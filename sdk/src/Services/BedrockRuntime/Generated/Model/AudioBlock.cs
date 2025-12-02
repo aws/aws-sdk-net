@@ -30,18 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Image content for a message.
+    /// An audio content block that contains audio data in various supported formats.
     /// </summary>
-    public partial class ImageBlock
+    public partial class AudioBlock
     {
         private ErrorBlock _error;
-        private ImageFormat _format;
-        private ImageSource _source;
+        private AudioFormat _format;
+        private AudioSource _source;
 
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Error information if the image block could not be processed or contains invalid data.
+        /// Error information if the audio block could not be processed or contains invalid data.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -60,11 +60,11 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format of the image.
+        /// The format of the audio data, such as MP3, WAV, FLAC, or other supported audio formats.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ImageFormat Format
+        public AudioFormat Format
         {
             get { return this._format; }
             set { this._format = value; }
@@ -79,11 +79,11 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source for the image.
+        /// The source of the audio data, which can be provided as raw bytes or an S3 location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
-        public ImageSource Source
+        public AudioSource Source
         {
             get { return this._source; }
             set { this._source = value; }

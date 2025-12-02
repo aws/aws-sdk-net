@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ImageBlock Marshaller
+    /// AudioBlock Marshaller
     /// </summary>
-    public class ImageBlockMarshaller : IRequestMarshaller<ImageBlock, JsonMarshallerContext> 
+    public class AudioBlockMarshaller : IRequestMarshaller<AudioBlock, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ImageBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioBlock requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -68,7 +68,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("source");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ImageSourceMarshaller.Instance;
+                var marshaller = AudioSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Source, context);
 
                 context.Writer.WriteEndObject();
@@ -79,7 +79,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ImageBlockMarshaller Instance = new ImageBlockMarshaller();
+        public readonly static AudioBlockMarshaller Instance = new AudioBlockMarshaller();
 
     }
 }

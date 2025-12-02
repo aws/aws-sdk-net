@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ToolResultBlockDelta Object
+    /// Response Unmarshaller for ImageBlockDelta Object
     /// </summary>  
-    public class ToolResultBlockDeltaUnmarshaller : IJsonUnmarshaller<ToolResultBlockDelta, JsonUnmarshallerContext>
+    public class ImageBlockDeltaUnmarshaller : IJsonUnmarshaller<ImageBlockDelta, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ToolResultBlockDelta Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ImageBlockDelta Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ToolResultBlockDelta unmarshalledObject = new ToolResultBlockDelta();
+            ImageBlockDelta unmarshalledObject = new ImageBlockDelta();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("json", targetDepth))
+                if (context.TestExpression("error", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Json = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ErrorBlockUnmarshaller.Instance;
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("source", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ImageSourceUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ToolResultBlockDeltaUnmarshaller _instance = new ToolResultBlockDeltaUnmarshaller();        
+        private static ImageBlockDeltaUnmarshaller _instance = new ImageBlockDeltaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ToolResultBlockDeltaUnmarshaller Instance
+        public static ImageBlockDeltaUnmarshaller Instance
         {
             get
             {

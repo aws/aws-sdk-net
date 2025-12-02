@@ -46,6 +46,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudio())
+            {
+                context.Writer.WritePropertyName("audio");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.Audio, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCachePoint())
             {
                 context.Writer.WritePropertyName("cachePoint");

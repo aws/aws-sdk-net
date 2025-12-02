@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ImageBlock Marshaller
+    /// AudioSource Marshaller
     /// </summary>
-    public class ImageBlockMarshaller : IRequestMarshaller<ImageBlock, JsonMarshallerContext> 
+    public class AudioSourceMarshaller : IRequestMarshaller<AudioSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +42,23 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ImageBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetError())
+            if(requestObject.IsSetBytes())
             {
-                context.Writer.WritePropertyName("error");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ErrorBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Error, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("bytes");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Bytes));
             }
 
-            if(requestObject.IsSetFormat())
+            if(requestObject.IsSetS3Location())
             {
-                context.Writer.WritePropertyName("format");
-                context.Writer.WriteStringValue(requestObject.Format);
-            }
-
-            if(requestObject.IsSetSource())
-            {
-                context.Writer.WritePropertyName("source");
+                context.Writer.WritePropertyName("s3Location");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ImageSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.Source, context);
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Location, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -79,7 +68,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ImageBlockMarshaller Instance = new ImageBlockMarshaller();
+        public readonly static AudioSourceMarshaller Instance = new AudioSourceMarshaller();
 
     }
 }

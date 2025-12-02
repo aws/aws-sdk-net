@@ -30,50 +30,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Contains incremental updates to tool results information during streaming responses.
-    /// This allows clients to build up tool results data progressively as the response is
-    /// generated.
+    /// The source of audio data, which can be provided either as raw bytes or a reference
+    /// to an S3 location.
     /// </summary>
-    public partial class ToolResultBlockDelta
+    public partial class AudioSource
     {
-        private Amazon.Runtime.Documents.Document _json;
-        private string _text;
+        private MemoryStream _bytes;
+        private S3Location _s3Location;
 
         /// <summary>
-        /// Gets and sets the property Json. 
+        /// Gets and sets the property Bytes. 
         /// <para>
-        /// The JSON schema for the tool result content block. see <a href="https://json-schema.org/understanding-json-schema/reference">JSON
-        /// Schema Reference</a>.
+        /// Audio data encoded in base64.
         /// </para>
         /// </summary>
-        public Amazon.Runtime.Documents.Document Json
+        [AWSProperty(Min=1)]
+        public MemoryStream Bytes
         {
-            get { return this._json; }
-            set { this._json = value; }
+            get { return this._bytes; }
+            set { this._bytes = value; }
         }
 
-        // Check to see if Json property is set
-        internal bool IsSetJson()
+        // Check to see if Bytes property is set
+        internal bool IsSetBytes()
         {
-            return !this._json.IsNull();
+            return this._bytes != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Text. 
+        /// Gets and sets the property S3Location. 
         /// <para>
-        /// The reasoning the model used to return the output.
+        /// A reference to audio data stored in an Amazon S3 bucket. To see which models support
+        /// S3 uploads, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html">Supported
+        /// models and features for Converse</a>.
         /// </para>
         /// </summary>
-        public string Text
+        public S3Location S3Location
         {
-            get { return this._text; }
-            set { this._text = value; }
+            get { return this._s3Location; }
+            set { this._s3Location = value; }
         }
 
-        // Check to see if Text property is set
-        internal bool IsSetText()
+        // Check to see if S3Location property is set
+        internal bool IsSetS3Location()
         {
-            return this._text != null;
+            return this._s3Location != null;
         }
 
     }
