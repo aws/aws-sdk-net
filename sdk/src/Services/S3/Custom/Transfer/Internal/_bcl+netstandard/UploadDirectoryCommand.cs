@@ -90,9 +90,9 @@ namespace Amazon.S3.Transfer.Internal
 
                 foreach (string filepath in filePaths)
                 {
-                    _logger.DebugFormat("Waiting for fileOperationThrottler to schedule file: {0}", filepath);
+                    _logger.DebugFormat("Waiting for fileOperationThrottler to schedule file.");
                     await fileOperationThrottler.WaitAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
-                    _logger.DebugFormat("Acquired fileOperationThrottler for file: {0}. Currently scheduled: {1}", filepath, pendingTasks.Count + 1);
+                    _logger.DebugFormat("Acquired fileOperationThrottler. Currently scheduled: {0}", pendingTasks.Count + 1);
 
                     try
                     {
@@ -108,11 +108,9 @@ namespace Amazon.S3.Transfer.Internal
                         }
 
                         var uploadRequest = ConstructRequest(basePath, filepath, prefix);
-                        _logger.DebugFormat("Constructed upload request for Key={0}, FilePath={1}", uploadRequest.Key, uploadRequest.FilePath);
 
                         Action<Exception> onFailure = (ex) =>
                         {
-                            _logger.Debug(ex, "Upload failed for Key={0}, FilePath={1}.", uploadRequest.Key, uploadRequest.FilePath);
                             this._request.OnRaiseObjectUploadFailedEvent(
                                 new ObjectUploadFailedEventArgs(
                                     this._request,
@@ -122,24 +120,23 @@ namespace Amazon.S3.Transfer.Internal
 
                         var task = _failurePolicy.ExecuteAsync(
                             async () => {
-                                _logger.DebugFormat("Starting upload command for Key={0}", uploadRequest.Key);
+                                _logger.DebugFormat("Starting upload command");
                                 var command = _utility.GetUploadCommand(uploadRequest, sharedHttpRequestThrottler);
                                 await command.ExecuteAsync(internalCts.Token)
                                     .ConfigureAwait(false);
                                 var uploaded = Interlocked.Increment(ref _numberOfFilesSuccessfullyUploaded);
-                                _logger.DebugFormat("Completed upload for Key={0}. FilesSuccessfullyUploaded={1}", uploadRequest.Key, uploaded);
+                                _logger.DebugFormat("Completed upload. FilesSuccessfullyUploaded={0}", uploaded);
                             },
                             onFailure,
                             internalCts
                         );
 
                         pendingTasks.Add(task);
-                        _logger.DebugFormat("Scheduled upload task for Key={0}. PendingTasks={1}", uploadRequest.Key, pendingTasks.Count);
+                        _logger.DebugFormat("Scheduled upload task. PendingTasks=01}", pendingTasks.Count);
                     }
                     finally
                     {
                         fileOperationThrottler.Release();
-                        _logger.DebugFormat("Released fileOperationThrottler for file: {0}", filepath);
                     }
                 }
 
