@@ -385,11 +385,14 @@ namespace Amazon.SavingsPlans
         #region  DescribeSavingsPlanRates
 
         /// <summary>
-        /// Describes the rates for the specified Savings Plan.
+        /// Describes the rates for a specific, existing Savings Plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlanRates service method.</param>
         /// 
         /// <returns>The response from the DescribeSavingsPlanRates service method, as returned by SavingsPlans.</returns>
+        /// <exception cref="Amazon.SavingsPlans.Model.InternalServerException">
+        /// An unexpected error occurred.
+        /// </exception>
         /// <exception cref="Amazon.SavingsPlans.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -505,7 +508,7 @@ namespace Amazon.SavingsPlans
         #region  DescribeSavingsPlansOfferingRates
 
         /// <summary>
-        /// Describes the offering rates for the specified Savings Plans.
+        /// Describes the offering rates for Savings Plans you might want to purchase.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlansOfferingRates service method.</param>
         /// 
