@@ -42,6 +42,8 @@ namespace Amazon.DataZone.Model
         private MetadataGenerationRunStatus _status;
         private MetadataGenerationRunTarget _target;
         private MetadataGenerationRunType _type;
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<MetadataGenerationRunTypeStat> _typeStats = AWSConfigs.InitializeCollections ? new List<MetadataGenerationRunTypeStat>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -179,6 +181,7 @@ namespace Amazon.DataZone.Model
         /// The type of metadata generation run.
         /// </para>
         /// </summary>
+        [Obsolete("This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types")]
         public MetadataGenerationRunType Type
         {
             get { return this._type; }
@@ -189,6 +192,43 @@ namespace Amazon.DataZone.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Types. 
+        /// <para>
+        /// The types of the metadata generation run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> Types
+        {
+            get { return this._types; }
+            set { this._types = value; }
+        }
+
+        // Check to see if Types property is set
+        internal bool IsSetTypes()
+        {
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TypeStats. 
+        /// <para>
+        /// The type stats included in the metadata generation run output details.
+        /// </para>
+        /// </summary>
+        public List<MetadataGenerationRunTypeStat> TypeStats
+        {
+            get { return this._typeStats; }
+            set { this._typeStats = value; }
+        }
+
+        // Check to see if TypeStats property is set
+        internal bool IsSetTypeStats()
+        {
+            return this._typeStats != null && (this._typeStats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MetadataGenerationRunItem Object
+    /// Response Unmarshaller for MetadataGenerationRunTypeStat Object
     /// </summary>  
-    public class MetadataGenerationRunItemUnmarshaller : IUnmarshaller<MetadataGenerationRunItem, XmlUnmarshallerContext>, IUnmarshaller<MetadataGenerationRunItem, JsonUnmarshallerContext>
+    public class MetadataGenerationRunTypeStatUnmarshaller : IUnmarshaller<MetadataGenerationRunTypeStat, XmlUnmarshallerContext>, IUnmarshaller<MetadataGenerationRunTypeStat, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MetadataGenerationRunItem IUnmarshaller<MetadataGenerationRunItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetadataGenerationRunTypeStat IUnmarshaller<MetadataGenerationRunTypeStat, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MetadataGenerationRunItem Unmarshall(JsonUnmarshallerContext context)
+        public MetadataGenerationRunTypeStat Unmarshall(JsonUnmarshallerContext context)
         {
-            MetadataGenerationRunItem unmarshalledObject = new MetadataGenerationRunItem();
+            MetadataGenerationRunTypeStat unmarshalledObject = new MetadataGenerationRunTypeStat();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdBy", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("domainId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("owningProjectId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwningProjectId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -102,22 +78,10 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
-                {
-                    var unmarshaller = MetadataGenerationRunTargetUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("types", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Types = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -125,12 +89,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static MetadataGenerationRunItemUnmarshaller _instance = new MetadataGenerationRunItemUnmarshaller();        
+        private static MetadataGenerationRunTypeStatUnmarshaller _instance = new MetadataGenerationRunTypeStatUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetadataGenerationRunItemUnmarshaller Instance
+        public static MetadataGenerationRunTypeStatUnmarshaller Instance
         {
             get
             {

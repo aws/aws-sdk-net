@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartMetadataGenerationRun operation
+    /// Response Unmarshaller for GetDataExportConfiguration operation
     /// </summary>  
-    public class StartMetadataGenerationRunResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetDataExportConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartMetadataGenerationRunResponse response = new StartMetadataGenerationRunResponse();
+            GetDataExportConfigurationResponse response = new GetDataExportConfigurationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -58,28 +58,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createdBy", targetDepth))
+                if (context.TestExpression("encryptionConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
+                    response.EncryptionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("domainId", targetDepth))
+                if (context.TestExpression("isExportEnabled", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsExportEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("s3TableBucketArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("owningProjectId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OwningProjectId = unmarshaller.Unmarshall(context);
+                    response.S3TableBucketArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -88,16 +82,10 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("types", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.Types = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -127,10 +115,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -138,10 +122,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -159,9 +139,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             return new AmazonDataZoneException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartMetadataGenerationRunResponseUnmarshaller _instance = new StartMetadataGenerationRunResponseUnmarshaller();        
+        private static GetDataExportConfigurationResponseUnmarshaller _instance = new GetDataExportConfigurationResponseUnmarshaller();        
 
-        internal static StartMetadataGenerationRunResponseUnmarshaller GetInstance()
+        internal static GetDataExportConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +149,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartMetadataGenerationRunResponseUnmarshaller Instance
+        public static GetDataExportConfigurationResponseUnmarshaller Instance
         {
             get
             {

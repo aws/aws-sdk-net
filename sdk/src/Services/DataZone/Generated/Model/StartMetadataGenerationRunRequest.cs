@@ -52,7 +52,7 @@ namespace Amazon.DataZone.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.
+    /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -67,6 +67,7 @@ namespace Amazon.DataZone.Model
         private string _owningProjectIdentifier;
         private MetadataGenerationRunTarget _target;
         private MetadataGenerationRunType _type;
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -153,7 +154,7 @@ namespace Amazon.DataZone.Model
         /// The type of the metadata generation run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types")]
         public MetadataGenerationRunType Type
         {
             get { return this._type; }
@@ -164,6 +165,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Types. 
+        /// <para>
+        /// The types of the metadata generation run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> Types
+        {
+            get { return this._types; }
+            set { this._types = value; }
+        }
+
+        // Check to see if Types property is set
+        internal bool IsSetTypes()
+        {
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -6151,6 +6151,70 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  GetDataExportConfiguration
+
+
+        /// <summary>
+        /// Gets data export configuration details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataExportConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataExportConfiguration">REST API Reference for GetDataExportConfiguration Operation</seealso>
+        GetDataExportConfigurationResponse GetDataExportConfiguration(GetDataExportConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Gets data export configuration details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataExportConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataExportConfiguration">REST API Reference for GetDataExportConfiguration Operation</seealso>
+        Task<GetDataExportConfigurationResponse> GetDataExportConfigurationAsync(GetDataExportConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDataProduct
 
 
@@ -10763,6 +10827,98 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  PutDataExportConfiguration
+
+
+        /// <summary>
+        /// Creates data export configuration details.
+        /// 
+        ///  
+        /// <para>
+        /// In the current release, you can enable exporting asset metadata only for one domain
+        /// per Amazon Web Services account per region. If you disable exporting asset metadata
+        /// feature for a domain where it's already enabled, you cannot enable this feature for
+        /// another domain in the same Amazon Web Services account and region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataExportConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutDataExportConfiguration">REST API Reference for PutDataExportConfiguration Operation</seealso>
+        PutDataExportConfigurationResponse PutDataExportConfiguration(PutDataExportConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates data export configuration details.
+        /// 
+        ///  
+        /// <para>
+        /// In the current release, you can enable exporting asset metadata only for one domain
+        /// per Amazon Web Services account per region. If you disable exporting asset metadata
+        /// feature for a domain where it's already enabled, you cannot enable this feature for
+        /// another domain in the same Amazon Web Services account and region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataExportConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutDataExportConfiguration">REST API Reference for PutDataExportConfiguration Operation</seealso>
+        Task<PutDataExportConfigurationResponse> PutDataExportConfigurationAsync(PutDataExportConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutEnvironmentBlueprintConfiguration
 
 
@@ -11810,7 +11966,7 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.
+        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11872,7 +12028,7 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.
+        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS.
         /// </para>
         ///  </li> <li> 
         /// <para>

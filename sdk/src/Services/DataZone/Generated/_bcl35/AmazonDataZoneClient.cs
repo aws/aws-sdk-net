@@ -6160,6 +6160,78 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  GetDataExportConfiguration
+
+        /// <summary>
+        /// Gets data export configuration details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataExportConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataExportConfiguration">REST API Reference for GetDataExportConfiguration Operation</seealso>
+        public virtual GetDataExportConfigurationResponse GetDataExportConfiguration(GetDataExportConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataExportConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataExportConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataExportConfiguration operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataExportConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataExportConfiguration">REST API Reference for GetDataExportConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetDataExportConfiguration(GetDataExportConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataExportConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataExportConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetDataExportConfigurationResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataExportConfiguration">REST API Reference for GetDataExportConfiguration Operation</seealso>
+        public virtual GetDataExportConfigurationResponse EndGetDataExportConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataExportConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDataProduct
 
         /// <summary>
@@ -11066,6 +11138,92 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  PutDataExportConfiguration
+
+        /// <summary>
+        /// Creates data export configuration details.
+        /// 
+        ///  
+        /// <para>
+        /// In the current release, you can enable exporting asset metadata only for one domain
+        /// per Amazon Web Services account per region. If you disable exporting asset metadata
+        /// feature for a domain where it's already enabled, you cannot enable this feature for
+        /// another domain in the same Amazon Web Services account and region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataExportConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutDataExportConfiguration">REST API Reference for PutDataExportConfiguration Operation</seealso>
+        public virtual PutDataExportConfigurationResponse PutDataExportConfiguration(PutDataExportConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutDataExportConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDataExportConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDataExportConfiguration operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDataExportConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutDataExportConfiguration">REST API Reference for PutDataExportConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutDataExportConfiguration(PutDataExportConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutDataExportConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDataExportConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutDataExportConfigurationResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutDataExportConfiguration">REST API Reference for PutDataExportConfiguration Operation</seealso>
+        public virtual PutDataExportConfigurationResponse EndPutDataExportConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutDataExportConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutEnvironmentBlueprintConfiguration
 
         /// <summary>
@@ -12081,7 +12239,7 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.
+        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetMetadataGenerationRun Request Marshaller
+    /// GetDataExportConfiguration Request Marshaller
     /// </summary>       
-    public class GetMetadataGenerationRunRequestMarshaller : IMarshaller<IRequest, GetMetadataGenerationRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetDataExportConfigurationRequestMarshaller : IMarshaller<IRequest, GetDataExportConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetMetadataGenerationRunRequest)input);
+            return this.Marshall((GetDataExportConfigurationRequest)input);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetMetadataGenerationRunRequest publicRequest)
+        public IRequest Marshall(GetDataExportConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataZone");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
@@ -62,20 +62,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainIdentifier())
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
-            if (!publicRequest.IsSetIdentifier())
-                throw new AmazonDataZoneException("Request object does not have required field Identifier set");
-            request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
-            
-            if (publicRequest.IsSetType())
-                request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
-            request.ResourcePath = "/v2/domains/{domainIdentifier}/metadata-generation-runs/{identifier}";
-            request.UseQueryString = true;
+            request.ResourcePath = "/v2/domains/{domainIdentifier}/data-export-configuration";
 
             return request;
         }
-        private static GetMetadataGenerationRunRequestMarshaller _instance = new GetMetadataGenerationRunRequestMarshaller();        
+        private static GetDataExportConfigurationRequestMarshaller _instance = new GetDataExportConfigurationRequestMarshaller();        
 
-        internal static GetMetadataGenerationRunRequestMarshaller GetInstance()
+        internal static GetDataExportConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +76,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetMetadataGenerationRunRequestMarshaller Instance
+        public static GetDataExportConfigurationRequestMarshaller Instance
         {
             get
             {

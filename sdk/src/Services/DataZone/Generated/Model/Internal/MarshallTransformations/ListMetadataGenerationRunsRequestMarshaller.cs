@@ -72,6 +72,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             
+            if (publicRequest.IsSetTargetIdentifier())
+                request.Parameters.Add("targetIdentifier", StringUtils.FromString(publicRequest.TargetIdentifier));
+            
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/metadata-generation-runs";

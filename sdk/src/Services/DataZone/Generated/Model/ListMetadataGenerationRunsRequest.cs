@@ -62,6 +62,7 @@ namespace Amazon.DataZone.Model
         private int? _maxResults;
         private string _nextToken;
         private MetadataGenerationRunStatus _status;
+        private string _targetIdentifier;
         private MetadataGenerationRunType _type;
 
         /// <summary>
@@ -144,6 +145,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetIdentifier. 
+        /// <para>
+        /// The target ID for which you want to list metadata generation runs.
+        /// </para>
+        /// </summary>
+        public string TargetIdentifier
+        {
+            get { return this._targetIdentifier; }
+            set { this._targetIdentifier = value; }
+        }
+
+        // Check to see if TargetIdentifier property is set
+        internal bool IsSetTargetIdentifier()
+        {
+            return this._targetIdentifier != null;
         }
 
         /// <summary>

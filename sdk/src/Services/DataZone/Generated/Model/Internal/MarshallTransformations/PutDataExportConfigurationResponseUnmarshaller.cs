@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartMetadataGenerationRun operation
+    /// Response Unmarshaller for PutDataExportConfiguration operation
     /// </summary>  
-    public class StartMetadataGenerationRunResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutDataExportConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,61 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartMetadataGenerationRunResponse response = new StartMetadataGenerationRunResponse();
+            PutDataExportConfigurationResponse response = new PutDataExportConfigurationResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("domainId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("owningProjectId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OwningProjectId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("types", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.Types = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -159,9 +106,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             return new AmazonDataZoneException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartMetadataGenerationRunResponseUnmarshaller _instance = new StartMetadataGenerationRunResponseUnmarshaller();        
+        private static PutDataExportConfigurationResponseUnmarshaller _instance = new PutDataExportConfigurationResponseUnmarshaller();        
 
-        internal static StartMetadataGenerationRunResponseUnmarshaller GetInstance()
+        internal static PutDataExportConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +116,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartMetadataGenerationRunResponseUnmarshaller Instance
+        public static PutDataExportConfigurationResponseUnmarshaller Instance
         {
             get
             {
