@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RestoreDBInstanceFromS3Request : AmazonRDSRequest
     {
+        private List<AdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
@@ -97,6 +98,32 @@ namespace Amazon.RDS.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _useDefaultProcessorFeatures;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// A list of additional storage volumes to modify or delete for the DB instance. You
+        /// can modify or delete up to three additional storage volumes using the names <c>rdsdbdata2</c>,
+        /// <c>rdsdbdata3</c>, and <c>rdsdbdata4</c>. Additional storage volumes are supported
+        /// for RDS for Oracle and RDS for SQL Server DB instances only.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 

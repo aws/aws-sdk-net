@@ -94,6 +94,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.CustomDBEngineVersionManifest = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DatabaseInstallationFiles/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.DatabaseInstallationFiles == null)
+                        {
+                            response.DatabaseInstallationFiles = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.DatabaseInstallationFiles.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("DatabaseInstallationFilesS3BucketName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -163,6 +174,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         response.ExportableLogTypes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("FailureReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.FailureReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Image", targetDepth))

@@ -55,6 +55,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AdditionalStorageVolumes/member", targetDepth))
+                    {
+                        var unmarshaller = AdditionalStorageVolumeUnmarshaller.Instance;
+                        if (unmarshalledObject.AdditionalStorageVolumes == null)
+                        {
+                            unmarshalledObject.AdditionalStorageVolumes = new List<AdditionalStorageVolume>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AdditionalStorageVolumes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("AllocatedStorage", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

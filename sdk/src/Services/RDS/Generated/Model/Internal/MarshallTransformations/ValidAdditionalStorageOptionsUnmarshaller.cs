@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidDBInstanceModificationsMessage Object
+    /// Response Unmarshaller for ValidAdditionalStorageOptions Object
     /// </summary>  
-    public class ValidDBInstanceModificationsMessageUnmarshaller : IXmlUnmarshaller<ValidDBInstanceModificationsMessage, XmlUnmarshallerContext>
+    public class ValidAdditionalStorageOptionsUnmarshaller : IXmlUnmarshaller<ValidAdditionalStorageOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidDBInstanceModificationsMessage Unmarshall(XmlUnmarshallerContext context)
+        public ValidAdditionalStorageOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            ValidDBInstanceModificationsMessage unmarshalledObject = new ValidDBInstanceModificationsMessage();
+            ValidAdditionalStorageOptions unmarshalledObject = new ValidAdditionalStorageOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,38 +55,21 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AdditionalStorage", targetDepth))
-                    {
-                        var unmarshaller = ValidAdditionalStorageOptionsUnmarshaller.Instance;
-                        unmarshalledObject.AdditionalStorage = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Storage/ValidStorageOptions", targetDepth))
-                    {
-                        var unmarshaller = ValidStorageOptionsUnmarshaller.Instance;
-                        if (unmarshalledObject.Storage == null)
-                        {
-                            unmarshalledObject.Storage = new List<ValidStorageOptions>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Storage.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("SupportsDedicatedLogVolume", targetDepth))
+                    if (context.TestExpression("SupportsAdditionalStorageVolumes", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.SupportsDedicatedLogVolume = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportsAdditionalStorageVolumes = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ValidProcessorFeatures/AvailableProcessorFeature", targetDepth))
+                    if (context.TestExpression("Volumes/member", targetDepth))
                     {
-                        var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
-                        if (unmarshalledObject.ValidProcessorFeatures == null)
+                        var unmarshaller = ValidVolumeOptionsUnmarshaller.Instance;
+                        if (unmarshalledObject.Volumes == null)
                         {
-                            unmarshalledObject.ValidProcessorFeatures = new List<AvailableProcessorFeature>();
+                            unmarshalledObject.Volumes = new List<ValidVolumeOptions>();
                         }
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ValidProcessorFeatures.Add(item);
+                        unmarshalledObject.Volumes.Add(item);
                         continue;
                     }
                 }
@@ -99,12 +82,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ValidDBInstanceModificationsMessageUnmarshaller _instance = new ValidDBInstanceModificationsMessageUnmarshaller();        
+        private static ValidAdditionalStorageOptionsUnmarshaller _instance = new ValidAdditionalStorageOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidDBInstanceModificationsMessageUnmarshaller Instance
+        public static ValidAdditionalStorageOptionsUnmarshaller Instance
         {
             get
             {
