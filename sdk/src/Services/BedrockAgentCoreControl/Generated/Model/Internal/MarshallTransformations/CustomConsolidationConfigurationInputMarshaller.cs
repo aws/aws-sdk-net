@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEpisodicConsolidationOverride())
+            {
+                context.Writer.WritePropertyName("episodicConsolidationOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EpisodicOverrideConsolidationConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.EpisodicConsolidationOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSemanticConsolidationOverride())
             {
                 context.Writer.WritePropertyName("semanticConsolidationOverride");

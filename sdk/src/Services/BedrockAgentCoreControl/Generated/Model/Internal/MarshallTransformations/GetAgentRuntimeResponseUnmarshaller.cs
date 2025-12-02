@@ -106,6 +106,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.EnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("failureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
