@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SearchCriteria Marshaller
+    /// EvaluationInput Marshaller
     /// </summary>
-    public class SearchCriteriaMarshaller : IRequestMarshaller<SearchCriteria, JsonMarshallerContext> 
+    public class EvaluationInputMarshaller : IRequestMarshaller<EvaluationInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,19 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SearchCriteria requestObject, JsonMarshallerContext context)
+        public void Marshall(EvaluationInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMemoryStrategyId())
+            if(requestObject.IsSetSessionSpans())
             {
-                context.Writer.WritePropertyName("memoryStrategyId");
-                context.Writer.WriteStringValue(requestObject.MemoryStrategyId);
-            }
-
-            if(requestObject.IsSetMetadataFilters())
-            {
-                context.Writer.WritePropertyName("metadataFilters");
+                context.Writer.WritePropertyName("sessionSpans");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectMetadataFiltersListValue in requestObject.MetadataFilters)
+                foreach(var requestObjectSessionSpansListValue in requestObject.SessionSpans)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = MemoryMetadataFilterExpressionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectMetadataFiltersListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObjectSessionSpansListValue);
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetSearchQuery())
-            {
-                context.Writer.WritePropertyName("searchQuery");
-                context.Writer.WriteStringValue(requestObject.SearchQuery);
-            }
-
-            if(requestObject.IsSetTopK())
-            {
-                context.Writer.WritePropertyName("topK");
-                context.Writer.WriteNumberValue(requestObject.TopK.Value);
             }
 
         }
@@ -85,7 +62,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SearchCriteriaMarshaller Instance = new SearchCriteriaMarshaller();
+        public readonly static EvaluationInputMarshaller Instance = new EvaluationInputMarshaller();
 
     }
 }

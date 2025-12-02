@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SearchCriteria Marshaller
+    /// MemoryMetadataFilterExpression Marshaller
     /// </summary>
-    public class SearchCriteriaMarshaller : IRequestMarshaller<SearchCriteria, JsonMarshallerContext> 
+    public class MemoryMetadataFilterExpressionMarshaller : IRequestMarshaller<MemoryMetadataFilterExpression, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,36 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SearchCriteria requestObject, JsonMarshallerContext context)
+        public void Marshall(MemoryMetadataFilterExpression requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMemoryStrategyId())
+            if(requestObject.IsSetLeft())
             {
-                context.Writer.WritePropertyName("memoryStrategyId");
-                context.Writer.WriteStringValue(requestObject.MemoryStrategyId);
+                context.Writer.WritePropertyName("left");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LeftExpressionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Left, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetMetadataFilters())
+            if(requestObject.IsSetOperator())
             {
-                context.Writer.WritePropertyName("metadataFilters");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectMetadataFiltersListValue in requestObject.MetadataFilters)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = MemoryMetadataFilterExpressionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectMetadataFiltersListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("operator");
+                context.Writer.WriteStringValue(requestObject.Operator);
             }
 
-            if(requestObject.IsSetSearchQuery())
+            if(requestObject.IsSetRight())
             {
-                context.Writer.WritePropertyName("searchQuery");
-                context.Writer.WriteStringValue(requestObject.SearchQuery);
-            }
+                context.Writer.WritePropertyName("right");
+                context.Writer.WriteStartObject();
 
-            if(requestObject.IsSetTopK())
-            {
-                context.Writer.WritePropertyName("topK");
-                context.Writer.WriteNumberValue(requestObject.TopK.Value);
+                var marshaller = RightExpressionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Right, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -85,7 +79,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SearchCriteriaMarshaller Instance = new SearchCriteriaMarshaller();
+        public readonly static MemoryMetadataFilterExpressionMarshaller Instance = new MemoryMetadataFilterExpressionMarshaller();
 
     }
 }
