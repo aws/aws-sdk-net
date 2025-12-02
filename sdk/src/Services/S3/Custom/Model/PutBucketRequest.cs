@@ -59,10 +59,12 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
     /// API operation to the Regional endpoint. These endpoints support path-style requests
-    /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-    /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-    /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+    /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+    /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+    /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+    /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+    /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+    /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
@@ -146,7 +148,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </important> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -162,7 +164,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class PutBucketRequest : PutWithACLRequest
     {

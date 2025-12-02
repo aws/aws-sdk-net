@@ -52,9 +52,12 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
     /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-    /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+    /// requests in the format <c>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information about endpoints
+    /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+    /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+    /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+    /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
@@ -86,7 +89,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -122,7 +125,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListPartsRequest : AmazonWebServiceRequest
     {

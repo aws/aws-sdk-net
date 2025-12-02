@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Grantee
+    /// <summary>
+    /// Container for the person being granted permissions.
     /// </summary>
     public class S3Grantee
     {
@@ -56,8 +57,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Screen name of the grantee.
-        ///  
+        /// Gets and sets the property DisplayName.
         /// </summary>
         public string DisplayName
         {
@@ -72,53 +72,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddress. 
-        /// <para>
-        /// Email address of the grantee.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following Amazon
-        /// Web Services Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// US East (N. Virginia)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (N. California)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  US West (Oregon)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Asia Pacific (Singapore)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Sydney)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Tokyo)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Europe (Ireland)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// South America (São Paulo)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the Amazon Web Services General Reference.
-        /// </para>
-        ///  </note>
+        /// Gets and sets the property EmailAddress.
         /// </summary>
         public string EmailAddress
         {

@@ -21,69 +21,12 @@ using System.IO;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// <important> 
-    /// <para>
-    /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-    /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-    /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-    /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-    /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-    /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-    /// Region, and South America (São Paulo) Region.
-    /// </para>
-    ///  </important> 
-    /// <para>
-    /// The owner of an S3 bucket.
-    /// </para>
+    /// Container for the owner's display name and ID.
     /// </summary>
     public class Owner
     {
         /// <summary>
-        /// <para>
-        /// Container for the display name of the owner. This value is only supported in the following
-        /// Amazon Web Services Regions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// US East (N. Virginia)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (N. California)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (Oregon)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Singapore)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Sydney)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Tokyo)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Europe (Ireland)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// South America (São Paulo)
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
+        /// Gets and sets the property DisplayName.
         /// </summary>
         public string DisplayName { set; get; }
 

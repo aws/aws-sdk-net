@@ -25,29 +25,52 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketEncryption operation.
-    /// <note> 
-    /// <para>
-    /// This operation is not supported by directory buckets.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
     /// all buckets have a default encryption configuration that uses server-side encryption
-    /// with Amazon S3 managed keys (SSE-S3). For information about the bucket default encryption
-    /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+    /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BucketKeyEnabled">BucketKeyEnabled</a>
+    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BlockedEncryptionTypes">BlockedEncryptionTypes</a>
+    /// statuses. 
+    /// 
+    ///  <note> <ul> <li> 
+    /// <para>
+    ///  <b>General purpose buckets</b> - For information about the bucket default encryption
+    /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon
     /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// To use this operation, you must have permission to perform the <code>s3:GetEncryptionConfiguration</code>
-    /// action. The bucket owner has this permission by default. The bucket owner can grant
-    /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+    ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
+    /// for server-side encryption: SSE-S3 and SSE-KMS. For information about the default
+    /// encryption configuration in directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-bucket-encryption.html">Setting
+    /// default server-side encryption behavior for directory buckets</a>.
+    /// </para>
+    ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+    /// <para>
+    ///  <b>General purpose bucket permissions</b> - The <c>s3:GetEncryptionConfiguration</c>
+    /// permission is required in a policy. The bucket owner has this permission by default.
+    /// The bucket owner can grant this permission to others. For more information about permissions,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// Related to Bucket Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
     /// Access Permissions to Your Amazon S3 Resources</a>.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// The following operations are related to <code>GetBucketEncryption</code>:
+    ///  <b>Directory bucket permissions</b> - To grant access to this API operation, you
+    /// must have the <c>s3express:GetEncryptionConfiguration</c> permission in an IAM identity-based
+    /// policy instead of a bucket policy. Cross-account access to this API operation isn't
+    /// supported. This operation can only be performed by the Amazon Web Services account
+    /// that owns the resource. For more information about directory bucket policies and permissions,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+    /// Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in the
+    /// <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+    /// <para>
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
+    /// </para>
+    ///  </dd> </dl> 
+    /// <para>
+    /// The following operations are related to <c>GetBucketEncryption</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -59,7 +82,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetBucketEncryptionRequest : AmazonWebServiceRequest
     {

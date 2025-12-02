@@ -22,68 +22,12 @@ using System.IO;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The container element for all Public Access Block configuration options. You can enable
-    /// the configuration options in any combination.
-    /// 
-    ///  
-    /// <para>
-    /// Amazon S3 considers a bucket policy public unless at least one of the following conditions
-    /// is true:
-    /// </para>
-    ///  <ol> <li> 
-    /// <para>
-    /// The policy limits access to a set of CIDRs using <code>aws:SourceIp</code>. For more
-    /// information on CIDR, see <a href="http://www.rfc-editor.org/rfc/rfc4632.txt">http://www.rfc-editor.org/rfc/rfc4632.txt</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The policy grants permissions, not including any "bad actions," to one of the following:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// A fixed AWS principal, user, role, or service principal
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A fixed <code>aws:SourceArn</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A fixed <code>aws:SourceVpc</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A fixed <code>aws:SourceVpce</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A fixed <code>aws:SourceOwner</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A fixed <code>aws:SourceAccount</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A fixed value of <code>s3:x-amz-server-side-encryption-aws-kms-key-id</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A fixed value of <code>aws:userid</code> outside the pattern "<code>AROLEID:*</code>"
-    /// </para>
-    ///  </li> </ul> </li> </ol> 
-    /// <para>
-    /// "Bad actions" are those that could expose the data inside a bucket to reads or writes
-    /// by the public. These actions are <code>s3:Get*</code>, <code>s3:List*</code>, <code>s3:AbortMultipartUpload</code>,
-    /// <code>s3:Delete*</code>, <code>s3:Put*</code>, and <code>s3:RestoreObject</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The star notation for bad actions indicates that all matching operations are considered
-    /// bad actions. For example, because <code>s3:Get*</code> is a bad action, <code>s3:GetObject</code>,
-    /// <code>s3:GetObjectVersion</code>, and <code>s3:GetObjectAcl</code> are all bad actions.
-    /// </para>
+    /// The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket.
+    /// You can enable the configuration options in any combination. Bucket-level settings
+    /// work alongside account-level settings (which may inherit from organization-level policies).
+    /// For more information about when Amazon S3 considers a bucket or object public, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+    /// Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.
     /// </summary>
     public class PublicAccessBlockConfiguration
     {        

@@ -27,23 +27,26 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the GetPublicAccessBlock operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
-    /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3 bucket.
-    /// To use this operation, you must have the <code>s3:GetBucketPublicAccessBlock</code>
+    /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. This
+    /// operation returns the bucket-level configuration only. To understand the effective
+    /// public access behavior, you must also consider account-level settings (which may inherit
+    /// from organization-level policies). To use this operation, you must have the <c>s3:GetBucketPublicAccessBlock</c>
     /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
     /// Permissions in a Policy</a>.
     /// </para>
     ///  <important> 
     /// <para>
-    /// When Amazon S3 evaluates the <code>PublicAccessBlock</code> configuration for a bucket
-    /// or an object, it checks the <code>PublicAccessBlock</code> configuration for both
-    /// the bucket (or the bucket that contains the object) and the bucket owner's account.
-    /// If the <code>PublicAccessBlock</code> settings are different between the bucket and
-    /// the account, Amazon S3 uses the most restrictive combination of the bucket-level and
-    /// account-level settings.
+    /// When Amazon S3 evaluates the <c>PublicAccessBlock</c> configuration for a bucket or
+    /// an object, it checks the <c>PublicAccessBlock</c> configuration for both the bucket
+    /// (or the bucket that contains the object) and the bucket owner's account. Account-level
+    /// settings automatically inherit from organization-level policies when present. If the
+    /// <c>PublicAccessBlock</c> settings are different between the bucket and the account,
+    /// Amazon S3 uses the most restrictive combination of the bucket-level and account-level
+    /// settings.
     /// </para>
     ///  </important> 
     /// <para>
@@ -53,7 +56,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>GetPublicAccessBlock</code>:
+    /// The following operations are related to <c>GetPublicAccessBlock</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -75,7 +78,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetPublicAccessBlockRequest : AmazonWebServiceRequest
     {

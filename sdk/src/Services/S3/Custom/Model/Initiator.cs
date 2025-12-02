@@ -30,11 +30,7 @@ namespace Amazon.S3.Model
         private string iD;
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
-        /// <para>
-        /// Name of the Principal.
-        /// </para>
-        ///  <note> 
+        /// Gets and sets the property DisplayName.  <note> 
         /// <para>
         /// This functionality is not supported for directory buckets.
         /// </para>

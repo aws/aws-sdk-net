@@ -28,7 +28,7 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the ListVersions operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
@@ -38,13 +38,13 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <important> 
     /// <para>
-    ///  To use this operation, you must have permission to perform the <code>s3:ListBucketVersions</code>
+    ///  To use this operation, you must have permission to perform the <c>s3:ListBucketVersions</c>
     /// action. Be aware of the name difference. 
     /// </para>
     ///  </important> <note> 
     /// <para>
-    ///  A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design
-    /// your application to parse the contents of the response and handle it appropriately.
+    ///  A <c>200 OK</c> response can contain valid or invalid XML. Make sure to design your
+    /// application to parse the contents of the response and handle it appropriately.
     /// </para>
     ///  </note> 
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>ListObjectVersions</code>:
+    /// The following operations are related to <c>ListObjectVersions</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -74,7 +74,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListVersionsRequest : AmazonWebServiceRequest
     {
