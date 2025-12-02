@@ -70,6 +70,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     response.ConnectorId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConnectorStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectorStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -108,6 +114,10 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {

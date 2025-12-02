@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConnectorRegistrationsV2 operation
+    /// Response Unmarshaller for RegisterConnectorV2 operation
     /// </summary>  
-    public class ConnectorRegistrationsV2ResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RegisterConnectorV2ResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ConnectorRegistrationsV2Response response = new ConnectorRegistrationsV2Response();
+            RegisterConnectorV2Response response = new RegisterConnectorV2Response();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -115,9 +115,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             return new AmazonSecurityHubException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ConnectorRegistrationsV2ResponseUnmarshaller _instance = new ConnectorRegistrationsV2ResponseUnmarshaller();        
+        private static RegisterConnectorV2ResponseUnmarshaller _instance = new RegisterConnectorV2ResponseUnmarshaller();        
 
-        internal static ConnectorRegistrationsV2ResponseUnmarshaller GetInstance()
+        internal static RegisterConnectorV2ResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +125,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectorRegistrationsV2ResponseUnmarshaller Instance
+        public static RegisterConnectorV2ResponseUnmarshaller Instance
         {
             get
             {

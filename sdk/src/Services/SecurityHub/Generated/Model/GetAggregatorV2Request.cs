@@ -31,8 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAggregatorV2 operation.
-    /// Returns the configuration of the specified Aggregator V2. This API is in public preview
-    /// and subject to change.
+    /// Returns the configuration of the specified Aggregator V2.
     /// </summary>
     public partial class GetAggregatorV2Request : AmazonSecurityHubRequest
     {

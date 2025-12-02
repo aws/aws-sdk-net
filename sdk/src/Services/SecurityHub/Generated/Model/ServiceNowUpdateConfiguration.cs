@@ -30,31 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the EnableSecurityHubV2 operation.
-    /// Enables the service in account for the current Amazon Web Services Region or specified
-    /// Amazon Web Services Region.
+    /// The parameters used to modify an existing ServiceNow integration.
     /// </summary>
-    public partial class EnableSecurityHubV2Request : AmazonSecurityHubRequest
+    public partial class ServiceNowUpdateConfiguration
     {
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _secretArn;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The tags to add to the hub V2 resource when you enable Security Hub.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that
+        /// contains the ServiceNow credentials.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
+        public string SecretArn
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._secretArn; }
+            set { this._secretArn = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if SecretArn property is set
+        internal bool IsSetSecretArn()
         {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._secretArn != null;
         }
 
     }

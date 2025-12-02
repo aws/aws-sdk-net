@@ -38,8 +38,7 @@ namespace Amazon.SecurityHub.Model
     /// both use <c>securityhub:BatchUpdateFindings</c> in the <c>Action</c> element of an
     /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
     /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
-    /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>. This
-    /// API is in public preview and subject to change.
+    /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>.
     /// </summary>
     public partial class BatchUpdateFindingsV2Request : AmazonSecurityHubRequest
     {

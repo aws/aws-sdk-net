@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ConnectorRegistrationsV2 Request Marshaller
+    /// RegisterConnectorV2 Request Marshaller
     /// </summary>       
-    public class ConnectorRegistrationsV2RequestMarshaller : IMarshaller<IRequest, ConnectorRegistrationsV2Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RegisterConnectorV2RequestMarshaller : IMarshaller<IRequest, RegisterConnectorV2Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ConnectorRegistrationsV2Request)input);
+            return this.Marshall((RegisterConnectorV2Request)input);
         }
 
         /// <summary>
@@ -53,14 +53,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ConnectorRegistrationsV2Request publicRequest)
+        public IRequest Marshall(RegisterConnectorV2Request publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityHub");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/connectorsv2/registrations";
+            request.ResourcePath = "/connectorsv2/register";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -87,9 +87,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ConnectorRegistrationsV2RequestMarshaller _instance = new ConnectorRegistrationsV2RequestMarshaller();        
+        private static RegisterConnectorV2RequestMarshaller _instance = new RegisterConnectorV2RequestMarshaller();        
 
-        internal static ConnectorRegistrationsV2RequestMarshaller GetInstance()
+        internal static RegisterConnectorV2RequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectorRegistrationsV2RequestMarshaller Instance
+        public static RegisterConnectorV2RequestMarshaller Instance
         {
             get
             {

@@ -354,7 +354,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// The security groups to assign to the instances in the Auto Scaling group.
+        /// The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

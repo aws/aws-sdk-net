@@ -30,11 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the ConnectorRegistrationsV2 operation.
-    /// Grants permission to complete the authorization based on input parameters. This API
-    /// is in public preview and subject to change.
+    /// Container for the parameters to the RegisterConnectorV2 operation.
+    /// Grants permission to complete the authorization based on input parameters.
     /// </summary>
-    public partial class ConnectorRegistrationsV2Request : AmazonSecurityHubRequest
+    public partial class RegisterConnectorV2Request : AmazonSecurityHubRequest
     {
         private string _authCode;
         private string _authState;

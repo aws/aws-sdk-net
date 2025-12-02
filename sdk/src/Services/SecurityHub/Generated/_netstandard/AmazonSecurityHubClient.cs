@@ -1219,8 +1219,7 @@ namespace Amazon.SecurityHub
         /// both use <c>securityhub:BatchUpdateFindings</c> in the <c>Action</c> element of an
         /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
         /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
-        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>. This
-        /// API is in public preview and subject to change.
+        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindingsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1309,60 +1308,6 @@ namespace Amazon.SecurityHub
 
         #endregion
         
-        #region  ConnectorRegistrationsV2
-
-        internal virtual ConnectorRegistrationsV2Response ConnectorRegistrationsV2(ConnectorRegistrationsV2Request request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = ConnectorRegistrationsV2RequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ConnectorRegistrationsV2ResponseUnmarshaller.Instance;
-
-            return Invoke<ConnectorRegistrationsV2Response>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Grants permission to complete the authorization based on input parameters. This API
-        /// is in public preview and subject to change.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ConnectorRegistrationsV2 service method, as returned by SecurityHub.</returns>
-        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
-        /// You don't have permission to perform the action specified in the request.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
-        /// The request causes conflict with the current state of the service resource.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
-        /// The request has failed due to an internal failure of the service.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because we can't find the specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
-        /// The request has failed validation because it's missing required fields or has invalid
-        /// inputs.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">REST API Reference for ConnectorRegistrationsV2 Operation</seealso>
-        public virtual Task<ConnectorRegistrationsV2Response> ConnectorRegistrationsV2Async(ConnectorRegistrationsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = ConnectorRegistrationsV2RequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ConnectorRegistrationsV2ResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ConnectorRegistrationsV2Response>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  CreateActionTarget
 
         internal virtual CreateActionTargetResponse CreateActionTarget(CreateActionTargetRequest request)
@@ -1435,8 +1380,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables aggregation across Amazon Web Services Regions. This API is in public preview
-        /// and subject to change.
+        /// Enables aggregation across Amazon Web Services Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAggregatorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1455,6 +1399,9 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -1541,7 +1488,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Creates a V2 automation rule. This API is in public preview and subject to change.
+        /// Creates a V2 automation rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRuleV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1557,6 +1504,9 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
         /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -1647,8 +1597,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to create a connectorV2 based on input parameters. This API is in
-        /// public preview and subject to change.
+        /// Grants permission to create a connectorV2 based on input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1667,6 +1616,9 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -1943,8 +1895,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to create a ticket in the chosen ITSM based on finding information
-        /// for the provided finding metadata UID. This API is in public preview and subject to
-        /// change.
+        /// for the provided finding metadata UID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2117,7 +2068,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes the Aggregator V2. This API is in public preview and subject to change.
+        /// Deletes the Aggregator V2.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAggregatorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2170,7 +2121,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes a V2 automation rule. This API is in public preview and subject to change.
+        /// Deletes a V2 automation rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutomationRuleV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2284,8 +2235,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to delete a connectorV2. This API is in public preview and subject
-        /// to change.
+        /// Grants permission to delete a connectorV2.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2801,8 +2751,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Gets information about the product integration. This API is in public preview and
-        /// subject to change.
+        /// Gets information about the product integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProductsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2852,8 +2801,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns details about the service resource in your account. This API is in public
-        /// preview and subject to change.
+        /// Returns details about the service resource in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityHubV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3185,7 +3133,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disable the service for the current Amazon Web Services Region or specified Amazon
-        /// Web Services Region. This API is in public preview and subject to change.
+        /// Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3628,7 +3576,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Enables the service in account for the current Amazon Web Services Region or specified
-        /// Amazon Web Services Region. This API is in public preview and subject to change.
+        /// Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHubV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3734,8 +3682,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the configuration of the specified Aggregator V2. This API is in public preview
-        /// and subject to change.
+        /// Returns the configuration of the specified Aggregator V2.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAggregatorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3788,8 +3735,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns an automation rule for the V2 service. This API is in public preview and subject
-        /// to change.
+        /// Returns an automation rule for the V2 service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutomationRuleV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3956,8 +3902,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to retrieve details for a connectorV2 based on connector id. This
-        /// API is in public preview and subject to change.
+        /// Grants permission to retrieve details for a connectorV2 based on connector id.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4243,8 +4188,7 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
         /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
-        /// policy statement. You must have permission to perform the <c>s</c> action. This API
-        /// is in public preview and subject to change.
+        /// policy statement. You must have permission to perform the <c>s</c> action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingStatisticsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4295,8 +4239,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Returns findings trend data based on the specified criteria. This operation helps
-        /// you analyze patterns and changes in findings over time. This API is in public preview
-        /// and subject to change.
+        /// you analyze patterns and changes in findings over time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsTrendsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4346,7 +4289,7 @@ namespace Amazon.SecurityHub
         /// Return a list of findings that match the specified criteria. <c>GetFindings</c> and
         /// <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c> in the <c>Action</c>
         /// element of an IAM policy statement. You must have permission to perform the <c>securityhub:GetFindings</c>
-        /// action. This API is in public preview and subject to change.
+        /// action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4698,7 +4641,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Retrieves statistical information about Amazon Web Services resources and their associated
-        /// security findings. This API is in public preview and subject to change.
+        /// security findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4752,8 +4695,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Returns resource trend data based on the specified criteria. This operation helps
-        /// you analyze patterns and changes in resource compliance over time. This API is in
-        /// public preview and subject to change.
+        /// you analyze patterns and changes in resource compliance over time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesTrendsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4800,7 +4742,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns a list of resources. This API is in public preview and subject to change.
+        /// Returns a list of resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4985,7 +4927,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Retrieves a list of V2 aggregators. This API is in public preview and subject to change.
+        /// Retrieves a list of V2 aggregators.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAggregatorsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -5090,8 +5032,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns a list of automation rules and metadata for the calling account. This API
-        /// is in public preview and subject to change.
+        /// Returns a list of automation rules and metadata for the calling account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAutomationRulesV2 service method.</param>
         /// <param name="cancellationToken">
@@ -5250,7 +5191,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
-        /// account. This API is in public preview and subject to change.
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -5708,6 +5649,59 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  RegisterConnectorV2
+
+        internal virtual RegisterConnectorV2Response RegisterConnectorV2(RegisterConnectorV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterConnectorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterConnectorV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Grants permission to complete the authorization based on input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterConnectorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RegisterConnectorV2">REST API Reference for RegisterConnectorV2 Operation</seealso>
+        public virtual Task<RegisterConnectorV2Response> RegisterConnectorV2Async(RegisterConnectorV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterConnectorV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterConnectorV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartConfigurationPolicyAssociation
 
         internal virtual StartConfigurationPolicyAssociationResponse StartConfigurationPolicyAssociation(StartConfigurationPolicyAssociationRequest request)
@@ -5975,8 +5969,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Udpates the configuration for the Aggregator V2. This API is in public preview and
-        /// subject to change.
+        /// Udpates the configuration for the Aggregator V2.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAggregatorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -6029,7 +6022,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates a V2 automation rule. This API is in public preview and subject to change.
+        /// Updates a V2 automation rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutomationRuleV2 service method.</param>
         /// <param name="cancellationToken">
@@ -6141,8 +6134,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to update a connectorV2 based on its id and input parameters. This
-        /// API is in public preview and subject to change.
+        /// Grants permission to update a connectorV2 based on its id and input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 service method.</param>
         /// <param name="cancellationToken">

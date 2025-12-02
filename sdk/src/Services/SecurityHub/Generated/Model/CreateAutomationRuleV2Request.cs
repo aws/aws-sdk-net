@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutomationRuleV2 operation.
-    /// Creates a V2 automation rule. This API is in public preview and subject to change.
+    /// Creates a V2 automation rule.
     /// </summary>
     public partial class CreateAutomationRuleV2Request : AmazonSecurityHubRequest
     {

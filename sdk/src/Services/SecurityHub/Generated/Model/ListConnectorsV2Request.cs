@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the ListConnectorsV2 operation.
     /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
-    /// account. This API is in public preview and subject to change.
+    /// account.
     /// </summary>
     public partial class ListConnectorsV2Request : AmazonSecurityHubRequest
     {

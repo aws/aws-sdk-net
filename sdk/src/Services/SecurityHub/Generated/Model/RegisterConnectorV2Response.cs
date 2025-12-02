@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// This is the response object from the ConnectorRegistrationsV2 operation.
+    /// This is the response object from the RegisterConnectorV2 operation.
     /// </summary>
-    public partial class ConnectorRegistrationsV2Response : AmazonWebServiceResponse
+    public partial class RegisterConnectorV2Response : AmazonWebServiceResponse
     {
         private string _connectorArn;
         private string _connectorId;

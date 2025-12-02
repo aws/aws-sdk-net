@@ -31,8 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProductsV2 operation.
-    /// Gets information about the product integration. This API is in public preview and
-    /// subject to change.
+    /// Gets information about the product integration.
     /// </summary>
     public partial class DescribeProductsV2Request : AmazonSecurityHubRequest
     {

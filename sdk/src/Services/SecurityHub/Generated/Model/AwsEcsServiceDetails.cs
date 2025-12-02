@@ -188,7 +188,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// After a task starts, the amount of time in seconds that the Amazon ECS service scheduler
-        /// ignores unhealthy Elastic Load Balancing target health checks.
+        /// ignores unhealthy ELB target health checks.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriodSeconds
@@ -363,8 +363,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The ARN of the IAM role that is associated with the service. The role allows the Amazon
-        /// ECS container agent to register container instances with an Elastic Load Balancing
-        /// load balancer.
+        /// ECS container agent to register container instances with an ELB load balancer.
         /// </para>
         /// </summary>
         public string Role

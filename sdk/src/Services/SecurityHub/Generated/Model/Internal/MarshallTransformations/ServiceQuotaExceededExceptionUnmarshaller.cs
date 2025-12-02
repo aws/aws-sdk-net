@@ -35,66 +35,53 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceNowDetail Object
+    /// Response Unmarshaller for ServiceQuotaExceededException Object
     /// </summary>  
-    public class ServiceNowDetailUnmarshaller : IUnmarshaller<ServiceNowDetail, XmlUnmarshallerContext>, IUnmarshaller<ServiceNowDetail, JsonUnmarshallerContext>
+    public class ServiceQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceQuotaExceededException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceNowDetail IUnmarshaller<ServiceNowDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns>The unmarshalled object</returns>
-        public ServiceNowDetail Unmarshall(JsonUnmarshallerContext context)
+        /// <param name="errorResponse"></param>
+        /// <returns></returns>
+        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            ServiceNowDetail unmarshalledObject = new ServiceNowDetail();
-            if (context.IsEmptyResponse)
-                return null;
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
+            ServiceQuotaExceededException unmarshalledObject = new ServiceQuotaExceededException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AuthStatus", targetDepth))
+                if (context.TestExpression("Code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecretArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static ServiceNowDetailUnmarshaller _instance = new ServiceNowDetailUnmarshaller();        
+        private static ServiceQuotaExceededExceptionUnmarshaller _instance = new ServiceQuotaExceededExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceNowDetailUnmarshaller Instance
+        public static ServiceQuotaExceededExceptionUnmarshaller Instance
         {
             get
             {

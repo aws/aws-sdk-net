@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAggregatorsV2 operation.
-    /// Retrieves a list of V2 aggregators. This API is in public preview and subject to change.
+    /// Retrieves a list of V2 aggregators.
     /// </summary>
     public partial class ListAggregatorsV2Request : AmazonSecurityHubRequest
     {

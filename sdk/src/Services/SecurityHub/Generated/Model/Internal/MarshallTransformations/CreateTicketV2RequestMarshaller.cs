@@ -90,6 +90,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FindingMetadataUid);
                 }
 
+                if(publicRequest.IsSetMode())
+                {
+                    context.Writer.WritePropertyName("Mode");
+                    context.Writer.Write(publicRequest.Mode);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
