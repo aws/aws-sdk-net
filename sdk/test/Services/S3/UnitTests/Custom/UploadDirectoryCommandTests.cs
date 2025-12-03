@@ -98,7 +98,6 @@ namespace AWSSDK.UnitTests
                     {
                         currentConcurrentUploads++;
                         maxObservedConcurrency = Math.Max(maxObservedConcurrency, currentConcurrentUploads);
-                        Console.WriteLine($"Upload started for {req.Key}. Current concurrent: {currentConcurrentUploads}, Max observed: {maxObservedConcurrency}");
                     }
 
                     try
@@ -117,7 +116,6 @@ namespace AWSSDK.UnitTests
                         lock (concurrencyLock)
                         {
                             currentConcurrentUploads--;
-                            Console.WriteLine($"Upload completed for {req.Key}. Current concurrent: {currentConcurrentUploads}");
                         }
                     }
                 });
@@ -129,7 +127,6 @@ namespace AWSSDK.UnitTests
             await command.ExecuteAsync(CancellationToken.None);
 
             // Assert
-            Console.WriteLine($"Test Results: Expected max concurrency  {config.ConcurrentServiceRequests}, Observed: {maxObservedConcurrency}");
             Assert.AreEqual(2, config.ConcurrentServiceRequests, "Test setup verification");
             Assert.IsTrue(maxObservedConcurrency <= config.ConcurrentServiceRequests,
                 $"Max concurrent uploads ({maxObservedConcurrency}) should not exceed ConcurrentServiceRequests ({config.ConcurrentServiceRequests})");
@@ -167,7 +164,6 @@ namespace AWSSDK.UnitTests
                     {
                         currentConcurrentUploads++;
                         maxObservedConcurrency = Math.Max(maxObservedConcurrency, currentConcurrentUploads);
-                        Console.WriteLine($"Sequential upload started for {req.Key}. Current concurrent: {currentConcurrentUploads}, Max observed: {maxObservedConcurrency}");
                     }
 
                     try
@@ -184,7 +180,6 @@ namespace AWSSDK.UnitTests
                         lock (concurrencyLock)
                         {
                             currentConcurrentUploads--;
-                            Console.WriteLine($"Sequential upload completed for {req.Key}. Current concurrent: {currentConcurrentUploads}");
                         }
                     }
                 });
@@ -196,7 +191,6 @@ namespace AWSSDK.UnitTests
             await command.ExecuteAsync(CancellationToken.None);
 
             // Assert
-            Console.WriteLine($"Sequential Test Results: Expected max concurrency = 1, Observed: {maxObservedConcurrency}");
             Assert.AreEqual(1, maxObservedConcurrency,
                 $"Sequential mode should only upload 1 file at a time, but observed {maxObservedConcurrency}");
         }

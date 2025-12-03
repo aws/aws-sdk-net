@@ -30,7 +30,6 @@ using Amazon.Util;
 using Amazon.Runtime.Internal;
 using System.Globalization;
 using System.Threading;
-using Amazon.S3.Transfer.Model;
 
 
 namespace Amazon.S3.Transfer

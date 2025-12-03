@@ -20,7 +20,7 @@
  *
  */
 
-namespace Amazon.S3.Transfer.Model
+namespace Amazon.S3.Transfer
 {
     /// <summary>
     /// Overall outcome of a directory operation.

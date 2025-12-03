@@ -27,7 +27,6 @@ using Amazon.S3.Model;
 using Amazon.Util;
 using System.Globalization;
 using Amazon.Runtime.Internal;
-using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer
 {

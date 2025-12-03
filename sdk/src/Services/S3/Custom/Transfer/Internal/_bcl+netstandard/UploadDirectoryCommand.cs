@@ -20,7 +20,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.S3.Transfer.Model;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Transfer.Internal

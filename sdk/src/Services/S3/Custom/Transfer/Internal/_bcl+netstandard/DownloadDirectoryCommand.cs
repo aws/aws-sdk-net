@@ -15,7 +15,6 @@
 
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.S3.Transfer.Model;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;

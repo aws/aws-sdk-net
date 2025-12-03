@@ -1,7 +1,6 @@
 ﻿using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
-using Amazon.S3.Transfer.Model;
 using Amazon.S3.Transfer.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

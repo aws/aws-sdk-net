@@ -26,7 +26,6 @@ using System.IO;
 using System.Text;
 using Amazon.Runtime;
 using System.Threading;
-using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {

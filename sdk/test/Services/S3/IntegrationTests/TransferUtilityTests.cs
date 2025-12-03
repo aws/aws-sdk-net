@@ -14,7 +14,6 @@ using Amazon.Util;
 using System.Net.Mime;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
-using Amazon.S3.Transfer.Model;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -2590,7 +2589,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         Directory = directory.FullName,
                         SearchPattern = "*",
                         SearchOption = SearchOption.AllDirectories,
-                        FailurePolicy = Amazon.S3.Transfer.Model.FailurePolicy.ContinueOnFailure,
+                        FailurePolicy = FailurePolicy.ContinueOnFailure,
                         UploadFilesConcurrently = true
                     };
 
@@ -2628,7 +2627,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         KeyPrefix = directory.Name,
                         SearchPattern = "*",
                         SearchOption = SearchOption.AllDirectories,
-                        FailurePolicy = Amazon.S3.Transfer.Model.FailurePolicy.ContinueOnFailure,
+                        FailurePolicy = FailurePolicy.ContinueOnFailure,
                         UploadFilesConcurrently = true
                     };
 
@@ -2648,18 +2647,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             finally
             {
-                // Cleanup uploaded objects
-                try
-                {
-                    var files = directory.GetFiles("*", SearchOption.AllDirectories);
-                    foreach (var file in files)
-                    {
-                        var rel = file.FullName.Substring(directory.FullName.Length + 1).Replace("\\", "/");
-                        var key = directory.Name + "/" + rel;
-                        Client.DeleteObject(new DeleteObjectRequest { BucketName = bucketName, Key = key });
-                    }
-                }
-                catch { }
                 try { Directory.Delete(directory.FullName, true); } catch { }
             }
         }
@@ -2681,7 +2668,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         Directory = directory.FullName,
                         SearchPattern = "*",
                         SearchOption = SearchOption.AllDirectories,
-                        FailurePolicy = Amazon.S3.Transfer.Model.FailurePolicy.AbortOnFailure,
+                        FailurePolicy = FailurePolicy.AbortOnFailure,
                         UploadFilesConcurrently = true
                     };
 

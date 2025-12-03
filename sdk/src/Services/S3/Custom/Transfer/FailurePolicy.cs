@@ -20,7 +20,7 @@
  *
  */
 
-namespace Amazon.S3.Transfer.Model
+namespace Amazon.S3.Transfer
 {
     /// <summary>
     /// Specifies the policy to apply when a failure occurs during a directory transfer operation.
