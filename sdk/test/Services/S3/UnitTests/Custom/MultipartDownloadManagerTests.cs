@@ -859,9 +859,10 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task StartDownloadsAsync_BackgroundTask_PreAcquiresCapacityBeforeCreatingTasks()
+        public async Task StartDownloadsAsync_BackgroundTask_InterleavesCapacityAcquisitionWithTaskCreation()
         {
-            // Arrange - Test that background task pre-acquires all capacity before creating download tasks
+            // Arrange - Test that background task interleaves capacity acquisition with task creation
+            // This ensures sequential ordering: capacity(2) → task(2) → capacity(3) → task(3)
             var totalParts = 3;
             var partSize = 8 * 1024 * 1024;
             var totalObjectSize = totalParts * partSize;
@@ -879,7 +880,8 @@ namespace AWSSDK.UnitTests
                 {
                     lock (lockObject)
                     {
-                        var partNum = operationOrder.Count(o => o.operation == "capacity") + 2; // Parts 2, 3
+                        // Capacity is now acquired for Parts 1, 2, 3 (Part 1 during discovery)
+                        var partNum = operationOrder.Count(o => o.operation == "capacity") + 1;
                         operationOrder.Add(("capacity", partNum, operationCounter++));
                     }
                     return Task.CompletedTask;
@@ -919,27 +921,56 @@ namespace AWSSDK.UnitTests
                 var capacityOps = operationOrder.Where(o => o.operation == "capacity").ToList();
                 var taskOps = operationOrder.Where(o => o.operation == "task").ToList();
                 
-                Assert.AreEqual(3, capacityOps.Count, "Should acquire capacity discovery part 1 and for parts 2-3");
+                Assert.AreEqual(3, capacityOps.Count, "Should acquire capacity for parts 1 (discovery), 2, 3 (background)");
                 Assert.AreEqual(3, taskOps.Count, "Should create tasks for parts 1-3");
                 
-                // Verify all capacity acquisitions happened before any task creation
-                // Find the highest sequence number among capacity operations
-                var lastCapacitySequence = capacityOps.Max(o => o.sequence);
-                
-                // Find the lowest sequence number among task operations
-                var firstTaskSequence = taskOps.Min(o => o.sequence);
-                
-                // All capacity must be acquired (have lower sequence numbers) before tasks start
-                Assert.IsTrue(lastCapacitySequence < firstTaskSequence,
-                    $"All capacity acquisitions must complete before task creation. " +
-                    $"Last capacity sequence: {lastCapacitySequence}, First task sequence: {firstTaskSequence}. " +
-                    $"Operations: {string.Join(", ", operationOrder.Select(o => $"{o.operation}({o.partNum})={o.sequence}"))}");
-                
-                // Additional verification: Part 1 should be first task (processed during StartDownloadsAsync)
+                // Verify Part 1: capacity → task (during discovery)
+                var part1Capacity = capacityOps.FirstOrDefault(o => o.partNum == 1);
                 var part1Task = taskOps.FirstOrDefault(o => o.partNum == 1);
+                Assert.IsNotNull(part1Capacity, "Part 1 capacity should be acquired during discovery");
                 Assert.IsNotNull(part1Task, "Part 1 should be processed");
-                Assert.IsTrue(part1Task.sequence < lastCapacitySequence,
-                    "Part 1 should be processed before capacity acquisition for background parts");
+                Assert.IsTrue(part1Capacity.sequence < part1Task.sequence,
+                    "Part 1 capacity should be acquired before Part 1 task");
+                
+                // Verify interleaved pattern for background parts (2, 3)
+                // For each background part: capacity(N) → task(N) → capacity(N+1) → task(N+1)
+                for (int partNum = 2; partNum <= totalParts; partNum++)
+                {
+                    var capacity = capacityOps.FirstOrDefault(o => o.partNum == partNum);
+                    var task = taskOps.FirstOrDefault(o => o.partNum == partNum);
+                    
+                    Assert.IsNotNull(capacity, $"Part {partNum} capacity should be acquired");
+                    Assert.IsNotNull(task, $"Part {partNum} task should be created");
+                    
+                    // Verify capacity comes before task for this part
+                    Assert.IsTrue(capacity.sequence < task.sequence,
+                        $"Part {partNum} capacity (seq={capacity.sequence}) should come before task (seq={task.sequence})");
+                    
+                    // Verify interleaving: task(N) should come before capacity(N+1)
+                    if (partNum < totalParts)
+                    {
+                        var nextCapacity = capacityOps.FirstOrDefault(o => o.partNum == partNum + 1);
+                        Assert.IsNotNull(nextCapacity, $"Part {partNum + 1} capacity should exist");
+                        Assert.IsTrue(task.sequence < nextCapacity.sequence,
+                            $"Part {partNum} task (seq={task.sequence}) should come before Part {partNum + 1} capacity (seq={nextCapacity.sequence})");
+                    }
+                }
+                
+                // Verify overall sequential pattern: capacity(1) → task(1) → capacity(2) → task(2) → capacity(3) → task(3)
+                var expectedPattern = new[]
+                {
+                    ("capacity", 1), ("task", 1),
+                    ("capacity", 2), ("task", 2),
+                    ("capacity", 3), ("task", 3)
+                };
+                
+                for (int i = 0; i < expectedPattern.Length; i++)
+                {
+                    Assert.AreEqual(expectedPattern[i].Item1, operationOrder[i].operation,
+                        $"Operation {i} should be {expectedPattern[i].Item1}");
+                    Assert.AreEqual(expectedPattern[i].Item2, operationOrder[i].partNum,
+                        $"Operation {i} should be for part {expectedPattern[i].Item2}");
+                }
             }
         }
 
