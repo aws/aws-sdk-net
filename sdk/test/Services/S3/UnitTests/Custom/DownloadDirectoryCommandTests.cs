@@ -53,7 +53,7 @@ namespace AWSSDK.UnitTests
             var request = CreateDownloadDirectoryRequest();
 
             // Act
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
 
             // Assert
             Assert.IsNotNull(command);
@@ -66,7 +66,7 @@ namespace AWSSDK.UnitTests
             var request = CreateDownloadDirectoryRequest();
 
             // Act
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, useMultipartDownload: true);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: true);
 
             // Assert
             Assert.IsNotNull(command);
@@ -93,7 +93,7 @@ namespace AWSSDK.UnitTests
             var request = CreateDownloadDirectoryRequest();
 
             // Act
-            var command = new DownloadDirectoryCommand(null, request);
+            var command = new DownloadDirectoryCommand(null, request, _config, useMultipartDownload: false);
         }
 
         [TestMethod]
@@ -101,7 +101,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithNullRequest_ThrowsArgumentNullException()
         {
             // Act
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, null);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, null, _config, useMultipartDownload: false);
         }
 
         #endregion
@@ -115,7 +115,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.BucketName = null;
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
 
             // Act
             await command.ExecuteAsync(CancellationToken.None);
@@ -128,7 +128,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.BucketName = "";
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
 
             // Act
             await command.ExecuteAsync(CancellationToken.None);
@@ -141,7 +141,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.S3Directory = null;
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
 
             // Act
             await command.ExecuteAsync(CancellationToken.None);
@@ -154,7 +154,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.S3Directory = "";
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
 
             // Act
             await command.ExecuteAsync(CancellationToken.None);
@@ -167,7 +167,7 @@ namespace AWSSDK.UnitTests
             // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.LocalDirectory = null;
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
 
             // Act
             await command.ExecuteAsync(CancellationToken.None);
@@ -813,6 +813,198 @@ namespace AWSSDK.UnitTests
             
             // Verify we got at least one progress event before cancellation
             Assert.IsTrue(progressEvents.Count >= 1, "Should have fired at least one progress event");
+        }
+
+        #endregion
+
+        #region Concurrency Control Tests
+
+        /// <summary>
+        /// Tests that ConcurrentServiceRequests setting actually limits concurrent file downloads.
+        /// This test will FAIL on the current broken implementation, demonstrating that 
+        /// ConcurrentServiceRequests is not being respected.
+        /// 
+        /// Expected: Max 2 concurrent downloads (ConcurrentServiceRequests = 2)
+        /// Actual (broken): 5 concurrent downloads (all files download simultaneously)
+        /// </summary>
+        [TestMethod]
+        public async Task ExecuteAsync_ConcurrentServiceRequests_RespectsLimit()
+        {
+            // Arrange
+            var request = CreateDownloadDirectoryRequest();
+            request.DownloadFilesConcurrently = true;
+            
+            // Use a low limit to make violation obvious
+            var config = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = 2  // Only 2 files should download simultaneously
+            };
+            
+            // Track concurrent downloads using thread-safe counter
+            var currentConcurrentDownloads = 0;
+            var maxObservedConcurrency = 0;
+            var concurrencyLock = new object();
+            
+            var files = new Dictionary<string, long>
+            {
+                { "file1.dat", 5 * 1024 * 1024 },  // 5MB files
+                { "file2.dat", 5 * 1024 * 1024 },
+                { "file3.dat", 5 * 1024 * 1024 },
+                { "file4.dat", 5 * 1024 * 1024 },
+                { "file5.dat", 5 * 1024 * 1024 }   // 5 files total
+            };
+            
+            // Setup directory listing
+            var listResponse = CreateListObjectsResponse(files);
+            _mockS3Client.Setup(c => c.ListObjectsAsync(
+                It.IsAny<ListObjectsRequest>(),
+                It.IsAny<CancellationToken>()))
+                .ReturnsAsync(listResponse);
+            
+            // Override GetObjectAsync to track concurrency
+            _mockS3Client.Setup(c => c.GetObjectAsync(
+                It.IsAny<GetObjectRequest>(),
+                It.IsAny<CancellationToken>()))
+                .Returns(async (GetObjectRequest req, CancellationToken ct) =>
+                {
+                    // Increment counter when download starts
+                    lock (concurrencyLock)
+                    {
+                        currentConcurrentDownloads++;
+                        maxObservedConcurrency = Math.Max(maxObservedConcurrency, currentConcurrentDownloads);
+                        Console.WriteLine($"Download started for {req.Key}. Current concurrent: {currentConcurrentDownloads}, Max observed: {maxObservedConcurrency}");
+                    }
+                    
+                    try
+                    {
+                        // Simulate some download time to ensure overlap
+                        await Task.Delay(100, ct);
+                        
+                        // Return mock response
+                        var fileName = req.Key.Split('/').Last();
+                        var fileSize = files[fileName];
+                        var data = MultipartDownloadTestHelpers.GenerateTestData((int)fileSize, 0);
+                        
+                        return new GetObjectResponse
+                        {
+                            BucketName = req.BucketName,
+                            Key = req.Key,
+                            ContentLength = fileSize,
+                            ResponseStream = new MemoryStream(data),
+                            ETag = "\"test-etag\""
+                        };
+                    }
+                    finally
+                    {
+                        // Decrement counter when download completes
+                        lock (concurrencyLock)
+                        {
+                            currentConcurrentDownloads--;
+                            Console.WriteLine($"Download completed for {req.Key}. Current concurrent: {currentConcurrentDownloads}");
+                        }
+                    }
+                });
+            
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, config, useMultipartDownload: false);
+
+            // Act
+            await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Console.WriteLine($"Test Results: Expected max concurrency ≤ {config.ConcurrentServiceRequests}, Observed: {maxObservedConcurrency}");
+            Assert.AreEqual(2, config.ConcurrentServiceRequests, "Test setup verification");
+            Assert.IsTrue(maxObservedConcurrency <= config.ConcurrentServiceRequests, 
+                $"Max concurrent downloads ({maxObservedConcurrency}) should not exceed ConcurrentServiceRequests ({config.ConcurrentServiceRequests})");
+        }
+
+        /// <summary>
+        /// Tests that sequential mode (DownloadFilesConcurrently = false) downloads only one file at a time.
+        /// This test will FAIL on the current broken implementation, demonstrating that 
+        /// sequential mode is not working correctly.
+        /// 
+        /// Expected: Max 1 concurrent download (sequential mode)
+        /// Actual (broken): 3 concurrent downloads (all files download simultaneously despite sequential setting)
+        /// </summary>
+        [TestMethod]
+        public async Task ExecuteAsync_SequentialMode_DownloadsOneAtATime()
+        {
+            // Arrange
+            var request = CreateDownloadDirectoryRequest();
+            request.DownloadFilesConcurrently = false; // Sequential mode
+            
+            var config = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = 10 // High limit, but sequential should still be 1
+            };
+            
+            // Track concurrent downloads
+            var currentConcurrentDownloads = 0;
+            var maxObservedConcurrency = 0;
+            var concurrencyLock = new object();
+            
+            var files = new Dictionary<string, long>
+            {
+                { "file1.dat", 1024 },
+                { "file2.dat", 1024 },
+                { "file3.dat", 1024 }
+            };
+            
+            // Setup directory listing
+            var listResponse = CreateListObjectsResponse(files);
+            _mockS3Client.Setup(c => c.ListObjectsAsync(
+                It.IsAny<ListObjectsRequest>(),
+                It.IsAny<CancellationToken>()))
+                .ReturnsAsync(listResponse);
+            
+            // Override GetObjectAsync to track concurrency
+            _mockS3Client.Setup(c => c.GetObjectAsync(
+                It.IsAny<GetObjectRequest>(),
+                It.IsAny<CancellationToken>()))
+                .Returns(async (GetObjectRequest req, CancellationToken ct) =>
+                {
+                    lock (concurrencyLock)
+                    {
+                        currentConcurrentDownloads++;
+                        maxObservedConcurrency = Math.Max(maxObservedConcurrency, currentConcurrentDownloads);
+                        Console.WriteLine($"Sequential download started for {req.Key}. Current concurrent: {currentConcurrentDownloads}, Max observed: {maxObservedConcurrency}");
+                    }
+                    
+                    try
+                    {
+                        await Task.Delay(50, ct); // Brief delay
+                        
+                        var fileName = req.Key.Split('/').Last();
+                        var fileSize = files[fileName];
+                        var data = MultipartDownloadTestHelpers.GenerateTestData((int)fileSize, 0);
+                        
+                        return new GetObjectResponse
+                        {
+                            BucketName = req.BucketName,
+                            Key = req.Key,
+                            ContentLength = fileSize,
+                            ResponseStream = new MemoryStream(data),
+                            ETag = "\"test-etag\""
+                        };
+                    }
+                    finally
+                    {
+                        lock (concurrencyLock)
+                        {
+                            currentConcurrentDownloads--;
+                            Console.WriteLine($"Sequential download completed for {req.Key}. Current concurrent: {currentConcurrentDownloads}");
+                        }
+                    }
+                });
+            
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, config, useMultipartDownload: false);
+
+            // Act
+            await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Console.WriteLine($"Sequential Test Results: Expected max concurrency = 1, Observed: {maxObservedConcurrency}");
+            Assert.AreEqual(1, maxObservedConcurrency, 
+                $"Sequential mode should only download 1 file at a time, but observed {maxObservedConcurrency}");
         }
 
         #endregion
