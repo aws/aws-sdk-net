@@ -1006,7 +1006,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public async Task AddBufferAsync_IPartDataSource_WithNull_ThrowsArgumentNullException()
+        public void AddBufferAsync_IPartDataSource_WithNull_ThrowsArgumentNullException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
