@@ -1,3 +1,11 @@
+### 4.0.145.0 (2025-12-03 16:47 UTC)
+* Bedrock (4.0.17.0)
+	* Adding support in Amazon Bedrock to customize models with reinforcement fine-tuning (RFT) and support for updating the existing Custom Model Deployments.
+* SageMaker (4.0.38.0)
+	* Introduces Serverless training: A fully managed compute infrastructure that abstracts away all infrastructure complexity, allowing you to focus purely on model development.
+
+Added AI model customization assets used to train, refine, and evaluate custom models during the model customization process.
+
 ### 4.0.144.0 (2025-12-02 16:43 UTC)
 * Bedrock (4.0.16.0)
 	* Adds the audioDataDeliveryEnabled boolean field to the Model Invocation Logging Configuration.
