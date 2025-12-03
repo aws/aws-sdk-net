@@ -1,68 +1,61 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using Amazon.DynamoDBv2.Model;
+﻿using Amazon;
 using Amazon.DynamoDBv2;
-using System.Collections.Generic;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using System.Text;
-using System.IO;
-using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace AWSSDK_DotNet.IntegrationTests.Tests
+namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
     [TestClass]
     public class CacheTests
     {
         private const string TABLENAME = "cache-test-table";
         private string testTableName = null;
-        private static AmazonDynamoDBClient client = AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.Client;
+        private static AmazonDynamoDBClient client = DynamoDBTests.Client;
         private static bool lastUseSdkCacheValue;
 
         [TestInitialize]
-        public void Init()
+        public async Task Init()
         {
             lastUseSdkCacheValue = AWSConfigs.UseSdkCache;
             AWSConfigs.UseSdkCache = true;
             SdkCache.Clear();
 
             testTableName = UtilityMethods.GenerateName("CacheTest");
-            CreateTable(testTableName, true);
+            await CreateTable(testTableName, true);
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public async Task Cleanup()
         {
-            var tableExists = true;
-
-            //var status = AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.GetStatus(tableName);
-            //tableExists = (status != null);
-
-            var allTables = AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.Client.ListTables().TableNames;
-            tableExists = allTables.Contains(TABLENAME);
-
+            var allTables = DynamoDBTests.Client.ListTables().TableNames;
+            var tableExists = allTables.Contains(TABLENAME);
             if (tableExists)
-                DeleteTable(TABLENAME);
+            {
+                await DeleteTable(TABLENAME);
+            }
 
             if (allTables.Contains(testTableName))
-                DeleteTable(testTableName);
+            {
+                await DeleteTable(testTableName);
+            }
 
             AWSConfigs.UseSdkCache = lastUseSdkCacheValue;
             SdkCache.Clear();
         }
 
-
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void TestCache()
         {
-            Func<string, TableDescription> creator = tn => client.DescribeTable(tn).Table;
+            TableDescription creator(string tn) => client.DescribeTable(tn).Table;
 
             var tableName = testTableName;
             var tableCache = SdkCache.GetCache<string, TableDescription>(client, DynamoDBTests.TableCacheIdentifier, StringComparer.Ordinal);
@@ -92,6 +85,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(1, tableCache.ItemCount);
             }
         }
+#endif
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
@@ -103,20 +97,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             ITable table;
             using (var nc = new AmazonDynamoDBClient())
             {
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 table = Table.LoadTable(nc, tableName);
-#pragma warning restore CS0618 // Re-enable the warning
             }
 
             Table.ClearTableCache();
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             table = Table.LoadTable(client, tableName);
-#pragma warning restore CS0618 // Re-enable the warning
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void ChangingTableTest()
+        public async Task ChangingTableTest()
         {
             var item = new Document(new Dictionary<string, DynamoDBEntry>
             {
@@ -126,15 +116,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
             var tableCache = SdkCache.GetCache<string, TableDescription>(client, DynamoDBTests.TableCacheIdentifier, StringComparer.Ordinal);
 
-            CreateTable(TABLENAME, defaultKeys: true);
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
+            await CreateTable(TABLENAME, defaultKeys: true);
             var table = Table.LoadTable(client, TABLENAME);
-#pragma warning restore CS0618 // Re-enable the warning
-            table.PutItem(item);
+            await table.PutItemAsync(item);
 
             using (var counter = new ServiceResponseCounter(client))
             {
-                var doc = table.GetItem(42, "Floyd");
+                var doc = await table.GetItemAsync(42, "Floyd");
                 Assert.IsNotNull(doc);
                 Assert.AreNotEqual(0, doc.Count);
                 Assert.AreEqual(1, counter.ResponseCount);
@@ -142,18 +130,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 var oldTableDescription = tableCache.GetValue(TABLENAME, null);
 
-                DeleteTable(TABLENAME);
-                CreateTable(TABLENAME, defaultKeys: false);
+                await DeleteTable(TABLENAME);
+                await CreateTable(TABLENAME, defaultKeys: false);
 
-                table.PutItem(item);
+                await table.PutItemAsync(item);
                 AssertExtensions.ExpectException(() => table.GetItem(42, "Yes"));
 
                 counter.Reset();
                 Table.ClearTableCache();
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 table = Table.LoadTable(client, TABLENAME);
-#pragma warning restore CS0618 // Re-enable the warning
-                doc = table.GetItem(42, "Yes");
+                doc = await table.GetItemAsync(42, "Yes");
                 Assert.IsNotNull(doc);
                 Assert.AreNotEqual(0, doc.Count);
                 Assert.AreEqual(2, counter.ResponseCount);
@@ -161,13 +147,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 counter.Reset();
                 Table.ClearTableCache();
                 PutItem(tableCache, TABLENAME, oldTableDescription);
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 table = Table.LoadTable(client, TABLENAME);
                 doc = tableCache.UseCache(TABLENAME,
                     () => table.GetItem(42, "Yes"),
                     () => table = Table.LoadTable(client, TABLENAME),
                     shouldRetryForException: null);
-#pragma warning restore CS0618 // Re-enable the warning
 
                 Assert.IsNotNull(doc);
                 Assert.AreNotEqual(0, doc.Count);
@@ -175,7 +159,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        private void CreateTable(string name, bool defaultKeys)
+        private async Task CreateTable(string name, bool defaultKeys)
         {
             var keySchema = new List<KeySchemaElement>
             {
@@ -205,7 +189,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             };
 
-            client.CreateTable(new CreateTableRequest
+            await client.CreateTableAsync(new CreateTableRequest
             {
                 TableName = name,
                 KeySchema = keySchema,
@@ -213,12 +197,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 BillingMode = BillingMode.PAY_PER_REQUEST
             });
 
-            AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.WaitForTableStatus(name, TableStatus.ACTIVE);
+            await DynamoDBTests.WaitForTableStatus(name, TableStatus.ACTIVE);
         }
-        private void DeleteTable(string name)
+
+        private async Task DeleteTable(string name)
         {
-            client.DeleteTable(name);
-            AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.WaitForTableStatus(name, null);
+            await client.DeleteTableAsync(name);
+            await DynamoDBTests.WaitForTableStatus(name, null);
         }
        
         private void PutItem<TKey,TValue>(ICache<TKey,TValue> cache, TKey key, TValue value)
