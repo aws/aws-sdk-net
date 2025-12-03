@@ -252,7 +252,7 @@ public class BedrockChatClientTests
 
     [Fact]
     [Trait("UnitTest", "BedrockRuntime")]
-    public async Task ResponseFormat_Json_UnsupportedModel_ThrowsNotSupportedException()
+    public async Task ResponseFormat_Json_UnsupportedModel_ThrowsValidationException()
     {
         // Arrange
         var mockRuntime = new Mock<IAmazonBedrockRuntime>();
@@ -270,11 +270,11 @@ public class BedrockChatClientTests
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
 
         // Act & Assert
-        var ex = await Assert.ThrowsAsync<NotSupportedException>(async () =>
+        var ex = await Assert.ThrowsAsync<AmazonBedrockRuntimeException>(async () =>
             await client.GetResponseAsync(messages, options));
 
-        Assert.Contains("does not support ResponseFormat", ex.Message);
-        Assert.Contains("ToolChoice", ex.Message);
+        Assert.Equal("ValidationException", ex.ErrorCode);
+        Assert.Contains("toolChoice is not supported", ex.Message);
     }
 
     [Fact]
@@ -405,6 +405,50 @@ public class BedrockChatClientTests
         Assert.NotNull(response.Text);
         var json = JsonDocument.Parse(response.Text);
         Assert.Equal(JsonValueKind.Object, json.RootElement.ValueKind);
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
+    public async Task ResponseFormat_Json_NullToolInput_ThrowsInvalidOperationException()
+    {
+        // Arrange - ToolUse with default/null Input (edge case: malformed API response)
+        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
+
+        mockRuntime
+            .Setup(x => x.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new ConverseResponse
+            {
+                Output = new ConverseOutput
+                {
+                    Message = new Message
+                    {
+                        Role = ConversationRole.Assistant,
+                        Content = new List<ContentBlock>
+                        {
+                            new ContentBlock
+                            {
+                                ToolUse = new ToolUseBlock
+                                {
+                                    ToolUseId = "null-input-id",
+                                    Name = "generate_response",
+                                    Input = default // Default/null Document
+                                }
+                            }
+                        }
+                    }
+                },
+                StopReason = new StopReason("tool_use")
+            });
+
+        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var messages = new[] { new ChatMessage(ChatRole.User, "Generate data") };
+        var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
+
+        // Act & Assert - Should throw InvalidOperationException, not NullReferenceException
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(async () =>
+            await client.GetResponseAsync(messages, options));
+
+        Assert.Contains("did not return structured output", ex.Message);
     }
 
     #endregion
