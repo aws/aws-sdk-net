@@ -208,6 +208,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetMlflowConfig())
+            {
+                context.Writer.WritePropertyName("MlflowConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MlflowConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MlflowConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetModelPackageConfig())
+            {
+                context.Writer.WritePropertyName("ModelPackageConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelPackageConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ModelPackageConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetOutputDataConfig())
             {
                 context.Writer.WritePropertyName("OutputDataConfig");
@@ -283,6 +305,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RoleArn");
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetServerlessJobConfig())
+            {
+                context.Writer.WritePropertyName("ServerlessJobConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServerlessJobConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ServerlessJobConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetSessionChainingConfig())

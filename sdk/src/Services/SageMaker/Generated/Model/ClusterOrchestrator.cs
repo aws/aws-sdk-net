@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ClusterOrchestratorEksConfig Eks
         {
             get { return this._eks; }

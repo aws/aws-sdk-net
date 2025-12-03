@@ -229,6 +229,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
+        /// SageMaker automatically selects the volume size for serverless training jobs. You
+        /// cannot customize this setting.
+        /// </para>
+        ///  
+        /// <para>
         /// ML storage volumes store model artifacts and incremental states. Training algorithms
         /// might also use the ML storage volume for scratch space. If you want to store the training
         /// data in the ML storage volume, choose <c>File</c> as the <c>TrainingInputMode</c>

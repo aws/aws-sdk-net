@@ -35,12 +35,14 @@ namespace Amazon.SageMaker.Model
     public partial class ModelPackageContainerDefinition
     {
         private AdditionalS3DataSource _additionalS3DataSource;
+        private BaseModel _baseModel;
         private string _containerHostname;
         private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _framework;
         private string _frameworkVersion;
         private string _image;
         private string _imageDigest;
+        private bool? _isCheckpoint;
         private string _modelDataETag;
         private ModelDataSource _modelDataSource;
         private string _modelDataUrl;
@@ -65,6 +67,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAdditionalS3DataSource()
         {
             return this._additionalS3DataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BaseModel. 
+        /// <para>
+        ///  The base model of the package. 
+        /// </para>
+        /// </summary>
+        public BaseModel BaseModel
+        {
+            get { return this._baseModel; }
+            set { this._baseModel = value; }
+        }
+
+        // Check to see if BaseModel property is set
+        internal bool IsSetBaseModel()
+        {
+            return this._baseModel != null;
         }
 
         /// <summary>
@@ -193,6 +213,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImageDigest()
         {
             return this._imageDigest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsCheckpoint. 
+        /// <para>
+        ///  The checkpoint of the model package. 
+        /// </para>
+        /// </summary>
+        public bool? IsCheckpoint
+        {
+            get { return this._isCheckpoint; }
+            set { this._isCheckpoint = value; }
+        }
+
+        // Check to see if IsCheckpoint property is set
+        internal bool IsSetIsCheckpoint()
+        {
+            return this._isCheckpoint.HasValue; 
         }
 
         /// <summary>
