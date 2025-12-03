@@ -1,0 +1,10 @@
+
+{
+  "core": {
+    "changeLogMessages": [
+      "Add user agent header to ResponseMetadata"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
