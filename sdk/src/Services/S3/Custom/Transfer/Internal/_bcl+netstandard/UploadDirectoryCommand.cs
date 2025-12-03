@@ -31,38 +31,51 @@ namespace Amazon.S3.Transfer.Internal
 
         public override async Task<TransferUtilityUploadDirectoryResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
-            // Step 1: Setup paths and discover files
-            string prefix = GetKeyPrefix();
-            string basePath = new DirectoryInfo(this._request.Directory).FullName;
-
-            _logger.DebugFormat("UploadDirectoryCommand.ExecuteAsync: Starting - BasePath={0}, Prefix={1}, UploadFilesConcurrently={2}, ConcurrentServiceRequests={3}",
-                basePath, prefix, UploadFilesConcurrently, this._config.ConcurrentServiceRequests);
-
-            // Step 2: Discover files to upload
-            string[] filePaths = await DiscoverFilesAsync(basePath, cancellationToken)
-                .ConfigureAwait(false);
-
-            this._totalNumberOfFiles = filePaths.Length;
-            _logger.DebugFormat("UploadDirectoryCommand.ExecuteAsync: Discovered {0} file(s) to upload. TotalBytes={1}",
-                _totalNumberOfFiles, _totalBytes);
-
-            // Step 3: Setup resources and execute uploads
-            using (var resources = CreateUploadResources(cancellationToken))
+            try
             {
-                await ExecuteParallelUploadsAsync(
-                    filePaths,
-                    basePath,
-                    prefix,
-                    resources,
-                    cancellationToken)
-                .ConfigureAwait(false);
+                // Step 1: Setup paths and discover files
+                string prefix = GetKeyPrefix();
+                string basePath = new DirectoryInfo(this._request.Directory).FullName;
+
+                _logger.DebugFormat("UploadDirectoryCommand.ExecuteAsync: Starting - BasePath={0}, Prefix={1}, UploadFilesConcurrently={2}, ConcurrentServiceRequests={3}",
+                    basePath, prefix, UploadFilesConcurrently, this._config.ConcurrentServiceRequests);
+
+                // Step 2: Discover files to upload
+                string[] filePaths = await DiscoverFilesAsync(basePath, cancellationToken)
+                    .ConfigureAwait(false);
+
+                this._totalNumberOfFiles = filePaths.Length;
+                _logger.DebugFormat("UploadDirectoryCommand.ExecuteAsync: Discovered {0} file(s) to upload. TotalBytes={1}",
+                    _totalNumberOfFiles, _totalBytes);
+
+                FireTransferInitiatedEvent();
+
+
+                // Step 3: Setup resources and execute uploads
+                using (var resources = CreateUploadResources(cancellationToken))
+                {
+                    await ExecuteParallelUploadsAsync(
+                        filePaths,
+                        basePath,
+                        prefix,
+                        resources,
+                        cancellationToken)
+                    .ConfigureAwait(false);
+                }
+
+                // Step 4: Build and return response
+                _logger.DebugFormat("UploadDirectoryCommand.ExecuteAsync: Completed - FilesSuccessfullyUploaded={0}, FilesFailed={1}",
+                    _numberOfFilesSuccessfullyUploaded, _errors.Count);
+
+                var response = BuildResponse();
+                FireTransferCompletedEvent(response);
+                return response;
             }
-
-            // Step 4: Build and return response
-            _logger.DebugFormat("UploadDirectoryCommand.ExecuteAsync: Completed - FilesSuccessfullyUploaded={0}, FilesFailed={1}",
-                _numberOfFilesSuccessfullyUploaded, _errors.Count);
-
-            return BuildResponse();
+            catch
+            {
+                FireTransferFailedEvent();
+                throw;
+            }
         }
 
         /// <summary>

@@ -70,6 +70,48 @@ namespace Amazon.S3.Transfer
                 ExceptionDispatchInfo.Capture(e.InnerException).Throw();
             }
         }
+
+        /// <inheritdoc/>
+        public TransferUtilityUploadDirectoryResponse UploadDirectoryWithResponse(string directory, string bucketName)
+        {
+            try
+            {
+                return UploadDirectoryWithResponseAsync(directory, bucketName).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <inheritdoc/>
+        public TransferUtilityUploadDirectoryResponse UploadDirectoryWithResponse(string directory, string bucketName, string searchPattern, SearchOption searchOption)
+        {
+            try
+            {
+                return UploadDirectoryWithResponseAsync(directory, bucketName, searchPattern, searchOption).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <inheritdoc/>
+        public TransferUtilityUploadDirectoryResponse UploadDirectoryWithResponse(TransferUtilityUploadDirectoryRequest request)
+        {
+            try
+            {
+                return UploadDirectoryWithResponseAsync(request).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
         #endregion
 
         #region Upload

@@ -45,7 +45,43 @@ namespace Amazon.S3.Transfer.Internal
         int _numberOfFilesUploaded;
         int _numberOfFilesSuccessfullyUploaded;
         long _totalBytes;
-        long _transferredBytes;        
+        long _transferredBytes;
+
+        #region Event Firing Methods
+
+        private void FireTransferInitiatedEvent()
+        {
+            var eventArgs = new UploadDirectoryInitiatedEventArgs(
+                _request,
+                _totalNumberOfFiles,
+                _totalBytes);
+            _request.OnRaiseUploadDirectoryInitiatedEvent(eventArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityUploadDirectoryResponse response)
+        {
+            var eventArgs = new UploadDirectoryCompletedEventArgs(
+                _request,
+                response,
+                _numberOfFilesSuccessfullyUploaded,
+                _totalNumberOfFiles,
+                Interlocked.Read(ref _transferredBytes),
+                _totalBytes);
+            _request.OnRaiseUploadDirectoryCompletedEvent(eventArgs);
+        }
+
+        private void FireTransferFailedEvent()
+        {
+            var eventArgs = new UploadDirectoryFailedEventArgs(
+                _request,
+                _numberOfFilesSuccessfullyUploaded,
+                _totalNumberOfFiles,
+                Interlocked.Read(ref _transferredBytes),
+                _totalBytes);
+            _request.OnRaiseUploadDirectoryFailedEvent(eventArgs);
+        }
+
+        #endregion
 
         internal UploadDirectoryCommand(TransferUtility utility, TransferUtilityConfig config, TransferUtilityUploadDirectoryRequest request)
         {
