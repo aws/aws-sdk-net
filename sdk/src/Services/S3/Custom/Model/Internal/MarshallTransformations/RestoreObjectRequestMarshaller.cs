@@ -31,84 +31,60 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Restore Object Request Marshaller
     /// </summary>       
-    public class RestoreObjectRequestMarshaller : IMarshaller<IRequest, RestoreObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class RestoreObjectRequestMarshaller : IMarshaller<IRequest, RestoreObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
     {
-        public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+        // UserMetadata needs a custom marshall because the model defines usermetadata as a list but the custom code had this as a dictionary. Even though S3 models this as a list
+        // upon closer inspection the list has only two members which are Name and Value, so a dictionary makes more sense here anyways.
+        void UserMetadataCustomMarshall(XmlWriter xmlWriter, RestoreObjectRequest publicRequest)
         {
-            return this.Marshall((RestoreObjectRequest)input);
+            if (publicRequest.OutputLocation.S3.IsSetUserMetadata())
+                publicRequest.OutputLocation.S3.UserMetadata.Marshall("UserMetadata", xmlWriter);
         }
 
-        public IRequest Marshall(RestoreObjectRequest restoreObjectRequest)
+        // Tier needs a custom marshall because Tier is actually a member of the GlacierJobParameters member on RestoreRequest. But since RestoreRequest has been flattened and moved up to the parent.
+        // and Tier is nested inside RestoreRequest, the IsSet method will check RestoreRequest's Tier shape instead of checking it on the top-level RestoreObjectRequest.
+        void TierCustomMarshall(XmlWriter xmlWriter, RestoreObjectRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(restoreObjectRequest, "Amazon.S3");
-
-            request.HttpMethod = "POST";
-
-            if (restoreObjectRequest.IsSetRequestPayer())
-                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(restoreObjectRequest.RequestPayer.ToString()));
-
-            if (restoreObjectRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(restoreObjectRequest.ExpectedBucketOwner));
-
-            if (restoreObjectRequest.IsSetChecksumAlgorithm())
-                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(restoreObjectRequest.ChecksumAlgorithm));
-
-            if (string.IsNullOrEmpty(restoreObjectRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "RestoreObjectRequest.BucketName");
-            if (string.IsNullOrEmpty(restoreObjectRequest.Key))
-                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "RestoreObjectRequest.Key");
-
-            request.ResourcePath = "/{Key+}";
-            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(restoreObjectRequest.Key));
-
-            request.AddSubResource("restore");
-            if (restoreObjectRequest.IsSetVersionId())
-                request.AddSubResource("versionId", S3Transforms.ToStringValue(restoreObjectRequest.VersionId));
-
-            var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            if (publicRequest.IsSetTier())
             {
-                restoreObjectRequest.Marshall("RestoreRequest", xmlWriter);
+                xmlWriter.WriteStartElement("GlacierJobParameters");
+                    xmlWriter.WriteElementString("Tier", StringUtils.FromString(publicRequest.Tier));
+                xmlWriter.WriteEndElement();
             }
-
-            try
-            {
-                var content = stringWriter.ToString();
-                request.Content = Encoding.UTF8.GetBytes(content);
-                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
-
-                ChecksumUtils.SetChecksumData(
-                    request, 
-                    restoreObjectRequest.ChecksumAlgorithm,
-                    fallbackToMD5: false, 
-                    isRequestChecksumRequired: false,
-                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
-                );
-            }
-            catch (EncoderFallbackException e)
-            {
-                throw new AmazonServiceException("Unable to marshall request to XML", e);
-            }
-
-            return request;
         }
 
-	    private static RestoreObjectRequestMarshaller _instance;
+        // AccessControlList needs a custom marshall because even though the model defines this as an AccessControlList which is just a list of grants, we created S3AccessControlList which contains
+        // both a list of grants and an Owner shape. S3AccessControlList is shared across different operations as well, and in this specific case, it has its own marshall which only marshalls the 
+        // grants and not the owner.
+        void AccessControlListCustomMarshall(XmlWriter xmlWriter, RestoreObjectRequest publicRequest)
+        {
+            if (publicRequest.OutputLocation.S3.IsSetAccessControlList())
+            {
+                publicRequest.OutputLocation.S3.AccessControlList.Marshall("AccessControlList", xmlWriter);
+            }
+        }
 
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static RestoreObjectRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new RestoreObjectRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
+        // All the validations from the custom code moved here for backwards compatibility
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, RestoreObjectRequest publicRequest)
+        {
+            if (publicRequest.SelectParameters != null)
+            {
+                if (!publicRequest.SelectParameters.IsSetInputSerialization()) throw new System.ArgumentException("SelectParameters.InputSerialization is a required property and must be set before making this call.");
+                if (!publicRequest.SelectParameters.IsSetExpression()) throw new System.ArgumentException("SelectParameters.Expression is a required property and must be set before making this call.");
+                if (!publicRequest.SelectParameters.IsSetExpressionType()) throw new System.ArgumentException("SelectParameters.ExpressionType is a required property and must be set before making this call.");
+                if (!publicRequest.SelectParameters.IsSetOutputSerialization()) throw new System.ArgumentException("SelectParameters.OutputSerialization is a required property and must be set before making this call.");
+            }
+
+            if (publicRequest.OutputLocation != null && publicRequest.OutputLocation.S3 != null)
+            {
+                if (string.IsNullOrEmpty(publicRequest.OutputLocation.S3.BucketName)) throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "S3Location.BucketName");
+                if (string.IsNullOrEmpty(publicRequest.OutputLocation.S3.Prefix)) throw new System.ArgumentException("Prefix is a required property and must be set before making this call.", "S3Location.Prefix");
+                if (publicRequest.OutputLocation.S3.Encryption != null)
+                {
+                    if (!publicRequest.OutputLocation.S3.Encryption.IsSetEncryptionType()) throw new System.ArgumentException("EncryptionType is a required property and must be set before making this call.", "S3Encryption.EncryptionType");
+                }
+            }
+        }
     }
 }
 
