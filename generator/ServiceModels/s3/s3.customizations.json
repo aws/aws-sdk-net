@@ -378,17 +378,6 @@
                 }
             ]
         },
-        "RestoreObjectRequest": {
-            "exclude": [ "RestoreRequest" ],
-            "inject": [
-                {
-                    "Days": {
-                        "shape": "Days",
-                        "originalMember": "RestoreRequest"
-                    }
-                }
-            ]
-        },
         "TopicConfigurationDeprecated": {
             "modify": [
                 {
@@ -1291,6 +1280,74 @@
                     
                 }
             ]
+        },
+        "RestoreObjectRequest":{
+            "modify":[
+                {
+                    "Tier": {"emitPropertyName":"RetrievalTier"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "GlacierJobParameters":{
+                        "emitPropertyName":"Tier"
+                    }
+                },
+                {
+                    "Type":{"emitPropertyName":"RestoreRequestType"}
+                }
+            ]
+        },
+        "RestoreRequest":{
+            "modify":[
+                {
+                    "GlacierJobParameters":{
+                        "injectXmlMarshallCode":["TierCustomMarshall(xmlWriter, publicRequest);"]
+                    }
+                },
+                {
+                    "Type":{"emitPropertyName":"RestoreRequestType"}
+                },
+                {
+                    "Tier": {"emitPropertyName":"RetrievalTier"}
+                }
+            ]
+        },
+        "InputSerialization":{
+            "modify":[
+                {
+                    "CompressionType":{
+                        "injectXmlPrivateMemberAssignment" :["private CompressionType _compressionType = CompressionType.None;"]
+                    }
+                }
+                
+            ]
+        },
+        "S3Location":{
+            "modify":[
+                {
+                    "AccessControlList":{
+                        "injectXmlPrivateMemberAssignment":["private S3AccessControlList _accessControlList;"],
+                        "injectXmlIsSet":["return this._accessControlList != null;"],
+                        "injectXmlMarshallCode":["AccessControlListCustomMarshall(xmlWriter, publicRequest);"]
+                    }
+                },
+                {
+                    "UserMetadata":{
+                        "injectXmlPrivateMemberAssignment":["private MetadataCollection _userMetadata;"],
+                        "injectXmlIsSet":["return this._userMetadata != null;"],
+                        "injectXmlMarshallCode":["UserMetadataCustomMarshall(xmlWriter, publicRequest);"]
+                    }
+                }
+            ]
+        },
+        "JSONInput":{
+            "modify":[
+                {
+                    "Type":{"emitPropertyName":"JsonType"}
+                }
+            ]
         }
         
     },
@@ -1434,6 +1491,18 @@
         },
         "Type" :{
             "renameShape":"GranteeType"
+        },
+        "Tier":{
+            "renameShape":"GlacierJobTier"
+        },
+        "Encryption":{
+            "renameShape":"S3Encryption"
+        },
+        "GlacierJobParameters":{
+            "renameShape":"GlacierJobTier"
+        },
+        "JSONType":{
+            "renameShape":"JsonType"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -1609,6 +1678,18 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller" : "CommonPrefixesItemUnmarshaller"
             } 
+        },
+        "S3Location":{
+            "AccessControlList":{
+                "Type":"S3AccessControlList",
+                "Marshaller":"AccessControlList.Marshall",
+                "Unmarshaller":"AccessControlListUnmarshaller.Instance"
+            },
+            "UserMetadata":{
+                "Type":"MetadataCollection",
+                "Marshaller":"UserMetadata.Marshall",
+                "Unmarshaller":"StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
@@ -1680,6 +1761,9 @@
         ],
         "UploadPartCopyOutput" : [
             "CopyPartResult"
+        ],
+        "RestoreObjectRequest":[
+            "RestoreRequest"
         ]
     },
     "excludeShapes":[
@@ -1691,6 +1775,7 @@
         "AnalyticsAndOperator",
         "IntelligentTieringFilter",
         "IntelligentTieringAndOperator",
-        "InventoryFilter"
+        "InventoryFilter",
+        "GlacierJobTier"
     ]
 }

@@ -21,58 +21,8 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Describes how CSV-formatted results are formatted.
     /// </summary>
-    public class CSVOutput
+    public partial class CSVOutput
     {
-        /// <summary>
-        /// Indicates whether or not all output fields should be quoted.
-        /// </summary>
-        public QuoteFields QuoteFields { get; set; }
-
-        internal bool IsSetQuoteFields()
-        {
-            return this.QuoteFields != null;
-        }
-
-        /// <summary>
-        /// Single character used for escaping the quote character inside an already escaped value.
-        /// </summary>
-        public string QuoteEscapeCharacter { get; set; }
-
-        internal bool IsSetQuoteEscapeCharacter()
-        {
-            return this.QuoteEscapeCharacter != null;
-        }
-
-        /// <summary>
-        /// Value used to separate individual records.
-        /// </summary>
-        public string RecordDelimiter { get; set; }
-
-        internal bool IsSetRecordDelimiter()
-        {
-            return this.RecordDelimiter != null;
-        }
-
-        /// <summary>
-        /// Value used to separate individual fields in a record.
-        /// </summary>
-        public string FieldDelimiter { get; set; }
-
-        internal bool IsSetFieldDelimiter()
-        {
-            return this.FieldDelimiter != null;
-        }
-
-        /// <summary>
-        /// Value used for escaping where the field delimiter is part of the value.
-        /// </summary>
-        public string QuoteCharacter { get; set; }
-
-        internal bool IsSetQuoteCharacter()
-        {
-            return this.QuoteCharacter != null;
-        }
-
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);

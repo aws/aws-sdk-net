@@ -206,11 +206,10 @@ namespace ServiceClientGenerator
 
             // Any enumerations for the service
             // skip s3 until we're at the end of s3 client generation
-            if (this.Configuration.ServiceId != "S3")
+            if (this.Configuration.ServiceModel.ServiceId != "S3")
             {
                 this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
             }
-
             // Any paginators for the service
             // skip paginators for s3 until we're at the end of s3 client generation
             if (Configuration.ServiceModel.HasPaginators && Configuration.ServiceId != "S3")
@@ -1725,7 +1724,9 @@ namespace ServiceClientGenerator
                 { "IntelligentTieringFilter", 3 },
                 { "MetricsAndOperator", 3 },
                 { "AnalyticsAndOperator", 2 },
-                { "IntelligentTieringAndOperator", 2}
+                { "IntelligentTieringAndOperator", 2},
+                //TODO: Add runbook entry as to why this excluded and how to do a customization for this.
+                { "GlacierJobParameters", 1 }
             };
             if (customUpdateShapes.TryGetValue(shape.Name, out int membersCount))
             {
