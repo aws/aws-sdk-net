@@ -7,7 +7,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
-using Amazon.S3.Transfer.Model;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 
