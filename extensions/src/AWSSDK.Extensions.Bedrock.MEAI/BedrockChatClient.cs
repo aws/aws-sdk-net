@@ -71,7 +71,8 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <inheritdoc />
     /// <remarks>
     /// When <see cref="ChatOptions.ResponseFormat"/> is specified, the model must support
-    /// the ToolChoice feature. Models without this support will throw <see cref="NotSupportedException"/>.
+    /// the ToolChoice feature. Models without this support will return an error from the Bedrock API
+    /// (typically <see cref="Amazon.BedrockRuntime.AmazonBedrockRuntimeException"/> with ErrorCode "ValidationException").
     /// If the model fails to return the expected structured output, <see cref="InvalidOperationException"/>
     /// is thrown.
     /// </remarks>
@@ -91,29 +92,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
         request.AdditionalModelRequestFields = CreateAdditionalModelRequestFields(request.AdditionalModelRequestFields, options);
 
-        ConverseResponse response;
-        try
-        {
-            response = await _runtime.ConverseAsync(request, cancellationToken).ConfigureAwait(false);
-        }
-        // Transforms ValidationException to NotSupportedException when error message indicates model lacks tool use support (required for ResponseFormat).
-        // This detection relies on error message text which may change in future Bedrock API versions.
-        catch (AmazonBedrockRuntimeException ex) when (options?.ResponseFormat is ChatResponseFormatJson)
-        {
-            // Detect unsupported model: ValidationException with specific tool support error messages
-            if (ex.ErrorCode == "ValidationException" &&
-                (ex.Message.IndexOf("toolChoice is not supported by this model", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                 ex.Message.IndexOf("This model doesn't support tool use", StringComparison.OrdinalIgnoreCase) >= 0))
-            {
-                throw new NotSupportedException(
-                    $"The model '{request.ModelId}' does not support ResponseFormat. " +
-                    $"ResponseFormat requires ToolChoice support, which is only available in Claude 3+ and Mistral Large models. " +
-                    $"See: https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html",
-                    ex);
-            }
-
-            throw;
-        }
+        ConverseResponse response = await _runtime.ConverseAsync(request, cancellationToken).ConfigureAwait(false);
 
         ChatMessage result = new()
         {
@@ -124,16 +103,24 @@ internal sealed partial class BedrockChatClient : IChatClient
         };
 
         // Check if ResponseFormat was used and extract structured content
+        // When ResponseFormat is active, Bedrock returns the JSON response as a ToolUseBlock
+        // within the Message.Content array, rather than as plain text.
         bool usingResponseFormat = options?.ResponseFormat is ChatResponseFormatJson;
         if (usingResponseFormat)
         {
-            var structuredContent = ExtractResponseFormatContent(response.Output?.Message);
-            if (structuredContent is not null)
+            // Search the response's ContentBlocks for our synthetic tool's input
+            // (ConverseResponse.Output.Message.Content contains a list of ContentBlock objects)
+            Document toolInput = GetResponseFormatToolInput(response.Output?.Message);
+            if (toolInput != default)
             {
-                // Replace the content with the extracted JSON as a TextContent
+                string structuredContent = DocumentToJsonString(toolInput);
+
+                // Return only the structured JSON content, not the ToolUseBlock metadata
+                // This gives the user clean JSON conforming to their schema
                 result.Contents.Add(new TextContent(structuredContent) { RawRepresentation = response.Output?.Message });
 
-                // Skip normal content processing since we've extracted the structured response
+                // Skip normal ContentBlock processing (Text, Image, etc.) since the model's
+                // entire response is contained in the ToolUseBlock we just extracted
                 if (DocumentToDictionary(response.AdditionalModelResponseFields) is { } responseFieldsDict)
                 {
                     result.AdditionalProperties = new(responseFieldsDict);
@@ -152,8 +139,8 @@ internal sealed partial class BedrockChatClient : IChatClient
                 // Model succeeded but did not return expected structured output
                 throw new InvalidOperationException(
                     $"Model '{request.ModelId}' did not return structured output as requested. " +
-                    $"This may indicate the model refused to follow the tool use instruction, " +
-                    $"the schema was too complex, or the prompt conflicted with the requirement. " +
+                    "This may indicate the model refused to follow the tool use instruction, " +
+                    "the schema was too complex, or the prompt conflicted with the requirement. " +
                     $"StopReason: {response.StopReason?.Value ?? "unknown"}.");
             }
         }
@@ -252,7 +239,13 @@ internal sealed partial class BedrockChatClient : IChatClient
             throw new ArgumentNullException(nameof(messages));
         }
 
-        // Check if ResponseFormat is set - not supported for streaming yet
+        // ResponseFormat is not supported for streaming because it requires forcing a specific
+        // tool via ToolChoice. Since we create a synthetic tool for ResponseFormat and set
+        // toolChoice to force its use, this conflicts with the dynamic nature of streaming responses
+        // where tool calls may be interleaved with text content.
+        //
+        // For more information about tool use in streaming, see:
+        // https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features
         if (options?.ResponseFormat is ChatResponseFormatJson)
         {
             throw new NotSupportedException(
@@ -881,149 +874,199 @@ internal sealed partial class BedrockChatClient : IChatClient
     {
         if (options?.Tools is { Count: > 0 } tools)
         {
-            foreach (AITool tool in tools)
-            {
-                if (tool is not AIFunctionDeclaration f)
-                {
-                    continue;
-                }
-
-                Document inputs = default;
-                List<Document> required = [];
-
-                if (f.JsonSchema.TryGetProperty("properties", out JsonElement properties))
-                {
-                    foreach (JsonProperty parameter in properties.EnumerateObject())
-                    {
-                        inputs.Add(parameter.Name, ToDocument(parameter.Value));
-                    }
-                }
-
-                if (f.JsonSchema.TryGetProperty("required", out JsonElement requiredProperties))
-                {
-                    foreach (JsonElement requiredProperty in requiredProperties.EnumerateArray())
-                    {
-                        required.Add(requiredProperty.GetString());
-                    }
-                }
-
-                Dictionary<string, Document> schemaDictionary = new()
-                {
-                    ["type"] = new Document("object"),
-                };
-
-                if (inputs != default)
-                {
-                    schemaDictionary["properties"] = inputs;
-                }
-
-                if (required.Count > 0)
-                {
-                    schemaDictionary["required"] = new Document(required);
-                }
-
-                toolConfig ??= new();
-                toolConfig.Tools ??= [];
-                toolConfig.Tools.Add(new()
-                {
-                    ToolSpec = new ToolSpecification()
-                    {
-                        Name = f.Name,
-                        Description = !string.IsNullOrEmpty(f.Description) ? f.Description : f.Name,
-                        InputSchema = new()
-                        {
-                            Json = new(schemaDictionary)
-                        },
-                    },
-                });
-            }
+            toolConfig = AddUserTools(toolConfig, tools);
         }
 
-        // Handle ResponseFormat by creating a synthetic tool
         if (options?.ResponseFormat is ChatResponseFormatJson jsonFormat)
         {
-            // Check for conflict with user-provided tools
-            if (toolConfig?.Tools?.Count > 0)
-            {
-                throw new ArgumentException(
-                    "ResponseFormat cannot be used with Tools in Amazon Bedrock. " +
-                    "ResponseFormat uses Bedrock's tool mechanism for structured output, " +
-                    "which conflicts with user-provided tools.");
-            }
-
-            // Create the synthetic tool with the schema from ResponseFormat
-            toolConfig ??= new();
-            toolConfig.Tools ??= [];
-
-            // Parse the schema if provided, otherwise create an empty object schema
-            Document schemaDoc;
-            if (jsonFormat.Schema.HasValue)
-            {
-                // Schema is already a JsonElement (parsed JSON), convert directly to Document
-                schemaDoc = ToDocument(jsonFormat.Schema.Value);
-            }
-            else
-            {
-                // For JSON mode without schema, create a generic object schema
-                schemaDoc = new Document(new Dictionary<string, Document>
-                {
-                    ["type"] = new Document("object"),
-                    ["additionalProperties"] = new Document(true)
-                });
-            }
-
-            toolConfig.Tools.Add(new Tool
-            {
-                ToolSpec = new ToolSpecification
-                {
-                    Name = ResponseFormatToolName,
-                    Description = jsonFormat.SchemaDescription ?? ResponseFormatToolDescription,
-                    InputSchema = new ToolInputSchema
-                    {
-                        Json = schemaDoc
-                    }
-                }
-            });
-
-            // Force the model to use the synthetic tool
-            toolConfig.ToolChoice = new ToolChoice { Tool = new() { Name = ResponseFormatToolName } };
+            toolConfig = AddResponseFormatTool(toolConfig, jsonFormat);
         }
 
         if (toolConfig?.Tools is { Count: > 0 } && toolConfig.ToolChoice is null)
         {
-            switch (options!.ToolMode)
-            {
-                case RequiredChatToolMode r:
-                    toolConfig.ToolChoice = !string.IsNullOrWhiteSpace(r.RequiredFunctionName) ?
-                        new ToolChoice() { Tool = new() { Name = r.RequiredFunctionName } } :
-                        new ToolChoice() { Any = new() };
-                    break;
-            }
+            toolConfig = ApplyToolMode(toolConfig, options);
         }
 
         return toolConfig;
     }
 
-    /// <summary>Extracts JSON content from the synthetic ResponseFormat tool use, if present.</summary>
-    private static string? ExtractResponseFormatContent(Message? message)
+    /// <summary>Adds user-provided tools to the tool configuration.</summary>
+    private static ToolConfiguration AddUserTools(ToolConfiguration? toolConfig, IList<AITool> tools)
+    {
+        foreach (AITool tool in tools)
+        {
+            if (tool is not AIFunctionDeclaration f)
+            {
+                continue;
+            }
+
+            Document inputs = default;
+            List<Document> required = [];
+
+            if (f.JsonSchema.TryGetProperty("properties", out JsonElement properties))
+            {
+                foreach (JsonProperty parameter in properties.EnumerateObject())
+                {
+                    inputs.Add(parameter.Name, ToDocument(parameter.Value));
+                }
+            }
+
+            if (f.JsonSchema.TryGetProperty("required", out JsonElement requiredProperties))
+            {
+                foreach (JsonElement requiredProperty in requiredProperties.EnumerateArray())
+                {
+                    required.Add(requiredProperty.GetString());
+                }
+            }
+
+            Dictionary<string, Document> schemaDictionary = new()
+            {
+                ["type"] = new Document("object"),
+            };
+
+            if (inputs != default)
+            {
+                schemaDictionary["properties"] = inputs;
+            }
+
+            if (required.Count > 0)
+            {
+                schemaDictionary["required"] = new Document(required);
+            }
+
+            toolConfig ??= new();
+            toolConfig.Tools ??= [];
+            toolConfig.Tools.Add(new()
+            {
+                ToolSpec = new ToolSpecification()
+                {
+                    Name = f.Name,
+                    Description = !string.IsNullOrEmpty(f.Description) ? f.Description : f.Name,
+                    InputSchema = new()
+                    {
+                        Json = new(schemaDictionary)
+                    },
+                },
+            });
+        }
+
+        return toolConfig!;
+    }
+
+    /// <summary>Adds the ResponseFormat synthetic tool to enforce structured output.</summary>
+    private static ToolConfiguration AddResponseFormatTool(ToolConfiguration? toolConfig, ChatResponseFormatJson jsonFormat)
+    {
+        // Check for conflict with user-provided tools
+        // Bedrock's ToolChoice can only force ONE specific tool at a time. Since ResponseFormat
+        // works by creating a synthetic tool and forcing its use via toolChoice, we cannot
+        // simultaneously support user-provided tools (which may have their own toolChoice requirements).
+        // This is a Bedrock API constraint, not an SDK limitation.
+        if (toolConfig?.Tools?.Count > 0)
+        {
+            throw new ArgumentException(
+                "ResponseFormat cannot be used with Tools in Amazon Bedrock. " +
+                "ResponseFormat uses Bedrock's tool mechanism for structured output, " +
+                "which conflicts with user-provided tools.");
+        }
+
+        // Create the synthetic tool with the schema from ResponseFormat
+        toolConfig ??= new();
+        toolConfig.Tools ??= [];
+
+        // Parse the schema if provided, otherwise create an empty object schema
+        Document schemaDoc;
+        if (jsonFormat.Schema.HasValue)
+        {
+            // Schema is already a JsonElement (parsed JSON), convert directly to Document
+            schemaDoc = ToDocument(jsonFormat.Schema.Value);
+        }
+        else
+        {
+            // For JSON mode without schema, create a generic object schema
+            schemaDoc = new Document(new Dictionary<string, Document>
+            {
+                ["type"] = new Document("object"),
+                ["additionalProperties"] = new Document(true)
+            });
+        }
+
+        toolConfig.Tools.Add(new Tool
+        {
+            ToolSpec = new ToolSpecification
+            {
+                Name = ResponseFormatToolName,
+                Description = jsonFormat.SchemaDescription ?? ResponseFormatToolDescription,
+                InputSchema = new ToolInputSchema
+                {
+                    Json = schemaDoc
+                }
+            }
+        });
+
+        // Force the model to use the synthetic tool
+        toolConfig.ToolChoice = new ToolChoice { Tool = new() { Name = ResponseFormatToolName } };
+
+        return toolConfig;
+    }
+
+    /// <summary>Applies ToolMode configuration to set ToolChoice if not already set.</summary>
+    private static ToolConfiguration ApplyToolMode(ToolConfiguration toolConfig, ChatOptions? options)
+    {
+        switch (options!.ToolMode)
+        {
+            case RequiredChatToolMode r:
+                toolConfig.ToolChoice = !string.IsNullOrWhiteSpace(r.RequiredFunctionName) ?
+                    new ToolChoice() { Tool = new() { Name = r.RequiredFunctionName } } :
+                    new ToolChoice() { Any = new() };
+                break;
+        }
+
+        return toolConfig;
+    }
+
+    /// <summary>
+    /// Gets the tool input <see cref="Document"/> from the synthetic ResponseFormat tool, if present.
+    /// </summary>
+    /// <param name="message">The Bedrock Message object containing the response ContentBlocks.</param>
+    /// <returns>
+    /// The tool input <see cref="Document"/> if found, otherwise <c>default</c> (Document is a struct).
+    /// </returns>
+    /// <remarks>
+    /// <para>
+    /// Bedrock returns responses as ConverseResponse.Output.Message.Content, which is a list of ContentBlock objects.
+    /// Each ContentBlock can contain one of several types: Text, ToolUse, Image, Video, Document, etc.
+    /// </para>
+    /// <para>
+    /// When ResponseFormat is specified, we create a synthetic tool ("generate_response") and force the model to use it
+    /// via ToolChoice. The model returns its structured JSON response as a ToolUseBlock within the ContentBlock list,
+    /// rather than as plain Text.
+    /// </para>
+    /// <para>
+    /// This method searches through the ContentBlock list to find the ToolUseBlock matching our synthetic tool name,
+    /// then extracts the Document from toolUse.Input. This Document contains the structured JSON conforming to the
+    /// user's schema.
+    /// </para>
+    /// </remarks>
+    private static Document GetResponseFormatToolInput(Message? message)
     {
         if (message?.Content is null)
         {
-            return null;
+            return default;
         }
 
+        // Message.Content is a List<ContentBlock> - each block can be Text, ToolUse, Image, etc.
+        // We're searching for the ToolUseBlock that matches our synthetic tool name.
         foreach (var content in message.Content)
         {
             if (content.ToolUse is ToolUseBlock toolUse &&
                 toolUse.Name == ResponseFormatToolName &&
                 toolUse.Input != default)
             {
-                // Convert the Document back to JSON string
-                return DocumentToJsonString(toolUse.Input);
+                return toolUse.Input;
             }
         }
 
-        return null;
+        return default;
     }
 
     /// <summary>
