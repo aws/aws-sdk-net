@@ -32,13 +32,13 @@ namespace Amazon.S3.Transfer.Internal
         {
             try
             {
+                FireTransferInitiatedEvent();
+
                 if (AsyncThrottler != null)
                 {
                     await this.AsyncThrottler.WaitAsync(cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false);
                 }
-
-                FireTransferInitiatedEvent();
 
                 var putRequest = ConstructRequest();
                 var response = await _s3Client.PutObjectAsync(putRequest, cancellationToken)
