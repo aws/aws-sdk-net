@@ -42,10 +42,7 @@ namespace Amazon.S3.Transfer.Internal
         private string _tempFilePath;
         private bool _disposed = false;
 
-        private Logger Logger
-        {
-            get { return Logger.GetLogger(typeof(TransferUtility)); }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(FilePartDataHandler));
 
         /// <summary>
         /// Initializes a new instance for file downloads.
@@ -63,7 +60,7 @@ namespace Amazon.S3.Transfer.Internal
             // Create temporary file once during preparation phase
             _tempFilePath = _fileHandler.CreateTemporaryFile(_config.DestinationFilePath);
             
-            Logger.DebugFormat("FilePartDataHandler: Created temporary file for download");
+            _logger.DebugFormat("FilePartDataHandler: Created temporary file for download");
             
             return Task.CompletedTask;
         }
@@ -83,20 +80,20 @@ namespace Amazon.S3.Transfer.Internal
         {
             try
             {
-                Logger.DebugFormat("FilePartDataHandler: [Part {0}] Starting to process part - ContentLength={1}",
+                _logger.DebugFormat("FilePartDataHandler: [Part {0}] Starting to process part - ContentLength={1}",
                     partNumber, response.ContentLength);
 
                 // Calculate offset for this part based on ContentRange or part number
                 long offset = GetPartOffset(response, partNumber);
 
-                Logger.DebugFormat("FilePartDataHandler: [Part {0}] Calculated file offset={1}",
+                _logger.DebugFormat("FilePartDataHandler: [Part {0}] Calculated file offset={1}",
                     partNumber, offset);
 
                 // Write part data to file at the calculated offset
                 await WritePartToFileAsync(offset, response, cancellationToken)
                     .ConfigureAwait(false);
 
-                Logger.DebugFormat("FilePartDataHandler: [Part {0}] File write completed successfully",
+                _logger.DebugFormat("FilePartDataHandler: [Part {0}] File write completed successfully",
                     partNumber);
             }
             finally
@@ -128,17 +125,17 @@ namespace Amazon.S3.Transfer.Internal
             if (exception == null)
             {
                 // Success - commit temp file to final destination
-                Logger.DebugFormat("FilePartDataHandler: Download complete, committing temporary file to destination");
+                _logger.DebugFormat("FilePartDataHandler: Download complete, committing temporary file to destination");
                 
                 try
                 {
                     _fileHandler.CommitFile(_tempFilePath, _config.DestinationFilePath);
                     
-                    Logger.DebugFormat("FilePartDataHandler: Successfully committed file to destination");
+                    _logger.DebugFormat("FilePartDataHandler: Successfully committed file to destination");
                 }
                 catch (Exception commitException)
                 {
-                    Logger.Error(commitException, "FilePartDataHandler: Failed to commit file to destination");
+                    _logger.Error(commitException, "FilePartDataHandler: Failed to commit file to destination");
                     
                     // Cleanup on commit failure
                     _fileHandler.CleanupOnFailure();
@@ -149,7 +146,7 @@ namespace Amazon.S3.Transfer.Internal
             else
             {
                 // Failure - cleanup temp file
-                Logger.Error(exception, "FilePartDataHandler: Download failed, cleaning up temporary file");
+                _logger.Error(exception, "FilePartDataHandler: Download failed, cleaning up temporary file");
                 
                 _fileHandler.CleanupOnFailure();
             }
@@ -202,7 +199,7 @@ namespace Amazon.S3.Transfer.Internal
             if (string.IsNullOrEmpty(_tempFilePath))
                 throw new InvalidOperationException("Temporary file has not been created");
 
-            Logger.DebugFormat("FilePartDataHandler: Opening file for writing at offset {0} with BufferSize={1}",
+            _logger.DebugFormat("FilePartDataHandler: Opening file for writing at offset {0} with BufferSize={1}",
                 offset, _config.BufferSize);
 
             // Open file with FileShare.Write to allow concurrent writes from other threads
@@ -216,7 +213,7 @@ namespace Amazon.S3.Transfer.Internal
                 // Seek to the correct offset for this part
                 fileStream.Seek(offset, SeekOrigin.Begin);
 
-                Logger.DebugFormat("FilePartDataHandler: Writing {0} bytes to file at offset {1}",
+                _logger.DebugFormat("FilePartDataHandler: Writing {0} bytes to file at offset {1}",
                     response.ContentLength, offset);
 
                 // Use GetObjectResponse's stream copy logic which includes:
@@ -235,7 +232,7 @@ namespace Amazon.S3.Transfer.Internal
                 await fileStream.FlushAsync(cancellationToken)
                     .ConfigureAwait(false);
 
-                Logger.DebugFormat("FilePartDataHandler: Successfully wrote {0} bytes at offset {1}",
+                _logger.DebugFormat("FilePartDataHandler: Successfully wrote {0} bytes at offset {1}",
                     response.ContentLength, offset);
             }
         }

@@ -66,10 +66,7 @@ namespace Amazon.S3.Transfer.Internal
         // Uses int instead of bool because Interlocked.CompareExchange requires reference types
         private int _completionEventFired = 0;  // 0 = false, 1 = true
 
-        private Logger Logger
-        {
-            get { return Logger.GetLogger(typeof(TransferUtility)); }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(MultipartDownloadManager));
 
         /// <summary>
         /// Task that completes when all downloads finish (successfully or with error).
@@ -184,7 +181,7 @@ namespace Amazon.S3.Transfer.Internal
             if (_discoveryCompleted)
                 throw new InvalidOperationException("Discovery has already been performed");
 
-            Logger.DebugFormat("MultipartDownloadManager: Starting discovery with strategy={0}",
+            _logger.DebugFormat("MultipartDownloadManager: Starting discovery with strategy={0}",
                 _request.MultipartDownloadType);
 
             try
@@ -196,7 +193,7 @@ namespace Amazon.S3.Transfer.Internal
                 
                 _discoveryCompleted = true;
 
-                Logger.InfoFormat("MultipartDownloadManager: Discovery complete - ObjectSize={0}, TotalParts={1}, Strategy={2}, ETagPresent={3}",
+                _logger.InfoFormat("MultipartDownloadManager: Discovery complete - ObjectSize={0}, TotalParts={1}, Strategy={2}, ETagPresent={3}",
                     result.ObjectSize,
                     result.TotalParts,
                     _request.MultipartDownloadType,
@@ -207,7 +204,7 @@ namespace Amazon.S3.Transfer.Internal
             catch (Exception ex)
             {
                 _downloadException = ex;
-                Logger.Error(ex, "MultipartDownloadManager: Discovery failed");
+                _logger.Error(ex, "MultipartDownloadManager: Discovery failed");
                 throw;
             }
         }
@@ -224,7 +221,7 @@ namespace Amazon.S3.Transfer.Internal
             _userProgressCallback = progressCallback;
             _totalObjectSize = discoveryResult.ObjectSize;
 
-            Logger.DebugFormat("MultipartDownloadManager: Starting downloads - TotalParts={0}, IsSinglePart={1}",
+            _logger.DebugFormat("MultipartDownloadManager: Starting downloads - TotalParts={0}, IsSinglePart={1}",
                 discoveryResult.TotalParts, discoveryResult.IsSinglePart);
 
             var downloadTasks = new List<Task>();
@@ -249,7 +246,7 @@ namespace Amazon.S3.Transfer.Internal
                     }
                     
                     // Process Part 1 from InitialResponse (applies to both single-part and multipart)
-                    Logger.DebugFormat("MultipartDownloadManager: Buffering Part 1 from discovery response");
+                    _logger.DebugFormat("MultipartDownloadManager: Buffering Part 1 from discovery response");
                     await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
                 }
                 finally
@@ -265,7 +262,7 @@ namespace Amazon.S3.Transfer.Internal
                 if (discoveryResult.IsSinglePart)
                 {
                     // Single-part: Part 1 is the entire object
-                    Logger.DebugFormat("MultipartDownloadManager: Single-part download complete");
+                    _logger.DebugFormat("MultipartDownloadManager: Single-part download complete");
                     _dataHandler.OnDownloadComplete(null);
                     return;
                 }
@@ -280,10 +277,10 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     try
                     {
-                        Logger.DebugFormat("MultipartDownloadManager: Background task starting capacity acquisition and downloads");
+                        _logger.DebugFormat("MultipartDownloadManager: Background task starting capacity acquisition and downloads");
                         
                         // Multipart: Start concurrent downloads for remaining parts (Part 2 onwards)
-                        Logger.InfoFormat("MultipartDownloadManager: Starting concurrent downloads for parts 2-{0}",
+                        _logger.InfoFormat("MultipartDownloadManager: Starting concurrent downloads for parts 2-{0}",
                             discoveryResult.TotalParts);
 
                         // Pre-acquire capacity in sequential order to prevent race condition deadlock
@@ -291,24 +288,24 @@ namespace Amazon.S3.Transfer.Internal
                         // parts from consuming all buffer slots and blocking the next expected part
                         for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
                         {
-                            Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for buffer space", partNum);
+                            _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for buffer space", partNum);
 
                             // Acquire capacity sequentially - guarantees Part 2 before Part 3, etc.
                             await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
                             
-                            Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Buffer space acquired", partNum);
+                            _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Buffer space acquired", partNum);
 
                             var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, wrappedCallback, internalCts.Token);
                             downloadTasks.Add(task);
                         }
 
                         var expectedTaskCount = downloadTasks.Count;
-                        Logger.DebugFormat("MultipartDownloadManager: Background task waiting for {0} download tasks", expectedTaskCount);
+                        _logger.DebugFormat("MultipartDownloadManager: Background task waiting for {0} download tasks", expectedTaskCount);
                         
                         // Wait for all downloads to complete (fails fast on first exception)
                         await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, cancellationToken).ConfigureAwait(false);
 
-                        Logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
+                        _logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
 
                         // SEP Part GET Step 6 / Ranged GET Step 8:
                         // "validate that the total number of part GET requests sent matches with the expected PartsCount"
@@ -324,7 +321,7 @@ namespace Amazon.S3.Transfer.Internal
                         }
 
                         // Mark successful completion
-                        Logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
+                        _logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
                             discoveryResult.TotalParts);
                         _dataHandler.OnDownloadComplete(null);
                     }
@@ -333,7 +330,7 @@ namespace Amazon.S3.Transfer.Internal
                     catch (Exception ex)
                     {
                         _downloadException = ex;
-                        Logger.Error(ex, "MultipartDownloadManager: Background download task failed");
+                        _logger.Error(ex, "MultipartDownloadManager: Background download task failed");
                         _dataHandler.OnDownloadComplete(ex);
                         throw;
                     }
@@ -348,12 +345,12 @@ namespace Amazon.S3.Transfer.Internal
 
                 // Return immediately to allow consumer to start reading
                 // This prevents deadlock when buffer fills up before consumer begins reading
-                Logger.DebugFormat("MultipartDownloadManager: Returning to allow consumer to start reading");
+                _logger.DebugFormat("MultipartDownloadManager: Returning to allow consumer to start reading");
             }
             catch (Exception ex)
             {
                 _downloadException = ex;
-                Logger.Error(ex, "MultipartDownloadManager: Download failed");
+                _logger.Error(ex, "MultipartDownloadManager: Download failed");
                 
                 _dataHandler.OnDownloadComplete(ex);
                 
@@ -374,13 +371,13 @@ namespace Amazon.S3.Transfer.Internal
             
             try
             {
-                Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for HTTP concurrency slot (Available: {1}/{2})",
+                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for HTTP concurrency slot (Available: {1}/{2})",
                     partNumber, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
 
                 // Limit HTTP concurrency
                 await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
 
-                Logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot acquired", partNumber);
+                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot acquired", partNumber);
                 
                 try
                 {
@@ -397,7 +394,7 @@ namespace Amazon.S3.Transfer.Internal
                         // for each request to the Etag value saved from Step 3"
                         getObjectRequest.EtagToMatch = _savedETag;
 
-                        Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Sending GetObject request with PartNumber={1}, IfMatchPresent={2}",
+                        _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Sending GetObject request with PartNumber={1}, IfMatchPresent={2}",
                             partNumber, partNumber, !string.IsNullOrEmpty(_savedETag));
                     }
                     else
@@ -412,7 +409,7 @@ namespace Amazon.S3.Transfer.Internal
                         // for each request to the value saved from Step 5"
                         getObjectRequest.EtagToMatch = _savedETag;
 
-                        Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Sending GetObject request with ByteRange={1}-{2}, IfMatchPresent={3}",
+                        _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Sending GetObject request with ByteRange={1}-{2}, IfMatchPresent={3}",
                             partNumber, startByte, endByte, !string.IsNullOrEmpty(_savedETag));
                     }
                     
@@ -425,31 +422,31 @@ namespace Amazon.S3.Transfer.Internal
                         response.WriteObjectProgressEvent += progressCallback;
                     }
 
-                    Logger.DebugFormat("MultipartDownloadManager: [Part {0}] GetObject response received - ContentLength={1}",
+                    _logger.DebugFormat("MultipartDownloadManager: [Part {0}] GetObject response received - ContentLength={1}",
                         partNumber, response.ContentLength);
                     
                     // SEP Part GET Step 5 / Ranged GET Step 7: Validate ContentRange matches request
                     ValidateContentRange(response, partNumber, objectSize);
 
-                    Logger.DebugFormat("MultipartDownloadManager: [Part {0}] ContentRange validation passed", partNumber);
+                    _logger.DebugFormat("MultipartDownloadManager: [Part {0}] ContentRange validation passed", partNumber);
                     
                     // Validate ETag consistency for SEP compliance
                     if (!string.IsNullOrEmpty(_savedETag) && !string.Equals(_savedETag, response.ETag, StringComparison.OrdinalIgnoreCase))
                     {
-                        Logger.Error(null, "MultipartDownloadManager: [Part {0}] ETag mismatch detected - object modified during download", partNumber);
+                        _logger.Error(null, "MultipartDownloadManager: [Part {0}] ETag mismatch detected - object modified during download", partNumber);
                         throw new InvalidOperationException($"ETag mismatch detected for part {partNumber} - object may have been modified during download");
                     }
 
-                    Logger.DebugFormat("MultipartDownloadManager: [Part {0}] ETag validation passed", partNumber);
+                    _logger.DebugFormat("MultipartDownloadManager: [Part {0}] ETag validation passed", partNumber);
                 }
                 finally
                 {
                     _httpConcurrencySlots.Release();
-                    Logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot released (Available: {1}/{2})",
+                    _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot released (Available: {1}/{2})",
                         partNumber, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
                 }
 
-                Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Processing part (handler will decide: stream or buffer)", partNumber);
+                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Processing part (handler will decide: stream or buffer)", partNumber);
                 
                 // Delegate data handling to the handler
                 // IMPORTANT: Handler takes ownership of response and is responsible for disposing it in ALL cases:
@@ -459,11 +456,11 @@ namespace Amazon.S3.Transfer.Internal
                 await _dataHandler.ProcessPartAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
                 ownsResponse = false;  // Ownership transferred to handler
 
-                Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Processing completed successfully", partNumber);
+                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Processing completed successfully", partNumber);
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "MultipartDownloadManager: [Part {0}] Download failed", partNumber);
+                _logger.Error(ex, "MultipartDownloadManager: [Part {0}] Download failed", partNumber);
                 
                 // Dispose response if we still own it (error occurred before handler took ownership)
                 if (ownsResponse)
@@ -487,10 +484,10 @@ namespace Amazon.S3.Transfer.Internal
             firstPartRequest.PartNumber = 1;
             
             // Wait for both capacity types before making HTTP request (consistent with background parts)
-            Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for buffer capacity");
+            _logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for buffer capacity");
             await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
 
-            Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for HTTP concurrency slot");
+            _logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for HTTP concurrency slot");
             await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
 
             GetObjectResponse firstPartResponse = null;
@@ -502,7 +499,7 @@ namespace Amazon.S3.Transfer.Internal
             finally
             {
                 _httpConcurrencySlots.Release();
-                Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] HTTP concurrency slot released");
+                _logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] HTTP concurrency slot released");
             }
             
             if (firstPartResponse == null)
@@ -564,10 +561,10 @@ namespace Amazon.S3.Transfer.Internal
             firstRangeRequest.ByteRange = new ByteRange(0, targetPartSize - 1);
             
             // Wait for both capacity types before making HTTP request (consistent with background parts)
-            Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for buffer capacity");
+            _logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for buffer capacity");
             await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
 
-            Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for HTTP concurrency slot");
+            _logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for HTTP concurrency slot");
             await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
 
             GetObjectResponse firstRangeResponse = null;
@@ -579,7 +576,7 @@ namespace Amazon.S3.Transfer.Internal
             finally
             {
                 _httpConcurrencySlots.Release();
-                Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] HTTP concurrency slot released");
+                _logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] HTTP concurrency slot released");
             }
             
             // Defensive null check

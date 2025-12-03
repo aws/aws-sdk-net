@@ -35,10 +35,7 @@ namespace Amazon.S3.Transfer.Internal
 
         public bool DownloadFilesConcurrently { get; set; }
 
-        private Logger Logger
-        {
-            get { return Logger.GetLogger(typeof(DownloadDirectoryCommand)); }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(DownloadDirectoryCommand));
 
         internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request, TransferUtilityConfig config)
         : this(s3Client, request, config, useMultipartDownload: false)
@@ -52,7 +49,7 @@ namespace Amazon.S3.Transfer.Internal
             {
                 FireTransferInitiatedEvent();
 
-                Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Starting - DownloadFilesConcurrently={0}, UseMultipartDownload={1}, ConcurrentServiceRequests={2}",
+                _logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Starting - DownloadFilesConcurrently={0}, UseMultipartDownload={1}, ConcurrentServiceRequests={2}",
                     DownloadFilesConcurrently, this._useMultipartDownload, this._config.ConcurrentServiceRequests);
 
                 // Step 1: Validate and setup
@@ -64,7 +61,7 @@ namespace Amazon.S3.Transfer.Internal
                     .ConfigureAwait(false);
 
                 this._totalNumberOfFilesToDownload = s3Objects.Count;
-                Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Found {0} total objects, TotalBytes={1}",
+                _logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Found {0} total objects, TotalBytes={1}",
                     s3Objects.Count, this._totalBytes);
 
                 // Step 3: Filter to actual files (exclude directory markers)
@@ -82,7 +79,7 @@ namespace Amazon.S3.Transfer.Internal
                 }
 
                 // Step 5: Build response
-                Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Completed - ObjectsDownloaded={0}, ObjectsFailed={1}",
+                _logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Completed - ObjectsDownloaded={0}, ObjectsFailed={1}",
                     _numberOfFilesDownloaded, _errors.Count);
 
                 var response = BuildResponse();
@@ -162,7 +159,7 @@ namespace Amazon.S3.Transfer.Internal
                 .Where(s3o => !s3o.Key.EndsWith("/", StringComparison.Ordinal))
                 .ToList();
 
-            Logger.DebugFormat("DownloadDirectoryCommand.FilterObjectsToDownload: Filtered to {0} files to download (excluded {1} directory markers)",
+            _logger.DebugFormat("DownloadDirectoryCommand.FilterObjectsToDownload: Filtered to {0} files to download (excluded {1} directory markers)",
                 filtered.Count, s3Objects.Count - filtered.Count);
 
             return filtered;
@@ -191,7 +188,7 @@ namespace Amazon.S3.Transfer.Internal
             if (this._useMultipartDownload)
             {
                 httpRequestThrottler = new SemaphoreSlim(this._config.ConcurrentServiceRequests);
-                Logger.DebugFormat("DownloadDirectoryCommand.CreateDownloadResources: Created HTTP throttler with MaxConcurrentRequests={0}",
+                _logger.DebugFormat("DownloadDirectoryCommand.CreateDownloadResources: Created HTTP throttler with MaxConcurrentRequests={0}",
                     this._config.ConcurrentServiceRequests);
             }
 
@@ -214,7 +211,7 @@ namespace Amazon.S3.Transfer.Internal
                 ? this._config.ConcurrentServiceRequests
                 : 1;
 
-            Logger.DebugFormat("DownloadDirectoryCommand.ExecuteParallelDownloadsAsync: Starting task pool with ConcurrencyLevel={0}, TotalFiles={1}",
+            _logger.DebugFormat("DownloadDirectoryCommand.ExecuteParallelDownloadsAsync: Starting task pool with ConcurrencyLevel={0}, TotalFiles={1}",
                 concurrencyLevel, objectsToDownload.Count);
 
             await TaskHelpers.ForEachWithConcurrencyAsync(
@@ -234,7 +231,7 @@ namespace Amazon.S3.Transfer.Internal
                 cancellationToken)
             .ConfigureAwait(false);
 
-            Logger.DebugFormat("DownloadDirectoryCommand.ExecuteParallelDownloadsAsync: Task pool completed - ObjectsDownloaded={0}, ObjectsFailed={1}",
+            _logger.DebugFormat("DownloadDirectoryCommand.ExecuteParallelDownloadsAsync: Task pool completed - ObjectsDownloaded={0}, ObjectsFailed={1}",
                 _numberOfFilesDownloaded, _errors.Count);
         }
 
@@ -341,7 +338,7 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task<List<S3Object>> GetS3ObjectsToDownloadAsync(ListObjectsRequest listRequest, CancellationToken cancellationToken)
         {
-            Logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadAsync: Starting object listing");
+            _logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadAsync: Starting object listing");
             
             List<S3Object> objs = new List<S3Object>();
             int pageCount = 0;
@@ -364,11 +361,11 @@ namespace Amazon.S3.Transfer.Internal
                 listRequest.Marker = listResponse.NextMarker;
                 pageCount++;
                 
-                Logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadAsync: Page {0} completed - ObjectsInPage={1}, TotalObjectsSoFar={2}",
+                _logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadAsync: Page {0} completed - ObjectsInPage={1}, TotalObjectsSoFar={2}",
                     pageCount, listResponse.S3Objects?.Count ?? 0, objs.Count);
             } while (!string.IsNullOrEmpty(listRequest.Marker));
             
-            Logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadAsync: Listing completed - TotalPages={0}, TotalObjects={1}",
+            _logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadAsync: Listing completed - TotalPages={0}, TotalObjects={1}",
                 pageCount, objs.Count);
             
             return objs;
@@ -376,7 +373,7 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task<List<S3Object>> GetS3ObjectsToDownloadV2Async(ListObjectsV2Request listRequestV2, CancellationToken cancellationToken)
         {
-            Logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadV2Async: Starting object listing (V2 API)");
+            _logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadV2Async: Starting object listing (V2 API)");
             
             List<S3Object> objs = new List<S3Object>();
             int pageCount = 0;
@@ -399,11 +396,11 @@ namespace Amazon.S3.Transfer.Internal
                 listRequestV2.ContinuationToken = listResponse.NextContinuationToken;
                 pageCount++;
                 
-                Logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadV2Async: Page {0} completed - ObjectsInPage={1}, TotalObjectsSoFar={2}",
+                _logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadV2Async: Page {0} completed - ObjectsInPage={1}, TotalObjectsSoFar={2}",
                     pageCount, listResponse.S3Objects?.Count ?? 0, objs.Count);
             } while (!string.IsNullOrEmpty(listRequestV2.ContinuationToken));
             
-            Logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadV2Async: Listing completed - TotalPages={0}, TotalObjects={1}",
+            _logger.DebugFormat("DownloadDirectoryCommand.GetS3ObjectsToDownloadV2Async: Listing completed - TotalPages={0}, TotalObjects={1}",
                 pageCount, objs.Count);
             
             return objs;

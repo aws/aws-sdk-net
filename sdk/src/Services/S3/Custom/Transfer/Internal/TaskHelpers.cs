@@ -27,11 +27,6 @@ namespace Amazon.S3.Transfer.Internal
     /// </summary>
     internal static class TaskHelpers
     {
-        private static Logger Logger
-        {
-            get { return Logger.GetLogger(typeof(TaskHelpers)); }
-        }
-
         /// <summary>
         /// Waits for all tasks to complete or till any task fails or is canceled.
         /// </summary>
@@ -43,7 +38,7 @@ namespace Amazon.S3.Transfer.Internal
             int processed = 0;
             int total = pendingTasks.Count;
             
-            Logger.DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync: Starting with TotalTasks={0}", total);
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync: Starting with TotalTasks={0}", total);
             
             while (processed < total)
             {
@@ -60,11 +55,11 @@ namespace Amazon.S3.Transfer.Internal
                 pendingTasks.Remove(completedTask);
                 processed++;
                 
-                Logger.DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync: Task completed (Processed={0}/{1}, Remaining={2})",
+                Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync: Task completed (Processed={0}/{1}, Remaining={2})",
                     processed, total, pendingTasks.Count);
             }
             
-            Logger.DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync: All tasks completed (Total={0})", total);
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync: All tasks completed (Total={0})", total);
         }
 
         /// <summary>
@@ -81,7 +76,7 @@ namespace Amazon.S3.Transfer.Internal
             int total = pendingTasks.Count;
             var responses = new List<T>();
             
-            Logger.DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync<T>: Starting with TotalTasks={0}", total);
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync<T>: Starting with TotalTasks={0}", total);
             
             while (processed < total)
             {
@@ -99,11 +94,11 @@ namespace Amazon.S3.Transfer.Internal
                 pendingTasks.Remove(completedTask);
                 processed++;
                 
-                Logger.DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync<T>: Task completed (Processed={0}/{1}, Remaining={2})",
+                Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync<T>: Task completed (Processed={0}/{1}, Remaining={2})",
                     processed, total, pendingTasks.Count);
             }
             
-            Logger.DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync<T>: All tasks completed (Total={0})", total);
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionAsync<T>: All tasks completed (Total={0})", total);
             
             return responses;
         }
@@ -134,11 +129,11 @@ namespace Amazon.S3.Transfer.Internal
             var itemList = items as IList<T> ?? items.ToList();
             if (itemList.Count == 0)
             {
-                Logger.DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: No items to process");
+                Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: No items to process");
                 return;
             }
 
-            Logger.DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: Starting with TotalItems={0}, MaxConcurrency={1}",
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: Starting with TotalItems={0}, MaxConcurrency={1}",
                 itemList.Count, maxConcurrency);
 
             int nextIndex = 0;
@@ -146,7 +141,7 @@ namespace Amazon.S3.Transfer.Internal
 
             // Start initial batch up to concurrency limit
             int initialBatchSize = Math.Min(maxConcurrency, itemList.Count);
-            Logger.DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: Starting initial batch of {0} tasks", initialBatchSize);
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: Starting initial batch of {0} tasks", initialBatchSize);
             
             for (int i = 0; i < initialBatchSize; i++)
             {
@@ -170,20 +165,20 @@ namespace Amazon.S3.Transfer.Internal
                 activeTasks.Remove(completedTask);
 
                 int itemsCompleted = nextIndex - activeTasks.Count;
-                Logger.DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: Task completed (Active={0}, Completed={1}/{2}, Remaining={3})",
+                Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: Task completed (Active={0}, Completed={1}/{2}, Remaining={3})",
                     activeTasks.Count, itemsCompleted, itemList.Count, itemList.Count - itemsCompleted);
 
                 // Start next task if more work remains
                 if (nextIndex < itemList.Count)
                 {
-                    Logger.DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: Starting next task (Index={0}/{1}, Active={2})",
+                    Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: Starting next task (Index={0}/{1}, Active={2})",
                         nextIndex + 1, itemList.Count, activeTasks.Count + 1);
                     var nextTask = processAsync(itemList[nextIndex++], cancellationToken);
                     activeTasks.Add(nextTask);
                 }
             }
             
-            Logger.DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: All items processed (Total={0})", itemList.Count);
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.ForEachWithConcurrencyAsync: All items processed (Total={0})", itemList.Count);
         }
     }
 }

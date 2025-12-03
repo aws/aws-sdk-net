@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix Transfer Utility internal Logger recursive property definition"
+      ]
+    }
+  ]
+}
