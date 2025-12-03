@@ -55,12 +55,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.IsNotNull(args.Request.BucketName);
                     Assert.IsNotNull(args.Request.S3Directory);
                     Assert.IsNotNull(args.Request.LocalDirectory);
-                    
-                    // Verify that progress properties are NOT present (consistent with our changes)
-                    // The initiated event should only contain the request information
-                    Console.WriteLine($"DownloadDirectoryInitiated - BucketName: {args.Request.BucketName}");
-                    Console.WriteLine($"DownloadDirectoryInitiated - S3Directory: {args.Request.S3Directory}");
-                    Console.WriteLine($"DownloadDirectoryInitiated - LocalDirectory: {args.Request.LocalDirectory}");
                 }
             };
             DownloadDirectoryWithLifecycleEvents(10 * MEG_SIZE, eventValidator, null, null);
@@ -83,11 +77,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(args.TransferredFiles, args.TotalFiles, "All files should be transferred");
                     Assert.IsTrue(args.TotalBytes > 0, "TotalBytes should be greater than 0");
                     Assert.AreEqual(args.TransferredBytes, args.TotalBytes, "All bytes should be transferred");
-                    
-                    Console.WriteLine($"DownloadDirectoryCompleted - TotalFiles: {args.TotalFiles}");
-                    Console.WriteLine($"DownloadDirectoryCompleted - TransferredFiles: {args.TransferredFiles}");
-                    Console.WriteLine($"DownloadDirectoryCompleted - TotalBytes: {args.TotalBytes}");
-                    Console.WriteLine($"DownloadDirectoryCompleted - TransferredBytes: {args.TransferredBytes}");
                 }
             };
             DownloadDirectoryWithLifecycleEvents(12 * MEG_SIZE, null, eventValidator, null);
@@ -103,17 +92,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Validate = (args) =>
                 {
                     Assert.IsNotNull(args.Request);
-                    
-                    // The DownloadDirectoryFailedEventArgs contains transfer progress information
-                    // but does not contain exception details (unlike individual object failures)
-                    Console.WriteLine($"DownloadDirectoryFailed - Request: {args.Request.BucketName}");
-                    Console.WriteLine($"DownloadDirectoryFailed - S3Directory: {args.Request.S3Directory}");
-                    
-                    // Progress information may or may not be available depending on when the failure occurred
-                    Console.WriteLine($"DownloadDirectoryFailed - TotalFiles: {args.TotalFiles}");
-                    Console.WriteLine($"DownloadDirectoryFailed - TransferredFiles: {args.TransferredFiles}");
-                    Console.WriteLine($"DownloadDirectoryFailed - TotalBytes: {args.TotalBytes}");
-                    Console.WriteLine($"DownloadDirectoryFailed - TransferredBytes: {args.TransferredBytes}");
                 }
             };
             
