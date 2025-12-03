@@ -2594,10 +2594,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     };
 
                     // ContinueOnFailure should not throw even if all uploads fail
-                    var config = new TransferUtilityConfig();
-                    var command = new Amazon.S3.Transfer.Internal.UploadDirectoryCommand(transferUtility, config, request);
-                    command.UploadFilesConcurrently = request.UploadFilesConcurrently;
-                    var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+                    var response = await transferUtility.UploadDirectoryWithResponseAsync(request);
 
                     Assert.IsNotNull(response);
                     Assert.AreEqual(0, response.ObjectsUploaded);
@@ -2631,10 +2628,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         UploadFilesConcurrently = true
                     };
 
-                    var config = new TransferUtilityConfig();
-                    var command = new Amazon.S3.Transfer.Internal.UploadDirectoryCommand(transferUtility, config, request);
-                    command.UploadFilesConcurrently = request.UploadFilesConcurrently;
-                    var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+                    var response = await transferUtility.UploadDirectoryWithResponseAsync(request);
 
                     Assert.IsNotNull(response);
                     Assert.AreEqual(3, response.ObjectsUploaded);
@@ -2672,10 +2666,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         UploadFilesConcurrently = true
                     };
 
-                    var config = new TransferUtilityConfig();
-                    var command = new Amazon.S3.Transfer.Internal.UploadDirectoryCommand(transferUtility, config, request);
-                    command.UploadFilesConcurrently = request.UploadFilesConcurrently;
-                    await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => command.ExecuteAsync(CancellationToken.None));
+                    await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => transferUtility.UploadDirectoryWithResponseAsync(request));
                 }
             }
             finally
