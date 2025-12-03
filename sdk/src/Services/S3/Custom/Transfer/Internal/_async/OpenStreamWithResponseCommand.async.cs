@@ -27,17 +27,14 @@ namespace Amazon.S3.Transfer.Internal
 {
     internal partial class OpenStreamWithResponseCommand : BaseCommand<TransferUtilityOpenStreamResponse>
     {
-        private Logger Logger
-        {
-            get { return Logger.GetLogger(typeof(TransferUtility)); }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(OpenStreamWithResponseCommand));
 
         public override async Task<TransferUtilityOpenStreamResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
-            Logger.DebugFormat("OpenStreamWithResponseCommand: Creating BufferedMultipartStream with MultipartDownloadType={0}",
+            _logger.DebugFormat("OpenStreamWithResponseCommand: Creating BufferedMultipartStream with MultipartDownloadType={0}",
                 _request.MultipartDownloadType);
 
-            Logger.DebugFormat("OpenStreamWithResponseCommand: Configuration - ConcurrentServiceRequests={0}, MaxInMemoryParts={1}, BufferSize={2}",
+            _logger.DebugFormat("OpenStreamWithResponseCommand: Configuration - ConcurrentServiceRequests={0}, MaxInMemoryParts={1}, BufferSize={2}",
                 _config.ConcurrentServiceRequests,
                 _request.MaxInMemoryParts,
                 _s3Client.Config.BufferSize
@@ -49,7 +46,7 @@ namespace Amazon.S3.Transfer.Internal
             // Populate metadata from the initial GetObject response (from discovery phase)
             var discoveryResult = bufferedStream.DiscoveryResult;
 
-            Logger.DebugFormat("OpenStreamWithResponseCommand: Stream initialized successfully - ObjectSize={0}, TotalParts={1}, IsSinglePart={2}",
+            _logger.DebugFormat("OpenStreamWithResponseCommand: Stream initialized successfully - ObjectSize={0}, TotalParts={1}, IsSinglePart={2}",
                 discoveryResult.ObjectSize,
                 discoveryResult.TotalParts,
                 discoveryResult.IsSinglePart);

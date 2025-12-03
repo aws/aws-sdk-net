@@ -40,7 +40,7 @@ namespace Amazon.S3.Transfer.Internal
             // Create configuration from request settings
             var config = CreateConfiguration();
             
-            Logger.DebugFormat("MultipartDownloadCommand: Configuration - ConcurrentServiceRequests={0}, BufferSize={1}, TargetPartSize={2}",
+            _logger.DebugFormat("MultipartDownloadCommand: Configuration - ConcurrentServiceRequests={0}, BufferSize={1}, TargetPartSize={2}",
                 config.ConcurrentServiceRequests,
                 config.BufferSize,
                 config.TargetPartSizeBytes
@@ -63,28 +63,28 @@ namespace Amazon.S3.Transfer.Internal
                     try
                     {
                         // Step 1: Discover download strategy (PART or RANGE) and get metadata
-                        Logger.DebugFormat("MultipartDownloadCommand: Discovering download strategy");
+                        _logger.DebugFormat("MultipartDownloadCommand: Discovering download strategy");
                         var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(cancellationToken)
                             .ConfigureAwait(false);
                         
                         totalBytes = discoveryResult.ObjectSize;
 
                         
-                        Logger.DebugFormat("MultipartDownloadCommand: Discovered {0} part(s), total size: {1} bytes, IsSinglePart={2}",
+                        _logger.DebugFormat("MultipartDownloadCommand: Discovered {0} part(s), total size: {1} bytes, IsSinglePart={2}",
                             discoveryResult.TotalParts, discoveryResult.ObjectSize, discoveryResult.IsSinglePart);
                         
                         // Step 2: Start concurrent downloads for all parts
-                        Logger.DebugFormat("Starting downloads for {0} part(s)", discoveryResult.TotalParts);
+                        _logger.DebugFormat("Starting downloads for {0} part(s)", discoveryResult.TotalParts);
                         await coordinator.StartDownloadsAsync(discoveryResult, DownloadPartProgressEventCallback, cancellationToken)
                             .ConfigureAwait(false);
                         
                         // Step 2b: Wait for all downloads to complete before returning
                         // This ensures file is fully written and committed for file-based downloads
                         // For stream-based downloads, this task completes immediately (no-op)
-                        Logger.DebugFormat("MultipartDownloadCommand: Waiting for download completion");
+                        _logger.DebugFormat("MultipartDownloadCommand: Waiting for download completion");
                         await coordinator.DownloadCompletionTask.ConfigureAwait(false);
                         
-                        Logger.DebugFormat("MultipartDownloadCommand: Completed multipart download");
+                        _logger.DebugFormat("MultipartDownloadCommand: Completed multipart download");
                         
                         // Step 3: Map the response from the initial GetObject response
                         // The initial response contains all the metadata we need
@@ -126,7 +126,7 @@ namespace Amazon.S3.Transfer.Internal
                     }
                     catch (Exception ex)
                     {
-                        Logger.Error(ex, "Exception during multipart download");
+                        _logger.Error(ex, "Exception during multipart download");
                         
                         // Fire failed event
                         FireTransferFailedEvent(totalBytes);

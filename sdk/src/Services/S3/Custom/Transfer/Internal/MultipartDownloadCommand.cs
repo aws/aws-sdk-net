@@ -42,13 +42,7 @@ namespace Amazon.S3.Transfer.Internal
         // Track last known transferred bytes from coordinator's progress events
         private long _lastKnownTransferredBytes;
 
-        private static Logger Logger
-        {
-            get
-            {
-                return Logger.GetLogger(typeof(TransferUtility));
-            }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(MultipartDownloadCommand));
 
         /// <summary>
         /// Initializes a new instance of the MultipartDownloadCommand class for single file downloads.
@@ -118,7 +112,7 @@ namespace Amazon.S3.Transfer.Internal
             // Use S3 client buffer size for I/O operations
             int bufferSize = _s3Client.Config.BufferSize;
 
-            Logger.DebugFormat("MultipartDownloadCommand: Creating configuration - PartSizeFromRequest={0}, UsingDefaultPartSize={1}",
+            _logger.DebugFormat("MultipartDownloadCommand: Creating configuration - PartSizeFromRequest={0}, UsingDefaultPartSize={1}",
                 _request.IsSetPartSize() ? _request.PartSize.ToString() : "Not Set",
                 !_request.IsSetPartSize());
 

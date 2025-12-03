@@ -55,10 +55,7 @@ namespace Amazon.S3.Transfer.Internal
         private readonly IPartBufferManager _partBufferManager;
         private readonly BufferedDownloadConfiguration _config;
 
-        private Logger Logger
-        {
-            get { return Logger.GetLogger(typeof(TransferUtility)); }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(BufferedPartDataHandler));
         
         /// <summary>
         /// Initializes a new instance of the <see cref="BufferedPartDataHandler"/> class.
@@ -137,7 +134,7 @@ namespace Amazon.S3.Transfer.Internal
             GetObjectResponse response, 
             CancellationToken cancellationToken)
         {
-            Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Matches NextExpectedPartNumber - streaming directly without buffering",
+            _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Matches NextExpectedPartNumber - streaming directly without buffering",
                 partNumber);
 
             StreamingDataSource streamingDataSource = null;
@@ -161,12 +158,12 @@ namespace Amazon.S3.Transfer.Internal
                 // Release capacity immediately since we're not holding anything in memory
                 _partBufferManager.ReleaseBufferSpace();
 
-                Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] StreamingDataSource added and capacity released",
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] StreamingDataSource added and capacity released",
                     partNumber);
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to process streaming part", partNumber);
+                _logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to process streaming part", partNumber);
                 
                 // Dispose response if we still own it (constructor failed before taking ownership)
                 if (ownsResponse)
@@ -206,7 +203,7 @@ namespace Amazon.S3.Transfer.Internal
             GetObjectResponse response, 
             CancellationToken cancellationToken)
         {
-            Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Out of order (NextExpected={1}) - buffering to memory",
+            _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Out of order (NextExpected={1}) - buffering to memory",
                 partNumber, _partBufferManager.NextExpectedPartNumber);
 
             try
@@ -220,18 +217,18 @@ namespace Amazon.S3.Transfer.Internal
                 // Response has been fully read and buffered - dispose it now
                 response?.Dispose();
 
-                Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Buffered {1} bytes into memory",
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Buffered {1} bytes into memory",
                     partNumber, buffer.Length);
                     
                 // Add the buffered part to the buffer manager
                 _partBufferManager.AddBuffer(buffer);
 
-                Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Added to buffer manager (capacity will be released after consumption)",
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Added to buffer manager (capacity will be released after consumption)",
                     partNumber);
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to process buffered part", partNumber);
+                _logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to process buffered part", partNumber);
                 
                 // We own the response throughout this method, so dispose it on error
                 response?.Dispose();
@@ -286,7 +283,7 @@ namespace Amazon.S3.Transfer.Internal
                 long expectedBytes = response.ContentLength;
                 int initialBufferSize = (int)expectedBytes;
 
-                Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Allocating buffer of size {1} bytes from ArrayPool",
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Allocating buffer of size {1} bytes from ArrayPool",
                     partNumber, initialBufferSize);
                 
                 downloadedPart = StreamPartBuffer.Create(partNumber, initialBufferSize);
@@ -299,7 +296,7 @@ namespace Amazon.S3.Transfer.Internal
                 // The MemoryStream starts at position 0 and can grow up to initialBufferSize
                 using (var memoryStream = new MemoryStream(partBuffer, 0, initialBufferSize, writable: true))
                 {
-                    Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Reading response stream into buffer",
+                    _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Reading response stream into buffer",
                         partNumber);
 
                     // Use GetObjectResponse's stream copy logic which includes:
@@ -316,7 +313,7 @@ namespace Amazon.S3.Transfer.Internal
                     
                     int totalRead = (int)memoryStream.Position;
                     
-                    Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Read {1} bytes from response stream",
+                    _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Read {1} bytes from response stream",
                         partNumber, totalRead);
 
                     // Set the length to reflect actual bytes read
@@ -324,7 +321,7 @@ namespace Amazon.S3.Transfer.Internal
 
                     if (totalRead != expectedBytes)
                     {
-                        Logger.Error(null, "BufferedPartDataHandler: [Part {0}] Size mismatch - Expected {1} bytes, read {2} bytes",
+                        _logger.Error(null, "BufferedPartDataHandler: [Part {0}] Size mismatch - Expected {1} bytes, read {2} bytes",
                             partNumber, expectedBytes, totalRead);
                     }
                 }
@@ -333,7 +330,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to buffer part from response stream", partNumber);
+                _logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to buffer part from response stream", partNumber);
                 // If something goes wrong, StreamPartBuffer.Dispose() will handle cleanup
                 downloadedPart?.Dispose();
                 throw;

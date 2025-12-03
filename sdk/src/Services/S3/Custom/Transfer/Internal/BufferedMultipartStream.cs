@@ -46,10 +46,7 @@ namespace Amazon.S3.Transfer.Internal
         private DownloadDiscoveryResult _discoveryResult;
         private long _totalBytesRead = 0;
 
-        private Logger Logger
-        {
-            get { return Logger.GetLogger(typeof(TransferUtility)); }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(BufferedMultipartStream));
 
         /// <summary>
         /// Gets the <see cref="DownloadDiscoveryResult"/> containing metadata from the initial GetObject response.
@@ -113,12 +110,12 @@ namespace Amazon.S3.Transfer.Internal
             if (_initialized)
                 throw new InvalidOperationException("Stream has already been initialized");
 
-            Logger.DebugFormat("BufferedMultipartStream: Starting initialization");
+            _logger.DebugFormat("BufferedMultipartStream: Starting initialization");
 
             _discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
                     .ConfigureAwait(false);
                 
-            Logger.DebugFormat("BufferedMultipartStream: Discovery completed - ObjectSize={0}, TotalParts={1}, IsSinglePart={2}",
+            _logger.DebugFormat("BufferedMultipartStream: Discovery completed - ObjectSize={0}, TotalParts={1}, IsSinglePart={2}",
                 _discoveryResult.ObjectSize,
                 _discoveryResult.TotalParts,
                 _discoveryResult.IsSinglePart);
@@ -127,7 +124,7 @@ namespace Amazon.S3.Transfer.Internal
                 .ConfigureAwait(false);
             
             _initialized = true;
-            Logger.DebugFormat("BufferedMultipartStream: Initialization completed successfully");
+            _logger.DebugFormat("BufferedMultipartStream: Initialization completed successfully");
         }
 
         /// <summary>
@@ -168,7 +165,7 @@ namespace Amazon.S3.Transfer.Internal
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
             var currentPosition = Interlocked.Read(ref _totalBytesRead);
-            Logger.DebugFormat("BufferedMultipartStream: ReadAsync called - Position={0}, RequestedBytes={1}",
+            _logger.DebugFormat("BufferedMultipartStream: ReadAsync called - Position={0}, RequestedBytes={1}",
                 currentPosition, count);
 
             var bytesRead = await _partBufferManager.ReadAsync(buffer, offset, count, cancellationToken)
@@ -178,12 +175,12 @@ namespace Amazon.S3.Transfer.Internal
             if (bytesRead > 0)
             {
                 Interlocked.Add(ref _totalBytesRead, bytesRead);
-                Logger.DebugFormat("BufferedMultipartStream: ReadAsync completed - BytesRead={0}, NewPosition={1}",
+                _logger.DebugFormat("BufferedMultipartStream: ReadAsync completed - BytesRead={0}, NewPosition={1}",
                     bytesRead, currentPosition + bytesRead);
             }
             else
             {
-                Logger.DebugFormat("BufferedMultipartStream: ReadAsync returned EOF (0 bytes)");
+                _logger.DebugFormat("BufferedMultipartStream: ReadAsync returned EOF (0 bytes)");
             }
             
             return bytesRead;
