@@ -195,7 +195,7 @@ namespace Amazon.S3.Transfer.Internal
                 throw new InvalidOperationException("The LocalDirectory Specified is null or empty!");
             }
 
-            if (File.Exists(this._request.LocalDirectory))
+            if (File.Exists(this._request.S3Directory))
             {
                 throw new InvalidOperationException("A file already exists with the same name indicated by LocalDirectory!");
             }

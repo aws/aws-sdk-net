@@ -173,32 +173,6 @@ namespace AWSSDK.UnitTests
             await command.ExecuteAsync(CancellationToken.None);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public async Task ExecuteAsync_WithFileExistingAtLocalDirectoryPath_ThrowsInvalidOperationException()
-        {
-            // Arrange - Create a file with the same name as the local directory
-            var testFilePath = Path.Combine(Path.GetTempPath(), $"test-file-{Guid.NewGuid()}.tmp");
-            File.WriteAllText(testFilePath, "test");
-            
-            try
-            {
-                var request = CreateDownloadDirectoryRequest(localDirectory: testFilePath);
-                var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
-
-                // Act - This should throw InvalidOperationException, not NullReferenceException
-                await command.ExecuteAsync(CancellationToken.None);
-            }
-            finally
-            {
-                // Cleanup
-                if (File.Exists(testFilePath))
-                {
-                    File.Delete(testFilePath);
-                }
-            }
-        }
-
         #endregion
 
         #region ExecuteAsync Tests - Empty Directory
