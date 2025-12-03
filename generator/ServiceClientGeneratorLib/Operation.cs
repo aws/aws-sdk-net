@@ -352,34 +352,54 @@ namespace ServiceClientGenerator
             }
         }
 
-        private IList<Member> _requestPayloadFlattenMembers;
+        //private IList<Member> _requestPayloadFlattenMembers;
 
-        /// <summary>
-        /// Contains the list of members of the flattened RequestPayloadMember if the RequestPayloadMember
-        /// has been flattened
-        /// </summary>
-        public IList<Member> RequestPayloadFlattenMembers
-        {
-            get
-            {
-                if (_requestPayloadFlattenMembers == null)
-                {
-                    IList<Member> map = new List<Member>();
-                    if (this.model.Customizations.FlattenShapes(this.RequestStructure.Name).Contains(this.RequestPayloadMember.ModeledName))
-                    {
-                        JsonData flattenMemberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][this.data[Shape.MembersKey][this.RequestPayloadMember.ModeledName][ServiceModel.ShapeKey].ToString()];
-                        foreach (KeyValuePair<string, JsonData> kvp in flattenMemberShape[Shape.MembersKey])
-                        {
-                            if (this.model.Customizations.IsExcludedProperty(kvp.Key, this.Name))
-                                continue;
-                            map.Add(new Member(this.model, this.RequestPayloadMember.Shape, kvp.Key, kvp.Key, kvp.Value, null));
-                        }
-                        _requestPayloadFlattenMembers = map;
-                    }
-                }
-                return _requestPayloadFlattenMembers;
-            }
-        }
+        ///// <summary>
+        ///// Contains the list of members of the flattened RequestPayloadMember if the RequestPayloadMember
+        ///// has been flattened
+        ///// </summary>
+        //public IList<Member> RequestPayloadFlattenMembers
+        //{
+        //    get
+        //    {
+        //        if (_requestPayloadFlattenMembers == null)
+        //        {
+        //            IList<Member> map = new List<Member>();
+        //            if (this.model.Customizations.FlattenShapes(this.RequestStructure.Name).Contains(this.RequestPayloadMember.ModeledName))
+        //            {
+        //                JsonData flattenMemberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][this.data[Shape.MembersKey][this.RequestPayloadMember.ModeledName][ServiceModel.ShapeKey].ToString()];
+        //                foreach (KeyValuePair<string, JsonData> kvp in flattenMemberShape[Shape.MembersKey])
+        //                {
+        //                    if (this.model.Customizations.IsExcludedProperty(kvp.Key, this.Name))
+        //                        continue;
+        //                    // while the "type" is not a simplr type keep adding. so we flatten everything..
+        //                    string shapeName = kvp.Value["shape"].ToString();
+        //                    var shapeStack = new Stack<JsonData>();
+        //                    shapeStack.Push(kvp.Value);
+        //                    while (shapeStack.Count > 0)
+        //                    {
+        //                        var currentShape = shapeStack.Pop();
+        //                        // if currentShape is primitive. just add it to the map.
+        //                        //else it's not a primitive, so we need to get to the leaf nodes, add it to the stack
+        //                        if (Shape.PrimitiveTypeNames.Keys.Contains(this.model.DocumentRoot[ServiceModel.ShapesKey][currentShape["shape"].ToString()]["type"].ToString()))
+        //                        {
+        //                            map.Add(new Member(this.model, this.RequestPayloadMember.Shape, kvp.Key, kvp.Key, kvp.Value, null));
+        //                        }
+        //                        else
+        //                        {
+        //                            foreach (KeyValuePair<string,JsonData> shapeKvp in this.model.DocumentRoot[ServiceModel.ShapesKey][currentShape["shape"].ToString()][Shape.MembersKey])
+        //                            {
+        //                                shapeStack.Push(shapeKvp.Value);
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //                _requestPayloadFlattenMembers = map;
+        //            }
+        //        }
+        //        return _requestPayloadFlattenMembers;
+        //    }
+        //}
 
         /// <summary>
         /// The response payload member, null if one does not exist.

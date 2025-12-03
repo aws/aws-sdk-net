@@ -12,55 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the RestoreObject response metadata.
-    /// The RestoreObject operation has a void result type.
+    /// This is the response object from the RestoreObject operation.
     /// </summary>
     public partial class RestoreObjectResponse : AmazonWebServiceResponse
     {
-        private RequestCharged requestCharged;
-        private string restoreOutputPath;
+        private RequestCharged _requestCharged;
+        private string _restoreOutputPath;
 
         /// <summary>
-        /// If present, indicates that the requester was successfully charged for the request.
+        /// Gets and sets the property RequestCharged.
         /// </summary>
         public RequestCharged RequestCharged
         {
-            get { return this.requestCharged; }
-            set { this.requestCharged = value; }
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
         }
 
-        /// <summary>
-        /// Checks to see if RequestCharged is set.
-        /// </summary>
-        /// <returns>true, if RequestCharged property is set.</returns>
+        // Check to see if RequestCharged property is set
         internal bool IsSetRequestCharged()
         {
-            return requestCharged != null;
+            return this._requestCharged != null;
         }
 
         /// <summary>
-        /// Indicates the path in the provided S3 output location where Select results will be restored to.
+        /// Gets and sets the property RestoreOutputPath. 
+        /// <para>
+        /// Indicates the path in the provided S3 output location where Select results will be
+        /// restored to.
+        /// </para>
         /// </summary>
         public string RestoreOutputPath
         {
-            get { return this.restoreOutputPath; }
-            set { this.restoreOutputPath = value; }
+            get { return this._restoreOutputPath; }
+            set { this._restoreOutputPath = value; }
         }
 
+        // Check to see if RestoreOutputPath property is set
         internal bool IsSetRestoreOutputPath()
         {
-            return this.RestoreOutputPath != null;
+            return this._restoreOutputPath != null;
         }
+
     }
 }
-    
