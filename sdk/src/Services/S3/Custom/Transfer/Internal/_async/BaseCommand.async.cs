@@ -13,12 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.S3.Model;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -30,24 +24,5 @@ namespace Amazon.S3.Transfer.Internal
         /// Executes the command and returns a typed response
         /// </summary>
         public abstract Task<TResponse> ExecuteAsync(CancellationToken cancellationToken);
-
-        protected static async Task ExecuteCommandAsync<T>(BaseCommand<T> command, CancellationTokenSource internalCts) where T : class
-        {
-            try
-            {
-                await command.ExecuteAsync(internalCts.Token)
-                    .ConfigureAwait(continueOnCapturedContext: false);
-            }
-            catch (Exception exception)
-            {
-                if (!(exception is OperationCanceledException))
-                {
-                    // Cancel scheduling any more tasks.
-                    // Cancel other upload requests.
-                    internalCts.Cancel();
-                }
-                throw;
-            }
-        }
     }
 }

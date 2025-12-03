@@ -31,7 +31,6 @@ using System.Threading;
 using Amazon.S3.Util;
 using Amazon.Util.Internal;
 using Amazon.Runtime;
-using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {

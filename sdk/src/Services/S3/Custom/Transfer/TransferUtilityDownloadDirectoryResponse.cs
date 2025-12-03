@@ -15,7 +15,6 @@
 
 using System;
 using System.Collections.Generic;
-using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer
 {
