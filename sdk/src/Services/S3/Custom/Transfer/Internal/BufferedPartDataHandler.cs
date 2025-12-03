@@ -99,7 +99,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             if (partNumber == _partBufferManager.NextExpectedPartNumber)
             {
-                await ProcessStreamingPartAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
+                ProcessStreamingPart(partNumber, response, cancellationToken);
             }
             else
             {
@@ -129,7 +129,7 @@ namespace Amazon.S3.Transfer.Internal
         /// - If constructor succeeds but AddBufferAsync fails: StreamingDataSource.Dispose() handles the response
         /// - If AddBufferAsync succeeds: Buffer manager owns everything and will clean up
         /// </remarks>
-        private async Task ProcessStreamingPartAsync(
+        private void ProcessStreamingPart(
             int partNumber,
             GetObjectResponse response, 
             CancellationToken cancellationToken)
