@@ -417,6 +417,12 @@ if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.Owning
             return this.Is<#=member.PropertyName#>Set; 
 <#
                     }
+                    else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlIsSetCode.Count > 0)
+                    {
+#>
+<#WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);#>
+<#
+                    }
                     else if (member.IsNullable)
                     {
 #>
@@ -466,7 +472,6 @@ if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.Owning
 #>
             return this.<#=member.VariableName#> != null;
 <#
-                        }
                     }
 #>
         }

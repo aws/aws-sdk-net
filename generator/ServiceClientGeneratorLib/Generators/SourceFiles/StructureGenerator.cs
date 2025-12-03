@@ -1205,6 +1205,22 @@ if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.Owning
             #line 418 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
+                    else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlIsSetCode.Count > 0)
+                    {
+
+            
+            #line default
+            #line hidden
+            
+            #line 421 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);
+            
+            #line default
+            #line hidden
+            
+            #line 422 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+
+                    }
                     else if (member.IsNullable)
                     {
 
@@ -1340,7 +1356,6 @@ if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.Owning
             
             #line 468 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
-                        }
                     }
 
             

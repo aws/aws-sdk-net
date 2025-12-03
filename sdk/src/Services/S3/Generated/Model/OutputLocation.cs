@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,32 +13,46 @@
  * permissions and limitations under the License.
  */
 
-using System.Xml;
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Describes the location where the restore job's output is stored.
     /// </summary>
-    public class OutputLocation
+    public partial class OutputLocation
     {
-        /// <summary>
-        /// Describes an S3 location that will receive the results of the restore request.
-        /// </summary>
-        public S3Location S3 { get; set; }
+        private S3Location _s3;
 
+        /// <summary>
+        /// Gets and sets the property S3. 
+        /// <para>
+        /// Describes an S3 location that will receive the results of the restore request.
+        /// </para>
+        /// </summary>
+        public S3Location S3
+        {
+            get { return this._s3; }
+            set { this._s3 = value; }
+        }
+
+        // Check to see if S3 property is set
         internal bool IsSetS3()
         {
-            return this.S3 != null;
+            return this._s3 != null;
         }
 
-        internal void Marshall(string propertyName, XmlWriter xmlWriter)
-        {
-            xmlWriter.WriteStartElement(propertyName);
-            {
-                S3.Marshall("S3", xmlWriter);
-            }
-            xmlWriter.WriteEndElement();
-        }
     }
 }
