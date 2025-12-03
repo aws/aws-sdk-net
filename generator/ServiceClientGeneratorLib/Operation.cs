@@ -352,35 +352,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        private IList<Member> _requestPayloadFlattenMembers;
-
-        /// <summary>
-        /// Contains the list of members of the flattened RequestPayloadMember if the RequestPayloadMember
-        /// has been flattened
-        /// </summary>
-        public IList<Member> RequestPayloadFlattenMembers
-        {
-            get
-            {
-                if (_requestPayloadFlattenMembers == null)
-                {
-                    IList<Member> map = new List<Member>();
-                    if (this.model.Customizations.FlattenShapes(this.RequestStructure.Name).Contains(this.RequestPayloadMember.ModeledName))
-                    {
-                        JsonData flattenMemberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][this.data[Shape.MembersKey][this.RequestPayloadMember.ModeledName][ServiceModel.ShapeKey].ToString()];
-                        foreach (KeyValuePair<string, JsonData> kvp in flattenMemberShape[Shape.MembersKey])
-                        {
-                            if (this.model.Customizations.IsExcludedProperty(kvp.Key, this.Name))
-                                continue;
-                            map.Add(new Member(this.model, this.RequestPayloadMember.Shape, kvp.Key, kvp.Key, kvp.Value, null));
-                        }
-                        _requestPayloadFlattenMembers = map;
-                    }
-                }
-                return _requestPayloadFlattenMembers;
-            }
-        }
-
         /// <summary>
         /// The response payload member, null if one does not exist.
         /// </summary>
