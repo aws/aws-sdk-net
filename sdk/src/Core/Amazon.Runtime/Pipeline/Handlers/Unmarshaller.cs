@@ -207,6 +207,14 @@ namespace Amazon.Runtime.Internal
                 if (response.ResponseMetadata != null)
                 {
                     requestContext.Metrics.AddProperty(Metric.AWSRequestID, response.ResponseMetadata.RequestId);
+
+                    var userAgentHeaderKey = requestContext.ClientConfig.UseAlternateUserAgentHeader
+                        ? HeaderKeys.XAmzUserAgentHeader : HeaderKeys.UserAgentHeader;
+
+                    if (requestContext.Request.Headers.ContainsKey(userAgentHeaderKey))
+                    {
+                        response.ResponseMetadata.Metadata.Add(userAgentHeaderKey, requestContext.Request.Headers[userAgentHeaderKey]);
+                    }
                 }
 
                 context.ValidateCRC32IfAvailable();
