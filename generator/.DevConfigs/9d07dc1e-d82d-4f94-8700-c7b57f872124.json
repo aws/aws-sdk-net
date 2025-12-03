@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "minor",
       "changeLogMessages": [
-      "Added DownloadDirectoryInitiatedEvent, DownloadDirectoryCompletedEvent, and DownloadDirectoryFailedEvent for Amazon.S3.Transfer.TransferUtility.DownloadDirectory."
+        "Added UploadDirectoryInitiatedEvent, UploadDirectoryCompletedEvent, and UploadDirectoryFailedEvent for Amazon.S3.Transfer.TransferUtility.UploadDirectory."
       ]
     }
   ]
