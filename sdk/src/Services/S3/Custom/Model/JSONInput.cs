@@ -27,22 +27,15 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Specifies JSON as object's input serialization format.
     /// </summary>
-    public class JSONInput
+    public partial class JSONInput
     {
-        /// <summary>
-        /// The type of JSON. Valid values: Document, Lines.
-        /// </summary>
-        public JsonType JsonType { get; set; }
-
-        internal bool IsSetType() => JsonType != null;
-
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);
 
-            if (IsSetType())
+            if (IsSetJsonType())
             {
-                xmlWriter.WriteElementString("Type", S3Transforms.ToXmlStringValue(JsonType.Value));
+                xmlWriter.WriteElementString("Type", S3Transforms.ToXmlStringValue(_jsonType));
             }
 
             xmlWriter.WriteEndElement();
