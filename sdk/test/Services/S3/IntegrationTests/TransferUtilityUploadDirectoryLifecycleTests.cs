@@ -59,11 +59,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     // Verify that total files and bytes are provided in initiated event
                     Assert.IsTrue(args.TotalFiles > 0, "TotalFiles should be greater than 0");
                     Assert.IsTrue(args.TotalBytes > 0, "TotalBytes should be greater than 0");
-                    
-                    Console.WriteLine($"UploadDirectoryInitiated - BucketName: {args.Request.BucketName}");
-                    Console.WriteLine($"UploadDirectoryInitiated - Directory: {args.Request.Directory}");
-                    Console.WriteLine($"UploadDirectoryInitiated - TotalFiles: {args.TotalFiles}");
-                    Console.WriteLine($"UploadDirectoryInitiated - TotalBytes: {args.TotalBytes}");
+
                 }
             };
             UploadDirectoryWithLifecycleEvents(10 * MEG_SIZE, eventValidator, null, null);
@@ -91,11 +87,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(args.TransferredFiles, args.Response.ObjectsUploaded, "Response ObjectsUploaded should match TransferredFiles");
                     Assert.AreEqual(0, args.Response.ObjectsFailed, "No objects should have failed");
                     Assert.AreEqual(DirectoryResult.Success, args.Response.Result, "Result should be Success");
-                    
-                    Console.WriteLine($"UploadDirectoryCompleted - TotalFiles: {args.TotalFiles}");
-                    Console.WriteLine($"UploadDirectoryCompleted - TransferredFiles: {args.TransferredFiles}");
-                    Console.WriteLine($"UploadDirectoryCompleted - TotalBytes: {args.TotalBytes}");
-                    Console.WriteLine($"UploadDirectoryCompleted - TransferredBytes: {args.TransferredBytes}");
+                
                 }
             };
             UploadDirectoryWithLifecycleEvents(12 * MEG_SIZE, null, eventValidator, null);
@@ -111,17 +103,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Validate = (args) =>
                 {
                     Assert.IsNotNull(args.Request);
-                    
-                    // The UploadDirectoryFailedEventArgs contains transfer progress information
-                    // but does not contain exception details (unlike individual object failures)
-                    Console.WriteLine($"UploadDirectoryFailed - Request: {args.Request.BucketName}");
-                    Console.WriteLine($"UploadDirectoryFailed - Directory: {args.Request.Directory}");
-                    
-                    // Progress information may or may not be available depending on when the failure occurred
-                    Console.WriteLine($"UploadDirectoryFailed - TotalFiles: {args.TotalFiles}");
-                    Console.WriteLine($"UploadDirectoryFailed - TransferredFiles: {args.TransferredFiles}");
-                    Console.WriteLine($"UploadDirectoryFailed - TotalBytes: {args.TotalBytes}");
-                    Console.WriteLine($"UploadDirectoryFailed - TransferredBytes: {args.TransferredBytes}");
                 }
             };
             
