@@ -48,6 +48,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDatasetSource())
+            {
+                context.Writer.WritePropertyName("DatasetSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DatasetSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.DatasetSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFileSystemDataSource())
             {
                 context.Writer.WritePropertyName("FileSystemDataSource");

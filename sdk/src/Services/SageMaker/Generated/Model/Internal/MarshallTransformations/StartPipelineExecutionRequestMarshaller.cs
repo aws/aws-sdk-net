@@ -80,6 +80,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetMlflowExperimentName())
+                {
+                    context.Writer.WritePropertyName("MlflowExperimentName");
+                    context.Writer.Write(publicRequest.MlflowExperimentName);
+                }
+
                 if(publicRequest.IsSetParallelismConfiguration())
                 {
                     context.Writer.WritePropertyName("ParallelismConfiguration");

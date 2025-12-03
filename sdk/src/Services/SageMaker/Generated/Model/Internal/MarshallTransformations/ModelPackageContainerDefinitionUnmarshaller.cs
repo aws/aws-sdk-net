@@ -72,6 +72,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalS3DataSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BaseModel", targetDepth))
+                {
+                    var unmarshaller = BaseModelUnmarshaller.Instance;
+                    unmarshalledObject.BaseModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContainerHostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,6 +112,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageDigest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsCheckpoint", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsCheckpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModelDataETag", targetDepth))

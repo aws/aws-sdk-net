@@ -54,7 +54,9 @@ namespace Amazon.SageMaker.Model
         private string _labelingJobArn;
         private DateTime? _lastModifiedTime;
         private ModelArtifacts _modelArtifacts;
+        private ModelPackageConfig _modelPackageConfig;
         private OutputDataConfig _outputDataConfig;
+        private string _outputModelPackageArn;
         private ProfilerConfig _profilerConfig;
         private ResourceConfig _resourceConfig;
         private RetryStrategy _retryStrategy;
@@ -448,6 +450,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelPackageConfig. 
+        /// <para>
+        ///  The model package configuration. 
+        /// </para>
+        /// </summary>
+        public ModelPackageConfig ModelPackageConfig
+        {
+            get { return this._modelPackageConfig; }
+            set { this._modelPackageConfig = value; }
+        }
+
+        // Check to see if ModelPackageConfig property is set
+        internal bool IsSetModelPackageConfig()
+        {
+            return this._modelPackageConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The S3 path where model artifacts that you configured when creating the job are stored.
@@ -464,6 +484,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputModelPackageArn. 
+        /// <para>
+        ///  The output model package Amazon Resource Name (ARN) that contains model weights or
+        /// checkpoint. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string OutputModelPackageArn
+        {
+            get { return this._outputModelPackageArn; }
+            set { this._outputModelPackageArn = value; }
+        }
+
+        // Check to see if OutputModelPackageArn property is set
+        internal bool IsSetOutputModelPackageArn()
+        {
+            return this._outputModelPackageArn != null;
         }
 
         /// <summary>

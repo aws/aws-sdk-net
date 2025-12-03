@@ -167,6 +167,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelPackageArn);
                 }
 
+                if(publicRequest.IsSetModelPackageRegistrationType())
+                {
+                    context.Writer.WritePropertyName("ModelPackageRegistrationType");
+                    context.Writer.Write(publicRequest.ModelPackageRegistrationType);
+                }
+
                 if(publicRequest.IsSetSourceUri())
                 {
                     context.Writer.WritePropertyName("SourceUri");

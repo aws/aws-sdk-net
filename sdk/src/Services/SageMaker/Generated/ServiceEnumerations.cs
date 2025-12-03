@@ -5797,6 +5797,64 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type CustomizationTechnique.
+    /// </summary>
+    public class CustomizationTechnique : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DPO for CustomizationTechnique
+        /// </summary>
+        public static readonly CustomizationTechnique DPO = new CustomizationTechnique("DPO");
+        /// <summary>
+        /// Constant RLAIF for CustomizationTechnique
+        /// </summary>
+        public static readonly CustomizationTechnique RLAIF = new CustomizationTechnique("RLAIF");
+        /// <summary>
+        /// Constant RLVR for CustomizationTechnique
+        /// </summary>
+        public static readonly CustomizationTechnique RLVR = new CustomizationTechnique("RLVR");
+        /// <summary>
+        /// Constant SFT for CustomizationTechnique
+        /// </summary>
+        public static readonly CustomizationTechnique SFT = new CustomizationTechnique("SFT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomizationTechnique(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomizationTechnique FindValue(string value)
+        {
+            return FindValue<CustomizationTechnique>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomizationTechnique(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataDistributionType.
     /// </summary>
     public class DataDistributionType : ConstantClass
@@ -6744,6 +6802,60 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationType.
+    /// </summary>
+    public class EvaluationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BenchmarkEvaluation for EvaluationType
+        /// </summary>
+        public static readonly EvaluationType BenchmarkEvaluation = new EvaluationType("BenchmarkEvaluation");
+        /// <summary>
+        /// Constant CustomScorerEvaluation for EvaluationType
+        /// </summary>
+        public static readonly EvaluationType CustomScorerEvaluation = new EvaluationType("CustomScorerEvaluation");
+        /// <summary>
+        /// Constant LLMAJEvaluation for EvaluationType
+        /// </summary>
+        public static readonly EvaluationType LLMAJEvaluation = new EvaluationType("LLMAJEvaluation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationType FindValue(string value)
+        {
+            return FindValue<EvaluationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationType(string value)
         {
             return FindValue(value);
         }
@@ -12275,6 +12387,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ModelPackageRegistrationType.
+    /// </summary>
+    public class ModelPackageRegistrationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Logged for ModelPackageRegistrationType
+        /// </summary>
+        public static readonly ModelPackageRegistrationType Logged = new ModelPackageRegistrationType("Logged");
+        /// <summary>
+        /// Constant Registered for ModelPackageRegistrationType
+        /// </summary>
+        public static readonly ModelPackageRegistrationType Registered = new ModelPackageRegistrationType("Registered");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelPackageRegistrationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelPackageRegistrationType FindValue(string value)
+        {
+            return FindValue<ModelPackageRegistrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelPackageRegistrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelPackageSortBy.
     /// </summary>
     public class ModelPackageSortBy : ConstantClass
@@ -14334,6 +14496,52 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PartnerAppType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Peft.
+    /// </summary>
+    public class Peft : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LORA for Peft
+        /// </summary>
+        public static readonly Peft LORA = new Peft("LORA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Peft(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Peft FindValue(string value)
+        {
+            return FindValue<Peft>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Peft(string value)
         {
             return FindValue(value);
         }
@@ -18822,6 +19030,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecondaryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServerlessJobType.
+    /// </summary>
+    public class ServerlessJobType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Evaluation for ServerlessJobType
+        /// </summary>
+        public static readonly ServerlessJobType Evaluation = new ServerlessJobType("Evaluation");
+        /// <summary>
+        /// Constant FineTuning for ServerlessJobType
+        /// </summary>
+        public static readonly ServerlessJobType FineTuning = new ServerlessJobType("FineTuning");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServerlessJobType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServerlessJobType FindValue(string value)
+        {
+            return FindValue<ServerlessJobType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServerlessJobType(string value)
         {
             return FindValue(value);
         }

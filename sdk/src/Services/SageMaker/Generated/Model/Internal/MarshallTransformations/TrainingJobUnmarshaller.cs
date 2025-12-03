@@ -186,10 +186,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelArtifacts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelPackageConfig", targetDepth))
+                {
+                    var unmarshaller = ModelPackageConfigUnmarshaller.Instance;
+                    unmarshalledObject.ModelPackageConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputDataConfig", targetDepth))
                 {
                     var unmarshaller = OutputDataConfigUnmarshaller.Instance;
                     unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutputModelPackageArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputModelPackageArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProfilerConfig", targetDepth))

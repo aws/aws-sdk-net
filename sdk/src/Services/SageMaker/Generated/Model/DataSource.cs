@@ -34,8 +34,27 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DataSource
     {
+        private DatasetSource _datasetSource;
         private FileSystemDataSource _fileSystemDataSource;
         private S3DataSource _s3DataSource;
+
+        /// <summary>
+        /// Gets and sets the property DatasetSource. 
+        /// <para>
+        ///  The dataset resource that's associated with a channel. 
+        /// </para>
+        /// </summary>
+        public DatasetSource DatasetSource
+        {
+            get { return this._datasetSource; }
+            set { this._datasetSource = value; }
+        }
+
+        // Check to see if DatasetSource property is set
+        internal bool IsSetDatasetSource()
+        {
+            return this._datasetSource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FileSystemDataSource. 

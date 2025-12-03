@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private AlgorithmSpecification _algorithmSpecification;
         private string _autoMLJobArn;
         private int? _billableTimeInSeconds;
+        private long? _billableTokenCount;
         private CheckpointConfig _checkpointConfig;
         private DateTime? _creationTime;
         private DebugHookConfig _debugHookConfig;
@@ -54,18 +55,24 @@ namespace Amazon.SageMaker.Model
         private List<Channel> _inputDataConfig = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
         private string _labelingJobArn;
         private DateTime? _lastModifiedTime;
+        private MlflowConfig _mlflowConfig;
+        private MlflowDetails _mlflowDetails;
         private ModelArtifacts _modelArtifacts;
+        private ModelPackageConfig _modelPackageConfig;
         private OutputDataConfig _outputDataConfig;
+        private string _outputModelPackageArn;
         private ProfilerConfig _profilerConfig;
         private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = AWSConfigs.InitializeCollections ? new List<ProfilerRuleConfiguration>() : null;
         private List<ProfilerRuleEvaluationStatus> _profilerRuleEvaluationStatuses = AWSConfigs.InitializeCollections ? new List<ProfilerRuleEvaluationStatus>() : null;
         private ProfilingStatus _profilingStatus;
+        private TrainingProgressInfo _progressInfo;
         private RemoteDebugConfig _remoteDebugConfig;
         private ResourceConfig _resourceConfig;
         private RetryStrategy _retryStrategy;
         private string _roleArn;
         private SecondaryStatus _secondaryStatus;
         private List<SecondaryStatusTransition> _secondaryStatusTransitions = AWSConfigs.InitializeCollections ? new List<SecondaryStatusTransition>() : null;
+        private ServerlessJobConfig _serverlessJobConfig;
         private StoppingCondition _stoppingCondition;
         private TensorBoardOutputConfig _tensorBoardOutputConfig;
         private DateTime? _trainingEndTime;
@@ -145,6 +152,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetBillableTimeInSeconds()
         {
             return this._billableTimeInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillableTokenCount. 
+        /// <para>
+        ///  The billable token count for eligible serverless training jobs. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long BillableTokenCount
+        {
+            get { return this._billableTokenCount.GetValueOrDefault(); }
+            set { this._billableTokenCount = value; }
+        }
+
+        // Check to see if BillableTokenCount property is set
+        internal bool IsSetBillableTokenCount()
+        {
+            return this._billableTokenCount.HasValue; 
         }
 
         /// <summary>
@@ -476,6 +502,42 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MlflowConfig. 
+        /// <para>
+        ///  The MLflow configuration using SageMaker managed MLflow. 
+        /// </para>
+        /// </summary>
+        public MlflowConfig MlflowConfig
+        {
+            get { return this._mlflowConfig; }
+            set { this._mlflowConfig = value; }
+        }
+
+        // Check to see if MlflowConfig property is set
+        internal bool IsSetMlflowConfig()
+        {
+            return this._mlflowConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlflowDetails. 
+        /// <para>
+        ///  The MLflow details of this job. 
+        /// </para>
+        /// </summary>
+        public MlflowDetails MlflowDetails
+        {
+            get { return this._mlflowDetails; }
+            set { this._mlflowDetails = value; }
+        }
+
+        // Check to see if MlflowDetails property is set
+        internal bool IsSetMlflowDetails()
+        {
+            return this._mlflowDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelArtifacts. 
         /// <para>
         /// Information about the Amazon S3 location that is configured for storing model artifacts.
@@ -496,6 +558,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelPackageConfig. 
+        /// <para>
+        ///  The configuration for the model package. 
+        /// </para>
+        /// </summary>
+        public ModelPackageConfig ModelPackageConfig
+        {
+            get { return this._modelPackageConfig; }
+            set { this._modelPackageConfig = value; }
+        }
+
+        // Check to see if ModelPackageConfig property is set
+        internal bool IsSetModelPackageConfig()
+        {
+            return this._modelPackageConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The S3 path where model artifacts that you configured when creating the job are stored.
@@ -512,6 +592,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputModelPackageArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the output model package containing model weights
+        /// or checkpoints. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string OutputModelPackageArn
+        {
+            get { return this._outputModelPackageArn; }
+            set { this._outputModelPackageArn = value; }
+        }
+
+        // Check to see if OutputModelPackageArn property is set
+        internal bool IsSetOutputModelPackageArn()
+        {
+            return this._outputModelPackageArn != null;
         }
 
         /// <summary>
@@ -584,6 +684,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProfilingStatus()
         {
             return this._profilingStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProgressInfo. 
+        /// <para>
+        ///  The Serverless training job progress information. 
+        /// </para>
+        /// </summary>
+        public TrainingProgressInfo ProgressInfo
+        {
+            get { return this._progressInfo; }
+            set { this._progressInfo = value; }
+        }
+
+        // Check to see if ProgressInfo property is set
+        internal bool IsSetProgressInfo()
+        {
+            return this._progressInfo != null;
         }
 
         /// <summary>
@@ -677,6 +795,11 @@ namespace Amazon.SageMaker.Model
         ///  <dl> <dt>InProgress</dt> <dd> <ul> <li> 
         /// <para>
         ///  <c>Starting</c> - Starting the training job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Pending</c> - The training job is waiting for compute capacity or compute resource
+        /// provision.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -776,6 +899,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSecondaryStatusTransitions()
         {
             return this._secondaryStatusTransitions != null && (this._secondaryStatusTransitions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessJobConfig. 
+        /// <para>
+        ///  The configuration for serverless training jobs. 
+        /// </para>
+        /// </summary>
+        public ServerlessJobConfig ServerlessJobConfig
+        {
+            get { return this._serverlessJobConfig; }
+            set { this._serverlessJobConfig = value; }
+        }
+
+        // Check to see if ServerlessJobConfig property is set
+        internal bool IsSetServerlessJobConfig()
+        {
+            return this._serverlessJobConfig != null;
         }
 
         /// <summary>

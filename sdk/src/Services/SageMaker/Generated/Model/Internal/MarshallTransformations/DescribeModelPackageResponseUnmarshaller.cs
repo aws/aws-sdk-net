@@ -172,6 +172,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ModelPackageName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelPackageRegistrationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelPackageRegistrationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelPackageStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private ModelPackageModelCard _modelCard;
         private ModelLifeCycle _modelLifeCycle;
         private string _modelPackageArn;
+        private ModelPackageRegistrationType _modelPackageRegistrationType;
         private string _sourceUri;
 
         /// <summary>
@@ -257,6 +258,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelPackageArn()
         {
             return this._modelPackageArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageRegistrationType. 
+        /// <para>
+        ///  The package registration type of the model package input. 
+        /// </para>
+        /// </summary>
+        public ModelPackageRegistrationType ModelPackageRegistrationType
+        {
+            get { return this._modelPackageRegistrationType; }
+            set { this._modelPackageRegistrationType = value; }
+        }
+
+        // Check to see if ModelPackageRegistrationType property is set
+        internal bool IsSetModelPackageRegistrationType()
+        {
+            return this._modelPackageRegistrationType != null;
         }
 
         /// <summary>
