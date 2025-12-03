@@ -70,6 +70,24 @@ namespace Amazon.S3.Transfer
                 ExceptionDispatchInfo.Capture(e.InnerException).Throw();
             }
         }
+
+        /// <inheritdoc/>
+        public TransferUtilityUploadDirectoryResponse UploadDirectoryWithResponse(string directory, string bucketName)
+        {
+            return UploadDirectoryWithResponseAsync(directory, bucketName).GetAwaiter().GetResult();
+        }
+
+        /// <inheritdoc/>
+        public TransferUtilityUploadDirectoryResponse UploadDirectoryWithResponse(string directory, string bucketName, string searchPattern, SearchOption searchOption)
+        {
+            return UploadDirectoryWithResponseAsync(directory, bucketName, searchPattern, searchOption).GetAwaiter().GetResult();
+        }
+
+        /// <inheritdoc/>
+        public TransferUtilityUploadDirectoryResponse UploadDirectoryWithResponse(TransferUtilityUploadDirectoryRequest request)
+        {
+            return UploadDirectoryWithResponseAsync(request).GetAwaiter().GetResult();
+        }
         #endregion
 
         #region Upload
@@ -130,57 +148,25 @@ namespace Amazon.S3.Transfer
         /// <inheritdoc/>
         public TransferUtilityUploadResponse UploadWithResponse(string filePath, string bucketName)
         {
-            try
-            {
-                return UploadWithResponseAsync(filePath, bucketName).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return UploadWithResponseAsync(filePath, bucketName).GetAwaiter().GetResult();
         }
 
         /// <inheritdoc/>
         public TransferUtilityUploadResponse UploadWithResponse(string filePath, string bucketName, string key)
         {
-            try
-            {
-                return UploadWithResponseAsync(filePath, bucketName, key).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return UploadWithResponseAsync(filePath, bucketName, key).GetAwaiter().GetResult();
         }
 
         /// <inheritdoc/>
         public TransferUtilityUploadResponse UploadWithResponse(Stream stream, string bucketName, string key)
         {
-            try
-            {
-                return UploadWithResponseAsync(stream, bucketName, key).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return UploadWithResponseAsync(stream, bucketName, key).GetAwaiter().GetResult();
         }
 
         /// <inheritdoc/>
         public TransferUtilityUploadResponse UploadWithResponse(TransferUtilityUploadRequest request)
         {
-            try
-            {
-                return UploadWithResponseAsync(request).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return UploadWithResponseAsync(request).GetAwaiter().GetResult();
         }
 
         #endregion
@@ -218,29 +204,13 @@ namespace Amazon.S3.Transfer
         /// <inheritdoc/>
         public TransferUtilityOpenStreamResponse OpenStreamWithResponse(string bucketName, string key)
         {
-            try
-            {
-                return OpenStreamWithResponseAsync(bucketName, key).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return OpenStreamWithResponseAsync(bucketName, key).GetAwaiter().GetResult();
         }
 
         /// <inheritdoc/>
         public TransferUtilityOpenStreamResponse OpenStreamWithResponse(TransferUtilityOpenStreamRequest request)
         {
-            try
-            {
-                return OpenStreamWithResponseAsync(request).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return OpenStreamWithResponseAsync(request).GetAwaiter().GetResult();
         }
 
         #endregion
@@ -275,29 +245,13 @@ namespace Amazon.S3.Transfer
         /// <inheritdoc/>
         public TransferUtilityDownloadResponse DownloadWithResponse(string filePath, string bucketName, string key)
         {
-            try
-            {
-                return DownloadWithResponseAsync(filePath, bucketName, key).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return DownloadWithResponseAsync(filePath, bucketName, key).GetAwaiter().GetResult();
         }
 
         /// <inheritdoc/>
         public TransferUtilityDownloadResponse DownloadWithResponse(TransferUtilityDownloadRequest request)
         {
-            try
-            {
-                return DownloadWithResponseAsync(request).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return DownloadWithResponseAsync(request).GetAwaiter().GetResult();
         }
         #endregion
 
@@ -331,29 +285,13 @@ namespace Amazon.S3.Transfer
         /// <inheritdoc/>
         public TransferUtilityDownloadDirectoryResponse DownloadDirectoryWithResponse(string bucketName, string s3Directory, string localDirectory)
         {
-            try
-            {
-                return DownloadDirectoryWithResponseAsync(bucketName, s3Directory, localDirectory).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return DownloadDirectoryWithResponseAsync(bucketName, s3Directory, localDirectory).GetAwaiter().GetResult();
         }
 
         /// <inheritdoc/>
         public TransferUtilityDownloadDirectoryResponse DownloadDirectoryWithResponse(TransferUtilityDownloadDirectoryRequest request)
         {
-            try
-            {
-                return DownloadDirectoryWithResponseAsync(request).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return DownloadDirectoryWithResponseAsync(request).GetAwaiter().GetResult();
         }
         #endregion
 

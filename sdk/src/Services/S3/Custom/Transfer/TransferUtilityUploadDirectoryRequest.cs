@@ -56,6 +56,33 @@ namespace Amazon.S3.Transfer
         }
         
         /// <summary>
+        /// Occurs when the upload directory operation is initiated.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised before any files are uploaded, providing information about
+        /// the total number of files and bytes that will be uploaded.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryInitiatedEventArgs> UploadDirectoryInitiatedEvent;
+
+        /// <summary>
+        /// Occurs when the upload directory operation completes successfully.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised after all files have been processed (successfully or with failures),
+        /// providing the final response and statistics.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryCompletedEventArgs> UploadDirectoryCompletedEvent;
+
+        /// <summary>
+        /// Occurs when the upload directory operation fails.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised when the entire operation fails (not individual file failures).
+        /// Individual file failures are reported through <see cref="ObjectUploadFailedEvent"/>.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryFailedEventArgs> UploadDirectoryFailedEvent;
+
+        /// <summary>
         /// Occurs when an individual object fails to upload during an UploadDirectory operation.
         /// </summary>
         /// <remarks>
@@ -71,6 +98,33 @@ namespace Amazon.S3.Transfer
         /// };
         /// </example>
         public event EventHandler<ObjectUploadFailedEventArgs> ObjectUploadFailedEvent;
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryInitiatedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryInitiatedEvent(UploadDirectoryInitiatedEventArgs args)
+        {
+            UploadDirectoryInitiatedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryCompletedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryCompletedEvent(UploadDirectoryCompletedEventArgs args)
+        {
+            UploadDirectoryCompletedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryFailedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryFailedEvent(UploadDirectoryFailedEventArgs args)
+        {
+            UploadDirectoryFailedEvent?.Invoke(this, args);
+        }
 
         /// <summary>
         /// Internal helper used by the transfer implementation to raise the <see cref="ObjectUploadFailedEvent"/>.
@@ -421,6 +475,157 @@ namespace Amazon.S3.Transfer
         public TransferUtilityUploadRequest UploadRequest { get; set; }
     }
     
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryInitiatedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryInitiatedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryInitiatedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="totalFiles">The total number of files to upload.</param>
+        /// <param name="totalBytes">The total number of bytes to upload.</param>
+        internal UploadDirectoryInitiatedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            long totalFiles,
+            long totalBytes)
+        {
+            Request = request;
+            TotalFiles = totalFiles;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files to upload.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes to upload.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryCompletedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryCompletedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryCompletedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="response">The upload directory response.</param>
+        /// <param name="transferredFiles">The number of files successfully uploaded.</param>
+        /// <param name="totalFiles">The total number of files attempted.</param>
+        /// <param name="transferredBytes">The number of bytes transferred.</param>
+        /// <param name="totalBytes">The total number of bytes.</param>
+        internal UploadDirectoryCompletedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            TransferUtilityUploadDirectoryResponse response,
+            long transferredFiles,
+            long totalFiles,
+            long transferredBytes,
+            long totalBytes)
+        {
+            Request = request;
+            Response = response;
+            TransferredFiles = transferredFiles;
+            TotalFiles = totalFiles;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the upload directory response.
+        /// </summary>
+        public TransferUtilityUploadDirectoryResponse Response { get; private set; }
+
+        /// <summary>
+        /// Gets the number of files successfully uploaded.
+        /// </summary>
+        public long TransferredFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files attempted.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the number of bytes transferred.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryFailedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryFailedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryFailedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="transferredFiles">The number of files successfully uploaded before failure.</param>
+        /// <param name="totalFiles">The total number of files attempted.</param>
+        /// <param name="transferredBytes">The number of bytes transferred before failure.</param>
+        /// <param name="totalBytes">The total number of bytes.</param>
+        internal UploadDirectoryFailedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            long transferredFiles,
+            long totalFiles,
+            long transferredBytes,
+            long totalBytes)
+        {
+            Request = request;
+            TransferredFiles = transferredFiles;
+            TotalFiles = totalFiles;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the number of files successfully uploaded before failure.
+        /// </summary>
+        public long TransferredFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files attempted.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the number of bytes transferred before failure.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
     /// <summary>
     /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.ObjectUploadFailedEvent"/>
     /// which is raised when an individual object fails to upload during an

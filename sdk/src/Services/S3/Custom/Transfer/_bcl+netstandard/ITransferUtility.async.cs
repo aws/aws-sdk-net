@@ -145,6 +145,94 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task UploadDirectoryAsync(TransferUtilityUploadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
+        /// <summary>
+        /// 	Uploads files from a specified directory and returns response metadata.
+        /// 	The object key is derived from the file names inside the directory.
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API. The parts will be reassembled as one object in
+        /// 	Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
+        /// <param name="directory">
+        /// 	The source directory, that is, the directory containing the files to upload.
+        /// </param>
+        /// <param name="bucketName">
+        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the files to.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with upload response metadata.</returns>
+        Task<TransferUtilityUploadDirectoryResponse> UploadDirectoryWithResponseAsync(string directory, string bucketName, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// 	Uploads files from a specified directory and returns response metadata.
+        /// 	The object key is derived from the file names inside the directory.
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API. The parts will be reassembled as one object in
+        /// 	Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
+        /// <param name="directory">
+        /// 	The source directory, that is, the directory containing the files to upload.
+        /// </param>
+        /// <param name="bucketName">
+        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the files to.
+        /// </param>
+        /// <param name="searchPattern">
+        /// 	A pattern used to identify the files from the source directory to upload.
+        /// </param>                                                                 
+        /// <param name="searchOption">
+        /// 	A search option that specifies whether to recursively search for files to upload
+        /// 	in subdirectories.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with upload response metadata.</returns>
+        Task<TransferUtilityUploadDirectoryResponse> UploadDirectoryWithResponseAsync(string directory, string bucketName, string searchPattern, SearchOption searchOption, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// 	Uploads files from a specified directory and returns response metadata.
+        /// 	The object key is derived from the file names inside the directory.
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API. The parts will be reassembled as one object in
+        /// 	Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
+        /// <param name="request">
+        /// 	The request that contains all the parameters required to upload a directory.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation with upload response metadata.</returns>
+        Task<TransferUtilityUploadDirectoryResponse> UploadDirectoryWithResponseAsync(TransferUtilityUploadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
         #endregion
 
         #region DownloadDirectory
