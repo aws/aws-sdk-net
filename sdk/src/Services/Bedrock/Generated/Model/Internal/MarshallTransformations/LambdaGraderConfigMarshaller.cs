@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomizationConfig Marshaller
+    /// LambdaGraderConfig Marshaller
     /// </summary>
-    public class CustomizationConfigMarshaller : IRequestMarshaller<CustomizationConfig, JsonMarshallerContext> 
+    public class LambdaGraderConfigMarshaller : IRequestMarshaller<LambdaGraderConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomizationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(LambdaGraderConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDistillationConfig())
+            if(requestObject.IsSetLambdaArn())
             {
-                context.Writer.WritePropertyName("distillationConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DistillationConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.DistillationConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetRftConfig())
-            {
-                context.Writer.WritePropertyName("rftConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RFTConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.RftConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("lambdaArn");
+                context.Writer.WriteStringValue(requestObject.LambdaArn);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomizationConfigMarshaller Instance = new CustomizationConfigMarshaller();
+        public readonly static LambdaGraderConfigMarshaller Instance = new LambdaGraderConfigMarshaller();
 
     }
 }

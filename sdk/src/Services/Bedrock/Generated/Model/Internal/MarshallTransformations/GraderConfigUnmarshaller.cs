@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomizationConfig Object
+    /// Response Unmarshaller for GraderConfig Object
     /// </summary>  
-    public class CustomizationConfigUnmarshaller : IJsonUnmarshaller<CustomizationConfig, JsonUnmarshallerContext>
+    public class GraderConfigUnmarshaller : IJsonUnmarshaller<GraderConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomizationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GraderConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CustomizationConfig unmarshalledObject = new CustomizationConfig();
+            GraderConfig unmarshalledObject = new GraderConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("distillationConfig", targetDepth))
+                if (context.TestExpression("lambdaGrader", targetDepth))
                 {
-                    var unmarshaller = DistillationConfigUnmarshaller.Instance;
-                    unmarshalledObject.DistillationConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rftConfig", targetDepth))
-                {
-                    var unmarshaller = RFTConfigUnmarshaller.Instance;
-                    unmarshalledObject.RftConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = LambdaGraderConfigUnmarshaller.Instance;
+                    unmarshalledObject.LambdaGrader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static CustomizationConfigUnmarshaller _instance = new CustomizationConfigUnmarshaller();        
+        private static GraderConfigUnmarshaller _instance = new GraderConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomizationConfigUnmarshaller Instance
+        public static GraderConfigUnmarshaller Instance
         {
             get
             {

@@ -30,48 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// A model customization configuration
+    /// Configuration settings for reinforcement fine-tuning (RFT), including grader configuration
+    /// and training hyperparameters.
     /// </summary>
-    public partial class CustomizationConfig
+    public partial class RFTConfig
     {
-        private DistillationConfig _distillationConfig;
-        private RFTConfig _rftConfig;
+        private GraderConfig _graderConfig;
+        private RFTHyperParameters _hyperParameters;
 
         /// <summary>
-        /// Gets and sets the property DistillationConfig. 
+        /// Gets and sets the property GraderConfig. 
         /// <para>
-        /// The Distillation configuration for the custom model.
+        ///  Configuration for the grader that evaluates model responses and provides reward signals
+        /// during RFT training. 
         /// </para>
         /// </summary>
-        public DistillationConfig DistillationConfig
+        public GraderConfig GraderConfig
         {
-            get { return this._distillationConfig; }
-            set { this._distillationConfig = value; }
+            get { return this._graderConfig; }
+            set { this._graderConfig = value; }
         }
 
-        // Check to see if DistillationConfig property is set
-        internal bool IsSetDistillationConfig()
+        // Check to see if GraderConfig property is set
+        internal bool IsSetGraderConfig()
         {
-            return this._distillationConfig != null;
+            return this._graderConfig != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RftConfig. 
+        /// Gets and sets the property HyperParameters. 
         /// <para>
-        ///  Configuration settings for reinforcement fine-tuning (RFT) model customization, including
-        /// grader configuration and hyperparameters. 
+        ///  Hyperparameters that control the reinforcement fine-tuning training process, including
+        /// learning rate, batch size, and epoch count. 
         /// </para>
         /// </summary>
-        public RFTConfig RftConfig
+        public RFTHyperParameters HyperParameters
         {
-            get { return this._rftConfig; }
-            set { this._rftConfig = value; }
+            get { return this._hyperParameters; }
+            set { this._hyperParameters = value; }
         }
 
-        // Check to see if RftConfig property is set
-        internal bool IsSetRftConfig()
+        // Check to see if HyperParameters property is set
+        internal bool IsSetHyperParameters()
         {
-            return this._rftConfig != null;
+            return this._hyperParameters != null;
         }
 
     }

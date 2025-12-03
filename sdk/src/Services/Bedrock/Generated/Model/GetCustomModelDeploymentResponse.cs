@@ -42,6 +42,7 @@ namespace Amazon.Bedrock.Model
         private string _modelArn;
         private string _modelDeploymentName;
         private CustomModelDeploymentStatus _status;
+        private CustomModelDeploymentUpdateDetails _updateDetails;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -206,6 +207,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateDetails. 
+        /// <para>
+        ///  Details about any pending or completed updates to the custom model deployment, including
+        /// the new model ARN and update status. 
+        /// </para>
+        /// </summary>
+        public CustomModelDeploymentUpdateDetails UpdateDetails
+        {
+            get { return this._updateDetails; }
+            set { this._updateDetails = value; }
+        }
+
+        // Check to see if UpdateDetails property is set
+        internal bool IsSetUpdateDetails()
+        {
+            return this._updateDetails != null;
         }
 
     }
