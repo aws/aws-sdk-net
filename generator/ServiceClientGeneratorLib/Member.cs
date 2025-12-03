@@ -1,9 +1,9 @@
 ﻿using Json.LitJson;
+using ServiceClientGenerator.Endpoints;
 using System;
+using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Globalization;
-using ServiceClientGenerator.Endpoints;
 
 namespace ServiceClientGenerator
 {

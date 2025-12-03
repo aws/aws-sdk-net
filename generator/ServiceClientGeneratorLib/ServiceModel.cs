@@ -562,7 +562,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
                         new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
                         new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
-						//new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
+                        new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
                         //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"]),
                         new Operation(this, "PutBucketAnalyticsConfiguration" , DocumentRoot[OperationsKey]["PutBucketAnalyticsConfiguration"]),
                         new Operation(this, "PutBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["PutBucketIntelligentTieringConfiguration"]),
@@ -719,6 +719,19 @@ namespace ServiceClientGenerator
                 return list.Where(e => ParentModel.Enumerations(true).All(en => !e.ModelName.Equals(en.ModelName)));
             }         
         }
+
+        //public IEnumerable<Enumeration> S3AllowListEnumerations
+        //{
+        //    get
+        //    {
+        //        var list = new List<Enumeration>()
+        //        {
+        //            new Enumeration(this, "JSONType", DocumentRoot[ShapesKey]["JSONType"])
+        //        };
+        //        return list;
+        //    }
+
+        //}
 
         /// <summary>
         /// Search the model for shape.
