@@ -99,7 +99,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             if (partNumber == _partBufferManager.NextExpectedPartNumber)
             {
-                ProcessStreamingPart(partNumber, response, cancellationToken);
+                ProcessStreamingPart(partNumber, response);
             }
             else
             {
@@ -113,7 +113,6 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="partNumber">The part number being processed.</param>
         /// <param name="response">The GetObjectResponse containing the part data. Ownership is transferred to StreamingDataSource.</param>
-        /// <param name="cancellationToken">Cancellation token for the operation.</param>
         /// <remarks>
         /// This method is called when the part arrives in the expected sequential order, allowing
         /// for optimal zero-copy streaming directly to the consumer without buffering into memory.
@@ -131,8 +130,7 @@ namespace Amazon.S3.Transfer.Internal
         /// </remarks>
         private void ProcessStreamingPart(
             int partNumber,
-            GetObjectResponse response, 
-            CancellationToken cancellationToken)
+            GetObjectResponse response)
         {
             _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Matches NextExpectedPartNumber - streaming directly without buffering",
                 partNumber);
