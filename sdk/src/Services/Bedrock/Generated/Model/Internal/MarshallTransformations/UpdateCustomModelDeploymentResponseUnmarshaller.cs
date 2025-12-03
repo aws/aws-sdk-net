@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetCustomModelDeployment operation
+    /// Response Unmarshaller for UpdateCustomModelDeployment operation
     /// </summary>  
-    public class GetCustomModelDeploymentResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateCustomModelDeploymentResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,64 +46,16 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetCustomModelDeploymentResponse response = new GetCustomModelDeploymentResponse();
+            UpdateCustomModelDeploymentResponse response = new UpdateCustomModelDeploymentResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("customModelDeploymentArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CustomModelDeploymentArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failureMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelDeploymentName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelDeploymentName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updateDetails", targetDepth))
-                {
-                    var unmarshaller = CustomModelDeploymentUpdateDetailsUnmarshaller.Instance;
-                    response.UpdateDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -153,9 +105,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             return new AmazonBedrockException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetCustomModelDeploymentResponseUnmarshaller _instance = new GetCustomModelDeploymentResponseUnmarshaller();        
+        private static UpdateCustomModelDeploymentResponseUnmarshaller _instance = new UpdateCustomModelDeploymentResponseUnmarshaller();        
 
-        internal static GetCustomModelDeploymentResponseUnmarshaller GetInstance()
+        internal static UpdateCustomModelDeploymentResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -163,7 +115,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCustomModelDeploymentResponseUnmarshaller Instance
+        public static UpdateCustomModelDeploymentResponseUnmarshaller Instance
         {
             get
             {

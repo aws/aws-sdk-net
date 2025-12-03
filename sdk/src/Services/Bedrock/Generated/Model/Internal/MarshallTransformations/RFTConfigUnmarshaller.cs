@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomizationConfig Object
+    /// Response Unmarshaller for RFTConfig Object
     /// </summary>  
-    public class CustomizationConfigUnmarshaller : IUnmarshaller<CustomizationConfig, XmlUnmarshallerContext>, IUnmarshaller<CustomizationConfig, JsonUnmarshallerContext>
+    public class RFTConfigUnmarshaller : IUnmarshaller<RFTConfig, XmlUnmarshallerContext>, IUnmarshaller<RFTConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CustomizationConfig IUnmarshaller<CustomizationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RFTConfig IUnmarshaller<RFTConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomizationConfig Unmarshall(JsonUnmarshallerContext context)
+        public RFTConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            CustomizationConfig unmarshalledObject = new CustomizationConfig();
+            RFTConfig unmarshalledObject = new RFTConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("distillationConfig", targetDepth))
+                if (context.TestExpression("graderConfig", targetDepth))
                 {
-                    var unmarshaller = DistillationConfigUnmarshaller.Instance;
-                    unmarshalledObject.DistillationConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = GraderConfigUnmarshaller.Instance;
+                    unmarshalledObject.GraderConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rftConfig", targetDepth))
+                if (context.TestExpression("hyperParameters", targetDepth))
                 {
-                    var unmarshaller = RFTConfigUnmarshaller.Instance;
-                    unmarshalledObject.RftConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RFTHyperParametersUnmarshaller.Instance;
+                    unmarshalledObject.HyperParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static CustomizationConfigUnmarshaller _instance = new CustomizationConfigUnmarshaller();        
+        private static RFTConfigUnmarshaller _instance = new RFTConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomizationConfigUnmarshaller Instance
+        public static RFTConfigUnmarshaller Instance
         {
             get
             {

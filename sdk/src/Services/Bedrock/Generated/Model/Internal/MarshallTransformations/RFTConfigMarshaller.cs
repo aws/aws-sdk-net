@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomizationConfig Marshaller
+    /// RFTConfig Marshaller
     /// </summary>
-    public class CustomizationConfigMarshaller : IRequestMarshaller<CustomizationConfig, JsonMarshallerContext> 
+    public class RFTConfigMarshaller : IRequestMarshaller<RFTConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,28 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomizationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RFTConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDistillationConfig())
+            if(requestObject.IsSetGraderConfig())
             {
-                context.Writer.WritePropertyName("distillationConfig");
+                context.Writer.WritePropertyName("graderConfig");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DistillationConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.DistillationConfig, context);
+                var marshaller = GraderConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.GraderConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetRftConfig())
+            if(requestObject.IsSetHyperParameters())
             {
-                context.Writer.WritePropertyName("rftConfig");
+                context.Writer.WritePropertyName("hyperParameters");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = RFTConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.RftConfig, context);
+                var marshaller = RFTHyperParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.HyperParameters, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +75,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomizationConfigMarshaller Instance = new CustomizationConfigMarshaller();
+        public readonly static RFTConfigMarshaller Instance = new RFTConfigMarshaller();
 
     }
 }

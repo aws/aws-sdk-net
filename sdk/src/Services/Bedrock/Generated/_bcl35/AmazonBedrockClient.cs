@@ -7407,6 +7407,77 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  UpdateCustomModelDeployment
+
+        /// <summary>
+        /// Updates a custom model deployment with a new custom model. This allows you to deploy
+        /// updated models without creating new deployment endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomModelDeployment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCustomModelDeployment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateCustomModelDeployment">REST API Reference for UpdateCustomModelDeployment Operation</seealso>
+        public virtual UpdateCustomModelDeploymentResponse UpdateCustomModelDeployment(UpdateCustomModelDeploymentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCustomModelDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomModelDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomModelDeploymentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCustomModelDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomModelDeployment operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCustomModelDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateCustomModelDeployment">REST API Reference for UpdateCustomModelDeployment Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCustomModelDeployment(UpdateCustomModelDeploymentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCustomModelDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomModelDeploymentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCustomModelDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCustomModelDeployment.</param>
+        /// 
+        /// <returns>Returns a  UpdateCustomModelDeploymentResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateCustomModelDeployment">REST API Reference for UpdateCustomModelDeployment Operation</seealso>
+        public virtual UpdateCustomModelDeploymentResponse EndUpdateCustomModelDeployment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCustomModelDeploymentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateGuardrail
 
         /// <summary>

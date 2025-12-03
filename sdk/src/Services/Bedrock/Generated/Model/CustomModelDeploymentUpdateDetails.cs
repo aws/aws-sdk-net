@@ -30,48 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// A model customization configuration
+    /// Details about an update to a custom model deployment, including the new custom model
+    /// resource ARN and current update status.
     /// </summary>
-    public partial class CustomizationConfig
+    public partial class CustomModelDeploymentUpdateDetails
     {
-        private DistillationConfig _distillationConfig;
-        private RFTConfig _rftConfig;
+        private string _modelArn;
+        private CustomModelDeploymentUpdateStatus _updateStatus;
 
         /// <summary>
-        /// Gets and sets the property DistillationConfig. 
+        /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The Distillation configuration for the custom model.
+        ///  ARN of the new custom model being deployed as part of the update. 
         /// </para>
         /// </summary>
-        public DistillationConfig DistillationConfig
+        [AWSProperty(Required=true, Min=20, Max=1011)]
+        public string ModelArn
         {
-            get { return this._distillationConfig; }
-            set { this._distillationConfig = value; }
+            get { return this._modelArn; }
+            set { this._modelArn = value; }
         }
 
-        // Check to see if DistillationConfig property is set
-        internal bool IsSetDistillationConfig()
+        // Check to see if ModelArn property is set
+        internal bool IsSetModelArn()
         {
-            return this._distillationConfig != null;
+            return this._modelArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RftConfig. 
+        /// Gets and sets the property UpdateStatus. 
         /// <para>
-        ///  Configuration settings for reinforcement fine-tuning (RFT) model customization, including
-        /// grader configuration and hyperparameters. 
+        ///  Current status of the deployment update. 
         /// </para>
         /// </summary>
-        public RFTConfig RftConfig
+        [AWSProperty(Required=true)]
+        public CustomModelDeploymentUpdateStatus UpdateStatus
         {
-            get { return this._rftConfig; }
-            set { this._rftConfig = value; }
+            get { return this._updateStatus; }
+            set { this._updateStatus = value; }
         }
 
-        // Check to see if RftConfig property is set
-        internal bool IsSetRftConfig()
+        // Check to see if UpdateStatus property is set
+        internal bool IsSetUpdateStatus()
         {
-            return this._rftConfig != null;
+            return this._updateStatus != null;
         }
 
     }

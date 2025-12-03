@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomizationConfig Object
+    /// Response Unmarshaller for CustomModelDeploymentUpdateDetails Object
     /// </summary>  
-    public class CustomizationConfigUnmarshaller : IUnmarshaller<CustomizationConfig, XmlUnmarshallerContext>, IUnmarshaller<CustomizationConfig, JsonUnmarshallerContext>
+    public class CustomModelDeploymentUpdateDetailsUnmarshaller : IUnmarshaller<CustomModelDeploymentUpdateDetails, XmlUnmarshallerContext>, IUnmarshaller<CustomModelDeploymentUpdateDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CustomizationConfig IUnmarshaller<CustomizationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CustomModelDeploymentUpdateDetails IUnmarshaller<CustomModelDeploymentUpdateDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomizationConfig Unmarshall(JsonUnmarshallerContext context)
+        public CustomModelDeploymentUpdateDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            CustomizationConfig unmarshalledObject = new CustomizationConfig();
+            CustomModelDeploymentUpdateDetails unmarshalledObject = new CustomModelDeploymentUpdateDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("distillationConfig", targetDepth))
+                if (context.TestExpression("modelArn", targetDepth))
                 {
-                    var unmarshaller = DistillationConfigUnmarshaller.Instance;
-                    unmarshalledObject.DistillationConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rftConfig", targetDepth))
+                if (context.TestExpression("updateStatus", targetDepth))
                 {
-                    var unmarshaller = RFTConfigUnmarshaller.Instance;
-                    unmarshalledObject.RftConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdateStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static CustomizationConfigUnmarshaller _instance = new CustomizationConfigUnmarshaller();        
+        private static CustomModelDeploymentUpdateDetailsUnmarshaller _instance = new CustomModelDeploymentUpdateDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomizationConfigUnmarshaller Instance
+        public static CustomModelDeploymentUpdateDetailsUnmarshaller Instance
         {
             get
             {
