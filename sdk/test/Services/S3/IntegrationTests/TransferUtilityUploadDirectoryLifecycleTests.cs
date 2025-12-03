@@ -8,7 +8,6 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Util;
-using Amazon.S3.Transfer.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
