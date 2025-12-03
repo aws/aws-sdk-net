@@ -486,8 +486,24 @@ namespace Amazon.S3.Transfer.Internal
             var firstPartRequest = CreateGetObjectRequest();
             firstPartRequest.PartNumber = 1;
             
-            // SEP Part GET Step 2: "send the request and wait for the response in a non-blocking fashion"
-            var firstPartResponse = await _s3Client.GetObjectAsync(firstPartRequest, cancellationToken).ConfigureAwait(false);
+            // Wait for both capacity types before making HTTP request (consistent with background parts)
+            Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for buffer capacity");
+            await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
+
+            Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for HTTP concurrency slot");
+            await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+            GetObjectResponse firstPartResponse = null;
+            try
+            {
+                // SEP Part GET Step 2: "send the request and wait for the response in a non-blocking fashion"
+                firstPartResponse = await _s3Client.GetObjectAsync(firstPartRequest, cancellationToken).ConfigureAwait(false);
+            }
+            finally
+            {
+                _httpConcurrencySlots.Release();
+                Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] HTTP concurrency slot released");
+            }
             
             if (firstPartResponse == null)
                 throw new InvalidOperationException("Failed to retrieve object from S3");
@@ -547,8 +563,24 @@ namespace Amazon.S3.Transfer.Internal
             var firstRangeRequest = CreateGetObjectRequest();
             firstRangeRequest.ByteRange = new ByteRange(0, targetPartSize - 1);
             
-            // SEP Ranged GET Step 2: "send the request and wait for the response in a non-blocking fashion"
-            var firstRangeResponse = await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
+            // Wait for both capacity types before making HTTP request (consistent with background parts)
+            Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for buffer capacity");
+            await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
+
+            Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for HTTP concurrency slot");
+            await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+            GetObjectResponse firstRangeResponse = null;
+            try
+            {
+                // SEP Ranged GET Step 2: "send the request and wait for the response in a non-blocking fashion"
+                firstRangeResponse = await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
+            }
+            finally
+            {
+                _httpConcurrencySlots.Release();
+                Logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] HTTP concurrency slot released");
+            }
             
             // Defensive null check
             if (firstRangeResponse == null)

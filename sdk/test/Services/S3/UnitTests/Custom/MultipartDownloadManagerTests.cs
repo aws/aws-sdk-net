@@ -734,7 +734,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task StartDownloadsAsync_MultipartDownload_AcquiresCapacitySequentially()
         {
-            // Arrange - Test that capacity is acquired in sequential order (Part 2 before Part 3, etc.)
+            // Arrange - Test that capacity is acquired in sequential order (Part 1 discovery, then Part 2, 3, 4 background)
             var totalParts = 4;
             var partSize = 8 * 1024 * 1024;
             var totalObjectSize = totalParts * partSize;
@@ -744,15 +744,25 @@ namespace AWSSDK.UnitTests
             
             var mockDataHandler = new Mock<IPartDataHandler>();
             
-            // Track capacity acquisition order
+            // Track capacity acquisition order - now includes Part 1 discovery
+            var callCount = 0;
             mockDataHandler
                 .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
                 .Returns(() =>
                 {
                     lock (capacityAcquisitionLock)
                     {
-                        // This will be called for parts 2, 3, 4 in that order
-                        capacityAcquisitionOrder.Add(capacityAcquisitionOrder.Count + 2);
+                        callCount++;
+                        if (callCount == 1)
+                        {
+                            // First call is Part 1 discovery
+                            capacityAcquisitionOrder.Add(1);
+                        }
+                        else
+                        {
+                            // Subsequent calls are background parts 2, 3, 4
+                            capacityAcquisitionOrder.Add(callCount);
+                        }
                     }
                     return Task.CompletedTask;
                 });
@@ -780,20 +790,21 @@ namespace AWSSDK.UnitTests
             // Wait for background task completion
             await coordinator.DownloadCompletionTask;
 
-            // Assert - Capacity should be acquired in sequential order: Part 2, then Part 3, then Part 4
+            // Assert - Capacity should be acquired in order: Part 1 (discovery), then Parts 2, 3, 4 (background)
             lock (capacityAcquisitionLock)
             {
-                Assert.AreEqual(3, capacityAcquisitionOrder.Count, "Should acquire capacity for parts 2, 3, 4");
-                Assert.AreEqual(2, capacityAcquisitionOrder[0], "First capacity acquisition should be for Part 2");
-                Assert.AreEqual(3, capacityAcquisitionOrder[1], "Second capacity acquisition should be for Part 3");
-                Assert.AreEqual(4, capacityAcquisitionOrder[2], "Third capacity acquisition should be for Part 4");
+                Assert.AreEqual(4, capacityAcquisitionOrder.Count, "Should acquire capacity for parts 1 (discovery), 2, 3, 4 (background)");
+                Assert.AreEqual(1, capacityAcquisitionOrder[0], "First capacity acquisition should be for Part 1 discovery");
+                Assert.AreEqual(2, capacityAcquisitionOrder[1], "Second capacity acquisition should be for Part 2 background");
+                Assert.AreEqual(3, capacityAcquisitionOrder[2], "Third capacity acquisition should be for Part 3 background");
+                Assert.AreEqual(4, capacityAcquisitionOrder[3], "Fourth capacity acquisition should be for Part 4 background");
             }
         }
 
         [TestMethod]
         public async Task StartDownloadsAsync_MultipartDownload_DoesNotCallWaitForCapacityInCreateDownloadTask()
         {
-            // Arrange - Test that CreateDownloadTaskAsync no longer calls WaitForCapacityAsync
+            // Arrange - Test that CreateDownloadTaskAsync no longer calls WaitForCapacityAsync (capacity is pre-acquired)
             var totalParts = 3;
             var partSize = 8 * 1024 * 1024;
             var totalObjectSize = totalParts * partSize;
@@ -803,7 +814,7 @@ namespace AWSSDK.UnitTests
             
             var mockDataHandler = new Mock<IPartDataHandler>();
             
-            // Track WaitForCapacityAsync calls - should only be called in background task, not in CreateDownloadTaskAsync
+            // Track WaitForCapacityAsync calls - now includes Part 1 discovery + background parts 2-3
             mockDataHandler
                 .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
                 .Returns(() =>
@@ -838,9 +849,9 @@ namespace AWSSDK.UnitTests
             await coordinator.DownloadCompletionTask;
 
             // Assert
-            // WaitForCapacityAsync should be called exactly once per background part (parts 2 and 3)
-            Assert.AreEqual(2, waitForCapacityCallCount, 
-                "WaitForCapacityAsync should be called exactly once per background part (2 times for parts 2-3)");
+            // WaitForCapacityAsync should be called for Part 1 discovery + background parts 2-3 (total 3 calls)
+            Assert.AreEqual(3, waitForCapacityCallCount, 
+                "WaitForCapacityAsync should be called for Part 1 discovery + background parts 2-3 (3 times total)");
             
             // ProcessPartAsync should be called for all parts (1, 2, 3)
             Assert.AreEqual(3, processPartCallCount, 
@@ -908,7 +919,7 @@ namespace AWSSDK.UnitTests
                 var capacityOps = operationOrder.Where(o => o.operation == "capacity").ToList();
                 var taskOps = operationOrder.Where(o => o.operation == "task").ToList();
                 
-                Assert.AreEqual(2, capacityOps.Count, "Should acquire capacity for parts 2-3");
+                Assert.AreEqual(3, capacityOps.Count, "Should acquire capacity discovery part 1 and for parts 2-3");
                 Assert.AreEqual(3, taskOps.Count, "Should create tasks for parts 1-3");
                 
                 // Verify all capacity acquisitions happened before any task creation
@@ -1024,7 +1035,7 @@ namespace AWSSDK.UnitTests
             
             var mockDataHandler = new Mock<IPartDataHandler>();
             
-            var partCounter = 1; // Start with part 2 (part 1 doesn't call WaitForCapacityAsync)
+            var partCounter = 0; // Start with part 1 (Part 1 discovery now calls WaitForCapacityAsync)
             mockDataHandler
                 .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
                 .Returns(() =>
@@ -1068,13 +1079,13 @@ namespace AWSSDK.UnitTests
             // Assert - Capacity acquisition should be in order, preventing blocking
             lock (lockObject)
             {
-                Assert.AreEqual(3, capacityOrder.Count, "Should acquire capacity for parts 2, 3, 4");
+                Assert.AreEqual(4, capacityOrder.Count, "Should acquire capacity for Part 1 discovery + parts 2, 3, 4 background");
                 
-                // Verify sequential order
+                // Verify sequential order: Part 1 (discovery), then Parts 2, 3, 4 (background)
                 for (int i = 0; i < capacityOrder.Count; i++)
                 {
-                    Assert.AreEqual(i + 2, capacityOrder[i], 
-                        $"Capacity acquisition {i} should be for part {i + 2}");
+                    Assert.AreEqual(i + 1, capacityOrder[i], 
+                        $"Capacity acquisition {i} should be for part {i + 1}");
                 }
                 
                 Assert.AreEqual(totalParts, processingOrder.Count, "All parts should be processed");
@@ -1233,19 +1244,30 @@ namespace AWSSDK.UnitTests
             var cts = new CancellationTokenSource();
             var mockDataHandler = new Mock<IPartDataHandler>();
             
-            // Part 1 succeeds, then cancel before background parts
-            mockDataHandler
-                .Setup(x => x.ProcessPartAsync(1, It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
-                .Returns(Task.CompletedTask);
-            
-            // Cancel when waiting for capacity (simulating cancellation during background task)
+            // Part 1 discovery succeeds (now also calls WaitForCapacityAsync)
+            var callCount = 0;
             mockDataHandler
                 .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
                 .Returns(() =>
                 {
-                    cts.Cancel(); // Cancel during background task execution
-                    throw new OperationCanceledException();
+                    callCount++;
+                    if (callCount == 1)
+                    {
+                        // First call (Part 1 discovery) succeeds
+                        return Task.CompletedTask;
+                    }
+                    else
+                    {
+                        // Second call (background task) cancels
+                        cts.Cancel(); // Cancel during background task execution
+                        throw new OperationCanceledException();
+                    }
                 });
+            
+            // Part 1 processing succeeds
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(1, It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
             
             mockDataHandler
                 .Setup(x => x.OnDownloadComplete(It.IsAny<Exception>()));
@@ -1803,6 +1825,376 @@ namespace AWSSDK.UnitTests
             
             // Verify OnDownloadComplete was called
             mockDataHandler.Verify(x => x.OnDownloadComplete(null), Times.Once);
+        }
+
+        #endregion
+
+        #region Capacity Checking Tests
+
+        [TestMethod]
+        public async Task DiscoverUsingPartStrategy_CallsWaitForCapacityAsync()
+        {
+            // Arrange
+            var capacityCallCount = 0;
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // Track WaitForCapacityAsync calls
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    Interlocked.Increment(ref capacityCallCount);
+                    return Task.CompletedTask;
+                });
+            
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            var mockResponse = MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                8 * 1024 * 1024, 3, 24 * 1024 * 1024, "test-etag");
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
+
+            // Act
+            var result = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+
+            // Assert
+            Assert.AreEqual(1, capacityCallCount, "WaitForCapacityAsync should be called exactly once during Part 1 discovery");
+            Assert.IsNotNull(result);
+            Assert.AreEqual(3, result.TotalParts);
+            
+            // Verify the mock was called with correct setup
+            mockDataHandler.Verify(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()), Times.Once);
+        }
+
+        [TestMethod]
+        public async Task DiscoverUsingRangeStrategy_CallsWaitForCapacityAsync()
+        {
+            // Arrange
+            var capacityCallCount = 0;
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // Track WaitForCapacityAsync calls
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    Interlocked.Increment(ref capacityCallCount);
+                    return Task.CompletedTask;
+                });
+            
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            var totalObjectSize = 52428800; // 50MB
+            var partSize = 8388608; // 8MB
+            var mockResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                0, partSize - 1, totalObjectSize, "test-etag");
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
+
+            // Act
+            var result = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+
+            // Assert
+            Assert.AreEqual(1, capacityCallCount, "WaitForCapacityAsync should be called exactly once during Part 1 discovery");
+            Assert.IsNotNull(result);
+            Assert.AreEqual(7, result.TotalParts); // 52428800 / 8388608 = 6.25 -> 7 parts
+            
+            // Verify the mock was called with correct setup
+            mockDataHandler.Verify(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()), Times.Once);
+        }
+
+        [TestMethod]
+        public async Task DiscoverUsingPartStrategy_AcquiresAndReleasesHttpSlot()
+        {
+            // Arrange - Use real SemaphoreSlim to track HTTP concurrency usage
+            var httpThrottler = new SemaphoreSlim(2, 2); // 2 concurrent requests max
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = CreateMockDataHandler();
+            var mockResponse = MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                8 * 1024 * 1024, 3, 24 * 1024 * 1024, "test-etag");
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            
+            // Use shared HTTP throttler to track usage
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+
+            // Act
+            var result = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount, 
+                "HTTP concurrency slot should be released after discovery completes");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task DiscoverUsingRangeStrategy_AcquiresAndReleasesHttpSlot()
+        {
+            // Arrange - Use real SemaphoreSlim to track HTTP concurrency usage  
+            var httpThrottler = new SemaphoreSlim(2, 2); // 2 concurrent requests max
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = CreateMockDataHandler();
+            var totalObjectSize = 52428800; // 50MB
+            var partSize = 8388608; // 8MB
+            var mockResponse = MultipartDownloadTestHelpers.CreateRangeResponse(
+                0, partSize - 1, totalObjectSize, "test-etag");
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            
+            // Use shared HTTP throttler to track usage
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+
+            // Act
+            var result = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount, 
+                "HTTP concurrency slot should be released after discovery completes");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task MultipleDownloads_WithSharedHttpThrottler_RespectsLimits()
+        {
+            // Arrange - Simulate directory download scenario with shared throttler
+            var sharedThrottler = new SemaphoreSlim(1, 1); // Very limited: 1 concurrent request
+            var mockDataHandler1 = CreateMockDataHandler();
+            var mockDataHandler2 = CreateMockDataHandler();
+            
+            // Create two download managers sharing the same HTTP throttler
+            var mockResponse1 = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024, "file1-etag");
+            var mockResponse2 = MultipartDownloadTestHelpers.CreateSinglePartResponse(2048, "file2-etag");
+            
+            var mockClient1 = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse1));
+            var mockClient2 = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse2));
+            
+            var request1 = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var request2 = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            
+            var coordinator1 = new MultipartDownloadManager(mockClient1.Object, request1, config, mockDataHandler1.Object, null, sharedThrottler);
+            var coordinator2 = new MultipartDownloadManager(mockClient2.Object, request2, config, mockDataHandler2.Object, null, sharedThrottler);
+
+            // Act - Start both discoveries concurrently
+            var task1 = coordinator1.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            var task2 = coordinator2.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            await Task.WhenAll(task1, task2);
+
+            // Assert - Both should complete successfully despite shared throttler limits
+            Assert.IsNotNull(task1.Result);
+            Assert.IsNotNull(task2.Result);
+            Assert.AreEqual(1, sharedThrottler.CurrentCount, "HTTP throttler should be fully released");
+            
+            // Cleanup
+            coordinator1.Dispose();
+            coordinator2.Dispose();
+            sharedThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Discovery_HttpRequestFails_ReleasesCapacityProperly()
+        {
+            // Arrange - Simulate HTTP request failure
+            var httpThrottler = new SemaphoreSlim(2, 2); 
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = CreateMockDataHandler();
+            var mockClient = new Mock<IAmazonS3>();
+            
+            // HTTP request throws exception
+            mockClient
+                .Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new InvalidOperationException("Simulated S3 failure"));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+
+            // Act & Assert
+            try
+            {
+                await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+                Assert.Fail("Expected InvalidOperationException to be thrown");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.AreEqual("Simulated S3 failure", ex.Message);
+            }
+
+            // Assert - HTTP concurrency should be properly released even after failure
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount, 
+                "HTTP concurrency slot should be released even when HTTP request fails");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Discovery_CancellationDuringCapacityWait_ReleasesHttpSlotProperly()
+        {
+            // Arrange - Test cancellation during capacity acquisition
+            var httpThrottler = new SemaphoreSlim(2, 2);
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var cts = new CancellationTokenSource();
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // Cancel during capacity wait
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    cts.Cancel();
+                    throw new OperationCanceledException();
+                });
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+
+            // Act & Assert
+            try
+            {
+                await coordinator.DiscoverDownloadStrategyAsync(cts.Token);
+                Assert.Fail("Expected OperationCanceledException to be thrown");
+            }
+            catch (OperationCanceledException)
+            {
+                // Expected
+            }
+
+            // Assert - HTTP slot should still be available (never acquired due to early cancellation)
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount, 
+                "HTTP concurrency slot should remain available when cancelled before HTTP request");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Discovery_CancellationAfterCapacityButBeforeHttp_ReleasesHttpSlotProperly() 
+        {
+            // Arrange - Test cancellation after capacity but before HTTP call
+            var httpThrottler = new SemaphoreSlim(2, 2);
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var cts = new CancellationTokenSource();
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // Capacity acquisition succeeds
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // HTTP call gets cancelled
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient
+                .Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    cts.Token.ThrowIfCancellationRequested();
+                    throw new OperationCanceledException();
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+
+            // Act & Assert
+            try
+            {
+                cts.Cancel(); // Cancel before discovery
+                await coordinator.DiscoverDownloadStrategyAsync(cts.Token);
+                Assert.Fail("Expected OperationCanceledException to be thrown");
+            }
+            catch (OperationCanceledException)
+            {
+                // Expected
+            }
+
+            // Assert - HTTP slot should be properly released by finally block
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount, 
+                "HTTP concurrency slot should be released by finally block on cancellation");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Discovery_SinglePart_StillCallsCapacityCheck()
+        {
+            // Arrange - Even single-part downloads should check capacity during discovery
+            var capacityCallCount = 0;
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    Interlocked.Increment(ref capacityCallCount);
+                    return Task.CompletedTask;
+                });
+            
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
+
+            // Act
+            var result = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.TotalParts);
+            Assert.AreEqual(1, capacityCallCount, 
+                "Even single-part downloads should call WaitForCapacityAsync during discovery");
         }
 
         #endregion
