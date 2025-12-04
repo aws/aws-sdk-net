@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net472</TargetFrameworks>
-    <DefineConstants>$(DefineConstants);BCL</DefineConstants>
     <AssemblyName>BedrockMEAITests</AssemblyName>
     <PackageId>BedrockMEAITests</PackageId>
 
