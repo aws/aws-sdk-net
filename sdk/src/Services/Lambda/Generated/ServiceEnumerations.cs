@@ -1205,6 +1205,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode DisabledKMSKey = new LastUpdateStatusReasonCode("DisabledKMSKey");
         /// <summary>
+        /// Constant DisallowedByVpcEncryptionControl for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode DisallowedByVpcEncryptionControl = new LastUpdateStatusReasonCode("DisallowedByVpcEncryptionControl");
+        /// <summary>
         /// Constant EC2RequestLimitExceeded for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode EC2RequestLimitExceeded = new LastUpdateStatusReasonCode("EC2RequestLimitExceeded");
@@ -2404,6 +2408,10 @@ namespace Amazon.Lambda
         /// Constant DisabledKMSKey for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode DisabledKMSKey = new StateReasonCode("DisabledKMSKey");
+        /// <summary>
+        /// Constant DisallowedByVpcEncryptionControl for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode DisallowedByVpcEncryptionControl = new StateReasonCode("DisallowedByVpcEncryptionControl");
         /// <summary>
         /// Constant DrainingDurableExecutions for StateReasonCode
         /// </summary>
