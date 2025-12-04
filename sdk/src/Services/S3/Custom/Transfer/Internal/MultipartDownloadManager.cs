@@ -64,7 +64,7 @@ namespace Amazon.S3.Transfer.Internal
         // Without this, concurrent parts completing simultaneously can both see
         // transferredBytes >= _totalObjectSize and fire duplicate completion events
         // Uses int instead of bool because Interlocked.CompareExchange requires reference types
-        private int _completionEventFired = 0;  // 0 = false, 1 = true
+        private long _completionEventFired = 0;  // 0 = false, 1 = true
 
         private readonly Logger _logger = Logger.GetLogger(typeof(MultipartDownloadManager));
 
@@ -733,26 +733,40 @@ namespace Amazon.S3.Transfer.Internal
         /// Progress aggregation callback that combines progress across all concurrent part downloads.
         /// Uses thread-safe counter increment to handle concurrent updates.
         /// Detects completion naturally when transferred bytes reaches total size.
-        /// Uses atomic flag to ensure completion event fires exactly once.
+        /// Uses atomic flag to ensure completion event fires exactly once and prevents any events after completion.
         /// </summary>
         private void DownloadPartProgressEventCallback(object sender, WriteObjectProgressArgs e)
         {
             long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred);
             
+            // Check if completion was already fired - if so, skip this event entirely
+            // This prevents the race condition where per-part completion events arrive after
+            // the aggregated completion event has already been fired
+            if (Interlocked.Read(ref _completionEventFired) == 1)
+            {
+                return; // Already completed, don't fire any more events
+            }
+            
             // Use atomic CompareExchange to ensure only first thread fires completion
             bool isComplete = false;
-            if (transferredBytes >= _totalObjectSize)
+            if (transferredBytes == _totalObjectSize)
             {
                 // CompareExchange returns the original value before the exchange
                 // If original value was 0 (false), we're the first thread and should fire completion
-                int originalValue = Interlocked.CompareExchange(ref _completionEventFired, 1, 0);
+                long originalValue = Interlocked.CompareExchange(ref _completionEventFired, 1, 0);
                 if (originalValue == 0)  // Was false, now set to true
                 {
                     isComplete = true;
                 }
+                else
+                {
+                    // Another thread already fired completion, skip this event
+                    return;
+                }
             }
             
             // Create and fire aggregated progress event
+            // Only reached if completion hasn't been fired yet
             var aggregatedArgs = CreateProgressArgs(e.IncrementTransferred, transferredBytes, isComplete);
             _userProgressCallback?.Invoke(this, aggregatedArgs);
         }
