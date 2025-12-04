@@ -1,17 +1,16 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
+﻿using Amazon;
 using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-using Amazon;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 #pragma warning disable CS0162
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -35,22 +34,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
             if (!ReuseTables)
-                RemoveCreatedTables();
+            {
+                await RemoveCreatedTables();
+            }
 
             BaseClean();
-            if (Context != null)
-                Context.Dispose();
-
+            Context?.Dispose();
             Client.BeforeRequestEvent -= ClientBeforeRequestEvent;
         }
 
         [ClassInitialize]
-        public static void ClassInitialize(TestContext testContext)
+        public static async Task ClassInitialize(TestContext testContext)
         {
-            CreateTestTables();
+            await CreateTestTables();
 
             Client.BeforeRequestEvent += ClientBeforeRequestEvent;
 
@@ -61,35 +60,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             CreateContext(DynamoDBEntryConversion.V1, false);
         }
 
-        private static void ClientBeforeRequestEvent(object sender, Amazon.Runtime.RequestEventArgs e)
+        private static void ClientBeforeRequestEvent(object sender, RequestEventArgs e)
         {
-            var client = sender as AmazonServiceClient;
-            if (client == null)
-                throw new InvalidOperationException();
-
-            var wsrea = e as WebServiceRequestEventArgs;
-            if (wsrea == null)
-                throw new InvalidOperationException();
-
+            var wsrea = e as WebServiceRequestEventArgs ?? throw new InvalidOperationException();
             var request = wsrea.Request;
 
-            var describeTableRequest = request as DescribeTableRequest;
-            if (describeTableRequest != null)
+            if (request is DescribeTableRequest describeTableRequest)
             {
                 var keys = TableCache.Keys;
                 if (keys.Contains(describeTableRequest.TableName))
+                {
                     Assert.Fail("Attempting to describe table that has already been described");
+                }
             }
         }
 
         [TestCleanup]
-        public void CleanupTables()
+        public async Task CleanupTables()
         {
-            ClearTable(hashTableName);
-            ClearTable(nestedTableName);
-            ClearTable(hashRangeTableName);
-            ClearTable(numericHashRangeTableName);
-            ClearTable(compositeHashRangeTableName);
+            var clearTasks = new List<Task>
+            {
+                ClearTable(hashTableName),
+                ClearTable(nestedTableName),
+                ClearTable(hashRangeTableName),
+                ClearTable(numericHashRangeTableName),
+                ClearTable(compositeHashRangeTableName)
+            };
+
+            await Task.WhenAll(clearTasks);
         }
 
         public static void CreateContext(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, bool disableFetchingTableMetadata = false)
@@ -130,31 +128,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             (ReuseTables ? string.Empty : + DateTime.UtcNow.ToFileTime() + "-");
         public static List<string> CreatedTables = new List<string>();
 
-        public static void ClearTable(string tableName)
+        public static async Task ClearTable(string tableName)
         {
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             var table = Table.LoadTable(Client, tableName, DynamoDBEntryConversion.V1, true);
-#pragma warning restore CS0618 // Re-enable the warning
             var keyNames = table.Keys.Keys.ToList();
             
             // Retrieve all keys
-            var keys = table.Scan(new ScanOperationConfig
+            var keys = await table.Scan(new ScanOperationConfig
             {
                 AttributesToGet = keyNames,
                 Select = SelectValues.SpecificAttributes,
                 ConsistentRead = true
-            }).GetRemaining();
+            }).GetRemainingAsync();
 
             // Populate BatchWrite to delete all keys
             var batchWrite = table.CreateBatchWrite();
             foreach (var key in keys)
+            {
                 batchWrite.AddKeyToDelete(key);
+            }
 
             // Execute batch write
-            batchWrite.Execute();
+            await batchWrite.ExecuteAsync();
         }
 
-        public static void CreateTestTables()
+        public static async Task CreateTestTables()
         {
             nestedTableName = TableNamePrefix + "NestedTable";
             hashTableName = TableNamePrefix + "HashTable";
@@ -169,29 +167,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             if (ReuseTables)
             {
-                if (GetStatus(nestedTableName) != null)
+                if ((await GetStatus(nestedTableName)) != null)
                 {
-                    WaitForTableStatus(nestedTableName, TableStatus.ACTIVE);
+                    await WaitForTableStatus(nestedTableName, TableStatus.ACTIVE);
                     createNestedTable = false;
                 }
-                if (GetStatus(hashTableName) != null)
+                if ((await GetStatus(hashTableName)) != null)
                 {
-                    WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
+                    await WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
                     createHashTable = false;
                 }
-                if (GetStatus(hashRangeTableName) != null)
+                if ((await GetStatus(hashRangeTableName)) != null)
                 {
-                    WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
+                    await WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
                     createHashRangeTable = false;
                 }
-                if (GetStatus(numericHashRangeTableName) != null)
+                if ((await GetStatus(numericHashRangeTableName)) != null)
                 {
-                    WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
+                    await WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
                     createNumericHashRangeTable = false;
                 }
-                if (GetStatus(compositeHashRangeTableName) != null)
+                if ((await GetStatus(compositeHashRangeTableName)) != null)
                 {
-                    WaitForTableStatus(compositeHashRangeTableName, TableStatus.ACTIVE);
+                    await WaitForTableStatus(compositeHashRangeTableName, TableStatus.ACTIVE);
                     createCompositeHashRangeTable = false;
                 }
             }
@@ -199,7 +197,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             if (createNestedTable)
             {
                 // Create hash-key table with global index
-                Client.CreateTable(new CreateTableRequest
+                await Client.CreateTableAsync(new CreateTableRequest
                 {
                     TableName = nestedTableName,
                     AttributeDefinitions = new List<AttributeDefinition>
@@ -215,13 +213,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreatedTables.Add(nestedTableName);
 
                 // Wait for table to be ready
-                WaitForTableStatus(nestedTableName, TableStatus.ACTIVE);
+                await WaitForTableStatus(nestedTableName, TableStatus.ACTIVE);
             }
 
             if (createHashTable)
             {
                 // Create hash-key table with global index
-                Client.CreateTable(new CreateTableRequest
+                await Client.CreateTableAsync(new CreateTableRequest
                 {
                     TableName = hashTableName,
                     AttributeDefinitions = new List<AttributeDefinition>
@@ -252,13 +250,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreatedTables.Add(hashTableName);
 
                 // Wait for table to be ready
-                WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
+                await WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
             }
 
             if (createHashRangeTable)
             {
                 // Create hash-and-range-key table with local and global indexes
-                Client.CreateTable(new CreateTableRequest
+                await Client.CreateTableAsync(new CreateTableRequest
                 {
                     TableName = hashRangeTableName,
                     AttributeDefinitions = new List<AttributeDefinition>
@@ -309,13 +307,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreatedTables.Add(hashRangeTableName);
 
                 // Wait for table to be ready
-                WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
+                await WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
             }
 
             if (createNumericHashRangeTable)
             {
                 // Create hash-and-range-key table with local and global indexes
-                Client.CreateTable(new CreateTableRequest
+                await Client.CreateTableAsync(new CreateTableRequest
                 {
                     TableName = numericHashRangeTableName,
                     AttributeDefinitions = new List<AttributeDefinition>
@@ -333,7 +331,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreatedTables.Add(numericHashRangeTableName);
 
                 // Wait for table to be ready
-                WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
+                await WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
             }
 
             if (createCompositeHashRangeTable)
@@ -407,7 +405,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         Projection = new Projection { ProjectionType = ProjectionType.ALL }
                     }
                 };
-                Client.CreateTable(new CreateTableRequest
+                await Client.CreateTableAsync(new CreateTableRequest
                 {
                     TableName = compositeHashRangeTableName,
                     AttributeDefinitions = attributeDefinitions,
@@ -420,50 +418,51 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     BillingMode = BillingMode.PAY_PER_REQUEST
                 });
                 CreatedTables.Add(compositeHashRangeTableName);
-                WaitForTableStatus(compositeHashRangeTableName, TableStatus.ACTIVE);
+                await WaitForTableStatus(compositeHashRangeTableName, TableStatus.ACTIVE);
             }
 
 
             // Make sure TTL is enabled for the tables and is on the correct attribute
-            EnsureTTL(nestedTableName);
-            EnsureTTL(hashTableName);
-            EnsureTTL(hashRangeTableName);
-            EnsureTTL(numericHashRangeTableName);
-            EnsureTTL(compositeHashRangeTableName);
+            await EnsureTTL(nestedTableName);
+            await EnsureTTL(hashTableName);
+            await EnsureTTL(hashRangeTableName);
+            await EnsureTTL(numericHashRangeTableName);
+            await EnsureTTL(compositeHashRangeTableName);
         }
-        public static void RemoveCreatedTables()
+
+        public static async Task RemoveCreatedTables()
         {
             if (CreatedTables.Count > 0)
             {
                 // Wait for all tables to be active first
-                WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
+                await WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
 
                 foreach (var table in CreatedTables)
                 {
-                    Client.DeleteTable(table);
+                    await Client.DeleteTableAsync(table);
                 }
 
                 // Wait for tables to be deleted
-                WaitForTableStatus(CreatedTables, null);
+                await WaitForTableStatus(CreatedTables, null);
 
                 CreatedTables.Clear();
             }
         }
 
-        public static void EnsureTTL(string tableName)
+        public static async Task EnsureTTL(string tableName)
         {
-            Func<bool> testFunction = () =>
+            async Task<bool> testFunction()
             {
-                var ttl = GetTTL(tableName);
-                var ttlReady = (ttl.TimeToLiveStatus == TimeToLiveStatus.ENABLED &&
-                string.Equals(ttl.AttributeName, DefaultTTLAttribute));
-                return ttlReady;
-            };
+                var ttl = await GetTTL(tableName);
+                return ttl.TimeToLiveStatus == TimeToLiveStatus.ENABLED && string.Equals(ttl.AttributeName, DefaultTTLAttribute);
+            }
 
-            if (testFunction())
+            if (await testFunction())
+            {
                 return;
+            }
 
-            Client.UpdateTimeToLive(new UpdateTimeToLiveRequest
+            await Client.UpdateTimeToLiveAsync(new UpdateTimeToLiveRequest
             {
                 TableName = tableName,
                 TimeToLiveSpecification = new TimeToLiveSpecification
@@ -473,52 +472,58 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             });
 
-            UtilityMethods.WaitUntil(testFunction);
+            await UtilityMethods.WaitUntilAsync(testFunction);
         }
-        public static TimeToLiveDescription GetTTL(string tableName)
+
+        public static async Task<TimeToLiveDescription> GetTTL(string tableName)
         {
-            return Client.DescribeTimeToLive(new DescribeTimeToLiveRequest { TableName = tableName }).TimeToLiveDescription;
+            var response = await Client.DescribeTimeToLiveAsync(new DescribeTimeToLiveRequest { TableName = tableName });
+            return response.TimeToLiveDescription;
         }
-        public static void WaitForTableStatus(string tableName, TableStatus status)
+
+        public static Task WaitForTableStatus(string tableName, TableStatus status)
         {
-            WaitForTableStatus(new string[] { tableName }, status);
+            return WaitForTableStatus(new string[] { tableName }, status);
         }
-        public static void WaitForTableStatus(IEnumerable<string> tableNames, TableStatus status)
+
+        public static async Task WaitForTableStatus(IEnumerable<string> tableNames, TableStatus status)
         {
-            Console.WriteLine("Waiting for tables [{0}] to reach status {1}",
-                string.Join(", ", tableNames.ToArray()), status);
+            Console.WriteLine("Waiting for tables [{0}] to reach status {1}", string.Join(", ", tableNames.ToArray()), status);
             var tablesList = new List<string>(tableNames);
 
-            Func<bool> testFunction = () =>
+            async Task<bool> testFunction()
             {
                 bool allReady = true;
-                foreach(var tableName in tablesList.ToArray())
+                foreach (var tableName in tablesList.ToArray())
                 {
-                    var tableStatus = GetStatus(tableName);
-                    allReady &= (tableStatus == status);
+                    var tableStatus = await GetStatus(tableName);
+                    allReady &= tableStatus == status;
                     if (allReady)
+                    {
                         tablesList.Remove(tableName);
+                    }
 
                     if (!allReady)
+                    {
                         break;
+                    }
                 }
 
                 return allReady;
-            };
+            }
 
-            UtilityMethods.WaitUntil(testFunction);
-
+            await UtilityMethods.WaitUntilAsync(testFunction);
             Console.WriteLine("All tables ready");
         }
-        public static TableStatus GetStatus(string tableName)
+
+        public static async Task<TableStatus> GetStatus(string tableName)
         {
-            TableStatus status = null;
+            TableStatus status;
             try
             {
-                var table = Client.DescribeTable(tableName);
-                status = table.Table.TableStatus;
+                status = (await Client.DescribeTableAsync(tableName)).Table.TableStatus;
             }
-            catch(ResourceNotFoundException)
+            catch (ResourceNotFoundException)
             {
                 status = null;
             }
