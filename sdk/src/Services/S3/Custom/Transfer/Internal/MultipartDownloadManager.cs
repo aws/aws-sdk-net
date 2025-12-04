@@ -63,7 +63,7 @@ namespace Amazon.S3.Transfer.Internal
         // Atomic flag to ensure completion event fires exactly once
         // Without this, concurrent parts completing simultaneously can both see
         // transferredBytes == _totalObjectSize and fire duplicate completion events
-        // Uses int instead of bool because Interlocked.CompareExchange requires reference types
+        // Uses long instead of bool for compatibility with Interlocked operations
         private long _completionEventFired = 0;  // 0 = false, 1 = true
 
         private readonly Logger _logger = Logger.GetLogger(typeof(MultipartDownloadManager));
