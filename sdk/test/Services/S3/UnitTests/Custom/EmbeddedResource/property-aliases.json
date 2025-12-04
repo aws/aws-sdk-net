@@ -8,6 +8,7 @@
       "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId"
     },
     "TransferUtilityUploadResponse": {
+      "Bucket" : "BucketName",
       "ServerSideEncryption": "ServerSideEncryptionMethod",
       "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
       "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
@@ -127,6 +128,32 @@
     },
     "AbortMultipartUploadRequest": {
       "Bucket": "BucketName"
+    },
+    "CompleteMultipartUploadResponse": {
+      "Bucket" : "BucketName",
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId"
+    },
+    "GetObjectResponse": {
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5", 
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId",
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "Restore": "RestoreExpiration"
+    },
+    "TransferUtilityDownloadResponse": {
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId", 
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "Restore": "RestoreExpiration"
+    },
+      "TransferUtilityOpenStreamResponse": {
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId", 
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "Restore": "RestoreExpiration"
     }
   }
 }

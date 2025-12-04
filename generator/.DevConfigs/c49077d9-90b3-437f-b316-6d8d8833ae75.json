@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Remove AmazonWebServiceResponse as base class for transfer utility repsonse objects."
+      ]
+    }
+  ]
+}

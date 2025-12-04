@@ -133,6 +133,29 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
+        public void MapPutObjectResponse_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<PutObjectResponse, TransferUtilityUploadResponse>(
+                new[] { "Conversion", "PutObjectResponse", "UploadResponse" },
+                (sourceResponse) =>
+                {
+                    return ResponseMapper.MapPutObjectResponse(sourceResponse);
+                },
+                usesHeadersCollection: false,
+                usesResponseHeadersOverrides: false,
+                (sourceResponse) =>
+                {
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.ContentLength = 1024;
+                },
+                (sourceResponse, targetResponse) =>
+                {
+                  
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void MapUploadRequest_PutObjectRequest_AllMappedProperties_WorkCorrectly()
         {
             ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityUploadRequest, PutObjectRequest>(
@@ -142,7 +165,12 @@ namespace AWSSDK.UnitTests
                     var simpleUploadCommand = new SimpleUploadCommand(null, null, sourceRequest);
                     return simpleUploadCommand.ConstructRequest();
                 },
-                usesHeadersCollection: false);
+                usesHeadersCollection: true,
+                usesResponseHeadersOverrides: false,
+                (sourceRequest) =>
+                {
+                    sourceRequest.InputStream = new MemoryStream(1024);
+                });
         }
 
         [TestMethod]
@@ -385,6 +413,33 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("test-upload-id-marker", listResult.UploadIdMarker, "UploadIdMarker should match");
             Assert.IsNull(listResult.ExpectedBucketOwner, "ExpectedBucketOwner should be null with minimal request");
             Assert.IsNull(listResult.RequestPayer, "RequestPayer should be null with minimal request");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapPutObjectResponse_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new PutObjectResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new PutObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapPutObjectResponse(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+            }
         }
 
         private void ValidateMappingTransferUtilityAndSdkRequests<TSourceRequest, TTargetRequest>(
@@ -668,6 +723,74 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
+        public void ValidateTransferUtilityUploadResponseDefinitionCompleteness()
+        {
+            ValidateResponseDefinitionCompleteness<TransferUtilityUploadResponse>(
+                new[] { "Definition", "UploadResponse", "PutObjectResponse" },
+                "TransferUtilityUploadResponse");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapCompleteMultipartUploadResponse_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<CompleteMultipartUploadResponse, TransferUtilityUploadResponse>(
+                new[] { "Conversion", "CompleteMultipartResponse", "UploadResponse" },
+                (sourceResponse) =>
+                {
+                    return ResponseMapper.MapCompleteMultipartUploadResponse(sourceResponse);
+                },
+                usesHeadersCollection: false,
+                usesResponseHeadersOverrides: false,
+                (sourceResponse) =>
+                {
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.ContentLength = 1024;
+                },
+                (sourceResponse, targetResponse) =>
+                {
+                    
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapCompleteMultipartUploadResponse_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new CompleteMultipartUploadResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new CompleteMultipartUploadResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapCompleteMultipartUploadResponse(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ValidateCompleteMultipartUploadResponseConversionCompleteness()
+        {
+            ValidateResponseDefinitionCompleteness<TransferUtilityUploadResponse>(
+                new[] { "Conversion", "CompleteMultipartResponse", "UploadResponse" },
+                "TransferUtilityUploadResponse");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void ValidatePutObjectRequestDefinitionCompleteness()
         {
             ValidateResponseDefinitionCompleteness<PutObjectRequest>(
@@ -681,6 +804,56 @@ namespace AWSSDK.UnitTests
                         .Select(p => p.Name)
                         .ToList();
                 });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponse_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<GetObjectResponse, TransferUtilityDownloadResponse>(
+                new[] { "Conversion", "GetObjectResponse", "DownloadResponse" },
+                (sourceResponse) =>
+                {
+                    return ResponseMapper.MapGetObjectResponse(sourceResponse);
+                },
+                usesHeadersCollection: true,
+                usesResponseHeadersOverrides: false,
+                (sourceResponse) =>
+                {
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.Headers.ContentLength = 1024;
+                },
+                (sourceResponse, targetResponse) =>
+                {
+                    
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponse_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new GetObjectResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new GetObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapGetObjectResponse(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+            }
         }
 
         [TestMethod]
@@ -733,6 +906,205 @@ namespace AWSSDK.UnitTests
                         .ToList();
                 });
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponseToOpenStream_AllMappedProperties_WorkCorrectly()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<GetObjectResponse, TransferUtilityOpenStreamResponse>(
+                new[] { "Conversion", "GetObjectResponse", "DownloadResponse" },
+                (sourceResponse) =>
+                {
+                    return ResponseMapper.MapGetObjectResponseToOpenStream(sourceResponse);
+                },
+                usesHeadersCollection: true,
+                usesResponseHeadersOverrides: false,
+                (sourceResponse) =>
+                {
+                    sourceResponse.HttpStatusCode = HttpStatusCode.OK;
+                    sourceResponse.Headers.ContentLength = 1024;
+                    sourceResponse.ResponseStream = new MemoryStream(new byte[1024]);
+                },
+                (sourceResponse, targetResponse) =>
+                {
+                    Assert.AreSame(sourceResponse.ResponseStream, targetResponse.ResponseStream, "ResponseStream should be the same instance");
+                });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponseToOpenStream_NullValues_HandledCorrectly()
+        {
+            // Test null handling scenarios
+            var testCases = new[]
+            {
+                // Test null Expiration
+                new GetObjectResponse { Expiration = null },
+                
+                // Test null enum conversions
+                new GetObjectResponse { ChecksumType = null, RequestCharged = null, ServerSideEncryptionMethod = null },
+                
+                // Test null ResponseStream
+                new GetObjectResponse { ResponseStream = null }
+            };
+
+            foreach (var testCase in testCases)
+            {
+                var mapped = ResponseMapper.MapGetObjectResponseToOpenStream(testCase);
+                Assert.IsNotNull(mapped, "Response should always be mappable");
+
+                // Test null handling
+                if (testCase.Expiration == null)
+                {
+                    Assert.IsNull(mapped.Expiration, "Null Expiration should map to null");
+                }
+                
+                if (testCase.ResponseStream == null)
+                {
+                    Assert.IsNull(mapped.ResponseStream, "Null ResponseStream should map to null");
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponseToOpenStream_ResponseStream_HandledCorrectly()
+        {
+            // Test with actual stream
+            var testStream = new MemoryStream(new byte[] { 1, 2, 3, 4, 5 });
+            var sourceResponse = new GetObjectResponse
+            {
+                ResponseStream = testStream,
+                ETag = "test-etag",
+                Headers = { ContentLength = 5 }
+            };
+
+            var mappedResponse = ResponseMapper.MapGetObjectResponseToOpenStream(sourceResponse);
+
+            Assert.IsNotNull(mappedResponse, "Mapped response should not be null");
+            Assert.AreSame(testStream, mappedResponse.ResponseStream, "ResponseStream should be the same instance");
+            Assert.AreEqual("test-etag", mappedResponse.ETag, "Other properties should also be mapped");
+            Assert.AreEqual(5, mappedResponse.Headers.ContentLength, "ContentLength should be mapped");
+
+            // Test with null stream
+            var sourceWithNullStream = new GetObjectResponse
+            {
+                ResponseStream = null,
+                ETag = "test-etag-2"
+            };
+
+            var mappedWithNullStream = ResponseMapper.MapGetObjectResponseToOpenStream(sourceWithNullStream);
+
+            Assert.IsNotNull(mappedWithNullStream, "Mapped response should not be null even with null stream");
+            Assert.IsNull(mappedWithNullStream.ResponseStream, "ResponseStream should be null when source is null");
+            Assert.AreEqual("test-etag-2", mappedWithNullStream.ETag, "Other properties should still be mapped");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MapGetObjectResponseToOpenStream_NullSource_ThrowsArgumentNullException()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() => 
+                ResponseMapper.MapGetObjectResponseToOpenStream(null),
+                "Mapping null source should throw ArgumentNullException");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TransferUtilityOpenStreamResponse_Dispose_DisposesResponseStream()
+        {
+            // Arrange
+            var memoryStream = new MemoryStream(new byte[] { 1, 2, 3, 4, 5 });
+            var response = new TransferUtilityOpenStreamResponse
+            {
+                ResponseStream = memoryStream,
+                ETag = "test-etag"
+            };
+
+            // Act
+            response.Dispose();
+
+            // Assert - accessing disposed stream should throw ObjectDisposedException
+            Assert.ThrowsException<ObjectDisposedException>(() => _ = memoryStream.Length, 
+                "Accessing Length of disposed stream should throw ObjectDisposedException");
+            Assert.ThrowsException<ObjectDisposedException>(() => _ = memoryStream.Position, 
+                "Accessing Position of disposed stream should throw ObjectDisposedException");
+            Assert.ThrowsException<ObjectDisposedException>(() => memoryStream.Read(new byte[1], 0, 1), 
+                "Reading from disposed stream should throw ObjectDisposedException");
+            Assert.IsNull(response.ResponseStream, "ResponseStream should be null after disposal");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TransferUtilityOpenStreamResponse_Dispose_MultipleCallsSafe()
+        {
+            // Arrange
+            var memoryStream = new MemoryStream(new byte[] { 1, 2, 3, 4, 5 });
+            var response = new TransferUtilityOpenStreamResponse
+            {
+                ResponseStream = memoryStream
+            };
+
+            // Act - call dispose multiple times
+            response.Dispose();
+            response.Dispose(); // Second call should not throw
+
+            // Assert - stream should still be disposed after multiple dispose calls
+            Assert.ThrowsException<ObjectDisposedException>(() => _ = memoryStream.Length, 
+                "Stream should remain disposed after multiple dispose calls");
+            Assert.ThrowsException<ObjectDisposedException>(() => memoryStream.Read(new byte[1], 0, 1), 
+                "Stream should remain disposed after multiple dispose calls");
+            Assert.IsNull(response.ResponseStream, "ResponseStream should remain null after multiple dispose calls");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TransferUtilityOpenStreamResponse_Dispose_NullStreamSafe()
+        {
+            // Arrange
+            var response = new TransferUtilityOpenStreamResponse
+            {
+                ResponseStream = null,
+                ETag = "test-etag"
+            };
+
+            // Act & Assert - should not throw
+            response.Dispose();
+            Assert.IsNull(response.ResponseStream, "ResponseStream should remain null");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TransferUtilityOpenStreamResponse_UsingStatement_DisposesCorrectly()
+        {
+            // Arrange
+            var memoryStream = new MemoryStream(new byte[] { 1, 2, 3, 4, 5 });
+            MemoryStream capturedStream = null;
+
+            // Act
+            using (var response = new TransferUtilityOpenStreamResponse())
+            {
+                response.ResponseStream = memoryStream;
+                response.ETag = "test-etag";
+                capturedStream = memoryStream;
+            } // Dispose should be called here
+
+            // Assert - stream should be disposed after using block
+            Assert.ThrowsException<ObjectDisposedException>(() => _ = capturedStream.Length, 
+                "Stream should be disposed after using block");
+            Assert.ThrowsException<ObjectDisposedException>(() => capturedStream.Read(new byte[1], 0, 1), 
+                "Stream should be disposed after using block");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TransferUtilityOpenStreamResponse_ImplementsIDisposable()
+        {
+            // Assert
+            Assert.IsTrue(typeof(IDisposable).IsAssignableFrom(typeof(TransferUtilityOpenStreamResponse)), 
+                "TransferUtilityOpenStreamResponse should implement IDisposable");
+        }
+
 
         /// <summary>
         /// Generates appropriate test data for a given property type
@@ -789,10 +1161,14 @@ namespace AWSSDK.UnitTests
                 };
             }
 
-            // Integer types
-            if (propertyType == typeof(int) || propertyType == typeof(long))
+            if (propertyType == typeof(int))
             {
-                return 1024;
+            return 1024;
+            }
+
+            if (propertyType == typeof(long))
+            {
+            return 1024L;  // Return long literal
             }
 
             if (propertyType == typeof(List<S3Grant>))

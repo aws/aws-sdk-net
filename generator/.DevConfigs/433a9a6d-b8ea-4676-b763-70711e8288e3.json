@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "minor",
+      "changeLogMessages": [
+        "Added UploadInitiatedEvent, UploadCompletedEvent, and UploadFailedEvent for multipart uploads."
+      ]
+    }
+  ]
+}

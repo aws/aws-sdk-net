@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "minor",
+      "changeLogMessages": [
+          "Created new UploadDirectoryWithResponseAsync method on the Amazon.S3.Transfer.TransferUtility class."
+      ]
+    }
+  ]
+}
