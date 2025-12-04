@@ -62,7 +62,7 @@ namespace Amazon.S3.Transfer.Internal
         
         // Atomic flag to ensure completion event fires exactly once
         // Without this, concurrent parts completing simultaneously can both see
-        // transferredBytes >= _totalObjectSize and fire duplicate completion events
+        // transferredBytes == _totalObjectSize and fire duplicate completion events
         // Uses int instead of bool because Interlocked.CompareExchange requires reference types
         private long _completionEventFired = 0;  // 0 = false, 1 = true
 
