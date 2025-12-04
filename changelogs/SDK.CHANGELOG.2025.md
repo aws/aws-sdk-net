@@ -1,3 +1,7 @@
+### 3.7.1178.0 (2025-12-04 17:02 UTC)
+* Lambda (3.7.509.0)
+	* Add DisallowedByVpcEncryptionControl to the LastUpdateStatusReasonCode and StateReasonCode enums to represent failures caused by VPC Encryption Controls.
+
 ### 3.7.1177.0 (2025-12-03 16:45 UTC)
 * Bedrock (3.7.509.0)
 	* Adding support in Amazon Bedrock to customize models with reinforcement fine-tuning (RFT) and support for updating the existing Custom Model Deployments.
