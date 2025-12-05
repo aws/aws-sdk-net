@@ -176,6 +176,11 @@ namespace Amazon.Inspector2.Model
         /// </para>
         ///  
         /// <para>
+        ///  <c>UNSUPPORTED_CODE_ARTIFACTS </c> - The function was not scanned because it has
+        /// an unsupported code artifacts.
+        /// </para>
+        ///  
+        /// <para>
         ///  <c>UNSUPPORTED_CONFIG_FILE</c> - Reserved for future use.
         /// </para>
         ///  

@@ -5325,6 +5325,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ScanStatusReason UNMANAGED_EC2_INSTANCE = new ScanStatusReason("UNMANAGED_EC2_INSTANCE");
         /// <summary>
+        /// Constant UNSUPPORTED_CODE_ARTIFACTS for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_CODE_ARTIFACTS = new ScanStatusReason("UNSUPPORTED_CODE_ARTIFACTS");
+        /// <summary>
         /// Constant UNSUPPORTED_CONFIG_FILE for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason UNSUPPORTED_CONFIG_FILE = new ScanStatusReason("UNSUPPORTED_CONFIG_FILE");
