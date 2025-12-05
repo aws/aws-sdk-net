@@ -574,8 +574,8 @@ namespace ServiceClientGenerator
                         new Operation(this, "DeleteBucketInventoryConfiguration", DocumentRoot[OperationsKey]["DeleteBucketInventoryConfiguration"]),
                         new Operation(this,"PutBucketRequestPayment", DocumentRoot[OperationsKey]["PutBucketRequestPayment"]),
                         new Operation(this, "CreateBucketMetadataConfiguration",DocumentRoot[OperationsKey]["CreateBucketMetadataConfiguration"]),
-                        new Operation(this, "GetBucketMetadataConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataConfiguration"])
-
+                        new Operation(this, "GetBucketMetadataConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataConfiguration"]),
+                        new Operation(this, "RenameObject", DocumentRoot[OperationsKey]["RenameObject"]),
                     };
                 }
                 return _s3AllowListOperations.Where(operation => operation.data != null).ToList();

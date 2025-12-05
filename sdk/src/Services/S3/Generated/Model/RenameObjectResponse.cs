@@ -12,10 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using Amazon.Runtime;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -23,7 +34,6 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class RenameObjectResponse : AmazonWebServiceResponse
     {
-        // The RenameObject operation returns an empty response with success status code 
-        // when the operation succeeds. No additional response fields are needed.
+
     }
 }
