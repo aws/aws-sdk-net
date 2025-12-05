@@ -1552,6 +1552,91 @@ namespace Amazon.PartnerCentralAccount
 
         #endregion
         
+        #region  GetVerification
+
+
+        /// <summary>
+        /// Retrieves the current status and details of a verification process for a partner account.
+        /// This operation allows partners to check the progress and results of business or registrant
+        /// verification processes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerification service method.</param>
+        /// 
+        /// <returns>The response from the GetVerification service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. This may occur when referencing a resource
+        /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetVerification">REST API Reference for GetVerification Operation</seealso>
+        public virtual GetVerificationResponse GetVerification(GetVerificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<GetVerificationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the current status and details of a verification process for a partner account.
+        /// This operation allows partners to check the progress and results of business or registrant
+        /// verification processes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVerification service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. This may occur when referencing a resource
+        /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetVerification">REST API Reference for GetVerification Operation</seealso>
+        public virtual Task<GetVerificationResponse> GetVerificationAsync(GetVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerificationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVerificationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListConnectionInvitations
 
 
@@ -2281,6 +2366,101 @@ namespace Amazon.PartnerCentralAccount
             options.ResponseUnmarshaller = StartProfileUpdateTaskResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartProfileUpdateTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartVerification
+
+
+        /// <summary>
+        /// Initiates a new verification process for a partner account. This operation begins
+        /// the verification workflow for either business registration or individual registrant
+        /// identity verification as required by AWS Partner Central.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVerification service method.</param>
+        /// 
+        /// <returns>The response from the StartVerification service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This typically occurs when trying to create a resource that already exists
+        /// or modify a resource that has been changed by another process.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed a service quota or limit. This may
+        /// occur when trying to create more resources than allowed by the service limits.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartVerification">REST API Reference for StartVerification Operation</seealso>
+        public virtual StartVerificationResponse StartVerification(StartVerificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<StartVerificationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a new verification process for a partner account. This operation begins
+        /// the verification workflow for either business registration or individual registrant
+        /// identity verification as required by AWS Partner Central.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartVerification service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This typically occurs when trying to create a resource that already exists
+        /// or modify a resource that has been changed by another process.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed a service quota or limit. This may
+        /// occur when trying to create more resources than allowed by the service limits.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartVerification">REST API Reference for StartVerification Operation</seealso>
+        public virtual Task<StartVerificationResponse> StartVerificationAsync(StartVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVerificationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartVerificationResponse>(request, options, cancellationToken);
         }
 
         #endregion

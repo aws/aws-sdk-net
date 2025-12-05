@@ -983,6 +983,68 @@ namespace Amazon.PartnerCentralAccount
 
         #endregion
         
+        #region  GetVerification
+
+
+        /// <summary>
+        /// Retrieves the current status and details of a verification process for a partner account.
+        /// This operation allows partners to check the progress and results of business or registrant
+        /// verification processes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerification service method.</param>
+        /// 
+        /// <returns>The response from the GetVerification service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. This may occur when referencing a resource
+        /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetVerification">REST API Reference for GetVerification Operation</seealso>
+        GetVerificationResponse GetVerification(GetVerificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVerification operation on AmazonPartnerCentralAccountClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVerification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetVerification">REST API Reference for GetVerification Operation</seealso>
+        IAsyncResult BeginGetVerification(GetVerificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVerification.</param>
+        /// 
+        /// <returns>Returns a  GetVerificationResult from PartnerCentralAccount.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetVerification">REST API Reference for GetVerification Operation</seealso>
+        GetVerificationResponse EndGetVerification(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListConnectionInvitations
 
 
@@ -1522,6 +1584,73 @@ namespace Amazon.PartnerCentralAccount
         /// <returns>Returns a  StartProfileUpdateTaskResult from PartnerCentralAccount.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartProfileUpdateTask">REST API Reference for StartProfileUpdateTask Operation</seealso>
         StartProfileUpdateTaskResponse EndStartProfileUpdateTask(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartVerification
+
+
+        /// <summary>
+        /// Initiates a new verification process for a partner account. This operation begins
+        /// the verification workflow for either business registration or individual registrant
+        /// identity verification as required by AWS Partner Central.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVerification service method.</param>
+        /// 
+        /// <returns>The response from the StartVerification service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This typically occurs when trying to create a resource that already exists
+        /// or modify a resource that has been changed by another process.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed a service quota or limit. This may
+        /// occur when trying to create more resources than allowed by the service limits.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartVerification">REST API Reference for StartVerification Operation</seealso>
+        StartVerificationResponse StartVerification(StartVerificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartVerification operation on AmazonPartnerCentralAccountClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartVerification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartVerification">REST API Reference for StartVerification Operation</seealso>
+        IAsyncResult BeginStartVerification(StartVerificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartVerification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartVerification.</param>
+        /// 
+        /// <returns>Returns a  StartVerificationResult from PartnerCentralAccount.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartVerification">REST API Reference for StartVerification Operation</seealso>
+        StartVerificationResponse EndStartVerification(IAsyncResult asyncResult);
 
         #endregion
         

@@ -205,6 +205,10 @@ namespace Amazon.PartnerCentralAccount
     {
 
         /// <summary>
+        /// Constant ACCOUNT_ALREADY_VERIFIED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason ACCOUNT_ALREADY_VERIFIED = new ConflictExceptionReason("ACCOUNT_ALREADY_VERIFIED");
+        /// <summary>
         /// Constant CONFLICT_CLIENT_TOKEN for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason CONFLICT_CLIENT_TOKEN = new ConflictExceptionReason("CONFLICT_CLIENT_TOKEN");
@@ -244,6 +248,10 @@ namespace Amazon.PartnerCentralAccount
         /// Constant INCOMPATIBLE_PROFILE_STATE for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason INCOMPATIBLE_PROFILE_STATE = new ConflictExceptionReason("INCOMPATIBLE_PROFILE_STATE");
+        /// <summary>
+        /// Constant VERIFICATION_ALREADY_IN_PROGRESS for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason VERIFICATION_ALREADY_IN_PROGRESS = new ConflictExceptionReason("VERIFICATION_ALREADY_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1042,6 +1050,10 @@ namespace Amazon.PartnerCentralAccount
         /// Constant SENDER_PROFILE_NOT_FOUND for ResourceNotFoundExceptionReason
         /// </summary>
         public static readonly ResourceNotFoundExceptionReason SENDER_PROFILE_NOT_FOUND = new ResourceNotFoundExceptionReason("SENDER_PROFILE_NOT_FOUND");
+        /// <summary>
+        /// Constant VERIFICATION_NOT_FOUND for ResourceNotFoundExceptionReason
+        /// </summary>
+        public static readonly ResourceNotFoundExceptionReason VERIFICATION_NOT_FOUND = new ResourceNotFoundExceptionReason("VERIFICATION_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1172,6 +1184,118 @@ namespace Amazon.PartnerCentralAccount
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerificationStatus.
+    /// </summary>
+    public class VerificationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus FAILED = new VerificationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus IN_PROGRESS = new VerificationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING_CUSTOMER_ACTION for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus PENDING_CUSTOMER_ACTION = new VerificationStatus("PENDING_CUSTOMER_ACTION");
+        /// <summary>
+        /// Constant REJECTED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus REJECTED = new VerificationStatus("REJECTED");
+        /// <summary>
+        /// Constant SUCCEEDED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus SUCCEEDED = new VerificationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationStatus FindValue(string value)
+        {
+            return FindValue<VerificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerificationType.
+    /// </summary>
+    public class VerificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUSINESS_VERIFICATION for VerificationType
+        /// </summary>
+        public static readonly VerificationType BUSINESS_VERIFICATION = new VerificationType("BUSINESS_VERIFICATION");
+        /// <summary>
+        /// Constant REGISTRANT_VERIFICATION for VerificationType
+        /// </summary>
+        public static readonly VerificationType REGISTRANT_VERIFICATION = new VerificationType("REGISTRANT_VERIFICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationType FindValue(string value)
+        {
+            return FindValue<VerificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationType(string value)
         {
             return FindValue(value);
         }

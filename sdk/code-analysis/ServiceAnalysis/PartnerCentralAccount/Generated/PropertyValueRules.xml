@@ -576,6 +576,12 @@
     <pattern>pprofile-[A-Za-z0-9]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.GetVerificationResponse.VerificationStatusReason</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.ListConnectionInvitationsRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
@@ -843,6 +849,18 @@
     <pattern>pprofiletask-[A-Za-z0-9]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.StartVerificationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.StartVerificationResponse.VerificationStatusReason</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>200</max>
@@ -898,6 +916,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.AllianceLeadContact.LastName</property>
+    <min>1</min>
+    <max>80</max>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.BusinessVerificationDetails.CountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.BusinessVerificationDetails.JurisdictionOfIncorporation</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z0-9]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.BusinessVerificationDetails.LegalName</property>
+    <min>1</min>
+    <max>80</max>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.BusinessVerificationDetails.RegistrationId</property>
     <min>1</min>
     <max>80</max>
     <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
