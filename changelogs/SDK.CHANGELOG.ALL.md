@@ -1,3 +1,27 @@
+### 4.0.147.0 (2025-12-05 19:23 UTC)
+* DynamoDBv2 (4.0.10.2)
+	* Fix `UpdateItem` not to throw an error when `ExpressionAttributeValues` is empty (https://github.com/aws/aws-sdk-net/issues/4144)
+* ECS (4.0.10.2)
+	* Updating stop-task API to encapsulate containers with custom stop signal
+* IdentityManagement (4.0.9.0)
+	* Adding the ExpirationTime attribute to the delegation request resource.
+* Inspector2 (4.0.8.0)
+	* This release adds a new ScanStatus called "Unsupported Code Artifacts". This ScanStatus will be returned when a Lambda function was not code scanned because it has unsupported code artifacts.
+* PartnerCentralAccount (4.0.1.0)
+	* Adding Verification API's to Partner Central Account SDK.
+* S3 (4.0.14.1)
+	* The following changes are a result of moving S3 from custom code to generated code based on the model provided by S3:
+	* [Breaking Change] The method isSetS3BucketDestination() in Amazon.S3.Model.InventoryDestination has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The method isSetAccountId() in Amazon.S3.Model.InventoryS3BucketDestination has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The method IsSetInventoryConfigurationList() in Amazon.S3.Model.ListBucketInventoryConfigurationsResponse has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The setter for Days in Amazon.S3.Model.RecordExpiration has been changed from int to int? to be consistent with the nullability changes in V4.
+	* Generates Put, Get, Delete, and ListBucketInventoryConfiguration. Generate PutBucketAccelerateConfiguration, PutBucketRequestPayment, CreateBucketMetadataTableConfiguration, GetBucketMetadataConfiguration.
+* SimpleEmailV2 (4.0.8.0)
+	* Updating the desired url for `PutEmailIdentityDkimSigningAttributes` from v1 to v2
+* Core 4.0.3.4
+	* Add user agent header to ResponseMetadata
+	* All service and extension packages updated to require new Core
+
 ### 4.0.146.0 (2025-12-04 17:01 UTC)
 * Lambda (4.0.11.0)
 	* Add DisallowedByVpcEncryptionControl to the LastUpdateStatusReasonCode and StateReasonCode enums to represent failures caused by VPC Encryption Controls.
