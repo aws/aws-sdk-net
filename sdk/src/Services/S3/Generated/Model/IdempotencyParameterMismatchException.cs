@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -22,22 +26,32 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The request includes a client token value that was used for a previous request, but at least one of the request parameters is different from 
-    /// the previous request that used that client token.
+    /// Parameters on this idempotent request are inconsistent with parameters used in previous
+    /// request(s). 
+    /// 
+    ///  
+    /// <para>
+    /// For a list of error codes and more information on Amazon S3 errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">Error
+    /// codes</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Idempotency ensures that an API request completes no more than one time. With an idempotent
+    /// request, if the original request completes successfully, any subsequent retries complete
+    /// successfully without performing any further actions.
+    /// </para>
+    ///  </note>
     /// </summary>
-    /// <remarks>
-    /// This exception is specific to operations that use idempotency tokens, such as the RenameObject operation.
-    /// When you receive this exception, it means you're attempting to retry an operation with the same client token but with different parameters,
-    /// which violates the idempotency guarantee.
-    /// </remarks>
-#if !NETSTANDARD
+    #if !NETSTANDARD
     [Serializable]
-#endif
+    #endif
     public partial class IdempotencyParameterMismatchException : AmazonS3Exception
     {
+
         /// <summary>
         /// Constructs a new IdempotencyParameterMismatchException with the specified error
         /// message.
@@ -45,46 +59,23 @@ namespace Amazon.S3.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public IdempotencyParameterMismatchException(string message)
-            : base(message) { }
+        public IdempotencyParameterMismatchException(string message) 
+            : base(message) {}
 
         /// <summary>
         /// Construct instance of IdempotencyParameterMismatchException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public IdempotencyParameterMismatchException(string message, Exception innerException)
-            : base(message, innerException) { }
+        public IdempotencyParameterMismatchException(string message, Exception innerException) 
+            : base(message, innerException) {}
 
         /// <summary>
         /// Construct instance of IdempotencyParameterMismatchException
         /// </summary>
         /// <param name="innerException"></param>
-        public IdempotencyParameterMismatchException(Exception innerException)
-            : base(innerException) { }
-
-        /// <summary>
-        /// Construct instance of IdempotencyParameterMismatchException
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public IdempotencyParameterMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, innerException, errorType, errorCode, requestId, statusCode) { }
-
-        /// <summary>
-        /// Construct instance of IdempotencyParameterMismatchException
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public IdempotencyParameterMismatchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, errorType, errorCode, requestId, statusCode) { }
+        public IdempotencyParameterMismatchException(Exception innerException) 
+            : base(innerException) {}
 
         /// <summary>
         /// Construct instance of IdempotencyParameterMismatchException
@@ -95,10 +86,20 @@ namespace Amazon.S3.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        /// <param name="amazonId2"></param>
-        /// <param name="amazonCfId"></param>
-        public IdempotencyParameterMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
-            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
+        public IdempotencyParameterMismatchException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
+
+        /// <summary>
+        /// Construct instance of IdempotencyParameterMismatchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public IdempotencyParameterMismatchException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
+
 
 #if !NETSTANDARD
         /// <summary>
@@ -128,5 +129,19 @@ namespace Amazon.S3.Model
             base.GetObjectData(info, context);
         }
 #endif
+
+        /// <summary>
+        /// Construct instance of IdempotencyParameterMismatchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        /// <param name="amazonId2"></param>
+        /// <param name="amazonCfId"></param>
+        public IdempotencyParameterMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
+            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
     }
 }
