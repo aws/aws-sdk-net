@@ -1,3 +1,15 @@
+### 3.7.1179.0 (2025-12-05 19:25 UTC)
+* ECS (3.7.506.4)
+	* Updating stop-task API to encapsulate containers with custom stop signal
+* IdentityManagement (3.7.507.0)
+	* Adding the ExpirationTime attribute to the delegation request resource.
+* Inspector2 (3.7.505.0)
+	* This release adds a new ScanStatus called "Unsupported Code Artifacts". This ScanStatus will be returned when a Lambda function was not code scanned because it has unsupported code artifacts.
+* PartnerCentralAccount (3.7.501.0)
+	* Adding Verification API's to Partner Central Account SDK.
+* SimpleEmailV2 (3.7.505.0)
+	* Updating the desired url for `PutEmailIdentityDkimSigningAttributes` from v1 to v2
+
 ### 3.7.1178.0 (2025-12-04 17:02 UTC)
 * Lambda (3.7.509.0)
 	* Add DisallowedByVpcEncryptionControl to the LastUpdateStatusReasonCode and StateReasonCode enums to represent failures caused by VPC Encryption Controls.
