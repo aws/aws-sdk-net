@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Added UploadWithResponse and UploadWithResponseAsync methods to ITransferUtility interface"
+        "Added UploadWithResponse and UploadWithResponseAsync methods to the Amazon.S3.Transfer.ITransferUtility interface"
       ]
     }
   ]

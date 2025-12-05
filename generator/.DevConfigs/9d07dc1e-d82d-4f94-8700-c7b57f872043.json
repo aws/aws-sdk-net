@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "minor",
       "changeLogMessages": [
-                "Created new DownloadWithResponseAsync method on the Amazon.S3.Transfer.TransferUtility class. The new operation supports downloading in parallel parts of the S3 object to a file for improved performance."
+        "Added DownloadWithResponse method to the Amazon.S3.Transfer.ITransferUtility interface. The new operation supports downloading in parallel parts of the S3 object to a file for improved performance."
       ]
     }
   ]

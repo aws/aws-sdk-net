@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "minor",
       "changeLogMessages": [
-        "Added UploadInitiatedEvent, UploadCompletedEvent, and UploadFailedEvent for multipart uploads."
+        "Added UploadInitiatedEvent, UploadCompletedEvent, and UploadFailedEvent events to the Amazon.S3.Transfer.TransferUtility.Upload operation for multipart uploads."
       ]
     }
   ]
