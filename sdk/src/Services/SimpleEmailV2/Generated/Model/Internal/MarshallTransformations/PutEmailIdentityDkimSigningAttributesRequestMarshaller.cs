@@ -63,7 +63,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetEmailIdentity())
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field EmailIdentity set");
             request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
-            request.ResourcePath = "/v1/email/identities/{EmailIdentity}/dkim/signing";
+            request.ResourcePath = "/v2/email/identities/{EmailIdentity}/dkim/signing";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
