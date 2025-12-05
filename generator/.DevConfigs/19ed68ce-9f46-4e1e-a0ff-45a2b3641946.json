@@ -4,9 +4,9 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Added MaxInMemoryParts property to TransferUtilityOpenStreamRequest for controlling memory usage during multipart downloads",
-        "Added PartSize property to BaseDownloadRequest for configuring multipart download part sizes",
-        "Added MultipartDownloadType enum and property to BaseDownloadRequest for selecting download strategy"
+        "Added MaxInMemoryParts property to the Amazon.S3.Transfer.TransferUtilityOpenStreamRequest class for controlling memory usage during multipart downloads",
+        "Added PartSize property to the Amazon.S3.Transfer.BaseDownloadRequest class for configuring multipart download part sizes",
+        "Added MultipartDownloadType enum and property to the Amazon.S3.Transfer.BaseDownloadRequest class for selecting download strategy"
       ]
     }
   ]

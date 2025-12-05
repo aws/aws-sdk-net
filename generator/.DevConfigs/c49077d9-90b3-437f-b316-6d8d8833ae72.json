@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Add ContentLanguage to header collection of GetObjectResponse."
+        "Added ContentLanguage property to the header collection of the Amazon.S3.Model.GetObjectResponse class."
       ]
     }
   ]

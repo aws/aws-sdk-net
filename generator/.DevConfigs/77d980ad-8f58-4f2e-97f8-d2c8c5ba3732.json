@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "minor",
       "changeLogMessages": [
-        "Create new UploadWithResponse API that returns response metadata information for transfer utility."
+        "Created new UploadWithResponse methods on the Amazon.S3.Transfer.TransferUtility class that return response metadata information."
       ]
     }
   ]
