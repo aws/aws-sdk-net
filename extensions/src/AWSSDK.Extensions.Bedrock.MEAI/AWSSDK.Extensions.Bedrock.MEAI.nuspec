@@ -14,18 +14,18 @@
     <dependencies>
       <group targetFramework="net472">
         <dependency id="AWSSDK.Core" version="4.0.3.3" />
-        <dependency id="AWSSDK.BedrockRuntime" version="4.0.11.1" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.9.1" />
+        <dependency id="AWSSDK.BedrockRuntime" version="4.0.13" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="10.0.1" />
       </group>
       <group targetFramework="netstandard2.0">
         <dependency id="AWSSDK.Core" version="4.0.3.3" />
-        <dependency id="AWSSDK.BedrockRuntime" version="4.0.11.1" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.9.1" />
+        <dependency id="AWSSDK.BedrockRuntime" version="4.0.13" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="10.0.1" />
       </group>
       <group targetFramework="net8.0">
         <dependency id="AWSSDK.Core" version="4.0.3.3" />
-        <dependency id="AWSSDK.BedrockRuntime" version="4.0.11.1" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.9.1" />
+        <dependency id="AWSSDK.BedrockRuntime" version="4.0.13" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="10.0.1" />
       </group>
     </dependencies>
   </metadata>
