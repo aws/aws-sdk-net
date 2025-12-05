@@ -119,8 +119,6 @@ internal sealed partial class BedrockChatClient : IChatClient
                 // This gives the user clean JSON conforming to their schema
                 result.Contents.Add(new TextContent(structuredContent) { RawRepresentation = response.Output?.Message });
 
-                // Skip normal ContentBlock processing (Text, Image, etc.) since the model's
-                // entire response is contained in the ToolUseBlock we just extracted
                 if (DocumentToDictionary(response.AdditionalModelResponseFields) is { } responseFieldsDict)
                 {
                     result.AdditionalProperties = new(responseFieldsDict);
@@ -866,10 +864,6 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <summary>Creates a <see cref="ToolConfiguration"/> from the specified options.</summary>
-    /// <remarks>
-    /// When ResponseFormat is specified, creates a synthetic tool to enforce structured output.
-    /// This conflicts with user-provided tools as Bedrock only supports a single ToolChoice value.
-    /// </remarks>
     private static ToolConfiguration? CreateToolConfig(ToolConfiguration? toolConfig, ChatOptions? options)
     {
         if (options?.Tools is { Count: > 0 } tools)
