@@ -13,14 +13,13 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Internal;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
-using Amazon.DynamoDBv2.Model;
-using Amazon.Util;
-
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
@@ -157,6 +156,47 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+        internal void ApplyConditionalExpression(UpdateItemRequest request, Table table)
+        {
+            request.ConditionExpression = this.ExpressionStatement;
+            MergeAttributes(request, table);
+        }
+
+        internal void ApplyUpdateExpression(UpdateItemRequest request, Table table)
+        {
+            request.UpdateExpression = this.ExpressionStatement;
+            MergeAttributes(request, table);
+        }
+
+        private void MergeAttributes(UpdateItemRequest request, Table table)
+        {
+            var convertToAttributeValues  = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+            request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+            foreach (var kvp in convertToAttributeValues)
+            {
+                request.ExpressionAttributeValues[kvp.Key] = kvp.Value;
+            }
+
+
+            if (this.ExpressionAttributeNames?.Count > 0)
+            {
+                request.ExpressionAttributeNames ??= new Dictionary<string, string>(StringComparer.Ordinal);
+                foreach (var kvp in this.ExpressionAttributeNames)
+                {
+                    if (!request.ExpressionAttributeNames.ContainsKey(kvp.Key))
+                    {
+                        request.ExpressionAttributeNames[kvp.Key] = kvp.Value;
+                    }
+                }
+            }
+        }
+
+        internal void ApplyExpression(GetItemRequest request, Table table)
+        {
+            request.ProjectionExpression = ExpressionStatement;
+            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+        }
+
         internal void ApplyExpression(Get request, Table table)
         {
             request.ProjectionExpression = ExpressionStatement;
@@ -206,7 +246,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
             }
         }
-
 
         internal static void ApplyExpression(QueryRequest request, Table table,
             Expression keyExpression, Expression filterExpression)

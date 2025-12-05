@@ -13,16 +13,15 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Telemetry.Tracing;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-
-using Amazon.DynamoDBv2.Model;
 using System.Globalization;
-using Amazon.Runtime.Telemetry.Tracing;
-
-using System.Threading.Tasks;
+using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -211,9 +210,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal Search(SearchType searchMethod)
         {
             SearchMethod = searchMethod;
+            ReturnConsumedCapacity = ReturnConsumedCapacity.NONE;
             Reset();
             TracerProvider = SourceTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
-               ?? AWSConfigs.TelemetryProvider.TracerProvider;
+                             ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -260,17 +260,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public Dictionary<string, AttributeValue> NextKey { get; private set; }
 
+        /// <summary>
+        /// Aggregated per-call and accumulated metrics for this search operation.
+        /// </summary>
+        public SearchMetrics Metrics => _metrics;
+
+        /// <summary>
+        /// The ReturnConsumedCapacity setting used for this search (NONE, TOTAL, INDEXES).
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; internal set; }
+
         /// <inheritdoc/>
         public string PaginationToken
         {
-            get
-            {
-                return Common.ToPaginationToken(NextKey);
-            }
-            internal set
-            {
-                NextKey = Common.FromPaginationToken(value);
-            }
+            get { return Common.ToPaginationToken(NextKey); }
+            internal set { NextKey = Common.FromPaginationToken(value); }
         }
 
         /// <inheritdoc/>
@@ -361,6 +365,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             scanReq.Segment = this.Segment;
                         }
 
+                        if (ReturnConsumedCapacity != ReturnConsumedCapacity.NONE)
+                            scanReq.ReturnConsumedCapacity = ReturnConsumedCapacity;
+
                         SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: false);
 
                         var scanResult = internalClient.Scan(scanReq);
@@ -379,10 +386,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         NextKey = scanResult.LastEvaluatedKey;
                         scannedCount = scanResult.ScannedCount.GetValueOrDefault();
+                        UpdateMetricsAfterPage(scanResult.ConsumedCapacity, scanResult.ScannedCount.GetValueOrDefault(),
+                            ret.Count);
                         if (NextKey == null || NextKey.Count == 0)
                         {
                             IsDone = true;
                         }
+
                         return ret;
                     case SearchType.Query:
                         QueryRequest queryReq = new QueryRequest
@@ -401,7 +411,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         if (Filter != null)
                         {
-                            SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out var keyConditions, out var filterConditions);
+                            SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out var keyConditions,
+                                out var filterConditions);
                             queryReq.KeyConditions = keyConditions?.Count > 0 ? keyConditions : null;
                             queryReq.QueryFilter = filterConditions?.Count > 0 ? filterConditions : null;
                         }
@@ -423,6 +434,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
+                        if (ReturnConsumedCapacity != ReturnConsumedCapacity.NONE)
+                            queryReq.ReturnConsumedCapacity = ReturnConsumedCapacity;
+
                         SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: false);
 
                         var queryResult = internalClient.Query(queryReq);
@@ -441,10 +455,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         NextKey = queryResult.LastEvaluatedKey;
                         scannedCount = queryResult.ScannedCount.GetValueOrDefault();
+                        UpdateMetricsAfterPage(queryResult.ConsumedCapacity,
+                            queryResult.ScannedCount.GetValueOrDefault(), ret.Count);
                         if (NextKey == null || NextKey.Count == 0)
                         {
                             IsDone = true;
                         }
+
                         return ret;
                     default:
                         throw new InvalidOperationException("Unknown Search Method");
@@ -502,9 +519,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             scanReq.Segment = this.Segment;
                         }
 
+                        if (ReturnConsumedCapacity != ReturnConsumedCapacity.NONE)
+                            scanReq.ReturnConsumedCapacity = ReturnConsumedCapacity;
+
                         SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: true);
 
-                        var scanResult = await SourceTable.DDBClient.ScanAsync(scanReq, cancellationToken).ConfigureAwait(false);
+                        var scanResult = await SourceTable.DDBClient.ScanAsync(scanReq, cancellationToken)
+                            .ConfigureAwait(false);
                         if (scanResult.Items != null)
                         {
                             foreach (var item in scanResult.Items)
@@ -520,11 +541,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         NextKey = scanResult.LastEvaluatedKey;
                         scannedCount = scanResult.ScannedCount.GetValueOrDefault();
+                        UpdateMetricsAfterPage(scanResult.ConsumedCapacity, scanResult.ScannedCount.GetValueOrDefault(),
+                            ret.Count);
 
                         if (NextKey == null || NextKey.Count == 0)
                         {
                             IsDone = true;
                         }
+
                         return ret;
                     case SearchType.Query:
                         QueryRequest queryReq = new QueryRequest
@@ -557,19 +581,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         if (this.ProjectionExpression != null && this.ProjectionExpression.IsSet)
                         {
-                            queryReq.ProjectionExpression= this.ProjectionExpression.ExpressionStatement;
+                            queryReq.ProjectionExpression = this.ProjectionExpression.ExpressionStatement;
                             foreach (var ean in this.ProjectionExpression.ExpressionAttributeNames)
                             {
-                                queryReq.ExpressionAttributeNames.Add(ean.Key,ean.Value);
+                                queryReq.ExpressionAttributeNames.Add(ean.Key, ean.Value);
                             }
                         }
 
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
+                        if (ReturnConsumedCapacity != ReturnConsumedCapacity.NONE)
+                            queryReq.ReturnConsumedCapacity = ReturnConsumedCapacity;
+
                         SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: true);
 
-                        var queryResult = await SourceTable.DDBClient.QueryAsync(queryReq, cancellationToken).ConfigureAwait(false);
+                        var queryResult = await SourceTable.DDBClient.QueryAsync(queryReq, cancellationToken)
+                            .ConfigureAwait(false);
                         if (queryResult.Items != null)
                         {
                             foreach (var item in queryResult.Items)
@@ -582,13 +610,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 }
                             }
                         }
+
                         NextKey = queryResult.LastEvaluatedKey;
                         scannedCount = queryResult.ScannedCount.GetValueOrDefault();
+                        UpdateMetricsAfterPage(queryResult.ConsumedCapacity,
+                            queryResult.ScannedCount.GetValueOrDefault(), ret.Count);
 
                         if (NextKey == null || NextKey.Count == 0)
                         {
                             IsDone = true;
                         }
+
                         return ret;
                     default:
                         throw new InvalidOperationException("Unknown Search Method");
@@ -609,6 +641,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     ret.Add(doc);
                 }
+
                 scannedCount += previousScannedCount;
             }
 
@@ -626,6 +659,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     ret.Add(doc);
                 }
+
                 scannedCount += previousScannedCount;
             }
 
@@ -640,7 +674,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table SourceTable { get; set; }
 
-        private static void SplitQueryFilter(Filter filter, Table targetTable, string indexName, out Dictionary<string, Condition> keyConditions, out Dictionary<string, Condition> filterConditions)
+        private static void SplitQueryFilter(Filter filter, Table targetTable, string indexName,
+            out Dictionary<string, Condition> keyConditions, out Dictionary<string, Condition> filterConditions)
         {
             QueryFilter queryFilter = filter as QueryFilter;
             if (queryFilter == null) throw new InvalidOperationException("Filter is not of type QueryFilter");
@@ -724,7 +759,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 TableName = TableName,
                                 Select = EnumMapper.Convert(SelectValues.Count),
                                 ExclusiveStartKey = NextKey,
-                                ScanFilter = Filter.ToConditions(SourceTable.Conversion, SourceTable.IsEmptyStringValueEnabled),
+                                ScanFilter = Filter.ToConditions(SourceTable.Conversion,
+                                    SourceTable.IsEmptyStringValueEnabled),
                                 ConsistentRead = IsConsistentRead
                             };
                             if (!string.IsNullOrEmpty(this.IndexName))
@@ -740,11 +776,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 scanReq.Segment = this.Segment;
                             }
 
+                            if (ReturnConsumedCapacity != ReturnConsumedCapacity.NONE)
+                                scanReq.ReturnConsumedCapacity = ReturnConsumedCapacity;
+
                             SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: false);
 
                             var scanResult = internalClient.Scan(scanReq);
                             count = Matches.Count + scanResult.Count.GetValueOrDefault();
                             scannedCount = scanResult.ScannedCount.GetValueOrDefault();
+
+                            UpdateMetricsAfterPage(scanResult.ConsumedCapacity,
+                                scanResult.ScannedCount.GetValueOrDefault(), 0);
 
                             return count;
                         case SearchType.Query:
@@ -772,11 +814,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                                 queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
+                            if (ReturnConsumedCapacity != ReturnConsumedCapacity.NONE)
+                                queryReq.ReturnConsumedCapacity = ReturnConsumedCapacity;
+
                             SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: false);
 
                             var queryResult = internalClient.Query(queryReq);
                             count = Matches.Count + queryResult.Count.GetValueOrDefault();
                             scannedCount = queryResult.ScannedCount.GetValueOrDefault();
+
+                            UpdateMetricsAfterPage(queryResult.ConsumedCapacity,
+                                queryResult.ScannedCount.GetValueOrDefault(), 0);
 
                             return count;
                         default:
@@ -797,8 +845,99 @@ namespace Amazon.DynamoDBv2.DocumentModel
             NextKey = null;
             Matches = new List<Document>();
             CollectResults = true;
+            _metrics = new SearchMetrics();
+        }
+
+        private SearchMetrics _metrics;
+
+        private void UpdateMetricsAfterPage(ConsumedCapacity consumed, int scannedCountPage, int itemsReturnedPage)
+        {
+            _metrics.ScannedCountLast = scannedCountPage;
+            _metrics.ScannedCountAccumulated += scannedCountPage;
+            _metrics.ItemsReturnedLast = itemsReturnedPage;
+            _metrics.TotalItemsReturned += itemsReturnedPage;
+            if (consumed != null)
+            {
+                _metrics.LastConsumedCapacity = consumed;
+                _metrics._history.Add(consumed);
+                if (consumed.CapacityUnits.HasValue)
+                    _metrics.TotalCapacityUnits = (_metrics.TotalCapacityUnits ?? 0) + consumed.CapacityUnits.Value;
+                if (consumed.ReadCapacityUnits.HasValue)
+                    _metrics.TotalReadCapacityUnits =
+                        (_metrics.TotalReadCapacityUnits ?? 0) + consumed.ReadCapacityUnits.Value;
+                if (consumed.WriteCapacityUnits.HasValue)
+                    _metrics.TotalWriteCapacityUnits =
+                        (_metrics.TotalWriteCapacityUnits ?? 0) + consumed.WriteCapacityUnits.Value;
+            }
         }
 
         #endregion
+    }
+
+    /// <summary>
+    /// Provides aggregated metrics and capacity usage information for a multi-page search or query operation.
+    /// </summary>
+    /// <remarks>This class exposes read-only properties that summarize capacity consumption, item counts, and
+    /// scan statistics across all pages retrieved during a search or query. Instances are typically returned by
+    /// operations that support capacity reporting, such as paginated database queries. All properties reflect the
+    /// cumulative or most recent values as appropriate, and are updated as additional pages are processed. This type is
+    /// not intended to be instantiated directly.</remarks>
+    public sealed class SearchMetrics
+    {
+        internal SearchMetrics()
+        {
+            _history = new List<ConsumedCapacity>();
+        }
+
+        internal List<ConsumedCapacity> _history;
+
+        /// <summary>
+        /// Gets the details of the capacity units consumed by the most recent operation.
+        /// </summary>
+        /// <remarks>This property is typically populated after a request to a data service that tracks
+        /// consumed capacity, such as a database or storage operation. The value may be null if capacity information is
+        /// not available for the last operation.</remarks>
+        public ConsumedCapacity LastConsumedCapacity { get; internal set; }
+
+        /// <summary>
+        /// Gets the history of consumed capacity details for all operations performed during the search.
+        /// </summary>
+        public IReadOnlyList<ConsumedCapacity> ConsumedCapacityHistory => _history;
+
+        /// <summary>
+        /// Total capacity units accumulated.
+        /// </summary>
+        public double? TotalCapacityUnits { get; internal set; }
+
+        /// <summary>
+        /// Gets the total provisioned read capacity units for all tables in the collection.
+        /// </summary>
+        public double? TotalReadCapacityUnits { get; internal set; }
+
+        /// <summary>
+        /// Gets the total provisioned write capacity units for all tables in the current context.
+        /// </summary>
+        public double? TotalWriteCapacityUnits { get; internal set; }
+
+        /// <summary>
+        /// Gets the number of items scanned during the most recent operation.
+        /// </summary>
+        public int ScannedCountLast { get; internal set; }
+
+        /// <summary>
+        /// Gets the total number of items scanned across all operations.
+        /// </summary>
+        /// <remarks>This property is updated internally and reflects the cumulative count of scanned items.</remarks>
+        public int ScannedCountAccumulated { get; internal set; }
+
+        /// <summary>
+        /// Number of items returned in the last operation.
+        /// </summary>
+        public int ItemsReturnedLast { get; internal set; }
+
+        /// <summary>
+        /// Total number of items returned across all operations.
+        /// </summary>
+        public int TotalItemsReturned { get; internal set; }
     }
 }
