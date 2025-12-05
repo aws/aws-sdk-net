@@ -54,7 +54,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for update
                 await TestExpressionUpdate(hashTable);
-                TestExpressionUpdateWithoutValues(hashTable);
+                await TestExpressionUpdateWithoutValues(hashTable);
 
                 // Test expressions for put
                 await TestExpressionPut(hashTable);
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for update
                 await TestExpressionUpdate(hashTable);
-                TestExpressionUpdateWithoutValues(hashTable);
+                await TestExpressionUpdateWithoutValues(hashTable);
 
                 // Test expressions for put
                 await TestExpressionPut(hashTable);
@@ -2337,6 +2337,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc = await hashTable.GetItemAsync(doc);
             Assert.IsFalse(doc.Contains("update-test"));
 
+            await hashTable.DeleteItemAsync(doc);
+        }
+
+        private async Task TestExpressionUpdateWithoutValues(ITable hashTable)
+        {
+            var doc = new Document
+            {
+                ["Id"] = DateTime.UtcNow.Ticks,
+                ["currentVersion"] = null,
+            };
+
+            var config = new UpdateItemOperationConfig
+            {
+                ConditionalExpression = new Expression
+                {
+                    ExpressionStatement = "attribute_not_exists(updateVersion)",
+                }
+            };
+            
+            Assert.IsTrue(hashTable.TryUpdateItem(doc, config));
             await hashTable.DeleteItemAsync(doc);
         }
 
