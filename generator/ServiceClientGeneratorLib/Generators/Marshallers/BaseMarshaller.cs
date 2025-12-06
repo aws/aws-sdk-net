@@ -209,6 +209,10 @@ this.Write(");\r\n");
         #line 56 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
             }
+            else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var headerPropertyModifier) && headerPropertyModifier.InjectXmlMarshallCode.Count > 0)
+            {
+                WriteInjectXmlMarshallCode(3, headerPropertyModifier.InjectXmlMarshallCode);
+            }
             else if (member.IsJsonValue)
             {
 
@@ -216,56 +220,56 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 60 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 64 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(");
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 66 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             else
@@ -285,56 +289,56 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 76 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 80 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                        request.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = StringUtils.FromList(");
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 82 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                     else
@@ -344,56 +348,56 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 82 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 86 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                        request.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 87 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 87 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = StringUtils.FromValueTypeList(");
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 87 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 87 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 87 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 87 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 88 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                 }
@@ -404,70 +408,70 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 89 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 93 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                //Map of headers with prefix \"");
 
         
         #line default
         #line hidden
         
-        #line 90 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 94 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 90 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 94 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\".\r\n                foreach (var kvp");
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" in ");
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(")\r\n                {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
  
                     // Dictionary<string, string>
                     if (member.ModelShape.ValueShape.IsString)
@@ -477,56 +481,56 @@ this.Write(")\r\n                {\r\n");
         #line default
         #line hidden
         
-        #line 97 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 101 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                     request.Headers[$\"");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 102 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 102 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("{kvp");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 102 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 102 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".Key}\"] = kvp");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 102 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 102 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".Value;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 99 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                     // Dictionary<string, List<string>>
@@ -537,56 +541,56 @@ this.Write(".Value;\r\n");
         #line default
         #line hidden
         
-        #line 104 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 108 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                    request.Headers[$\"");
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("{kvp");
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".Key}\"] = string.Join(\",\", kvp");
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".Value.ToArray());\r\n");
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                     else
@@ -598,14 +602,14 @@ this.Write(".Value.ToArray());\r\n");
         #line default
         #line hidden
         
-        #line 112 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 116 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 114 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else if(member.Shape.IsString)
@@ -615,56 +619,56 @@ this.Write("                }\r\n");
         #line default
         #line hidden
         
-        #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 120 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 124 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 					
 				}
                 else
@@ -674,70 +678,70 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 124 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 128 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 126 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 130 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
             }
@@ -748,14 +752,14 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 131 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 135 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
         }
@@ -790,98 +794,98 @@ this.Write("            }\r\n");
         #line default
         #line hidden
         
-        #line 162 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 166 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? ");
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)));
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".TrimStart(\'/\')) : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 164 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 168 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else
@@ -891,98 +895,98 @@ this.Write(".TrimStart(\'/\')) : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 168 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 172 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? ");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 173 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(") : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 170 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 174 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 
@@ -996,84 +1000,84 @@ this.Write(") : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 178 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 182 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (string.IsNullOrEmpty(");
 
         
         #line default
         #line hidden
         
-        #line 179 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 183 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 179 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 183 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 179 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 183 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 179 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 183 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("))\r\n                throw new System.ArgumentException(\"");
 
         
         #line default
         #line hidden
         
-        #line 180 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 180 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" is a required property and must be set before making this call.\", \"");
 
         
         #line default
         #line hidden
         
-        #line 180 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 180 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("Request.");
 
         
         #line default
         #line hidden
         
-        #line 180 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 180 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 181 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else
@@ -1083,70 +1087,70 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 189 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (!");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 191 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 191 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"Request object does not have required field ");
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 191 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 191 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" set\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 192 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
             if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
@@ -1164,70 +1168,70 @@ this.Write(" set\");\r\n");
         #line default
         #line hidden
         
-        #line 200 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 204 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 205 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 205 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 205 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)));
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 205 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 205 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 205 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 205 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 205 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".TrimStart(\'/\')));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 206 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else
@@ -1237,70 +1241,70 @@ this.Write(".TrimStart(\'/\')));\r\n");
         #line default
         #line hidden
         
-        #line 206 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 210 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)));
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 212 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
             }
@@ -1318,42 +1322,42 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 220 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 224 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Value));
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 222 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 226 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 			}
 			else
@@ -1363,28 +1367,28 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 226 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 230 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 227 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 231 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 227 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 231 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 232 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 						
 			}
 		}
@@ -1394,7 +1398,7 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 233 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 237 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 	// Only applicable for rest-json and rest-xml
     // Generates code to add any operation query members to the query string for the request
@@ -1424,7 +1428,7 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 258 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 262 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
 			}
 		}
@@ -1434,7 +1438,7 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 263 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 267 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 	// Only applicable for rest-json and rest-xml
     // Generates code to add any operation query members to the query string for the request
@@ -1454,70 +1458,70 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 277 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 281 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (string.IsNullOrEmpty(");
 
         
         #line default
         #line hidden
         
-        #line 278 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 282 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 278 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 282 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 278 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 282 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 278 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 282 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("))\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 283 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 283 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"Request object does not have required field ");
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 283 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 283 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" set\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 280 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 284 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                     else
@@ -1527,70 +1531,70 @@ this.Write(" set\");\r\n");
         #line default
         #line hidden
         
-        #line 284 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 288 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (");
 
         
         #line default
         #line hidden
         
-        #line 285 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 285 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 285 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 285 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" == null)\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 290 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 290 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"Request object does not have required field ");
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 290 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 290 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" set\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 287 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 291 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                 }
@@ -1599,42 +1603,42 @@ this.Write(" set\");\r\n");
         #line default
         #line hidden
         
-        #line 290 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 294 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\r\n\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 291 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 295 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 291 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 295 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 291 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 295 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 291 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 295 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 292 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 if (member.CustomMarshallerTransformation != null)
                 {
@@ -1643,70 +1647,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 295 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 299 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 296 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 297 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 301 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else if (member.IsList)
@@ -1725,56 +1729,56 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 310 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 314 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                request.ParameterCollection.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 311 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 315 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 311 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 315 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 311 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 315 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 311 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 315 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 311 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 315 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 311 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 315 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 312 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 316 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                     else
@@ -1784,70 +1788,70 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 316 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 320 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                request.ParameterCollection.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 317 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 321 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 317 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 321 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 317 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 321 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 317 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 321 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 317 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 321 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 317 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 321 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".ConvertAll<string>(item => ");
 
         
         #line default
         #line hidden
         
-        #line 317 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 321 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)));
 
         
         #line default
         #line hidden
         
-        #line 317 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 321 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(item)));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 318 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 322 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                 }
@@ -1858,70 +1862,70 @@ this.Write("(item)));\r\n");
         #line default
         #line hidden
         
-        #line 323 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 327 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                request.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 324 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 328 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 324 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 328 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 324 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 328 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 324 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 328 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 324 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 328 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 324 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 328 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 324 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 328 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 324 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 328 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 325 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 329 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
                 if(member.IsIdempotent)
@@ -1931,28 +1935,28 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 329 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 333 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            else            \r\n                request.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 331 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 335 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 331 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 335 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", System.Guid.NewGuid().ToString());\r\n                \r\n");
 
         
         #line default
         #line hidden
         
-        #line 333 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 337 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
  
 	            }
 			}
@@ -1963,7 +1967,7 @@ this.Write("\", System.Guid.NewGuid().ToString());\r\n                \r\n");
         #line default
         #line hidden
         
-        #line 342 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 346 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     protected void ProcessQueryStringMemberWithMap(int level, Member member, string variableName)
     {
@@ -1972,63 +1976,63 @@ this.Write("\", System.Guid.NewGuid().ToString());\r\n                \r\n");
         #line default
         #line hidden
         
-        #line 346 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 350 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 346 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 350 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("if (");
 
         
         #line default
         #line hidden
         
-        #line 346 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 350 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 346 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 350 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 346 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 350 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 346 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 350 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 347 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 351 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 347 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 351 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 348 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 352 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         if (member.CustomMarshallerTransformation != null)
         {
@@ -2037,147 +2041,147 @@ this.Write("{\r\n");
         #line default
         #line hidden
         
-        #line 352 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 356 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 352 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("if (request.Parameters.ContainsKey(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 352 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 352 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\"))\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 353 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 353 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("   request.Parameters.Remove(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 353 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 353 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\"));\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("request.Parameters.Add(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\", ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(".");
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 354 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("));\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 355 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 355 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("}\r\n");
 
         
         #line default
         #line hidden
         
         #line 356 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("if (request.Parameters.ContainsKey(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 356 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 356 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\"))\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 357 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 357 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("   request.Parameters.Remove(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 357 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 357 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\"));\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("request.Parameters.Add(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\", ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".");
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 358 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("));\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 359 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 359 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 360 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         } //end curly brace for if(member.CustomMarshallerTransformation!=null
 
@@ -2185,7 +2189,7 @@ this.Write("}\r\n");
         #line default
         #line hidden
         
-        #line 359 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 363 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         else if (member.IsMap)
         {
@@ -2200,63 +2204,63 @@ this.Write("}\r\n");
         #line default
         #line hidden
         
-        #line 369 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 373 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 369 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 373 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("foreach(var kvp in ");
 
         
         #line default
         #line hidden
         
-        #line 369 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 373 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 369 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 373 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 369 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 373 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 369 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 373 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 370 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 374 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 370 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 374 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 371 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 375 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             if(member.Shape.ValueShape.IsList)
             {
@@ -2267,63 +2271,63 @@ this.Write("{\r\n");
         #line default
         #line hidden
         
-        #line 377 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 381 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 377 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("if(request.ParameterCollection.ContainsKey(kvp.Key))\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 378 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 378 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("   continue;\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 379 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 379 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("else\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 380 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 380 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("   request.ParameterCollection.Add(kvp.Key, kvp.Value);\r\n");
 
         
         #line default
         #line hidden
         
         #line 381 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("if(request.ParameterCollection.ContainsKey(kvp.Key))\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 382 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 382 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("   continue;\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 383 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 383 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("else\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 384 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 384 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("   request.ParameterCollection.Add(kvp.Key, kvp.Value);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 385 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
              }//ending closing brace for (if(member.Shape.ValueShape.ListShape.IsString)
                 else
                 {
@@ -2332,56 +2336,56 @@ this.Write("   request.ParameterCollection.Add(kvp.Key, kvp.Value);\r\n");
         #line default
         #line hidden
         
-        #line 385 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 389 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 385 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 389 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("if(request.ParameterCollection.ContainsKey(kvp.Key))\r\n");
 
         
         #line default
         #line hidden
         
-        #line 386 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 390 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 386 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 390 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("   continue;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 387 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 391 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 387 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 391 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("else\r\n");
 
         
         #line default
         #line hidden
         
-        #line 388 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 392 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 388 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 392 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("   request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => " +
         "");
 
@@ -2389,21 +2393,21 @@ this.Write("   request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<str
         #line default
         #line hidden
         
-        #line 388 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 392 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)));
 
         
         #line default
         #line hidden
         
-        #line 388 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 392 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(item)));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 389 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 393 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
              }//ending closing brace for else
 
             }//ending closing brach for if(member.Shape.ValueShape.IsList
@@ -2414,77 +2418,77 @@ this.Write("(item)));\r\n");
         #line default
         #line hidden
         
-        #line 395 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 399 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 395 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("if(request.Parameters.ContainsKey(kvp.Key))\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 396 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 396 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("   continue;\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 397 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 397 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("else\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 398 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 398 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("   request.Parameters.Add(kvp.Key, ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 398 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.QueryString)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 398 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("(kvp.Value));\r\n");
 
         
         #line default
         #line hidden
         
         #line 399 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("if(request.Parameters.ContainsKey(kvp.Key))\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 400 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 400 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("   continue;\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 401 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 401 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("else\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 402 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 2) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 402 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("   request.Parameters.Add(kvp.Key, ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 402 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.QueryString)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 402 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("(kvp.Value));\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 403 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }//closing brace for else
 
@@ -2492,35 +2496,35 @@ this.Write("(kvp.Value));\r\n");
         #line default
         #line hidden
         
-        #line 402 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 406 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 402 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 406 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 403 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 407 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 403 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 407 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 404 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 408 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         } //ending closing brace for member.IsMap
 
@@ -2528,7 +2532,7 @@ this.Write("}\r\n");
         #line default
         #line hidden
         
-        #line 407 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 411 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         else if (member.IsList)
         {
@@ -2545,119 +2549,119 @@ this.Write("}\r\n");
         #line default
         #line hidden
         
-        #line 419 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 423 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 419 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 423 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("if(request.ParameterCollection.ContainsKey(\"");
 
         
         #line default
         #line hidden
         
-        #line 419 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 423 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 419 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 423 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"))\r\n");
 
         
         #line default
         #line hidden
         
-        #line 420 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 424 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 420 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 424 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("   request.ParameterCollection.Remove(\"");
 
         
         #line default
         #line hidden
         
-        #line 420 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 424 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 420 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 424 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 421 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 425 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 421 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 425 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("request.ParameterCollection.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 421 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 425 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 421 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 425 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 421 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 425 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 421 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 425 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 421 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 425 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 421 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 425 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 422 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 426 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
          }//end of member.Shape.ListShape.IsString
             else
             {
@@ -2666,154 +2670,154 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 426 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 430 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 426 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("if(request.ParameterCollection.ContainsKey(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 426 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 426 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\"))\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 427 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 427 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("   request.ParameterCollection.Remove(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 427 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 427 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\");\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("request.ParameterCollection.Add(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\", ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(".");
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(".ConvertAll<string>(item => ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 428 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("(item)));\r\n\r\n");
 
         
         #line default
         #line hidden
         
         #line 430 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("if(request.ParameterCollection.ContainsKey(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 430 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 430 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\"))\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 431 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 431 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("   request.ParameterCollection.Remove(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 431 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 431 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("request.ParameterCollection.Add(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\", ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".");
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".ConvertAll<string>(item => ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("(item)));\r\n\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 434 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
          }//end of else
 
         
         #line default
         #line hidden
         
-        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 436 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 432 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 436 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 433 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 437 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         }//end of (member.isList) 
         else // not a map or a list
@@ -2823,147 +2827,147 @@ this.Write("}\r\n");
         #line default
         #line hidden
         
-        #line 438 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 442 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 438 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("if(request.Parameters.ContainsKey(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 438 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 438 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\"))\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 439 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 439 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("   request.Parameters.Remove(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 439 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 439 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\");\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("request.Parameters.Add(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\", ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(".");
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 440 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("));\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 441 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 441 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("}\r\n");
 
         
         #line default
         #line hidden
         
         #line 442 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("if(request.Parameters.ContainsKey(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 442 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 442 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\"))\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 443 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 443 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("   request.Parameters.Remove(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 443 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 443 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("request.Parameters.Add(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\", ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".");
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 444 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("));\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 445 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 445 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 446 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         }//end of else
         if(member.IsIdempotent)
@@ -2973,49 +2977,49 @@ this.Write("}\r\n");
         #line default
         #line hidden
         
-        #line 447 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 451 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 447 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 451 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" else\r\n");
 
         
         #line default
         #line hidden
         
-        #line 448 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 452 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 448 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 452 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("     request.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 448 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 452 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 448 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 452 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", System.Guid.NewGuid().ToString());\r\n");
 
         
         #line default
         #line hidden
         
-        #line 449 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 453 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         }//end of member.IsIdempotent
 
@@ -3023,7 +3027,7 @@ this.Write("\", System.Guid.NewGuid().ToString());\r\n");
         #line default
         #line hidden
         
-        #line 452 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 456 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 //end of ProcessQueryStringMember function
     }
 
@@ -3031,7 +3035,7 @@ this.Write("\", System.Guid.NewGuid().ToString());\r\n");
         #line default
         #line hidden
         
-        #line 456 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 460 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     // Only applicable for rest-json and rest-xml
     // Generates code to add the operation's hostPrefixMembers to the request's HostPrefix
@@ -3044,42 +3048,42 @@ this.Write("\", System.Guid.NewGuid().ToString());\r\n");
         #line default
         #line hidden
         
-        #line 463 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 467 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\r\n");
 
         
         #line default
         #line hidden
         
-        #line 465 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 469 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 465 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 469 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("var hostPrefixLabels = new\r\n");
 
         
         #line default
         #line hidden
         
-        #line 466 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 470 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 466 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 470 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 467 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             foreach(var member in operation.RequestHostPrefixMembers)
             {
@@ -3089,70 +3093,70 @@ this.Write("{\r\n");
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.ModeledName));
 
         
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 471 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("),\r\n");
 
         
         #line default
         #line hidden
         
-        #line 472 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 476 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }     
 
@@ -3160,21 +3164,21 @@ this.Write("),\r\n");
         #line default
         #line hidden
         
-        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 479 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 475 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 479 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("};\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 477 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 481 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             foreach(var member in operation.RequestHostPrefixMembers)
             {
@@ -3183,70 +3187,70 @@ this.Write("};\r\n\r\n");
         #line default
         #line hidden
         
-        #line 481 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 485 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 481 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 485 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.");
 
         
         #line default
         #line hidden
         
-        #line 481 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 485 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.ModeledName));
 
         
         #line default
         #line hidden
         
-        #line 481 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 485 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("))\r\n");
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 486 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level + 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 486 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("throw new ");
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 486 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 486 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"");
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 486 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.ModeledName));
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 486 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" can only contain alphanumeric characters and dashes and must be between 1 and 63" +
         " characters long.\");\t\t\r\n");
 
@@ -3254,7 +3258,7 @@ this.Write(" can only contain alphanumeric characters and dashes and must be bet
         #line default
         #line hidden
         
-        #line 483 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 487 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }     
         }
@@ -3263,42 +3267,42 @@ this.Write(" can only contain alphanumeric characters and dashes and must be bet
         #line default
         #line hidden
         
-        #line 486 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 490 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            \r\n");
 
         
         #line default
         #line hidden
         
-        #line 487 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 491 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 487 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 491 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("request.HostPrefix = $\"");
 
         
         #line default
         #line hidden
         
-        #line 487 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 491 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.EndpointHostPrefix.Replace("{", "{hostPrefixLabels.")));
 
         
         #line default
         #line hidden
         
-        #line 487 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 491 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 488 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 492 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 	}
 
@@ -3328,7 +3332,7 @@ this.Write("\";\r\n");
         #line default
         #line hidden
         
-        #line 512 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 516 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                ChecksumUtils.SetChecksumData(\r\n                    request,\r\n   " +
         "                 publicRequest.");
 
@@ -3336,14 +3340,14 @@ this.Write("                ChecksumUtils.SetChecksumData(\r\n                  
         #line default
         #line hidden
         
-        #line 515 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 519 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.ChecksumConfiguration.RequestAlgorithmMember));
 
         
         #line default
         #line hidden
         
-        #line 515 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 519 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(",\r\n                    fallbackToMD5: false,\r\n                    isRequestChecks" +
         "umRequired: ");
 
@@ -3351,35 +3355,35 @@ this.Write(",\r\n                    fallbackToMD5: false,\r\n                  
         #line default
         #line hidden
         
-        #line 517 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 521 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.ChecksumConfiguration.RequestChecksumRequired.ToString().ToLower()));
 
         
         #line default
         #line hidden
         
-        #line 517 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 521 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(",\r\n                    headerName: \"");
 
         
         #line default
         #line hidden
         
-        #line 518 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 522 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(headerName));
 
         
         #line default
         #line hidden
         
-        #line 518 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 522 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"\r\n                );\r\n");
 
         
         #line default
         #line hidden
         
-        #line 520 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 524 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             // When checksum is configured without an algorithm member, let the SDK pick the best available option (without falling back to MD5).
@@ -3390,7 +3394,7 @@ this.Write("\"\r\n                );\r\n");
         #line default
         #line hidden
         
-        #line 525 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 529 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                ChecksumUtils.SetChecksumData(request, checksumAlgorithm: null, f" +
         "allbackToMD5: false, isRequestChecksumRequired: ");
 
@@ -3398,21 +3402,21 @@ this.Write("                ChecksumUtils.SetChecksumData(request, checksumAlgor
         #line default
         #line hidden
         
-        #line 526 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 530 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.ChecksumConfiguration.RequestChecksumRequired.ToString().ToLower()));
 
         
         #line default
         #line hidden
         
-        #line 526 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 530 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 527 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 531 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             // This is the legacy trait ("httpChecksumRequired"), which does not use flexible checksums (just MD5).
@@ -3424,14 +3428,14 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 533 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 537 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                ChecksumUtils.SetChecksumData(request);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 535 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 539 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
         }
@@ -3454,7 +3458,7 @@ this.Write("                ChecksumUtils.SetChecksumData(request);\r\n");
         #line default
         #line hidden
         
-        #line 552 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 556 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            CompressionAlgorithmUtils.SetCompressionAlgorithm(request, Compressio" +
         "nEncodingAlgorithm.");
 
@@ -3462,25 +3466,73 @@ this.Write("            CompressionAlgorithmUtils.SetCompressionAlgorithm(reques
         #line default
         #line hidden
         
-        #line 553 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 557 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(encoding.ToString()));
 
         
         #line default
         #line hidden
         
-        #line 553 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 557 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 554 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 558 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
         }
     }
+
+        
+        #line default
+        #line hidden
+        
+        #line 563 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
+	protected void WriteInjectXmlMarshallCode(int level, HashSet<string> injectXmlMarshallCode)
+	{
+		foreach (var injectCode in injectXmlMarshallCode)
+		{
+
+        
+        #line default
+        #line hidden
+        
+        #line 569 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 569 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\t\t\t\t");
+
+        
+        #line default
+        #line hidden
+        
+        #line 569 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(injectCode));
+
+        
+        #line default
+        #line hidden
+        
+        #line 569 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 570 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
+		}
+	}
 
         
         #line default
