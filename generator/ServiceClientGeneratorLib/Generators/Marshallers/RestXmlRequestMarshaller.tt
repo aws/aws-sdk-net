@@ -937,14 +937,4 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 		}
 	}
 #>
-<#+
-	protected void WriteInjectXmlMarshallCode(int level, HashSet<string> injectXmlMarshallCode)
-	{
-		foreach (var injectCode in injectXmlMarshallCode)
-		{
-#>
-<#=new string(' ', level * 4)#>				<#=injectCode#>
-<#+
-		}
-	}
-#>
+
