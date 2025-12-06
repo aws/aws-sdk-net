@@ -5356,54 +5356,6 @@ this.Write("));\r\n");
         
         #line default
         #line hidden
-        
-        #line 947 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-
-	protected void WriteInjectXmlMarshallCode(int level, HashSet<string> injectXmlMarshallCode)
-	{
-		foreach (var injectCode in injectXmlMarshallCode)
-		{
-
-        
-        #line default
-        #line hidden
-        
-        #line 953 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 953 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\t");
-
-        
-        #line default
-        #line hidden
-        
-        #line 953 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(injectCode));
-
-        
-        #line default
-        #line hidden
-        
-        #line 953 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 954 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-
-		}
-	}
-
-        
-        #line default
-        #line hidden
     }
     
     #line default
