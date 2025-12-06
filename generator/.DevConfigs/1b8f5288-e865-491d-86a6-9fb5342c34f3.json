@@ -1,0 +1,12 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Generate CompleteMultipartUpload and RestoreObject operations",
+                "[Breaking Change] MpuObjectSize in Amazon.S3.Model.CompleteMultipartUploadRequest has been changed to nullable to be consistent with the nullability changes in V4."
+            ]
+        }
+    ]
+}
