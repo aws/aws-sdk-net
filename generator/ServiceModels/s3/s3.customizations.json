@@ -43,16 +43,22 @@
             ]
         },
         "CompleteMultipartUploadRequest": {
-            "exclude": [
-                "MultipartUpload"
-            ],
-            "inject": [
+            "modify":[
                 {
-                    "PartETags": {
-                        "shape": "CompletedPartList",
-                        "originalMember": "MultipartUpload"
-                    }
+                    "IfMatch": {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._ifMatch);"]}
+                },
+                {
+                    "ExpectedBucketOwner": {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "IfNoneMatch": {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._ifNoneMatch);"]}
+                },
+                {
+                    "Parts":{"emitPropertyName":"PartETags"}
                 }
+            ],
+            "injectXmlMarshallCodeInPayload":[
+                "SortPartsList(publicRequest);"
             ]
         },
         "CopyObjectRequest": {
@@ -1345,6 +1351,26 @@
                     "Type":{"emitPropertyName":"JsonType"}
                 }
             ]
+        },
+        "CompleteMultipartUploadOutput":{
+            "modify":[
+                {
+                    "ServerSideEncryption":{"emitPropertyName":"ServerSideEncryptionMethod"}
+                },
+                {
+                    "SSEKMSKeyId":{"emitPropertyName":"ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "Expiration":{"injectXmlUnmarshallCode":["ExpirationCustomUnmarshall(context, response);"]}
+                }
+            ]
+        },
+        "CompletedMultipartUpload":{
+            "modify":[
+                {
+                    "Parts": {"emitPropertyName":"PartETags"}
+                }
+            ]
         }
         
     },
@@ -1500,6 +1526,9 @@
         },
         "JSONType":{
             "renameShape":"JsonType"
+        },
+        "CompletedPart":{
+            "renameShape":"PartETag"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -1687,6 +1716,13 @@
                 "Marshaller":"UserMetadata.Marshall",
                 "Unmarshaller":"StringUnmarshaller"
             }
+        },
+        "CompleteMultipartUploadOutput":{
+            "Expiration":{
+                "Type":"Expiration",
+                "Marshaller":"blah",
+                "Unmarshaller":"StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
@@ -1750,6 +1786,9 @@
         },
         "PartDetail":{
             "alternateBaseClass": "PartETag"
+        },
+        "PartETag":{
+            "alternateBaseClass": "IComparable<PartETag>"
         }
     },
     "flattenShapes" : {
@@ -1761,6 +1800,9 @@
         ],
         "RestoreObjectRequest":[
             "RestoreRequest"
+        ],
+        "CompleteMultipartUploadRequest":[
+            "MultipartUpload"
         ]
     },
     "excludeShapes":[
