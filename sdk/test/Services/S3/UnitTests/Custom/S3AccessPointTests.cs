@@ -265,7 +265,8 @@ namespace AWSSDK.UnitTests
             var request = new CompleteMultipartUploadRequest
             {
                 BucketName = accessPointArn,
-                Key = "foo.txt"
+                Key = "foo.txt",
+                UploadId = "upload-id"
             };
 
             var internalRequest = S3ArnTestUtils.RunMockRequest(request, CompleteMultipartUploadRequestMarshaller.Instance);
