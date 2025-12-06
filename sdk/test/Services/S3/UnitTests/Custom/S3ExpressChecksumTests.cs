@@ -235,6 +235,7 @@ namespace AWSSDK.UnitTests
             {
                 BucketName = S3ExpressBucketName,
                 Key = "foo.txt",
+                UploadId = "foo"
             };
 
             var internalRequest = RunMockRequest(request, CompleteMultipartUploadRequestMarshaller.Instance);

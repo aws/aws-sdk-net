@@ -31,27 +31,10 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMultipartUploads operation.
-    /// <important> 
-    /// <para>
-    /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-    /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-    /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-    /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-    /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-    /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-    /// Region, and South America (São Paulo) Region.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
     /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
     /// request, but has not yet been completed or aborted.
-    /// </para>
+    /// 
     ///  <note> 
     /// <para>
     ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
