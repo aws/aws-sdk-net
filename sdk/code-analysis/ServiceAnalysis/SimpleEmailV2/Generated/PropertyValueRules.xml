@@ -219,7 +219,7 @@
     <property>Amazon.SimpleEmailV2.Model.PutConfigurationSetArchivingOptionsRequest.ArchiveArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:(aws|aws-[a-z-]+):ses:[a-z]{2}-[a-z-]+-[0-9]:[0-9]{1,20}:mailmanager-archive/a-[a-z0-9]{24,62}</pattern>
+    <pattern>arn:(aws|aws-[a-z-]+):ses:[a-z]{2,4}-[a-z-]+-[0-9]:[0-9]{1,20}:mailmanager-archive/a-[a-z0-9]{24,62}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutConfigurationSetDeliveryOptionsRequest.MaxDeliverySeconds</property>
@@ -337,7 +337,7 @@
     <property>Amazon.SimpleEmailV2.Model.ArchivingOptions.ArchiveArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:(aws|aws-[a-z-]+):ses:[a-z]{2}-[a-z-]+-[0-9]:[0-9]{1,20}:mailmanager-archive/a-[a-z0-9]{24,62}</pattern>
+    <pattern>arn:(aws|aws-[a-z-]+):ses:[a-z]{2,4}-[a-z-]+-[0-9]:[0-9]{1,20}:mailmanager-archive/a-[a-z0-9]{24,62}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.Attachment.ContentDescription</property>
