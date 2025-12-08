@@ -10555,6 +10555,54 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7iXlarge = new InstanceType("c7i.xlarge");
         /// <summary>
+        /// Constant C8a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a12xlarge = new InstanceType("c8a.12xlarge");
+        /// <summary>
+        /// Constant C8a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a16xlarge = new InstanceType("c8a.16xlarge");
+        /// <summary>
+        /// Constant C8a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a24xlarge = new InstanceType("c8a.24xlarge");
+        /// <summary>
+        /// Constant C8a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a2xlarge = new InstanceType("c8a.2xlarge");
+        /// <summary>
+        /// Constant C8a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a48xlarge = new InstanceType("c8a.48xlarge");
+        /// <summary>
+        /// Constant C8a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a4xlarge = new InstanceType("c8a.4xlarge");
+        /// <summary>
+        /// Constant C8a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a8xlarge = new InstanceType("c8a.8xlarge");
+        /// <summary>
+        /// Constant C8aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aLarge = new InstanceType("c8a.large");
+        /// <summary>
+        /// Constant C8aMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aMedium = new InstanceType("c8a.medium");
+        /// <summary>
+        /// Constant C8aMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aMetal24xl = new InstanceType("c8a.metal-24xl");
+        /// <summary>
+        /// Constant C8aMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aMetal48xl = new InstanceType("c8a.metal-48xl");
+        /// <summary>
+        /// Constant C8aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aXlarge = new InstanceType("c8a.xlarge");
+        /// <summary>
         /// Constant C8g12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C8g12xlarge = new InstanceType("c8g.12xlarge");
@@ -12634,6 +12682,10 @@ namespace Amazon.EC2
         /// Constant P6B20048xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType P6B20048xlarge = new InstanceType("p6-b200.48xlarge");
+        /// <summary>
+        /// Constant P6B30048xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P6B30048xlarge = new InstanceType("p6-b300.48xlarge");
         /// <summary>
         /// Constant P6eGb20036xlarge for InstanceType
         /// </summary>
