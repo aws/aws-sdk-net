@@ -1217,6 +1217,34 @@
                     "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
+        },
+        "RenameObjectRequest":{
+            "modify":[
+                {
+                    "ClientToken" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._clientToken);"]}
+                },
+                {
+                    "BucketName" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._bucketName);"]}
+                },
+                {
+                    "Key" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._key);"]}
+                },
+                {
+                    "RenameSource" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._renameSource);"]}
+                },
+                {
+                    "DestinationIfMatch" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._destinationIfMatch);"]}
+                },
+                {
+                    "DestinationIfNoneMatch" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._destinationIfNoneMatch);"]}
+                },
+                {
+                    "SourceIfMatch" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._sourceIfMatch);"]}
+                },
+                {
+                    "SourceIfNoneMatch" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._sourceIfNoneMatch);"]}
+                }
+            ]
         }
         
     },
