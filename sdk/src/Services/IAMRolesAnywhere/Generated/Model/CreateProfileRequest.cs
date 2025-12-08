@@ -151,8 +151,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property RequireInstanceProperties. 
         /// <para>
-        /// Specifies whether instance properties are required in temporary credential requests
-        /// with this profile. 
+        /// Unused, saved for future use. Will likely specify whether instance properties are
+        /// required in temporary credential requests with this profile. 
         /// </para>
         /// </summary>
         public bool RequireInstanceProperties
