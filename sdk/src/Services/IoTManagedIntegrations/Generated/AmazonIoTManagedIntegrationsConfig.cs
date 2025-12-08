@@ -32,7 +32,7 @@ namespace Amazon.IoTManagedIntegrations
     public partial class AmazonIoTManagedIntegrationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Managed Integrations", "3.7.503.10");
+            InternalSDKUtils.BuildUserAgentString("IoT Managed Integrations", "3.7.503.11");
 
         private string _userAgent = UserAgentString;
         ///<summary>

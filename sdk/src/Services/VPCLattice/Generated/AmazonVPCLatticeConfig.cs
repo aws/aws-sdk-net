@@ -32,7 +32,7 @@ namespace Amazon.VPCLattice
     public partial class AmazonVPCLatticeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("VPC Lattice", "3.7.504.7");
+            InternalSDKUtils.BuildUserAgentString("VPC Lattice", "3.7.504.8");
 
         private string _userAgent = UserAgentString;
         ///<summary>

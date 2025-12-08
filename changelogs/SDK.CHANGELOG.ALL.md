@@ -1,3 +1,24 @@
+### 3.7.1180.0 (2025-12-08 19:31 UTC)
+* CostExplorer (3.7.508.0)
+	* Add support for Cost Category resource associations including filtering by resource type on ListCostCategoryDefinitions and new ListCostCategoryResourceAssociations API.
+* EC2 (3.7.536.0)
+	* Amazon EC2 P6-B300 instances provide 8x NVIDIA Blackwell Ultra GPUs with 2.1 TB high bandwidth GPU memory, 6.4 Tbps EFA networking, 300 Gbps dedicated ENA throughput, and 4 TB of system memory. Amazon EC2 C8a instances are powered by 5th Gen AMD EPYC processors with a maximum frequency of 4.5 GHz.
+* IAMRolesAnywhere (3.7.503.0)
+	* Increases certificate string length for trust anchor source data to support ML-DSA certificates.
+* IdentityStore (3.7.504.0)
+	* Updating AWS Identity Store APIs to support Attribute Extensions capability, with the first release adding Enterprise Attributes. This launch aligns Identity Store APIs with SCIM for enterprise attributes, reducing cases when customers are forced to use SCIM due to lack of SigV4 API support.
+* PartnerCentralSelling (3.7.505.0)
+	* Deal Sizing Service for AI-based deal size estimation with AWS service-level breakdown, supporting Expansion and Migration deals across Technology, and Reseller partner cohorts, including Pricing Calculator AddOn for MAP deals and funding incentives.
+* RDS (3.7.511.0)
+	* Adding support for tagging RDS Instance/Cluster Automated Backups
+* RedshiftServerless (3.7.503.0)
+	* Added GetIdentityCenterAuthToken API to retrieve encrypted authentication tokens for Identity Center integrated serverless workgroups. This API enables programmatic access to secure Identity Center tokens with proper error handling and parameter validation across supported SDK languages.
+* SimpleEmailV2 (3.7.506.0)
+	* Update Mail Manager Archive ARN validation
+* Core 3.7.500.51
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1179.0 (2025-12-05 19:25 UTC)
 * ECS (3.7.506.4)
 	* Updating stop-task API to encapsulate containers with custom stop signal
