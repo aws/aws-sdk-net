@@ -185,6 +185,10 @@ namespace Amazon.IdentityStore
         /// </summary>
         public static readonly ResourceType IDENTITY_STORE = new ResourceType("IDENTITY_STORE");
         /// <summary>
+        /// Constant RESOURCE_POLICY for ResourceType
+        /// </summary>
+        public static readonly ResourceType RESOURCE_POLICY = new ResourceType("RESOURCE_POLICY");
+        /// <summary>
         /// Constant USER for ResourceType
         /// </summary>
         public static readonly ResourceType USER = new ResourceType("USER");
