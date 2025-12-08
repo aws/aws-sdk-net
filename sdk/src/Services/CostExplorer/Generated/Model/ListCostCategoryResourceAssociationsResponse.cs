@@ -30,18 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// This is the response object from the ListCostCategoryDefinitions operation.
+    /// This is the response object from the ListCostCategoryResourceAssociations operation.
     /// </summary>
-    public partial class ListCostCategoryDefinitionsResponse : AmazonWebServiceResponse
+    public partial class ListCostCategoryResourceAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<CostCategoryReference> _costCategoryReferences = AWSConfigs.InitializeCollections ? new List<CostCategoryReference>() : null;
+        private List<CostCategoryResourceAssociation> _costCategoryResourceAssociations = AWSConfigs.InitializeCollections ? new List<CostCategoryResourceAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CostCategoryReferences. 
+        /// Gets and sets the property CostCategoryResourceAssociations. 
         /// <para>
-        /// A reference to a cost category that contains enough information to identify the Cost
-        /// Category. 
+        ///  A reference to a cost category association that contains information on an associated
+        /// resource. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -49,22 +49,22 @@ namespace Amazon.CostExplorer.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<CostCategoryReference> CostCategoryReferences
+        public List<CostCategoryResourceAssociation> CostCategoryResourceAssociations
         {
-            get { return this._costCategoryReferences; }
-            set { this._costCategoryReferences = value; }
+            get { return this._costCategoryResourceAssociations; }
+            set { this._costCategoryResourceAssociations = value; }
         }
 
-        // Check to see if CostCategoryReferences property is set
-        internal bool IsSetCostCategoryReferences()
+        // Check to see if CostCategoryResourceAssociations property is set
+        internal bool IsSetCostCategoryResourceAssociations()
         {
-            return this._costCategoryReferences != null && (this._costCategoryReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._costCategoryResourceAssociations != null && (this._costCategoryResourceAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        ///  The token to retrieve the next set of results. Amazon Web Services provides the token
         /// when the response from a previous call has more results than the maximum page size.
         /// 
         /// </para>

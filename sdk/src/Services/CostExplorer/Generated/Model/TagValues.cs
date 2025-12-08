@@ -73,7 +73,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property MatchOptions. 
         /// <para>
         /// The match options that you can use to filter your results. <c>MatchOptions</c> is
-        /// only applicable for actions related to Cost Category. The default values for <c>MatchOptions</c>
+        /// only applicable for actions related to cost category. The default values for <c>MatchOptions</c>
         /// are <c>EQUALS</c> and <c>CASE_SENSITIVE</c>.
         /// </para>
         /// <para />

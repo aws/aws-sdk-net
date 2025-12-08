@@ -22,18 +22,18 @@ using Amazon.Runtime;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Paginator for the ListCostAllocationTagBackfillHistory operation
+    /// Paginator for the ListCostCategoryResourceAssociations operation
     ///</summary>
-    public interface IListCostAllocationTagBackfillHistoryPaginator
+    public interface IListCostCategoryResourceAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<ListCostAllocationTagBackfillHistoryResponse> Responses { get; }
+        IPaginatedEnumerable<ListCostCategoryResourceAssociationsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the BackfillRequests
+        /// Enumerable containing all of the CostCategoryResourceAssociations
         /// </summary>
-        IPaginatedEnumerable<CostAllocationTagBackfillRequest> BackfillRequests { get; }
+        IPaginatedEnumerable<CostCategoryResourceAssociation> CostCategoryResourceAssociations { get; }
     }
 }

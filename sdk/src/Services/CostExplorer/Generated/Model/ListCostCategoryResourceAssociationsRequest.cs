@@ -30,41 +30,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// This is the response object from the ListCostCategoryDefinitions operation.
+    /// Container for the parameters to the ListCostCategoryResourceAssociations operation.
+    /// Returns resource associations of all cost categories defined in the account. You have
+    /// the option to use <c>CostCategoryArn</c> to get the association for a specific cost
+    /// category. <c>ListCostCategoryResourceAssociations</c> supports pagination. The request
+    /// can have a <c>MaxResults</c> range up to 100.
     /// </summary>
-    public partial class ListCostCategoryDefinitionsResponse : AmazonWebServiceResponse
+    public partial class ListCostCategoryResourceAssociationsRequest : AmazonCostExplorerRequest
     {
-        private List<CostCategoryReference> _costCategoryReferences = AWSConfigs.InitializeCollections ? new List<CostCategoryReference>() : null;
+        private string _costCategoryArn;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CostCategoryReferences. 
+        /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        /// A reference to a cost category that contains enough information to identify the Cost
-        /// Category. 
+        /// The unique identifier for your cost category.
         /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<CostCategoryReference> CostCategoryReferences
+        [AWSProperty(Min=20, Max=2048)]
+        public string CostCategoryArn
         {
-            get { return this._costCategoryReferences; }
-            set { this._costCategoryReferences = value; }
+            get { return this._costCategoryArn; }
+            set { this._costCategoryArn = value; }
         }
 
-        // Check to see if CostCategoryReferences property is set
-        internal bool IsSetCostCategoryReferences()
+        // Check to see if CostCategoryArn property is set
+        internal bool IsSetCostCategoryArn()
         {
-            return this._costCategoryReferences != null && (this._costCategoryReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._costCategoryArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        ///  The number of entries a paginated response contains. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int? MaxResults
+        {
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        ///  The token to retrieve the next set of results. Amazon Web Services provides the token
         /// when the response from a previous call has more results than the maximum page size.
         /// 
         /// </para>
