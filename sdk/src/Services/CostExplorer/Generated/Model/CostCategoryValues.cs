@@ -90,7 +90,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The specific value of the Cost Category.
+        /// The specific value of the cost category.
         /// </para>
         /// </summary>
         public List<string> Values

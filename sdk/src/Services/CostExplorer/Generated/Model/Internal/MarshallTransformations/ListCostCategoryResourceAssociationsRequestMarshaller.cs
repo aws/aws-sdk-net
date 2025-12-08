@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListCostCategoryDefinitions Request Marshaller
+    /// ListCostCategoryResourceAssociations Request Marshaller
     /// </summary>       
-    public class ListCostCategoryDefinitionsRequestMarshaller : IMarshaller<IRequest, ListCostCategoryDefinitionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListCostCategoryResourceAssociationsRequestMarshaller : IMarshaller<IRequest, ListCostCategoryResourceAssociationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListCostCategoryDefinitionsRequest)input);
+            return this.Marshall((ListCostCategoryResourceAssociationsRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListCostCategoryDefinitionsRequest publicRequest)
+        public IRequest Marshall(ListCostCategoryResourceAssociationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CostExplorer");
-            string target = "AWSInsightsIndexService.ListCostCategoryDefinitions";
+            string target = "AWSInsightsIndexService.ListCostCategoryResourceAssociations";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-25";
@@ -69,10 +69,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEffectiveOn())
+                if(publicRequest.IsSetCostCategoryArn())
                 {
-                    context.Writer.WritePropertyName("EffectiveOn");
-                    context.Writer.Write(publicRequest.EffectiveOn);
+                    context.Writer.WritePropertyName("CostCategoryArn");
+                    context.Writer.Write(publicRequest.CostCategoryArn);
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -87,17 +87,6 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetSupportedResourceTypes())
-                {
-                    context.Writer.WritePropertyName("SupportedResourceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSupportedResourceTypesListValue in publicRequest.SupportedResourceTypes)
-                    {
-                            context.Writer.Write(publicRequestSupportedResourceTypesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -106,9 +95,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListCostCategoryDefinitionsRequestMarshaller _instance = new ListCostCategoryDefinitionsRequestMarshaller();        
+        private static ListCostCategoryResourceAssociationsRequestMarshaller _instance = new ListCostCategoryResourceAssociationsRequestMarshaller();        
 
-        internal static ListCostCategoryDefinitionsRequestMarshaller GetInstance()
+        internal static ListCostCategoryResourceAssociationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +105,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListCostCategoryDefinitionsRequestMarshaller Instance
+        public static ListCostCategoryResourceAssociationsRequestMarshaller Instance
         {
             get
             {

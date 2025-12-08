@@ -383,7 +383,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Creates a new Cost Category with the requested name and rules.
+        /// Creates a new cost category with the requested name and rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCostCategoryDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -504,8 +504,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Deletes a Cost Category. Expenses from this month going forward will no longer be
-        /// categorized with this Cost Category.
+        /// Deletes a cost category. Expenses from this month going forward will no longer be
+        /// categorized with this cost category.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCostCategoryDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -546,13 +546,13 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates
-        /// of a Cost Category that's defined in the account.
+        /// of a cost category that's defined in the account.
         /// 
         ///  
         /// <para>
-        /// You have the option to use <c>EffectiveOn</c> to return a Cost Category that's active
+        /// You have the option to use <c>EffectiveOn</c> to return a cost category that's active
         /// on a specific date. If there's no <c>EffectiveOn</c> specified, you see a Cost Category
-        /// that's effective on the current date. If Cost Category is still effective, <c>EffectiveEnd</c>
+        /// that's effective on the current date. If cost category is still effective, <c>EffectiveEnd</c>
         /// is omitted in the response. 
         /// </para>
         /// </summary>
@@ -1005,11 +1005,11 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves an array of Cost Category names and values incurred cost.
+        /// Retrieves an array of cost category names and values incurred cost.
         /// 
         ///  <note> 
         /// <para>
-        /// If some Cost Category names and values are not associated with any cost, they will
+        /// If some cost category names and values are not associated with any cost, they will
         /// not be returned by this API.
         /// </para>
         ///  </note>
@@ -1232,7 +1232,7 @@ namespace Amazon.CostExplorer
         /// much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
         /// Service, or Amazon Redshift usage is covered by a reservation. An organization's management
         /// account can see the coverage of the associated member accounts. This supports dimensions,
-        /// Cost Categories, and nested expressions. For any time period, you can filter data
+        /// cost categories, and nested expressions. For any time period, you can filter data
         /// about reservation usage by the following dimensions:
         /// 
         ///  <ul> <li> 
@@ -1536,7 +1536,7 @@ namespace Amazon.CostExplorer
         /// Retrieves the Savings Plans covered for your account. This enables you to see how
         /// much of your cost is covered by a Savings Plan. An organization’s management account
         /// can see the coverage of the associated member accounts. This supports dimensions,
-        /// Cost Categories, and nested expressions. For any time period, you can filter data
+        /// cost categories, and nested expressions. For any time period, you can filter data
         /// for Savings Plans usage with the following dimensions:
         /// 
         ///  <ul> <li> 
@@ -1981,12 +1981,12 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Returns the name, Amazon Resource Name (ARN), <c>NumberOfRules</c> and effective dates
-        /// of all Cost Categories defined in the account. You have the option to use <c>EffectiveOn</c>
-        /// to return a list of Cost Categories that were active on a specific date. If there
-        /// is no <c>EffectiveOn</c> specified, you’ll see Cost Categories that are effective
-        /// on the current date. If Cost Category is still effective, <c>EffectiveEnd</c> is omitted
-        /// in the response. <c>ListCostCategoryDefinitions</c> supports pagination. The request
-        /// can have a <c>MaxResults</c> range up to 100.
+        /// of all cost categories defined in the account. You have the option to use <c>EffectiveOn</c>
+        /// and <c>SupportedResourceTypes</c> to return a list of cost categories that were active
+        /// on a specific date. If there is no <c>EffectiveOn</c> specified, you’ll see cost categories
+        /// that are effective on the current date. If cost category is still effective, <c>EffectiveEnd</c>
+        /// is omitted in the response. <c>ListCostCategoryDefinitions</c> supports pagination.
+        /// The request can have a <c>MaxResults</c> range up to 100.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCostCategoryDefinitions service method.</param>
         /// <param name="cancellationToken">
@@ -2005,6 +2005,49 @@ namespace Amazon.CostExplorer
             options.ResponseUnmarshaller = ListCostCategoryDefinitionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCostCategoryDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCostCategoryResourceAssociations
+
+        internal virtual ListCostCategoryResourceAssociationsResponse ListCostCategoryResourceAssociations(ListCostCategoryResourceAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCostCategoryResourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCostCategoryResourceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCostCategoryResourceAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns resource associations of all cost categories defined in the account. You have
+        /// the option to use <c>CostCategoryArn</c> to get the association for a specific cost
+        /// category. <c>ListCostCategoryResourceAssociations</c> supports pagination. The request
+        /// can have a <c>MaxResults</c> range up to 100.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostCategoryResourceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCostCategoryResourceAssociations service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryResourceAssociations">REST API Reference for ListCostCategoryResourceAssociations Operation</seealso>
+        public virtual Task<ListCostCategoryResourceAssociationsResponse> ListCostCategoryResourceAssociationsAsync(ListCostCategoryResourceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCostCategoryResourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCostCategoryResourceAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCostCategoryResourceAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2530,7 +2573,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Updates an existing Cost Category. Changes made to the Cost Category rules will be
+        /// Updates an existing cost category. Changes made to the cost category rules will be
         /// used to categorize the current month’s expenses and future expenses. This won’t change
         /// categorization for the previous months.
         /// </summary>

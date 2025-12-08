@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCostCategoryDefinition operation.
-    /// Updates an existing Cost Category. Changes made to the Cost Category rules will be
+    /// Updates an existing cost category. Changes made to the cost category rules will be
     /// used to categorize the current month’s expenses and future expenses. This won’t change
     /// categorization for the previous months.
     /// </summary>
@@ -47,7 +47,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        /// The unique identifier for your Cost Category.
+        /// The unique identifier for your cost category.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -82,7 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveStart. 
         /// <para>
-        /// The Cost Category's effective start date. It can only be a billing start date (first
+        /// The cost category's effective start date. It can only be a billing start date (first
         /// day of the month). If the date isn't provided, it's the first day of the current month.
         /// Dates can't be before the previous twelve months, or in the future.
         /// </para>
@@ -140,7 +140,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SplitChargeRules. 
         /// <para>
-        ///  The split charge rules used to allocate your charges between your Cost Category values.
+        ///  The split charge rules used to allocate your charges between your cost category values.
         /// 
         /// </para>
         /// </summary>

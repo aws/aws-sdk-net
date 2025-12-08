@@ -30,13 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCostCategoryDefinition operation.
-    /// Deletes a cost category. Expenses from this month going forward will no longer be
-    /// categorized with this cost category.
+    /// A reference to a cost category association that contains information on an associated
+    /// resource.
     /// </summary>
-    public partial class DeleteCostCategoryDefinitionRequest : AmazonCostExplorerRequest
+    public partial class CostCategoryResourceAssociation
     {
         private string _costCategoryArn;
+        private string _costCategoryName;
+        private string _resourceArn;
 
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
@@ -44,7 +45,7 @@ namespace Amazon.CostExplorer.Model
         /// The unique identifier for your cost category. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string CostCategoryArn
         {
             get { return this._costCategoryArn; }
@@ -55,6 +56,41 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetCostCategoryArn()
         {
             return this._costCategoryArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CostCategoryName.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public string CostCategoryName
+        {
+            get { return this._costCategoryName; }
+            set { this._costCategoryName = value; }
+        }
+
+        // Check to see if CostCategoryName property is set
+        internal bool IsSetCostCategoryName()
+        {
+            return this._costCategoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The unique identifier for an associated resource. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
     }

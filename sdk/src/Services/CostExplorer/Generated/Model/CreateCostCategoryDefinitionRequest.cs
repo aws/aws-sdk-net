@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCostCategoryDefinition operation.
-    /// Creates a new Cost Category with the requested name and rules.
+    /// Creates a new cost category with the requested name and rules.
     /// </summary>
     public partial class CreateCostCategoryDefinitionRequest : AmazonCostExplorerRequest
     {
@@ -62,7 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveStart. 
         /// <para>
-        /// The Cost Category's effective start date. It can only be a billing start date (first
+        /// The cost category's effective start date. It can only be a billing start date (first
         /// day of the month). If the date isn't provided, it's the first day of the current month.
         /// Dates can't be before the previous twelve months, or in the future.
         /// </para>
@@ -157,7 +157,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.
+        /// The cost category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -192,7 +192,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SplitChargeRules. 
         /// <para>
-        ///  The split charge rules used to allocate your charges between your Cost Category values.
+        ///  The split charge rules used to allocate your charges between your cost category values.
         /// 
         /// </para>
         /// </summary>

@@ -29,32 +29,32 @@ using Amazon.Runtime;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Base class for ListCostAllocationTagBackfillHistory paginators.
+    /// Base class for ListCostCategoryResourceAssociations paginators.
     /// </summary>
-    internal sealed partial class ListCostAllocationTagBackfillHistoryPaginator : IPaginator<ListCostAllocationTagBackfillHistoryResponse>, IListCostAllocationTagBackfillHistoryPaginator
+    internal sealed partial class ListCostCategoryResourceAssociationsPaginator : IPaginator<ListCostCategoryResourceAssociationsResponse>, IListCostCategoryResourceAssociationsPaginator
     {
         private readonly IAmazonCostExplorer _client;
-        private readonly ListCostAllocationTagBackfillHistoryRequest _request;
+        private readonly ListCostCategoryResourceAssociationsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListCostAllocationTagBackfillHistoryResponse> Responses => new PaginatedResponse<ListCostAllocationTagBackfillHistoryResponse>(this);
+        public IPaginatedEnumerable<ListCostCategoryResourceAssociationsResponse> Responses => new PaginatedResponse<ListCostCategoryResourceAssociationsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the BackfillRequests
+        /// Enumerable containing all of the CostCategoryResourceAssociations
         /// </summary>
-        public IPaginatedEnumerable<CostAllocationTagBackfillRequest> BackfillRequests => 
-            new PaginatedResultKeyResponse<ListCostAllocationTagBackfillHistoryResponse, CostAllocationTagBackfillRequest>(this, (i) => i.BackfillRequests ?? new List<CostAllocationTagBackfillRequest>());
+        public IPaginatedEnumerable<CostCategoryResourceAssociation> CostCategoryResourceAssociations => 
+            new PaginatedResultKeyResponse<ListCostCategoryResourceAssociationsResponse, CostCategoryResourceAssociation>(this, (i) => i.CostCategoryResourceAssociations ?? new List<CostCategoryResourceAssociation>());
 
-        internal ListCostAllocationTagBackfillHistoryPaginator(IAmazonCostExplorer client, ListCostAllocationTagBackfillHistoryRequest request)
+        internal ListCostCategoryResourceAssociationsPaginator(IAmazonCostExplorer client, ListCostCategoryResourceAssociationsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<ListCostAllocationTagBackfillHistoryResponse> IPaginator<ListCostAllocationTagBackfillHistoryResponse>.Paginate()
+        IEnumerable<ListCostCategoryResourceAssociationsResponse> IPaginator<ListCostCategoryResourceAssociationsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -62,11 +62,11 @@ namespace Amazon.CostExplorer.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListCostAllocationTagBackfillHistoryResponse response;
+            ListCostCategoryResourceAssociationsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.ListCostAllocationTagBackfillHistory(_request);
+                response = _client.ListCostCategoryResourceAssociations(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -74,7 +74,7 @@ namespace Amazon.CostExplorer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCostAllocationTagBackfillHistoryResponse> IPaginator<ListCostAllocationTagBackfillHistoryResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
+        async IAsyncEnumerable<ListCostCategoryResourceAssociationsResponse> IPaginator<ListCostCategoryResourceAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -82,11 +82,11 @@ namespace Amazon.CostExplorer.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListCostAllocationTagBackfillHistoryResponse response;
+            ListCostCategoryResourceAssociationsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.ListCostAllocationTagBackfillHistoryAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.ListCostCategoryResourceAssociationsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
