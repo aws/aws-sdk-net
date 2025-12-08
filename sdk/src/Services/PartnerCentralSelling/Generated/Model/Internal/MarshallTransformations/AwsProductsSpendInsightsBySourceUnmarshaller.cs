@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsOpportunityInsights Object
+    /// Response Unmarshaller for AwsProductsSpendInsightsBySource Object
     /// </summary>  
-    public class AwsOpportunityInsightsUnmarshaller : IJsonUnmarshaller<AwsOpportunityInsights, JsonUnmarshallerContext>
+    public class AwsProductsSpendInsightsBySourceUnmarshaller : IJsonUnmarshaller<AwsProductsSpendInsightsBySource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsOpportunityInsights Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AwsProductsSpendInsightsBySource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AwsOpportunityInsights unmarshalledObject = new AwsOpportunityInsights();
+            AwsProductsSpendInsightsBySource unmarshalledObject = new AwsProductsSpendInsightsBySource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsProductsSpendInsightsBySource", targetDepth))
+                if (context.TestExpression("AWS", targetDepth))
                 {
-                    var unmarshaller = AwsProductsSpendInsightsBySourceUnmarshaller.Instance;
-                    unmarshalledObject.AwsProductsSpendInsightsBySource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AwsProductInsightsUnmarshaller.Instance;
+                    unmarshalledObject.AWS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngagementScore", targetDepth))
+                if (context.TestExpression("Partner", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngagementScore = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("NextBestActions", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextBestActions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AwsProductInsightsUnmarshaller.Instance;
+                    unmarshalledObject.Partner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsOpportunityInsightsUnmarshaller _instance = new AwsOpportunityInsightsUnmarshaller();        
+        private static AwsProductsSpendInsightsBySourceUnmarshaller _instance = new AwsProductsSpendInsightsBySourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsOpportunityInsightsUnmarshaller Instance
+        public static AwsProductsSpendInsightsBySourceUnmarshaller Instance
         {
             get
             {
