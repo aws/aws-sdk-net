@@ -44,8 +44,30 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class DescribeUserRequest : AmazonIdentityStoreRequest
     {
+        private List<string> _extensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identityStoreId;
         private string _userId;
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// A collection of extension names indicating what extensions the service should retrieve
+        /// alongside other user attributes. <c>aws:identitystore:enterprise</c> is the only supported
+        /// extension name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 

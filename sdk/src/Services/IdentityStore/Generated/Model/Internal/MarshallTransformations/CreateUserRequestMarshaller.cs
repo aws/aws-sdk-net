@@ -113,6 +113,20 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetExtensions())
+                {
+                    context.Writer.WritePropertyName("Extensions");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestExtensionsKvp in publicRequest.Extensions)
+                    {
+                        context.Writer.WritePropertyName(publicRequestExtensionsKvp.Key);
+                        var publicRequestExtensionsValue = publicRequestExtensionsKvp.Value;
+
+                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestExtensionsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIdentityStoreId())
                 {
                     context.Writer.WritePropertyName("IdentityStoreId");

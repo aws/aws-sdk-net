@@ -39,6 +39,7 @@ namespace Amazon.IdentityStore.Model
         private string _birthdate;
         private string _displayName;
         private List<Email> _emails = AWSConfigs.InitializeCollections ? new List<Email>() : null;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _extensions = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private string _identityStoreId;
         private string _locale;
         private Name _name;
@@ -130,6 +131,28 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetEmails()
         {
             return this._emails != null && (this._emails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// A map with additional attribute extensions for the user. Each map key corresponds
+        /// to an extension name, while map values represent extension data in <c>Document</c>
+        /// type (not supported by Java V1, Go V1 and older versions of the CLI). <c>aws:identitystore:enterprise</c>
+        /// is the only supported extension name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public Dictionary<string, Amazon.Runtime.Documents.Document> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
