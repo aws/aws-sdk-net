@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsOpportunityInsights Object
+    /// Response Unmarshaller for AwsProductOptimization Object
     /// </summary>  
-    public class AwsOpportunityInsightsUnmarshaller : IUnmarshaller<AwsOpportunityInsights, XmlUnmarshallerContext>, IUnmarshaller<AwsOpportunityInsights, JsonUnmarshallerContext>
+    public class AwsProductOptimizationUnmarshaller : IUnmarshaller<AwsProductOptimization, XmlUnmarshallerContext>, IUnmarshaller<AwsProductOptimization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsOpportunityInsights IUnmarshaller<AwsOpportunityInsights, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsProductOptimization IUnmarshaller<AwsProductOptimization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsOpportunityInsights Unmarshall(JsonUnmarshallerContext context)
+        public AwsProductOptimization Unmarshall(JsonUnmarshallerContext context)
         {
-            AwsOpportunityInsights unmarshalledObject = new AwsOpportunityInsights();
+            AwsProductOptimization unmarshalledObject = new AwsProductOptimization();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AwsProductsSpendInsightsBySource", targetDepth))
-                {
-                    var unmarshaller = AwsProductsSpendInsightsBySourceUnmarshaller.Instance;
-                    unmarshalledObject.AwsProductsSpendInsightsBySource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EngagementScore", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngagementScore = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NextBestActions", targetDepth))
+                if (context.TestExpression("SavingsAmount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextBestActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SavingsAmount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsOpportunityInsightsUnmarshaller _instance = new AwsOpportunityInsightsUnmarshaller();        
+        private static AwsProductOptimizationUnmarshaller _instance = new AwsProductOptimizationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsOpportunityInsightsUnmarshaller Instance
+        public static AwsProductOptimizationUnmarshaller Instance
         {
             get
             {

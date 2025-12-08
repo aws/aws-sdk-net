@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsOpportunityInsights Object
+    /// Response Unmarshaller for AwsProductsSpendInsightsBySource Object
     /// </summary>  
-    public class AwsOpportunityInsightsUnmarshaller : IUnmarshaller<AwsOpportunityInsights, XmlUnmarshallerContext>, IUnmarshaller<AwsOpportunityInsights, JsonUnmarshallerContext>
+    public class AwsProductsSpendInsightsBySourceUnmarshaller : IUnmarshaller<AwsProductsSpendInsightsBySource, XmlUnmarshallerContext>, IUnmarshaller<AwsProductsSpendInsightsBySource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsOpportunityInsights IUnmarshaller<AwsOpportunityInsights, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsProductsSpendInsightsBySource IUnmarshaller<AwsProductsSpendInsightsBySource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsOpportunityInsights Unmarshall(JsonUnmarshallerContext context)
+        public AwsProductsSpendInsightsBySource Unmarshall(JsonUnmarshallerContext context)
         {
-            AwsOpportunityInsights unmarshalledObject = new AwsOpportunityInsights();
+            AwsProductsSpendInsightsBySource unmarshalledObject = new AwsProductsSpendInsightsBySource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AwsProductsSpendInsightsBySource", targetDepth))
+                if (context.TestExpression("AWS", targetDepth))
                 {
-                    var unmarshaller = AwsProductsSpendInsightsBySourceUnmarshaller.Instance;
-                    unmarshalledObject.AwsProductsSpendInsightsBySource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AwsProductInsightsUnmarshaller.Instance;
+                    unmarshalledObject.AWS = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EngagementScore", targetDepth))
+                if (context.TestExpression("Partner", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngagementScore = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextBestActions", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextBestActions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AwsProductInsightsUnmarshaller.Instance;
+                    unmarshalledObject.Partner = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsOpportunityInsightsUnmarshaller _instance = new AwsOpportunityInsightsUnmarshaller();        
+        private static AwsProductsSpendInsightsBySourceUnmarshaller _instance = new AwsProductsSpendInsightsBySourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsOpportunityInsightsUnmarshaller Instance
+        public static AwsProductsSpendInsightsBySourceUnmarshaller Instance
         {
             get
             {

@@ -848,6 +848,38 @@
     <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsProductDetails.Amount</property>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsProductDetails.OptimizedAmount</property>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsProductDetails.PotentialSavingsAmount</property>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsProductInsights.CurrencyCode</property>
+    <pattern>USD</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsProductInsights.TotalAmount</property>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsProductInsights.TotalOptimizedAmount</property>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsProductInsights.TotalPotentialSavingsAmount</property>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsProductOptimization.SavingsAmount</property>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AwsTeamMember.Email</property>
     <pattern>(?=.{0,80}$)[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?</pattern>
   </property-value-rule>
@@ -977,7 +1009,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.Amount</property>
-    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+    <pattern>((0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.CurrencyCode</property>
@@ -985,7 +1017,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.EstimationUrl</property>
-    <pattern>(?s).{4,255}</pattern>
+    <pattern>https://calculator\.aws/#/estimate\?id=[a-f0-9]{32,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.TargetCompany</property>
