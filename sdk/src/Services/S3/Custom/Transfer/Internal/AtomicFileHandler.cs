@@ -20,8 +20,10 @@
  *
  */
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -33,6 +35,7 @@ namespace Amazon.S3.Transfer.Internal
     {
         private string _tempFilePath;
         private bool _disposed = false;
+        private readonly Logger _logger = Logger.GetLogger(typeof(AtomicFileHandler));
 
         /// <summary>
         /// Creates a temporary file with unique identifier for atomic operations.
@@ -93,26 +96,52 @@ namespace Amazon.S3.Transfer.Internal
             if (!File.Exists(tempPath))
                 throw new FileNotFoundException($"Temporary file not found: {tempPath}");
 
+            var commitStopwatch = Stopwatch.StartNew();
+            var destExists = File.Exists(destinationPath);
+            var tempFileInfo = new FileInfo(tempPath);
+            var fileSize = tempFileInfo.Length;
+
+            _logger.DebugFormat("AtomicFileHandler: Starting commit - TempFile={0}, DestExists={1}, FileSize={2:N0} bytes",
+                Path.GetFileName(tempPath), destExists, fileSize);
+
             try
             {
                 // Use File.Replace for atomic replacement when overwriting existing file
                 // This prevents data loss if process crashes between delete and move operations
                 // File.Replace is atomic on Windows (ReplaceFile API) and Unix (rename syscall)
-                if (File.Exists(destinationPath))
+                if (destExists)
                 {
+                    _logger.DebugFormat("AtomicFileHandler: Using File.Replace to overwrite existing file");
+                    var replaceStopwatch = Stopwatch.StartNew();
                     File.Replace(tempPath, destinationPath, null);
+                    replaceStopwatch.Stop();
+                    _logger.InfoFormat("AtomicFileHandler: File.Replace completed in {0:F3}s for {1:N0} bytes ({2:F2} MB/s)",
+                        replaceStopwatch.Elapsed.TotalSeconds,
+                        fileSize,
+                        fileSize / (1024.0 * 1024.0) / replaceStopwatch.Elapsed.TotalSeconds);
                 }
                 else
                 {
-                    // For new files, File.Move is sufficient and atomic on same volume
+                    _logger.DebugFormat("AtomicFileHandler: Using File.Move to create new file");
+                    var moveStopwatch = Stopwatch.StartNew();
                     File.Move(tempPath, destinationPath);
+                    moveStopwatch.Stop();
+                    _logger.InfoFormat("AtomicFileHandler: File.Move completed in {0:F3}s for {1:N0} bytes ({2:F2} MB/s)",
+                        moveStopwatch.Elapsed.TotalSeconds,
+                        fileSize,
+                        fileSize / (1024.0 * 1024.0) / moveStopwatch.Elapsed.TotalSeconds);
                 }
+
+                commitStopwatch.Stop();
+                _logger.InfoFormat("AtomicFileHandler: Total commit operation took {0:F3}s", commitStopwatch.Elapsed.TotalSeconds);
 
                 if (_tempFilePath == tempPath)
                     _tempFilePath = null; // Successfully committed
             }
             catch (Exception ex)
             {
+                commitStopwatch.Stop();
+                _logger.Error(ex, "AtomicFileHandler: Commit failed after {0:F3}s", commitStopwatch.Elapsed.TotalSeconds);
                 throw new InvalidOperationException($"Failed to commit temporary file {tempPath} to {destinationPath}", ex);
             }
         }
