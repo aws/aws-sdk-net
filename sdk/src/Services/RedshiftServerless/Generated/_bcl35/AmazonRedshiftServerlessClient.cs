@@ -1844,6 +1844,96 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  GetIdentityCenterAuthToken
+
+        /// <summary>
+        /// Returns an Identity Center authentication token for accessing Amazon Redshift Serverless
+        /// workgroups.
+        /// 
+        ///  
+        /// <para>
+        /// The token provides secure access to data within the specified workgroups using Identity
+        /// Center identity propagation. The token expires after a specified duration and must
+        /// be refreshed for continued access.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) user or role that runs GetIdentityCenterAuthToken
+        /// must have appropriate permissions to access the specified workgroups and Identity
+        /// Center integration must be configured for the workgroups.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityCenterAuthToken service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityCenterAuthToken service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetIdentityCenterAuthToken">REST API Reference for GetIdentityCenterAuthToken Operation</seealso>
+        public virtual GetIdentityCenterAuthTokenResponse GetIdentityCenterAuthToken(GetIdentityCenterAuthTokenRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIdentityCenterAuthTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityCenterAuthTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityCenterAuthTokenResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityCenterAuthToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityCenterAuthToken operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityCenterAuthToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetIdentityCenterAuthToken">REST API Reference for GetIdentityCenterAuthToken Operation</seealso>
+        public virtual IAsyncResult BeginGetIdentityCenterAuthToken(GetIdentityCenterAuthTokenRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIdentityCenterAuthTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityCenterAuthTokenResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdentityCenterAuthToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityCenterAuthToken.</param>
+        /// 
+        /// <returns>Returns a  GetIdentityCenterAuthTokenResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetIdentityCenterAuthToken">REST API Reference for GetIdentityCenterAuthToken Operation</seealso>
+        public virtual GetIdentityCenterAuthTokenResponse EndGetIdentityCenterAuthToken(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIdentityCenterAuthTokenResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetNamespace
 
         /// <summary>
@@ -2370,6 +2460,10 @@ namespace Amazon.RedshiftServerless
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
         /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.

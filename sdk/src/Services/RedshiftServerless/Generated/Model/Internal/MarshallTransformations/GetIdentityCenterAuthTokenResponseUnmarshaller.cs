@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTrack operation
+    /// Response Unmarshaller for GetIdentityCenterAuthToken operation
     /// </summary>  
-    public class GetTrackResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetIdentityCenterAuthTokenResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,22 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetTrackResponse response = new GetTrackResponse();
+            GetIdentityCenterAuthTokenResponse response = new GetIdentityCenterAuthTokenResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("track", targetDepth))
+                if (context.TestExpression("expirationTime", targetDepth))
                 {
-                    var unmarshaller = ServerlessTrackUnmarshaller.Instance;
-                    response.Track = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.ExpirationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("token", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Token = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,9 +119,9 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             return new AmazonRedshiftServerlessException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetTrackResponseUnmarshaller _instance = new GetTrackResponseUnmarshaller();        
+        private static GetIdentityCenterAuthTokenResponseUnmarshaller _instance = new GetIdentityCenterAuthTokenResponseUnmarshaller();        
 
-        internal static GetTrackResponseUnmarshaller GetInstance()
+        internal static GetIdentityCenterAuthTokenResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +129,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTrackResponseUnmarshaller Instance
+        public static GetIdentityCenterAuthTokenResponseUnmarshaller Instance
         {
             get
             {
