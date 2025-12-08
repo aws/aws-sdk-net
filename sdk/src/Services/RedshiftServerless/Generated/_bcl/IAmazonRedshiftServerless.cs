@@ -1426,6 +1426,106 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  GetIdentityCenterAuthToken
+
+
+        /// <summary>
+        /// Returns an Identity Center authentication token for accessing Amazon Redshift Serverless
+        /// workgroups.
+        /// 
+        ///  
+        /// <para>
+        /// The token provides secure access to data within the specified workgroups using Identity
+        /// Center identity propagation. The token expires after a specified duration and must
+        /// be refreshed for continued access.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) user or role that runs GetIdentityCenterAuthToken
+        /// must have appropriate permissions to access the specified workgroups and Identity
+        /// Center integration must be configured for the workgroups.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityCenterAuthToken service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityCenterAuthToken service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetIdentityCenterAuthToken">REST API Reference for GetIdentityCenterAuthToken Operation</seealso>
+        GetIdentityCenterAuthTokenResponse GetIdentityCenterAuthToken(GetIdentityCenterAuthTokenRequest request);
+
+
+
+        /// <summary>
+        /// Returns an Identity Center authentication token for accessing Amazon Redshift Serverless
+        /// workgroups.
+        /// 
+        ///  
+        /// <para>
+        /// The token provides secure access to data within the specified workgroups using Identity
+        /// Center identity propagation. The token expires after a specified duration and must
+        /// be refreshed for continued access.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) user or role that runs GetIdentityCenterAuthToken
+        /// must have appropriate permissions to access the specified workgroups and Identity
+        /// Center integration must be configured for the workgroups.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityCenterAuthToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIdentityCenterAuthToken service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetIdentityCenterAuthToken">REST API Reference for GetIdentityCenterAuthToken Operation</seealso>
+        Task<GetIdentityCenterAuthTokenResponse> GetIdentityCenterAuthTokenAsync(GetIdentityCenterAuthTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetNamespace
 
 
@@ -1827,6 +1927,10 @@ namespace Amazon.RedshiftServerless
         /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
         /// The submitted action has conflicts.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
@@ -1858,6 +1962,10 @@ namespace Amazon.RedshiftServerless
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
         /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
