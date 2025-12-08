@@ -13,17 +13,29 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.S3.Model;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
-#pragma warning disable 1591
-
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IdempotencyParameterMismatchException
-    /// </summary>
+    /// Response Unmarshaller for IdempotencyParameterMismatchException operation
+    /// </summary>  
     public class IdempotencyParameterMismatchExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IdempotencyParameterMismatchException, XmlUnmarshallerContext>
     {
         /// <summary>
@@ -51,10 +63,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 id2 = s3ErrorResponse.Id2;
                 amzCfId = s3ErrorResponse.AmzCfId;
             }
-
-            IdempotencyParameterMismatchException response = new IdempotencyParameterMismatchException(
-                errorResponse.Message, errorResponse.InnerException,
+            IdempotencyParameterMismatchException response = new IdempotencyParameterMismatchException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
+
 
             while (context.Read())
             {
@@ -65,19 +76,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static IdempotencyParameterMismatchExceptionUnmarshaller _instance;
-        
+        private static IdempotencyParameterMismatchExceptionUnmarshaller _instance = new IdempotencyParameterMismatchExceptionUnmarshaller();        
+
         /// <summary>
         /// Gets the singleton.
-        /// </summary>
+        /// </summary>  
         public static IdempotencyParameterMismatchExceptionUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new IdempotencyParameterMismatchExceptionUnmarshaller();
-                }
                 return _instance;
             }
         }
