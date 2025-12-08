@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private string _preSignedUrl;
         private string _sourceDBInstanceArn;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
@@ -151,6 +152,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSourceDBInstanceArn()
         {
             return this._sourceDBInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to associate with the replicated automated backups.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
