@@ -22,6 +22,7 @@
 using System;
 using System.Buffers;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading;
@@ -193,7 +194,7 @@ namespace Amazon.S3.Transfer.Internal
                 
                 _discoveryCompleted = true;
 
-                _logger.InfoFormat("MultipartDownloadManager: Discovery complete - ObjectSize={0}, TotalParts={1}, Strategy={2}, ETagPresent={3}",
+                _logger.DebugFormat("MultipartDownloadManager: Discovery complete - ObjectSize={0}, TotalParts={1}, Strategy={2}, ETagPresent={3}",
                     result.ObjectSize,
                     result.TotalParts,
                     _request.MultipartDownloadType,
@@ -280,7 +281,7 @@ namespace Amazon.S3.Transfer.Internal
                         _logger.DebugFormat("MultipartDownloadManager: Background task starting capacity acquisition and downloads");
                         
                         // Multipart: Start concurrent downloads for remaining parts (Part 2 onwards)
-                        _logger.InfoFormat("MultipartDownloadManager: Starting concurrent downloads for parts 2-{0}",
+                        _logger.DebugFormat("MultipartDownloadManager: Starting concurrent downloads for parts 2-{0}",
                             discoveryResult.TotalParts);
 
                         // Pre-acquire capacity in sequential order to prevent race condition deadlock
@@ -321,7 +322,7 @@ namespace Amazon.S3.Transfer.Internal
                         }
 
                         // Mark successful completion
-                        _logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
+                        _logger.DebugFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
                             discoveryResult.TotalParts);
                         _dataHandler.OnDownloadComplete(null);
                     }
@@ -368,6 +369,7 @@ namespace Amazon.S3.Transfer.Internal
         {            
             GetObjectResponse response = null;
             var ownsResponse = false;  // Track if we still own the response
+            var httpStopwatch = new Stopwatch();
             
             try
             {
@@ -413,8 +415,18 @@ namespace Amazon.S3.Transfer.Internal
                             partNumber, startByte, endByte, !string.IsNullOrEmpty(_savedETag));
                     }
                     
+                    httpStopwatch.Start();
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
+                    httpStopwatch.Stop();
                     ownsResponse = true;  // We now own the response
+                    
+                    // Calculate and log network speed
+                    var downloadedBytes = response.ContentLength;
+                    var httpTimeSeconds = httpStopwatch.Elapsed.TotalSeconds;
+                    var networkSpeedMBps = httpTimeSeconds > 0 ? (downloadedBytes / (1024.0 * 1024.0)) / httpTimeSeconds : 0;
+                    
+                    _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Network download complete - {1:N0} bytes in {2:F2}s ({3:F2} MB/s)",
+                        partNumber, downloadedBytes, httpTimeSeconds, networkSpeedMBps);
                     
                     // Attach progress callback to response if provided
                     if (progressCallback != null)

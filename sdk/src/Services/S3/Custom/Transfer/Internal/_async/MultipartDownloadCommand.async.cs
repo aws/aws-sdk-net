@@ -85,24 +85,31 @@ namespace Amazon.S3.Transfer.Internal
                         await coordinator.DownloadCompletionTask.ConfigureAwait(false);
                         
                         _logger.DebugFormat("MultipartDownloadCommand: Completed multipart download");
+                        _logger.DebugFormat("MultipartDownloadCommand: All parts written to disk, beginning response mapping");
                         
                         // Step 3: Map the response from the initial GetObject response
                         // The initial response contains all the metadata we need
+                        _logger.DebugFormat("MultipartDownloadCommand: Mapping response from initial GetObject");
                         var mappedResponse = ResponseMapper.MapGetObjectResponse(discoveryResult.InitialResponse);
+                        _logger.DebugFormat("MultipartDownloadCommand: Response mapping complete");
                         
                         // SEP Part GET Step 7 / Ranged GET Step 9:
                         // Set ContentLength to total object size (not just first part)
+                        _logger.DebugFormat("MultipartDownloadCommand: Setting ContentLength to {0}", discoveryResult.ObjectSize);
                         mappedResponse.Headers.ContentLength = discoveryResult.ObjectSize;
                         
                         // Set ContentRange to represent the entire object: bytes 0-(ContentLength-1)/ContentLength
                         // S3 returns null for 0-byte objects, so we match that behavior
+                        _logger.DebugFormat("MultipartDownloadCommand: Setting ContentRange");
                         if (discoveryResult.ObjectSize == 0)
                         {
                             mappedResponse.ContentRange = null;
+                            _logger.DebugFormat("MultipartDownloadCommand: ContentRange set to null (0-byte object)");
                         }
                         else
                         {
                             mappedResponse.ContentRange = $"bytes 0-{discoveryResult.ObjectSize - 1}/{discoveryResult.ObjectSize}";
+                            _logger.DebugFormat("MultipartDownloadCommand: ContentRange set to: {0}", mappedResponse.ContentRange);
                         }
                         
                         // SEP Part GET Step 7 / Ranged GET Step 9:
@@ -110,18 +117,24 @@ namespace Amazon.S3.Transfer.Internal
                         // Per spec: "If ChecksumType is COMPOSITE, set all checksum value members to null 
                         // as the checksum value returned from a part GET request is not the composite 
                         // checksum for the entire object"
+                        _logger.DebugFormat("MultipartDownloadCommand: Processing checksums (ChecksumType={0})", mappedResponse.ChecksumType);
                         if (mappedResponse.ChecksumType == ChecksumType.COMPOSITE)
                         {
+                            _logger.DebugFormat("MultipartDownloadCommand: Nullifying composite checksums");
                             mappedResponse.ChecksumCRC32 = null;
                             mappedResponse.ChecksumCRC32C = null;
                             mappedResponse.ChecksumCRC64NVME = null;
                             mappedResponse.ChecksumSHA1 = null;
                             mappedResponse.ChecksumSHA256 = null;
                         }
+                        _logger.DebugFormat("MultipartDownloadCommand: Checksum processing complete");
                         
                         // Fire completed event
+                        _logger.DebugFormat("MultipartDownloadCommand: Firing transfer completed event");
                         FireTransferCompletedEvent(mappedResponse, totalBytes);
+                        _logger.DebugFormat("MultipartDownloadCommand: Transfer completed event fired");
                         
+                        _logger.DebugFormat("MultipartDownloadCommand: Returning response to caller");
                         return mappedResponse;
                     }
                     catch (Exception ex)

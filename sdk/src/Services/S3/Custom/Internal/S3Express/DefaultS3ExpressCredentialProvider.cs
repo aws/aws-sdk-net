@@ -199,7 +199,7 @@ namespace Amazon.S3.Internal.S3Express
         {
             try
             {
-                _logger.InfoFormat("Refreshing session credentials started in the background.");
+                _logger.DebugFormat("Refreshing session credentials started in the background.");
                 var keysToRefresh = new List<string>();
                 _cacheLock.Wait();
                 try
@@ -269,7 +269,7 @@ namespace Amazon.S3.Internal.S3Express
                 _timerStarted = false;
                 if (resetTime == DateTime.MinValue)
                 {
-                    _logger.InfoFormat("Refreshing session credentials stopped since none were used recently.");
+                    _logger.DebugFormat("Refreshing session credentials stopped since none were used recently.");
                     return;
                 }
 

@@ -20,6 +20,7 @@
  *
  */
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -202,6 +203,8 @@ namespace Amazon.S3.Transfer.Internal
             _logger.DebugFormat("FilePartDataHandler: Opening file for writing at offset {0} with BufferSize={1}",
                 offset, _config.BufferSize);
 
+            var writeStopwatch = Stopwatch.StartNew();
+
             // Open file with FileShare.Write to allow concurrent writes from other threads
             using (var fileStream = new FileStream(
                 _tempFilePath,
@@ -231,6 +234,16 @@ namespace Amazon.S3.Transfer.Internal
                 // Ensure data is written to disk
                 await fileStream.FlushAsync(cancellationToken)
                     .ConfigureAwait(false);
+
+                writeStopwatch.Stop();
+
+                // Calculate and log disk write speed
+                var writtenBytes = response.ContentLength;
+                var writeTimeSeconds = writeStopwatch.Elapsed.TotalSeconds;
+                var writeSpeedMBps = writeTimeSeconds > 0 ? (writtenBytes / (1024.0 * 1024.0)) / writeTimeSeconds : 0;
+
+                _logger.DebugFormat("FilePartDataHandler: Disk write complete - {0:N0} bytes in {1:F2}s ({2:F2} MB/s) at offset {3:N0}",
+                    writtenBytes, writeTimeSeconds, writeSpeedMBps, offset);
 
                 _logger.DebugFormat("FilePartDataHandler: Successfully wrote {0} bytes at offset {1}",
                     response.ContentLength, offset);

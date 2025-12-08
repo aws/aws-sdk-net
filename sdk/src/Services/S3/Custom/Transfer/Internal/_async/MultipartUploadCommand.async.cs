@@ -246,7 +246,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch(Exception exception)
             {
-                _logger.InfoFormat(
+                _logger.DebugFormat(
                     "A timeout occured while waiting for all upload part request to complete as part of aborting the multipart upload : {0}",
                     exception.Message);
             }
