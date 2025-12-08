@@ -34,9 +34,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCleanup]
         public async Task Cleanup()
         {
-            var allTables = DynamoDBTests.Client.ListTables().TableNames;
-            var tableExists = allTables.Contains(TABLENAME);
-            if (tableExists)
+            var allTables = (await DynamoDBTests.Client.ListTablesAsync()).TableNames;
+            
+            if (allTables.Contains(TABLENAME))
             {
                 await DeleteTable(TABLENAME);
             }
