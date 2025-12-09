@@ -27,67 +27,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Object Request Marshaller
     /// </summary>       
-    public class DeleteObjectRequestMarshaller : IMarshaller<IRequest, DeleteObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class DeleteObjectRequestMarshaller : IMarshaller<IRequest, DeleteObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((DeleteObjectRequest)input);
-		}
-
-        public IRequest Marshall(DeleteObjectRequest deleteObjectRequest)
+        // custom marshall to preserve backwards compatibility since MfaCodes is modeled as a string but the custom code has a custom shape for it.
+        void MfaCodesCustomMarshall(DefaultRequest request, DeleteObjectRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteObjectRequest, "Amazon.S3");
-
-            request.HttpMethod = "DELETE";
-
-            if (deleteObjectRequest.IsSetBypassGovernanceRetention())
-                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(deleteObjectRequest.BypassGovernanceRetention.Value));
-            if (deleteObjectRequest.IsSetMfaCodes())
-                request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectRequest.MfaCodes.FormattedMfaCodes);
-
-            if (deleteObjectRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(deleteObjectRequest.ExpectedBucketOwner));
-
-            if (string.IsNullOrEmpty(deleteObjectRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteObjectRequest.BucketName");
-            if (string.IsNullOrEmpty(deleteObjectRequest.Key))
-                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "DeleteObjectRequest.Key");
-            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(deleteObjectRequest.Key));
-            request.ResourcePath = "/{Key+}";
-            if (deleteObjectRequest.IsSetVersionId())
-                request.AddSubResource("versionId", S3Transforms.ToStringValue(deleteObjectRequest.VersionId));
-            if (deleteObjectRequest.IsSetRequestPayer())
-                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(deleteObjectRequest.RequestPayer.ToString()));
-            request.UseQueryString = true;
-
-            if (deleteObjectRequest.IsSetIfMatch())
-                request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(deleteObjectRequest.IfMatch));
-
-            if (deleteObjectRequest.IsSetIfMatchLastModifiedTime())
-                request.Headers.Add(S3Constants.AmzHeaderIfMatchLastModifiedTime, S3Transforms.ToStringValue(deleteObjectRequest.IfMatchLastModifiedTime.Value));
-
-            if (deleteObjectRequest.IsSetIfMatchSize())
-                request.Headers.Add(S3Constants.AmzHeaderIfMatchSize, S3Transforms.ToStringValue(deleteObjectRequest.IfMatchSize));
-
-            return request;
+            if (publicRequest.IsSetMfaCodes())
+                request.Headers.Add(HeaderKeys.XAmzMfaHeader, publicRequest.MfaCodes.FormattedMfaCodes);
         }
-
-	    private static DeleteObjectRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static DeleteObjectRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new DeleteObjectRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
     }
 }
     
