@@ -12,23 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteObject response and response metadata.
+    /// This is the response object from the DeleteObject operation.
     /// </summary>
-    public class DeleteObjectResponse : AmazonWebServiceResponse
+    public partial class DeleteObjectResponse : AmazonWebServiceResponse
     {
-        private string deleteMarker;
-        private string versionId;
-        private RequestCharged requestCharged;
+        private string _deleteMarker;
+        private RequestCharged _requestCharged;
+        private string _versionId;
 
         /// <summary>
         /// Gets and sets the property DeleteMarker. 
@@ -36,7 +44,8 @@ namespace Amazon.S3.Model
         /// Indicates whether the specified object version that was permanently deleted was (true)
         /// or was not (false) a delete marker before deletion. In a simple DELETE, this header
         /// indicates whether (true) or not (false) the current version of the object is a delete
-        /// marker.
+        /// marker. To learn more about delete markers, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working
+        /// with delete markers</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -46,14 +55,29 @@ namespace Amazon.S3.Model
         /// </summary>
         public string DeleteMarker
         {
-            get { return this.deleteMarker; }
-            set { this.deleteMarker = value; }
+            get { return this._deleteMarker; }
+            set { this._deleteMarker = value; }
         }
 
         // Check to see if DeleteMarker property is set
         internal bool IsSetDeleteMarker()
         {
-            return this.deleteMarker != null;
+            return this._deleteMarker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestCharged.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
+        }
+
+        // Check to see if RequestCharged property is set
+        internal bool IsSetRequestCharged()
+        {
+            return this._requestCharged != null;
         }
 
         /// <summary>
@@ -69,33 +93,15 @@ namespace Amazon.S3.Model
         /// </summary>
         public string VersionId
         {
-            get { return this.versionId; }
-            set { this.versionId = value; }
+            get { return this._versionId; }
+            set { this._versionId = value; }
         }
 
         // Check to see if VersionId property is set
         internal bool IsSetVersionId()
         {
-            return this.versionId != null;
+            return this._versionId != null;
         }
 
-        /// <summary>
-        /// If present, indicates that the requester was successfully charged for the request.
-        /// </summary>
-        public RequestCharged RequestCharged
-        {
-            get { return this.requestCharged; }
-            set { this.requestCharged = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if RequestCharged is set.
-        /// </summary>
-        /// <returns>true, if RequestCharged property is set.</returns>
-        internal bool IsSetRequestCharged()
-        {
-            return requestCharged != null;
-        }
     }
 }
-    
