@@ -52,7 +52,7 @@ namespace Amazon.SQS.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<BatchResultErrorEntry> Failed
+        public List<BatchResultErrorEntry>? Failed
         {
             get { return this._failed; }
             set { this._failed = value; }
@@ -76,7 +76,7 @@ namespace Amazon.SQS.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<SendMessageBatchResultEntry> Successful
+        public List<SendMessageBatchResultEntry>? Successful
         {
             get { return this._successful; }
             set { this._successful = value; }

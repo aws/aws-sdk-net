@@ -594,11 +594,11 @@ namespace ServiceClientGenerator
                     bool overrideMapTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
                     var keyType = DetermineType(memberShape["key"], overrideMapTreatEnumsAsString, false);
                     var valueType = DetermineType(memberShape["value"], overrideMapTreatEnumsAsString, false);
-                    return string.Format("Dictionary<{0}, {1}>", keyType, valueType);
+                    return string.Format("Dictionary<{0}, {1}>{2}", keyType, valueType, nullable);
                 case "list":
                     bool overrideListTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
                     var listType = DetermineType(memberShape["member"], overrideListTreatEnumsAsString, false);
-                    return string.Format("List<{0}>", listType);
+                    return string.Format("List<{0}>{1}", listType, nullable);
 
                 case "decimal":
                     throw new Exception(UnhandledTypeDecimalErrorMessage);

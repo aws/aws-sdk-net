@@ -1,0 +1,6 @@
+{
+  "description": "Fix missing nullable annotations for collection properties in V4",
+  "versionBumpType": "patch",
+  "services": ["Core"],
+  "changelogEntry": "Fixed missing nullable reference type annotations for collection properties that can be null in V4. This enables proper compile-time null checking for Dictionary and List properties that use the AWSConfigs.InitializeCollections pattern."
+}
