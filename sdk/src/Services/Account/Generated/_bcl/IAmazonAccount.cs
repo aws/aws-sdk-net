@@ -131,15 +131,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -175,15 +175,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -441,15 +441,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -485,15 +485,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -535,8 +535,8 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
-        /// the primary and alternate contact information</a>.
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContactInformation service method.</param>
@@ -570,8 +570,8 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
-        /// the primary and alternate contact information</a>.
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContactInformation service method.</param>
@@ -600,6 +600,82 @@ namespace Amazon.Account
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation">REST API Reference for GetContactInformation Operation</seealso>
         Task<GetContactInformationResponse> GetContactInformationAsync(GetContactInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetGovCloudAccountInformation
+
+
+        /// <summary>
+        /// Retrieves information about the GovCloud account linked to the specified standard
+        /// account (if it exists) including the GovCloud account ID and state. To use this API,
+        /// an IAM user or role must have the <c>account:GetGovCloudAccountInformation</c> IAM
+        /// permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGovCloudAccountInformation service method.</param>
+        /// 
+        /// <returns>The response from the GetGovCloudAccountInformation service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceUnavailableException">
+        /// The operation failed because it specified a resource that is not currently available.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetGovCloudAccountInformation">REST API Reference for GetGovCloudAccountInformation Operation</seealso>
+        GetGovCloudAccountInformationResponse GetGovCloudAccountInformation(GetGovCloudAccountInformationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about the GovCloud account linked to the specified standard
+        /// account (if it exists) including the GovCloud account ID and state. To use this API,
+        /// an IAM user or role must have the <c>account:GetGovCloudAccountInformation</c> IAM
+        /// permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGovCloudAccountInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGovCloudAccountInformation service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceUnavailableException">
+        /// The operation failed because it specified a resource that is not currently available.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetGovCloudAccountInformation">REST API Reference for GetGovCloudAccountInformation Operation</seealso>
+        Task<GetGovCloudAccountInformationResponse> GetGovCloudAccountInformationAsync(GetGovCloudAccountInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -853,15 +929,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -894,15 +970,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -941,8 +1017,8 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
-        /// the primary and alternate contact information</a>.
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutContactInformation service method.</param>
@@ -973,8 +1049,8 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
-        /// the primary and alternate contact information</a>.
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutContactInformation service method.</param>
