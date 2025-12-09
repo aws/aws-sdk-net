@@ -463,10 +463,6 @@ namespace AWSSDK.UnitTests
                 // Part 3 should use buffering path (ArrayPool allocation)
                 Assert.AreEqual(1, bufferedPartNumbers.Count, "Expected exactly 1 part to be buffered");
                 Assert.AreEqual(3, bufferedPartNumbers[0], "Part 3 should be buffered");
-                
-                // Verify ReleaseBufferSpace was called for streaming path (immediate capacity release)
-                mockBufferManager.Verify(m => m.ReleaseBufferSpace(), Times.Once, 
-                    "Streaming path should release capacity immediately");
             }
             finally
             {
@@ -525,10 +521,6 @@ namespace AWSSDK.UnitTests
                     Assert.AreEqual(i + 1, streamingPartNumbers[i], 
                         $"Part {i + 1} should have streamed in order");
                 }
-                
-                // Verify capacity was released 5 times (once per streaming part)
-                mockBufferManager.Verify(m => m.ReleaseBufferSpace(), Times.Exactly(5),
-                    "Capacity should be released immediately for each streaming part");
             }
             finally
             {
@@ -762,6 +754,142 @@ namespace AWSSDK.UnitTests
             handler.Dispose();
 
             // Assert - Should not throw
+        }
+
+        #endregion
+
+        #region Semaphore Double Release Fix Tests
+
+        [TestMethod]
+        public async Task ProcessPartAsync_StreamingPart_ReleasesCapacityOnlyOnce()
+        {
+            // This test verifies the fix for the double release bug in BufferedPartDataHandler.
+            // Before the fix: ProcessStreamingPart() called ReleaseBufferSpace() immediately after
+            // adding the StreamingDataSource, causing capacity to be released twice (once immediately,
+            // once later when the consumer finished reading the part).
+            // After the fix: The immediate ReleaseBufferSpace() call was removed. Capacity is released
+            // only once when the consumer finishes reading the part through PartBufferManager.
+
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            
+            var releaseCount = 0;
+            mockBufferManager.Setup(m => m.ReleaseBufferSpace())
+                .Callback(() => releaseCount++);
+            
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                var response = CreateMockGetObjectResponse(512);
+
+                // Act - Process an in-order (streaming) part
+                await handler.ProcessPartAsync(1, response, CancellationToken.None);
+
+                // Assert - ReleaseBufferSpace should NOT have been called during ProcessPartAsync
+                // (The removed code that called it immediately has been deleted)
+                // Capacity will be released later by PartBufferManager when consumer finishes reading
+                Assert.AreEqual(0, releaseCount,
+                    "ProcessPartAsync should not release capacity for streaming parts. " +
+                    "Capacity is released by PartBufferManager when consumer completes reading.");
+
+                // Verify AddBuffer was called with StreamingDataSource (streaming path taken)
+                mockBufferManager.Verify(m => m.AddBuffer(
+                    It.Is<IPartDataSource>(ds => ds is StreamingDataSource)), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_BufferedPart_DoesNotReleaseCapacityImmediately()
+        {
+            // This test verifies that buffered (out-of-order) parts don't release capacity immediately.
+            // Capacity is released later by PartBufferManager when the consumer finishes reading the part.
+
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            
+            var releaseCount = 0;
+            mockBufferManager.Setup(m => m.ReleaseBufferSpace())
+                .Callback(() => releaseCount++);
+            
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                var response = CreateMockGetObjectResponse(512);
+
+                // Act - Process an out-of-order (buffered) part
+                await handler.ProcessPartAsync(3, response, CancellationToken.None);
+
+                // Assert - ReleaseBufferSpace should NOT have been called
+                // Capacity will be released later by PartBufferManager when consumer finishes reading
+                Assert.AreEqual(0, releaseCount,
+                    "ProcessPartAsync should not release capacity for buffered parts. " +
+                    "Capacity is released by PartBufferManager when consumer completes reading.");
+
+                // Verify AddBuffer was called with StreamPartBuffer (buffering path taken)
+                mockBufferManager.Verify(m => m.AddBuffer(
+                    It.IsAny<StreamPartBuffer>()), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_StreamingPartError_DoesNotDoubleRelease()
+        {
+            // This test verifies that when an error occurs during streaming part processing,
+            // capacity is released correctly through ReleaseCapacity() without double-releasing.
+
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            
+            var releaseCount = 0;
+            mockBufferManager.Setup(m => m.ReleaseBufferSpace())
+                .Callback(() => releaseCount++);
+            
+            // Simulate error when adding buffer
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+                .Throws(new InvalidOperationException("Test error"));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                var response = CreateMockGetObjectResponse(512);
+
+                // Act & Assert - Should throw
+                await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+                {
+                    await handler.ProcessPartAsync(1, response, CancellationToken.None);
+                });
+
+                // Verify ReleaseBufferSpace was NOT called during error handling
+                // (The old double-release bug would have called it, causing issues)
+                Assert.AreEqual(0, releaseCount,
+                    "Error handling should not release capacity for streaming parts. " +
+                    "Streaming parts don't hold capacity slots in BufferedPartDataHandler.");
+            }
+            finally
+            {
+                handler.Dispose();
+            }
         }
 
         #endregion

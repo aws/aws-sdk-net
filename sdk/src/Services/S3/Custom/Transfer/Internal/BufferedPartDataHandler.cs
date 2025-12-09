@@ -153,9 +153,6 @@ namespace Amazon.S3.Transfer.Internal
                 // If ReleaseBufferSpace() throws, we no longer own the data source, so we won't dispose it
                 streamingDataSource = null;
 
-                // Release capacity immediately since we're not holding anything in memory
-                _partBufferManager.ReleaseBufferSpace();
-
                 _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] StreamingDataSource added and capacity released",
                     partNumber);
             }
