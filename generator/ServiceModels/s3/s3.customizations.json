@@ -1712,6 +1712,32 @@
                     "Parts": {"emitPropertyName":"PartETags"}
                 }
             ]
+        },
+        "DeleteObjectRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet": ["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "IfMatch" : {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._ifMatch);"]}
+                },
+                {
+                    "MFA": {"emitPropertyName": "MfaCodes"}
+                },
+                {
+                    "MfaCodes":{
+                        "injectXmlIsSet": ["return CustomMfaCodesIsSet();"],
+                        "injectXmlMarshallCode" : ["MfaCodesCustomMarshall(request, publicRequest);"]
+                    }
+                }
+            ]
+        },
+        "DeleteObjectOutput":{
+            "modify":[
+                {
+                    "DeleteMarker":{"injectXmlUnmarshallCode": ["DeleteMarkerCustomUnmarshall(context, response);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1869,6 +1895,9 @@
         },
         "CompletedPart":{
             "renameShape":"PartETag"
+        },
+        "MFA":{
+            "renameShape": "MfaCodes"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -2134,6 +2163,20 @@
                 "Type":"Expiration",
                 "Marshaller":"blah",
                 "Unmarshaller":"StringUnmarshaller"
+            }
+        },
+        "DeleteObjectOutput":{
+            "DeleteMarker":{
+                "Type":"string",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "DeleteObjectRequest":{
+            "MfaCodes":{
+                "Type": "MfaCodes",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
             }
         }
     },
