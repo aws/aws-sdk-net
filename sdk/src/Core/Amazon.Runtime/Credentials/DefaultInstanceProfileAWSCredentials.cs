@@ -37,7 +37,6 @@ namespace Amazon.Runtime
 
         private readonly Timer _credentialsRetrieverTimer;
         private volatile RefreshingAWSCredentials.CredentialsRefreshState _lastRetrievedCredentials;
-        private Logger _logger;
 
         private readonly IIMDSAccessMethods _imdsAccessMethods;
         private readonly TimeSpan _refreshRate = TimeSpan.FromMinutes(2); // EC2 refreshes credentials 2 min before expiration
@@ -90,7 +89,6 @@ namespace Amazon.Runtime
                 return;
             }
 
-            _logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
             _credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, _neverTimespan); // This invokes synchronous calls in seperate thread.
             FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_IMDS);
         }
@@ -111,7 +109,6 @@ namespace Amazon.Runtime
             _imdsAccessMethods = imdsAccessMethods;
             _refreshRate = refreshRate;
 
-            _logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
             _credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, _neverTimespan); // This invokes synchronous calls in seperate thread.
             FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_IMDS);
         }
@@ -123,6 +120,10 @@ namespace Amazon.Runtime
         /// </summary>
         public override ImmutableCredentials GetCredentials()
         {
+            // The logger instance is not cached as member variable because the static constructor
+            // can fire before the adaptor plug ins have been registered causing them to not
+            // send the logs to the correct destination.
+            var logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
             _imdsAccessMethods.CheckIsIMDSEnabled();
             ImmutableCredentials credentials;
 
@@ -135,23 +136,23 @@ namespace Amazon.Runtime
             }
             else
             {
-                _logger.DebugFormat("Waiting on lock to refresh ECS IMDS");
+                logger.DebugFormat("Waiting on lock to refresh ECS IMDS");
                 if (_credentialsSemaphore.Wait(_credentialsLockTimeout))
                 {
                     try
                     {
-                        _logger.DebugFormat("Obtained lock to refresh ECS IMDS");
+                        logger.DebugFormat("Obtained lock to refresh ECS IMDS");
 
                         // Check to see if another thread has already refreshed the credentials
                         localLastRetrievedCredentials = _lastRetrievedCredentials;
                         if (null != localLastRetrievedCredentials && !localLastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
                         {
-                            _logger.DebugFormat("Another thread has refreshed credentials and reusing those credentials");
+                            logger.DebugFormat("Another thread has refreshed credentials and reusing those credentials");
                             credentials = localLastRetrievedCredentials.Credentials;
                         }
                         else
                         {
-                            _logger.DebugFormat("Fetching credentials from ECS IMDS");
+                            logger.DebugFormat("Fetching credentials from ECS IMDS");
                             _lastRetrievedCredentials = _imdsAccessMethods.FetchCredentials();
                             // if credentials are expired, we'll still return them, but log a message about
                             // them being expired.
@@ -161,7 +162,7 @@ namespace Amazon.Runtime
                                 // expired warning log message for this specific incident.
                                 if (!_previousRefreshFailed)
                                 {
-                                    _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                                    logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
                                 }
 
                                 _previousRefreshFailed = true;
@@ -176,7 +177,7 @@ namespace Amazon.Runtime
                     }
                     finally
                     {
-                        _logger.DebugFormat("Releasing lock after refreshing ECS IMDS");
+                        logger.DebugFormat("Releasing lock after refreshing ECS IMDS");
                         SafeReleaseSemaphore();
                     }
                 }
@@ -199,6 +200,10 @@ namespace Amazon.Runtime
         /// </summary>
         public override async Task<ImmutableCredentials> GetCredentialsAsync()
         {
+            // The logger instance is not cached as member variable because the static constructor
+            // can fire before the adaptor plug ins have been registered causing them to not
+            // send the logs to the correct destination.
+            var logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
             _imdsAccessMethods.CheckIsIMDSEnabled();
             ImmutableCredentials credentials;
 
@@ -211,23 +216,23 @@ namespace Amazon.Runtime
             }
             else
             {
-                _logger.DebugFormat("Waiting on lock to refresh ECS IMDS");
+                logger.DebugFormat("Waiting on lock to refresh ECS IMDS");
                 if (await _credentialsSemaphore.WaitAsync(_credentialsLockTimeout).ConfigureAwait(false))
                 {
                     try
                     {
-                        _logger.DebugFormat("Obtained lock to refresh ECS IMDS");
+                        logger.DebugFormat("Obtained lock to refresh ECS IMDS");
 
                         // Check to see if another thread has already refreshed the credentials
                         localLastRetrievedCredentials = _lastRetrievedCredentials;
                         if (null != localLastRetrievedCredentials && !localLastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
                         {
-                            _logger.DebugFormat("Another thread has refreshed credentials and reusing those credentials");
+                            logger.DebugFormat("Another thread has refreshed credentials and reusing those credentials");
                             credentials = localLastRetrievedCredentials.Credentials;
                         }
                         else
                         {
-                            _logger.DebugFormat("Fetching credentials from ECS IMDS");
+                            logger.DebugFormat("Fetching credentials from ECS IMDS");
                             _lastRetrievedCredentials = await _imdsAccessMethods.FetchCredentialsAsync().ConfigureAwait(false);
                             // if credentials are expired, we'll still return them, but log a message about
                             // them being expired.
@@ -237,7 +242,7 @@ namespace Amazon.Runtime
                                 // expired warning log message for this specific incident.
                                 if (!_previousRefreshFailed)
                                 {
-                                    _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                                    logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
                                 }
 
                                 _previousRefreshFailed = true;                                
@@ -252,7 +257,7 @@ namespace Amazon.Runtime
                     }
                     finally
                     {
-                        _logger.DebugFormat("Releasing lock after refreshing ECS IMDS");
+                        logger.DebugFormat("Releasing lock after refreshing ECS IMDS");
                         SafeReleaseSemaphore();
                     }
                 }
@@ -275,6 +280,8 @@ namespace Amazon.Runtime
         #region Private members
         private void RenewCredentials(object _)
         {
+            var logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
+
             // This would only be true for unit tests that want to disable the timer-based refresh for
             // more predictable testing.
             if (_refreshRate <= TimeSpan.Zero)
@@ -287,11 +294,11 @@ namespace Amazon.Runtime
             var lockedObtained = false;
             try
             {
-                _logger.DebugFormat("[Background Timer] Waiting on lock to refresh ECS IMDS");
+                logger.DebugFormat("[Background Timer] Waiting on lock to refresh ECS IMDS");
                 if (_credentialsSemaphore.Wait(_credentialsLockTimeout))
                 {
                     lockedObtained = true;
-                    _logger.DebugFormat("[Background Timer] Obtained lock to refresh ECS IMDS");
+                    logger.DebugFormat("[Background Timer] Obtained lock to refresh ECS IMDS");
 
                     // if FetchCredentials() call were to fail, _lastRetrievedCredentials
                     // would remain unchanged and would continue to be returned in GetCredentials()
@@ -300,26 +307,26 @@ namespace Amazon.Runtime
                     // If the previous refresh do not fail but this refresh did fail retry immediately.
                     if (!_previousRefreshFailed && _lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
                     {
-                        _logger.DebugFormat("[Background Timer] First refresh failed and trying an immediate retry fetching credentials");
+                        logger.DebugFormat("[Background Timer] First refresh failed and trying an immediate retry fetching credentials");
                         _lastRetrievedCredentials = _imdsAccessMethods.FetchCredentials();
                     }
 
                     // if credentials are expired, we'll still return them, but log a message about them being expired.
                     if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
                     {
-                        _logger.DebugFormat("[Background Timer] Credential refresh failed");
+                        logger.DebugFormat("[Background Timer] Credential refresh failed");
                         // If the previous refresh did not fail then this is the first failure and write the single
                         // expired warning log message for this specific incident.
                         if (!_previousRefreshFailed)
                         {
-                            _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                            logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
                         }
 
                         _previousRefreshFailed = true;
                     }
                     else
                     {
-                        _logger.DebugFormat("[Background Timer] Credential refresh succeeded");
+                        logger.DebugFormat("[Background Timer] Credential refresh succeeded");
                         _previousRefreshFailed = false;
                     }
 
@@ -333,18 +340,18 @@ namespace Amazon.Runtime
                 }
                 else
                 {
-                    _logger.InfoFormat("[Background Timer] {0}", FailedToGetLockMessage);
+                    logger.InfoFormat("[Background Timer] {0}", FailedToGetLockMessage);
                 }
 
             }
             catch (OperationCanceledException e)
             {
-                _logger.Error(e, "[Background Timer] RenewCredentials task canceled");
+                logger.Error(e, "[Background Timer] RenewCredentials task canceled");
             }
             catch (Exception e)
             {
                 // we want to suppress any exceptions from this timer task.
-                _logger.Error(e, FailedToGetCredentialsMessage);
+                logger.Error(e, FailedToGetCredentialsMessage);
             }
             finally
             {
@@ -465,7 +472,6 @@ namespace Amazon.Runtime
                         catch (ObjectDisposedException) { }
 
                         _credentialsRetrieverTimer?.Dispose();
-                        _logger = null;
                         _instance = null;
                     }
 
