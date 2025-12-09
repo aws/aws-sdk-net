@@ -383,8 +383,27 @@ namespace Amazon.S3.Transfer.Internal
                             
                             _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Buffer space acquired", partNum);
 
-                            var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, wrappedCallback, internalCts.Token);
-                            downloadTasks.Add(task);
+                            _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for HTTP concurrency slot (Available: {1}/{2})",
+                                partNum, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
+
+                            // Acquire HTTP slot in the loop before creating task
+                            // Loop will block here if all slots are in use
+                            await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+                            _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot acquired", partNum);
+
+                            try
+                            {
+                                var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, wrappedCallback, internalCts.Token);
+                                downloadTasks.Add(task);
+                            }
+                            catch
+                            {
+                                // If task creation fails, release the HTTP slot we just acquired
+                                _httpConcurrencySlots.Release();
+                                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot released due to task creation failure", partNum);
+                                throw;
+                            }
                         }
 
                         var expectedTaskCount = downloadTasks.Count;
@@ -459,15 +478,8 @@ namespace Amazon.S3.Transfer.Internal
             
             try
             {
-                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for HTTP concurrency slot (Available: {1}/{2})",
-                    partNumber, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
-
-                // Limit HTTP concurrency for both network download AND disk write
-                // The semaphore is held until AFTER ProcessPartAsync completes to ensure
-                // ConcurrentServiceRequests controls the entire I/O operation
-                await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
-
-                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot acquired", partNumber);
+                // HTTP slot was already acquired in the for loop before this task was created
+                // We just need to use it and release it when done
                 
                 try
                 {
@@ -544,7 +556,7 @@ namespace Amazon.S3.Transfer.Internal
                 finally
                 {
                     // Release semaphore after BOTH network download AND disk write complete
-                    // This ensures ConcurrentServiceRequests limits the entire I/O operation
+                    // Slot was acquired in the for loop before this task was created
                     _httpConcurrencySlots.Release();
                     _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot released (Available: {1}/{2})",
                         partNumber, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
