@@ -1317,6 +1317,13 @@
                     "SourceIfNoneMatch" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._sourceIfNoneMatch);"]}
                 }
             ]
+        },
+        "PutBucketOwnershipControlsRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
         
     },
