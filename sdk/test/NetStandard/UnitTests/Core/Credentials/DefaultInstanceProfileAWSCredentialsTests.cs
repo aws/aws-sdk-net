@@ -171,7 +171,7 @@ namespace UnitTests.NetStandard.Core.Credentials
         }
 
         [Fact]
-        public async Task GetCredentials_ReturnsExpiredCredentials()
+        public void GetCredentials_ReturnsExpiredCredentials()
         {
             ResetPreviousRefreshFailedFlag();
 
