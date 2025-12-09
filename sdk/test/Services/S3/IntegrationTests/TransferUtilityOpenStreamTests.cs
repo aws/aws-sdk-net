@@ -662,6 +662,133 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         #endregion
 
+        #region Concurrency Tests
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("OpenStream")]
+        [TestCategory("Concurrency")]
+        public async Task OpenStream_SequentialDownload_PeakConcurrencyIsOne()
+        {
+            // Arrange - Upload a large multipart object (40MB with 5 parts)
+            var objectSize = 40 * MB;
+            var uploadPartSize = 8 * MB;
+            var key = UtilityMethods.GenerateName("concurrency-sequential-test");
+            var filePath = Path.Combine(Path.GetTempPath(), key);
+            UtilityMethods.GenerateFile(filePath, objectSize);
+
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath,
+                PartSize = uploadPartSize
+            };
+
+            var uploadUtility = new TransferUtility(Client);
+            await uploadUtility.UploadAsync(uploadRequest);
+
+            // Create instrumented client with tracking
+            var trackingClient = new ConcurrencyTrackingS3Client(new AmazonS3Config());
+
+            var transferConfig = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = 1 // Sequential downloads
+            };
+
+            var downloadRequest = new TransferUtilityOpenStreamRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartSize = uploadPartSize
+            };
+
+            // Act
+            var transferUtility = new TransferUtility(trackingClient, transferConfig);
+            using (var response = await transferUtility.OpenStreamWithResponseAsync(downloadRequest))
+            {
+                // Read the entire stream to trigger all downloads
+                var reader = new FastStreamReader();
+                await reader.ReadStreamAsync(response.ResponseStream);
+            }
+
+            // Assert - Sequential download should have peak concurrency of 1
+            Assert.AreEqual(1, trackingClient.Tracker.PeakConcurrency,
+                "Sequential download (ConcurrentServiceRequests=1) should have peak concurrency of 1");
+
+            // Verify expected number of GetObject requests (5 parts)
+            Assert.AreEqual(5, trackingClient.Tracker.TotalRequests,
+                "Should 5 part requests");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("OpenStream")]
+        [TestCategory("Concurrency")]
+        public async Task OpenStream_HighConcurrency_NeverExceedsLimit()
+        {
+            // This provides enough parts to allow concurrency to reach the limit
+            var objectSize = 8 * 12 * MB;
+            var uploadPartSize = 8 * MB;
+            var key = UtilityMethods.GenerateName("highconcurrency-limit-test");
+            var filePath = Path.Combine(Path.GetTempPath(), key);
+            UtilityMethods.GenerateFile(filePath, objectSize);
+
+            var expectedChecksum = CalculateFileChecksum(filePath);
+
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath,
+                PartSize = uploadPartSize
+            };
+
+            var uploadUtility = new TransferUtility(Client);
+            await uploadUtility.UploadAsync(uploadRequest);
+
+            // Create instrumented client
+            var trackingClient = new ConcurrencyTrackingS3Client(new AmazonS3Config());
+
+            var concurrencyLimit = 5;
+            var transferConfig = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = concurrencyLimit
+            };
+
+            var downloadRequest = new TransferUtilityOpenStreamRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartSize = uploadPartSize,
+                MaxInMemoryParts = 1024 // Large buffer to not constrain concurrency
+            };
+
+            // Act
+            var transferUtility = new TransferUtility(trackingClient, transferConfig);
+            byte[] downloadedData;
+            using (var response = await transferUtility.OpenStreamWithResponseAsync(downloadRequest))
+            {
+                // Read the entire stream for checksum verification
+                downloadedData = await ReadStreamToByteArray(response.ResponseStream, objectSize, (int)(2 * MB));
+            }
+
+            // Assert - Peak concurrency should NEVER exceed the configured limit
+            Assert.IsTrue(trackingClient.Tracker.PeakConcurrency <= concurrencyLimit,
+                $"Peak concurrency ({trackingClient.Tracker.PeakConcurrency}) must not exceed limit ({concurrencyLimit})");
+
+            // Verify data integrity with concurrent downloads
+            var actualChecksum = CalculateChecksum(downloadedData);
+            Assert.AreEqual(expectedChecksum, actualChecksum,
+                "Downloaded data should match original with concurrent downloads");
+
+            // Verify total requests (10 parts)
+            Assert.AreEqual(12, trackingClient.Tracker.TotalRequests,
+                "Should make correct number of requests for 12-part object");
+        }
+
+        #endregion
+
         #region Helper Methods
 
         /// <summary>

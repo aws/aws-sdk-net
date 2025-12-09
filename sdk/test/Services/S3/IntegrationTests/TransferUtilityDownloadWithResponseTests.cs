@@ -620,6 +620,154 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         #endregion
 
+        #region Concurrency Tests
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("Download")]
+        [TestCategory("Concurrency")]
+        public async Task Download_SequentialDownload_PeakConcurrencyIsOne()
+        {
+            // Arrange - Upload a large multipart object (40MB with 5 parts)
+            var objectSize = 40 * MB;
+            var uploadPartSize = 8 * MB;
+            var key = UtilityMethods.GenerateName("concurrency-sequential-test");
+            var uploadPath = Path.Combine(Path.GetTempPath(), key + "-upload");
+            var downloadPath = Path.Combine(tempDirectory, key);
+            
+            UtilityMethods.GenerateFile(uploadPath, objectSize);
+
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = uploadPath,
+                PartSize = uploadPartSize
+            };
+
+            var uploadUtility = new TransferUtility(Client);
+            await uploadUtility.UploadAsync(uploadRequest);
+
+            // Create instrumented client with tracking
+            var trackingClient = new ConcurrencyTrackingS3Client(new AmazonS3Config());
+
+            var transferConfig = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = 1 // Sequential downloads
+            };
+
+            var downloadRequest = new TransferUtilityDownloadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = downloadPath,
+                PartSize = uploadPartSize
+            };
+
+            // Act
+            var transferUtility = new TransferUtility(trackingClient, transferConfig);
+            var response = await transferUtility.DownloadWithResponseAsync(downloadRequest);
+
+            // Assert - Sequential download should have peak concurrency of 1
+            Assert.AreEqual(1, trackingClient.Tracker.PeakConcurrency,
+                "Sequential download (ConcurrentServiceRequests=1) should have peak concurrency of 1");
+
+            // Verify expected number of GetObject requests (5 parts)
+            Assert.AreEqual(5, trackingClient.Tracker.TotalRequests,
+                "Should make 5 part requests");
+
+            // Verify response and file
+            Assert.IsNotNull(response, "Response should not be null");
+            Assert.IsTrue(File.Exists(downloadPath), "Downloaded file should exist");
+            
+            var fileInfo = new FileInfo(downloadPath);
+            Assert.AreEqual(objectSize, fileInfo.Length, "Downloaded file size should match");
+            
+            // Verify no temp files remain
+            VerifyNoTempFilesExist(downloadPath);
+            
+            // Cleanup upload file
+            File.Delete(uploadPath);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("Download")]
+        [TestCategory("Concurrency")]
+        public async Task Download_HighConcurrency_NeverExceedsLimit()
+        {
+            // Arrange - This provides enough parts to allow concurrency to reach the limit
+            var objectSize = 8 * 12 * MB;
+            var uploadPartSize = 8 * MB;
+            var key = UtilityMethods.GenerateName("highconcurrency-limit-test");
+            var uploadPath = Path.Combine(Path.GetTempPath(), key + "-upload");
+            var downloadPath = Path.Combine(tempDirectory, key);
+            
+            UtilityMethods.GenerateFile(uploadPath, objectSize);
+            
+            var expectedChecksum = CalculateFileChecksum(uploadPath);
+
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = uploadPath,
+                PartSize = uploadPartSize
+            };
+
+            var uploadUtility = new TransferUtility(Client);
+            await uploadUtility.UploadAsync(uploadRequest);
+
+            // Create instrumented client
+            var trackingClient = new ConcurrencyTrackingS3Client(new AmazonS3Config());
+
+            var concurrencyLimit = 5;
+            var transferConfig = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = concurrencyLimit
+            };
+
+            var downloadRequest = new TransferUtilityDownloadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = downloadPath,
+                PartSize = uploadPartSize
+            };
+
+            // Act
+            var transferUtility = new TransferUtility(trackingClient, transferConfig);
+            var response = await transferUtility.DownloadWithResponseAsync(downloadRequest);
+
+            // Assert - Peak concurrency should NEVER exceed the configured limit
+            Assert.IsTrue(trackingClient.Tracker.PeakConcurrency <= concurrencyLimit,
+                $"Peak concurrency ({trackingClient.Tracker.PeakConcurrency}) must not exceed limit ({concurrencyLimit})");
+
+            // Verify data integrity with concurrent downloads
+            var actualChecksum = CalculateFileChecksum(downloadPath);
+            Assert.AreEqual(expectedChecksum, actualChecksum,
+                "Downloaded data should match original with concurrent downloads");
+
+            // Verify total requests (12 parts)
+            Assert.AreEqual(12, trackingClient.Tracker.TotalRequests,
+                "Should make correct number of requests for 12-part object");
+
+            // Verify response and file
+            Assert.IsNotNull(response, "Response should not be null");
+            Assert.IsTrue(File.Exists(downloadPath), "Downloaded file should exist");
+            
+            var fileInfo = new FileInfo(downloadPath);
+            Assert.AreEqual(objectSize, fileInfo.Length, "Downloaded file size should match");
+            
+            // Verify no temp files remain
+            VerifyNoTempFilesExist(downloadPath);
+            
+            // Cleanup upload file
+            File.Delete(uploadPath);
+        }
+
+        #endregion
+
         #region Helper Methods
 
         /// <summary>
