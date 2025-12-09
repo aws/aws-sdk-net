@@ -38,6 +38,12 @@ namespace Amazon.Runtime
         private readonly Timer _credentialsRetrieverTimer;
         private volatile RefreshingAWSCredentials.CredentialsRefreshState _lastRetrievedCredentials;
 
+        /// <summary>
+        /// Control flag: in the event IMDS returns an expired credential, a refresh must be immediately
+        /// retried, if it continues to fail, then retry every 5-10 minutes.
+        /// </summary>
+        private volatile bool _previousRefreshFailed = false;
+
         private readonly IIMDSAccessMethods _imdsAccessMethods;
         private readonly TimeSpan _refreshRate = TimeSpan.FromMinutes(2); // EC2 refreshes credentials 2 min before expiration
 
@@ -45,12 +51,6 @@ namespace Amazon.Runtime
         private const string FailedToGetCredentialsMessage = "Failed to retrieve credentials from EC2 Instance Metadata Service.";
         private const string FailedToGetLockMessage = "Failed to obtain lock to refresh credentials from EC2 Instance Metadata Service.";
         private static readonly TimeSpan _credentialsLockTimeout = TimeSpan.FromMinutes(1);
-
-        /// <summary>
-        /// Control flag: in the event IMDS returns an expired credential, a refresh must be immediately
-        /// retried, if it continues to fail, then retry every 5-10 minutes.
-        /// </summary>
-        private static volatile bool _previousRefreshFailed = false;
 
         private const string _usingExpiredCredentialsFromIMDS =
             "Attempting credential expiration extension due to a credential service availability issue. " +
@@ -295,7 +295,7 @@ namespace Amazon.Runtime
             try
             {
                 logger.DebugFormat("[Background Timer] Waiting on lock to refresh ECS IMDS");
-                if (_credentialsSemaphore.Wait(_credentialsLockTimeout))
+                if (!_isDisposed && _credentialsSemaphore.Wait(_credentialsLockTimeout))
                 {
                     lockedObtained = true;
                     logger.DebugFormat("[Background Timer] Obtained lock to refresh ECS IMDS");

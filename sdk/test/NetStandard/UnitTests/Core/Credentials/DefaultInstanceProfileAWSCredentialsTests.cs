@@ -10,32 +10,9 @@ namespace UnitTests.NetStandard.Core.Credentials
 {
     public sealed class DefaultInstanceProfileAWSCredentialsTests
     {
-        // Helper: release the private semaphore so the instance can proceed.
-        private static void EnsureSemaphoreReleased(DefaultInstanceProfileAWSCredentials instance)
-        {
-            var field = typeof(DefaultInstanceProfileAWSCredentials)
-                .GetField("_credentialsSemaphore", BindingFlags.Instance | BindingFlags.NonPublic);
-            var sem = (SemaphoreSlim)field.GetValue(instance);
-            if (sem.CurrentCount == 0)
-            {
-                // Safe: call Release once to allow entry.
-                sem.Release();
-            }
-        }
-
-        // Helper: reset the private static failure flag between tests.
-        private static void ResetPreviousRefreshFailedFlag()
-        {
-            var field = typeof(DefaultInstanceProfileAWSCredentials)
-                .GetField("_previousRefreshFailed", BindingFlags.Static | BindingFlags.NonPublic);
-            field.SetValue(null, false);
-        }
-
         [Fact]
         public async Task GetCredentialsAsync_FetchesFromIMDS_WhenNoCached()
         {
-            ResetPreviousRefreshFailedFlag();
-
             var expectedAccessKey = "AK123";
             var expectedSecret = "SK123";
             var expectedToken = "T123";
@@ -50,9 +27,6 @@ namespace UnitTests.NetStandard.Core.Credentials
             // lower refresh rate to speed test
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(5));
 
-            // fix semaphore (production code's semaphore is created with initialCount:0 in this branch)
-            EnsureSemaphoreReleased(provider);
-
             var creds = await provider.GetCredentialsAsync().ConfigureAwait(false);
 
             Assert.Equal(expectedAccessKey, creds.AccessKey);
@@ -63,8 +37,6 @@ namespace UnitTests.NetStandard.Core.Credentials
         [Fact]
         public void GetCredentials_UsesCachedCredentials_WhenValid()
         {
-            ResetPreviousRefreshFailedFlag();
-
             var initiallyReturned = new RefreshingAWSCredentials.CredentialsRefreshState(
                 new ImmutableCredentials("AK_A", "SK_A", "T_A"),
                 DateTime.UtcNow.AddMinutes(30));
@@ -79,7 +51,6 @@ namespace UnitTests.NetStandard.Core.Credentials
             };
 
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(5));
-            EnsureSemaphoreReleased(provider);
 
             // First call: populates cache
             var first = provider.GetCredentials();
@@ -94,11 +65,8 @@ namespace UnitTests.NetStandard.Core.Credentials
         [Fact]
         public async Task GetCredentialsAsync_ConcurrentRequests_OnlyOneFetch()
         {
-            ResetPreviousRefreshFailedFlag();
-
             var stub = new CountingDelayStubImds(delayMs: 100);
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(-1));
-            EnsureSemaphoreReleased(provider);
 
             var tasks = Enumerable.Range(0, 5)
                 .Select(_ => provider.GetCredentialsAsync())
@@ -116,11 +84,8 @@ namespace UnitTests.NetStandard.Core.Credentials
         [Fact]
         public async Task GetCredentialsAsync_ConcurrentRequests_TimerRefreshed()
         {
-            ResetPreviousRefreshFailedFlag();
-
             var stub = new CountingDelayStubImds(delayMs: 100);
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(1));
-            EnsureSemaphoreReleased(provider);
 
             await Task.Delay(2000).ConfigureAwait(false);
 
@@ -144,8 +109,6 @@ namespace UnitTests.NetStandard.Core.Credentials
         [Fact]
         public async Task GetCredentialsAsync_ReturnsExpiredCredentials()
         {
-            ResetPreviousRefreshFailedFlag();
-
             var expectedAccessKey = "AK123";
             var expectedSecret = "SK123";
             var expectedToken = "T123";
@@ -159,9 +122,6 @@ namespace UnitTests.NetStandard.Core.Credentials
 
             // lower refresh rate to speed test
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(-1));
-
-            // fix semaphore (production code's semaphore is created with initialCount:0 in this branch)
-            EnsureSemaphoreReleased(provider);
 
             var creds = await provider.GetCredentialsAsync().ConfigureAwait(false);
 
@@ -173,8 +133,6 @@ namespace UnitTests.NetStandard.Core.Credentials
         [Fact]
         public void GetCredentials_ReturnsExpiredCredentials()
         {
-            ResetPreviousRefreshFailedFlag();
-
             var expectedAccessKey = "AK123";
             var expectedSecret = "SK123";
             var expectedToken = "T123";
@@ -189,9 +147,6 @@ namespace UnitTests.NetStandard.Core.Credentials
             // lower refresh rate to speed test
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(-1));
 
-            // fix semaphore (production code's semaphore is created with initialCount:0 in this branch)
-            EnsureSemaphoreReleased(provider);
-
             var creds = provider.GetCredentials();
 
             Assert.Equal(expectedAccessKey, creds.AccessKey);
@@ -202,8 +157,6 @@ namespace UnitTests.NetStandard.Core.Credentials
         [Fact]
         public async Task GetCredentials_RecoverExpired()
         {
-            ResetPreviousRefreshFailedFlag();
-
             var endCheckForExpiration = DateTime.UtcNow.AddSeconds(3);
             var stub = new SimulatedIMDSOutageStubImds(TimeSpan.FromSeconds(5));
 
@@ -234,8 +187,6 @@ namespace UnitTests.NetStandard.Core.Credentials
         [Fact]
         public async Task GetCredentialsAsync_RecoverExpired()
         {
-            ResetPreviousRefreshFailedFlag();
-
             var endCheckForExpiration = DateTime.UtcNow.AddSeconds(3);
             var stub = new SimulatedIMDSOutageStubImds(TimeSpan.FromSeconds(5));
 
