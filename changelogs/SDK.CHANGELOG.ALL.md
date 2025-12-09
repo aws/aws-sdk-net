@@ -1,3 +1,20 @@
+### 3.7.1181.0 (2025-12-09 19:31 UTC)
+* Account (3.7.503.0)
+	* This release adds a new API (GetGovCloudAccountInformation) used to retrieve information about a linked GovCloud account from the standard AWS partition.
+* AppSync (3.7.502.0)
+	* Update Event API to require EventConfig parameter in creation and update requests.
+* GuardDuty (3.7.510.0)
+	* Adding support for Ec2LaunchTemplate Version field
+* IVSRealTime (3.7.504.0)
+	* Token Exchange introduces seamless token exchange capabilities for IVS RTX, enabling customers to upgrade or downgrade token capabilities and update token attributes within the IVS client SDK without forcing clients to disconnect and reconnect.
+* Mgn (3.7.503.0)
+	* Added parameters encryption, IPv4/IPv6 protocol configuration, and enhanced tagging support for replication operations.
+* Route53 (3.7.506.0)
+	* Amazon Route 53 now supports the EU (Germany) Region (eusc-de-east-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region
+* Core 3.7.500.52
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1180.0 (2025-12-08 19:31 UTC)
 * CostExplorer (3.7.508.0)
 	* Add support for Cost Category resource associations including filtering by resource type on ListCostCategoryDefinitions and new ListCostCategoryResourceAssociations API.

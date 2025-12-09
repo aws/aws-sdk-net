@@ -32,7 +32,7 @@ namespace Amazon.IoTDeviceAdvisor
     public partial class AmazonIoTDeviceAdvisorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IotDeviceAdvisor", "3.7.502.17");
+            InternalSDKUtils.BuildUserAgentString("IotDeviceAdvisor", "3.7.502.18");
 
         private string _userAgent = UserAgentString;
         ///<summary>

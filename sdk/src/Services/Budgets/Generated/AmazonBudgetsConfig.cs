@@ -32,7 +32,7 @@ namespace Amazon.Budgets
     public partial class AmazonBudgetsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Budgets", "3.7.507.4");
+            InternalSDKUtils.BuildUserAgentString("Budgets", "3.7.507.5");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -32,7 +32,7 @@ namespace Amazon.RTBFabric
     public partial class AmazonRTBFabricConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RTBFabric", "3.7.502.8");
+            InternalSDKUtils.BuildUserAgentString("RTBFabric", "3.7.502.9");
 
         private string _userAgent = UserAgentString;
         ///<summary>
