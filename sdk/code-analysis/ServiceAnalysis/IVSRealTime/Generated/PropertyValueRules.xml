@@ -628,6 +628,11 @@
     <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ExchangedParticipantToken.UserId</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.GridConfiguration.FeaturedParticipantAttribute</property>
     <min>0</min>
     <max>128</max>

@@ -39,7 +39,9 @@ namespace Amazon.IVSRealTime.Model
         private EventErrorCode _errorCode;
         private DateTime? _eventTime;
         private EventName _name;
+        private ExchangedParticipantToken _newToken;
         private string _participantId;
+        private ExchangedParticipantToken _previousToken;
         private string _remoteParticipantId;
         private bool? _replica;
 
@@ -219,6 +221,24 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NewToken. 
+        /// <para>
+        /// Participant token created during <c>TOKEN_EXCHANGED</c> event.
+        /// </para>
+        /// </summary>
+        public ExchangedParticipantToken NewToken
+        {
+            get { return this._newToken; }
+            set { this._newToken = value; }
+        }
+
+        // Check to see if NewToken property is set
+        internal bool IsSetNewToken()
+        {
+            return this._newToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ParticipantId. 
         /// <para>
         /// Unique identifier for the participant who triggered the event. This is assigned by
@@ -236,6 +256,24 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetParticipantId()
         {
             return this._participantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviousToken. 
+        /// <para>
+        /// Source participant token for <c>TOKEN_EXCHANGED</c> event.
+        /// </para>
+        /// </summary>
+        public ExchangedParticipantToken PreviousToken
+        {
+            get { return this._previousToken; }
+            set { this._previousToken = value; }
+        }
+
+        // Check to see if PreviousToken property is set
+        internal bool IsSetPreviousToken()
+        {
+            return this._previousToken != null;
         }
 
         /// <summary>

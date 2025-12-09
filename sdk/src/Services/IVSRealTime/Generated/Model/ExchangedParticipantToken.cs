@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Object specifying a participant token in a stage.
+    /// Object specifying an exchanged participant token in a stage, created when an original
+    /// participant token is updated.
     /// 
     ///  
     /// <para>
@@ -38,14 +39,11 @@ namespace Amazon.IVSRealTime.Model
     /// on token contents. The format of tokens could change in the future.
     /// </para>
     /// </summary>
-    public partial class ParticipantToken
+    public partial class ExchangedParticipantToken
     {
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private int? _duration;
         private DateTime? _expirationTime;
-        private string _participantId;
-        private string _token;
         private string _userId;
 
         /// <summary>
@@ -89,26 +87,6 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Duration. 
-        /// <para>
-        /// Duration (in minutes), after which the participant token expires. Default: 720 (12
-        /// hours).
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=20160)]
-        public int Duration
-        {
-            get { return this._duration.GetValueOrDefault(); }
-            set { this._duration = value; }
-        }
-
-        // Check to see if Duration property is set
-        internal bool IsSetDuration()
-        {
-            return this._duration.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property ExpirationTime. 
         /// <para>
         /// ISO 8601 timestamp (returned as a string) for when this token expires.
@@ -124,44 +102,6 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetExpirationTime()
         {
             return this._expirationTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ParticipantId. 
-        /// <para>
-        /// Unique identifier for this participant token, assigned by IVS.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=64)]
-        public string ParticipantId
-        {
-            get { return this._participantId; }
-            set { this._participantId = value; }
-        }
-
-        // Check to see if ParticipantId property is set
-        internal bool IsSetParticipantId()
-        {
-            return this._participantId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Token. 
-        /// <para>
-        /// The issued client token, encrypted.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string Token
-        {
-            get { return this._token; }
-            set { this._token = value; }
-        }
-
-        // Check to see if Token property is set
-        internal bool IsSetToken()
-        {
-            return this._token != null;
         }
 
         /// <summary>
