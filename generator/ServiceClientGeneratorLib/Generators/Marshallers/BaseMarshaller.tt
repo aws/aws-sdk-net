@@ -40,6 +40,11 @@ using Amazon.Runtime.Internal.Util;
             bool skipXmlIsSet = this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier) && propModifier.SkipXmlIsSet;
 			if (!skipXmlIsSet)
 			{
+            else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var headerPropertyModifier) && headerPropertyModifier.InjectXmlMarshallCode.Count > 0)
+            {
+                WriteInjectXmlMarshallCode(0, headerPropertyModifier.InjectXmlMarshallCode);
+                continue;
+            }
 #>		
             if (<#=variableName#>.IsSet<#=member.PropertyName#>()) 
             {
@@ -54,10 +59,6 @@ using Amazon.Runtime.Internal.Util;
 #>
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>);
 <#+        
-            }
-            else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var headerPropertyModifier) && headerPropertyModifier.InjectXmlMarshallCode.Count > 0)
-            {
-                WriteInjectXmlMarshallCode(3, headerPropertyModifier.InjectXmlMarshallCode);
             }
             else if (member.IsJsonValue)
             {
