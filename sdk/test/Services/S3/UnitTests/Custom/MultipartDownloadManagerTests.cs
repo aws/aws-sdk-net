@@ -2174,7 +2174,6 @@ namespace AWSSDK.UnitTests
         public async Task HttpSemaphore_HeldThroughProcessPartAsync()
         {
             // Arrange - Test that HTTP semaphore is NOT released until ProcessPartAsync completes
-            // This is the core bug that commit daf985e fixed
             var totalParts = 2;
             var partSize = 8 * 1024 * 1024;
             var totalObjectSize = totalParts * partSize;
@@ -2246,11 +2245,9 @@ namespace AWSSDK.UnitTests
             await coordinator.DownloadCompletionTask;
 
             // Assert - This is the deterministic test of the fix
-            // Before fix (commit daf985e): semaphore was released after HTTP download but BEFORE ProcessPartAsync
-            // After fix: semaphore is held through the ENTIRE operation including ProcessPartAsync
             Assert.IsFalse(semaphoreAvailableDuringProcessing,
                 "HTTP semaphore should NOT be released while ProcessPartAsync is executing. " +
-                "Before fix (daf985e): semaphore.CurrentCount would be > 0 (released early). " +
+                "Before fix semaphore.CurrentCount would be > 0 (released early). " +
                 "After fix: semaphore.CurrentCount should be 0 (held through ProcessPartAsync).");
             
             Assert.IsFalse(semaphoreWasReleasedDuringPart1,
@@ -2333,7 +2330,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task StartDownloadsAsync_PrepareAsyncFails_ReleasesHttpSemaphore()
         {
-            // Arrange - Test critical bug: PrepareAsync fails but semaphore was acquired during discovery
+            // Arrange - PrepareAsync fails but semaphore was acquired during discovery
             var httpThrottler = new SemaphoreSlim(2, 2);
             var initialCount = httpThrottler.CurrentCount;
             
@@ -2378,10 +2375,8 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual("Simulated prepare failure", ex.Message);
             }
 
-            // Assert - CRITICAL BUG: Semaphore should be released but currently ISN'T
-            // This test will FAIL until the bug is fixed
             Assert.AreEqual(initialCount, httpThrottler.CurrentCount,
-                "HTTP semaphore should be released when PrepareAsync fails (BUG: currently leaks!)");
+                "HTTP semaphore should be released when PrepareAsync fails");
             
             // Cleanup
             httpThrottler.Dispose();
