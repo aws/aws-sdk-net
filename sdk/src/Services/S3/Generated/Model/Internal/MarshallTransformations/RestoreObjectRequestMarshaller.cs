@@ -129,15 +129,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("TagSet");
                                     foreach (var publicRequestOutputLocationS3TaggingTagSetValue in publicRequestOutputLocationS3TaggingTagSet) 
                                     {
-                                    if (publicRequestOutputLocationS3TaggingTagSetValue != null)
-                                    {
                                         xmlWriter.WriteStartElement("Tag");
                                         if(publicRequestOutputLocationS3TaggingTagSetValue.IsSetKey())
                                             xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestOutputLocationS3TaggingTagSetValue.Key));
                                         if(publicRequestOutputLocationS3TaggingTagSetValue.IsSetValue())
                                             xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestOutputLocationS3TaggingTagSetValue.Value));
                                         xmlWriter.WriteEndElement();
-                                    }
                                     }            
                                     xmlWriter.WriteEndElement();            
                                 }

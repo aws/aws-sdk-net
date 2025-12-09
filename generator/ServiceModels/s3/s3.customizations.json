@@ -199,13 +199,9 @@
             ]
         },
         "PutBucketTaggingRequest": {
-            "exclude": [ "Tagging" ],
-            "inject": [
+            "modify":[
                 {
-                    "TagSet": {
-                        "shape": "TagSet",
-                        "originalMember": "Tagging"
-                    }
+                    "ExpectedBucketOwner": {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
         },
@@ -1371,8 +1367,13 @@
                     "Parts": {"emitPropertyName":"PartETags"}
                 }
             ]
+        },
+        "Tagging":
+        {
+            "modify":[
+                {"TagSet": {"skipXmlIsSet": true}}
+            ]
         }
-        
     },
     "operationModifiers": {
         "CreateBucket": {
@@ -1723,6 +1724,13 @@
                 "Marshaller":"blah",
                 "Unmarshaller":"StringUnmarshaller"
             }
+        },
+        "PutBucketTaggingRequest":{
+            "TagSet":{
+                "Type": "List<Tag>",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
@@ -1803,6 +1811,9 @@
         ],
         "CompleteMultipartUploadRequest":[
             "MultipartUpload"
+        ],
+        "PutBucketTaggingRequest":[
+            "Tagging"
         ]
     },
     "excludeShapes":[

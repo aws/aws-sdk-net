@@ -496,10 +496,14 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName ?? "member" : member.MarshallName;
 			if(member.Shape.IsFlattened || member.IsFlattened)
 				marshallName =  member.LocationName ?? member.ModeledName;
+			bool skipXmlIsSet = this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier) && propModifier.SkipXmlIsSet;
+			if (!skipXmlIsSet)
+			{
 #>
 <#=new string(' ', level * 4)#>				if (<#=variableName#> != null)
 <#=new string(' ', level * 4)#>				{
 <#+
+			}
 			if (!string.IsNullOrEmpty(member.Shape.XmlNamespace))
 			{
 				if (!string.IsNullOrEmpty(member.Shape.XmlNamespacePrefix))
@@ -524,8 +528,13 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 			ProcessMembers(level + 1, variableName, shape.Members);
 #>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
+<#+
+			if (!skipXmlIsSet)
+			{
+#>
 <#=new string(' ', level * 4)#>				}
-<#+		
+<#+	
+			}
 	}
 	void ProcessList(int level, string variableName, Member member)
 	{

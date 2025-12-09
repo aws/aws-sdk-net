@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutObjectTagging Request Marshaller
+    /// PutBucketTagging Request Marshaller
     /// </summary>       
-    public partial class PutObjectTaggingRequestMarshaller : IMarshaller<IRequest, PutObjectTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class PutBucketTaggingRequestMarshaller : IMarshaller<IRequest, PutBucketTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutObjectTaggingRequest)input);
+            return this.Marshall((PutBucketTaggingRequest)input);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutObjectTaggingRequest publicRequest)
+        public IRequest Marshall(PutBucketTaggingRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             PreMarshallCustomization(request, publicRequest);
@@ -74,44 +74,30 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
-        
-            if (publicRequest.IsSetRequestPayer()) 
-            {
-                request.Headers["x-amz-request-payer"] = publicRequest.RequestPayer;
-            }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutObjectTaggingRequest.BucketName");
-            if (string.IsNullOrEmpty(publicRequest.Key))
-                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "PutObjectTaggingRequest.Key");
-            request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
-            
-            if (publicRequest.IsSetVersionId())
-                request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
-            request.ResourcePath = "/{Key+}";
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketTaggingRequest.BucketName");
+            request.ResourcePath = "/";
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                if (publicRequest.IsSetTagging())
-                {
                     xmlWriter.WriteStartElement("Tagging", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    var publicRequestTaggingTagSet = publicRequest.Tagging.TagSet;
-                    if (publicRequestTaggingTagSet != null && (publicRequestTaggingTagSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    var publicRequestTagSet = publicRequest.TagSet;
+                    if (publicRequestTagSet != null && (publicRequestTagSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {
                         xmlWriter.WriteStartElement("TagSet");
-                        foreach (var publicRequestTaggingTagSetValue in publicRequestTaggingTagSet) 
+                        foreach (var publicRequestTagSetValue in publicRequestTagSet) 
                         {
                             xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestTaggingTagSetValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));
-                            if(publicRequestTaggingTagSetValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTaggingTagSetValue.Value));
+                            if(publicRequestTagSetValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagSetValue.Key));
+                            if(publicRequestTagSetValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagSetValue.Value));
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();            
                     }
 
                     xmlWriter.WriteEndElement();
-                }
             }
             PostMarshallCustomization(request, publicRequest);
             try 
@@ -132,12 +118,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-            request.UseQueryString = true;
             return request;
         }
-        private static PutObjectTaggingRequestMarshaller _instance = new PutObjectTaggingRequestMarshaller();        
+        private static PutBucketTaggingRequestMarshaller _instance = new PutBucketTaggingRequestMarshaller();        
 
-        internal static PutObjectTaggingRequestMarshaller GetInstance()
+        internal static PutBucketTaggingRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -145,7 +130,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutObjectTaggingRequestMarshaller Instance
+        public static PutBucketTaggingRequestMarshaller Instance
         {
             get
             {
@@ -153,7 +138,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutObjectTaggingRequest publicRequest);
-        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutObjectTaggingRequest publicRequest);
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketTaggingRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketTaggingRequest publicRequest);
     }    
 }
