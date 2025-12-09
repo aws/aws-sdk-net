@@ -214,7 +214,7 @@ namespace Amazon.S3.Transfer.Internal
                 // Seek to the correct offset for this part
                 fileStream.Seek(offset, SeekOrigin.Begin);
 
-                _logger.DebugFormat("FilePartDataHandler: [Part {0} Writing {1} bytes to file at offset {2}", partNumber,
+                _logger.DebugFormat("FilePartDataHandler: [Part {0}] Writing {1} bytes to file at offset {2}", partNumber,
                     response.ContentLength, offset);
 
                 // Use GetObjectResponse's stream copy logic which includes:

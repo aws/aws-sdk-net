@@ -308,9 +308,6 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
-                // Prepare the data handler (e.g., create temp files for file-based downloads)
-                await _dataHandler.PrepareAsync(discoveryResult, cancellationToken).ConfigureAwait(false);
-                
                 // Create delegate once and reuse for all parts
                 var wrappedCallback = progressCallback != null 
                     ? new EventHandler<WriteObjectProgressArgs>(DownloadPartProgressEventCallback)
@@ -318,6 +315,9 @@ namespace Amazon.S3.Transfer.Internal
                 
                 try
                 {
+                    // Prepare the data handler (e.g., create temp files for file-based downloads)
+                    await _dataHandler.PrepareAsync(discoveryResult, cancellationToken).ConfigureAwait(false);
+                    
                     // Attach progress callback to Part 1's response if provided
                     if (wrappedCallback != null)
                     {

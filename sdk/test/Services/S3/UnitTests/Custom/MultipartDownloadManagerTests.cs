@@ -2328,6 +2328,389 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region Semaphore Release Error Path Tests
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_PrepareAsyncFails_ReleasesHttpSemaphore()
+        {
+            // Arrange - Test critical bug: PrepareAsync fails but semaphore was acquired during discovery
+            var httpThrottler = new SemaphoreSlim(2, 2);
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // WaitForCapacityAsync succeeds (buffer space available)
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // PrepareAsync fails BEFORE Part 1 processing
+            mockDataHandler
+                .Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new InvalidOperationException("Simulated prepare failure"));
+            
+            var mockResponse = MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                8 * 1024 * 1024, 2, 16 * 1024 * 1024, "test-etag");
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(
+                mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            // After discovery, semaphore should have 1 slot held (2 total - 1 used = 1 available)
+            Assert.AreEqual(initialCount - 1, httpThrottler.CurrentCount,
+                "After discovery, semaphore should have 1 slot held");
+
+            // Act & Assert
+            try
+            {
+                await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
+                Assert.Fail("Expected InvalidOperationException to be thrown");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.AreEqual("Simulated prepare failure", ex.Message);
+            }
+
+            // Assert - CRITICAL BUG: Semaphore should be released but currently ISN'T
+            // This test will FAIL until the bug is fixed
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount,
+                "HTTP semaphore should be released when PrepareAsync fails (BUG: currently leaks!)");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_Part1ProcessingFails_ReleasesHttpSemaphore()
+        {
+            // Arrange - Test that finally block correctly releases semaphore when Part 1 processing fails
+            var httpThrottler = new SemaphoreSlim(2, 2);
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // WaitForCapacityAsync succeeds
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // PrepareAsync succeeds
+            mockDataHandler
+                .Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // ProcessPartAsync fails for Part 1
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(1, It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new InvalidOperationException("Simulated Part 1 processing failure"));
+            
+            var mockResponse = MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                8 * 1024 * 1024, 2, 16 * 1024 * 1024, "test-etag");
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(
+                mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            // After discovery, semaphore should have 1 slot held
+            Assert.AreEqual(initialCount - 1, httpThrottler.CurrentCount,
+                "After discovery, semaphore should have 1 slot held");
+
+            // Act & Assert
+            try
+            {
+                await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
+                Assert.Fail("Expected InvalidOperationException to be thrown");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.AreEqual("Simulated Part 1 processing failure", ex.Message);
+            }
+
+            // Assert - Finally block should release semaphore
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount,
+                "HTTP semaphore should be released by finally block when Part 1 processing fails");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Discovery_WaitForCapacityFails_DoesNotReleaseHttpSemaphore()
+        {
+            // Arrange - Test that semaphore is NOT released when it was never acquired
+            var httpThrottler = new SemaphoreSlim(2, 2);
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // WaitForCapacityAsync fails BEFORE HTTP semaphore is acquired
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new InvalidOperationException("Simulated capacity wait failure"));
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(
+                mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+
+            // Act & Assert
+            try
+            {
+                await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+                Assert.Fail("Expected InvalidOperationException to be thrown");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.AreEqual("Simulated capacity wait failure", ex.Message);
+            }
+
+            // Assert - Semaphore should NOT be released (it was never acquired)
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount,
+                "HTTP semaphore should NOT be released when it was never acquired (failed before WaitAsync)");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_BackgroundPartHttpFails_ReleasesHttpSemaphore()
+        {
+            // Arrange - Test that background part download failures properly release semaphore
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var httpThrottler = new SemaphoreSlim(2, 2);
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // WaitForCapacityAsync succeeds for all parts
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // PrepareAsync succeeds
+            mockDataHandler
+                .Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // ProcessPartAsync succeeds for Part 1, but not called for Part 2 (HTTP fails first)
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(1, It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // ReleaseCapacity is called on failure
+            mockDataHandler
+                .Setup(x => x.ReleaseCapacity());
+            
+            mockDataHandler
+                .Setup(x => x.OnDownloadComplete(It.IsAny<Exception>()));
+            
+            var callCount = 0;
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    callCount++;
+                    if (callCount == 1)
+                    {
+                        // Discovery call succeeds
+                        return Task.FromResult(MultipartDownloadTestHelpers.CreateMultipartFirstPartResponse(
+                            partSize, totalParts, totalObjectSize, "test-etag"));
+                    }
+                    else
+                    {
+                        // Background part HTTP request fails
+                        throw new InvalidOperationException("Simulated HTTP failure for background part");
+                    }
+                });
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadManager(
+                mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            // After discovery, semaphore should have 1 slot held (for Part 1)
+            Assert.AreEqual(initialCount - 1, httpThrottler.CurrentCount,
+                "After discovery, semaphore should have 1 slot held");
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
+            
+            // Wait for background task to fail
+            try
+            {
+                await coordinator.DownloadCompletionTask;
+            }
+            catch (InvalidOperationException)
+            {
+                // Expected failure from background task
+            }
+
+            // Assert - Semaphore should be fully released (Part 1 released in StartDownloadsAsync,
+            // Parts 2 and 3 released in CreateDownloadTaskAsync catch blocks)
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount,
+                "HTTP semaphore should be fully released after background part HTTP failure");
+            
+            // Verify ReleaseCapacity was called twice (once for Part 2 that failed, once for Part 3 that got cancelled)
+            // With sequential capacity acquisition, Part 3 acquired capacity before Part 2's HTTP call failed
+            mockDataHandler.Verify(x => x.ReleaseCapacity(), Times.Exactly(2),
+                "ReleaseCapacity should be called for both Part 2 (failed) and Part 3 (cancelled after acquiring capacity)");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_BackgroundPartProcessingFails_ReleasesHttpSemaphore()
+        {
+            // Arrange - Test that background part ProcessPartAsync failures properly release semaphore
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var httpThrottler = new SemaphoreSlim(2, 2);
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // WaitForCapacityAsync succeeds for all parts
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // PrepareAsync succeeds
+            mockDataHandler
+                .Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // ProcessPartAsync succeeds for Part 1, fails for Part 2
+            var processCallCount = 0;
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns<int, GetObjectResponse, CancellationToken>((partNum, response, ct) =>
+                {
+                    processCallCount++;
+                    if (partNum == 1)
+                    {
+                        return Task.CompletedTask; // Part 1 succeeds
+                    }
+                    throw new InvalidOperationException($"Simulated processing failure for Part {partNum}");
+                });
+            
+            // ReleaseCapacity is called on failure
+            mockDataHandler
+                .Setup(x => x.ReleaseCapacity());
+            
+            mockDataHandler
+                .Setup(x => x.OnDownloadComplete(It.IsAny<Exception>()));
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
+            var coordinator = new MultipartDownloadManager(
+                mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            // After discovery, semaphore should have 1 slot held
+            Assert.AreEqual(initialCount - 1, httpThrottler.CurrentCount,
+                "After discovery, semaphore should have 1 slot held");
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
+            
+            // Wait for background task to fail
+            try
+            {
+                await coordinator.DownloadCompletionTask;
+            }
+            catch (InvalidOperationException)
+            {
+                // Expected failure from background task
+            }
+
+            // Assert - Semaphore should be fully released
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount,
+                "HTTP semaphore should be fully released after background part processing failure");
+            
+            // Verify ReleaseCapacity was called twice (once for Part 2 that failed, once for Part 3 that may have continued)
+            // With sequential capacity acquisition, Part 3 acquired capacity before Part 2's processing failed
+            mockDataHandler.Verify(x => x.ReleaseCapacity(), Times.Exactly(2),
+                "ReleaseCapacity should be called for both Part 2 (failed) and Part 3 (cancelled/failed after acquiring capacity)");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Discovery_HttpRequestAfterCapacityFails_ReleasesHttpSemaphore()
+        {
+            // Arrange - Test semaphore release when HTTP request fails after capacity is acquired
+            var httpThrottler = new SemaphoreSlim(2, 2);
+            var initialCount = httpThrottler.CurrentCount;
+            
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // WaitForCapacityAsync succeeds (capacity acquired)
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // HTTP request fails AFTER both capacity types are acquired
+            var mockClient = new Mock<IAmazonS3>();
+            mockClient
+                .Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new InvalidOperationException("Simulated S3 failure after capacity acquired"));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(
+                mockClient.Object, request, config, mockDataHandler.Object, null, httpThrottler);
+
+            // Act & Assert
+            try
+            {
+                await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+                Assert.Fail("Expected InvalidOperationException to be thrown");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.AreEqual("Simulated S3 failure after capacity acquired", ex.Message);
+            }
+
+            // Assert - HTTP semaphore should be released by catch block in discovery
+            Assert.AreEqual(initialCount, httpThrottler.CurrentCount,
+                "HTTP semaphore should be released when HTTP request fails in discovery");
+            
+            // Cleanup
+            httpThrottler.Dispose();
+        }
+
+        #endregion
+
         #region ContentRange and Part Range Calculation Tests
 
         [TestMethod]
