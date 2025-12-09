@@ -193,13 +193,9 @@
             ]
         },
         "PutBucketTaggingRequest": {
-            "exclude": [ "Tagging" ],
-            "inject": [
+            "modify":[
                 {
-                    "TagSet": {
-                        "shape": "TagSet",
-                        "originalMember": "Tagging"
-                    }
+                    "ExpectedBucketOwner" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
         },
@@ -1253,7 +1249,6 @@
                 }
             ]
         }
-        
     },
     "operationModifiers": {
         "CreateBucket": {
@@ -1620,6 +1615,9 @@
         ],
         "UploadPartCopyOutput" : [
             "CopyPartResult"
+        ],
+        "PutBucketTaggingRequest":[
+            "Tagging"
         ]
     },
     "excludeShapes":[
