@@ -159,7 +159,10 @@ namespace Amazon.S3.Transfer.Internal
             }
             else
             {
-                _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
+                _httpConcurrencySlots = new SemaphoreSlim(
+                    _config.ConcurrentServiceRequests,  // initialCount
+                    _config.ConcurrentServiceRequests   // maxCount - prevents exceeding configured limit
+                );
                 _ownsHttpThrottler = true; // We own it, so we dispose it
             }
         }
