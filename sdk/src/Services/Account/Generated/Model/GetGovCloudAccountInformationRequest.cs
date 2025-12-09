@@ -30,55 +30,59 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Account.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetContactInformation operation.
-    /// Retrieves the primary contact information of an Amazon Web Services account.
-    /// 
-    ///  
-    /// <para>
-    /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
-    /// the primary contact for your Amazon Web Services account</a>.
-    /// </para>
+    /// Container for the parameters to the GetGovCloudAccountInformation operation.
+    /// Retrieves information about the GovCloud account linked to the specified standard
+    /// account (if it exists) including the GovCloud account ID and state. To use this API,
+    /// an IAM user or role must have the <c>account:GetGovCloudAccountInformation</c> IAM
+    /// permission.
     /// </summary>
-    public partial class GetContactInformationRequest : AmazonAccountRequest
+    public partial class GetGovCloudAccountInformationRequest : AmazonAccountRequest
     {
-        private string _accountId;
+        private string _standardAccountId;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property StandardAccountId. 
         /// <para>
-        /// Specifies the 12-digit account ID number of the Amazon Web Services account that you
-        /// want to access or modify with this operation. If you don't specify this parameter,
-        /// it defaults to the Amazon Web Services account of the identity used to call the operation.
+        /// Specifies the 12 digit account ID number of the Amazon Web Services account that you
+        /// want to access or modify with this operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify this parameter, it defaults to the Amazon Web Services account
+        /// of the identity used to call the operation.
+        /// </para>
+        ///  
+        /// <para>
         /// To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
-        /// management account</a> or a delegated administrator account. The specified account
+        /// management account</a> or a delegated administrator account, and the specified account
         /// ID must be a member account in the same organization. The organization must have <a
         /// href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
-        /// features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">trusted
+        /// features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-account.html">trusted
         /// access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#delegated-admin">delegated
-        /// admin</a> account assigned.
+        /// administrator</a> account assigned.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The management account can't specify its own <c>AccountId</c>. It must call the operation
+        /// The management account can't specify its own <c>AccountId</c>; it must call the operation
         /// in standalone context by not including the <c>AccountId</c> parameter.
         /// </para>
         ///  </note> 
         /// <para>
-        /// To call this operation on an account that is not a member of an organization, don't
-        /// specify this parameter. Instead, call the operation using an identity belonging to
+        /// To call this operation on an account that is not a member of an organization, then
+        /// don't specify this parameter, and call the operation using an identity belonging to
         /// the account whose contacts you wish to retrieve or modify.
         /// </para>
         /// </summary>
-        public string AccountId
+        public string StandardAccountId
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._standardAccountId; }
+            set { this._standardAccountId = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if StandardAccountId property is set
+        internal bool IsSetStandardAccountId()
         {
-            return this._accountId != null;
+            return this._standardAccountId != null;
         }
 
     }
