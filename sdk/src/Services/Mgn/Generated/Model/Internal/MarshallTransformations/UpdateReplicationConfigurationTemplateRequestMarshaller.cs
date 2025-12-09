@@ -115,6 +115,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EbsEncryptionKeyArn);
                 }
 
+                if(publicRequest.IsSetInternetProtocol())
+                {
+                    context.Writer.WritePropertyName("internetProtocol");
+                    context.Writer.Write(publicRequest.InternetProtocol);
+                }
+
                 if(publicRequest.IsSetReplicationConfigurationTemplateID())
                 {
                     context.Writer.WritePropertyName("replicationConfigurationTemplateID");

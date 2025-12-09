@@ -108,6 +108,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableMapAutoTagging = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableParametersEncryption", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableParametersEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("largeVolumeConf", targetDepth))
                 {
                     var unmarshaller = LaunchTemplateDiskConfUnmarshaller.Instance;
@@ -136,6 +142,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MapAutoTaggingMpeID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("parametersEncryptionKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParametersEncryptionKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("postLaunchActions", targetDepth))

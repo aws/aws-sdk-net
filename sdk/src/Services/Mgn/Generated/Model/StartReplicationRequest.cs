@@ -31,7 +31,7 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the StartReplication operation.
-    /// Starts replication for SNAPSHOT_SHIPPING agents.
+    /// Start replication for source server irrespective of its replication type.
     /// </summary>
     public partial class StartReplicationRequest : AmazonMgnRequest
     {

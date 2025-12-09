@@ -66,10 +66,22 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("attemptCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AttemptCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("conversionServerID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConversionServerID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("maxAttemptsCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxAttemptsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rawError", targetDepth))

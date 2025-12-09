@@ -34,6 +34,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class ImportTask
     {
+        private string _arn;
         private string _creationDateTime;
         private string _endDateTime;
         private string _importid;
@@ -41,6 +42,26 @@ namespace Amazon.Mgn.Model
         private S3BucketSource _s3BucketSource;
         private ImportStatus _status;
         private ImportTaskSummary _summary;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// ImportTask arn.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -169,6 +190,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetSummary()
         {
             return this._summary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Import task tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

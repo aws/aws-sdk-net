@@ -2693,7 +2693,7 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Starts replication for SNAPSHOT_SHIPPING agents.
+        /// Start replication for source server irrespective of its replication type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplication service method.</param>
         /// 
@@ -3492,7 +3492,12 @@ namespace Amazon.Mgn
 
         /// <summary>
         /// Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING
-        /// replication type.
+        /// replication type. 
+        /// 
+        ///  
+        /// <para>
+        /// SNAPSHOT_SHIPPING should be used for agentless replication.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSourceServerReplicationType service method.</param>
         /// 

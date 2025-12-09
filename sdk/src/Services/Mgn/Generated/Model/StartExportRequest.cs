@@ -38,6 +38,7 @@ namespace Amazon.Mgn.Model
         private string _s3Bucket;
         private string _s3BucketOwner;
         private string _s3Key;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property S3Bucket. 
@@ -94,6 +95,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetS3Key()
         {
             return this._s3Key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Start import request tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

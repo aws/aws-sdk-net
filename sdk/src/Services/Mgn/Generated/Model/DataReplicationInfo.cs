@@ -41,6 +41,7 @@ namespace Amazon.Mgn.Model
         private string _lagDuration;
         private string _lastSnapshotDateTime;
         private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = AWSConfigs.InitializeCollections ? new List<DataReplicationInfoReplicatedDisk>() : null;
+        private string _replicatorId;
 
         /// <summary>
         /// Gets and sets the property DataReplicationError. 
@@ -170,6 +171,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetReplicatedDisks()
         {
             return this._replicatedDisks != null && (this._replicatedDisks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicatorId. 
+        /// <para>
+        /// Replication server instance ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=19, Max=19)]
+        public string ReplicatorId
+        {
+            get { return this._replicatorId; }
+            set { this._replicatorId = value; }
+        }
+
+        // Check to see if ReplicatorId property is set
+        internal bool IsSetReplicatorId()
+        {
+            return this._replicatorId != null;
         }
 
     }

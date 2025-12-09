@@ -108,6 +108,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReplicatedDisks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("replicatorId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicatorId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
