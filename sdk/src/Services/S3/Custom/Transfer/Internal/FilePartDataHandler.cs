@@ -91,7 +91,7 @@ namespace Amazon.S3.Transfer.Internal
                     partNumber, offset);
 
                 // Write part data to file at the calculated offset
-                await WritePartToFileAsync(offset, response, cancellationToken)
+                await WritePartToFileAsync(partNumber, offset, response, cancellationToken)
                     .ConfigureAwait(false);
 
                 _logger.DebugFormat("FilePartDataHandler: [Part {0}] File write completed successfully",
@@ -193,6 +193,7 @@ namespace Amazon.S3.Transfer.Internal
         /// Writes part data from GetObjectResponse ResponseStream to the file at the specified offset.
         /// </summary>
         private async Task WritePartToFileAsync(
+            int partNumber,
             long offset,
             GetObjectResponse response,
             CancellationToken cancellationToken)
@@ -242,8 +243,8 @@ namespace Amazon.S3.Transfer.Internal
                 var writeTimeSeconds = writeStopwatch.Elapsed.TotalSeconds;
                 var writeSpeedMBps = writeTimeSeconds > 0 ? (writtenBytes / (1024.0 * 1024.0)) / writeTimeSeconds : 0;
 
-                _logger.DebugFormat("FilePartDataHandler: Disk write complete - {0:N0} bytes in {1:F2}s ({2:F2} MB/s) at offset {3:N0}",
-                    writtenBytes, writeTimeSeconds, writeSpeedMBps, offset);
+                _logger.DebugFormat("FilePartDataHandler: [Part {0}] Disk write complete - {1:N0} bytes in {2:F2}s ({3:F2} MB/s) at offset {4:N0}",
+                    partNumber, writtenBytes, writeTimeSeconds, writeSpeedMBps, offset);
 
                 _logger.DebugFormat("FilePartDataHandler: Successfully wrote {0} bytes at offset {1}",
                     response.ContentLength, offset);
