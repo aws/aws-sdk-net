@@ -33,21 +33,32 @@ namespace Amazon.Runtime.Internal.Settings
     {
         public static string Decrypt(string encrypted)
         {
-            List<Byte> dataIn = new List<byte>();
-            for (int i = 0; i < encrypted.Length; i = i + 2)
-            {
-                byte data = Convert.ToByte(encrypted.Substring(i, 2), 16);
-                dataIn.Add(data);
-            }
+            if (encrypted is null)
+                throw new ArgumentNullException(nameof(encrypted));
+
+            byte[] dataIn;
+
+#if NET5_0_OR_GREATER
+            // Optimized path: no per-byte Substring allocations
+            dataIn = Convert.FromHexString(encrypted);
+#else
+    // Legacy behavior preserved for older TFMs
+    List<byte> dataInList = new List<byte>();
+    for (int i = 0; i < encrypted.Length; i = i + 2)
+    {
+        byte data = Convert.ToByte(encrypted.Substring(i, 2), 16);
+        dataInList.Add(data);
+    }
+    dataIn = dataInList.ToArray();
+#endif
 
             CryptProtectFlags flags = CryptProtectFlags.CRYPTPROTECT_UI_FORBIDDEN;
-            DATA_BLOB encryptedBlob = ConvertData(dataIn.ToArray());
+            DATA_BLOB encryptedBlob = ConvertData(dataIn);
             DATA_BLOB unencryptedBlob = new DATA_BLOB();
             DATA_BLOB dataOption = new DATA_BLOB();
 
             try
             {
-
                 CRYPTPROTECT_PROMPTSTRUCT prompt = new CRYPTPROTECT_PROMPTSTRUCT();
                 if (!CryptUnprotectData(ref encryptedBlob, "psw", ref dataOption, IntPtr.Zero, ref prompt, flags, ref unencryptedBlob))
                 {

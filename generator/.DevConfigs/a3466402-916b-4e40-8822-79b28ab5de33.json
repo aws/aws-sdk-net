@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "optimize user crypto decrypt"
+    ]
+  }
+}
