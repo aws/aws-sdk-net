@@ -35,7 +35,27 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class AwsOpportunityProject
     {
+        private AwsPartition _awsPartition;
         private List<ExpectedCustomerSpend> _expectedCustomerSpend = AWSConfigs.InitializeCollections ? new List<ExpectedCustomerSpend>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AwsPartition. 
+        /// <para>
+        /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc'
+        /// for AWS European Sovereign Cloud, <c>null</c> for all other partitions
+        /// </para>
+        /// </summary>
+        public AwsPartition AwsPartition
+        {
+            get { return this._awsPartition; }
+            set { this._awsPartition = value; }
+        }
+
+        // Check to see if AwsPartition property is set
+        internal bool IsSetAwsPartition()
+        {
+            return this._awsPartition != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExpectedCustomerSpend. 

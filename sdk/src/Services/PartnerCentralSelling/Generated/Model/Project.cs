@@ -36,6 +36,7 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private string _additionalComments;
         private List<string> _apnPrograms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private AwsPartition _awsPartition;
         private CompetitorName _competitorName;
         private string _customerBusinessProblem;
         private string _customerUseCase;
@@ -97,6 +98,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetApnPrograms()
         {
             return this._apnPrograms != null && (this._apnPrograms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsPartition. 
+        /// <para>
+        /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc'
+        /// for AWS European Sovereign Cloud, <c>null</c> for all other partitions
+        /// </para>
+        /// </summary>
+        public AwsPartition AwsPartition
+        {
+            get { return this._awsPartition; }
+            set { this._awsPartition = value; }
+        }
+
+        // Check to see if AwsPartition property is set
+        internal bool IsSetAwsPartition()
+        {
+            return this._awsPartition != null;
         }
 
         /// <summary>
