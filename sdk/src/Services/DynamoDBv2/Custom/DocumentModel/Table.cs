@@ -1419,7 +1419,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true } ||
                      (ifNotExistAttributeNames != null && ifNotExistAttributeNames.Any()))
             {
-                currentConfig.ConditionalExpression?.ApplyExpression(req, this);
+                currentConfig.ConditionalExpression.ApplyExpression(req, this);
 
                 string statement;
                 Dictionary<string, AttributeValue> expressionAttributeValues;
@@ -1431,20 +1431,37 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
 
-                if (req.ExpressionAttributeValues == null)
-                    req.ExpressionAttributeValues = expressionAttributeValues;
-                else
+                // Common.ConvertAttributeUpdatesToUpdateExpression initializes the expression dictionaries as empty,
+                // so we'll only add them to the request if there are values.
+
+                if (expressionAttributeValues.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeValues)
-                        req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeValues == null)
+                    {
+                        req.ExpressionAttributeValues = expressionAttributeValues;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeValues)
+                        {
+                            req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
 
-                if (req.ExpressionAttributeNames == null)
-                    req.ExpressionAttributeNames = expressionAttributeNames;
-                else
+                if (expressionAttributeNames.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeNames)
-                        req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeNames == null)
+                    {
+                        req.ExpressionAttributeNames = expressionAttributeNames;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeNames)
+                        {
+                            req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
             }
 #if NETSTANDARD
@@ -1531,20 +1548,37 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
 
-                if (req.ExpressionAttributeValues == null)
-                    req.ExpressionAttributeValues = expressionAttributeValues;
-                else
+                // Common.ConvertAttributeUpdatesToUpdateExpression initializes the expression dictionaries as empty,
+                // so we'll only add them to the request if there are values.
+
+                if (expressionAttributeValues.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeValues)
-                        req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeValues == null)
+                    {
+                        req.ExpressionAttributeValues = expressionAttributeValues;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeValues)
+                        {
+                            req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
 
-                if (req.ExpressionAttributeNames == null)
-                    req.ExpressionAttributeNames = expressionAttributeNames;
-                else
+                if (expressionAttributeNames.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeNames)
-                        req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeNames == null)
+                    {
+                        req.ExpressionAttributeNames = expressionAttributeNames;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeNames)
+                        {
+                            req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
             }
 

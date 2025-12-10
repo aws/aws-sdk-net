@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Configuration for destinations where scheduled query results are delivered, such as
-    /// S3 buckets or EventBridge event buses.
+    /// Configuration for where to deliver scheduled query results. Specifies the destination
+    /// type and associated settings for result delivery.
     /// </summary>
     public partial class DestinationConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// Configuration for delivering query results to an Amazon S3 bucket.
+        /// Configuration for delivering query results to Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -76,12 +76,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientSecret())
-            {
-                context.Writer.WritePropertyName("ClientSecret");
-                context.Writer.WriteStringValue(publicRequest.ClientSecret);
-            }
-
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

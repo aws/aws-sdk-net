@@ -42,6 +42,12 @@ namespace Amazon.CostExplorer.Model
         /// </summary>
         public IPaginatedEnumerable<ListCostAllocationTagBackfillHistoryResponse> Responses => new PaginatedResponse<ListCostAllocationTagBackfillHistoryResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the BackfillRequests
+        /// </summary>
+        public IPaginatedEnumerable<CostAllocationTagBackfillRequest> BackfillRequests => 
+            new PaginatedResultKeyResponse<ListCostAllocationTagBackfillHistoryResponse, CostAllocationTagBackfillRequest>(this, (i) => i.BackfillRequests ?? new List<CostAllocationTagBackfillRequest>());
+
         internal ListCostAllocationTagBackfillHistoryPaginator(IAmazonCostExplorer client, ListCostAllocationTagBackfillHistoryRequest request)
         {
             this._client = client;

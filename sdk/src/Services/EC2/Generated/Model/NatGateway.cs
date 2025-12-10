@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NatGateway
     {
+        private List<NatGatewayAttachedAppliance> _attachedAppliances = AWSConfigs.InitializeCollections ? new List<NatGatewayAttachedAppliance>() : null;
         private AutoProvisionZonesState _autoProvisionZones;
         private AutoScalingIpsState _autoScalingIps;
         private AvailabilityMode _availabilityMode;
@@ -50,6 +51,30 @@ namespace Amazon.EC2.Model
         private string _subnetId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AttachedAppliances. 
+        /// <para>
+        /// The proxy appliances attached to the NAT Gateway for filtering and inspecting traffic
+        /// to prevent data exfiltration.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<NatGatewayAttachedAppliance> AttachedAppliances
+        {
+            get { return this._attachedAppliances; }
+            set { this._attachedAppliances = value; }
+        }
+
+        // Check to see if AttachedAppliances property is set
+        internal bool IsSetAttachedAppliances()
+        {
+            return this._attachedAppliances != null && (this._attachedAppliances.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AutoProvisionZones. 

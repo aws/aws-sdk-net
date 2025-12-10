@@ -37,6 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class RelatedEntityIdentifiers
     {
         private List<string> _awsMarketplaceOffers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _awsMarketplaceOfferSets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _awsProducts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _solutions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -68,6 +69,31 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetAwsMarketplaceOffers()
         {
             return this._awsMarketplaceOffers != null && (this._awsMarketplaceOffers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsMarketplaceOfferSets. 
+        /// <para>
+        /// Enables the association of AWS Marketplace offer sets with the <c>Opportunity</c>.
+        /// Offer sets allow grouping multiple related marketplace offers together for comprehensive
+        /// solution packaging. Each value is an Amazon Resource Name (ARN) in this format: <c>arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/OfferSet/offerset-sampleOfferSet32</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AwsMarketplaceOfferSets
+        {
+            get { return this._awsMarketplaceOfferSets; }
+            set { this._awsMarketplaceOfferSets = value; }
+        }
+
+        // Check to see if AwsMarketplaceOfferSets property is set
+        internal bool IsSetAwsMarketplaceOfferSets()
+        {
+            return this._awsMarketplaceOfferSets != null && (this._awsMarketplaceOfferSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

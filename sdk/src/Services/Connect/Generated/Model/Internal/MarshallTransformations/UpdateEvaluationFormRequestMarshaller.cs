@@ -79,6 +79,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAsDraft())
+            {
+                context.Writer.WritePropertyName("AsDraft");
+                context.Writer.WriteBooleanValue(publicRequest.AsDraft.Value);
+            }
+
             if(publicRequest.IsSetAutoEvaluationConfiguration())
             {
                 context.Writer.WritePropertyName("AutoEvaluationConfiguration");
@@ -135,6 +141,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetLanguageConfiguration())
+            {
+                context.Writer.WritePropertyName("LanguageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormLanguageConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LanguageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetScoringStrategy())
             {
                 context.Writer.WritePropertyName("ScoringStrategy");
@@ -142,6 +159,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
                 var marshaller = EvaluationFormScoringStrategyMarshaller.Instance;
                 marshaller.Marshall(publicRequest.ScoringStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTargetConfiguration())
+            {
+                context.Writer.WritePropertyName("TargetConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

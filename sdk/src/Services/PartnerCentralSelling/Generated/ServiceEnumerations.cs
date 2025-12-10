@@ -25,6 +25,52 @@ namespace Amazon.PartnerCentralSelling
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessDeniedExceptionErrorCode.
+    /// </summary>
+    public class AccessDeniedExceptionErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE for AccessDeniedExceptionErrorCode
+        /// </summary>
+        public static readonly AccessDeniedExceptionErrorCode INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE = new AccessDeniedExceptionErrorCode("INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessDeniedExceptionErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessDeniedExceptionErrorCode FindValue(string value)
+        {
+            return FindValue<AccessDeniedExceptionErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessDeniedExceptionErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AwsClosedLostReason.
     /// </summary>
     public class AwsClosedLostReason : ConstantClass
@@ -506,6 +552,720 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AwsOpportunityStage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AwsProductInsightsCurrencyCodeEnum.
+    /// </summary>
+    public class AwsProductInsightsCurrencyCodeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AED for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum AED = new AwsProductInsightsCurrencyCodeEnum("AED");
+        /// <summary>
+        /// Constant AFN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum AFN = new AwsProductInsightsCurrencyCodeEnum("AFN");
+        /// <summary>
+        /// Constant ALL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ALL = new AwsProductInsightsCurrencyCodeEnum("ALL");
+        /// <summary>
+        /// Constant AMD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum AMD = new AwsProductInsightsCurrencyCodeEnum("AMD");
+        /// <summary>
+        /// Constant ANG for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ANG = new AwsProductInsightsCurrencyCodeEnum("ANG");
+        /// <summary>
+        /// Constant AOA for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum AOA = new AwsProductInsightsCurrencyCodeEnum("AOA");
+        /// <summary>
+        /// Constant ARS for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ARS = new AwsProductInsightsCurrencyCodeEnum("ARS");
+        /// <summary>
+        /// Constant AUD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum AUD = new AwsProductInsightsCurrencyCodeEnum("AUD");
+        /// <summary>
+        /// Constant AWG for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum AWG = new AwsProductInsightsCurrencyCodeEnum("AWG");
+        /// <summary>
+        /// Constant AZN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum AZN = new AwsProductInsightsCurrencyCodeEnum("AZN");
+        /// <summary>
+        /// Constant BAM for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BAM = new AwsProductInsightsCurrencyCodeEnum("BAM");
+        /// <summary>
+        /// Constant BBD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BBD = new AwsProductInsightsCurrencyCodeEnum("BBD");
+        /// <summary>
+        /// Constant BDT for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BDT = new AwsProductInsightsCurrencyCodeEnum("BDT");
+        /// <summary>
+        /// Constant BGN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BGN = new AwsProductInsightsCurrencyCodeEnum("BGN");
+        /// <summary>
+        /// Constant BHD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BHD = new AwsProductInsightsCurrencyCodeEnum("BHD");
+        /// <summary>
+        /// Constant BIF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BIF = new AwsProductInsightsCurrencyCodeEnum("BIF");
+        /// <summary>
+        /// Constant BMD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BMD = new AwsProductInsightsCurrencyCodeEnum("BMD");
+        /// <summary>
+        /// Constant BND for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BND = new AwsProductInsightsCurrencyCodeEnum("BND");
+        /// <summary>
+        /// Constant BOB for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BOB = new AwsProductInsightsCurrencyCodeEnum("BOB");
+        /// <summary>
+        /// Constant BOV for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BOV = new AwsProductInsightsCurrencyCodeEnum("BOV");
+        /// <summary>
+        /// Constant BRL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BRL = new AwsProductInsightsCurrencyCodeEnum("BRL");
+        /// <summary>
+        /// Constant BSD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BSD = new AwsProductInsightsCurrencyCodeEnum("BSD");
+        /// <summary>
+        /// Constant BTN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BTN = new AwsProductInsightsCurrencyCodeEnum("BTN");
+        /// <summary>
+        /// Constant BWP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BWP = new AwsProductInsightsCurrencyCodeEnum("BWP");
+        /// <summary>
+        /// Constant BYN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BYN = new AwsProductInsightsCurrencyCodeEnum("BYN");
+        /// <summary>
+        /// Constant BZD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum BZD = new AwsProductInsightsCurrencyCodeEnum("BZD");
+        /// <summary>
+        /// Constant CAD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CAD = new AwsProductInsightsCurrencyCodeEnum("CAD");
+        /// <summary>
+        /// Constant CDF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CDF = new AwsProductInsightsCurrencyCodeEnum("CDF");
+        /// <summary>
+        /// Constant CHE for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CHE = new AwsProductInsightsCurrencyCodeEnum("CHE");
+        /// <summary>
+        /// Constant CHF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CHF = new AwsProductInsightsCurrencyCodeEnum("CHF");
+        /// <summary>
+        /// Constant CHW for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CHW = new AwsProductInsightsCurrencyCodeEnum("CHW");
+        /// <summary>
+        /// Constant CLF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CLF = new AwsProductInsightsCurrencyCodeEnum("CLF");
+        /// <summary>
+        /// Constant CLP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CLP = new AwsProductInsightsCurrencyCodeEnum("CLP");
+        /// <summary>
+        /// Constant CNY for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CNY = new AwsProductInsightsCurrencyCodeEnum("CNY");
+        /// <summary>
+        /// Constant COP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum COP = new AwsProductInsightsCurrencyCodeEnum("COP");
+        /// <summary>
+        /// Constant COU for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum COU = new AwsProductInsightsCurrencyCodeEnum("COU");
+        /// <summary>
+        /// Constant CRC for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CRC = new AwsProductInsightsCurrencyCodeEnum("CRC");
+        /// <summary>
+        /// Constant CUC for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CUC = new AwsProductInsightsCurrencyCodeEnum("CUC");
+        /// <summary>
+        /// Constant CUP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CUP = new AwsProductInsightsCurrencyCodeEnum("CUP");
+        /// <summary>
+        /// Constant CVE for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CVE = new AwsProductInsightsCurrencyCodeEnum("CVE");
+        /// <summary>
+        /// Constant CZK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum CZK = new AwsProductInsightsCurrencyCodeEnum("CZK");
+        /// <summary>
+        /// Constant DJF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum DJF = new AwsProductInsightsCurrencyCodeEnum("DJF");
+        /// <summary>
+        /// Constant DKK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum DKK = new AwsProductInsightsCurrencyCodeEnum("DKK");
+        /// <summary>
+        /// Constant DOP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum DOP = new AwsProductInsightsCurrencyCodeEnum("DOP");
+        /// <summary>
+        /// Constant DZD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum DZD = new AwsProductInsightsCurrencyCodeEnum("DZD");
+        /// <summary>
+        /// Constant EGP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum EGP = new AwsProductInsightsCurrencyCodeEnum("EGP");
+        /// <summary>
+        /// Constant ERN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ERN = new AwsProductInsightsCurrencyCodeEnum("ERN");
+        /// <summary>
+        /// Constant ETB for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ETB = new AwsProductInsightsCurrencyCodeEnum("ETB");
+        /// <summary>
+        /// Constant EUR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum EUR = new AwsProductInsightsCurrencyCodeEnum("EUR");
+        /// <summary>
+        /// Constant FJD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum FJD = new AwsProductInsightsCurrencyCodeEnum("FJD");
+        /// <summary>
+        /// Constant FKP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum FKP = new AwsProductInsightsCurrencyCodeEnum("FKP");
+        /// <summary>
+        /// Constant GBP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum GBP = new AwsProductInsightsCurrencyCodeEnum("GBP");
+        /// <summary>
+        /// Constant GEL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum GEL = new AwsProductInsightsCurrencyCodeEnum("GEL");
+        /// <summary>
+        /// Constant GHS for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum GHS = new AwsProductInsightsCurrencyCodeEnum("GHS");
+        /// <summary>
+        /// Constant GIP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum GIP = new AwsProductInsightsCurrencyCodeEnum("GIP");
+        /// <summary>
+        /// Constant GMD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum GMD = new AwsProductInsightsCurrencyCodeEnum("GMD");
+        /// <summary>
+        /// Constant GNF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum GNF = new AwsProductInsightsCurrencyCodeEnum("GNF");
+        /// <summary>
+        /// Constant GTQ for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum GTQ = new AwsProductInsightsCurrencyCodeEnum("GTQ");
+        /// <summary>
+        /// Constant GYD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum GYD = new AwsProductInsightsCurrencyCodeEnum("GYD");
+        /// <summary>
+        /// Constant HKD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum HKD = new AwsProductInsightsCurrencyCodeEnum("HKD");
+        /// <summary>
+        /// Constant HNL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum HNL = new AwsProductInsightsCurrencyCodeEnum("HNL");
+        /// <summary>
+        /// Constant HRK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum HRK = new AwsProductInsightsCurrencyCodeEnum("HRK");
+        /// <summary>
+        /// Constant HTG for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum HTG = new AwsProductInsightsCurrencyCodeEnum("HTG");
+        /// <summary>
+        /// Constant HUF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum HUF = new AwsProductInsightsCurrencyCodeEnum("HUF");
+        /// <summary>
+        /// Constant IDR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum IDR = new AwsProductInsightsCurrencyCodeEnum("IDR");
+        /// <summary>
+        /// Constant ILS for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ILS = new AwsProductInsightsCurrencyCodeEnum("ILS");
+        /// <summary>
+        /// Constant INR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum INR = new AwsProductInsightsCurrencyCodeEnum("INR");
+        /// <summary>
+        /// Constant IQD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum IQD = new AwsProductInsightsCurrencyCodeEnum("IQD");
+        /// <summary>
+        /// Constant IRR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum IRR = new AwsProductInsightsCurrencyCodeEnum("IRR");
+        /// <summary>
+        /// Constant ISK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ISK = new AwsProductInsightsCurrencyCodeEnum("ISK");
+        /// <summary>
+        /// Constant JMD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum JMD = new AwsProductInsightsCurrencyCodeEnum("JMD");
+        /// <summary>
+        /// Constant JOD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum JOD = new AwsProductInsightsCurrencyCodeEnum("JOD");
+        /// <summary>
+        /// Constant JPY for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum JPY = new AwsProductInsightsCurrencyCodeEnum("JPY");
+        /// <summary>
+        /// Constant KES for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KES = new AwsProductInsightsCurrencyCodeEnum("KES");
+        /// <summary>
+        /// Constant KGS for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KGS = new AwsProductInsightsCurrencyCodeEnum("KGS");
+        /// <summary>
+        /// Constant KHR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KHR = new AwsProductInsightsCurrencyCodeEnum("KHR");
+        /// <summary>
+        /// Constant KMF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KMF = new AwsProductInsightsCurrencyCodeEnum("KMF");
+        /// <summary>
+        /// Constant KPW for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KPW = new AwsProductInsightsCurrencyCodeEnum("KPW");
+        /// <summary>
+        /// Constant KRW for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KRW = new AwsProductInsightsCurrencyCodeEnum("KRW");
+        /// <summary>
+        /// Constant KWD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KWD = new AwsProductInsightsCurrencyCodeEnum("KWD");
+        /// <summary>
+        /// Constant KYD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KYD = new AwsProductInsightsCurrencyCodeEnum("KYD");
+        /// <summary>
+        /// Constant KZT for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum KZT = new AwsProductInsightsCurrencyCodeEnum("KZT");
+        /// <summary>
+        /// Constant LAK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum LAK = new AwsProductInsightsCurrencyCodeEnum("LAK");
+        /// <summary>
+        /// Constant LBP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum LBP = new AwsProductInsightsCurrencyCodeEnum("LBP");
+        /// <summary>
+        /// Constant LKR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum LKR = new AwsProductInsightsCurrencyCodeEnum("LKR");
+        /// <summary>
+        /// Constant LRD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum LRD = new AwsProductInsightsCurrencyCodeEnum("LRD");
+        /// <summary>
+        /// Constant LSL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum LSL = new AwsProductInsightsCurrencyCodeEnum("LSL");
+        /// <summary>
+        /// Constant LYD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum LYD = new AwsProductInsightsCurrencyCodeEnum("LYD");
+        /// <summary>
+        /// Constant MAD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MAD = new AwsProductInsightsCurrencyCodeEnum("MAD");
+        /// <summary>
+        /// Constant MDL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MDL = new AwsProductInsightsCurrencyCodeEnum("MDL");
+        /// <summary>
+        /// Constant MGA for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MGA = new AwsProductInsightsCurrencyCodeEnum("MGA");
+        /// <summary>
+        /// Constant MKD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MKD = new AwsProductInsightsCurrencyCodeEnum("MKD");
+        /// <summary>
+        /// Constant MMK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MMK = new AwsProductInsightsCurrencyCodeEnum("MMK");
+        /// <summary>
+        /// Constant MNT for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MNT = new AwsProductInsightsCurrencyCodeEnum("MNT");
+        /// <summary>
+        /// Constant MOP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MOP = new AwsProductInsightsCurrencyCodeEnum("MOP");
+        /// <summary>
+        /// Constant MRU for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MRU = new AwsProductInsightsCurrencyCodeEnum("MRU");
+        /// <summary>
+        /// Constant MUR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MUR = new AwsProductInsightsCurrencyCodeEnum("MUR");
+        /// <summary>
+        /// Constant MVR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MVR = new AwsProductInsightsCurrencyCodeEnum("MVR");
+        /// <summary>
+        /// Constant MWK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MWK = new AwsProductInsightsCurrencyCodeEnum("MWK");
+        /// <summary>
+        /// Constant MXN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MXN = new AwsProductInsightsCurrencyCodeEnum("MXN");
+        /// <summary>
+        /// Constant MXV for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MXV = new AwsProductInsightsCurrencyCodeEnum("MXV");
+        /// <summary>
+        /// Constant MYR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MYR = new AwsProductInsightsCurrencyCodeEnum("MYR");
+        /// <summary>
+        /// Constant MZN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum MZN = new AwsProductInsightsCurrencyCodeEnum("MZN");
+        /// <summary>
+        /// Constant NAD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum NAD = new AwsProductInsightsCurrencyCodeEnum("NAD");
+        /// <summary>
+        /// Constant NGN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum NGN = new AwsProductInsightsCurrencyCodeEnum("NGN");
+        /// <summary>
+        /// Constant NIO for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum NIO = new AwsProductInsightsCurrencyCodeEnum("NIO");
+        /// <summary>
+        /// Constant NOK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum NOK = new AwsProductInsightsCurrencyCodeEnum("NOK");
+        /// <summary>
+        /// Constant NPR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum NPR = new AwsProductInsightsCurrencyCodeEnum("NPR");
+        /// <summary>
+        /// Constant NZD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum NZD = new AwsProductInsightsCurrencyCodeEnum("NZD");
+        /// <summary>
+        /// Constant OMR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum OMR = new AwsProductInsightsCurrencyCodeEnum("OMR");
+        /// <summary>
+        /// Constant PAB for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum PAB = new AwsProductInsightsCurrencyCodeEnum("PAB");
+        /// <summary>
+        /// Constant PEN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum PEN = new AwsProductInsightsCurrencyCodeEnum("PEN");
+        /// <summary>
+        /// Constant PGK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum PGK = new AwsProductInsightsCurrencyCodeEnum("PGK");
+        /// <summary>
+        /// Constant PHP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum PHP = new AwsProductInsightsCurrencyCodeEnum("PHP");
+        /// <summary>
+        /// Constant PKR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum PKR = new AwsProductInsightsCurrencyCodeEnum("PKR");
+        /// <summary>
+        /// Constant PLN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum PLN = new AwsProductInsightsCurrencyCodeEnum("PLN");
+        /// <summary>
+        /// Constant PYG for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum PYG = new AwsProductInsightsCurrencyCodeEnum("PYG");
+        /// <summary>
+        /// Constant QAR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum QAR = new AwsProductInsightsCurrencyCodeEnum("QAR");
+        /// <summary>
+        /// Constant RON for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum RON = new AwsProductInsightsCurrencyCodeEnum("RON");
+        /// <summary>
+        /// Constant RSD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum RSD = new AwsProductInsightsCurrencyCodeEnum("RSD");
+        /// <summary>
+        /// Constant RUB for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum RUB = new AwsProductInsightsCurrencyCodeEnum("RUB");
+        /// <summary>
+        /// Constant RWF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum RWF = new AwsProductInsightsCurrencyCodeEnum("RWF");
+        /// <summary>
+        /// Constant SAR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SAR = new AwsProductInsightsCurrencyCodeEnum("SAR");
+        /// <summary>
+        /// Constant SBD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SBD = new AwsProductInsightsCurrencyCodeEnum("SBD");
+        /// <summary>
+        /// Constant SCR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SCR = new AwsProductInsightsCurrencyCodeEnum("SCR");
+        /// <summary>
+        /// Constant SDG for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SDG = new AwsProductInsightsCurrencyCodeEnum("SDG");
+        /// <summary>
+        /// Constant SEK for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SEK = new AwsProductInsightsCurrencyCodeEnum("SEK");
+        /// <summary>
+        /// Constant SGD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SGD = new AwsProductInsightsCurrencyCodeEnum("SGD");
+        /// <summary>
+        /// Constant SHP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SHP = new AwsProductInsightsCurrencyCodeEnum("SHP");
+        /// <summary>
+        /// Constant SLL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SLL = new AwsProductInsightsCurrencyCodeEnum("SLL");
+        /// <summary>
+        /// Constant SOS for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SOS = new AwsProductInsightsCurrencyCodeEnum("SOS");
+        /// <summary>
+        /// Constant SRD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SRD = new AwsProductInsightsCurrencyCodeEnum("SRD");
+        /// <summary>
+        /// Constant SSP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SSP = new AwsProductInsightsCurrencyCodeEnum("SSP");
+        /// <summary>
+        /// Constant STN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum STN = new AwsProductInsightsCurrencyCodeEnum("STN");
+        /// <summary>
+        /// Constant SVC for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SVC = new AwsProductInsightsCurrencyCodeEnum("SVC");
+        /// <summary>
+        /// Constant SYP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SYP = new AwsProductInsightsCurrencyCodeEnum("SYP");
+        /// <summary>
+        /// Constant SZL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum SZL = new AwsProductInsightsCurrencyCodeEnum("SZL");
+        /// <summary>
+        /// Constant THB for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum THB = new AwsProductInsightsCurrencyCodeEnum("THB");
+        /// <summary>
+        /// Constant TJS for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum TJS = new AwsProductInsightsCurrencyCodeEnum("TJS");
+        /// <summary>
+        /// Constant TMT for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum TMT = new AwsProductInsightsCurrencyCodeEnum("TMT");
+        /// <summary>
+        /// Constant TND for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum TND = new AwsProductInsightsCurrencyCodeEnum("TND");
+        /// <summary>
+        /// Constant TOP for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum TOP = new AwsProductInsightsCurrencyCodeEnum("TOP");
+        /// <summary>
+        /// Constant TRY for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum TRY = new AwsProductInsightsCurrencyCodeEnum("TRY");
+        /// <summary>
+        /// Constant TTD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum TTD = new AwsProductInsightsCurrencyCodeEnum("TTD");
+        /// <summary>
+        /// Constant TWD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum TWD = new AwsProductInsightsCurrencyCodeEnum("TWD");
+        /// <summary>
+        /// Constant TZS for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum TZS = new AwsProductInsightsCurrencyCodeEnum("TZS");
+        /// <summary>
+        /// Constant UAH for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum UAH = new AwsProductInsightsCurrencyCodeEnum("UAH");
+        /// <summary>
+        /// Constant UGX for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum UGX = new AwsProductInsightsCurrencyCodeEnum("UGX");
+        /// <summary>
+        /// Constant USD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum USD = new AwsProductInsightsCurrencyCodeEnum("USD");
+        /// <summary>
+        /// Constant USN for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum USN = new AwsProductInsightsCurrencyCodeEnum("USN");
+        /// <summary>
+        /// Constant UYI for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum UYI = new AwsProductInsightsCurrencyCodeEnum("UYI");
+        /// <summary>
+        /// Constant UYU for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum UYU = new AwsProductInsightsCurrencyCodeEnum("UYU");
+        /// <summary>
+        /// Constant UZS for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum UZS = new AwsProductInsightsCurrencyCodeEnum("UZS");
+        /// <summary>
+        /// Constant VEF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum VEF = new AwsProductInsightsCurrencyCodeEnum("VEF");
+        /// <summary>
+        /// Constant VND for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum VND = new AwsProductInsightsCurrencyCodeEnum("VND");
+        /// <summary>
+        /// Constant VUV for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum VUV = new AwsProductInsightsCurrencyCodeEnum("VUV");
+        /// <summary>
+        /// Constant WST for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum WST = new AwsProductInsightsCurrencyCodeEnum("WST");
+        /// <summary>
+        /// Constant XAF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum XAF = new AwsProductInsightsCurrencyCodeEnum("XAF");
+        /// <summary>
+        /// Constant XCD for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum XCD = new AwsProductInsightsCurrencyCodeEnum("XCD");
+        /// <summary>
+        /// Constant XDR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum XDR = new AwsProductInsightsCurrencyCodeEnum("XDR");
+        /// <summary>
+        /// Constant XOF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum XOF = new AwsProductInsightsCurrencyCodeEnum("XOF");
+        /// <summary>
+        /// Constant XPF for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum XPF = new AwsProductInsightsCurrencyCodeEnum("XPF");
+        /// <summary>
+        /// Constant XSU for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum XSU = new AwsProductInsightsCurrencyCodeEnum("XSU");
+        /// <summary>
+        /// Constant XUA for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum XUA = new AwsProductInsightsCurrencyCodeEnum("XUA");
+        /// <summary>
+        /// Constant YER for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum YER = new AwsProductInsightsCurrencyCodeEnum("YER");
+        /// <summary>
+        /// Constant ZAR for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ZAR = new AwsProductInsightsCurrencyCodeEnum("ZAR");
+        /// <summary>
+        /// Constant ZMW for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ZMW = new AwsProductInsightsCurrencyCodeEnum("ZMW");
+        /// <summary>
+        /// Constant ZWL for AwsProductInsightsCurrencyCodeEnum
+        /// </summary>
+        public static readonly AwsProductInsightsCurrencyCodeEnum ZWL = new AwsProductInsightsCurrencyCodeEnum("ZWL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AwsProductInsightsCurrencyCodeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AwsProductInsightsCurrencyCodeEnum FindValue(string value)
+        {
+            return FindValue<AwsProductInsightsCurrencyCodeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AwsProductInsightsCurrencyCodeEnum(string value)
         {
             return FindValue(value);
         }
@@ -2638,6 +3398,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant CustomerProject for EngagementContextType
         /// </summary>
         public static readonly EngagementContextType CustomerProject = new EngagementContextType("CustomerProject");
+        /// <summary>
+        /// Constant Lead for EngagementContextType
+        /// </summary>
+        public static readonly EngagementContextType Lead = new EngagementContextType("Lead");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2680,6 +3444,10 @@ namespace Amazon.PartnerCentralSelling
     public class EngagementInvitationPayloadType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant LeadInvitation for EngagementInvitationPayloadType
+        /// </summary>
+        public static readonly EngagementInvitationPayloadType LeadInvitation = new EngagementInvitationPayloadType("LeadInvitation");
         /// <summary>
         /// Constant OpportunityInvitation for EngagementInvitationPayloadType
         /// </summary>
@@ -3905,6 +4673,68 @@ namespace Amazon.PartnerCentralSelling
 
 
     /// <summary>
+    /// Constants used for properties of type MarketSegment.
+    /// </summary>
+    public class MarketSegment : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enterprise for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Enterprise = new MarketSegment("Enterprise");
+        /// <summary>
+        /// Constant Large for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Large = new MarketSegment("Large");
+        /// <summary>
+        /// Constant Medium for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Medium = new MarketSegment("Medium");
+        /// <summary>
+        /// Constant Micro for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Micro = new MarketSegment("Micro");
+        /// <summary>
+        /// Constant Small for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Small = new MarketSegment("Small");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MarketSegment(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MarketSegment FindValue(string value)
+        {
+            return FindValue<MarketSegment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MarketSegment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NationalSecurity.
     /// </summary>
     public class NationalSecurity : ConstantClass
@@ -4335,6 +5165,18 @@ namespace Amazon.PartnerCentralSelling
     {
 
         /// <summary>
+        /// Constant ContextNotFound for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ContextNotFound = new ReasonCode("ContextNotFound");
+        /// <summary>
+        /// Constant CustomerProjectContextNotPermitted for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode CustomerProjectContextNotPermitted = new ReasonCode("CustomerProjectContextNotPermitted");
+        /// <summary>
+        /// Constant DisqualifiedLeadNotPermitted for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode DisqualifiedLeadNotPermitted = new ReasonCode("DisqualifiedLeadNotPermitted");
+        /// <summary>
         /// Constant EngagementAccessDenied for ReasonCode
         /// </summary>
         public static readonly ReasonCode EngagementAccessDenied = new ReasonCode("EngagementAccessDenied");
@@ -4534,6 +5376,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant AwsMarketplaceOffers for RelatedEntityType
         /// </summary>
         public static readonly RelatedEntityType AwsMarketplaceOffers = new RelatedEntityType("AwsMarketplaceOffers");
+        /// <summary>
+        /// Constant AwsMarketplaceOfferSets for RelatedEntityType
+        /// </summary>
+        public static readonly RelatedEntityType AwsMarketplaceOfferSets = new RelatedEntityType("AwsMarketplaceOfferSets");
         /// <summary>
         /// Constant AwsProducts for RelatedEntityType
         /// </summary>
@@ -5284,6 +6130,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant INVALID_VALUE for ValidationExceptionErrorCode
         /// </summary>
         public static readonly ValidationExceptionErrorCode INVALID_VALUE = new ValidationExceptionErrorCode("INVALID_VALUE");
+        /// <summary>
+        /// Constant NOT_ENOUGH_VALUES for ValidationExceptionErrorCode
+        /// </summary>
+        public static readonly ValidationExceptionErrorCode NOT_ENOUGH_VALUES = new ValidationExceptionErrorCode("NOT_ENOUGH_VALUES");
         /// <summary>
         /// Constant REQUIRED_FIELD_MISSING for ValidationExceptionErrorCode
         /// </summary>

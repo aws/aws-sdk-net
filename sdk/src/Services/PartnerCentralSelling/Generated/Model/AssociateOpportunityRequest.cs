@@ -140,7 +140,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Amazon Web Services Marketplace API</a> to obtain the ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string RelatedEntityIdentifier
         {
             get { return this._relatedEntityIdentifier; }

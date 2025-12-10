@@ -57,6 +57,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetServiceNow())
+            {
+                context.Writer.WritePropertyName("ServiceNow");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceNowUpdateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServiceNow, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

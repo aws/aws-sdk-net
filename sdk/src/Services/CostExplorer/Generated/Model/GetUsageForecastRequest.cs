@@ -182,7 +182,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Granularity. 
         /// <para>
         /// How granular you want the forecast to be. You can get 3 months of <c>DAILY</c> forecasts
-        /// or 12 months of <c>MONTHLY</c> forecasts.
+        /// or 18 months of <c>MONTHLY</c> forecasts.
         /// </para>
         ///  
         /// <para>

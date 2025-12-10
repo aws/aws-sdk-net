@@ -126,6 +126,17 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Type);
             }
 
+            if(publicRequest.IsSetVectorOptions())
+            {
+                context.Writer.WritePropertyName("vectorOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VectorOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VectorOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -38,9 +38,11 @@ namespace Amazon.S3Control.Model
         private StorageLensAwsOrg _awsOrg;
         private StorageLensDataExport _dataExport;
         private Exclude _exclude;
+        private StorageLensExpandedPrefixesDataExport _expandedPrefixesDataExport;
         private string _id;
         private Include _include;
         private bool? _isEnabled;
+        private string _prefixDelimiter;
         private string _storageLensArn;
 
         /// <summary>
@@ -119,6 +121,25 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpandedPrefixesDataExport. 
+        /// <para>
+        /// A container that configures your S3 Storage Lens expanded prefixes metrics report.
+        /// 
+        /// </para>
+        /// </summary>
+        public StorageLensExpandedPrefixesDataExport ExpandedPrefixesDataExport
+        {
+            get { return this._expandedPrefixesDataExport; }
+            set { this._expandedPrefixesDataExport = value; }
+        }
+
+        // Check to see if ExpandedPrefixesDataExport property is set
+        internal bool IsSetExpandedPrefixesDataExport()
+        {
+            return this._expandedPrefixesDataExport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// A container for the Amazon S3 Storage Lens configuration ID.
@@ -173,6 +194,43 @@ namespace Amazon.S3Control.Model
         internal bool IsSetIsEnabled()
         {
             return this._isEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixDelimiter. 
+        /// <para>
+        /// A container for all prefix delimiters that are used for object keys in this S3 Storage
+        /// Lens configuration. The prefix delimiters determine how S3 Storage Lens counts prefix
+        /// depth, by separating the hierarchical levels in object keys.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// If either a prefix delimiter or existing delimiter is undefined, Amazon S3 uses the
+        /// delimiter that’s defined.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If both the prefix delimiter and existing delimiter are undefined, S3 uses <c>/</c>
+        /// as the default delimiter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When custom delimiters are used, both the prefix delimiter and existing delimiter
+        /// must specify the same special character. Otherwise, your request results in an error.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public string PrefixDelimiter
+        {
+            get { return this._prefixDelimiter; }
+            set { this._prefixDelimiter = value; }
+        }
+
+        // Check to see if PrefixDelimiter property is set
+        internal bool IsSetPrefixDelimiter()
+        {
+            return this._prefixDelimiter != null;
         }
 
         /// <summary>

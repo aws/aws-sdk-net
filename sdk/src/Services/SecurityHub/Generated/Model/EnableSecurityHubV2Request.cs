@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the EnableSecurityHubV2 operation.
     /// Enables the service in account for the current Amazon Web Services Region or specified
-    /// Amazon Web Services Region. This API is in public preview and subject to change.
+    /// Amazon Web Services Region.
     /// </summary>
     public partial class EnableSecurityHubV2Request : AmazonSecurityHubRequest
     {

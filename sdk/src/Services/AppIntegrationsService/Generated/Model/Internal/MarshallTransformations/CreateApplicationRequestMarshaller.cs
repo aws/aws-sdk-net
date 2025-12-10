@@ -95,6 +95,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetApplicationType())
+            {
+                context.Writer.WritePropertyName("ApplicationType");
+                context.Writer.WriteStringValue(publicRequest.ApplicationType);
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");

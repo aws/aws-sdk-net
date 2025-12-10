@@ -59,6 +59,47 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAdditionalStorageVolumes())
+                {
+                    if (publicRequest.AdditionalStorageVolumes.Count == 0)
+                        request.Parameters.Add("AdditionalStorageVolumes", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AdditionalStorageVolumes)
+                         {
+                            if(publicRequestlistValue.IsSetAllocatedStorage())
+                            {
+                                request.Parameters.Add("AdditionalStorageVolumes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AllocatedStorage", StringUtils.FromInt(publicRequestlistValue.AllocatedStorage));
+                            }
+                            if(publicRequestlistValue.IsSetIOPS())
+                            {
+                                request.Parameters.Add("AdditionalStorageVolumes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IOPS", StringUtils.FromInt(publicRequestlistValue.IOPS));
+                            }
+                            if(publicRequestlistValue.IsSetMaxAllocatedStorage())
+                            {
+                                request.Parameters.Add("AdditionalStorageVolumes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MaxAllocatedStorage", StringUtils.FromInt(publicRequestlistValue.MaxAllocatedStorage));
+                            }
+                            if(publicRequestlistValue.IsSetSetForDelete())
+                            {
+                                request.Parameters.Add("AdditionalStorageVolumes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SetForDelete", StringUtils.FromBool(publicRequestlistValue.SetForDelete));
+                            }
+                            if(publicRequestlistValue.IsSetStorageThroughput())
+                            {
+                                request.Parameters.Add("AdditionalStorageVolumes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StorageThroughput", StringUtils.FromInt(publicRequestlistValue.StorageThroughput));
+                            }
+                            if(publicRequestlistValue.IsSetStorageType())
+                            {
+                                request.Parameters.Add("AdditionalStorageVolumes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StorageType", StringUtils.FromString(publicRequestlistValue.StorageType));
+                            }
+                            if(publicRequestlistValue.IsSetVolumeName())
+                            {
+                                request.Parameters.Add("AdditionalStorageVolumes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "VolumeName", StringUtils.FromString(publicRequestlistValue.VolumeName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetAllocatedStorage())
                 {
                     request.Parameters.Add("AllocatedStorage", StringUtils.FromInt(publicRequest.AllocatedStorage));
@@ -354,6 +395,44 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStorageType())
                 {
                     request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));
+                }
+                if(publicRequest.IsSetTagSpecifications())
+                {
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecifications", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
+                            {
+                                request.Parameters.Add("TagSpecifications" + "." + "item" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                            }
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecifications" + "." + "item" + "." + publicRequestlistValueIndex + "." + "Tags", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecifications" + "." + "item" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecifications" + "." + "item" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
                 }
                 if(publicRequest.IsSetTdeCredentialArn())
                 {

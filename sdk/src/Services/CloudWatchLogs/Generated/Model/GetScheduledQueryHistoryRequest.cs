@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the GetScheduledQueryHistory operation.
     /// Retrieves the execution history of a scheduled query within a specified time range,
-    /// including execution status and destination processing metadata.
+    /// including query results and destination processing status.
     /// </summary>
     public partial class GetScheduledQueryHistoryRequest : AmazonCloudWatchLogsRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time for the history retrieval window in Unix epoch time.
+        /// The end time for the history query in Unix epoch format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -65,7 +65,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ExecutionStatuses. 
         /// <para>
-        /// Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).
+        /// An array of execution statuses to filter the history results. Only executions with
+        /// the specified statuses are returned.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -88,7 +89,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name or ARN of the scheduled query to retrieve history for.
+        /// The ARN or name of the scheduled query to retrieve history for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,7 +108,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of history records to return in a single call.
+        /// The maximum number of history records to return. Valid range is 1 to 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -142,7 +143,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time for the history retrieval window in Unix epoch time.
+        /// The start time for the history query in Unix epoch format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

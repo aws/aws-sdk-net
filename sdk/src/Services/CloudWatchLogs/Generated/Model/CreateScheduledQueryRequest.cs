@@ -31,8 +31,10 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScheduledQuery operation.
-    /// Creates a new Scheduled Query that runs CloudWatch Logs Insights queries on a schedule
-    /// and delivers results to specified destinations.
+    /// Creates a scheduled query that runs CloudWatch Logs Insights queries at regular intervals.
+    /// Scheduled queries enable proactive monitoring by automatically executing queries to
+    /// detect patterns and anomalies in your log data. Query results can be delivered to
+    /// Amazon S3 for analysis or further processing.
     /// </summary>
     public partial class CreateScheduledQueryRequest : AmazonCloudWatchLogsRequest
     {
@@ -54,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// An optional description for the scheduled query to help identify its purpose.
+        /// An optional description for the scheduled query to help identify its purpose and functionality.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -73,8 +75,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationConfiguration. 
         /// <para>
-        /// Configuration for destinations where the query results will be delivered after successful
-        /// execution. You can configure delivery to S3 buckets or EventBridge event buses.
+        /// Configuration for where to deliver query results. Currently supports Amazon S3 destinations
+        /// for storing query output.
         /// </para>
         /// </summary>
         public DestinationConfiguration DestinationConfiguration
@@ -92,8 +94,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that CloudWatch Logs will assume to
-        /// execute the scheduled query and deliver results to the specified destinations.
+        /// The ARN of the IAM role that grants permissions to execute the query and deliver results
+        /// to the specified destination. The role must have permissions to read from the specified
+        /// log groups and write to the destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -112,9 +115,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupIdentifiers. 
         /// <para>
-        /// The log group identifiers to query. You can specify log group names or log group ARNs.
-        /// If querying log groups in a source account from a monitoring account, you must specify
-        /// the ARN of the log group.
+        /// An array of log group names or ARNs to query. You can specify between 1 and 50 log
+        /// groups. Log groups can be identified by name or full ARN.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -138,9 +140,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A unique name for the scheduled query within the region for an AWS account. The name
-        /// can contain letters, numbers, underscores, hyphens, forward slashes, periods, and
-        /// hash symbols.
+        /// The name of the scheduled query. The name must be unique within your account and region.
+        /// Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length
+        /// must be between 1 and 255 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -159,9 +161,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryLanguage. 
         /// <para>
-        /// The query language to use for the scheduled query. Valid values are LogsQL (CloudWatch
-        /// Logs Insights query language), PPL (OpenSearch Service Piped Processing Language),
-        /// and SQL (OpenSearch Service Structured Query Language).
+        /// The query language to use for the scheduled query. Valid values are <c>LogsQL</c>,
+        /// <c>PPL</c>, and <c>SQL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -180,8 +181,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The CloudWatch Logs Insights query string to execute. This is the actual query that
-        /// will be run against your log data on the specified schedule.
+        /// The query string to execute. This is the same query syntax used in CloudWatch Logs
+        /// Insights. Maximum length is 10,000 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
@@ -200,8 +201,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleEndTime. 
         /// <para>
-        /// The end time for the query schedule in Unix epoch time (seconds since January 1, 1970,
-        /// 00:00:00 UTC). If not specified, the schedule runs indefinitely.
+        /// The end time for the scheduled query in Unix epoch format. The query will stop executing
+        /// after this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -220,9 +221,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A cron expression that defines when the scheduled query runs. The format is cron(fields)
-        /// where fields consist of six space-separated values: minutes, hours, day_of_month,
-        /// month, day_of_week, year.
+        /// A cron expression that defines when the scheduled query runs. The expression uses
+        /// standard cron syntax and supports minute-level precision. Maximum length is 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -241,8 +241,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleStartTime. 
         /// <para>
-        /// The start time for the query schedule in Unix epoch time (seconds since January 1,
-        /// 1970, 00:00:00 UTC). If not specified, the schedule starts immediately.
+        /// The start time for the scheduled query in Unix epoch format. The query will not execute
+        /// before this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -261,8 +261,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTimeOffset. 
         /// <para>
-        /// Time offset in seconds from the execution time for the start of the query time range.
-        /// This defines the lookback period for the query (for example, 3600 for the last hour).
+        /// The time offset in seconds that defines the lookback period for the query. This determines
+        /// how far back in time the query searches from the execution time.
         /// </para>
         /// </summary>
         public long? StartTimeOffset
@@ -280,9 +280,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The initial state of the scheduled query. Valid values are ENABLED (the query will
-        /// run according to its schedule) and DISABLED (the query is paused and will not run).
-        /// If not provided, defaults to ENABLED.
+        /// The initial state of the scheduled query. Valid values are <c>ENABLED</c> and <c>DISABLED</c>.
+        /// Default is <c>ENABLED</c>.
         /// </para>
         /// </summary>
         public ScheduledQueryState State
@@ -300,12 +299,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An optional list of key-value pairs to associate with the resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services resources</a> 
+        /// Key-value pairs to associate with the scheduled query for resource management and
+        /// cost allocation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -329,8 +324,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The timezone in which the schedule expression is evaluated. If not provided, defaults
-        /// to UTC.
+        /// The timezone for evaluating the schedule expression. This determines when the scheduled
+        /// query executes relative to the specified timezone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -55,6 +55,7 @@ namespace Amazon.DataZone.Model
     {
         private string _domainIdentifier;
         private string _identifier;
+        private MetadataGenerationRunType _type;
 
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
@@ -93,6 +94,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the metadata generation run.
+        /// </para>
+        /// </summary>
+        public MetadataGenerationRunType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

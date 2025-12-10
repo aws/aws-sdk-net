@@ -594,6 +594,29 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostCategoryResourceAssociationsRequest.CostCategoryArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostCategoryResourceAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostCategoryResourceAssociationsRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostCategoryResourceAssociationsResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.ListSavingsPlansPurchaseRecommendationGenerationRequest.NextPageToken</property>
     <min>0</min>
     <max>8192</max>
@@ -1014,6 +1037,24 @@
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.CostCategoryReference.NumberOfRules</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostCategoryResourceAssociation.CostCategoryArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostCategoryResourceAssociation.CostCategoryName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostCategoryResourceAssociation.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.CostCategoryRule.Value</property>

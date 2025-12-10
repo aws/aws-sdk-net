@@ -43,7 +43,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The key in the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -62,7 +62,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The value in the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

@@ -110,6 +110,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Type);
             }
 
+            if(publicRequest.IsSetTypes())
+            {
+                context.Writer.WritePropertyName("types");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTypesListValue in publicRequest.Types)
+                {
+                        context.Writer.WriteStringValue(publicRequestTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

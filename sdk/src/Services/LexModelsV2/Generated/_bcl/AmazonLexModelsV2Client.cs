@@ -40,7 +40,8 @@ namespace Amazon.LexModelsV2
     /// <summary>
     /// <para>Implementation for accessing LexModelsV2</para>
     ///
-    /// 
+    /// Amazon Lex Model Building Service provides APIs for creating, managing, and deploying
+    /// conversational bots and their components.
     /// </summary>
     public partial class AmazonLexModelsV2Client : AmazonServiceClient, IAmazonLexModelsV2
     {

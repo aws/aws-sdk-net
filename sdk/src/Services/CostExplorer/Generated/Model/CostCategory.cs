@@ -48,7 +48,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        /// The unique identifier for your Cost Category. 
+        /// The unique identifier for your cost category. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -83,7 +83,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveEnd. 
         /// <para>
-        /// The effective end date of your Cost Category.
+        /// The effective end date of your cost category.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -102,7 +102,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveStart. 
         /// <para>
-        /// The effective start date of your Cost Category.
+        /// The effective start date of your cost category.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=25)]
@@ -162,7 +162,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Rules. 
         /// <para>
         /// The rules are processed in order. If there are multiple rules that match the line
-        /// item, then the first rule to match is used to determine that Cost Category value.
+        /// item, then the first rule to match is used to determine that cost category value.
         /// 
         /// </para>
         /// <para />
@@ -203,7 +203,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SplitChargeRules. 
         /// <para>
-        ///  The split charge rules that are used to allocate your charges between your Cost Category
+        ///  The split charge rules that are used to allocate your charges between your cost category
         /// values. 
         /// </para>
         /// <para />

@@ -56,6 +56,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("FlowConfig", targetDepth))
+                {
+                    var unmarshaller = FlowQuickConnectConfigUnmarshaller.Instance;
+                    unmarshalledObject.FlowConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PhoneConfig", targetDepth))
                 {
                     var unmarshaller = PhoneNumberQuickConnectConfigUnmarshaller.Instance;

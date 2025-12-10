@@ -1,3 +1,192 @@
+### 4.0.149.0 (2025-12-09 19:28 UTC)
+* Account (4.0.3.0)
+	* This release adds a new API (GetGovCloudAccountInformation) used to retrieve information about a linked GovCloud account from the standard AWS partition.
+* AppSync (4.0.3.0)
+	* Update Event API to require EventConfig parameter in creation and update requests.
+* GuardDuty (4.0.13.0)
+	* Adding support for Ec2LaunchTemplate Version field
+* IVSRealTime (4.0.5.0)
+	* Token Exchange introduces seamless token exchange capabilities for IVS RTX, enabling customers to upgrade or downgrade token capabilities and update token attributes within the IVS client SDK without forcing clients to disconnect and reconnect.
+* Mgn (4.0.3.0)
+	* Added parameters encryption, IPv4/IPv6 protocol configuration, and enhanced tagging support for replication operations.
+* Route53 (4.0.8.0)
+	* Amazon Route 53 now supports the EU (Germany) Region (eusc-de-east-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region
+
+### 4.0.148.0 (2025-12-08 19:39 UTC)
+* CostExplorer (4.0.10.0)
+	* Add support for Cost Category resource associations including filtering by resource type on ListCostCategoryDefinitions and new ListCostCategoryResourceAssociations API.
+* EC2 (4.0.62.0)
+	* Amazon EC2 P6-B300 instances provide 8x NVIDIA Blackwell Ultra GPUs with 2.1 TB high bandwidth GPU memory, 6.4 Tbps EFA networking, 300 Gbps dedicated ENA throughput, and 4 TB of system memory. Amazon EC2 C8a instances are powered by 5th Gen AMD EPYC processors with a maximum frequency of 4.5 GHz.
+* IAMRolesAnywhere (4.0.3.0)
+	* Increases certificate string length for trust anchor source data to support ML-DSA certificates.
+* IdentityStore (4.0.4.0)
+	* Updating AWS Identity Store APIs to support Attribute Extensions capability, with the first release adding Enterprise Attributes. This launch aligns Identity Store APIs with SCIM for enterprise attributes, reducing cases when customers are forced to use SCIM due to lack of SigV4 API support.
+* PartnerCentralSelling (4.0.6.0)
+	* Deal Sizing Service for AI-based deal size estimation with AWS service-level breakdown, supporting Expansion and Migration deals across Technology, and Reseller partner cohorts, including Pricing Calculator AddOn for MAP deals and funding incentives.
+* RDS (4.0.15.0)
+	* Adding support for tagging RDS Instance/Cluster Automated Backups
+* RedshiftServerless (4.0.3.0)
+	* Added GetIdentityCenterAuthToken API to retrieve encrypted authentication tokens for Identity Center integrated serverless workgroups. This API enables programmatic access to secure Identity Center tokens with proper error handling and parameter validation across supported SDK languages.
+* SimpleEmailV2 (4.0.9.0)
+	* Update Mail Manager Archive ARN validation
+
+### 4.0.147.0 (2025-12-05 19:23 UTC)
+* DynamoDBv2 (4.0.10.2)
+	* Fix `UpdateItem` not to throw an error when `ExpressionAttributeValues` is empty (https://github.com/aws/aws-sdk-net/issues/4144)
+* ECS (4.0.10.2)
+	* Updating stop-task API to encapsulate containers with custom stop signal
+* IdentityManagement (4.0.9.0)
+	* Adding the ExpirationTime attribute to the delegation request resource.
+* Inspector2 (4.0.8.0)
+	* This release adds a new ScanStatus called "Unsupported Code Artifacts". This ScanStatus will be returned when a Lambda function was not code scanned because it has unsupported code artifacts.
+* PartnerCentralAccount (4.0.1.0)
+	* Adding Verification API's to Partner Central Account SDK.
+* S3 (4.0.14.1)
+	* The following changes are a result of moving S3 from custom code to generated code based on the model provided by S3:
+	* [Breaking Change] The method isSetS3BucketDestination() in Amazon.S3.Model.InventoryDestination has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The method isSetAccountId() in Amazon.S3.Model.InventoryS3BucketDestination has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The method IsSetInventoryConfigurationList() in Amazon.S3.Model.ListBucketInventoryConfigurationsResponse has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The setter for Days in Amazon.S3.Model.RecordExpiration has been changed from int to int? to be consistent with the nullability changes in V4.
+	* Generates Put, Get, Delete, and ListBucketInventoryConfiguration. Generate PutBucketAccelerateConfiguration, PutBucketRequestPayment, CreateBucketMetadataTableConfiguration, GetBucketMetadataConfiguration.
+* SimpleEmailV2 (4.0.8.0)
+	* Updating the desired url for `PutEmailIdentityDkimSigningAttributes` from v1 to v2
+* Core 4.0.3.4
+	* Add user agent header to ResponseMetadata
+	* All service and extension packages updated to require new Core
+
+### 4.0.146.0 (2025-12-04 17:01 UTC)
+* Lambda (4.0.11.0)
+	* Add DisallowedByVpcEncryptionControl to the LastUpdateStatusReasonCode and StateReasonCode enums to represent failures caused by VPC Encryption Controls.
+
+### 4.0.145.0 (2025-12-03 16:47 UTC)
+* Bedrock (4.0.17.0)
+	* Adding support in Amazon Bedrock to customize models with reinforcement fine-tuning (RFT) and support for updating the existing Custom Model Deployments.
+* SageMaker (4.0.38.0)
+	* Introduces Serverless training: A fully managed compute infrastructure that abstracts away all infrastructure complexity, allowing you to focus purely on model development.
+
+Added AI model customization assets used to train, refine, and evaluate custom models during the model customization process.
+
+### 4.0.144.0 (2025-12-02 16:43 UTC)
+* Bedrock (4.0.16.0)
+	* Adds the audioDataDeliveryEnabled boolean field to the Model Invocation Logging Configuration.
+* BedrockAgentCore (4.0.8.0)
+	* Support for AgentCore Evaluations and Episodic memory strategy for AgentCore Memory.
+* BedrockAgentCoreControl (4.0.12.0)
+	* Supports AgentCore Evaluations, Policy, Episodic Memory Strategy, Resource Based Policy for Runtime and Gateway APIs, API Gateway Rest API Targets and enhances JWT authorizer.
+* BedrockRuntime (4.0.14.0)
+	* Adds support for Audio Blocks and Streaming Image Output plus new Stop Reasons of malformed_model_output and malformed_tool_use.
+* CloudWatchLogs (4.0.13.0)
+	* CloudWatch Logs adds managed S3 Tables integration to access logs using other analytical tools, as well as facets and field indexing to simplify log analytics in CloudWatch Logs Insights.
+* CostExplorer (4.0.9.0)
+	* This release updates existing Savings Plans Purchase Analyzer and Recommendations APIs to support Database Savings Plans.
+* DataZone (4.0.17.0)
+	* Amazon DataZone now supports exporting Catalog datasets as Amazon S3 tables, and provides automatic business glossary term suggestions for data assets.
+* FSx (4.0.9.0)
+	* S3 Access Points support for FSx for NetApp ONTAP
+* GuardDuty (4.0.12.0)
+	* Adding support for extended threat detection for Amazon EC2 and Amazon ECS. Adding support for wild card suppression rules.
+* Lambda (4.0.10.0)
+	* Launching Lambda durable functions - a new feature to build reliable multi-step applications and AI workflows natively within the Lambda developer experience.
+* NovaAct (4.0.0.0)
+	* Initial release of Nova Act SDK. The Nova Act service enables customers to build and manage fleets of agents for automating production UI workflows with high reliability, fastest time-to-value, and ease of implementation at scale.
+* ObservabilityAdmin (4.0.5.0)
+	* CloudWatch Observability Admin adds pipelines configuration for third party log ingestion and transformation of all logs ingested, integration of CloudWatch logs with S3 Tables, and AWS account or organization level enablement for 7 AWS services.
+* OpenSearchServerless (4.0.5.0)
+	* GPU-acceleration helps you build large-scale vector databases faster and more efficiently. You can enable this feature on new OpenSearch domains and OpenSearch Serverless collections. This feature uses GPU-acceleration to reduce the time needed to index data into vector indexes.
+* OpenSearchService (4.0.7.0)
+	* GPU-acceleration helps you build large-scale vector databases faster and more efficiently. You can enable this feature on new OpenSearch domains and OpenSearch Serverless collections. This feature uses GPU-acceleration to reduce the time needed to index data into vector indexes.
+* RDS (4.0.14.0)
+	* RDS Oracle and SQL Server: Add support for adding, modifying, and removing additional storage volumes, offering up to 256TiB storage; RDS SQL Server: Support Developer Edition via custom engine versions for development and testing purposes; M7i/R7i instances with Optimize CPU for cost savings.
+* S3 (4.0.14.0)
+	* New S3 Storage Class FSX_ONTAP
+* S3Control (4.0.8.0)
+	* Add support for S3 Storage Lens Advanced Performance Metrics, Expanded Prefixes metrics report, and export to S3 Tables.
+* S3Tables (4.0.8.0)
+	* Add storage class, replication, and table record expiration features to S3 Tables.
+* S3Vectors (4.0.4.0)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
+* SageMaker (4.0.37.0)
+	* Added support for serverless MLflow Apps.
+
+Added support for new HubContentTypes (DataSet and JsonDoc) in Private Hub for AI model customization assets, enabling tracking and management of training datasets and evaluators (reward functions/prompts) throughout the ML lifecycle.
+* SavingsPlans (4.0.4.0)
+	* Added support for Amazon Database Savings Plans
+* SecurityHub (4.0.7.0)
+	* ITSM enhancements: DRYRUN mode for testing ticket creation, ServiceNow now uses AWS Secrets Manager for credentials, ConnectorRegistrationsV2 renamed to RegisterConnectorV2, added ServiceQuotaExceededException error, and ConnectorStatus visibility in CreateConnectorV2.
+
+### 4.0.143.0 (2025-12-01 01:44 UTC)
+* AppIntegrationsService (4.0.4.0)
+	* This release adds support for MCP servers via the ApplicationType field, allowing customers to register their Bedrock AgentCore gateways as third party applications.
+* BedrockAgent (4.0.7.0)
+	* Support audio and video ingestion on Bedrock Knowledge Bases.
+* BedrockAgentRuntime (4.0.8.0)
+	* Support audio and video content retrieval on Bedrock Knowledge Bases.
+* CleanRooms (4.0.11.0)
+	* AWS Clean Rooms now supports privacy-enhancing synthetic dataset generation for custom ML training.
+* CleanRoomsML (4.0.7.0)
+	* AWS Clean Rooms ML now supports privacy-enhancing synthetic dataset generation for custom ML training.
+* Connect (4.0.20.0)
+	* This is a combined re:Invent release for Amazon Connect.
+* ConnectCampaignsV2 (4.0.5.0)
+	* This release added support for new WhatsApp channel and Journey type outbound campaign
+* ConnectParticipant (4.0.4.0)
+	* Amazon Connect now supports message processing that intercepts and processes chat messages before they reach any participant.
+* CustomerProfiles (4.0.7.0)
+	* This release introduces, CRUD APIs for the DomainObjectType and Recommender resources, APIs to offer statistical insights on Object Type Attributes, Changes to SegmentDefinition APIs to support SQL queries to create Segments, and Changes to Domain APIs to support Data Store.
+* EKS (4.0.9.0)
+	* This release adds support for EKS Capabilities
+* Glue (4.0.23.0)
+	* feature: Glue: Add support for Iceberg materialized view in Glue Data Catalog, including updated CreateTable API to support materialized views and new APIs for managing data refresh for materialized views.
+feature: Glue: Add support for Iceberg table encryption keys and struct field defaults.
+* Lambda (4.0.9.0)
+	* Launching Lambda Managed Instances - a new feature to run Lambda on EC2.
+* LexModelsV2 (4.0.5.0)
+	* Adds support for speech-to-speech models for human-like, adaptive, and expressive voice interactions. Also adds support for speech model preference, allowing customers to select which speech model they want to use for speech-to-text requests.
+* MarketplaceAgreement (4.0.3.0)
+	* This release supports 1/multi-product transactions via offer sets. DescribeAgreement and SearchAgreements APIs now return offer set IDs. SearchAgreements also supports filtering by offer set ID and 2/variable payment pricing terms will be returned through GetAgreementTerms.
+* MarketplaceCatalog (4.0.4.0)
+	* This release introduces offer set entity in AWS Marketplace Catalog API to enable multi-product transaction. Offer set enables sellers to group multiple private offers into a single-click purchase experience, simplifying procurement for customers purchasing multi-product solutions.
+* PartnerCentralAccount (4.0.0.0)
+	* Initial GA launch of Partner Central Account
+* PartnerCentralBenefits (4.0.0.0)
+	* Initial GA launch of Partner Central Benefits
+* PartnerCentralSelling (4.0.5.0)
+	* New Features:
+Lead Management APIs for capturing and nurturing leads
+Lead invitation support for partner collaboration
+Lead-to-opportunity conversion operations
+AWS Marketplace OfferSets support for opportunities
+* Personalize (4.0.3.0)
+	* This release adds support for includedDatasetColumns and performIncrementalUpdate in solution APIs, and rankingInfluence in campaign and batch inference APIs.
+* QConnect (4.0.5.0)
+	* New AIAgent types: Orchestration for ModelContextProtocol tool integration, CaseSummary for Amazon Connect Case summaries, NoteTaker for Agent Assistance notes. Added ListSpans and Retrieve APIs. Enhanced Q in Connect AssistantAssociationType to support Bring Your Own Bedrock Knowledge Bases.
+* Route53GlobalResolver (4.0.0.0)
+	* Add SDK for Amazon Route 53 Global Resolver, a fully managed DNS resolver service that offers broad DNS-filtering security controls.
+
+### 4.0.142.0 (2025-11-26 19:16 UTC)
+* BedrockRuntime (4.0.13.0)
+	* Bedrock Runtime Reserved Service Support
+* ComputeOptimizer (4.0.4.0)
+	* Compute Optimizer now identifies idle NAT Gateway resources for cost optimization based on traffic patterns and backup configuration analysis. Access recommendations via the GetIdleRecommendations API.
+* CostOptimizationHub (4.0.6.0)
+	* This release enables AWS Cost Optimization Hub to show cost optimization recommendations for NAT Gateway.
+
+### 4.0.141.0 (2025-11-25 19:21 UTC)
+* EC2 (4.0.61.0)
+	* This release adds support to view Network firewall proxy appliances attached to an existing NAT Gateway via DescribeNatGateways API NatGatewayAttachedAppliance structure.
+* NetworkFirewall (4.0.10.0)
+	* Network Firewall release of the Proxy feature.
+* Organizations (4.0.9.0)
+	* Add support for policy operations on the S3_POLICY and BEDROCK_POLICY policy type.
+* Route53 (4.0.7.0)
+	* Adds support for new route53 feature: accelerated recovery.
+
+### 4.0.140.0 (2025-11-24 19:14 UTC)
+* CloudFront (4.0.10.0)
+	* Add TrustStore, ConnectionFunction APIs to CloudFront SDK
+* CloudWatchLogs (4.0.12.0)
+	* New CloudWatch Logs feature - LogGroup Deletion Protection, a capability that allows customers to safeguard their critical CloudWatch log groups from accidental or unintended deletion.
+
 ### 4.0.139.0 (2025-11-21 21:17 UTC)
 * APIGateway (4.0.5.0)
 	* API Gateway supports VPC link V2 for REST APIs.

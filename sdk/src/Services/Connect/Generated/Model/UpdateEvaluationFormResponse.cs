@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         /// The version of the updated evaluation form resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int? EvaluationFormVersion
         {
             get { return this._evaluationFormVersion; }

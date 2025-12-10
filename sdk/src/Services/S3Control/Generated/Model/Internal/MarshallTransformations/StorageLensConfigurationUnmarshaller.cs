@@ -80,6 +80,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Exclude = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExpandedPrefixesDataExport", targetDepth))
+                    {
+                        var unmarshaller = StorageLensExpandedPrefixesDataExportUnmarshaller.Instance;
+                        unmarshalledObject.ExpandedPrefixesDataExport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Id", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -96,6 +102,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PrefixDelimiter", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrefixDelimiter = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StorageLensArn", targetDepth))

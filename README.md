@@ -664,6 +664,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release adds support for AWS User Notifications. You can now configure and view notifications from AWS services in a central location using the AWS SDK.
 * [AWSSDK.NotificationsContacts](https://www.nuget.org/packages/AWSSDK.NotificationsContacts/)
 	* This release adds support for AWS User Notifications Contacts. You can now configure and view email contacts for AWS User Notifications using the AWS SDK.
+* [AWSSDK.NovaAct](https://www.nuget.org/packages/AWSSDK.NovaAct/)
+	* Initial release of Nova Act SDK. The Nova Act service enables customers to build and manage fleets of agents for automating production UI workflows with high reliability, fastest time-to-value, and ease of implementation at scale.
 * [AWSSDK.OAM](https://www.nuget.org/packages/AWSSDK.OAM/)
 	* Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.
 * [AWSSDK.ObservabilityAdmin](https://www.nuget.org/packages/AWSSDK.ObservabilityAdmin/)
@@ -684,6 +686,10 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This is the initial release for AWS Outposts, a fully managed service that extends AWS infrastructure, services, APIs, and tools to customer sites. AWS Outposts enables you to launch and run EC2 instances and EBS volumes locally at your on-premises location. This release introduces new APIs for creating and viewing Outposts. 
 * [AWSSDK.Panorama](https://www.nuget.org/packages/AWSSDK.Panorama/)
 	* General availability for AWS Panorama. AWS SDK for Panorama includes APIs to manage your devices and nodes, and deploy computer vision applications to the edge. For more information, see the AWS Panorama documentation at http://docs.aws.amazon.com/panorama
+* [AWSSDK.PartnerCentralAccount](https://www.nuget.org/packages/AWSSDK.PartnerCentralAccount/)
+	* Initial GA launch of Partner Central Account
+* [AWSSDK.PartnerCentralBenefits](https://www.nuget.org/packages/AWSSDK.PartnerCentralBenefits/)
+	* Initial GA launch of Partner Central Benefits
 * [AWSSDK.PartnerCentralChannel](https://www.nuget.org/packages/AWSSDK.PartnerCentralChannel/)
 	* Initial GA launch of Partner Central Channel
 * [AWSSDK.PartnerCentralSelling](https://www.nuget.org/packages/AWSSDK.PartnerCentralSelling/)
@@ -762,6 +768,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
 * [AWSSDK.Route53Domains](https://www.nuget.org/packages/AWSSDK.Route53Domains/)
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
+* [AWSSDK.Route53GlobalResolver](https://www.nuget.org/packages/AWSSDK.Route53GlobalResolver/)
+	* Add SDK for Amazon Route 53 Global Resolver, a fully managed DNS resolver service that offers broad DNS-filtering security controls.
 * [AWSSDK.Route53Profiles](https://www.nuget.org/packages/AWSSDK.Route53Profiles/)
 	* Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.
 * [AWSSDK.Route53RecoveryCluster](https://www.nuget.org/packages/AWSSDK.Route53RecoveryCluster/)

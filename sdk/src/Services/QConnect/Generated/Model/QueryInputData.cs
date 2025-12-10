@@ -34,8 +34,27 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class QueryInputData
     {
+        private CaseSummarizationInputData _caseSummarizationInputData;
         private IntentInputData _intentInputData;
         private QueryTextInputData _queryTextInputData;
+
+        /// <summary>
+        /// Gets and sets the property CaseSummarizationInputData. 
+        /// <para>
+        /// Input data for case summarization queries.
+        /// </para>
+        /// </summary>
+        public CaseSummarizationInputData CaseSummarizationInputData
+        {
+            get { return this._caseSummarizationInputData; }
+            set { this._caseSummarizationInputData = value; }
+        }
+
+        // Check to see if CaseSummarizationInputData property is set
+        internal bool IsSetCaseSummarizationInputData()
+        {
+            return this._caseSummarizationInputData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IntentInputData. 

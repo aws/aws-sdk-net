@@ -10555,6 +10555,54 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7iXlarge = new InstanceType("c7i.xlarge");
         /// <summary>
+        /// Constant C8a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a12xlarge = new InstanceType("c8a.12xlarge");
+        /// <summary>
+        /// Constant C8a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a16xlarge = new InstanceType("c8a.16xlarge");
+        /// <summary>
+        /// Constant C8a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a24xlarge = new InstanceType("c8a.24xlarge");
+        /// <summary>
+        /// Constant C8a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a2xlarge = new InstanceType("c8a.2xlarge");
+        /// <summary>
+        /// Constant C8a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a48xlarge = new InstanceType("c8a.48xlarge");
+        /// <summary>
+        /// Constant C8a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a4xlarge = new InstanceType("c8a.4xlarge");
+        /// <summary>
+        /// Constant C8a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8a8xlarge = new InstanceType("c8a.8xlarge");
+        /// <summary>
+        /// Constant C8aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aLarge = new InstanceType("c8a.large");
+        /// <summary>
+        /// Constant C8aMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aMedium = new InstanceType("c8a.medium");
+        /// <summary>
+        /// Constant C8aMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aMetal24xl = new InstanceType("c8a.metal-24xl");
+        /// <summary>
+        /// Constant C8aMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aMetal48xl = new InstanceType("c8a.metal-48xl");
+        /// <summary>
+        /// Constant C8aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8aXlarge = new InstanceType("c8a.xlarge");
+        /// <summary>
         /// Constant C8g12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C8g12xlarge = new InstanceType("c8g.12xlarge");
@@ -12634,6 +12682,10 @@ namespace Amazon.EC2
         /// Constant P6B20048xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType P6B20048xlarge = new InstanceType("p6-b200.48xlarge");
+        /// <summary>
+        /// Constant P6B30048xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P6B30048xlarge = new InstanceType("p6-b300.48xlarge");
         /// <summary>
         /// Constant P6eGb20036xlarge for InstanceType
         /// </summary>
@@ -19154,6 +19206,172 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NatGatewayAddressStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NatGatewayApplianceModifyState.
+    /// </summary>
+    public class NatGatewayApplianceModifyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for NatGatewayApplianceModifyState
+        /// </summary>
+        public static readonly NatGatewayApplianceModifyState Completed = new NatGatewayApplianceModifyState("completed");
+        /// <summary>
+        /// Constant Failed for NatGatewayApplianceModifyState
+        /// </summary>
+        public static readonly NatGatewayApplianceModifyState Failed = new NatGatewayApplianceModifyState("failed");
+        /// <summary>
+        /// Constant Modifying for NatGatewayApplianceModifyState
+        /// </summary>
+        public static readonly NatGatewayApplianceModifyState Modifying = new NatGatewayApplianceModifyState("modifying");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NatGatewayApplianceModifyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewayApplianceModifyState FindValue(string value)
+        {
+            return FindValue<NatGatewayApplianceModifyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewayApplianceModifyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NatGatewayApplianceState.
+    /// </summary>
+    public class NatGatewayApplianceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Attached for NatGatewayApplianceState
+        /// </summary>
+        public static readonly NatGatewayApplianceState Attached = new NatGatewayApplianceState("attached");
+        /// <summary>
+        /// Constant AttachFailed for NatGatewayApplianceState
+        /// </summary>
+        public static readonly NatGatewayApplianceState AttachFailed = new NatGatewayApplianceState("attach-failed");
+        /// <summary>
+        /// Constant Attaching for NatGatewayApplianceState
+        /// </summary>
+        public static readonly NatGatewayApplianceState Attaching = new NatGatewayApplianceState("attaching");
+        /// <summary>
+        /// Constant Detached for NatGatewayApplianceState
+        /// </summary>
+        public static readonly NatGatewayApplianceState Detached = new NatGatewayApplianceState("detached");
+        /// <summary>
+        /// Constant DetachFailed for NatGatewayApplianceState
+        /// </summary>
+        public static readonly NatGatewayApplianceState DetachFailed = new NatGatewayApplianceState("detach-failed");
+        /// <summary>
+        /// Constant Detaching for NatGatewayApplianceState
+        /// </summary>
+        public static readonly NatGatewayApplianceState Detaching = new NatGatewayApplianceState("detaching");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NatGatewayApplianceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewayApplianceState FindValue(string value)
+        {
+            return FindValue<NatGatewayApplianceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewayApplianceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NatGatewayApplianceType.
+    /// </summary>
+    public class NatGatewayApplianceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NetworkFirewallProxy for NatGatewayApplianceType
+        /// </summary>
+        public static readonly NatGatewayApplianceType NetworkFirewallProxy = new NatGatewayApplianceType("network-firewall-proxy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NatGatewayApplianceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewayApplianceType FindValue(string value)
+        {
+            return FindValue<NatGatewayApplianceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewayApplianceType(string value)
         {
             return FindValue(value);
         }

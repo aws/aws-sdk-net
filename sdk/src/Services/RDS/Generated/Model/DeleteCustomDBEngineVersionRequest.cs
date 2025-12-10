@@ -71,7 +71,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database engine. RDS Custom for Oracle supports the following values:
+        /// The database engine.
+        /// </para>
+        ///  
+        /// <para>
+        /// RDS Custom for Oracle supports the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -89,7 +93,30 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <c>custom-oracle-se2-cdb</c> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// RDS Custom for SQL Server supports the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>custom-sqlserver-ee</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-sqlserver-se</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ccustom-sqlserver-web</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-sqlserver-dev</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// RDS for SQL Server supports only <c>sqlserver-dev-ee</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]
         public string Engine

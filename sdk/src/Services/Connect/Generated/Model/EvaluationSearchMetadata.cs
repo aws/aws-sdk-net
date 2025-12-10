@@ -42,7 +42,11 @@ namespace Amazon.Connect.Model
         private string _calibrationSessionId;
         private string _contactAgentId;
         private string _contactId;
+        private string _contactParticipantId;
+        private ContactParticipantRole _contactParticipantRole;
         private string _evaluatorArn;
+        private string _reviewId;
+        private string _samplingJobId;
         private bool? _scoreAutomaticFail;
         private bool? _scoreNotApplicable;
         private double? _scorePercentage;
@@ -196,6 +200,43 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContactParticipantId. 
+        /// <para>
+        /// Identifier for a contact participant in the evaluation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string ContactParticipantId
+        {
+            get { return this._contactParticipantId; }
+            set { this._contactParticipantId = value; }
+        }
+
+        // Check to see if ContactParticipantId property is set
+        internal bool IsSetContactParticipantId()
+        {
+            return this._contactParticipantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactParticipantRole. 
+        /// <para>
+        /// Role of a contact participant in the evaluation.
+        /// </para>
+        /// </summary>
+        public ContactParticipantRole ContactParticipantRole
+        {
+            get { return this._contactParticipantRole; }
+            set { this._contactParticipantRole = value; }
+        }
+
+        // Check to see if ContactParticipantRole property is set
+        internal bool IsSetContactParticipantRole()
+        {
+            return this._contactParticipantRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EvaluatorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the person who evaluated the contact.
@@ -212,6 +253,44 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvaluatorArn()
         {
             return this._evaluatorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewId. 
+        /// <para>
+        /// Identifier for the review.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string ReviewId
+        {
+            get { return this._reviewId; }
+            set { this._reviewId = value; }
+        }
+
+        // Check to see if ReviewId property is set
+        internal bool IsSetReviewId()
+        {
+            return this._reviewId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamplingJobId. 
+        /// <para>
+        /// Identifier of the sampling job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string SamplingJobId
+        {
+            get { return this._samplingJobId; }
+            set { this._samplingJobId = value; }
+        }
+
+        // Check to see if SamplingJobId property is set
+        internal bool IsSetSamplingJobId()
+        {
+            return this._samplingJobId != null;
         }
 
         /// <summary>

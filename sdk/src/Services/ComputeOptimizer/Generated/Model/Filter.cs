@@ -118,7 +118,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <ul> <li> 
         /// <para>
         /// Specify <c>Optimized</c> or <c>NotOptimized</c> if you specify the <c>name</c> parameter
-        /// as <c>Finding</c> and you want to filter results for Auto Scaling groups.
+        /// as <c>Finding</c> and you want to filter results for Amazon EC2 Auto Scaling groups.
         /// </para>
         ///  </li> <li> 
         /// <para>

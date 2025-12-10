@@ -31,8 +31,8 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCostCategoryDefinition operation.
-    /// Deletes a Cost Category. Expenses from this month going forward will no longer be
-    /// categorized with this Cost Category.
+    /// Deletes a cost category. Expenses from this month going forward will no longer be
+    /// categorized with this cost category.
     /// </summary>
     public partial class DeleteCostCategoryDefinitionRequest : AmazonCostExplorerRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        /// The unique identifier for your Cost Category. 
+        /// The unique identifier for your cost category. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

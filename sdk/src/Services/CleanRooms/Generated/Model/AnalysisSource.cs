@@ -61,7 +61,7 @@ namespace Amazon.CleanRooms.Model
         /// The query text.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=90000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500000)]
         public string Text
         {
             get { return this._text; }

@@ -34,10 +34,29 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class QuickConnectConfig
     {
+        private FlowQuickConnectConfig _flowConfig;
         private PhoneNumberQuickConnectConfig _phoneConfig;
         private QueueQuickConnectConfig _queueConfig;
         private QuickConnectType _quickConnectType;
         private UserQuickConnectConfig _userConfig;
+
+        /// <summary>
+        /// Gets and sets the property FlowConfig. 
+        /// <para>
+        ///  Flow configuration for quick connect setup. 
+        /// </para>
+        /// </summary>
+        public FlowQuickConnectConfig FlowConfig
+        {
+            get { return this._flowConfig; }
+            set { this._flowConfig = value; }
+        }
+
+        // Check to see if FlowConfig property is set
+        internal bool IsSetFlowConfig()
+        {
+            return this._flowConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PhoneConfig. 

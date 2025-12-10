@@ -81,6 +81,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.PerformAutoTraining.Value);
             }
 
+            if(publicRequest.IsSetPerformIncrementalUpdate())
+            {
+                context.Writer.WritePropertyName("performIncrementalUpdate");
+                context.Writer.WriteBooleanValue(publicRequest.PerformIncrementalUpdate.Value);
+            }
+
             if(publicRequest.IsSetSolutionArn())
             {
                 context.Writer.WritePropertyName("solutionArn");

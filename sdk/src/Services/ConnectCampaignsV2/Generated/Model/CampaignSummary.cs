@@ -41,6 +41,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         private string _id;
         private string _name;
         private Schedule _schedule;
+        private ExternalCampaignType _type;
 
         /// <summary>
         /// Gets and sets the property Arn.
@@ -156,6 +157,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type.
+        /// </summary>
+        public ExternalCampaignType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

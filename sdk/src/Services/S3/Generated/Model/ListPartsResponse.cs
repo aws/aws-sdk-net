@@ -173,7 +173,7 @@ namespace Amazon.S3.Model
         /// Container element that identifies who initiated the multipart upload. If the initiator
         /// is an Amazon Web Services account, this element provides the same information as the
         /// <c>Owner</c> element. If the initiator is an IAM User, this element provides the user
-        /// ARN and display name.
+        /// ARN.
         /// </para>
         /// </summary>
         public Initiator Initiator
@@ -270,7 +270,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// Container element that identifies the object owner, after the object is created. If
         /// multipart upload is initiated by an IAM user, this element provides the parent account
-        /// ID and display name.
+        /// ID.
         /// </para>
         ///  <note> 
         /// <para>

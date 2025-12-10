@@ -43,6 +43,7 @@ namespace Amazon.CleanRooms.Model
         private string _name;
         private AnalysisSchema _schema;
         private AnalysisSource _source;
+        private SyntheticDataParameters _syntheticDataParameters;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -199,6 +200,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyntheticDataParameters. 
+        /// <para>
+        /// The parameters for generating synthetic data when running the analysis template.
+        /// </para>
+        /// </summary>
+        public SyntheticDataParameters SyntheticDataParameters
+        {
+            get { return this._syntheticDataParameters; }
+            set { this._syntheticDataParameters = value; }
+        }
+
+        // Check to see if SyntheticDataParameters property is set
+        internal bool IsSetSyntheticDataParameters()
+        {
+            return this._syntheticDataParameters != null;
         }
 
         /// <summary>

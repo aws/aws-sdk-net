@@ -31,8 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Can be used to define a list of preferred agents to target the contact to within the
-    /// queue.&#x2028; Note that agents must have the queue in their routing profile in order
-    /// to be offered the&#x2028; contact.
+    /// queue. Note that agents must have the queue in their routing profile in order to be
+    /// offered the contact.
     /// </summary>
     public partial class AgentsCriteria
     {

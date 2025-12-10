@@ -96,6 +96,12 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
+        /// The <c>GetCostAndUsageWithResources</c> operation requires that you either group by
+        /// or filter by a <c>ResourceId</c>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// <c>"SERVICE = Amazon Elastic Compute Cloud - Compute"</c> in the filter.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid values for <c>MatchOptions</c> for <c>Dimensions</c> are <c>EQUALS</c> and <c>CASE_SENSITIVE</c>.
         /// </para>
         ///  

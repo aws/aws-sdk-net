@@ -1909,6 +1909,64 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type InputImageFormat.
+    /// </summary>
+    public class InputImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gif for InputImageFormat
+        /// </summary>
+        public static readonly InputImageFormat Gif = new InputImageFormat("gif");
+        /// <summary>
+        /// Constant Jpeg for InputImageFormat
+        /// </summary>
+        public static readonly InputImageFormat Jpeg = new InputImageFormat("jpeg");
+        /// <summary>
+        /// Constant Png for InputImageFormat
+        /// </summary>
+        public static readonly InputImageFormat Png = new InputImageFormat("png");
+        /// <summary>
+        /// Constant Webp for InputImageFormat
+        /// </summary>
+        public static readonly InputImageFormat Webp = new InputImageFormat("webp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputImageFormat FindValue(string value)
+        {
+            return FindValue<InputImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputQueryType.
     /// </summary>
     public class InputQueryType : ConstantClass
@@ -2010,6 +2068,56 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KnowledgeBaseQueryType.
+    /// </summary>
+    public class KnowledgeBaseQueryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMAGE for KnowledgeBaseQueryType
+        /// </summary>
+        public static readonly KnowledgeBaseQueryType IMAGE = new KnowledgeBaseQueryType("IMAGE");
+        /// <summary>
+        /// Constant TEXT for KnowledgeBaseQueryType
+        /// </summary>
+        public static readonly KnowledgeBaseQueryType TEXT = new KnowledgeBaseQueryType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KnowledgeBaseQueryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KnowledgeBaseQueryType FindValue(string value)
+        {
+            return FindValue<KnowledgeBaseQueryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KnowledgeBaseQueryType(string value)
         {
             return FindValue(value);
         }
@@ -3067,6 +3175,10 @@ namespace Amazon.BedrockAgentRuntime
     {
 
         /// <summary>
+        /// Constant AUDIO for RetrievalResultContentType
+        /// </summary>
+        public static readonly RetrievalResultContentType AUDIO = new RetrievalResultContentType("AUDIO");
+        /// <summary>
         /// Constant IMAGE for RetrievalResultContentType
         /// </summary>
         public static readonly RetrievalResultContentType IMAGE = new RetrievalResultContentType("IMAGE");
@@ -3078,6 +3190,10 @@ namespace Amazon.BedrockAgentRuntime
         /// Constant TEXT for RetrievalResultContentType
         /// </summary>
         public static readonly RetrievalResultContentType TEXT = new RetrievalResultContentType("TEXT");
+        /// <summary>
+        /// Constant VIDEO for RetrievalResultContentType
+        /// </summary>
+        public static readonly RetrievalResultContentType VIDEO = new RetrievalResultContentType("VIDEO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

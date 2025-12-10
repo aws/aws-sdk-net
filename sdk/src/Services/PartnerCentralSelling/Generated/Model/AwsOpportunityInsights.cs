@@ -35,8 +35,24 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class AwsOpportunityInsights
     {
+        private AwsProductsSpendInsightsBySource _awsProductsSpendInsightsBySource;
         private EngagementScore _engagementScore;
         private string _nextBestActions;
+
+        /// <summary>
+        /// Gets and sets the property AwsProductsSpendInsightsBySource.
+        /// </summary>
+        public AwsProductsSpendInsightsBySource AwsProductsSpendInsightsBySource
+        {
+            get { return this._awsProductsSpendInsightsBySource; }
+            set { this._awsProductsSpendInsightsBySource = value; }
+        }
+
+        // Check to see if AwsProductsSpendInsightsBySource property is set
+        internal bool IsSetAwsProductsSpendInsightsBySource()
+        {
+            return this._awsProductsSpendInsightsBySource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EngagementScore. 

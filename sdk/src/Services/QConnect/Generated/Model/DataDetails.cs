@@ -34,6 +34,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class DataDetails
     {
+        private CaseSummarizationChunkDataDetails _caseSummarizationChunkData;
         private ContentDataDetails _contentData;
         private EmailGenerativeAnswerChunkDataDetails _emailGenerativeAnswerChunkData;
         private EmailOverviewChunkDataDetails _emailOverviewChunkData;
@@ -41,7 +42,28 @@ namespace Amazon.QConnect.Model
         private GenerativeChunkDataDetails _generativeChunkData;
         private GenerativeDataDetails _generativeData;
         private IntentDetectedDataDetails _intentDetectedData;
+        private NotesChunkDataDetails _notesChunkData;
+        private NotesDataDetails _notesData;
         private SourceContentDataDetails _sourceContentData;
+        private SuggestedMessageDataDetails _suggestedMessageData;
+
+        /// <summary>
+        /// Gets and sets the property CaseSummarizationChunkData. 
+        /// <para>
+        /// Details about case summarization chunk data.
+        /// </para>
+        /// </summary>
+        public CaseSummarizationChunkDataDetails CaseSummarizationChunkData
+        {
+            get { return this._caseSummarizationChunkData; }
+            set { this._caseSummarizationChunkData = value; }
+        }
+
+        // Check to see if CaseSummarizationChunkData property is set
+        internal bool IsSetCaseSummarizationChunkData()
+        {
+            return this._caseSummarizationChunkData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContentData. 
@@ -171,6 +193,42 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotesChunkData. 
+        /// <para>
+        /// Details about notes chunk data.
+        /// </para>
+        /// </summary>
+        public NotesChunkDataDetails NotesChunkData
+        {
+            get { return this._notesChunkData; }
+            set { this._notesChunkData = value; }
+        }
+
+        // Check to see if NotesChunkData property is set
+        internal bool IsSetNotesChunkData()
+        {
+            return this._notesChunkData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotesData. 
+        /// <para>
+        /// Details about notes data.
+        /// </para>
+        /// </summary>
+        public NotesDataDetails NotesData
+        {
+            get { return this._notesData; }
+            set { this._notesData = value; }
+        }
+
+        // Check to see if NotesData property is set
+        internal bool IsSetNotesData()
+        {
+            return this._notesData != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceContentData. 
         /// <para>
         /// Details about the content data.
@@ -186,6 +244,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetSourceContentData()
         {
             return this._sourceContentData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuggestedMessageData. 
+        /// <para>
+        /// Details about suggested message data.
+        /// </para>
+        /// </summary>
+        public SuggestedMessageDataDetails SuggestedMessageData
+        {
+            get { return this._suggestedMessageData; }
+            set { this._suggestedMessageData = value; }
+        }
+
+        // Check to see if SuggestedMessageData property is set
+        internal bool IsSetSuggestedMessageData()
+        {
+            return this._suggestedMessageData != null;
         }
 
     }

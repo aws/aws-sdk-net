@@ -32,23 +32,24 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the ListCostCategoryDefinitions operation.
     /// Returns the name, Amazon Resource Name (ARN), <c>NumberOfRules</c> and effective dates
-    /// of all Cost Categories defined in the account. You have the option to use <c>EffectiveOn</c>
-    /// to return a list of Cost Categories that were active on a specific date. If there
-    /// is no <c>EffectiveOn</c> specified, you’ll see Cost Categories that are effective
-    /// on the current date. If Cost Category is still effective, <c>EffectiveEnd</c> is omitted
-    /// in the response. <c>ListCostCategoryDefinitions</c> supports pagination. The request
-    /// can have a <c>MaxResults</c> range up to 100.
+    /// of all cost categories defined in the account. You have the option to use <c>EffectiveOn</c>
+    /// and <c>SupportedResourceTypes</c> to return a list of cost categories that were active
+    /// on a specific date. If there is no <c>EffectiveOn</c> specified, you’ll see cost categories
+    /// that are effective on the current date. If cost category is still effective, <c>EffectiveEnd</c>
+    /// is omitted in the response. <c>ListCostCategoryDefinitions</c> supports pagination.
+    /// The request can have a <c>MaxResults</c> range up to 100.
     /// </summary>
     public partial class ListCostCategoryDefinitionsRequest : AmazonCostExplorerRequest
     {
         private string _effectiveOn;
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _supportedResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EffectiveOn. 
         /// <para>
-        /// The date when the Cost Category was effective. 
+        /// The date when the cost category was effective. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -102,6 +103,33 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedResourceTypes. 
+        /// <para>
+        ///  Filter cost category definitions that are supported by given resource types based
+        /// on the latest version. If the filter is present, the result only includes Cost Categories
+        /// that supports input resource type. If the filter isn't provided, no filtering is applied.
+        /// The valid values are <c>billing:rispgroupsharing</c>. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> SupportedResourceTypes
+        {
+            get { return this._supportedResourceTypes; }
+            set { this._supportedResourceTypes = value; }
+        }
+
+        // Check to see if SupportedResourceTypes property is set
+        internal bool IsSetSupportedResourceTypes()
+        {
+            return this._supportedResourceTypes != null && (this._supportedResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

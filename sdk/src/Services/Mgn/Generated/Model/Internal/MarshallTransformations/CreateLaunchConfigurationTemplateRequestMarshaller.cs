@@ -103,6 +103,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.EnableMapAutoTagging.Value);
             }
 
+            if(publicRequest.IsSetEnableParametersEncryption())
+            {
+                context.Writer.WritePropertyName("enableParametersEncryption");
+                context.Writer.WriteBooleanValue(publicRequest.EnableParametersEncryption.Value);
+            }
+
             if(publicRequest.IsSetLargeVolumeConf())
             {
                 context.Writer.WritePropertyName("largeVolumeConf");
@@ -135,6 +141,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("mapAutoTaggingMpeID");
                 context.Writer.WriteStringValue(publicRequest.MapAutoTaggingMpeID);
+            }
+
+            if(publicRequest.IsSetParametersEncryptionKey())
+            {
+                context.Writer.WritePropertyName("parametersEncryptionKey");
+                context.Writer.WriteStringValue(publicRequest.ParametersEncryptionKey);
             }
 
             if(publicRequest.IsSetPostLaunchActions())

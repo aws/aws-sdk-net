@@ -40,6 +40,7 @@ namespace Amazon.CloudFront.Model
         private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
+        private ConnectionFunctionAssociation _connectionFunctionAssociation;
         private ConnectionMode _connectionMode;
         private CustomErrorResponses _customErrorResponses;
         private DefaultCacheBehavior _defaultCacheBehavior;
@@ -57,6 +58,7 @@ namespace Amazon.CloudFront.Model
         private bool? _staging;
         private string _status;
         private ViewerCertificate _viewerCertificate;
+        private ViewerMtlsConfig _viewerMtlsConfig;
         private string _webACLId;
 
         /// <summary>
@@ -190,6 +192,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetComment()
         {
             return this._comment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionFunctionAssociation. 
+        /// <para>
+        /// The distribution's connection function association.
+        /// </para>
+        /// </summary>
+        public ConnectionFunctionAssociation ConnectionFunctionAssociation
+        {
+            get { return this._connectionFunctionAssociation; }
+            set { this._connectionFunctionAssociation = value; }
+        }
+
+        // Check to see if ConnectionFunctionAssociation property is set
+        internal bool IsSetConnectionFunctionAssociation()
+        {
+            return this._connectionFunctionAssociation != null;
         }
 
         /// <summary>
@@ -531,6 +551,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetViewerCertificate()
         {
             return this._viewerCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewerMtlsConfig. 
+        /// <para>
+        /// The distribution's viewer mTLS configuration.
+        /// </para>
+        /// </summary>
+        public ViewerMtlsConfig ViewerMtlsConfig
+        {
+            get { return this._viewerMtlsConfig; }
+            set { this._viewerMtlsConfig = value; }
+        }
+
+        // Check to see if ViewerMtlsConfig property is set
+        internal bool IsSetViewerMtlsConfig()
+        {
+            return this._viewerMtlsConfig != null;
         }
 
         /// <summary>

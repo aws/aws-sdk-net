@@ -118,6 +118,28 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.SpeechDetectionSensitivity);
             }
 
+            if(publicRequest.IsSetSpeechRecognitionSettings())
+            {
+                context.Writer.WritePropertyName("speechRecognitionSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SpeechRecognitionSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SpeechRecognitionSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUnifiedSpeechSettings())
+            {
+                context.Writer.WritePropertyName("unifiedSpeechSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UnifiedSpeechSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UnifiedSpeechSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetVoiceSettings())
             {
                 context.Writer.WritePropertyName("voiceSettings");

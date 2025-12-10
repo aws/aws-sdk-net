@@ -42,6 +42,12 @@ namespace Amazon.CostExplorer.Model
         /// </summary>
         public IPaginatedEnumerable<ListCostCategoryDefinitionsResponse> Responses => new PaginatedResponse<ListCostCategoryDefinitionsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the CostCategoryReferences
+        /// </summary>
+        public IPaginatedEnumerable<CostCategoryReference> CostCategoryReferences => 
+            new PaginatedResultKeyResponse<ListCostCategoryDefinitionsResponse, CostCategoryReference>(this, (i) => i.CostCategoryReferences ?? new List<CostCategoryReference>());
+
         internal ListCostCategoryDefinitionsPaginator(IAmazonCostExplorer client, ListCostCategoryDefinitionsRequest request)
         {
             this._client = client;

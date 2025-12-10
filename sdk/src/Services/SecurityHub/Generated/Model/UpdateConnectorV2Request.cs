@@ -31,34 +31,13 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConnectorV2 operation.
-    /// Grants permission to update a connectorV2 based on its id and input parameters. This
-    /// API is in public preview and subject to change.
+    /// Grants permission to update a connectorV2 based on its id and input parameters.
     /// </summary>
     public partial class UpdateConnectorV2Request : AmazonSecurityHubRequest
     {
-        private string _clientSecret;
         private string _connectorId;
         private string _description;
         private ProviderUpdateConfiguration _provider;
-
-        /// <summary>
-        /// Gets and sets the property ClientSecret. 
-        /// <para>
-        /// The clientSecret of ServiceNow.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ClientSecret
-        {
-            get { return this._clientSecret; }
-            set { this._clientSecret = value; }
-        }
-
-        // Check to see if ClientSecret property is set
-        internal bool IsSetClientSecret()
-        {
-            return this._clientSecret != null;
-        }
 
         /// <summary>
         /// Gets and sets the property ConnectorId. 

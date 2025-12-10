@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private Dictionary<string, string> _allowedAccessControlTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _arn;
         private string _description;
+        private GranularAccessControlConfiguration _granularAccessControlConfiguration;
         private List<string> _hierarchyRestrictedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _lastModifiedRegion;
@@ -126,6 +127,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GranularAccessControlConfiguration. 
+        /// <para>
+        /// The granular access control configuration for the security profile, including data
+        /// table permissions.
+        /// </para>
+        /// </summary>
+        public GranularAccessControlConfiguration GranularAccessControlConfiguration
+        {
+            get { return this._granularAccessControlConfiguration; }
+            set { this._granularAccessControlConfiguration = value; }
+        }
+
+        // Check to see if GranularAccessControlConfiguration property is set
+        internal bool IsSetGranularAccessControlConfiguration()
+        {
+            return this._granularAccessControlConfiguration != null;
         }
 
         /// <summary>

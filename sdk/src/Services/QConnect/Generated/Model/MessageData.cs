@@ -35,6 +35,7 @@ namespace Amazon.QConnect.Model
     public partial class MessageData
     {
         private TextMessage _text;
+        private ToolUseResultData _toolUseResult;
 
         /// <summary>
         /// Gets and sets the property Text. 
@@ -52,6 +53,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetText()
         {
             return this._text != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolUseResult. 
+        /// <para>
+        /// The result of tool usage in the message.
+        /// </para>
+        /// </summary>
+        public ToolUseResultData ToolUseResult
+        {
+            get { return this._toolUseResult; }
+            set { this._toolUseResult = value; }
+        }
+
+        // Check to see if ToolUseResult property is set
+        internal bool IsSetToolUseResult()
+        {
+            return this._toolUseResult != null;
         }
 
     }

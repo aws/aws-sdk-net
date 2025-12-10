@@ -40,6 +40,7 @@ namespace Amazon.IdentityStore.Model
         private string _createdBy;
         private string _displayName;
         private List<Email> _emails = AWSConfigs.InitializeCollections ? new List<Email>() : null;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _extensions = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private List<ExternalId> _externalIds = AWSConfigs.InitializeCollections ? new List<ExternalId>() : null;
         private string _identityStoreId;
         private string _locale;
@@ -180,6 +181,31 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetEmails()
         {
             return this._emails != null && (this._emails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// A map of explicitly requested attribute extensions associated with the user. Not populated
+        /// if the user has no requested extensions.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public Dictionary<string, Amazon.Runtime.Documents.Document> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

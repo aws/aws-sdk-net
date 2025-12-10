@@ -34,6 +34,25 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class DeleteFunctionResponse : AmazonWebServiceResponse
     {
+        private int? _statusCode;
+
+        /// <summary>
+        /// Gets and sets the property StatusCode. 
+        /// <para>
+        /// The HTTP status code returned by the operation.
+        /// </para>
+        /// </summary>
+        public int? StatusCode
+        {
+            get { return this._statusCode; }
+            set { this._statusCode = value; }
+        }
+
+        // Check to see if StatusCode property is set
+        internal bool IsSetStatusCode()
+        {
+            return this._statusCode.HasValue; 
+        }
 
     }
 }

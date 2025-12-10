@@ -39,6 +39,7 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? _createDate;
         private string _delegationRequestId;
         private string _description;
+        private DateTime? _expirationTime;
         private string _notes;
         private bool? _onlySendByOwner;
         private string _ownerAccountId;
@@ -126,6 +127,30 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpirationTime. 
+        /// <para>
+        /// The expiry time of this delegation request
+        /// </para>
+        ///  
+        /// <para>
+        /// See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
+        /// the Request Lifecycle</a> for details on the life time of a delegation request at
+        /// each state.
+        /// </para>
+        /// </summary>
+        public DateTime? ExpirationTime
+        {
+            get { return this._expirationTime; }
+            set { this._expirationTime = value; }
+        }
+
+        // Check to see if ExpirationTime property is set
+        internal bool IsSetExpirationTime()
+        {
+            return this._expirationTime.HasValue; 
         }
 
         /// <summary>
@@ -394,7 +419,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html">Understanding
+        /// See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
         /// the Request Lifecycle</a> for an explanation of how these states are transitioned.
         /// </para>
         /// </summary>

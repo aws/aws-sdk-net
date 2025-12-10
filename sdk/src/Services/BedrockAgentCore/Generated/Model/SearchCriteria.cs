@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class SearchCriteria
     {
         private string _memoryStrategyId;
+        private List<MemoryMetadataFilterExpression> _metadataFilters = AWSConfigs.InitializeCollections ? new List<MemoryMetadataFilterExpression>() : null;
         private string _searchQuery;
         private int? _topk;
 
@@ -55,6 +56,30 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetMemoryStrategyId()
         {
             return this._memoryStrategyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataFilters. 
+        /// <para>
+        /// Filters to apply to metadata associated with a memory.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<MemoryMetadataFilterExpression> MetadataFilters
+        {
+            get { return this._metadataFilters; }
+            set { this._metadataFilters = value; }
+        }
+
+        // Check to see if MetadataFilters property is set
+        internal bool IsSetMetadataFilters()
+        {
+            return this._metadataFilters != null && (this._metadataFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

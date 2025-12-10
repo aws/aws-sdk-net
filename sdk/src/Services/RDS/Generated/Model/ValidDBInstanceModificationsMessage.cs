@@ -36,9 +36,28 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ValidDBInstanceModificationsMessage
     {
+        private ValidAdditionalStorageOptions _additionalStorage;
         private List<ValidStorageOptions> _storage = AWSConfigs.InitializeCollections ? new List<ValidStorageOptions>() : null;
         private bool? _supportsDedicatedLogVolume;
         private List<AvailableProcessorFeature> _validProcessorFeatures = AWSConfigs.InitializeCollections ? new List<AvailableProcessorFeature>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorage. 
+        /// <para>
+        /// The valid additional storage options for the DB instance.
+        /// </para>
+        /// </summary>
+        public ValidAdditionalStorageOptions AdditionalStorage
+        {
+            get { return this._additionalStorage; }
+            set { this._additionalStorage = value; }
+        }
+
+        // Check to see if AdditionalStorage property is set
+        internal bool IsSetAdditionalStorage()
+        {
+            return this._additionalStorage != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Storage. 

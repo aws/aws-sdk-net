@@ -39,7 +39,10 @@ namespace Amazon.Lambda.Model
         private string _functionName;
 
         /// <summary>
-        /// Gets and sets the property FunctionName.
+        /// Gets and sets the property FunctionName. 
+        /// <para>
+        /// The name of the function.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName

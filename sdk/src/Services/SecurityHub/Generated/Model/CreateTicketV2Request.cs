@@ -32,14 +32,14 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the CreateTicketV2 operation.
     /// Grants permission to create a ticket in the chosen ITSM based on finding information
-    /// for the provided finding metadata UID. This API is in public preview and subject to
-    /// change.
+    /// for the provided finding metadata UID.
     /// </summary>
     public partial class CreateTicketV2Request : AmazonSecurityHubRequest
     {
         private string _clientToken;
         private string _connectorId;
         private string _findingMetadataUid;
+        private TicketCreationMode _mode;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -96,6 +96,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetFindingMetadataUid()
         {
             return this._findingMetadataUid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security
+        /// Hub owned template test finding to verify the integration is working correctly.
+        /// </para>
+        /// </summary>
+        public TicketCreationMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
     }

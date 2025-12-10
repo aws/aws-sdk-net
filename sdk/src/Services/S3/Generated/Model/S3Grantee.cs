@@ -30,25 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// <important> 
-    /// <para>
-    /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-    /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-    /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-    /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-    /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-    /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-    /// Region, and South America (São Paulo) Region.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Container for the person being granted permissions.
-    /// </para>
     /// </summary>
     public partial class S3Grantee
     {
@@ -77,10 +59,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
-        /// <para>
-        /// Screen name of the grantee.
-        /// </para>
+        /// Gets and sets the property DisplayName.
         /// </summary>
         public string DisplayName
         {
@@ -95,53 +74,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddress. 
-        /// <para>
-        /// Email address of the grantee.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following Amazon
-        /// Web Services Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// US East (N. Virginia)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (N. California)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  US West (Oregon)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Asia Pacific (Singapore)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Sydney)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Tokyo)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Europe (Ireland)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// South America (São Paulo)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the Amazon Web Services General Reference.
-        /// </para>
-        ///  </note>
+        /// Gets and sets the property EmailAddress.
         /// </summary>
         public string EmailAddress
         {

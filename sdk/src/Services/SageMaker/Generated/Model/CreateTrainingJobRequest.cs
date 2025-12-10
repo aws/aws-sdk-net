@@ -137,6 +137,8 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, string> _hyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private InfraCheckConfig _infraCheckConfig;
         private List<Channel> _inputDataConfig = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
+        private MlflowConfig _mlflowConfig;
+        private ModelPackageConfig _modelPackageConfig;
         private OutputDataConfig _outputDataConfig;
         private ProfilerConfig _profilerConfig;
         private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = AWSConfigs.InitializeCollections ? new List<ProfilerRuleConfiguration>() : null;
@@ -144,6 +146,7 @@ namespace Amazon.SageMaker.Model
         private ResourceConfig _resourceConfig;
         private RetryStrategy _retryStrategy;
         private string _roleArn;
+        private ServerlessJobConfig _serverlessJobConfig;
         private SessionChainingConfig _sessionChainingConfig;
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -459,6 +462,42 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MlflowConfig. 
+        /// <para>
+        ///  The MLflow configuration using SageMaker managed MLflow. 
+        /// </para>
+        /// </summary>
+        public MlflowConfig MlflowConfig
+        {
+            get { return this._mlflowConfig; }
+            set { this._mlflowConfig = value; }
+        }
+
+        // Check to see if MlflowConfig property is set
+        internal bool IsSetMlflowConfig()
+        {
+            return this._mlflowConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageConfig. 
+        /// <para>
+        ///  The configuration for the model package. 
+        /// </para>
+        /// </summary>
+        public ModelPackageConfig ModelPackageConfig
+        {
+            get { return this._modelPackageConfig; }
+            set { this._modelPackageConfig = value; }
+        }
+
+        // Check to see if ModelPackageConfig property is set
+        internal bool IsSetModelPackageConfig()
+        {
+            return this._modelPackageConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// Specifies the path to the S3 location where you want to store model artifacts. SageMaker
@@ -617,6 +656,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessJobConfig. 
+        /// <para>
+        ///  The configuration for serverless training jobs. 
+        /// </para>
+        /// </summary>
+        public ServerlessJobConfig ServerlessJobConfig
+        {
+            get { return this._serverlessJobConfig; }
+            set { this._serverlessJobConfig = value; }
+        }
+
+        // Check to see if ServerlessJobConfig property is set
+        internal bool IsSetServerlessJobConfig()
+        {
+            return this._serverlessJobConfig != null;
         }
 
         /// <summary>

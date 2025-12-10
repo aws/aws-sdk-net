@@ -79,6 +79,7 @@ namespace Amazon.FSx.Model
     {
         private string _clientRequestToken;
         private string _name;
+        private CreateAndAttachS3AccessPointOntapConfiguration _ontapConfiguration;
         private CreateAndAttachS3AccessPointOpenZFSConfiguration _openZFSConfiguration;
         private CreateAndAttachS3AccessPointS3Configuration _s3AccessPoint;
         private S3AccessPointAttachmentType _type;
@@ -116,6 +117,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OntapConfiguration.
+        /// </summary>
+        public CreateAndAttachS3AccessPointOntapConfiguration OntapConfiguration
+        {
+            get { return this._ontapConfiguration; }
+            set { this._ontapConfiguration = value; }
+        }
+
+        // Check to see if OntapConfiguration property is set
+        internal bool IsSetOntapConfiguration()
+        {
+            return this._ontapConfiguration != null;
         }
 
         /// <summary>

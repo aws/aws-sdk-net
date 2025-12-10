@@ -49,7 +49,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// opportunity. This helps in forecasting financial returns.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Sensitive=true)]
         public string Amount
         {
             get { return this._amount; }
@@ -88,7 +88,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// A URL providing additional information or context about the spend estimation.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=4, Max=255)]
         public string EstimationUrl
         {
             get { return this._estimationUrl; }
@@ -131,7 +130,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// system will automatically set it to <c>AWS</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=80)]
+        [AWSProperty(Required=true)]
         public string TargetCompany
         {
             get { return this._targetCompany; }

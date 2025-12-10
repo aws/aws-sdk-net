@@ -42,7 +42,6 @@ namespace Amazon.Connect.Model
         /// The referenceId of the target section for auto failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
         public string TargetSection
         {
             get { return this._targetSection; }

@@ -54,6 +54,7 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private int? _maxResults;
         private string _nextChunkToken;
+        private RecommendationType _recommendationType;
         private string _sessionId;
         private int? _waitTimeSeconds;
 
@@ -114,6 +115,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetNextChunkToken()
         {
             return this._nextChunkToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationType. 
+        /// <para>
+        /// The type of recommendation being requested.
+        /// </para>
+        /// </summary>
+        public RecommendationType RecommendationType
+        {
+            get { return this._recommendationType; }
+            set { this._recommendationType = value; }
+        }
+
+        // Check to see if RecommendationType property is set
+        internal bool IsSetRecommendationType()
+        {
+            return this._recommendationType != null;
         }
 
         /// <summary>

@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private bool? _autoEvaluationEnabled;
         private AutoEvaluationStatus _autoEvaluationStatus;
         private string _calibrationSessionId;
+        private EvaluationContactParticipant _contactParticipant;
         private DateTime? _createdTime;
         private string _evaluationArn;
         private string _evaluationFormId;
@@ -123,6 +124,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContactParticipant. 
+        /// <para>
+        /// Information about a contact participant in the evaluation.
+        /// </para>
+        /// </summary>
+        public EvaluationContactParticipant ContactParticipant
+        {
+            get { return this._contactParticipant; }
+            set { this._contactParticipant = value; }
+        }
+
+        // Check to see if ContactParticipant property is set
+        internal bool IsSetContactParticipant()
+        {
+            return this._contactParticipant != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
         /// The timestamp for when the evaluation was created.
@@ -185,7 +204,7 @@ namespace Amazon.Connect.Model
         /// A title of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string EvaluationFormTitle
         {
             get { return this._evaluationFormTitle; }

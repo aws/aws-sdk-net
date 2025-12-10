@@ -35,10 +35,13 @@ namespace Amazon.Lambda.Model
     public partial class GetFunctionConfigurationResponse : AmazonWebServiceResponse
     {
         private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private CapacityProviderConfig _capacityProviderConfig;
         private string _codeSha256;
         private long? _codeSize;
+        private string _configSha256;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
+        private DurableConfig _durableConfig;
         private EnvironmentResponse _environment;
         private EphemeralStorage _ephemeralStorage;
         private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
@@ -98,6 +101,25 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CapacityProviderConfig. 
+        /// <para>
+        /// Configuration for the capacity provider that manages compute resources for Lambda
+        /// functions.
+        /// </para>
+        /// </summary>
+        public CapacityProviderConfig CapacityProviderConfig
+        {
+            get { return this._capacityProviderConfig; }
+            set { this._capacityProviderConfig = value; }
+        }
+
+        // Check to see if CapacityProviderConfig property is set
+        internal bool IsSetCapacityProviderConfig()
+        {
+            return this._capacityProviderConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CodeSha256. 
         /// <para>
         /// The SHA256 hash of the function's deployment package.
@@ -131,6 +153,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetCodeSize()
         {
             return this._codeSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigSha256. 
+        /// <para>
+        /// The SHA256 hash of the function configuration.
+        /// </para>
+        /// </summary>
+        public string ConfigSha256
+        {
+            get { return this._configSha256; }
+            set { this._configSha256 = value; }
+        }
+
+        // Check to see if ConfigSha256 property is set
+        internal bool IsSetConfigSha256()
+        {
+            return this._configSha256 != null;
         }
 
         /// <summary>
@@ -168,6 +208,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurableConfig. 
+        /// <para>
+        /// The function's durable execution configuration settings, if the function is configured
+        /// for durability.
+        /// </para>
+        /// </summary>
+        public DurableConfig DurableConfig
+        {
+            get { return this._durableConfig; }
+            set { this._durableConfig = value; }
+        }
+
+        // Check to see if DurableConfig property is set
+        internal bool IsSetDurableConfig()
+        {
+            return this._durableConfig != null;
         }
 
         /// <summary>
@@ -241,6 +300,7 @@ namespace Amazon.Lambda.Model
         /// The function's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string FunctionArn
         {
             get { return this._functionArn; }
@@ -259,7 +319,7 @@ namespace Amazon.Lambda.Model
         /// The name of the function.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=170)]
+        [AWSProperty(Min=1, Max=256)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -478,6 +538,7 @@ namespace Amazon.Lambda.Model
         /// For Lambda@Edge functions, the ARN of the main function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string MasterArn
         {
             get { return this._masterArn; }
@@ -496,7 +557,7 @@ namespace Amazon.Lambda.Model
         /// The amount of memory available to the function at runtime.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=10240)]
+        [AWSProperty(Min=128, Max=32768)]
         public int? MemorySize
         {
             get { return this._memorySize; }

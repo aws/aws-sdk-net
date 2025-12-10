@@ -498,6 +498,7 @@ namespace AWSSDK.UnitTests
             {
                 httpHandler,
                 requestInspector,
+                new Unmarshaller(true),
                 new Signer(),
                 retryHandler,
                 new ChecksumHandler(),
@@ -521,9 +522,20 @@ namespace AWSSDK.UnitTests
                 new ResponseContext()
             );
 
-            pipeline.InvokeSync(executionContext);
+            var response = pipeline.InvokeSync(executionContext).Response;
 
-            return requestInspector.LastRequest;
+            var lastRequest = requestInspector.LastRequest;
+            var userAgentHeaderKey = config.UseAlternateUserAgentHeader ? HeaderKeys.XAmzUserAgentHeader : HeaderKeys.UserAgentHeader;
+
+            lastRequest.Headers.TryGetValue(userAgentHeaderKey, out string requestUserAgentHeader);
+            Assert.IsNotNull(requestUserAgentHeader);
+
+            response.ResponseMetadata.Metadata.TryGetValue(userAgentHeaderKey, out string responseMetadataUserAgentHeader);
+            Assert.IsNotNull(responseMetadataUserAgentHeader);
+
+            Assert.AreEqual(requestUserAgentHeader, responseMetadataUserAgentHeader);
+
+            return lastRequest;
         }
 
         public class RequestInspectorHandler : PipelineHandler

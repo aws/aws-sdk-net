@@ -37,6 +37,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for EvaluateDataTableValues operation
+        ///</summary>
+        public IEvaluateDataTableValuesPaginator EvaluateDataTableValues(EvaluateDataTableValuesRequest request) 
+        {
+            return new EvaluateDataTableValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetCurrentMetricData operation
         ///</summary>
         public IGetCurrentMetricDataPaginator GetCurrentMetricData(GetCurrentMetricDataRequest request) 
@@ -154,6 +162,38 @@ namespace Amazon.Connect.Model
         public IListContactReferencesPaginator ListContactReferences(ListContactReferencesRequest request) 
         {
             return new ListContactReferencesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTableAttributes operation
+        ///</summary>
+        public IListDataTableAttributesPaginator ListDataTableAttributes(ListDataTableAttributesRequest request) 
+        {
+            return new ListDataTableAttributesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTablePrimaryValues operation
+        ///</summary>
+        public IListDataTablePrimaryValuesPaginator ListDataTablePrimaryValues(ListDataTablePrimaryValuesRequest request) 
+        {
+            return new ListDataTablePrimaryValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTables operation
+        ///</summary>
+        public IListDataTablesPaginator ListDataTables(ListDataTablesRequest request) 
+        {
+            return new ListDataTablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTableValues operation
+        ///</summary>
+        public IListDataTableValuesPaginator ListDataTableValues(ListDataTableValuesRequest request) 
+        {
+            return new ListDataTableValuesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -453,6 +493,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListWorkspacePages operation
+        ///</summary>
+        public IListWorkspacePagesPaginator ListWorkspacePages(ListWorkspacePagesRequest request) 
+        {
+            return new ListWorkspacePagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkspaces operation
+        ///</summary>
+        public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 
+        {
+            return new ListWorkspacesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAgentStatuses operation
         ///</summary>
         public ISearchAgentStatusesPaginator SearchAgentStatuses(SearchAgentStatusesRequest request) 
@@ -490,6 +546,14 @@ namespace Amazon.Connect.Model
         public ISearchContactsPaginator SearchContacts(SearchContactsRequest request) 
         {
             return new SearchContactsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchDataTables operation
+        ///</summary>
+        public ISearchDataTablesPaginator SearchDataTables(SearchDataTablesRequest request) 
+        {
+            return new SearchDataTablesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -581,11 +645,35 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchViews operation
+        ///</summary>
+        public ISearchViewsPaginator SearchViews(SearchViewsRequest request) 
+        {
+            return new SearchViewsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchVocabularies operation
         ///</summary>
         public ISearchVocabulariesPaginator SearchVocabularies(SearchVocabulariesRequest request) 
         {
             return new SearchVocabulariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchWorkspaceAssociations operation
+        ///</summary>
+        public ISearchWorkspaceAssociationsPaginator SearchWorkspaceAssociations(SearchWorkspaceAssociationsRequest request) 
+        {
+            return new SearchWorkspaceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchWorkspaces operation
+        ///</summary>
+        public ISearchWorkspacesPaginator SearchWorkspaces(SearchWorkspacesRequest request) 
+        {
+            return new SearchWorkspacesPaginator(this.client, request);
         }
     }
 }

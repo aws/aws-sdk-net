@@ -96,6 +96,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.FindingMetadataUid);
             }
 
+            if(publicRequest.IsSetMode())
+            {
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.WriteStringValue(publicRequest.Mode);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -575,6 +575,48 @@
     <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSetLastModifiedDateFilterDateRange.AfterValue</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSetLastModifiedDateFilterDateRange.BeforeValue</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSetReleaseDateFilterDateRange.AfterValue</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSetReleaseDateFilterDateRange.BeforeValue</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSetSummary.Name</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSetSummary.ReleaseDate</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSetSummary.SolutionId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.OfferSummary.AvailabilityEndDate</property>
     <min>20</min>
     <max>20</max>
@@ -585,6 +627,12 @@
     <min>1</min>
     <max>150</max>
     <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSummary.OfferSetId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^offerset-[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.OfferSummary.ProductId</property>

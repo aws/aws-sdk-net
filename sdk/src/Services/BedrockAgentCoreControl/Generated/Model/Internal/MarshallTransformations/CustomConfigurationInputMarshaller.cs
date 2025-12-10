@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEpisodicOverride())
+            {
+                context.Writer.WritePropertyName("episodicOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EpisodicOverrideConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.EpisodicOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSelfManagedConfiguration())
             {
                 context.Writer.WritePropertyName("selfManagedConfiguration");

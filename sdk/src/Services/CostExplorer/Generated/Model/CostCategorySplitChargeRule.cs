@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Use the split charge rule to split the cost of one Cost Category value across several
+    /// Use the split charge rule to split the cost of one cost category value across several
     /// other target values.
     /// </summary>
     public partial class CostCategorySplitChargeRule
@@ -102,7 +102,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The Cost Category value that you want to split. That value can't be used as a source
+        /// The cost category value that you want to split. That value can't be used as a source
         /// or a target in other split charge rules. To indicate uncategorized costs, you can
         /// use an empty string as the source.
         /// </para>
@@ -123,7 +123,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The Cost Category values that you want to split costs across. These values can't be
+        /// The cost category values that you want to split costs across. These values can't be
         /// used as a source in other split charge rules. 
         /// </para>
         /// <para />
