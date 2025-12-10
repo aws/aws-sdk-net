@@ -41,6 +41,7 @@ namespace Amazon.OpenSearchService.Model
         private string _endpoint;
         private IamIdentityCenterOptions _iamIdentityCenterOptions;
         private string _id;
+        private string _kmsKeyArn;
         private DateTime? _lastUpdatedAt;
         private string _name;
         private ApplicationStatus _status;
@@ -168,6 +169,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data
+        /// at rest.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>
