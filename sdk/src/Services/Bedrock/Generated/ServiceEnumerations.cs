@@ -533,6 +533,10 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildResultAssetType POLICY_DEFINITION = new AutomatedReasoningPolicyBuildResultAssetType("POLICY_DEFINITION");
         /// <summary>
+        /// Constant POLICY_SCENARIOS for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType POLICY_SCENARIOS = new AutomatedReasoningPolicyBuildResultAssetType("POLICY_SCENARIOS");
+        /// <summary>
         /// Constant QUALITY_REPORT for AutomatedReasoningPolicyBuildResultAssetType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildResultAssetType QUALITY_REPORT = new AutomatedReasoningPolicyBuildResultAssetType("QUALITY_REPORT");
