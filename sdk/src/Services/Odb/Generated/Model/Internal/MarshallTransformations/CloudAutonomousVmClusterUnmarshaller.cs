@@ -108,6 +108,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudAutonomousVmClusterId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cloudExadataInfrastructureArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CloudExadataInfrastructureArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("cloudExadataInfrastructureId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -262,6 +268,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OciUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("odbNetworkArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OdbNetworkArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("odbNetworkId", targetDepth))

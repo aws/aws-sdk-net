@@ -43,8 +43,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property AwsIntegration. 
         /// <para>
-        /// The Amazon Web Services integration configuration settings for the IAM service role
-        /// association.
+        /// The Amazon Web Services integration configuration settings for the Amazon Web Services
+        /// Identity and Access Management (IAM) service role association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM service role to associate with the resource.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
+        /// (IAM) service role to associate with the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -82,8 +83,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the target resource to associate with the IAM service
-        /// role.
+        /// The Amazon Resource Name (ARN) of the target resource to associate with the Amazon
+        /// Web Services Identity and Access Management (IAM) service role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

@@ -42,7 +42,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property Ipv4Addresses. 
         /// <para>
-        /// The IPv4 addresses allowed for cross-Region S3 restore access.
+        /// The IPv4 addresses allowed for cross-Region Amazon S3 restore access.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -61,7 +61,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Amazon Web Services Region for cross-Region S3 restore access.
+        /// The Amazon Web Services Region for cross-Region Amazon S3 restore access.
         /// </para>
         /// </summary>
         public string Region
@@ -79,7 +79,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the cross-Region S3 restore access configuration.
+        /// The current status of the cross-Region Amazon S3 restore access configuration.
         /// </para>
         /// </summary>
         public ManagedResourceStatus Status

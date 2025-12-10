@@ -41,6 +41,7 @@ namespace Amazon.Odb.Model
         private float? _availableCpus;
         private string _cloudAutonomousVmClusterArn;
         private string _cloudAutonomousVmClusterId;
+        private string _cloudExadataInfrastructureArn;
         private string _cloudExadataInfrastructureId;
         private ComputeModel _computeModel;
         private int? _cpuCoreCount;
@@ -67,6 +68,7 @@ namespace Amazon.Odb.Model
         private string _ocid;
         private string _ociResourceAnchorName;
         private string _ociUrl;
+        private string _odbNetworkArn;
         private string _odbNetworkId;
         private float? _percentProgress;
         private int? _provisionableAutonomousContainerDatabases;
@@ -213,6 +215,26 @@ namespace Amazon.Odb.Model
         internal bool IsSetCloudAutonomousVmClusterId()
         {
             return this._cloudAutonomousVmClusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudExadataInfrastructureArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Exadata infrastructure containing this Autonomous
+        /// VM cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CloudExadataInfrastructureArn
+        {
+            get { return this._cloudExadataInfrastructureArn; }
+            set { this._cloudExadataInfrastructureArn = value; }
+        }
+
+        // Check to see if CloudExadataInfrastructureArn property is set
+        internal bool IsSetCloudExadataInfrastructureArn()
+        {
+            return this._cloudExadataInfrastructureArn != null;
         }
 
         /// <summary>
@@ -686,6 +708,26 @@ namespace Amazon.Odb.Model
         internal bool IsSetOciUrl()
         {
             return this._ociUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OdbNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the ODB network associated with this Autonomous
+        /// VM cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string OdbNetworkArn
+        {
+            get { return this._odbNetworkArn; }
+            set { this._odbNetworkArn = value; }
+        }
+
+        // Check to see if OdbNetworkArn property is set
+        internal bool IsSetOdbNetworkArn()
+        {
+            return this._odbNetworkArn != null;
         }
 
         /// <summary>

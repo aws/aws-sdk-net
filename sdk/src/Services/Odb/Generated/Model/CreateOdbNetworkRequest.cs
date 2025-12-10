@@ -325,7 +325,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property KmsPolicyDocument. 
         /// <para>
-        /// The KMS policy document that defines permissions for key usage within the ODB network.
+        /// The Amazon Web Services Key Management Service (KMS) policy document that defines
+        /// permissions for key usage within the ODB network.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=20480)]
@@ -400,8 +401,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property StsPolicyDocument. 
         /// <para>
-        /// The STS policy document that defines permissions for token service usage within the
-        /// ODB network.
+        /// The Amazon Web Services Security Token Service (STS) policy document that defines
+        /// permissions for token service usage within the ODB network.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=20480)]
