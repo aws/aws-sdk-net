@@ -71,7 +71,7 @@ namespace Amazon.QueryCompatibleJSONRPC10.Model.Internal.MarshallTransformations
 
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("Customized"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CustomCodeError"))
                 {
                     return CustomCodeErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }

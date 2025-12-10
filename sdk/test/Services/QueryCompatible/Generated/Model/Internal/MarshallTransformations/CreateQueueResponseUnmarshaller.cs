@@ -86,7 +86,7 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
                 {
                     return QueueDeletedRecentlyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("QueueAlreadyExists"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("QueueNameExists"))
                 {
                     return QueueNameExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
