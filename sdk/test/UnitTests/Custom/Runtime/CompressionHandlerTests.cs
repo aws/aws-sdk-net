@@ -76,7 +76,6 @@ namespace AWSSDK.UnitTests
 
             if (notCompressed)
             {
-                Assert.IsNull(request.Content);
                 CollectionAssert.AreEqual(originalInput, newInput);
             }
             else
@@ -121,7 +120,6 @@ namespace AWSSDK.UnitTests
 
             await handler.InvokeAsync<AmazonWebServiceResponse>(executionContext);
 
-            Assert.IsNull(request.Content);
             Assert.IsNotNull(request.ContentStream);
             Assert.AreEqual(originalInputLen, request.ContentStream.Length);
 

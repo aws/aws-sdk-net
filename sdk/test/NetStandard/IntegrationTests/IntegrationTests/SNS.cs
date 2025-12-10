@@ -209,7 +209,10 @@ namespace Amazon.DNXCore.IntegrationTests
             do
             {
                 var listResponse = await Client.ListTopicsAsync(listRequest);
-                allTopics.AddRange(listResponse.Topics);
+                if (listResponse.Topics != null)
+                {
+                    allTopics.AddRange(listResponse.Topics);
+                }
 
                 listRequest.NextToken = listResponse.NextToken;
             } while (!string.IsNullOrEmpty(listRequest.NextToken));

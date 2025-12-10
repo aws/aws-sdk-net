@@ -59,6 +59,20 @@ namespace Amazon.DNXCore.IntegrationTests
         }
 
         [Fact]
+        [Trait(CategoryAttribute, "SQS")]
+        public async Task ListQueues()
+        {
+            var request = new ListQueuesRequest();
+            var response = await Client.ListQueuesAsync(request);
+            Assert.NotNull(response.ResponseMetadata.Metadata);
+
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.NotNull(response.QueueUrls);
+            }
+        }
+
+        [Fact]
         [Trait(CategoryAttribute,"SQS")]
         public async Task SQSDLQTest()
         {
@@ -261,11 +275,6 @@ namespace Amazon.DNXCore.IntegrationTests
             Array.Reverse(charArray);
             return new string(charArray);
         }
-
-        private static string CalculateMD5(string message)
-        {
-            return Amazon.SQS.Internal.ValidationResponseHandler.CalculateMD5(message);
-        }
         private static void ValidateMD5(string message, string md5)
         {
             Amazon.SQS.Internal.ValidationResponseHandler.ValidateMD5(message, md5);
@@ -294,25 +303,6 @@ namespace Amazon.DNXCore.IntegrationTests
                 AttributeNames = new List<string> { "All" },
                 QueueUrl = queueUrl
             })).QueueARN;
-        }
-
-
-        private async Task deleteQueueTest(string queueUrl)
-        {
-            var listResult = await Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix });
-            int count = listResult.QueueUrls.Count;
-
-            await Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = queueUrl });
-            for (int i = 0; i < 10; i++)
-            {
-                listResult = await Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix });
-                if (count - 1 == listResult.QueueUrls.Count)
-                {
-                    return;
-                }
-                Console.WriteLine("Sleeping 10s while queue is being deleted");
-                UtilityMethods.Sleep(TimeSpan.FromSeconds(10));
-            }
         }
 
         private async Task<string> createQueueTest(string name)
