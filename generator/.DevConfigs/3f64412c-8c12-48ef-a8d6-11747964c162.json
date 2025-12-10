@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Fix SynchronizationLockException exception when using IMDS for credentials (https://github.com/aws/aws-sdk-net/issues/4199)"
-    ]
-  }
-}

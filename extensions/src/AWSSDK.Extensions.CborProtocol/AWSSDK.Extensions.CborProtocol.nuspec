@@ -3,7 +3,7 @@
   <metadata>
     <id>AWSSDK.Extensions.CborProtocol</id>
     <title>AWSSDK - Extensions for Cbor protocol support</title>
-    <version>4.0.0.17</version>
+    <version>4.0.0.18</version>
     <authors>Amazon Web Services</authors>
     <description>This package contains shared serialization and deserialization logic for services that use Cbor protocol in the AWS SDK for .NET.</description>
     <language>en-US</language>
@@ -13,19 +13,19 @@
     <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net472">
-        <dependency id="AWSSDK.Core" version="4.0.3.4" />
+        <dependency id="AWSSDK.Core" version="4.0.3.5" />
         <dependency id="System.Formats.Cbor" version="9.0.5" />
       </group>
       <group targetFramework="netstandard2.0">
-        <dependency id="AWSSDK.Core" version="4.0.3.4" />
+        <dependency id="AWSSDK.Core" version="4.0.3.5" />
         <dependency id="System.Formats.Cbor" version="9.0.5" />
       </group>
       <group targetFramework="netcoreapp3.1">
-        <dependency id="AWSSDK.Core" version="4.0.3.4" />
+        <dependency id="AWSSDK.Core" version="4.0.3.5" />
         <dependency id="System.Formats.Cbor" version="9.0.5" />
       </group>
       <group targetFramework="net8.0">
-        <dependency id="AWSSDK.Core" version="4.0.3.4" />
+        <dependency id="AWSSDK.Core" version="4.0.3.5" />
         <dependency id="System.Formats.Cbor" version="9.0.5" />
       </group>
     </dependencies>

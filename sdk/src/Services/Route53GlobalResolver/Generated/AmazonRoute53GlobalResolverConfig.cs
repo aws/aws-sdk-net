@@ -33,7 +33,7 @@ namespace Amazon.Route53GlobalResolver
     public partial class AmazonRoute53GlobalResolverConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53GlobalResolver", "4.0.0.1");
+            InternalSDKUtils.BuildUserAgentString("Route53GlobalResolver", "4.0.0.2");
 
         private static readonly AmazonRoute53GlobalResolverEndpointResolver EndpointResolver =
             new AmazonRoute53GlobalResolverEndpointResolver();
