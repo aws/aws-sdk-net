@@ -43,7 +43,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property AwsIntegration. 
         /// <para>
-        /// The Amazon Web Services integration configuration settings for the IAM service role.
+        /// The Amazon Web Services integration configuration settings for the Amazon Web Services
+        /// Identity and Access Management (IAM) service role.
         /// </para>
         /// </summary>
         public SupportedAwsIntegration AwsIntegration
@@ -61,7 +62,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM service role.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
+        /// (IAM) service role.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -80,7 +82,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the IAM service role.
+        /// The current status of the Amazon Web Services Identity and Access Management (IAM)
+        /// service role.
         /// </para>
         /// </summary>
         public IamRoleStatus Status
@@ -98,7 +101,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// Additional information about the current status of the IAM service role, if applicable.
+        /// Additional information about the current status of the Amazon Web Services Identity
+        /// and Access Management (IAM) service role, if applicable.
         /// </para>
         /// </summary>
         public string StatusReason
