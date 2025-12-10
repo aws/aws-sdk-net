@@ -29,48 +29,74 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InvalidNextTokenException operation
+    /// Response Unmarshaller for InvalidNextTokenException Object
     /// </summary>  
-    public class InvalidNextTokenExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidNextTokenException, XmlUnmarshallerContext>
+    public class InvalidNextTokenExceptionUnmarshaller : ICborErrorResponseUnmarshaller<InvalidNextTokenException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InvalidNextTokenException Unmarshall(XmlUnmarshallerContext context)
+        public InvalidNextTokenException Unmarshall(CborUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidNextTokenException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public InvalidNextTokenException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            InvalidNextTokenException response = new InvalidNextTokenException(errorResponse.Message, errorResponse.InnerException, 
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
             {
-                if (context.IsStartElement || context.IsAttribute)
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
                 {
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
+                    }
                 }
             }
-            return response;
+            InvalidNextTokenException unmarshalledObject = new InvalidNextTokenException(errorResponse.Message, errorResponse.InnerException,
+                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+            var reader = context.Reader;
+            context.AddPathSegment("InvalidNextTokenException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
+            context.PopPathSegment();
+          
+            return unmarshalledObject;
         }
 
         private static InvalidNextTokenExceptionUnmarshaller _instance = new InvalidNextTokenExceptionUnmarshaller();        

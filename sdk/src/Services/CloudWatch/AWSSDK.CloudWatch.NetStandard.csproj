@@ -22,6 +22,7 @@
     <SignAssembly>true</SignAssembly>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
     <NoWarn>CA1822</NoWarn>
   </PropertyGroup>
   <!-- Async Enumerable Compatibility -->
@@ -71,6 +72,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetStandard.csproj"/>
     <ProjectReference Include="../../Core/AWSSDK.Core.NetStandard.csproj"/>
   </ItemGroup>
 

@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DescribeAlarmsRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,71 +58,85 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeAlarmsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "DescribeAlarms");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/DescribeAlarms";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetActionPrefix())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetActionPrefix())
                 {
-                    request.Parameters.Add("ActionPrefix", StringUtils.FromString(publicRequest.ActionPrefix));
+                    context.Writer.WriteTextString("ActionPrefix");
+                    context.Writer.WriteTextString(publicRequest.ActionPrefix);
                 }
-                if(publicRequest.IsSetAlarmNamePrefix())
+                if (publicRequest.IsSetAlarmNamePrefix())
                 {
-                    request.Parameters.Add("AlarmNamePrefix", StringUtils.FromString(publicRequest.AlarmNamePrefix));
+                    context.Writer.WriteTextString("AlarmNamePrefix");
+                    context.Writer.WriteTextString(publicRequest.AlarmNamePrefix);
                 }
-                if(publicRequest.IsSetAlarmNames())
+                if (publicRequest.IsSetAlarmNames())
                 {
-                    if (publicRequest.AlarmNames.Count == 0)
-                        request.Parameters.Add("AlarmNames", "");
-                    else
+                    context.Writer.WriteTextString("AlarmNames");
+                    context.Writer.WriteStartArray(publicRequest.AlarmNames.Count);
+                    foreach(var publicRequestAlarmNamesListValue in publicRequest.AlarmNames)
                     {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.AlarmNames)
-                         {
-                             request.Parameters.Add("AlarmNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                             publicRequestlistValueIndex++;
-                         }
+                            context.Writer.WriteTextString(publicRequestAlarmNamesListValue);
                     }
+                    context.Writer.WriteEndArray();
                 }
-                if(publicRequest.IsSetAlarmTypes())
+                if (publicRequest.IsSetAlarmTypes())
                 {
-                    if (publicRequest.AlarmTypes.Count == 0)
-                        request.Parameters.Add("AlarmTypes", "");
-                    else
+                    context.Writer.WriteTextString("AlarmTypes");
+                    context.Writer.WriteStartArray(publicRequest.AlarmTypes.Count);
+                    foreach(var publicRequestAlarmTypesListValue in publicRequest.AlarmTypes)
                     {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
-                         {
-                             request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                             publicRequestlistValueIndex++;
-                         }
+                            context.Writer.WriteTextString(publicRequestAlarmTypesListValue);
                     }
+                    context.Writer.WriteEndArray();
                 }
-                if(publicRequest.IsSetChildrenOfAlarmName())
+                if (publicRequest.IsSetChildrenOfAlarmName())
                 {
-                    request.Parameters.Add("ChildrenOfAlarmName", StringUtils.FromString(publicRequest.ChildrenOfAlarmName));
+                    context.Writer.WriteTextString("ChildrenOfAlarmName");
+                    context.Writer.WriteTextString(publicRequest.ChildrenOfAlarmName);
                 }
-                if(publicRequest.IsSetMaxRecords())
+                if (publicRequest.IsSetMaxRecords())
                 {
-                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                    context.Writer.WriteTextString("MaxRecords");
+                    context.Writer.WriteInt32(publicRequest.MaxRecords.Value);
                 }
-                if(publicRequest.IsSetNextToken())
+                if (publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
                 }
-                if(publicRequest.IsSetParentsOfAlarmName())
+                if (publicRequest.IsSetParentsOfAlarmName())
                 {
-                    request.Parameters.Add("ParentsOfAlarmName", StringUtils.FromString(publicRequest.ParentsOfAlarmName));
+                    context.Writer.WriteTextString("ParentsOfAlarmName");
+                    context.Writer.WriteTextString(publicRequest.ParentsOfAlarmName);
                 }
-                if(publicRequest.IsSetStateValue())
+                if (publicRequest.IsSetStateValue())
                 {
-                    request.Parameters.Add("StateValue", StringUtils.FromString(publicRequest.StateValue));
+                    context.Writer.WriteTextString("StateValue");
+                    context.Writer.WriteTextString(publicRequest.StateValue);
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static DescribeAlarmsRequestMarshaller _instance = new DescribeAlarmsRequestMarshaller();        
+        private static DescribeAlarmsRequestMarshaller _instance = new DescribeAlarmsRequestMarshaller();        
 
         internal static DescribeAlarmsRequestMarshaller GetInstance()
         {

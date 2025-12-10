@@ -29,58 +29,64 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AnomalyDetectorConfiguration Object
     /// </summary>  
-    public class AnomalyDetectorConfigurationUnmarshaller : IXmlUnmarshaller<AnomalyDetectorConfiguration, XmlUnmarshallerContext>
+    public class AnomalyDetectorConfigurationUnmarshaller : ICborUnmarshaller<AnomalyDetectorConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public AnomalyDetectorConfiguration Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public AnomalyDetectorConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             AnomalyDetectorConfiguration unmarshalledObject = new AnomalyDetectorConfiguration();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("ExcludedTimeRanges/member", targetDepth))
-                    {
-                        var unmarshaller = RangeUnmarshaller.Instance;
-                        if (unmarshalledObject.ExcludedTimeRanges == null)
-                        {
-                            unmarshalledObject.ExcludedTimeRanges = new List<Range>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ExcludedTimeRanges.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricTimezone", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MetricTimezone = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "ExcludedTimeRanges":
+                        {
+                            context.AddPathSegment("ExcludedTimeRanges");
+                            var unmarshaller = new CborListUnmarshaller<Range, RangeUnmarshaller>(RangeUnmarshaller.Instance);
+                            unmarshalledObject.ExcludedTimeRanges = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MetricTimezone":
+                        {
+                            context.AddPathSegment("MetricTimezone");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MetricTimezone = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static AnomalyDetectorConfigurationUnmarshaller _instance = new AnomalyDetectorConfigurationUnmarshaller();        
 

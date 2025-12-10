@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((GetMetricDataRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,126 +58,80 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetMetricDataRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "GetMetricData");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/GetMetricData";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetEndTime())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
+                    context.Writer.WriteTextString("EndTime");
+                    context.Writer.WriteDateTime(publicRequest.EndTime.Value);
                 }
-                if(publicRequest.IsSetLabelOptions())
+                if (publicRequest.IsSetLabelOptions())
                 {
-                    if(publicRequest.LabelOptions.IsSetTimezone())
+                    context.Writer.WriteTextString("LabelOptions");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = LabelOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LabelOptions, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetMaxDatapoints())
+                {
+                    context.Writer.WriteTextString("MaxDatapoints");
+                    context.Writer.WriteInt32(publicRequest.MaxDatapoints.Value);
+                }
+                if (publicRequest.IsSetMetricDataQueries())
+                {
+                    context.Writer.WriteTextString("MetricDataQueries");
+                    context.Writer.WriteStartArray(publicRequest.MetricDataQueries.Count);
+                    foreach(var publicRequestMetricDataQueriesListValue in publicRequest.MetricDataQueries)
                     {
-                        request.Parameters.Add("LabelOptions" + "." + "Timezone", StringUtils.FromString(publicRequest.LabelOptions.Timezone));
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = MetricDataQueryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMetricDataQueriesListValue, context);
+
+                        context.Writer.WriteEndMap();
                     }
+                    context.Writer.WriteEndArray();
                 }
-                if(publicRequest.IsSetMaxDatapoints())
+                if (publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("MaxDatapoints", StringUtils.FromInt(publicRequest.MaxDatapoints));
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
                 }
-                if(publicRequest.IsSetMetricDataQueries())
+                if (publicRequest.IsSetScanBy())
                 {
-                    if (publicRequest.MetricDataQueries.Count == 0)
-                        request.Parameters.Add("MetricDataQueries", "");
-                    else
-                    {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.MetricDataQueries)
-                         {
-                            if(publicRequestlistValue.IsSetAccountId())
-                            {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AccountId", StringUtils.FromString(publicRequestlistValue.AccountId));
-                            }
-                            if(publicRequestlistValue.IsSetExpression())
-                            {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestlistValue.Expression));
-                            }
-                            if(publicRequestlistValue.IsSetId())
-                            {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
-                            }
-                            if(publicRequestlistValue.IsSetLabel())
-                            {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestlistValue.Label));
-                            }
-                            if(publicRequestlistValue.IsSetMetricStat())
-                            {
-                                if(publicRequestlistValue.MetricStat.IsSetMetric())
-                                {
-                                    if(publicRequestlistValue.MetricStat.Metric.IsSetDimensions())
-                                    {
-                                        if (publicRequestlistValue.MetricStat.Metric.Dimensions.Count == 0)
-                                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions", "");
-                                        else
-                                        {
-                                             int publicRequestlistValueMetricStatMetriclistValueIndex = 1;
-                                             foreach(var publicRequestlistValueMetricStatMetriclistValue in publicRequestlistValue.MetricStat.Metric.Dimensions)
-                                             {
-                                                if(publicRequestlistValueMetricStatMetriclistValue.IsSetName())
-                                                {
-                                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Name));
-                                                }
-                                                if(publicRequestlistValueMetricStatMetriclistValue.IsSetValue())
-                                                {
-                                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Value));
-                                                }
-                                                 publicRequestlistValueMetricStatMetriclistValueIndex++;
-                                             }
-                                        }
-                                    }
-                                    if(publicRequestlistValue.MetricStat.Metric.IsSetMetricName())
-                                    {
-                                        request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.MetricName));
-                                    }
-                                    if(publicRequestlistValue.MetricStat.Metric.IsSetNamespace())
-                                    {
-                                        request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.Namespace));
-                                    }
-                                }
-                                if(publicRequestlistValue.MetricStat.IsSetPeriod())
-                                {
-                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Period", StringUtils.FromInt(publicRequestlistValue.MetricStat.Period));
-                                }
-                                if(publicRequestlistValue.MetricStat.IsSetStat())
-                                {
-                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestlistValue.MetricStat.Stat));
-                                }
-                                if(publicRequestlistValue.MetricStat.IsSetUnit())
-                                {
-                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestlistValue.MetricStat.Unit));
-                                }
-                            }
-                            if(publicRequestlistValue.IsSetPeriod())
-                            {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestlistValue.Period));
-                            }
-                            if(publicRequestlistValue.IsSetReturnData())
-                            {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestlistValue.ReturnData));
-                            }
-                             publicRequestlistValueIndex++;
-                         }
-                    }
+                    context.Writer.WriteTextString("ScanBy");
+                    context.Writer.WriteTextString(publicRequest.ScanBy);
                 }
-                if(publicRequest.IsSetNextToken())
+                if (publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WriteTextString("StartTime");
+                    context.Writer.WriteDateTime(publicRequest.StartTime.Value);
                 }
-                if(publicRequest.IsSetScanBy())
-                {
-                    request.Parameters.Add("ScanBy", StringUtils.FromString(publicRequest.ScanBy));
-                }
-                if(publicRequest.IsSetStartTime())
-                {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
-                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static GetMetricDataRequestMarshaller _instance = new GetMetricDataRequestMarshaller();        
+        private static GetMetricDataRequestMarshaller _instance = new GetMetricDataRequestMarshaller();        
 
         internal static GetMetricDataRequestMarshaller GetInstance()
         {

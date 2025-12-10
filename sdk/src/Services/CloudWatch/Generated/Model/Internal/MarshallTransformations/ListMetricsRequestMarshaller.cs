@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ListMetricsRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,60 +58,75 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListMetricsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "ListMetrics");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/ListMetrics";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetDimensions())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDimensions())
                 {
-                    if (publicRequest.Dimensions.Count == 0)
-                        request.Parameters.Add("Dimensions", "");
-                    else
+                    context.Writer.WriteTextString("Dimensions");
+                    context.Writer.WriteStartArray(publicRequest.Dimensions.Count);
+                    foreach(var publicRequestDimensionsListValue in publicRequest.Dimensions)
                     {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.Dimensions)
-                         {
-                            if(publicRequestlistValue.IsSetName())
-                            {
-                                request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                            }
-                            if(publicRequestlistValue.IsSetValue())
-                            {
-                                request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                            }
-                             publicRequestlistValueIndex++;
-                         }
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = DimensionFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDimensionsListValue, context);
+
+                        context.Writer.WriteEndMap();
                     }
+                    context.Writer.WriteEndArray();
                 }
-                if(publicRequest.IsSetIncludeLinkedAccounts())
+                if (publicRequest.IsSetIncludeLinkedAccounts())
                 {
-                    request.Parameters.Add("IncludeLinkedAccounts", StringUtils.FromBool(publicRequest.IncludeLinkedAccounts));
+                    context.Writer.WriteTextString("IncludeLinkedAccounts");
+                    context.Writer.WriteBoolean(publicRequest.IncludeLinkedAccounts.Value);
                 }
-                if(publicRequest.IsSetMetricName())
+                if (publicRequest.IsSetMetricName())
                 {
-                    request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
+                    context.Writer.WriteTextString("MetricName");
+                    context.Writer.WriteTextString(publicRequest.MetricName);
                 }
-                if(publicRequest.IsSetNamespace())
+                if (publicRequest.IsSetNamespace())
                 {
-                    request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
+                    context.Writer.WriteTextString("Namespace");
+                    context.Writer.WriteTextString(publicRequest.Namespace);
                 }
-                if(publicRequest.IsSetNextToken())
+                if (publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
                 }
-                if(publicRequest.IsSetOwningAccount())
+                if (publicRequest.IsSetOwningAccount())
                 {
-                    request.Parameters.Add("OwningAccount", StringUtils.FromString(publicRequest.OwningAccount));
+                    context.Writer.WriteTextString("OwningAccount");
+                    context.Writer.WriteTextString(publicRequest.OwningAccount);
                 }
-                if(publicRequest.IsSetRecentlyActive())
+                if (publicRequest.IsSetRecentlyActive())
                 {
-                    request.Parameters.Add("RecentlyActive", StringUtils.FromString(publicRequest.RecentlyActive));
+                    context.Writer.WriteTextString("RecentlyActive");
+                    context.Writer.WriteTextString(publicRequest.RecentlyActive);
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static ListMetricsRequestMarshaller _instance = new ListMetricsRequestMarshaller();        
+        private static ListMetricsRequestMarshaller _instance = new ListMetricsRequestMarshaller();        
 
         internal static ListMetricsRequestMarshaller GetInstance()
         {

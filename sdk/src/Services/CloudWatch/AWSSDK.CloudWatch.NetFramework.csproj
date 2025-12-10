@@ -61,6 +61,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetFramework.csproj"/>
     <ProjectReference Include="../../Core/AWSSDK.Core.NetFramework.csproj"/>
   </ItemGroup>
 
