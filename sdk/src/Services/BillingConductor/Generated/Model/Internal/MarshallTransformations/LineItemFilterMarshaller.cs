@@ -54,6 +54,17 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Attribute);
             }
 
+            if(requestObject.IsSetAttributeValues())
+            {
+                context.Writer.WritePropertyName("AttributeValues");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAttributeValuesListValue in requestObject.AttributeValues)
+                {
+                        context.Writer.Write(requestObjectAttributeValuesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetMatchOption())
             {
                 context.Writer.WritePropertyName("MatchOption");

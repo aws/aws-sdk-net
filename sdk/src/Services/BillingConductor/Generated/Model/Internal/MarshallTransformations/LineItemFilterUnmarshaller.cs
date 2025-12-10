@@ -72,6 +72,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attribute = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AttributeValues", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AttributeValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MatchOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

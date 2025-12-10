@@ -39,6 +39,7 @@ namespace Amazon.BillingConductor.Model
     public partial class LineItemFilter
     {
         private LineItemFilterAttributeName _attribute;
+        private List<string> _attributeValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MatchOption _matchOption;
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -60,6 +61,25 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetAttribute()
         {
             return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttributeValues. 
+        /// <para>
+        /// The values of the line item filter. This specifies the values to filter on.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> AttributeValues
+        {
+            get { return this._attributeValues; }
+            set { this._attributeValues = value; }
+        }
+
+        // Check to see if AttributeValues property is set
+        internal bool IsSetAttributeValues()
+        {
+            return this._attributeValues != null && (this._attributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +109,7 @@ namespace Amazon.BillingConductor.Model
         /// you can only exclude Savings Plans discounts.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<string> Values
         {
             get { return this._values; }
