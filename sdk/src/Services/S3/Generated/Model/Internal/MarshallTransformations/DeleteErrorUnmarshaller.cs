@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ErrorsItem Unmarshaller
-     /// </summary>
-    public class ErrorsItemUnmarshaller : IXmlUnmarshaller<DeleteError, XmlUnmarshallerContext>
+    /// <summary>
+    /// Response Unmarshaller for DeleteError Object
+    /// </summary>  
+    public partial class DeleteErrorUnmarshaller : IXmlUnmarshaller<DeleteError, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeleteError Unmarshall(XmlUnmarshallerContext context) 
+        public DeleteError Unmarshall(XmlUnmarshallerContext context)
         {
-            DeleteError errorsItem = new DeleteError();
+            DeleteError unmarshalledObject = new DeleteError();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -44,57 +58,52 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Code", targetDepth))
                     {
-                        errorsItem.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Key", targetDepth))
                     {
-                        errorsItem.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Message", targetDepth))
                     {
-                        errorsItem.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VersionId", targetDepth))
                     {
-                        errorsItem.VersionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return errorsItem;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return errorsItem;
+            }          
+            return unmarshalledObject;
         }
 
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DeleteError unmarshalledObject, int targetDepth);
 
-        private static ErrorsItemUnmarshaller _instance;
+        private static DeleteErrorUnmarshaller _instance = new DeleteErrorUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static ErrorsItemUnmarshaller Instance
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteErrorUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new ErrorsItemUnmarshaller();
-                }
                 return _instance;
             }
         }
     }
 }
-    
