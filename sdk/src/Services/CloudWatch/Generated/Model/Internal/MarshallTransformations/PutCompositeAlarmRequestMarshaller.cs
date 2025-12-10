@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((PutCompositeAlarmRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,86 +56,120 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutCompositeAlarmRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "PutCompositeAlarm");
-            request.Parameters.Add("Version", "2010-08-01");
+            string target = "GraniteServiceVersion20100801.PutCompositeAlarm";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetActionsEnabled())
                 {
-                    request.Parameters.Add("ActionsEnabled", StringUtils.FromBool(publicRequest.ActionsEnabled));
+                    context.Writer.WritePropertyName("ActionsEnabled");
+                    context.Writer.Write(publicRequest.ActionsEnabled);
                 }
+
                 if(publicRequest.IsSetActionsSuppressor())
                 {
-                    request.Parameters.Add("ActionsSuppressor", StringUtils.FromString(publicRequest.ActionsSuppressor));
+                    context.Writer.WritePropertyName("ActionsSuppressor");
+                    context.Writer.Write(publicRequest.ActionsSuppressor);
                 }
+
                 if(publicRequest.IsSetActionsSuppressorExtensionPeriod())
                 {
-                    request.Parameters.Add("ActionsSuppressorExtensionPeriod", StringUtils.FromInt(publicRequest.ActionsSuppressorExtensionPeriod));
+                    context.Writer.WritePropertyName("ActionsSuppressorExtensionPeriod");
+                    context.Writer.Write(publicRequest.ActionsSuppressorExtensionPeriod);
                 }
+
                 if(publicRequest.IsSetActionsSuppressorWaitPeriod())
                 {
-                    request.Parameters.Add("ActionsSuppressorWaitPeriod", StringUtils.FromInt(publicRequest.ActionsSuppressorWaitPeriod));
+                    context.Writer.WritePropertyName("ActionsSuppressorWaitPeriod");
+                    context.Writer.Write(publicRequest.ActionsSuppressorWaitPeriod);
                 }
+
                 if(publicRequest.IsSetAlarmActions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AlarmActions)
+                    context.Writer.WritePropertyName("AlarmActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAlarmActionsListValue in publicRequest.AlarmActions)
                     {
-                        request.Parameters.Add("AlarmActions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestAlarmActionsListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetAlarmDescription())
                 {
-                    request.Parameters.Add("AlarmDescription", StringUtils.FromString(publicRequest.AlarmDescription));
+                    context.Writer.WritePropertyName("AlarmDescription");
+                    context.Writer.Write(publicRequest.AlarmDescription);
                 }
+
                 if(publicRequest.IsSetAlarmName())
                 {
-                    request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
+                    context.Writer.WritePropertyName("AlarmName");
+                    context.Writer.Write(publicRequest.AlarmName);
                 }
+
                 if(publicRequest.IsSetAlarmRule())
                 {
-                    request.Parameters.Add("AlarmRule", StringUtils.FromString(publicRequest.AlarmRule));
+                    context.Writer.WritePropertyName("AlarmRule");
+                    context.Writer.Write(publicRequest.AlarmRule);
                 }
+
                 if(publicRequest.IsSetInsufficientDataActions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.InsufficientDataActions)
+                    context.Writer.WritePropertyName("InsufficientDataActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInsufficientDataActionsListValue in publicRequest.InsufficientDataActions)
                     {
-                        request.Parameters.Add("InsufficientDataActions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestInsufficientDataActionsListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetOKActions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.OKActions)
+                    context.Writer.WritePropertyName("OKActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOKActionsListValue in publicRequest.OKActions)
                     {
-                        request.Parameters.Add("OKActions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestOKActionsListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static PutCompositeAlarmRequestMarshaller _instance = new PutCompositeAlarmRequestMarshaller();        
+        private static PutCompositeAlarmRequestMarshaller _instance = new PutCompositeAlarmRequestMarshaller();        
 
         internal static PutCompositeAlarmRequestMarshaller GetInstance()
         {

@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -42,236 +44,204 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetricAlarm Unmarshall(XmlUnmarshallerContext context)
+        MetricAlarm IUnmarshaller<MetricAlarm, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            MetricAlarm unmarshalledObject = new MetricAlarm();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("ActionsEnabled", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.ActionsEnabled = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmActions/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.AlarmActions == null)
-                        {
-                            unmarshalledObject.AlarmActions = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.AlarmActions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmConfigurationUpdatedTimestamp", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.AlarmConfigurationUpdatedTimestamp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmDescription", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmDescription = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ComparisonOperator", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DatapointsToAlarm", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.DatapointsToAlarm = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Dimensions/member", targetDepth))
-                    {
-                        var unmarshaller = DimensionUnmarshaller.Instance;
-                        if (unmarshalledObject.Dimensions == null)
-                        {
-                            unmarshalledObject.Dimensions = new List<Dimension>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Dimensions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("EvaluateLowSampleCountPercentile", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EvaluateLowSampleCountPercentile = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EvaluationPeriods", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.EvaluationPeriods = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EvaluationState", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EvaluationState = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ExtendedStatistic", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ExtendedStatistic = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("InsufficientDataActions/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.InsufficientDataActions == null)
-                        {
-                            unmarshalledObject.InsufficientDataActions = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.InsufficientDataActions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Metrics/member", targetDepth))
-                    {
-                        var unmarshaller = MetricDataQueryUnmarshaller.Instance;
-                        if (unmarshalledObject.Metrics == null)
-                        {
-                            unmarshalledObject.Metrics = new List<MetricDataQuery>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Metrics.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Namespace", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("OKActions/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.OKActions == null)
-                        {
-                            unmarshalledObject.OKActions = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.OKActions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Period", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Period = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StateReason", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StateReasonData", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StateReasonData = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StateTransitionedTimestamp", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.StateTransitionedTimestamp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StateUpdatedTimestamp", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.StateUpdatedTimestamp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StateValue", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StateValue = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Statistic", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Statistic = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Threshold", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ThresholdMetricId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ThresholdMetricId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TreatMissingData", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TreatMissingData = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Unit", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MetricAlarm Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            MetricAlarm unmarshalledObject = new MetricAlarm();
+            if (context.IsEmptyResponse)
+                return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("ActionsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ActionsEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AlarmActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AlarmActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AlarmArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AlarmArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AlarmConfigurationUpdatedTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.AlarmConfigurationUpdatedTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AlarmDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AlarmDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AlarmName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ComparisonOperator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DatapointsToAlarm", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DatapointsToAlarm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Dimensions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Dimension, DimensionUnmarshaller>(DimensionUnmarshaller.Instance);
+                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EvaluateLowSampleCountPercentile", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluateLowSampleCountPercentile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EvaluationPeriods", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationPeriods = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EvaluationState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExtendedStatistic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExtendedStatistic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InsufficientDataActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InsufficientDataActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MetricName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Metrics", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricDataQuery, MetricDataQueryUnmarshaller>(MetricDataQueryUnmarshaller.Instance);
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Namespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OKActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.OKActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Period", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Period = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateReasonData", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateReasonData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateTransitionedTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StateTransitionedTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateUpdatedTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StateUpdatedTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Statistic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Statistic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Threshold", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThresholdMetricId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ThresholdMetricId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TreatMissingData", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TreatMissingData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Unit", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
         }
 
 

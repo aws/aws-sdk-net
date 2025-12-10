@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -42,85 +44,78 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InsightRuleMetricDatapoint Unmarshall(XmlUnmarshallerContext context)
+        InsightRuleMetricDatapoint IUnmarshaller<InsightRuleMetricDatapoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            InsightRuleMetricDatapoint unmarshalledObject = new InsightRuleMetricDatapoint();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("Average", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.Average = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MaxContributorValue", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.MaxContributorValue = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Maximum", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Minimum", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SampleCount", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.SampleCount = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Sum", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.Sum = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timestamp", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("UniqueContributors", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.UniqueContributors = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public InsightRuleMetricDatapoint Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            InsightRuleMetricDatapoint unmarshalledObject = new InsightRuleMetricDatapoint();
+            if (context.IsEmptyResponse)
+                return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Average", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Average = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxContributorValue", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MaxContributorValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Maximum", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Minimum", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SampleCount", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.SampleCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Sum", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Sum = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UniqueContributors", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.UniqueContributors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
         }
 
 

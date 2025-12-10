@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((GetInsightRuleReportRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,48 +56,76 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetInsightRuleReportRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "GetInsightRuleReport");
-            request.Parameters.Add("Version", "2010-08-01");
+            string target = "GraniteServiceVersion20100801.GetInsightRuleReport";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
+                    context.Writer.WritePropertyName("EndTime");
+                    context.Writer.Write(publicRequest.EndTime);
                 }
+
                 if(publicRequest.IsSetMaxContributorCount())
                 {
-                    request.Parameters.Add("MaxContributorCount", StringUtils.FromInt(publicRequest.MaxContributorCount));
+                    context.Writer.WritePropertyName("MaxContributorCount");
+                    context.Writer.Write(publicRequest.MaxContributorCount);
                 }
+
                 if(publicRequest.IsSetMetrics())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Metrics)
+                    context.Writer.WritePropertyName("Metrics");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
                     {
-                        request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestMetricsListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetOrderBy())
                 {
-                    request.Parameters.Add("OrderBy", StringUtils.FromString(publicRequest.OrderBy));
+                    context.Writer.WritePropertyName("OrderBy");
+                    context.Writer.Write(publicRequest.OrderBy);
                 }
+
                 if(publicRequest.IsSetPeriod())
                 {
-                    request.Parameters.Add("Period", StringUtils.FromInt(publicRequest.Period));
+                    context.Writer.WritePropertyName("Period");
+                    context.Writer.Write(publicRequest.Period);
                 }
+
                 if(publicRequest.IsSetRuleName())
                 {
-                    request.Parameters.Add("RuleName", StringUtils.FromString(publicRequest.RuleName));
+                    context.Writer.WritePropertyName("RuleName");
+                    context.Writer.Write(publicRequest.RuleName);
                 }
+
                 if(publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
+                    context.Writer.WritePropertyName("StartTime");
+                    context.Writer.Write(publicRequest.StartTime);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static GetInsightRuleReportRequestMarshaller _instance = new GetInsightRuleReportRequestMarshaller();        
+        private static GetInsightRuleReportRequestMarshaller _instance = new GetInsightRuleReportRequestMarshaller();        
 
         internal static GetInsightRuleReportRequestMarshaller GetInstance()
         {

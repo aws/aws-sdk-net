@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -42,65 +44,48 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InsightRuleContributor Unmarshall(XmlUnmarshallerContext context)
+        InsightRuleContributor IUnmarshaller<InsightRuleContributor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            InsightRuleContributor unmarshalledObject = new InsightRuleContributor();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("ApproximateAggregateValue", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.ApproximateAggregateValue = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Datapoints/member", targetDepth))
-                    {
-                        var unmarshaller = InsightRuleContributorDatapointUnmarshaller.Instance;
-                        if (unmarshalledObject.Datapoints == null)
-                        {
-                            unmarshalledObject.Datapoints = new List<InsightRuleContributorDatapoint>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Datapoints.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Keys/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.Keys == null)
-                        {
-                            unmarshalledObject.Keys = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Keys.Add(item);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public InsightRuleContributor Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            InsightRuleContributor unmarshalledObject = new InsightRuleContributor();
+            if (context.IsEmptyResponse)
+                return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("ApproximateAggregateValue", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.ApproximateAggregateValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Datapoints", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InsightRuleContributorDatapoint, InsightRuleContributorDatapointUnmarshaller>(InsightRuleContributorDatapointUnmarshaller.Instance);
+                    unmarshalledObject.Datapoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Keys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Keys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
         }
 
 

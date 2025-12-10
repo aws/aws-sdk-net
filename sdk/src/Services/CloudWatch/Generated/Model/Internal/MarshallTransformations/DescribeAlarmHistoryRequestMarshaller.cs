@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DescribeAlarmHistoryRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,56 +56,88 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeAlarmHistoryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "DescribeAlarmHistory");
-            request.Parameters.Add("Version", "2010-08-01");
+            string target = "GraniteServiceVersion20100801.DescribeAlarmHistory";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAlarmContributorId())
                 {
-                    request.Parameters.Add("AlarmContributorId", StringUtils.FromString(publicRequest.AlarmContributorId));
+                    context.Writer.WritePropertyName("AlarmContributorId");
+                    context.Writer.Write(publicRequest.AlarmContributorId);
                 }
+
                 if(publicRequest.IsSetAlarmName())
                 {
-                    request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
+                    context.Writer.WritePropertyName("AlarmName");
+                    context.Writer.Write(publicRequest.AlarmName);
                 }
+
                 if(publicRequest.IsSetAlarmTypes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
+                    context.Writer.WritePropertyName("AlarmTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAlarmTypesListValue in publicRequest.AlarmTypes)
                     {
-                        request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestAlarmTypesListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetEndDateUtc())
                 {
-                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateUtc));
+                    context.Writer.WritePropertyName("EndDate");
+                    context.Writer.Write(publicRequest.EndDateUtc);
                 }
+
                 if(publicRequest.IsSetHistoryItemType())
                 {
-                    request.Parameters.Add("HistoryItemType", StringUtils.FromString(publicRequest.HistoryItemType));
+                    context.Writer.WritePropertyName("HistoryItemType");
+                    context.Writer.Write(publicRequest.HistoryItemType);
                 }
+
                 if(publicRequest.IsSetMaxRecords())
                 {
-                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                    context.Writer.WritePropertyName("MaxRecords");
+                    context.Writer.Write(publicRequest.MaxRecords);
                 }
+
                 if(publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
+
                 if(publicRequest.IsSetScanBy())
                 {
-                    request.Parameters.Add("ScanBy", StringUtils.FromString(publicRequest.ScanBy));
+                    context.Writer.WritePropertyName("ScanBy");
+                    context.Writer.Write(publicRequest.ScanBy);
                 }
+
                 if(publicRequest.IsSetStartDateUtc())
                 {
-                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateUtc));
+                    context.Writer.WritePropertyName("StartDate");
+                    context.Writer.Write(publicRequest.StartDateUtc);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static DescribeAlarmHistoryRequestMarshaller _instance = new DescribeAlarmHistoryRequestMarshaller();        
+        private static DescribeAlarmHistoryRequestMarshaller _instance = new DescribeAlarmHistoryRequestMarshaller();        
 
         internal static DescribeAlarmHistoryRequestMarshaller GetInstance()
         {

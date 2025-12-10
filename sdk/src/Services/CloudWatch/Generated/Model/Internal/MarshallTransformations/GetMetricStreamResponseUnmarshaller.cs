@@ -29,20 +29,22 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GetMetricStream operation
     /// </summary>  
-    public class GetMetricStreamResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetMetricStreamResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetMetricStreamResponse response = new GetMetricStreamResponse();
 
@@ -50,131 +52,82 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.IsStartElement)
-                {                    
-                    if(context.TestExpression("GetMetricStreamResult", 2))
-                    {
-                        UnmarshallResult(context, response);                        
-                        continue;
-                    }
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
-                    }
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExcludeFilters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricStreamFilter, MetricStreamFilterUnmarshaller>(MetricStreamFilterUnmarshaller.Instance);
+                    response.ExcludeFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FirehoseArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FirehoseArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeFilters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricStreamFilter, MetricStreamFilterUnmarshaller>(MetricStreamFilterUnmarshaller.Instance);
+                    response.IncludeFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeLinkedAccountsMetrics", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IncludeLinkedAccountsMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastUpdateDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastUpdateDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutputFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OutputFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatisticsConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricStreamStatisticsConfiguration, MetricStreamStatisticsConfigurationUnmarshaller>(MetricStreamStatisticsConfigurationUnmarshaller.Instance);
+                    response.StatisticsConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
                 }
             }
 
             return response;
         }
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetMetricStreamResponse response)
-        {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-
-                    if (context.TestExpression("Arn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Arn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("CreationDate", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        response.CreationDate = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ExcludeFilters/member", targetDepth))
-                    {
-                        var unmarshaller = MetricStreamFilterUnmarshaller.Instance;
-                        if (response.ExcludeFilters == null)
-                        {
-                            response.ExcludeFilters = new List<MetricStreamFilter>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.ExcludeFilters.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("FirehoseArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.FirehoseArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IncludeFilters/member", targetDepth))
-                    {
-                        var unmarshaller = MetricStreamFilterUnmarshaller.Instance;
-                        if (response.IncludeFilters == null)
-                        {
-                            response.IncludeFilters = new List<MetricStreamFilter>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.IncludeFilters.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("IncludeLinkedAccountsMetrics", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.IncludeLinkedAccountsMetrics = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LastUpdateDate", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        response.LastUpdateDate = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Name", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Name = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("OutputFormat", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.OutputFormat = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("RoleArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.RoleArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("State", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.State = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StatisticsConfigurations/member", targetDepth))
-                    {
-                        var unmarshaller = MetricStreamStatisticsConfigurationUnmarshaller.Instance;
-                        if (response.StatisticsConfigurations == null)
-                        {
-                            response.StatisticsConfigurations = new List<MetricStreamStatisticsConfiguration>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.StatisticsConfigurations.Add(item);
-                        continue;
-                    }
-                } 
-           }
-
-            return;
-        }
-
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -183,30 +136,31 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceError"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceFault"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombination"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
                 {
                     return InvalidParameterCombinationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameter"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("MissingRequiredParameterException"))
                 {
                     return MissingRequiredParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
@@ -215,8 +169,29 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+            {
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                {
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
+                    }
+                }
+            }
+            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
         }
+
         private static GetMetricStreamResponseUnmarshaller _instance = new GetMetricStreamResponseUnmarshaller();        
 
         internal static GetMetricStreamResponseUnmarshaller GetInstance()

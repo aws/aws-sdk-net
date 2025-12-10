@@ -29,57 +29,71 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DashboardInvalidInputErrorException operation
+    /// Response Unmarshaller for DashboardInvalidInputErrorException Object
     /// </summary>  
-    public class DashboardInvalidInputErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<DashboardInvalidInputErrorException, XmlUnmarshallerContext>
+    public class DashboardInvalidInputErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<DashboardInvalidInputErrorException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DashboardInvalidInputErrorException Unmarshall(XmlUnmarshallerContext context)
+        public DashboardInvalidInputErrorException Unmarshall(JsonUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public DashboardInvalidInputErrorException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public DashboardInvalidInputErrorException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            DashboardInvalidInputErrorException response = new DashboardInvalidInputErrorException(errorResponse.Message, errorResponse.InnerException, 
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            context.Read();
+
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
             {
-                if (context.IsStartElement || context.IsAttribute)
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
                 {
-                    if (context.TestExpression("dashboardValidationMessages/member", targetDepth))
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
                     {
-                        if (response.DashboardValidationMessages == null)
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
                         {
-                            response.DashboardValidationMessages = new List<DashboardValidationMessage>();
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
                         }
-                        var item = DashboardValidationMessageUnmarshaller.Instance.Unmarshall(context);
-                        response.DashboardValidationMessages.Add(item);
                     }
                 }
             }
-            return response;
+            DashboardInvalidInputErrorException unmarshalledObject = new DashboardInvalidInputErrorException(errorResponse.Message, errorResponse.InnerException,
+                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("dashboardValidationMessages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DashboardValidationMessage, DashboardValidationMessageUnmarshaller>(DashboardValidationMessageUnmarshaller.Instance);
+                    unmarshalledObject.DashboardValidationMessages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
         private static DashboardInvalidInputErrorExceptionUnmarshaller _instance = new DashboardInvalidInputErrorExceptionUnmarshaller();        

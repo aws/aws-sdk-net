@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ListMetricsRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,55 +56,81 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListMetricsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "ListMetrics");
-            request.Parameters.Add("Version", "2010-08-01");
+            string target = "GraniteServiceVersion20100801.ListMetrics";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDimensions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Dimensions)
+                    context.Writer.WritePropertyName("Dimensions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDimensionsListValue in publicRequest.Dimensions)
                     {
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DimensionFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDimensionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetIncludeLinkedAccounts())
                 {
-                    request.Parameters.Add("IncludeLinkedAccounts", StringUtils.FromBool(publicRequest.IncludeLinkedAccounts));
+                    context.Writer.WritePropertyName("IncludeLinkedAccounts");
+                    context.Writer.Write(publicRequest.IncludeLinkedAccounts);
                 }
+
                 if(publicRequest.IsSetMetricName())
                 {
-                    request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
+                    context.Writer.WritePropertyName("MetricName");
+                    context.Writer.Write(publicRequest.MetricName);
                 }
+
                 if(publicRequest.IsSetNamespace())
                 {
-                    request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
+                    context.Writer.WritePropertyName("Namespace");
+                    context.Writer.Write(publicRequest.Namespace);
                 }
+
                 if(publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
+
                 if(publicRequest.IsSetOwningAccount())
                 {
-                    request.Parameters.Add("OwningAccount", StringUtils.FromString(publicRequest.OwningAccount));
+                    context.Writer.WritePropertyName("OwningAccount");
+                    context.Writer.Write(publicRequest.OwningAccount);
                 }
+
                 if(publicRequest.IsSetRecentlyActive())
                 {
-                    request.Parameters.Add("RecentlyActive", StringUtils.FromString(publicRequest.RecentlyActive));
+                    context.Writer.WritePropertyName("RecentlyActive");
+                    context.Writer.Write(publicRequest.RecentlyActive);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static ListMetricsRequestMarshaller _instance = new ListMetricsRequestMarshaller();        
+        private static ListMetricsRequestMarshaller _instance = new ListMetricsRequestMarshaller();        
 
         internal static ListMetricsRequestMarshaller GetInstance()
         {

@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((PutMetricStreamRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,126 +56,123 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutMetricStreamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "PutMetricStream");
-            request.Parameters.Add("Version", "2010-08-01");
+            string target = "GraniteServiceVersion20100801.PutMetricStream";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetExcludeFilters())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ExcludeFilters)
+                    context.Writer.WritePropertyName("ExcludeFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExcludeFiltersListValue in publicRequest.ExcludeFilters)
                     {
-                        if(publicRequestlistValue.IsSetMetricNames())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.MetricNames)
-                            {
-                                request.Parameters.Add("ExcludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricNames" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetNamespace())
-                        {
-                            request.Parameters.Add("ExcludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricStreamFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExcludeFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetFirehoseArn())
                 {
-                    request.Parameters.Add("FirehoseArn", StringUtils.FromString(publicRequest.FirehoseArn));
+                    context.Writer.WritePropertyName("FirehoseArn");
+                    context.Writer.Write(publicRequest.FirehoseArn);
                 }
+
                 if(publicRequest.IsSetIncludeFilters())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.IncludeFilters)
+                    context.Writer.WritePropertyName("IncludeFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIncludeFiltersListValue in publicRequest.IncludeFilters)
                     {
-                        if(publicRequestlistValue.IsSetMetricNames())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.MetricNames)
-                            {
-                                request.Parameters.Add("IncludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricNames" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetNamespace())
-                        {
-                            request.Parameters.Add("IncludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricStreamFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestIncludeFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetIncludeLinkedAccountsMetrics())
                 {
-                    request.Parameters.Add("IncludeLinkedAccountsMetrics", StringUtils.FromBool(publicRequest.IncludeLinkedAccountsMetrics));
+                    context.Writer.WritePropertyName("IncludeLinkedAccountsMetrics");
+                    context.Writer.Write(publicRequest.IncludeLinkedAccountsMetrics);
                 }
+
                 if(publicRequest.IsSetName())
                 {
-                    request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
+
                 if(publicRequest.IsSetOutputFormat())
                 {
-                    request.Parameters.Add("OutputFormat", StringUtils.FromString(publicRequest.OutputFormat));
+                    context.Writer.WritePropertyName("OutputFormat");
+                    context.Writer.Write(publicRequest.OutputFormat);
                 }
+
                 if(publicRequest.IsSetRoleArn())
                 {
-                    request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
+                    context.Writer.WritePropertyName("RoleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
                 }
+
                 if(publicRequest.IsSetStatisticsConfigurations())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.StatisticsConfigurations)
+                    context.Writer.WritePropertyName("StatisticsConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStatisticsConfigurationsListValue in publicRequest.StatisticsConfigurations)
                     {
-                        if(publicRequestlistValue.IsSetAdditionalStatistics())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.AdditionalStatistics)
-                            {
-                                request.Parameters.Add("StatisticsConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AdditionalStatistics" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetIncludeMetrics())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.IncludeMetrics)
-                            {
-                                if(publicRequestlistValuelistValue.IsSetMetricName())
-                                {
-                                    request.Parameters.Add("StatisticsConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IncludeMetrics" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "MetricName", StringUtils.FromString(publicRequestlistValuelistValue.MetricName));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetNamespace())
-                                {
-                                    request.Parameters.Add("StatisticsConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IncludeMetrics" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValuelistValue.Namespace));
-                                }
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricStreamStatisticsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestStatisticsConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static PutMetricStreamRequestMarshaller _instance = new PutMetricStreamRequestMarshaller();        
+        private static PutMetricStreamRequestMarshaller _instance = new PutMetricStreamRequestMarshaller();        
 
         internal static PutMetricStreamRequestMarshaller GetInstance()
         {

@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DescribeAlarmsRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,61 +56,93 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeAlarmsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "DescribeAlarms");
-            request.Parameters.Add("Version", "2010-08-01");
+            string target = "GraniteServiceVersion20100801.DescribeAlarms";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetActionPrefix())
                 {
-                    request.Parameters.Add("ActionPrefix", StringUtils.FromString(publicRequest.ActionPrefix));
+                    context.Writer.WritePropertyName("ActionPrefix");
+                    context.Writer.Write(publicRequest.ActionPrefix);
                 }
+
                 if(publicRequest.IsSetAlarmNamePrefix())
                 {
-                    request.Parameters.Add("AlarmNamePrefix", StringUtils.FromString(publicRequest.AlarmNamePrefix));
+                    context.Writer.WritePropertyName("AlarmNamePrefix");
+                    context.Writer.Write(publicRequest.AlarmNamePrefix);
                 }
+
                 if(publicRequest.IsSetAlarmNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AlarmNames)
+                    context.Writer.WritePropertyName("AlarmNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAlarmNamesListValue in publicRequest.AlarmNames)
                     {
-                        request.Parameters.Add("AlarmNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestAlarmNamesListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetAlarmTypes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
+                    context.Writer.WritePropertyName("AlarmTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAlarmTypesListValue in publicRequest.AlarmTypes)
                     {
-                        request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestAlarmTypesListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetChildrenOfAlarmName())
                 {
-                    request.Parameters.Add("ChildrenOfAlarmName", StringUtils.FromString(publicRequest.ChildrenOfAlarmName));
+                    context.Writer.WritePropertyName("ChildrenOfAlarmName");
+                    context.Writer.Write(publicRequest.ChildrenOfAlarmName);
                 }
+
                 if(publicRequest.IsSetMaxRecords())
                 {
-                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                    context.Writer.WritePropertyName("MaxRecords");
+                    context.Writer.Write(publicRequest.MaxRecords);
                 }
+
                 if(publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
+
                 if(publicRequest.IsSetParentsOfAlarmName())
                 {
-                    request.Parameters.Add("ParentsOfAlarmName", StringUtils.FromString(publicRequest.ParentsOfAlarmName));
+                    context.Writer.WritePropertyName("ParentsOfAlarmName");
+                    context.Writer.Write(publicRequest.ParentsOfAlarmName);
                 }
+
                 if(publicRequest.IsSetStateValue())
                 {
-                    request.Parameters.Add("StateValue", StringUtils.FromString(publicRequest.StateValue));
+                    context.Writer.WritePropertyName("StateValue");
+                    context.Writer.Write(publicRequest.StateValue);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static DescribeAlarmsRequestMarshaller _instance = new DescribeAlarmsRequestMarshaller();        
+        private static DescribeAlarmsRequestMarshaller _instance = new DescribeAlarmsRequestMarshaller();        
 
         internal static DescribeAlarmsRequestMarshaller GetInstance()
         {

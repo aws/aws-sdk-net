@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((PutMetricAlarmRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,212 +56,213 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutMetricAlarmRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "PutMetricAlarm");
-            request.Parameters.Add("Version", "2010-08-01");
+            string target = "GraniteServiceVersion20100801.PutMetricAlarm";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetActionsEnabled())
                 {
-                    request.Parameters.Add("ActionsEnabled", StringUtils.FromBool(publicRequest.ActionsEnabled));
+                    context.Writer.WritePropertyName("ActionsEnabled");
+                    context.Writer.Write(publicRequest.ActionsEnabled);
                 }
+
                 if(publicRequest.IsSetAlarmActions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AlarmActions)
+                    context.Writer.WritePropertyName("AlarmActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAlarmActionsListValue in publicRequest.AlarmActions)
                     {
-                        request.Parameters.Add("AlarmActions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestAlarmActionsListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetAlarmDescription())
                 {
-                    request.Parameters.Add("AlarmDescription", StringUtils.FromString(publicRequest.AlarmDescription));
+                    context.Writer.WritePropertyName("AlarmDescription");
+                    context.Writer.Write(publicRequest.AlarmDescription);
                 }
+
                 if(publicRequest.IsSetAlarmName())
                 {
-                    request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
+                    context.Writer.WritePropertyName("AlarmName");
+                    context.Writer.Write(publicRequest.AlarmName);
                 }
+
                 if(publicRequest.IsSetComparisonOperator())
                 {
-                    request.Parameters.Add("ComparisonOperator", StringUtils.FromString(publicRequest.ComparisonOperator));
+                    context.Writer.WritePropertyName("ComparisonOperator");
+                    context.Writer.Write(publicRequest.ComparisonOperator);
                 }
+
                 if(publicRequest.IsSetDatapointsToAlarm())
                 {
-                    request.Parameters.Add("DatapointsToAlarm", StringUtils.FromInt(publicRequest.DatapointsToAlarm));
+                    context.Writer.WritePropertyName("DatapointsToAlarm");
+                    context.Writer.Write(publicRequest.DatapointsToAlarm);
                 }
+
                 if(publicRequest.IsSetDimensions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Dimensions)
+                    context.Writer.WritePropertyName("Dimensions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDimensionsListValue in publicRequest.Dimensions)
                     {
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DimensionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDimensionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetEvaluateLowSampleCountPercentile())
                 {
-                    request.Parameters.Add("EvaluateLowSampleCountPercentile", StringUtils.FromString(publicRequest.EvaluateLowSampleCountPercentile));
+                    context.Writer.WritePropertyName("EvaluateLowSampleCountPercentile");
+                    context.Writer.Write(publicRequest.EvaluateLowSampleCountPercentile);
                 }
+
                 if(publicRequest.IsSetEvaluationPeriods())
                 {
-                    request.Parameters.Add("EvaluationPeriods", StringUtils.FromInt(publicRequest.EvaluationPeriods));
+                    context.Writer.WritePropertyName("EvaluationPeriods");
+                    context.Writer.Write(publicRequest.EvaluationPeriods);
                 }
+
                 if(publicRequest.IsSetExtendedStatistic())
                 {
-                    request.Parameters.Add("ExtendedStatistic", StringUtils.FromString(publicRequest.ExtendedStatistic));
+                    context.Writer.WritePropertyName("ExtendedStatistic");
+                    context.Writer.Write(publicRequest.ExtendedStatistic);
                 }
+
                 if(publicRequest.IsSetInsufficientDataActions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.InsufficientDataActions)
+                    context.Writer.WritePropertyName("InsufficientDataActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInsufficientDataActionsListValue in publicRequest.InsufficientDataActions)
                     {
-                        request.Parameters.Add("InsufficientDataActions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestInsufficientDataActionsListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetMetricName())
                 {
-                    request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
+                    context.Writer.WritePropertyName("MetricName");
+                    context.Writer.Write(publicRequest.MetricName);
                 }
+
                 if(publicRequest.IsSetMetrics())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Metrics)
+                    context.Writer.WritePropertyName("Metrics");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
                     {
-                        if(publicRequestlistValue.IsSetAccountId())
-                        {
-                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AccountId", StringUtils.FromString(publicRequestlistValue.AccountId));
-                        }
-                        if(publicRequestlistValue.IsSetExpression())
-                        {
-                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestlistValue.Expression));
-                        }
-                        if(publicRequestlistValue.IsSetId())
-                        {
-                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
-                        }
-                        if(publicRequestlistValue.IsSetLabel())
-                        {
-                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestlistValue.Label));
-                        }
-                        if(publicRequestlistValue.IsSetMetricStat())
-                        {
-                            if(publicRequestlistValue.MetricStat.IsSetMetric())
-                            {
-                                if(publicRequestlistValue.MetricStat.Metric.IsSetDimensions())
-                                {
-                                    int publicRequestlistValueMetricStatMetriclistValueIndex = 1;
-                                    foreach(var publicRequestlistValueMetricStatMetriclistValue in publicRequestlistValue.MetricStat.Metric.Dimensions)
-                                    {
-                                        if(publicRequestlistValueMetricStatMetriclistValue.IsSetName())
-                                        {
-                                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Name));
-                                        }
-                                        if(publicRequestlistValueMetricStatMetriclistValue.IsSetValue())
-                                        {
-                                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Value));
-                                        }
-                                        publicRequestlistValueMetricStatMetriclistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.MetricStat.Metric.IsSetMetricName())
-                                {
-                                    request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.MetricName));
-                                }
-                                if(publicRequestlistValue.MetricStat.Metric.IsSetNamespace())
-                                {
-                                    request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.Namespace));
-                                }
-                            }
-                            if(publicRequestlistValue.MetricStat.IsSetPeriod())
-                            {
-                                request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Period", StringUtils.FromInt(publicRequestlistValue.MetricStat.Period));
-                            }
-                            if(publicRequestlistValue.MetricStat.IsSetStat())
-                            {
-                                request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestlistValue.MetricStat.Stat));
-                            }
-                            if(publicRequestlistValue.MetricStat.IsSetUnit())
-                            {
-                                request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestlistValue.MetricStat.Unit));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetPeriod())
-                        {
-                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestlistValue.Period));
-                        }
-                        if(publicRequestlistValue.IsSetReturnData())
-                        {
-                            request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestlistValue.ReturnData));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricDataQueryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMetricsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetNamespace())
                 {
-                    request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
+                    context.Writer.WritePropertyName("Namespace");
+                    context.Writer.Write(publicRequest.Namespace);
                 }
+
                 if(publicRequest.IsSetOKActions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.OKActions)
+                    context.Writer.WritePropertyName("OKActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOKActionsListValue in publicRequest.OKActions)
                     {
-                        request.Parameters.Add("OKActions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestOKActionsListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetPeriod())
                 {
-                    request.Parameters.Add("Period", StringUtils.FromInt(publicRequest.Period));
+                    context.Writer.WritePropertyName("Period");
+                    context.Writer.Write(publicRequest.Period);
                 }
+
                 if(publicRequest.IsSetStatistic())
                 {
-                    request.Parameters.Add("Statistic", StringUtils.FromString(publicRequest.Statistic));
+                    context.Writer.WritePropertyName("Statistic");
+                    context.Writer.Write(publicRequest.Statistic);
                 }
+
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetThreshold())
                 {
-                    request.Parameters.Add("Threshold", StringUtils.FromDouble(publicRequest.Threshold));
+                    context.Writer.WritePropertyName("Threshold");
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Threshold);
+                    }
                 }
+
                 if(publicRequest.IsSetThresholdMetricId())
                 {
-                    request.Parameters.Add("ThresholdMetricId", StringUtils.FromString(publicRequest.ThresholdMetricId));
+                    context.Writer.WritePropertyName("ThresholdMetricId");
+                    context.Writer.Write(publicRequest.ThresholdMetricId);
                 }
+
                 if(publicRequest.IsSetTreatMissingData())
                 {
-                    request.Parameters.Add("TreatMissingData", StringUtils.FromString(publicRequest.TreatMissingData));
+                    context.Writer.WritePropertyName("TreatMissingData");
+                    context.Writer.Write(publicRequest.TreatMissingData);
                 }
+
                 if(publicRequest.IsSetUnit())
                 {
-                    request.Parameters.Add("Unit", StringUtils.FromString(publicRequest.Unit));
+                    context.Writer.WritePropertyName("Unit");
+                    context.Writer.Write(publicRequest.Unit);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static PutMetricAlarmRequestMarshaller _instance = new PutMetricAlarmRequestMarshaller();        
+        private static PutMetricAlarmRequestMarshaller _instance = new PutMetricAlarmRequestMarshaller();        
 
         internal static PutMetricAlarmRequestMarshaller GetInstance()
         {

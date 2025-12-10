@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -42,90 +44,78 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AlarmHistoryItem Unmarshall(XmlUnmarshallerContext context)
+        AlarmHistoryItem IUnmarshaller<AlarmHistoryItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            AlarmHistoryItem unmarshalledObject = new AlarmHistoryItem();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("AlarmContributorAttributes/entry", targetDepth))
-                    {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                        if (unmarshalledObject.AlarmContributorAttributes == null)
-                        {
-                            unmarshalledObject.AlarmContributorAttributes = new Dictionary<string, string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.AlarmContributorAttributes.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmContributorId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmContributorId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistoryData", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistoryData = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistoryItemType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistoryItemType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistorySummary", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistorySummary = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timestamp", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public AlarmHistoryItem Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            AlarmHistoryItem unmarshalledObject = new AlarmHistoryItem();
+            if (context.IsEmptyResponse)
+                return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("AlarmContributorAttributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AlarmContributorAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AlarmContributorId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AlarmContributorId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AlarmName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AlarmType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AlarmType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HistoryData", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HistoryData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HistoryItemType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HistoryItemType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HistorySummary", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HistorySummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
         }
 
 

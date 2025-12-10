@@ -29,20 +29,22 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GetMetricData operation
     /// </summary>  
-    public class GetMetricDataResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetMetricDataResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetMetricDataResponse response = new GetMetricDataResponse();
 
@@ -50,72 +52,28 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.IsStartElement)
-                {                    
-                    if(context.TestExpression("GetMetricDataResult", 2))
-                    {
-                        UnmarshallResult(context, response);                        
-                        continue;
-                    }
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
-                    }
+                if (context.TestExpression("Messages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MessageData, MessageDataUnmarshaller>(MessageDataUnmarshaller.Instance);
+                    response.Messages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MetricDataResults", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricDataResult, MetricDataResultUnmarshaller>(MetricDataResultUnmarshaller.Instance);
+                    response.MetricDataResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
                 }
             }
 
             return response;
         }
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetMetricDataResponse response)
-        {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-
-                    if (context.TestExpression("Messages/member", targetDepth))
-                    {
-                        var unmarshaller = MessageDataUnmarshaller.Instance;
-                        if (response.Messages == null)
-                        {
-                            response.Messages = new List<MessageData>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.Messages.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricDataResults/member", targetDepth))
-                    {
-                        var unmarshaller = MetricDataResultUnmarshaller.Instance;
-                        if (response.MetricDataResults == null)
-                        {
-                            response.MetricDataResults = new List<MetricDataResult>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.MetricDataResults.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("NextToken", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextToken = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                } 
-           }
-
-            return;
-        }
-
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -124,24 +82,46 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
                 {
                     return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+            {
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                {
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
+                    }
+                }
+            }
+            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
         }
+
         private static GetMetricDataResponseUnmarshaller _instance = new GetMetricDataResponseUnmarshaller();        
 
         internal static GetMetricDataResponseUnmarshaller GetInstance()

@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -42,88 +44,66 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetricDataResult Unmarshall(XmlUnmarshallerContext context)
+        MetricDataResult IUnmarshaller<MetricDataResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            MetricDataResult unmarshalledObject = new MetricDataResult();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("Id", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Label", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Label = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Messages/member", targetDepth))
-                    {
-                        var unmarshaller = MessageDataUnmarshaller.Instance;
-                        if (unmarshalledObject.Messages == null)
-                        {
-                            unmarshalledObject.Messages = new List<MessageData>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Messages.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("StatusCode", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timestamps/member", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        if (unmarshalledObject.Timestamps == null)
-                        {
-                            unmarshalledObject.Timestamps = new List<DateTime>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Timestamps.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Values/member", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        if (unmarshalledObject.Values == null)
-                        {
-                            unmarshalledObject.Values = new List<double>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Values.Add(item);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public MetricDataResult Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            MetricDataResult unmarshalledObject = new MetricDataResult();
+            if (context.IsEmptyResponse)
+                return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Label", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Messages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MessageData, MessageDataUnmarshaller>(MessageDataUnmarshaller.Instance);
+                    unmarshalledObject.Messages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timestamps", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DateTime, DateTimeUnmarshaller>(DateTimeUnmarshaller.Instance);
+                    unmarshalledObject.Timestamps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Values", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
         }
 
 
