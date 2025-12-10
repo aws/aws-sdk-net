@@ -1,16 +1,16 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon.DynamoDBv2;
+﻿using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using System.IO;
-using System.Text.Json;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -65,18 +65,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestDocumentPutGet()
+        public async Task TestDocumentPutGet()
         {
             // Clear tables
-            CleanupTables();
-
-            ITable hashTable;
-            ITable hashRangeTable;
-            ITable numericHashRangeTable;
-            ITable compositeHashRangeTable;
+            await CleanupTables();
 
             // Load tables using provided conversion schema
-            LoadTables(DynamoDBEntryConversion.V2, out hashTable, out hashRangeTable, out numericHashRangeTable, out compositeHashRangeTable);
+            LoadTables(DynamoDBEntryConversion.V2, out ITable hashTable, out ITable hashRangeTable, out ITable numericHashRangeTable, out ITable compositeHashRangeTable);
 
             // JSON as top-level data
             var doc = Document.FromJson(_sampleJson);
@@ -86,12 +81,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // JSON as nested data
             var nestedDoc = Document.FromJson(_sampleJson);
-            doc = new Document();
-            doc["Name"] = "Jim";
-            doc["Age"] = 29;
-            doc["Colleague"] = nestedDoc;
-            hashRangeTable.PutItem(doc);
-            retrievedDoc = hashRangeTable.GetItem("Jim", 29);
+            doc = new Document
+            {
+                ["Name"] = "Jim",
+                ["Age"] = 29,
+                ["Colleague"] = nestedDoc
+            };
+            
+            await hashRangeTable.PutItemAsync(doc);
+            retrievedDoc = await hashRangeTable.GetItemAsync("Jim", 29);
             Assert.IsTrue(doc.ForceConversion(DynamoDBEntryConversion.V2).Equals(retrievedDoc));
         }
 
