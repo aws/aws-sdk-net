@@ -78,6 +78,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApnPrograms = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsPartition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AwsPartition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompetitorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

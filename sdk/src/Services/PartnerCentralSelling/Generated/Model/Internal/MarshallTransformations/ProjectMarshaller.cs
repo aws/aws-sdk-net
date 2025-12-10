@@ -65,6 +65,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAwsPartition())
+            {
+                context.Writer.WritePropertyName("AwsPartition");
+                context.Writer.Write(requestObject.AwsPartition);
+            }
+
             if(requestObject.IsSetCompetitorName())
             {
                 context.Writer.WritePropertyName("CompetitorName");
