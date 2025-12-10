@@ -31,118 +31,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Objects Request Marshaller
     /// </summary>       
-    public class DeleteObjectsRequestMarshaller : IMarshaller<IRequest, DeleteObjectsRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class DeleteObjectsRequestMarshaller : IMarshaller<IRequest, DeleteObjectsRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((DeleteObjectsRequest)input);
-		}
-
-        public IRequest Marshall(DeleteObjectsRequest deleteObjectsRequest)
+        void MfaCodesCustomMarshall(DefaultRequest request, DeleteObjectsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteObjectsRequest, "Amazon.S3");
-
-            request.HttpMethod = "POST";
-
-			if (deleteObjectsRequest.IsSetBypassGovernanceRetention())
-                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(deleteObjectsRequest.BypassGovernanceRetention.Value));
-            if (deleteObjectsRequest.IsSetMfaCodes())
-                request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectsRequest.MfaCodes.FormattedMfaCodes);
-            if (deleteObjectsRequest.IsSetRequestPayer())
-                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(deleteObjectsRequest.RequestPayer.ToString()));
-            if (deleteObjectsRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(deleteObjectsRequest.ExpectedBucketOwner));
-            if (deleteObjectsRequest.IsSetChecksumAlgorithm())
-                request.Headers[S3Constants.AmzHeaderSdkChecksumAlgorithm] = S3Transforms.ToStringValue(deleteObjectsRequest.ChecksumAlgorithm);
-
-            if (string.IsNullOrEmpty(deleteObjectsRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteObjectsRequest.BucketName");
-
-            request.ResourcePath = "/";
-
-            request.AddSubResource("delete");
-
-            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {
-                xmlWriter.WriteStartElement("Delete", S3Constants.S3RequestXmlNamespace);
-
-                var deleteDeleteobjectsList = deleteObjectsRequest.Objects;
-                if (deleteDeleteobjectsList != null && deleteDeleteobjectsList.Count > 0)
-                {
-                    foreach (var deleteDeleteobjectsListValue in deleteDeleteobjectsList)
-                    {
-                        xmlWriter.WriteStartElement("Object", "");
-                        if (deleteDeleteobjectsListValue.IsSetKey())
-                        {
-                            xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Key));
-                        }
-                        if (deleteDeleteobjectsListValue.IsSetVersionId())
-                        {
-                            xmlWriter.WriteElementString("VersionId", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.VersionId));
-                        }
-
-                        if (deleteDeleteobjectsListValue.IsSetETag())
-                        {
-                            xmlWriter.WriteElementString("ETag", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.ETag));
-                        }
-                        if (deleteDeleteobjectsListValue.IsSetLastModifiedTime())
-                        {
-                            xmlWriter.WriteElementString("LastModifiedTime", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.LastModifiedTime.Value));
-                        }
-                        if (deleteDeleteobjectsListValue.IsSetSize())
-                        {
-                            xmlWriter.WriteElementString("Size", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Size.Value));
-                        }
-
-                        xmlWriter.WriteEndElement();
-                    }
-                }
-                if (deleteObjectsRequest.IsSetQuiet())
-                {
-                    xmlWriter.WriteElementString("Quiet", "", S3Transforms.ToXmlStringValue(deleteObjectsRequest.Quiet.Value));
-                }
-                xmlWriter.WriteEndElement();
-            }
-
-            try
-            {
-                var content = stringWriter.ToString();
-                request.Content = Encoding.UTF8.GetBytes(content);
-                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
-
-                ChecksumUtils.SetChecksumData(
-                    request, 
-                    deleteObjectsRequest.ChecksumAlgorithm, 
-                    fallbackToMD5: false, 
-                    isRequestChecksumRequired: true,
-                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
-                );
-            }
-            catch (EncoderFallbackException e)
-            {
-                throw new AmazonServiceException("Unable to marshall request to XML", e);
-            }
-
-            return request;
+            if (publicRequest.IsSetMfaCodes())
+                request.Headers.Add(HeaderKeys.XAmzMfaHeader, publicRequest.MfaCodes.FormattedMfaCodes);
         }
-
-	    private static DeleteObjectsRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static DeleteObjectsRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new DeleteObjectsRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
     }
 }
 

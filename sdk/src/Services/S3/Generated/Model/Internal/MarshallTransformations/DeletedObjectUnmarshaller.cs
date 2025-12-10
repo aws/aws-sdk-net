@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-    ///   DeletedObject Unmarshaller
-     /// </summary>
-    public class DeletedObjectUnmarshaller : IXmlUnmarshaller<DeletedObject, XmlUnmarshallerContext>
+    /// <summary>
+    /// Response Unmarshaller for DeletedObject Object
+    /// </summary>  
+    public partial class DeletedObjectUnmarshaller : IXmlUnmarshaller<DeletedObject, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeletedObject Unmarshall(XmlUnmarshallerContext context) 
+        public DeletedObject Unmarshall(XmlUnmarshallerContext context)
         {
-            DeletedObject deletedItem = new DeletedObject();
+            DeletedObject unmarshalledObject = new DeletedObject();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -44,58 +58,52 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DeleteMarker", targetDepth))
                     {
-                        deletedItem.DeleteMarker = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.DeleteMarker = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DeleteMarkerVersionId", targetDepth))
                     {
-                        deletedItem.DeleteMarkerVersionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeleteMarkerVersionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Key", targetDepth))
                     {
-                        deletedItem.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VersionId", targetDepth))
                     {
-                        deletedItem.VersionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return deletedItem;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return deletedItem;
+            }          
+            return unmarshalledObject;
         }
 
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DeletedObject unmarshalledObject, int targetDepth);
 
-        private static DeletedObjectUnmarshaller _instance;
+        private static DeletedObjectUnmarshaller _instance = new DeletedObjectUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DeletedObjectUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new DeletedObjectUnmarshaller();
-                }
                 return _instance;
             }
         }
-
     }
 }
-    
