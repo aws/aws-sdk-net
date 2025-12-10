@@ -83,6 +83,18 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Returns the original shape name of the exception specified in the json model.
+        /// </summary>
+        public string ShapeOriginalName
+        {
+            get
+            {
+                return base.Name;
+            }
+        }
+
+
+        /// <summary>
         /// Determines if the exception is marked retryable
         /// </summary>
         public bool IsRetryable
