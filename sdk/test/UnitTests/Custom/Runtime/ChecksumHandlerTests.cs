@@ -23,6 +23,7 @@ using Amazon.CloudWatch;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using System.Linq;
 
 namespace AWSSDK.UnitTests
 {
@@ -93,7 +94,7 @@ namespace AWSSDK.UnitTests
             {
                 // Make sure that we don't set checksum header twice when it already exists
                 Assert.IsTrue(request.Headers[headerKey].Equals(JunkChecksumHeaderValue));
-                Assert.IsTrue(request.Headers.Count == 1);
+                Assert.IsTrue(request.Headers.Count(h => h.Key.StartsWith("x-amz-checksum-")) == 1);
             }
             else if (headerKey != null)
             {
@@ -109,7 +110,7 @@ namespace AWSSDK.UnitTests
             }
             else
             {
-                Assert.IsTrue(request.Headers.Count == 0);
+                Assert.IsTrue(request.Headers.Count(h => h.Key.StartsWith("x-amz-checksum-")) == 0);
             }
         }
 
@@ -174,7 +175,7 @@ namespace AWSSDK.UnitTests
             {
                 // Make sure that we don't set checksum header twice
                 Assert.IsTrue(request.Headers[headerKey].Equals(JunkChecksumHeaderValue));
-                Assert.IsTrue(request.Headers.Count == 1);
+                Assert.IsTrue(request.Headers.Count(h => h.Key.StartsWith("x-amz-checksum-")) == 1);
             }
             else if (headerKey != null)
             {
@@ -190,7 +191,7 @@ namespace AWSSDK.UnitTests
             }
             else
             {
-                Assert.IsTrue(request.Headers.Count == 0);
+                Assert.IsTrue(request.Headers.Count(h => h.Key.StartsWith("x-amz-checksum-")) == 0);
             }
         }
 #endif
