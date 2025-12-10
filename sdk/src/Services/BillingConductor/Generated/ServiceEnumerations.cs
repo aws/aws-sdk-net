@@ -200,6 +200,10 @@ namespace Amazon.BillingConductor
         /// Constant CONSOLIDATED for ComputationRuleEnum
         /// </summary>
         public static readonly ComputationRuleEnum CONSOLIDATED = new ComputationRuleEnum("CONSOLIDATED");
+        /// <summary>
+        /// Constant ITEMIZED for ComputationRuleEnum
+        /// </summary>
+        public static readonly ComputationRuleEnum ITEMIZED = new ComputationRuleEnum("ITEMIZED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -508,6 +512,10 @@ namespace Amazon.BillingConductor
         /// Constant LINE_ITEM_TYPE for LineItemFilterAttributeName
         /// </summary>
         public static readonly LineItemFilterAttributeName LINE_ITEM_TYPE = new LineItemFilterAttributeName("LINE_ITEM_TYPE");
+        /// <summary>
+        /// Constant SERVICE for LineItemFilterAttributeName
+        /// </summary>
+        public static readonly LineItemFilterAttributeName SERVICE = new LineItemFilterAttributeName("SERVICE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -596,6 +604,10 @@ namespace Amazon.BillingConductor
     public class MatchOption : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EQUAL for MatchOption
+        /// </summary>
+        public static readonly MatchOption EQUAL = new MatchOption("EQUAL");
         /// <summary>
         /// Constant NOT_EQUAL for MatchOption
         /// </summary>
@@ -848,6 +860,10 @@ namespace Amazon.BillingConductor
         /// Constant ILLEGAL_BILLING_ENTITY for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_BILLING_ENTITY = new ValidationExceptionReason("ILLEGAL_BILLING_ENTITY");
+        /// <summary>
+        /// Constant ILLEGAL_BILLING_GROUP_PRICING_PLAN for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_BILLING_GROUP_PRICING_PLAN = new ValidationExceptionReason("ILLEGAL_BILLING_GROUP_PRICING_PLAN");
         /// <summary>
         /// Constant ILLEGAL_BILLING_GROUP_TYPE for ValidationExceptionReason
         /// </summary>
