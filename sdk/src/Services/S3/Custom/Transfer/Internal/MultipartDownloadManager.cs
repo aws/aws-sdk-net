@@ -440,7 +440,23 @@ namespace Amazon.S3.Transfer.Internal
                     catch (Exception ex)
                     {
                         _downloadException = ex;
-                        _logger.Error(ex, "MultipartDownloadManager: Background download task failed");
+                        
+            
+                        
+                        // Cancel all remaining downloads immediately to prevent cascading timeout errors
+                        // This ensures that when one part fails, other tasks stop gracefully instead of
+                        // continuing until they hit their own timeout/cancellation errors
+                        try
+                        {
+                            internalCts.Cancel();
+                            _logger.DebugFormat("MultipartDownloadManager: Cancelled all in-flight downloads due to error");
+                        }
+                        catch (ObjectDisposedException)
+                        {
+                            // CancellationTokenSource was already disposed, ignore
+                            _logger.DebugFormat("MultipartDownloadManager: CancellationTokenSource already disposed during cancellation");
+                        }
+                        
                         _dataHandler.OnDownloadComplete(ex);
                         throw;
                     }
@@ -461,6 +477,18 @@ namespace Amazon.S3.Transfer.Internal
             {
                 _downloadException = ex;
                 _logger.Error(ex, "MultipartDownloadManager: Download failed");
+                
+                // Cancel all remaining downloads immediately to prevent cascading timeout errors
+                try
+                {
+                    internalCts.Cancel();
+                    _logger.DebugFormat("MultipartDownloadManager: Cancelled all in-flight downloads due to error");
+                }
+                catch (ObjectDisposedException)
+                {
+                    // CancellationTokenSource was already disposed, ignore
+                    _logger.DebugFormat("MultipartDownloadManager: CancellationTokenSource already disposed during cancellation");
+                }
                 
                 _dataHandler.OnDownloadComplete(ex);
                 
