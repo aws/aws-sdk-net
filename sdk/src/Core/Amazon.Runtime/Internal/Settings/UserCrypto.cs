@@ -33,13 +33,9 @@ namespace Amazon.Runtime.Internal.Settings
     {
         public static string Decrypt(string encrypted)
         {
-            if (encrypted is null)
-                throw new ArgumentNullException(nameof(encrypted));
-
             byte[] dataIn;
 
-#if NET5_0_OR_GREATER
-            // Optimized path: no per-byte Substring allocations
+#if NET8_0_OR_GREATER
             dataIn = Convert.FromHexString(encrypted);
 #else
     // Legacy behavior preserved for older TFMs
