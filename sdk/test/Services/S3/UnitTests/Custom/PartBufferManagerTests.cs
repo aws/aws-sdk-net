@@ -82,6 +82,7 @@ namespace AWSSDK.UnitTests
                 // Add part 1
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer);
 
                 // Read part 1 completely
@@ -244,6 +245,8 @@ namespace AWSSDK.UnitTests
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
 
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
+
                 // Act
                 manager.AddBuffer(partBuffer);
 
@@ -301,6 +304,7 @@ namespace AWSSDK.UnitTests
                 // Add the part
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer);
 
                 // Assert - Read should complete
@@ -331,6 +335,7 @@ namespace AWSSDK.UnitTests
                 var dataSource = new BufferedDataSource(partBuffer);
 
                 // Act
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddDataSource(dataSource);
 
                 // Assert - Should be able to read from part 1
@@ -415,6 +420,7 @@ namespace AWSSDK.UnitTests
                 Buffer.BlockCopy(testData, 0, testBuffer, 0, 512);
                 
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer);
 
                 // Act
@@ -443,6 +449,7 @@ namespace AWSSDK.UnitTests
                 // Add part 1
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer);
 
                 // Read part 1 completely
@@ -576,6 +583,7 @@ namespace AWSSDK.UnitTests
                 // Add the part asynchronously
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer);
 
                 // Assert - Read should complete
@@ -657,6 +665,7 @@ namespace AWSSDK.UnitTests
                 byte[] testBuffer1 = ArrayPool<byte>.Shared.Rent(100);
                 Buffer.BlockCopy(testData1, 0, testBuffer1, 0, 100);
                 var partBuffer1 = new StreamPartBuffer(1, testBuffer1, 100);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer1);
 
                 // Add Part 2 (100 bytes) 
@@ -664,6 +673,7 @@ namespace AWSSDK.UnitTests
                 byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(100);
                 Buffer.BlockCopy(testData2, 0, testBuffer2, 0, 100);
                 var partBuffer2 = new StreamPartBuffer(2, testBuffer2, 100);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer2);
 
                 // Act - Request 150 bytes (spans both parts)
@@ -704,6 +714,7 @@ namespace AWSSDK.UnitTests
                     byte[] testBuffer = ArrayPool<byte>.Shared.Rent(50);
                     Buffer.BlockCopy(testData, 0, testBuffer, 0, 50);
                     var partBuffer = new StreamPartBuffer(i, testBuffer, 50);
+                    await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                     manager.AddBuffer(partBuffer);
                 }
 
@@ -733,6 +744,7 @@ namespace AWSSDK.UnitTests
                 // Add part 1
                 byte[] testBuffer1 = ArrayPool<byte>.Shared.Rent(100);
                 var partBuffer1 = new StreamPartBuffer(1, testBuffer1, 100);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer1);
 
                 // Read part 1 completely
@@ -745,6 +757,7 @@ namespace AWSSDK.UnitTests
                 // Add part 2
                 byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(100);
                 var partBuffer2 = new StreamPartBuffer(2, testBuffer2, 100);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer2);
 
                 // Read part 2
@@ -772,6 +785,7 @@ namespace AWSSDK.UnitTests
                 // Add empty part 1
                 byte[] testBuffer1 = ArrayPool<byte>.Shared.Rent(100);
                 var partBuffer1 = new StreamPartBuffer(1, testBuffer1, 0); // 0 bytes
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer1);
 
                 // Add part 2 with data
@@ -779,6 +793,7 @@ namespace AWSSDK.UnitTests
                 byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(100);
                 Buffer.BlockCopy(testData2, 0, testBuffer2, 0, 100);
                 var partBuffer2 = new StreamPartBuffer(2, testBuffer2, 100);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer2);
 
                 // Act - Try to read 100 bytes starting from part 1
@@ -959,6 +974,7 @@ namespace AWSSDK.UnitTests
                 var streamingSource = new StreamingDataSource(1, response);
 
                 // Act
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(streamingSource);
 
                 // Assert - Should be able to read from part 1
@@ -990,6 +1006,7 @@ namespace AWSSDK.UnitTests
                 var bufferedSource = new BufferedDataSource(partBuffer);
 
                 // Act
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(bufferedSource);
 
                 // Assert - Should be able to read from part 1
@@ -1054,6 +1071,7 @@ namespace AWSSDK.UnitTests
                 var streamingSource = new StreamingDataSource(1, response);
 
                 // Act
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(streamingSource);
 
                 // Assert - Read should complete
@@ -1087,6 +1105,7 @@ namespace AWSSDK.UnitTests
                     ResponseStream = new MemoryStream(testData)
                 };
                 var streamingSource = new StreamingDataSource(1, response);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(streamingSource);
 
                 // Act - Read in multiple chunks
@@ -1126,6 +1145,7 @@ namespace AWSSDK.UnitTests
                     ResponseStream = new MemoryStream(testData1)
                 };
                 var streamingSource = new StreamingDataSource(1, response1);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer((IPartDataSource)streamingSource);
 
                 // Add buffered source for part 2
@@ -1133,6 +1153,7 @@ namespace AWSSDK.UnitTests
                 byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(500);
                 Buffer.BlockCopy(testData2, 0, testBuffer2, 0, 500);
                 var partBuffer2 = new StreamPartBuffer(2, testBuffer2, 500);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(partBuffer2);
 
                 // Act - Read across both parts
@@ -1173,6 +1194,7 @@ namespace AWSSDK.UnitTests
                     ResponseStream = new MemoryStream(testData)
                 };
                 var streamingSource = new StreamingDataSource(1, response);
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 manager.AddBuffer(streamingSource);
 
                 // Act - Read all data
@@ -1208,6 +1230,7 @@ namespace AWSSDK.UnitTests
                         ResponseStream = new MemoryStream(testData)
                     };
                     var streamingSource = new StreamingDataSource(i, response);
+                    await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                     manager.AddBuffer(streamingSource);
                 }
 
@@ -1368,6 +1391,9 @@ namespace AWSSDK.UnitTests
                 // by adding and reading parts sequentially
                 for (int partNum = 1; partNum <= NumIncrements; partNum++)
                 {
+                    // Wait for buffer space before adding part
+                    await manager.WaitForBufferSpaceAsync(CancellationToken.None);
+
                     // Add part
                     byte[] testBuffer = ArrayPool<byte>.Shared.Rent(100);
                     var partBuffer = new StreamPartBuffer(partNum, testBuffer, 100);
@@ -1409,6 +1435,219 @@ namespace AWSSDK.UnitTests
                 manager.Dispose();
                 startSignal.Dispose();
                 stopSignal.Dispose();
+            }
+        }
+
+        #endregion
+
+        #region Semaphore MaxCount Tests
+
+        [TestMethod]
+        public async Task WaitForBufferSpaceAsync_WithMaxCount_DoesNotExceedConfiguredLimit()
+        {
+            // This test verifies the fix for the double release bug.
+            // Before the fix: SemaphoreSlim without maxCount allowed unlimited Release() calls,
+            // which could corrupt the semaphore state and allow more concurrent operations than configured.
+            // After the fix: maxCount parameter prevents exceeding MaxInMemoryParts limit.
+
+            // Arrange
+            const int maxInMemoryParts = 3;
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(maxInMemoryParts: maxInMemoryParts);
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Acquire all available slots
+                for (int i = 0; i < maxInMemoryParts; i++)
+                {
+                    await manager.WaitForBufferSpaceAsync(CancellationToken.None);
+                }
+
+                // Release all acquired slots
+                for (int i = 0; i < maxInMemoryParts; i++)
+                {
+                    manager.ReleaseBufferSpace();
+                }
+
+                // Attempt to release beyond maxCount (should throw)
+                Assert.ThrowsException<SemaphoreFullException>(() =>
+                {
+                    manager.ReleaseBufferSpace();
+                }, "Releasing beyond maxCount should throw SemaphoreFullException");
+
+                // Attempt one more release to confirm protection is consistent
+                Assert.ThrowsException<SemaphoreFullException>(() =>
+                {
+                    manager.ReleaseBufferSpace();
+                }, "Second excessive release should also throw SemaphoreFullException");
+
+                // Act - Try to acquire slots again
+                var acquiredSlots = 0;
+                for (int i = 0; i < maxInMemoryParts + 2; i++)
+                {
+                    var waitTask = manager.WaitForBufferSpaceAsync(CancellationToken.None);
+                    if (await Task.WhenAny(waitTask, Task.Delay(100)) == waitTask)
+                    {
+                        acquiredSlots++;
+                    }
+                    else
+                    {
+                        break; // Task didn't complete, no more slots available
+                    }
+                }
+
+                // Assert - Should only be able to acquire maxInMemoryParts slots, not more
+                // With maxCount fix: Can only acquire 3 slots (respects limit)
+                // Without maxCount fix: Could acquire 5 slots (2 extra from double releases)
+                Assert.AreEqual(maxInMemoryParts, acquiredSlots,
+                    $"Semaphore should respect maxCount={maxInMemoryParts} limit despite excessive releases");
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ReleaseBufferSpace_ExcessiveReleases_MaintainsSemaphoreIntegrity()
+        {
+            // This test verifies that excessive Release() calls don't corrupt semaphore state.
+            // The maxCount parameter ensures CurrentCount never exceeds MaxInMemoryParts.
+
+            // Arrange
+            const int maxInMemoryParts = 5;
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(maxInMemoryParts: maxInMemoryParts);
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Acquire half the slots
+                for (int i = 0; i < maxInMemoryParts / 2; i++)
+                {
+                    await manager.WaitForBufferSpaceAsync(CancellationToken.None);
+                }
+
+                // Release the acquired slots
+                for (int i = 0; i < maxInMemoryParts / 2; i++)
+                {
+                    manager.ReleaseBufferSpace();
+                }
+
+                // Now semaphore should be at full capacity (maxInMemoryParts)
+                // Attempt to release beyond maxCount - each should throw
+                var excessiveReleaseCount = 0;
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        manager.ReleaseBufferSpace();
+                        Assert.Fail($"Release #{i + 1} beyond maxCount should have thrown SemaphoreFullException");
+                    }
+                    catch (SemaphoreFullException)
+                    {
+                        excessiveReleaseCount++;
+                    }
+                }
+
+                // Assert - All excessive releases should have thrown
+                Assert.AreEqual(5, excessiveReleaseCount, "All excessive releases should throw SemaphoreFullException");
+
+                // Act - Count how many slots are now available
+                var availableSlots = 0;
+                for (int i = 0; i < maxInMemoryParts * 2; i++)
+                {
+                    var waitTask = manager.WaitForBufferSpaceAsync(CancellationToken.None);
+                    if (waitTask.IsCompleted)
+                    {
+                        availableSlots++;
+                        await waitTask;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                // Assert - Should never exceed maxInMemoryParts
+                Assert.IsTrue(availableSlots <= maxInMemoryParts,
+                    $"Available slots ({availableSlots}) should not exceed maxInMemoryParts ({maxInMemoryParts})");
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task BufferCapacity_ConcurrentOperations_RespectsMaxCountLimit()
+        {
+            // This test simulates the real-world scenario where multiple parts are being
+            // processed concurrently, verifying that the maxCount parameter prevents
+            // exceeding the configured buffer capacity limit.
+
+            // Arrange
+            const int maxInMemoryParts = 4;
+            const int totalParts = 10;
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(maxInMemoryParts: maxInMemoryParts);
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                var activeParts = 0;
+                var maxActiveParts = 0;
+                var lockObj = new object();
+
+                // Simulate concurrent part processing
+                var tasks = new List<Task>();
+                for (int partNum = 1; partNum <= totalParts; partNum++)
+                {
+                    int capturedPartNum = partNum;
+                    tasks.Add(Task.Run(async () =>
+                    {
+                        // Wait for buffer space (enforces maxInMemoryParts limit)
+                        await manager.WaitForBufferSpaceAsync(CancellationToken.None);
+
+                        lock (lockObj)
+                        {
+                            activeParts++;
+                            if (activeParts > maxActiveParts)
+                            {
+                                maxActiveParts = activeParts;
+                            }
+                        }
+
+                        // Simulate buffering the part
+                        byte[] testBuffer = ArrayPool<byte>.Shared.Rent(100);
+                        var partBuffer = new StreamPartBuffer(capturedPartNum, testBuffer, 100);
+                        manager.AddBuffer(partBuffer);
+
+                        // Simulate some processing time
+                        await Task.Delay(10);
+
+                        // Consumer reads the part (happens asynchronously in real scenario)
+                        // For this test, we'll manually release after a delay
+                        await Task.Delay(20);
+                        
+                        lock (lockObj)
+                        {
+                            activeParts--;
+                        }
+
+                        // Release is normally done by consumer after reading part
+                        manager.ReleaseBufferSpace();
+                    }));
+                }
+
+                // Wait for all parts to be processed
+                await Task.WhenAll(tasks);
+
+                // Assert - Should never have exceeded maxInMemoryParts
+                Assert.IsTrue(maxActiveParts <= maxInMemoryParts,
+                    $"Maximum concurrent buffered parts ({maxActiveParts}) exceeded configured limit ({maxInMemoryParts})");
+            }
+            finally
+            {
+                manager.Dispose();
             }
         }
 

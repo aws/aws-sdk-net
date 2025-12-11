@@ -601,25 +601,19 @@ namespace AWSSDK.UnitTests
         public async Task StartDownloadsAsync_SinglePart_ReturnsImmediately()
         {
             // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
-            var discoveryResult = new DownloadDiscoveryResult
-            {
-                TotalParts = 1,
-                ObjectSize = 1024,
-                InitialResponse = new GetObjectResponse()
-            };
-            
-            var mockBufferManager = new Mock<IPartBufferManager>();
-
-            // Act
+            // Act - Call DiscoverDownloadStrategyAsync first to properly acquire HTTP semaphore
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
             await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
 
-            // Assert - should complete without any downloads
-            mockClient.Verify(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+            // Assert - should complete without any additional downloads (discovery already made the call)
+            mockClient.Verify(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
         [TestMethod]
@@ -1230,22 +1224,35 @@ namespace AWSSDK.UnitTests
             // Arrange - Test CancellationTokenSource disposal when error occurs before background task starts
             var mockDataHandler = new Mock<IPartDataHandler>();
             
+            // WaitForCapacityAsync succeeds (needed for discovery)
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // ProcessPartAsync succeeds for Part 1 (discovery)
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(1, It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
             // Simulate error during PrepareAsync (before background task is created)
             mockDataHandler
                 .Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
                 .ThrowsAsync(new InvalidOperationException("Simulated prepare failure"));
             
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var totalParts = 2;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
             
-            var discoveryResult = new DownloadDiscoveryResult
-            {
-                TotalParts = 2,
-                ObjectSize = 16 * 1024 * 1024,
-                InitialResponse = new GetObjectResponse()
-            };
+            // Call DiscoverDownloadStrategyAsync first to properly acquire HTTP semaphore
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
             // Act & Assert
             try
@@ -1599,17 +1606,16 @@ namespace AWSSDK.UnitTests
         public async Task StartDownloadsAsync_SinglePart_DoesNotThrowOnCancellation()
         {
             // Arrange - Single part download should return immediately without using cancellation token
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
             
-            var discoveryResult = new DownloadDiscoveryResult
-            {
-                TotalParts = 1,
-                ObjectSize = 1024,
-                InitialResponse = new GetObjectResponse()
-            };
+            // Call DiscoverDownloadStrategyAsync first to properly acquire HTTP semaphore
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
             
             var cts = new CancellationTokenSource();
             cts.Cancel();
@@ -1617,8 +1623,8 @@ namespace AWSSDK.UnitTests
             // Act - should complete without throwing even though token is cancelled
             await coordinator.StartDownloadsAsync(discoveryResult, null, cts.Token);
 
-            // Assert - no exception thrown, no S3 calls made
-            mockClient.Verify(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+            // Assert - discovery already made the S3 call, StartDownloadsAsync doesn't make additional calls for single-part
+            mockClient.Verify(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
         [TestMethod]
@@ -1831,19 +1837,17 @@ namespace AWSSDK.UnitTests
         public async Task StartDownloadsAsync_SinglePart_ReturnsImmediatelyWithoutBackgroundTask()
         {
             // Arrange - Single-part downloads should not create background tasks
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             
             var mockDataHandler = CreateMockDataHandler();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
             
-            var discoveryResult = new DownloadDiscoveryResult
-            {
-                TotalParts = 1,
-                ObjectSize = 1024,
-                InitialResponse = new GetObjectResponse()
-            };
+            // Call DiscoverDownloadStrategyAsync first to properly acquire HTTP semaphore
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
             
             // Act
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
