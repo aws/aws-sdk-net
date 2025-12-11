@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TableConfiguration
     {
+        private DashboardCustomizationVisualOptions _dashboardCustomizationVisualOptions;
         private TableFieldOptions _fieldOptions;
         private TableFieldWells _fieldWells;
         private VisualInteractionOptions _interactions;
@@ -42,6 +43,25 @@ namespace Amazon.QuickSight.Model
         private List<TableInlineVisualization> _tableInlineVisualizations = AWSConfigs.InitializeCollections ? new List<TableInlineVisualization>() : null;
         private TableOptions _tableOptions;
         private TotalOptions _totalOptions;
+
+        /// <summary>
+        /// Gets and sets the property DashboardCustomizationVisualOptions. 
+        /// <para>
+        /// The options that define customizations available to dashboard readers for a specific
+        /// visual
+        /// </para>
+        /// </summary>
+        public DashboardCustomizationVisualOptions DashboardCustomizationVisualOptions
+        {
+            get { return this._dashboardCustomizationVisualOptions; }
+            set { this._dashboardCustomizationVisualOptions = value; }
+        }
+
+        // Check to see if DashboardCustomizationVisualOptions property is set
+        internal bool IsSetDashboardCustomizationVisualOptions()
+        {
+            return this._dashboardCustomizationVisualOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FieldOptions. 

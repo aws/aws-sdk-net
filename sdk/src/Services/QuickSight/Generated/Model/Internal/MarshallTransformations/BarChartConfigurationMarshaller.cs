@@ -114,6 +114,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDefaultSeriesSettings())
+            {
+                context.Writer.WritePropertyName("DefaultSeriesSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BarChartDefaultSeriesSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultSeriesSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFieldWells())
             {
                 context.Writer.WritePropertyName("FieldWells");
@@ -163,6 +174,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                     var marshaller = ReferenceLineMarshaller.Instance;
                     marshaller.Marshall(requestObjectReferenceLinesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSeries())
+            {
+                context.Writer.WritePropertyName("Series");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSeriesListValue in requestObject.Series)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BarSeriesItemMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSeriesListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

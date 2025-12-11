@@ -177,7 +177,7 @@ namespace Amazon.QuickSight.Model
         /// in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Max=400)]
         public List<ParameterDeclaration> ParameterDeclarations
         {
             get { return this._parameterDeclarations; }

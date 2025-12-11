@@ -66,6 +66,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DecalSettings", targetDepth))
+                {
+                    var unmarshaller = DecalSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DecalSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LineStyleSettings", targetDepth))
                 {
                     var unmarshaller = LineChartLineStyleSettingsUnmarshaller.Instance;

@@ -72,6 +72,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.AxisBinding = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DecalSettings", targetDepth))
+                {
+                    var unmarshaller = DecalSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DecalSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LineStyleSettings", targetDepth))
                 {
                     var unmarshaller = LineChartLineStyleSettingsUnmarshaller.Instance;

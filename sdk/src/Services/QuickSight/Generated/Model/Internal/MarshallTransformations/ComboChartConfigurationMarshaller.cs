@@ -98,6 +98,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDefaultSeriesSettings())
+            {
+                context.Writer.WritePropertyName("DefaultSeriesSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ComboChartDefaultSeriesSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultSeriesSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFieldWells())
             {
                 context.Writer.WritePropertyName("FieldWells");
@@ -200,6 +211,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.SecondaryYAxisLabelOptions, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSeries())
+            {
+                context.Writer.WritePropertyName("Series");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSeriesListValue in requestObject.Series)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ComboSeriesItemMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSeriesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetSingleAxisOptions())

@@ -96,6 +96,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColorLabelOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultSeriesSettings", targetDepth))
+                {
+                    var unmarshaller = ComboChartDefaultSeriesSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DefaultSeriesSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FieldWells", targetDepth))
                 {
                     var unmarshaller = ComboChartFieldWellsUnmarshaller.Instance;
@@ -148,6 +154,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.SecondaryYAxisLabelOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Series", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ComboSeriesItem, ComboSeriesItemUnmarshaller>(ComboSeriesItemUnmarshaller.Instance);
+                    unmarshalledObject.Series = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SingleAxisOptions", targetDepth))

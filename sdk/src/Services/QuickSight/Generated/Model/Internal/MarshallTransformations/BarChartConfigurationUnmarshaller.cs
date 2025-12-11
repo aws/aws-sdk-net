@@ -102,6 +102,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultSeriesSettings", targetDepth))
+                {
+                    var unmarshaller = BarChartDefaultSeriesSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DefaultSeriesSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FieldWells", targetDepth))
                 {
                     var unmarshaller = BarChartFieldWellsUnmarshaller.Instance;
@@ -130,6 +136,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<ReferenceLine, ReferenceLineUnmarshaller>(ReferenceLineUnmarshaller.Instance);
                     unmarshalledObject.ReferenceLines = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Series", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BarSeriesItem, BarSeriesItemUnmarshaller>(BarSeriesItemUnmarshaller.Instance);
+                    unmarshalledObject.Series = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SmallMultiplesOptions", targetDepth))

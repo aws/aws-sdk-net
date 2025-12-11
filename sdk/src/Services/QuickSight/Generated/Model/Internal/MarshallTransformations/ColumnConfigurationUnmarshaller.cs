@@ -78,6 +78,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Column = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DecalSettingsConfiguration", targetDepth))
+                {
+                    var unmarshaller = DecalSettingsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DecalSettingsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FormatConfiguration", targetDepth))
                 {
                     var unmarshaller = FormatConfigurationUnmarshaller.Instance;
