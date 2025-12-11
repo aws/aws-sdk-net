@@ -96,6 +96,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SigningEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SigningHostedZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SigningHostedZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -41,6 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
     {
         private DkimStatus _dkimStatus;
         private List<string> _dkimTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _signingHostedZone;
 
         /// <summary>
         /// Gets and sets the property DkimStatus. 
@@ -131,6 +132,46 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetDkimTokens()
         {
             return this._dkimTokens != null && (this._dkimTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningHostedZone. 
+        /// <para>
+        /// The hosted zone where Amazon SES publishes the DKIM public key TXT records for this
+        /// email identity. This value indicates the DNS zone that customers must reference when
+        /// configuring their CNAME records for DKIM authentication.
+        /// </para>
+        ///  
+        /// <para>
+        /// When configuring DKIM for your domain, create CNAME records in your DNS that point
+        /// to the selectors in this hosted zone. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> selector1._domainkey.yourdomain.com CNAME selector1.&lt;SigningHostedZone&gt;
+        /// </c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> selector2._domainkey.yourdomain.com CNAME selector2.&lt;SigningHostedZone&gt;
+        /// </c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> selector3._domainkey.yourdomain.com CNAME selector3.&lt;SigningHostedZone&gt;
+        /// </c> 
+        /// </para>
+        /// </summary>
+        public string SigningHostedZone
+        {
+            get { return this._signingHostedZone; }
+            set { this._signingHostedZone = value; }
+        }
+
+        // Check to see if SigningHostedZone property is set
+        internal bool IsSetSigningHostedZone()
+        {
+            return this._signingHostedZone != null;
         }
 
     }

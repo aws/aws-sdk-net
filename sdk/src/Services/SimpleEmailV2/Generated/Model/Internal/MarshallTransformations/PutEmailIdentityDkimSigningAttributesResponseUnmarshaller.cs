@@ -64,6 +64,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     response.DkimTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SigningHostedZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SigningHostedZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
