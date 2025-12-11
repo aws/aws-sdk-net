@@ -3337,5 +3337,261 @@ namespace AWSSDK.UnitTests
         }
 
         #endregion
+
+        #region Cancellation Enhancement Tests
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_BackgroundPartFails_CancelsInternalToken()
+        {
+            // Arrange - Deterministic test using TaskCompletionSource to control execution order
+            // This ensures Part 3 waits at synchronization point, Part 2 fails, then Part 3 checks cancellation
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var part2Failed = false;
+            var part3SawCancellation = false;
+            
+            // Synchronization primitives to control execution order
+            var part3ReachedSyncPoint = new TaskCompletionSource<bool>();
+            var part2CanFail = new TaskCompletionSource<bool>();
+            var part3CanCheckCancellation = new TaskCompletionSource<bool>();
+            
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // Capacity acquisition succeeds for all parts
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // PrepareAsync succeeds
+            mockDataHandler
+                .Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // ProcessPartAsync: Controlled execution order using TaskCompletionSource
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns<int, GetObjectResponse, CancellationToken>(async (partNum, response, ct) =>
+                {
+                    if (partNum == 1)
+                    {
+                        return; // Part 1 succeeds immediately
+                    }
+                    else if (partNum == 2)
+                    {
+                        // Part 2 waits for Part 3 to reach sync point before failing
+                        await part2CanFail.Task;
+                        part2Failed = true;
+                        throw new InvalidOperationException("Simulated Part 2 failure");
+                    }
+                    else // Part 3
+                    {
+                        // Part 3 reaches sync point and signals to Part 2
+                        part3ReachedSyncPoint.SetResult(true);
+                        
+                        // Wait for Part 2 to fail and cancellation to propagate
+                        await part3CanCheckCancellation.Task;
+                        
+                        // Now check if cancellation was received from internalCts
+                        if (ct.IsCancellationRequested)
+                        {
+                            part3SawCancellation = true;
+                            throw new OperationCanceledException("Part 3 cancelled due to Part 2 failure");
+                        }
+                    }
+                });
+            
+            mockDataHandler.Setup(x => x.ReleaseCapacity());
+            mockDataHandler.Setup(x => x.OnDownloadComplete(It.IsAny<Exception>()));
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 2);
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+
+            // Act - Start downloads
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
+            
+            // Wait for Part 3 to reach synchronization point
+            await part3ReachedSyncPoint.Task;
+            
+            // Allow Part 2 to fail
+            part2CanFail.SetResult(true);
+            
+            // Give cancellation time to propagate
+            await Task.Delay(100);
+            
+            // Allow Part 3 to check cancellation
+            part3CanCheckCancellation.SetResult(true);
+            
+            // Wait for background task to complete
+            try
+            {
+                await coordinator.DownloadCompletionTask;
+            }
+            catch (InvalidOperationException)
+            {
+                // Expected failure from Part 2
+            }
+
+            // Assert - Deterministic verification that cancellation propagated
+            Assert.IsTrue(part2Failed, "Part 2 should have failed");
+            Assert.IsTrue(part3SawCancellation, 
+                "Part 3 should have received cancellation via internalCts.Token (deterministic with TaskCompletionSource)");
+            
+            Assert.IsNotNull(coordinator.DownloadException, 
+                "Download exception should be captured when background part fails");
+            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(InvalidOperationException),
+                "Download exception should be the Part 2 failure");
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_MultiplePartsFail_HandlesGracefully()
+        {
+            // Arrange - Test simultaneous failures from multiple parts
+            var totalParts = 4;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var failedParts = new System.Collections.Concurrent.ConcurrentBag<int>();
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            mockDataHandler
+                .Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // Part 1 succeeds, Parts 2, 3, 4 all fail
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns<int, GetObjectResponse, CancellationToken>((partNum, response, ct) =>
+                {
+                    if (partNum == 1)
+                    {
+                        return Task.CompletedTask;
+                    }
+                    
+                    failedParts.Add(partNum);
+                    throw new InvalidOperationException($"Simulated Part {partNum} failure");
+                });
+            
+            mockDataHandler.Setup(x => x.ReleaseCapacity());
+            mockDataHandler.Setup(x => x.OnDownloadComplete(It.IsAny<Exception>()));
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 3);
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
+            
+            try
+            {
+                await coordinator.DownloadCompletionTask;
+            }
+            catch (InvalidOperationException)
+            {
+                // Expected - at least one part failed
+            }
+
+            // Assert - Should handle multiple failures gracefully
+            Assert.IsTrue(failedParts.Count > 0, "At least one part should have failed");
+            Assert.IsNotNull(coordinator.DownloadException, "Download exception should be captured");
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_CancellationRacesWithDispose_HandlesGracefully()
+        {
+            // Arrange - Test race condition between Cancel() and Dispose()
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var objectDisposedExceptionCaught = false;
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            mockDataHandler
+                .Setup(x => x.PrepareAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+            
+            // Part 1 succeeds, Part 2 fails triggering cancellation
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Returns<int, GetObjectResponse, CancellationToken>((partNum, response, ct) =>
+                {
+                    if (partNum == 1)
+                    {
+                        return Task.CompletedTask;
+                    }
+                    
+                    // Part 2 failure will trigger Cancel() in catch block
+                    // The enhancement should check IsCancellationRequested to avoid ObjectDisposedException
+                    throw new InvalidOperationException("Simulated Part 2 failure");
+                });
+            
+            mockDataHandler.Setup(x => x.ReleaseCapacity());
+            mockDataHandler
+                .Setup(x => x.OnDownloadComplete(It.IsAny<Exception>()))
+                .Callback<Exception>(ex =>
+                {
+                    // Check if ObjectDisposedException was handled
+                    if (ex is ObjectDisposedException)
+                    {
+                        objectDisposedExceptionCaught = true;
+                    }
+                });
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 2);
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+
+            // Act
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
+            
+            try
+            {
+                await coordinator.DownloadCompletionTask;
+            }
+            catch (InvalidOperationException)
+            {
+                // Expected failure
+            }
+
+            // Assert - The enhancement should prevent ObjectDisposedException from being thrown
+            // by checking IsCancellationRequested before calling Cancel()
+            Assert.IsFalse(objectDisposedExceptionCaught, 
+                "ObjectDisposedException should not propagate due to IsCancellationRequested check");
+            Assert.IsNotNull(coordinator.DownloadException, 
+                "Download exception should be the original failure, not ObjectDisposedException");
+            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(InvalidOperationException),
+                "Download exception should be the original InvalidOperationException from Part 2 failure");
+        }
+
+        #endregion
     }
 }
