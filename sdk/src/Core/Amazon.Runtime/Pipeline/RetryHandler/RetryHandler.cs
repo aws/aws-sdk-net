@@ -80,6 +80,9 @@ namespace Amazon.Runtime.Internal
             }
 
             bool shouldRetry = false;
+            int staleConnectionRetries = 0;
+            int maxStaleConnectionRetries = requestContext.ClientConfig.MaxStaleConnectionRetries;
+            
             this.RetryPolicy.ObtainSendToken(executionContext, null);
             do
             {
@@ -92,6 +95,25 @@ namespace Amazon.Runtime.Internal
                 }
                 catch (Exception exception)
                 {
+                    // Check for stale connection errors first - these get "free" retries
+                    if (this.RetryPolicy.IsStaleConnectionError(exception) && 
+                        staleConnectionRetries < maxStaleConnectionRetries &&
+                        this.RetryPolicy.CanRetry(executionContext))
+                    {
+                        staleConnectionRetries++;
+                        Logger.DebugFormat(
+                            "Detected stale pooled connection error ({0}). Automatic retry {1} of {2} for request {3}",
+                            exception.GetType().Name,
+                            staleConnectionRetries,
+                            maxStaleConnectionRetries,
+                            requestContext.RequestName);
+                        
+                        PrepareForRetry(requestContext);
+                        // No backoff delay for stale connections - immediate retry
+                        // Don't increment requestContext.Retries - this is a "free" retry
+                        continue;
+                    }
+                    
                     shouldRetry = this.RetryPolicy.Retry(executionContext, exception);
                     if (!shouldRetry)
                     {
@@ -140,6 +162,9 @@ namespace Amazon.Runtime.Internal
             }
 
             bool shouldRetry = false;
+            int staleConnectionRetries = 0;
+            int maxStaleConnectionRetries = requestContext.ClientConfig.MaxStaleConnectionRetries;
+            
             await this.RetryPolicy.ObtainSendTokenAsync(executionContext, null).ConfigureAwait(false);
 
             do
@@ -160,6 +185,25 @@ namespace Amazon.Runtime.Internal
 
                 if (capturedException != null)
                 {
+                    // Check for stale connection errors first - these get "free" retries
+                    if (this.RetryPolicy.IsStaleConnectionError(capturedException.SourceException) && 
+                        staleConnectionRetries < maxStaleConnectionRetries &&
+                        this.RetryPolicy.CanRetry(executionContext))
+                    {
+                        staleConnectionRetries++;
+                        Logger.DebugFormat(
+                            "Detected stale pooled connection error ({0}). Automatic retry {1} of {2} for request {3}",
+                            capturedException.SourceException.GetType().Name,
+                            staleConnectionRetries,
+                            maxStaleConnectionRetries,
+                            requestContext.RequestName);
+                        
+                        PrepareForRetry(requestContext);
+                        // No backoff delay for stale connections - immediate retry
+                        // Don't increment requestContext.Retries - this is a "free" retry
+                        continue;
+                    }
+                    
                     shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);
                     if (!shouldRetry)
                     {

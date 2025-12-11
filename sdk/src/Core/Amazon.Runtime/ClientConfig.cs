@@ -91,6 +91,7 @@ namespace Amazon.Runtime
         private RequestRetryMode? retryMode = null;
         private int? maxRetries = null;
         private const int MaxRetriesDefault = 2;
+        private int _maxStaleConnectionRetries = 3;
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
         private AWSCredentials _defaultAWSCredentials = null;
@@ -479,9 +480,9 @@ namespace Amazon.Runtime
         /// 
         /// Valid values are a list of one or more of the following:
         /// <list type="bullet">
-        /// <item><b>sigv4</b> – Signature Version 4 (fastest performance, single-region)</item>
-        /// <item><b>sigv4a</b> – Signature Version 4a (enhanced availability, cross-region support, has a slower signing performance than SigV4)</item>
-        /// <item><b>httpBearerAuth</b> – HTTP Bearer token authentication</item>
+        /// <item><b>sigv4</b> â€“ Signature Version 4 (fastest performance, single-region)</item>
+        /// <item><b>sigv4a</b> â€“ Signature Version 4a (enhanced availability, cross-region support, has a slower signing performance than SigV4)</item>
+        /// <item><b>httpBearerAuth</b> â€“ HTTP Bearer token authentication</item>
         /// </list>
         /// </summary>
         /// <remarks>
@@ -586,6 +587,18 @@ namespace Amazon.Runtime
             {
                 return this.maxRetries.HasValue;
             }
+        }
+
+        /// <summary>
+        /// Returns the maximum number of retries for stale connection errors (e.g., "Broken pipe", 
+        /// "Connection reset") that can occur when the HTTP client reuses a pooled connection that 
+        /// the server has closed. These retries don't count against the MaxErrorRetry limit.
+        /// Default value is 3.
+        /// </summary>
+        public int MaxStaleConnectionRetries
+        {
+            get { return this._maxStaleConnectionRetries; }
+            set { this._maxStaleConnectionRetries = value; }
         }
 
         /// <summary>
