@@ -305,7 +305,11 @@ namespace Amazon.Runtime
                 Logger.GetLogger(typeof(HttpRequestMessageFactory)).Debug(pns, $"The current runtime does not support modifying proxy settings of HttpClient.");
             }
 
-            var httpClient = new HttpClient(httpMessageHandler);
+            // Wrap the handler with pooled connection retry middleware to automatically
+            // retry requests that fail due to stale connections from the connection pool.
+            // This prevents dead pooled connections from consuming SDK retry attempts.
+            var pooledConnectionRetryHandler = new PooledConnectionRetryHandler(httpMessageHandler);
+            var httpClient = new HttpClient(pooledConnectionRetryHandler);
             
             if (clientConfig.Timeout.HasValue)
             {
