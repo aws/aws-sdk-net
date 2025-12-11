@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _copySourceArn;
         private CredentialPair _credentialPair;
+        private KeyPairCredentials _keyPairCredentials;
         private string _secretArn;
         private WebProxyCredentials _webProxyCredentials;
 
@@ -78,6 +79,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCredentialPair()
         {
             return this._credentialPair != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyPairCredentials. 
+        /// <para>
+        /// The credentials for connecting using key-pair.
+        /// </para>
+        /// </summary>
+        public KeyPairCredentials KeyPairCredentials
+        {
+            get { return this._keyPairCredentials; }
+            set { this._keyPairCredentials = value; }
+        }
+
+        // Check to see if KeyPairCredentials property is set
+        internal bool IsSetKeyPairCredentials()
+        {
+            return this._keyPairCredentials != null;
         }
 
         /// <summary>

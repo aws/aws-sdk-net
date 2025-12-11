@@ -1976,6 +1976,17 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetIdentityContextRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetIdentityContextRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.GetSessionEmbedUrlRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -3914,6 +3925,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.BorderSettings.BorderColor</property>
+    <pattern>^#[A-F0-9]{6}(?:[A-F0-9]{2})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.BorderStyle.Width</property>
     <max>50</max>
   </property-value-rule>
@@ -4156,6 +4171,16 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ContributionAnalysisFactor.FieldName</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Coordinate.Latitude</property>
+    <min>-90</min>
+    <max>90</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Coordinate.Longitude</property>
+    <min>-180</min>
+    <max>180</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateColumnsOperation.Alias</property>
@@ -4408,6 +4433,16 @@
     <pattern>^#[A-F0-9]{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataFieldBarSeriesItem.FieldId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataFieldComboSeriesItem.FieldId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DataFieldSeriesItem.FieldId</property>
     <min>1</min>
     <max>512</max>
@@ -4583,6 +4618,14 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DecalSettings.DecalColor</property>
+    <pattern>^#[A-F0-9]{6}(?:[A-F0-9]{2})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DecalSettings.ElementValue</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DecimalDatasetParameter.Id</property>
     <min>1</min>
     <max>128</max>
@@ -4692,6 +4735,16 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FailedKeyRegistrationEntry.Message</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FieldBarSeriesItem.FieldId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FieldComboSeriesItem.FieldId</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FieldFolder.Description</property>
@@ -5046,6 +5099,31 @@
     <property>Amazon.QuickSight.Model.GeneratedAnswerResult.TopicName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeocoderHierarchy.City</property>
+    <min>0</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeocoderHierarchy.Country</property>
+    <min>0</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeocoderHierarchy.County</property>
+    <min>0</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeocoderHierarchy.PostCode</property>
+    <min>0</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeocoderHierarchy.State</property>
+    <min>0</min>
+    <max>3000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.GeospatialCategoricalColor.DefaultOpacity</property>
@@ -5407,6 +5485,21 @@
     <property>Amazon.QuickSight.Model.JoinOperation.OnClause</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KeyPairCredentials.KeyPairUsername</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KeyPairCredentials.PrivateKey</property>
+    <min>1600</min>
+    <max>8000</max>
+    <pattern>^-{5}BEGIN (ENCRYPTED )?PRIVATE KEY-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END (ENCRYPTED )?PRIVATE KEY-{5}(\u000D?\u000A)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KeyPairCredentials.PrivateKeyPassphrase</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.KPISparklineOptions.Color</property>

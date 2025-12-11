@@ -3699,6 +3699,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type DashboardCustomizationStatus.
+    /// </summary>
+    public class DashboardCustomizationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DashboardCustomizationStatus
+        /// </summary>
+        public static readonly DashboardCustomizationStatus DISABLED = new DashboardCustomizationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DashboardCustomizationStatus
+        /// </summary>
+        public static readonly DashboardCustomizationStatus ENABLED = new DashboardCustomizationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashboardCustomizationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashboardCustomizationStatus FindValue(string value)
+        {
+            return FindValue<DashboardCustomizationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashboardCustomizationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashboardErrorType.
     /// </summary>
     public class DashboardErrorType : ConstantClass
@@ -5152,6 +5202,186 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DecalPatternType.
+    /// </summary>
+    public class DecalPatternType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHECKERBOARD_LARGE for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType CHECKERBOARD_LARGE = new DecalPatternType("CHECKERBOARD_LARGE");
+        /// <summary>
+        /// Constant CHECKERBOARD_MEDIUM for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType CHECKERBOARD_MEDIUM = new DecalPatternType("CHECKERBOARD_MEDIUM");
+        /// <summary>
+        /// Constant CHECKERBOARD_SMALL for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType CHECKERBOARD_SMALL = new DecalPatternType("CHECKERBOARD_SMALL");
+        /// <summary>
+        /// Constant CIRCLE_LARGE for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType CIRCLE_LARGE = new DecalPatternType("CIRCLE_LARGE");
+        /// <summary>
+        /// Constant CIRCLE_MEDIUM for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType CIRCLE_MEDIUM = new DecalPatternType("CIRCLE_MEDIUM");
+        /// <summary>
+        /// Constant CIRCLE_SMALL for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType CIRCLE_SMALL = new DecalPatternType("CIRCLE_SMALL");
+        /// <summary>
+        /// Constant DIAGONAL_LARGE for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAGONAL_LARGE = new DecalPatternType("DIAGONAL_LARGE");
+        /// <summary>
+        /// Constant DIAGONAL_MEDIUM for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAGONAL_MEDIUM = new DecalPatternType("DIAGONAL_MEDIUM");
+        /// <summary>
+        /// Constant DIAGONAL_OPPOSITE_LARGE for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAGONAL_OPPOSITE_LARGE = new DecalPatternType("DIAGONAL_OPPOSITE_LARGE");
+        /// <summary>
+        /// Constant DIAGONAL_OPPOSITE_MEDIUM for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAGONAL_OPPOSITE_MEDIUM = new DecalPatternType("DIAGONAL_OPPOSITE_MEDIUM");
+        /// <summary>
+        /// Constant DIAGONAL_OPPOSITE_SMALL for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAGONAL_OPPOSITE_SMALL = new DecalPatternType("DIAGONAL_OPPOSITE_SMALL");
+        /// <summary>
+        /// Constant DIAGONAL_SMALL for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAGONAL_SMALL = new DecalPatternType("DIAGONAL_SMALL");
+        /// <summary>
+        /// Constant DIAMOND_GRID_LARGE for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAMOND_GRID_LARGE = new DecalPatternType("DIAMOND_GRID_LARGE");
+        /// <summary>
+        /// Constant DIAMOND_GRID_MEDIUM for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAMOND_GRID_MEDIUM = new DecalPatternType("DIAMOND_GRID_MEDIUM");
+        /// <summary>
+        /// Constant DIAMOND_GRID_SMALL for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAMOND_GRID_SMALL = new DecalPatternType("DIAMOND_GRID_SMALL");
+        /// <summary>
+        /// Constant DIAMOND_LARGE for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAMOND_LARGE = new DecalPatternType("DIAMOND_LARGE");
+        /// <summary>
+        /// Constant DIAMOND_MEDIUM for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAMOND_MEDIUM = new DecalPatternType("DIAMOND_MEDIUM");
+        /// <summary>
+        /// Constant DIAMOND_SMALL for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType DIAMOND_SMALL = new DecalPatternType("DIAMOND_SMALL");
+        /// <summary>
+        /// Constant SOLID for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType SOLID = new DecalPatternType("SOLID");
+        /// <summary>
+        /// Constant TRIANGLE_LARGE for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType TRIANGLE_LARGE = new DecalPatternType("TRIANGLE_LARGE");
+        /// <summary>
+        /// Constant TRIANGLE_MEDIUM for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType TRIANGLE_MEDIUM = new DecalPatternType("TRIANGLE_MEDIUM");
+        /// <summary>
+        /// Constant TRIANGLE_SMALL for DecalPatternType
+        /// </summary>
+        public static readonly DecalPatternType TRIANGLE_SMALL = new DecalPatternType("TRIANGLE_SMALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DecalPatternType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DecalPatternType FindValue(string value)
+        {
+            return FindValue<DecalPatternType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DecalPatternType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DecalStyleType.
+    /// </summary>
+    public class DecalStyleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Auto for DecalStyleType
+        /// </summary>
+        public static readonly DecalStyleType Auto = new DecalStyleType("Auto");
+        /// <summary>
+        /// Constant Manual for DecalStyleType
+        /// </summary>
+        public static readonly DecalStyleType Manual = new DecalStyleType("Manual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DecalStyleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DecalStyleType FindValue(string value)
+        {
+            return FindValue<DecalStyleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DecalStyleType(string value)
         {
             return FindValue(value);
         }
