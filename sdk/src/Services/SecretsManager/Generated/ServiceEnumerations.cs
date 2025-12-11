@@ -95,6 +95,64 @@ namespace Amazon.SecretsManager
 
 
     /// <summary>
+    /// Constants used for properties of type SortByType.
+    /// </summary>
+    public class SortByType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreatedDate for SortByType
+        /// </summary>
+        public static readonly SortByType CreatedDate = new SortByType("created-date");
+        /// <summary>
+        /// Constant LastAccessedDate for SortByType
+        /// </summary>
+        public static readonly SortByType LastAccessedDate = new SortByType("last-accessed-date");
+        /// <summary>
+        /// Constant LastChangedDate for SortByType
+        /// </summary>
+        public static readonly SortByType LastChangedDate = new SortByType("last-changed-date");
+        /// <summary>
+        /// Constant Name for SortByType
+        /// </summary>
+        public static readonly SortByType Name = new SortByType("name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortByType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortByType FindValue(string value)
+        {
+            return FindValue<SortByType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortByType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortOrderType.
     /// </summary>
     public class SortOrderType : ConstantClass
