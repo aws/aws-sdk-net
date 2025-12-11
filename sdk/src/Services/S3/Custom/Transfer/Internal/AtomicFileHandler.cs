@@ -33,6 +33,7 @@ namespace Amazon.S3.Transfer.Internal
     {
         private string _tempFilePath;
         private bool _disposed = false;
+        private static readonly object _fileLock = new object();
 
         /// <summary>
         /// Creates a temporary file with unique identifier for atomic operations.
@@ -68,10 +69,24 @@ namespace Amazon.S3.Transfer.Internal
                     _tempFilePath = tempPath;
                     return tempPath;
                 }
-                catch (IOException) when (attempt < 99)
+                catch (IOException)
                 {
-                    // File exists, try again with new ID
-                    continue;
+                    lock (_fileLock)
+                    {
+                        // If the file now exists when we check immediately after the exception, 
+                        // it means another process or thread beat us to the creation (race condition).
+                        if (File.Exists(tempPath))
+                        {
+                            // File exists, try again with new ID
+                            continue;
+                        }
+                        else
+                        {
+                            // The file does *not* exist, which means the IOException was caused by 
+                            // something else entirely (e.g., permissions, disk full, network error).
+                            throw; // Re-throw the original exception as it was an unexpected error.
+                        }
+                    }
                 }
             }
             
