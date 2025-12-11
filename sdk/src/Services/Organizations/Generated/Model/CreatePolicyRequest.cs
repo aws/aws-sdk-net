@@ -217,7 +217,12 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_s3.html">S3_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html">NETWORK_SECURITY_DIRECTOR_POLICY</a>
         /// 
         /// </para>
         ///  </li> </ul>

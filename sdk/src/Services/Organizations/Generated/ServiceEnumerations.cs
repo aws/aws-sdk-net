@@ -757,6 +757,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly EffectivePolicyType INSPECTOR_POLICY = new EffectivePolicyType("INSPECTOR_POLICY");
         /// <summary>
+        /// Constant NETWORK_SECURITY_DIRECTOR_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType NETWORK_SECURITY_DIRECTOR_POLICY = new EffectivePolicyType("NETWORK_SECURITY_DIRECTOR_POLICY");
+        /// <summary>
         /// Constant S3_POLICY for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType S3_POLICY = new EffectivePolicyType("S3_POLICY");
@@ -1506,6 +1510,10 @@ namespace Amazon.Organizations
         /// Constant INSPECTOR_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType INSPECTOR_POLICY = new PolicyType("INSPECTOR_POLICY");
+        /// <summary>
+        /// Constant NETWORK_SECURITY_DIRECTOR_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType NETWORK_SECURITY_DIRECTOR_POLICY = new PolicyType("NETWORK_SECURITY_DIRECTOR_POLICY");
         /// <summary>
         /// Constant RESOURCE_CONTROL_POLICY for PolicyType
         /// </summary>
