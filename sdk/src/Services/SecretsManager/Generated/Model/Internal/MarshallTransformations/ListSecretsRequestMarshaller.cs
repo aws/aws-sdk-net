@@ -103,6 +103,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.Write(publicRequest.SortBy);
+                }
+
                 if(publicRequest.IsSetSortOrder())
                 {
                     context.Writer.WritePropertyName("SortOrder");

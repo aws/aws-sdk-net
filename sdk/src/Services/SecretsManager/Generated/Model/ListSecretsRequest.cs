@@ -75,6 +75,7 @@ namespace Amazon.SecretsManager.Model
         private bool? _includePlannedDeletion;
         private int? _maxResults;
         private string _nextToken;
+        private SortByType _sortBy;
         private SortOrderType _sortOrder;
 
         /// <summary>
@@ -158,6 +159,24 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// If not specified, secrets are listed by <c>CreatedDate</c>.
+        /// </para>
+        /// </summary>
+        public SortByType SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
         }
 
         /// <summary>
