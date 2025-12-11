@@ -1881,6 +1881,10 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant Dotnet10 for Runtime
+        /// </summary>
+        public static readonly Runtime Dotnet10 = new Runtime("dotnet10");
+        /// <summary>
         /// Constant Dotnet6 for Runtime
         /// </summary>
         public static readonly Runtime Dotnet6 = new Runtime("dotnet6");
