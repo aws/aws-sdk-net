@@ -61,6 +61,22 @@ namespace Amazon.ObservabilityAdmin.Model
         }
 
         /// <summary>
+        /// Paginator for ListS3TableIntegrations operation
+        ///</summary>
+        public IListS3TableIntegrationsPaginator ListS3TableIntegrations(ListS3TableIntegrationsRequest request) 
+        {
+            return new ListS3TableIntegrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTelemetryPipelines operation
+        ///</summary>
+        public IListTelemetryPipelinesPaginator ListTelemetryPipelines(ListTelemetryPipelinesRequest request) 
+        {
+            return new ListTelemetryPipelinesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTelemetryRules operation
         ///</summary>
         public IListTelemetryRulesPaginator ListTelemetryRules(ListTelemetryRulesRequest request) 

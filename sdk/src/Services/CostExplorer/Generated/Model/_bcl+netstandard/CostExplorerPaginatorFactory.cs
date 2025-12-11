@@ -115,5 +115,13 @@ namespace Amazon.CostExplorer.Model
         {
             return new ListCostCategoryDefinitionsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListCostCategoryResourceAssociations operation
+        ///</summary>
+        public IListCostCategoryResourceAssociationsPaginator ListCostCategoryResourceAssociations(ListCostCategoryResourceAssociationsRequest request) 
+        {
+            return new ListCostCategoryResourceAssociationsPaginator(this.client, request);
+        }
     }
 }

@@ -1923,6 +1923,56 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type OntapFileSystemUserType.
+    /// </summary>
+    public class OntapFileSystemUserType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UNIX for OntapFileSystemUserType
+        /// </summary>
+        public static readonly OntapFileSystemUserType UNIX = new OntapFileSystemUserType("UNIX");
+        /// <summary>
+        /// Constant WINDOWS for OntapFileSystemUserType
+        /// </summary>
+        public static readonly OntapFileSystemUserType WINDOWS = new OntapFileSystemUserType("WINDOWS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OntapFileSystemUserType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OntapFileSystemUserType FindValue(string value)
+        {
+            return FindValue<OntapFileSystemUserType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OntapFileSystemUserType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OntapVolumeType.
     /// </summary>
     public class OntapVolumeType : ConstantClass
@@ -2639,6 +2689,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly S3AccessPointAttachmentLifecycle FAILED = new S3AccessPointAttachmentLifecycle("FAILED");
         /// <summary>
+        /// Constant MISCONFIGURED for S3AccessPointAttachmentLifecycle
+        /// </summary>
+        public static readonly S3AccessPointAttachmentLifecycle MISCONFIGURED = new S3AccessPointAttachmentLifecycle("MISCONFIGURED");
+        /// <summary>
         /// Constant UPDATING for S3AccessPointAttachmentLifecycle
         /// </summary>
         public static readonly S3AccessPointAttachmentLifecycle UPDATING = new S3AccessPointAttachmentLifecycle("UPDATING");
@@ -2738,6 +2792,10 @@ namespace Amazon.FSx
     public class S3AccessPointAttachmentType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ONTAP for S3AccessPointAttachmentType
+        /// </summary>
+        public static readonly S3AccessPointAttachmentType ONTAP = new S3AccessPointAttachmentType("ONTAP");
         /// <summary>
         /// Constant OPENZFS for S3AccessPointAttachmentType
         /// </summary>

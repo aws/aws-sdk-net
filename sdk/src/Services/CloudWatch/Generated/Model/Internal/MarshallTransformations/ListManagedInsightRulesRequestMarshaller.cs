@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ListManagedInsightRulesRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,27 +58,45 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListManagedInsightRulesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "ListManagedInsightRules");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/ListManagedInsightRules";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetMaxResults())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetMaxResults())
                 {
-                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
                 }
-                if(publicRequest.IsSetNextToken())
+                if (publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
                 }
-                if(publicRequest.IsSetResourceARN())
+                if (publicRequest.IsSetResourceARN())
                 {
-                    request.Parameters.Add("ResourceARN", StringUtils.FromString(publicRequest.ResourceARN));
+                    context.Writer.WriteTextString("ResourceARN");
+                    context.Writer.WriteTextString(publicRequest.ResourceARN);
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static ListManagedInsightRulesRequestMarshaller _instance = new ListManagedInsightRulesRequestMarshaller();        
+        private static ListManagedInsightRulesRequestMarshaller _instance = new ListManagedInsightRulesRequestMarshaller();        
 
         internal static ListManagedInsightRulesRequestMarshaller GetInstance()
         {

@@ -43,7 +43,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name for STS access configuration.
+        /// The domain name for Amazon Web Services Security Token Service (STS) access configuration.
         /// </para>
         /// </summary>
         public string DomainName
@@ -61,7 +61,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property Ipv4Addresses. 
         /// <para>
-        /// The IPv4 addresses allowed for STS access.
+        /// The IPv4 addresses allowed for Amazon Web Services Security Token Service (STS) access.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -85,7 +85,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the STS access configuration.
+        /// The current status of the Amazon Web Services Security Token Service (STS) access
+        /// configuration.
         /// </para>
         /// </summary>
         public ManagedResourceStatus Status
@@ -103,7 +104,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property StsPolicyDocument. 
         /// <para>
-        /// The STS policy document that defines permissions for token service usage.
+        /// The Amazon Web Services Security Token Service (STS) policy document that defines
+        /// permissions for token service usage.
         /// </para>
         /// </summary>
         public string StsPolicyDocument

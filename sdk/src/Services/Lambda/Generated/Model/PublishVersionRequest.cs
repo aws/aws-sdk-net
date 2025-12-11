@@ -51,6 +51,7 @@ namespace Amazon.Lambda.Model
         private string _codeSha256;
         private string _description;
         private string _functionName;
+        private FunctionVersionLatestPublished _publishTo;
         private string _revisionId;
 
         /// <summary>
@@ -131,6 +132,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublishTo. 
+        /// <para>
+        /// Specifies where to publish the function version or configuration.
+        /// </para>
+        /// </summary>
+        public FunctionVersionLatestPublished PublishTo
+        {
+            get { return this._publishTo; }
+            set { this._publishTo = value; }
+        }
+
+        // Check to see if PublishTo property is set
+        internal bool IsSetPublishTo()
+        {
+            return this._publishTo != null;
         }
 
         /// <summary>

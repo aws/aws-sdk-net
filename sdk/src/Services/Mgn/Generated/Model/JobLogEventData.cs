@@ -34,10 +34,31 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class JobLogEventData
     {
+        private int? _attemptCount;
         private string _conversionServerID;
+        private int? _maxAttemptsCount;
         private string _rawError;
         private string _sourceServerID;
         private string _targetInstanceID;
+
+        /// <summary>
+        /// Gets and sets the property AttemptCount. 
+        /// <para>
+        /// Retries for this operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? AttemptCount
+        {
+            get { return this._attemptCount; }
+            set { this._attemptCount = value; }
+        }
+
+        // Check to see if AttemptCount property is set
+        internal bool IsSetAttemptCount()
+        {
+            return this._attemptCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConversionServerID. 
@@ -56,6 +77,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetConversionServerID()
         {
             return this._conversionServerID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAttemptsCount. 
+        /// <para>
+        /// The maximum number of retries that will be attempted if this operation failed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? MaxAttemptsCount
+        {
+            get { return this._maxAttemptsCount; }
+            set { this._maxAttemptsCount = value; }
+        }
+
+        // Check to see if MaxAttemptsCount property is set
+        internal bool IsSetMaxAttemptsCount()
+        {
+            return this._maxAttemptsCount.HasValue; 
         }
 
         /// <summary>

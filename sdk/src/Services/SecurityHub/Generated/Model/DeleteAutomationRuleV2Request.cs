@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutomationRuleV2 operation.
-    /// Deletes a V2 automation rule. This API is in public preview and subject to change.
+    /// Deletes a V2 automation rule.
     /// </summary>
     public partial class DeleteAutomationRuleV2Request : AmazonSecurityHubRequest
     {

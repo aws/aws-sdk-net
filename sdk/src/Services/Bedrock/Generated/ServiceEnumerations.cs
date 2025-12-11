@@ -533,6 +533,10 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildResultAssetType POLICY_DEFINITION = new AutomatedReasoningPolicyBuildResultAssetType("POLICY_DEFINITION");
         /// <summary>
+        /// Constant POLICY_SCENARIOS for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType POLICY_SCENARIOS = new AutomatedReasoningPolicyBuildResultAssetType("POLICY_SCENARIOS");
+        /// <summary>
         /// Constant QUALITY_REPORT for AutomatedReasoningPolicyBuildResultAssetType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildResultAssetType QUALITY_REPORT = new AutomatedReasoningPolicyBuildResultAssetType("QUALITY_REPORT");
@@ -930,6 +934,10 @@ namespace Amazon.Bedrock
         /// Constant IMPORTED for CustomizationType
         /// </summary>
         public static readonly CustomizationType IMPORTED = new CustomizationType("IMPORTED");
+        /// <summary>
+        /// Constant REINFORCEMENT_FINE_TUNING for CustomizationType
+        /// </summary>
+        public static readonly CustomizationType REINFORCEMENT_FINE_TUNING = new CustomizationType("REINFORCEMENT_FINE_TUNING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1014,6 +1022,60 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CustomModelDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomModelDeploymentUpdateStatus.
+    /// </summary>
+    public class CustomModelDeploymentUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UpdateCompleted for CustomModelDeploymentUpdateStatus
+        /// </summary>
+        public static readonly CustomModelDeploymentUpdateStatus UpdateCompleted = new CustomModelDeploymentUpdateStatus("UpdateCompleted");
+        /// <summary>
+        /// Constant UpdateFailed for CustomModelDeploymentUpdateStatus
+        /// </summary>
+        public static readonly CustomModelDeploymentUpdateStatus UpdateFailed = new CustomModelDeploymentUpdateStatus("UpdateFailed");
+        /// <summary>
+        /// Constant Updating for CustomModelDeploymentUpdateStatus
+        /// </summary>
+        public static readonly CustomModelDeploymentUpdateStatus Updating = new CustomModelDeploymentUpdateStatus("Updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomModelDeploymentUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomModelDeploymentUpdateStatus FindValue(string value)
+        {
+            return FindValue<CustomModelDeploymentUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomModelDeploymentUpdateStatus(string value)
         {
             return FindValue(value);
         }
@@ -3282,6 +3344,60 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryTransformationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReasoningEffort.
+    /// </summary>
+    public class ReasoningEffort : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for ReasoningEffort
+        /// </summary>
+        public static readonly ReasoningEffort High = new ReasoningEffort("high");
+        /// <summary>
+        /// Constant Low for ReasoningEffort
+        /// </summary>
+        public static readonly ReasoningEffort Low = new ReasoningEffort("low");
+        /// <summary>
+        /// Constant Medium for ReasoningEffort
+        /// </summary>
+        public static readonly ReasoningEffort Medium = new ReasoningEffort("medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReasoningEffort(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReasoningEffort FindValue(string value)
+        {
+            return FindValue<ReasoningEffort>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReasoningEffort(string value)
         {
             return FindValue(value);
         }

@@ -108,10 +108,12 @@ namespace Amazon.Lambda.Model
     public partial class CreateFunctionRequest : AmazonLambdaRequest
     {
         private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private CapacityProviderConfig _capacityProviderConfig;
         private FunctionCode _code;
         private string _codeSigningConfigArn;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
+        private DurableConfig _durableConfig;
         private Environment _environment;
         private EphemeralStorage _ephemeralStorage;
         private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
@@ -124,6 +126,7 @@ namespace Amazon.Lambda.Model
         private int? _memorySize;
         private PackageType _packageType;
         private bool? _publish;
+        private FunctionVersionLatestPublished _publishTo;
         private string _role;
         private Runtime _runtime;
         private SnapStart _snapStart;
@@ -156,6 +159,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetArchitectures()
         {
             return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderConfig. 
+        /// <para>
+        /// Configuration for the capacity provider that manages compute resources for Lambda
+        /// functions.
+        /// </para>
+        /// </summary>
+        public CapacityProviderConfig CapacityProviderConfig
+        {
+            get { return this._capacityProviderConfig; }
+            set { this._capacityProviderConfig = value; }
+        }
+
+        // Check to see if CapacityProviderConfig property is set
+        internal bool IsSetCapacityProviderConfig()
+        {
+            return this._capacityProviderConfig != null;
         }
 
         /// <summary>
@@ -235,6 +257,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurableConfig. 
+        /// <para>
+        /// Configuration settings for durable functions. Enables creating functions with durability
+        /// that can remember their state and continue execution even after interruptions.
+        /// </para>
+        /// </summary>
+        public DurableConfig DurableConfig
+        {
+            get { return this._durableConfig; }
+            set { this._durableConfig = value; }
+        }
+
+        // Check to see if DurableConfig property is set
+        internal bool IsSetDurableConfig()
+        {
+            return this._durableConfig != null;
         }
 
         /// <summary>
@@ -482,7 +523,7 @@ namespace Amazon.Lambda.Model
         /// 1 MB.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=10240)]
+        [AWSProperty(Min=128, Max=32768)]
         public int? MemorySize
         {
             get { return this._memorySize; }
@@ -530,6 +571,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetPublish()
         {
             return this._publish.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublishTo. 
+        /// <para>
+        /// Specifies where to publish the function version or configuration.
+        /// </para>
+        /// </summary>
+        public FunctionVersionLatestPublished PublishTo
+        {
+            get { return this._publishTo; }
+            set { this._publishTo = value; }
+        }
+
+        // Check to see if PublishTo property is set
+        internal bool IsSetPublishTo()
+        {
+            return this._publishTo != null;
         }
 
         /// <summary>

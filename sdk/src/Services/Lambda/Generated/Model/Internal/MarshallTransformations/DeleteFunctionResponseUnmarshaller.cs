@@ -47,6 +47,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteFunctionResponse response = new DeleteFunctionResponse();
+            response.StatusCode = (int)context.ResponseData.StatusCode;
 
             return response;
         }

@@ -36,6 +36,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class OAuthCredentialProvider
     {
         private Dictionary<string, string> _customParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _defaultReturnUrl;
+        private OAuthGrantType _grantType;
         private string _providerArn;
         private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -62,6 +64,54 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCustomParameters()
         {
             return this._customParameters != null && (this._customParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultReturnUrl. 
+        /// <para>
+        /// The URL where the end user's browser is redirected after obtaining the authorization
+        /// code. Generally points to the customer's application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string DefaultReturnUrl
+        {
+            get { return this._defaultReturnUrl; }
+            set { this._defaultReturnUrl = value; }
+        }
+
+        // Check to see if DefaultReturnUrl property is set
+        internal bool IsSetDefaultReturnUrl()
+        {
+            return this._defaultReturnUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrantType. 
+        /// <para>
+        /// Specifies the kind of credentials to use for authorization:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CLIENT_CREDENTIALS</c> - Authorization with a client ID and secret.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AUTHORIZATION_CODE</c> - Authorization with a token that is specific to an individual
+        /// end user.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public OAuthGrantType GrantType
+        {
+            get { return this._grantType; }
+            set { this._grantType = value; }
+        }
+
+        // Check to see if GrantType property is set
+        internal bool IsSetGrantType()
+        {
+            return this._grantType != null;
         }
 
         /// <summary>

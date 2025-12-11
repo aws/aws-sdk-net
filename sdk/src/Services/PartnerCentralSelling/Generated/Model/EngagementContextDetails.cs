@@ -35,8 +35,28 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class EngagementContextDetails
     {
+        private string _id;
         private EngagementContextPayload _payload;
         private EngagementContextType _type;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier of the engagement context. This ID is used to reference and
+        /// manage the specific context within the engagement.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Payload. 

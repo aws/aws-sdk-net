@@ -92,6 +92,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.QueryReformulationAIPromptId);
             }
 
+            if(requestObject.IsSetSuggestedMessages())
+            {
+                context.Writer.WritePropertyName("suggestedMessages");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSuggestedMessagesListValue in requestObject.SuggestedMessages)
+                {
+                        context.Writer.WriteStringValue(requestObjectSuggestedMessagesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

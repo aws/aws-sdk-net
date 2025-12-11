@@ -127,7 +127,7 @@ namespace Amazon.SageMaker.Model
         /// tables, and standard markdown formatting.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=65535)]
+        [AWSProperty(Min=0, Max=170391)]
         public string HubContentMarkdown
         {
             get { return this._hubContentMarkdown; }

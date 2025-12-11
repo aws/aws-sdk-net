@@ -46,6 +46,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetLeadInvitation())
+            {
+                context.Writer.WritePropertyName("LeadInvitation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LeadInvitationPayloadMarshaller.Instance;
+                marshaller.Marshall(requestObject.LeadInvitation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOpportunityInvitation())
             {
                 context.Writer.WritePropertyName("OpportunityInvitation");

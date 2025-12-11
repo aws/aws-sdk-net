@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetKnowledgeBase operation.
-    /// Gets information about a knoweldge base.
+    /// Gets information about a knowledge base.
     /// </summary>
     public partial class GetKnowledgeBaseRequest : AmazonBedrockAgentRequest
     {

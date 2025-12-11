@@ -40,8 +40,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// You can optionally filter the list by log group class and by using regular expressions
-    /// in your request to match strings in the log group names.
+    /// You can optionally filter the list by log group class, by using regular expressions
+    /// in your request to match strings in the log group names, by using the fieldIndexes
+    /// parameter to filter log groups based on which field indexes are configured, by using
+    /// the dataSources parameter to filter log groups by data source types, and by using
+    /// the fieldIndexNames parameter to filter by specific field index names.
     /// </para>
     ///  
     /// <para>
@@ -52,6 +55,8 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class ListLogGroupsRequest : AmazonCloudWatchLogsRequest
     {
         private List<string> _accountIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataSourceFilter> _dataSources = AWSConfigs.InitializeCollections ? new List<DataSourceFilter>() : null;
+        private List<string> _fieldIndexNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _includeLinkedAccounts;
         private int? _limit;
         private LogGroupClass _logGroupClass;
@@ -81,6 +86,59 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetAccountIdentifiers()
         {
             return this._accountIdentifiers != null && (this._accountIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// An array of data source filters to filter log groups by their associated data sources.
+        /// You can filter by data source name, type, or both. Multiple filters within the same
+        /// dimension are combined with OR logic, while filters across different dimensions are
+        /// combined with AND logic.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<DataSourceFilter> DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldIndexNames. 
+        /// <para>
+        /// An array of field index names to filter log groups that have specific field indexes.
+        /// Only log groups containing all specified field indexes are returned. You can specify
+        /// 1 to 20 field index names, each with 1 to 512 characters.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> FieldIndexNames
+        {
+            get { return this._fieldIndexNames; }
+            set { this._fieldIndexNames = value; }
+        }
+
+        // Check to see if FieldIndexNames property is set
+        internal bool IsSetFieldIndexNames()
+        {
+            return this._fieldIndexNames != null && (this._fieldIndexNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

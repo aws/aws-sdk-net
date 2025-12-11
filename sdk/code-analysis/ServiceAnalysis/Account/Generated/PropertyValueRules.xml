@@ -58,6 +58,14 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Account.Model.GetGovCloudAccountInformationRequest.StandardAccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.GetGovCloudAccountInformationResponse.GovCloudAccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Account.Model.GetPrimaryEmailRequest.AccountId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>

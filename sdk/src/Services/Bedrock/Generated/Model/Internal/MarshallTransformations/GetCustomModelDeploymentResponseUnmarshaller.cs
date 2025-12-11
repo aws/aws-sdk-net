@@ -100,6 +100,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("updateDetails", targetDepth))
+                {
+                    var unmarshaller = CustomModelDeploymentUpdateDetailsUnmarshaller.Instance;
+                    response.UpdateDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

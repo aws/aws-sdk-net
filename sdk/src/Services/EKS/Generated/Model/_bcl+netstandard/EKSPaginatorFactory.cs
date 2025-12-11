@@ -85,6 +85,14 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Paginator for ListCapabilities operation
+        ///</summary>
+        public IListCapabilitiesPaginator ListCapabilities(ListCapabilitiesRequest request) 
+        {
+            return new ListCapabilitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
         public IListClustersPaginator ListClusters(ListClustersRequest request) 

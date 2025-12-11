@@ -35,8 +35,27 @@ namespace Amazon.AppIntegrationsService.Model
     /// </summary>
     public partial class ListApplicationsRequest : AmazonAppIntegrationsServiceRequest
     {
+        private ApplicationType _applicationType;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// The type of application.
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

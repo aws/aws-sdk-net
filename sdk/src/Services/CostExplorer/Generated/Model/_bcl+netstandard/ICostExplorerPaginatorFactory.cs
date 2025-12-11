@@ -126,5 +126,15 @@ namespace Amazon.CostExplorer.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListCostCategoryDefinitionsPaginator ListCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCostCategoryResourceAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCostCategoryResourceAssociationsPaginator ListCostCategoryResourceAssociations(ListCostCategoryResourceAssociationsRequest request);
     }
 }

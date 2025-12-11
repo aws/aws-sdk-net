@@ -100,6 +100,94 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
                 
+        #region  CreateS3TableIntegration
+
+
+
+        /// <summary>
+        /// Creates an integration between CloudWatch and S3 Tables for analytics. This integration
+        /// enables querying CloudWatch telemetry data using analytics engines like Amazon Athena,
+        /// Amazon Redshift, and Apache Spark.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateS3TableIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateS3TableIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateS3TableIntegration">REST API Reference for CreateS3TableIntegration Operation</seealso>
+        Task<CreateS3TableIntegrationResponse> CreateS3TableIntegrationAsync(CreateS3TableIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTelemetryPipeline
+
+
+
+        /// <summary>
+        /// Creates a telemetry pipeline for processing and transforming telemetry data. The pipeline
+        /// defines how data flows from sources through processors to destinations, enabling data
+        /// transformation and delivering capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTelemetryPipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryPipeline">REST API Reference for CreateTelemetryPipeline Operation</seealso>
+        Task<CreateTelemetryPipelineResponse> CreateTelemetryPipelineAsync(CreateTelemetryPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateTelemetryRule
 
 
@@ -227,6 +315,91 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
                 
+        #region  DeleteS3TableIntegration
+
+
+
+        /// <summary>
+        /// Deletes an S3 Table integration and its associated data. This operation removes the
+        /// connection between CloudWatch Observability Admin and S3 Tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteS3TableIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteS3TableIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InvalidStateException">
+        /// The requested operation cannot be completed on the specified resource in the current
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteS3TableIntegration">REST API Reference for DeleteS3TableIntegration Operation</seealso>
+        Task<DeleteS3TableIntegrationResponse> DeleteS3TableIntegrationAsync(DeleteS3TableIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTelemetryPipeline
+
+
+
+        /// <summary>
+        /// Deletes a telemetry pipeline and its associated resources. This operation stops data
+        /// processing and removes the pipeline configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTelemetryPipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryPipeline">REST API Reference for DeleteTelemetryPipeline Operation</seealso>
+        Task<DeleteTelemetryPipelineResponse> DeleteTelemetryPipelineAsync(DeleteTelemetryPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteTelemetryRule
 
 
@@ -342,14 +515,51 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
                 
+        #region  GetS3TableIntegration
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific S3 Table integration, including its configuration,
+        /// status, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetS3TableIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetS3TableIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetS3TableIntegration">REST API Reference for GetS3TableIntegration Operation</seealso>
+        Task<GetS3TableIntegrationResponse> GetS3TableIntegrationAsync(GetS3TableIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetTelemetryEnrichmentStatus
 
 
 
         /// <summary>
         /// Returns the current status of the resource tags for telemetry feature, which enhances
-        /// telemetry data with additional resource metadata from Amazon Web Services Resource
-        /// Explorer.
+        /// telemetry data with additional resource metadata from Resource Explorer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTelemetryEnrichmentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -444,6 +654,44 @@ namespace Amazon.ObservabilityAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEvaluationStatusForOrganization">REST API Reference for GetTelemetryEvaluationStatusForOrganization Operation</seealso>
         Task<GetTelemetryEvaluationStatusForOrganizationResponse> GetTelemetryEvaluationStatusForOrganizationAsync(GetTelemetryEvaluationStatusForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTelemetryPipeline
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific telemetry pipeline, including its configuration,
+        /// status, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryPipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryPipeline">REST API Reference for GetTelemetryPipeline Operation</seealso>
+        Task<GetTelemetryPipelineResponse> GetTelemetryPipelineAsync(GetTelemetryPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -629,12 +877,48 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
                 
+        #region  ListS3TableIntegrations
+
+
+
+        /// <summary>
+        /// Lists all S3 Table integrations in your account. We recommend using pagination to
+        /// ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListS3TableIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListS3TableIntegrations service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListS3TableIntegrations">REST API Reference for ListS3TableIntegrations Operation</seealso>
+        Task<ListS3TableIntegrationsResponse> ListS3TableIntegrationsAsync(ListS3TableIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 
 
         /// <summary>
-        /// Lists all tags attached to the specified telemetry rule resource.
+        /// Lists all tags attached to the specified resource. Supports telemetry rule resources
+        /// and telemetry pipeline resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -663,6 +947,42 @@ namespace Amazon.ObservabilityAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTelemetryPipelines
+
+
+
+        /// <summary>
+        /// Returns a list of telemetry pipelines in your account. Returns up to 100 results.
+        /// If more than 100 telemetry pipelines exist, include the <c>NextToken</c> value from
+        /// the response to retrieve the next set of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTelemetryPipelines service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTelemetryPipelines service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryPipelines">REST API Reference for ListTelemetryPipelines Operation</seealso>
+        Task<ListTelemetryPipelinesResponse> ListTelemetryPipelinesAsync(ListTelemetryPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -742,8 +1062,8 @@ namespace Amazon.ObservabilityAdmin
 
         /// <summary>
         /// Enables the resource tags for telemetry feature for your account, which enhances
-        /// telemetry data with additional resource metadata from Amazon Web Services Resource
-        /// Explorer to provide richer context for monitoring and observability.
+        /// telemetry data with additional resource metadata from Resource Explorer to provide
+        /// richer context for monitoring and observability.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTelemetryEnrichment service method.</param>
         /// <param name="cancellationToken">
@@ -954,7 +1274,8 @@ namespace Amazon.ObservabilityAdmin
 
 
         /// <summary>
-        /// Adds or updates tags for a telemetry rule resource.
+        /// Adds or updates tags for a resource. Supports telemetry rule resources and telemetry
+        /// pipeline resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -990,12 +1311,48 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
                 
+        #region  TestTelemetryPipeline
+
+
+
+        /// <summary>
+        /// Tests a pipeline configuration with sample records to validate data processing before
+        /// deployment. This operation helps ensure your pipeline configuration works as expected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestTelemetryPipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TestTelemetryPipeline">REST API Reference for TestTelemetryPipeline Operation</seealso>
+        Task<TestTelemetryPipelineResponse> TestTelemetryPipelineAsync(TestTelemetryPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UntagResource
 
 
 
         /// <summary>
-        /// Removes tags from a telemetry rule resource.
+        /// Removes tags from a resource. Supports telemetry rule resources and telemetry pipeline
+        /// resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1070,12 +1427,129 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
                 
+        #region  UpdateTelemetryPipeline
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing telemetry pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The following attributes cannot be updated after pipeline creation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Pipeline name</b> - The pipeline name is immutable
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Pipeline ARN</b> - The ARN is automatically generated and cannot be changed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Source type</b> - Once a pipeline is created with a specific source type (such
+        /// as S3, CloudWatch Logs, GitHub, or third-party sources), it cannot be changed to a
+        /// different source type
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Processors can be added, removed, or modified. However, some processors are not supported
+        /// for third-party pipelines and cannot be added through updates.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Source-Specific Update Rules</b> 
+        /// </para>
+        ///  <dl> <dt>CloudWatch Logs Sources (Vended and Custom)</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> <c>sts_role_arn</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Fixed:</b> <c>data_source_name</c>, <c>data_source_type</c>, sink (must remain
+        /// <c>@original</c>)
+        /// </para>
+        ///  </dd> <dt>S3 Sources (Crowdstrike, Zscaler, SentinelOne, Custom)</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All SQS configuration parameters, <c>sts_role_arn</c>, codec settings,
+        /// compression type, bucket ownership settings, sink log group
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Fixed:</b> <c>notification_type</c>, <c>aws.region</c> 
+        /// </para>
+        ///  </dd> <dt>GitHub Audit Logs</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>scope</c>
+        /// (can switch between ORGANIZATION/ENTERPRISE), <c>organization</c> or <c>enterprise</c>
+        /// name, <c>range</c>, authentication credentials (PAT or GitHub App)
+        /// </para>
+        ///  </dd> <dt>Microsoft Sources (Entra ID, Office365, Windows)</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>tenant_id</c>,
+        /// <c>workspace_id</c> (Windows only), OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// </para>
+        ///  </dd> <dt>Okta Sources (SSO, Auth0)</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>domain</c>,
+        /// <c>range</c> (SSO only), OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// </para>
+        ///  </dd> <dt>Palo Alto Networks</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>hostname</c>,
+        /// basic authentication credentials (<c>username</c>, <c>password</c>)
+        /// </para>
+        ///  </dd> <dt>ServiceNow CMDB</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>instance_url</c>,
+        /// <c>range</c>, OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// </para>
+        ///  </dd> <dt>Wiz CNAPP</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>region</c>,
+        /// <c>range</c>, OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryPipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryPipeline">REST API Reference for UpdateTelemetryPipeline Operation</seealso>
+        Task<UpdateTelemetryPipelineResponse> UpdateTelemetryPipelineAsync(UpdateTelemetryPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateTelemetryRule
 
 
 
         /// <summary>
-        /// Updates an existing telemetry rule in your account.
+        /// Updates an existing telemetry rule in your account. If multiple users attempt to
+        /// modify the same telemetry rule simultaneously, a ConflictException is returned to
+        /// provide specific error information for concurrent modification scenarios.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryRule service method.</param>
         /// <param name="cancellationToken">
@@ -1088,6 +1562,10 @@ namespace Amazon.ObservabilityAdmin
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
@@ -1151,6 +1629,41 @@ namespace Amazon.ObservabilityAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRuleForOrganization">REST API Reference for UpdateTelemetryRuleForOrganization Operation</seealso>
         Task<UpdateTelemetryRuleForOrganizationResponse> UpdateTelemetryRuleForOrganizationAsync(UpdateTelemetryRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ValidateTelemetryPipelineConfiguration
+
+
+
+        /// <summary>
+        /// Validates a pipeline configuration without creating the pipeline. This operation checks
+        /// the configuration for syntax errors and compatibility issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateTelemetryPipelineConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateTelemetryPipelineConfiguration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ValidateTelemetryPipelineConfiguration">REST API Reference for ValidateTelemetryPipelineConfiguration Operation</seealso>
+        Task<ValidateTelemetryPipelineConfigurationResponse> ValidateTelemetryPipelineConfigurationAsync(ValidateTelemetryPipelineConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

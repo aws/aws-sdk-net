@@ -31,7 +31,8 @@ namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all tags attached to the specified telemetry rule resource.
+    /// Lists all tags attached to the specified resource. Supports telemetry rule resources
+    /// and telemetry pipeline resources.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonObservabilityAdminRequest
     {

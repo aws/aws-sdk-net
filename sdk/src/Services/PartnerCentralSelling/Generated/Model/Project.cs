@@ -36,6 +36,7 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private string _additionalComments;
         private List<string> _apnPrograms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private AwsPartition _awsPartition;
         private CompetitorName _competitorName;
         private string _customerBusinessProblem;
         private string _customerUseCase;
@@ -54,7 +55,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// captured in other fields.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
         public string AdditionalComments
         {
             get { return this._additionalComments; }
@@ -101,6 +101,25 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsPartition. 
+        /// <para>
+        /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc'
+        /// for AWS European Sovereign Cloud, <c>null</c> for all other partitions
+        /// </para>
+        /// </summary>
+        public AwsPartition AwsPartition
+        {
+            get { return this._awsPartition; }
+            set { this._awsPartition = value; }
+        }
+
+        // Check to see if AwsPartition property is set
+        internal bool IsSetAwsPartition()
+        {
+            return this._awsPartition != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CompetitorName. 
         /// <para>
         /// Name of the <c>Opportunity</c>'s competitor (if any). Use <c>Other</c> to submit a
@@ -133,7 +152,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// and the strategic fit of the partner's solution.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2000)]
+        [AWSProperty(Sensitive=true)]
         public string CustomerBusinessProblem
         {
             get { return this._customerBusinessProblem; }
@@ -274,7 +293,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Only allowed when <c>CompetitorNames</c> has <c>Other</c> selected.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string OtherCompetitorNames
         {
             get { return this._otherCompetitorNames; }
@@ -294,7 +312,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// field value is <c>Other</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string OtherSolutionDescription
         {
             get { return this._otherSolutionDescription; }
@@ -399,7 +417,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the <c>Opportunity</c>'s title or name.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string Title
         {
             get { return this._title; }

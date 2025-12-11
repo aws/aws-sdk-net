@@ -35,10 +35,33 @@ namespace Amazon.ObservabilityAdmin.Model
     /// </summary>
     public partial class TelemetryDestinationConfiguration
     {
+        private CloudtrailParameters _cloudtrailParameters;
         private string _destinationPattern;
         private DestinationType _destinationType;
+        private ELBLoadBalancerLoggingParameters _elbLoadBalancerLoggingParameters;
+        private LogDeliveryParameters _logDeliveryParameters;
         private int? _retentionInDays;
         private VPCFlowLogParameters _vpcFlowLogParameters;
+        private WAFLoggingParameters _wafLoggingParameters;
+
+        /// <summary>
+        /// Gets and sets the property CloudtrailParameters. 
+        /// <para>
+        ///  Configuration parameters specific to Amazon Web Services CloudTrail when CloudTrail
+        /// is the source type. 
+        /// </para>
+        /// </summary>
+        public CloudtrailParameters CloudtrailParameters
+        {
+            get { return this._cloudtrailParameters; }
+            set { this._cloudtrailParameters = value; }
+        }
+
+        // Check to see if CloudtrailParameters property is set
+        internal bool IsSetCloudtrailParameters()
+        {
+            return this._cloudtrailParameters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationPattern. 
@@ -79,6 +102,44 @@ namespace Amazon.ObservabilityAdmin.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ELBLoadBalancerLoggingParameters. 
+        /// <para>
+        ///  Configuration parameters specific to ELB load balancer logging when ELB is the resource
+        /// type. 
+        /// </para>
+        /// </summary>
+        public ELBLoadBalancerLoggingParameters ELBLoadBalancerLoggingParameters
+        {
+            get { return this._elbLoadBalancerLoggingParameters; }
+            set { this._elbLoadBalancerLoggingParameters = value; }
+        }
+
+        // Check to see if ELBLoadBalancerLoggingParameters property is set
+        internal bool IsSetELBLoadBalancerLoggingParameters()
+        {
+            return this._elbLoadBalancerLoggingParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDeliveryParameters. 
+        /// <para>
+        /// Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon
+        /// Bedrock AgentCore is the resource type.
+        /// </para>
+        /// </summary>
+        public LogDeliveryParameters LogDeliveryParameters
+        {
+            get { return this._logDeliveryParameters; }
+            set { this._logDeliveryParameters = value; }
+        }
+
+        // Check to see if LogDeliveryParameters property is set
+        internal bool IsSetLogDeliveryParameters()
+        {
+            return this._logDeliveryParameters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RetentionInDays. 
         /// <para>
         ///  The number of days to retain the telemetry data in the destination. 
@@ -114,6 +175,24 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetVPCFlowLogParameters()
         {
             return this._vpcFlowLogParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WAFLoggingParameters. 
+        /// <para>
+        ///  Configuration parameters specific to WAF logging when WAF is the resource type. 
+        /// </para>
+        /// </summary>
+        public WAFLoggingParameters WAFLoggingParameters
+        {
+            get { return this._wafLoggingParameters; }
+            set { this._wafLoggingParameters = value; }
+        }
+
+        // Check to see if WAFLoggingParameters property is set
+        internal bool IsSetWAFLoggingParameters()
+        {
+            return this._wafLoggingParameters != null;
         }
 
     }

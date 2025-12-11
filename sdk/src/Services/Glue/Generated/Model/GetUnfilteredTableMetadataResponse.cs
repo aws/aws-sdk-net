@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private List<string> _authorizedColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ColumnRowFilter> _cellFilters = AWSConfigs.InitializeCollections ? new List<ColumnRowFilter>() : null;
+        private bool? _isMaterializedView;
         private bool? _isMultiDialectView;
         private bool? _isProtected;
         private bool? _isRegisteredWithLakeFormation;
@@ -89,6 +90,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetCellFilters()
         {
             return this._cellFilters != null && (this._cellFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMaterializedView. 
+        /// <para>
+        /// Indicates if a table is a materialized view.
+        /// </para>
+        /// </summary>
+        public bool? IsMaterializedView
+        {
+            get { return this._isMaterializedView; }
+            set { this._isMaterializedView = value; }
+        }
+
+        // Check to see if IsMaterializedView property is set
+        internal bool IsSetIsMaterializedView()
+        {
+            return this._isMaterializedView.HasValue; 
         }
 
         /// <summary>

@@ -65,7 +65,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the ARN of the IAM Role used for resource snapshot job executions.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
         public string ResourceSnapshotJobRoleIdentifier
         {
             get { return this._resourceSnapshotJobRoleIdentifier; }

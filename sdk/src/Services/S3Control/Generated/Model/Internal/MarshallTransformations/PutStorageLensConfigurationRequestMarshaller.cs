@@ -99,6 +99,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics.IsEnabled.Value));
                             xmlWriter.WriteEndElement();
                         }
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.AdvancedPerformanceMetrics != null)
+                        {
+                            xmlWriter.WriteStartElement("AdvancedPerformanceMetrics");
+                            if(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedPerformanceMetrics.IsSetIsEnabled())
+                                xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedPerformanceMetrics.IsEnabled.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                         if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel != null)
                         {
                             xmlWriter.WriteStartElement("BucketLevel");
@@ -121,6 +128,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("AdvancedDataProtectionMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics.IsSetIsEnabled())
                                     xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics.IsEnabled.Value));
+                                xmlWriter.WriteEndElement();
+                            }
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedPerformanceMetrics != null)
+                            {
+                                xmlWriter.WriteStartElement("AdvancedPerformanceMetrics");
+                                if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedPerformanceMetrics.IsSetIsEnabled())
+                                    xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedPerformanceMetrics.IsEnabled.Value));
                                 xmlWriter.WriteEndElement();
                             }
                             if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics != null)
@@ -247,6 +261,30 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Prefix));
                             xmlWriter.WriteEndElement();
                         }
+                        if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination != null)
+                        {
+                            xmlWriter.WriteStartElement("StorageLensTableDestination");
+                            if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption != null)
+                            {
+                                xmlWriter.WriteStartElement("Encryption");
+                                if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.SSEKMS != null)
+                                {
+                                    xmlWriter.WriteStartElement("SSE-KMS");
+                                    if(publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.SSEKMS.IsSetKeyId())
+                                        xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.SSEKMS.KeyId));
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.SSES3 != null)
+                                {
+                                    xmlWriter.WriteStartElement("SSE-S3");
+                                    xmlWriter.WriteEndElement();
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            if(publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.IsSetIsEnabled())
+                                xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.IsEnabled.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                         xmlWriter.WriteEndElement();
                     }
                     if (publicRequest.StorageLensConfiguration.Exclude != null)
@@ -275,6 +313,67 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();
                             }            
                             xmlWriter.WriteEndElement();            
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
+                    if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport != null)
+                    {
+                        xmlWriter.WriteStartElement("ExpandedPrefixesDataExport");
+                        if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination != null)
+                        {
+                            xmlWriter.WriteStartElement("S3BucketDestination");
+                            if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.IsSetAccountId())
+                                xmlWriter.WriteElementString("AccountId", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.AccountId));
+                            if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.IsSetArn())
+                                xmlWriter.WriteElementString("Arn", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Arn));
+                            if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption != null)
+                            {
+                                xmlWriter.WriteStartElement("Encryption");
+                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.SSEKMS != null)
+                                {
+                                    xmlWriter.WriteStartElement("SSE-KMS");
+                                    if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.SSEKMS.IsSetKeyId())
+                                        xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.SSEKMS.KeyId));
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.SSES3 != null)
+                                {
+                                    xmlWriter.WriteStartElement("SSE-S3");
+                                    xmlWriter.WriteEndElement();
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.IsSetFormat())
+                                xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Format));
+                            if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.IsSetOutputSchemaVersion())
+                                xmlWriter.WriteElementString("OutputSchemaVersion", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.OutputSchemaVersion));
+                            if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.IsSetPrefix())
+                                xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Prefix));
+                            xmlWriter.WriteEndElement();
+                        }
+                        if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination != null)
+                        {
+                            xmlWriter.WriteStartElement("StorageLensTableDestination");
+                            if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption != null)
+                            {
+                                xmlWriter.WriteStartElement("Encryption");
+                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.SSEKMS != null)
+                                {
+                                    xmlWriter.WriteStartElement("SSE-KMS");
+                                    if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.SSEKMS.IsSetKeyId())
+                                        xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.SSEKMS.KeyId));
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.SSES3 != null)
+                                {
+                                    xmlWriter.WriteStartElement("SSE-S3");
+                                    xmlWriter.WriteEndElement();
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.IsSetIsEnabled())
+                                xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.IsEnabled.Value));
+                            xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
                     }
@@ -311,6 +410,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.StorageLensConfiguration.IsSetIsEnabled())
                         xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.IsEnabled.Value));
+                    if(publicRequest.StorageLensConfiguration.IsSetPrefixDelimiter())
+                        xmlWriter.WriteElementString("PrefixDelimiter", StringUtils.FromString(publicRequest.StorageLensConfiguration.PrefixDelimiter));
                     if(publicRequest.StorageLensConfiguration.IsSetStorageLensArn())
                         xmlWriter.WriteElementString("StorageLensArn", StringUtils.FromString(publicRequest.StorageLensConfiguration.StorageLensArn));
                     xmlWriter.WriteEndElement();

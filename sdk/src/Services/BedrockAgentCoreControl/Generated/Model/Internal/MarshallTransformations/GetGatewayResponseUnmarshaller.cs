@@ -118,6 +118,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("policyEngineConfiguration", targetDepth))
+                {
+                    var unmarshaller = GatewayPolicyEngineConfigurationUnmarshaller.Instance;
+                    response.PolicyEngineConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("protocolConfiguration", targetDepth))
                 {
                     var unmarshaller = GatewayProtocolConfigurationUnmarshaller.Instance;

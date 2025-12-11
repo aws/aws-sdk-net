@@ -243,7 +243,7 @@ namespace Amazon.SavingsPlans.Model
         /// Gets and sets the property ReturnableUntil. 
         /// <para>
         /// The time until when a return for the Savings Plan can be requested. If the Savings
-        /// Plan is not returnable, the field reflects the Savings Plan start time.
+        /// Plan is not returnable, the field reflects the Savings Plans start time.
         /// </para>
         /// </summary>
         public string ReturnableUntil

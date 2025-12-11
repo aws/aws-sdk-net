@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduledQueryArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the created scheduled query.
+        /// The ARN of the created scheduled query.
         /// </para>
         /// </summary>
         public string ScheduledQueryArn
@@ -58,7 +58,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the scheduled query (ENABLED or DISABLED).
+        /// The current state of the scheduled query.
         /// </para>
         /// </summary>
         public ScheduledQueryState State

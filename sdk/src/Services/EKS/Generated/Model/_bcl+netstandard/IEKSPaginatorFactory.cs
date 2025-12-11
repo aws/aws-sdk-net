@@ -88,6 +88,16 @@ namespace Amazon.EKS.Model
         IListAssociatedAccessPoliciesPaginator ListAssociatedAccessPolicies(ListAssociatedAccessPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListCapabilities operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCapabilitiesPaginator ListCapabilities(ListCapabilitiesRequest request);
+
+        /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
         [AWSPaginator(

@@ -34,8 +34,28 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ImageBlock
     {
+        private ErrorBlock _error;
         private ImageFormat _format;
         private ImageSource _source;
+
+        /// <summary>
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// Error information if the image block could not be processed or contains invalid data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ErrorBlock Error
+        {
+            get { return this._error; }
+            set { this._error = value; }
+        }
+
+        // Check to see if Error property is set
+        internal bool IsSetError()
+        {
+            return this._error != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Format. 
@@ -62,7 +82,7 @@ namespace Amazon.BedrockRuntime.Model
         /// The source for the image.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ImageSource Source
         {
             get { return this._source; }

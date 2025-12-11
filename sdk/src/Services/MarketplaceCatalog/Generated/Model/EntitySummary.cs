@@ -45,6 +45,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _lastModifiedDate;
         private MachineLearningProductSummary _machineLearningProductSummary;
         private string _name;
+        private OfferSetSummary _offerSetSummary;
         private OfferSummary _offerSummary;
         private ResaleAuthorizationSummary _resaleAuthorizationSummary;
         private SaaSProductSummary _saaSProductSummary;
@@ -212,6 +213,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferSetSummary. 
+        /// <para>
+        /// An object that contains summary information about the offer set.
+        /// </para>
+        /// </summary>
+        public OfferSetSummary OfferSetSummary
+        {
+            get { return this._offerSetSummary; }
+            set { this._offerSetSummary = value; }
+        }
+
+        // Check to see if OfferSetSummary property is set
+        internal bool IsSetOfferSetSummary()
+        {
+            return this._offerSetSummary != null;
         }
 
         /// <summary>

@@ -75,6 +75,17 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExtensions())
+            {
+                context.Writer.WritePropertyName("Extensions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExtensionsListValue in publicRequest.Extensions)
+                {
+                        context.Writer.WriteStringValue(publicRequestExtensionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetFilters())
             {
                 context.Writer.WritePropertyName("Filters");

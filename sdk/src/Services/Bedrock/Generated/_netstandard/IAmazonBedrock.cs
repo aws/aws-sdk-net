@@ -3802,6 +3802,41 @@ namespace Amazon.Bedrock
 
         #endregion
                 
+        #region  UpdateCustomModelDeployment
+
+
+
+        /// <summary>
+        /// Updates a custom model deployment with a new custom model. This allows you to deploy
+        /// updated models without creating new deployment endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomModelDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomModelDeployment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateCustomModelDeployment">REST API Reference for UpdateCustomModelDeployment Operation</seealso>
+        Task<UpdateCustomModelDeploymentResponse> UpdateCustomModelDeploymentAsync(UpdateCustomModelDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateGuardrail
 
 

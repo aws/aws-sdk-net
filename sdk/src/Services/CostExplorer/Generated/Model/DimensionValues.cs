@@ -79,7 +79,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>MatchOptions</c> is only applicable for actions related to Cost Category and Anomaly
+        ///  <c>MatchOptions</c> is only applicable for actions related to cost category and Anomaly
         /// Subscriptions. Refer to the documentation for each specific API to see what is supported.
         /// </para>
         ///  

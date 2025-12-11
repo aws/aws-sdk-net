@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// An error occurred while calling a dependency. For example, calling <c>connect:DecribeContact</c>
-    /// as part of <c>CreateSession</c> with a contactArn.
+    /// The request failed because it depends on another request that failed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

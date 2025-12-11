@@ -31,7 +31,9 @@ namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTelemetryRule operation.
-    /// Updates an existing telemetry rule in your account.
+    /// Updates an existing telemetry rule in your account. If multiple users attempt to
+    /// modify the same telemetry rule simultaneously, a ConflictException is returned to
+    /// provide specific error information for concurrent modification scenarios.
     /// </summary>
     public partial class UpdateTelemetryRuleRequest : AmazonObservabilityAdminRequest
     {

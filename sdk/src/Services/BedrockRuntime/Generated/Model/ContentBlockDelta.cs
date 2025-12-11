@@ -35,6 +35,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class ContentBlockDelta
     {
         private CitationsDelta _citation;
+        private ImageBlockDelta _image;
         private ReasoningContentBlockDelta _reasoningContent;
         private string _text;
         private List<ToolResultBlockDelta> _toolResult = AWSConfigs.InitializeCollections ? new List<ToolResultBlockDelta>() : null;
@@ -57,6 +58,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetCitation()
         {
             return this._citation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// A streaming delta event containing incremental image data.
+        /// </para>
+        /// </summary>
+        public ImageBlockDelta Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
         }
 
         /// <summary>

@@ -35,13 +35,13 @@ namespace Amazon.SecurityHub.Model
     public partial class ServiceNowDetail
     {
         private ConnectorAuthStatus _authStatus;
-        private string _clientId;
         private string _instanceName;
+        private string _secretArn;
 
         /// <summary>
         /// Gets and sets the property AuthStatus. 
         /// <para>
-        /// The status of the authorization between Jira Cloud and the service.
+        /// The status of the authorization between ServiceNow and the service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -55,24 +55,6 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAuthStatus()
         {
             return this._authStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClientId. 
-        /// <para>
-        /// The clientId of ServiceNow ITSM.
-        /// </para>
-        /// </summary>
-        public string ClientId
-        {
-            get { return this._clientId; }
-            set { this._clientId = value; }
-        }
-
-        // Check to see if ClientId property is set
-        internal bool IsSetClientId()
-        {
-            return this._clientId != null;
         }
 
         /// <summary>
@@ -91,6 +73,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetInstanceName()
         {
             return this._instanceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that
+        /// contains the ServiceNow credentials.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string SecretArn
+        {
+            get { return this._secretArn; }
+            set { this._secretArn = value; }
+        }
+
+        // Check to see if SecretArn property is set
+        internal bool IsSetSecretArn()
+        {
+            return this._secretArn != null;
         }
 
     }

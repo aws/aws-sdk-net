@@ -29,82 +29,60 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DescribeAnomalyDetectors operation
     /// </summary>  
-    public class DescribeAnomalyDetectorsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeAnomalyDetectorsResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             DescribeAnomalyDetectorsResponse response = new DescribeAnomalyDetectorsResponse();
-
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            var reader = context.Reader;
+            context.AddPathSegment("DescribeAnomalyDetectors");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.IsStartElement)
-                {                    
-                    if(context.TestExpression("DescribeAnomalyDetectorsResult", 2))
-                    {
-                        UnmarshallResult(context, response);                        
-                        continue;
-                    }
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
-                    }
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "AnomalyDetectors":
+                        {
+                            context.AddPathSegment("AnomalyDetectors");
+                            var unmarshaller = new CborListUnmarshaller<AnomalyDetector, AnomalyDetectorUnmarshaller>(AnomalyDetectorUnmarshaller.Instance);
+                            response.AnomalyDetectors = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "NextToken":
+                        {
+                            context.AddPathSegment("NextToken");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.NextToken = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return response;
         }
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeAnomalyDetectorsResponse response)
-        {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-
-                    if (context.TestExpression("AnomalyDetectors/member", targetDepth))
-                    {
-                        var unmarshaller = AnomalyDetectorUnmarshaller.Instance;
-                        if (response.AnomalyDetectors == null)
-                        {
-                            response.AnomalyDetectors = new List<AnomalyDetector>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.AnomalyDetectors.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("NextToken", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextToken = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                } 
-           }
-
-            return;
-        }
-
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -113,36 +91,60 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceError"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceFault"))
                 {
+                    errorResponse.Code = "InternalServiceError";
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
                 {
                     return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombination"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
                 {
+                    errorResponse.Code = "InvalidParameterCombination";
                     return InvalidParameterCombinationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {
+                    errorResponse.Code = "InvalidParameterValue";
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+            {
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                {
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
+                    }
+                }
+            }
+            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
         }
+
         private static DescribeAnomalyDetectorsResponseUnmarshaller _instance = new DescribeAnomalyDetectorsResponseUnmarshaller();        
 
         internal static DescribeAnomalyDetectorsResponseUnmarshaller GetInstance()

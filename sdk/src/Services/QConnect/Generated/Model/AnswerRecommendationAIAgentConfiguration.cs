@@ -40,6 +40,7 @@ namespace Amazon.QConnect.Model
         private string _intentLabelingGenerationAIPromptId;
         private string _locale;
         private string _queryReformulationAIPromptId;
+        private List<string> _suggestedMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AnswerGenerationAIGuardrailId. 
@@ -164,6 +165,29 @@ namespace Amazon.QConnect.Model
         internal bool IsSetQueryReformulationAIPromptId()
         {
             return this._queryReformulationAIPromptId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuggestedMessages. 
+        /// <para>
+        /// The suggested messages configuration for the Answer Recommendation AI Agent.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SuggestedMessages
+        {
+            get { return this._suggestedMessages; }
+            set { this._suggestedMessages = value; }
+        }
+
+        // Check to see if SuggestedMessages property is set
+        internal bool IsSetSuggestedMessages()
+        {
+            return this._suggestedMessages != null && (this._suggestedMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

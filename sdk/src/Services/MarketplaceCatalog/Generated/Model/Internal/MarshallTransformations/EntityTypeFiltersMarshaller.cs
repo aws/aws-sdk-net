@@ -101,6 +101,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetOfferSetFilters())
+            {
+                context.Writer.WritePropertyName("OfferSetFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OfferSetFiltersMarshaller.Instance;
+                marshaller.Marshall(requestObject.OfferSetFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetResaleAuthorizationFilters())
             {
                 context.Writer.WritePropertyName("ResaleAuthorizationFilters");

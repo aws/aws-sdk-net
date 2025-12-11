@@ -81,6 +81,10 @@ namespace Amazon.QConnect
         /// </summary>
         public static readonly AIAgentType ANSWER_RECOMMENDATION = new AIAgentType("ANSWER_RECOMMENDATION");
         /// <summary>
+        /// Constant CASE_SUMMARIZATION for AIAgentType
+        /// </summary>
+        public static readonly AIAgentType CASE_SUMMARIZATION = new AIAgentType("CASE_SUMMARIZATION");
+        /// <summary>
         /// Constant EMAIL_GENERATIVE_ANSWER for AIAgentType
         /// </summary>
         public static readonly AIAgentType EMAIL_GENERATIVE_ANSWER = new AIAgentType("EMAIL_GENERATIVE_ANSWER");
@@ -96,6 +100,14 @@ namespace Amazon.QConnect
         /// Constant MANUAL_SEARCH for AIAgentType
         /// </summary>
         public static readonly AIAgentType MANUAL_SEARCH = new AIAgentType("MANUAL_SEARCH");
+        /// <summary>
+        /// Constant NOTE_TAKING for AIAgentType
+        /// </summary>
+        public static readonly AIAgentType NOTE_TAKING = new AIAgentType("NOTE_TAKING");
+        /// <summary>
+        /// Constant ORCHESTRATION for AIAgentType
+        /// </summary>
+        public static readonly AIAgentType ORCHESTRATION = new AIAgentType("ORCHESTRATION");
         /// <summary>
         /// Constant SELF_SERVICE for AIAgentType
         /// </summary>
@@ -251,6 +263,10 @@ namespace Amazon.QConnect
         /// </summary>
         public static readonly AIPromptType ANSWER_GENERATION = new AIPromptType("ANSWER_GENERATION");
         /// <summary>
+        /// Constant CASE_SUMMARIZATION for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType CASE_SUMMARIZATION = new AIPromptType("CASE_SUMMARIZATION");
+        /// <summary>
         /// Constant EMAIL_GENERATIVE_ANSWER for AIPromptType
         /// </summary>
         public static readonly AIPromptType EMAIL_GENERATIVE_ANSWER = new AIPromptType("EMAIL_GENERATIVE_ANSWER");
@@ -270,6 +286,14 @@ namespace Amazon.QConnect
         /// Constant INTENT_LABELING_GENERATION for AIPromptType
         /// </summary>
         public static readonly AIPromptType INTENT_LABELING_GENERATION = new AIPromptType("INTENT_LABELING_GENERATION");
+        /// <summary>
+        /// Constant NOTE_TAKING for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType NOTE_TAKING = new AIPromptType("NOTE_TAKING");
+        /// <summary>
+        /// Constant ORCHESTRATION for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType ORCHESTRATION = new AIPromptType("ORCHESTRATION");
         /// <summary>
         /// Constant QUERY_REFORMULATION for AIPromptType
         /// </summary>
@@ -486,6 +510,10 @@ namespace Amazon.QConnect
     public class AssociationType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EXTERNAL_BEDROCK_KNOWLEDGE_BASE for AssociationType
+        /// </summary>
+        public static readonly AssociationType EXTERNAL_BEDROCK_KNOWLEDGE_BASE = new AssociationType("EXTERNAL_BEDROCK_KNOWLEDGE_BASE");
         /// <summary>
         /// Constant KNOWLEDGE_BASE for AssociationType
         /// </summary>
@@ -1823,6 +1851,56 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type MessageFilterType.
+    /// </summary>
+    public class MessageFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for MessageFilterType
+        /// </summary>
+        public static readonly MessageFilterType ALL = new MessageFilterType("ALL");
+        /// <summary>
+        /// Constant TEXT_ONLY for MessageFilterType
+        /// </summary>
+        public static readonly MessageFilterType TEXT_ONLY = new MessageFilterType("TEXT_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageFilterType FindValue(string value)
+        {
+            return FindValue<MessageFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MessageTemplateAttributeType.
     /// </summary>
     public class MessageTemplateAttributeType : ConstantClass
@@ -2433,6 +2511,10 @@ namespace Amazon.QConnect
     {
 
         /// <summary>
+        /// Constant BLOCKED_CASE_SUMMARIZATION_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType BLOCKED_CASE_SUMMARIZATION_CHUNK = new QueryResultType("BLOCKED_CASE_SUMMARIZATION_CHUNK");
+        /// <summary>
         /// Constant BLOCKED_GENERATIVE_ANSWER_CHUNK for QueryResultType
         /// </summary>
         public static readonly QueryResultType BLOCKED_GENERATIVE_ANSWER_CHUNK = new QueryResultType("BLOCKED_GENERATIVE_ANSWER_CHUNK");
@@ -2440,6 +2522,14 @@ namespace Amazon.QConnect
         /// Constant BLOCKED_INTENT_ANSWER_CHUNK for QueryResultType
         /// </summary>
         public static readonly QueryResultType BLOCKED_INTENT_ANSWER_CHUNK = new QueryResultType("BLOCKED_INTENT_ANSWER_CHUNK");
+        /// <summary>
+        /// Constant BLOCKED_NOTES_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType BLOCKED_NOTES_CHUNK = new QueryResultType("BLOCKED_NOTES_CHUNK");
+        /// <summary>
+        /// Constant CASE_SUMMARIZATION_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType CASE_SUMMARIZATION_CHUNK = new QueryResultType("CASE_SUMMARIZATION_CHUNK");
         /// <summary>
         /// Constant EMAIL_GENERATIVE_ANSWER_CHUNK for QueryResultType
         /// </summary>
@@ -2472,6 +2562,14 @@ namespace Amazon.QConnect
         /// Constant KNOWLEDGE_CONTENT for QueryResultType
         /// </summary>
         public static readonly QueryResultType KNOWLEDGE_CONTENT = new QueryResultType("KNOWLEDGE_CONTENT");
+        /// <summary>
+        /// Constant NOTES for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType NOTES = new QueryResultType("NOTES");
+        /// <summary>
+        /// Constant NOTES_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType NOTES_CHUNK = new QueryResultType("NOTES_CHUNK");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2793,6 +2891,10 @@ namespace Amazon.QConnect
     {
 
         /// <summary>
+        /// Constant BLOCKED_CASE_SUMMARIZATION_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType BLOCKED_CASE_SUMMARIZATION_CHUNK = new RecommendationType("BLOCKED_CASE_SUMMARIZATION_CHUNK");
+        /// <summary>
         /// Constant BLOCKED_GENERATIVE_ANSWER_CHUNK for RecommendationType
         /// </summary>
         public static readonly RecommendationType BLOCKED_GENERATIVE_ANSWER_CHUNK = new RecommendationType("BLOCKED_GENERATIVE_ANSWER_CHUNK");
@@ -2800,6 +2902,14 @@ namespace Amazon.QConnect
         /// Constant BLOCKED_INTENT_ANSWER_CHUNK for RecommendationType
         /// </summary>
         public static readonly RecommendationType BLOCKED_INTENT_ANSWER_CHUNK = new RecommendationType("BLOCKED_INTENT_ANSWER_CHUNK");
+        /// <summary>
+        /// Constant BLOCKED_NOTES_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType BLOCKED_NOTES_CHUNK = new RecommendationType("BLOCKED_NOTES_CHUNK");
+        /// <summary>
+        /// Constant CASE_SUMMARIZATION_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType CASE_SUMMARIZATION_CHUNK = new RecommendationType("CASE_SUMMARIZATION_CHUNK");
         /// <summary>
         /// Constant DETECTED_INTENT for RecommendationType
         /// </summary>
@@ -2836,6 +2946,14 @@ namespace Amazon.QConnect
         /// Constant KNOWLEDGE_CONTENT for RecommendationType
         /// </summary>
         public static readonly RecommendationType KNOWLEDGE_CONTENT = new RecommendationType("KNOWLEDGE_CONTENT");
+        /// <summary>
+        /// Constant NOTES_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType NOTES_CHUNK = new RecommendationType("NOTES_CHUNK");
+        /// <summary>
+        /// Constant SUGGESTED_MESSAGE for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType SUGGESTED_MESSAGE = new RecommendationType("SUGGESTED_MESSAGE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2878,6 +2996,38 @@ namespace Amazon.QConnect
     public class ReferenceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BEDROCK_KB_CONFLUENCE for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType BEDROCK_KB_CONFLUENCE = new ReferenceType("BEDROCK_KB_CONFLUENCE");
+        /// <summary>
+        /// Constant BEDROCK_KB_CUSTOM_DOCUMENT for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType BEDROCK_KB_CUSTOM_DOCUMENT = new ReferenceType("BEDROCK_KB_CUSTOM_DOCUMENT");
+        /// <summary>
+        /// Constant BEDROCK_KB_KENDRA for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType BEDROCK_KB_KENDRA = new ReferenceType("BEDROCK_KB_KENDRA");
+        /// <summary>
+        /// Constant BEDROCK_KB_S3 for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType BEDROCK_KB_S3 = new ReferenceType("BEDROCK_KB_S3");
+        /// <summary>
+        /// Constant BEDROCK_KB_SALESFORCE for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType BEDROCK_KB_SALESFORCE = new ReferenceType("BEDROCK_KB_SALESFORCE");
+        /// <summary>
+        /// Constant BEDROCK_KB_SHAREPOINT for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType BEDROCK_KB_SHAREPOINT = new ReferenceType("BEDROCK_KB_SHAREPOINT");
+        /// <summary>
+        /// Constant BEDROCK_KB_SQL for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType BEDROCK_KB_SQL = new ReferenceType("BEDROCK_KB_SQL");
+        /// <summary>
+        /// Constant BEDROCK_KB_WEB for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType BEDROCK_KB_WEB = new ReferenceType("BEDROCK_KB_WEB");
         /// <summary>
         /// Constant KNOWLEDGE_BASE for ReferenceType
         /// </summary>
@@ -3119,6 +3269,114 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type SpanStatus.
+    /// </summary>
+    public class SpanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for SpanStatus
+        /// </summary>
+        public static readonly SpanStatus ERROR = new SpanStatus("ERROR");
+        /// <summary>
+        /// Constant OK for SpanStatus
+        /// </summary>
+        public static readonly SpanStatus OK = new SpanStatus("OK");
+        /// <summary>
+        /// Constant TIMEOUT for SpanStatus
+        /// </summary>
+        public static readonly SpanStatus TIMEOUT = new SpanStatus("TIMEOUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpanStatus FindValue(string value)
+        {
+            return FindValue<SpanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpanType.
+    /// </summary>
+    public class SpanType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLIENT for SpanType
+        /// </summary>
+        public static readonly SpanType CLIENT = new SpanType("CLIENT");
+        /// <summary>
+        /// Constant INTERNAL for SpanType
+        /// </summary>
+        public static readonly SpanType INTERNAL = new SpanType("INTERNAL");
+        /// <summary>
+        /// Constant SERVER for SpanType
+        /// </summary>
+        public static readonly SpanType SERVER = new SpanType("SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpanType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpanType FindValue(string value)
+        {
+            return FindValue<SpanType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpanType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass
@@ -3286,6 +3544,114 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ToolOverrideInputValueType.
+    /// </summary>
+    public class ToolOverrideInputValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON_STRING for ToolOverrideInputValueType
+        /// </summary>
+        public static readonly ToolOverrideInputValueType JSON_STRING = new ToolOverrideInputValueType("JSON_STRING");
+        /// <summary>
+        /// Constant NUMBER for ToolOverrideInputValueType
+        /// </summary>
+        public static readonly ToolOverrideInputValueType NUMBER = new ToolOverrideInputValueType("NUMBER");
+        /// <summary>
+        /// Constant STRING for ToolOverrideInputValueType
+        /// </summary>
+        public static readonly ToolOverrideInputValueType STRING = new ToolOverrideInputValueType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToolOverrideInputValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToolOverrideInputValueType FindValue(string value)
+        {
+            return FindValue<ToolOverrideInputValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToolOverrideInputValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ToolType.
+    /// </summary>
+    public class ToolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONSTANT for ToolType
+        /// </summary>
+        public static readonly ToolType CONSTANT = new ToolType("CONSTANT");
+        /// <summary>
+        /// Constant MODEL_CONTEXT_PROTOCOL for ToolType
+        /// </summary>
+        public static readonly ToolType MODEL_CONTEXT_PROTOCOL = new ToolType("MODEL_CONTEXT_PROTOCOL");
+        /// <summary>
+        /// Constant RETURN_TO_CONTROL for ToolType
+        /// </summary>
+        public static readonly ToolType RETURN_TO_CONTROL = new ToolType("RETURN_TO_CONTROL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToolType FindValue(string value)
+        {
+            return FindValue<ToolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToolType(string value)
         {
             return FindValue(value);
         }

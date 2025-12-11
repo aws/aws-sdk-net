@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((PutInsightRuleRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,52 +58,65 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutInsightRuleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "PutInsightRule");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/PutInsightRule";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetApplyOnTransformedLogs())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetApplyOnTransformedLogs())
                 {
-                    request.Parameters.Add("ApplyOnTransformedLogs", StringUtils.FromBool(publicRequest.ApplyOnTransformedLogs));
+                    context.Writer.WriteTextString("ApplyOnTransformedLogs");
+                    context.Writer.WriteBoolean(publicRequest.ApplyOnTransformedLogs.Value);
                 }
-                if(publicRequest.IsSetRuleDefinition())
+                if (publicRequest.IsSetRuleDefinition())
                 {
-                    request.Parameters.Add("RuleDefinition", StringUtils.FromString(publicRequest.RuleDefinition));
+                    context.Writer.WriteTextString("RuleDefinition");
+                    context.Writer.WriteTextString(publicRequest.RuleDefinition);
                 }
-                if(publicRequest.IsSetRuleName())
+                if (publicRequest.IsSetRuleName())
                 {
-                    request.Parameters.Add("RuleName", StringUtils.FromString(publicRequest.RuleName));
+                    context.Writer.WriteTextString("RuleName");
+                    context.Writer.WriteTextString(publicRequest.RuleName);
                 }
-                if(publicRequest.IsSetRuleState())
+                if (publicRequest.IsSetRuleState())
                 {
-                    request.Parameters.Add("RuleState", StringUtils.FromString(publicRequest.RuleState));
+                    context.Writer.WriteTextString("RuleState");
+                    context.Writer.WriteTextString(publicRequest.RuleState);
                 }
-                if(publicRequest.IsSetTags())
+                if (publicRequest.IsSetTags())
                 {
-                    if (publicRequest.Tags.Count == 0)
-                        request.Parameters.Add("Tags", "");
-                    else
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.Tags)
-                         {
-                            if(publicRequestlistValue.IsSetKey())
-                            {
-                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                            }
-                            if(publicRequestlistValue.IsSetValue())
-                            {
-                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                            }
-                             publicRequestlistValueIndex++;
-                         }
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
                     }
+                    context.Writer.WriteEndArray();
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static PutInsightRuleRequestMarshaller _instance = new PutInsightRuleRequestMarshaller();        
+        private static PutInsightRuleRequestMarshaller _instance = new PutInsightRuleRequestMarshaller();        
 
         internal static PutInsightRuleRequestMarshaller GetInstance()
         {

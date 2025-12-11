@@ -42,6 +42,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _objectTypeName;
         private Dictionary<string, string> _objectTypeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _roleArn;
+        private Scope _scope;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uri;
         private string _workflowId;
@@ -130,7 +131,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The timestamp of when the domain was most recently edited.
+        /// The timestamp of when the integration was most recently edited.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -210,6 +211,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The scope or boundary of the integration item's applicability.
+        /// </para>
+        /// </summary>
+        public Scope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
         /// <summary>

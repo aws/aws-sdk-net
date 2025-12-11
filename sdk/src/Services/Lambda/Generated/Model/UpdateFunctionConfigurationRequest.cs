@@ -59,8 +59,10 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateFunctionConfigurationRequest : AmazonLambdaRequest
     {
+        private CapacityProviderConfig _capacityProviderConfig;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
+        private DurableConfig _durableConfig;
         private Environment _environment;
         private EphemeralStorage _ephemeralStorage;
         private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
@@ -78,6 +80,25 @@ namespace Amazon.Lambda.Model
         private int? _timeout;
         private TracingConfig _tracingConfig;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderConfig. 
+        /// <para>
+        /// Configuration for the capacity provider that manages compute resources for Lambda
+        /// functions.
+        /// </para>
+        /// </summary>
+        public CapacityProviderConfig CapacityProviderConfig
+        {
+            get { return this._capacityProviderConfig; }
+            set { this._capacityProviderConfig = value; }
+        }
+
+        // Check to see if CapacityProviderConfig property is set
+        internal bool IsSetCapacityProviderConfig()
+        {
+            return this._capacityProviderConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
@@ -116,6 +137,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurableConfig. 
+        /// <para>
+        /// Configuration settings for durable functions. Allows updating execution timeout and
+        /// retention period for functions with durability enabled.
+        /// </para>
+        /// </summary>
+        public DurableConfig DurableConfig
+        {
+            get { return this._durableConfig; }
+            set { this._durableConfig = value; }
+        }
+
+        // Check to see if DurableConfig property is set
+        internal bool IsSetDurableConfig()
+        {
+            return this._durableConfig != null;
         }
 
         /// <summary>
@@ -414,7 +454,7 @@ namespace Amazon.Lambda.Model
         /// 1 MB.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=10240)]
+        [AWSProperty(Min=128, Max=32768)]
         public int? MemorySize
         {
             get { return this._memorySize; }

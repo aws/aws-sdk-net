@@ -29,69 +29,72 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InsightRuleContributor Object
     /// </summary>  
-    public class InsightRuleContributorUnmarshaller : IXmlUnmarshaller<InsightRuleContributor, XmlUnmarshallerContext>
+    public class InsightRuleContributorUnmarshaller : ICborUnmarshaller<InsightRuleContributor, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public InsightRuleContributor Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public InsightRuleContributor Unmarshall(CborUnmarshallerContext context)
         {
             InsightRuleContributor unmarshalledObject = new InsightRuleContributor();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("ApproximateAggregateValue", targetDepth))
-                    {
-                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                        unmarshalledObject.ApproximateAggregateValue = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Datapoints/member", targetDepth))
-                    {
-                        var unmarshaller = InsightRuleContributorDatapointUnmarshaller.Instance;
-                        if (unmarshalledObject.Datapoints == null)
-                        {
-                            unmarshalledObject.Datapoints = new List<InsightRuleContributorDatapoint>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Datapoints.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Keys/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.Keys == null)
-                        {
-                            unmarshalledObject.Keys = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Keys.Add(item);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "ApproximateAggregateValue":
+                        {
+                            context.AddPathSegment("ApproximateAggregateValue");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.ApproximateAggregateValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Datapoints":
+                        {
+                            context.AddPathSegment("Datapoints");
+                            var unmarshaller = new CborListUnmarshaller<InsightRuleContributorDatapoint, InsightRuleContributorDatapointUnmarshaller>(InsightRuleContributorDatapointUnmarshaller.Instance);
+                            unmarshalledObject.Datapoints = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Keys":
+                        {
+                            context.AddPathSegment("Keys");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.Keys = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static InsightRuleContributorUnmarshaller _instance = new InsightRuleContributorUnmarshaller();        
 

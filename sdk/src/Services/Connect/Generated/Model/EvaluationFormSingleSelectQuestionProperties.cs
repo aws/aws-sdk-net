@@ -85,7 +85,7 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true)]
         public List<EvaluationFormSingleSelectQuestionOption> Options
         {
             get { return this._options; }

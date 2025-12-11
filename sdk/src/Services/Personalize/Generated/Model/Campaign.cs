@@ -138,7 +138,18 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestCampaignUpdate.
+        /// Gets and sets the property LatestCampaignUpdate. 
+        /// <para>
+        /// Provides a summary of the properties of a campaign update. For a complete listing,
+        /// call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+        /// API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>latestCampaignUpdate</c> field is only returned when the campaign has had at
+        /// least one <c>UpdateCampaign</c> call. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public CampaignUpdateSummary LatestCampaignUpdate
         {

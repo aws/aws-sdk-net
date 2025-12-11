@@ -1,21 +1,18 @@
-﻿using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
+﻿using Amazon;
+using Amazon.KeyManagementService;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
 using Amazon.S3.Transfer;
-using System.Security.Cryptography;
-using System.Net;
-using Amazon.Runtime;
-using Amazon;
-using System.Collections.Generic;
+using Amazon.S3.Util;
 using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Text;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -268,9 +265,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void SpecificKeyTests()
         {
-            var keyId = KeyManagementService.Client.CreateKey(new Amazon.KeyManagementService.Model.CreateKeyRequest
+            var kms = new AmazonKeyManagementServiceClient(Client.Config.RegionEndpoint);
+            var keyId = kms.CreateKey(new Amazon.KeyManagementService.Model.CreateKeyRequest
             {
-                KeyUsage = Amazon.KeyManagementService.KeyUsageType.ENCRYPT_DECRYPT,
+                KeyUsage = KeyUsageType.ENCRYPT_DECRYPT,
                 Description = ".NET SDK S3 Test Key"
             }).KeyMetadata.KeyId;
 

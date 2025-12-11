@@ -44,6 +44,7 @@ namespace Amazon.Connect.Model
         private RecordingStatus _status;
         private DateTime? _stopTimestamp;
         private StorageType _storageType;
+        private string _unprocessedTranscriptLocation;
 
         /// <summary>
         /// Gets and sets the property DeletionReason. 
@@ -254,6 +255,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnprocessedTranscriptLocation. 
+        /// <para>
+        ///  The location, in Amazon S3, for the unprocessed transcript if any media processing
+        /// was performed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string UnprocessedTranscriptLocation
+        {
+            get { return this._unprocessedTranscriptLocation; }
+            set { this._unprocessedTranscriptLocation = value; }
+        }
+
+        // Check to see if UnprocessedTranscriptLocation property is set
+        internal bool IsSetUnprocessedTranscriptLocation()
+        {
+            return this._unprocessedTranscriptLocation != null;
         }
 
     }

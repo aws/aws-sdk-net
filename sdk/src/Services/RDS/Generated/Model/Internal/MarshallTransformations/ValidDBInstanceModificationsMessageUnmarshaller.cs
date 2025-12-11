@@ -55,6 +55,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AdditionalStorage", targetDepth))
+                    {
+                        var unmarshaller = ValidAdditionalStorageOptionsUnmarshaller.Instance;
+                        unmarshalledObject.AdditionalStorage = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Storage/ValidStorageOptions", targetDepth))
                     {
                         var unmarshaller = ValidStorageOptionsUnmarshaller.Instance;

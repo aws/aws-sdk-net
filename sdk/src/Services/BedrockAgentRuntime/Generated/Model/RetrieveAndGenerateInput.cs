@@ -50,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The query made to the knowledge base.
+        /// The query made to the knowledge base, in characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

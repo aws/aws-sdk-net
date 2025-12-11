@@ -3963,6 +3963,92 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type IcebergUpdateAction.
+    /// </summary>
+    public class IcebergUpdateAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AddEncryptionKey for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction AddEncryptionKey = new IcebergUpdateAction("add-encryption-key");
+        /// <summary>
+        /// Constant AddSchema for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction AddSchema = new IcebergUpdateAction("add-schema");
+        /// <summary>
+        /// Constant AddSortOrder for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction AddSortOrder = new IcebergUpdateAction("add-sort-order");
+        /// <summary>
+        /// Constant AddSpec for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction AddSpec = new IcebergUpdateAction("add-spec");
+        /// <summary>
+        /// Constant RemoveEncryptionKey for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction RemoveEncryptionKey = new IcebergUpdateAction("remove-encryption-key");
+        /// <summary>
+        /// Constant RemoveProperties for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction RemoveProperties = new IcebergUpdateAction("remove-properties");
+        /// <summary>
+        /// Constant SetCurrentSchema for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetCurrentSchema = new IcebergUpdateAction("set-current-schema");
+        /// <summary>
+        /// Constant SetDefaultSortOrder for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetDefaultSortOrder = new IcebergUpdateAction("set-default-sort-order");
+        /// <summary>
+        /// Constant SetDefaultSpec for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetDefaultSpec = new IcebergUpdateAction("set-default-spec");
+        /// <summary>
+        /// Constant SetLocation for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetLocation = new IcebergUpdateAction("set-location");
+        /// <summary>
+        /// Constant SetProperties for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetProperties = new IcebergUpdateAction("set-properties");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergUpdateAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergUpdateAction FindValue(string value)
+        {
+            return FindValue<IcebergUpdateAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergUpdateAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InclusionAnnotationValue.
     /// </summary>
     public class InclusionAnnotationValue : ConstantClass
@@ -4742,6 +4828,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LastCrawlStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LastRefreshType.
+    /// </summary>
+    public class LastRefreshType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for LastRefreshType
+        /// </summary>
+        public static readonly LastRefreshType FULL = new LastRefreshType("FULL");
+        /// <summary>
+        /// Constant INCREMENTAL for LastRefreshType
+        /// </summary>
+        public static readonly LastRefreshType INCREMENTAL = new LastRefreshType("INCREMENTAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastRefreshType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastRefreshType FindValue(string value)
+        {
+            return FindValue<LastRefreshType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastRefreshType(string value)
         {
             return FindValue(value);
         }

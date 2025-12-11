@@ -36,7 +36,27 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ToolResultBlockDelta
     {
+        private Amazon.Runtime.Documents.Document _json;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Json. 
+        /// <para>
+        /// The JSON schema for the tool result content block. see <a href="https://json-schema.org/understanding-json-schema/reference">JSON
+        /// Schema Reference</a>.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document Json
+        {
+            get { return this._json; }
+            set { this._json = value; }
+        }
+
+        // Check to see if Json property is set
+        internal bool IsSetJson()
+        {
+            return !this._json.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

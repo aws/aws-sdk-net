@@ -33,7 +33,7 @@ namespace Amazon.CloudControlApi
     public partial class AmazonCloudControlApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudControl", "4.0.1.5");
+            InternalSDKUtils.BuildUserAgentString("CloudControl", "4.0.1.7");
 
         private static readonly AmazonCloudControlApiEndpointResolver EndpointResolver =
             new AmazonCloudControlApiEndpointResolver();

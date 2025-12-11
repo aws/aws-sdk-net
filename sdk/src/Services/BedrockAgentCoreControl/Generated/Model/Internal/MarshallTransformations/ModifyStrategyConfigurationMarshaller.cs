@@ -68,6 +68,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetReflection())
+            {
+                context.Writer.WritePropertyName("reflection");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModifyReflectionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Reflection, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSelfManagedConfiguration())
             {
                 context.Writer.WritePropertyName("selfManagedConfiguration");

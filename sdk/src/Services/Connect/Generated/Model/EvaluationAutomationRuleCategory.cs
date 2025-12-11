@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// A category label.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true)]
         public string Category
         {
             get { return this._category; }

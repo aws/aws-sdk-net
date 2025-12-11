@@ -1076,7 +1076,149 @@
                     "Id":{"emitPropertyName": "IntelligentTieringId"}
                 }
             ]
+        },
+        "PutBucketInventoryConfigurationRequest":{
+            "modify":[
+                {
+                    "Id" :{"emitPropertyName":"InventoryId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "InventoryConfiguration":{
+            "modify":[
+                {
+                    "Filter":{"emitPropertyName":"InventoryFilter"}
+                },
+                {
+                    "Id":{"emitPropertyName":"InventoryId"}
+                },
+                {
+                    "InventoryId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._inventoryId);"]}
+                },
+                {
+                    "OptionalFields":{"emitPropertyName": "InventoryOptionalFields"}
+                },
+                {
+                    "InventoryFilter":{"injectXmlMarshallCode":["InventoryFilterCustomMarshall(publicRequest, xmlWriter);"]}
+                },
+                {
+                    "IsEnabled":{"injectXmlMarshallCode":["CustomIsEnabledMarshall(publicRequest, xmlWriter);"]}
+                }
+            ]
+        },
+        "InventoryS3BucketDestination":{
+            "modify":[
+                {
+                    "AccountId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._accountId);"]}
+                },
+                {
+                    "BucketName":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._bucketName);"]}
+                },
+                {
+                    "Encryption":{"emitPropertyName": "InventoryEncryption"}
+                },
+                {
+                    "Prefix":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._prefix);"]}
+                },
+                {
+                    "Format":{"emitPropertyName":"InventoryFormat"}
+                }
+            ]
+        },
+        "GetBucketInventoryConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"InventoryId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "ListBucketInventoryConfigurationsRequest":{
+            "modify":[
+                {
+                    "ContinuationToken":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._continuationToken);"]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "ListBucketInventoryConfigurationsOutput":{
+            "modify":[
+                {
+                    "ContinuationToken":{"emitPropertyName":"Token"}
+                },
+                {
+                    "NextContinuationToken":{"emitPropertyName":"NextToken"}
+                },
+                {
+                    "Token":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._token);"]}
+                },
+                {
+                    "NextToken":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._nextToken);"]}
+                }
+            ]
+        },
+        "DeleteBucketInventoryConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"InventoryId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "PutBucketAccelerateConfigurationRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner": {"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "PutBucketRequestPaymentRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "CreateBucketMetadataConfigurationRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "ContentMD5":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._contentMD5);"]}
+                },
+                {
+                    "BucketName":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._bucketName);"]}
+                }
+            ]
+        },
+        "MetadataTableEncryptionConfiguration":{
+            "modify":[
+                {
+                    "KmsKeyArn":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._kmsKeyArn);"]}
+                }
+            ]
+        },
+        "GetBucketMetadataConfigurationRequest":{
+            "modify":[
+                {
+                    "BucketName":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._bucketName);"]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
+        
     },
     "operationModifiers": {
         "CreateBucket": {
@@ -1221,7 +1363,8 @@
         }
     },
     "overrideTreatEnumsAsString":{
-        "ObjectAttributesList": false
+        "ObjectAttributesList": false,
+        "InventoryOptionalFields": false
     },
     "dataTypeSwap":{
         "ListPartsRequest":{
@@ -1452,6 +1595,7 @@
         "AnalyticsFilter",
         "AnalyticsAndOperator",
         "IntelligentTieringFilter",
-        "IntelligentTieringAndOperator"
+        "IntelligentTieringAndOperator",
+        "InventoryFilter"
     ]
 }

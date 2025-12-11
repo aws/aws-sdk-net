@@ -68,6 +68,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3BucketDestination = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageLensTableDestination", targetDepth))
+                    {
+                        var unmarshaller = StorageLensTableDestinationUnmarshaller.Instance;
+                        unmarshalledObject.StorageLensTableDestination = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
 
                     XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }

@@ -36,6 +36,7 @@ namespace Amazon.Personalize.Model
     {
         private bool? _enableMetadataWithRecommendations;
         private Dictionary<string, string> _itemExplorationConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, double> _rankingInfluence = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private bool? _syncWithLatestSolutionVersion;
 
         /// <summary>
@@ -92,6 +93,32 @@ namespace Amazon.Personalize.Model
         internal bool IsSetItemExplorationConfig()
         {
             return this._itemExplorationConfig != null && (this._itemExplorationConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RankingInfluence. 
+        /// <para>
+        /// A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify
+        /// a numerical value between 0.0 and 1.0 that determines how much influence that ranking
+        /// factor has on the final recommendations. A value closer to 1.0 gives more weight to
+        /// the factor, while a value closer to 0.0 reduces its influence. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, double> RankingInfluence
+        {
+            get { return this._rankingInfluence; }
+            set { this._rankingInfluence = value; }
+        }
+
+        // Check to see if RankingInfluence property is set
+        internal bool IsSetRankingInfluence()
+        {
+            return this._rankingInfluence != null && (this._rankingInfluence.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

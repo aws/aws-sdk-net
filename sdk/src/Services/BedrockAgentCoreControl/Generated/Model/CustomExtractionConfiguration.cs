@@ -34,8 +34,28 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomExtractionConfiguration
     {
+        private EpisodicExtractionOverride _episodicExtractionOverride;
         private SemanticExtractionOverride _semanticExtractionOverride;
         private UserPreferenceExtractionOverride _userPreferenceExtractionOverride;
+
+        /// <summary>
+        /// Gets and sets the property EpisodicExtractionOverride. 
+        /// <para>
+        /// The configurations to override the default extraction step for the episodic memory
+        /// strategy.
+        /// </para>
+        /// </summary>
+        public EpisodicExtractionOverride EpisodicExtractionOverride
+        {
+            get { return this._episodicExtractionOverride; }
+            set { this._episodicExtractionOverride = value; }
+        }
+
+        // Check to see if EpisodicExtractionOverride property is set
+        internal bool IsSetEpisodicExtractionOverride()
+        {
+            return this._episodicExtractionOverride != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SemanticExtractionOverride. 

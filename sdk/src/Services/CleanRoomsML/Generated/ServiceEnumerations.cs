@@ -1681,6 +1681,52 @@ namespace Amazon.CleanRoomsML
 
 
     /// <summary>
+    /// Constants used for properties of type MembershipInferenceAttackVersion.
+    /// </summary>
+    public class MembershipInferenceAttackVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISTANCE_TO_CLOSEST_RECORD_V1 for MembershipInferenceAttackVersion
+        /// </summary>
+        public static readonly MembershipInferenceAttackVersion DISTANCE_TO_CLOSEST_RECORD_V1 = new MembershipInferenceAttackVersion("DISTANCE_TO_CLOSEST_RECORD_V1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MembershipInferenceAttackVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MembershipInferenceAttackVersion FindValue(string value)
+        {
+            return FindValue<MembershipInferenceAttackVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MembershipInferenceAttackVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetricsStatus.
     /// </summary>
     public class MetricsStatus : ConstantClass
@@ -2056,6 +2102,56 @@ namespace Amazon.CleanRoomsML
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SharedAudienceMetrics(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyntheticDataColumnType.
+    /// </summary>
+    public class SyntheticDataColumnType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CATEGORICAL for SyntheticDataColumnType
+        /// </summary>
+        public static readonly SyntheticDataColumnType CATEGORICAL = new SyntheticDataColumnType("CATEGORICAL");
+        /// <summary>
+        /// Constant NUMERICAL for SyntheticDataColumnType
+        /// </summary>
+        public static readonly SyntheticDataColumnType NUMERICAL = new SyntheticDataColumnType("NUMERICAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyntheticDataColumnType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyntheticDataColumnType FindValue(string value)
+        {
+            return FindValue<SyntheticDataColumnType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyntheticDataColumnType(string value)
         {
             return FindValue(value);
         }

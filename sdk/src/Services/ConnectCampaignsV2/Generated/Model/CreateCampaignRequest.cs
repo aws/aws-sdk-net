@@ -44,11 +44,11 @@ namespace Amazon.ConnectCampaignsV2.Model
         private Schedule _schedule;
         private Source _source;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private ExternalCampaignType _type;
 
         /// <summary>
         /// Gets and sets the property ChannelSubtypeConfig.
         /// </summary>
-        [AWSProperty(Required=true)]
         public ChannelSubtypeConfig ChannelSubtypeConfig
         {
             get { return this._channelSubtypeConfig; }
@@ -187,6 +187,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type.
+        /// </summary>
+        public ExternalCampaignType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

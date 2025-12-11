@@ -46,6 +46,33 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAiGuardrailAssessment())
+            {
+                context.Writer.WritePropertyName("aiGuardrailAssessment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AIGuardrailAssessmentMarshaller.Instance;
+                marshaller.Marshall(requestObject.AiGuardrailAssessment, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetCitations())
+            {
+                context.Writer.WritePropertyName("citations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCitationsListValue in requestObject.Citations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CitationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCitationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");

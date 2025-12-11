@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         ///  The category name, as defined in Rules.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true)]
         public string Category
         {
             get { return this._category; }
@@ -86,7 +86,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the answer option.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true)]
         public string OptionRefId
         {
             get { return this._optionRefId; }

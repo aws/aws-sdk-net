@@ -84,6 +84,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetCapacityProviderConfig())
+            {
+                context.Writer.WritePropertyName("CapacityProviderConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CapacityProviderConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CapacityProviderConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetCode())
             {
                 context.Writer.WritePropertyName("Code");
@@ -116,6 +127,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Description");
                 context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDurableConfig())
+            {
+                context.Writer.WritePropertyName("DurableConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DurableConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DurableConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetEnvironment())
@@ -223,6 +245,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Publish");
                 context.Writer.WriteBooleanValue(publicRequest.Publish.Value);
+            }
+
+            if(publicRequest.IsSetPublishTo())
+            {
+                context.Writer.WritePropertyName("PublishTo");
+                context.Writer.WriteStringValue(publicRequest.PublishTo);
             }
 
             if(publicRequest.IsSetRole())

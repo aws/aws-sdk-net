@@ -98,6 +98,16 @@ namespace Amazon.PartnerCentralSelling.Model
         IListOpportunitiesPaginator ListOpportunities(ListOpportunitiesRequest request);
 
         /// <summary>
+        /// Paginator for ListOpportunityFromEngagementTasks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListOpportunityFromEngagementTasksPaginator ListOpportunityFromEngagementTasks(ListOpportunityFromEngagementTasksRequest request);
+
+        /// <summary>
         /// Paginator for ListResourceSnapshotJobs operation
         ///</summary>
         [AWSPaginator(

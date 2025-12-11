@@ -46,6 +46,7 @@ namespace Amazon.MarketplaceAgreement.Model
         private SupportTerm _supportTerm;
         private UsageBasedPricingTerm _usageBasedPricingTerm;
         private ValidityTerm _validityTerm;
+        private VariablePaymentTerm _variablePaymentTerm;
 
         /// <summary>
         /// Gets and sets the property ByolPricingTerm. 
@@ -258,6 +259,25 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetValidityTerm()
         {
             return this._validityTerm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VariablePaymentTerm. 
+        /// <para>
+        /// Defines a payment model where sellers can submit variable payment requests up to a
+        /// maximum charge amount, with configurable approval strategies and expiration timelines.
+        /// </para>
+        /// </summary>
+        public VariablePaymentTerm VariablePaymentTerm
+        {
+            get { return this._variablePaymentTerm; }
+            set { this._variablePaymentTerm = value; }
+        }
+
+        // Check to see if VariablePaymentTerm property is set
+        internal bool IsSetVariablePaymentTerm()
+        {
+            return this._variablePaymentTerm != null;
         }
 
     }

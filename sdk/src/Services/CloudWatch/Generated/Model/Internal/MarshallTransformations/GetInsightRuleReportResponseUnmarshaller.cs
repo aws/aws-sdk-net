@@ -29,116 +29,92 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GetInsightRuleReport operation
     /// </summary>  
-    public class GetInsightRuleReportResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetInsightRuleReportResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             GetInsightRuleReportResponse response = new GetInsightRuleReportResponse();
-
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            var reader = context.Reader;
+            context.AddPathSegment("GetInsightRuleReport");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.IsStartElement)
-                {                    
-                    if(context.TestExpression("GetInsightRuleReportResult", 2))
-                    {
-                        UnmarshallResult(context, response);                        
-                        continue;
-                    }
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
-                    }
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "AggregateValue":
+                        {
+                            context.AddPathSegment("AggregateValue");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            response.AggregateValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AggregationStatistic":
+                        {
+                            context.AddPathSegment("AggregationStatistic");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.AggregationStatistic = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ApproximateUniqueCount":
+                        {
+                            context.AddPathSegment("ApproximateUniqueCount");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            response.ApproximateUniqueCount = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Contributors":
+                        {
+                            context.AddPathSegment("Contributors");
+                            var unmarshaller = new CborListUnmarshaller<InsightRuleContributor, InsightRuleContributorUnmarshaller>(InsightRuleContributorUnmarshaller.Instance);
+                            response.Contributors = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "KeyLabels":
+                        {
+                            context.AddPathSegment("KeyLabels");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            response.KeyLabels = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MetricDatapoints":
+                        {
+                            context.AddPathSegment("MetricDatapoints");
+                            var unmarshaller = new CborListUnmarshaller<InsightRuleMetricDatapoint, InsightRuleMetricDatapointUnmarshaller>(InsightRuleMetricDatapointUnmarshaller.Instance);
+                            response.MetricDatapoints = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return response;
         }
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetInsightRuleReportResponse response)
-        {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-
-                    if (context.TestExpression("AggregateValue", targetDepth))
-                    {
-                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                        response.AggregateValue = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AggregationStatistic", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.AggregationStatistic = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ApproximateUniqueCount", targetDepth))
-                    {
-                        var unmarshaller = NullableLongUnmarshaller.Instance;
-                        response.ApproximateUniqueCount = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Contributors/member", targetDepth))
-                    {
-                        var unmarshaller = InsightRuleContributorUnmarshaller.Instance;
-                        if (response.Contributors == null)
-                        {
-                            response.Contributors = new List<InsightRuleContributor>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.Contributors.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("KeyLabels/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (response.KeyLabels == null)
-                        {
-                            response.KeyLabels = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.KeyLabels.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricDatapoints/member", targetDepth))
-                    {
-                        var unmarshaller = InsightRuleMetricDatapointUnmarshaller.Instance;
-                        if (response.MetricDatapoints == null)
-                        {
-                            response.MetricDatapoints = new List<InsightRuleMetricDatapoint>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.MetricDatapoints.Add(item);
-                        continue;
-                    }
-                } 
-           }
-
-            return;
-        }
-
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -147,23 +123,25 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {
+                    errorResponse.Code = "InvalidParameterValue";
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameter"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("MissingRequiredParameterException"))
                 {
+                    errorResponse.Code = "MissingParameter";
                     return MissingRequiredParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
@@ -171,8 +149,29 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+            {
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                {
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
+                    }
+                }
+            }
+            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
         }
+
         private static GetInsightRuleReportResponseUnmarshaller _instance = new GetInsightRuleReportResponseUnmarshaller();        
 
         internal static GetInsightRuleReportResponseUnmarshaller GetInstance()

@@ -58,6 +58,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InputTranscript);
             }
 
+            if(requestObject.IsSetTimestamp())
+            {
+                context.Writer.WritePropertyName("timestamp");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Timestamp.Value)));
+            }
+
             if(requestObject.IsSetTurnNumber())
             {
                 context.Writer.WritePropertyName("turnNumber");

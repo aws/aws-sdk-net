@@ -37,6 +37,22 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Paginator for GetDurableExecutionHistory operation
+        ///</summary>
+        public IGetDurableExecutionHistoryPaginator GetDurableExecutionHistory(GetDurableExecutionHistoryRequest request) 
+        {
+            return new GetDurableExecutionHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetDurableExecutionState operation
+        ///</summary>
+        public IGetDurableExecutionStatePaginator GetDurableExecutionState(GetDurableExecutionStateRequest request) 
+        {
+            return new GetDurableExecutionStatePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAliases operation
         ///</summary>
         public IListAliasesPaginator ListAliases(ListAliasesRequest request) 
@@ -45,11 +61,27 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Paginator for ListCapacityProviders operation
+        ///</summary>
+        public IListCapacityProvidersPaginator ListCapacityProviders(ListCapacityProvidersRequest request) 
+        {
+            return new ListCapacityProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCodeSigningConfigs operation
         ///</summary>
         public IListCodeSigningConfigsPaginator ListCodeSigningConfigs(ListCodeSigningConfigsRequest request) 
         {
             return new ListCodeSigningConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDurableExecutionsByFunction operation
+        ///</summary>
+        public IListDurableExecutionsByFunctionPaginator ListDurableExecutionsByFunction(ListDurableExecutionsByFunctionRequest request) 
+        {
+            return new ListDurableExecutionsByFunctionPaginator(this.client, request);
         }
 
         /// <summary>
@@ -90,6 +122,14 @@ namespace Amazon.Lambda.Model
         public IListFunctionUrlConfigsPaginator ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request) 
         {
             return new ListFunctionUrlConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFunctionVersionsByCapacityProvider operation
+        ///</summary>
+        public IListFunctionVersionsByCapacityProviderPaginator ListFunctionVersionsByCapacityProvider(ListFunctionVersionsByCapacityProviderRequest request) 
+        {
+            return new ListFunctionVersionsByCapacityProviderPaginator(this.client, request);
         }
 
         /// <summary>

@@ -538,6 +538,59 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  CreateEvaluator
+
+        internal virtual CreateEvaluatorResponse CreateEvaluator(CreateEvaluatorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateEvaluatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEvaluatorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEvaluatorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a custom evaluator for agent quality assessment. Custom evaluators use LLM-as-a-Judge
+        /// configurations with user-defined prompts, rating scales, and model settings to evaluate
+        /// agent performance at tool call, trace, or session levels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEvaluator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEvaluator service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateEvaluator">REST API Reference for CreateEvaluator Operation</seealso>
+        public virtual Task<CreateEvaluatorResponse> CreateEvaluatorAsync(CreateEvaluatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateEvaluatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEvaluatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEvaluatorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateGateway
 
         internal virtual CreateGatewayResponse CreateGateway(CreateGatewayRequest request)
@@ -769,6 +822,178 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = CreateOauth2CredentialProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateOauth2CredentialProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateOnlineEvaluationConfig
+
+        internal virtual CreateOnlineEvaluationConfigResponse CreateOnlineEvaluationConfig(CreateOnlineEvaluationConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateOnlineEvaluationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOnlineEvaluationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOnlineEvaluationConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an online evaluation configuration for continuous monitoring of agent performance.
+        /// Online evaluation automatically samples live traffic from CloudWatch logs at specified
+        /// rates and applies evaluators to assess agent quality in production.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOnlineEvaluationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOnlineEvaluationConfig service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateOnlineEvaluationConfig">REST API Reference for CreateOnlineEvaluationConfig Operation</seealso>
+        public virtual Task<CreateOnlineEvaluationConfigResponse> CreateOnlineEvaluationConfigAsync(CreateOnlineEvaluationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateOnlineEvaluationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOnlineEvaluationConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateOnlineEvaluationConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreatePolicy
+
+        internal virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic
+        /// control over agentic interactions with AgentCore Gateway. Using the Cedar policy language,
+        /// you can define fine-grained policies that specify which interactions with Gateway
+        /// tools are permitted based on input parameters and OAuth claims, ensuring agents operate
+        /// within defined boundaries and business rules. The policy is validated during creation
+        /// against the Cedar schema generated from the Gateway's tools' input schemas, which
+        /// defines the available tools, their parameters, and expected data types. This is an
+        /// asynchronous operation. Use the <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_GetPolicy.html">GetPolicy</a>
+        /// operation to poll the <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
+        public virtual Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreatePolicyEngine
+
+        internal virtual CreatePolicyEngineResponse CreatePolicyEngine(CreatePolicyEngineRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePolicyEngineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyEngineResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePolicyEngineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new policy engine within the AgentCore Policy system. A policy engine is
+        /// a collection of policies that evaluates and authorizes agent tool calls. When associated
+        /// with Gateways (each Gateway can be associated with at most one policy engine, but
+        /// multiple Gateways can be associated with the same engine), the policy engine intercepts
+        /// all agent requests and determines whether to allow or deny each action based on the
+        /// defined policies. This is an asynchronous operation. Use the <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_GetPolicyEngine.html">GetPolicyEngine</a>
+        /// operation to poll the <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicyEngine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePolicyEngine service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicyEngine">REST API Reference for CreatePolicyEngine Operation</seealso>
+        public virtual Task<CreatePolicyEngineResponse> CreatePolicyEngineAsync(CreatePolicyEngineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePolicyEngineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyEngineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePolicyEngineResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1080,6 +1305,58 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  DeleteEvaluator
+
+        internal virtual DeleteEvaluatorResponse DeleteEvaluator(DeleteEvaluatorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteEvaluatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEvaluatorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEvaluatorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a custom evaluator. Builtin evaluators cannot be deleted. The evaluator must
+        /// not be referenced by any active online evaluation configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEvaluator service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteEvaluator">REST API Reference for DeleteEvaluator Operation</seealso>
+        public virtual Task<DeleteEvaluatorResponse> DeleteEvaluatorAsync(DeleteEvaluatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteEvaluatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEvaluatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEvaluatorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteGateway
 
         internal virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
@@ -1207,6 +1484,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource referenced by the operation does not exist
         /// </exception>
@@ -1279,6 +1559,221 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = DeleteOauth2CredentialProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteOauth2CredentialProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteOnlineEvaluationConfig
+
+        internal virtual DeleteOnlineEvaluationConfigResponse DeleteOnlineEvaluationConfig(DeleteOnlineEvaluationConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteOnlineEvaluationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOnlineEvaluationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOnlineEvaluationConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an online evaluation configuration and stops any ongoing evaluation processes
+        /// associated with it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOnlineEvaluationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOnlineEvaluationConfig service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteOnlineEvaluationConfig">REST API Reference for DeleteOnlineEvaluationConfig Operation</seealso>
+        public virtual Task<DeleteOnlineEvaluationConfigResponse> DeleteOnlineEvaluationConfigAsync(DeleteOnlineEvaluationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteOnlineEvaluationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOnlineEvaluationConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOnlineEvaluationConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeletePolicy
+
+        internal virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing policy from the AgentCore Policy system. Once deleted, the policy
+        /// can no longer be used for agent behavior control and all references to it become invalid.
+        /// This is an asynchronous operation. Use the <c>GetPolicy</c> operation to poll the
+        /// <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        public virtual Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeletePolicyEngine
+
+        internal virtual DeletePolicyEngineResponse DeletePolicyEngine(DeletePolicyEngineRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePolicyEngineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyEngineResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyEngineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing policy engine from the AgentCore Policy system. The policy engine
+        /// must not have any associated policies before deletion. Once deleted, the policy engine
+        /// and all its configurations become unavailable for policy management and evaluation.
+        /// This is an asynchronous operation. Use the <c>GetPolicyEngine</c> operation to poll
+        /// the <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyEngine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePolicyEngine service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePolicyEngine">REST API Reference for DeletePolicyEngine Operation</seealso>
+        public virtual Task<DeletePolicyEngineResponse> DeletePolicyEngineAsync(DeletePolicyEngineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePolicyEngineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyEngineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePolicyEngineResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the resource-based policy for a specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime and Gateway.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1581,6 +2076,55 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  GetEvaluator
+
+        internal virtual GetEvaluatorResponse GetEvaluator(GetEvaluatorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEvaluatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEvaluatorResponseUnmarshaller.Instance;
+
+            return Invoke<GetEvaluatorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about an evaluator, including its configuration, status,
+        /// and metadata. Works with both built-in and custom evaluators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvaluator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEvaluator service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetEvaluator">REST API Reference for GetEvaluator Operation</seealso>
+        public virtual Task<GetEvaluatorResponse> GetEvaluatorAsync(GetEvaluatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEvaluatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEvaluatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEvaluatorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetGateway
 
         internal virtual GetGatewayResponse GetGateway(GetGatewayRequest request)
@@ -1777,6 +2321,259 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = GetOauth2CredentialProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOauth2CredentialProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetOnlineEvaluationConfig
+
+        internal virtual GetOnlineEvaluationConfigResponse GetOnlineEvaluationConfig(GetOnlineEvaluationConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOnlineEvaluationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOnlineEvaluationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetOnlineEvaluationConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about an online evaluation configuration, including
+        /// its rules, data sources, evaluators, and execution status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOnlineEvaluationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOnlineEvaluationConfig service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetOnlineEvaluationConfig">REST API Reference for GetOnlineEvaluationConfig Operation</seealso>
+        public virtual Task<GetOnlineEvaluationConfigResponse> GetOnlineEvaluationConfigAsync(GetOnlineEvaluationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOnlineEvaluationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOnlineEvaluationConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOnlineEvaluationConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPolicy
+
+        internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific policy within the AgentCore Policy
+        /// system. This operation returns the complete policy definition, metadata, and current
+        /// status, allowing administrators to review and manage policy configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPolicyEngine
+
+        internal virtual GetPolicyEngineResponse GetPolicyEngine(GetPolicyEngineRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyEngineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyEngineResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyEngineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific policy engine within the AgentCore
+        /// Policy system. This operation returns the complete policy engine configuration, metadata,
+        /// and current status, allowing administrators to review and manage policy engine settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyEngine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicyEngine service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyEngine">REST API Reference for GetPolicyEngine Operation</seealso>
+        public virtual Task<GetPolicyEngineResponse> GetPolicyEngineAsync(GetPolicyEngineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyEngineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyEngineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyEngineResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPolicyGeneration
+
+        internal virtual GetPolicyGenerationResponse GetPolicyGeneration(GetPolicyGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyGenerationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a policy generation request within the AgentCore Policy
+        /// system. Policy generation converts natural language descriptions into Cedar policy
+        /// statements using AI-powered translation, enabling non-technical users to create policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicyGeneration service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyGeneration">REST API Reference for GetPolicyGeneration Operation</seealso>
+        public virtual Task<GetPolicyGenerationResponse> GetPolicyGenerationAsync(GetPolicyGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyGenerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyGenerationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetResourcePolicy
+
+        internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the resource-based policy for a specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime and Gateway.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2164,6 +2961,52 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  ListEvaluators
+
+        internal virtual ListEvaluatorsResponse ListEvaluators(ListEvaluatorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEvaluatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEvaluatorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEvaluatorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all available evaluators, including both builtin evaluators provided by the
+        /// service and custom evaluators created by the user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluators service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEvaluators service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListEvaluators">REST API Reference for ListEvaluators Operation</seealso>
+        public virtual Task<ListEvaluatorsResponse> ListEvaluatorsAsync(ListEvaluatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEvaluatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEvaluatorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEvaluatorsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListGateways
 
         internal virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
@@ -2355,6 +3198,250 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  ListOnlineEvaluationConfigs
+
+        internal virtual ListOnlineEvaluationConfigsResponse ListOnlineEvaluationConfigs(ListOnlineEvaluationConfigsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOnlineEvaluationConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOnlineEvaluationConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOnlineEvaluationConfigsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all online evaluation configurations in the account, providing summary information
+        /// about each configuration's status and settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOnlineEvaluationConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOnlineEvaluationConfigs service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListOnlineEvaluationConfigs">REST API Reference for ListOnlineEvaluationConfigs Operation</seealso>
+        public virtual Task<ListOnlineEvaluationConfigsResponse> ListOnlineEvaluationConfigsAsync(ListOnlineEvaluationConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOnlineEvaluationConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOnlineEvaluationConfigsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOnlineEvaluationConfigsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPolicies
+
+        internal virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPoliciesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of policies within the AgentCore Policy engine. This operation supports
+        /// pagination and filtering to help administrators manage and discover policies across
+        /// policy engines. Results can be filtered by policy engine or resource associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicies service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
+        public virtual Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPolicyEngines
+
+        internal virtual ListPolicyEnginesResponse ListPolicyEngines(ListPolicyEnginesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyEnginesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyEnginesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyEnginesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of policy engines within the AgentCore Policy system. This operation
+        /// supports pagination to help administrators discover and manage policy engines across
+        /// their account. Each policy engine serves as a container for related policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyEngines service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyEngines service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyEngines">REST API Reference for ListPolicyEngines Operation</seealso>
+        public virtual Task<ListPolicyEnginesResponse> ListPolicyEnginesAsync(ListPolicyEnginesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyEnginesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyEnginesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyEnginesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPolicyGenerationAssets
+
+        internal virtual ListPolicyGenerationAssetsResponse ListPolicyGenerationAssets(ListPolicyGenerationAssetsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyGenerationAssetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGenerationAssetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyGenerationAssetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of generated policy assets from a policy generation request within
+        /// the AgentCore Policy system. This operation returns the actual Cedar policies and
+        /// related artifacts produced by the AI-powered policy generation process, allowing users
+        /// to review and select from multiple generated policy options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGenerationAssets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyGenerationAssets service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerationAssets">REST API Reference for ListPolicyGenerationAssets Operation</seealso>
+        public virtual Task<ListPolicyGenerationAssetsResponse> ListPolicyGenerationAssetsAsync(ListPolicyGenerationAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyGenerationAssetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGenerationAssetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyGenerationAssetsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPolicyGenerations
+
+        internal virtual ListPolicyGenerationsResponse ListPolicyGenerations(ListPolicyGenerationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGenerationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyGenerationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of policy generation requests within the AgentCore Policy system.
+        /// This operation supports pagination and filtering to help track and manage AI-powered
+        /// policy generation operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGenerations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyGenerations service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerations">REST API Reference for ListPolicyGenerations Operation</seealso>
+        public virtual Task<ListPolicyGenerationsResponse> ListPolicyGenerationsAsync(ListPolicyGenerationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGenerationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyGenerationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -2462,6 +3549,60 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  PutResourcePolicy
+
+        internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates a resource-based policy for a resource with the specified resourceArn.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime and Gateway.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SetTokenVaultCMK
 
         internal virtual SetTokenVaultCMKResponse SetTokenVaultCMK(SetTokenVaultCMKRequest request)
@@ -2514,6 +3655,71 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = SetTokenVaultCMKResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetTokenVaultCMKResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StartPolicyGeneration
+
+        internal virtual StartPolicyGenerationResponse StartPolicyGeneration(StartPolicyGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartPolicyGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPolicyGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartPolicyGenerationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates the AI-powered generation of Cedar policies from natural language descriptions
+        /// within the AgentCore Policy system. This feature enables both technical and non-technical
+        /// users to create policies by describing their authorization requirements in plain English,
+        /// which is then automatically translated into formal Cedar policy statements. The generation
+        /// process analyzes the natural language input along with the Gateway's tool context
+        /// to produce validated policy options. Generated policy assets are automatically deleted
+        /// after 7 days, so you should review and create policies from the generated assets within
+        /// this timeframe. Once created, policies are permanent and not subject to this expiration.
+        /// Generated policies should be reviewed and tested in log-only mode before deploying
+        /// to production. Use this when you want to describe policy intent naturally rather than
+        /// learning Cedar syntax, though generated policies may require refinement for complex
+        /// scenarios.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPolicyGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartPolicyGeneration service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/StartPolicyGeneration">REST API Reference for StartPolicyGeneration Operation</seealso>
+        public virtual Task<StartPolicyGenerationResponse> StartPolicyGenerationAsync(StartPolicyGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartPolicyGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPolicyGenerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartPolicyGenerationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2858,6 +4064,61 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  UpdateEvaluator
+
+        internal virtual UpdateEvaluatorResponse UpdateEvaluator(UpdateEvaluatorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateEvaluatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEvaluatorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEvaluatorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a custom evaluator's configuration, description, or evaluation level. Built-in
+        /// evaluators cannot be updated. The evaluator must not be locked for modification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEvaluator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEvaluator service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateEvaluator">REST API Reference for UpdateEvaluator Operation</seealso>
+        public virtual Task<UpdateEvaluatorResponse> UpdateEvaluatorAsync(UpdateEvaluatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateEvaluatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEvaluatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEvaluatorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateGateway
 
         internal virtual UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request)
@@ -3081,6 +4342,170 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UpdateOauth2CredentialProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateOauth2CredentialProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateOnlineEvaluationConfig
+
+        internal virtual UpdateOnlineEvaluationConfigResponse UpdateOnlineEvaluationConfig(UpdateOnlineEvaluationConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOnlineEvaluationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOnlineEvaluationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOnlineEvaluationConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an online evaluation configuration's settings, including rules, data sources,
+        /// evaluators, and execution status. Changes take effect immediately for ongoing evaluations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOnlineEvaluationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOnlineEvaluationConfig service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateOnlineEvaluationConfig">REST API Reference for UpdateOnlineEvaluationConfig Operation</seealso>
+        public virtual Task<UpdateOnlineEvaluationConfigResponse> UpdateOnlineEvaluationConfigAsync(UpdateOnlineEvaluationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOnlineEvaluationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOnlineEvaluationConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateOnlineEvaluationConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdatePolicy
+
+        internal virtual UpdatePolicyResponse UpdatePolicy(UpdatePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing policy within the AgentCore Policy system. This operation allows
+        /// modification of the policy description and definition while maintaining the policy's
+        /// identity. The updated policy is validated against the Cedar schema before being applied.
+        /// This is an asynchronous operation. Use the <c>GetPolicy</c> operation to poll the
+        /// <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
+        public virtual Task<UpdatePolicyResponse> UpdatePolicyAsync(UpdatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdatePolicyEngine
+
+        internal virtual UpdatePolicyEngineResponse UpdatePolicyEngine(UpdatePolicyEngineRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePolicyEngineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePolicyEngineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePolicyEngineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing policy engine within the AgentCore Policy system. This operation
+        /// allows modification of the policy engine description while maintaining its identity.
+        /// This is an asynchronous operation. Use the <c>GetPolicyEngine</c> operation to poll
+        /// the <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePolicyEngine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePolicyEngine service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePolicyEngine">REST API Reference for UpdatePolicyEngine Operation</seealso>
+        public virtual Task<UpdatePolicyEngineResponse> UpdatePolicyEngineAsync(UpdatePolicyEngineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePolicyEngineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePolicyEngineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePolicyEngineResponse>(request, options, cancellationToken);
         }
         #endregion
         

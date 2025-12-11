@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonRDSRequest
     {
+        private List<ModifyAdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<ModifyAdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private bool? _allowMajorVersionUpgrade;
         private bool? _applyImmediately;
@@ -96,6 +97,7 @@ namespace Amazon.RDS.Model
         private bool? _rotateMasterUserPassword;
         private int? _storageThroughput;
         private string _storageType;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
         private bool? _useDefaultProcessorFeatures;
@@ -113,6 +115,31 @@ namespace Amazon.RDS.Model
         public ModifyDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// A list of additional storage volumes to modify or delete for the DB instance. You
+        /// can create up to 3 additional storage volumes. Additional storage volumes are supported
+        /// for RDS for Oracle and RDS for SQL Server DB instances only.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ModifyAdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -2414,6 +2441,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// Tags to assign to resources associated with the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>auto-backup</c> - The DB instance's automated backup.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

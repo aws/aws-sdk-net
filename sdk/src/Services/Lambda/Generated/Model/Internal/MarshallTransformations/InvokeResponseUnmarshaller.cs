@@ -52,6 +52,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             ms.Seek(0, SeekOrigin.Begin);
             if (ms.Length > 0)
                 response.Payload = ms;
+            if (context.ResponseData.IsHeaderPresent("X-Amz-Durable-Execution-Arn"))
+                response.DurableExecutionArn = context.ResponseData.GetHeaderValue("X-Amz-Durable-Execution-Arn");
             if (context.ResponseData.IsHeaderPresent("X-Amz-Executed-Version"))
                 response.ExecutedVersion = context.ResponseData.GetHeaderValue("X-Amz-Executed-Version");
             if (context.ResponseData.IsHeaderPresent("X-Amz-Function-Error"))
@@ -83,6 +85,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DurableExecutionAlreadyStartedException"))
+                {
+                    return DurableExecutionAlreadyStartedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EC2AccessDeniedException"))
                 {
                     return EC2AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -154,6 +160,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KMSNotFoundException"))
                 {
                     return KMSNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoPublishedVersionException"))
+                {
+                    return NoPublishedVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RecursiveInvocationException"))
                 {

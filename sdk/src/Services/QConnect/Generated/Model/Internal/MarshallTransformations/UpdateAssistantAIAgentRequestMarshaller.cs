@@ -93,6 +93,22 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetOrchestratorConfigurationList())
+            {
+                context.Writer.WritePropertyName("orchestratorConfigurationList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOrchestratorConfigurationListListValue in publicRequest.OrchestratorConfigurationList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OrchestratorConfigurationEntryMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOrchestratorConfigurationListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

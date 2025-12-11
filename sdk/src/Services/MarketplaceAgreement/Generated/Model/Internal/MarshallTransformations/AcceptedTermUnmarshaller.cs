@@ -122,6 +122,12 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ValidityTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("variablePaymentTerm", targetDepth))
+                {
+                    var unmarshaller = VariablePaymentTermUnmarshaller.Instance;
+                    unmarshalledObject.VariablePaymentTerm = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

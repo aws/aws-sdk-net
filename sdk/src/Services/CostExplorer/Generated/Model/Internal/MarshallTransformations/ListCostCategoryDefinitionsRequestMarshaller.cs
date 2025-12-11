@@ -93,6 +93,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetSupportedResourceTypes())
+            {
+                context.Writer.WritePropertyName("SupportedResourceTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSupportedResourceTypesListValue in publicRequest.SupportedResourceTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestSupportedResourceTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

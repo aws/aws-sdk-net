@@ -94,6 +94,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.EbsEncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("internetProtocol", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InternetProtocol = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

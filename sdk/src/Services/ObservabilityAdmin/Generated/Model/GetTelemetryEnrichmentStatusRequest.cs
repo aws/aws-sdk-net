@@ -32,8 +32,7 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// Container for the parameters to the GetTelemetryEnrichmentStatus operation.
     /// Returns the current status of the resource tags for telemetry feature, which enhances
-    /// telemetry data with additional resource metadata from Amazon Web Services Resource
-    /// Explorer.
+    /// telemetry data with additional resource metadata from Resource Explorer.
     /// </summary>
     public partial class GetTelemetryEnrichmentStatusRequest : AmazonObservabilityAdminRequest
     {

@@ -133,6 +133,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.InstanceId);
             }
 
+            if(publicRequest.IsSetParticipantConfiguration())
+            {
+                context.Writer.WritePropertyName("ParticipantConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ParticipantConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ParticipantConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetParticipantDetails())
             {
                 context.Writer.WritePropertyName("ParticipantDetails");

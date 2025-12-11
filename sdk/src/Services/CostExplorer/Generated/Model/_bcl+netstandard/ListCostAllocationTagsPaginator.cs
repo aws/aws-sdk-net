@@ -42,6 +42,12 @@ namespace Amazon.CostExplorer.Model
         /// </summary>
         public IPaginatedEnumerable<ListCostAllocationTagsResponse> Responses => new PaginatedResponse<ListCostAllocationTagsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the CostAllocationTags
+        /// </summary>
+        public IPaginatedEnumerable<CostAllocationTag> CostAllocationTags => 
+            new PaginatedResultKeyResponse<ListCostAllocationTagsResponse, CostAllocationTag>(this, (i) => i.CostAllocationTags ?? new List<CostAllocationTag>());
+
         internal ListCostAllocationTagsPaginator(IAmazonCostExplorer client, ListCostAllocationTagsRequest request)
         {
             this._client = client;

@@ -37,6 +37,7 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ContentBlock
     {
+        private AudioBlock _audio;
         private CachePointBlock _cachePoint;
         private CitationsContentBlock _citationsContent;
         private DocumentBlock _document;
@@ -48,6 +49,24 @@ namespace Amazon.BedrockRuntime.Model
         private ToolResultBlock _toolResult;
         private ToolUseBlock _toolUse;
         private VideoBlock _video;
+
+        /// <summary>
+        /// Gets and sets the property Audio. 
+        /// <para>
+        /// An audio content block containing audio data in the conversation.
+        /// </para>
+        /// </summary>
+        public AudioBlock Audio
+        {
+            get { return this._audio; }
+            set { this._audio = value; }
+        }
+
+        // Check to see if Audio property is set
+        internal bool IsSetAudio()
+        {
+            return this._audio != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CachePoint. 

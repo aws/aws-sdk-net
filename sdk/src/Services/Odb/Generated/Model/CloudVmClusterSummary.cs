@@ -34,6 +34,7 @@ namespace Amazon.Odb.Model
     /// </summary>
     public partial class CloudVmClusterSummary
     {
+        private string _cloudExadataInfrastructureArn;
         private string _cloudExadataInfrastructureId;
         private string _cloudVmClusterArn;
         private string _cloudVmClusterId;
@@ -62,6 +63,7 @@ namespace Amazon.Odb.Model
         private string _ocid;
         private string _ociResourceAnchorName;
         private string _ociUrl;
+        private string _odbNetworkArn;
         private string _odbNetworkId;
         private float? _percentProgress;
         private string _scanDnsName;
@@ -75,6 +77,26 @@ namespace Amazon.Odb.Model
         private string _systemVersion;
         private string _timeZone;
         private List<string> _vipIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CloudExadataInfrastructureArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster
+        /// belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CloudExadataInfrastructureArn
+        {
+            get { return this._cloudExadataInfrastructureArn; }
+            set { this._cloudExadataInfrastructureArn = value; }
+        }
+
+        // Check to see if CloudExadataInfrastructureArn property is set
+        internal bool IsSetCloudExadataInfrastructureArn()
+        {
+            return this._cloudExadataInfrastructureArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CloudExadataInfrastructureId. 
@@ -591,6 +613,25 @@ namespace Amazon.Odb.Model
         internal bool IsSetOciUrl()
         {
             return this._ociUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OdbNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the ODB network associated with this VM cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string OdbNetworkArn
+        {
+            get { return this._odbNetworkArn; }
+            set { this._odbNetworkArn = value; }
+        }
+
+        // Check to see if OdbNetworkArn property is set
+        internal bool IsSetOdbNetworkArn()
+        {
+            return this._odbNetworkArn != null;
         }
 
         /// <summary>

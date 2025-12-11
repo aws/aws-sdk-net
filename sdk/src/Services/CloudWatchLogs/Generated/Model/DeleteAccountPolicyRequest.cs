@@ -32,8 +32,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccountPolicy operation.
     /// Deletes a CloudWatch Logs account policy. This stops the account-wide policy from
-    /// applying to log groups in the account. If you delete a data protection policy or subscription
-    /// filter policy, any log-group level policies of those types remain in effect.
+    /// applying to log groups or data sources in the account. If you delete a data protection
+    /// policy or subscription filter policy, any log-group level policies of those types
+    /// remain in effect. This operation supports deletion of data source-based field index
+    /// policies, including facet configurations, in addition to log group-based policies.
     /// 
     ///  
     /// <para>
@@ -59,6 +61,12 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// To delete a field index policy, you must have the <c>logs:DeleteIndexPolicy</c> and
     /// <c>logs:DeleteAccountPolicy</c> permissions.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you delete a field index policy that included facet configurations, those facets
+    /// will no longer be available for interactive exploration in the CloudWatch Logs Insights
+    /// console. However, facet data is retained for up to 30 days.
     /// </para>
     ///  </li> </ul> 
     /// <para>
