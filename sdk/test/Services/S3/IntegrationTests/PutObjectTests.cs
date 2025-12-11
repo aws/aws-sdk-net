@@ -628,6 +628,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             PutObjectWithoutContentEncoding();
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestPutObjectWithContentLanguage()
+        {
+            var key = "contentLanguageTest" + random.Next();
+            var contentLanguage = "en-US";
+            
+            var request = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = testContent
+            };
+            request.Headers.ContentLanguage = contentLanguage;
+            
+            // Put the object
+            var putResponse = Client.PutObject(request);
+            Assert.IsTrue(putResponse.ETag.Length > 0);
+            
+            // Verify via GetObject
+            using (var getResponse = Client.GetObject(bucketName, key))
+            {
+                Assert.AreEqual(contentLanguage, getResponse.Headers.ContentLanguage);
+                Assert.AreEqual(contentLanguage, getResponse.ContentLanguage);
+
+            }
+            
+            // Verify via GetObjectMetadata
+            var metadata = Client.GetObjectMetadata(bucketName, key);
+            Assert.AreEqual(contentLanguage, metadata.Headers.ContentLanguage);
+        }
+
         private void PutObjectWithContentEncoding()
         {
             var request = CreatePutObjectRequest();
