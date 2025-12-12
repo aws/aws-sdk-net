@@ -150,6 +150,16 @@ using Amazon.Runtime.Internal.Util;
 			{
 				if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(member.OwningShape.Name, out var modifier) && modifier.ExcludedUnmarshallingProperties.Contains(member.ModeledName))
 					continue;
+				if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propertyModifier) && propertyModifier.InjectXmlUnmarshallCode.Count > 0)
+					{
+						foreach (var code in propertyModifier.InjectXmlUnmarshallCode)
+						{
+#>
+			<#=code#>
+<#+
+						}
+					continue;
+					}
 				if (member.Shape.IsMap)
 				{
 #>
