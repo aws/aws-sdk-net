@@ -29,6 +29,53 @@ namespace Amazon.S3.Transfer.Internal
     {
         /// <summary>
         /// Waits for all tasks to complete or till any task fails or is canceled.
+        /// Prioritizes returning already-completed (especially faulted) tasks before checking cancellation.
+        /// This ensures the original exception is propagated rather than OperationCanceledException when
+        /// cancellation occurs due to a task failure.
+        /// </summary>
+        /// <param name="pendingTasks">List of tasks to wait for completion</param>
+        /// <param name="cancellationToken">Cancellation token to observe</param>
+        /// <returns>A task that represents the completion of all tasks or the first exception</returns>
+        internal static async Task WhenAllOrFirstExceptionWithFaultPriorityAsync(List<Task> pendingTasks, CancellationToken cancellationToken)
+        {
+            int processed = 0;
+            int total = pendingTasks.Count;
+            
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionWithFaultPriorityAsync: Starting with TotalTasks={0}", total);
+            
+            while (processed < total)
+            {
+                // First check if any task has already completed (synchronously)
+                // This ensures faulted tasks are processed before cancellation is checked,
+                // so the original exception takes precedence over OperationCanceledException
+                var completedTask = pendingTasks.FirstOrDefault(t => t.IsCompleted);
+                
+                if (completedTask == null)
+                {
+                    // No task completed yet - check cancellation before blocking
+                    cancellationToken.ThrowIfCancellationRequested();
+                    
+                    // Now wait for one to complete
+                    completedTask = await Task.WhenAny(pendingTasks)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+                }
+                
+                // Process the completed task - this will throw if faulted
+                await completedTask
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                
+                pendingTasks.Remove(completedTask);
+                processed++;
+                
+                Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionWithFaultPriorityAsync: Task completed (Processed={0}/{1}, Remaining={2})",
+                    processed, total, pendingTasks.Count);
+            }
+            
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllOrFirstExceptionWithFaultPriorityAsync: All tasks completed (Total={0})", total);
+        }
+
+        /// <summary>
+        /// Waits for all tasks to complete or till any task fails or is canceled.
         /// </summary>
         /// <param name="pendingTasks">List of tasks to wait for completion</param>
         /// <param name="cancellationToken">Cancellation token to observe</param>
