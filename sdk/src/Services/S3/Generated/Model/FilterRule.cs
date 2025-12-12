@@ -59,12 +59,6 @@ namespace Amazon.S3.Model
             set { this._name = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
@@ -75,12 +69,6 @@ namespace Amazon.S3.Model
         {
             get { return this._value; }
             set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
         }
 
     }

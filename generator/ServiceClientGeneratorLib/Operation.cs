@@ -598,9 +598,12 @@ namespace ServiceClientGenerator
                 if (this.RequestStructure == null)
                     return new List<Member>();
 
+                this.model.Customizations.ShapeModifiers.TryGetValue(this.RequestStructure.Name, out var modifiers);
+
                 var payloadName = this.RequestStructure.PayloadMemberName;
                 return this.RequestStructure.Members.Where(
                     m =>
+                        !(modifiers != null && modifiers.ExcludedMarshallingProperties.Contains(m.ModeledName)) &&
                         m.MarshallLocation == MarshallLocation.Body &&
                         !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
             }
