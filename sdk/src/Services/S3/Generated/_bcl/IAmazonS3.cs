@@ -25479,7 +25479,7 @@ namespace Amazon.S3
         ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
-        /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="tagSet">A collection for a set of tags</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
@@ -25667,7 +25667,7 @@ namespace Amazon.S3
         ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
-        /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="tagSet">A collection for a set of tags</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
