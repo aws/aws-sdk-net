@@ -81,6 +81,17 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBrandingConfigurationInput())
+                {
+                    context.Writer.WritePropertyName("brandingConfigurationInput");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BrandingConfigurationCreateInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BrandingConfigurationInput, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");

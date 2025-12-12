@@ -38,6 +38,7 @@ namespace Amazon.WorkSpacesWeb.Model
     public partial class CreateUserSettingsRequest : AmazonWorkSpacesWebRequest
     {
         private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private BrandingConfigurationCreateInput _brandingConfigurationInput;
         private string _clientToken;
         private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
@@ -68,6 +69,26 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetAdditionalEncryptionContext()
         {
             return this._additionalEncryptionContext != null && (this._additionalEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrandingConfigurationInput. 
+        /// <para>
+        /// The branding configuration input that customizes the appearance of the web portal
+        /// for end users. This includes a custom logo, favicon, wallpaper, localized strings,
+        /// color theme, and an optional terms of service.
+        /// </para>
+        /// </summary>
+        public BrandingConfigurationCreateInput BrandingConfigurationInput
+        {
+            get { return this._brandingConfigurationInput; }
+            set { this._brandingConfigurationInput = value; }
+        }
+
+        // Check to see if BrandingConfigurationInput property is set
+        internal bool IsSetBrandingConfigurationInput()
+        {
+            return this._brandingConfigurationInput != null;
         }
 
         /// <summary>
