@@ -31,31 +31,21 @@
         }        
     }
     else {
-        //This content page is not in the expected frameset which contains the TOC so  
-        //reload the parent frame and cause it to reload this page in the frame. The
-        //canonical link element contains the link to reload the entire parent frameset
-        //and load this current content page.
-        var pageLink = jQuery("link[rel='canonical']").attr('href');
-        if (pageLink !== '') {
-            //Canonical links look like this: http://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html?page=PAGE.html&tocid=TOCID
-            //Attempt to find where the relative path starts after the hostname.
-            var seekFrom = 0;
-            var protocolEndIndex = pageLink.indexOf('://');
-            if (protocolEndIndex != -1) {
-                seekFrom = protocolEndIndex + 3;
-            }            
+        //This content page is not in the expected frameset which contains the TOC so
+        //reload the parent frame and cause it to reload this page in the frame.
+        //Read the tocid from the meta tag and build the frameset URL.
+        var tocid = jQuery("meta[name='aws-tocid']").attr('content');
+        var pathname = window.location.pathname;
+        var itemsIndex = pathname.indexOf('/items/');
 
-            //Look for the start of the relative path.
-            var relPathIndex = pageLink.indexOf('/', seekFrom);
-            if (relPathIndex != -1) {            
-                //Reload the parent frameset and this content page. Note the address bar URL will
-                //look like the canonical link in the address bar. The inFrame part of this script 
-                //will run on release to replace the address bar URL with the actual friendly content
-                //frame page URL.
-                window.location.href = pageLink.substring(relPathIndex);
-            }
-            //Else do nothing because the link doesn't appear to be in a normal URL format where the 
-            //hostname ends with a / starting the relative URL path.
+        if (tocid && itemsIndex !== -1) {
+            //Build the frameset URL from the current path
+            var basePath = pathname.substring(0, itemsIndex);
+            var filename = pathname.substring(pathname.lastIndexOf('/') + 1);
+            //Reload the parent frameset and this content page. The inFrame part of this script
+            //will run on reload to replace the address bar URL with the actual friendly content
+            //frame page URL.
+            window.location.href = basePath + '/index.html?page=' + filename + '&tocid=' + tocid;
         }
     }    
 })();
