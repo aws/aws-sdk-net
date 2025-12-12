@@ -86,7 +86,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (responseData.IsHeaderPresent("Content-Encoding"))
                 response.Headers.ContentEncoding = S3Transforms.ToString(responseData.GetHeaderValue("Content-Encoding"));
             if (responseData.IsHeaderPresent("Content-Language"))
-                response.ContentLanguage = S3Transforms.ToString(responseData.GetHeaderValue("Content-Language"));
+                response.Headers.ContentLanguage = S3Transforms.ToString(responseData.GetHeaderValue("Content-Language"));
             if (responseData.IsHeaderPresent("Content-Length"))
                 response.Headers.ContentLength = long.Parse(responseData.GetHeaderValue("Content-Length"), CultureInfo.InvariantCulture);
             if (responseData.IsHeaderPresent("x-amz-object-lock-legal-hold"))

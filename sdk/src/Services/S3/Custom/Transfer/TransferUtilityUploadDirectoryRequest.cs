@@ -42,6 +42,98 @@ namespace Amazon.S3.Transfer
         string _keyPrefix;
         private bool _uploadFilesConcurrently = false;
         SearchOption _searchOption = SearchOption.TopDirectoryOnly;
+        private FailurePolicy failurePolicy = FailurePolicy.AbortOnFailure;
+
+        /// <summary>
+        /// Gets or sets the failure policy for the upload directory operation.
+        /// Determines whether the operation should abort or continue when a failure occurs during upload.
+        /// The default value is <see cref="FailurePolicy.AbortOnFailure"/>.
+        /// </summary>
+        public FailurePolicy FailurePolicy
+        {
+            get { return this.failurePolicy; }
+            set { this.failurePolicy = value; }
+        }
+        
+        /// <summary>
+        /// Occurs when the upload directory operation is initiated.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised before any files are uploaded, providing information about
+        /// the total number of files and bytes that will be uploaded.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryInitiatedEventArgs> UploadDirectoryInitiatedEvent;
+
+        /// <summary>
+        /// Occurs when the upload directory operation completes successfully.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised after all files have been processed (successfully or with failures),
+        /// providing the final response and statistics.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryCompletedEventArgs> UploadDirectoryCompletedEvent;
+
+        /// <summary>
+        /// Occurs when the upload directory operation fails.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised when the entire operation fails (not individual file failures).
+        /// Individual file failures are reported through <see cref="ObjectUploadFailedEvent"/>.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryFailedEventArgs> UploadDirectoryFailedEvent;
+
+        /// <summary>
+        /// Occurs when an individual object fails to upload during an UploadDirectory operation.
+        /// </summary>
+        /// <remarks>
+        /// Subscribers will receive a <see cref="ObjectUploadFailedEventArgs"/> instance containing
+        /// the original <see cref="TransferUtilityUploadDirectoryRequest"/>, the failed
+        /// <see cref="TransferUtilityUploadRequest"/>, and the exception that caused the failure.
+        /// This event is raised on a background thread by the transfer utility.
+        /// </remarks>
+        /// <example>
+        /// request.ObjectUploadFailedEvent += (sender, args) =>
+        /// {
+        ///     // inspect args.DirectoryRequest, args.ObjectRequest, args.Exception
+        /// };
+        /// </example>
+        public event EventHandler<ObjectUploadFailedEventArgs> ObjectUploadFailedEvent;
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryInitiatedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryInitiatedEvent(UploadDirectoryInitiatedEventArgs args)
+        {
+            UploadDirectoryInitiatedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryCompletedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryCompletedEvent(UploadDirectoryCompletedEventArgs args)
+        {
+            UploadDirectoryCompletedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryFailedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryFailedEvent(UploadDirectoryFailedEventArgs args)
+        {
+            UploadDirectoryFailedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="ObjectUploadFailedEvent"/>.
+        /// </summary>
+        /// <param name="args">The details of the failed object upload.</param>
+        internal void OnRaiseObjectUploadFailedEvent(ObjectUploadFailedEventArgs args)
+        {
+            ObjectUploadFailedEvent?.Invoke(this, args);
+        }
 
         /// <summary>
         /// 	Gets or sets the directory where files are uploaded from.
@@ -381,5 +473,225 @@ namespace Amazon.S3.Transfer
         /// Gets and sets the UploadRequest property.
         /// </summary>
         public TransferUtilityUploadRequest UploadRequest { get; set; }
+    }
+    
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryInitiatedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryInitiatedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryInitiatedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="totalFiles">The total number of files to upload.</param>
+        /// <param name="totalBytes">The total number of bytes to upload.</param>
+        internal UploadDirectoryInitiatedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            long totalFiles,
+            long totalBytes)
+        {
+            Request = request;
+            TotalFiles = totalFiles;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files to upload.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes to upload.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryCompletedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryCompletedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryCompletedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="response">The upload directory response.</param>
+        /// <param name="transferredFiles">The number of files successfully uploaded.</param>
+        /// <param name="totalFiles">The total number of files attempted.</param>
+        /// <param name="transferredBytes">The number of bytes transferred.</param>
+        /// <param name="totalBytes">The total number of bytes.</param>
+        internal UploadDirectoryCompletedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            TransferUtilityUploadDirectoryResponse response,
+            long transferredFiles,
+            long totalFiles,
+            long transferredBytes,
+            long totalBytes)
+        {
+            Request = request;
+            Response = response;
+            TransferredFiles = transferredFiles;
+            TotalFiles = totalFiles;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the upload directory response.
+        /// </summary>
+        public TransferUtilityUploadDirectoryResponse Response { get; private set; }
+
+        /// <summary>
+        /// Gets the number of files successfully uploaded.
+        /// </summary>
+        public long TransferredFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files attempted.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the number of bytes transferred.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryFailedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryFailedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryFailedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="transferredFiles">The number of files successfully uploaded before failure.</param>
+        /// <param name="totalFiles">The total number of files attempted.</param>
+        /// <param name="transferredBytes">The number of bytes transferred before failure.</param>
+        /// <param name="totalBytes">The total number of bytes.</param>
+        internal UploadDirectoryFailedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            long transferredFiles,
+            long totalFiles,
+            long transferredBytes,
+            long totalBytes)
+        {
+            Request = request;
+            TransferredFiles = transferredFiles;
+            TotalFiles = totalFiles;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the number of files successfully uploaded before failure.
+        /// </summary>
+        public long TransferredFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files attempted.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the number of bytes transferred before failure.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.ObjectUploadFailedEvent"/>
+    /// which is raised when an individual object fails to upload during an
+    /// UploadDirectory operation.
+    /// </summary>
+    /// <remarks>
+    /// Instances of this class are created by the transfer implementation and
+    /// passed to event subscribers. The instance contains the original directory
+    /// upload request (<see cref="TransferUtilityUploadDirectoryRequest"/>),
+    /// the per-object upload request that failed (<see cref="TransferUtilityUploadRequest"/>),
+    /// and the exception that caused the failure.
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// var request = new TransferUtilityUploadDirectoryRequest { /* ... */ };
+    /// request.ObjectUploadFailedEvent += (sender, args) =>
+    /// {
+    ///     // args.DirectoryRequest: original directory request
+    ///     // args.ObjectRequest: upload request for the failed object
+    ///     // args.Exception: exception thrown during the object upload
+    ///     Console.WriteLine($"Failed to upload {args.ObjectRequest.Key}: {args.Exception}");
+    /// };
+    /// </code>
+    /// </example>
+    public class ObjectUploadFailedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectUploadFailedEventArgs"/> class.
+        /// </summary>
+        /// <param name="directoryRequest">The original <see cref="TransferUtilityUploadDirectoryRequest"/> that initiated the directory upload.</param>
+        /// <param name="objectRequest">The <see cref="TransferUtilityUploadRequest"/> representing the individual object upload that failed.</param>
+        /// <param name="exception">The <see cref="Exception"/> that caused the object upload to fail.</param>
+        internal ObjectUploadFailedEventArgs(
+            TransferUtilityUploadDirectoryRequest directoryRequest,
+            TransferUtilityUploadRequest objectRequest,
+            Exception exception)
+        {
+            DirectoryRequest = directoryRequest;
+            ObjectRequest = objectRequest;
+            Exception = exception;
+        }
+
+        /// <summary>
+        /// Gets the original <see cref="TransferUtilityUploadDirectoryRequest"/> that initiated the directory upload.
+        /// </summary>
+        /// <value>
+        /// The directory-level request that configured the overall UploadDirectory operation.
+        /// </value>
+        public TransferUtilityUploadDirectoryRequest DirectoryRequest { get; private set; }
+
+        /// <summary>
+        /// Gets the <see cref="TransferUtilityUploadRequest"/> for the individual object that failed to upload.
+        /// </summary>
+        /// <value>
+        /// Contains per-object parameters such as the S3 key and version id (if set).
+        /// </value>
+        public TransferUtilityUploadRequest ObjectRequest { get; private set; }
+
+        /// <summary>
+        /// Gets the <see cref="Exception"/> that caused the object upload to fail.
+        /// </summary>
+        /// <value>
+        /// The exception thrown by the underlying upload operation. Can be an <see cref="Amazon.S3.AmazonS3Exception"/>,
+        /// <see cref="Amazon.Runtime.AmazonClientException"/>, <see cref="IOException"/>, or other exception type depending
+        /// on the failure mode.
+        /// </value>
+        public Exception Exception { get; private set; }
     }
 }
