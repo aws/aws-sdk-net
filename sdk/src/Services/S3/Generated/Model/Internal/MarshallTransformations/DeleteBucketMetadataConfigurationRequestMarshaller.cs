@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteBucketMetadataConfiguration Request Marshaller
     /// </summary>       
-    public class DeleteBucketMetadataConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteBucketMetadataConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteBucketMetadataConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteBucketMetadataConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteBucketMetadataConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "DELETE";
             request.AddSubResource("metadataConfiguration");
         
@@ -65,10 +66,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             if (!publicRequest.IsSetBucketName())
                 throw new AmazonS3Exception("Request object does not have required field BucketName set");
-            request.AddPathResource("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
-            request.ResourcePath = "/{Bucket}";
+            request.ResourcePath = "/";
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteBucketMetadataConfigurationRequestMarshaller _instance = new DeleteBucketMetadataConfigurationRequestMarshaller();        
@@ -89,5 +89,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketMetadataConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketMetadataConfigurationRequest publicRequest);
     }    
 }

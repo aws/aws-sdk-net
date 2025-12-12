@@ -1217,6 +1217,13 @@
                     "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
+        },
+        "DeleteBucketMetadataConfigurationRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
         
     },
