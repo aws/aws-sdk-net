@@ -114,12 +114,6 @@ namespace Amazon.DataSync.Model
         /// Limits the bandwidth used by a DataSync task. For example, if you want DataSync to
         /// use a maximum of 1 MB, set this value to <c>1048576</c> (<c>=1024*1024</c>).
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
-        /// mode tasks</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=-1)]
         public long? BytesPerSecond

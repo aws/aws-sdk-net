@@ -103,7 +103,7 @@ namespace Amazon.DataSync.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=8)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }
@@ -166,14 +166,14 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// When you include this paramater as part of a <c>CreateLocationAzureBlob</c> request,
+        /// When you include this parameter as part of a <c>CreateLocationAzureBlob</c> request,
         /// you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication
         /// token you specify for <c>SasConfiguration</c> to create a DataSync-managed secret
         /// to store the location access credentials.
         /// </para>
         ///  
         /// <para>
-        /// Make sure the DataSync has permission to access the KMS key that you specify.
+        /// Make sure that DataSync has permission to access the KMS key that you specify.
         /// </para>
         ///  <note> 
         /// <para>
@@ -219,8 +219,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies configuration information for a customer-managed Secrets Manager secret
         /// where the authentication token for an AzureBlob storage location is stored in plain
-        /// text. This configuration includes the secret ARN, and the ARN for an IAM role that
-        /// provides access to the secret.
+        /// text, in Secrets Manager. This configuration includes the secret ARN, and the ARN
+        /// for an IAM role that provides access to the secret.
         /// </para>
         ///  <note> 
         /// <para>

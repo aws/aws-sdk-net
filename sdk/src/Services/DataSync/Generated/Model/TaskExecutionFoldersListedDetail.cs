@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The number of files or objects that DataSync finds at your locations.
+    /// The number of directories that DataSync finds at your locations.
     /// 
     ///  <note> 
     /// <para>
@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
     /// </para>
     ///  </note>
     /// </summary>
-    public partial class TaskExecutionFilesListedDetail
+    public partial class TaskExecutionFoldersListedDetail
     {
         private long? _atDestinationForDelete;
         private long? _atSource;
@@ -47,8 +47,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AtDestinationForDelete. 
         /// <para>
-        /// The number of files or objects that DataSync finds at your destination location. This
-        /// counter is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure
+        /// The number of directories that DataSync finds at your destination location. This counter
+        /// is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure
         /// your task</a> to delete data in the destination that isn't in the source.
         /// </para>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AtSource. 
         /// <para>
-        /// The number of files or objects that DataSync finds at your source location.
+        /// The number of directories that DataSync finds at your source location.
         /// </para>
         ///  <ul> <li> 
         /// <para>

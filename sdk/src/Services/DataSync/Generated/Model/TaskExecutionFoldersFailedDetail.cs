@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The number of files or objects that DataSync fails to prepare, transfer, verify, and
-    /// delete during your task execution.
+    /// The number of directories that DataSync fails to list, prepare, transfer, verify,
+    /// and delete during your task execution.
     /// 
     ///  <note> 
     /// <para>
@@ -40,9 +40,10 @@ namespace Amazon.DataSync.Model
     /// </para>
     ///  </note>
     /// </summary>
-    public partial class TaskExecutionFilesFailedDetail
+    public partial class TaskExecutionFoldersFailedDetail
     {
         private long? _delete;
+        private long? _list;
         private long? _prepare;
         private long? _transfer;
         private long? _verify;
@@ -50,7 +51,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Delete. 
         /// <para>
-        /// The number of files or objects that DataSync fails to delete during your task execution.
+        /// The number of directories that DataSync fails to delete during your task execution.
         /// </para>
         /// </summary>
         public long? Delete
@@ -66,9 +67,27 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property List. 
+        /// <para>
+        /// The number of directories that DataSync fails to list during your task execution.
+        /// </para>
+        /// </summary>
+        public long? List
+        {
+            get { return this._list; }
+            set { this._list = value; }
+        }
+
+        // Check to see if List property is set
+        internal bool IsSetList()
+        {
+            return this._list.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Prepare. 
         /// <para>
-        /// The number of files or objects that DataSync fails to prepare during your task execution.
+        /// The number of directories that DataSync fails to prepare during your task execution.
         /// </para>
         /// </summary>
         public long? Prepare
@@ -86,7 +105,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Transfer. 
         /// <para>
-        /// The number of files or objects that DataSync fails to transfer during your task execution.
+        /// The number of directories that DataSync fails to transfer during your task execution.
         /// </para>
         /// </summary>
         public long? Transfer
@@ -104,7 +123,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Verify. 
         /// <para>
-        /// The number of files or objects that DataSync fails to verify during your task execution.
+        /// The number of directories that DataSync fails to verify during your task execution.
         /// </para>
         /// </summary>
         public long? Verify
