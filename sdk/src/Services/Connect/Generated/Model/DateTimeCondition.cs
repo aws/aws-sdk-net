@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ComparisonType. 
         /// <para>
-        /// Datetime property comparison type. 
+        /// Datetime property comparison type.
         /// </para>
         /// </summary>
         public DateTimeComparisonType ComparisonType
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxValue. 
         /// <para>
-        /// A maximum value of the property. 
+        /// A maximum value of the property.
         /// </para>
         /// </summary>
         public string MaxValue
@@ -96,7 +96,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MinValue. 
         /// <para>
-        /// A minimum value of the property. 
+        /// A minimum value of the property.
         /// </para>
         /// </summary>
         public string MinValue

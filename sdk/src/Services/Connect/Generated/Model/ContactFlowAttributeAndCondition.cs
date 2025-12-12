@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowTypeCondition. 
         /// <para>
-        ///  Contact flow type condition. 
+        ///  Contact flow type condition.
         /// </para>
         /// </summary>
         public ContactFlowTypeCondition ContactFlowTypeCondition
@@ -58,7 +58,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TagConditions. 
         /// <para>
-        ///  Tag-based conditions for contact flow filtering. 
+        ///  Tag-based conditions for contact flow filtering.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -116,6 +116,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CustomerId);
             }
 
+            if(publicRequest.IsSetDisconnectOnCustomerExit())
+            {
+                context.Writer.WritePropertyName("DisconnectOnCustomerExit");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDisconnectOnCustomerExitListValue in publicRequest.DisconnectOnCustomerExit)
+                {
+                        context.Writer.WriteStringValue(publicRequestDisconnectOnCustomerExitListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetInitialMessage())
             {
                 context.Writer.WritePropertyName("InitialMessage");
