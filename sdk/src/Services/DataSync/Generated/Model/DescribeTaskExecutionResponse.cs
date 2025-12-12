@@ -41,6 +41,8 @@ namespace Amazon.DataSync.Model
         private long? _estimatedBytesToTransfer;
         private long? _estimatedFilesToDelete;
         private long? _estimatedFilesToTransfer;
+        private long? _estimatedFoldersToDelete;
+        private long? _estimatedFoldersToTransfer;
         private List<FilterRule> _excludes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
         private long? _filesDeleted;
         private TaskExecutionFilesFailedDetail _filesFailed;
@@ -49,6 +51,13 @@ namespace Amazon.DataSync.Model
         private long? _filesSkipped;
         private long? _filesTransferred;
         private long? _filesVerified;
+        private long? _foldersDeleted;
+        private TaskExecutionFoldersFailedDetail _foldersFailed;
+        private TaskExecutionFoldersListedDetail _foldersListed;
+        private long? _foldersPrepared;
+        private long? _foldersSkipped;
+        private long? _foldersTransferred;
+        private long? _foldersVerified;
         private List<FilterRule> _includes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
         private DateTime? _launchTime;
         private ManifestConfig _manifestConfig;
@@ -162,6 +171,14 @@ namespace Amazon.DataSync.Model
         /// destination location. If you don't configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
         /// data in the destination that isn't in the source</a>, the value is always <c>0</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>, this counter only includes files or objects. Directories are counted
+        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-EstimatedFoldersToDelete">EstimatedFoldersToDelete</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public long EstimatedFilesToDelete
         {
@@ -214,7 +231,14 @@ namespace Amazon.DataSync.Model
         /// If <c>TranserMode</c> is set to <c>ALL</c> - The calculation is based only on the
         /// items that DataSync finds at the source location.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>, this counter only includes files or objects. Directories are counted
+        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-EstimatedFoldersToTransfer">EstimatedFoldersToTransfer</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public long EstimatedFilesToTransfer
         {
@@ -226,6 +250,84 @@ namespace Amazon.DataSync.Model
         internal bool IsSetEstimatedFilesToTransfer()
         {
             return this._estimatedFilesToTransfer.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedFoldersToDelete. 
+        /// <para>
+        /// The number of directories that DataSync expects to delete in your destination location.
+        /// If you don't configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+        /// data in the destination that isn't in the source</a>, the value is always <c>0</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long EstimatedFoldersToDelete
+        {
+            get { return this._estimatedFoldersToDelete.GetValueOrDefault(); }
+            set { this._estimatedFoldersToDelete = value; }
+        }
+
+        // Check to see if EstimatedFoldersToDelete property is set
+        internal bool IsSetEstimatedFoldersToDelete()
+        {
+            return this._estimatedFoldersToDelete.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedFoldersToTransfer. 
+        /// <para>
+        /// The number of directories that DataSync expects to transfer over the network. This
+        /// value is calculated as DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">prepares</a>
+        /// directories to transfer.
+        /// </para>
+        ///  
+        /// <para>
+        /// How this gets calculated depends primarily on your task’s <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-TransferMode">transfer
+        /// mode</a> configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <c>TranserMode</c> is set to <c>CHANGED</c> - The calculation is based on comparing
+        /// the content of the source and destination locations and determining the difference
+        /// that needs to be transferred. The difference can include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Anything that's added or modified at the source location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Anything that's in both locations and modified at the destination after an initial
+        /// transfer (unless <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-OverwriteMode">OverwriteMode</a>
+        /// is set to <c>NEVER</c>).
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If <c>TranserMode</c> is set to <c>ALL</c> - The calculation is based only on the
+        /// items that DataSync finds at the source location.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long EstimatedFoldersToTransfer
+        {
+            get { return this._estimatedFoldersToTransfer.GetValueOrDefault(); }
+            set { this._estimatedFoldersToTransfer = value; }
+        }
+
+        // Check to see if EstimatedFoldersToTransfer property is set
+        internal bool IsSetEstimatedFoldersToTransfer()
+        {
+            return this._estimatedFoldersToTransfer.HasValue; 
         }
 
         /// <summary>
@@ -256,6 +358,14 @@ namespace Amazon.DataSync.Model
         /// destination location. If you don't configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
         /// data in the destination that isn't in the source</a>, the value is always <c>0</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>, this counter only includes files or objects. Directories are counted
+        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-FoldersDeleted">FoldersDeleted</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public long FilesDeleted
         {
@@ -272,8 +382,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FilesFailed. 
         /// <para>
-        /// The number of objects that DataSync fails to prepare, transfer, verify, and delete
-        /// during your task execution.
+        /// The number of files or objects that DataSync fails to prepare, transfer, verify, and
+        /// delete during your task execution.
         /// </para>
         ///  <note> 
         /// <para>
@@ -297,7 +407,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FilesListed. 
         /// <para>
-        /// The number of objects that DataSync finds at your locations.
+        /// The number of files or objects that DataSync finds at your locations.
         /// </para>
         ///  <note> 
         /// <para>
@@ -321,8 +431,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FilesPrepared. 
         /// <para>
-        /// The number of objects that DataSync will attempt to transfer after comparing your
-        /// source and destination locations.
+        /// The number of files or objects that DataSync will attempt to transfer after comparing
+        /// your source and destination locations.
         /// </para>
         ///  <note> 
         /// <para>
@@ -353,6 +463,14 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The number of files, objects, and directories that DataSync skips during your transfer.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>, this counter only includes files or objects. Directories are counted
+        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-FoldersSkipped">FoldersSkipped</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public long FilesSkipped
         {
@@ -380,6 +498,14 @@ namespace Amazon.DataSync.Model
         /// This element is implementation-specific for some location types, so don't use it as
         /// an exact indication of what's transferring or to monitor your task execution.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>, this counter only includes files or objects. Directories are counted
+        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-FoldersTransferred">FoldersTransferred</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public long FilesTransferred
         {
@@ -404,6 +530,13 @@ namespace Amazon.DataSync.Model
         /// only the data that's transferred</a>, DataSync doesn't verify directories in some
         /// situations or files that fail to transfer.
         /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>, this counter only includes files or objects. Directories are counted
+        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-FoldersVerified">FoldersVerified</a>.
+        /// 
+        /// </para>
         ///  </note>
         /// </summary>
         public long FilesVerified
@@ -416,6 +549,191 @@ namespace Amazon.DataSync.Model
         internal bool IsSetFilesVerified()
         {
             return this._filesVerified.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoldersDeleted. 
+        /// <para>
+        /// The number of directories that DataSync actually deletes in your destination location.
+        /// If you don't configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+        /// data in the destination that isn't in the source</a>, the value is always <c>0</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long FoldersDeleted
+        {
+            get { return this._foldersDeleted.GetValueOrDefault(); }
+            set { this._foldersDeleted = value; }
+        }
+
+        // Check to see if FoldersDeleted property is set
+        internal bool IsSetFoldersDeleted()
+        {
+            return this._foldersDeleted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoldersFailed. 
+        /// <para>
+        /// The number of directories that DataSync fails to list, prepare, transfer, verify,
+        /// and delete during your task execution.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public TaskExecutionFoldersFailedDetail FoldersFailed
+        {
+            get { return this._foldersFailed; }
+            set { this._foldersFailed = value; }
+        }
+
+        // Check to see if FoldersFailed property is set
+        internal bool IsSetFoldersFailed()
+        {
+            return this._foldersFailed != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoldersListed. 
+        /// <para>
+        /// The number of directories that DataSync finds at your locations.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public TaskExecutionFoldersListedDetail FoldersListed
+        {
+            get { return this._foldersListed; }
+            set { this._foldersListed = value; }
+        }
+
+        // Check to see if FoldersListed property is set
+        internal bool IsSetFoldersListed()
+        {
+            return this._foldersListed != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoldersPrepared. 
+        /// <para>
+        /// The number of directories that DataSync will attempt to transfer after comparing your
+        /// source and destination locations.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This counter isn't applicable if you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-transfer-mode">transfer
+        /// all data</a>. In that scenario, DataSync copies everything from the source to the
+        /// destination without comparing differences between the locations.
+        /// </para>
+        /// </summary>
+        public long FoldersPrepared
+        {
+            get { return this._foldersPrepared.GetValueOrDefault(); }
+            set { this._foldersPrepared = value; }
+        }
+
+        // Check to see if FoldersPrepared property is set
+        internal bool IsSetFoldersPrepared()
+        {
+            return this._foldersPrepared.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoldersSkipped. 
+        /// <para>
+        /// The number of directories that DataSync skips during your transfer.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long FoldersSkipped
+        {
+            get { return this._foldersSkipped.GetValueOrDefault(); }
+            set { this._foldersSkipped = value; }
+        }
+
+        // Check to see if FoldersSkipped property is set
+        internal bool IsSetFoldersSkipped()
+        {
+            return this._foldersSkipped.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoldersTransferred. 
+        /// <para>
+        /// The number of directories that DataSync actually transfers over the network. This
+        /// value is updated periodically during your task execution when something is read from
+        /// the source and sent over the network.
+        /// </para>
+        ///  
+        /// <para>
+        /// If DataSync fails to transfer something, this value can be less than <c>EstimatedFoldersToTransfer</c>.
+        /// In some cases, this value can also be greater than <c>EstimatedFoldersToTransfer</c>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long FoldersTransferred
+        {
+            get { return this._foldersTransferred.GetValueOrDefault(); }
+            set { this._foldersTransferred = value; }
+        }
+
+        // Check to see if FoldersTransferred property is set
+        internal bool IsSetFoldersTransferred()
+        {
+            return this._foldersTransferred.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoldersVerified. 
+        /// <para>
+        /// The number of directories that DataSync verifies during your transfer.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long FoldersVerified
+        {
+            get { return this._foldersVerified.GetValueOrDefault(); }
+            set { this._foldersVerified = value; }
+        }
+
+        // Check to see if FoldersVerified property is set
+        internal bool IsSetFoldersVerified()
+        {
+            return this._foldersVerified.HasValue; 
         }
 
         /// <summary>

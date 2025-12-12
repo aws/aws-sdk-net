@@ -92,7 +92,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=8)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }
@@ -133,14 +133,14 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// When you include this paramater as part of a <c>CreateLocationObjectStorage</c> request,
+        /// When you include this parameter as part of a <c>CreateLocationObjectStorage</c> request,
         /// you provide only the KMS key ARN. DataSync uses this KMS key together with the value
         /// you specify for the <c>SecretKey</c> parameter to create a DataSync-managed secret
         /// to store the location access credentials.
         /// </para>
         ///  
         /// <para>
-        /// Make sure the DataSync has permission to access the KMS key that you specify.
+        /// Make sure that DataSync has permission to access the KMS key that you specify.
         /// </para>
         ///  <note> 
         /// <para>
@@ -166,9 +166,9 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property CustomSecretConfig. 
         /// <para>
         /// Specifies configuration information for a customer-managed Secrets Manager secret
-        /// where the secret key for a specific object storage location is stored in plain text.
-        /// This configuration includes the secret ARN, and the ARN for an IAM role that provides
-        /// access to the secret.
+        /// where the secret key for a specific object storage location is stored in plain text,
+        /// in Secrets Manager. This configuration includes the secret ARN, and the ARN for an
+        /// IAM role that provides access to the secret.
         /// </para>
         ///  <note> 
         /// <para>

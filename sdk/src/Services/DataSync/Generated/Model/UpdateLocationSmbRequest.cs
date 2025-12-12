@@ -44,6 +44,8 @@ namespace Amazon.DataSync.Model
     {
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SmbAuthenticationType _authenticationType;
+        private CmkSecretConfig _cmkSecretConfig;
+        private CustomSecretConfig _customSecretConfig;
         private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domain;
         private MemoryStream _kerberosKeytab;
@@ -63,7 +65,7 @@ namespace Amazon.DataSync.Model
         /// You specify an agent by using its Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=8)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }
@@ -98,6 +100,46 @@ namespace Amazon.DataSync.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a DataSync-managed secret, such as a <c>Password</c>
+        /// or <c>KerberosKeytab</c> or set of credentials that DataSync uses to access a specific
+        /// transfer location, and a customer-managed KMS key.
+        /// </para>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a customer-managed secret, such as a <c>Password</c>
+        /// or <c>KerberosKeytab</c> or set of credentials that DataSync uses to access a specific
+        /// transfer location, and a customer-managed KMS key.
+        /// </para>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
         }
 
         /// <summary>

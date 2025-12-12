@@ -63,7 +63,7 @@ namespace Amazon.DataSync.Model
         /// cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=8)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }
