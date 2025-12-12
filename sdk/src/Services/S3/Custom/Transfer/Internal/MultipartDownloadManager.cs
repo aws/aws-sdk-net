@@ -306,7 +306,6 @@ namespace Amazon.S3.Transfer.Internal
             _logger.DebugFormat("MultipartDownloadManager: Starting downloads - TotalParts={0}, IsSinglePart={1}",
                 discoveryResult.TotalParts, discoveryResult.IsSinglePart);
 
-            var downloadTasks = new List<Task>();
             var internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
 
             try
@@ -316,39 +315,8 @@ namespace Amazon.S3.Transfer.Internal
                     ? new EventHandler<WriteObjectProgressArgs>(DownloadPartProgressEventCallback)
                     : null;
                 
-                try
-                {
-                    // Prepare the data handler (e.g., create temp files for file-based downloads)
-                    await _dataHandler.PrepareAsync(discoveryResult, cancellationToken).ConfigureAwait(false);
-                    
-                    // Attach progress callback to Part 1's response if provided
-                    if (wrappedCallback != null)
-                    {
-                        discoveryResult.InitialResponse.WriteObjectProgressEvent += wrappedCallback;
-                    }
-                    
-                    // Process Part 1 from InitialResponse (applies to both single-part and multipart)
-                    // NOTE: Semaphore is still held from discovery phase and will be released in finally block
-                    _logger.DebugFormat("MultipartDownloadManager: Processing Part 1 from discovery response");
-                    await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
-                    
-                    _logger.DebugFormat("MultipartDownloadManager: Part 1 processing completed");
-                }
-                finally
-                {
-                    // Always detach the event handler to prevent memory leak
-                    if (wrappedCallback != null)
-                    {
-                        discoveryResult.InitialResponse.WriteObjectProgressEvent -= wrappedCallback;
-                    }
-                    
-                    // Release semaphore after BOTH network download AND disk write complete for Part 1
-                    // This ensures ConcurrentServiceRequests controls the entire I/O operation,
-                    // consistent with Parts 2+ (see CreateDownloadTaskAsync)
-                    _httpConcurrencySlots.Release();
-                    _logger.DebugFormat("MultipartDownloadManager: [Part 1] HTTP concurrency slot released (Available: {0}/{1})",
-                        _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
-                }
+                // Process Part 1 (downloaded during discovery)
+                await ProcessFirstPartAsync(discoveryResult, wrappedCallback, cancellationToken).ConfigureAwait(false);
 
                 if (discoveryResult.IsSinglePart)
                 {
@@ -361,116 +329,12 @@ namespace Amazon.S3.Transfer.Internal
                 // Check if already cancelled before creating background task
                 cancellationToken.ThrowIfCancellationRequested();
 
-                // Start background task to handle capacity acquisition and task creation
+                // Start background task to handle remaining parts
                 // This allows the method to return immediately so the consumer can start reading
                 // which prevents deadlock when MaxInMemoryParts is reached before consumer begins reading
                 _downloadCompletionTask = Task.Run(async () =>
                 {
-                    try
-                    {
-                        _logger.DebugFormat("MultipartDownloadManager: Background task starting capacity acquisition and downloads");
-                        
-                        // Multipart: Start concurrent downloads for remaining parts (Part 2 onwards)
-                        _logger.InfoFormat("MultipartDownloadManager: Starting concurrent downloads for parts 2-{0}",
-                            discoveryResult.TotalParts);
-
-                        // Pre-acquire capacity in sequential order to prevent race condition deadlock
-                        // This ensures Part 2 gets capacity before Part 3, etc., preventing out-of-order
-                        // parts from consuming all buffer slots and blocking the next expected part
-                        for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
-                        {
-                            _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for buffer space", partNum);
-
-                            // Acquire capacity sequentially - guarantees Part 2 before Part 3, etc.
-                            await _dataHandler.WaitForCapacityAsync(internalCts.Token).ConfigureAwait(false);
-                            
-                            _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Buffer space acquired", partNum);
-
-                            _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for HTTP concurrency slot (Available: {1}/{2})",
-                                partNum, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
-
-                            // Acquire HTTP slot in the loop before creating task
-                            // Loop will block here if all slots are in use
-                            await _httpConcurrencySlots.WaitAsync(internalCts.Token).ConfigureAwait(false);
-
-                            _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot acquired", partNum);
-
-                            try
-                            {
-                                var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, wrappedCallback, internalCts.Token);
-                                downloadTasks.Add(task);
-                            }
-                            catch (Exception ex)
-                            {
-                                // If task creation fails, release the HTTP slot we just acquired
-                                _httpConcurrencySlots.Release();
-                                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot released due to task creation failure: {1}", partNum, ex);
-                                throw;
-                            }
-                        }
-
-                        var expectedTaskCount = downloadTasks.Count;
-                        _logger.DebugFormat("MultipartDownloadManager: Background task waiting for {0} download tasks", expectedTaskCount);
-                        
-                        // Wait for all downloads to complete (fails fast on first exception)
-                        await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, internalCts.Token).ConfigureAwait(false);
-
-                        _logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
-
-                        // SEP Part GET Step 6 / Ranged GET Step 8:
-                        // "validate that the total number of part GET requests sent matches with the expected PartsCount"
-                        // Note: This should always be true if we reach this point, since WhenAllOrFirstException
-                        // ensures all tasks completed successfully (or threw on first failure).
-                        // The check serves as a defensive assertion for SEP compliance.
-                        // Note: expectedTaskCount + 1 accounts for Part 1 being buffered during discovery
-                        if (expectedTaskCount + 1 != discoveryResult.TotalParts)
-                        {
-                            throw new InvalidOperationException(
-                                $"Request count mismatch. Expected {discoveryResult.TotalParts} parts, " +
-                                $"but sent {expectedTaskCount + 1} requests");
-                        }
-
-                        // Mark successful completion
-                        _logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
-                            discoveryResult.TotalParts);
-                        _dataHandler.OnDownloadComplete(null);
-                    }
-                    #pragma warning disable CA1031 // Do not catch general exception types
-
-                    catch (Exception ex)
-                    {
-                        _downloadException = ex;
-                        
-            
-                        
-                        // Cancel all remaining downloads immediately to prevent cascading timeout errors
-                        // This ensures that when one part fails, other tasks stop gracefully instead of
-                        // continuing until they hit their own timeout/cancellation errors
-                        // Check if cancellation was already requested to avoid ObjectDisposedException
-                        if (!internalCts.IsCancellationRequested)
-                        {
-                            try
-                            {
-                                internalCts.Cancel();
-                                _logger.DebugFormat("MultipartDownloadManager: Cancelled all in-flight downloads due to error");
-                            }
-                            catch (ObjectDisposedException)
-                            {
-                                // CancellationTokenSource was already disposed, ignore
-                                _logger.DebugFormat("MultipartDownloadManager: CancellationTokenSource already disposed during cancellation");
-                            }
-                        }
-                        
-                        _dataHandler.OnDownloadComplete(ex);
-                        throw;
-                    }
-                    #pragma warning restore CA1031 // Do not catch general exception types
-                    finally
-                    {
-                        // Dispose the CancellationTokenSource after all background operations complete
-                        // This ensures the token remains valid for the entire lifetime of download tasks
-                        internalCts.Dispose();
-                    }
+                    await StartBackgroundDownloadsAsync(discoveryResult, wrappedCallback, internalCts).ConfigureAwait(false);
                 }, cancellationToken);
 
                 // Return immediately to allow consumer to start reading
@@ -482,23 +346,7 @@ namespace Amazon.S3.Transfer.Internal
                 _downloadException = ex;
                 _logger.Error(ex, "MultipartDownloadManager: Download failed");
                 
-                // Cancel all remaining downloads immediately to prevent cascading timeout errors
-                // Check if cancellation was already requested to avoid ObjectDisposedException
-                if (!internalCts.IsCancellationRequested)
-                {
-                    try
-                    {
-                        internalCts.Cancel();
-                        _logger.DebugFormat("MultipartDownloadManager: Cancelled all in-flight downloads due to error");
-                    }
-                    catch (ObjectDisposedException)
-                    {
-                        // CancellationTokenSource was already disposed, ignore
-                        _logger.DebugFormat("MultipartDownloadManager: CancellationTokenSource already disposed during cancellation");
-                    }
-                }
-                
-                _dataHandler.OnDownloadComplete(ex);
+                HandleDownloadError(ex, internalCts);
                 
                 // Dispose the CancellationTokenSource if background task was never started
                 // This handles the case where an error occurs before Task.Run is called
@@ -509,6 +357,184 @@ namespace Amazon.S3.Transfer.Internal
         }
 
 
+
+        /// <summary>
+        /// Processes Part 1 (downloaded during discovery) including preparation, progress tracking, and semaphore release.
+        /// </summary>
+        private async Task ProcessFirstPartAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationToken cancellationToken)
+        {
+            try
+            {
+                // Prepare the data handler (e.g., create temp files for file-based downloads)
+                await _dataHandler.PrepareAsync(discoveryResult, cancellationToken).ConfigureAwait(false);
+                
+                // Attach progress callback to Part 1's response if provided
+                if (wrappedCallback != null)
+                {
+                    discoveryResult.InitialResponse.WriteObjectProgressEvent += wrappedCallback;
+                }
+                
+                // Process Part 1 from InitialResponse (applies to both single-part and multipart)
+                // NOTE: Semaphore is still held from discovery phase and will be released in finally block
+                _logger.DebugFormat("MultipartDownloadManager: Processing Part 1 from discovery response");
+                await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
+                
+                _logger.DebugFormat("MultipartDownloadManager: Part 1 processing completed");
+            }
+            finally
+            {
+                // Always detach the event handler to prevent memory leak
+                if (wrappedCallback != null)
+                {
+                    discoveryResult.InitialResponse.WriteObjectProgressEvent -= wrappedCallback;
+                }
+                
+                // Release semaphore after BOTH network download AND disk write complete for Part 1
+                // This ensures ConcurrentServiceRequests controls the entire I/O operation,
+                // consistent with Parts 2+ (see CreateDownloadTaskAsync)
+                _httpConcurrencySlots.Release();
+                _logger.DebugFormat("MultipartDownloadManager: [Part 1] HTTP concurrency slot released (Available: {0}/{1})",
+                    _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
+            }
+        }
+
+        /// <summary>
+        /// Starts background downloads for remaining parts (Part 2+) in a multipart download.
+        /// Handles capacity acquisition, task creation, completion validation, and error handling.
+        /// </summary>
+        private async Task StartBackgroundDownloadsAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationTokenSource internalCts)
+        {
+            var downloadTasks = new List<Task>();
+            
+            try
+            {
+                _logger.DebugFormat("MultipartDownloadManager: Background task starting capacity acquisition and downloads");
+                
+                // Multipart: Start concurrent downloads for remaining parts (Part 2 onwards)
+                _logger.InfoFormat("MultipartDownloadManager: Starting concurrent downloads for parts 2-{0}",
+                    discoveryResult.TotalParts);
+
+                // Create download tasks for all remaining parts
+                await CreateDownloadTasksAsync(discoveryResult, wrappedCallback, internalCts, downloadTasks).ConfigureAwait(false);
+
+                var expectedTaskCount = downloadTasks.Count;
+                _logger.DebugFormat("MultipartDownloadManager: Background task waiting for {0} download tasks", expectedTaskCount);
+                
+                // Wait for all downloads to complete (fails fast on first exception)
+                await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, internalCts.Token).ConfigureAwait(false);
+
+                _logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
+
+                // Validate completion and mark successful
+                ValidateDownloadCompletion(expectedTaskCount, discoveryResult.TotalParts);
+                
+                // Mark successful completion
+                _logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
+                    discoveryResult.TotalParts);
+                _dataHandler.OnDownloadComplete(null);
+            }
+            #pragma warning disable CA1031 // Do not catch general exception types
+            catch (Exception ex)
+            {
+                _downloadException = ex;
+                HandleDownloadError(ex, internalCts);
+                throw;
+            }
+            #pragma warning restore CA1031 // Do not catch general exception types
+            finally
+            {
+                // Dispose the CancellationTokenSource after all background operations complete
+                // This ensures the token remains valid for the entire lifetime of download tasks
+                internalCts.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Creates download tasks for all remaining parts (Part 2+) with sequential capacity acquisition.
+        /// Pre-acquires capacity in sequential order to prevent race condition deadlock.
+        /// </summary>
+        private async Task CreateDownloadTasksAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationTokenSource internalCts, List<Task> downloadTasks)
+        {
+            // Pre-acquire capacity in sequential order to prevent race condition deadlock
+            // This ensures Part 2 gets capacity before Part 3, etc., preventing out-of-order
+            // parts from consuming all buffer slots and blocking the next expected part
+            for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
+            {
+                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for buffer space", partNum);
+
+                // Acquire capacity sequentially - guarantees Part 2 before Part 3, etc.
+                await _dataHandler.WaitForCapacityAsync(internalCts.Token).ConfigureAwait(false);
+                
+                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Buffer space acquired", partNum);
+
+                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for HTTP concurrency slot (Available: {1}/{2})",
+                    partNum, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
+
+                // Acquire HTTP slot in the loop before creating task
+                // Loop will block here if all slots are in use
+                await _httpConcurrencySlots.WaitAsync(internalCts.Token).ConfigureAwait(false);
+
+                _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot acquired", partNum);
+
+                try
+                {
+                    var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, wrappedCallback, internalCts.Token);
+                    downloadTasks.Add(task);
+                }
+                catch (Exception ex)
+                {
+                    // If task creation fails, release the HTTP slot we just acquired
+                    _httpConcurrencySlots.Release();
+                    _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot released due to task creation failure: {1}", partNum, ex);
+                    throw;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Validates that the expected number of parts were downloaded for SEP compliance.
+        /// </summary>
+        private void ValidateDownloadCompletion(int expectedTaskCount, int totalParts)
+        {
+            // SEP Part GET Step 6 / Ranged GET Step 8:
+            // "validate that the total number of part GET requests sent matches with the expected PartsCount"
+            // Note: This should always be true if we reach this point, since WhenAllOrFirstException
+            // ensures all tasks completed successfully (or threw on first failure).
+            // The check serves as a defensive assertion for SEP compliance.
+            // Note: expectedTaskCount + 1 accounts for Part 1 being buffered during discovery
+            if (expectedTaskCount + 1 != totalParts)
+            {
+                throw new InvalidOperationException(
+                    $"Request count mismatch. Expected {totalParts} parts, " +
+                    $"but sent {expectedTaskCount + 1} requests");
+            }
+        }
+
+        /// <summary>
+        /// Handles download errors by cancelling remaining downloads and notifying the data handler.
+        /// </summary>
+        private void HandleDownloadError(Exception ex, CancellationTokenSource internalCts)
+        {
+            // Cancel all remaining downloads immediately to prevent cascading timeout errors
+            // This ensures that when one part fails, other tasks stop gracefully instead of
+            // continuing until they hit their own timeout/cancellation errors
+            // Check if cancellation was already requested to avoid ObjectDisposedException
+            if (!internalCts.IsCancellationRequested)
+            {
+                try
+                {
+                    internalCts.Cancel();
+                    _logger.DebugFormat("MultipartDownloadManager: Cancelled all in-flight downloads due to error");
+                }
+                catch (ObjectDisposedException)
+                {
+                    // CancellationTokenSource was already disposed, ignore
+                    _logger.DebugFormat("MultipartDownloadManager: CancellationTokenSource already disposed during cancellation");
+                }
+            }
+            
+            _dataHandler.OnDownloadComplete(ex);
+        }
 
         private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken)
         {            
