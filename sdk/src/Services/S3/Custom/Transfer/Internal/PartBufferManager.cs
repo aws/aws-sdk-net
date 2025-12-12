@@ -82,8 +82,8 @@ namespace Amazon.S3.Transfer.Internal
     ///    - Blocks if <see cref="BufferedDownloadConfiguration.MaxInMemoryParts"/> are already buffered in memory
     ///    - Example: With MaxInMemoryParts=10, if parts 5-14 are buffered, the task downloading
     ///      part 15 blocks here until the reader consumes and releases part 5's buffer
-    /// 2. Read part data from S3 into pooled buffer
-    /// 3. Add buffered part: await <see cref="AddBuffer(StreamPartBuffer)"/>
+    /// 2. Read part data from S3 into chunked ArrayPool buffers
+    /// 3. Add buffered part: await <see cref="AddDataSource(IPartDataSource)"/>
     ///    - Adds buffer to _partDataSources dictionary
     ///    - Signals _partAvailable to wake consumer if waiting
     /// 4. Consumer eventually releases the buffer slot after reading the part
@@ -284,31 +284,6 @@ namespace Amazon.S3.Transfer.Internal
 
             // Signal that a new part is available
             _partAvailable.Set();
-        }
-
-        /// <inheritdoc/>
-        public void AddBuffer(StreamPartBuffer buffer)
-        {
-            ThrowIfDisposed();
-            
-            if (buffer == null)
-                throw new ArgumentNullException(nameof(buffer));
-
-            // Create a BufferedDataSource and add it
-            var bufferedSource = new BufferedDataSource(buffer);
-            AddDataSource(bufferedSource);
-        }
-
-        /// <inheritdoc/>
-        public void AddBuffer(IPartDataSource dataSource)
-        {
-            ThrowIfDisposed();
-            
-            if (dataSource == null)
-                throw new ArgumentNullException(nameof(dataSource));
-
-            // Delegate directly to AddDataSourceAsync which already handles IPartDataSource
-            AddDataSource(dataSource);
         }
 
         /// <inheritdoc/>

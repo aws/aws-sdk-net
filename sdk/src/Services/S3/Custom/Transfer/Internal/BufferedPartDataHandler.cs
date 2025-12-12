@@ -147,7 +147,7 @@ namespace Amazon.S3.Transfer.Internal
 
                 // Add the streaming data source to the buffer manager
                 // After this succeeds, the buffer manager owns the data source
-                _partBufferManager.AddBuffer(streamingDataSource);
+                _partBufferManager.AddDataSource(streamingDataSource);
                 
                 // Mark ownership transfer by nulling our reference
                 // If ReleaseBufferSpace() throws, we no longer own the data source, so we won't dispose it
@@ -181,17 +181,17 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="cancellationToken">Cancellation token for the operation.</param>
         /// <remarks>
         /// This method is called when the part arrives out of the expected sequential order.
-        /// The part data is buffered into ArrayPool memory for later sequential consumption.
+        /// The part data is buffered into ArrayPool memory using ChunkedBufferStream for later sequential consumption.
         /// 
         /// OWNERSHIP:
-        /// - Response is read and buffered into StreamPartBuffer
+        /// - Response is read and buffered into ChunkedBufferStream
         /// - Response is disposed immediately after buffering (no longer needed)
-        /// - StreamPartBuffer is added to buffer manager (buffer manager takes ownership)
-        /// - Buffer manager will dispose StreamPartBuffer during cleanup
+        /// - ChunkedPartDataSource (wrapping ChunkedBufferStream) is added to buffer manager (buffer manager takes ownership)
+        /// - Buffer manager will dispose ChunkedPartDataSource during cleanup
         /// 
         /// ERROR HANDLING:
         /// - Always dispose response in catch block since we own it throughout this method
-        /// - BufferPartFromResponseAsync handles its own cleanup of StreamPartBuffer on error
+        /// - BufferPartFromResponseAsync handles its own cleanup of ChunkedBufferStream on error
         /// </remarks>
         private async Task ProcessBufferedPartAsync(
             int partNumber,
@@ -204,7 +204,7 @@ namespace Amazon.S3.Transfer.Internal
             try
             {
                 // Buffer the part from the response stream into memory
-                var buffer = await BufferPartFromResponseAsync(
+                var dataSource = await BufferPartFromResponseAsync(
                     partNumber, 
                     response, 
                     cancellationToken).ConfigureAwait(false);
@@ -212,11 +212,11 @@ namespace Amazon.S3.Transfer.Internal
                 // Response has been fully read and buffered - dispose it now
                 response?.Dispose();
 
-                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Buffered {1} bytes into memory",
-                    partNumber, buffer.Length);
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Successfully buffered part data",
+                    partNumber);
                     
                 // Add the buffered part to the buffer manager
-                _partBufferManager.AddBuffer(buffer);
+                _partBufferManager.AddDataSource(dataSource);
 
                 _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Added to buffer manager (capacity will be released after consumption)",
                     partNumber);
@@ -257,77 +257,61 @@ namespace Amazon.S3.Transfer.Internal
         }
         
         /// <summary>
-        /// Buffers a part from the GetObjectResponse stream into ArrayPool memory.
-        /// Used when a part arrives out of order and cannot be streamed directly.
+        /// Buffers a part from the GetObjectResponse stream into memory using ChunkedBufferStream.
+        /// Uses multiple small ArrayPool chunks (80KB each) to avoid the 2GB byte[] array size limitation
+        /// and Large Object Heap allocations. Used when a part arrives out of order and cannot be streamed directly.
         /// </summary>
         /// <param name="partNumber">The part number being buffered.</param>
         /// <param name="response">The GetObjectResponse containing the part data stream.</param>
         /// <param name="cancellationToken">Cancellation token for the operation.</param>
-        /// <returns>A <see cref="StreamPartBuffer"/> containing the buffered part data.</returns>
-        /// <exception cref="Exception">Thrown when buffering fails. The StreamPartBuffer will be disposed automatically.</exception>
-        private async Task<StreamPartBuffer> BufferPartFromResponseAsync(
+        /// <returns>An <see cref="IPartDataSource"/> containing the buffered part data.</returns>
+        /// <exception cref="Exception">Thrown when buffering fails. The data source will be disposed automatically.</exception>
+        private async Task<IPartDataSource> BufferPartFromResponseAsync(
             int partNumber, 
             GetObjectResponse response, 
             CancellationToken cancellationToken)
         {
-            StreamPartBuffer downloadedPart = null;
+            long expectedBytes = response.ContentLength;
+            
+            ChunkedBufferStream chunkedStream = null;
             
             try
             {
-                // Use ContentLength to determine exact bytes to read and allocate
-                long expectedBytes = response.ContentLength;
-                int initialBufferSize = (int)expectedBytes;
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Buffering {1} bytes using chunked buffer stream",
+                    partNumber, expectedBytes);
+                
+                chunkedStream = new ChunkedBufferStream();
+                
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Reading response stream into chunked buffers",
+                    partNumber);
 
-                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Allocating buffer of size {1} bytes from ArrayPool",
-                    partNumber, initialBufferSize);
+                // Write response stream to chunked buffer stream
+                // ChunkedBufferStream automatically allocates chunks as needed
+                await response.WriteResponseStreamAsync(
+                    chunkedStream,
+                    null,
+                    _config.BufferSize,
+                    cancellationToken,
+                    validateSize: true)
+                    .ConfigureAwait(false);
                 
-                downloadedPart = StreamPartBuffer.Create(partNumber, initialBufferSize);
-                
-                // Get reference to the buffer for writing
-                var partBuffer = downloadedPart.ArrayPoolBuffer;
-                
-                // Create a MemoryStream wrapper around the pooled buffer
-                // writable: true allows WriteResponseStreamAsync to write to it
-                // The MemoryStream starts at position 0 and can grow up to initialBufferSize
-                using (var memoryStream = new MemoryStream(partBuffer, 0, initialBufferSize, writable: true))
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Buffered {1} bytes into chunked stream",
+                    partNumber, chunkedStream.Length);
+
+                if (chunkedStream.Length != expectedBytes)
                 {
-                    _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Reading response stream into buffer",
-                        partNumber);
-
-                    // Use GetObjectResponse's stream copy logic which includes:
-                    // - Progress tracking with events
-                    // - Size validation (ContentLength vs bytes read)
-                    // - Buffered reading with proper chunk sizes
-                    await response.WriteResponseStreamAsync(
-                        memoryStream,
-                        null, // destination identifier (not needed for memory stream)
-                        _config.BufferSize,
-                        cancellationToken,
-                        validateSize: true)
-                        .ConfigureAwait(false);
-                    
-                    int totalRead = (int)memoryStream.Position;
-                    
-                    _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Read {1} bytes from response stream",
-                        partNumber, totalRead);
-
-                    // Set the length to reflect actual bytes read
-                    downloadedPart.SetLength(totalRead);
-
-                    if (totalRead != expectedBytes)
-                    {
-                        _logger.Error(null, "BufferedPartDataHandler: [Part {0}] Size mismatch - Expected {1} bytes, read {2} bytes",
-                            partNumber, expectedBytes, totalRead);
-                    }
+                    _logger.Error(null, "BufferedPartDataHandler: [Part {0}] Size mismatch - Expected {1} bytes, read {2} bytes",
+                        partNumber, expectedBytes, chunkedStream.Length);
                 }
                 
-                return downloadedPart;
+                // Switch to read mode and wrap in IPartDataSource
+                chunkedStream.SwitchToReadMode();
+                return new ChunkedPartDataSource(partNumber, chunkedStream);
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to buffer part from response stream", partNumber);
-                // If something goes wrong, StreamPartBuffer.Dispose() will handle cleanup
-                downloadedPart?.Dispose();
+                _logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to buffer part", partNumber);
+                chunkedStream?.Dispose();
                 throw;
             }
         }
