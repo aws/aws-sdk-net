@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AndCondition. 
         /// <para>
-        ///  A list of conditions which would be applied together with a AND condition. 
+        ///  A list of conditions which would be applied together with a AND condition.
         /// </para>
         /// </summary>
         public ContactFlowAttributeAndCondition AndCondition
@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowTypeCondition. 
         /// <para>
-        ///  Contact flow type condition within attribute filter. 
+        ///  Contact flow type condition within attribute filter.
         /// </para>
         /// </summary>
         public ContactFlowTypeCondition ContactFlowTypeCondition
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property OrConditions. 
         /// <para>
-        ///  A list of conditions which would be applied together with an OR condition. 
+        ///  A list of conditions which would be applied together with an OR condition.
         /// </para>
         /// </summary>
         public List<ContactFlowAttributeAndCondition> OrConditions

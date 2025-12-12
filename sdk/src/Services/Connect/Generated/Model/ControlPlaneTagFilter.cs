@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// An object that can be used to specify Tag conditions inside the <c>SearchFilter</c>.
-    /// This accepts an <c>OR</c> of <c>AND</c> (List of List) input where: 
+    /// This accepts an <c>OR</c> of <c>AND</c> (List of List) input where:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -71,7 +71,6 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property OrConditions. 
         /// <para>
         /// A list of conditions which would be applied together with an <c>OR</c> condition.
-        /// 
         /// </para>
         /// </summary>
         public List<List<TagCondition>> OrConditions
@@ -89,7 +88,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TagCondition. 
         /// <para>
-        /// A leaf node condition which can be used to specify a tag condition. 
+        /// A leaf node condition which can be used to specify a tag condition.
         /// </para>
         /// </summary>
         public TagCondition TagCondition

@@ -85,6 +85,7 @@ namespace Amazon.Connect.Model
         private string _clientToken;
         private string _contactFlowId;
         private string _customerId;
+        private List<string> _disconnectOnCustomerExit = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ChatMessage _initialMessage;
         private string _instanceId;
         private ParticipantConfiguration _participantConfiguration;
@@ -208,6 +209,37 @@ namespace Amazon.Connect.Model
         internal bool IsSetCustomerId()
         {
             return this._customerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisconnectOnCustomerExit. 
+        /// <para>
+        /// A list of participant types to automatically disconnect when the end customer ends
+        /// the chat session, allowing them to continue through disconnect flows such as surveys
+        /// or feedback forms.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid value: <c>AGENT</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// With the <c>DisconnectOnCustomerExit</c> parameter, you can configure automatic agent
+        /// disconnection when end customers end the chat, ensuring that disconnect flows are
+        /// triggered consistently regardless of which participant disconnects first.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> DisconnectOnCustomerExit
+        {
+            get { return this._disconnectOnCustomerExit; }
+            set { this._disconnectOnCustomerExit = value; }
+        }
+
+        // Check to see if DisconnectOnCustomerExit property is set
+        internal bool IsSetDisconnectOnCustomerExit()
+        {
+            return this._disconnectOnCustomerExit != null && (this._disconnectOnCustomerExit.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

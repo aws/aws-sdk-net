@@ -52,7 +52,6 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AndConditions. 
         /// <para>
         /// A list of conditions which would be applied together with an <c>AND</c> condition.
-        /// 
         /// </para>
         /// </summary>
         public List<UserSearchCriteria> AndConditions

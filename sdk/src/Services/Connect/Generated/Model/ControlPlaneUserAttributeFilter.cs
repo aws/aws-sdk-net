@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model
     ///  </li> </ul> <note> 
     /// <para>
     /// Only one field can be populated. Maximum number of allowed Tag conditions is 25. Maximum
-    /// number of allowed Hierarchy Group conditions is 20. 
+    /// number of allowed Hierarchy Group conditions is 20.
     /// </para>
     ///  </note>
     /// </summary>
