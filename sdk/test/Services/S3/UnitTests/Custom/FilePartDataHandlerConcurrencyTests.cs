@@ -56,7 +56,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
 
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Determine write order (default to sequential if not specified)
             var order = writeOrder ?? Enumerable.Range(1, partCount).ToArray();
@@ -101,7 +101,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
 
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var totalSize = partDefinitions.Sum(p => p.Size);
             var order = writeOrder ?? Enumerable.Range(0, partDefinitions.Length).ToArray();

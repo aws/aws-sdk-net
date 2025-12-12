@@ -71,7 +71,7 @@ namespace Amazon.S3.Transfer.Internal
             _config = config ?? throw new ArgumentNullException(nameof(config));
         }
         
-        public Task PrepareAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken)
+        public Task PrepareAsync(DownloadResult discoveryResult, CancellationToken cancellationToken)
         {
             // No preparation needed for buffered handler - buffers are created on demand
             return Task.CompletedTask;

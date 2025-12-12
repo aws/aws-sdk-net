@@ -55,7 +55,7 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <inheritdoc/>
-        public Task PrepareAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken)
+        public Task PrepareAsync(DownloadResult discoveryResult, CancellationToken cancellationToken)
         {
             // Create temporary file once during preparation phase
             _tempFilePath = _fileHandler.CreateTemporaryFile(_config.DestinationFilePath);

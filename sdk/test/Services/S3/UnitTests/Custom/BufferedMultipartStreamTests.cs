@@ -64,17 +64,16 @@ namespace AWSSDK.UnitTests
                 ? MultipartDownloadTestHelpers.CreateSinglePartResponse(objectSize)
                 : new GetObjectResponse();
 
-            var discoveryResult = new DownloadDiscoveryResult
+            var discoveryResult = new DownloadResult 
             {
                 TotalParts = totalParts,
                 ObjectSize = objectSize,
                 InitialResponse = mockResponse
             };
 
-            _mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
+            _mockCoordinator.Setup(x => x.StartDownloadAsync(
+                It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
-            _mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
-                .Returns(Task.CompletedTask);
 
             var stream = CreateStream();
             await stream.InitializeAsync(CancellationToken.None);
@@ -157,11 +156,11 @@ namespace AWSSDK.UnitTests
         #region InitializeAsync Tests - Single Part
 
         [TestMethod]
-        public async Task InitializeAsync_SinglePart_UsesSinglePartHandler()
+        public async Task InitializeAsync_SinglePart_SetsCorrectDiscoveryResult()
         {
             // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
-            var discoveryResult = new DownloadDiscoveryResult
+            var discoveryResult = new DownloadResult 
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
@@ -169,7 +168,8 @@ namespace AWSSDK.UnitTests
             };
 
             var mockCoordinator = new Mock<IDownloadManager>();
-            mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
+            mockCoordinator.Setup(x => x.StartDownloadAsync(
+                It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
@@ -182,48 +182,15 @@ namespace AWSSDK.UnitTests
             // Assert
             Assert.IsNotNull(stream.DiscoveryResult);
             Assert.AreEqual(1, stream.DiscoveryResult.TotalParts);
+            Assert.AreEqual(1024, stream.DiscoveryResult.ObjectSize);
         }
 
-        [TestMethod]
-        public async Task InitializeAsync_SinglePart_CallsStartDownloads()
-        {
-            // Arrange
-            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
-            var discoveryResult = new DownloadDiscoveryResult
-            {
-                TotalParts = 1,
-                ObjectSize = 1024,
-                InitialResponse = mockResponse
-            };
-
-            var mockCoordinator = new Mock<IDownloadManager>();
-            mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(discoveryResult);
-            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
-                .Returns(Task.CompletedTask);
-
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
-
-            // Act
-            await stream.InitializeAsync(CancellationToken.None);
-
-            // Assert
-            mockCoordinator.Verify(
-                x => x.StartDownloadsAsync(discoveryResult, It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()),
-                Times.Once);
-        }
-
-        #endregion
-
-        #region InitializeAsync Tests - Multipart
 
         [TestMethod]
         public async Task InitializeAsync_Multipart_UsesMultipartHandler()
         {
             // Arrange
-            var discoveryResult = new DownloadDiscoveryResult
+            var discoveryResult = new DownloadResult 
             {
                 TotalParts = 5,
                 ObjectSize = 50 * 1024 * 1024,
@@ -231,10 +198,9 @@ namespace AWSSDK.UnitTests
             };
 
             var mockCoordinator = new Mock<IDownloadManager>();
-            mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
+            mockCoordinator.Setup(x => x.StartDownloadAsync(
+                It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
-            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
-                .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -248,21 +214,21 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task InitializeAsync_Multipart_StartsDownloads()
+        public async Task InitializeAsync_SinglePart_CallsStartDownloads()
         {
             // Arrange
-            var discoveryResult = new DownloadDiscoveryResult
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
+            var discoveryResult = new DownloadResult 
             {
-                TotalParts = 5,
-                ObjectSize = 50 * 1024 * 1024,
-                InitialResponse = new GetObjectResponse()
+                TotalParts = 1,
+                ObjectSize = 1024,
+                InitialResponse = mockResponse
             };
 
             var mockCoordinator = new Mock<IDownloadManager>();
-            mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
+            mockCoordinator.Setup(x => x.StartDownloadAsync(
+                It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
-            mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
-                .Returns(Task.CompletedTask);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -273,7 +239,42 @@ namespace AWSSDK.UnitTests
 
             // Assert
             mockCoordinator.Verify(
-                x => x.StartDownloadsAsync(discoveryResult, It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()),
+                x => x.StartDownloadAsync(
+                    It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()),
+                Times.Once);
+        }
+
+        #endregion
+
+        #region InitializeAsync Tests - Multipart
+
+        [TestMethod]
+        public async Task InitializeAsync_Multipart_StartsDownloads()
+        {
+            // Arrange
+            var discoveryResult = new DownloadResult 
+            {
+                TotalParts = 5,
+                ObjectSize = 50 * 1024 * 1024,
+                InitialResponse = new GetObjectResponse()
+            };
+
+            var mockCoordinator = new Mock<IDownloadManager>();
+            mockCoordinator.Setup(x => x.StartDownloadAsync(
+                It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(discoveryResult);
+
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
+
+            // Act
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Assert
+            mockCoordinator.Verify(
+                x => x.StartDownloadAsync(
+                    It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()),
                 Times.Once);
         }
 
@@ -285,7 +286,7 @@ namespace AWSSDK.UnitTests
         public async Task InitializeAsync_SetsDiscoveryResult()
         {
             // Arrange
-            var discoveryResult = new DownloadDiscoveryResult
+            var discoveryResult = new DownloadResult 
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
@@ -293,7 +294,8 @@ namespace AWSSDK.UnitTests
             };
 
             var mockCoordinator = new Mock<IDownloadManager>();
-            mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
+            mockCoordinator.Setup(x => x.StartDownloadAsync(
+                It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
@@ -314,7 +316,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
-            var discoveryResult = new DownloadDiscoveryResult
+            var discoveryResult = new DownloadResult 
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
@@ -322,7 +324,8 @@ namespace AWSSDK.UnitTests
             };
 
             var mockCoordinator = new Mock<IDownloadManager>();
-            mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
+            mockCoordinator.Setup(x => x.StartDownloadAsync(
+                It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
 
             var mockBufferManager = new Mock<IPartBufferManager>();
