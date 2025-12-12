@@ -76,7 +76,7 @@ namespace AWSSDK.UnitTests
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
 
             IPartDataSource capturedDataSource = null;
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()))
                 .Callback<IPartDataSource>((ds) => capturedDataSource = ds);
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -109,7 +109,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockBufferManager = new Mock<IPartBufferManager>();
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -122,8 +122,8 @@ namespace AWSSDK.UnitTests
 
                 // Assert - ReleaseBufferSpace should be called (through ReleaseCapacity)
                 // Handler calls ReleaseBufferSpace directly, which eventually calls the manager's method
-                // We verify the AddBuffer was called with a StreamingDataSource
-                mockBufferManager.Verify(m => m.AddBuffer(
+                // We verify the AddDataSource was called with a StreamingDataSource
+                mockBufferManager.Verify(m => m.AddDataSource(
                     It.Is<IPartDataSource>(ds => ds is StreamingDataSource)), Times.Once);
             }
             finally
@@ -139,7 +139,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockBufferManager = new Mock<IPartBufferManager>();
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -170,7 +170,7 @@ namespace AWSSDK.UnitTests
 
             mockBufferManager.Setup(m => m.NextExpectedPartNumber)
                 .Returns(() => streamingCount + 1);
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()))
                 .Callback<IPartDataSource>((ds) =>
                 {
                     if (ds is StreamingDataSource)
@@ -207,9 +207,9 @@ namespace AWSSDK.UnitTests
             var mockBufferManager = new Mock<IPartBufferManager>();
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
 
-            StreamPartBuffer capturedBuffer = null;
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()))
-                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
+            ChunkedPartDataSource capturedDataSource = null;
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<ChunkedPartDataSource>()))
+                .Callback<IPartDataSource>((ds) => capturedDataSource = ds as ChunkedPartDataSource);
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -222,13 +222,13 @@ namespace AWSSDK.UnitTests
                 await handler.ProcessPartAsync(2, response, CancellationToken.None);
 
                 // Assert
-                Assert.IsNotNull(capturedBuffer);
-                Assert.AreEqual(2, capturedBuffer.PartNumber);
-                Assert.AreEqual(512, capturedBuffer.Length);
+                Assert.IsNotNull(capturedDataSource);
+                Assert.AreEqual(2, capturedDataSource.PartNumber);
 
-                // Verify data was buffered correctly
+                // Verify data was buffered correctly by reading from the ChunkedPartDataSource
                 byte[] bufferData = new byte[512];
-                Buffer.BlockCopy(capturedBuffer.ArrayPoolBuffer, 0, bufferData, 0, 512);
+                int bytesRead = await capturedDataSource.ReadAsync(bufferData, 0, 512, CancellationToken.None);
+                Assert.AreEqual(512, bytesRead);
                 Assert.IsTrue(MultipartDownloadTestHelpers.VerifyDataMatch(testData, bufferData, 0, 512));
             }
             finally
@@ -244,7 +244,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockBufferManager = new Mock<IPartBufferManager>();
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<ChunkedPartDataSource>()));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -272,7 +272,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockBufferManager = new Mock<IPartBufferManager>();
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<ChunkedPartDataSource>()));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -283,9 +283,9 @@ namespace AWSSDK.UnitTests
                 // Act
                 await handler.ProcessPartAsync(2, response, CancellationToken.None);
 
-                // Assert - AddBuffer should be called with StreamPartBuffer (not IPartDataSource)
-                mockBufferManager.Verify(m => m.AddBuffer(
-                    It.IsAny<StreamPartBuffer>()), Times.Once);
+                // Assert - AddDataSource should be called with ChunkedPartDataSource
+                mockBufferManager.Verify(m => m.AddDataSource(
+                    It.IsAny<ChunkedPartDataSource>()), Times.Once);
 
                 // Note: Capacity will be released later when the buffer is consumed by the reader
             }
@@ -313,7 +313,7 @@ namespace AWSSDK.UnitTests
             var streamingParts = 0;
             var bufferedParts = 0;
 
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()))
                 .Callback<IPartDataSource>((ds) =>
                 {
                     if (ds is StreamingDataSource)
@@ -323,8 +323,8 @@ namespace AWSSDK.UnitTests
                     }
                 });
 
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()))
-                .Callback<StreamPartBuffer>((buffer) => bufferedParts++);
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<ChunkedPartDataSource>()))
+                .Callback<IPartDataSource>((ds) => bufferedParts++);
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -356,8 +356,8 @@ namespace AWSSDK.UnitTests
                 .Returns(1)
                 .Returns(2);
             
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<ChunkedPartDataSource>()));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -368,11 +368,11 @@ namespace AWSSDK.UnitTests
                 await handler.ProcessPartAsync(3, CreateMockGetObjectResponse(512), CancellationToken.None);
 
                 // Assert
-                mockBufferManager.Verify(m => m.AddBuffer(
+                mockBufferManager.Verify(m => m.AddDataSource(
                     It.Is<IPartDataSource>(ds => ds is StreamingDataSource && ds.PartNumber == 1)), Times.Once);
                 
-                mockBufferManager.Verify(m => m.AddBuffer(
-                    It.Is<StreamPartBuffer>(b => b.PartNumber == 3)), Times.Once);
+                mockBufferManager.Verify(m => m.AddDataSource(
+                    It.Is<ChunkedPartDataSource>(ds => ds.PartNumber == 3)), Times.Once);
             }
             finally
             {
@@ -392,8 +392,8 @@ namespace AWSSDK.UnitTests
             // Part 1 (in order): calls it twice, should return 1 both times
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
             
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<ChunkedPartDataSource>()));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -404,10 +404,10 @@ namespace AWSSDK.UnitTests
                 await handler.ProcessPartAsync(1, CreateMockGetObjectResponse(512), CancellationToken.None);
 
                 // Assert
-                mockBufferManager.Verify(m => m.AddBuffer(
-                    It.Is<StreamPartBuffer>(b => b.PartNumber == 2)), Times.Once);
+                mockBufferManager.Verify(m => m.AddDataSource(
+                    It.Is<ChunkedPartDataSource>(ds => ds.PartNumber == 2)), Times.Once);
                 
-                mockBufferManager.Verify(m => m.AddBuffer(
+                mockBufferManager.Verify(m => m.AddDataSource(
                     It.Is<IPartDataSource>(ds => ds is StreamingDataSource && ds.PartNumber == 1)), Times.Once);
             }
             finally
@@ -429,20 +429,20 @@ namespace AWSSDK.UnitTests
             
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
             
-            // Capture StreamingDataSource additions (streaming path - NO ArrayPool allocation)
-            mockBufferManager.Setup(m => m.AddBuffer(
+            // Capture StreamingDataSource additions (streaming path - NO buffering)
+            mockBufferManager.Setup(m => m.AddDataSource(
                 It.IsAny<StreamingDataSource>()))
                 .Callback<IPartDataSource>((ds) => 
                 {
                     streamingPartNumbers.Add(ds.PartNumber);
                 });
             
-            // Capture StreamPartBuffer additions (buffering path - USES ArrayPool)
-            mockBufferManager.Setup(m => m.AddBuffer(
-                It.IsAny<StreamPartBuffer>()))
-                .Callback<StreamPartBuffer>((buffer) => 
+            // Capture ChunkedPartDataSource additions (buffering path - uses ChunkedBufferStream)
+            mockBufferManager.Setup(m => m.AddDataSource(
+                It.IsAny<ChunkedPartDataSource>()))
+                .Callback<IPartDataSource>((ds) => 
                 {
-                    bufferedPartNumbers.Add(buffer.PartNumber);
+                    bufferedPartNumbers.Add(ds.PartNumber);
                 });
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -456,11 +456,11 @@ namespace AWSSDK.UnitTests
                 await handler.ProcessPartAsync(3, CreateMockGetObjectResponse(512), CancellationToken.None);
 
                 // Assert
-                // Part 1 should use streaming path (no ArrayPool allocation)
+                // Part 1 should use streaming path (no buffering)
                 Assert.AreEqual(1, streamingPartNumbers.Count, "Expected exactly 1 part to stream");
                 Assert.AreEqual(1, streamingPartNumbers[0], "Part 1 should stream directly");
                 
-                // Part 3 should use buffering path (ArrayPool allocation)
+                // Part 3 should use buffering path (ChunkedBufferStream)
                 Assert.AreEqual(1, bufferedPartNumbers.Count, "Expected exactly 1 part to be buffered");
                 Assert.AreEqual(3, bufferedPartNumbers[0], "Part 3 should be buffered");
             }
@@ -485,7 +485,7 @@ namespace AWSSDK.UnitTests
                 .Returns(() => currentExpectedPart);
             
             // Capture streaming additions
-            mockBufferManager.Setup(m => m.AddBuffer(
+            mockBufferManager.Setup(m => m.AddDataSource(
                 It.IsAny<StreamingDataSource>()))
                 .Callback<IPartDataSource>((ds) => 
                 {
@@ -494,11 +494,11 @@ namespace AWSSDK.UnitTests
                 });
             
             // Capture buffering additions
-            mockBufferManager.Setup(m => m.AddBuffer(
-                It.IsAny<StreamPartBuffer>()))
-                .Callback<StreamPartBuffer>((buffer) => 
+            mockBufferManager.Setup(m => m.AddDataSource(
+                It.IsAny<ChunkedPartDataSource>()))
+                .Callback<IPartDataSource>((ds) => 
                 {
-                    bufferedPartNumbers.Add(buffer.PartNumber);
+                    bufferedPartNumbers.Add(ds.PartNumber);
                 });
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -539,7 +539,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockBufferManager = new Mock<IPartBufferManager>();
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()))
                 .Throws(new InvalidOperationException("Test error"));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -570,7 +570,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockBufferManager = new Mock<IPartBufferManager>();
             mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()))
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<ChunkedPartDataSource>()))
                 .Throws(new InvalidOperationException("Test error"));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -779,7 +779,7 @@ namespace AWSSDK.UnitTests
             mockBufferManager.Setup(m => m.ReleaseBufferSpace())
                 .Callback(() => releaseCount++);
             
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -797,8 +797,8 @@ namespace AWSSDK.UnitTests
                     "ProcessPartAsync should not release capacity for streaming parts. " +
                     "Capacity is released by PartBufferManager when consumer completes reading.");
 
-                // Verify AddBuffer was called with StreamingDataSource (streaming path taken)
-                mockBufferManager.Verify(m => m.AddBuffer(
+                // Verify AddDataSource was called with StreamingDataSource (streaming path taken)
+                mockBufferManager.Verify(m => m.AddDataSource(
                     It.Is<IPartDataSource>(ds => ds is StreamingDataSource)), Times.Once);
             }
             finally
@@ -822,7 +822,7 @@ namespace AWSSDK.UnitTests
             mockBufferManager.Setup(m => m.ReleaseBufferSpace())
                 .Callback(() => releaseCount++);
             
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<ChunkedPartDataSource>()));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
@@ -839,9 +839,9 @@ namespace AWSSDK.UnitTests
                     "ProcessPartAsync should not release capacity for buffered parts. " +
                     "Capacity is released by PartBufferManager when consumer completes reading.");
 
-                // Verify AddBuffer was called with StreamPartBuffer (buffering path taken)
-                mockBufferManager.Verify(m => m.AddBuffer(
-                    It.IsAny<StreamPartBuffer>()), Times.Once);
+                // Verify AddDataSource was called with ChunkedPartDataSource (buffering path taken)
+                mockBufferManager.Verify(m => m.AddDataSource(
+                    It.IsAny<ChunkedPartDataSource>()), Times.Once);
             }
             finally
             {
@@ -865,7 +865,7 @@ namespace AWSSDK.UnitTests
                 .Callback(() => releaseCount++);
             
             // Simulate error when adding buffer
-            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+            mockBufferManager.Setup(m => m.AddDataSource(It.IsAny<IPartDataSource>()))
                 .Throws(new InvalidOperationException("Test error"));
 
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
