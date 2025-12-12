@@ -47,6 +47,10 @@ using Amazon.Runtime.Internal.Util;
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>);
 <#+        
             }
+            else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var headerPropertyModifier) && headerPropertyModifier.InjectXmlMarshallCode.Count > 0)
+            {
+                WriteInjectXmlMarshallCode(3, headerPropertyModifier.InjectXmlMarshallCode);
+            }
             else if (member.IsJsonValue)
             {
 #>
@@ -544,4 +548,15 @@ using Amazon.Runtime.Internal.Util;
             }
         }
     }
+#>
+<#+
+	protected void WriteInjectXmlMarshallCode(int level, HashSet<string> injectXmlMarshallCode)
+	{
+		foreach (var injectCode in injectXmlMarshallCode)
+		{
+#>
+<#=new string(' ', level * 4)#>				<#=injectCode#>
+<#+
+		}
+	}
 #>
