@@ -1,3 +1,16 @@
+### 3.7.1184.0 (2025-12-12 19:24 UTC)
+* BCMRecommendedActions (3.7.502.0)
+	* Added new freetier action types to RecommendedAction.type.
+* Connect (3.7.517.0)
+	* Amazon Connect now offers automated post-chat surveys triggered when customers end conversations. This captures timely feedback while experience is fresh, using either a no-code form builder or Amazon Lex-powered interactive surveys.
+* DataSync (3.7.505.0)
+	* Adds Enhanced mode support for NFS and SMB locations. SMB credentials are now managed via Secrets Manager, and may be encrypted with service or customer managed keys. Increases AgentArns maximum count to 8 (max 4 per TaskMode). Adds folder counters to DescribeTaskExecution for Enhanced mode tasks.
+* WorkSpacesWeb (3.7.504.0)
+	* Adds support for portal branding customization, enabling administrators to personalize end-user portals with custom assets.
+* Core 3.7.500.54
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1183.0 (2025-12-11 19:22 UTC)
 * Lambda (3.7.510.0)
 	* Add Dotnet 10 (dotnet10) support to AWS Lambda.
