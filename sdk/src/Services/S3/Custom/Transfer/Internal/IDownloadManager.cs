@@ -32,23 +32,29 @@ namespace Amazon.S3.Transfer.Internal
     internal interface IDownloadManager : IDisposable
     {
         /// <summary>
-        /// Discovers whether the object requires single-part or multipart downloading.
+        /// Discovers the download strategy and starts concurrent downloads in a single operation.
+        /// This unified method eliminates resource leakage by managing HTTP slots and buffer capacity
+        /// internally throughout the entire download lifecycle.
         /// </summary>
-        /// <param name="cancellationToken">A token to cancel the discovery operation.</param>
-        /// <returns>
-        /// A task containing discovery results including total parts, object size,
-        /// and initial response data if single-part.
-        /// </returns>
-        Task<DownloadDiscoveryResult> DiscoverDownloadStrategyAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Starts concurrent downloads with HTTP concurrency control and part range calculations.
-        /// </summary>
-        /// <param name="discoveryResult">Results from the discovery phase.</param>
         /// <param name="progressCallback">Optional callback for progress tracking events.</param>
         /// <param name="cancellationToken">A token to cancel the download operation.</param>
-        /// <returns>A task that completes when all downloads finish or an error occurs.</returns>
-        Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken);
+        /// <returns>
+        /// A task containing download results including total parts, object size,
+        /// and initial response data.
+        /// </returns>
+        /// <remarks>
+        /// This method performs both discovery and download operations atomically:
+        /// 1. Acquires HTTP slot and buffer capacity
+        /// 2. Makes initial GetObject request to discover download strategy
+        /// 3. Processes Part 1 immediately
+        /// 4. Starts background downloads for remaining parts (if multipart)
+        /// 5. Returns after Part 1 is processed, allowing consumer to begin reading
+        /// 
+        /// Resources (HTTP slots, buffer capacity) are managed internally and released
+        /// at the appropriate times, eliminating the awkward resource holding that existed
+        /// with the previous two-method API.
+        /// </remarks>
+        Task<DownloadResult> StartDownloadAsync(EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken);
 
         /// <summary>
         /// Exception that occurred during downloads, if any.
@@ -57,9 +63,9 @@ namespace Amazon.S3.Transfer.Internal
     }
 
     /// <summary>
-    /// Download discovery results with metadata for determining download strategy.
+    /// Download results with metadata about the completed discovery and initial download.
     /// </summary>
-    internal class DownloadDiscoveryResult
+    internal class DownloadResult
     {
         /// <summary>
         /// Total parts needed (1 = single-part, >1 = multipart).
@@ -72,7 +78,8 @@ namespace Amazon.S3.Transfer.Internal
         public long ObjectSize { get; set; }
 
         /// <summary>
-        /// GetObjectResponse obtained during download initialization, containing the ResponseStream. Represents the complete object for single-part downloads or the first range/part for multipart downloads.
+        /// GetObjectResponse obtained during download initialization, containing the ResponseStream. 
+        /// Represents the complete object for single-part downloads or the first range/part for multipart downloads.
         /// </summary>
         public GetObjectResponse InitialResponse { get; set; }
 

@@ -133,8 +133,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <seealso cref="DownloadManagerConfiguration"/>
         /// <seealso cref="IPartDataHandler"/>
         /// <seealso cref="MultipartDownloadType"/>
-        /// <seealso cref="DiscoverDownloadStrategyAsync"/>
-        /// <seealso cref="StartDownloadsAsync"/>
+        /// <seealso cref="StartDownloadAsync"/>
         /// <exception cref="NotSupportedException">Thrown when using S3 encryption client, which does not support multipart downloads.</exception>
         public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadManagerConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler, SemaphoreSlim sharedHttpThrottler)
         {
@@ -177,42 +176,61 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
-        /// Discovers the download strategy (single-part vs multipart) by making an initial GetObject request.
+        /// Discovers the download strategy and starts concurrent downloads in a single unified operation.
+        /// This eliminates resource leakage by managing HTTP slots and buffer capacity internally.
         /// </summary>
-        /// <param name="cancellationToken">Cancellation token to cancel the discovery operation.</param>
+        /// <param name="progressCallback">Optional callback for progress tracking events.</param>
+        /// <param name="cancellationToken">A token to cancel the download operation.</param>
         /// <returns>
-        /// A <see cref="DownloadDiscoveryResult"/> containing information about the object size, part count,
+        /// A <see cref="DownloadResult"/> containing information about the object size, part count,
         /// and the initial GetObject response.
         /// </returns>
         /// <remarks>
-        /// <para><strong>IMPORTANT - HTTP Semaphore Lifecycle:</strong></para>
-        /// <para>
-        /// This method acquires an HTTP concurrency slot from the configured semaphore and downloads Part 1.
-        /// The semaphore slot is <strong>HELD</strong> until <see cref="StartDownloadsAsync"/> completes processing Part 1.
-        /// Callers <strong>MUST</strong> call <see cref="StartDownloadsAsync"/> after this method to release the semaphore.
-        /// Failure to call <see cref="StartDownloadsAsync"/> will cause the semaphore slot to remain held indefinitely,
-        /// potentially blocking other downloads and causing deadlocks.
-        /// </para>
-        /// <para><strong>Concurrency Implications:</strong></para>
-        /// <para>
-        /// With limited HTTP concurrency (e.g., <c>ConcurrentServiceRequests=1</c> for shared throttlers in directory downloads),
-        /// concurrent calls to this method will block until previous downloads complete their full lifecycle
-        /// (discover → start). This is by design to ensure the entire I/O operation (network + disk) is
-        /// within the concurrency limit. For single-slot throttlers, downloads must be processed sequentially:
-        /// complete one download's full lifecycle before starting the next.
-        /// </para>
-        /// <para><strong>Typical Usage Pattern:</strong></para>
-        /// <code>
-        /// var discovery = await manager.DiscoverDownloadStrategyAsync(cancellationToken);
-        /// await manager.StartDownloadsAsync(discovery, progressCallback, cancellationToken);
-        /// await manager.DownloadCompletionTask; // Wait for multipart downloads to finish
-        /// </code>
+        /// This method performs both discovery and download operations atomically:
+        /// 1. Acquires HTTP slot and buffer capacity
+        /// 2. Makes initial GetObject request to discover download strategy
+        /// 3. Processes Part 1 immediately
+        /// 4. Starts background downloads for remaining parts (if multipart)
+        /// 5. Returns after Part 1 is processed, allowing consumer to begin reading
+        /// 
+        /// Resources (HTTP slots, buffer capacity) are managed internally and released
+        /// at the appropriate times
         /// </remarks>
         /// <exception cref="ObjectDisposedException">Thrown if the manager has been disposed.</exception>
-        /// <exception cref="InvalidOperationException">Thrown if discovery has already been performed.</exception>
+        /// <exception cref="InvalidOperationException">Thrown if download has already been started.</exception>
         /// <exception cref="OperationCanceledException">Thrown if the operation is cancelled.</exception>
         /// <inheritdoc/>
-        public async Task<DownloadDiscoveryResult> DiscoverDownloadStrategyAsync(CancellationToken cancellationToken)
+        public async Task<DownloadResult> StartDownloadAsync(EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken)
+        {
+            ThrowIfDisposed();
+            
+            if (_discoveryCompleted)
+                throw new InvalidOperationException("Download has already been started");
+
+            // Step 1: Perform discovery (acquires resources, downloads Part 1)
+            var discoveryResult = await PerformDiscoveryAsync(cancellationToken).ConfigureAwait(false);
+            
+            // Step 2: Process Part 1 and start remaining downloads
+            await PerformDownloadsAsync(discoveryResult, progressCallback, cancellationToken).ConfigureAwait(false);
+            
+            // Step 3: Return results to caller
+            return discoveryResult;
+        }
+
+        /// <summary>
+        /// Performs the discovery phase by making an initial GetObject request.
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to cancel the discovery operation.</param>
+        /// <returns>
+        /// A <see cref="DownloadResult"/> containing information about the object size, part count,
+        /// and the initial GetObject response.
+        /// </returns>
+        /// <remarks>
+        /// This method acquires an HTTP concurrency slot and buffer capacity, then makes the initial
+        /// GetObject request to determine the download strategy. The HTTP slot is held until
+        /// PerformDownloadsAsync processes Part 1.
+        /// </remarks>
+        private async Task<DownloadResult> PerformDiscoveryAsync(CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
             
@@ -251,9 +269,8 @@ namespace Amazon.S3.Transfer.Internal
         /// Processes Part 1 and starts downloading remaining parts for multipart downloads.
         /// Returns immediately after processing Part 1 to allow the consumer to begin reading.
         /// </summary>
-        /// <param name="discoveryResult">
-        /// The discovery result from <see cref="DiscoverDownloadStrategyAsync"/> containing object metadata
-        /// and the initial GetObject response.
+        /// <param name="downloadResult">
+        /// The download result from discovery containing object metadata and the initial GetObject response.
         /// </param>
         /// <param name="progressCallback">
         /// Optional progress callback that will be invoked as parts are downloaded. For multipart downloads,
@@ -265,46 +282,22 @@ namespace Amazon.S3.Transfer.Internal
         /// continue downloading in the background (monitor via <see cref="DownloadCompletionTask"/>).
         /// </returns>
         /// <remarks>
-        /// <para><strong>HTTP Semaphore Release:</strong></para>
-        /// <para>
-        /// This method processes Part 1 (downloaded during <see cref="DiscoverDownloadStrategyAsync"/>)
-        /// and <strong>releases the HTTP semaphore slot</strong> that was acquired during discovery.
-        /// The semaphore is released <strong>after</strong> both the network download and disk write
-        /// operations complete for Part 1. This ensures the <c>ConcurrentServiceRequests</c> limit
-        /// controls the entire I/O operation (network + disk), not just the network download.
-        /// </para>
-        /// <para><strong>Background Processing (Multipart Only):</strong></para>
-        /// <para>
-        /// For multipart downloads (when <c>TotalParts > 1</c>), this method starts a background task
-        /// to download and process remaining parts (Part 2+) and returns immediately. This allows the
-        /// consumer to start reading from the buffer without waiting for all downloads to complete,
-        /// which prevents deadlocks when the buffer fills up before the consumer begins reading.
-        /// Monitor <see cref="DownloadCompletionTask"/> to detect when all background downloads have finished.
-        /// </para>
-        /// <para><strong>Single-Part Downloads:</strong></para>
-        /// <para>
-        /// For single-part downloads (when <c>TotalParts = 1</c>), this method processes Part 1 synchronously
-        /// and returns immediately. No background task is created, and <see cref="DownloadCompletionTask"/>
-        /// will already be completed when this method returns.
-        /// </para>
+        /// This is a private method called by StartDownloadAsync after discovery completes.
+        /// It processes Part 1 and starts background downloads for remaining parts.
         /// </remarks>
-        /// <exception cref="ObjectDisposedException">Thrown if the manager has been disposed.</exception>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="discoveryResult"/> is null.</exception>
-        /// <exception cref="OperationCanceledException">Thrown if the operation is cancelled.</exception>
-        /// <inheritdoc/>
-        public async Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken)
+        private async Task PerformDownloadsAsync(DownloadResult downloadResult, EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
             
-            if (discoveryResult == null)
-                throw new ArgumentNullException(nameof(discoveryResult));
+            if (downloadResult == null)
+                throw new ArgumentNullException(nameof(downloadResult));
 
             // Store for progress aggregation
             _userProgressCallback = progressCallback;
-            _totalObjectSize = discoveryResult.ObjectSize;
+            _totalObjectSize = downloadResult.ObjectSize;
 
             _logger.DebugFormat("MultipartDownloadManager: Starting downloads - TotalParts={0}, IsSinglePart={1}",
-                discoveryResult.TotalParts, discoveryResult.IsSinglePart);
+                downloadResult.TotalParts, downloadResult.IsSinglePart);
 
             var internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
 
@@ -316,9 +309,9 @@ namespace Amazon.S3.Transfer.Internal
                     : null;
                 
                 // Process Part 1 (downloaded during discovery)
-                await ProcessFirstPartAsync(discoveryResult, wrappedCallback, cancellationToken).ConfigureAwait(false);
+                await ProcessFirstPartAsync(downloadResult, wrappedCallback, cancellationToken).ConfigureAwait(false);
 
-                if (discoveryResult.IsSinglePart)
+                if (downloadResult.IsSinglePart)
                 {
                     // Single-part: Part 1 is the entire object
                     _logger.DebugFormat("MultipartDownloadManager: Single-part download complete");
@@ -334,7 +327,7 @@ namespace Amazon.S3.Transfer.Internal
                 // which prevents deadlock when MaxInMemoryParts is reached before consumer begins reading
                 _downloadCompletionTask = Task.Run(async () =>
                 {
-                    await StartBackgroundDownloadsAsync(discoveryResult, wrappedCallback, internalCts).ConfigureAwait(false);
+                    await StartBackgroundDownloadsAsync(downloadResult, wrappedCallback, internalCts).ConfigureAwait(false);
                 }, cancellationToken);
 
                 // Return immediately to allow consumer to start reading
@@ -361,23 +354,23 @@ namespace Amazon.S3.Transfer.Internal
         /// <summary>
         /// Processes Part 1 (downloaded during discovery) including preparation, progress tracking, and semaphore release.
         /// </summary>
-        private async Task ProcessFirstPartAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationToken cancellationToken)
+        private async Task ProcessFirstPartAsync(DownloadResult downloadResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationToken cancellationToken)
         {
             try
             {
                 // Prepare the data handler (e.g., create temp files for file-based downloads)
-                await _dataHandler.PrepareAsync(discoveryResult, cancellationToken).ConfigureAwait(false);
+                await _dataHandler.PrepareAsync(downloadResult, cancellationToken).ConfigureAwait(false);
                 
                 // Attach progress callback to Part 1's response if provided
                 if (wrappedCallback != null)
                 {
-                    discoveryResult.InitialResponse.WriteObjectProgressEvent += wrappedCallback;
+                    downloadResult.InitialResponse.WriteObjectProgressEvent += wrappedCallback;
                 }
                 
                 // Process Part 1 from InitialResponse (applies to both single-part and multipart)
                 // NOTE: Semaphore is still held from discovery phase and will be released in finally block
                 _logger.DebugFormat("MultipartDownloadManager: Processing Part 1 from discovery response");
-                await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
+                await _dataHandler.ProcessPartAsync(1, downloadResult.InitialResponse, cancellationToken).ConfigureAwait(false);
                 
                 _logger.DebugFormat("MultipartDownloadManager: Part 1 processing completed");
             }
@@ -386,7 +379,7 @@ namespace Amazon.S3.Transfer.Internal
                 // Always detach the event handler to prevent memory leak
                 if (wrappedCallback != null)
                 {
-                    discoveryResult.InitialResponse.WriteObjectProgressEvent -= wrappedCallback;
+                    downloadResult.InitialResponse.WriteObjectProgressEvent -= wrappedCallback;
                 }
                 
                 // Release semaphore after BOTH network download AND disk write complete for Part 1
@@ -402,7 +395,7 @@ namespace Amazon.S3.Transfer.Internal
         /// Starts background downloads for remaining parts (Part 2+) in a multipart download.
         /// Handles capacity acquisition, task creation, completion validation, and error handling.
         /// </summary>
-        private async Task StartBackgroundDownloadsAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationTokenSource internalCts)
+        private async Task StartBackgroundDownloadsAsync(DownloadResult downloadResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationTokenSource internalCts)
         {
             var downloadTasks = new List<Task>();
             
@@ -412,10 +405,10 @@ namespace Amazon.S3.Transfer.Internal
                 
                 // Multipart: Start concurrent downloads for remaining parts (Part 2 onwards)
                 _logger.InfoFormat("MultipartDownloadManager: Starting concurrent downloads for parts 2-{0}",
-                    discoveryResult.TotalParts);
+                    downloadResult.TotalParts);
 
                 // Create download tasks for all remaining parts
-                await CreateDownloadTasksAsync(discoveryResult, wrappedCallback, internalCts, downloadTasks).ConfigureAwait(false);
+                await CreateDownloadTasksAsync(downloadResult, wrappedCallback, internalCts, downloadTasks).ConfigureAwait(false);
 
                 var expectedTaskCount = downloadTasks.Count;
                 _logger.DebugFormat("MultipartDownloadManager: Background task waiting for {0} download tasks", expectedTaskCount);
@@ -426,11 +419,11 @@ namespace Amazon.S3.Transfer.Internal
                 _logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
 
                 // Validate completion and mark successful
-                ValidateDownloadCompletion(expectedTaskCount, discoveryResult.TotalParts);
+                ValidateDownloadCompletion(expectedTaskCount, downloadResult.TotalParts);
                 
                 // Mark successful completion
                 _logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
-                    discoveryResult.TotalParts);
+                    downloadResult.TotalParts);
                 _dataHandler.OnDownloadComplete(null);
             }
             #pragma warning disable CA1031 // Do not catch general exception types
@@ -453,12 +446,12 @@ namespace Amazon.S3.Transfer.Internal
         /// Creates download tasks for all remaining parts (Part 2+) with sequential capacity acquisition.
         /// Pre-acquires capacity in sequential order to prevent race condition deadlock.
         /// </summary>
-        private async Task CreateDownloadTasksAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationTokenSource internalCts, List<Task> downloadTasks)
+        private async Task CreateDownloadTasksAsync(DownloadResult downloadResult, EventHandler<WriteObjectProgressArgs> wrappedCallback, CancellationTokenSource internalCts, List<Task> downloadTasks)
         {
             // Pre-acquire capacity in sequential order to prevent race condition deadlock
             // This ensures Part 2 gets capacity before Part 3, etc., preventing out-of-order
             // parts from consuming all buffer slots and blocking the next expected part
-            for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
+            for (int partNum = 2; partNum <= downloadResult.TotalParts; partNum++)
             {
                 _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for buffer space", partNum);
 
@@ -478,7 +471,7 @@ namespace Amazon.S3.Transfer.Internal
 
                 try
                 {
-                    var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, wrappedCallback, internalCts.Token);
+                    var task = CreateDownloadTaskAsync(partNum, downloadResult.ObjectSize, wrappedCallback, internalCts.Token);
                     downloadTasks.Add(task);
                 }
                 catch (Exception ex)
@@ -642,7 +635,7 @@ namespace Amazon.S3.Transfer.Internal
         }
 
 
-        private async Task<DownloadDiscoveryResult> DiscoverUsingPartStrategyAsync(CancellationToken cancellationToken)
+        private async Task<DownloadResult> DiscoverUsingPartStrategyAsync(CancellationToken cancellationToken)
         {
             // Check for cancellation before making any S3 calls
             cancellationToken.ThrowIfCancellationRequested();
@@ -693,7 +686,7 @@ namespace Amazon.S3.Transfer.Internal
                     
                     // SEP Part GET Step 7 will use this response for creating DownloadResponse
                     // Keep the response with its stream (will be buffered in StartDownloadsAsync)
-                    return new DownloadDiscoveryResult
+                    return new DownloadResult
                     {
                         TotalParts = firstPartResponse.PartsCount.Value,
                         ObjectSize = totalObjectSize,
@@ -706,7 +699,7 @@ namespace Amazon.S3.Transfer.Internal
                     _discoveredPartCount = 1;
                     
                     // Single part upload - return the response for immediate use (SEP Step 7)
-                    return new DownloadDiscoveryResult
+                    return new DownloadResult
                     {
                         TotalParts = 1,
                         ObjectSize = firstPartResponse.ContentLength,
@@ -723,7 +716,7 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        private async Task<DownloadDiscoveryResult> DiscoverUsingRangeStrategyAsync(CancellationToken cancellationToken)
+        private async Task<DownloadResult> DiscoverUsingRangeStrategyAsync(CancellationToken cancellationToken)
         {
             // Check for cancellation before making any S3 calls
             cancellationToken.ThrowIfCancellationRequested();
@@ -771,7 +764,7 @@ namespace Amazon.S3.Transfer.Internal
                     // No ContentRange means we got the entire small object
                     _discoveredPartCount = 1;
                     
-                    return new DownloadDiscoveryResult
+                    return new DownloadResult
                     {
                         TotalParts = 1,
                         ObjectSize = firstRangeResponse.ContentLength,
@@ -792,7 +785,7 @@ namespace Amazon.S3.Transfer.Internal
                     // This request contains all of the data
                     _discoveredPartCount = 1;
                     
-                    return new DownloadDiscoveryResult
+                    return new DownloadResult
                     {
                         TotalParts = 1,
                         ObjectSize = totalContentLength,
@@ -815,7 +808,7 @@ namespace Amazon.S3.Transfer.Internal
                 
                 // SEP Ranged GET Step 9 will use this response for creating DownloadResponse
                 // Keep the response with its stream (will be buffered in StartDownloadsAsync)
-                return new DownloadDiscoveryResult
+                return new DownloadResult
                 {
                     TotalParts = _discoveredPartCount,
                     ObjectSize = totalContentLength,

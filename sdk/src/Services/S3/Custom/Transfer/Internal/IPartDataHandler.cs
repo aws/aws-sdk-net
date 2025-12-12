@@ -40,7 +40,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="discoveryResult">Discovery result containing object metadata</param>
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Task that completes when preparation is done</returns>
-        Task PrepareAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken);
+        Task PrepareAsync(DownloadResult discoveryResult, CancellationToken cancellationToken);
         
         /// <summary>
         /// Process a downloaded part from the GetObjectResponse.

@@ -62,23 +62,17 @@ namespace Amazon.S3.Transfer.Internal
                     long totalBytes = -1;
                     try
                     {
-                        // Step 1: Discover download strategy (PART or RANGE) and get metadata
-                        _logger.DebugFormat("MultipartDownloadCommand: Discovering download strategy");
-                        var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(cancellationToken)
+                        // Start unified download operation (discovers strategy and starts downloads)
+                        _logger.DebugFormat("MultipartDownloadCommand: Starting unified download operation");
+                        var downloadResult = await coordinator.StartDownloadAsync(DownloadPartProgressEventCallback, cancellationToken)
                             .ConfigureAwait(false);
                         
-                        totalBytes = discoveryResult.ObjectSize;
-
+                        totalBytes = downloadResult.ObjectSize;
                         
-                        _logger.DebugFormat("MultipartDownloadCommand: Discovered {0} part(s), total size: {1} bytes, IsSinglePart={2}",
-                            discoveryResult.TotalParts, discoveryResult.ObjectSize, discoveryResult.IsSinglePart);
+                        _logger.DebugFormat("MultipartDownloadCommand: Downloaded {0} part(s), total size: {1} bytes, IsSinglePart={2}",
+                            downloadResult.TotalParts, downloadResult.ObjectSize, downloadResult.IsSinglePart);
                         
-                        // Step 2: Start concurrent downloads for all parts
-                        _logger.DebugFormat("Starting downloads for {0} part(s)", discoveryResult.TotalParts);
-                        await coordinator.StartDownloadsAsync(discoveryResult, DownloadPartProgressEventCallback, cancellationToken)
-                            .ConfigureAwait(false);
-                        
-                        // Step 2b: Wait for all downloads to complete before returning
+                        // Wait for all downloads to complete before returning
                         // This ensures file is fully written and committed for file-based downloads
                         // For stream-based downloads, this task completes immediately (no-op)
                         _logger.DebugFormat("MultipartDownloadCommand: Waiting for download completion");
@@ -86,23 +80,23 @@ namespace Amazon.S3.Transfer.Internal
                         
                         _logger.DebugFormat("MultipartDownloadCommand: Completed multipart download");
                         
-                        // Step 3: Map the response from the initial GetObject response
+                        // Map the response from the initial GetObject response
                         // The initial response contains all the metadata we need
-                        var mappedResponse = ResponseMapper.MapGetObjectResponse(discoveryResult.InitialResponse);
+                        var mappedResponse = ResponseMapper.MapGetObjectResponse(downloadResult.InitialResponse);
                         
                         // SEP Part GET Step 7 / Ranged GET Step 9:
                         // Set ContentLength to total object size (not just first part)
-                        mappedResponse.Headers.ContentLength = discoveryResult.ObjectSize;
+                        mappedResponse.Headers.ContentLength = downloadResult.ObjectSize;
                         
                         // Set ContentRange to represent the entire object: bytes 0-(ContentLength-1)/ContentLength
                         // S3 returns null for 0-byte objects, so we match that behavior
-                        if (discoveryResult.ObjectSize == 0)
+                        if (downloadResult.ObjectSize == 0)
                         {
                             mappedResponse.ContentRange = null;
                         }
                         else
                         {
-                            mappedResponse.ContentRange = $"bytes 0-{discoveryResult.ObjectSize - 1}/{discoveryResult.ObjectSize}";
+                            mappedResponse.ContentRange = $"bytes 0-{downloadResult.ObjectSize - 1}/{downloadResult.ObjectSize}";
                         }
                         
                         // SEP Part GET Step 7 / Ranged GET Step 9:
