@@ -28,9 +28,51 @@ namespace Amazon.S3.Transfer.Internal
     internal static class TaskHelpers
     {
         /// <summary>
+        /// Waits for all tasks to complete, failing fast on the first exception.
+        /// When any task faults, its exception is immediately propagated without waiting for other tasks.
+        /// </summary>
+        /// <param name="pendingTasks">List of tasks to wait for completion. This list is not modified.</param>
+        /// <param name="cancellationToken">Cancellation token to observe (not actively checked - caller handles cancellation)</param>
+        /// <returns>A task that represents the completion of all tasks or throws on first exception</returns>
+        /// <remarks>
+        /// This method creates an internal copy of the task list for tracking purposes,
+        /// so the caller's list remains unchanged after this method completes.
+        /// The caller is responsible for cancelling remaining tasks when this method throws.
+        /// </remarks>
+        internal static async Task WhenAllFailFastAsync(List<Task> pendingTasks, CancellationToken cancellationToken)
+        {
+            var remaining = new HashSet<Task>(pendingTasks);
+            int total = remaining.Count;
+            int processed = 0;
+            
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllFailFastAsync: Starting with TotalTasks={0}", total);
+            
+            while (remaining.Count > 0)
+            {
+                // Wait for any task to complete
+                var completedTask = await Task.WhenAny(remaining)
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                
+                // Process the completed task - will throw if faulted
+                // The caller's catch block handles cancellation AFTER this exception propagates,
+                // which ensures the original exception is always thrown (not OperationCanceledException)
+                await completedTask
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                
+                remaining.Remove(completedTask); 
+                processed++;
+                
+                Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllFailFastAsync: Task completed (Processed={0}/{1}, Remaining={2})",
+                    processed, total, remaining.Count);
+            }
+            
+            Logger.GetLogger(typeof(TaskHelpers)).DebugFormat("TaskHelpers.WhenAllFailFastAsync: All tasks completed (Total={0})", total);
+        }
+
+        /// <summary>
         /// Waits for all tasks to complete or till any task fails or is canceled.
         /// </summary>
-        /// <param name="pendingTasks">List of tasks to wait for completion</param>
+        /// <param name="pendingTasks">List of tasks to wait for completion. Note: This list is mutated during processing.</param>
         /// <param name="cancellationToken">Cancellation token to observe</param>
         /// <returns>A task that represents the completion of all tasks or the first exception</returns>
         internal static async Task WhenAllOrFirstExceptionAsync(List<Task> pendingTasks, CancellationToken cancellationToken)
@@ -47,8 +89,8 @@ namespace Amazon.S3.Transfer.Internal
                 var completedTask = await Task.WhenAny(pendingTasks)
                     .ConfigureAwait(continueOnCapturedContext: false);                
                 
-                //If RanToCompletion a response will be returned
-                //If Faulted or Canceled an appropriate exception will be thrown       
+                // If RanToCompletion a response will be returned
+                // If Faulted or Canceled an appropriate exception will be thrown       
                 await completedTask
                     .ConfigureAwait(continueOnCapturedContext: false);                    
                 
