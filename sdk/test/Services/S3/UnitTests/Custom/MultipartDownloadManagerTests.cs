@@ -130,7 +130,6 @@ namespace AWSSDK.UnitTests
 
             // Assert
             Assert.IsNotNull(coordinator);
-            Assert.IsNull(coordinator.DownloadException);
         }
 
         [DataTestMethod]
@@ -188,26 +187,6 @@ namespace AWSSDK.UnitTests
             {
                 Assert.IsTrue(ex.Message.Contains("Multipart download is not supported when using Amazon.S3.Internal.IAmazonS3Encryption client. Please use the Amazon.S3.AmazonS3Client for multipart download."));
             }
-        }
-
-        #endregion
-
-        #region Property Tests
-
-        [TestMethod]
-        public void DownloadException_InitiallyNull()
-        {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            var exception = coordinator.DownloadException;
-
-            // Assert
-            Assert.IsNull(exception);
         }
 
         #endregion
@@ -1156,8 +1135,6 @@ namespace AWSSDK.UnitTests
               !coordinator.DownloadCompletionTask.IsCanceled, 
             "Background task should complete successfully");
 
-            Assert.IsNull(coordinator.DownloadException, 
-                "No download exception should occur");
         }
 
         [TestMethod]
@@ -1217,10 +1194,8 @@ namespace AWSSDK.UnitTests
             // Assert - Background task should have failed but cleanup should be done
             Assert.IsTrue(coordinator.DownloadCompletionTask.IsCompleted, 
                 "Background task should be completed (even with failure)");
-            Assert.IsNotNull(coordinator.DownloadException, 
-                "Download exception should be captured");
-            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(InvalidOperationException), 
-                "Should capture the simulated failure");
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted,
+                "Background task should be faulted");
         }
 
         [TestMethod]
@@ -1270,8 +1245,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual("Simulated prepare failure", ex.Message);
             }
             
-            // Assert - Exception should be captured and no background task should exist
-            Assert.IsNotNull(coordinator.DownloadException, "Download exception should be captured");
+            // Assert - DownloadCompletionTask should return completed task when no background work exists
             Assert.IsTrue(coordinator.DownloadCompletionTask.IsCompleted, 
                 "DownloadCompletionTask should return completed task when no background work exists");
         }
@@ -1341,8 +1315,8 @@ namespace AWSSDK.UnitTests
             // Assert - Cancellation should be handled properly with cleanup
             Assert.IsTrue(coordinator.DownloadCompletionTask.IsCompleted, 
                 "Background task should be completed");
-            Assert.IsNotNull(coordinator.DownloadException, 
-                "Cancellation exception should be captured");
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted || coordinator.DownloadCompletionTask.IsCanceled,
+                "Background task should be faulted or canceled");
         }
 
         #endregion
@@ -1424,36 +1398,6 @@ namespace AWSSDK.UnitTests
         }
 
 
-        [TestMethod]
-        public async Task DiscoverDownloadStrategyAsync_WhenCancelled_SetsDownloadException()
-        {
-            // Arrange
-            var mockClient = new Mock<IAmazonS3>();
-            var cancelledException = new OperationCanceledException();
-            mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
-                .ThrowsAsync(cancelledException);
-            
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
-            var cts = new CancellationTokenSource();
-            cts.Cancel();
-
-            // Act
-            try
-            {
-                await coordinator.StartDownloadAsync(null, cts.Token);
-            }
-            catch (OperationCanceledException)
-            {
-                // Expected
-            }
-
-            // Assert
-            Assert.IsNotNull(coordinator.DownloadException);
-            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(OperationCanceledException));
-        }
 
         [TestMethod]
         public async Task DiscoverDownloadStrategyAsync_PassesCancellationTokenToS3Client()
@@ -1549,13 +1493,14 @@ namespace AWSSDK.UnitTests
                 // Expected
             }
 
-            // Assert
-            Assert.IsNotNull(coordinator.DownloadException);
-            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(OperationCanceledException));
+            // Assert - Verify DownloadCompletionTask is faulted with the cancellation exception
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsCompleted, "DownloadCompletionTask should be completed");
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted || coordinator.DownloadCompletionTask.IsCanceled,
+                "DownloadCompletionTask should be faulted or canceled");
         }
 
         [TestMethod]
-        public async Task StartDownloadsAsync_WhenCancelled_SetsDownloadException()
+        public async Task StartDownloadsAsync_WhenCancelled_CompletionTaskIsFaulted()
         {
             // Arrange
             var totalParts = 3;
@@ -1594,9 +1539,10 @@ namespace AWSSDK.UnitTests
                 // Expected
             }
 
-            // Assert
-            Assert.IsNotNull(coordinator.DownloadException);
-            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(OperationCanceledException));
+            // Assert - Verify DownloadCompletionTask is faulted with the cancellation
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsCompleted, "DownloadCompletionTask should be completed");
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted || coordinator.DownloadCompletionTask.IsCanceled,
+                "DownloadCompletionTask should be faulted or canceled");
         }
 
         [TestMethod]
@@ -1680,8 +1626,9 @@ namespace AWSSDK.UnitTests
                 // Expected
             }
 
-            // Assert - Error should be captured
-            Assert.IsNotNull(coordinator.DownloadException);
+            // Assert - DownloadCompletionTask should be faulted
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted || coordinator.DownloadCompletionTask.IsCanceled,
+                "DownloadCompletionTask should be faulted or canceled when errors occur");
         }
 
         [TestMethod]
@@ -3418,10 +3365,8 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(part3SawCancellation, 
                 "Part 3 should have received cancellation via internalCts.Token (deterministic with TaskCompletionSource)");
             
-            Assert.IsNotNull(coordinator.DownloadException, 
-                "Download exception should be captured when background part fails");
-            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(InvalidOperationException),
-                "Download exception should be the Part 2 failure");
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted, 
+                "DownloadCompletionTask should be faulted when background part fails");
         }
 
         [TestMethod]
@@ -3484,7 +3429,7 @@ namespace AWSSDK.UnitTests
 
             // Assert - Should handle multiple failures gracefully
             Assert.IsTrue(failedParts.Count > 0, "At least one part should have failed");
-            Assert.IsNotNull(coordinator.DownloadException, "Download exception should be captured");
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted, "DownloadCompletionTask should be faulted");
         }
 
         [TestMethod]
@@ -3559,10 +3504,14 @@ namespace AWSSDK.UnitTests
             // by checking IsCancellationRequested before calling Cancel()
             Assert.IsFalse(objectDisposedExceptionCaught, 
                 "ObjectDisposedException should not propagate due to IsCancellationRequested check");
-            Assert.IsNotNull(coordinator.DownloadException, 
-                "Download exception should be the original failure, not ObjectDisposedException");
-            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(InvalidOperationException),
-                "Download exception should be the original InvalidOperationException from Part 2 failure");
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted, 
+                "DownloadCompletionTask should be faulted with the original failure");
+            
+            // Verify the exception type via the Task's exception
+            var aggregateException = coordinator.DownloadCompletionTask.Exception;
+            Assert.IsNotNull(aggregateException, "Task should have an exception");
+            Assert.IsInstanceOfType(aggregateException.InnerException, typeof(InvalidOperationException),
+                "Inner exception should be the original InvalidOperationException from Part 2 failure");
         }
 
         [TestMethod]
@@ -3640,10 +3589,8 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("Simulated Part 3 failure", caughtException.Message,
                 "The original exception message should be preserved");
             
-            // Also verify DownloadException matches
-            Assert.IsNotNull(coordinator.DownloadException, "DownloadException should be set");
-            Assert.IsInstanceOfType(coordinator.DownloadException, typeof(InvalidOperationException),
-                "DownloadException should also be InvalidOperationException");
+            // Also verify DownloadCompletionTask is faulted
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsFaulted, "DownloadCompletionTask should be faulted");
         }
 
         #endregion

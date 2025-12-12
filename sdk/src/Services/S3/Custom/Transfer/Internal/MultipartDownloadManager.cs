@@ -46,8 +46,6 @@ namespace Amazon.S3.Transfer.Internal
         private readonly SemaphoreSlim _httpConcurrencySlots;
         private readonly bool _ownsHttpThrottler;
         private readonly RequestEventHandler _requestEventHandler;
-        
-        private Exception _downloadException;
         private bool _disposed = false;
         private bool _discoveryCompleted = false;
         private Task _downloadCompletionTask;
@@ -166,15 +164,6 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        /// <inheritdoc/>
-        public Exception DownloadException
-        { 
-            get 
-            { 
-                return _downloadException;
-            }
-        }
-
         /// <summary>
         /// Discovers the download strategy and starts concurrent downloads in a single unified operation.
         /// This eliminates resource leakage by managing HTTP slots and buffer capacity internally.
@@ -259,7 +248,6 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
-                _downloadException = ex;
                 _logger.Error(ex, "MultipartDownloadManager: Discovery failed");
                 throw;
             }
@@ -336,7 +324,6 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
-                _downloadException = ex;
                 _logger.Error(ex, "MultipartDownloadManager: Download failed");
                 
                 HandleDownloadError(ex, internalCts);
@@ -431,7 +418,6 @@ namespace Amazon.S3.Transfer.Internal
             #pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
-                _downloadException = ex;
                 HandleDownloadError(ex, internalCts);
                 throw;
             }
