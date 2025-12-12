@@ -1086,6 +1086,21 @@
     <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.BrandingConfiguration.TermsOfService</property>
+    <min>0</min>
+    <max>153600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.BrandingConfigurationCreateInput.TermsOfService</property>
+    <min>0</min>
+    <max>153600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.BrandingConfigurationUpdateInput.TermsOfService</property>
+    <min>0</min>
+    <max>153600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.BrowserSettings.BrowserPolicy</property>
     <min>2</min>
     <max>131072</max>
@@ -1234,6 +1249,15 @@
     <pattern>[ _\-\d\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.IconImageInput.Blob</property>
+    <min>0</min>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.IconImageInput.S3Uri</property>
+    <pattern>s3://[a-z0-9][a-z0-9\.\-]{1,61}[a-z0-9]/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.IdentityProvider.IdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
@@ -1256,6 +1280,12 @@
     <min>1</min>
     <max>32</max>
     <pattern>[^_][\p{L}\p{M}\p{S}\p{N}\p{P}][^_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ImageMetadata.FileExtension</property>
+    <min>0</min>
+    <max>131072</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.InlineRedactionConfiguration.GlobalConfidenceLevel</property>
@@ -1324,6 +1354,52 @@
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.IpRule.IpRange</property>
     <pattern>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?:/([0-9]|[12][0-9]|3[0-2])|)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.LocalizedBrandingStrings.BrowserTabTitle</property>
+    <min>0</min>
+    <max>25</max>
+    <pattern>[^&lt;&gt;&amp;'`~\\]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.LocalizedBrandingStrings.ContactButtonText</property>
+    <min>0</min>
+    <max>30</max>
+    <pattern>[^&lt;&gt;&amp;'`~\\]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.LocalizedBrandingStrings.ContactLink</property>
+    <pattern>(https://|mailto:).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.LocalizedBrandingStrings.LoadingText</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>[^&lt;&gt;&amp;'`~\\]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.LocalizedBrandingStrings.LoginButtonText</property>
+    <min>0</min>
+    <max>30</max>
+    <pattern>[^&lt;&gt;&amp;'`~\\]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.LocalizedBrandingStrings.LoginDescription</property>
+    <min>0</min>
+    <max>250</max>
+    <pattern>[^&lt;&gt;&amp;'`~\\]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.LocalizedBrandingStrings.LoginTitle</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>[^&lt;&gt;&amp;'`~\\]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.LocalizedBrandingStrings.WelcomeText</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[^&lt;&gt;&amp;'`~\\]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.NetworkSettings.NetworkSettingsArn</property>
@@ -1682,5 +1758,14 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.WallpaperImageInput.Blob</property>
+    <min>0</min>
+    <max>5242880</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.WallpaperImageInput.S3Uri</property>
+    <pattern>s3://[a-z0-9][a-z0-9\.\-]{1,61}[a-z0-9]/.+</pattern>
   </property-value-rule>
 </property-value-rules>

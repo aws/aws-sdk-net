@@ -76,6 +76,17 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBrandingConfigurationInput())
+            {
+                context.Writer.WritePropertyName("brandingConfigurationInput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BrandingConfigurationUpdateInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BrandingConfigurationInput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");

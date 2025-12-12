@@ -68,6 +68,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociatedPortalArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("brandingConfiguration", targetDepth))
+                {
+                    var unmarshaller = BrandingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BrandingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("cookieSynchronizationConfiguration", targetDepth))
                 {
                     var unmarshaller = CookieSynchronizationConfigurationUnmarshaller.Instance;

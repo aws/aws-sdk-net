@@ -35,6 +35,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class UpdateUserSettingsRequest : AmazonWorkSpacesWebRequest
     {
+        private BrandingConfigurationUpdateInput _brandingConfigurationInput;
         private string _clientToken;
         private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
@@ -47,6 +48,28 @@ namespace Amazon.WorkSpacesWeb.Model
         private ToolbarConfiguration _toolbarConfiguration;
         private EnabledType _uploadAllowed;
         private string _userSettingsArn;
+
+        /// <summary>
+        /// Gets and sets the property BrandingConfigurationInput. 
+        /// <para>
+        /// The branding configuration that customizes the appearance of the web portal for end
+        /// users. When updating user settings without an existing branding configuration, all
+        /// fields (logo, favicon, wallpaper, localized strings, and color theme) are required
+        /// except for terms of service. When updating user settings with an existing branding
+        /// configuration, all fields are optional.
+        /// </para>
+        /// </summary>
+        public BrandingConfigurationUpdateInput BrandingConfigurationInput
+        {
+            get { return this._brandingConfigurationInput; }
+            set { this._brandingConfigurationInput = value; }
+        }
+
+        // Check to see if BrandingConfigurationInput property is set
+        internal bool IsSetBrandingConfigurationInput()
+        {
+            return this._brandingConfigurationInput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
