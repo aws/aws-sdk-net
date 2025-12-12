@@ -62,7 +62,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
-            var discoveryResult = new DownloadDiscoveryResult
+            var discoveryResult = new DownloadResult 
             {
                 TotalParts = 1,
                 ObjectSize = 1024
@@ -85,7 +85,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
-            var discoveryResult = new DownloadDiscoveryResult();
+            var discoveryResult = new DownloadResult();
 
             // Act
             await handler.PrepareAsync(discoveryResult, CancellationToken.None);
@@ -102,7 +102,7 @@ namespace AWSSDK.UnitTests
             var config = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
                 destinationPath: Path.Combine(_testDirectory, "test.dat"));
             var handler = new FilePartDataHandler(config);
-            var discoveryResult = new DownloadDiscoveryResult();
+            var discoveryResult = new DownloadResult();
 
             // Act
             var task = handler.PrepareAsync(discoveryResult, CancellationToken.None);
@@ -125,7 +125,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
             var response = new GetObjectResponse
@@ -156,7 +156,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Write part 2 (offset 1024)
             var part2Data = MultipartDownloadTestHelpers.GenerateTestData(1024, 1024);
@@ -192,7 +192,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
             var response = new GetObjectResponse
@@ -225,7 +225,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
             var response = new GetObjectResponse
@@ -250,7 +250,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
             var response = new GetObjectResponse
@@ -277,7 +277,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.CreateMixedPattern(10240, 42);
             var response = new GetObjectResponse
@@ -305,7 +305,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var response = new GetObjectResponse
             {
@@ -327,7 +327,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
             var response = new GetObjectResponse
@@ -355,7 +355,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partSize = 16 * 1024 * 1024; // 16MB
             var partData = MultipartDownloadTestHelpers.GenerateTestData(partSize, 0);
@@ -384,7 +384,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Write part 1
             var part1Data = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
@@ -431,7 +431,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Create multiple parts
             var part1Data = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
@@ -489,7 +489,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Create 10 parts with distinct patterns
             var tasks = new Task[10];
@@ -563,7 +563,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
             var response = new GetObjectResponse
@@ -657,7 +657,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
             var response = new GetObjectResponse
@@ -689,7 +689,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Write 3 parts
             for (int i = 0; i < 3; i++)
@@ -726,7 +726,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Act
             handler.OnDownloadComplete(new Exception("Download failed"));
@@ -744,7 +744,7 @@ namespace AWSSDK.UnitTests
             var config1 = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
                 destinationPath: destinationPath1);
             var handler1 = new FilePartDataHandler(config1);
-            await handler1.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler1.PrepareAsync(new DownloadResult(), CancellationToken.None);
             handler1.OnDownloadComplete(new OperationCanceledException());
             Assert.IsFalse(File.Exists(destinationPath1));
 
@@ -753,7 +753,7 @@ namespace AWSSDK.UnitTests
             var config2 = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
                 destinationPath: destinationPath2);
             var handler2 = new FilePartDataHandler(config2);
-            await handler2.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler2.PrepareAsync(new DownloadResult(), CancellationToken.None);
             handler2.OnDownloadComplete(new IOException("IO error"));
             Assert.IsFalse(File.Exists(destinationPath2));
         }
@@ -771,7 +771,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Act
             handler.Dispose();
@@ -790,7 +790,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
             
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
             var response = new GetObjectResponse
@@ -853,7 +853,7 @@ namespace AWSSDK.UnitTests
             var handler = new FilePartDataHandler(config);
 
             // Act - Simulate complete download workflow
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Download 5 parts
             for (int i = 0; i < 5; i++)
@@ -888,7 +888,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
 
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Act - Download parts in parallel (reverse order to test offset handling)
             var tasks = new Task[5];
@@ -926,7 +926,7 @@ namespace AWSSDK.UnitTests
             var handler = new FilePartDataHandler(config);
 
             // Act
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             var partData = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
             var response = new GetObjectResponse
@@ -955,7 +955,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
 
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Act - Download 3 parts of 1MB each
             for (int i = 0; i < 3; i++)
@@ -990,7 +990,7 @@ namespace AWSSDK.UnitTests
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
 
-            await handler.PrepareAsync(new DownloadDiscoveryResult(), CancellationToken.None);
+            await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
 
             // Act - Download single byte
             var partData = new byte[] { 0x42 };
