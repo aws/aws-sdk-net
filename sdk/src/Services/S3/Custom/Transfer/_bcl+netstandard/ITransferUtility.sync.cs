@@ -360,6 +360,26 @@ namespace Amazon.S3.Transfer
         /// 	<item><description>Downloaded parts are buffered in memory and served to your application as you read from the stream</description></item>
         /// 	</list>
         /// 	<para>
+        /// 	<b>Multipart Download Strategy:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	The <see cref="BaseDownloadRequest.MultipartDownloadType"/> property controls how parts are downloaded (default: <c>MultipartDownloadType.PART</c>):
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description><b>PART (default)</b>: Uses the original part boundaries from when the object was uploaded with multipart upload. 
+        /// 	This is more efficient as it aligns with S3's internal part structure, but <b>requires that the object was uploaded using multipart upload</b>. 
+        /// 	The <see cref="BaseDownloadRequest.PartSize"/> property is ignored in this mode.</description></item>
+        /// 	<item><description><b>RANGE</b>: Uses range-based downloads with configurable part sizes via the <see cref="BaseDownloadRequest.PartSize"/> property. 
+        /// 	This works with any object (whether uploaded as single-part or multipart) and provides more flexibility in controlling download part sizes.</description></item>
+        /// 	</list>
+        /// 	<para>
+        /// 	<b>When to use PART vs RANGE:</b>
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description>Use <b>PART</b> mode (default) when you know the object was uploaded using multipart upload and want optimal performance.</description></item>
+        /// 	<item><description>Use <b>RANGE</b> mode when the object's upload method is unknown, when you need specific part sizes, or when downloading objects that were uploaded as a single part.</description></item>
+        /// 	</list>
+        /// 	<para>
         /// 	<b>Configuration Options:</b>
         /// 	</para>
         /// 	<para>
@@ -414,6 +434,26 @@ namespace Amazon.S3.Transfer
         /// 	<item><description>Downloaded parts are buffered in memory and served to your application as you read from the stream</description></item>
         /// 	</list>
         /// 	<para>
+        /// 	<b>Multipart Download Strategy:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	The <see cref="BaseDownloadRequest.MultipartDownloadType"/> property controls how parts are downloaded (default: <c>MultipartDownloadType.PART</c>):
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description><b>PART (default)</b>: Uses the original part boundaries from when the object was uploaded with multipart upload. 
+        /// 	This is more efficient as it aligns with S3's internal part structure, but <b>requires that the object was uploaded using multipart upload</b>. 
+        /// 	The <see cref="BaseDownloadRequest.PartSize"/> property is ignored in this mode.</description></item>
+        /// 	<item><description><b>RANGE</b>: Uses range-based downloads with configurable part sizes via the <see cref="BaseDownloadRequest.PartSize"/> property. 
+        /// 	This works with any object (whether uploaded as single-part or multipart) and provides more flexibility in controlling download part sizes.</description></item>
+        /// 	</list>
+        /// 	<para>
+        /// 	<b>When to use PART vs RANGE:</b>
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description>Use <b>PART</b> mode (default) when you know the object was uploaded using multipart upload and want optimal performance.</description></item>
+        /// 	<item><description>Use <b>RANGE</b> mode when the object's upload method is unknown, when you need specific part sizes, or when downloading objects that were uploaded as a single part.</description></item>
+        /// 	</list>
+        /// 	<para>
         /// 	<b>Configuration Options:</b>
         /// 	</para>
         /// 	<para>
@@ -440,7 +480,8 @@ namespace Amazon.S3.Transfer
         /// 	{
         /// 	    BucketName = "my-bucket",
         /// 	    Key = "my-key",
-        /// 	    PartSize = 16 * 1024 * 1024  // Use 16MB parts instead of default 8MB
+        /// 	    PartSize = 16 * 1024 * 1024,  // Use 16MB parts instead of default 8MB
+        /// 	    MultipartDownloadType = MultipartDownloadType.RANGE  // Enable RANGE mode to use custom PartSize
         /// 	};
         /// 	var response = transferUtility.OpenStreamWithResponse(request);
         /// 	</code>
@@ -516,6 +557,26 @@ namespace Amazon.S3.Transfer
         /// 	<item><description>Downloaded parts are written directly to the file as they arrive</description></item>
         /// 	</list>
         /// 	<para>
+        /// 	<b>Multipart Download Strategy:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	The <see cref="BaseDownloadRequest.MultipartDownloadType"/> property controls how parts are downloaded (default: <c>MultipartDownloadType.PART</c>):
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description><b>PART (default)</b>: Uses the original part boundaries from when the object was uploaded with multipart upload. 
+        /// 	This is more efficient as it aligns with S3's internal part structure, but <b>requires that the object was uploaded using multipart upload</b>. 
+        /// 	The <see cref="BaseDownloadRequest.PartSize"/> property is ignored in this mode.</description></item>
+        /// 	<item><description><b>RANGE</b>: Uses range-based downloads with configurable part sizes via the <see cref="BaseDownloadRequest.PartSize"/> property. 
+        /// 	This works with any object (whether uploaded as single-part or multipart) and provides more flexibility in controlling download part sizes.</description></item>
+        /// 	</list>
+        /// 	<para>
+        /// 	<b>When to use PART vs RANGE:</b>
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description>Use <b>PART</b> mode (default) when you know the object was uploaded using multipart upload and want optimal performance.</description></item>
+        /// 	<item><description>Use <b>RANGE</b> mode when the object's upload method is unknown, when you need specific part sizes, or when downloading objects that were uploaded as a single part.</description></item>
+        /// 	</list>
+        /// 	<para>
         /// 	<b>Configuration Options:</b>
         /// 	</para>
         /// 	<para>
@@ -563,6 +624,26 @@ namespace Amazon.S3.Transfer
         /// 	<item><description>Downloaded parts are written directly to the file as they arrive</description></item>
         /// 	</list>
         /// 	<para>
+        /// 	<b>Multipart Download Strategy:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	The <see cref="BaseDownloadRequest.MultipartDownloadType"/> property controls how parts are downloaded (default: <c>MultipartDownloadType.PART</c>):
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description><b>PART (default)</b>: Uses the original part boundaries from when the object was uploaded with multipart upload. 
+        /// 	This is more efficient as it aligns with S3's internal part structure, but <b>requires that the object was uploaded using multipart upload</b>. 
+        /// 	The <see cref="BaseDownloadRequest.PartSize"/> property is ignored in this mode.</description></item>
+        /// 	<item><description><b>RANGE</b>: Uses range-based downloads with configurable part sizes via the <see cref="BaseDownloadRequest.PartSize"/> property. 
+        /// 	This works with any object (whether uploaded as single-part or multipart) and provides more flexibility in controlling download part sizes.</description></item>
+        /// 	</list>
+        /// 	<para>
+        /// 	<b>When to use PART vs RANGE:</b>
+        /// 	</para>
+        /// 	<list type="bullet">
+        /// 	<item><description>Use <b>PART</b> mode (default) when you know the object was uploaded using multipart upload and want optimal performance.</description></item>
+        /// 	<item><description>Use <b>RANGE</b> mode when the object's upload method is unknown, when you need specific part sizes, or when downloading objects that were uploaded as a single part.</description></item>
+        /// 	</list>
+        /// 	<para>
         /// 	<b>Configuration Options:</b>
         /// 	</para>
         /// 	<para>
@@ -588,7 +669,8 @@ namespace Amazon.S3.Transfer
         /// 	    BucketName = "my-bucket",
         /// 	    Key = "my-key",
         /// 	    FilePath = "local-file.txt",
-        /// 	    PartSize = 16 * 1024 * 1024  // Use 16MB parts instead of default 8MB
+        /// 	    PartSize = 16 * 1024 * 1024,  // Use 16MB parts instead of default 8MB
+        /// 	    MultipartDownloadType = MultipartDownloadType.RANGE  // Enable RANGE mode to use custom PartSize
         /// 	};
         /// 	var response = transferUtility.DownloadWithResponse(request);
         /// 	</code>

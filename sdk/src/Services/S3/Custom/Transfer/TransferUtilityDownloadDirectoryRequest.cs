@@ -318,6 +318,7 @@ namespace Amazon.S3.Transfer
         /// Specifies if multiple files will be downloaded concurrently.
         /// The number of concurrent web requests used is controlled 
         /// by the TransferUtilityConfig.ConcurrencyLevel property.
+        /// The default value is <c>false</c>.
         /// </summary>
 #if BCL || NETSTANDARD
         public
