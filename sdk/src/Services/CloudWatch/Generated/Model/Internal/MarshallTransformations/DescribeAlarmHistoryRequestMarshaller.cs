@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DescribeAlarmHistoryRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,61 +58,80 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeAlarmHistoryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "DescribeAlarmHistory");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/DescribeAlarmHistory";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetAlarmContributorId())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAlarmContributorId())
                 {
-                    request.Parameters.Add("AlarmContributorId", StringUtils.FromString(publicRequest.AlarmContributorId));
+                    context.Writer.WriteTextString("AlarmContributorId");
+                    context.Writer.WriteTextString(publicRequest.AlarmContributorId);
                 }
-                if(publicRequest.IsSetAlarmName())
+                if (publicRequest.IsSetAlarmName())
                 {
-                    request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
+                    context.Writer.WriteTextString("AlarmName");
+                    context.Writer.WriteTextString(publicRequest.AlarmName);
                 }
-                if(publicRequest.IsSetAlarmTypes())
+                if (publicRequest.IsSetAlarmTypes())
                 {
-                    if (publicRequest.AlarmTypes.Count == 0)
-                        request.Parameters.Add("AlarmTypes", "");
-                    else
+                    context.Writer.WriteTextString("AlarmTypes");
+                    context.Writer.WriteStartArray(publicRequest.AlarmTypes.Count);
+                    foreach(var publicRequestAlarmTypesListValue in publicRequest.AlarmTypes)
                     {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
-                         {
-                             request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                             publicRequestlistValueIndex++;
-                         }
+                            context.Writer.WriteTextString(publicRequestAlarmTypesListValue);
                     }
+                    context.Writer.WriteEndArray();
                 }
-                if(publicRequest.IsSetEndDate())
+                if (publicRequest.IsSetEndDate())
                 {
-                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
+                    context.Writer.WriteTextString("EndDate");
+                    context.Writer.WriteDateTime(publicRequest.EndDate.Value);
                 }
-                if(publicRequest.IsSetHistoryItemType())
+                if (publicRequest.IsSetHistoryItemType())
                 {
-                    request.Parameters.Add("HistoryItemType", StringUtils.FromString(publicRequest.HistoryItemType));
+                    context.Writer.WriteTextString("HistoryItemType");
+                    context.Writer.WriteTextString(publicRequest.HistoryItemType);
                 }
-                if(publicRequest.IsSetMaxRecords())
+                if (publicRequest.IsSetMaxRecords())
                 {
-                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                    context.Writer.WriteTextString("MaxRecords");
+                    context.Writer.WriteInt32(publicRequest.MaxRecords.Value);
                 }
-                if(publicRequest.IsSetNextToken())
+                if (publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
                 }
-                if(publicRequest.IsSetScanBy())
+                if (publicRequest.IsSetScanBy())
                 {
-                    request.Parameters.Add("ScanBy", StringUtils.FromString(publicRequest.ScanBy));
+                    context.Writer.WriteTextString("ScanBy");
+                    context.Writer.WriteTextString(publicRequest.ScanBy);
                 }
-                if(publicRequest.IsSetStartDate())
+                if (publicRequest.IsSetStartDate())
                 {
-                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
+                    context.Writer.WriteTextString("StartDate");
+                    context.Writer.WriteDateTime(publicRequest.StartDate.Value);
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static DescribeAlarmHistoryRequestMarshaller _instance = new DescribeAlarmHistoryRequestMarshaller();        
+        private static DescribeAlarmHistoryRequestMarshaller _instance = new DescribeAlarmHistoryRequestMarshaller();        
 
         internal static DescribeAlarmHistoryRequestMarshaller GetInstance()
         {

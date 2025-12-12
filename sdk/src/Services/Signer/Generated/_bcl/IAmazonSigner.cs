@@ -68,7 +68,7 @@ namespace Amazon.Signer
     /// </para>
     ///  
     /// <para>
-    /// For more information about Signer, see the <a href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
+    /// For more information about Signer, see the <a href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
     /// Signer Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -167,7 +167,8 @@ namespace Amazon.Signer
         /// <summary>
         /// Changes the state of an <c>ACTIVE</c> signing profile to <c>CANCELED</c>. A canceled
         /// profile is still viewable with the <c>ListSigningProfiles</c> operation, but it cannot
-        /// perform new signing jobs, and is deleted two years after cancelation.
+        /// perform new signing jobs. See <a href="https://docs.aws.amazon.com/signer/latest/developerguide/retention.html">Data
+        /// Retention</a> for more information on scheduled deletion of a canceled signing profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSigningProfile service method.</param>
         /// 
@@ -197,7 +198,8 @@ namespace Amazon.Signer
         /// <summary>
         /// Changes the state of an <c>ACTIVE</c> signing profile to <c>CANCELED</c>. A canceled
         /// profile is still viewable with the <c>ListSigningProfiles</c> operation, but it cannot
-        /// perform new signing jobs, and is deleted two years after cancelation.
+        /// perform new signing jobs. See <a href="https://docs.aws.amazon.com/signer/latest/developerguide/retention.html">Data
+        /// Retention</a> for more information on scheduled deletion of a canceled signing profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSigningProfile service method.</param>
         /// <param name="cancellationToken">
@@ -973,8 +975,8 @@ namespace Amazon.Signer
 
 
         /// <summary>
-        /// Changes the state of a signing job to REVOKED. This indicates that the signature is
-        /// no longer valid.
+        /// Changes the state of a signing job to <c>REVOKED</c>. This indicates that the signature
+        /// is no longer valid.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeSignature service method.</param>
         /// 
@@ -1005,8 +1007,8 @@ namespace Amazon.Signer
 
 
         /// <summary>
-        /// Changes the state of a signing job to REVOKED. This indicates that the signature is
-        /// no longer valid.
+        /// Changes the state of a signing job to <c>REVOKED</c>. This indicates that the signature
+        /// is no longer valid.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeSignature service method.</param>
         /// <param name="cancellationToken">
@@ -1043,8 +1045,11 @@ namespace Amazon.Signer
 
 
         /// <summary>
-        /// Changes the state of a signing profile to REVOKED. This indicates that signatures
+        /// Changes the state of a signing profile to <c>REVOKED</c>. This indicates that signatures
         /// generated using the signing profile after an effective start date are no longer valid.
+        /// A revoked profile is still viewable with the <c>ListSigningProfiles</c> operation,
+        /// but it cannot perform new signing jobs. See <a href="https://docs.aws.amazon.com/signer/latest/developerguide/retention.html">Data
+        /// Retention</a> for more information on scheduled deletion of a revoked signing profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeSigningProfile service method.</param>
         /// 
@@ -1075,8 +1080,11 @@ namespace Amazon.Signer
 
 
         /// <summary>
-        /// Changes the state of a signing profile to REVOKED. This indicates that signatures
+        /// Changes the state of a signing profile to <c>REVOKED</c>. This indicates that signatures
         /// generated using the signing profile after an effective start date are no longer valid.
+        /// A revoked profile is still viewable with the <c>ListSigningProfiles</c> operation,
+        /// but it cannot perform new signing jobs. See <a href="https://docs.aws.amazon.com/signer/latest/developerguide/retention.html">Data
+        /// Retention</a> for more information on scheduled deletion of a revoked signing profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeSigningProfile service method.</param>
         /// <param name="cancellationToken">
@@ -1182,8 +1190,7 @@ namespace Amazon.Signer
 
         /// <summary>
         /// Initiates a signing job to be performed on the code provided. Signing jobs are viewable
-        /// by the <c>ListSigningJobs</c> operation for two years after they are performed. Note
-        /// the following requirements: 
+        /// by the <c>ListSigningJobs</c> operation. Note the following requirements: 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1261,8 +1268,7 @@ namespace Amazon.Signer
 
         /// <summary>
         /// Initiates a signing job to be performed on the code provided. Signing jobs are viewable
-        /// by the <c>ListSigningJobs</c> operation for two years after they are performed. Note
-        /// the following requirements: 
+        /// by the <c>ListSigningJobs</c> operation. Note the following requirements: 
         /// 
         ///  <ul> <li> 
         /// <para>

@@ -43,7 +43,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name for KMS access configuration.
+        /// The domain name for Amazon Web Services Key Management Service (KMS) access configuration.
         /// </para>
         /// </summary>
         public string DomainName
@@ -61,7 +61,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property Ipv4Addresses. 
         /// <para>
-        /// The IPv4 addresses allowed for KMS access.
+        /// The IPv4 addresses allowed for Amazon Web Services Key Management Service (KMS) access.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -85,7 +85,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property KmsPolicyDocument. 
         /// <para>
-        /// The KMS policy document that defines permissions for key usage.
+        /// The Amazon Web Services Key Management Service (KMS) policy document that defines
+        /// permissions for key usage.
         /// </para>
         /// </summary>
         public string KmsPolicyDocument
@@ -103,7 +104,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the KMS access configuration.
+        /// The current status of the Amazon Web Services Key Management Service (KMS) access
+        /// configuration.
         /// </para>
         /// </summary>
         public ManagedResourceStatus Status

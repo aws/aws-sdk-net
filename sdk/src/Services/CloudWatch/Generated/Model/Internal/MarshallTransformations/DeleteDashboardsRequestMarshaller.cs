@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DeleteDashboardsRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,29 +58,40 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteDashboardsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "DeleteDashboards");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/DeleteDashboards";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetDashboardNames())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDashboardNames())
                 {
-                    if (publicRequest.DashboardNames.Count == 0)
-                        request.Parameters.Add("DashboardNames", "");
-                    else
+                    context.Writer.WriteTextString("DashboardNames");
+                    context.Writer.WriteStartArray(publicRequest.DashboardNames.Count);
+                    foreach(var publicRequestDashboardNamesListValue in publicRequest.DashboardNames)
                     {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.DashboardNames)
-                         {
-                             request.Parameters.Add("DashboardNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                             publicRequestlistValueIndex++;
-                         }
+                            context.Writer.WriteTextString(publicRequestDashboardNamesListValue);
                     }
+                    context.Writer.WriteEndArray();
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static DeleteDashboardsRequestMarshaller _instance = new DeleteDashboardsRequestMarshaller();        
+        private static DeleteDashboardsRequestMarshaller _instance = new DeleteDashboardsRequestMarshaller();        
 
         internal static DeleteDashboardsRequestMarshaller GetInstance()
         {

@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((GetInsightRuleReportRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,53 +58,70 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetInsightRuleReportRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "GetInsightRuleReport");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/GetInsightRuleReport";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetEndTime())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
+                    context.Writer.WriteTextString("EndTime");
+                    context.Writer.WriteDateTime(publicRequest.EndTime.Value);
                 }
-                if(publicRequest.IsSetMaxContributorCount())
+                if (publicRequest.IsSetMaxContributorCount())
                 {
-                    request.Parameters.Add("MaxContributorCount", StringUtils.FromInt(publicRequest.MaxContributorCount));
+                    context.Writer.WriteTextString("MaxContributorCount");
+                    context.Writer.WriteInt32(publicRequest.MaxContributorCount.Value);
                 }
-                if(publicRequest.IsSetMetrics())
+                if (publicRequest.IsSetMetrics())
                 {
-                    if (publicRequest.Metrics.Count == 0)
-                        request.Parameters.Add("Metrics", "");
-                    else
+                    context.Writer.WriteTextString("Metrics");
+                    context.Writer.WriteStartArray(publicRequest.Metrics.Count);
+                    foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
                     {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.Metrics)
-                         {
-                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                             publicRequestlistValueIndex++;
-                         }
+                            context.Writer.WriteTextString(publicRequestMetricsListValue);
                     }
+                    context.Writer.WriteEndArray();
                 }
-                if(publicRequest.IsSetOrderBy())
+                if (publicRequest.IsSetOrderBy())
                 {
-                    request.Parameters.Add("OrderBy", StringUtils.FromString(publicRequest.OrderBy));
+                    context.Writer.WriteTextString("OrderBy");
+                    context.Writer.WriteTextString(publicRequest.OrderBy);
                 }
-                if(publicRequest.IsSetPeriod())
+                if (publicRequest.IsSetPeriod())
                 {
-                    request.Parameters.Add("Period", StringUtils.FromInt(publicRequest.Period));
+                    context.Writer.WriteTextString("Period");
+                    context.Writer.WriteInt32(publicRequest.Period.Value);
                 }
-                if(publicRequest.IsSetRuleName())
+                if (publicRequest.IsSetRuleName())
                 {
-                    request.Parameters.Add("RuleName", StringUtils.FromString(publicRequest.RuleName));
+                    context.Writer.WriteTextString("RuleName");
+                    context.Writer.WriteTextString(publicRequest.RuleName);
                 }
-                if(publicRequest.IsSetStartTime())
+                if (publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
+                    context.Writer.WriteTextString("StartTime");
+                    context.Writer.WriteDateTime(publicRequest.StartTime.Value);
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static GetInsightRuleReportRequestMarshaller _instance = new GetInsightRuleReportRequestMarshaller();        
+        private static GetInsightRuleReportRequestMarshaller _instance = new GetInsightRuleReportRequestMarshaller();        
 
         internal static GetInsightRuleReportRequestMarshaller GetInstance()
         {

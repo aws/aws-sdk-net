@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((PutDashboardRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,23 +58,40 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutDashboardRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "PutDashboard");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/PutDashboard";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetDashboardBody())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDashboardBody())
                 {
-                    request.Parameters.Add("DashboardBody", StringUtils.FromString(publicRequest.DashboardBody));
+                    context.Writer.WriteTextString("DashboardBody");
+                    context.Writer.WriteTextString(publicRequest.DashboardBody);
                 }
-                if(publicRequest.IsSetDashboardName())
+                if (publicRequest.IsSetDashboardName())
                 {
-                    request.Parameters.Add("DashboardName", StringUtils.FromString(publicRequest.DashboardName));
+                    context.Writer.WriteTextString("DashboardName");
+                    context.Writer.WriteTextString(publicRequest.DashboardName);
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static PutDashboardRequestMarshaller _instance = new PutDashboardRequestMarshaller();        
+        private static PutDashboardRequestMarshaller _instance = new PutDashboardRequestMarshaller();        
 
         internal static PutDashboardRequestMarshaller GetInstance()
         {

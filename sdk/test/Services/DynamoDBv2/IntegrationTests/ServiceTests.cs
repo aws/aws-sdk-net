@@ -1,220 +1,62 @@
-﻿using System;
-using System.Text;
+﻿using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-#pragma warning disable CS0162
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
     {
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestTableCalls()
-        {
-
-            // Only run these tests if we are not reusing tables
-            if (ReuseTables)
-                return;
-
-            var tables = GetTableNames();
-            int tableCount = tables.Count;
-
-            // Create hash-key table
-            var table1Name = TableNamePrefix + "Table1";
-            Client.CreateTable(
-                new CreateTableRequest
-                {
-                    TableName = table1Name,
-                    KeySchema = new List<KeySchemaElement>
-                    {
-                        new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
-                    },
-                    AttributeDefinitions = new List<AttributeDefinition>
-                    {
-                        new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
-                    },
-                    BillingMode = BillingMode.PAY_PER_REQUEST
-                });
-            CreatedTables.Add(table1Name);
-
-            // Create hash-and-range-key table
-            var table2Name = TableNamePrefix + "Table2";
-            Client.CreateTable(new CreateTableRequest
-                {
-                    TableName = table2Name,
-                    KeySchema = new List<KeySchemaElement>
-                    {
-                        new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH },
-                        new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.RANGE }
-                    },
-                    AttributeDefinitions = new List<AttributeDefinition>
-                    {
-                        new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
-                        new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S }
-                    },
-                    BillingMode = BillingMode.PAY_PER_REQUEST
-                });
-            CreatedTables.Add(table2Name);
-
-            // Create hash-key table with global index
-            var table3Name = TableNamePrefix + "Table3";
-            Client.CreateTable(new CreateTableRequest
-            {
-                TableName = table3Name,
-                AttributeDefinitions = new List<AttributeDefinition>
-                {
-                    new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Price", AttributeType = ScalarAttributeType.N }
-                },
-                KeySchema = new List<KeySchemaElement>
-                {
-                    new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
-                },
-                GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
-                {
-                    new GlobalSecondaryIndex
-                    {
-                        IndexName = "GlobalIndex",
-                        KeySchema = new List<KeySchemaElement>
-                        {
-                            new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Price", KeyType = KeyType.RANGE }
-                        },
-                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
-                    }
-                },
-                BillingMode = BillingMode.PAY_PER_REQUEST
-            });
-            CreatedTables.Add(table3Name);
-
-            // Wait for tables to be ready before creating another table with an index
-            WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
-
-            // Create hash-and-range-key table with local and global indexes
-            var table4Name = TableNamePrefix + "Table4";
-            Client.CreateTable(new CreateTableRequest
-            {
-                TableName = table4Name,
-                AttributeDefinitions = new List<AttributeDefinition>
-                {
-                    new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Price", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Manager", AttributeType = ScalarAttributeType.S }
-                },
-                KeySchema = new List<KeySchemaElement>
-                {
-                    new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH },
-                    new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.RANGE }
-                },
-                GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
-                {
-                    new GlobalSecondaryIndex
-                    {
-                        IndexName = "GlobalIndex",
-                        KeySchema = new List<KeySchemaElement>
-                        {
-                            new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Price", KeyType = KeyType.RANGE }
-                        },
-                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
-                    }
-                },
-                LocalSecondaryIndexes = new List<LocalSecondaryIndex> 
-                {
-                    new LocalSecondaryIndex
-                    {
-                        IndexName = "LocalIndex",
-                        KeySchema = new List<KeySchemaElement>
-                        {
-                            new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Manager", KeyType = KeyType.RANGE }
-                        },
-                        Projection = new Projection
-                        {
-                            ProjectionType = ProjectionType.INCLUDE,
-                            NonKeyAttributes = new List<string> { "Company", "Price" }
-                        }
-                    }
-                },
-                BillingMode = BillingMode.PAY_PER_REQUEST
-            });
-            CreatedTables.Add(table4Name);
-
-            tables = GetTableNames();
-            Assert.AreEqual(tableCount + 4, tables.Count);
-
-            // Wait for tables to be ready
-            WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
-
-            // Delete new tables
-            Client.DeleteTable(table1Name);
-            Client.DeleteTable(table2Name);
-            Client.DeleteTable(table3Name);
-            Client.DeleteTable(table4Name);
-
-            // Wait for tables to be deleted
-            WaitForTableStatus(new string[] { table1Name, table2Name, table3Name, table4Name } , null);
-
-            // Count tables again
-            tables = GetTableNames();
-            Assert.AreEqual(tableCount, tables.Count);
-
-            CreatedTables.Remove(table1Name);
-            CreatedTables.Remove(table2Name);
-            CreatedTables.Remove(table3Name);
-            CreatedTables.Remove(table4Name);
-        }
-
-        [TestMethod]
-        [TestCategory("DynamoDBv2")]
-        public void TestDataCalls()
+        public async Task TestDataCalls()
         {
             // Test hash-key table
-            TestHashTable(hashTableName);
+            await TestHashTable(hashTableName);
 
             // Test hash-and-range-key table
-            TestHashRangeTable(hashRangeTableName);
+            await TestHashRangeTable(hashRangeTableName);
 
             // Test batch gets and writes
-            TestBatchWriteGet(hashTableName, hashRangeTableName);
+            await TestBatchWriteGet(hashTableName, hashRangeTableName);
 
             // Test large batch gets and writes
-            TestLargeBatches(hashTableName);
+            await TestLargeBatches(hashTableName);
         }
 
-        private void TestHashTable(string hashTableName)
+        private async Task TestHashTable(string hashTableName)
         {
             // Put item
-            var nonEmptyListAV = new AttributeValue();
-            nonEmptyListAV.L = new List<AttributeValue>
+            var nonEmptyListAV = new AttributeValue
             {
-                new AttributeValue { S = "Data" },
-                new AttributeValue { N = "12" }
+                L = new List<AttributeValue>
+                {
+                    new AttributeValue { S = "Data" },
+                    new AttributeValue { N = "12" }
+                },
+                // optional call to IsLSet = true, no-op
+                IsLSet = true
             };
-            // optional call to IsLSet = true, no-op
-            nonEmptyListAV.IsLSet = true;
             Assert.AreEqual(2, nonEmptyListAV.L.Count);
 
-            var emptyListAV = new AttributeValue();
-            emptyListAV.L = null;
-            // call to IsLSet = true sets L to empty list. This is testing legacy behavior in V3 where
-            // Users would explicit set IsLSet to confirm an empty array is sent to the request.
-            emptyListAV.IsLSet = true;
+            var emptyListAV = new AttributeValue
+            {
+                L = null,
+                // call to IsLSet = true sets L to empty list. This is testing legacy behavior in V3 where
+                // Users would explicit set IsLSet to confirm an empty array is sent to the request.
+                IsLSet = true
+            };
             Assert.AreEqual(0, emptyListAV.L.Count);
 
             // Create a new AttributeValue to confirm that the empty collection will be sent even
             // if IsLSet is not set.
-            emptyListAV = new AttributeValue();
-            emptyListAV.L = new List<AttributeValue>();
+            emptyListAV = new AttributeValue
+            {
+                L = new List<AttributeValue>()
+            };
             Assert.AreEqual(0, emptyListAV.L.Count);
 
             var boolAV = new AttributeValue();
@@ -222,7 +64,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             boolAV.BOOL = false;
             Assert.IsTrue(boolAV.IsBOOLSet);
 
-            Client.PutItem(hashTableName, new Dictionary<string, AttributeValue>
+            await Client.PutItemAsync(hashTableName, new Dictionary<string, AttributeValue>
             {
                 { "Id", new AttributeValue { N = "1" } },
                 { "Product", new AttributeValue { S = "CloudSpotter" } },
@@ -242,7 +84,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 { "Id", new AttributeValue { N = "1" } }
             };
-            var item = Client.GetItem(hashTableName, key1).Item;
+            var item = (await Client.GetItemAsync(hashTableName, key1)).Item;
 
             // Verify empty collections and value type
             Assert.IsTrue(item["EmptyList"].IsLSet);
@@ -259,11 +101,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 { "Id", new AttributeValue { N = "999" } }
             };
-            var getItemResult = Client.GetItem(hashTableName, key2);
+            var getItemResult = await Client.GetItemAsync(hashTableName, key2);
             Assert.IsFalse(getItemResult.IsItemSet);
 
             // Get empty item
-            getItemResult = Client.GetItem(new GetItemRequest
+            getItemResult = await Client.GetItemAsync(new GetItemRequest
             {
                 TableName = hashTableName,
                 Key = key1,
@@ -273,7 +115,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, getItemResult.Item.Count);
 
             // Update item
-            Client.UpdateItem(hashTableName, key1, new Dictionary<string, AttributeValueUpdate>
+            await Client.UpdateItemAsync(hashTableName, key1, new Dictionary<string, AttributeValueUpdate>
             {
                 { "Product", new AttributeValueUpdate { Action = AttributeAction.PUT, Value = new AttributeValue { S = "CloudSpotter 2.0" } } },
                 { "Seller", new AttributeValueUpdate { Action = AttributeAction.DELETE } },
@@ -281,7 +123,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             });
 
             // Get updated item
-            item = Client.GetItem(hashTableName, key1).Item;
+            item = (await Client.GetItemAsync(hashTableName, key1)).Item;
             Assert.IsTrue(item["Product"].S.IndexOf("2.0") >= 0);
             Assert.AreEqual(3, item["Tags"].SS.Count);
             Assert.IsFalse(item.ContainsKey("Seller"));
@@ -301,7 +143,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             };
-            var items = Scan(hashTableName, scanConditions);
+            var items = await Scan(hashTableName, scanConditions);
             Assert.AreEqual(1, items.Count);
 
             // Update non-existent item
@@ -309,7 +151,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 { "Id", new AttributeValue { N = "2" } }
             };
-            Client.UpdateItem(hashTableName, key2,
+            await Client.UpdateItemAsync(hashTableName, key2,
                 new Dictionary<string, AttributeValueUpdate>
                 {
                     { "Product", new AttributeValueUpdate { Action = AttributeAction.PUT, Value = new AttributeValue { S = "CloudDebugger" } } },
@@ -319,21 +161,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 });
 
             // Get updated item
-            item = Client.GetItem(hashTableName, key2).Item;
+            item = (await Client.GetItemAsync(hashTableName, key2)).Item;
             Assert.IsTrue(item["Product"].S.IndexOf("Debugger") >= 0);
             Assert.AreEqual(1, item["Tags"].SS.Count);
             Assert.IsFalse(item.ContainsKey("Seller"));
 
             // Scan all items
-            items = Scan(hashTableName, scanConditions);
+            items = await Scan(hashTableName, scanConditions);
             Assert.AreEqual(2, items.Count);
 
             // Query global index
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashTableName,
                 IndexName = "GlobalIndex",
-                KeyConditions = new Dictionary<string, Condition> 
+                KeyConditions = new Dictionary<string, Condition>
                 {
                     // First Query condition must be HashKey EQ [Value]
                     {
@@ -354,15 +196,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(1, items.Count);
 
             // Scan global index
-            items = Client.Scan(new ScanRequest
+            items = (await Client.ScanAsync(new ScanRequest
             {
                 TableName = hashTableName,
                 IndexName = "GlobalIndex",
-                ScanFilter = new Dictionary<string, Condition> 
+                ScanFilter = new Dictionary<string, Condition>
                 {
                     // First condition will be HashKey EQ [Value]
                     {
@@ -383,14 +225,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(1, items.Count);
-
         }
-        private void TestHashRangeTable(string hashRangeTableName)
+        
+        private async Task TestHashRangeTable(string hashRangeTableName)
         {
             // Put items
-            Client.PutItem(hashRangeTableName, new Dictionary<string, AttributeValue>
+            await Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
             {
                 { "Name", new AttributeValue { S = "Alan" } },
                 { "Age", new AttributeValue { N = "31" } },
@@ -398,7 +240,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Score", new AttributeValue { N = "120" } },
                 { "Manager", new AttributeValue { S = "Barbara"} }
             });
-            Client.PutItem(hashRangeTableName, new Dictionary<string, AttributeValue>
+            await Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
             {
                 { "Name", new AttributeValue { S = "Chuck" } },
                 { "Age", new AttributeValue { N = "30" } },
@@ -406,7 +248,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Score", new AttributeValue { N = "94" } },
                 { "Manager", new AttributeValue { S = "Barbara"} }
             });
-            Client.PutItem(hashRangeTableName, new Dictionary<string, AttributeValue>
+            await Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
             {
                 { "Name", new AttributeValue { S = "Diane" } },
                 { "Age", new AttributeValue { N = "40" } },
@@ -414,7 +256,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Score", new AttributeValue { N = "140" } },
                 { "Manager", new AttributeValue { S = "Eva"} }
             });
-            Client.PutItem(hashRangeTableName, new Dictionary<string, AttributeValue>
+            await Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
             {
                 { "Name", new AttributeValue { S = "Diane" } },
                 { "Age", new AttributeValue { N = "24" } },
@@ -438,18 +280,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             };
-            var items = Scan(hashRangeTableName, scanConditions);
+            var items = await Scan(hashRangeTableName, scanConditions);
             Assert.AreEqual(4, items.Count);
 
             // Scan in parallel
-            items = ParallelScan(hashRangeTableName, segments: 2, conditions: scanConditions);
+            items = await ParallelScan(hashRangeTableName, segments: 2, conditions: scanConditions);
             Assert.AreEqual(4, items.Count);
 
             // Query table with no range-key condition
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
-                KeyConditions = new Dictionary<string, Condition> 
+                KeyConditions = new Dictionary<string, Condition>
                 {
                     // First Query condition must be HashKey EQ [Value]
                     {
@@ -461,14 +303,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     },
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(2, items.Count);
 
             // Query table with no range-key condition and no returned attributes
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
-                KeyConditions = new Dictionary<string, Condition> 
+                KeyConditions = new Dictionary<string, Condition>
                 {
                     // First Query condition must be HashKey EQ [Value]
                     {
@@ -481,13 +323,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     },
                 },
                 ProjectionExpression = "Coffee"
-            }).Items;
+            })).Items;
             Assert.AreEqual(2, items.Count);
             Assert.AreEqual(0, items[0].Count);
             Assert.AreEqual(0, items[1].Count);
 
             // Query table with hash-key condition expression
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditionExpression = "#H = :val",
@@ -499,11 +341,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     { ":val", new AttributeValue { S = "Diane" } }
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(2, items.Count);
 
             // Query table with key condition expression
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditionExpression = "#H = :name and #R > :age",
@@ -517,15 +359,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     { ":name", new AttributeValue { S = "Diane" } },
                     { ":age", new AttributeValue { N = "30" } }
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(1, items.Count);
 
             // Query global index
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "GlobalIndex",
-                KeyConditions = new Dictionary<string, Condition> 
+                KeyConditions = new Dictionary<string, Condition>
                 {
                     // First Query condition must be HashKey EQ [Value]
                     {
@@ -546,15 +388,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(1, items.Count);
 
             // Query local index with no range-key condition
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
-                KeyConditions = new Dictionary<string, Condition> 
+                KeyConditions = new Dictionary<string, Condition>
                 {
                     // First Query condition must be HashKey EQ [Value]
                     {
@@ -566,15 +408,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     },
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(2, items.Count);
 
             // Query local index with range-key condition
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
-                KeyConditions = new Dictionary<string, Condition> 
+                KeyConditions = new Dictionary<string, Condition>
                 {
                     // First Query condition must be HashKey EQ [Value]
                     {
@@ -595,14 +437,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            }).Items;
+            })).Items;
+            Assert.AreEqual(1, items.Count);
 
             // Query local index with a query filter
-            items = Client.Query(new QueryRequest
+            items = (await Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
-                KeyConditions = new Dictionary<string, Condition> 
+                KeyConditions = new Dictionary<string, Condition>
                 {
                     // First Query condition must be HashKey EQ [Value]
                     {
@@ -614,7 +457,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 },
-                QueryFilter = new Dictionary<string, Condition> 
+                QueryFilter = new Dictionary<string, Condition>
                 {
                     // QueryFilter conditions must be non-key attributes
                     {
@@ -626,15 +469,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(1, items.Count);
 
             // Scan global index
-            items = Client.Scan(new ScanRequest
+            items = (await Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "GlobalIndex",
-                ScanFilter = new Dictionary<string, Condition> 
+                ScanFilter = new Dictionary<string, Condition>
                 {
                     // First condition will be HashKey EQ [Value]
                     {
@@ -655,15 +498,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(1, items.Count);
 
             // Scan local index with no range-key condition
-            items = Client.Scan(new ScanRequest
+            items = (await Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
-                ScanFilter = new Dictionary<string, Condition> 
+                ScanFilter = new Dictionary<string, Condition>
                 {
                     // First condition will be HashKey EQ [Value]
                     {
@@ -675,15 +518,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     },
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(2, items.Count);
 
             // Scan local index with range-key condition
-            items = Client.Scan(new ScanRequest
+            items = (await Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
-                ScanFilter = new Dictionary<string, Condition> 
+                ScanFilter = new Dictionary<string, Condition>
                 {
                     // First condition will be HashKey EQ [Value]
                     {
@@ -704,14 +547,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            }).Items;
+            })).Items;
+            Assert.AreEqual(1, items.Count);
 
             // Scan local index with a non-key condition
-            items = Client.Scan(new ScanRequest
+            items = (await Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
-                ScanFilter = new Dictionary<string, Condition> 
+                ScanFilter = new Dictionary<string, Condition>
                 {
                     // First condition will be HashKey EQ [Value]
                     {
@@ -732,14 +576,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            }).Items;
+            })).Items;
             Assert.AreEqual(1, items.Count);
-
         }
-        private void TestBatchWriteGet(string hashTableName, string hashRangeTableName)
+        
+        private async Task TestBatchWriteGet(string hashTableName, string hashRangeTableName)
         {
             // Put 1 item and delete 2 items across 2 tables
-            Client.BatchWriteItem(new Dictionary<string, List<WriteRequest>>
+            await Client.BatchWriteItemAsync(new Dictionary<string, List<WriteRequest>>
             {
                 {
                     hashTableName,
@@ -789,7 +633,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             });
 
             // Get 5 items across 2 tables
-            var batchGetResult = Client.BatchGetItem(new Dictionary<string, KeysAndAttributes>
+            var batchGetResult = await Client.BatchGetItemAsync(new Dictionary<string, KeysAndAttributes>
             {
                 {
                     hashTableName,
@@ -841,7 +685,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(2, hashItems.Count);
             Assert.AreEqual(3, hashRangeItems.Count);
         }
-        private void TestLargeBatches(string hashTableName)
+        
+        private async Task TestLargeBatches(string hashTableName)
         {
             int itemSize = 60 * 1024;
             Assert.IsTrue(itemSize < MaxItemSize);
@@ -854,7 +699,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             List<string> itemIds = new List<string>();
             for (int i = 0; i < itemCount; i += writeBatchSize)
             {
-                var writtenIds = WriteBigBatch(hashTableName, writeBatchSize, i, itemSize);
+                var writtenIds = await WriteBigBatch(hashTableName, writeBatchSize, i, itemSize);
                 itemIds.AddRange(writtenIds);
             }
 
@@ -864,18 +709,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 List<string> itemsToGet = itemIds.GetRange(i, MaxBatchSize);
                 if (itemsToGet.Count > 0)
                 {
-                    int itemsRetrieved = GetBigBatch(hashTableName, itemsToGet);
+                    int itemsRetrieved = await GetBigBatch(hashTableName, itemsToGet);
                     Assert.AreEqual(itemsRetrieved, itemsToGet.Count);
                 }
             }
         }
 
-        private List<string> WriteBigBatch(string hashTableName, int items, int itemsStartingIndex, int itemSize)
+        private async Task<List<string>> WriteBigBatch(string hashTableName, int items, int itemsStartingIndex, int itemSize)
         {
-            List<string> itemIds = new List<string>();
-            string itemData = new string('@', itemSize);
-
-            List<WriteRequest> writeRequests = new List<WriteRequest>();
+            var itemData = new string('@', itemSize);
+            var itemIds = new List<string>();
+            var writeRequests = new List<WriteRequest>();
+            
             for (int i = 0; i < items; i++)
             {
                 var itemId = (itemsStartingIndex + i).ToString();
@@ -906,13 +751,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             do
             {
-                result = Client.BatchWriteItem(request);
+                result = await Client.BatchWriteItemAsync(request);
                 request.RequestItems = result.UnprocessedItems;
             } while (result.UnprocessedItems != null && result.UnprocessedItems.Count > 0);
 
             return itemIds;
         }
-        private int GetBigBatch(string hashTableName, List<string> idsToGet)
+        
+        private async Task<int> GetBigBatch(string hashTableName, List<string> idsToGet)
         {
             var keys = new List<Dictionary<string, AttributeValue>>();
             foreach (var id in idsToGet)
@@ -930,12 +776,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     { hashTableName, new KeysAndAttributes { Keys = keys } }
                 }
             };
+            
             BatchGetItemResponse result;
-
             int itemsRetrieved = 0;
             do
             {
-                result = Client.BatchGetItem(request);
+                result = await Client.BatchGetItemAsync(request);
                 itemsRetrieved += result.Responses[hashTableName].Count;
 
                 request.RequestItems = result.UnprocessedKeys;
@@ -944,40 +790,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             return itemsRetrieved;
         }
 
-        private List<string> GetTableNames()
+        private async Task<List<Dictionary<string, AttributeValue>>> Scan(string tableName, Dictionary<string, Condition> conditions)
         {
-            return GetTableNamesHelper().ToList();
+            return (await ScanHelper(tableName, conditions)).ToList();
         }
-        private IEnumerable<string> GetTableNamesHelper()
-        {
-            var request = new ListTablesRequest();
-            ListTablesResponse response;
-            do
-            {
-                response = Client.ListTables(request);
-                foreach (var tableName in response.TableNames)
-                    yield return tableName;
-
-                request.ExclusiveStartTableName = response.LastEvaluatedTableName;
-            } while (!string.IsNullOrEmpty(response.LastEvaluatedTableName));
-        }
-
-        private List<Dictionary<string, AttributeValue>> Scan(string tableName, Dictionary<string, Condition> conditions)
-        {
-            return ScanHelper(tableName, conditions).ToList();
-        }
-        private List<Dictionary<string, AttributeValue>> ParallelScan(string tableName, int segments, Dictionary<string, Condition> conditions)
+        
+        private async Task<List<Dictionary<string, AttributeValue>>> ParallelScan(string tableName, int segments, Dictionary<string, Condition> conditions)
         {
             var allItems = new List<Dictionary<string, AttributeValue>>();
             for (int i = 0; i < segments; i++)
             {
-                var segmentResults = ScanHelper(tableName, conditions, i, segments);
+                var segmentResults = await ScanHelper(tableName, conditions, i, segments);
                 allItems.AddRange(segmentResults);
             }
 
             return allItems;
         }
-        private IEnumerable<Dictionary<string, AttributeValue>> ScanHelper(string tableName, Dictionary<string, Condition> conditions, int? segment = null, int? totalSegments = null)
+        
+        private async Task<IEnumerable<Dictionary<string, AttributeValue>>> ScanHelper(string tableName, Dictionary<string, Condition> conditions, int? segment = null, int? totalSegments = null)
         {
             var request = new ScanRequest
             {
@@ -985,20 +815,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 ScanFilter = conditions,
                 Limit = ScanLimit,
             };
+
             if (segment.HasValue && totalSegments.HasValue)
             {
                 request.Segment = segment.Value;
                 request.TotalSegments = totalSegments.Value;
             }
 
+            var items = new List<Dictionary<string, AttributeValue>>();
+
             ScanResponse result;
             do
             {
-                result = Client.Scan(request);
-                foreach (var item in result.Items)
-                    yield return item;
+                result = await Client.ScanAsync(request);
+                if (result.Items != null)
+                {
+                    items.AddRange(result.Items);
+                }
                 request.ExclusiveStartKey = result.LastEvaluatedKey;
             } while (result.LastEvaluatedKey != null && result.LastEvaluatedKey.Count > 0);
+            
+            return items;
         }
     }
 }

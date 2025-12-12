@@ -16,7 +16,8 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <NoWarn>CS1591</NoWarn>
+    <NoWarn>CS1591,NU1701</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,11 +36,5 @@
   <ItemGroup>
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetStandard.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Net.Http" />
-  </ItemGroup>
-  
+  </ItemGroup>  
 </Project>

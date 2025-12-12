@@ -29,94 +29,112 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AlarmHistoryItem Object
     /// </summary>  
-    public class AlarmHistoryItemUnmarshaller : IXmlUnmarshaller<AlarmHistoryItem, XmlUnmarshallerContext>
+    public class AlarmHistoryItemUnmarshaller : ICborUnmarshaller<AlarmHistoryItem, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public AlarmHistoryItem Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public AlarmHistoryItem Unmarshall(CborUnmarshallerContext context)
         {
             AlarmHistoryItem unmarshalledObject = new AlarmHistoryItem();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("AlarmContributorAttributes/entry", targetDepth))
-                    {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
-                        if (unmarshalledObject.AlarmContributorAttributes == null)
-                        {
-                            unmarshalledObject.AlarmContributorAttributes = new Dictionary<string, string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.AlarmContributorAttributes.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmContributorId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmContributorId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AlarmType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistoryData", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistoryData = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistoryItemType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistoryItemType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistorySummary", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistorySummary = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timestamp", targetDepth))
-                    {
-                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "AlarmContributorAttributes":
+                        {
+                            context.AddPathSegment("AlarmContributorAttributes");
+                            var unmarshaller = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance);
+                            unmarshalledObject.AlarmContributorAttributes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AlarmContributorId":
+                        {
+                            context.AddPathSegment("AlarmContributorId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AlarmContributorId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AlarmName":
+                        {
+                            context.AddPathSegment("AlarmName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AlarmType":
+                        {
+                            context.AddPathSegment("AlarmType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AlarmType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "HistoryData":
+                        {
+                            context.AddPathSegment("HistoryData");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.HistoryData = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "HistoryItemType":
+                        {
+                            context.AddPathSegment("HistoryItemType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.HistoryItemType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "HistorySummary":
+                        {
+                            context.AddPathSegment("HistorySummary");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.HistorySummary = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Timestamp":
+                        {
+                            context.AddPathSegment("Timestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static AlarmHistoryItemUnmarshaller _instance = new AlarmHistoryItemUnmarshaller();        
 

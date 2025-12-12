@@ -90,7 +90,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.ResourcePath = "/revocations";
             request.UseQueryString = true;
             
-            request.HostPrefix = $"verification.";
+            request.HostPrefix = $"data-";
 
             return request;
         }

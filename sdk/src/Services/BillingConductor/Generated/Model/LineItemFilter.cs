@@ -39,6 +39,7 @@ namespace Amazon.BillingConductor.Model
     public partial class LineItemFilter
     {
         private LineItemFilterAttributeName _attribute;
+        private List<string> _attributeValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MatchOption _matchOption;
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -60,6 +61,30 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetAttribute()
         {
             return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttributeValues. 
+        /// <para>
+        /// The values of the line item filter. This specifies the values to filter on.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> AttributeValues
+        {
+            get { return this._attributeValues; }
+            set { this._attributeValues = value; }
+        }
+
+        // Check to see if AttributeValues property is set
+        internal bool IsSetAttributeValues()
+        {
+            return this._attributeValues != null && (this._attributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +119,7 @@ namespace Amazon.BillingConductor.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<string> Values
         {
             get { return this._values; }
