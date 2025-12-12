@@ -35,7 +35,7 @@ namespace Amazon.Runtime.Internal.Settings
         {
             byte[] dataIn;
 
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
             dataIn = Convert.FromHexString(encrypted);
 #else
     // Legacy behavior preserved for older TFMs
