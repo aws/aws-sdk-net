@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Reduce object allocations in UserCrypto.Decrypt by 98%+ for .NET8+."
-    ]
-  }
-}

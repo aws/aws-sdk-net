@@ -3,7 +3,7 @@
   <metadata>
     <id>AWSSDK.Extensions.Logging.ILoggerAdaptor</id>
     <title>AWSSDK - Adaptor for Microsoft.Extensions.Logging</title>
-    <version>4.0.0.16</version>
+    <version>4.0.0.17</version>
     <authors>Amazon Web Services</authors>
     <description>Integrates the AWS SDK for .NET logging into Microsoft.Extensions.Logging.</description>
     <language>en-US</language>
@@ -14,7 +14,7 @@
     <readme>README.md</readme>
     <dependencies>
       <group targetFramework="netstandard2.0">
-        <dependency id="AWSSDK.Core" version="4.0.3.5" />
+        <dependency id="AWSSDK.Core" version="4.0.3.6" />
         <dependency id="Microsoft.Extensions.Logging.Abstractions" version="8.0.3" />
       </group>
     </dependencies>

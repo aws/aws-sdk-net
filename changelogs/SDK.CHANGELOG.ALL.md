@@ -1,3 +1,18 @@
+### 4.0.152.0 (2025-12-12 19:23 UTC)
+* BCMRecommendedActions (4.0.2.0)
+	* Added new freetier action types to RecommendedAction.type.
+* Connect (4.0.21.0)
+	* Amazon Connect now offers automated post-chat surveys triggered when customers end conversations. This captures timely feedback while experience is fresh, using either a no-code form builder or Amazon Lex-powered interactive surveys.
+* DataSync (4.0.8.0)
+	* Adds Enhanced mode support for NFS and SMB locations. SMB credentials are now managed via Secrets Manager, and may be encrypted with service or customer managed keys. Increases AgentArns maximum count to 8 (max 4 per TaskMode). Adds folder counters to DescribeTaskExecution for Enhanced mode tasks.
+* WorkSpacesWeb (4.0.5.0)
+	* Adds support for portal branding customization, enabling administrators to personalize end-user portals with custom assets.
+* Extensions.Bedrock.MEAI (4.0.5.0)
+	* Add support for ChatOptions.ResponseFormat to enable structured JSON responses using JSON Schema.
+* Core 4.0.3.6
+	* Reduce object allocations in UserCrypto.Decrypt by 98%+ for .NET8+.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.151.0 (2025-12-11 19:29 UTC)
 * Lambda (4.0.12.0)
 	* Add Dotnet 10 (dotnet10) support to AWS Lambda.
