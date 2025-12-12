@@ -46,8 +46,6 @@ namespace Amazon.S3.Transfer.Internal
         private readonly SemaphoreSlim _httpConcurrencySlots;
         private readonly bool _ownsHttpThrottler;
         private readonly RequestEventHandler _requestEventHandler;
-        
-        private Exception _downloadException;
         private bool _disposed = false;
         private bool _discoveryCompleted = false;
         private Task _downloadCompletionTask;
@@ -166,15 +164,6 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        /// <inheritdoc/>
-        public Exception DownloadException
-        { 
-            get 
-            { 
-                return _downloadException;
-            }
-        }
-
         /// <summary>
         /// Discovers the download strategy and starts concurrent downloads in a single unified operation.
         /// This eliminates resource leakage by managing HTTP slots and buffer capacity internally.
@@ -259,7 +248,6 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
-                _downloadException = ex;
                 _logger.Error(ex, "MultipartDownloadManager: Discovery failed");
                 throw;
             }
@@ -336,7 +324,6 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
-                _downloadException = ex;
                 _logger.Error(ex, "MultipartDownloadManager: Download failed");
                 
                 HandleDownloadError(ex, internalCts);
@@ -414,7 +401,7 @@ namespace Amazon.S3.Transfer.Internal
                 _logger.DebugFormat("MultipartDownloadManager: Background task waiting for {0} download tasks", expectedTaskCount);
                 
                 // Wait for all downloads to complete (fails fast on first exception)
-                await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, internalCts.Token).ConfigureAwait(false);
+                await TaskHelpers.WhenAllFailFastAsync(downloadTasks, internalCts.Token).ConfigureAwait(false);
 
                 _logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
 
@@ -429,7 +416,6 @@ namespace Amazon.S3.Transfer.Internal
             #pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
-                _downloadException = ex;
                 HandleDownloadError(ex, internalCts);
                 throw;
             }
@@ -451,12 +437,20 @@ namespace Amazon.S3.Transfer.Internal
             // Pre-acquire capacity in sequential order to prevent race condition deadlock
             // This ensures Part 2 gets capacity before Part 3, etc., preventing out-of-order
             // parts from consuming all buffer slots and blocking the next expected part
-            for (int partNum = 2; partNum <= downloadResult.TotalParts; partNum++)
+            for (int partNum = 2; partNum <= downloadResult.TotalParts && !internalCts.IsCancellationRequested; partNum++)
             {
                 _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Waiting for buffer space", partNum);
 
                 // Acquire capacity sequentially - guarantees Part 2 before Part 3, etc.
                 await _dataHandler.WaitForCapacityAsync(internalCts.Token).ConfigureAwait(false);
+                
+                // Check cancellation after acquiring capacity - a task may have failed while waiting
+                if (internalCts.IsCancellationRequested)
+                {
+                    _logger.InfoFormat("MultipartDownloadManager: [Part {0}] Stopping early - cancellation requested after capacity acquired", partNum);
+                    _dataHandler.ReleaseCapacity();
+                    break;
+                }
                 
                 _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Buffer space acquired", partNum);
 
@@ -466,6 +460,15 @@ namespace Amazon.S3.Transfer.Internal
                 // Acquire HTTP slot in the loop before creating task
                 // Loop will block here if all slots are in use
                 await _httpConcurrencySlots.WaitAsync(internalCts.Token).ConfigureAwait(false);
+                
+                // Check cancellation after acquiring HTTP slot - a task may have failed while waiting
+                if (internalCts.IsCancellationRequested)
+                {
+                    _logger.InfoFormat("MultipartDownloadManager: [Part {0}] Stopping early - cancellation requested after HTTP slot acquired", partNum);
+                    _httpConcurrencySlots.Release();
+                    _dataHandler.ReleaseCapacity();
+                    break;
+                }
 
                 _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot acquired", partNum);
 
@@ -478,9 +481,15 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     // If task creation fails, release the HTTP slot we just acquired
                     _httpConcurrencySlots.Release();
+                    _dataHandler.ReleaseCapacity();
                     _logger.DebugFormat("MultipartDownloadManager: [Part {0}] HTTP concurrency slot released due to task creation failure: {1}", partNum, ex);
                     throw;
                 }
+            }
+            
+            if (internalCts.IsCancellationRequested && downloadTasks.Count < downloadResult.TotalParts - 1)
+            {
+                _logger.InfoFormat("MultipartDownloadManager: Stopped queuing early at {0} parts due to cancellation", downloadTasks.Count);
             }
         }
 
@@ -491,7 +500,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             // SEP Part GET Step 6 / Ranged GET Step 8:
             // "validate that the total number of part GET requests sent matches with the expected PartsCount"
-            // Note: This should always be true if we reach this point, since WhenAllOrFirstException
+            // Note: This should always be true if we reach this point, since WhenAllFailFastAsync
             // ensures all tasks completed successfully (or threw on first failure).
             // The check serves as a defensive assertion for SEP compliance.
             // Note: expectedTaskCount + 1 accounts for Part 1 being buffered during discovery

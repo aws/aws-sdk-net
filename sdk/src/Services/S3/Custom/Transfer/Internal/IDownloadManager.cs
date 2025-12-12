@@ -55,11 +55,6 @@ namespace Amazon.S3.Transfer.Internal
         /// with the previous two-method API.
         /// </remarks>
         Task<DownloadResult> StartDownloadAsync(EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Exception that occurred during downloads, if any.
-        /// </summary>
-        Exception DownloadException { get; }
     }
 
     /// <summary>
