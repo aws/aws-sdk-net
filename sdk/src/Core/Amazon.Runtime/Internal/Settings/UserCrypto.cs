@@ -39,12 +39,12 @@ namespace Amazon.Runtime.Internal.Settings
             dataIn = Convert.FromHexString(encrypted);
 #else
     // Legacy behavior preserved for older TFMs
-    List<byte> dataInList = new List<byte>();
-    for (int i = 0; i < encrypted.Length; i = i + 2)
-    {
-        byte data = Convert.ToByte(encrypted.Substring(i, 2), 16);
-        dataInList.Add(data);
-    }
+            List<byte> dataInList = new List<byte>();
+            for (int i = 0; i < encrypted.Length; i = i + 2)
+            {
+                byte data = Convert.ToByte(encrypted.Substring(i, 2), 16);
+                dataInList.Add(data);
+            }
     dataIn = dataInList.ToArray();
 #endif
 

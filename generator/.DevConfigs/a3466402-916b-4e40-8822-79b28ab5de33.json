@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "optimize user crypto decrypt"
+      "Reduce object allocations in UserCrypto.Decrypt by 98%+ for .NET8+."
     ]
   }
 }
