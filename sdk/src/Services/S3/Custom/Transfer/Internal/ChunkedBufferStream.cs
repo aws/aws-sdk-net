@@ -78,11 +78,39 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         private const long MAX_STREAM_SIZE = (long)int.MaxValue * CHUNK_SIZE;
 
-        private readonly List<byte[]> _chunks = new List<byte[]>();
+        private readonly List<byte[]> _chunks;
         private long _length = 0;
         private long _position = 0;
         private bool _isReadMode = false;
         private bool _disposed = false;
+
+        /// <summary>
+        /// Creates a new ChunkedBufferStream with default initial capacity.
+        /// </summary>
+        public ChunkedBufferStream()
+        {
+            _chunks = new List<byte[]>();
+        }
+
+        /// <summary>
+        /// Creates a new ChunkedBufferStream with pre-allocated capacity for the expected size.
+        /// This avoids List resizing during writes, improving performance for known sizes.
+        /// </summary>
+        /// <param name="estimatedSize">The estimated total size in bytes. Used to pre-allocate the chunk list capacity.</param>
+        public ChunkedBufferStream(long estimatedSize)
+        {
+            if (estimatedSize > 0)
+            {
+                // Calculate number of chunks needed and cap at int.MaxValue for List capacity
+                long estimatedChunks = (estimatedSize + CHUNK_SIZE - 1) / CHUNK_SIZE;
+                int capacity = (int)Math.Min(estimatedChunks, int.MaxValue);
+                _chunks = new List<byte[]>(capacity);
+            }
+            else
+            {
+                _chunks = new List<byte[]>();
+            }
+        }
 
         /// <summary>
         /// Throws <see cref="ObjectDisposedException"/> if the stream has been disposed.

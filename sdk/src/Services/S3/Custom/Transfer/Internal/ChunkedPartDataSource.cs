@@ -102,12 +102,12 @@ namespace Amazon.S3.Transfer.Internal
         /// are not currently available, or zero if the end of the stream is reached.
         /// </returns>
         /// <exception cref="ObjectDisposedException">Thrown if the object has been disposed.</exception>
-        public async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        public Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             if (_disposed)
                 throw new ObjectDisposedException(nameof(ChunkedPartDataSource));
             
-            return await _stream.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
+            return _stream.ReadAsync(buffer, offset, count, cancellationToken);
         }
 
         /// <summary>

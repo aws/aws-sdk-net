@@ -280,7 +280,7 @@ namespace Amazon.S3.Transfer.Internal
                 _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Buffering {1} bytes using chunked buffer stream",
                     partNumber, expectedBytes);
                 
-                chunkedStream = new ChunkedBufferStream();
+                chunkedStream = new ChunkedBufferStream(expectedBytes);
                 
                 _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Reading response stream into chunked buffers",
                     partNumber);
