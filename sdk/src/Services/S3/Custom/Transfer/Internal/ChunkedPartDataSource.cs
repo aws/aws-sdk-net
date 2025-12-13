@@ -45,7 +45,7 @@ namespace Amazon.S3.Transfer.Internal
     /// var dataSource = new ChunkedPartDataSource(partNumber, chunkedStream);
     /// 
     /// // Added to PartBufferManager
-    /// _partBufferManager.AddBuffer(dataSource);
+    /// _partBufferManager.AddDataSource(dataSource);
     /// 
     /// // Consumer reads sequentially
     /// await dataSource.ReadAsync(buffer, offset, count, ct);
@@ -79,6 +79,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="partNumber">The part number for ordering.</param>
         /// <param name="stream">The ChunkedBufferStream containing the buffered part data. Must be in read mode.</param>
         /// <exception cref="ArgumentNullException">Thrown if stream is null.</exception>
+        /// <exception cref="InvalidOperationException">Thrown if the stream is not in read mode (CanRead is false).</exception>
         public ChunkedPartDataSource(int partNumber, ChunkedBufferStream stream)
         {
             PartNumber = partNumber;
@@ -100,8 +101,12 @@ namespace Amazon.S3.Transfer.Internal
         /// of bytes read into the buffer. This can be less than the requested count if that many bytes
         /// are not currently available, or zero if the end of the stream is reached.
         /// </returns>
+        /// <exception cref="ObjectDisposedException">Thrown if the object has been disposed.</exception>
         public async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
+            if (_disposed)
+                throw new ObjectDisposedException(nameof(ChunkedPartDataSource));
+            
             return await _stream.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
         }
 

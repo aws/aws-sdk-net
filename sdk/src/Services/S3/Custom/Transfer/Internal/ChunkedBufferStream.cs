@@ -42,6 +42,12 @@ namespace Amazon.S3.Transfer.Internal
     /// <item>Present standard Stream interface for easy integration</item>
     /// </list>
     /// 
+    /// <para><strong>Size Limits:</strong></para>
+    /// <para>
+    /// Maximum supported stream size is approximately 175TB (int.MaxValue * CHUNK_SIZE bytes).
+    /// This limit exists because chunk indexing uses int for List indexing.
+    /// </para>
+    /// 
     /// <para><strong>Usage Pattern:</strong></para>
     /// <code>
     /// var stream = new ChunkedBufferStream();
@@ -65,6 +71,12 @@ namespace Amazon.S3.Transfer.Internal
         /// Size of each buffer chunk. Set to 80KB to safely stay below the 85KB Large Object Heap threshold.
         /// </summary>
         private const int CHUNK_SIZE = 81920; // 80KB - safely below 85KB LOH threshold
+
+        /// <summary>
+        /// Maximum supported stream size. This limit exists because chunk indexing uses int for List indexing.
+        /// With 80KB chunks, this allows approximately 175TB of data.
+        /// </summary>
+        private const long MAX_STREAM_SIZE = (long)int.MaxValue * CHUNK_SIZE;
 
         private readonly List<byte[]> _chunks = new List<byte[]>();
         private long _length = 0;
@@ -140,6 +152,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <exception cref="NotSupportedException">Thrown if stream is in read mode.</exception>
         /// <exception cref="ArgumentNullException">Thrown if buffer is null.</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if offset or count is negative or exceeds buffer bounds.</exception>
+        /// <exception cref="IOException">Thrown if the write would exceed the maximum supported stream size (approximately 175TB).</exception>
         public override void Write(byte[] buffer, int offset, int count)
         {
             ThrowIfDisposed();
@@ -155,6 +168,10 @@ namespace Amazon.S3.Transfer.Internal
                 throw new ArgumentOutOfRangeException(nameof(count), "Count must be non-negative");
             if (offset + count > buffer.Length)
                 throw new ArgumentException("Offset and count exceed buffer bounds");
+
+            // Check for overflow before writing - prevents chunk index overflow for extremely large streams
+            if (_length > MAX_STREAM_SIZE - count)
+                throw new IOException($"Write would exceed maximum supported stream size of {MAX_STREAM_SIZE} bytes (approximately 175TB).");
 
             int remaining = count;
             int sourceOffset = offset;
@@ -194,11 +211,11 @@ namespace Amazon.S3.Transfer.Internal
         /// <remarks>
         /// Delegates to synchronous <see cref="Write"/> as ArrayPool operations are fast and don't benefit from async.
         /// </remarks>
-        public override async Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
             Write(buffer, offset, count);
-            await Task.CompletedTask.ConfigureAwait(false);
+            return Task.CompletedTask;
         }
 
         /// <summary>
@@ -267,10 +284,10 @@ namespace Amazon.S3.Transfer.Internal
         /// <remarks>
         /// Delegates to synchronous <see cref="Read"/> as buffer operations are fast and don't benefit from async.
         /// </remarks>
-        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            return await Task.FromResult(Read(buffer, offset, count)).ConfigureAwait(false);
+            return Task.FromResult(Read(buffer, offset, count));
         }
 
         /// <summary>
