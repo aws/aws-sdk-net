@@ -305,7 +305,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void IsComplete_ReturnsFalse_ForEmptyStream()
+        public void IsComplete_ReturnsTrue_ForEmptyStream()
         {
             // Arrange
             var stream = new ChunkedBufferStream();
