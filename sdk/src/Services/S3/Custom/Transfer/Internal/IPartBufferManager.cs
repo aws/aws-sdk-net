@@ -44,19 +44,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="dataSource">The part data source to add.</param>
         void AddDataSource(IPartDataSource dataSource);
         
-        /// <summary>
-        /// Adds a downloaded part buffer and signals readers when next expected part arrives.
-        /// </summary>
-        /// <param name="buffer">The downloaded part buffer to add.</param>
-        void AddBuffer(StreamPartBuffer buffer);
-        
-        /// <summary>
-        /// Adds a part data source (streaming or buffered) and signals readers when next expected part arrives.
-        /// </summary>
-        /// <param name="dataSource">The part data source to add (can be StreamingDataSource or BufferedDataSource).</param>
-        /// <returns>A task that completes when the data source has been added and signaling is complete.</returns>
-        void AddBuffer(IPartDataSource dataSource);
-        
+ 
         /// <summary>
         /// Reads data from the buffer manager. Automatically handles sequential part consumption
         /// and reads across part boundaries to fill the buffer when possible, matching standard Stream.Read() behavior.
