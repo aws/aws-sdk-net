@@ -44,7 +44,7 @@ namespace Amazon.S3.Transfer.Internal
     /// 
     /// <para><strong>Size Limits:</strong></para>
     /// <para>
-    /// Maximum supported stream size is approximately 175TB (int.MaxValue * CHUNK_SIZE bytes).
+    /// Maximum supported stream size is approximately 140TB (int.MaxValue * CHUNK_SIZE bytes).
     /// This limit exists because chunk indexing uses int for List indexing.
     /// </para>
     /// 
@@ -68,13 +68,14 @@ namespace Amazon.S3.Transfer.Internal
     internal class ChunkedBufferStream : Stream
     {
         /// <summary>
-        /// Size of each buffer chunk. Set to 80KB to safely stay below the 85KB Large Object Heap threshold.
+        /// Size of each buffer chunk. Set to 64KB to match ArrayPool bucket size and stay below the 85KB Large Object Heap threshold.
+        /// If we chose any higher than 64KB, ArrayPool would round up to 128KB (which would go to LOH).
         /// </summary>
-        private const int CHUNK_SIZE = 81920; // 80KB - safely below 85KB LOH threshold
+        private const int CHUNK_SIZE = 65536; // 64KB - matches ArrayPool bucket, safely below 85KB LOH threshold
 
         /// <summary>
         /// Maximum supported stream size. This limit exists because chunk indexing uses int for List indexing.
-        /// With 80KB chunks, this allows approximately 175TB of data.
+        /// With 64KB chunks, this allows approximately 140TB of data.
         /// </summary>
         private const long MAX_STREAM_SIZE = (long)int.MaxValue * CHUNK_SIZE;
 
