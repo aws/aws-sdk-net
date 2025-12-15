@@ -90,7 +90,6 @@ internal sealed partial class BedrockChatClient : IChatClient
         request.System = CreateSystem(request.System, messages, options);
         request.ToolConfig = CreateToolConfig(request.ToolConfig, options);
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
-        request.AdditionalModelRequestFields = CreateAdditionalModelRequestFields(request.AdditionalModelRequestFields, options);
 
         ConverseResponse response = await _runtime.ConverseAsync(request, cancellationToken).ConfigureAwait(false);
 
@@ -257,7 +256,6 @@ internal sealed partial class BedrockChatClient : IChatClient
         request.System = CreateSystem(request.System, messages, options);
         request.ToolConfig = CreateToolConfig(request.ToolConfig, options);
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
-        request.AdditionalModelRequestFields = CreateAdditionalModelRequestFields(request.AdditionalModelRequestFields, options);
 
         var result = await _runtime.ConverseStreamAsync(request, cancellationToken).ConfigureAwait(false);
 
@@ -1099,62 +1097,5 @@ internal sealed partial class BedrockChatClient : IChatClient
         }
 
         return config;
-    }
-
-    /// <summary>Creates a <see cref="Document"/> from the specified options to use as the additional model request options.</summary>
-    private static Document CreateAdditionalModelRequestFields(Document d, ChatOptions? options)
-    {
-        if (options is not null)
-        {
-            if (options.TopK is int topK)
-            {
-                d.Add("k", topK);
-            }
-
-            if (options.FrequencyPenalty is float frequencyPenalty)
-            {
-                d.Add("frequency_penalty", frequencyPenalty);
-            }
-
-            if (options.PresencePenalty is float presencePenalty)
-            {
-                d.Add("presence_penalty", presencePenalty);
-            }
-
-            if (options.Seed is long seed)
-            {
-                d.Add("seed", seed);
-            }
-
-            if (options.AdditionalProperties is { } props)
-            {
-                foreach (KeyValuePair<string, object?> prop in props)
-                {
-                    switch (prop.Value)
-                    {
-                        case bool propBool: d.Add(prop.Key, propBool); break;
-                        case int propInt32: d.Add(prop.Key, propInt32); break;
-                        case long propInt64: d.Add(prop.Key, propInt64); break;
-                        case float propSingle: d.Add(prop.Key, propSingle); break;
-                        case double propDouble: d.Add(prop.Key, propDouble); break;
-                        case string propString: d.Add(prop.Key, propString); break;
-                        case null: d.Add(prop.Key, default); break;
-                        case JsonElement json: d.Add(prop.Key, ToDocument(json)); break;
-                        default:
-                            try
-                            {
-                                d.Add(prop.Key, ToDocument(JsonSerializer.SerializeToElement(prop.Value, BedrockJsonContext.DefaultOptions.GetTypeInfo(prop.Value.GetType()))));
-                            }
-                            catch (Exception e)
-                            {
-                                DefaultLogger.Debug(e, "Unable to serialize ChatOptions.AdditionalProperties[\"{0}\"] of type {1}", prop.Key, prop.Value?.GetType());
-                            }
-                            break;
-                    }
-                }
-            }
-        }
-
-        return d;
     }
 }
