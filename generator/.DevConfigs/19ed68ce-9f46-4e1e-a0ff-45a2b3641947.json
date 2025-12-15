@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix The request signature we calculated does not match the signature you provided when using ContentLanguage in GetObjectRequest"
+      ]
+    }
+  ]
+}
