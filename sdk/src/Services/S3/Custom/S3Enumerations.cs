@@ -1774,6 +1774,11 @@ namespace Amazon.S3
         public static readonly InventoryOptionalField ObjectOwner = new InventoryOptionalField("ObjectOwner");
 
         /// <summary>
+        /// Constant LifecycleExpirationDate for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField LifecycleExpirationDate = new InventoryOptionalField("LifecycleExpirationDate");
+
+        /// <summary>
         /// Construct instance of InventoryOptionalField.
         /// </summary>
         /// <param name="value"></param>
