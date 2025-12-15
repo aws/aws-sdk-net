@@ -18825,6 +18825,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly Metric SpotAvgRunTimeBeforeInterruptionInst = new Metric("spot-avg-run-time-before-interruption-inst");
         /// <summary>
+        /// Constant SpotInterruptionRateInst for Metric
+        /// </summary>
+        public static readonly Metric SpotInterruptionRateInst = new Metric("spot-interruption-rate-inst");
+        /// <summary>
+        /// Constant SpotInterruptionRateVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotInterruptionRateVcpu = new Metric("spot-interruption-rate-vcpu");
+        /// <summary>
         /// Constant SpotMaxRunTimeBeforeInterruptionInst for Metric
         /// </summary>
         public static readonly Metric SpotMaxRunTimeBeforeInterruptionInst = new Metric("spot-max-run-time-before-interruption-inst");
@@ -18833,9 +18841,25 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly Metric SpotMinRunTimeBeforeInterruptionInst = new Metric("spot-min-run-time-before-interruption-inst");
         /// <summary>
+        /// Constant SpotTotalCountInst for Metric
+        /// </summary>
+        public static readonly Metric SpotTotalCountInst = new Metric("spot-total-count-inst");
+        /// <summary>
+        /// Constant SpotTotalCountVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotTotalCountVcpu = new Metric("spot-total-count-vcpu");
+        /// <summary>
         /// Constant SpotTotalEstimatedCost for Metric
         /// </summary>
         public static readonly Metric SpotTotalEstimatedCost = new Metric("spot-total-estimated-cost");
+        /// <summary>
+        /// Constant SpotTotalInterruptionsInst for Metric
+        /// </summary>
+        public static readonly Metric SpotTotalInterruptionsInst = new Metric("spot-total-interruptions-inst");
+        /// <summary>
+        /// Constant SpotTotalInterruptionsVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotTotalInterruptionsVcpu = new Metric("spot-total-interruptions-vcpu");
         /// <summary>
         /// Constant SpotTotalUsageHrsInst for Metric
         /// </summary>
