@@ -719,6 +719,14 @@
     <pattern>[a-zA-Z_0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EntityResolution.Model.CustomerProfilesIntegrationConfig.DomainArn</property>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):profile:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(domains/[a-zA-Z_0-9-]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EntityResolution.Model.CustomerProfilesIntegrationConfig.ObjectTypeArn</property>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):profile:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(domains/[a-zA-Z_0-9-]{1,255}/object-types/[a-zA-Z_0-9-]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EntityResolution.Model.DeletedUniqueId.UniqueId</property>
     <min>1</min>
     <max>780</max>
@@ -883,9 +891,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EntityResolution.Model.OutputSource.OutputS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
-    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+    <pattern>$|^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EntityResolution.Model.ProviderProperties.ProviderServiceArn</property>

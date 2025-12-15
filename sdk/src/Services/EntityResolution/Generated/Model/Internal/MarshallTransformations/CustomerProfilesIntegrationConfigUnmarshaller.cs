@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputSource Object
+    /// Response Unmarshaller for CustomerProfilesIntegrationConfig Object
     /// </summary>  
-    public class OutputSourceUnmarshaller : IJsonUnmarshaller<OutputSource, JsonUnmarshallerContext>
+    public class CustomerProfilesIntegrationConfigUnmarshaller : IJsonUnmarshaller<CustomerProfilesIntegrationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OutputSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CustomerProfilesIntegrationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OutputSource unmarshalledObject = new OutputSource();
+            CustomerProfilesIntegrationConfig unmarshalledObject = new CustomerProfilesIntegrationConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applyNormalization", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ApplyNormalization = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("customerProfilesIntegrationConfig", targetDepth))
-                {
-                    var unmarshaller = CustomerProfilesIntegrationConfigUnmarshaller.Instance;
-                    unmarshalledObject.CustomerProfilesIntegrationConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("KMSArn", targetDepth))
+                if (context.TestExpression("domainArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KMSArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DomainArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("output", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<OutputAttribute, OutputAttributeUnmarshaller>(OutputAttributeUnmarshaller.Instance);
-                    unmarshalledObject.Output = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("outputS3Path", targetDepth))
+                if (context.TestExpression("objectTypeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputS3Path = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ObjectTypeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputSourceUnmarshaller _instance = new OutputSourceUnmarshaller();        
+        private static CustomerProfilesIntegrationConfigUnmarshaller _instance = new CustomerProfilesIntegrationConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputSourceUnmarshaller Instance
+        public static CustomerProfilesIntegrationConfigUnmarshaller Instance
         {
             get
             {
