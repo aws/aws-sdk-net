@@ -162,8 +162,9 @@ internal sealed partial class BedrockChatClient : IChatClient
                         TextContent tc = new(citations.Content[i]?.Text) { RawRepresentation = citations.Content[i] };
                         tc.Annotations = [new CitationAnnotation()
                         {
+                            Snippet = citations.Citations[i].SourceContent?.Select(c => c.Text).FirstOrDefault() ?? citations.Citations[i].Source,
                             Title = citations.Citations[i].Title,
-                            Snippet = citations.Citations[i].SourceContent?.Select(c => c.Text).FirstOrDefault(),
+                            Url = Uri.TryCreate(citations.Citations[i].Location?.Web?.Url, UriKind.Absolute, out Uri? uri) ? uri : null,
                         }];
                         result.Contents.Add(tc);
                     }
@@ -422,14 +423,10 @@ internal sealed partial class BedrockChatClient : IChatClient
         UsageDetails ud = new()
         {
             InputTokenCount = usage.InputTokens,
+            CachedInputTokenCount = usage.CacheReadInputTokens,
             OutputTokenCount = usage.OutputTokens,
             TotalTokenCount = usage.TotalTokens,
         };
-
-        if (usage.CacheReadInputTokens is int cacheReadTokens)
-        {
-            (ud.AdditionalCounts ??= []).Add(nameof(usage.CacheReadInputTokens), cacheReadTokens);
-        }
 
         if (usage.CacheWriteInputTokens is int cacheWriteTokens)
         {
@@ -465,8 +462,7 @@ internal sealed partial class BedrockChatClient : IChatClient
             });
         }
 
-        foreach (var message in messages
-                     .Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent)))
+        foreach (var message in messages.Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent)))
         {
             system.Add(new SystemContentBlock()
             {
@@ -567,6 +563,10 @@ internal sealed partial class BedrockChatClient : IChatClient
         {
             switch (content)
             {
+                case AIContent when content.RawRepresentation is ContentBlock cb:
+                    contents.Add(cb);
+                    break;
+
                 case TextContent tc:
                     if (message.Role == ChatRole.Assistant)
                     {
@@ -649,32 +649,54 @@ internal sealed partial class BedrockChatClient : IChatClient
                     break;
 
                 case FunctionResultContent frc:
-                    Document result = frc.Result switch
-                    {
-                        int i => i,
-                        long l => l,
-                        float f => f,
-                        double d => d,
-                        string s => s,
-                        bool b => b,
-                        JsonElement json => ToDocument(json),
-                        { } other => ToDocument(JsonSerializer.SerializeToElement(other, BedrockJsonContext.DefaultOptions.GetTypeInfo(other.GetType()))),
-                        _ => default,
-                    };
-
                     contents.Add(new()
                     {
                         ToolResult = new()
                         {
                             ToolUseId = frc.CallId,
-                            Content = [new() { Json = new Document(new Dictionary<string, Document>() { ["result"] = result }) }],
+                            Content = ToToolResultContentBlocks(frc.Result),
                         },
                     });
                     break;
             }
 
+            static List<ToolResultContentBlock> ToToolResultContentBlocks(object? result) =>
+                result switch
+                {
+                    AIContent aic => [ToolResultContentBlockFromAIContent(aic)],
+                    IEnumerable<AIContent> aics => [.. aics.Select(ToolResultContentBlockFromAIContent)],
+                    string s => [new () { Text = s }],
+                    _ => [new()
+                        {
+                            Json = new Document(new Dictionary<string, Document>()
+                            {
+                                ["result"] = result switch
+                                {
+                                    int i => i,
+                                    long l => l,
+                                    float f => f,
+                                    double d => d,
+                                    bool b => b,
+                                    JsonElement json => ToDocument(json),
+                                    { } other => ToDocument(JsonSerializer.SerializeToElement(other, BedrockJsonContext.DefaultOptions.GetTypeInfo(other.GetType()))),
+                                    _ => default,
+                                }
+                            })
+                        }],
+                };
 
-            if (content.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) == true)
+            static ToolResultContentBlock ToolResultContentBlockFromAIContent(AIContent aic) =>
+                aic switch
+                {
+                    TextContent tc => new() { Text = tc.Text },
+                    TextReasoningContent trc => new() { Text = trc.Text },
+                    DataContent dc when GetImageFormat(dc.MediaType) is { } imageFormat => new() { Image = new() { Source = new() { Bytes = new(dc.Data.ToArray()) }, Format = imageFormat } },
+                    DataContent dc when GetVideoFormat(dc.MediaType) is { } videoFormat => new() { Video = new() { Source = new() { Bytes = new(dc.Data.ToArray()) }, Format = videoFormat } },
+                    DataContent dc when GetDocumentFormat(dc.MediaType) is { } docFormat => new() { Document = new() { Source = new() { Bytes = new(dc.Data.ToArray()) }, Format = docFormat, Name = dc.Name ?? "file" } },
+                    _ => ToToolResultContentBlocks(JsonSerializer.SerializeToElement(aic, BedrockJsonContext.DefaultOptions.GetTypeInfo(typeof(object)))).First(),
+                };
+
+            if (content.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) is true)
             {
                 if (maybeCachePoint is CachePointBlock cachePointBlock)
                 {
