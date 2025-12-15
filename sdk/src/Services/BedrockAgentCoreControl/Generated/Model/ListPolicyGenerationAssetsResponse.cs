@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token that can be used in subsequent <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a>
+        /// A pagination token that can be used in subsequent <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a>
         /// calls to retrieve additional assets. This token is only present when there are more
         /// generated policy assets available beyond the current response.
         /// </para>

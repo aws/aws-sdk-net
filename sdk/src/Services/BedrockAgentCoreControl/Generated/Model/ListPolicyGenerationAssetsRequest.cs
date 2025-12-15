@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token returned from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a>
+        /// A pagination token returned from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a>
         /// call. Use this token to retrieve the next page of assets when the response is paginated
         /// due to large numbers of generated policy options.
         /// </para>
@@ -111,7 +111,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property PolicyGenerationId. 
         /// <para>
         /// The unique identifier of the policy generation request whose assets are to be retrieved.
-        /// This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a>
+        /// This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a>
         /// call that has completed processing.
         /// </para>
         /// </summary>
