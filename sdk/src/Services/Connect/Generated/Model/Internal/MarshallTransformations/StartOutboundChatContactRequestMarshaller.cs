@@ -126,6 +126,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInitialTemplatedSystemMessage())
+                {
+                    context.Writer.WritePropertyName("InitialTemplatedSystemMessage");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TemplatedMessageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InitialTemplatedSystemMessage, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInstanceId())
                 {
                     context.Writer.WritePropertyName("InstanceId");
