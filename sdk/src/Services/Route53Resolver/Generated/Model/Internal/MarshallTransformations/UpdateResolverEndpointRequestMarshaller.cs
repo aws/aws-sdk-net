@@ -98,6 +98,18 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResolverEndpointType);
                 }
 
+                if(publicRequest.IsSetRniEnhancedMetricsEnabled())
+                {
+                    context.Writer.WritePropertyName("RniEnhancedMetricsEnabled");
+                    context.Writer.Write(publicRequest.RniEnhancedMetricsEnabled);
+                }
+
+                if(publicRequest.IsSetTargetNameServerMetricsEnabled())
+                {
+                    context.Writer.WritePropertyName("TargetNameServerMetricsEnabled");
+                    context.Writer.Write(publicRequest.TargetNameServerMetricsEnabled);
+                }
+
                 if(publicRequest.IsSetUpdateIpAddresses())
                 {
                     context.Writer.WritePropertyName("UpdateIpAddresses");

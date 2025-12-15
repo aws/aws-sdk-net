@@ -144,6 +144,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResolverEndpointType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RniEnhancedMetricsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RniEnhancedMetricsEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityGroupIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -160,6 +166,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetNameServerMetricsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TargetNameServerMetricsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

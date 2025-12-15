@@ -52,9 +52,11 @@ namespace Amazon.Route53Resolver.Model
         private string _preferredInstanceType;
         private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResolverEndpointType _resolverEndpointType;
+        private bool? _rniEnhancedMetricsEnabled;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResolverEndpointStatus _status;
         private string _statusMessage;
+        private bool? _targetNameServerMetricsEnabled;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -374,6 +376,26 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RniEnhancedMetricsEnabled. 
+        /// <para>
+        /// Indicates whether RNI enhanced metrics are enabled for the Resolver endpoint. When
+        /// enabled, one-minute granular metrics are published in CloudWatch for each RNI associated
+        /// with this endpoint. When disabled, these metrics are not published.
+        /// </para>
+        /// </summary>
+        public bool RniEnhancedMetricsEnabled
+        {
+            get { return this._rniEnhancedMetricsEnabled.GetValueOrDefault(); }
+            set { this._rniEnhancedMetricsEnabled = value; }
+        }
+
+        // Check to see if RniEnhancedMetricsEnabled property is set
+        internal bool IsSetRniEnhancedMetricsEnabled()
+        {
+            return this._rniEnhancedMetricsEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// The ID of one or more security groups that control access to this VPC. The security
@@ -479,6 +501,27 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetNameServerMetricsEnabled. 
+        /// <para>
+        /// Indicates whether target name server metrics are enabled for the outbound Resolver
+        /// endpoint. When enabled, one-minute granular metrics are published in CloudWatch for
+        /// each target name server associated with this endpoint. When disabled, these metrics
+        /// are not published. This feature is not supported for inbound Resolver endpoint.
+        /// </para>
+        /// </summary>
+        public bool TargetNameServerMetricsEnabled
+        {
+            get { return this._targetNameServerMetricsEnabled.GetValueOrDefault(); }
+            set { this._targetNameServerMetricsEnabled = value; }
+        }
+
+        // Check to see if TargetNameServerMetricsEnabled property is set
+        internal bool IsSetTargetNameServerMetricsEnabled()
+        {
+            return this._targetNameServerMetricsEnabled.HasValue; 
         }
 
     }

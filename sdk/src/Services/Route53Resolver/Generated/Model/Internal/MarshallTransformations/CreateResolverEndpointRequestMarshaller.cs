@@ -132,6 +132,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResolverEndpointType);
                 }
 
+                if(publicRequest.IsSetRniEnhancedMetricsEnabled())
+                {
+                    context.Writer.WritePropertyName("RniEnhancedMetricsEnabled");
+                    context.Writer.Write(publicRequest.RniEnhancedMetricsEnabled);
+                }
+
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     context.Writer.WritePropertyName("SecurityGroupIds");
@@ -157,6 +163,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTargetNameServerMetricsEnabled())
+                {
+                    context.Writer.WritePropertyName("TargetNameServerMetricsEnabled");
+                    context.Writer.Write(publicRequest.TargetNameServerMetricsEnabled);
                 }
 
                 writer.WriteObjectEnd();

@@ -41,6 +41,8 @@ namespace Amazon.Route53Resolver.Model
         private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resolverEndpointId;
         private ResolverEndpointType _resolverEndpointType;
+        private bool? _rniEnhancedMetricsEnabled;
+        private bool? _targetNameServerMetricsEnabled;
         private List<UpdateIpAddress> _updateIpAddresses = AWSConfigs.InitializeCollections ? new List<UpdateIpAddress>() : null;
 
         /// <summary>
@@ -183,6 +185,61 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetResolverEndpointType()
         {
             return this._resolverEndpointType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RniEnhancedMetricsEnabled. 
+        /// <para>
+        /// Updates whether RNI enhanced metrics are enabled for the Resolver endpoints. When
+        /// set to true, one-minute granular metrics are published in CloudWatch for each RNI
+        /// associated with this endpoint. When set to false, metrics are not published.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver
+        /// endpoint RNI enhanced metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed
+        /// metrics</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool RniEnhancedMetricsEnabled
+        {
+            get { return this._rniEnhancedMetricsEnabled.GetValueOrDefault(); }
+            set { this._rniEnhancedMetricsEnabled = value; }
+        }
+
+        // Check to see if RniEnhancedMetricsEnabled property is set
+        internal bool IsSetRniEnhancedMetricsEnabled()
+        {
+            return this._rniEnhancedMetricsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetNameServerMetricsEnabled. 
+        /// <para>
+        /// Updates whether target name server metrics are enabled for the outbound Resolver endpoints.
+        /// When set to true, one-minute granular metrics are published in CloudWatch for each
+        /// target name server associated with this endpoint. When set to false, metrics are not
+        /// published. This setting is not supported for inbound Resolver endpoints.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver
+        /// endpoint target name server metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed
+        /// metrics</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool TargetNameServerMetricsEnabled
+        {
+            get { return this._targetNameServerMetricsEnabled.GetValueOrDefault(); }
+            set { this._targetNameServerMetricsEnabled = value; }
+        }
+
+        // Check to see if TargetNameServerMetricsEnabled property is set
+        internal bool IsSetTargetNameServerMetricsEnabled()
+        {
+            return this._targetNameServerMetricsEnabled.HasValue; 
         }
 
         /// <summary>

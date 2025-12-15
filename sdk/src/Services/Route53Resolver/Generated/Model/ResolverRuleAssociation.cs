@@ -72,6 +72,11 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// The name of an association between a Resolver rule and a VPC.
         /// </para>
+        ///  
+        /// <para>
+        /// The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers
+        /// (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
         public string Name
