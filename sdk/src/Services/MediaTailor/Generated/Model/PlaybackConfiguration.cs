@@ -37,6 +37,7 @@ namespace Amazon.MediaTailor.Model
     public partial class PlaybackConfiguration
     {
         private AdConditioningConfiguration _adConditioningConfiguration;
+        private AdDecisionServerConfiguration _adDecisionServerConfiguration;
         private string _adDecisionServerUrl;
         private AvailSuppression _availSuppression;
         private Bumper _bumper;
@@ -76,6 +77,21 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetAdConditioningConfiguration()
         {
             return this._adConditioningConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdDecisionServerConfiguration.
+        /// </summary>
+        public AdDecisionServerConfiguration AdDecisionServerConfiguration
+        {
+            get { return this._adDecisionServerConfiguration; }
+            set { this._adDecisionServerConfiguration = value; }
+        }
+
+        // Check to see if AdDecisionServerConfiguration property is set
+        internal bool IsSetAdDecisionServerConfiguration()
+        {
+            return this._adDecisionServerConfiguration != null;
         }
 
         /// <summary>

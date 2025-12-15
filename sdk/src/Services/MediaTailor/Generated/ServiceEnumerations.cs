@@ -485,6 +485,56 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type CompressionMethod.
+    /// </summary>
+    public class CompressionMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for CompressionMethod
+        /// </summary>
+        public static readonly CompressionMethod GZIP = new CompressionMethod("GZIP");
+        /// <summary>
+        /// Constant NONE for CompressionMethod
+        /// </summary>
+        public static readonly CompressionMethod NONE = new CompressionMethod("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CompressionMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CompressionMethod FindValue(string value)
+        {
+            return FindValue<CompressionMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CompressionMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FillPolicy.
     /// </summary>
     public class FillPolicy : ConstantClass
@@ -948,6 +998,56 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Method.
+    /// </summary>
+    public class Method : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GET for Method
+        /// </summary>
+        public static readonly Method GET = new Method("GET");
+        /// <summary>
+        /// Constant POST for Method
+        /// </summary>
+        public static readonly Method POST = new Method("POST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Method(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Method FindValue(string value)
+        {
+            return FindValue<Method>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Method(string value)
         {
             return FindValue(value);
         }

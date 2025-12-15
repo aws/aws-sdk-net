@@ -30,32 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// The configuration that tells Elemental MediaTailor how many seconds to spread out
-    /// requests to the ad decision server (ADS). Instead of sending ADS requests for all
-    /// sessions at the same time, MediaTailor spreads the requests across the amount of time
-    /// specified in the retrieval window.
+    /// Configuration parameters for customizing HTTP requests sent to the ad decision server
+    /// (ADS). This allows you to specify the HTTP method, headers, request body, and compression
+    /// settings for ADS requests.
     /// </summary>
-    public partial class TrafficShapingRetrievalWindow
+    public partial class AdDecisionServerConfiguration
     {
-        private int? _retrievalWindowDurationSeconds;
+        private HttpRequest _httpRequest;
 
         /// <summary>
-        /// Gets and sets the property RetrievalWindowDurationSeconds. 
+        /// Gets and sets the property HttpRequest. 
         /// <para>
-        /// The amount of time, in seconds, that MediaTailor spreads prefetch requests to the
-        /// ADS. 
+        /// The HTTP request configuration parameters for the ad decision server.
         /// </para>
         /// </summary>
-        public int RetrievalWindowDurationSeconds
+        public HttpRequest HttpRequest
         {
-            get { return this._retrievalWindowDurationSeconds.GetValueOrDefault(); }
-            set { this._retrievalWindowDurationSeconds = value; }
+            get { return this._httpRequest; }
+            set { this._httpRequest = value; }
         }
 
-        // Check to see if RetrievalWindowDurationSeconds property is set
-        internal bool IsSetRetrievalWindowDurationSeconds()
+        // Check to see if HttpRequest property is set
+        internal bool IsSetHttpRequest()
         {
-            return this._retrievalWindowDurationSeconds.HasValue; 
+            return this._httpRequest != null;
         }
 
     }
