@@ -515,6 +515,55 @@ namespace Amazon.CloudWatchLogs
         }
         #endregion
         
+        #region  CancelImportTask
+
+        internal virtual CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CancelImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels an active import task and stops importing data from the CloudTrail Lake Event
+        /// Data Store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelImportTask service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
+        public virtual Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelImportTaskResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateDelivery
 
         internal virtual CreateDeliveryResponse CreateDelivery(CreateDeliveryRequest request)
@@ -708,6 +757,140 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = CreateExportTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateExportTaskResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateImportTask
+
+        internal virtual CreateImportTaskResponse CreateImportTask(CreateImportTaskRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts an import from a data source to CloudWatch Log and creates a managed log group
+        /// as the destination for the imported data. Currently, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">CloudTrail
+        /// Event Data Store</a> is the only supported data source. 
+        /// 
+        ///  
+        /// <para>
+        /// The import task must satisfy the following constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified source must be in an ACTIVE state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The API caller must have permissions to access the data in the provided source and
+        /// to perform iam:PassRole on the provided import role which has the same permissions,
+        /// as described below.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The provided IAM role must trust the "cloudtrail.amazonaws.com" principal and have
+        /// the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// cloudtrail:GetEventDataStoreData
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// logs:CreateLogGroup
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// logs:CreateLogStream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// logs:PutResourcePolicy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (If source has an associated AWS KMS Key) kms:Decrypt
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (If source has an associated AWS KMS Key) kms:GenerateDataKey
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example IAM policy for provided import role:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>[ { "Effect": "Allow", "Action": "iam:PassRole", "Resource": "arn:aws:iam::123456789012:role/apiCallerCredentials",
+        /// "Condition": { "StringLike": { "iam:AssociatedResourceARN": "arn:aws:logs:us-east-1:123456789012:log-group:aws/cloudtrail/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb:*"
+        /// } } }, { "Effect": "Allow", "Action": [ "cloudtrail:GetEventDataStoreData" ], "Resource":
+        /// [ "arn:aws:cloudtrail:us-east-1:123456789012:eventdatastore/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb"
+        /// ] }, { "Effect": "Allow", "Action": [ "logs:CreateImportTask", "logs:CreateLogGroup",
+        /// "logs:CreateLogStream", "logs:PutResourcePolicy" ], "Resource": [ "arn:aws:logs:us-east-1:123456789012:log-group:/aws/cloudtrail/*"
+        /// ] }, { "Effect": "Allow", "Action": [ "kms:Decrypt", "kms:GenerateDataKey" ], "Resource":
+        /// [ "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012" ]
+        /// } ]</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the import source has a customer managed key, the "cloudtrail.amazonaws.com" principal
+        /// needs permissions to perform kms:Decrypt and kms:GenerateDataKey.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There can be no more than 3 active imports per account at a given time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The startEventTime must be less than or equal to endEventTime.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The data being imported must be within the specified source's retention period.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateImportTask service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateImportTask">REST API Reference for CreateImportTask Operation</seealso>
+        public virtual Task<CreateImportTaskResponse> CreateImportTaskAsync(CreateImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateImportTaskResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1460,7 +1643,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// You can't use this operation to delete an account-level index policy. Instead, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeletAccountPolicy</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeleteAccountPolicy</a>.
         /// </para>
         ///  
         /// <para>
@@ -2437,6 +2620,105 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = DescribeFieldIndexesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFieldIndexesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeImportTaskBatches
+
+        internal virtual DescribeImportTaskBatchesResponse DescribeImportTaskBatches(DescribeImportTaskBatchesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeImportTaskBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportTaskBatchesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportTaskBatchesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets detailed information about the individual batches within an import task, including
+        /// their status and any error messages. For CloudTrail Event Data Store sources, a batch
+        /// refers to a subset of stored events grouped by their eventTime.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportTaskBatches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImportTaskBatches service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeImportTaskBatches">REST API Reference for DescribeImportTaskBatches Operation</seealso>
+        public virtual Task<DescribeImportTaskBatchesResponse> DescribeImportTaskBatchesAsync(DescribeImportTaskBatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeImportTaskBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportTaskBatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImportTaskBatchesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeImportTasks
+
+        internal virtual DescribeImportTasksResponse DescribeImportTasks(DescribeImportTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeImportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportTasksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists and describes import tasks, with optional filtering by import status and source
+        /// ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImportTasks service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeImportTasks">REST API Reference for DescribeImportTasks Operation</seealso>
+        public virtual Task<DescribeImportTasksResponse> DescribeImportTasksAsync(DescribeImportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeImportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImportTasksResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4531,7 +4813,8 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates an account-level data protection policy, subscription filter policy, field
         /// index policy, transformer policy, or metric extraction policy that applies to all
-        /// log groups or a subset of log groups in the account.
+        /// log groups, a subset of log groups, or a data source name and type combination in
+        /// the account.
         /// 
         ///  
         /// <para>
@@ -4725,7 +5008,72 @@ namespace Amazon.CloudWatchLogs
         /// If you have multiple account-level transformer policies with selection criteria, no
         /// two of them can use the same or overlapping log group name prefixes. For example,
         /// if you have one policy filtered to log groups that start with <c>my-log</c>, you can't
-        /// have another field index policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
+        /// have another transformer policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also set up a transformer at the log-group level. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.
+        /// If there is both a log-group level transformer created with <c>PutTransformer</c>
+        /// and an account-level transformer that could apply to the same log group, the log group
+        /// uses only the log-group level transformer. It ignores the account-level transformer.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Field index policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use field index policies to create indexes on fields found in log events for
+        /// a log group or data source name and type combination. Creating field indexes can help
+        /// lower the scan volume for CloudWatch Logs Insights queries that reference those fields,
+        /// because these queries attempt to skip the processing of log events that are known
+        /// to not match the indexed field. Good fields to index are fields that you often need
+        /// to query for and fields or values that match only a small fraction of the total log
+        /// events. Common examples of indexes include request ID, session ID, user IDs, or instance
+        /// IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
+        /// field indexes to improve query performance and reduce costs</a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
+        /// operation. To find the fields for a data source use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html">GetLogFields</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, suppose you have created a field index for <c>requestId</c>. Then, any
+        /// CloudWatch Logs Insights query on that log group that includes <c>requestId = <i>value</i>
+        /// </c> or <c>requestId in [<i>value</i>, <i>value</i>, ...]</c> will attempt to process
+        /// only the log events where the indexed field matches the specified value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Matches of log events to the names of indexed fields are case-sensitive. For example,
+        /// an indexed field of <c>RequestId</c> won't match a log event containing <c>requestId</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have one account-level field index policy that applies to all log groups in
+        /// the account. Or you can create as many as 20 account-level field index policies that
+        /// are each scoped to a subset of log groups using <c>LogGroupNamePrefix</c> with the
+        /// <c>selectionCriteria</c> parameter. You can have another 20 account-level field index
+        /// policies using <c>DataSourceName</c> and <c>DataSourceType</c> for the <c>selectionCriteria</c>
+        /// parameter. If you have multiple account-level index policies with <c>LogGroupNamePrefix</c>
+        /// selection criteria, no two of them can use the same or overlapping log group name
+        /// prefixes. For example, if you have one policy filtered to log groups that start with
+        /// <i>my-log</i>, you can't have another field index policy filtered to <i>my-logpprod</i>
+        /// or <i>my-logging</i>. Similarly, if you have multiple account-level index policies
+        /// with <c>DataSourceName</c> and <c>DataSourceType</c> selection criteria, no two of
+        /// them can use the same data source name and type combination. For example, if you have
+        /// one policy filtered to the data source name <c>amazon_vpc</c> and data source type
+        /// <c>flow</c> you cannot create another policy with this combination.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you create an account-level field index policy in a monitoring account in cross-account
+        /// observability, the policy is applied only to the monitoring account and not to any
+        /// source accounts.
         /// </para>
         ///  
         /// <para>
@@ -4751,80 +5099,140 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>@data_source_name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@data_source_type</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@data_format</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>traceId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>severityText</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>attributes.session.id</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// CloudWatch Logs provides default field indexes for certain data source name and type
+        /// combinations as well. Default field indexes are automatically available for the following
+        /// data source name and type combinations as identified in the following list:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>amazon_vpc.flow</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>action</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>logStatus</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>region</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>flowDirection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>type</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>amazon_route53.resolver_query</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>transport</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>rcode</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>aws_waf.access</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>action</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>httpRequest.country</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>aws_cloudtrail.data</c>, <c>aws_cloudtrail.management</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>eventSource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eventName</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>awsRegion</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>userAgent</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>errorCode</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eventType</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>managementEvent</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>readOnly</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eventCategory</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>requestId</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Default field indexes are in addition to any custom field indexes you define within
-        /// your policy. Default field indexes are not counted towards your field index quota.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can also set up a transformer at the log-group level. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.
-        /// If there is both a log-group level transformer created with <c>PutTransformer</c>
-        /// and an account-level transformer that could apply to the same log group, the log group
-        /// uses only the log-group level transformer. It ignores the account-level transformer.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Field index policy</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use field index policies to create indexes on fields found in log events in
-        /// the log group. Creating field indexes can help lower the scan volume for CloudWatch
-        /// Logs Insights queries that reference those fields, because these queries attempt to
-        /// skip the processing of log events that are known to not match the indexed field. Good
-        /// fields to index are fields that you often need to query for and fields or values that
-        /// match only a small fraction of the total log events. Common examples of indexes include
-        /// request ID, session ID, user IDs, or instance IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
-        /// field indexes to improve query performance and reduce costs</a> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
-        /// operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example, suppose you have created a field index for <c>requestId</c>. Then, any
-        /// CloudWatch Logs Insights query on that log group that includes <c>requestId = <i>value</i>
-        /// </c> or <c>requestId in [<i>value</i>, <i>value</i>, ...]</c> will attempt to process
-        /// only the log events where the indexed field matches the specified value.
-        /// </para>
-        ///  
-        /// <para>
-        /// Matches of log events to the names of indexed fields are case-sensitive. For example,
-        /// an indexed field of <c>RequestId</c> won't match a log event containing <c>requestId</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can have one account-level field index policy that applies to all log groups in
-        /// the account. Or you can create as many as 40 account-level field index policies (20
-        /// for log group prefix selection, 20 for data source selection) that are each scoped
-        /// to a subset of log groups or data sources with the <c>selectionCriteria</c> parameter.
-        /// Field index policies can now be created for specific data source name and type combinations
-        /// using DataSourceName and DataSourceType selection criteria. If you have multiple account-level
-        /// index policies with selection criteria, no two of them can use the same or overlapping
-        /// log group name prefixes. For example, if you have one policy filtered to log groups
-        /// that start with <c>my-log</c>, you can't have another field index policy filtered
-        /// to <c>my-logpprod</c> or <c>my-logging</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you create an account-level field index policy in a monitoring account in cross-account
-        /// observability, the policy is applied only to the monitoring account and not to any
-        /// source accounts.
+        /// your policy. Default field indexes are not counted towards your <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax">field
+        /// index quota</a>. 
         /// </para>
         ///  
         /// <para>
         /// If you want to create a field index policy for a single log group, you can use <a
         /// href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>
-        /// instead of <c>PutAccountPolicy</c>. If you do so, that log group will use only that
-        /// log-group level policy, and will ignore the account-level policy that you create with
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
+        /// instead of <c>PutAccountPolicy</c>. If you do so, that log group will use that log-group
+        /// level policy and any account-level policies that match at the data source level; any
+        /// account-level policy that matches at the log group level (for example, no selection
+        /// criteria or log group name prefix selection criteria) will be ignored.
         /// </para>
         ///  
         /// <para>
