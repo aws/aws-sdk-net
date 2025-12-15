@@ -37,6 +37,7 @@ namespace Amazon.EntityResolution.Model
     public partial class OutputSource
     {
         private bool? _applyNormalization;
+        private CustomerProfilesIntegrationConfig _customerProfilesIntegrationConfig;
         private string _kmsArn;
         private List<OutputAttribute> _output = AWSConfigs.InitializeCollections ? new List<OutputAttribute>() : null;
         private string _outputs3Path;
@@ -60,6 +61,27 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetApplyNormalization()
         {
             return this._applyNormalization.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerProfilesIntegrationConfig. 
+        /// <para>
+        /// Specifies the Customer Profiles integration configuration for sending matched output
+        /// directly to Customer Profiles. When configured, Entity Resolution automatically creates
+        /// and updates customer profiles based on match clusters, eliminating the need for manual
+        /// Amazon S3 integration setup.
+        /// </para>
+        /// </summary>
+        public CustomerProfilesIntegrationConfig CustomerProfilesIntegrationConfig
+        {
+            get { return this._customerProfilesIntegrationConfig; }
+            set { this._customerProfilesIntegrationConfig = value; }
+        }
+
+        // Check to see if CustomerProfilesIntegrationConfig property is set
+        internal bool IsSetCustomerProfilesIntegrationConfig()
+        {
+            return this._customerProfilesIntegrationConfig != null;
         }
 
         /// <summary>
@@ -108,7 +130,7 @@ namespace Amazon.EntityResolution.Model
         /// The S3 path to which Entity Resolution will write the output table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string OutputS3Path
         {
             get { return this._outputs3Path; }
