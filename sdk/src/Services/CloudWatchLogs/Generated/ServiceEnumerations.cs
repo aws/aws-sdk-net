@@ -691,6 +691,64 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus CANCELLED = new ImportStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus COMPLETED = new ImportStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus FAILED = new ImportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IN_PROGRESS = new ImportStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IndexSource.
     /// </summary>
     public class IndexSource : ConstantClass

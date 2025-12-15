@@ -133,6 +133,14 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Paginator for ListAggregateLogGroupSummaries operation
+        ///</summary>
+        public IListAggregateLogGroupSummariesPaginator ListAggregateLogGroupSummaries(ListAggregateLogGroupSummariesRequest request) 
+        {
+            return new ListAggregateLogGroupSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAnomalies operation
         ///</summary>
         public IListAnomaliesPaginator ListAnomalies(ListAnomaliesRequest request) 

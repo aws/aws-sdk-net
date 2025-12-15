@@ -149,11 +149,20 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Network Firewall Proxy, the valid values are <c>ALERT_LOGS</c>, <c>ALLOW_LOGS</c>,
+        /// and <c>DENY_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Network Load Balancer, the valid value is <c>NLB_ACCESS_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c> and <c>PCS_JOBCOMP_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Quick Suite, the valid values are <c>CHAT_LOGS</c> and <c>FEEDBACK_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

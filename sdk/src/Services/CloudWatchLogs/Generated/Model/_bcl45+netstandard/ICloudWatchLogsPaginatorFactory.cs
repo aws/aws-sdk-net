@@ -148,6 +148,16 @@ namespace Amazon.CloudWatchLogs.Model
         IGetScheduledQueryHistoryPaginator GetScheduledQueryHistory(GetScheduledQueryHistoryRequest request);
 
         /// <summary>
+        /// Paginator for ListAggregateLogGroupSummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAggregateLogGroupSummariesPaginator ListAggregateLogGroupSummaries(ListAggregateLogGroupSummariesRequest request);
+
+        /// <summary>
         /// Paginator for ListAnomalies operation
         ///</summary>
         [AWSPaginator(
