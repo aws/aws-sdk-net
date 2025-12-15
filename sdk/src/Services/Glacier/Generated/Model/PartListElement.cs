@@ -63,7 +63,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property SHA256TreeHash. 
         /// <para>
-        /// The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field
+        /// The SHA256 tree hash value that Amazon Glacier calculated for the part. This field
         /// is never <c>null</c>.
         /// </para>
         /// </summary>

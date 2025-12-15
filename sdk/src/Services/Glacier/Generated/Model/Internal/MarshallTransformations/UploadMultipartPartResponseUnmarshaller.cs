@@ -80,6 +80,10 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 {
                     return MissingParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoLongerSupportedException"))
+                {
+                    return NoLongerSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTimeoutException"))
                 {
                     return RequestTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
