@@ -68,6 +68,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContentLanguage. 
+        /// <para>
+        /// The language the content is in.
+        /// </para>
+        /// </summary>
+        public string ContentLanguage
+        {
+            get { return this.Headers.ContentLanguage; }
+            set { this.Headers.ContentLanguage = value; }
+        }
+
+        /// <summary>
         /// Gets and sets the property DeleteMarker. 
         /// <para>
         /// Specifies whether the object retrieved was (true) or was not (false) a Delete Marker.
@@ -182,4 +194,3 @@ namespace Amazon.S3.Model
         }
     }
 }
-
