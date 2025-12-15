@@ -2,6 +2,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Transfer.Internal;
+using Amazon.S3.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
@@ -1005,6 +1006,139 @@ namespace AWSSDK.UnitTests
             Console.WriteLine($"Sequential Test Results: Expected max concurrency = 1, Observed: {maxObservedConcurrency}");
             Assert.AreEqual(1, maxObservedConcurrency, 
                 $"Sequential mode should only download 1 file at a time, but observed {maxObservedConcurrency}");
+        }
+
+        #endregion
+
+        #region Case-Insensitive Key Conflict Tests
+
+        [TestMethod]
+        public async Task ExecuteAsync_CaseInsensitiveKeyConflict_AbortOnFailure_ThrowsAndNoFilesDownloaded()
+        {
+            var request = CreateDownloadDirectoryRequest();
+            var isCaseSensitive = FileSystemHelper.IsDirectoryCaseSensitive(request.LocalDirectory);
+            if (isCaseSensitive)
+            {
+                return;
+            }
+            request.FailurePolicy = FailurePolicy.AbortOnFailure;
+
+            var listResponse = new ListObjectsResponse
+            {
+                S3Objects = new List<S3Object>
+                {
+                    new S3Object { Key = "prefix/File.txt", Size = 10 },
+                    new S3Object { Key = "prefix/file.txt", Size = 20 }
+                }
+            };
+
+            _mockS3Client.Setup(c => c.ListObjectsAsync(
+                It.IsAny<ListObjectsRequest>(),
+                It.IsAny<CancellationToken>()))
+                .ReturnsAsync(listResponse);
+
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
+
+            try
+            {
+                await command.ExecuteAsync(CancellationToken.None);
+                Assert.Fail("Expected an exception due to case-insensitive key conflict.");
+            }
+            catch (Exception ex)
+            {
+                StringAssert.Contains(ex.Message, "conflict", "Exception message should indicate a key path conflict.");
+            }
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_CaseInsensitiveKeyConflict_ContinueOnFailure_ReportsFailureInResponse()
+        {
+            var request = CreateDownloadDirectoryRequest();
+            var isCaseSensitive = FileSystemHelper.IsDirectoryCaseSensitive(request.LocalDirectory);
+            if (isCaseSensitive)
+            {
+                return;
+            }
+            request.FailurePolicy = FailurePolicy.ContinueOnFailure;
+
+            var listResponse = new ListObjectsResponse
+            {
+                S3Objects = new List<S3Object>
+                {
+                    new S3Object { Key = "prefix/File.txt", Size = 10 },
+                    new S3Object { Key = "prefix/file.txt", Size = 20 }
+                }
+            };
+
+            _mockS3Client.Setup(c => c.ListObjectsAsync(
+                It.IsAny<ListObjectsRequest>(),
+                It.IsAny<CancellationToken>()))
+                .ReturnsAsync(listResponse);
+
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
+
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            Assert.IsNotNull(response, "Response should not be null.");
+            Assert.AreEqual(0, response.ObjectsDownloaded, "No files should be downloaded when all conflicted.");
+            Assert.IsTrue(response.ObjectsFailed >= 1, "At least one failure should be recorded.");
+            Assert.IsNotNull(response.Errors, "Errors collection should be populated.");
+            Assert.IsTrue(response.Errors.Count >= 1, "Errors collection should contain at least one error.");
+            Assert.IsTrue(response.Result == DirectoryResult.Failure ||
+                          response.Result == DirectoryResult.PartialSuccess,
+                          "Result should indicate failure or partial success due to conflicts.");
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_CaseInsensitiveKeyConflict_SkipCaseCheck_AllowsDownloads()
+        {
+            var request = CreateDownloadDirectoryRequest();
+            var isCaseSensitive = FileSystemHelper.IsDirectoryCaseSensitive(request.LocalDirectory);
+            if (isCaseSensitive)
+            {
+                // This test validates behavior only on case-insensitive filesystems.
+                // On case-sensitive systems, there is no conflict to detect.
+                return;
+            }
+
+            request.FailurePolicy = FailurePolicy.AbortOnFailure;
+
+            var listResponse = new ListObjectsResponse
+            {
+                S3Objects = new List<S3Object>
+                {
+                    new S3Object { Key = "prefix/File.txt", Size = 10 },
+                    new S3Object { Key = "prefix/file.txt", Size = 20 }
+                }
+            };
+
+            _mockS3Client.Setup(c => c.ListObjectsAsync(
+                It.IsAny<ListObjectsRequest>(),
+                It.IsAny<CancellationToken>()))
+                .ReturnsAsync(listResponse);
+
+            SetupGetObjectForFile("prefix/File.txt", 10, setupForMultipart: false);
+            SetupGetObjectForFile("prefix/file.txt", 20, setupForMultipart: false);
+
+            // Enable skipping of directory case-sensitivity checks so that the
+            // conflict detection logic is bypassed.
+            var config = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = 4,
+                SkipDirectoryCaseSensitivityCheck = true
+            };
+
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, config, useMultipartDownload: false);
+
+            // Act: with the skip flag enabled, the operation should not throw a
+            // conflict exception and should attempt to download objects.
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            Assert.IsNotNull(response, "Response should not be null when skipping case check.");
+            // Behavior of how many files succeed may vary by implementation
+            // (last one wins on overwrite), but we at least assert that no
+            // conflict exception prevented completion.
+            Assert.IsTrue(response.ObjectsDownloaded >= 1, "At least one object should have been downloaded when skipping case checks.");
         }
 
         #endregion

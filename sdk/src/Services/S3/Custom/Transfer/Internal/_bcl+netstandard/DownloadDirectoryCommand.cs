@@ -66,10 +66,13 @@ namespace Amazon.S3.Transfer.Internal
 
                 // Step 3: Filter to actual files (exclude directory markers)
                 var objectsToDownload = FilterObjectsToDownload(s3Objects);
-
+                
                 // Step 4: Setup resources and execute downloads
                 using (var resources = CreateDownloadResources(cancellationToken))
                 {
+                    await CheckIfKeysDifferByCase(objectsToDownload, prefixLength, resources.InternalCancellationTokenSource)
+                        .ConfigureAwait(false);
+                    
                     await ExecuteParallelDownloadsAsync(
                         objectsToDownload,
                         prefixLength,
@@ -90,6 +93,63 @@ namespace Amazon.S3.Transfer.Internal
             {
                 FireTransferFailedEvent();
                 throw;
+            }
+        }
+
+        /// <summary>
+        /// Checks if any S3 object keys differ only by case.
+        /// On case-insensitive file systems, this can lead to conflicts where objects can be overwritten.
+        /// If such conflicts are found, the configured failure policy is applied.
+        /// </summary>
+        private async Task CheckIfKeysDifferByCase(List<S3Object> s3Objects, int prefixLength, CancellationTokenSource cancellationTokenSource)
+        {
+            if (_config.SkipDirectoryCaseSensitivityCheck)
+            {
+                _logger.DebugFormat("DownloadDirectoryCommand.CheckIfKeysDifferByCase: Skipping case sensitivity check as per configuration.");
+                return;
+            }
+            var isCaseSensitive = FileSystemHelper.IsDirectoryCaseSensitive(this._request.LocalDirectory);
+            if (isCaseSensitive)
+            {
+                _logger.DebugFormat("DownloadDirectoryCommand.CheckIfKeysDifferByCase: Target directory is case-sensitive, skipping check.");
+                return;
+            }
+            
+            var hashSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var s3Object in s3Objects)
+            {
+                // Create failure callback
+                Action<Exception> onFailure = (ex) =>
+                {
+                    var downloadRequest = ConstructTransferUtilityDownloadRequest(s3Object, prefixLength);
+                    this._request.OnRaiseObjectDownloadFailedEvent(
+                        new ObjectDownloadFailedEventArgs(
+                            this._request,
+                            downloadRequest,
+                            ex));
+                };
+                
+                await _failurePolicy.ExecuteAsync(
+                    () =>
+                    {
+                        string currentKey = s3Object.Key;
+
+                        // Check the key against the hash set for case-insensitive duplicates
+                        if (!hashSet.Add(currentKey))
+                        {
+                            // A case-insensitive match was found.
+                            // Handle the conflict according to the configured failure policy.
+                            throw new AmazonS3Exception(
+                                "The S3 directory contains multiple objects whose keys differ only by case. " +
+                                "This can lead to conflicts when downloading to a case-insensitive file system. " +
+                                $"The key {currentKey} conflicts with another object that differs only by case.");
+                        }
+                        
+                        return Task.CompletedTask;
+                    },
+                    onFailure,
+                    cancellationTokenSource
+                ).ConfigureAwait(false);
             }
         }
 
