@@ -581,7 +581,8 @@ namespace ServiceClientGenerator
                         new Operation(this, "ListMultipartUploads", DocumentRoot[OperationsKey]["ListMultipartUploads"]),
                         new Operation(this, "CompleteMultipartUpload", DocumentRoot[OperationsKey]["CompleteMultipartUpload"]),
                         new Operation(this, "DeleteObject", DocumentRoot[OperationsKey]["DeleteObject"]),
-                        new Operation(this, "DeleteObjects", DocumentRoot[OperationsKey]["DeleteObjects"])
+                        new Operation(this, "DeleteObjects", DocumentRoot[OperationsKey]["DeleteObjects"]),
+                        new Operation(this, "DeleteObjectTagging",  DocumentRoot[OperationsKey]["DeleteObjectTagging"])
                     };
                 }
                 return _s3AllowListOperations.Where(operation => operation.data != null).ToList();
