@@ -71,6 +71,7 @@ namespace Amazon.Connect.Model
         private string _contactFlowId;
         private Endpoint _destinationEndpoint;
         private ChatMessage _initialSystemMessage;
+        private TemplatedMessageConfig _initialTemplatedSystemMessage;
         private string _instanceId;
         private ParticipantDetails _participantDetails;
         private string _relatedContactId;
@@ -204,6 +205,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetInitialSystemMessage()
         {
             return this._initialSystemMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitialTemplatedSystemMessage.
+        /// </summary>
+        public TemplatedMessageConfig InitialTemplatedSystemMessage
+        {
+            get { return this._initialTemplatedSystemMessage; }
+            set { this._initialTemplatedSystemMessage = value; }
+        }
+
+        // Check to see if InitialTemplatedSystemMessage property is set
+        internal bool IsSetInitialTemplatedSystemMessage()
+        {
+            return this._initialTemplatedSystemMessage != null;
         }
 
         /// <summary>
