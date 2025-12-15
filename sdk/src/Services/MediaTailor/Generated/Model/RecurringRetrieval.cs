@@ -87,8 +87,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property TrafficShapingRetrievalWindow. 
         /// <para>
-        /// Configuration for spreading ADS traffic across a set window instead of sending ADS
-        /// requests for all sessions at the same time.
+        /// The configuration that tells Elemental MediaTailor how many seconds to spread out
+        /// requests to the ad decision server (ADS). Instead of sending ADS requests for all
+        /// sessions at the same time, MediaTailor spreads the requests across the amount of time
+        /// specified in the retrieval window.
         /// </para>
         /// </summary>
         public TrafficShapingRetrievalWindow TrafficShapingRetrievalWindow
@@ -106,8 +108,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property TrafficShapingTpsConfiguration. 
         /// <para>
-        /// The configuration for TPS-based traffic shaping that limits the number of requests
-        /// to the ad decision server (ADS) based on transactions per second instead of time windows.
+        /// The configuration for TPS-based traffic shaping. This approach limits requests to
+        /// the ad decision server (ADS) based on transactions per second and concurrent users.
         /// </para>
         /// </summary>
         public TrafficShapingTpsConfiguration TrafficShapingTpsConfiguration
@@ -125,8 +127,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property TrafficShapingType. 
         /// <para>
-        /// Indicates the type of traffic shaping used for traffic shaping and limiting the number
-        /// of requests to the ADS at one time.
+        /// Indicates the type of traffic shaping used to limit the number of requests to the
+        /// ADS at one time.
         /// </para>
         /// </summary>
         public TrafficShapingType TrafficShapingType
