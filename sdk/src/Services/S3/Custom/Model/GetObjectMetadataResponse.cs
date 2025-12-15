@@ -79,6 +79,12 @@ namespace Amazon.S3.Model
             set { this.Headers.ContentLanguage = value; }
         }
 
+        // Check to see if ContentLanguage property is set
+        internal bool IsSetContentLanguage()
+        {
+            return this.Headers.ContentLanguage != null;
+        }
+
         /// <summary>
         /// Gets and sets the property DeleteMarker. 
         /// <para>
