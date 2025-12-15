@@ -373,5 +373,590 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region aws-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://global.health.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region aws-cn-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "aws-cn-global";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://global.health.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-isob-east-1.api.aws.scloud", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-isob-east-1.api.aws.scloud", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.us-isof-south-1.api.aws.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.us-isof-south-1.api.aws.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.eu-isoe-west-1.api.cloud-aws.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.eu-isoe-west-1.api.cloud-aws.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.eusc-de-east-1.api.amazonwebservices.eu", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health.eusc-de-east-1.api.amazonwebservices.eu", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.eusc-de-east-1.api.amazonwebservices.eu", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://health-fips.eusc-de-east-1.api.amazonwebservices.eu", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For custom endpoint with fips enabled and dualstack disabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AWSHealth")]
+        [Description("For custom endpoint with fips disabled and dualstack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_1_Test()
+        {
+            var parameters = new AWSHealthEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonAWSHealthEndpointProvider().ResolveEndpoint(parameters);
+        }
+
     }
 }
