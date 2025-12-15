@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon S3 Glacier response to your request.
+    /// Contains the Amazon Glacier response to your request.
     /// </summary>
     public partial class CreateVaultResponse : AmazonWebServiceResponse
     {

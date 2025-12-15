@@ -210,9 +210,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property SNSTopic. 
         /// <para>
-        /// The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the
-        /// job is completed and the output is ready for you to download. The specified topic
-        /// publishes the notification to its subscribers. The SNS topic must exist.
+        /// The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job
+        /// is completed and the output is ready for you to download. The specified topic publishes
+        /// the notification to its subscribers. The SNS topic must exist.
         /// </para>
         /// </summary>
         public string SNSTopic
