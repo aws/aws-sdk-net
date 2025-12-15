@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Fix The request signature we calculated does not match the signature you provided when using ContentLanguage in GetObjectRequest"
+        "Fix signature calculation error when using the Content-Language header in S3 requests (e.g., PutObjectRequest)"
       ]
     }
   ]
