@@ -511,6 +511,79 @@ namespace Amazon.ServiceQuotas
 
         #endregion
         
+        #region  GetQuotaUtilizationReport
+
+
+        /// <summary>
+        /// Retrieves the quota utilization report for your Amazon Web Services account. This
+        /// operation returns paginated results showing your quota usage across all Amazon Web
+        /// Services services, sorted by utilization percentage in descending order (highest utilization
+        /// first).
+        /// 
+        ///  
+        /// <para>
+        /// You must first initiate a report using the <c>StartQuotaUtilizationReport</c> operation.
+        /// The report generation process is asynchronous and may take several seconds to complete.
+        /// Poll this operation periodically to check the status and retrieve results when the
+        /// report is ready.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each report contains up to 1,000 quota records per page. Use the <c>NextToken</c>
+        /// parameter to retrieve additional pages of results. Reports are automatically deleted
+        /// after 15 minutes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuotaUtilizationReport service method.</param>
+        /// 
+        /// <returns>The response from the GetQuotaUtilizationReport service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetQuotaUtilizationReport">REST API Reference for GetQuotaUtilizationReport Operation</seealso>
+        GetQuotaUtilizationReportResponse GetQuotaUtilizationReport(GetQuotaUtilizationReportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetQuotaUtilizationReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetQuotaUtilizationReport operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQuotaUtilizationReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetQuotaUtilizationReport">REST API Reference for GetQuotaUtilizationReport Operation</seealso>
+        IAsyncResult BeginGetQuotaUtilizationReport(GetQuotaUtilizationReportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetQuotaUtilizationReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQuotaUtilizationReport.</param>
+        /// 
+        /// <returns>Returns a  GetQuotaUtilizationReportResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetQuotaUtilizationReport">REST API Reference for GetQuotaUtilizationReport Operation</seealso>
+        GetQuotaUtilizationReportResponse EndGetQuotaUtilizationReport(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetRequestedServiceQuotaChange
 
 
@@ -1316,6 +1389,75 @@ namespace Amazon.ServiceQuotas
         /// <returns>Returns a  StartAutoManagementResult from ServiceQuotas.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartAutoManagement">REST API Reference for StartAutoManagement Operation</seealso>
         StartAutoManagementResponse EndStartAutoManagement(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartQuotaUtilizationReport
+
+
+        /// <summary>
+        /// Initiates the generation of a quota utilization report for your Amazon Web Services
+        /// account. This asynchronous operation analyzes your quota usage across all Amazon Web
+        /// Services services and returns a unique report identifier that you can use to retrieve
+        /// the results.
+        /// 
+        ///  
+        /// <para>
+        /// The report generation process may take several seconds to complete, depending on the
+        /// number of quotas in your account. Use the <c>GetQuotaUtilizationReport</c> operation
+        /// to check the status and retrieve the results when the report is ready.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartQuotaUtilizationReport service method.</param>
+        /// 
+        /// <returns>The response from the StartQuotaUtilizationReport service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.InvalidPaginationTokenException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartQuotaUtilizationReport">REST API Reference for StartQuotaUtilizationReport Operation</seealso>
+        StartQuotaUtilizationReportResponse StartQuotaUtilizationReport(StartQuotaUtilizationReportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartQuotaUtilizationReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartQuotaUtilizationReport operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartQuotaUtilizationReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartQuotaUtilizationReport">REST API Reference for StartQuotaUtilizationReport Operation</seealso>
+        IAsyncResult BeginStartQuotaUtilizationReport(StartQuotaUtilizationReportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartQuotaUtilizationReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartQuotaUtilizationReport.</param>
+        /// 
+        /// <returns>Returns a  StartQuotaUtilizationReportResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartQuotaUtilizationReport">REST API Reference for StartQuotaUtilizationReport Operation</seealso>
+        StartQuotaUtilizationReportResponse EndStartQuotaUtilizationReport(IAsyncResult asyncResult);
 
         #endregion
         

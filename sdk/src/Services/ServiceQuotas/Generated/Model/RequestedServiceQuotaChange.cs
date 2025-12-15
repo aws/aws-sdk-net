@@ -46,6 +46,7 @@ namespace Amazon.ServiceQuotas.Model
         private string _quotaName;
         private AppliedLevelEnum _quotaRequestedAtLevel;
         private string _requester;
+        private RequestType _requestType;
         private string _serviceCode;
         private string _serviceName;
         private RequestStatus _status;
@@ -272,6 +273,33 @@ namespace Amazon.ServiceQuotas.Model
         internal bool IsSetRequester()
         {
             return this._requester != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestType. 
+        /// <para>
+        /// The type of quota increase request. Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AutomaticManagement</c> - The request was automatically created by Service Quotas
+        /// Automatic Management when quota utilization approached the limit.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If this field is not present, the request was manually created by a user.
+        /// </para>
+        /// </summary>
+        public RequestType RequestType
+        {
+            get { return this._requestType; }
+            set { this._requestType = value; }
+        }
+
+        // Check to see if RequestType property is set
+        internal bool IsSetRequestType()
+        {
+            return this._requestType != null;
         }
 
         /// <summary>
