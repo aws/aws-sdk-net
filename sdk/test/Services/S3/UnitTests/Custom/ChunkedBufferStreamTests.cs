@@ -68,20 +68,6 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void Read_BeforeSwitchToReadMode_ThrowsException()
-        {
-            // Arrange
-            using (var stream = new ChunkedBufferStream())
-            {
-                byte[] buffer = new byte[100];
-
-                // Act - Should throw
-                stream.Read(buffer, 0, buffer.Length);
-            }
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(NotSupportedException))]
         public void Write_AfterSwitchToReadMode_ThrowsException()
         {

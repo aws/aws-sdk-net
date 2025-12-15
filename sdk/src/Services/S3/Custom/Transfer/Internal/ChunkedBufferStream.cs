@@ -55,15 +55,16 @@ namespace Amazon.S3.Transfer.Internal
     /// // Write phase: Stream data in
     /// await response.WriteResponseStreamAsync(stream, ...);
     /// 
-    /// // Switch to read mode
-    /// stream.SwitchToReadMode();
-    /// 
-    /// // Read phase: Stream data out
+    /// // Read phase: Stream data out (automatically switches to read mode)
     /// int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
     /// 
     /// // Cleanup: Returns all chunks to ArrayPool
     /// stream.Dispose();
     /// </code>
+    /// <para>
+    /// Note: The stream automatically switches to read mode on the first read operation.
+    /// You can optionally call <see cref="SwitchToReadMode"/> explicitly for clarity.
+    /// </para>
     /// </remarks>
     internal class ChunkedBufferStream : Stream
     {
@@ -102,7 +103,11 @@ namespace Amazon.S3.Transfer.Internal
         {
             if (estimatedSize > 0)
             {
-                // Calculate number of chunks needed and cap at int.MaxValue for List capacity
+                // Ceiling division formula: (n + d - 1) / d calculates ceil(n / d) using integer arithmetic.
+                // This computes how many chunks are needed to hold estimatedSize bytes, rounding up to
+                // ensure the last partial chunk is accounted for. Avoids floating-point math for performance.
+                // Example: For 100 bytes with CHUNK_SIZE=32: (100 + 31) / 32 = 131 / 32 = 4 chunks
+                //          (simple division 100/32=3 would only hold 96 bytes, losing 4 bytes)
                 long estimatedChunks = (estimatedSize + CHUNK_SIZE - 1) / CHUNK_SIZE;
                 int capacity = (int)Math.Min(estimatedChunks, int.MaxValue);
                 _chunks = new List<byte[]>(capacity);
@@ -125,7 +130,7 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Gets a value indicating whether the stream supports reading.
-        /// Returns true only after <see cref="SwitchToReadMode"/> has been called.
+        /// Returns true after the first read operation or after <see cref="SwitchToReadMode"/> has been called.
         /// </summary>
         public override bool CanRead => _isReadMode;
 
@@ -249,6 +254,7 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Reads a sequence of bytes from the stream and advances the position by the number of bytes read.
+        /// Automatically switches to read mode on the first read if not already in read mode.
         /// </summary>
         /// <param name="buffer">The buffer to read data into.</param>
         /// <param name="offset">The zero-based byte offset in buffer at which to begin storing data.</param>
@@ -258,15 +264,18 @@ namespace Amazon.S3.Transfer.Internal
         /// if that many bytes are not currently available, or zero if the end of the stream is reached.
         /// </returns>
         /// <exception cref="ObjectDisposedException">Thrown if the stream has been disposed.</exception>
-        /// <exception cref="InvalidOperationException">Thrown if <see cref="SwitchToReadMode"/> has not been called.</exception>
         /// <exception cref="ArgumentNullException">Thrown if buffer is null.</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if offset or count is negative or exceeds buffer bounds.</exception>
         public override int Read(byte[] buffer, int offset, int count)
         {
             ThrowIfDisposed();
             
+            // Automatically switch to read mode on first read
             if (!_isReadMode)
-                throw new InvalidOperationException("Must call SwitchToReadMode() before reading");
+            {
+                _isReadMode = true;
+                _position = 0;
+            }
 
             if (buffer == null)
                 throw new ArgumentNullException(nameof(buffer));
@@ -301,6 +310,7 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Asynchronously reads a sequence of bytes from the stream.
+        /// Automatically switches to read mode on the first read if not already in read mode.
         /// </summary>
         /// <param name="buffer">The buffer to read data into.</param>
         /// <param name="offset">The zero-based byte offset in buffer at which to begin storing data.</param>
@@ -321,7 +331,8 @@ namespace Amazon.S3.Transfer.Internal
 
         /// <summary>
         /// Switches the stream from write mode to read mode.
-        /// Must be called after all writing is complete and before reading begins.
+        /// This method is optional - the stream will automatically switch to read mode on the first read operation.
+        /// Call this explicitly if you want to switch modes before reading or for clarity in your code.
         /// Resets the position to the beginning of the stream.
         /// </summary>
         /// <exception cref="ObjectDisposedException">Thrown if the stream has been disposed.</exception>
