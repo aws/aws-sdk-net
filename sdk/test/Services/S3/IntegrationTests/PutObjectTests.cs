@@ -658,6 +658,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Verify via GetObjectMetadata
             var metadata = Client.GetObjectMetadata(bucketName, key);
             Assert.AreEqual(contentLanguage, metadata.Headers.ContentLanguage);
+            Assert.AreEqual(contentLanguage, metadata.ContentLanguage);
         }
 
         private void PutObjectWithContentEncoding()
