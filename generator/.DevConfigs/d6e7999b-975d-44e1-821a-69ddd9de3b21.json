@@ -1,0 +1,12 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Generate DeleteBucketMetadataConfiguration, ListObjects, UpdateBucketMetadataTableConfiguration, and ListMultipartUploads",
+        "[Breaking Change] UpdateBucketMetadataTableConfiguration was not functioning when called and is now fixed. As part of the fix there are breaking changes where incorrect properties are being replaced with the correct properties"
+      ]
+    }
+  ]
+}
