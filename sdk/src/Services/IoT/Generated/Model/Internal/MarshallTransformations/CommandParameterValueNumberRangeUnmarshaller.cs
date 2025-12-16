@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CommandParameter Object
+    /// Response Unmarshaller for CommandParameterValueNumberRange Object
     /// </summary>  
-    public class CommandParameterUnmarshaller : IJsonUnmarshaller<CommandParameter, JsonUnmarshallerContext>
+    public class CommandParameterValueNumberRangeUnmarshaller : IJsonUnmarshaller<CommandParameterValueNumberRange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CommandParameter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CommandParameterValueNumberRange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CommandParameter unmarshalledObject = new CommandParameter();
+            CommandParameterValueNumberRange unmarshalledObject = new CommandParameterValueNumberRange();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("defaultValue", targetDepth))
-                {
-                    var unmarshaller = CommandParameterValueUnmarshaller.Instance;
-                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("max", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Max = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("min", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("value", targetDepth))
-                {
-                    var unmarshaller = CommandParameterValueUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("valueConditions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<CommandParameterValueCondition, CommandParameterValueConditionUnmarshaller>(CommandParameterValueConditionUnmarshaller.Instance);
-                    unmarshalledObject.ValueConditions = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Min = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static CommandParameterUnmarshaller _instance = new CommandParameterUnmarshaller();        
+        private static CommandParameterValueNumberRangeUnmarshaller _instance = new CommandParameterValueNumberRangeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CommandParameterUnmarshaller Instance
+        public static CommandParameterValueNumberRangeUnmarshaller Instance
         {
             get
             {
