@@ -425,7 +425,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// subnet IDs in different Availability Zones when deploying with a Multi-AZ standby.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3)]
+        [AWSProperty(Required=true, Min=1, Max=6)]
         public List<string> VpcSubnetIds
         {
             get { return this._vpcSubnetIds; }

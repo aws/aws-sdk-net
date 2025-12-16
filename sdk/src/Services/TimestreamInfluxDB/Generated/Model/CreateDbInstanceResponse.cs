@@ -456,7 +456,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// A list of VPC subnet IDs associated with the DB instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3)]
+        [AWSProperty(Required=true, Min=1, Max=6)]
         public List<string> VpcSubnetIds
         {
             get { return this._vpcSubnetIds; }

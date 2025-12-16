@@ -1177,6 +1177,150 @@ namespace Amazon.TimestreamInfluxDB
 
         #endregion
         
+        #region  RebootDbCluster
+
+        /// <summary>
+        /// Reboots a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the RebootDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbCluster">REST API Reference for RebootDbCluster Operation</seealso>
+        public virtual RebootDbClusterResponse RebootDbCluster(RebootDbClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RebootDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RebootDbClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebootDbCluster operation on AmazonTimestreamInfluxDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootDbCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbCluster">REST API Reference for RebootDbCluster Operation</seealso>
+        public virtual IAsyncResult BeginRebootDbCluster(RebootDbClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RebootDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDbClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RebootDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootDbCluster.</param>
+        /// 
+        /// <returns>Returns a  RebootDbClusterResult from TimestreamInfluxDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbCluster">REST API Reference for RebootDbCluster Operation</seealso>
+        public virtual RebootDbClusterResponse EndRebootDbCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RebootDbClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RebootDbInstance
+
+        /// <summary>
+        /// Reboots a Timestream for InfluxDB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDbInstance service method.</param>
+        /// 
+        /// <returns>The response from the RebootDbInstance service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbInstance">REST API Reference for RebootDbInstance Operation</seealso>
+        public virtual RebootDbInstanceResponse RebootDbInstance(RebootDbInstanceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RebootDbInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDbInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RebootDbInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootDbInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebootDbInstance operation on AmazonTimestreamInfluxDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootDbInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbInstance">REST API Reference for RebootDbInstance Operation</seealso>
+        public virtual IAsyncResult BeginRebootDbInstance(RebootDbInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RebootDbInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDbInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RebootDbInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootDbInstance.</param>
+        /// 
+        /// <returns>Returns a  RebootDbInstanceResult from TimestreamInfluxDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbInstance">REST API Reference for RebootDbInstance Operation</seealso>
+        public virtual RebootDbInstanceResponse EndRebootDbInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RebootDbInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>

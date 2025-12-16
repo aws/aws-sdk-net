@@ -30,36 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamInfluxDB.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDbInstance operation.
-    /// Creates a new Timestream for InfluxDB DB instance.
+    /// This is the response object from the RebootDbInstance operation.
     /// </summary>
-    public partial class CreateDbInstanceRequest : AmazonTimestreamInfluxDBRequest
+    public partial class RebootDbInstanceResponse : AmazonWebServiceResponse
     {
         private int? _allocatedStorage;
-        private string _bucket;
+        private string _arn;
+        private string _availabilityZone;
+        private string _dbClusterId;
         private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
         private DbStorageType _dbStorageType;
         private DeploymentType _deploymentType;
+        private string _endpoint;
+        private string _id;
+        private string _influxAuthParametersSecretArn;
+        private InstanceMode _instanceMode;
+        private List<string> _instanceModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private string _name;
         private NetworkType _networkType;
-        private string _organization;
-        private string _password;
         private int? _port;
         private bool? _publiclyAccessible;
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private string _username;
+        private string _secondaryAvailabilityZone;
+        private Status _status;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _vpcSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The amount of storage to allocate for your DB storage type in GiB (gibibytes).
+        /// The amount of storage allocated for your DB storage type (in gibibytes).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=15360)]
+        [AWSProperty(Min=20, Max=15360)]
         public int AllocatedStorage
         {
             get { return this._allocatedStorage.GetValueOrDefault(); }
@@ -73,33 +77,67 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Bucket. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The name of the initial InfluxDB bucket. All InfluxDB data is stored in a bucket.
-        /// A bucket combines the concept of a database and a retention period (the duration of
-        /// time that each data point persists). A bucket belongs to an organization.
+        /// The Amazon Resource Name (ARN) of the DB instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
-        public string Bucket
+        [AWSProperty(Required=true, Min=1, Max=1011)]
+        public string Arn
         {
-            get { return this._bucket; }
-            set { this._bucket = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Bucket property is set
-        internal bool IsSetBucket()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._bucket != null;
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone in which the DB instance resides.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbClusterId. 
+        /// <para>
+        /// Specifies the DbCluster to which this DbInstance belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=64)]
+        public string DbClusterId
+        {
+            get { return this._dbClusterId; }
+            set { this._dbClusterId = value; }
+        }
+
+        // Check to see if DbClusterId property is set
+        internal bool IsSetDbClusterId()
+        {
+            return this._dbClusterId != null;
         }
 
         /// <summary>
         /// Gets and sets the property DbInstanceType. 
         /// <para>
-        /// The Timestream for InfluxDB DB instance type to run InfluxDB on.
+        /// The Timestream for InfluxDB instance type that InfluxDB runs on.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DbInstanceType DbInstanceType
         {
             get { return this._dbInstanceType; }
@@ -115,9 +153,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DbParameterGroupIdentifier. 
         /// <para>
-        /// The id of the DB parameter group to assign to your DB instance. DB parameter groups
-        /// specify how the database is configured. For example, DB parameter groups can specify
-        /// the limit for query concurrency.
+        /// The id of the DB parameter group assigned to your DB instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=64)]
@@ -136,26 +172,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DbStorageType. 
         /// <para>
-        /// The Timestream for InfluxDB DB storage type to read and write InfluxDB data.
+        /// The Timestream for InfluxDB DB storage type that InfluxDB stores data on.
         /// </para>
-        ///  
-        /// <para>
-        /// You can choose between 3 different types of provisioned Influx IOPS included storage
-        /// according to your workloads requirements:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Influx IO Included 3000 IOPS
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Influx IO Included 12000 IOPS
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Influx IO Included 16000 IOPS
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public DbStorageType DbStorageType
         {
@@ -172,8 +190,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// Specifies whether the DB instance will be deployed as a standalone instance or with
-        /// a Multi-AZ standby for high availability.
+        /// Specifies whether the Timestream for InfluxDB is deployed as Single-AZ or with a MultiAZ
+        /// Standby for High availability.
         /// </para>
         /// </summary>
         public DeploymentType DeploymentType
@@ -189,9 +207,102 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        /// The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.
+        /// </para>
+        /// </summary>
+        public string Endpoint
+        {
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
+        }
+
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
+        {
+            return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// A service-generated unique identifier.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=64)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfluxAuthParametersSecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial
+        /// InfluxDB authorization parameters. The secret value is a JSON formatted key-value
+        /// pair holding InfluxDB authorization values: organization, bucket, username, and password.
+        /// </para>
+        /// </summary>
+        public string InfluxAuthParametersSecretArn
+        {
+            get { return this._influxAuthParametersSecretArn; }
+            set { this._influxAuthParametersSecretArn = value; }
+        }
+
+        // Check to see if InfluxAuthParametersSecretArn property is set
+        internal bool IsSetInfluxAuthParametersSecretArn()
+        {
+            return this._influxAuthParametersSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMode. 
+        /// <para>
+        /// Specifies the DbInstance's role in the cluster.
+        /// </para>
+        /// </summary>
+        public InstanceMode InstanceMode
+        {
+            get { return this._instanceMode; }
+            set { this._instanceMode = value; }
+        }
+
+        // Check to see if InstanceMode property is set
+        internal bool IsSetInstanceMode()
+        {
+            return this._instanceMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceModes. 
+        /// <para>
+        /// Specifies the DbInstance's roles in the cluster.
+        /// </para>
+        /// </summary>
+        public List<string> InstanceModes
+        {
+            get { return this._instanceModes; }
+            set { this._instanceModes = value; }
+        }
+
+        // Check to see if InstanceModes property is set
+        internal bool IsSetInstanceModes()
+        {
+            return this._instanceModes != null && (this._instanceModes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property LogDeliveryConfiguration. 
         /// <para>
-        /// Configuration for sending InfluxDB engine logs to a specified S3 bucket.
+        /// Configuration for sending InfluxDB engine logs to send to specified S3 bucket.
         /// </para>
         /// </summary>
         public LogDeliveryConfiguration LogDeliveryConfiguration
@@ -209,9 +320,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that uniquely identifies the DB instance when interacting with the Amazon
-        /// Timestream for InfluxDB API and CLI commands. This name will also be a prefix included
-        /// in the endpoint. DB instance names must be unique per customer and per region.
+        /// The customer-supplied name that uniquely identifies the DB instance when interacting
+        /// with the Amazon Timestream for InfluxDB API and CLI commands.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=40)]
@@ -248,63 +358,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Organization. 
-        /// <para>
-        /// The name of the initial organization for the initial admin user in InfluxDB. An InfluxDB
-        /// organization is a workspace for a group of users.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string Organization
-        {
-            get { return this._organization; }
-            set { this._organization = value; }
-        }
-
-        // Check to see if Organization property is set
-        internal bool IsSetOrganization()
-        {
-            return this._organization != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Password. 
-        /// <para>
-        /// The password of the initial admin user created in InfluxDB v2. This password will
-        /// allow you to access the InfluxDB UI to perform various administrative tasks and also
-        /// use the InfluxDB CLI to create an operator token. These attributes will be stored
-        /// in a Secret created in Secrets Manager in your account.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=8, Max=64)]
-        public string Password
-        {
-            get { return this._password; }
-            set { this._password = value; }
-        }
-
-        // Check to see if Password property is set
-        internal bool IsSetPassword()
-        {
-            return this._password != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The port number on which InfluxDB accepts connections.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: 1024-65535
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: 8086
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680
         /// </para>
         /// </summary>
         [AWSProperty(Min=1024, Max=65535)]
@@ -323,7 +379,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Configures the DB instance with a public IP to facilitate access.
+        /// Indicates if the DB instance has a public IP to facilitate access.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -339,54 +395,49 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property SecondaryAvailabilityZone. 
         /// <para>
-        /// A list of key-value pairs to associate with the DB instance.
+        /// The Availability Zone in which the standby instance is located when deploying with
+        /// a MultiAZ standby instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public Dictionary<string, string> Tags
+        public string SecondaryAvailabilityZone
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._secondaryAvailabilityZone; }
+            set { this._secondaryAvailabilityZone = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if SecondaryAvailabilityZone property is set
+        internal bool IsSetSecondaryAvailabilityZone()
         {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._secondaryAvailabilityZone != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Username. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The username of the initial admin user created in InfluxDB. Must start with a letter
-        /// and can't end with a hyphen or contain two consecutive hyphens. For example, my-user1.
-        /// This username will allow you to access the InfluxDB UI to perform various administrative
-        /// tasks and also use the InfluxDB CLI to create an operator token. These attributes
-        /// will be stored in a Secret created in Amazon Secrets Manager in your account.
+        /// The status of the DB instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=64)]
-        public string Username
+        public Status Status
         {
-            get { return this._username; }
-            set { this._username = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Username property is set
-        internal bool IsSetUsername()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._username != null;
+            return this._status != null;
         }
 
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of VPC security group IDs to associate with the DB instance.
+        /// A list of VPC security group IDs associated with the DB instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=5)]
         public List<string> VpcSecurityGroupIds
         {
             get { return this._vpcSecurityGroupIds; }
@@ -402,8 +453,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property VpcSubnetIds. 
         /// <para>
-        /// A list of VPC subnet IDs to associate with the DB instance. Provide at least two VPC
-        /// subnet IDs in different availability zones when deploying with a Multi-AZ standby.
+        /// A list of VPC subnet IDs associated with the DB instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=6)]

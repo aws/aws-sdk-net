@@ -488,6 +488,78 @@ namespace Amazon.TimestreamInfluxDB
 
         #endregion
                 
+        #region  RebootDbCluster
+
+
+
+        /// <summary>
+        /// Reboots a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDbCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RebootDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbCluster">REST API Reference for RebootDbCluster Operation</seealso>
+        Task<RebootDbClusterResponse> RebootDbClusterAsync(RebootDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RebootDbInstance
+
+
+
+        /// <summary>
+        /// Reboots a Timestream for InfluxDB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDbInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RebootDbInstance service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbInstance">REST API Reference for RebootDbInstance Operation</seealso>
+        Task<RebootDbInstanceResponse> RebootDbInstanceAsync(RebootDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TagResource
 
 
