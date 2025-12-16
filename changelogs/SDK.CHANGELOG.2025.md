@@ -1,3 +1,14 @@
+### 4.0.154.0 (2025-12-16 20:08 UTC)
+* IoT (4.0.4.0)
+	* Add support for dynamic payloads in IoT Device Management Commands
+* S3 (4.0.15.1)
+	* Generate DeleteBucketMetadataConfiguration, ListObjects, UpdateBucketMetadataTableConfiguration, and ListMultipartUploads
+	* [Breaking Change] UpdateBucketMetadataTableConfiguration was not functioning when called and is now fixed. As part of the fix there are breaking changes where incorrect properties are being replaced with the correct properties
+* TimestreamInfluxDB (4.0.5.0)
+	* This release adds support for rebooting InfluxDB DbInstances and DbClusters
+* Extensions.Bedrock.MEAI (4.0.5.1)
+	* Remove `CreateAdditionalModelRequestFields` from `BedrockChatClient`
+
 ### 4.0.153.0 (2025-12-15 19:15 UTC)
 * AWSHealth (4.0.3.0)
 	* Updating Health API endpoint generation for dualstack only regions
