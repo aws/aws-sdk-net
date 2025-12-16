@@ -390,6 +390,58 @@
     <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group)/[a-zA-Z0-9]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbClusterRequest.DbClusterId</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceRequest.Identifier</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.AllocatedStorage</property>
+    <min>20</min>
+    <max>15360</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group)/[a-zA-Z0-9]{3,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.DbClusterId</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.DbParameterGroupIdentifier</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.Id</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.Port</property>
+    <min>1024</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>

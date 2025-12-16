@@ -101,9 +101,25 @@ namespace Amazon.TimestreamInfluxDB
         /// </summary>
         public static readonly ClusterStatus MAINTENANCE = new ClusterStatus("MAINTENANCE");
         /// <summary>
+        /// Constant PARTIALLY_AVAILABLE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus PARTIALLY_AVAILABLE = new ClusterStatus("PARTIALLY_AVAILABLE");
+        /// <summary>
+        /// Constant REBOOT_FAILED for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus REBOOT_FAILED = new ClusterStatus("REBOOT_FAILED");
+        /// <summary>
+        /// Constant REBOOTING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus REBOOTING = new ClusterStatus("REBOOTING");
+        /// <summary>
         /// Constant UPDATING for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus UPDATING = new ClusterStatus("UPDATING");
+        /// <summary>
+        /// Constant UPDATING_INSTANCE_TYPE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus UPDATING_INSTANCE_TYPE = new ClusterStatus("UPDATING_INSTANCE_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -792,6 +808,14 @@ namespace Amazon.TimestreamInfluxDB
         /// Constant MODIFYING for Status
         /// </summary>
         public static readonly Status MODIFYING = new Status("MODIFYING");
+        /// <summary>
+        /// Constant REBOOT_FAILED for Status
+        /// </summary>
+        public static readonly Status REBOOT_FAILED = new Status("REBOOT_FAILED");
+        /// <summary>
+        /// Constant REBOOTING for Status
+        /// </summary>
+        public static readonly Status REBOOTING = new Status("REBOOTING");
         /// <summary>
         /// Constant UPDATING for Status
         /// </summary>

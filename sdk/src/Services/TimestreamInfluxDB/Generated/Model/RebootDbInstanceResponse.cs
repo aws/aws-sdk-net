@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamInfluxDB.Model
 {
     /// <summary>
-    /// This is the response object from the GetDbInstance operation.
+    /// This is the response object from the RebootDbInstance operation.
     /// </summary>
-    public partial class GetDbInstanceResponse : AmazonWebServiceResponse
+    public partial class RebootDbInstanceResponse : AmazonWebServiceResponse
     {
         private int? _allocatedStorage;
         private string _arn;
