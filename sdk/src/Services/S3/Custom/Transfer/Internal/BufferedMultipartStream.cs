@@ -43,16 +43,16 @@ namespace Amazon.S3.Transfer.Internal
         
         private bool _initialized = false;
         private bool _disposed = false;
-        private DownloadDiscoveryResult _discoveryResult;
+        private DownloadResult _discoveryResult;
         private long _totalBytesRead = 0;
 
         private readonly Logger _logger = Logger.GetLogger(typeof(BufferedMultipartStream));
 
         /// <summary>
-        /// Gets the <see cref="DownloadDiscoveryResult"/> containing metadata from the initial GetObject response.
+        /// Gets the <see cref="DownloadResult"/> containing metadata from the initial GetObject response.
         /// Available after <see cref="InitializeAsync"/> completes successfully.
         /// </summary>
-        public DownloadDiscoveryResult DiscoveryResult => _discoveryResult;
+        public DownloadResult DiscoveryResult => _discoveryResult;
 
         /// <summary>
         /// Creates a new <see cref="BufferedMultipartStream"/> with dependency injection.
@@ -112,16 +112,14 @@ namespace Amazon.S3.Transfer.Internal
 
             _logger.DebugFormat("BufferedMultipartStream: Starting initialization");
 
-            _discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
-                    .ConfigureAwait(false);
-                
-            _logger.DebugFormat("BufferedMultipartStream: Discovery completed - ObjectSize={0}, TotalParts={1}, IsSinglePart={2}",
+            // Start unified download operation (discovers strategy and starts downloads)
+            _discoveryResult = await _downloadCoordinator.StartDownloadAsync(null, cancellationToken)
+                .ConfigureAwait(false);
+            
+            _logger.DebugFormat("BufferedMultipartStream: Download started - ObjectSize={0}, TotalParts={1}, IsSinglePart={2}",
                 _discoveryResult.ObjectSize,
                 _discoveryResult.TotalParts,
                 _discoveryResult.IsSinglePart);
-
-            await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, null, cancellationToken)
-                .ConfigureAwait(false);
             
             _initialized = true;
             _logger.DebugFormat("BufferedMultipartStream: Initialization completed successfully");
