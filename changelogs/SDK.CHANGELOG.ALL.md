@@ -2,8 +2,8 @@
 * IoT (4.0.4.0)
 	* Add support for dynamic payloads in IoT Device Management Commands
 * S3 (4.0.15.1)
-	* Generate DeleteBucketMetadataConfiguration, ListObjects, UpdateBucketMetadataTableConfiguration, and ListMultipartUploads
-	* [Breaking Change] UpdateBucketMetadataTableConfiguration was not functioning when called and is now fixed. As part of the fix there are breaking changes where incorrect properties are being replaced with the correct properties
+	* Generate DeleteBucketMetadataConfiguration, ListObjects, UpdateBucketMetadataJournalTableConfiguration, and ListMultipartUploads
+	* [Breaking Change] UpdateBucketMetadataJournalTableConfiguration was not functioning when called and is now fixed. As part of the fix there are breaking changes where incorrect properties are being replaced with the correct properties
 * TimestreamInfluxDB (4.0.5.0)
 	* This release adds support for rebooting InfluxDB DbInstances and DbClusters
 * Extensions.Bedrock.MEAI (4.0.5.1)
