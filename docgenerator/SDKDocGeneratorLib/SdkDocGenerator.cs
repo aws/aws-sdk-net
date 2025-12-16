@@ -85,6 +85,7 @@ namespace SDKDocGenerator
                 Info("...Services: {0}", string.Join(",", Options.Services));
                 Info("...CodeSamplesRootFolder: {0}", Options.CodeSamplesRootFolder);
                 Info("...ExampleMetaJson: {0}", Options.ExampleMetaJson);
+                Info("...ExamplesErrorFile: {0}", Options.ExamplesErrorFile);
                 Info("");
             }
 
@@ -103,7 +104,7 @@ namespace SDKDocGenerator
             DeferredTypesProvider deferredTypes = new DeferredTypesProvider(null);
 
             // Generate the Code Examples fragments for all services            
-            ExampleMetadataParser.GenerateExampleFragments(options.ExampleMetaJson);
+            ExampleMetadataParser.GenerateExampleFragments(options.ExampleMetaJson, options.ExamplesErrorFile);
 
             // Process the service manifests
             foreach (var m in manifests)

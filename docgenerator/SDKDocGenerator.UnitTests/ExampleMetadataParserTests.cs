@@ -123,7 +123,7 @@ namespace SDKDocGenerator.UnitTests
         public void GenerateExampleFragments_WithInvalidJson_ShouldCreateFailureFile()
         {
             var tempJsonFile = Path.GetTempFileName();
-            var failureFile = "examples_failure.txt";
+            var failureFile = Path.GetTempFileName();
             
             try
             {
@@ -132,7 +132,7 @@ namespace SDKDocGenerator.UnitTests
                 if (File.Exists(failureFile))
                     File.Delete(failureFile);
                 
-                ExampleMetadataParser.GenerateExampleFragments(tempJsonFile);
+                ExampleMetadataParser.GenerateExampleFragments(tempJsonFile, failureFile);
                 
                 Assert.True(File.Exists(failureFile));
                 var content = File.ReadAllText(failureFile);

@@ -15,7 +15,7 @@ namespace SDKDocGenerator
         private const string BaseCodeLibraryUrl = "https://docs.aws.amazon.com/code-library/latest/ug/dotnet_4";        
         public static string ExampleFragmentsFullPath { get; private set; } = string.Empty;        
 
-        public static void GenerateExampleFragments(string examplesMetaJsonFile)
+        public static void GenerateExampleFragments(string examplesMetaJsonFile, string examplesErrorFile = "examples_failure.txt")
         {
             string tempPath = Path.GetTempPath();
             ExampleFragmentsFullPath = Path.Combine(tempPath, $"{FragmentOutputDirectory}-{Guid.NewGuid().ToString()}");
@@ -58,7 +58,7 @@ namespace SDKDocGenerator
                 // because any errors in the example_meta.json file must be corrected by the owners of
                 // the file.
                 Console.WriteLine($"Continuing without examples. Failed to generate example fragments: {ex.Message}");
-                File.WriteAllText("examples_failure.txt", $"Failed to generate example fragments: {ex}");
+                File.WriteAllText(examplesErrorFile, $"Failed to generate example fragments: {ex}");
                 CleanupExampleFragments();
             }            
         }

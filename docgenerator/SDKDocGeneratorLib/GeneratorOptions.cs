@@ -49,6 +49,11 @@ namespace SDKDocGenerator
         /// </summary>
         public string ExampleMetaJson { get; set; }
 
+        /// <summary>
+        /// The path and filename for the examples error file. Defaults to "examples_failure.txt".
+        /// </summary>
+        public string ExamplesErrorFile { get; set; } = "examples_failure.txt";
+
 
         /// <summary>
         /// The path to _sdk-versions.json
