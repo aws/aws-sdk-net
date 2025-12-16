@@ -62,7 +62,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property EncryptionType. 
         /// <para>
-        /// The type of the Amazon Web Services Key Management Service (KMS) key.
+        /// The type of the KMS key.
         /// </para>
         /// </summary>
         public EncryptionType EncryptionType
@@ -80,7 +80,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property KmsAccessRoleArn. 
         /// <para>
-        /// The ARN of the customer-managed KMS key.
+        /// The Amazon Resource Name (ARN) of the IAM role assumed by Amazon Web Services IoT
+        /// Core to call KMS on behalf of the customer.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -99,8 +100,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role assumed by Amazon Web Services IoT
-        /// Core to call KMS on behalf of the customer.
+        /// The ARN of the customer managed KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

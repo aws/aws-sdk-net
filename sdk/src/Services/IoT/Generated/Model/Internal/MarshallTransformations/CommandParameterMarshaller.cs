@@ -71,6 +71,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
@@ -80,6 +86,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Value, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetValueConditions())
+            {
+                context.Writer.WritePropertyName("valueConditions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectValueConditionsListValue in requestObject.ValueConditions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CommandParameterValueConditionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectValueConditionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

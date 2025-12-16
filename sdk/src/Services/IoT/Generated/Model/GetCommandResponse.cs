@@ -44,7 +44,9 @@ namespace Amazon.IoT.Model
         private List<CommandParameter> _mandatoryParameters = AWSConfigs.InitializeCollections ? new List<CommandParameter>() : null;
         private CommandNamespace _awsNamespace;
         private CommandPayload _payload;
+        private string _payloadTemplate;
         private bool? _pendingDeletion;
+        private CommandPreprocessor _preprocessor;
         private string _roleArn;
 
         /// <summary>
@@ -233,6 +235,25 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PayloadTemplate. 
+        /// <para>
+        /// The payload template for the dynamic command.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32768)]
+        public string PayloadTemplate
+        {
+            get { return this._payloadTemplate; }
+            set { this._payloadTemplate = value; }
+        }
+
+        // Check to see if PayloadTemplate property is set
+        internal bool IsSetPayloadTemplate()
+        {
+            return this._payloadTemplate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PendingDeletion. 
         /// <para>
         /// Indicates whether the command is being deleted.
@@ -248,6 +269,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetPendingDeletion()
         {
             return this._pendingDeletion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Preprocessor. 
+        /// <para>
+        /// Configuration that determines how <c>payloadTemplate</c> is processed to generate
+        /// command execution payload.
+        /// </para>
+        /// </summary>
+        public CommandPreprocessor Preprocessor
+        {
+            get { return this._preprocessor; }
+            set { this._preprocessor = value; }
+        }
+
+        // Check to see if Preprocessor property is set
+        internal bool IsSetPreprocessor()
+        {
+            return this._preprocessor != null;
         }
 
         /// <summary>

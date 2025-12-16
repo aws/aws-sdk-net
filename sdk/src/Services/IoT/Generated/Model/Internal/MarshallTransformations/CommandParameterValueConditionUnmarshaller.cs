@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CommandParameter Object
+    /// Response Unmarshaller for CommandParameterValueCondition Object
     /// </summary>  
-    public class CommandParameterUnmarshaller : IUnmarshaller<CommandParameter, XmlUnmarshallerContext>, IUnmarshaller<CommandParameter, JsonUnmarshallerContext>
+    public class CommandParameterValueConditionUnmarshaller : IUnmarshaller<CommandParameterValueCondition, XmlUnmarshallerContext>, IUnmarshaller<CommandParameterValueCondition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CommandParameter IUnmarshaller<CommandParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CommandParameterValueCondition IUnmarshaller<CommandParameterValueCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CommandParameter Unmarshall(JsonUnmarshallerContext context)
+        public CommandParameterValueCondition Unmarshall(JsonUnmarshallerContext context)
         {
-            CommandParameter unmarshalledObject = new CommandParameter();
+            CommandParameterValueCondition unmarshalledObject = new CommandParameterValueCondition();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("defaultValue", targetDepth))
-                {
-                    var unmarshaller = CommandParameterValueUnmarshaller.Instance;
-                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("comparisonOperator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("operand", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("value", targetDepth))
-                {
-                    var unmarshaller = CommandParameterValueUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("valueConditions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CommandParameterValueCondition, CommandParameterValueConditionUnmarshaller>(CommandParameterValueConditionUnmarshaller.Instance);
-                    unmarshalledObject.ValueConditions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CommandParameterValueComparisonOperandUnmarshaller.Instance;
+                    unmarshalledObject.Operand = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static CommandParameterUnmarshaller _instance = new CommandParameterUnmarshaller();        
+        private static CommandParameterValueConditionUnmarshaller _instance = new CommandParameterValueConditionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CommandParameterUnmarshaller Instance
+        public static CommandParameterValueConditionUnmarshaller Instance
         {
             get
             {

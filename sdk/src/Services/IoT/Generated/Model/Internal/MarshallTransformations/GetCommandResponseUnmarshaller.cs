@@ -112,10 +112,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.Payload = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("payloadTemplate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PayloadTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pendingDeletion", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.PendingDeletion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("preprocessor", targetDepth))
+                {
+                    var unmarshaller = CommandPreprocessorUnmarshaller.Instance;
+                    response.Preprocessor = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))

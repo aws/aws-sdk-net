@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The range of possible values that's used to describe a specific command parameter.
+    /// The value of a command parameter used to create a command execution.
     /// 
     ///  <note> 
     /// <para>

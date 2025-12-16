@@ -30,13 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeEncryptionConfiguration operation.
-    /// Retrieves the encryption configuration for resources and data of your Amazon Web Services
-    /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
-    /// encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+    /// Configures the command to treat the <c>payloadTemplate</c> as a JSON document for
+    /// preprocessing. This preprocessor substitutes placeholders with parameter values to
+    /// generate the command execution request payload.
     /// </summary>
-    public partial class DescribeEncryptionConfigurationRequest : AmazonIoTRequest
+    public partial class AwsJsonSubstitutionCommandPreprocessorConfig
     {
+        private OutputFormat _outputFormat;
+
+        /// <summary>
+        /// Gets and sets the property OutputFormat. 
+        /// <para>
+        /// Converts the command preprocessor result to the format defined by this parameter,
+        /// before sending it to the device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public OutputFormat OutputFormat
+        {
+            get { return this._outputFormat; }
+            set { this._outputFormat = value; }
+        }
+
+        // Check to see if OutputFormat property is set
+        internal bool IsSetOutputFormat()
+        {
+            return this._outputFormat != null;
+        }
 
     }
 }

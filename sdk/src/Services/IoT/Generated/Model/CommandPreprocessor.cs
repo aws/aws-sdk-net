@@ -30,13 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeEncryptionConfiguration operation.
-    /// Retrieves the encryption configuration for resources and data of your Amazon Web Services
-    /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
-    /// encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+    /// Configuration that determines how the <c>payloadTemplate</c> is processed by the service
+    /// to generate the final payload sent to devices at <c>StartCommandExecution</c> API
+    /// invocation.
     /// </summary>
-    public partial class DescribeEncryptionConfigurationRequest : AmazonIoTRequest
+    public partial class CommandPreprocessor
     {
+        private AwsJsonSubstitutionCommandPreprocessorConfig _awsJsonSubstitution;
+
+        /// <summary>
+        /// Gets and sets the property AwsJsonSubstitution. 
+        /// <para>
+        /// Configuration for the JSON substitution preprocessor.
+        /// </para>
+        /// </summary>
+        public AwsJsonSubstitutionCommandPreprocessorConfig AwsJsonSubstitution
+        {
+            get { return this._awsJsonSubstitution; }
+            set { this._awsJsonSubstitution = value; }
+        }
+
+        // Check to see if AwsJsonSubstitution property is set
+        internal bool IsSetAwsJsonSubstitution()
+        {
+            return this._awsJsonSubstitution != null;
+        }
 
     }
 }

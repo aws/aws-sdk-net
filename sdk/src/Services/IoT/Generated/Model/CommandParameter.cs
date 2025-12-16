@@ -37,7 +37,9 @@ namespace Amazon.IoT.Model
         private CommandParameterValue _defaultValue;
         private string _description;
         private string _name;
+        private CommandParameterType _type;
         private CommandParameterValue _value;
+        private List<CommandParameterValueCondition> _valueConditions = AWSConfigs.InitializeCollections ? new List<CommandParameterValueCondition>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultValue. 
@@ -97,10 +99,27 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the command parameter.
+        /// </para>
+        /// </summary>
+        public CommandParameterType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value used to describe the command. When you assign a value to a parameter, it
-        /// will override any default value that you had already specified.
+        /// Parameter value that overrides the default value, if set.
         /// </para>
         /// </summary>
         public CommandParameterValue Value
@@ -113,6 +132,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetValue()
         {
             return this._value != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueConditions. 
+        /// <para>
+        /// The list of conditions that a command parameter value must satisfy to create a command
+        /// execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<CommandParameterValueCondition> ValueConditions
+        {
+            get { return this._valueConditions; }
+            set { this._valueConditions = value; }
+        }
+
+        // Check to see if ValueConditions property is set
+        internal bool IsSetValueConditions()
+        {
+            return this._valueConditions != null && (this._valueConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
