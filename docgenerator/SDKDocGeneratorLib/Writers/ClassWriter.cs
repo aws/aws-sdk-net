@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using SDKDocGenerator.Syntax;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
-
-using SDKDocGenerator.Syntax;
 
 namespace SDKDocGenerator.Writers
 {
@@ -56,6 +56,7 @@ namespace SDKDocGenerator.Writers
         protected override void WriteContent(TextWriter writer)
         {
             AddSummaryDocumentation(writer);
+            AddPageTOC(writer);
             AddInheritanceHierarchy(writer);
             AddNamespace(writer, this._versionType.Namespace, this._versionType.ManifestModuleName);
 
@@ -78,7 +79,91 @@ namespace SDKDocGenerator.Writers
             }
 
             AddRemarksDocumentation(writer);
+
+            // Add Code Examples section before Version Information
+            AddCodeExamples(writer);
+
             AddVersionInformation(writer, this._versionType);
+        }
+
+        private void AddPageTOC(TextWriter writer)
+        {
+            writer.WriteLine("<div id=\"pageTOC\" class=\"collapsible-toc collapsed\">");
+            writer.WriteLine("<h2 onclick=\"toggleTOC()\">In this article <span id=\"tocToggle\">▶</span></h2>");
+            writer.WriteLine("<ul id=\"tocList\" style=\"display: none;\">");
+            
+            writer.WriteLine("<li><a href=\"#inheritancehierarchy\">Inheritance Hierarchy</a></li>");
+            writer.WriteLine("<li><a href=\"#syntax\">Syntax</a></li>");
+            
+            if (!this._versionType.IsEnum)
+            {
+                var constructors = this._versionType.GetConstructors().Where(x => x.IsPublic);
+                if (constructors.Any())
+                    writer.WriteLine("<li><a href=\"#constructors\">Constructors</a></li>");
+                
+                var properties = this._versionType.GetProperties();
+                if (properties.Any())
+                    writer.WriteLine("<li><a href=\"#properties\">Properties</a></li>");
+                
+                var methods = this._versionType.GetMethodsToDocument();
+                if (methods.Any())
+                    writer.WriteLine("<li><a href=\"#methods\">Methods</a></li>");
+                
+                var events = this._versionType.GetEvents();
+                if (events.Any())
+                    writer.WriteLine("<li><a href=\"#events\">Events</a></li>");
+                
+                var fields = this._versionType.GetFields();
+                if (fields.Any())
+                    writer.WriteLine("<li><a href=\"#fields\">Fields</a></li>");
+
+                var serviceId = GetServiceIdFromNamespace();
+                var fragmentPath = Path.Combine(ExampleMetadataParser.ExampleFragmentsFullPath, $"{serviceId}.fragment.html");
+                if (File.Exists(fragmentPath))
+                    writer.WriteLine("<li><a href=\"#codeexamples\">Code Examples</a></li>");
+            }
+            else
+            {
+                var enumNames = this._versionType.GetEnumNames();
+                if (enumNames.Any())
+                    writer.WriteLine("<li><a href=\"#members\">Members</a></li>");
+            }
+                        
+            
+            writer.WriteLine("<li><a href=\"#versioninformation\">Version Information</a></li>");
+            writer.WriteLine("</ul>");
+            writer.WriteLine("</div>");
+        }
+
+        private void AddCodeExamples(TextWriter writer)
+        {
+            var serviceId = GetServiceIdFromNamespace();
+            var fragmentPath = Path.Combine(ExampleMetadataParser.ExampleFragmentsFullPath,$"{serviceId}.fragment.html"
+            );
+
+            if (!File.Exists(fragmentPath))
+                return;
+
+            writer.WriteLine("<div>");
+            writer.WriteLine("<div>");
+            writer.WriteLine("<div class=\"collapsibleSection\">");
+            writer.WriteLine("<h2 id=\"codeexamples\" class=\"title\">Code Examples</h2>");
+            writer.WriteLine("</div>");
+            writer.WriteLine("</div>");
+            writer.WriteLine("<div class=\"sectionbody\">");
+
+            var fragmentContent = File.ReadAllText(fragmentPath);
+            writer.WriteLine(fragmentContent);
+
+            writer.WriteLine("</div>");
+            writer.WriteLine("</div>");
+        }
+
+        private string GetServiceIdFromNamespace()
+        {
+            var namespaceParts = this._versionType.Namespace.Split('.');            
+            var serviceId = namespaceParts[namespaceParts.Length - 1];
+            return serviceId;            
         }
 
         protected override XElement GetSummaryDocumentation()

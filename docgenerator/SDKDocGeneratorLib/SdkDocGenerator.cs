@@ -84,6 +84,7 @@ namespace SDKDocGenerator
                 Info("...Platform: {0}", Options.Platform);
                 Info("...Services: {0}", string.Join(",", Options.Services));
                 Info("...CodeSamplesRootFolder: {0}", Options.CodeSamplesRootFolder);
+                Info("...ExampleMetaJson: {0}", Options.ExampleMetaJson);
                 Info("");
             }
 
@@ -101,6 +102,10 @@ namespace SDKDocGenerator
             GenerationManifest coreManifest = null;
             DeferredTypesProvider deferredTypes = new DeferredTypesProvider(null);
 
+            // Generate the Code Examples fragments for all services            
+            ExampleMetadataParser.GenerateExampleFragments(options.ExampleMetaJson);
+
+            // Process the service manifests
             foreach (var m in manifests)
             {
                 if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
@@ -139,6 +144,9 @@ namespace SDKDocGenerator
             {
                 SDKDocRedirectWriter.Write(stream);
             }
+
+            // Remove example fragments
+            ExampleMetadataParser.CleanupExampleFragments();
 
             return 0;
         }

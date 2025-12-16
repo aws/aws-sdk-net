@@ -45,6 +45,12 @@ namespace SDKDocGenerator
         public string SDKAssembliesRoot { get; set; }
 
         /// <summary>
+        /// The path to the example_meta.json file if example links are to be included.
+        /// </summary>
+        public string ExampleMetaJson { get; set; }
+
+
+        /// <summary>
         /// The path to _sdk-versions.json
         /// </summary>
         string _sdkVersionFilePath;
