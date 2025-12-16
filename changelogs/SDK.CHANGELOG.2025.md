@@ -1,3 +1,12 @@
+### 3.7.1186.0 (2025-12-16 20:11 UTC)
+* IoT (3.7.503.0)
+	* Add support for dynamic payloads in IoT Device Management Commands
+* TimestreamInfluxDB (3.7.504.0)
+	* This release adds support for rebooting InfluxDB DbInstances and DbClusters
+* Core 3.7.500.55
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1185.0 (2025-12-15 19:16 UTC)
 * AWSHealth (3.7.503.0)
 	* Updating Health API endpoint generation for dualstack only regions
