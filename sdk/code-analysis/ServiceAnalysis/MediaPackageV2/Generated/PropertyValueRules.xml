@@ -1135,6 +1135,12 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.SpekeKeyProvider.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:([^:\n]+):acm:([^:\n]+):([0-9]+):certificate/[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.SpekeKeyProvider.ResourceId</property>
     <min>1</min>
     <max>256</max>
