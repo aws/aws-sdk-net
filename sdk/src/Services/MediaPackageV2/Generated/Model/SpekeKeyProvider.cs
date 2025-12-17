@@ -34,11 +34,33 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class SpekeKeyProvider
     {
+        private string _certificateArn;
         private List<string> _drmSystems = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionContractConfiguration _encryptionContractConfiguration;
         private string _resourceId;
         private string _roleArn;
         private string _url;
+
+        /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The ARN for the certificate that you imported to AWS Certificate Manager to add content
+        /// key encryption to this endpoint. For this feature to work, your DRM key provider must
+        /// support content key encryption.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DrmSystems. 

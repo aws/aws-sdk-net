@@ -1371,6 +1371,14 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType CENC_IV_INCOMPATIBLE = new ValidationExceptionType("CENC_IV_INCOMPATIBLE");
         /// <summary>
+        /// Constant CERTIFICATE_ACCESS_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CERTIFICATE_ACCESS_DENIED = new ValidationExceptionType("CERTIFICATE_ACCESS_DENIED");
+        /// <summary>
+        /// Constant CERTIFICATE_RESOURCE_NOT_FOUND for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CERTIFICATE_RESOURCE_NOT_FOUND = new ValidationExceptionType("CERTIFICATE_RESOURCE_NOT_FOUND");
+        /// <summary>
         /// Constant CLIP_START_TIME_WITH_START_OR_END for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType CLIP_START_TIME_WITH_START_OR_END = new ValidationExceptionType("CLIP_START_TIME_WITH_START_OR_END");
@@ -1394,6 +1402,10 @@ namespace Amazon.MediaPackageV2
         /// Constant DECRYPT_SECRET_FAILED for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType DECRYPT_SECRET_FAILED = new ValidationExceptionType("DECRYPT_SECRET_FAILED");
+        /// <summary>
+        /// Constant DESCRIBE_CERTIFICATE_FAILED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DESCRIBE_CERTIFICATE_FAILED = new ValidationExceptionType("DESCRIBE_CERTIFICATE_FAILED");
         /// <summary>
         /// Constant DESCRIBE_SECRET_DENIED for ValidationExceptionType
         /// </summary>
@@ -1478,6 +1490,22 @@ namespace Amazon.MediaPackageV2
         /// Constant INCOMPATIBLE_XML_ENCODING for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType INCOMPATIBLE_XML_ENCODING = new ValidationExceptionType("INCOMPATIBLE_XML_ENCODING");
+        /// <summary>
+        /// Constant INVALID_ARN for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_ARN = new ValidationExceptionType("INVALID_ARN");
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_KEY_ALGORITHM for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_KEY_ALGORITHM = new ValidationExceptionType("INVALID_CERTIFICATE_KEY_ALGORITHM");
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_SIGNATURE_ALGORITHM for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_SIGNATURE_ALGORITHM = new ValidationExceptionType("INVALID_CERTIFICATE_SIGNATURE_ALGORITHM");
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_STATUS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_STATUS = new ValidationExceptionType("INVALID_CERTIFICATE_STATUS");
         /// <summary>
         /// Constant INVALID_DRM_SETTINGS for ValidationExceptionType
         /// </summary>
@@ -1591,6 +1619,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType MEMBER_MISSING = new ValidationExceptionType("MEMBER_MISSING");
         /// <summary>
+        /// Constant MISSING_CERTIFICATE_DOMAIN_NAME for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MISSING_CERTIFICATE_DOMAIN_NAME = new ValidationExceptionType("MISSING_CERTIFICATE_DOMAIN_NAME");
+        /// <summary>
         /// Constant NONE_MODE_WITH_TIMING_SOURCE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType NONE_MODE_WITH_TIMING_SOURCE = new ValidationExceptionType("NONE_MODE_WITH_TIMING_SOURCE");
@@ -1622,6 +1654,10 @@ namespace Amazon.MediaPackageV2
         /// Constant PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES = new ValidationExceptionType("PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES");
+        /// <summary>
+        /// Constant RESOURCE_NOT_IN_SAME_REGION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType RESOURCE_NOT_IN_SAME_REGION = new ValidationExceptionType("RESOURCE_NOT_IN_SAME_REGION");
         /// <summary>
         /// Constant ROLE_ARN_INVALID_FORMAT for ValidationExceptionType
         /// </summary>
