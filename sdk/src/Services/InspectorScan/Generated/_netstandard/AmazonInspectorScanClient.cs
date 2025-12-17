@@ -266,8 +266,17 @@ namespace Amazon.InspectorScan
 
         /// <summary>
         /// Scans a provided CycloneDX 1.5 SBOM and reports on any vulnerabilities discovered
-        /// in that SBOM. You can generate compatible SBOMs for your resources using the <a href="">Amazon
+        /// in that SBOM. You can generate compatible SBOMs for your resources using the <a href="https://docs.aws.amazon.com/inspector/latest/user/sbom-generator.html">Amazon
         /// Inspector SBOM generator</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  The output of this action reports NVD and CVSS scores when NVD and CVSS scores are
+        /// available. Because the output reports both scores, you might notice a discrepency
+        /// between them. However, you can triage the severity of either score depending on the
+        /// vendor of your choosing. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScanSbom service method.</param>
         /// <param name="cancellationToken">
