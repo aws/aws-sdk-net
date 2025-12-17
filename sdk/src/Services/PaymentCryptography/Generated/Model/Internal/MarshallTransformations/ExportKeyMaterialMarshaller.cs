@@ -48,6 +48,17 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAs2805KeyCryptogram())
+            {
+                context.Writer.WritePropertyName("As2805KeyCryptogram");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExportAs2805KeyCryptogramMarshaller.Instance;
+                marshaller.Marshall(requestObject.As2805KeyCryptogram, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDiffieHellmanTr31KeyBlock())
             {
                 context.Writer.WritePropertyName("DiffieHellmanTr31KeyBlock");

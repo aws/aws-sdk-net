@@ -83,7 +83,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// The city you provide to create the certificate signing request.
+        /// The country you provide to create the certificate signing request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]

@@ -281,6 +281,12 @@
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptography.Model.ExportAs2805KeyCryptogram.WrappingKeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ExportDiffieHellmanTr31KeyBlock.CertificateAuthorityPublicKeyIdentifier</property>
     <min>7</min>
     <max>322</max>
@@ -355,6 +361,18 @@
     <min>1</min>
     <max>32768</max>
     <pattern>[^\[;\]&lt;&gt;]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptography.Model.ImportAs2805KeyCryptogram.WrappedKeyCryptogram</property>
+    <min>16</min>
+    <max>4096</max>
+    <pattern>[0-9A-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptography.Model.ImportAs2805KeyCryptogram.WrappingKeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ImportDiffieHellmanTr31KeyBlock.CertificateAuthorityPublicKeyIdentifier</property>
