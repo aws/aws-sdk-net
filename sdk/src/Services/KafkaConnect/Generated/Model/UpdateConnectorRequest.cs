@@ -31,7 +31,8 @@ namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConnector operation.
-    /// Updates the specified connector.
+    /// Updates the specified connector. For request body, specify only one parameter: either
+    /// <c>capacity</c> or <c>connectorConfiguration</c>.
     /// </summary>
     public partial class UpdateConnectorRequest : AmazonKafkaConnectRequest
     {

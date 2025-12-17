@@ -154,6 +154,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("networkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
                 if(publicRequest.IsSetPlugins())
                 {
                     context.Writer.WritePropertyName("plugins");

@@ -1885,7 +1885,8 @@ namespace Amazon.KafkaConnect
 
 
         /// <summary>
-        /// Updates the specified connector.
+        /// Updates the specified connector. For request body, specify only one parameter: either
+        /// <c>capacity</c> or <c>connectorConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
         /// 
@@ -1928,7 +1929,8 @@ namespace Amazon.KafkaConnect
 
 
         /// <summary>
-        /// Updates the specified connector.
+        /// Updates the specified connector. For request body, specify only one parameter: either
+        /// <c>capacity</c> or <c>connectorConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
         /// <param name="cancellationToken">
