@@ -127,7 +127,7 @@ namespace Amazon.SageMaker.Model
         /// subsequent training jobs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3600)]
+        [AWSProperty(Min=0, Max=21600)]
         public int KeepAlivePeriodInSeconds
         {
             get { return this._keepAlivePeriodInSeconds.GetValueOrDefault(); }

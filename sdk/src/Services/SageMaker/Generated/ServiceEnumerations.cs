@@ -4859,6 +4859,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlP6B20048xlarge = new ClusterInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
+        /// Constant MlP6B30048xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlP6B30048xlarge = new ClusterInstanceType("ml.p6-b300.48xlarge");
+        /// <summary>
         /// Constant MlP6eGb20036xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlP6eGb20036xlarge = new ClusterInstanceType("ml.p6e-gb200.36xlarge");
@@ -17681,6 +17685,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP6B20048xlarge = new ReservedCapacityInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
+        /// Constant MlP6B30048xlarge for ReservedCapacityInstanceType
+        /// </summary>
+        public static readonly ReservedCapacityInstanceType MlP6B30048xlarge = new ReservedCapacityInstanceType("ml.p6-b300.48xlarge");
+        /// <summary>
         /// Constant MlP6eGb20036xlarge for ReservedCapacityInstanceType
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP6eGb20036xlarge = new ReservedCapacityInstanceType("ml.p6e-gb200.36xlarge");
@@ -22042,6 +22050,10 @@ namespace Amazon.SageMaker
         /// Constant MlP6B20048xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlP6B20048xlarge = new TrainingInstanceType("ml.p6-b200.48xlarge");
+        /// <summary>
+        /// Constant MlP6B30048xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP6B30048xlarge = new TrainingInstanceType("ml.p6-b300.48xlarge");
         /// <summary>
         /// Constant MlP6eGb20036xlarge for TrainingInstanceType
         /// </summary>
