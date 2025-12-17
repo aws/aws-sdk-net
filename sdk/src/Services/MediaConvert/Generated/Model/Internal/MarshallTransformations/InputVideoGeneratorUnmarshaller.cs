@@ -96,6 +96,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageInput", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sampleRate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

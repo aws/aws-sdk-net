@@ -35,10 +35,34 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class VideoOverlayInput
     {
+        private Dictionary<string, AudioSelector> _audioSelectors = AWSConfigs.InitializeCollections ? new Dictionary<string, AudioSelector>() : null;
         private string _fileInput;
         private List<VideoOverlayInputClipping> _inputClippings = AWSConfigs.InitializeCollections ? new List<VideoOverlayInputClipping>() : null;
         private InputTimecodeSource _timecodeSource;
         private string _timecodeStart;
+
+        /// <summary>
+        /// Gets and sets the property AudioSelectors. Use Audio selectors to specify audio to
+        /// use during your Video overlay. You can use multiple Audio selectors per Video overlay.
+        /// When you include an Audio selector within a Video overlay, MediaConvert mutes any
+        /// Audio selectors with the same name from the underlying input. For example, if your
+        /// underlying input has Audio selector 1 and Audio selector 2, and your Video overlay
+        /// only has Audio selector 1, then MediaConvert replaces all audio for Audio selector
+        /// 1 during the Video overlay. To replace all audio for all Audio selectors from the
+        /// underlying input by using a single Audio selector in your overlay, set DefaultSelection
+        /// to DEFAULT (Check \"Use as default\" in the MediaConvert console).
+        /// </summary>
+        public Dictionary<string, AudioSelector> AudioSelectors
+        {
+            get { return this._audioSelectors; }
+            set { this._audioSelectors = value; }
+        }
+
+        // Check to see if AudioSelectors property is set
+        internal bool IsSetAudioSelectors()
+        {
+            return this._audioSelectors != null && (this._audioSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property FileInput. Specify the input file S3, HTTP, or HTTPS URL

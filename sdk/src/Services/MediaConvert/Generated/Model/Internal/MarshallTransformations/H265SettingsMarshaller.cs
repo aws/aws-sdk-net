@@ -204,6 +204,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinIInterval);
             }
 
+            if(requestObject.IsSetMvOverPictureBoundaries())
+            {
+                context.Writer.WritePropertyName("mvOverPictureBoundaries");
+                context.Writer.Write(requestObject.MvOverPictureBoundaries);
+            }
+
+            if(requestObject.IsSetMvTemporalPredictor())
+            {
+                context.Writer.WritePropertyName("mvTemporalPredictor");
+                context.Writer.Write(requestObject.MvTemporalPredictor);
+            }
+
             if(requestObject.IsSetNumberBFramesBetweenReferenceFrames())
             {
                 context.Writer.WritePropertyName("numberBFramesBetweenReferenceFrames");
@@ -322,10 +334,34 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TemporalIds);
             }
 
+            if(requestObject.IsSetTileHeight())
+            {
+                context.Writer.WritePropertyName("tileHeight");
+                context.Writer.Write(requestObject.TileHeight);
+            }
+
+            if(requestObject.IsSetTilePadding())
+            {
+                context.Writer.WritePropertyName("tilePadding");
+                context.Writer.Write(requestObject.TilePadding);
+            }
+
             if(requestObject.IsSetTiles())
             {
                 context.Writer.WritePropertyName("tiles");
                 context.Writer.Write(requestObject.Tiles);
+            }
+
+            if(requestObject.IsSetTileWidth())
+            {
+                context.Writer.WritePropertyName("tileWidth");
+                context.Writer.Write(requestObject.TileWidth);
+            }
+
+            if(requestObject.IsSetTreeBlockSize())
+            {
+                context.Writer.WritePropertyName("treeBlockSize");
+                context.Writer.Write(requestObject.TreeBlockSize);
             }
 
             if(requestObject.IsSetUnregisteredSeiTimecode())

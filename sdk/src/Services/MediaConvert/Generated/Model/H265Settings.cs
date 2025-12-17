@@ -58,6 +58,8 @@ namespace Amazon.MediaConvert.Model
         private H265InterlaceMode _interlaceMode;
         private int? _maxBitrate;
         private int? _minIInterval;
+        private H265MvOverPictureBoundaries _mvOverPictureBoundaries;
+        private H265MvTemporalPredictor _mvTemporalPredictor;
         private int? _numberBFramesBetweenReferenceFrames;
         private int? _numberReferenceFrames;
         private H265ParControl _parControl;
@@ -76,7 +78,11 @@ namespace Amazon.MediaConvert.Model
         private H265Telecine _telecine;
         private H265TemporalAdaptiveQuantization _temporalAdaptiveQuantization;
         private H265TemporalIds _temporalIds;
+        private int? _tileHeight;
+        private H265TilePadding _tilePadding;
         private H265Tiles _tiles;
+        private int? _tileWidth;
+        private H265TreeBlockSize _treeBlockSize;
         private H265UnregisteredSeiTimecode _unregisteredSeiTimecode;
         private H265WriteMp4PackagingType _writeMp4PackagingType;
 
@@ -573,6 +579,40 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MvOverPictureBoundaries. If you are setting up the picture
+        /// as a tile, you must set this to "disabled". In all other configurations, you typically
+        /// enter "enabled".
+        /// </summary>
+        public H265MvOverPictureBoundaries MvOverPictureBoundaries
+        {
+            get { return this._mvOverPictureBoundaries; }
+            set { this._mvOverPictureBoundaries = value; }
+        }
+
+        // Check to see if MvOverPictureBoundaries property is set
+        internal bool IsSetMvOverPictureBoundaries()
+        {
+            return this._mvOverPictureBoundaries != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MvTemporalPredictor. If you are setting up the picture
+        /// as a tile, you must set this to "disabled". In other configurations, you typically
+        /// enter "enabled".
+        /// </summary>
+        public H265MvTemporalPredictor MvTemporalPredictor
+        {
+            get { return this._mvTemporalPredictor; }
+            set { this._mvTemporalPredictor = value; }
+        }
+
+        // Check to see if MvTemporalPredictor property is set
+        internal bool IsSetMvTemporalPredictor()
+        {
+            return this._mvTemporalPredictor != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Specify the number
         /// of B-frames between reference frames in this output. For the best video quality: Leave
         /// blank. MediaConvert automatically determines the number of B-frames to use based on
@@ -946,6 +986,45 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TileHeight. Set this field to set up the picture as a tile.
+        /// You must also set TileWidth. The tile height must result in 22 or fewer rows in the
+        /// frame. The tile width must result in 20 or fewer columns in the frame. And finally,
+        /// the product of the column count and row count must be 64 or less. If the tile width
+        /// and height are specified, MediaConvert will override the video codec slices field
+        /// with a value that MediaConvert calculates.
+        /// </summary>
+        [AWSProperty(Min=64, Max=2160)]
+        public int TileHeight
+        {
+            get { return this._tileHeight.GetValueOrDefault(); }
+            set { this._tileHeight = value; }
+        }
+
+        // Check to see if TileHeight property is set
+        internal bool IsSetTileHeight()
+        {
+            return this._tileHeight.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TilePadding. Set to "padded" to force MediaConvert to add
+        /// padding to the frame, to obtain a frame that is a whole multiple of the tile size.
+        /// If you are setting up the picture as a tile, you must enter "padded". In all other
+        /// configurations, you typically enter "none".
+        /// </summary>
+        public H265TilePadding TilePadding
+        {
+            get { return this._tilePadding; }
+            set { this._tilePadding = value; }
+        }
+
+        // Check to see if TilePadding property is set
+        internal bool IsSetTilePadding()
+        {
+            return this._tilePadding != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tiles. Enable use of tiles, allowing horizontal as well
         /// as vertical subdivision of the encoded pictures.
         /// </summary>
@@ -959,6 +1038,41 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTiles()
         {
             return this._tiles != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TileWidth. Set this field to set up the picture as a tile.
+        /// See TileHeight for more information.
+        /// </summary>
+        [AWSProperty(Min=256, Max=3840)]
+        public int TileWidth
+        {
+            get { return this._tileWidth.GetValueOrDefault(); }
+            set { this._tileWidth = value; }
+        }
+
+        // Check to see if TileWidth property is set
+        internal bool IsSetTileWidth()
+        {
+            return this._tileWidth.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TreeBlockSize. Select the tree block size used for encoding.
+        /// If you enter "auto", the encoder will pick the best size. If you are setting up the
+        /// picture as a tile, you must set this to 32x32. In all other configurations, you typically
+        /// enter "auto".
+        /// </summary>
+        public H265TreeBlockSize TreeBlockSize
+        {
+            get { return this._treeBlockSize; }
+            set { this._treeBlockSize = value; }
+        }
+
+        // Check to see if TreeBlockSize property is set
+        internal bool IsSetTreeBlockSize()
+        {
+            return this._treeBlockSize != null;
         }
 
         /// <summary>

@@ -78,6 +78,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Height);
             }
 
+            if(requestObject.IsSetImageInput())
+            {
+                context.Writer.WritePropertyName("imageInput");
+                context.Writer.Write(requestObject.ImageInput);
+            }
+
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
