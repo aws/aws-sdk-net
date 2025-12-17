@@ -44,6 +44,7 @@ namespace Amazon.KafkaConnect.Model
         private KafkaClusterEncryptionInTransit _kafkaClusterEncryptionInTransit;
         private string _kafkaConnectVersion;
         private LogDelivery _logDelivery;
+        private NetworkType _networkType;
         private List<Plugin> _plugins = AWSConfigs.InitializeCollections ? new List<Plugin>() : null;
         private string _serviceExecutionRoleArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -227,7 +228,28 @@ namespace Amazon.KafkaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Plugins. <important> 
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the connector. It gives connectors connectivity to either IPv4
+        /// (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Plugins. 
+        /// <para>
+        /// <important> 
         /// <para>
         /// Amazon MSK Connect does not currently support specifying multiple plugins as a list.
         /// To use more than one plugin for your connector, you can create a single custom plugin
@@ -237,6 +259,8 @@ namespace Amazon.KafkaConnect.Model
         /// <para>
         /// Specifies which plugin to use for the connector. You must specify a single-element
         /// list containing one <c>customPlugin</c> object.
+        /// </para>
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
