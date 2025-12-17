@@ -37,6 +37,11 @@ using Amazon.Runtime.Internal.Util;
 		{
             if (structure != null && this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(structure.Name, out var modifier) && modifier.ExcludedMarshallingProperties.Contains(member.ModeledName))
                 continue;
+            else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var headerPropertyModifier) && headerPropertyModifier.InjectXmlMarshallCode.Count > 0)
+            {
+                WriteInjectXmlMarshallCode(0, headerPropertyModifier.InjectXmlMarshallCode);
+                continue;
+            }
 #>		
             if (<#=variableName#>.IsSet<#=member.PropertyName#>()) 
             {
@@ -46,10 +51,6 @@ using Amazon.Runtime.Internal.Util;
 #>
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>);
 <#+        
-            }
-            else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var headerPropertyModifier) && headerPropertyModifier.InjectXmlMarshallCode.Count > 0)
-            {
-                WriteInjectXmlMarshallCode(3, headerPropertyModifier.InjectXmlMarshallCode);
             }
             else if (member.IsJsonValue)
             {
