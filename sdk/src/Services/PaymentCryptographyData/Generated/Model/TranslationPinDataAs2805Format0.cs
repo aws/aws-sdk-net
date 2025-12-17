@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Parameters that are required for translation between ISO9564 PIN format 0,3,4 translation.
+    /// Parameters that are required for translation between AS2805 PIN format 0 translation.
     /// </summary>
-    public partial class TranslationPinDataIsoFormat034
+    public partial class TranslationPinDataAs2805Format0
     {
         private string _primaryAccountNumber;
 

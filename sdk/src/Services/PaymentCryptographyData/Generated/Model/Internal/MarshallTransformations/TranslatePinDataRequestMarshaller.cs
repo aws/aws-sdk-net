@@ -79,6 +79,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EncryptedPinBlock);
             }
 
+            if(publicRequest.IsSetIncomingAs2805Attributes())
+            {
+                context.Writer.WritePropertyName("IncomingAs2805Attributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = As2805PekDerivationAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IncomingAs2805Attributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetIncomingDukptAttributes())
             {
                 context.Writer.WritePropertyName("IncomingDukptAttributes");

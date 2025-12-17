@@ -30,30 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Parameters that are required for translation between ISO9564 PIN format 0,3,4 translation.
+    /// Parameter information for generating a KEK validation response during node-to-node
+    /// initialization.
     /// </summary>
-    public partial class TranslationPinDataIsoFormat034
+    public partial class KekValidationResponse
     {
-        private string _primaryAccountNumber;
+        private string _randomKeySend;
 
         /// <summary>
-        /// Gets and sets the property PrimaryAccountNumber. 
+        /// Gets and sets the property RandomKeySend. 
         /// <para>
-        /// The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for
-        /// a payment credit or debit card and associates the card to a specific account holder.
+        /// The random key for generating a KEK validation response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=12, Max=19)]
-        public string PrimaryAccountNumber
+        [AWSProperty(Required=true, Sensitive=true, Min=32, Max=48)]
+        public string RandomKeySend
         {
-            get { return this._primaryAccountNumber; }
-            set { this._primaryAccountNumber = value; }
+            get { return this._randomKeySend; }
+            set { this._randomKeySend = value; }
         }
 
-        // Check to see if PrimaryAccountNumber property is set
-        internal bool IsSetPrimaryAccountNumber()
+        // Check to see if RandomKeySend property is set
+        internal bool IsSetRandomKeySend()
         {
-            return this._primaryAccountNumber != null;
+            return this._randomKeySend != null;
         }
 
     }

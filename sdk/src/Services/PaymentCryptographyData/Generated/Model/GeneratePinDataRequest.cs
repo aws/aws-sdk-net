@@ -187,8 +187,6 @@ namespace Amazon.PaymentCryptographyData.Model
         ///  
         /// <para>
         /// The <c>ISO_Format_4</c> PIN block format is the only one supporting AES encryption.
-        /// It is similar to <c>ISO_Format_3</c> but doubles the pin block length by padding with
-        /// fill digit A and random values from 10 to 15.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

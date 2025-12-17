@@ -34,15 +34,34 @@ namespace Amazon.PaymentCryptographyData.Model
     /// </summary>
     public partial class TranslationIsoFormats
     {
+        private TranslationPinDataAs2805Format0 _as2805Format0;
         private TranslationPinDataIsoFormat034 _isoFormat0;
         private TranslationPinDataIsoFormat1 _isoFormat1;
         private TranslationPinDataIsoFormat034 _isoFormat3;
         private TranslationPinDataIsoFormat034 _isoFormat4;
 
         /// <summary>
+        /// Gets and sets the property As2805Format0. 
+        /// <para>
+        /// Parameters that are required for AS2805 PIN format 0 translation.
+        /// </para>
+        /// </summary>
+        public TranslationPinDataAs2805Format0 As2805Format0
+        {
+            get { return this._as2805Format0; }
+            set { this._as2805Format0 = value; }
+        }
+
+        // Check to see if As2805Format0 property is set
+        internal bool IsSetAs2805Format0()
+        {
+            return this._as2805Format0 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IsoFormat0. 
         /// <para>
-        /// Parameters that are required for ISO9564 PIN format 0 tranlation.
+        /// Parameters that are required for ISO9564 PIN format 0 translation.
         /// </para>
         /// </summary>
         public TranslationPinDataIsoFormat034 IsoFormat0
@@ -60,7 +79,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property IsoFormat1. 
         /// <para>
-        /// Parameters that are required for ISO9564 PIN format 1 tranlation.
+        /// Parameters that are required for ISO9564 PIN format 1 translation.
         /// </para>
         /// </summary>
         public TranslationPinDataIsoFormat1 IsoFormat1
@@ -78,7 +97,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property IsoFormat3. 
         /// <para>
-        /// Parameters that are required for ISO9564 PIN format 3 tranlation.
+        /// Parameters that are required for ISO9564 PIN format 3 translation.
         /// </para>
         /// </summary>
         public TranslationPinDataIsoFormat034 IsoFormat3
@@ -96,7 +115,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property IsoFormat4. 
         /// <para>
-        /// Parameters that are required for ISO9564 PIN format 4 tranlation.
+        /// Parameters that are required for ISO9564 PIN format 4 translation.
         /// </para>
         /// </summary>
         public TranslationPinDataIsoFormat034 IsoFormat4
