@@ -30,30 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Parameters that are required for translation between ISO9564 PIN format 0,3,4 translation.
+    /// Parameter information for generating a KEK validation request during node-to-node
+    /// initialization.
     /// </summary>
-    public partial class TranslationPinDataIsoFormat034
+    public partial class KekValidationRequest
     {
-        private string _primaryAccountNumber;
+        private SymmetricKeyAlgorithm _deriveKeyAlgorithm;
 
         /// <summary>
-        /// Gets and sets the property PrimaryAccountNumber. 
+        /// Gets and sets the property DeriveKeyAlgorithm. 
         /// <para>
-        /// The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for
-        /// a payment credit or debit card and associates the card to a specific account holder.
+        /// The key derivation algorithm to use for generating a KEK validation request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=12, Max=19)]
-        public string PrimaryAccountNumber
+        [AWSProperty(Required=true)]
+        public SymmetricKeyAlgorithm DeriveKeyAlgorithm
         {
-            get { return this._primaryAccountNumber; }
-            set { this._primaryAccountNumber = value; }
+            get { return this._deriveKeyAlgorithm; }
+            set { this._deriveKeyAlgorithm = value; }
         }
 
-        // Check to see if PrimaryAccountNumber property is set
-        internal bool IsSetPrimaryAccountNumber()
+        // Check to see if DeriveKeyAlgorithm property is set
+        internal bool IsSetDeriveKeyAlgorithm()
         {
-            return this._primaryAccountNumber != null;
+            return this._deriveKeyAlgorithm != null;
         }
 
     }

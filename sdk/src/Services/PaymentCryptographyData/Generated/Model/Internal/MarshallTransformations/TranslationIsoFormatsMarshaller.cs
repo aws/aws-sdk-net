@@ -48,6 +48,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAs2805Format0())
+            {
+                context.Writer.WritePropertyName("As2805Format0");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TranslationPinDataAs2805Format0Marshaller.Instance;
+                marshaller.Marshall(requestObject.As2805Format0, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIsoFormat0())
             {
                 context.Writer.WritePropertyName("IsoFormat0");
