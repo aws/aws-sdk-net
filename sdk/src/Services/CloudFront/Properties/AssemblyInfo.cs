@@ -44,7 +44,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3.4.0")]
-[assembly: AssemblyFileVersion("3.7.508.7")]
+[assembly: AssemblyFileVersion("3.7.508.8")]
 
 #if BCL
 [assembly: System.Security.AllowPartiallyTrustedCallers]

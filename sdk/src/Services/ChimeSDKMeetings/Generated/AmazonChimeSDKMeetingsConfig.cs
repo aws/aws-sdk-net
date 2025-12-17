@@ -32,7 +32,7 @@ namespace Amazon.ChimeSDKMeetings
     public partial class AmazonChimeSDKMeetingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Chime SDK Meetings", "3.7.503.21");
+            InternalSDKUtils.BuildUserAgentString("Chime SDK Meetings", "3.7.503.22");
 
         private string _userAgent = UserAgentString;
         ///<summary>

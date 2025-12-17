@@ -1,3 +1,26 @@
+### 3.7.1187.0 (2025-12-17 19:16 UTC)
+* GameLiftStreams (3.7.505.0)
+	* Added new stream group operation parameters for scale-on-demand capacity with automatic prewarming. Added new Gen6 stream classes based on the EC2 G6 instance family. Added new StartStreamSession parameter for exposure of real-time performance stats to clients.
+* GuardDuty (3.7.511.0)
+	* Add support for dbiResourceId in finding.
+* InspectorScan (3.7.503.0)
+	* Adds an additional OutputFormat
+* KafkaConnect (3.7.503.0)
+	* Support dual-stack network connectivity for connectors via NetworkType field.
+* MediaConvert (3.7.506.0)
+	* Adds support for tile encoding in HEVC and audio for video overlays.
+* MediaPackageV2 (3.7.506.0)
+	* This release adds support for SPEKE V2 content key encryption in MediaPackage v2 Origin Endpoints.
+* PaymentCryptography (3.7.506.0)
+	* Support for AS2805 standard.  Modifications to import-key and export-key to support AS2805 variants.
+* PaymentCryptographyData (3.7.504.0)
+	* Support for AS2805 standard.  New API GenerateAs2805KekValidation and changes to translate pin, GenerateMac and VerifyMac to support AS2805 key variants.
+* SageMaker (3.7.525.0)
+	* Adding the newly launched p6-b300.48xlarge ec2  instance support in Sagemaker(Hyperpod,Training and Sceptor)
+* Core 3.7.500.56
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1186.0 (2025-12-16 20:11 UTC)
 * IoT (3.7.503.0)
 	* Add support for dynamic payloads in IoT Device Management Commands
