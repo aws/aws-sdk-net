@@ -118,6 +118,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                     response.LogFileLocationUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PerformanceStatsConfiguration", targetDepth))
+                {
+                    var unmarshaller = PerformanceStatsConfigurationUnmarshaller.Instance;
+                    response.PerformanceStatsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

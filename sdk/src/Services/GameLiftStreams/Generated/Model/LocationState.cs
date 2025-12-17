@@ -38,9 +38,11 @@ namespace Amazon.GameLiftStreams.Model
         private int? _alwaysOnCapacity;
         private int? _idleCapacity;
         private string _locationName;
+        private int? _maximumCapacity;
         private int? _onDemandCapacity;
         private int? _requestedCapacity;
         private StreamGroupLocationStatus _status;
+        private int? _targetIdleCapacity;
 
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
@@ -48,11 +50,12 @@ namespace Amazon.GameLiftStreams.Model
         /// This value is the stream capacity that Amazon GameLift Streams has provisioned in
         /// a stream group that can respond immediately to stream requests. It includes resources
         /// that are currently streaming and resources that are idle and ready to respond to stream
-        /// requests. You pay for this capacity whether it's in use or not. After making changes
-        /// to capacity, it can take a few minutes for the allocated capacity count to reflect
-        /// the change while compute resources are allocated or deallocated. Similarly, when allocated
-        /// on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift
-        /// Streams to spin down the allocated capacity.
+        /// requests. When target-idle capacity is configured, the idle resources include the
+        /// capacity buffer maintained beyond ongoing sessions. You pay for this capacity whether
+        /// it's in use or not. After making changes to capacity, it can take a few minutes for
+        /// the allocated capacity count to reflect the change while compute resources are allocated
+        /// or deallocated. Similarly, when allocated on-demand capacity is no longer needed,
+        /// it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -71,10 +74,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property AlwaysOnCapacity. 
         /// <para>
-        /// The streaming capacity that is allocated and ready to handle stream requests without
-        /// delay. You pay for this capacity whether it's in use or not. Best for quickest time
-        /// from streaming request to streaming session. Default is 1 (2 for high stream classes)
-        /// when creating a stream group or adding a location.
+        /// This setting, if non-zero, indicates minimum streaming capacity which is allocated
+        /// to you and is never released back to the service. You pay for this base level of capacity
+        /// at all times, whether used or idle.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -131,6 +133,27 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetLocationName()
         {
             return this._locationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumCapacity. 
+        /// <para>
+        /// This indicates the maximum capacity that the service can allocate for you. Newly created
+        /// streams may take a few minutes to start. Capacity is released back to the service
+        /// when idle. You pay for capacity that is allocated to you until it is released.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int MaximumCapacity
+        {
+            get { return this._maximumCapacity.GetValueOrDefault(); }
+            set { this._maximumCapacity = value; }
+        }
+
+        // Check to see if MaximumCapacity property is set
+        internal bool IsSetMaximumCapacity()
+        {
+            return this._maximumCapacity.HasValue; 
         }
 
         /// <summary>
@@ -221,6 +244,27 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetIdleCapacity. 
+        /// <para>
+        /// This indicates idle capacity which the service pre-allocates and holds for you in
+        /// anticipation of future activity. This helps to insulate your users from capacity-allocation
+        /// delays. You pay for capacity which is held in this intentional idle state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int TargetIdleCapacity
+        {
+            get { return this._targetIdleCapacity.GetValueOrDefault(); }
+            set { this._targetIdleCapacity = value; }
+        }
+
+        // Check to see if TargetIdleCapacity property is set
+        internal bool IsSetTargetIdleCapacity()
+        {
+            return this._targetIdleCapacity.HasValue; 
         }
 
     }

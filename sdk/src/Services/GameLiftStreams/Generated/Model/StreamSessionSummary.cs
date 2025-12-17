@@ -43,6 +43,7 @@ namespace Amazon.GameLiftStreams.Model
         private string _location;
         private Protocol _protocol;
         private StreamSessionStatus _status;
+        private StreamSessionStatusReason _statusReason;
         private string _userId;
 
         /// <summary>
@@ -246,6 +247,87 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// A short description of the reason the stream session is in <c>ERROR</c> status or
+        /// <c>TERMINATED</c> status.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>ERROR</c> status reasons:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>applicationLogS3DestinationError</c>: Could not write the application log to the
+        /// Amazon S3 bucket that is configured for the streaming application. Make sure the bucket
+        /// still exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>internalError</c>: An internal service error occurred. Start a new stream session
+        /// to continue streaming.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>invalidSignalRequest</c>: The WebRTC signal request that was sent is not valid.
+        /// When starting or reconnecting to a stream session, use <c>generateSignalRequest</c>
+        /// in the Amazon GameLift Streams Web SDK to generate a new signal request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>placementTimeout</c>: Amazon GameLift Streams could not find available stream
+        /// capacity to start a stream session. Increase the stream capacity in the stream group
+        /// or wait until capacity becomes available.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>TERMINATED</c> status reasons:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>apiTerminated</c>: The stream session was terminated by an API call to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>applicationExit</c>: The streaming application exited or crashed. The stream session
+        /// was terminated because the application is no longer running.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>connectionTimeout</c>: The stream session was terminated because the client failed
+        /// to connect within the connection timeout period specified by <c>ConnectionTimeoutSeconds</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>idleTimeout</c>: The stream session was terminated because it exceeded the idle
+        /// timeout period of 60 minutes with no user input activity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>maxSessionLengthTimeout</c>: The stream session was terminated because it exceeded
+        /// the maximum session length timeout period specified by <c>SessionLengthSeconds</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>reconnectionTimeout</c>: The stream session was terminated because the client
+        /// failed to reconnect within the reconnection timeout period specified by <c>ConnectionTimeoutSeconds</c>
+        /// after losing connection.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StreamSessionStatusReason StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

@@ -187,6 +187,7 @@ namespace Amazon.GameLiftStreams.Model
         private string _description;
         private string _identifier;
         private List<string> _locations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private PerformanceStatsConfiguration _performanceStatsConfiguration;
         private Protocol _protocol;
         private int? _sessionLengthSeconds;
         private string _signalRequest;
@@ -394,6 +395,25 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetLocations()
         {
             return this._locations != null && (this._locations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceStatsConfiguration. 
+        /// <para>
+        /// Configuration settings for sharing the stream session's performance stats with the
+        /// client
+        /// </para>
+        /// </summary>
+        public PerformanceStatsConfiguration PerformanceStatsConfiguration
+        {
+            get { return this._performanceStatsConfiguration; }
+            set { this._performanceStatsConfiguration = value; }
+        }
+
+        // Check to see if PerformanceStatsConfiguration property is set
+        internal bool IsSetPerformanceStatsConfiguration()
+        {
+            return this._performanceStatsConfiguration != null;
         }
 
         /// <summary>

@@ -90,6 +90,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                     unmarshalledObject.LocationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaximumCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaximumCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OnDemandCapacity", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -106,6 +112,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetIdleCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TargetIdleCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

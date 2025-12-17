@@ -135,6 +135,17 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPerformanceStatsConfiguration())
+                {
+                    context.Writer.WritePropertyName("PerformanceStatsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PerformanceStatsConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PerformanceStatsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProtocol())
                 {
                     context.Writer.WritePropertyName("Protocol");
