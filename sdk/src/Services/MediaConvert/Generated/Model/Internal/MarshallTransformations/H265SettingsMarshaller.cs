@@ -202,6 +202,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MinIInterval.Value);
             }
 
+            if(requestObject.IsSetMvOverPictureBoundaries())
+            {
+                context.Writer.WritePropertyName("mvOverPictureBoundaries");
+                context.Writer.WriteStringValue(requestObject.MvOverPictureBoundaries);
+            }
+
+            if(requestObject.IsSetMvTemporalPredictor())
+            {
+                context.Writer.WritePropertyName("mvTemporalPredictor");
+                context.Writer.WriteStringValue(requestObject.MvTemporalPredictor);
+            }
+
             if(requestObject.IsSetNumberBFramesBetweenReferenceFrames())
             {
                 context.Writer.WritePropertyName("numberBFramesBetweenReferenceFrames");
@@ -320,10 +332,34 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.TemporalIds);
             }
 
+            if(requestObject.IsSetTileHeight())
+            {
+                context.Writer.WritePropertyName("tileHeight");
+                context.Writer.WriteNumberValue(requestObject.TileHeight.Value);
+            }
+
+            if(requestObject.IsSetTilePadding())
+            {
+                context.Writer.WritePropertyName("tilePadding");
+                context.Writer.WriteStringValue(requestObject.TilePadding);
+            }
+
             if(requestObject.IsSetTiles())
             {
                 context.Writer.WritePropertyName("tiles");
                 context.Writer.WriteStringValue(requestObject.Tiles);
+            }
+
+            if(requestObject.IsSetTileWidth())
+            {
+                context.Writer.WritePropertyName("tileWidth");
+                context.Writer.WriteNumberValue(requestObject.TileWidth.Value);
+            }
+
+            if(requestObject.IsSetTreeBlockSize())
+            {
+                context.Writer.WritePropertyName("treeBlockSize");
+                context.Writer.WriteStringValue(requestObject.TreeBlockSize);
             }
 
             if(requestObject.IsSetUnregisteredSeiTimecode())
