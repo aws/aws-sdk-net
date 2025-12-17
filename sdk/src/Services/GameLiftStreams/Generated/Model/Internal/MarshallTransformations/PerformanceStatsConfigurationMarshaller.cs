@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LocationConfiguration Marshaller
+    /// PerformanceStatsConfiguration Marshaller
     /// </summary>
-    public class LocationConfigurationMarshaller : IRequestMarshaller<LocationConfiguration, JsonMarshallerContext> 
+    public class PerformanceStatsConfigurationMarshaller : IRequestMarshaller<PerformanceStatsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +42,14 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LocationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(PerformanceStatsConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAlwaysOnCapacity())
+            if(requestObject.IsSetSharedWithClient())
             {
-                context.Writer.WritePropertyName("AlwaysOnCapacity");
-                context.Writer.WriteNumberValue(requestObject.AlwaysOnCapacity.Value);
-            }
-
-            if(requestObject.IsSetLocationName())
-            {
-                context.Writer.WritePropertyName("LocationName");
-                context.Writer.WriteStringValue(requestObject.LocationName);
-            }
-
-            if(requestObject.IsSetMaximumCapacity())
-            {
-                context.Writer.WritePropertyName("MaximumCapacity");
-                context.Writer.WriteNumberValue(requestObject.MaximumCapacity.Value);
-            }
-
-            if(requestObject.IsSetOnDemandCapacity())
-            {
-                context.Writer.WritePropertyName("OnDemandCapacity");
-                context.Writer.WriteNumberValue(requestObject.OnDemandCapacity.Value);
-            }
-
-            if(requestObject.IsSetTargetIdleCapacity())
-            {
-                context.Writer.WritePropertyName("TargetIdleCapacity");
-                context.Writer.WriteNumberValue(requestObject.TargetIdleCapacity.Value);
+                context.Writer.WritePropertyName("SharedWithClient");
+                context.Writer.WriteBooleanValue(requestObject.SharedWithClient.Value);
             }
 
         }
@@ -81,7 +57,7 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LocationConfigurationMarshaller Instance = new LocationConfigurationMarshaller();
+        public readonly static PerformanceStatsConfigurationMarshaller Instance = new PerformanceStatsConfigurationMarshaller();
 
     }
 }

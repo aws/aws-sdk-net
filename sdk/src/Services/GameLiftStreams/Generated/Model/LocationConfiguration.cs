@@ -40,15 +40,16 @@ namespace Amazon.GameLiftStreams.Model
     {
         private int? _alwaysOnCapacity;
         private string _locationName;
+        private int? _maximumCapacity;
         private int? _onDemandCapacity;
+        private int? _targetIdleCapacity;
 
         /// <summary>
         /// Gets and sets the property AlwaysOnCapacity. 
         /// <para>
-        /// The streaming capacity that is allocated and ready to handle stream requests without
-        /// delay. You pay for this capacity whether it's in use or not. Best for quickest time
-        /// from streaming request to streaming session. Default is 1 (2 for high stream classes)
-        /// when creating a stream group or adding a location.
+        /// This setting, if non-zero, indicates minimum streaming capacity which is allocated
+        /// to you and is never released back to the service. You pay for this base level of capacity
+        /// at all times, whether used or idle.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -87,7 +88,34 @@ namespace Amazon.GameLiftStreams.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaximumCapacity. 
+        /// <para>
+        /// This indicates the maximum capacity that the service can allocate for you. Newly created
+        /// streams may take a few minutes to start. Capacity is released back to the service
+        /// when idle. You pay for capacity that is allocated to you until it is released.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? MaximumCapacity
+        {
+            get { return this._maximumCapacity; }
+            set { this._maximumCapacity = value; }
+        }
+
+        // Check to see if MaximumCapacity property is set
+        internal bool IsSetMaximumCapacity()
+        {
+            return this._maximumCapacity.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OnDemandCapacity. 
+        /// <para>
+        /// This field is deprecated. Use <c>MaximumCapacity</c> instead. This parameter cannot
+        /// be used with <c>MaximumCapacity</c> or <c>TargetIdleCapacity</c> in the same location
+        /// configuration.
+        /// </para>
+        ///  
         /// <para>
         /// The streaming capacity that Amazon GameLift Streams can allocate in response to stream
         /// requests, and then de-allocate when the session has terminated. This offers a cost
@@ -95,6 +123,7 @@ namespace Amazon.GameLiftStreams.Model
         /// Default is 0 when creating a stream group or adding a location.
         /// </para>
         /// </summary>
+        [Obsolete("This input field is deprecated in favor of explicit MaximumCapacity values.")]
         [AWSProperty(Min=0)]
         public int? OnDemandCapacity
         {
@@ -106,6 +135,27 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetOnDemandCapacity()
         {
             return this._onDemandCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetIdleCapacity. 
+        /// <para>
+        /// This indicates idle capacity which the service pre-allocates and holds for you in
+        /// anticipation of future activity. This helps to insulate your users from capacity-allocation
+        /// delays. You pay for capacity which is held in this intentional idle state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? TargetIdleCapacity
+        {
+            get { return this._targetIdleCapacity; }
+            set { this._targetIdleCapacity = value; }
+        }
+
+        // Check to see if TargetIdleCapacity property is set
+        internal bool IsSetTargetIdleCapacity()
+        {
+            return this._targetIdleCapacity.HasValue; 
         }
 
     }
