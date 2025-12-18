@@ -396,6 +396,64 @@ namespace Amazon.Artifact
 
         #endregion
         
+        #region  ListReportVersions
+
+
+        /// <summary>
+        /// List available report versions for a given report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReportVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListReportVersions service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListReportVersions">REST API Reference for ListReportVersions Operation</seealso>
+        ListReportVersionsResponse ListReportVersions(ListReportVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReportVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReportVersions operation on AmazonArtifactClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReportVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListReportVersions">REST API Reference for ListReportVersions Operation</seealso>
+        IAsyncResult BeginListReportVersions(ListReportVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReportVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReportVersions.</param>
+        /// 
+        /// <returns>Returns a  ListReportVersionsResult from Artifact.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListReportVersions">REST API Reference for ListReportVersions Operation</seealso>
+        ListReportVersionsResponse EndListReportVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutAccountSettings
 
 
