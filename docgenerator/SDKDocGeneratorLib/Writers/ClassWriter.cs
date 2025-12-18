@@ -143,8 +143,7 @@ namespace SDKDocGenerator.Writers
 
             if (!File.Exists(fragmentPath))
                 return;
-
-            writer.WriteLine("<div>");
+                        
             writer.WriteLine("<div>");
             writer.WriteLine("<div class=\"collapsibleSection\">");
             writer.WriteLine("<h2 id=\"codeexamples\" class=\"title\">Code Examples</h2>");
@@ -156,11 +155,13 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine(fragmentContent);
 
             writer.WriteLine("</div>");
-            writer.WriteLine("</div>");
         }
 
         private string GetServiceIdFromNamespace()
         {
+            if (string.IsNullOrEmpty(this._versionType.Namespace))
+                return string.Empty;
+                
             var namespaceParts = this._versionType.Namespace.Split('.');            
             var serviceId = namespaceParts[namespaceParts.Length - 1];
             return serviceId;            

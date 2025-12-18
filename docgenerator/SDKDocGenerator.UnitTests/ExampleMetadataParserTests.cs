@@ -147,5 +147,53 @@ namespace SDKDocGenerator.UnitTests
                 ExampleMetadataParser.CleanupExampleFragments();
             }
         }
+
+        [Fact]
+        public void GenerateExampleFragments_WithNullPath_ShouldCreateFailureFile()
+        {
+            var failureFile = Path.GetTempFileName();
+            
+            try
+            {
+                if (File.Exists(failureFile))
+                    File.Delete(failureFile);
+                
+                ExampleMetadataParser.GenerateExampleFragments(null, failureFile);
+                
+                Assert.True(File.Exists(failureFile));
+                var content = File.ReadAllText(failureFile);
+                Assert.Contains("Example metadata file has not been specified.", content);
+            }
+            finally
+            {
+                if (File.Exists(failureFile))
+                    File.Delete(failureFile);
+                ExampleMetadataParser.CleanupExampleFragments();
+            }
+        }
+
+        [Fact]
+        public void GenerateExampleFragments_WithEmptyPath_ShouldCreateFailureFile()
+        {
+            var failureFile = Path.GetTempFileName();
+            
+            try
+            {
+                if (File.Exists(failureFile))
+                    File.Delete(failureFile);
+                
+                ExampleMetadataParser.GenerateExampleFragments("", failureFile);
+                
+                Assert.True(File.Exists(failureFile));
+                var content = File.ReadAllText(failureFile);
+                Assert.Contains("Example metadata file has not been specified.", content);
+            }
+            finally
+            {
+                if (File.Exists(failureFile))
+                    File.Delete(failureFile);
+                ExampleMetadataParser.CleanupExampleFragments();
+            }
+        }
     }
 }

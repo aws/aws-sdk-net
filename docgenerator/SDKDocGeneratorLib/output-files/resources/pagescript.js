@@ -160,19 +160,25 @@
 function toggleTOC() {
   var tocList = document.getElementById('tocList');
   var tocToggle = document.getElementById('tocToggle');
-  if (tocList.style.display === 'none') {
-    tocList.style.display = 'block';
-    tocToggle.innerHTML = '▼';
-  } else {
-    tocList.style.display = 'none';
-    tocToggle.innerHTML = '▶';
+
+  if (tocList && tocToggle) {
+    if (tocList.style.display === 'none') {
+      tocList.style.display = 'block';
+      tocToggle.innerHTML = '▼';
+    } else {
+      tocList.style.display = 'none';
+      tocToggle.innerHTML = '▶';
+    }
   }
 }
 window.addEventListener('scroll', function() {
   var toc = document.getElementById('pageTOC');
-  if (window.scrollY > 200) {
+  var tocList = document.getElementById('tocList');
+  var tocToggle = document.getElementById('tocToggle');
+  
+  if (toc && tocList && tocToggle && window.scrollY > 200) {
     toc.classList.add('collapsed');
-    document.getElementById('tocList').style.display = 'none';
-    document.getElementById('tocToggle').innerHTML = '▶';
+    tocList.style.display = 'none';
+    tocToggle.innerHTML = '▶';
   }
 });

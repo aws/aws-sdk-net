@@ -22,6 +22,11 @@ namespace SDKDocGenerator
             
             try
             {
+                if (string.IsNullOrEmpty(examplesMetaJsonFile))
+                {
+                    throw new Exception($"Example metadata file has not been specified.");
+                }
+
                 if (!File.Exists(examplesMetaJsonFile))
                 {                    
                     throw new Exception($"Example metadata file not found at {examplesMetaJsonFile}.");
@@ -81,9 +86,9 @@ namespace SDKDocGenerator
             }
         }
 
-        private static (Dictionary<string, List<ExampleDoc>>, Dictionary<string, string>) ParseExamples(ExampleMeta meta)
+        private static (SortedDictionary<string, List<ExampleDoc>>, Dictionary<string, string>) ParseExamples(ExampleMeta meta)
         {
-            var examplesBySdkId = new Dictionary<string, List<ExampleDoc>>();
+            var examplesBySdkId = new SortedDictionary<string, List<ExampleDoc>>();
             var serviceNameBySdkIdLookup = new Dictionary<string, string>();
 
             foreach (var example in meta.Examples.Values)
@@ -127,11 +132,14 @@ namespace SDKDocGenerator
 
         private static bool IsDotNetExample(Example example)
         {
+            if (example.Languages == null)
+                return false;
 
             return example.Languages.Values.Any(lang =>
+                lang != null && (
                 lang.Name.Equals(".NET", StringComparison.OrdinalIgnoreCase) ||
                 lang.Name.Equals("C#", StringComparison.OrdinalIgnoreCase) ||
-                lang.Name.Equals("CSharp", StringComparison.OrdinalIgnoreCase));
+                lang.Name.Equals("CSharp", StringComparison.OrdinalIgnoreCase)));
         }
 
         /// <summary>
@@ -166,7 +174,7 @@ namespace SDKDocGenerator
             return title.Replace("<code>", "").Replace("</code>", "");
         }
 
-        private static void WriteFragments(Dictionary<string, List<ExampleDoc>> examplesBySdkId,
+        private static void WriteFragments(SortedDictionary<string, List<ExampleDoc>> examplesBySdkId,
             Dictionary<string, string> serviceNameBySdkIdLookup,
             string fragmentDir, ExampleMeta meta)
         {
