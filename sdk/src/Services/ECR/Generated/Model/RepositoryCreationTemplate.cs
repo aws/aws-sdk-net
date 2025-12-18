@@ -51,8 +51,8 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property AppliedFor. 
         /// <para>
         /// A list of enumerable Strings representing the repository creation scenarios that this
-        /// template will apply towards. The two supported scenarios are PULL_THROUGH_CACHE and
-        /// REPLICATION
+        /// template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION,
+        /// and CREATE_ON_PUSH
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

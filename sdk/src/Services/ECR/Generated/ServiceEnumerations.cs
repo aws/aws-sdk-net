@@ -873,6 +873,10 @@ namespace Amazon.ECR
     {
 
         /// <summary>
+        /// Constant CREATE_ON_PUSH for RCTAppliedFor
+        /// </summary>
+        public static readonly RCTAppliedFor CREATE_ON_PUSH = new RCTAppliedFor("CREATE_ON_PUSH");
+        /// <summary>
         /// Constant PULL_THROUGH_CACHE for RCTAppliedFor
         /// </summary>
         public static readonly RCTAppliedFor PULL_THROUGH_CACHE = new RCTAppliedFor("PULL_THROUGH_CACHE");
