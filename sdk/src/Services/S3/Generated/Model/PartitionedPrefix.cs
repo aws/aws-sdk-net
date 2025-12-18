@@ -13,6 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -20,7 +34,7 @@ namespace Amazon.S3.Model
     /// 
     ///  
     /// <para>
-    ///  <code>[DestinationPrefix][SourceAccountId]/[SourceRegion]/[SourceBucket]/[YYYY]/[MM]/[DD]/[YYYY]-[MM]-[DD]-[hh]-[mm]-[ss]-[UniqueString]</code>
+    ///  <c>[DestinationPrefix][SourceAccountId]/[SourceRegion]/[SourceBucket]/[YYYY]/[MM]/[DD]/[YYYY]-[MM]-[DD]-[hh]-[mm]-[ss]-[UniqueString]</c>
     /// 
     /// </para>
     ///  
@@ -35,14 +49,19 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property PartitionDateSource. 
         /// <para>
-        /// Specifies the partition date source for the partitioned prefix. 
-        /// <code>PartitionDateSource</code> can be <code>EventTime</code> or 
-        /// <code>DeliveryTime</code>.</para> <para>For <code>DeliveryTime</code>, 
-        /// the time in the log file names corresponds to the delivery time for the 
-        /// log files. </para> <para> For <code>EventTime</code>, The logs delivered 
-        /// are for a specific day only. The year, month, and day correspond to the 
-        /// day on which the event occurred, and the hour, minutes and seconds are 
-        /// set to 00 in the key.
+        /// Specifies the partition date source for the partitioned prefix. <c>PartitionDateSource</c>
+        /// can be <c>EventTime</c> or <c>DeliveryTime</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>DeliveryTime</c>, the time in the log file names corresponds to the delivery
+        /// time for the log files. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For <c>EventTime</c>, The logs delivered are for a specific day only. The year, month,
+        /// and day correspond to the day on which the event occurred, and the hour, minutes and
+        /// seconds are set to 00 in the key.
         /// </para>
         /// </summary>
         public PartitionDateSource PartitionDateSource

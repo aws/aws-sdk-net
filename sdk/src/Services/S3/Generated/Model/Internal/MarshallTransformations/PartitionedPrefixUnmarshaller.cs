@@ -12,14 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime.Internal.Transform;
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PartitionedPrefix Object
     /// </summary>  
-    public class PartitionedPrefixUnmarshaller : IXmlUnmarshaller<PartitionedPrefix, XmlUnmarshallerContext>
+    public partial class PartitionedPrefixUnmarshaller : IXmlUnmarshaller<PartitionedPrefix, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,6 +62,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.PartitionDateSource = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -53,6 +72,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, PartitionedPrefix unmarshalledObject, int targetDepth);
 
         private static PartitionedPrefixUnmarshaller _instance = new PartitionedPrefixUnmarshaller();        
 
