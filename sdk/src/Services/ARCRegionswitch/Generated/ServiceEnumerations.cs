@@ -1081,6 +1081,60 @@ namespace Amazon.ARCRegionswitch
 
 
     /// <summary>
+    /// Constants used for properties of type Route53HealthCheckStatus.
+    /// </summary>
+    public class Route53HealthCheckStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Healthy for Route53HealthCheckStatus
+        /// </summary>
+        public static readonly Route53HealthCheckStatus Healthy = new Route53HealthCheckStatus("healthy");
+        /// <summary>
+        /// Constant Unhealthy for Route53HealthCheckStatus
+        /// </summary>
+        public static readonly Route53HealthCheckStatus Unhealthy = new Route53HealthCheckStatus("unhealthy");
+        /// <summary>
+        /// Constant Unknown for Route53HealthCheckStatus
+        /// </summary>
+        public static readonly Route53HealthCheckStatus Unknown = new Route53HealthCheckStatus("unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Route53HealthCheckStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Route53HealthCheckStatus FindValue(string value)
+        {
+            return FindValue<Route53HealthCheckStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Route53HealthCheckStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RoutingControlStateChange.
     /// </summary>
     public class RoutingControlStateChange : ConstantClass
