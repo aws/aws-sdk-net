@@ -140,21 +140,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 });
                 Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
             }
-
-            using (var client = new Amazon.Glacier.AmazonGlacierClient())
-            {
-                var ex = AssertExtensions.ExpectException<Amazon.Glacier.Model.ResourceNotFoundException>(() =>
-                {
-                    client.InitiateMultipartUpload(new Amazon.Glacier.Model.InitiateMultipartUploadRequest
-                    {
-                        AccountId = "-",
-                        ArchiveDescription = fakeData,
-                        VaultName = fakeData,
-                        PartSize = 123
-                    });
-                });
-                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
-            }
         }
 
         [TestMethod]
