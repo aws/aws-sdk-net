@@ -4591,6 +4591,86 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  UpdateCollaborationChangeRequest
+
+
+        /// <summary>
+        /// Updates an existing collaboration change request. This operation allows approval actions
+        /// for pending change requests in collaborations (APPROVE, DENY, CANCEL, COMMIT).
+        /// 
+        ///  
+        /// <para>
+        /// For change requests without automatic approval, a member in the collaboration can
+        /// manually APPROVE or DENY a change request. The collaboration owner can manually CANCEL
+        /// or COMMIT a change request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCollaborationChangeRequest service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaborationChangeRequest">REST API Reference for UpdateCollaborationChangeRequest Operation</seealso>
+        UpdateCollaborationChangeRequestResponse UpdateCollaborationChangeRequest(UpdateCollaborationChangeRequestRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing collaboration change request. This operation allows approval actions
+        /// for pending change requests in collaborations (APPROVE, DENY, CANCEL, COMMIT).
+        /// 
+        ///  
+        /// <para>
+        /// For change requests without automatic approval, a member in the collaboration can
+        /// manually APPROVE or DENY a change request. The collaboration owner can manually CANCEL
+        /// or COMMIT a change request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCollaborationChangeRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaborationChangeRequest">REST API Reference for UpdateCollaborationChangeRequest Operation</seealso>
+        Task<UpdateCollaborationChangeRequestResponse> UpdateCollaborationChangeRequestAsync(UpdateCollaborationChangeRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateConfiguredAudienceModelAssociation
 
 

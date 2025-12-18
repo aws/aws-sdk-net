@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class CollaborationChangeRequest
     {
+        private Dictionary<string, ApprovalStatusDetails> _approvals = AWSConfigs.InitializeCollections ? new Dictionary<string, ApprovalStatusDetails>() : null;
         private List<Change> _changes = AWSConfigs.InitializeCollections ? new List<Change>() : null;
         private string _collaborationId;
         private DateTime? _createTime;
@@ -42,6 +43,26 @@ namespace Amazon.CleanRooms.Model
         private bool? _isAutoApproved;
         private ChangeRequestStatus _status;
         private DateTime? _updateTime;
+
+        /// <summary>
+        /// Gets and sets the property Approvals. 
+        /// <para>
+        /// A list of approval details from collaboration members, including approval status and
+        /// multi-party approval workflow information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, ApprovalStatusDetails> Approvals
+        {
+            get { return this._approvals; }
+            set { this._approvals = value; }
+        }
+
+        // Check to see if Approvals property is set
+        internal bool IsSetApprovals()
+        {
+            return this._approvals != null && (this._approvals.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Changes. 

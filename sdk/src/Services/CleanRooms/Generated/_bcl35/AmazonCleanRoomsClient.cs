@@ -5588,6 +5588,86 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  UpdateCollaborationChangeRequest
+
+        /// <summary>
+        /// Updates an existing collaboration change request. This operation allows approval actions
+        /// for pending change requests in collaborations (APPROVE, DENY, CANCEL, COMMIT).
+        /// 
+        ///  
+        /// <para>
+        /// For change requests without automatic approval, a member in the collaboration can
+        /// manually APPROVE or DENY a change request. The collaboration owner can manually CANCEL
+        /// or COMMIT a change request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCollaborationChangeRequest service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaborationChangeRequest">REST API Reference for UpdateCollaborationChangeRequest Operation</seealso>
+        public virtual UpdateCollaborationChangeRequestResponse UpdateCollaborationChangeRequest(UpdateCollaborationChangeRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCollaborationChangeRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCollaborationChangeRequestResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCollaborationChangeRequestResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCollaborationChangeRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCollaborationChangeRequest operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCollaborationChangeRequest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaborationChangeRequest">REST API Reference for UpdateCollaborationChangeRequest Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCollaborationChangeRequest(UpdateCollaborationChangeRequestRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCollaborationChangeRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCollaborationChangeRequestResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCollaborationChangeRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCollaborationChangeRequest.</param>
+        /// 
+        /// <returns>Returns a  UpdateCollaborationChangeRequestResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaborationChangeRequest">REST API Reference for UpdateCollaborationChangeRequest Operation</seealso>
+        public virtual UpdateCollaborationChangeRequestResponse EndUpdateCollaborationChangeRequest(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCollaborationChangeRequestResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateConfiguredAudienceModelAssociation
 
         /// <summary>

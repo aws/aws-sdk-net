@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChangeSpecification Object
+    /// Response Unmarshaller for CollaborationChangeSpecification Object
     /// </summary>  
-    public class ChangeSpecificationUnmarshaller : IUnmarshaller<ChangeSpecification, XmlUnmarshallerContext>, IUnmarshaller<ChangeSpecification, JsonUnmarshallerContext>
+    public class CollaborationChangeSpecificationUnmarshaller : IUnmarshaller<CollaborationChangeSpecification, XmlUnmarshallerContext>, IUnmarshaller<CollaborationChangeSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ChangeSpecification IUnmarshaller<ChangeSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CollaborationChangeSpecification IUnmarshaller<CollaborationChangeSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChangeSpecification Unmarshall(JsonUnmarshallerContext context)
+        public CollaborationChangeSpecification Unmarshall(JsonUnmarshallerContext context)
         {
-            ChangeSpecification unmarshalledObject = new ChangeSpecification();
+            CollaborationChangeSpecification unmarshalledObject = new CollaborationChangeSpecification();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("collaboration", targetDepth))
+                if (context.TestExpression("autoApprovedChangeTypes", targetDepth))
                 {
-                    var unmarshaller = CollaborationChangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.Collaboration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("member", targetDepth))
-                {
-                    var unmarshaller = MemberChangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.Member = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AutoApprovedChangeTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChangeSpecificationUnmarshaller _instance = new ChangeSpecificationUnmarshaller();        
+        private static CollaborationChangeSpecificationUnmarshaller _instance = new CollaborationChangeSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChangeSpecificationUnmarshaller Instance
+        public static CollaborationChangeSpecificationUnmarshaller Instance
         {
             get
             {

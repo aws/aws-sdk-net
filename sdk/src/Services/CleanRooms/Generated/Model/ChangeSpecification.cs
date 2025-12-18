@@ -34,7 +34,27 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ChangeSpecification
     {
+        private CollaborationChangeSpecification _collaboration;
         private MemberChangeSpecification _member;
+
+        /// <summary>
+        /// Gets and sets the property Collaboration. 
+        /// <para>
+        /// The collaboration configuration changes being requested. Currently, this only supports
+        /// modifying which change types are auto-approved for the collaboration.
+        /// </para>
+        /// </summary>
+        public CollaborationChangeSpecification Collaboration
+        {
+            get { return this._collaboration; }
+            set { this._collaboration = value; }
+        }
+
+        // Check to see if Collaboration property is set
+        internal bool IsSetCollaboration()
+        {
+            return this._collaboration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Member. 

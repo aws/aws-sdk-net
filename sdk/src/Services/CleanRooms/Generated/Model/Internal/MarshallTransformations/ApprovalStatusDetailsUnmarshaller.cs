@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChangeSpecification Object
+    /// Response Unmarshaller for ApprovalStatusDetails Object
     /// </summary>  
-    public class ChangeSpecificationUnmarshaller : IUnmarshaller<ChangeSpecification, XmlUnmarshallerContext>, IUnmarshaller<ChangeSpecification, JsonUnmarshallerContext>
+    public class ApprovalStatusDetailsUnmarshaller : IUnmarshaller<ApprovalStatusDetails, XmlUnmarshallerContext>, IUnmarshaller<ApprovalStatusDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ChangeSpecification IUnmarshaller<ChangeSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ApprovalStatusDetails IUnmarshaller<ApprovalStatusDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChangeSpecification Unmarshall(JsonUnmarshallerContext context)
+        public ApprovalStatusDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            ChangeSpecification unmarshalledObject = new ChangeSpecification();
+            ApprovalStatusDetails unmarshalledObject = new ApprovalStatusDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("collaboration", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
-                    var unmarshaller = CollaborationChangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.Collaboration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("member", targetDepth))
-                {
-                    var unmarshaller = MemberChangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.Member = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChangeSpecificationUnmarshaller _instance = new ChangeSpecificationUnmarshaller();        
+        private static ApprovalStatusDetailsUnmarshaller _instance = new ApprovalStatusDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChangeSpecificationUnmarshaller Instance
+        public static ApprovalStatusDetailsUnmarshaller Instance
         {
             get
             {
