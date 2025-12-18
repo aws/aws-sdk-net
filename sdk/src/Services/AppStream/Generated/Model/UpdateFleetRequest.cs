@@ -453,22 +453,6 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-design.large
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.2xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.4xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// stream.graphics.g4dn.xlarge
         /// </para>
         ///  </li> <li> 
@@ -697,8 +681,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for
-        /// Elastic fleets. 
+        /// The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404
+        /// are supported for Elastic fleets. 
         /// </para>
         /// </summary>
         public PlatformType Platform
