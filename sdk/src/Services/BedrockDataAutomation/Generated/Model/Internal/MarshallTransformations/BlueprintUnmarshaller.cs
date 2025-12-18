@@ -114,6 +114,18 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("optimizationSamples", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BlueprintOptimizationSample, BlueprintOptimizationSampleUnmarshaller>(BlueprintOptimizationSampleUnmarshaller.Instance);
+                    unmarshalledObject.OptimizationSamples = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("optimizationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.OptimizationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schema", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

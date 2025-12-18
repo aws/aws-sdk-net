@@ -264,6 +264,77 @@ namespace Amazon.BedrockDataAutomation
         #endregion
 
 
+        #region  CopyBlueprintStage
+
+
+        /// <summary>
+        /// Copies a Blueprint from one stage to another
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyBlueprintStage service method.</param>
+        /// 
+        /// <returns>The response from the CopyBlueprintStage service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CopyBlueprintStage">REST API Reference for CopyBlueprintStage Operation</seealso>
+        public virtual CopyBlueprintStageResponse CopyBlueprintStage(CopyBlueprintStageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CopyBlueprintStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyBlueprintStageResponseUnmarshaller.Instance;
+
+            return Invoke<CopyBlueprintStageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Copies a Blueprint from one stage to another
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyBlueprintStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CopyBlueprintStage service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CopyBlueprintStage">REST API Reference for CopyBlueprintStage Operation</seealso>
+        public virtual Task<CopyBlueprintStageResponse> CopyBlueprintStageAsync(CopyBlueprintStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CopyBlueprintStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyBlueprintStageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CopyBlueprintStageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateBlueprint
 
 
@@ -708,6 +779,77 @@ namespace Amazon.BedrockDataAutomation
 
         #endregion
         
+        #region  GetBlueprintOptimizationStatus
+
+
+        /// <summary>
+        /// API used to get blueprint optimization status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintOptimizationStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetBlueprintOptimizationStatus service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetBlueprintOptimizationStatus">REST API Reference for GetBlueprintOptimizationStatus Operation</seealso>
+        public virtual GetBlueprintOptimizationStatusResponse GetBlueprintOptimizationStatus(GetBlueprintOptimizationStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBlueprintOptimizationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintOptimizationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintOptimizationStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// API used to get blueprint optimization status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintOptimizationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBlueprintOptimizationStatus service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetBlueprintOptimizationStatus">REST API Reference for GetBlueprintOptimizationStatus Operation</seealso>
+        public virtual Task<GetBlueprintOptimizationStatusResponse> GetBlueprintOptimizationStatusAsync(GetBlueprintOptimizationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBlueprintOptimizationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintOptimizationStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBlueprintOptimizationStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDataAutomationProject
 
 
@@ -775,6 +917,83 @@ namespace Amazon.BedrockDataAutomation
             options.ResponseUnmarshaller = GetDataAutomationProjectResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetDataAutomationProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  InvokeBlueprintOptimizationAsync
+
+
+        /// <summary>
+        /// Invoke an async job to perform Blueprint Optimization
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeBlueprintOptimizationAsync service method.</param>
+        /// 
+        /// <returns>The response from the InvokeBlueprintOptimizationAsync service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/InvokeBlueprintOptimizationAsync">REST API Reference for InvokeBlueprintOptimizationAsync Operation</seealso>
+        public virtual InvokeBlueprintOptimizationAsyncResponse InvokeBlueprintOptimizationAsync(InvokeBlueprintOptimizationAsyncRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InvokeBlueprintOptimizationAsyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeBlueprintOptimizationAsyncResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeBlueprintOptimizationAsyncResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Invoke an async job to perform Blueprint Optimization
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeBlueprintOptimizationAsync service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeBlueprintOptimizationAsync service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/InvokeBlueprintOptimizationAsync">REST API Reference for InvokeBlueprintOptimizationAsync Operation</seealso>
+        public virtual Task<InvokeBlueprintOptimizationAsyncResponse> InvokeBlueprintOptimizationAsyncAsync(InvokeBlueprintOptimizationAsyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InvokeBlueprintOptimizationAsyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeBlueprintOptimizationAsyncResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<InvokeBlueprintOptimizationAsyncResponse>(request, options, cancellationToken);
         }
 
         #endregion

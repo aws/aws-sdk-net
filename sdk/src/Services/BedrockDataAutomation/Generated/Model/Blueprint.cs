@@ -42,6 +42,8 @@ namespace Amazon.BedrockDataAutomation.Model
         private Dictionary<string, string> _kmsEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
+        private List<BlueprintOptimizationSample> _optimizationSamples = AWSConfigs.InitializeCollections ? new List<BlueprintOptimizationSample>() : null;
+        private DateTime? _optimizationTime;
         private string _schema;
         private Type _type;
 
@@ -170,6 +172,36 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizationSamples.
+        /// </summary>
+        public List<BlueprintOptimizationSample> OptimizationSamples
+        {
+            get { return this._optimizationSamples; }
+            set { this._optimizationSamples = value; }
+        }
+
+        // Check to see if OptimizationSamples property is set
+        internal bool IsSetOptimizationSamples()
+        {
+            return this._optimizationSamples != null && (this._optimizationSamples.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizationTime.
+        /// </summary>
+        public DateTime OptimizationTime
+        {
+            get { return this._optimizationTime.GetValueOrDefault(); }
+            set { this._optimizationTime = value; }
+        }
+
+        // Check to see if OptimizationTime property is set
+        internal bool IsSetOptimizationTime()
+        {
+            return this._optimizationTime.HasValue; 
         }
 
         /// <summary>

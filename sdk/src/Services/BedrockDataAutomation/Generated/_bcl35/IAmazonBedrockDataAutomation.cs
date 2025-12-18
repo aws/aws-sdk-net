@@ -45,6 +45,61 @@ namespace Amazon.BedrockDataAutomation
 
 
         
+        #region  CopyBlueprintStage
+
+
+        /// <summary>
+        /// Copies a Blueprint from one stage to another
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyBlueprintStage service method.</param>
+        /// 
+        /// <returns>The response from the CopyBlueprintStage service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CopyBlueprintStage">REST API Reference for CopyBlueprintStage Operation</seealso>
+        CopyBlueprintStageResponse CopyBlueprintStage(CopyBlueprintStageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyBlueprintStage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyBlueprintStage operation on AmazonBedrockDataAutomationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyBlueprintStage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CopyBlueprintStage">REST API Reference for CopyBlueprintStage Operation</seealso>
+        IAsyncResult BeginCopyBlueprintStage(CopyBlueprintStageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyBlueprintStage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyBlueprintStage.</param>
+        /// 
+        /// <returns>Returns a  CopyBlueprintStageResult from BedrockDataAutomation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CopyBlueprintStage">REST API Reference for CopyBlueprintStage Operation</seealso>
+        CopyBlueprintStageResponse EndCopyBlueprintStage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateBlueprint
 
 
@@ -384,6 +439,61 @@ namespace Amazon.BedrockDataAutomation
 
         #endregion
         
+        #region  GetBlueprintOptimizationStatus
+
+
+        /// <summary>
+        /// API used to get blueprint optimization status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintOptimizationStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetBlueprintOptimizationStatus service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetBlueprintOptimizationStatus">REST API Reference for GetBlueprintOptimizationStatus Operation</seealso>
+        GetBlueprintOptimizationStatusResponse GetBlueprintOptimizationStatus(GetBlueprintOptimizationStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlueprintOptimizationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprintOptimizationStatus operation on AmazonBedrockDataAutomationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBlueprintOptimizationStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetBlueprintOptimizationStatus">REST API Reference for GetBlueprintOptimizationStatus Operation</seealso>
+        IAsyncResult BeginGetBlueprintOptimizationStatus(GetBlueprintOptimizationStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBlueprintOptimizationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBlueprintOptimizationStatus.</param>
+        /// 
+        /// <returns>Returns a  GetBlueprintOptimizationStatusResult from BedrockDataAutomation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetBlueprintOptimizationStatus">REST API Reference for GetBlueprintOptimizationStatus Operation</seealso>
+        GetBlueprintOptimizationStatusResponse EndGetBlueprintOptimizationStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDataAutomationProject
 
 
@@ -436,6 +546,64 @@ namespace Amazon.BedrockDataAutomation
         /// <returns>Returns a  GetDataAutomationProjectResult from BedrockDataAutomation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationProject">REST API Reference for GetDataAutomationProject Operation</seealso>
         GetDataAutomationProjectResponse EndGetDataAutomationProject(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  InvokeBlueprintOptimizationAsync
+
+
+        /// <summary>
+        /// Invoke an async job to perform Blueprint Optimization
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeBlueprintOptimizationAsync service method.</param>
+        /// 
+        /// <returns>The response from the InvokeBlueprintOptimizationAsync service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/InvokeBlueprintOptimizationAsync">REST API Reference for InvokeBlueprintOptimizationAsync Operation</seealso>
+        InvokeBlueprintOptimizationAsyncResponse InvokeBlueprintOptimizationAsync(InvokeBlueprintOptimizationAsyncRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InvokeBlueprintOptimizationAsync operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InvokeBlueprintOptimizationAsync operation on AmazonBedrockDataAutomationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvokeBlueprintOptimizationAsync
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/InvokeBlueprintOptimizationAsync">REST API Reference for InvokeBlueprintOptimizationAsync Operation</seealso>
+        IAsyncResult BeginInvokeBlueprintOptimizationAsync(InvokeBlueprintOptimizationAsyncRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InvokeBlueprintOptimizationAsync operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvokeBlueprintOptimizationAsync.</param>
+        /// 
+        /// <returns>Returns a  InvokeBlueprintOptimizationAsyncResult from BedrockDataAutomation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/InvokeBlueprintOptimizationAsync">REST API Reference for InvokeBlueprintOptimizationAsync Operation</seealso>
+        InvokeBlueprintOptimizationAsyncResponse EndInvokeBlueprintOptimizationAsync(IAsyncResult asyncResult);
 
         #endregion
         
