@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ARCRegionswitch.IAmazonARCRegionswitch.ListRoute53HealthChecksInRegion(Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest)" />
+            <member name="M:Amazon.ARCRegionswitch.AmazonARCRegionswitchClient.ListRoute53HealthChecksInRegion(Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest)" />
+            <member name="T:Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest" />
+            <member name="T:Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example ListRoute53HealthChecksInRegion"
+                    source=".\AWSSDKDocSamples\ARCRegionswitch\ARCRegionswitch.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
