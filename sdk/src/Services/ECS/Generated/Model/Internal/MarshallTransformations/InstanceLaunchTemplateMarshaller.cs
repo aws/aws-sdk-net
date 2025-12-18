@@ -48,6 +48,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCapacityOptionType())
+            {
+                context.Writer.WritePropertyName("capacityOptionType");
+                context.Writer.Write(requestObject.CapacityOptionType);
+            }
+
             if(requestObject.IsSetEc2InstanceProfileArn())
             {
                 context.Writer.WritePropertyName("ec2InstanceProfileArn");

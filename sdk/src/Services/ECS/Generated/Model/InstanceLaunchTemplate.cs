@@ -37,11 +37,55 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class InstanceLaunchTemplate
     {
+        private CapacityOptionType _capacityOptionType;
         private string _ec2InstanceProfileArn;
         private InstanceRequirementsRequest _instanceRequirements;
         private ManagedInstancesMonitoringOptions _monitoring;
         private ManagedInstancesNetworkConfiguration _networkConfiguration;
         private ManagedInstancesStorageConfiguration _storageConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property CapacityOptionType. 
+        /// <para>
+        /// The capacity option type. This determines whether Amazon ECS launches On-Demand or
+        /// Spot Instances for your managed instance capacity provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ON_DEMAND</c> - Launches standard On-Demand Instances. On-Demand Instances provide
+        /// predictable pricing and availability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SPOT</c> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced
+        /// cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification
+        /// when the capacity is needed back.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The default is On-Demand
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance
+        /// purchasing options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public CapacityOptionType CapacityOptionType
+        {
+            get { return this._capacityOptionType; }
+            set { this._capacityOptionType = value; }
+        }
+
+        // Check to see if CapacityOptionType property is set
+        internal bool IsSetCapacityOptionType()
+        {
+            return this._capacityOptionType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceProfileArn. 
