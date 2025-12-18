@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private List<CredentialProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialProviderConfiguration>() : null;
         private string _description;
         private string _gatewayIdentifier;
+        private MetadataConfiguration _metadataConfiguration;
         private string _name;
         private TargetConfiguration _targetConfiguration;
         private string _targetId;
@@ -97,6 +98,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetGatewayIdentifier()
         {
             return this._gatewayIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataConfiguration. 
+        /// <para>
+        /// Configuration for HTTP header and query parameter propagation to the gateway target.
+        /// </para>
+        /// </summary>
+        public MetadataConfiguration MetadataConfiguration
+        {
+            get { return this._metadataConfiguration; }
+            set { this._metadataConfiguration = value; }
+        }
+
+        // Check to see if MetadataConfiguration property is set
+        internal bool IsSetMetadataConfiguration()
+        {
+            return this._metadataConfiguration != null;
         }
 
         /// <summary>

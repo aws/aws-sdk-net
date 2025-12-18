@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _description;
         private string _gatewayArn;
         private DateTime? _lastSynchronizedAt;
+        private MetadataConfiguration _metadataConfiguration;
         private string _name;
         private TargetStatus _status;
         private List<string> _statusReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -138,6 +139,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLastSynchronizedAt()
         {
             return this._lastSynchronizedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataConfiguration. 
+        /// <para>
+        /// The metadata configuration that was applied to the created gateway target.
+        /// </para>
+        /// </summary>
+        public MetadataConfiguration MetadataConfiguration
+        {
+            get { return this._metadataConfiguration; }
+            set { this._metadataConfiguration = value; }
+        }
+
+        // Check to see if MetadataConfiguration property is set
+        internal bool IsSetMetadataConfiguration()
+        {
+            return this._metadataConfiguration != null;
         }
 
         /// <summary>

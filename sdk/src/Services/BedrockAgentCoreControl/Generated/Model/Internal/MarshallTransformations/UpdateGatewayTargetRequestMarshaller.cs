@@ -95,6 +95,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetMetadataConfiguration())
+                {
+                    context.Writer.WritePropertyName("metadataConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MetadataConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MetadataConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
