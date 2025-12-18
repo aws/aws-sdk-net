@@ -59,10 +59,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetBatchConfig())
+            {
+                context.Writer.WritePropertyName("batchConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.BatchConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetConfirmationUrl())
             {
                 context.Writer.WritePropertyName("confirmationUrl");
                 context.Writer.Write(requestObject.ConfirmationUrl);
+            }
+
+            if(requestObject.IsSetEnableBatching())
+            {
+                context.Writer.WritePropertyName("enableBatching");
+                context.Writer.Write(requestObject.EnableBatching);
             }
 
             if(requestObject.IsSetHeaders())
