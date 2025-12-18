@@ -218,8 +218,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Platforms. 
         /// <para>
-        /// The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are
-        /// supported for Elastic fleets.
+        /// The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404
+        /// are supported for Elastic fleets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=4)]

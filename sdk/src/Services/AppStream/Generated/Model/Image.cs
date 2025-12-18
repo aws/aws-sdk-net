@@ -471,23 +471,15 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Graphics
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Graphics Design
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Graphics Pro
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Graphics G4
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Graphics G5
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Graphics G6
         /// </para>
         ///  </li> </ul>
         /// </summary>
