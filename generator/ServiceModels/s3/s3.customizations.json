@@ -1816,6 +1816,33 @@
                     "VersionId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._versionId);"]}
                 }
             ]
+        },
+        "GetBucketLoggingRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketLoggingOutput":{
+            "modify":[
+                {
+                    "LoggingEnabled": {"emitPropertyName":"BucketLoggingConfig"}
+                },
+                {
+                    "BucketLoggingConfig":{"injectXmlPropertyGetter" : ["get {return BucketLoggingConfigCustomGetter();}"]}
+                }
+            ]
+        },
+        "S3BucketLoggingConfig":{
+            "modify":[
+                {
+                    "TargetBucket":{"emitPropertyName":"TargetBucketName"}
+                },
+                {
+                    "TargetGrants":{"emitPropertyName":"Grants"}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1982,6 +2009,12 @@
         },
         "Error":{
             "renameShape": "DeleteError"
+        },
+        "LoggingEnabled":{
+            "renameShape":"S3BucketLoggingConfig"
+        },
+        "TargetGrant":{
+            "renameShape": "S3Grant"
         }
     },
     "overrideTreatEnumsAsString":{
