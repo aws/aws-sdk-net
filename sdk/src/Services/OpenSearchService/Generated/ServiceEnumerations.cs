@@ -1866,6 +1866,10 @@ namespace Amazon.OpenSearchService
         /// Constant Ultrawarm for NodeType
         /// </summary>
         public static readonly NodeType Ultrawarm = new NodeType("Ultrawarm");
+        /// <summary>
+        /// Constant Warm for NodeType
+        /// </summary>
+        public static readonly NodeType Warm = new NodeType("Warm");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
