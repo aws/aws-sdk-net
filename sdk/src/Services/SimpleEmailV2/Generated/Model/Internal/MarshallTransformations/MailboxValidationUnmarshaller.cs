@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SuppressionOptions Object
+    /// Response Unmarshaller for MailboxValidation Object
     /// </summary>  
-    public class SuppressionOptionsUnmarshaller : IUnmarshaller<SuppressionOptions, XmlUnmarshallerContext>, IUnmarshaller<SuppressionOptions, JsonUnmarshallerContext>
+    public class MailboxValidationUnmarshaller : IUnmarshaller<MailboxValidation, XmlUnmarshallerContext>, IUnmarshaller<MailboxValidation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SuppressionOptions IUnmarshaller<SuppressionOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MailboxValidation IUnmarshaller<MailboxValidation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SuppressionOptions Unmarshall(JsonUnmarshallerContext context)
+        public MailboxValidation Unmarshall(JsonUnmarshallerContext context)
         {
-            SuppressionOptions unmarshalledObject = new SuppressionOptions();
+            MailboxValidation unmarshalledObject = new MailboxValidation();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("SuppressedReasons", targetDepth))
+                if (context.TestExpression("Evaluations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SuppressedReasons = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EmailAddressInsightsMailboxEvaluationsUnmarshaller.Instance;
+                    unmarshalledObject.Evaluations = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ValidationOptions", targetDepth))
+                if (context.TestExpression("IsValid", targetDepth))
                 {
-                    var unmarshaller = SuppressionValidationOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ValidationOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EmailAddressInsightsVerdictUnmarshaller.Instance;
+                    unmarshalledObject.IsValid = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SuppressionOptionsUnmarshaller _instance = new SuppressionOptionsUnmarshaller();        
+        private static MailboxValidationUnmarshaller _instance = new MailboxValidationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SuppressionOptionsUnmarshaller Instance
+        public static MailboxValidationUnmarshaller Instance
         {
             get
             {

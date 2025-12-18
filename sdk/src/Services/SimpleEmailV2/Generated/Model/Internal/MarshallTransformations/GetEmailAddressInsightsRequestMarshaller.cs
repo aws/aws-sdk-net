@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutConfigurationSetSuppressionOptions Request Marshaller
+    /// GetEmailAddressInsights Request Marshaller
     /// </summary>       
-    public class PutConfigurationSetSuppressionOptionsRequestMarshaller : IMarshaller<IRequest, PutConfigurationSetSuppressionOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetEmailAddressInsightsRequestMarshaller : IMarshaller<IRequest, GetEmailAddressInsightsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutConfigurationSetSuppressionOptionsRequest)input);
+            return this.Marshall((GetEmailAddressInsightsRequest)input);
         }
 
         /// <summary>
@@ -53,43 +53,24 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutConfigurationSetSuppressionOptionsRequest publicRequest)
+        public IRequest Marshall(GetEmailAddressInsightsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetConfigurationSetName())
-                throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field ConfigurationSetName set");
-            request.AddPathResource("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
-            request.ResourcePath = "/v2/email/configuration-sets/{ConfigurationSetName}/suppression-options";
+            request.ResourcePath = "/v2/email/email-address-insights/";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSuppressedReasons())
+                if(publicRequest.IsSetEmailAddress())
                 {
-                    context.Writer.WritePropertyName("SuppressedReasons");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSuppressedReasonsListValue in publicRequest.SuppressedReasons)
-                    {
-                            context.Writer.Write(publicRequestSuppressedReasonsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetValidationOptions())
-                {
-                    context.Writer.WritePropertyName("ValidationOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SuppressionValidationOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ValidationOptions, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("EmailAddress");
+                    context.Writer.Write(publicRequest.EmailAddress);
                 }
 
                 writer.WriteObjectEnd();
@@ -100,9 +81,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutConfigurationSetSuppressionOptionsRequestMarshaller _instance = new PutConfigurationSetSuppressionOptionsRequestMarshaller();        
+        private static GetEmailAddressInsightsRequestMarshaller _instance = new GetEmailAddressInsightsRequestMarshaller();        
 
-        internal static PutConfigurationSetSuppressionOptionsRequestMarshaller GetInstance()
+        internal static GetEmailAddressInsightsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +91,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutConfigurationSetSuppressionOptionsRequestMarshaller Instance
+        public static GetEmailAddressInsightsRequestMarshaller Instance
         {
             get
             {

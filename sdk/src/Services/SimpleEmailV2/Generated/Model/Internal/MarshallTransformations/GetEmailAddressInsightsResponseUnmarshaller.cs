@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetEmailTemplate operation
+    /// Response Unmarshaller for GetEmailAddressInsights operation
     /// </summary>  
-    public class GetEmailTemplateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetEmailAddressInsightsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,16 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetEmailTemplateResponse response = new GetEmailTemplateResponse();
+            GetEmailAddressInsightsResponse response = new GetEmailAddressInsightsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("MailboxValidation", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TemplateContent", targetDepth))
-                {
-                    var unmarshaller = EmailTemplateContentUnmarshaller.Instance;
-                    response.TemplateContent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TemplateName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MailboxValidationUnmarshaller.Instance;
+                    response.MailboxValidation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -97,10 +85,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
-                {
-                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
                     return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -109,9 +93,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetEmailTemplateResponseUnmarshaller _instance = new GetEmailTemplateResponseUnmarshaller();        
+        private static GetEmailAddressInsightsResponseUnmarshaller _instance = new GetEmailAddressInsightsResponseUnmarshaller();        
 
-        internal static GetEmailTemplateResponseUnmarshaller GetInstance()
+        internal static GetEmailAddressInsightsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +103,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetEmailTemplateResponseUnmarshaller Instance
+        public static GetEmailAddressInsightsResponseUnmarshaller Instance
         {
             get
             {

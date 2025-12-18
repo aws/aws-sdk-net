@@ -78,6 +78,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetValidationAttributes())
+                {
+                    context.Writer.WritePropertyName("ValidationAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SuppressionValidationAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ValidationAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

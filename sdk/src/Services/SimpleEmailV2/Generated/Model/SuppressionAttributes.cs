@@ -36,6 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class SuppressionAttributes
     {
         private List<string> _suppressedReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SuppressionValidationAttributes _validationAttributes;
 
         /// <summary>
         /// Gets and sets the property SuppressedReasons. 
@@ -66,6 +67,21 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSuppressedReasons()
         {
             return this._suppressedReasons != null && (this._suppressedReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationAttributes.
+        /// </summary>
+        public SuppressionValidationAttributes ValidationAttributes
+        {
+            get { return this._validationAttributes; }
+            set { this._validationAttributes = value; }
+        }
+
+        // Check to see if ValidationAttributes property is set
+        internal bool IsSetValidationAttributes()
+        {
+            return this._validationAttributes != null;
         }
 
     }

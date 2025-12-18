@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SuppressionOptions Marshaller
+    /// SuppressionConfidenceThreshold Marshaller
     /// </summary>
-    public class SuppressionOptionsMarshaller : IRequestMarshaller<SuppressionOptions, JsonMarshallerContext> 
+    public class SuppressionConfidenceThresholdMarshaller : IRequestMarshaller<SuppressionConfidenceThreshold, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SuppressionOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(SuppressionConfidenceThreshold requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSuppressedReasons())
+            if(requestObject.IsSetConfidenceVerdictThreshold())
             {
-                context.Writer.WritePropertyName("SuppressedReasons");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectSuppressedReasonsListValue in requestObject.SuppressedReasons)
-                {
-                        context.Writer.Write(requestObjectSuppressedReasonsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetValidationOptions())
-            {
-                context.Writer.WritePropertyName("ValidationOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SuppressionValidationOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ValidationOptions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("ConfidenceVerdictThreshold");
+                context.Writer.Write(requestObject.ConfidenceVerdictThreshold);
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SuppressionOptionsMarshaller Instance = new SuppressionOptionsMarshaller();
+        public readonly static SuppressionConfidenceThresholdMarshaller Instance = new SuppressionConfidenceThresholdMarshaller();
 
     }
 }

@@ -1598,6 +1598,31 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
                 
+        #region  GetEmailAddressInsights
+
+
+
+        /// <summary>
+        /// Provides validation insights about a specific email address, including syntax validation,
+        /// DNS record checks, mailbox existence, and other deliverability factors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailAddressInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEmailAddressInsights service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailAddressInsights">REST API Reference for GetEmailAddressInsights Operation</seealso>
+        Task<GetEmailAddressInsightsResponse> GetEmailAddressInsightsAsync(GetEmailAddressInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetEmailIdentity
 
 

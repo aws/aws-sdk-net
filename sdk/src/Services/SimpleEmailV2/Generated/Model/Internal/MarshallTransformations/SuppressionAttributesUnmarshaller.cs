@@ -72,6 +72,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SuppressedReasons = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ValidationAttributes", targetDepth))
+                {
+                    var unmarshaller = SuppressionValidationAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ValidationAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

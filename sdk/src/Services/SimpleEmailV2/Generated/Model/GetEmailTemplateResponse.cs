@@ -34,8 +34,28 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class GetEmailTemplateResponse : AmazonWebServiceResponse
     {
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private EmailTemplateContent _templateContent;
         private string _templateName;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of objects that define the tags (keys and values) that are associated with
+        /// the email template.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property TemplateContent. 

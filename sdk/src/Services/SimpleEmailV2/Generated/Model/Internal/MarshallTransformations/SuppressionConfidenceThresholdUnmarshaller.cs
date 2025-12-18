@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SuppressionOptions Object
+    /// Response Unmarshaller for SuppressionConfidenceThreshold Object
     /// </summary>  
-    public class SuppressionOptionsUnmarshaller : IUnmarshaller<SuppressionOptions, XmlUnmarshallerContext>, IUnmarshaller<SuppressionOptions, JsonUnmarshallerContext>
+    public class SuppressionConfidenceThresholdUnmarshaller : IUnmarshaller<SuppressionConfidenceThreshold, XmlUnmarshallerContext>, IUnmarshaller<SuppressionConfidenceThreshold, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SuppressionOptions IUnmarshaller<SuppressionOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SuppressionConfidenceThreshold IUnmarshaller<SuppressionConfidenceThreshold, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SuppressionOptions Unmarshall(JsonUnmarshallerContext context)
+        public SuppressionConfidenceThreshold Unmarshall(JsonUnmarshallerContext context)
         {
-            SuppressionOptions unmarshalledObject = new SuppressionOptions();
+            SuppressionConfidenceThreshold unmarshalledObject = new SuppressionConfidenceThreshold();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("SuppressedReasons", targetDepth))
+                if (context.TestExpression("ConfidenceVerdictThreshold", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SuppressedReasons = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationOptions", targetDepth))
-                {
-                    var unmarshaller = SuppressionValidationOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ValidationOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfidenceVerdictThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SuppressionOptionsUnmarshaller _instance = new SuppressionOptionsUnmarshaller();        
+        private static SuppressionConfidenceThresholdUnmarshaller _instance = new SuppressionConfidenceThresholdUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SuppressionOptionsUnmarshaller Instance
+        public static SuppressionConfidenceThresholdUnmarshaller Instance
         {
             get
             {
