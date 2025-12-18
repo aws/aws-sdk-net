@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChangeSpecification Object
+    /// Response Unmarshaller for CollaborationChangeSpecification Object
     /// </summary>  
-    public class ChangeSpecificationUnmarshaller : IJsonUnmarshaller<ChangeSpecification, JsonUnmarshallerContext>
+    public class CollaborationChangeSpecificationUnmarshaller : IJsonUnmarshaller<CollaborationChangeSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChangeSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CollaborationChangeSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ChangeSpecification unmarshalledObject = new ChangeSpecification();
+            CollaborationChangeSpecification unmarshalledObject = new CollaborationChangeSpecification();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("collaboration", targetDepth))
+                if (context.TestExpression("autoApprovedChangeTypes", targetDepth))
                 {
-                    var unmarshaller = CollaborationChangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.Collaboration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("member", targetDepth))
-                {
-                    var unmarshaller = MemberChangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.Member = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AutoApprovedChangeTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChangeSpecificationUnmarshaller _instance = new ChangeSpecificationUnmarshaller();        
+        private static CollaborationChangeSpecificationUnmarshaller _instance = new CollaborationChangeSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChangeSpecificationUnmarshaller Instance
+        public static CollaborationChangeSpecificationUnmarshaller Instance
         {
             get
             {

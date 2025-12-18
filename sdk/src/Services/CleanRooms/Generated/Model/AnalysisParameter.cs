@@ -46,7 +46,7 @@ namespace Amazon.CleanRooms.Model
         /// can query can override this value in the query editor.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=250)]
+        [AWSProperty(Min=0, Max=1000)]
         public string DefaultValue
         {
             get { return this._defaultValue; }

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ChangeSpecification Marshaller
+    /// CollaborationChangeSpecification Marshaller
     /// </summary>
-    public class ChangeSpecificationMarshaller : IRequestMarshaller<ChangeSpecification, JsonMarshallerContext> 
+    public class CollaborationChangeSpecificationMarshaller : IRequestMarshaller<CollaborationChangeSpecification, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ChangeSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(CollaborationChangeSpecification requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCollaboration())
+            if(requestObject.IsSetAutoApprovedChangeTypes())
             {
-                context.Writer.WritePropertyName("collaboration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CollaborationChangeSpecificationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Collaboration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetMember())
-            {
-                context.Writer.WritePropertyName("member");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MemberChangeSpecificationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Member, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("autoApprovedChangeTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAutoApprovedChangeTypesListValue in requestObject.AutoApprovedChangeTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectAutoApprovedChangeTypesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ChangeSpecificationMarshaller Instance = new ChangeSpecificationMarshaller();
+        public readonly static CollaborationChangeSpecificationMarshaller Instance = new CollaborationChangeSpecificationMarshaller();
 
     }
 }
