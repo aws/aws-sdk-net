@@ -104,6 +104,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZone));
                                 }
+                                if(publicRequestlistValuelistValue.IsSetAvailabilityZoneId())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZoneId));
+                                }
                                 if(publicRequestlistValuelistValue.IsSetBlockDeviceMappings())
                                 {
                                     int publicRequestlistValuelistValuelistValueIndex = 1;

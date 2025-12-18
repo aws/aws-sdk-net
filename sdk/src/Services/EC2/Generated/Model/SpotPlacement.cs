@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class SpotPlacement
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _groupName;
         private Tenancy _tenancy;
 
@@ -46,7 +47,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates SpotPlacement with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone. [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</param>
+        /// <param name="availabilityZone">The Availability Zone. For example, <c>us-east-2a</c>. [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "<c>us-east-2a</c>, <c>us-east-2b</c>". Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified in the request, but not both.</param>
         public SpotPlacement(string availabilityZone)
         {
             _availabilityZone = availabilityZone;
@@ -55,12 +56,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone.
+        /// The Availability Zone. For example, <c>us-east-2a</c>.
         /// </para>
         ///  
         /// <para>
         /// [Spot Fleet only] To specify multiple Availability Zones, separate them using commas;
-        /// for example, "us-west-2a, us-west-2b".
+        /// for example, "<c>us-east-2a</c>, <c>us-east-2b</c>".
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified in the
+        /// request, but not both.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -73,6 +79,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone. For example, <c>use2-az1</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Spot Fleet only] To specify multiple Availability Zones, separate them using commas;
+        /// for example, "<c>use2-az1</c>, <c>use2-bz1</c>".
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified in the
+        /// request, but not both.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>
