@@ -32,7 +32,7 @@ namespace Amazon.PinpointEmail
     public partial class AmazonPinpointEmailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pinpoint Email", "3.7.502.20");
+            InternalSDKUtils.BuildUserAgentString("Pinpoint Email", "3.7.502.21");
 
         private string _userAgent = UserAgentString;
         ///<summary>
