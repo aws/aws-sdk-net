@@ -1188,6 +1188,87 @@ namespace Amazon.ARCRegionswitch
 
         #endregion
         
+        #region  ListRoute53HealthChecksInRegion
+
+        /// <summary>
+        /// List the Amazon Route 53 health checks in a specific Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoute53HealthChecksInRegion service method.</param>
+        /// 
+        /// <returns>The response from the ListRoute53HealthChecksInRegion service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecksInRegion">REST API Reference for ListRoute53HealthChecksInRegion Operation</seealso>
+        public virtual ListRoute53HealthChecksInRegionResponse ListRoute53HealthChecksInRegion(ListRoute53HealthChecksInRegionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRoute53HealthChecksInRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoute53HealthChecksInRegionResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoute53HealthChecksInRegionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRoute53HealthChecksInRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRoute53HealthChecksInRegion operation on AmazonARCRegionswitchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRoute53HealthChecksInRegion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecksInRegion">REST API Reference for ListRoute53HealthChecksInRegion Operation</seealso>
+        public virtual IAsyncResult BeginListRoute53HealthChecksInRegion(ListRoute53HealthChecksInRegionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRoute53HealthChecksInRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoute53HealthChecksInRegionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRoute53HealthChecksInRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRoute53HealthChecksInRegion.</param>
+        /// 
+        /// <returns>Returns a  ListRoute53HealthChecksInRegionResult from ARCRegionswitch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecksInRegion">REST API Reference for ListRoute53HealthChecksInRegion Operation</seealso>
+        public virtual ListRoute53HealthChecksInRegionResponse EndListRoute53HealthChecksInRegion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRoute53HealthChecksInRegionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
