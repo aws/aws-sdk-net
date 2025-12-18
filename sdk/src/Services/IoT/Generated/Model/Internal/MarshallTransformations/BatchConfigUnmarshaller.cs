@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HttpAction Object
+    /// Response Unmarshaller for BatchConfig Object
     /// </summary>  
-    public class HttpActionUnmarshaller : IJsonUnmarshaller<HttpAction, JsonUnmarshallerContext>
+    public class BatchConfigUnmarshaller : IJsonUnmarshaller<BatchConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HttpAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BatchConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            HttpAction unmarshalledObject = new HttpAction();
+            BatchConfig unmarshalledObject = new BatchConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("auth", targetDepth))
+                if (context.TestExpression("maxBatchOpenMs", targetDepth))
                 {
-                    var unmarshaller = HttpAuthorizationUnmarshaller.Instance;
-                    unmarshalledObject.Auth = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxBatchOpenMs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("batchConfig", targetDepth))
+                if (context.TestExpression("maxBatchSize", targetDepth))
                 {
-                    var unmarshaller = BatchConfigUnmarshaller.Instance;
-                    unmarshalledObject.BatchConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxBatchSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("confirmationUrl", targetDepth))
+                if (context.TestExpression("maxBatchSizeBytes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfirmationUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("enableBatching", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableBatching = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("headers", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<HttpActionHeader, HttpActionHeaderUnmarshaller>(HttpActionHeaderUnmarshaller.Instance);
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxBatchSizeBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +79,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static HttpActionUnmarshaller _instance = new HttpActionUnmarshaller();        
+        private static BatchConfigUnmarshaller _instance = new BatchConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HttpActionUnmarshaller Instance
+        public static BatchConfigUnmarshaller Instance
         {
             get
             {

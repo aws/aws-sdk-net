@@ -35,7 +35,9 @@ namespace Amazon.IoT.Model
     public partial class HttpAction
     {
         private HttpAuthorization _auth;
+        private BatchConfig _batchConfig;
         private string _confirmationUrl;
+        private bool? _enableBatching;
         private List<HttpActionHeader> _headers = AWSConfigs.InitializeCollections ? new List<HttpActionHeader>() : null;
         private string _url;
 
@@ -55,6 +57,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetAuth()
         {
             return this._auth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchConfig. 
+        /// <para>
+        /// The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching
+        /// HTTP action messages</a>.
+        /// </para>
+        /// </summary>
+        public BatchConfig BatchConfig
+        {
+            get { return this._batchConfig; }
+            set { this._batchConfig = value; }
+        }
+
+        // Check to see if BatchConfig property is set
+        internal bool IsSetBatchConfig()
+        {
+            return this._batchConfig != null;
         }
 
         /// <summary>
@@ -79,6 +100,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetConfirmationUrl()
         {
             return this._confirmationUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableBatching. 
+        /// <para>
+        /// Whether to process the HTTP action messages into a single request. Value can be true
+        /// or false.
+        /// </para>
+        /// </summary>
+        public bool? EnableBatching
+        {
+            get { return this._enableBatching; }
+            set { this._enableBatching = value; }
+        }
+
+        // Check to see if EnableBatching property is set
+        internal bool IsSetEnableBatching()
+        {
+            return this._enableBatching.HasValue; 
         }
 
         /// <summary>

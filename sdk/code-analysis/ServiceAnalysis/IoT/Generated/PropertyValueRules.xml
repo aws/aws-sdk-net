@@ -3553,6 +3553,21 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.BatchConfig.MaxBatchOpenMs</property>
+    <min>5</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.BatchConfig.MaxBatchSize</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.BatchConfig.MaxBatchSizeBytes</property>
+    <min>100</min>
+    <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.Behavior.Name</property>
     <min>1</min>
     <max>128</max>
