@@ -2478,6 +2478,46 @@ namespace Amazon.SimpleEmailV2
         }
         #endregion
         
+        #region  GetEmailAddressInsights
+
+        internal virtual GetEmailAddressInsightsResponse GetEmailAddressInsights(GetEmailAddressInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEmailAddressInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailAddressInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<GetEmailAddressInsightsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides validation insights about a specific email address, including syntax validation,
+        /// DNS record checks, mailbox existence, and other deliverability factors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailAddressInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEmailAddressInsights service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailAddressInsights">REST API Reference for GetEmailAddressInsights Operation</seealso>
+        public virtual Task<GetEmailAddressInsightsResponse> GetEmailAddressInsightsAsync(GetEmailAddressInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEmailAddressInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailAddressInsightsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEmailAddressInsightsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetEmailIdentity
 
         internal virtual GetEmailIdentityResponse GetEmailIdentity(GetEmailIdentityRequest request)

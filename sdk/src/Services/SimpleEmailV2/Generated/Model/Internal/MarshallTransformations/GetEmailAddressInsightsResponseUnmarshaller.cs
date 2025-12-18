@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetCustomVerificationEmailTemplate operation
+    /// Response Unmarshaller for GetEmailAddressInsights operation
     /// </summary>  
-    public class GetCustomVerificationEmailTemplateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetEmailAddressInsightsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,52 +46,16 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetCustomVerificationEmailTemplateResponse response = new GetCustomVerificationEmailTemplateResponse();
+            GetEmailAddressInsightsResponse response = new GetEmailAddressInsightsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailureRedirectionURL", targetDepth))
+                if (context.TestExpression("MailboxValidation", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureRedirectionURL = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FromEmailAddress", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FromEmailAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SuccessRedirectionURL", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SuccessRedirectionURL = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TemplateContent", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateContent = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TemplateName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TemplateSubject", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateSubject = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = MailboxValidationUnmarshaller.Instance;
+                    response.MailboxValidation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -123,10 +87,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
-                {
-                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
                     return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -135,9 +95,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetCustomVerificationEmailTemplateResponseUnmarshaller _instance = new GetCustomVerificationEmailTemplateResponseUnmarshaller();        
+        private static GetEmailAddressInsightsResponseUnmarshaller _instance = new GetEmailAddressInsightsResponseUnmarshaller();        
 
-        internal static GetCustomVerificationEmailTemplateResponseUnmarshaller GetInstance()
+        internal static GetEmailAddressInsightsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -145,7 +105,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCustomVerificationEmailTemplateResponseUnmarshaller Instance
+        public static GetEmailAddressInsightsResponseUnmarshaller Instance
         {
             get
             {

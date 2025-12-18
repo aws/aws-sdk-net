@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SuppressionOptions Marshaller
+    /// SuppressionValidationOptions Marshaller
     /// </summary>
-    public class SuppressionOptionsMarshaller : IRequestMarshaller<SuppressionOptions, JsonMarshallerContext> 
+    public class SuppressionValidationOptionsMarshaller : IRequestMarshaller<SuppressionValidationOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +42,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SuppressionOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(SuppressionValidationOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSuppressedReasons())
+            if(requestObject.IsSetConditionThreshold())
             {
-                context.Writer.WritePropertyName("SuppressedReasons");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectSuppressedReasonsListValue in requestObject.SuppressedReasons)
-                {
-                        context.Writer.WriteStringValue(requestObjectSuppressedReasonsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetValidationOptions())
-            {
-                context.Writer.WritePropertyName("ValidationOptions");
+                context.Writer.WritePropertyName("ConditionThreshold");
                 context.Writer.WriteStartObject();
 
-                var marshaller = SuppressionValidationOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ValidationOptions, context);
+                var marshaller = SuppressionConditionThresholdMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConditionThreshold, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -73,7 +62,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SuppressionOptionsMarshaller Instance = new SuppressionOptionsMarshaller();
+        public readonly static SuppressionValidationOptionsMarshaller Instance = new SuppressionValidationOptionsMarshaller();
 
     }
 }

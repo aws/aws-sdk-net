@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutAccountSuppressionAttributes Request Marshaller
+    /// GetEmailAddressInsights Request Marshaller
     /// </summary>       
-    public class PutAccountSuppressionAttributesRequestMarshaller : IMarshaller<IRequest, PutAccountSuppressionAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetEmailAddressInsightsRequestMarshaller : IMarshaller<IRequest, GetEmailAddressInsightsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutAccountSuppressionAttributesRequest)input);
+            return this.Marshall((GetEmailAddressInsightsRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutAccountSuppressionAttributesRequest publicRequest)
+        public IRequest Marshall(GetEmailAddressInsightsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v2/email/account/suppression";
+            request.ResourcePath = "/v2/email/email-address-insights/";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,26 +73,10 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetSuppressedReasons())
+            if(publicRequest.IsSetEmailAddress())
             {
-                context.Writer.WritePropertyName("SuppressedReasons");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestSuppressedReasonsListValue in publicRequest.SuppressedReasons)
-                {
-                        context.Writer.WriteStringValue(publicRequestSuppressedReasonsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetValidationAttributes())
-            {
-                context.Writer.WritePropertyName("ValidationAttributes");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SuppressionValidationAttributesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ValidationAttributes, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("EmailAddress");
+                context.Writer.WriteStringValue(publicRequest.EmailAddress);
             }
 
             writer.WriteEndObject();
@@ -108,9 +92,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutAccountSuppressionAttributesRequestMarshaller _instance = new PutAccountSuppressionAttributesRequestMarshaller();        
+        private static GetEmailAddressInsightsRequestMarshaller _instance = new GetEmailAddressInsightsRequestMarshaller();        
 
-        internal static PutAccountSuppressionAttributesRequestMarshaller GetInstance()
+        internal static GetEmailAddressInsightsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +102,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutAccountSuppressionAttributesRequestMarshaller Instance
+        public static GetEmailAddressInsightsRequestMarshaller Instance
         {
             get
             {
