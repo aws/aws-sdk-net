@@ -1,3 +1,31 @@
+### 4.0.156.0 (2025-12-18 19:17 UTC)
+* AppStream (4.0.5.0)
+	* Added support for new operating systems (1) Ubuntu 24.04 Pro LTS on Elastic fleets, and (2) Microsoft Server 2025 on Always-On and On-Demand fleets
+* ARCRegionswitch (4.0.2.0)
+	* New API to list Route 53 health checks created by ARC region switch for a plan in a specific AWS Region using the Region switch Regional data plane.
+* Artifact (4.0.3.0)
+	* Add support for ListReportVersions API  for the calling AWS account.
+* BedrockAgentCoreControl (4.0.13.0)
+	* Feature to support header exchanges between Bedrock AgentCore Gateway Targets and client, along with propagating query parameter to the configured targets.
+* BedrockDataAutomation (4.0.7.0)
+	* Blueprint Optimization (BPO) is a new Amazon Bedrock Data Automation (BDA) capability that improves blueprint inference accuracy using example content assets and ground truth data. BPO works by generating better instructions for fields in the Blueprint using provided data.
+* CleanRooms (4.0.12.0)
+	* Adding support for collaboration change requests requiring an approval workflow. Adding support for change requests that grant or revoke results receiver ability and modifying auto approved change types in an existing collaboration.
+* EC2 (4.0.64.0)
+	* This release adds AvailabilityZoneId support for CreateFleet, ModifyFleet, DescribeFleets, RequestSpotFleet, ModifySpotFleetRequests and DescribeSpotFleetRequests APIs.
+* ECR (4.0.9.0)
+	* Adds support for ECR Create On Push
+* ECS (4.0.11.0)
+	* Adding support for Event Windows via a new ECS account setting "fargateEventWindows". When enabled, ECS Fargate will use the configured event window for patching tasks. Introducing "CapacityOptionType" for CreateCapacityProvider API, allowing support for Spot capacity for ECS Managed Instances.
+* IoT (4.0.5.0)
+	* This release adds message batching for the IoT Rules Engine HTTP action.
+* OpenSearchService (4.0.9.0)
+	* Amazon OpenSearch Service adds support for warm nodes, enabling new multi-tier architecture.
+* SimpleEmailV2 (4.0.11.0)
+	* Amazon SES introduces Email Validation feature which checks email addresses for syntax errors, domain validity, and risky addresses to help maintain deliverability and protect sender reputation. SES also adds resource tagging and ABAC support for EmailTemplates and CustomVerificationEmailTemplates.
+* SsmSap (4.0.4.0)
+	* Added "Stopping" for the HANA Database Status.
+
 ### 4.0.155.0 (2025-12-17 19:16 UTC)
 * GameLiftStreams (4.0.5.0)
 	* Added new stream group operation parameters for scale-on-demand capacity with automatic prewarming. Added new Gen6 stream classes based on the EC2 G6 instance family. Added new StartStreamSession parameter for exposure of real-time performance stats to clients.
