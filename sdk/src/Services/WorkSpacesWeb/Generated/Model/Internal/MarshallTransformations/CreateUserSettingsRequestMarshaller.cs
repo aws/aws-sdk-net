@@ -201,6 +201,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.UploadAllowed);
             }
 
+            if(publicRequest.IsSetWebAuthnAllowed())
+            {
+                context.Writer.WritePropertyName("webAuthnAllowed");
+                context.Writer.WriteStringValue(publicRequest.WebAuthnAllowed);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array
