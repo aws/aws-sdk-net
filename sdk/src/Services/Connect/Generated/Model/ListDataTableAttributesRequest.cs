@@ -32,8 +32,9 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the ListDataTableAttributes operation.
     /// Returns all attributes for a specified data table. A maximum of 100 attributes per
-    /// data table is allowed. Customers can request an increase by using AWS Service Quotas.
-    /// The response can be filtered by specific attribute IDs for CloudFormation integration.
+    /// data table is allowed. Customers can request an increase by using Amazon Web Services
+    /// Service Quotas. The response can be filtered by specific attribute IDs for CloudFormation
+    /// integration.
     /// </summary>
     public partial class ListDataTableAttributesRequest : AmazonConnectRequest
     {

@@ -218,16 +218,6 @@ namespace Amazon.Connect.Model
         /// the chat session, allowing them to continue through disconnect flows such as surveys
         /// or feedback forms.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid value: <c>AGENT</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// With the <c>DisconnectOnCustomerExit</c> parameter, you can configure automatic agent
-        /// disconnection when end customers end the chat, ensuring that disconnect flows are
-        /// triggered consistently regardless of which participant disconnects first.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> DisconnectOnCustomerExit

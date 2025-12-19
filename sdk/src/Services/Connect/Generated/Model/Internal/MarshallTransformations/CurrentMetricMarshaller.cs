@@ -48,6 +48,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMetricId())
+            {
+                context.Writer.WritePropertyName("MetricId");
+                context.Writer.Write(requestObject.MetricId);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

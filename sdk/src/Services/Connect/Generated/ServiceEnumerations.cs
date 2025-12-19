@@ -3956,6 +3956,14 @@ namespace Amazon.Connect
         /// Constant ROUTING_STEP_EXPRESSION for Grouping
         /// </summary>
         public static readonly Grouping ROUTING_STEP_EXPRESSION = new Grouping("ROUTING_STEP_EXPRESSION");
+        /// <summary>
+        /// Constant SUBTYPE for Grouping
+        /// </summary>
+        public static readonly Grouping SUBTYPE = new Grouping("SUBTYPE");
+        /// <summary>
+        /// Constant VALIDATION_TEST_TYPE for Grouping
+        /// </summary>
+        public static readonly Grouping VALIDATION_TEST_TYPE = new Grouping("VALIDATION_TEST_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

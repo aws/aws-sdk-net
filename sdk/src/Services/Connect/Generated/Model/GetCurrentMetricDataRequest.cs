@@ -92,11 +92,16 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property CurrentMetrics. 
         /// <para>
-        /// The metrics to retrieve. Specify the name and unit for each metric. The following
-        /// metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+        /// The metrics to retrieve. Specify the name or metricId, and unit for each metric. The
+        /// following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
-        ///  <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        ///  MetricId should be used to reference custom metrics or out of the box metrics as
+        /// Arn. If using MetricId, the limit is 10 MetricId per request.
+        /// </para>
+        ///  </note> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> 
         /// <para>
         /// Unit: COUNT
         /// </para>
@@ -279,6 +284,14 @@ namespace Amazon.Connect.Model
         /// <para>
         /// AgentStatuses: 50
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subtypes: 10
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ValidationTestTypes: 10
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Metric data is retrieved only for the resources associated with the queues or routing
@@ -289,6 +302,15 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// When using <c>AgentStatuses</c> as filter make sure Queues is added as primary filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <c>Subtypes</c> as filter make sure Queues is added as primary filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <c>ValidationTestTypes</c> as filter make sure Queues is added as primary
+        /// filter.
         /// </para>
         ///  
         /// <para>
@@ -338,6 +360,11 @@ namespace Amazon.Connect.Model
         /// If you group by <c>AGENT_STATUS</c>, you must include the <c>QUEUE</c> as the primary
         /// grouping and use queue filter. When you group by <c>AGENT_STATUS</c>, the only metric
         /// available is the <c>AGENTS_ONLINE</c> metric.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you group by <c>SUBTYPE</c> or <c>VALIDATION_TEST_TYPE</c> as secondary grouping
+        /// then you must include <c>QUEUE</c> as primary grouping and use Queue as filter
         /// </para>
         ///  </li> <li> 
         /// <para>

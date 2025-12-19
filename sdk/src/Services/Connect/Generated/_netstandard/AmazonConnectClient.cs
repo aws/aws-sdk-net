@@ -2624,7 +2624,8 @@ namespace Amazon.Connect
         /// Creates a new data table with the specified properties. Supports the creation of all
         /// table properties except for attributes and values. A table with no attributes and
         /// values is a valid state for a table. The number of tables per instance is limited
-        /// to 100 per instance. Customers can request an increase by using AWS Service Quotas.
+        /// to 100 per instance. Customers can request an increase by using Amazon Web Services
+        /// Service Quotas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataTable service method.</param>
         /// <param name="cancellationToken">
@@ -9017,7 +9018,7 @@ namespace Amazon.Connect
         /// When a value is accessed, the accessor's identity and the time of access are saved
         /// alongside the value to help identify values that are actively in use. The term "Batch"
         /// is not included in the operation name since it does not meet all the criteria for
-        /// a batch operation as specified in Batch Operations: AWS API Standards.
+        /// a batch operation as specified in Batch Operations: Amazon Web Services API Standards.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EvaluateDataTableValues service method.</param>
         /// <param name="cancellationToken">
@@ -10763,8 +10764,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Returns all attributes for a specified data table. A maximum of 100 attributes per
-        /// data table is allowed. Customers can request an increase by using AWS Service Quotas.
-        /// The response can be filtered by specific attribute IDs for CloudFormation integration.
+        /// data table is allowed. Customers can request an increase by using Amazon Web Services
+        /// Service Quotas. The response can be filtered by specific attribute IDs for CloudFormation
+        /// integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataTableAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -15675,25 +15677,26 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Initiates a new outbound SMS contact to a customer. Response of this API provides
-        /// the <c>ContactId</c> of the outbound SMS contact created.
+        /// Initiates a new outbound SMS or WhatsApp contact to a customer. Response of this API
+        /// provides the <c>ContactId</c> of the outbound SMS or WhatsApp contact created.
         /// 
         ///  
         /// <para>
         ///  <b>SourceEndpoint</b> only supports Endpoints with <c>CONNECT_PHONENUMBER_ARN</c>
         /// as Type and <b>DestinationEndpoint</b> only supports Endpoints with <c>TELEPHONE_NUMBER</c>
-        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.
+        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new contact created.
         /// </para>
         ///  
         /// <para>
-        /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
-        /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+        /// This API can be used to initiate outbound SMS or WhatsApp contacts for an agent, or
+        /// it can also deflect an ongoing contact to an outbound SMS or WhatsApp contact by using
+        /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
         /// Flow Action.
         /// </para>
         ///  
         /// <para>
-        /// For more information about using SMS in Amazon Connect, see the following topics in
-        /// the <i>Amazon Connect Administrator Guide</i>:
+        /// For more information about using SMS or WhatsApp in Amazon Connect, see the following
+        /// topics in the <i>Amazon Connect Administrator Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -15703,7 +15706,13 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
-        /// an SMS-enabled phone number through AWS End User Messaging SMS</a> 
+        /// an SMS-enabled phone number through Amazon Web Services End User Messaging SMS</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html">Set
+        /// up WhatsApp Business messaging</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -39,6 +39,8 @@ namespace Amazon.Connect.Model
         private List<string> _queues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _routingProfiles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _routingStepExpressions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subtypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _validationTestTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentStatuses. 
@@ -135,6 +137,44 @@ namespace Amazon.Connect.Model
         internal bool IsSetRoutingStepExpressions()
         {
             return this._routingStepExpressions != null && (this._routingStepExpressions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subtypes. 
+        /// <para>
+        /// A list of up to 10 subtypes can be provided.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<string> Subtypes
+        {
+            get { return this._subtypes; }
+            set { this._subtypes = value; }
+        }
+
+        // Check to see if Subtypes property is set
+        internal bool IsSetSubtypes()
+        {
+            return this._subtypes != null && (this._subtypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationTestTypes. 
+        /// <para>
+        /// A list of up to 10 validationTestTypes can be provided.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<string> ValidationTestTypes
+        {
+            get { return this._validationTestTypes; }
+            set { this._validationTestTypes = value; }
+        }
+
+        // Check to see if ValidationTestTypes property is set
+        internal bool IsSetValidationTestTypes()
+        {
+            return this._validationTestTypes != null && (this._validationTestTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
