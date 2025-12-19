@@ -83,7 +83,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetJournalTableConfiguration())
                 {
                     xmlWriter.WriteStartElement("JournalTableConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.JournalTableConfiguration.RecordExpiration != null)
+                    if (publicRequest.JournalTableConfiguration.IsSetRecordExpiration())
                     {
                         xmlWriter.WriteStartElement("RecordExpiration");
                         if(publicRequest.JournalTableConfiguration.RecordExpiration.IsSetDays())

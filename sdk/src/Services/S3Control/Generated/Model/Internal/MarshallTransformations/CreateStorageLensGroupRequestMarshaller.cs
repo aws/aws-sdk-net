@@ -69,13 +69,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("CreateStorageLensGroupRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
-                if (publicRequest.StorageLensGroup != null)
+                if (publicRequest.IsSetStorageLensGroup())
                 {
                     xmlWriter.WriteStartElement("StorageLensGroup");
-                    if (publicRequest.StorageLensGroup.Filter != null)
+                    if (publicRequest.StorageLensGroup.IsSetFilter())
                     {
                         xmlWriter.WriteStartElement("Filter");
-                        if (publicRequest.StorageLensGroup.Filter.And != null)
+                        if (publicRequest.StorageLensGroup.Filter.IsSetAnd())
                         {
                             xmlWriter.WriteStartElement("And");
                             var publicRequestStorageLensGroupFilterAndMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.And.MatchAnyPrefix;
@@ -120,7 +120,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
-                            if (publicRequest.StorageLensGroup.Filter.And.MatchObjectAge != null)
+                            if (publicRequest.StorageLensGroup.Filter.And.IsSetMatchObjectAge())
                             {
                                 xmlWriter.WriteStartElement("MatchObjectAge");
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.IsSetDaysGreaterThan())
@@ -129,7 +129,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysLessThan.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.StorageLensGroup.Filter.And.MatchObjectSize != null)
+                            if (publicRequest.StorageLensGroup.Filter.And.IsSetMatchObjectSize())
                             {
                                 xmlWriter.WriteStartElement("MatchObjectSize");
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.IsSetBytesGreaterThan())
@@ -182,7 +182,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }            
                             xmlWriter.WriteEndElement();            
                         }
-                        if (publicRequest.StorageLensGroup.Filter.MatchObjectAge != null)
+                        if (publicRequest.StorageLensGroup.Filter.IsSetMatchObjectAge())
                         {
                             xmlWriter.WriteStartElement("MatchObjectAge");
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectAge.IsSetDaysGreaterThan())
@@ -191,7 +191,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysLessThan.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensGroup.Filter.MatchObjectSize != null)
+                        if (publicRequest.StorageLensGroup.Filter.IsSetMatchObjectSize())
                         {
                             xmlWriter.WriteStartElement("MatchObjectSize");
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectSize.IsSetBytesGreaterThan())
@@ -200,7 +200,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesLessThan.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensGroup.Filter.Or != null)
+                        if (publicRequest.StorageLensGroup.Filter.IsSetOr())
                         {
                             xmlWriter.WriteStartElement("Or");
                             var publicRequestStorageLensGroupFilterOrMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.Or.MatchAnyPrefix;
@@ -245,7 +245,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
-                            if (publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge != null)
+                            if (publicRequest.StorageLensGroup.Filter.Or.IsSetMatchObjectAge())
                             {
                                 xmlWriter.WriteStartElement("MatchObjectAge");
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.IsSetDaysGreaterThan())
@@ -254,7 +254,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysLessThan.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize != null)
+                            if (publicRequest.StorageLensGroup.Filter.Or.IsSetMatchObjectSize())
                             {
                                 xmlWriter.WriteStartElement("MatchObjectSize");
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.IsSetBytesGreaterThan())

@@ -96,10 +96,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if(publicRequest.ObjectLockConfiguration.IsSetObjectLockEnabled())
                         xmlWriter.WriteElementString("ObjectLockEnabled", StringUtils.FromString(publicRequest.ObjectLockConfiguration.ObjectLockEnabled));
 
-                    if (publicRequest.ObjectLockConfiguration.Rule != null)
+                    if (publicRequest.ObjectLockConfiguration.IsSetRule())
                     {
                         xmlWriter.WriteStartElement("Rule");
-                        if (publicRequest.ObjectLockConfiguration.Rule.DefaultRetention != null)
+                        if (publicRequest.ObjectLockConfiguration.Rule.IsSetDefaultRetention())
                         {
                             xmlWriter.WriteStartElement("DefaultRetention");
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetDays())

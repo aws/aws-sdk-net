@@ -72,11 +72,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Comment));
 
-                    if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities != null)
+                    if (publicRequest.FieldLevelEncryptionProfileConfig.IsSetEncryptionEntities())
                     {
                         xmlWriter.WriteStartElement("EncryptionEntities");
                         var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems = publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Items;
-                        if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems != null && (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems) 
@@ -84,11 +84,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null)
                             {
                                 xmlWriter.WriteStartElement("EncryptionEntity");
-                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns != null)
+                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetFieldPatterns())
                                 {
                                     xmlWriter.WriteStartElement("FieldPatterns");
                                     var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems = publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Items;
-                                    if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems != null && (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetItems()) 
                                     {
                                         xmlWriter.WriteStartElement("Items");
                                         foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems) 

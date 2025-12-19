@@ -72,87 +72,87 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("PutStorageLensConfigurationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
-                if (publicRequest.StorageLensConfiguration != null)
+                if (publicRequest.IsSetStorageLensConfiguration())
                 {
                     xmlWriter.WriteStartElement("StorageLensConfiguration");
-                    if (publicRequest.StorageLensConfiguration.AccountLevel != null)
+                    if (publicRequest.StorageLensConfiguration.IsSetAccountLevel())
                     {
                         xmlWriter.WriteStartElement("AccountLevel");
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.ActivityMetrics != null)
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.IsSetActivityMetrics())
                         {
                             xmlWriter.WriteStartElement("ActivityMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.ActivityMetrics.IsSetIsEnabled())
                                 xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.ActivityMetrics.IsEnabled.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.AdvancedCostOptimizationMetrics != null)
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.IsSetAdvancedCostOptimizationMetrics())
                         {
                             xmlWriter.WriteStartElement("AdvancedCostOptimizationMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedCostOptimizationMetrics.IsSetIsEnabled())
                                 xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedCostOptimizationMetrics.IsEnabled.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics != null)
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.IsSetAdvancedDataProtectionMetrics())
                         {
                             xmlWriter.WriteStartElement("AdvancedDataProtectionMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics.IsSetIsEnabled())
                                 xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics.IsEnabled.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.AdvancedPerformanceMetrics != null)
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.IsSetAdvancedPerformanceMetrics())
                         {
                             xmlWriter.WriteStartElement("AdvancedPerformanceMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedPerformanceMetrics.IsSetIsEnabled())
                                 xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedPerformanceMetrics.IsEnabled.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel != null)
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.IsSetBucketLevel())
                         {
                             xmlWriter.WriteStartElement("BucketLevel");
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.ActivityMetrics != null)
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.IsSetActivityMetrics())
                             {
                                 xmlWriter.WriteStartElement("ActivityMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.ActivityMetrics.IsSetIsEnabled())
                                     xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.ActivityMetrics.IsEnabled.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedCostOptimizationMetrics != null)
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.IsSetAdvancedCostOptimizationMetrics())
                             {
                                 xmlWriter.WriteStartElement("AdvancedCostOptimizationMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedCostOptimizationMetrics.IsSetIsEnabled())
                                     xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedCostOptimizationMetrics.IsEnabled.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics != null)
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.IsSetAdvancedDataProtectionMetrics())
                             {
                                 xmlWriter.WriteStartElement("AdvancedDataProtectionMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics.IsSetIsEnabled())
                                     xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics.IsEnabled.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedPerformanceMetrics != null)
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.IsSetAdvancedPerformanceMetrics())
                             {
                                 xmlWriter.WriteStartElement("AdvancedPerformanceMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedPerformanceMetrics.IsSetIsEnabled())
                                     xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedPerformanceMetrics.IsEnabled.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics != null)
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.IsSetDetailedStatusCodesMetrics())
                             {
                                 xmlWriter.WriteStartElement("DetailedStatusCodesMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics.IsSetIsEnabled())
                                     xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics.IsEnabled.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel != null)
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.IsSetPrefixLevel())
                             {
                                 xmlWriter.WriteStartElement("PrefixLevel");
-                                if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics != null)
+                                if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.IsSetStorageMetrics())
                                 {
                                     xmlWriter.WriteStartElement("StorageMetrics");
                                     if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.IsSetIsEnabled())
                                         xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.IsEnabled.Value));
-                                    if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria != null)
+                                    if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.IsSetSelectionCriteria())
                                     {
                                         xmlWriter.WriteStartElement("SelectionCriteria");
                                         if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.IsSetDelimiter())
@@ -169,17 +169,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.DetailedStatusCodesMetrics != null)
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.IsSetDetailedStatusCodesMetrics())
                         {
                             xmlWriter.WriteStartElement("DetailedStatusCodesMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.DetailedStatusCodesMetrics.IsSetIsEnabled())
                                 xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.DetailedStatusCodesMetrics.IsEnabled.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel != null)
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.IsSetStorageLensGroupLevel())
                         {
                             xmlWriter.WriteStartElement("StorageLensGroupLevel");
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria != null)
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.IsSetSelectionCriteria())
                             {
                                 xmlWriter.WriteStartElement("SelectionCriteria");
                                 var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude = publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.Exclude;
@@ -212,41 +212,41 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.StorageLensConfiguration.AwsOrg != null)
+                    if (publicRequest.StorageLensConfiguration.IsSetAwsOrg())
                     {
                         xmlWriter.WriteStartElement("AwsOrg");
                         if(publicRequest.StorageLensConfiguration.AwsOrg.IsSetArn())
                             xmlWriter.WriteElementString("Arn", StringUtils.FromString(publicRequest.StorageLensConfiguration.AwsOrg.Arn));
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.StorageLensConfiguration.DataExport != null)
+                    if (publicRequest.StorageLensConfiguration.IsSetDataExport())
                     {
                         xmlWriter.WriteStartElement("DataExport");
-                        if (publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics != null)
+                        if (publicRequest.StorageLensConfiguration.DataExport.IsSetCloudWatchMetrics())
                         {
                             xmlWriter.WriteStartElement("CloudWatchMetrics");
                             if(publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics.IsSetIsEnabled())
                                 xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics.IsEnabled.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination != null)
+                        if (publicRequest.StorageLensConfiguration.DataExport.IsSetS3BucketDestination())
                         {
                             xmlWriter.WriteStartElement("S3BucketDestination");
                             if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.IsSetAccountId())
                                 xmlWriter.WriteElementString("AccountId", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.AccountId));
                             if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.IsSetArn())
                                 xmlWriter.WriteElementString("Arn", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Arn));
-                            if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption != null)
+                            if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.IsSetEncryption())
                             {
                                 xmlWriter.WriteStartElement("Encryption");
-                                if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSEKMS != null)
+                                if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.IsSetSSEKMS())
                                 {
                                     xmlWriter.WriteStartElement("SSE-KMS");
                                     if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSEKMS.IsSetKeyId())
                                         xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSEKMS.KeyId));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSES3 != null)
+                                if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.IsSetSSES3())
                                 {
                                     xmlWriter.WriteStartElement("SSE-S3");
                                     xmlWriter.WriteEndElement();
@@ -261,20 +261,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Prefix));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination != null)
+                        if (publicRequest.StorageLensConfiguration.DataExport.IsSetStorageLensTableDestination())
                         {
                             xmlWriter.WriteStartElement("StorageLensTableDestination");
-                            if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption != null)
+                            if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.IsSetEncryption())
                             {
                                 xmlWriter.WriteStartElement("Encryption");
-                                if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.SSEKMS != null)
+                                if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.IsSetSSEKMS())
                                 {
                                     xmlWriter.WriteStartElement("SSE-KMS");
                                     if(publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.SSEKMS.IsSetKeyId())
                                         xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.SSEKMS.KeyId));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.SSES3 != null)
+                                if (publicRequest.StorageLensConfiguration.DataExport.StorageLensTableDestination.Encryption.IsSetSSES3())
                                 {
                                     xmlWriter.WriteStartElement("SSE-S3");
                                     xmlWriter.WriteEndElement();
@@ -287,7 +287,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.StorageLensConfiguration.Exclude != null)
+                    if (publicRequest.StorageLensConfiguration.IsSetExclude())
                     {
                         xmlWriter.WriteStartElement("Exclude");
                         var publicRequestStorageLensConfigurationExcludeBuckets = publicRequest.StorageLensConfiguration.Exclude.Buckets;
@@ -316,27 +316,27 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport != null)
+                    if (publicRequest.StorageLensConfiguration.IsSetExpandedPrefixesDataExport())
                     {
                         xmlWriter.WriteStartElement("ExpandedPrefixesDataExport");
-                        if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination != null)
+                        if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.IsSetS3BucketDestination())
                         {
                             xmlWriter.WriteStartElement("S3BucketDestination");
                             if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.IsSetAccountId())
                                 xmlWriter.WriteElementString("AccountId", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.AccountId));
                             if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.IsSetArn())
                                 xmlWriter.WriteElementString("Arn", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Arn));
-                            if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption != null)
+                            if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.IsSetEncryption())
                             {
                                 xmlWriter.WriteStartElement("Encryption");
-                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.SSEKMS != null)
+                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.IsSetSSEKMS())
                                 {
                                     xmlWriter.WriteStartElement("SSE-KMS");
                                     if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.SSEKMS.IsSetKeyId())
                                         xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.SSEKMS.KeyId));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.SSES3 != null)
+                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Encryption.IsSetSSES3())
                                 {
                                     xmlWriter.WriteStartElement("SSE-S3");
                                     xmlWriter.WriteEndElement();
@@ -351,20 +351,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.S3BucketDestination.Prefix));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination != null)
+                        if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.IsSetStorageLensTableDestination())
                         {
                             xmlWriter.WriteStartElement("StorageLensTableDestination");
-                            if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption != null)
+                            if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.IsSetEncryption())
                             {
                                 xmlWriter.WriteStartElement("Encryption");
-                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.SSEKMS != null)
+                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.IsSetSSEKMS())
                                 {
                                     xmlWriter.WriteStartElement("SSE-KMS");
                                     if(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.SSEKMS.IsSetKeyId())
                                         xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.SSEKMS.KeyId));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.SSES3 != null)
+                                if (publicRequest.StorageLensConfiguration.ExpandedPrefixesDataExport.StorageLensTableDestination.Encryption.IsSetSSES3())
                                 {
                                     xmlWriter.WriteStartElement("SSE-S3");
                                     xmlWriter.WriteEndElement();
@@ -379,7 +379,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.StorageLensConfiguration.IsSetId())
                         xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequest.StorageLensConfiguration.Id));
-                    if (publicRequest.StorageLensConfiguration.Include != null)
+                    if (publicRequest.StorageLensConfiguration.IsSetInclude())
                     {
                         xmlWriter.WriteStartElement("Include");
                         var publicRequestStorageLensConfigurationIncludeBuckets = publicRequest.StorageLensConfiguration.Include.Buckets;

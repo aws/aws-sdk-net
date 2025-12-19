@@ -87,7 +87,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLongValue())
                     xmlWriter.WriteElementString("longValue", StringUtils.FromLong(publicRequest.LongValue.Value));
 
-                if (publicRequest.Nested != null)
+                if (publicRequest.IsSetNested())
                 {
                     xmlWriter.WriteStartElement("Nested");
                     if(publicRequest.Nested.IsSetAttrField())

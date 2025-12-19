@@ -83,14 +83,14 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         if (publicRequestLifecycleConfigurationRulesValue != null)
                         {
                             xmlWriter.WriteStartElement("Rule");
-                            if (publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload != null)
+                            if (publicRequestLifecycleConfigurationRulesValue.IsSetAbortIncompleteMultipartUpload())
                             {
                                 xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload");
                                 if(publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload.IsSetDaysAfterInitiation())
                                     xmlWriter.WriteElementString("DaysAfterInitiation", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload.DaysAfterInitiation.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequestLifecycleConfigurationRulesValue.Expiration != null)
+                            if (publicRequestLifecycleConfigurationRulesValue.IsSetExpiration())
                             {
                                 xmlWriter.WriteStartElement("Expiration");
                                 if(publicRequestLifecycleConfigurationRulesValue.Expiration.IsSetDate())
@@ -101,10 +101,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", StringUtils.FromBool(publicRequestLifecycleConfigurationRulesValue.Expiration.ExpiredObjectDeleteMarker.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequestLifecycleConfigurationRulesValue.Filter != null)
+                            if (publicRequestLifecycleConfigurationRulesValue.IsSetFilter())
                             {
                                 xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestLifecycleConfigurationRulesValue.Filter.And != null)
+                                if (publicRequestLifecycleConfigurationRulesValue.Filter.IsSetAnd())
                                 {
                                     xmlWriter.WriteStartElement("And");
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetObjectSizeGreaterThan())
@@ -139,7 +139,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("ObjectSizeLessThan", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.ObjectSizeLessThan.Value));
                                 if(publicRequestLifecycleConfigurationRulesValue.Filter.IsSetPrefix())
                                     xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.Prefix));
-                                if (publicRequestLifecycleConfigurationRulesValue.Filter.Tag != null)
+                                if (publicRequestLifecycleConfigurationRulesValue.Filter.IsSetTag())
                                 {
                                     xmlWriter.WriteStartElement("Tag");
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.Tag.IsSetKey())
@@ -152,7 +152,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestLifecycleConfigurationRulesValue.IsSetID())
                                 xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.ID));
-                            if (publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration != null)
+                            if (publicRequestLifecycleConfigurationRulesValue.IsSetNoncurrentVersionExpiration())
                             {
                                 xmlWriter.WriteStartElement("NoncurrentVersionExpiration");
                                 if(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNewerNoncurrentVersions())

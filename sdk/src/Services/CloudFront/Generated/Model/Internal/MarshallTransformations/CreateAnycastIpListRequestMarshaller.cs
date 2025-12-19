@@ -68,7 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
 
                 var publicRequestIpamCidrConfigs = publicRequest.IpamCidrConfigs;
-                if (publicRequestIpamCidrConfigs != null && (publicRequestIpamCidrConfigs.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetIpamCidrConfigs()) 
                 {
                     xmlWriter.WriteStartElement("IpamCidrConfigs");
                     foreach (var publicRequestIpamCidrConfigsValue in publicRequestIpamCidrConfigs) 
@@ -95,11 +95,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetName())
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
-                if (publicRequest.Tags != null)
+                if (publicRequest.IsSetTags())
                 {
                     xmlWriter.WriteStartElement("Tags");
                     var publicRequestTagsItems = publicRequest.Tags.Items;
-                    if (publicRequestTagsItems != null && (publicRequestTagsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Tags.IsSetItems()) 
                     {
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
