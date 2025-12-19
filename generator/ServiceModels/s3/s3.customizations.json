@@ -1606,42 +1606,6 @@
                 }
             ]
         },
-        "UpdateBucketMetadataJournalTableConfigurationRequest":{
-            "modify":[
-                {
-                    "ContentMD5":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._contentMD5);"]}
-                },
-                {
-                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
-                }
-                
-            ]
-        },
-        "ListMultipartUploadsRequest":{
-            "modify":[
-                {
-                    "EncodingType":{"emitPropertyName":"Encoding"}
-                },
-                {
-                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
-                }
-            ]
-        },
-        "ListMultipartUploadsOutput":{
-            "modify":[
-                {
-                    "CommonPrefixes":{
-                        "injectXmlUnmarshallCode":["CommonPrefixesCustomUnmarshall(context, response);"],
-                        "skipContextTestExpressionUnmarshallingLogic" : true
-                    }
-                },
-                {
-                    "Uploads":{"emitPropertyName":"MultipartUploads"}
-                        
-                    
-                }
-            ]
-        },
         "RestoreObjectRequest":{
             "modify":[
                 {
