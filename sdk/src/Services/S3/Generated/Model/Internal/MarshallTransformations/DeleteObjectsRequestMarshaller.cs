@@ -88,7 +88,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                     xmlWriter.WriteStartElement("Delete", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestObjects = publicRequest.Objects;
-                    if (publicRequestObjects != null && (publicRequestObjects.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IsSetObjects()) 
                     {
                         foreach (var publicRequestObjectsValue in publicRequestObjects) 
                         {

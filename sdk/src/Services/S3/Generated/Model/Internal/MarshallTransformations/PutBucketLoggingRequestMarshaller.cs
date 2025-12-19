@@ -85,7 +85,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("LoggingEnabled");
                         var publicRequestLoggingConfigGrants = publicRequest.LoggingConfig.Grants;
-                        if (publicRequestLoggingConfigGrants != null && (publicRequestLoggingConfigGrants.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.LoggingConfig.IsSetGrants()) 
                         {
                             xmlWriter.WriteStartElement("TargetGrants");
                             foreach (var publicRequestLoggingConfigGrantsValue in publicRequestLoggingConfigGrants) 

@@ -145,7 +145,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 SortPartsList(publicRequest);
                     xmlWriter.WriteStartElement("CompleteMultipartUpload", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestPartETags = publicRequest.PartETags;
-                    if (publicRequestPartETags != null && (publicRequestPartETags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IsSetPartETags()) 
                     {
                         foreach (var publicRequestPartETagsValue in publicRequestPartETags) 
                         {

@@ -124,7 +124,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("Tagging");
                                 var publicRequestOutputLocationS3TaggingTagSet = publicRequest.OutputLocation.S3.Tagging.TagSet;
-                                if (publicRequestOutputLocationS3TaggingTagSet != null && (publicRequestOutputLocationS3TaggingTagSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequest.OutputLocation.S3.Tagging.IsSetTagSet()) 
                                 {
                                     xmlWriter.WriteStartElement("TagSet");
                                     foreach (var publicRequestOutputLocationS3TaggingTagSetValue in publicRequestOutputLocationS3TaggingTagSet) 
