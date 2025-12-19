@@ -78,6 +78,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomActionLambdaConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("documentDbConfig", targetDepth))
+                {
+                    var unmarshaller = DocumentDbConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DocumentDbConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ec2AsgCapacityIncreaseConfig", targetDepth))
                 {
                     var unmarshaller = Ec2AsgCapacityIncreaseConfigurationUnmarshaller.Instance;

@@ -94,6 +94,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     response.ExecutionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("generatedReportDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GeneratedReport, GeneratedReportUnmarshaller>(GeneratedReportUnmarshaller.Instance);
+                    response.GeneratedReportDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

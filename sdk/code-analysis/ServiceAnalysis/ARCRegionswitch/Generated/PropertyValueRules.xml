@@ -311,6 +311,18 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.CrossAccountRole</property>
+    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.GlobalClusterIdentifier</property>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.TimeoutMinutes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Ec2AsgCapacityIncreaseConfiguration.TimeoutMinutes</property>
     <min>1</min>
   </property-value-rule>
@@ -449,6 +461,16 @@
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Route53ResourceRecordSet.Region</property>
     <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.S3ReportOutputConfiguration.BucketOwner</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.S3ReportOutputConfiguration.BucketPath</property>
+    <min>3</min>
+    <max>512</max>
+    <pattern>(?:s3://)?[a-z0-9][a-z0-9-]{1,61}[a-z0-9](?:/[^/ ][^/]*)*/?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Service.ClusterArn</property>

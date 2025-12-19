@@ -37,6 +37,7 @@ namespace Amazon.ARCRegionswitch.Model
     {
         private ArcRoutingControlConfiguration _arcRoutingControlConfig;
         private CustomActionLambdaConfiguration _customActionLambdaConfig;
+        private DocumentDbConfiguration _documentDbConfig;
         private Ec2AsgCapacityIncreaseConfiguration _ec2AsgCapacityIncreaseConfig;
         private EcsCapacityIncreaseConfiguration _ecsCapacityIncreaseConfig;
         private EksResourceScalingConfiguration _eksResourceScalingConfig;
@@ -80,6 +81,21 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetCustomActionLambdaConfig()
         {
             return this._customActionLambdaConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentDbConfig.
+        /// </summary>
+        public DocumentDbConfiguration DocumentDbConfig
+        {
+            get { return this._documentDbConfig; }
+            set { this._documentDbConfig = value; }
+        }
+
+        // Check to see if DocumentDbConfig property is set
+        internal bool IsSetDocumentDbConfig()
+        {
+            return this._documentDbConfig != null;
         }
 
         /// <summary>

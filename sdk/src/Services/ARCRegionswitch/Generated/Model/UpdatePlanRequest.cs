@@ -41,6 +41,7 @@ namespace Amazon.ARCRegionswitch.Model
         private string _description;
         private string _executionRole;
         private int? _recoveryTimeObjectiveMinutes;
+        private ReportConfiguration _reportConfiguration;
         private List<Trigger> _triggers = AWSConfigs.InitializeCollections ? new List<Trigger>() : null;
         private List<Workflow> _workflows = AWSConfigs.InitializeCollections ? new List<Workflow>() : null;
 
@@ -136,6 +137,24 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetRecoveryTimeObjectiveMinutes()
         {
             return this._recoveryTimeObjectiveMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportConfiguration. 
+        /// <para>
+        /// The updated report configuration for the plan.
+        /// </para>
+        /// </summary>
+        public ReportConfiguration ReportConfiguration
+        {
+            get { return this._reportConfiguration; }
+            set { this._reportConfiguration = value; }
+        }
+
+        // Check to see if ReportConfiguration property is set
+        internal bool IsSetReportConfiguration()
+        {
+            return this._reportConfiguration != null;
         }
 
         /// <summary>

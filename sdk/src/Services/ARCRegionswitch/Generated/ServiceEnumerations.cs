@@ -175,6 +175,102 @@ namespace Amazon.ARCRegionswitch
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentDbDefaultBehavior.
+    /// </summary>
+    public class DocumentDbDefaultBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failover for DocumentDbDefaultBehavior
+        /// </summary>
+        public static readonly DocumentDbDefaultBehavior Failover = new DocumentDbDefaultBehavior("failover");
+        /// <summary>
+        /// Constant SwitchoverOnly for DocumentDbDefaultBehavior
+        /// </summary>
+        public static readonly DocumentDbDefaultBehavior SwitchoverOnly = new DocumentDbDefaultBehavior("switchoverOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentDbDefaultBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentDbDefaultBehavior FindValue(string value)
+        {
+            return FindValue<DocumentDbDefaultBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentDbDefaultBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentDbUngracefulBehavior.
+    /// </summary>
+    public class DocumentDbUngracefulBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failover for DocumentDbUngracefulBehavior
+        /// </summary>
+        public static readonly DocumentDbUngracefulBehavior Failover = new DocumentDbUngracefulBehavior("failover");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentDbUngracefulBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentDbUngracefulBehavior FindValue(string value)
+        {
+            return FindValue<DocumentDbUngracefulBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentDbUngracefulBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Ec2AsgCapacityMonitoringApproach.
     /// </summary>
     public class Ec2AsgCapacityMonitoringApproach : ConstantClass
@@ -451,6 +547,10 @@ namespace Amazon.ARCRegionswitch
         /// </summary>
         public static readonly ExecutionBlockType CustomActionLambda = new ExecutionBlockType("CustomActionLambda");
         /// <summary>
+        /// Constant DocumentDb for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType DocumentDb = new ExecutionBlockType("DocumentDb");
+        /// <summary>
         /// Constant EC2AutoScaling for ExecutionBlockType
         /// </summary>
         public static readonly ExecutionBlockType EC2AutoScaling = new ExecutionBlockType("EC2AutoScaling");
@@ -568,6 +668,10 @@ namespace Amazon.ARCRegionswitch
         /// Constant ExecutionSuccessMonitoringApplicationHealth for ExecutionEventType
         /// </summary>
         public static readonly ExecutionEventType ExecutionSuccessMonitoringApplicationHealth = new ExecutionEventType("executionSuccessMonitoringApplicationHealth");
+        /// <summary>
+        /// Constant PlanEvaluationWarning for ExecutionEventType
+        /// </summary>
+        public static readonly ExecutionEventType PlanEvaluationWarning = new ExecutionEventType("planEvaluationWarning");
         /// <summary>
         /// Constant StepCanceled for ExecutionEventType
         /// </summary>
@@ -782,6 +886,60 @@ namespace Amazon.ARCRegionswitch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FailedReportErrorCode.
+    /// </summary>
+    public class FailedReportErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConfigurationError for FailedReportErrorCode
+        /// </summary>
+        public static readonly FailedReportErrorCode ConfigurationError = new FailedReportErrorCode("configurationError");
+        /// <summary>
+        /// Constant InsufficientPermissions for FailedReportErrorCode
+        /// </summary>
+        public static readonly FailedReportErrorCode InsufficientPermissions = new FailedReportErrorCode("insufficientPermissions");
+        /// <summary>
+        /// Constant InvalidResource for FailedReportErrorCode
+        /// </summary>
+        public static readonly FailedReportErrorCode InvalidResource = new FailedReportErrorCode("invalidResource");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FailedReportErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailedReportErrorCode FindValue(string value)
+        {
+            return FindValue<FailedReportErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailedReportErrorCode(string value)
         {
             return FindValue(value);
         }
