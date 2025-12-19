@@ -126,6 +126,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.InteractiveConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobLevelCostAllocationConfiguration", targetDepth))
+                {
+                    var unmarshaller = JobLevelCostAllocationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.JobLevelCostAllocationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maximumCapacity", targetDepth))
                 {
                     var unmarshaller = MaximumAllowedResourcesUnmarshaller.Instance;
