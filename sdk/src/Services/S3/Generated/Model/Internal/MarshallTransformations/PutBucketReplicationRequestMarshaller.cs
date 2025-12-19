@@ -99,17 +99,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (publicRequestConfigurationRulesValue != null)
                         {
                             xmlWriter.WriteStartElement("Rule");
-                            if (publicRequestConfigurationRulesValue.DeleteMarkerReplication != null)
+                            if (publicRequestConfigurationRulesValue.IsSetDeleteMarkerReplication())
                             {
                                 xmlWriter.WriteStartElement("DeleteMarkerReplication");
                                 if(publicRequestConfigurationRulesValue.DeleteMarkerReplication.IsSetStatus())
                                     xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.DeleteMarkerReplication.Status));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequestConfigurationRulesValue.Destination != null)
+                            if (publicRequestConfigurationRulesValue.IsSetDestination())
                             {
                                 xmlWriter.WriteStartElement("Destination");
-                                if (publicRequestConfigurationRulesValue.Destination.AccessControlTranslation != null)
+                                if (publicRequestConfigurationRulesValue.Destination.IsSetAccessControlTranslation())
                                 {
                                     xmlWriter.WriteStartElement("AccessControlTranslation");
                                     if(publicRequestConfigurationRulesValue.Destination.AccessControlTranslation.IsSetOwner())
@@ -120,17 +120,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("Account", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.AccountId));
                                 if(publicRequestConfigurationRulesValue.Destination.IsSetBucketArn())
                                     xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.BucketArn));
-                                if (publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration != null)
+                                if (publicRequestConfigurationRulesValue.Destination.IsSetEncryptionConfiguration())
                                 {
                                     xmlWriter.WriteStartElement("EncryptionConfiguration");
                                     if(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.IsSetReplicaKmsKeyID())
                                         xmlWriter.WriteElementString("ReplicaKmsKeyID", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if (publicRequestConfigurationRulesValue.Destination.Metrics != null)
+                                if (publicRequestConfigurationRulesValue.Destination.IsSetMetrics())
                                 {
                                     xmlWriter.WriteStartElement("Metrics");
-                                    if (publicRequestConfigurationRulesValue.Destination.Metrics.EventThreshold != null)
+                                    if (publicRequestConfigurationRulesValue.Destination.Metrics.IsSetEventThreshold())
                                     {
                                         xmlWriter.WriteStartElement("EventThreshold");
                                         if(publicRequestConfigurationRulesValue.Destination.Metrics.EventThreshold.IsSetMinutes())
@@ -141,12 +141,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.Metrics.Status));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if (publicRequestConfigurationRulesValue.Destination.ReplicationTime != null)
+                                if (publicRequestConfigurationRulesValue.Destination.IsSetReplicationTime())
                                 {
                                     xmlWriter.WriteStartElement("ReplicationTime");
                                     if(publicRequestConfigurationRulesValue.Destination.ReplicationTime.IsSetStatus())
                                         xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.ReplicationTime.Status));
-                                    if (publicRequestConfigurationRulesValue.Destination.ReplicationTime.Time != null)
+                                    if (publicRequestConfigurationRulesValue.Destination.ReplicationTime.IsSetTime())
                                     {
                                         xmlWriter.WriteStartElement("Time");
                                         if(publicRequestConfigurationRulesValue.Destination.ReplicationTime.Time.IsSetMinutes())
@@ -159,17 +159,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.StorageClass));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequestConfigurationRulesValue.ExistingObjectReplication != null)
+                            if (publicRequestConfigurationRulesValue.IsSetExistingObjectReplication())
                             {
                                 xmlWriter.WriteStartElement("ExistingObjectReplication");
                                 if(publicRequestConfigurationRulesValue.ExistingObjectReplication.IsSetStatus())
                                     xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.ExistingObjectReplication.Status));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequestConfigurationRulesValue.Filter != null)
+                            if (publicRequestConfigurationRulesValue.IsSetFilter())
                             {
                                 xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestConfigurationRulesValue.Filter.And != null)
+                                if (publicRequestConfigurationRulesValue.Filter.IsSetAnd())
                                 {
                                     xmlWriter.WriteStartElement("And");
                                     if(publicRequestConfigurationRulesValue.Filter.And.IsSetPrefix())
@@ -194,7 +194,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 }
                                 if(publicRequestConfigurationRulesValue.Filter.IsSetPrefix())
                                     xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Prefix));
-                                if (publicRequestConfigurationRulesValue.Filter.Tag != null)
+                                if (publicRequestConfigurationRulesValue.Filter.IsSetTag())
                                 {
                                     xmlWriter.WriteStartElement("Tag");
                                     if(publicRequestConfigurationRulesValue.Filter.Tag.IsSetKey())
@@ -211,17 +211,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Prefix));
                             if(publicRequestConfigurationRulesValue.IsSetPriority())
                                 xmlWriter.WriteElementString("Priority", StringUtils.FromInt(publicRequestConfigurationRulesValue.Priority.Value));
-                            if (publicRequestConfigurationRulesValue.SourceSelectionCriteria != null)
+                            if (publicRequestConfigurationRulesValue.IsSetSourceSelectionCriteria())
                             {
                                 xmlWriter.WriteStartElement("SourceSelectionCriteria");
-                                if (publicRequestConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications != null)
+                                if (publicRequestConfigurationRulesValue.SourceSelectionCriteria.IsSetReplicaModifications())
                                 {
                                     xmlWriter.WriteStartElement("ReplicaModifications");
                                     if(publicRequestConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications.IsSetStatus())
                                         xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications.Status));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if (publicRequestConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects != null)
+                                if (publicRequestConfigurationRulesValue.SourceSelectionCriteria.IsSetSseKmsEncryptedObjects())
                                 {
                                     xmlWriter.WriteStartElement("SseKmsEncryptedObjects");
                                     if(publicRequestConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects.IsSetSseKmsEncryptedObjectsStatus())
