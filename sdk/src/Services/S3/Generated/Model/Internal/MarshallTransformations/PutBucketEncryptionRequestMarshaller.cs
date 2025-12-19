@@ -91,7 +91,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue != null)
                         {
                             xmlWriter.WriteStartElement("Rule");
-                            if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes != null)
+                            if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetBlockedEncryptionTypes())
                             {
                                 xmlWriter.WriteStartElement("BlockedEncryptionTypes");
                                 var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType = publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes.EncryptionType;
@@ -108,7 +108,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetBucketKeyEnabled())
                                 xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BucketKeyEnabled.Value));
-                            if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault != null)
+                            if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetServerSideEncryptionByDefault())
                             {
                                 xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault");
                                 if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetServerSideEncryptionAlgorithm())

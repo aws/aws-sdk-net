@@ -122,7 +122,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (publicRequestAccessControlPolicyGrantsValue != null)
                         {
                             xmlWriter.WriteStartElement("Grant");
-                            if (publicRequestAccessControlPolicyGrantsValue.Grantee != null)
+                            if (publicRequestAccessControlPolicyGrantsValue.IsSetGrantee())
                             {
                                 xmlWriter.WriteStartElement("xsi","Grantee","http://www.w3.org/2001/XMLSchema-instance");
                                 if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetType())
@@ -144,7 +144,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-                    if (publicRequest.AccessControlPolicy.Owner != null)
+                    if (publicRequest.AccessControlPolicy.IsSetOwner())
                     {
                         xmlWriter.WriteStartElement("Owner");
                         if(publicRequest.AccessControlPolicy.Owner.IsSetDisplayName())

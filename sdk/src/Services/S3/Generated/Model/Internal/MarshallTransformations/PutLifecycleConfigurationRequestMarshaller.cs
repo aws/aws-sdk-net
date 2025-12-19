@@ -91,14 +91,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (publicRequestConfigurationRulesValue != null)
                         {
                             xmlWriter.WriteStartElement("Rule");
-                            if (publicRequestConfigurationRulesValue.AbortIncompleteMultipartUpload != null)
+                            if (publicRequestConfigurationRulesValue.IsSetAbortIncompleteMultipartUpload())
                             {
                                 xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload");
                                 if(publicRequestConfigurationRulesValue.AbortIncompleteMultipartUpload.IsSetDaysAfterInitiation())
                                     xmlWriter.WriteElementString("DaysAfterInitiation", StringUtils.FromInt(publicRequestConfigurationRulesValue.AbortIncompleteMultipartUpload.DaysAfterInitiation.Value));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequestConfigurationRulesValue.Expiration != null)
+                            if (publicRequestConfigurationRulesValue.IsSetExpiration())
                             {
                                 xmlWriter.WriteStartElement("Expiration");
                                 if(publicRequestConfigurationRulesValue.Expiration.IsSetDate())
@@ -112,7 +112,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             FilterCustomMarshall(publicRequestConfigurationRulesValue, xmlWriter);
                             if(publicRequestConfigurationRulesValue.IsSetId())
                                 xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
-                            if (publicRequestConfigurationRulesValue.NoncurrentVersionExpiration != null)
+                            if (publicRequestConfigurationRulesValue.IsSetNoncurrentVersionExpiration())
                             {
                                 xmlWriter.WriteStartElement("NoncurrentVersionExpiration");
                                 if(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
