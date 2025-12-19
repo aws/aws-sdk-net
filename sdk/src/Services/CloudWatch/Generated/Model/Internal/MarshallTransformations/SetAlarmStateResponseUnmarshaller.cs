@@ -68,39 +68,37 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFormatFault"))
+                var errorTypeName = errorResponse.Code;
+                var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+                if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+                {
+                    var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                    if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                    {
+                        var queryErrorParts = queryError.Split(';');
+                        if (queryErrorParts.Length == 2)
+                        {
+                            errorResponse.Code = queryErrorParts[0];
+                            var errorTypeString = queryErrorParts[1];
+                            if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                            {
+                                errorResponse.Type = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                            }
+                        }
+                    }
+                }
+                if (errorTypeName != null && errorTypeName.Equals("InvalidFormatFault"))
                 {
                     return InvalidFormatExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
+                if (errorTypeName != null && errorTypeName.Equals("ResourceNotFound"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            var errorCode = errorResponse.Code;
-            var errorType = errorResponse.Type;
-            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
-            {
-                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
-                {
-                    var queryErrorParts = queryError.Split(';');
-                    if (queryErrorParts.Length == 2)
-                    {
-                        errorCode = queryErrorParts[0];
-                        var errorTypeString = queryErrorParts[1];
-                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
-                        {
-                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
-                        }
-                    }
-                }
-            }
-            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
         private static SetAlarmStateResponseUnmarshaller _instance = new SetAlarmStateResponseUnmarshaller();        
