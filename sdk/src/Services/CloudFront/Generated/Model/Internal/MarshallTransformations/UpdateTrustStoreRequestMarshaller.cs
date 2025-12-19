@@ -74,7 +74,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetCaCertificatesBundleSource())
                 {
                     xmlWriter.WriteStartElement("CaCertificatesBundleSource", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                    if (publicRequest.CaCertificatesBundleSource.CaCertificatesBundleS3Location != null)
+                    if (publicRequest.CaCertificatesBundleSource.IsSetCaCertificatesBundleS3Location())
                     {
                         xmlWriter.WriteStartElement("CaCertificatesBundleS3Location");
                         if(publicRequest.CaCertificatesBundleSource.CaCertificatesBundleS3Location.IsSetBucket())

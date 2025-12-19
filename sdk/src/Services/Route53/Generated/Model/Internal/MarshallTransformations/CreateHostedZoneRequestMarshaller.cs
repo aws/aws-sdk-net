@@ -67,7 +67,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetName())
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
-                if (publicRequest.VPC != null)
+                if (publicRequest.IsSetVPC())
                 {
                     xmlWriter.WriteStartElement("VPC");
                     if(publicRequest.VPC.IsSetVPCRegion())
@@ -79,7 +79,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCallerReference())
                     xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
 
-                if (publicRequest.HostedZoneConfig != null)
+                if (publicRequest.IsSetHostedZoneConfig())
                 {
                     xmlWriter.WriteStartElement("HostedZoneConfig");
                     if(publicRequest.HostedZoneConfig.IsSetComment())

@@ -74,12 +74,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 else                
                     xmlWriter.WriteElementString("ClientToken", Guid.NewGuid().ToString());                
 
-                if (publicRequest.Details != null)
+                if (publicRequest.IsSetDetails())
                 {
                     xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));
-                    if (publicRequest.Details.PublicAccessBlock != null)
+                    if (publicRequest.Details.IsSetPublicAccessBlock())
                     {
                         xmlWriter.WriteStartElement("PublicAccessBlock");
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicAcls())

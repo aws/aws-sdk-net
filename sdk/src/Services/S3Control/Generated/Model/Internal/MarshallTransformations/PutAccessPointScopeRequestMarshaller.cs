@@ -72,7 +72,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("PutAccessPointScopeRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
-                if (publicRequest.Scope != null)
+                if (publicRequest.IsSetScope())
                 {
                     xmlWriter.WriteStartElement("Scope");
                     var publicRequestScopePermissions = publicRequest.Scope.Permissions;

@@ -72,7 +72,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("CreateAccessPointForObjectLambdaRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
-                if (publicRequest.Configuration != null)
+                if (publicRequest.IsSetConfiguration())
                 {
                     xmlWriter.WriteStartElement("Configuration");
                     var publicRequestConfigurationAllowedFeatures = publicRequest.Configuration.AllowedFeatures;
@@ -112,10 +112,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
-                            if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation != null)
+                            if (publicRequestConfigurationTransformationConfigurationsValue.IsSetContentTransformation())
                             {
                                 xmlWriter.WriteStartElement("ContentTransformation");
-                                if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda != null)
+                                if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.IsSetAwsLambda())
                                 {
                                     xmlWriter.WriteStartElement("AwsLambda");
                                     if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionArn())

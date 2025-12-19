@@ -89,11 +89,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.VpcOriginEndpointConfig.IsSetOriginProtocolPolicy())
                         xmlWriter.WriteElementString("OriginProtocolPolicy", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.OriginProtocolPolicy));
 
-                    if (publicRequest.VpcOriginEndpointConfig.OriginSslProtocols != null)
+                    if (publicRequest.VpcOriginEndpointConfig.IsSetOriginSslProtocols())
                     {
                         xmlWriter.WriteStartElement("OriginSslProtocols");
                         var publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems = publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.Items;
-                        if (publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems != null && (publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestVpcOriginEndpointConfigOriginSslProtocolsItemsValue in publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems) 

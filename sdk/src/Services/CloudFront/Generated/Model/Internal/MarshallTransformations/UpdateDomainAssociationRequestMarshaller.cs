@@ -72,7 +72,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDomain())
                     xmlWriter.WriteElementString("Domain", StringUtils.FromString(publicRequest.Domain));
 
-                if (publicRequest.TargetResource != null)
+                if (publicRequest.IsSetTargetResource())
                 {
                     xmlWriter.WriteStartElement("TargetResource");
                     if(publicRequest.TargetResource.IsSetDistributionId())

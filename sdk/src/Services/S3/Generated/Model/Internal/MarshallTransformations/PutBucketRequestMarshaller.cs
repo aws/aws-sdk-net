@@ -79,7 +79,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (regionCode == null)
                         xmlWriter.WriteStartElement("CreateBucketConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.PutBucketConfiguration.BucketInfo != null)
+                    if (publicRequest.PutBucketConfiguration.IsSetBucketInfo())
                     {
                         xmlWriter.WriteStartElement("Bucket");
                         if(publicRequest.PutBucketConfiguration.BucketInfo.IsSetDataRedundancy())
@@ -88,7 +88,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("Type", StringUtils.FromString(publicRequest.PutBucketConfiguration.BucketInfo.Type));
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.PutBucketConfiguration.Location != null)
+                    if (publicRequest.PutBucketConfiguration.IsSetLocation())
                     {
                         xmlWriter.WriteStartElement("Location");
                         if(publicRequest.PutBucketConfiguration.Location.IsSetName())

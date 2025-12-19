@@ -67,7 +67,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCallerReference())
                     xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
 
-                if (publicRequest.HealthCheckConfig != null)
+                if (publicRequest.IsSetHealthCheckConfig())
                 {
                     xmlWriter.WriteStartElement("HealthCheckConfig");
                     if(publicRequest.HealthCheckConfig.IsSetIPAddress())
@@ -120,7 +120,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-                    if (publicRequest.HealthCheckConfig.AlarmIdentifier != null)
+                    if (publicRequest.HealthCheckConfig.IsSetAlarmIdentifier())
                     {
                         xmlWriter.WriteStartElement("AlarmIdentifier");
                         if(publicRequest.HealthCheckConfig.AlarmIdentifier.IsSetRegion())

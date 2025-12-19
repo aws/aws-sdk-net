@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "serviceName": "CloudFront",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update request marshallers to use IsSet methods"
+      ]
+    },
+    {
+      "serviceName": "Route53",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update request marshallers to use IsSet methods."
+      ]
+    },
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update request marshallers to use IsSet methods."
+      ]
+    },
+    {
+      "serviceName": "S3Control",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update request marshallers to use IsSet methods."
+      ]
+    }
+  ]
+}

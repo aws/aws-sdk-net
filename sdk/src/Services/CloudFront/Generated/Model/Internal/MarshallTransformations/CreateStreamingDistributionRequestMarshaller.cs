@@ -66,11 +66,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetStreamingDistributionConfig())
                 {
                     xmlWriter.WriteStartElement("StreamingDistributionConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                    if (publicRequest.StreamingDistributionConfig.Aliases != null)
+                    if (publicRequest.StreamingDistributionConfig.IsSetAliases())
                     {
                         xmlWriter.WriteStartElement("Aliases");
                         var publicRequestStreamingDistributionConfigAliasesItems = publicRequest.StreamingDistributionConfig.Aliases.Items;
-                        if (publicRequestStreamingDistributionConfigAliasesItems != null && (publicRequestStreamingDistributionConfigAliasesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StreamingDistributionConfig.Aliases.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestStreamingDistributionConfigAliasesItemsValue in publicRequestStreamingDistributionConfigAliasesItems) 
@@ -94,7 +94,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.StreamingDistributionConfig.IsSetEnabled())
                         xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Enabled.Value));
 
-                    if (publicRequest.StreamingDistributionConfig.Logging != null)
+                    if (publicRequest.StreamingDistributionConfig.IsSetLogging())
                     {
                         xmlWriter.WriteStartElement("Logging");
                         if(publicRequest.StreamingDistributionConfig.Logging.IsSetBucket())
@@ -108,7 +108,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.StreamingDistributionConfig.IsSetPriceClass())
                         xmlWriter.WriteElementString("PriceClass", StringUtils.FromString(publicRequest.StreamingDistributionConfig.PriceClass));
 
-                    if (publicRequest.StreamingDistributionConfig.S3Origin != null)
+                    if (publicRequest.StreamingDistributionConfig.IsSetS3Origin())
                     {
                         xmlWriter.WriteStartElement("S3Origin");
                         if(publicRequest.StreamingDistributionConfig.S3Origin.IsSetDomainName())
@@ -117,13 +117,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.OriginAccessIdentity));
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.StreamingDistributionConfig.TrustedSigners != null)
+                    if (publicRequest.StreamingDistributionConfig.IsSetTrustedSigners())
                     {
                         xmlWriter.WriteStartElement("TrustedSigners");
                         if(publicRequest.StreamingDistributionConfig.TrustedSigners.IsSetEnabled())
                             xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.TrustedSigners.Enabled.Value));
                         var publicRequestStreamingDistributionConfigTrustedSignersItems = publicRequest.StreamingDistributionConfig.TrustedSigners.Items;
-                        if (publicRequestStreamingDistributionConfigTrustedSignersItems != null && (publicRequestStreamingDistributionConfigTrustedSignersItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StreamingDistributionConfig.TrustedSigners.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestStreamingDistributionConfigTrustedSignersItemsValue in publicRequestStreamingDistributionConfigTrustedSignersItems) 

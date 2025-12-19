@@ -64,10 +64,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("CreateTrustStoreRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                if (publicRequest.CaCertificatesBundleSource != null)
+                if (publicRequest.IsSetCaCertificatesBundleSource())
                 {
                     xmlWriter.WriteStartElement("CaCertificatesBundleSource");
-                    if (publicRequest.CaCertificatesBundleSource.CaCertificatesBundleS3Location != null)
+                    if (publicRequest.CaCertificatesBundleSource.IsSetCaCertificatesBundleS3Location())
                     {
                         xmlWriter.WriteStartElement("CaCertificatesBundleS3Location");
                         if(publicRequest.CaCertificatesBundleSource.CaCertificatesBundleS3Location.IsSetBucket())
@@ -85,11 +85,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetName())
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
-                if (publicRequest.Tags != null)
+                if (publicRequest.IsSetTags())
                 {
                     xmlWriter.WriteStartElement("Tags");
                     var publicRequestTagsItems = publicRequest.Tags.Items;
-                    if (publicRequestTagsItems != null && (publicRequestTagsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Tags.IsSetItems()) 
                     {
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 

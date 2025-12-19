@@ -124,7 +124,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }            
                     xmlWriter.WriteEndElement();            
                 }
-                if (publicRequest.AlarmIdentifier != null)
+                if (publicRequest.IsSetAlarmIdentifier())
                 {
                     xmlWriter.WriteStartElement("AlarmIdentifier");
                     if(publicRequest.AlarmIdentifier.IsSetRegion())

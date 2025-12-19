@@ -69,7 +69,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("CreateAccessGrantRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
-                if (publicRequest.AccessGrantsLocationConfiguration != null)
+                if (publicRequest.IsSetAccessGrantsLocationConfiguration())
                 {
                     xmlWriter.WriteStartElement("AccessGrantsLocationConfiguration");
                     if(publicRequest.AccessGrantsLocationConfiguration.IsSetS3SubPrefix())
@@ -82,7 +82,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApplicationArn())
                     xmlWriter.WriteElementString("ApplicationArn", StringUtils.FromString(publicRequest.ApplicationArn));
 
-                if (publicRequest.Grantee != null)
+                if (publicRequest.IsSetGrantee())
                 {
                     xmlWriter.WriteStartElement("Grantee");
                     if(publicRequest.Grantee.IsSetGranteeIdentifier())
