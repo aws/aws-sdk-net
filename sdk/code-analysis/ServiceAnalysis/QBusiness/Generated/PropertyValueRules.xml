@@ -10,7 +10,7 @@
     <property>Amazon.QBusiness.Model.AssociatePermissionRequest.Principal</property>
     <min>1</min>
     <max>1284</max>
-    <pattern>arn:aws:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.AssociatePermissionRequest.StatementId</property>
@@ -236,13 +236,13 @@
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.IamIdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:(oidc-provider|saml-provider)/[a-zA-Z0-9_\.\/@\-]+</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:iam::\d{12}:(oidc-provider|saml-provider)/[a-zA-Z0-9_\.\/@\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.IdentityCenterInstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.RoleArn</property>
@@ -311,7 +311,7 @@
     <property>Amazon.QBusiness.Model.CreateDataAccessorRequest.Principal</property>
     <min>1</min>
     <max>1284</max>
-    <pattern>arn:aws:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataAccessorResponse.DataAccessorArn</property>
@@ -329,7 +329,7 @@
     <property>Amazon.QBusiness.Model.CreateDataAccessorResponse.IdcApplicationArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceRequest.ApplicationId</property>
@@ -795,13 +795,13 @@
     <property>Amazon.QBusiness.Model.GetApplicationResponse.IamIdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:(oidc-provider|saml-provider)/[a-zA-Z0-9_\.\/@\-]+</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:iam::\d{12}:(oidc-provider|saml-provider)/[a-zA-Z0-9_\.\/@\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.IdentityCenterApplicationArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.RoleArn</property>
@@ -899,13 +899,13 @@
     <property>Amazon.QBusiness.Model.GetDataAccessorResponse.IdcApplicationArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataAccessorResponse.Principal</property>
     <min>1</min>
     <max>1284</max>
-    <pattern>arn:aws:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceRequest.ApplicationId</property>
@@ -1853,7 +1853,7 @@
     <property>Amazon.QBusiness.Model.UpdateApplicationRequest.IdentityCenterInstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateApplicationRequest.RoleArn</property>
@@ -2418,19 +2418,19 @@
     <property>Amazon.QBusiness.Model.DataAccessor.IdcApplicationArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataAccessor.Principal</property>
     <min>1</min>
     <max>1284</max>
-    <pattern>arn:aws:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataAccessorIdcTrustedTokenIssuerConfiguration.IdcTrustedTokenIssuerArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>arn:aws:sso::[0-9]{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:sso::[0-9]{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSource.DataSourceId</property>
@@ -2611,7 +2611,7 @@
     <property>Amazon.QBusiness.Model.HookConfiguration.LambdaArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z-]*-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:lambda:[a-z-]*-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.HookConfiguration.RoleArn</property>
@@ -2629,7 +2629,7 @@
     <property>Amazon.QBusiness.Model.IdcAuthConfiguration.IdcApplicationArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.IdcAuthConfiguration.RoleArn</property>
@@ -2814,7 +2814,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PermissionCondition.ConditionKey</property>
-    <pattern>aws:PrincipalTag/qbusiness-dataaccessor:[a-zA-Z]+.*</pattern>
+    <pattern>aws:[a-zA-Z][a-zA-Z0-9-/:]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Plugin.DisplayName</property>
