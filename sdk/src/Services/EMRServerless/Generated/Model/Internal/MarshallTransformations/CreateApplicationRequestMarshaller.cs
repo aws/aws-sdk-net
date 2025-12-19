@@ -164,6 +164,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetJobLevelCostAllocationConfiguration())
+            {
+                context.Writer.WritePropertyName("jobLevelCostAllocationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobLevelCostAllocationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobLevelCostAllocationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaximumCapacity())
             {
                 context.Writer.WritePropertyName("maximumCapacity");
