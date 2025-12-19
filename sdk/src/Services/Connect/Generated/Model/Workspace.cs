@@ -106,7 +106,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
         /// <para>
-        /// The AWS Region where the workspace was last modified.
+        /// The Amazon Web Services Region where the workspace was last modified.
         /// </para>
         /// </summary>
         public string LastModifiedRegion
