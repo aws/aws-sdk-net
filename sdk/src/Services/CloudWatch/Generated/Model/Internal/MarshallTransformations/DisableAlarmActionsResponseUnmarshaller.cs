@@ -68,31 +68,29 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-            }
-            var errorCode = errorResponse.Code;
-            var errorType = errorResponse.Type;
-            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
-            {
-                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                var errorTypeName = errorResponse.Code;
+                var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+                if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
                 {
-                    var queryErrorParts = queryError.Split(';');
-                    if (queryErrorParts.Length == 2)
+                    var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                    if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
                     {
-                        errorCode = queryErrorParts[0];
-                        var errorTypeString = queryErrorParts[1];
-                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        var queryErrorParts = queryError.Split(';');
+                        if (queryErrorParts.Length == 2)
                         {
-                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                            errorResponse.Code = queryErrorParts[0];
+                            var errorTypeString = queryErrorParts[1];
+                            if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                            {
+                                errorResponse.Type = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                            }
                         }
                     }
                 }
             }
-            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
         private static DisableAlarmActionsResponseUnmarshaller _instance = new DisableAlarmActionsResponseUnmarshaller();        
