@@ -240,13 +240,6 @@ namespace Amazon.S3.Transfer
         /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
         /// 	specified by <c>s3Directory</c>.
         /// </summary>
-        /// <remarks>
-        /// 	<para>
-        /// 	<b>Note:</b> Consider using <see cref="DownloadDirectoryWithResponseAsync(string, string, string, CancellationToken)"/> 
-        /// 	instead. The newer operation uses enhanced multipart download with concurrent part downloads 
-        /// 	for improved performance and returns response metadata including the total number of objects downloaded.
-        /// 	</para>
-        /// </remarks>
         /// <param name="bucketName">
         /// 	The name of the bucket containing the Amazon S3 objects to download.
         /// </param>
@@ -267,13 +260,6 @@ namespace Amazon.S3.Transfer
         /// 	specified by the <c>S3Directory</c>
         /// 	property of the passed in <c>TransferUtilityDownloadDirectoryRequest</c> object.
         /// </summary>
-        /// <remarks>
-        /// 	<para>
-        /// 	<b>Note:</b> Consider using <see cref="DownloadDirectoryWithResponseAsync(TransferUtilityDownloadDirectoryRequest, CancellationToken)"/> 
-        /// 	instead. The newer operation uses enhanced multipart download with concurrent part downloads 
-        /// 	for improved performance and returns response metadata including the total number of objects downloaded.
-        /// 	</para>
-        /// </remarks>
         /// <param name="request">
         /// 	Contains all the parameters required to download objects from Amazon S3 
         /// 	into a local directory.

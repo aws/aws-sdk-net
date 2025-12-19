@@ -200,19 +200,6 @@ namespace Amazon.S3.Transfer
                 return null;
             }
         }
-
-        /// <inheritdoc/>
-        public TransferUtilityOpenStreamResponse OpenStreamWithResponse(string bucketName, string key)
-        {
-            return OpenStreamWithResponseAsync(bucketName, key).GetAwaiter().GetResult();
-        }
-
-        /// <inheritdoc/>
-        public TransferUtilityOpenStreamResponse OpenStreamWithResponse(TransferUtilityOpenStreamRequest request)
-        {
-            return OpenStreamWithResponseAsync(request).GetAwaiter().GetResult();
-        }
-
         #endregion
 
         #region Download
@@ -242,17 +229,6 @@ namespace Amazon.S3.Transfer
             }
         }
 
-        /// <inheritdoc/>
-        public TransferUtilityDownloadResponse DownloadWithResponse(string filePath, string bucketName, string key)
-        {
-            return DownloadWithResponseAsync(filePath, bucketName, key).GetAwaiter().GetResult();
-        }
-
-        /// <inheritdoc/>
-        public TransferUtilityDownloadResponse DownloadWithResponse(TransferUtilityDownloadRequest request)
-        {
-            return DownloadWithResponseAsync(request).GetAwaiter().GetResult();
-        }
         #endregion
 
         #region DownloadDirectory
@@ -282,17 +258,6 @@ namespace Amazon.S3.Transfer
             }
         }
 
-        /// <inheritdoc/>
-        public TransferUtilityDownloadDirectoryResponse DownloadDirectoryWithResponse(string bucketName, string s3Directory, string localDirectory)
-        {
-            return DownloadDirectoryWithResponseAsync(bucketName, s3Directory, localDirectory).GetAwaiter().GetResult();
-        }
-
-        /// <inheritdoc/>
-        public TransferUtilityDownloadDirectoryResponse DownloadDirectoryWithResponse(TransferUtilityDownloadDirectoryRequest request)
-        {
-            return DownloadDirectoryWithResponseAsync(request).GetAwaiter().GetResult();
-        }
         #endregion
 
         #region AbortMultipartUploads

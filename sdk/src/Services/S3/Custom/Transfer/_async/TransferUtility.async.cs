@@ -164,25 +164,8 @@ namespace Amazon.S3.Transfer
             }
         }
 
-        /// <inheritdoc/>
-        public async Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructDownloadRequest(filePath, bucketName, key);
-            return await DownloadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
-        }
 
-        /// <inheritdoc/>
-        public async Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            using(CreateSpan(nameof(DownloadWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
-            {
-                CheckForBlockedArn(request.BucketName, "Download");
-                var command = new MultipartDownloadCommand(this._s3Client, request, this._config);
-                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
-            }
-        }
-
-    #endregion
+        #endregion
 
         #region OpenStream
         /// <inheritdoc/>
@@ -208,50 +191,11 @@ namespace Amazon.S3.Transfer
             }
         }
 
-        /// <inheritdoc/>
-        public async Task<TransferUtilityOpenStreamResponse> OpenStreamWithResponseAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
-            {
-                BucketName = bucketName,
-                Key = key
-            };
-            return await OpenStreamWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <inheritdoc/>
-        public async Task<TransferUtilityOpenStreamResponse> OpenStreamWithResponseAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            using(CreateSpan(nameof(OpenStreamWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
-            {
-                CheckForBlockedArn(request.BucketName, "OpenStreamWithResponse");
-                OpenStreamWithResponseCommand command = new OpenStreamWithResponseCommand(this._s3Client, request, this._config);
-                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
-            }
-        }
 
         #endregion
 
         #region DownloadDirectory
 
-        /// <inheritdoc/>
-        public async Task<TransferUtilityDownloadDirectoryResponse> DownloadDirectoryWithResponseAsync(string bucketName, string s3Directory, string localDirectory, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructDownloadDirectoryRequest(bucketName, s3Directory, localDirectory);
-            return await DownloadDirectoryWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <inheritdoc/>
-        public async Task<TransferUtilityDownloadDirectoryResponse> DownloadDirectoryWithResponseAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            using(CreateSpan(nameof(DownloadDirectoryWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
-            {
-                CheckForBlockedArn(request.BucketName, "DownloadDirectory");
-                var command = new DownloadDirectoryCommand(this._s3Client, request, this._config, true);
-                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
-                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
-            }
-        }
 
         #endregion
 

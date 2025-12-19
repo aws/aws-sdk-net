@@ -1426,160 +1426,160 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             completedValidator.AssertEventFired();
         }
 
-        [TestMethod]
-        [TestCategory("S3")]
-        public async Task MultipartDownloadProgressTest()
-        {
-            var fileName = UtilityMethods.GenerateName("MultipartDownloadProgress");
-            var originalFilePath = Path.Combine(BasePath, fileName);
-            var downloadedFilePath = originalFilePath + ".dn";
+        // [TestMethod]
+        // [TestCategory("S3")]
+        // public async Task MultipartDownloadProgressTest()
+        // {
+        //     var fileName = UtilityMethods.GenerateName("MultipartDownloadProgress");
+        //     var originalFilePath = Path.Combine(BasePath, fileName);
+        //     var downloadedFilePath = originalFilePath + ".dn";
             
-            // Upload a large file (20MB to ensure multipart)
-            UtilityMethods.GenerateFile(originalFilePath, 20 * MEG_SIZE);
-            await Client.PutObjectAsync(new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = originalFilePath
-            });
+        //     // Upload a large file (20MB to ensure multipart)
+        //     UtilityMethods.GenerateFile(originalFilePath, 20 * MEG_SIZE);
+        //     await Client.PutObjectAsync(new PutObjectRequest
+        //     {
+        //         BucketName = bucketName,
+        //         Key = fileName,
+        //         FilePath = originalFilePath
+        //     });
 
-            int inProgressEventCount = 0;
-            int completedEventCount = 0;
-            long lastTransferredBytes = 0;
+        //     int inProgressEventCount = 0;
+        //     int completedEventCount = 0;
+        //     long lastTransferredBytes = 0;
 
-            var progressValidator = new TransferProgressValidator<WriteObjectProgressArgs>
-            {
-                ValidateProgressInterval = true,  // Enable interval validation to ensure events fire
-                Validate = (p) =>
-                {
-                    Assert.AreEqual(bucketName, p.BucketName);
-                    Assert.AreEqual(fileName, p.Key);
-                    Assert.IsNotNull(p.FilePath);
-                    Assert.IsTrue(p.TransferredBytes >= lastTransferredBytes);
+        //     var progressValidator = new TransferProgressValidator<WriteObjectProgressArgs>
+        //     {
+        //         ValidateProgressInterval = true,  // Enable interval validation to ensure events fire
+        //         Validate = (p) =>
+        //         {
+        //             Assert.AreEqual(bucketName, p.BucketName);
+        //             Assert.AreEqual(fileName, p.Key);
+        //             Assert.IsNotNull(p.FilePath);
+        //             Assert.IsTrue(p.TransferredBytes >= lastTransferredBytes);
                     
-                    if (p.IsCompleted)
-                    {
-                        completedEventCount++;
-                        Assert.AreEqual(p.TotalBytes, p.TransferredBytes);
-                    }
-                    else
-                    {
-                        inProgressEventCount++;
-                        Assert.IsTrue(p.TransferredBytes < p.TotalBytes);
-                    }
+        //             if (p.IsCompleted)
+        //             {
+        //                 completedEventCount++;
+        //                 Assert.AreEqual(p.TotalBytes, p.TransferredBytes);
+        //             }
+        //             else
+        //             {
+        //                 inProgressEventCount++;
+        //                 Assert.IsTrue(p.TransferredBytes < p.TotalBytes);
+        //             }
                     
-                    lastTransferredBytes = p.TransferredBytes;
-                }
-            };
+        //             lastTransferredBytes = p.TransferredBytes;
+        //         }
+        //     };
 
-            var transferUtility = new TransferUtility(Client);
-            var request = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                FilePath = downloadedFilePath,
-                Key = fileName
-            };
-            request.WriteObjectProgressEvent += progressValidator.OnProgressEvent;
+        //     var transferUtility = new TransferUtility(Client);
+        //     var request = new TransferUtilityDownloadRequest
+        //     {
+        //         BucketName = bucketName,
+        //         FilePath = downloadedFilePath,
+        //         Key = fileName
+        //     };
+        //     request.WriteObjectProgressEvent += progressValidator.OnProgressEvent;
 
-            // Use DownloadWithResponseAsync to trigger MultipartDownloadCommand
-            var response = await transferUtility.DownloadWithResponseAsync(request);
+        //     // Use DownloadWithResponseAsync to trigger MultipartDownloadCommand
+        //     var response = await transferUtility.DownloadWithResponseAsync(request);
 
-            progressValidator.AssertOnCompletion();
+        //     progressValidator.AssertOnCompletion();
             
-            // Validate that in-progress events actually fired during the download
-            Assert.IsTrue(inProgressEventCount > 0, 
-                $"Expected in-progress events to fire during multipart download, but got {inProgressEventCount}");
-            Assert.AreEqual(1, completedEventCount);
+        //     // Validate that in-progress events actually fired during the download
+        //     Assert.IsTrue(inProgressEventCount > 0, 
+        //         $"Expected in-progress events to fire during multipart download, but got {inProgressEventCount}");
+        //     Assert.AreEqual(1, completedEventCount);
             
-            Assert.IsNotNull(response);
-            UtilityMethods.CompareFiles(originalFilePath, downloadedFilePath);
-        }
+        //     Assert.IsNotNull(response);
+        //     UtilityMethods.CompareFiles(originalFilePath, downloadedFilePath);
+        // }
 
-        [TestMethod]
-        [TestCategory("S3")]
-        public async Task MultipartDownloadInitiatedCompletedEventsTest()
-        {
-            var fileName = UtilityMethods.GenerateName("MultipartDownloadEvents");
-            var originalFilePath = Path.Combine(BasePath, fileName);
-            var downloadedFilePath = originalFilePath + ".dn";
-            long expectedSize = 20 * MEG_SIZE;
+        // [TestMethod]
+        // [TestCategory("S3")]
+        // public async Task MultipartDownloadInitiatedCompletedEventsTest()
+        // {
+        //     var fileName = UtilityMethods.GenerateName("MultipartDownloadEvents");
+        //     var originalFilePath = Path.Combine(BasePath, fileName);
+        //     var downloadedFilePath = originalFilePath + ".dn";
+        //     long expectedSize = 20 * MEG_SIZE;
             
-            // Upload large file
-            UtilityMethods.GenerateFile(originalFilePath, expectedSize);
-            await Client.PutObjectAsync(new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = originalFilePath
-            });
+        //     // Upload large file
+        //     UtilityMethods.GenerateFile(originalFilePath, expectedSize);
+        //     await Client.PutObjectAsync(new PutObjectRequest
+        //     {
+        //         BucketName = bucketName,
+        //         Key = fileName,
+        //         FilePath = originalFilePath
+        //     });
 
-            bool initiatedEventFired = false;
-            bool completedEventFired = false;
+        //     bool initiatedEventFired = false;
+        //     bool completedEventFired = false;
             
-            var transferUtility = new TransferUtility(Client);
-            var request = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                FilePath = downloadedFilePath,
-                Key = fileName
-            };
+        //     var transferUtility = new TransferUtility(Client);
+        //     var request = new TransferUtilityDownloadRequest
+        //     {
+        //         BucketName = bucketName,
+        //         FilePath = downloadedFilePath,
+        //         Key = fileName
+        //     };
             
-            request.DownloadInitiatedEvent += (s, e) =>
-            {
-                Assert.IsFalse(initiatedEventFired, "Initiated event should fire only once");
-                initiatedEventFired = true;
-                Assert.AreEqual(fileName, e.Request.Key);
-            };
+        //     request.DownloadInitiatedEvent += (s, e) =>
+        //     {
+        //         Assert.IsFalse(initiatedEventFired, "Initiated event should fire only once");
+        //         initiatedEventFired = true;
+        //         Assert.AreEqual(fileName, e.Request.Key);
+        //     };
             
-            request.DownloadCompletedEvent += (s, e) =>
-            {
-                Assert.IsFalse(completedEventFired, "Completed event should fire only once");
-                completedEventFired = true;
-                Assert.AreEqual(expectedSize, e.TotalBytes);
-                Assert.AreEqual(expectedSize, e.TransferredBytes);
-            };
+        //     request.DownloadCompletedEvent += (s, e) =>
+        //     {
+        //         Assert.IsFalse(completedEventFired, "Completed event should fire only once");
+        //         completedEventFired = true;
+        //         Assert.AreEqual(expectedSize, e.TotalBytes);
+        //         Assert.AreEqual(expectedSize, e.TransferredBytes);
+        //     };
 
-            var response = await transferUtility.DownloadWithResponseAsync(request);
+        //     var response = await transferUtility.DownloadWithResponseAsync(request);
 
-            Assert.IsTrue(initiatedEventFired, "Initiated event should have fired");
-            Assert.IsTrue(completedEventFired, "Completed event should have fired");
-            Assert.IsNotNull(response);
-        }
+        //     Assert.IsTrue(initiatedEventFired, "Initiated event should have fired");
+        //     Assert.IsTrue(completedEventFired, "Completed event should have fired");
+        //     Assert.IsNotNull(response);
+        // }
 
-        [TestMethod]
-        [TestCategory("S3")]
-        public async Task MultipartDownloadFailedEventTest()
-        {
-            var fileName = UtilityMethods.GenerateName("MultipartDownloadFailed");
-            var downloadedFilePath = Path.Combine(BasePath, fileName + ".dn");
+        // [TestMethod]
+        // [TestCategory("S3")]
+        // public async Task MultipartDownloadFailedEventTest()
+        // {
+        //     var fileName = UtilityMethods.GenerateName("MultipartDownloadFailed");
+        //     var downloadedFilePath = Path.Combine(BasePath, fileName + ".dn");
             
-            bool failedEventFired = false;
+        //     bool failedEventFired = false;
             
-            var transferUtility = new TransferUtility(Client);
-            var request = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                FilePath = downloadedFilePath,
-                Key = "non-existent-key-" + Guid.NewGuid() // Intentionally non-existent
-            };
+        //     var transferUtility = new TransferUtility(Client);
+        //     var request = new TransferUtilityDownloadRequest
+        //     {
+        //         BucketName = bucketName,
+        //         FilePath = downloadedFilePath,
+        //         Key = "non-existent-key-" + Guid.NewGuid() // Intentionally non-existent
+        //     };
             
-            request.DownloadFailedEvent += (s, e) =>
-            {
-                failedEventFired = true;
-                Assert.IsNotNull(e.FilePath);
-            };
+        //     request.DownloadFailedEvent += (s, e) =>
+        //     {
+        //         failedEventFired = true;
+        //         Assert.IsNotNull(e.FilePath);
+        //     };
 
-            try
-            {
-                await transferUtility.DownloadWithResponseAsync(request);
-                Assert.Fail("Expected an exception to be thrown for non-existent key");
-            }
-            catch (AmazonS3Exception)
-            {
-                // Expected exception - the failed event should have been fired
-                Assert.IsTrue(failedEventFired, "Failed event should have fired");
-            }
-        }
+        //     try
+        //     {
+        //         await transferUtility.DownloadWithResponseAsync(request);
+        //         Assert.Fail("Expected an exception to be thrown for non-existent key");
+        //     }
+        //     catch (AmazonS3Exception)
+        //     {
+        //         // Expected exception - the failed event should have been fired
+        //         Assert.IsTrue(failedEventFired, "Failed event should have fired");
+        //     }
+        // }
 
         void Download(string fileName, long size, TransferProgressValidator<WriteObjectProgressArgs> progressValidator)
         {
