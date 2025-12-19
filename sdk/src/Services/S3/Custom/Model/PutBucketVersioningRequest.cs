@@ -94,131 +94,20 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutBucketVersioningRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
-        private ChecksumAlgorithm _checksumAlgorithm;
-        private MfaCodes mfaCodes;
-        private S3BucketVersioningConfig config;
-        private string expectedBucketOwner;
-
-        /// <summary>
-        /// The name of the bucket to be updated.
-        /// </summary>
-        public string BucketName
+        // Custom IsSet method to preserve backwards compatibility
+        bool CustomMfaCodesIsSet()
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
-        }
-
-        // Check to see if Bucket property is set
-        internal bool IsSetBucketName()
-        {
-            return this.bucketName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ChecksumAlgorithm. 
-        /// <para>
-        /// Indicates the algorithm used to create the checksum for the object when you use the
-        /// SDK. This header will not provide any additional functionality if you don't use the
-        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
-        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
-        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
-        /// parameter.
-        /// </para>
-        /// </summary>
-        public ChecksumAlgorithm ChecksumAlgorithm
-        {
-            get { return this._checksumAlgorithm; }
-            set { this._checksumAlgorithm = value; }
-        }
-
-        // Check to see if ChecksumAlgorithm property is set
-        internal bool IsSetChecksumAlgorithm()
-        {
-            return this._checksumAlgorithm != null;
-        }
-
-        /// <summary>
-        /// The MfaCodes Tuple associates the Serial Number and the current Token/Code displayed on the
-        /// Multi-Factor Authentication device associated with your AWS Account. 
-        /// </summary>
-        /// <remarks>
-        /// This is a required property for this request if:<br />
-        /// 1. EnableMfaDelete was configured on the bucket
-        /// containing this object's version.<br />
-        /// 2. You are deleting an object's version
-        /// </remarks>
-        public MfaCodes MfaCodes
-        {
-            get { return this.mfaCodes; }
-            set { this.mfaCodes = value; }
-        }
-
-        /// <summary>
-        /// Checks if the MfaCodes property is set.
-        /// </summary>
-        /// <returns>true if the MfaCodes property is set.</returns>
-        internal bool IsSetMfaCodes()
-        {
-            return (this.mfaCodes != null) &&
+            return (this._mfaCodes != null) &&
                 (!System.String.IsNullOrEmpty(MfaCodes.SerialNumber)) &&
                 (!System.String.IsNullOrEmpty(MfaCodes.AuthenticationValue));
         }
-
-        /// <summary>
-        /// The versioning configuration to apply to the bucket.
-        /// </summary>
-        /// <remarks>
-        /// Once Versioning has been "Enabled" on a bucket, it can be "Suspended" 
-        /// but cannot be switched "Off". If EnableMfaDelete is set,
-        /// the MfaCodes property needs to contain the Serial of and current Token
-        /// displayed on the MFA device.
-        /// </remarks>
-        public S3BucketVersioningConfig VersioningConfig
+        // Custom Getter to preserve backwards compatibility
+        S3BucketVersioningConfig CustomVersioningConfigGetter()
         {
-            get 
-            {
-                if (this.config == null)
-                    this.config = new S3BucketVersioningConfig();
+            if (this._versioningConfig == null)
+                this._versioningConfig = new S3BucketVersioningConfig();
 
-                return this.config; 
-            }
-            set { this.config = value; }
-        }
-
-        // Check to see if VersioningConfiguration property is set
-        internal bool IsSetVersioningConfiguration()
-        {
-            return this.config != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ExpectedBucketOwner. 
-        /// <para>
-        /// The account ID of the expected bucket owner. If the account ID that you provide does
-        /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
-        /// </para>
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return this._versioningConfig;
         }
     }
 }

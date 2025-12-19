@@ -499,6 +499,18 @@
             "modify": [
                 {
                     "VersioningConfiguration": { "emitPropertyName": "VersioningConfig" }
+                },
+                {
+                    "MFA": {"emitPropertyName":"MfaCodes"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "VersioningConfig":{"injectXmlPropertyGetter": ["get {return CustomVersioningConfigGetter();}"]}
+                },
+                {
+                    "MfaCodes":{"injectXmlIsSet":["return CustomMfaCodesIsSet();"]}
                 }
             ]
         },
@@ -1827,6 +1839,16 @@
                     "LoggingEnabled":{"emitPropertyName":"LoggingConfig"}
                 }
             ]
+        },
+        "S3BucketVersioningConfig":{
+            "modify":[
+                {
+                    "MFADelete":{"emitPropertyName": "EnableMfaDelete"}
+                },
+                {
+                    "Status":{"injectXmlPrivateMemberAssignment":["private VersionStatus _status = \"Off\";"], "injectXmlIsSet": ["return this._status != null && this._status != VersionStatus.Off;"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1999,6 +2021,12 @@
         },
         "TargetGrant":{
             "renameShape": "S3Grant"
+        },
+        "VersioningConfiguration":{
+            "renameShape": "S3BucketVersioningConfig"
+        },
+        "BucketVersioningStatus":{
+            "renameShape": "VersionStatus"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -2285,6 +2313,16 @@
                 "Type": "MfaCodes",
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "PutBucketVersioningRequest":{
+            "MfaCodes":{
+                "Type": "MfaCodes"
+            }
+        },
+        "S3BucketVersioningConfig":{
+            "EnableMfaDelete":{
+                "Type":"bool?"
             }
         }
     },
