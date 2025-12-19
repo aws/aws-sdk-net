@@ -73,7 +73,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("PutJobTaggingRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetTags()) 
                 {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 

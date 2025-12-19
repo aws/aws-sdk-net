@@ -71,7 +71,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("CollectionVersion", StringUtils.FromLong(publicRequest.CollectionVersion.Value));
 
                 var publicRequestChanges = publicRequest.Changes;
-                if (publicRequestChanges != null && (publicRequestChanges.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetChanges()) 
                 {
                     xmlWriter.WriteStartElement("Changes");
                     foreach (var publicRequestChangesValue in publicRequestChanges) 
@@ -84,7 +84,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         if(publicRequestChangesValue.IsSetAction())
                             xmlWriter.WriteElementString("Action", StringUtils.FromString(publicRequestChangesValue.Action));
                         var publicRequestChangesValueCidrList = publicRequestChangesValue.CidrList;
-                        if (publicRequestChangesValueCidrList != null && (publicRequestChangesValueCidrList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequestChangesValue.IsSetCidrList()) 
                         {
                             xmlWriter.WriteStartElement("CidrList");
                             foreach (var publicRequestChangesValueCidrListValue in publicRequestChangesValueCidrList) 

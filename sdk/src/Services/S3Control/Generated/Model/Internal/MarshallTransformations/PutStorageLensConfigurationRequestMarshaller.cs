@@ -183,7 +183,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("SelectionCriteria");
                                 var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude = publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.Exclude;
-                                if (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude != null && (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.IsSetExclude()) 
                                 {
                                     xmlWriter.WriteStartElement("Exclude");
                                     foreach (var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExcludeValue in publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude) 
@@ -195,7 +195,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude = publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.Include;
-                                if (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude != null && (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.IsSetInclude()) 
                                 {
                                     xmlWriter.WriteStartElement("Include");
                                     foreach (var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaIncludeValue in publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude) 
@@ -291,7 +291,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Exclude");
                         var publicRequestStorageLensConfigurationExcludeBuckets = publicRequest.StorageLensConfiguration.Exclude.Buckets;
-                        if (publicRequestStorageLensConfigurationExcludeBuckets != null && (publicRequestStorageLensConfigurationExcludeBuckets.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StorageLensConfiguration.Exclude.IsSetBuckets()) 
                         {
                             xmlWriter.WriteStartElement("Buckets");
                             foreach (var publicRequestStorageLensConfigurationExcludeBucketsValue in publicRequestStorageLensConfigurationExcludeBuckets) 
@@ -303,7 +303,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         var publicRequestStorageLensConfigurationExcludeRegions = publicRequest.StorageLensConfiguration.Exclude.Regions;
-                        if (publicRequestStorageLensConfigurationExcludeRegions != null && (publicRequestStorageLensConfigurationExcludeRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StorageLensConfiguration.Exclude.IsSetRegions()) 
                         {
                             xmlWriter.WriteStartElement("Regions");
                             foreach (var publicRequestStorageLensConfigurationExcludeRegionsValue in publicRequestStorageLensConfigurationExcludeRegions) 
@@ -383,7 +383,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Include");
                         var publicRequestStorageLensConfigurationIncludeBuckets = publicRequest.StorageLensConfiguration.Include.Buckets;
-                        if (publicRequestStorageLensConfigurationIncludeBuckets != null && (publicRequestStorageLensConfigurationIncludeBuckets.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StorageLensConfiguration.Include.IsSetBuckets()) 
                         {
                             xmlWriter.WriteStartElement("Buckets");
                             foreach (var publicRequestStorageLensConfigurationIncludeBucketsValue in publicRequestStorageLensConfigurationIncludeBuckets) 
@@ -395,7 +395,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         var publicRequestStorageLensConfigurationIncludeRegions = publicRequest.StorageLensConfiguration.Include.Regions;
-                        if (publicRequestStorageLensConfigurationIncludeRegions != null && (publicRequestStorageLensConfigurationIncludeRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StorageLensConfiguration.Include.IsSetRegions()) 
                         {
                             xmlWriter.WriteStartElement("Regions");
                             foreach (var publicRequestStorageLensConfigurationIncludeRegionsValue in publicRequestStorageLensConfigurationIncludeRegions) 
@@ -417,7 +417,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetTags()) 
                 {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 

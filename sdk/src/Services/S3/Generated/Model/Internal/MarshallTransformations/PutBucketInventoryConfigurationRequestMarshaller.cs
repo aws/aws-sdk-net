@@ -121,7 +121,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequest.InventoryConfiguration.InventoryId));
 
                     var publicRequestInventoryConfigurationInventoryOptionalFields = publicRequest.InventoryConfiguration.InventoryOptionalFields;
-                    if (publicRequestInventoryConfigurationInventoryOptionalFields != null && (publicRequestInventoryConfigurationInventoryOptionalFields.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.InventoryConfiguration.IsSetInventoryOptionalFields()) 
                     {
                         xmlWriter.WriteStartElement("OptionalFields");
                         foreach (var publicRequestInventoryConfigurationInventoryOptionalFieldsValue in publicRequestInventoryConfigurationInventoryOptionalFields) 

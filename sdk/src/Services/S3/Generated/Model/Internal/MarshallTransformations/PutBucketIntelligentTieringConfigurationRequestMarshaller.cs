@@ -86,7 +86,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.IntelligentTieringConfiguration.Status));
 
                     var publicRequestIntelligentTieringConfigurationTierings = publicRequest.IntelligentTieringConfiguration.Tierings;
-                    if (publicRequestIntelligentTieringConfigurationTierings != null && (publicRequestIntelligentTieringConfigurationTierings.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IntelligentTieringConfiguration.IsSetTierings()) 
                     {
                         foreach (var publicRequestIntelligentTieringConfigurationTieringsValue in publicRequestIntelligentTieringConfigurationTierings) 
                         {

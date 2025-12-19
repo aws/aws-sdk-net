@@ -78,7 +78,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Role", StringUtils.FromString(publicRequest.ReplicationConfiguration.Role));
 
                     var publicRequestReplicationConfigurationRules = publicRequest.ReplicationConfiguration.Rules;
-                    if (publicRequestReplicationConfigurationRules != null && (publicRequestReplicationConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.ReplicationConfiguration.IsSetRules()) 
                     {
                         xmlWriter.WriteStartElement("Rules");
                         foreach (var publicRequestReplicationConfigurationRulesValue in publicRequestReplicationConfigurationRules) 
@@ -164,7 +164,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     if(publicRequestReplicationConfigurationRulesValue.Filter.And.IsSetPrefix())
                                         xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Filter.And.Prefix));
                                     var publicRequestReplicationConfigurationRulesValueFilterAndTags = publicRequestReplicationConfigurationRulesValue.Filter.And.Tags;
-                                    if (publicRequestReplicationConfigurationRulesValueFilterAndTags != null && (publicRequestReplicationConfigurationRulesValueFilterAndTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    if (publicRequestReplicationConfigurationRulesValue.Filter.And.IsSetTags()) 
                                     {
                                         xmlWriter.WriteStartElement("Tags");
                                         foreach (var publicRequestReplicationConfigurationRulesValueFilterAndTagsValue in publicRequestReplicationConfigurationRulesValueFilterAndTags) 

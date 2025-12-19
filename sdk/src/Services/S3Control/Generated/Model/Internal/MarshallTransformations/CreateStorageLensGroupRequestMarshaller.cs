@@ -79,7 +79,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("And");
                             var publicRequestStorageLensGroupFilterAndMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.And.MatchAnyPrefix;
-                            if (publicRequestStorageLensGroupFilterAndMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterAndMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.StorageLensGroup.Filter.And.IsSetMatchAnyPrefix()) 
                             {
                                 xmlWriter.WriteStartElement("MatchAnyPrefix");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnyPrefixValue in publicRequestStorageLensGroupFilterAndMatchAnyPrefix) 
@@ -91,7 +91,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestStorageLensGroupFilterAndMatchAnySuffix = publicRequest.StorageLensGroup.Filter.And.MatchAnySuffix;
-                            if (publicRequestStorageLensGroupFilterAndMatchAnySuffix != null && (publicRequestStorageLensGroupFilterAndMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.StorageLensGroup.Filter.And.IsSetMatchAnySuffix()) 
                             {
                                 xmlWriter.WriteStartElement("MatchAnySuffix");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnySuffixValue in publicRequestStorageLensGroupFilterAndMatchAnySuffix) 
@@ -103,7 +103,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestStorageLensGroupFilterAndMatchAnyTag = publicRequest.StorageLensGroup.Filter.And.MatchAnyTag;
-                            if (publicRequestStorageLensGroupFilterAndMatchAnyTag != null && (publicRequestStorageLensGroupFilterAndMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.StorageLensGroup.Filter.And.IsSetMatchAnyTag()) 
                             {
                                 xmlWriter.WriteStartElement("MatchAnyTag");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnyTagValue in publicRequestStorageLensGroupFilterAndMatchAnyTag) 
@@ -141,7 +141,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }
                         var publicRequestStorageLensGroupFilterMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.MatchAnyPrefix;
-                        if (publicRequestStorageLensGroupFilterMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StorageLensGroup.Filter.IsSetMatchAnyPrefix()) 
                         {
                             xmlWriter.WriteStartElement("MatchAnyPrefix");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnyPrefixValue in publicRequestStorageLensGroupFilterMatchAnyPrefix) 
@@ -153,7 +153,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         var publicRequestStorageLensGroupFilterMatchAnySuffix = publicRequest.StorageLensGroup.Filter.MatchAnySuffix;
-                        if (publicRequestStorageLensGroupFilterMatchAnySuffix != null && (publicRequestStorageLensGroupFilterMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StorageLensGroup.Filter.IsSetMatchAnySuffix()) 
                         {
                             xmlWriter.WriteStartElement("MatchAnySuffix");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnySuffixValue in publicRequestStorageLensGroupFilterMatchAnySuffix) 
@@ -165,7 +165,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         var publicRequestStorageLensGroupFilterMatchAnyTag = publicRequest.StorageLensGroup.Filter.MatchAnyTag;
-                        if (publicRequestStorageLensGroupFilterMatchAnyTag != null && (publicRequestStorageLensGroupFilterMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.StorageLensGroup.Filter.IsSetMatchAnyTag()) 
                         {
                             xmlWriter.WriteStartElement("MatchAnyTag");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnyTagValue in publicRequestStorageLensGroupFilterMatchAnyTag) 
@@ -204,7 +204,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("Or");
                             var publicRequestStorageLensGroupFilterOrMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.Or.MatchAnyPrefix;
-                            if (publicRequestStorageLensGroupFilterOrMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterOrMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.StorageLensGroup.Filter.Or.IsSetMatchAnyPrefix()) 
                             {
                                 xmlWriter.WriteStartElement("MatchAnyPrefix");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnyPrefixValue in publicRequestStorageLensGroupFilterOrMatchAnyPrefix) 
@@ -216,7 +216,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestStorageLensGroupFilterOrMatchAnySuffix = publicRequest.StorageLensGroup.Filter.Or.MatchAnySuffix;
-                            if (publicRequestStorageLensGroupFilterOrMatchAnySuffix != null && (publicRequestStorageLensGroupFilterOrMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.StorageLensGroup.Filter.Or.IsSetMatchAnySuffix()) 
                             {
                                 xmlWriter.WriteStartElement("MatchAnySuffix");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnySuffixValue in publicRequestStorageLensGroupFilterOrMatchAnySuffix) 
@@ -228,7 +228,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestStorageLensGroupFilterOrMatchAnyTag = publicRequest.StorageLensGroup.Filter.Or.MatchAnyTag;
-                            if (publicRequestStorageLensGroupFilterOrMatchAnyTag != null && (publicRequestStorageLensGroupFilterOrMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.StorageLensGroup.Filter.Or.IsSetMatchAnyTag()) 
                             {
                                 xmlWriter.WriteStartElement("MatchAnyTag");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnyTagValue in publicRequestStorageLensGroupFilterOrMatchAnyTag) 
@@ -274,7 +274,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetTags()) 
                 {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 

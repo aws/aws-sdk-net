@@ -114,7 +114,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("AccessControlPolicy", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestAccessControlPolicyGrants = publicRequest.AccessControlPolicy.Grants;
-                    if (publicRequestAccessControlPolicyGrants != null && (publicRequestAccessControlPolicyGrants.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.AccessControlPolicy.IsSetGrants()) 
                     {
                         xmlWriter.WriteStartElement("AccessControlList");
                         foreach (var publicRequestAccessControlPolicyGrantsValue in publicRequestAccessControlPolicyGrants) 

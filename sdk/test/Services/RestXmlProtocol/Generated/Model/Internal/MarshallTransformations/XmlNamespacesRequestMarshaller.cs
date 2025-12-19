@@ -70,7 +70,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     if(publicRequest.Nested.IsSetFoo())
                         xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Nested.Foo));
                     var publicRequestNestedValues = publicRequest.Nested.Values;
-                    if (publicRequestNestedValues != null && (publicRequestNestedValues.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Nested.IsSetValues()) 
                     {
                         xmlWriter.WriteStartElement("values", "http://qux.com");
                         foreach (var publicRequestNestedValuesValue in publicRequestNestedValues) 

@@ -98,7 +98,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("S3PrefixType", StringUtils.FromString(publicRequest.S3PrefixType));
 
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetTags()) 
                 {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 

@@ -71,7 +71,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("ChangeTagsForResourceRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 var publicRequestAddTags = publicRequest.AddTags;
-                if (publicRequestAddTags != null && (publicRequestAddTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetAddTags()) 
                 {
                     xmlWriter.WriteStartElement("AddTags");
                     foreach (var publicRequestAddTagsValue in publicRequestAddTags) 
@@ -89,7 +89,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestRemoveTagKeys = publicRequest.RemoveTagKeys;
-                if (publicRequestRemoveTagKeys != null && (publicRequestRemoveTagKeys.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetRemoveTagKeys()) 
                 {
                     xmlWriter.WriteStartElement("RemoveTagKeys");
                     foreach (var publicRequestRemoveTagKeysValue in publicRequestRemoveTagKeys) 

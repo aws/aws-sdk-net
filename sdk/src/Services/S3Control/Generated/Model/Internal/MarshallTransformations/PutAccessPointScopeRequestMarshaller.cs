@@ -76,7 +76,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Scope");
                     var publicRequestScopePermissions = publicRequest.Scope.Permissions;
-                    if (publicRequestScopePermissions != null && (publicRequestScopePermissions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Scope.IsSetPermissions()) 
                     {
                         xmlWriter.WriteStartElement("Permissions");
                         foreach (var publicRequestScopePermissionsValue in publicRequestScopePermissions) 
@@ -88,7 +88,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     var publicRequestScopePrefixes = publicRequest.Scope.Prefixes;
-                    if (publicRequestScopePrefixes != null && (publicRequestScopePrefixes.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Scope.IsSetPrefixes()) 
                     {
                         xmlWriter.WriteStartElement("Prefixes");
                         foreach (var publicRequestScopePrefixesValue in publicRequestScopePrefixes) 

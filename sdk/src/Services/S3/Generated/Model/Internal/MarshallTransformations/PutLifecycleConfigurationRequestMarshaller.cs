@@ -84,7 +84,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("LifecycleConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestConfigurationRules = publicRequest.Configuration.Rules;
-                    if (publicRequestConfigurationRules != null && (publicRequestConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Configuration.IsSetRules()) 
                     {
                         foreach (var publicRequestConfigurationRulesValue in publicRequestConfigurationRules) 
                         {
@@ -122,7 +122,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();
                             }
                             var publicRequestConfigurationRulesValueNoncurrentVersionTransitions = publicRequestConfigurationRulesValue.NoncurrentVersionTransitions;
-                            if (publicRequestConfigurationRulesValueNoncurrentVersionTransitions != null && (publicRequestConfigurationRulesValueNoncurrentVersionTransitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestConfigurationRulesValue.IsSetNoncurrentVersionTransitions()) 
                             {
                                 foreach (var publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue in publicRequestConfigurationRulesValueNoncurrentVersionTransitions) 
                                 {
@@ -143,7 +143,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Prefix));
                             CustomStatusMarshalling(xmlWriter, publicRequestConfigurationRulesValue);
                             var publicRequestConfigurationRulesValueTransitions = publicRequestConfigurationRulesValue.Transitions;
-                            if (publicRequestConfigurationRulesValueTransitions != null && (publicRequestConfigurationRulesValueTransitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestConfigurationRulesValue.IsSetTransitions()) 
                             {
                                 foreach (var publicRequestConfigurationRulesValueTransitionsValue in publicRequestConfigurationRulesValueTransitions) 
                                 {

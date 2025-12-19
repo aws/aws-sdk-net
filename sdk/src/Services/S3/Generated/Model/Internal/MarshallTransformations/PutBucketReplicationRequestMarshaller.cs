@@ -92,7 +92,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Role", StringUtils.FromString(publicRequest.Configuration.Role));
 
                     var publicRequestConfigurationRules = publicRequest.Configuration.Rules;
-                    if (publicRequestConfigurationRules != null && (publicRequestConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Configuration.IsSetRules()) 
                     {
                         foreach (var publicRequestConfigurationRulesValue in publicRequestConfigurationRules) 
                         {
@@ -175,7 +175,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     if(publicRequestConfigurationRulesValue.Filter.And.IsSetPrefix())
                                         xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Prefix));
                                     var publicRequestConfigurationRulesValueFilterAndTags = publicRequestConfigurationRulesValue.Filter.And.Tags;
-                                    if (publicRequestConfigurationRulesValueFilterAndTags != null && (publicRequestConfigurationRulesValueFilterAndTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    if (publicRequestConfigurationRulesValue.Filter.And.IsSetTags()) 
                                     {
                                         foreach (var publicRequestConfigurationRulesValueFilterAndTagsValue in publicRequestConfigurationRulesValueFilterAndTags) 
                                         {

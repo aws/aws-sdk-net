@@ -76,7 +76,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Configuration");
                     var publicRequestConfigurationAllowedFeatures = publicRequest.Configuration.AllowedFeatures;
-                    if (publicRequestConfigurationAllowedFeatures != null && (publicRequestConfigurationAllowedFeatures.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Configuration.IsSetAllowedFeatures()) 
                     {
                         xmlWriter.WriteStartElement("AllowedFeatures");
                         foreach (var publicRequestConfigurationAllowedFeaturesValue in publicRequestConfigurationAllowedFeatures) 
@@ -92,7 +92,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     if(publicRequest.Configuration.IsSetSupportingAccessPoint())
                         xmlWriter.WriteElementString("SupportingAccessPoint", StringUtils.FromString(publicRequest.Configuration.SupportingAccessPoint));
                     var publicRequestConfigurationTransformationConfigurations = publicRequest.Configuration.TransformationConfigurations;
-                    if (publicRequestConfigurationTransformationConfigurations != null && (publicRequestConfigurationTransformationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Configuration.IsSetTransformationConfigurations()) 
                     {
                         xmlWriter.WriteStartElement("TransformationConfigurations");
                         foreach (var publicRequestConfigurationTransformationConfigurationsValue in publicRequestConfigurationTransformationConfigurations) 
@@ -101,7 +101,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("TransformationConfiguration");
                             var publicRequestConfigurationTransformationConfigurationsValueActions = publicRequestConfigurationTransformationConfigurationsValue.Actions;
-                            if (publicRequestConfigurationTransformationConfigurationsValueActions != null && (publicRequestConfigurationTransformationConfigurationsValueActions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestConfigurationTransformationConfigurationsValue.IsSetActions()) 
                             {
                                 xmlWriter.WriteStartElement("Actions");
                                 foreach (var publicRequestConfigurationTransformationConfigurationsValueActionsValue in publicRequestConfigurationTransformationConfigurationsValueActions) 

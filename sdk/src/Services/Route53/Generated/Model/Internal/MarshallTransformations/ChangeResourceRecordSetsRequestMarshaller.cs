@@ -73,7 +73,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if(publicRequest.ChangeBatch.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.ChangeBatch.Comment));
                     var publicRequestChangeBatchChanges = publicRequest.ChangeBatch.Changes;
-                    if (publicRequestChangeBatchChanges != null && (publicRequestChangeBatchChanges.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.ChangeBatch.IsSetChanges()) 
                     {
                         xmlWriter.WriteStartElement("Changes");
                         foreach (var publicRequestChangeBatchChangesValue in publicRequestChangeBatchChanges) 
@@ -114,7 +114,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetTTL())
                                     xmlWriter.WriteElementString("TTL", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.TTL.Value));
                                 var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords = publicRequestChangeBatchChangesValue.ResourceRecordSet.ResourceRecords;
-                                if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords != null && (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetResourceRecords()) 
                                 {
                                     xmlWriter.WriteStartElement("ResourceRecords");
                                     foreach (var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue in publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords) 

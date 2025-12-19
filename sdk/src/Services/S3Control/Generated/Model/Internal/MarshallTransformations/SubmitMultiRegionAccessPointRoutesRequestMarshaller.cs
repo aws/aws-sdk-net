@@ -73,7 +73,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("SubmitMultiRegionAccessPointRoutesRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 var publicRequestRouteUpdates = publicRequest.RouteUpdates;
-                if (publicRequestRouteUpdates != null && (publicRequestRouteUpdates.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetRouteUpdates()) 
                 {
                     xmlWriter.WriteStartElement("RouteUpdates");
                     foreach (var publicRequestRouteUpdatesValue in publicRequestRouteUpdates) 

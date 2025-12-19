@@ -84,7 +84,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("ServerSideEncryptionConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRules = publicRequest.ServerSideEncryptionConfiguration.ServerSideEncryptionRules;
-                    if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRules != null && (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.ServerSideEncryptionConfiguration.IsSetServerSideEncryptionRules()) 
                     {
                         foreach (var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue in publicRequestServerSideEncryptionConfigurationServerSideEncryptionRules) 
                         {
@@ -95,7 +95,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("BlockedEncryptionTypes");
                                 var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType = publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes.EncryptionType;
-                                if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType != null && (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes.IsSetEncryptionType()) 
                                 {
                                     foreach (var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionTypeValue in publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType) 
                                     {

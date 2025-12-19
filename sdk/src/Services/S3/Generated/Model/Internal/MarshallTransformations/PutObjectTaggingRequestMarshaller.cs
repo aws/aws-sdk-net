@@ -95,7 +95,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Tagging", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestTaggingTagSet = publicRequest.Tagging.TagSet;
-                    if (publicRequestTaggingTagSet != null && (publicRequestTaggingTagSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Tagging.IsSetTagSet()) 
                     {
                         xmlWriter.WriteStartElement("TagSet");
                         foreach (var publicRequestTaggingTagSetValue in publicRequestTaggingTagSet) 

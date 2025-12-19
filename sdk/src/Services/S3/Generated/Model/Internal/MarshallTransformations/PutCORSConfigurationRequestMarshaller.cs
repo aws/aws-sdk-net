@@ -84,7 +84,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CORSConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestConfigurationRules = publicRequest.Configuration.Rules;
-                    if (publicRequestConfigurationRules != null && (publicRequestConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Configuration.IsSetRules()) 
                     {
                         foreach (var publicRequestConfigurationRulesValue in publicRequestConfigurationRules) 
                         {
@@ -92,7 +92,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("CORSRule");
                             var publicRequestConfigurationRulesValueAllowedHeaders = publicRequestConfigurationRulesValue.AllowedHeaders;
-                            if (publicRequestConfigurationRulesValueAllowedHeaders != null && (publicRequestConfigurationRulesValueAllowedHeaders.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestConfigurationRulesValue.IsSetAllowedHeaders()) 
                             {
                                 foreach (var publicRequestConfigurationRulesValueAllowedHeadersValue in publicRequestConfigurationRulesValueAllowedHeaders) 
                                 {
@@ -102,7 +102,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 }            
                             }
                             var publicRequestConfigurationRulesValueAllowedMethods = publicRequestConfigurationRulesValue.AllowedMethods;
-                            if (publicRequestConfigurationRulesValueAllowedMethods != null && (publicRequestConfigurationRulesValueAllowedMethods.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestConfigurationRulesValue.IsSetAllowedMethods()) 
                             {
                                 foreach (var publicRequestConfigurationRulesValueAllowedMethodsValue in publicRequestConfigurationRulesValueAllowedMethods) 
                                 {
@@ -112,7 +112,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 }            
                             }
                             var publicRequestConfigurationRulesValueAllowedOrigins = publicRequestConfigurationRulesValue.AllowedOrigins;
-                            if (publicRequestConfigurationRulesValueAllowedOrigins != null && (publicRequestConfigurationRulesValueAllowedOrigins.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestConfigurationRulesValue.IsSetAllowedOrigins()) 
                             {
                                 foreach (var publicRequestConfigurationRulesValueAllowedOriginsValue in publicRequestConfigurationRulesValueAllowedOrigins) 
                                 {
@@ -122,7 +122,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 }            
                             }
                             var publicRequestConfigurationRulesValueExposeHeaders = publicRequestConfigurationRulesValue.ExposeHeaders;
-                            if (publicRequestConfigurationRulesValueExposeHeaders != null && (publicRequestConfigurationRulesValueExposeHeaders.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestConfigurationRulesValue.IsSetExposeHeaders()) 
                             {
                                 foreach (var publicRequestConfigurationRulesValueExposeHeadersValue in publicRequestConfigurationRulesValueExposeHeaders) 
                                 {

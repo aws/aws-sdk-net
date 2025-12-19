@@ -75,7 +75,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("LifecycleConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     var publicRequestLifecycleConfigurationRules = publicRequest.LifecycleConfiguration.Rules;
-                    if (publicRequestLifecycleConfigurationRules != null && (publicRequestLifecycleConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.LifecycleConfiguration.IsSetRules()) 
                     {
                         xmlWriter.WriteStartElement("Rules");
                         foreach (var publicRequestLifecycleConfigurationRulesValue in publicRequestLifecycleConfigurationRules) 
@@ -114,7 +114,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetPrefix())
                                         xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.And.Prefix));
                                     var publicRequestLifecycleConfigurationRulesValueFilterAndTags = publicRequestLifecycleConfigurationRulesValue.Filter.And.Tags;
-                                    if (publicRequestLifecycleConfigurationRulesValueFilterAndTags != null && (publicRequestLifecycleConfigurationRulesValueFilterAndTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    if (publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetTags()) 
                                     {
                                         xmlWriter.WriteStartElement("Tags");
                                         foreach (var publicRequestLifecycleConfigurationRulesValueFilterAndTagsValue in publicRequestLifecycleConfigurationRulesValueFilterAndTags) 
@@ -162,7 +162,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();
                             }
                             var publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions = publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionTransitions;
-                            if (publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions != null && (publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestLifecycleConfigurationRulesValue.IsSetNoncurrentVersionTransitions()) 
                             {
                                 xmlWriter.WriteStartElement("NoncurrentVersionTransitions");
                                 foreach (var publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue in publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions) 
@@ -182,7 +182,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             if(publicRequestLifecycleConfigurationRulesValue.IsSetStatus())
                                 xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Status));
                             var publicRequestLifecycleConfigurationRulesValueTransitions = publicRequestLifecycleConfigurationRulesValue.Transitions;
-                            if (publicRequestLifecycleConfigurationRulesValueTransitions != null && (publicRequestLifecycleConfigurationRulesValueTransitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestLifecycleConfigurationRulesValue.IsSetTransitions()) 
                             {
                                 xmlWriter.WriteStartElement("Transitions");
                                 foreach (var publicRequestLifecycleConfigurationRulesValueTransitionsValue in publicRequestLifecycleConfigurationRulesValueTransitions) 

@@ -98,7 +98,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Spec");
                         var publicRequestManifestSpecFields = publicRequest.Manifest.Spec.Fields;
-                        if (publicRequestManifestSpecFields != null && (publicRequestManifestSpecFields.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.Manifest.Spec.IsSetFields()) 
                         {
                             xmlWriter.WriteStartElement("Fields");
                             foreach (var publicRequestManifestSpecFieldsValue in publicRequestManifestSpecFields) 
@@ -138,7 +138,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("KeyNameConstraint");
                                 var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefix = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.MatchAnyPrefix;
-                                if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefix != null && (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.IsSetMatchAnyPrefix()) 
                                 {
                                     xmlWriter.WriteStartElement("MatchAnyPrefix");
                                     foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefixValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefix) 
@@ -150,7 +150,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstring = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.MatchAnySubstring;
-                                if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstring != null && (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstring.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.IsSetMatchAnySubstring()) 
                                 {
                                     xmlWriter.WriteStartElement("MatchAnySubstring");
                                     foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstringValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstring) 
@@ -162,7 +162,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffix = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.MatchAnySuffix;
-                                if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffix != null && (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.IsSetMatchAnySuffix()) 
                                 {
                                     xmlWriter.WriteStartElement("MatchAnySuffix");
                                     foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffixValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffix) 
@@ -176,7 +176,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();
                             }
                             var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryption = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.MatchAnyObjectEncryption;
-                            if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryption != null && (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryption.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetMatchAnyObjectEncryption()) 
                             {
                                 xmlWriter.WriteStartElement("MatchAnyObjectEncryption");
                                 foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryption) 
@@ -221,7 +221,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.MatchAnyStorageClass;
-                            if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass != null && (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetMatchAnyStorageClass()) 
                             {
                                 xmlWriter.WriteStartElement("MatchAnyStorageClass");
                                 foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClassValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass) 
@@ -233,7 +233,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectReplicationStatuses;
-                            if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses != null && (publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetObjectReplicationStatuses()) 
                             {
                                 xmlWriter.WriteStartElement("ObjectReplicationStatuses");
                                 foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatusesValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses) 
@@ -344,7 +344,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("AccessControlList");
                                 var publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrants = publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.AccessControlList.Grants;
-                                if (publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrants != null && (publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrants.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                if (publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.AccessControlList.IsSetGrants()) 
                                 {
                                     xmlWriter.WriteStartElement("Grants");
                                     foreach (var publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue in publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrants) 
@@ -391,7 +391,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("S3PutObjectCopy");
                         var publicRequestOperationS3PutObjectCopyAccessControlGrants = publicRequest.Operation.S3PutObjectCopy.AccessControlGrants;
-                        if (publicRequestOperationS3PutObjectCopyAccessControlGrants != null && (publicRequestOperationS3PutObjectCopyAccessControlGrants.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.Operation.S3PutObjectCopy.IsSetAccessControlGrants()) 
                         {
                             xmlWriter.WriteStartElement("AccessControlGrants");
                             foreach (var publicRequestOperationS3PutObjectCopyAccessControlGrantsValue in publicRequestOperationS3PutObjectCopyAccessControlGrants) 
@@ -466,7 +466,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }
                         var publicRequestOperationS3PutObjectCopyNewObjectTagging = publicRequest.Operation.S3PutObjectCopy.NewObjectTagging;
-                        if (publicRequestOperationS3PutObjectCopyNewObjectTagging != null && (publicRequestOperationS3PutObjectCopyNewObjectTagging.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.Operation.S3PutObjectCopy.IsSetNewObjectTagging()) 
                         {
                             xmlWriter.WriteStartElement("NewObjectTagging");
                             foreach (var publicRequestOperationS3PutObjectCopyNewObjectTaggingValue in publicRequestOperationS3PutObjectCopyNewObjectTagging) 
@@ -537,7 +537,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("S3PutObjectTagging");
                         var publicRequestOperationS3PutObjectTaggingTagSet = publicRequest.Operation.S3PutObjectTagging.TagSet;
-                        if (publicRequestOperationS3PutObjectTaggingTagSet != null && (publicRequestOperationS3PutObjectTaggingTagSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.Operation.S3PutObjectTagging.IsSetTagSet()) 
                         {
                             xmlWriter.WriteStartElement("TagSet");
                             foreach (var publicRequestOperationS3PutObjectTaggingTagSetValue in publicRequestOperationS3PutObjectTaggingTagSet) 
@@ -587,7 +587,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
 
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetTags()) 
                 {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 

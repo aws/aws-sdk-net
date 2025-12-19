@@ -82,7 +82,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     var publicRequestLambdaFunctionConfigurations = publicRequest.LambdaFunctionConfigurations;
-                    if (publicRequestLambdaFunctionConfigurations != null && (publicRequestLambdaFunctionConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IsSetLambdaFunctionConfigurations()) 
                     {
                         foreach (var publicRequestLambdaFunctionConfigurationsValue in publicRequestLambdaFunctionConfigurations) 
                         {
@@ -90,7 +90,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("CloudFunctionConfiguration");
                             var publicRequestLambdaFunctionConfigurationsValueEvents = publicRequestLambdaFunctionConfigurationsValue.Events;
-                            if (publicRequestLambdaFunctionConfigurationsValueEvents != null && (publicRequestLambdaFunctionConfigurationsValueEvents.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestLambdaFunctionConfigurationsValue.IsSetEvents()) 
                             {
                                 foreach (var publicRequestLambdaFunctionConfigurationsValueEventsValue in publicRequestLambdaFunctionConfigurationsValueEvents) 
                                 {
@@ -106,7 +106,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("S3Key");
                                     var publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestLambdaFunctionConfigurationsValue.Filter.S3KeyFilter.FilterRules;
-                                    if (publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules != null && (publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    if (publicRequestLambdaFunctionConfigurationsValue.Filter.S3KeyFilter.IsSetFilterRules()) 
                                     {
                                         foreach (var publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules) 
                                         {
@@ -132,7 +132,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }            
                     }
                     var publicRequestQueueConfigurations = publicRequest.QueueConfigurations;
-                    if (publicRequestQueueConfigurations != null && (publicRequestQueueConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IsSetQueueConfigurations()) 
                     {
                         foreach (var publicRequestQueueConfigurationsValue in publicRequestQueueConfigurations) 
                         {
@@ -140,7 +140,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("QueueConfiguration");
                             var publicRequestQueueConfigurationsValueEvents = publicRequestQueueConfigurationsValue.Events;
-                            if (publicRequestQueueConfigurationsValueEvents != null && (publicRequestQueueConfigurationsValueEvents.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestQueueConfigurationsValue.IsSetEvents()) 
                             {
                                 foreach (var publicRequestQueueConfigurationsValueEventsValue in publicRequestQueueConfigurationsValueEvents) 
                                 {
@@ -156,7 +156,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("S3Key");
                                     var publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestQueueConfigurationsValue.Filter.S3KeyFilter.FilterRules;
-                                    if (publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules != null && (publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    if (publicRequestQueueConfigurationsValue.Filter.S3KeyFilter.IsSetFilterRules()) 
                                     {
                                         foreach (var publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules) 
                                         {
@@ -182,7 +182,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }            
                     }
                     var publicRequestTopicConfigurations = publicRequest.TopicConfigurations;
-                    if (publicRequestTopicConfigurations != null && (publicRequestTopicConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IsSetTopicConfigurations()) 
                     {
                         foreach (var publicRequestTopicConfigurationsValue in publicRequestTopicConfigurations) 
                         {
@@ -190,7 +190,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("TopicConfiguration");
                             var publicRequestTopicConfigurationsValueEvents = publicRequestTopicConfigurationsValue.Events;
-                            if (publicRequestTopicConfigurationsValueEvents != null && (publicRequestTopicConfigurationsValueEvents.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestTopicConfigurationsValue.IsSetEvents()) 
                             {
                                 foreach (var publicRequestTopicConfigurationsValueEventsValue in publicRequestTopicConfigurationsValueEvents) 
                                 {
@@ -206,7 +206,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("S3Key");
                                     var publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestTopicConfigurationsValue.Filter.S3KeyFilter.FilterRules;
-                                    if (publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules != null && (publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    if (publicRequestTopicConfigurationsValue.Filter.S3KeyFilter.IsSetFilterRules()) 
                                     {
                                         foreach (var publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules) 
                                         {

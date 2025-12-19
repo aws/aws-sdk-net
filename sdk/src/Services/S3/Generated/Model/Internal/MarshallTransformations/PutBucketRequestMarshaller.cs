@@ -101,7 +101,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("LocationConstraint", StringUtils.FromString(publicRequest.PutBucketConfiguration.LocationConstraint));
 
                     var publicRequestPutBucketConfigurationTags = publicRequest.PutBucketConfiguration.Tags;
-                    if (publicRequestPutBucketConfigurationTags != null && (publicRequestPutBucketConfigurationTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.PutBucketConfiguration.IsSetTags()) 
                     {
                         xmlWriter.WriteStartElement("Tags");
                         foreach (var publicRequestPutBucketConfigurationTagsValue in publicRequestPutBucketConfigurationTags) 
