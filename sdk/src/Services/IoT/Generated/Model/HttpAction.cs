@@ -62,8 +62,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property BatchConfig. 
         /// <para>
-        /// The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching
-        /// HTTP action messages</a>.
+        /// The configuration settings for batching. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/http_batching.html">
+        /// Batching HTTP action messages</a>.
         /// </para>
         /// </summary>
         public BatchConfig BatchConfig
