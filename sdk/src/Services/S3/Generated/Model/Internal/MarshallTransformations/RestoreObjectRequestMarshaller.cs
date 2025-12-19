@@ -94,10 +94,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Description", StringUtils.FromString(publicRequest.Description));
 
                     TierCustomMarshall(xmlWriter, publicRequest);
-                    if (publicRequest.OutputLocation != null)
+                    if (publicRequest.IsSetOutputLocation())
                     {
                         xmlWriter.WriteStartElement("OutputLocation");
-                        if (publicRequest.OutputLocation.S3 != null)
+                        if (publicRequest.OutputLocation.IsSetS3())
                         {
                             xmlWriter.WriteStartElement("S3");
                             AccessControlListCustomMarshall(xmlWriter, publicRequest);
@@ -105,7 +105,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("BucketName", StringUtils.FromString(publicRequest.OutputLocation.S3.BucketName));
                             if(publicRequest.OutputLocation.S3.IsSetCannedACL())
                                 xmlWriter.WriteElementString("CannedACL", StringUtils.FromString(publicRequest.OutputLocation.S3.CannedACL));
-                            if (publicRequest.OutputLocation.S3.Encryption != null)
+                            if (publicRequest.OutputLocation.S3.IsSetEncryption())
                             {
                                 xmlWriter.WriteStartElement("Encryption");
                                 if(publicRequest.OutputLocation.S3.Encryption.IsSetEncryptionType())
@@ -120,7 +120,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.OutputLocation.S3.Prefix));
                             if(publicRequest.OutputLocation.S3.IsSetStorageClass())
                                 xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequest.OutputLocation.S3.StorageClass));
-                            if (publicRequest.OutputLocation.S3.Tagging != null)
+                            if (publicRequest.OutputLocation.S3.IsSetTagging())
                             {
                                 xmlWriter.WriteStartElement("Tagging");
                                 var publicRequestOutputLocationS3TaggingTagSet = publicRequest.OutputLocation.S3.Tagging.TagSet;
@@ -154,19 +154,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if(publicRequest.IsSetRetrievalTier())
                         xmlWriter.WriteElementString("Tier", StringUtils.FromString(publicRequest.RetrievalTier));
 
-                    if (publicRequest.SelectParameters != null)
+                    if (publicRequest.IsSetSelectParameters())
                     {
                         xmlWriter.WriteStartElement("SelectParameters");
                         if(publicRequest.SelectParameters.IsSetExpression())
                             xmlWriter.WriteElementString("Expression", StringUtils.FromString(publicRequest.SelectParameters.Expression));
                         if(publicRequest.SelectParameters.IsSetExpressionType())
                             xmlWriter.WriteElementString("ExpressionType", StringUtils.FromString(publicRequest.SelectParameters.ExpressionType));
-                        if (publicRequest.SelectParameters.InputSerialization != null)
+                        if (publicRequest.SelectParameters.IsSetInputSerialization())
                         {
                             xmlWriter.WriteStartElement("InputSerialization");
                             if(publicRequest.SelectParameters.InputSerialization.IsSetCompressionType())
                                 xmlWriter.WriteElementString("CompressionType", StringUtils.FromString(publicRequest.SelectParameters.InputSerialization.CompressionType));
-                            if (publicRequest.SelectParameters.InputSerialization.CSV != null)
+                            if (publicRequest.SelectParameters.InputSerialization.IsSetCSV())
                             {
                                 xmlWriter.WriteStartElement("CSV");
                                 if(publicRequest.SelectParameters.InputSerialization.CSV.IsSetAllowQuotedRecordDelimiter())
@@ -185,24 +185,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("RecordDelimiter", StringUtils.FromString(publicRequest.SelectParameters.InputSerialization.CSV.RecordDelimiter));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.SelectParameters.InputSerialization.JSON != null)
+                            if (publicRequest.SelectParameters.InputSerialization.IsSetJSON())
                             {
                                 xmlWriter.WriteStartElement("JSON");
                                 if(publicRequest.SelectParameters.InputSerialization.JSON.IsSetJsonType())
                                     xmlWriter.WriteElementString("Type", StringUtils.FromString(publicRequest.SelectParameters.InputSerialization.JSON.JsonType));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.SelectParameters.InputSerialization.Parquet != null)
+                            if (publicRequest.SelectParameters.InputSerialization.IsSetParquet())
                             {
                                 xmlWriter.WriteStartElement("Parquet");
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.SelectParameters.OutputSerialization != null)
+                        if (publicRequest.SelectParameters.IsSetOutputSerialization())
                         {
                             xmlWriter.WriteStartElement("OutputSerialization");
-                            if (publicRequest.SelectParameters.OutputSerialization.CSV != null)
+                            if (publicRequest.SelectParameters.OutputSerialization.IsSetCSV())
                             {
                                 xmlWriter.WriteStartElement("CSV");
                                 if(publicRequest.SelectParameters.OutputSerialization.CSV.IsSetFieldDelimiter())
@@ -217,7 +217,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("RecordDelimiter", StringUtils.FromString(publicRequest.SelectParameters.OutputSerialization.CSV.RecordDelimiter));
                                 xmlWriter.WriteEndElement();
                             }
-                            if (publicRequest.SelectParameters.OutputSerialization.JSON != null)
+                            if (publicRequest.SelectParameters.OutputSerialization.IsSetJSON())
                             {
                                 xmlWriter.WriteStartElement("JSON");
                                 if(publicRequest.SelectParameters.OutputSerialization.JSON.IsSetRecordDelimiter())
