@@ -153,45 +153,40 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             {
 #>
 <# // Create a copy of context with headers in the response #>
-
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
-<#
-            }
-            else
-            {
-#>
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
-<#
-            }
-#>
             {
 <#
+                GenerateAWSQueryCompatibleBlock();
     foreach (var exception in this.Operation.Exceptions)
     {
 #>
-                if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.ShapeOriginalName #>"))
+                if (errorTypeName != null && errorTypeName.Equals("<#=exception.ShapeOriginalName #>"))
                 {
                     return <#=exception.Name#>Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
 <#
     }
-#>
-            }
-<#
-            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
-            {
-                GenerateAWSQueryCompatibleBlock();
-#>
-            return new <#=this.BaseException#>(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
-<#
             }
             else
             {
 #>
-            return new <#=this.BaseException#>(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            {
 <#
-            }
+    foreach (var exception in this.Operation.Exceptions)
+    {
 #>
+                if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.Code #>"))
+                {
+                    return <#=exception.Name#>Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+<#
+    }
+            }
+
+#>
+            }
+            return new <#=this.BaseException#>(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
 <#
