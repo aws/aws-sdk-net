@@ -1,3 +1,27 @@
+### 4.0.157.0 (2025-12-19 19:17 UTC)
+* ARCRegionswitch (4.0.3.0)
+	* Automatic Plan Execution Reports allow customers to maintain a concise record of their Region switch Plan executions.  This enables customer SREs and leadership to have a clear view of their recovery posture based on the generated reports for their Plan executions.
+* CloudFront (4.0.10.4)
+	* Update request marshallers to use IsSet methods
+* Connect (4.0.23.0)
+	* Adding support for Custom Metrics and Pre-Defined Attributes to GetCurrentMetricData API.
+* EMRServerless (4.0.7.0)
+	* Added JobLevelCostAllocationConfiguration field to enable cost allocation reporting at the job level, providing more granular visibility into EMR Serverless charges
+* IoT (4.0.6.0)
+	* This release adds event-based logging feature that enables granular event logging controls for AWS IoT logs.
+* QBusiness (4.0.7.0)
+	* It is a internal bug fix for region expansion
+* Route53 (4.0.8.3)
+	* Update request marshallers to use IsSet methods.
+* S3 (4.0.15.2)
+	* Update request marshallers to use IsSet methods.
+* S3Control (4.0.8.4)
+	* Update request marshallers to use IsSet methods.
+* Wickr (4.0.0.0)
+	* AWS Wickr now provides a suite of admin APIs to allow you to programmatically manage secure communication for Wickr networks at scale. These APIs enable you to automate administrative workflows including user lifecycle management, network configuration, and security group administration.
+* WorkSpacesWeb (4.0.6.0)
+	* Add support for WebAuthn under user settings.
+
 ### 4.0.156.0 (2025-12-18 19:17 UTC)
 * AppStream (4.0.5.0)
 	* Added support for new operating systems (1) Ubuntu 24.04 Pro LTS on Elastic fleets, and (2) Microsoft Server 2025 on Always-On and On-Demand fleets
