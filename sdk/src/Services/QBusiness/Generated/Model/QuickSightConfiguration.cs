@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The Amazon QuickSight configuration for an Amazon Q Business application that uses
-    /// QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
-    /// an Amazon QuickSight integrated application</a>.
+    /// The Amazon Quick Suite configuration for an Amazon Q Business application that uses
+    /// Quick Suite as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
+    /// an Amazon Quick Suite integrated application</a>.
     /// </summary>
     public partial class QuickSightConfiguration
     {
@@ -41,8 +41,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientNamespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that is used as the identity provider. For more information
-        /// about QuickSight namespaces, see <a href="https://docs.aws.amazon.com/quicksight/latest/developerguide/namespace-operations.html">Namespace
+        /// The Amazon Quick Suite namespace that is used as the identity provider. For more information
+        /// about Quick Suite namespaces, see <a href="https://docs.aws.amazon.com/quicksight/latest/developerguide/namespace-operations.html">Namespace
         /// operations</a>. 
         /// </para>
         /// </summary>
