@@ -162,6 +162,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UploadAllowed);
                 }
 
+                if(publicRequest.IsSetWebAuthnAllowed())
+                {
+                    context.Writer.WritePropertyName("webAuthnAllowed");
+                    context.Writer.Write(publicRequest.WebAuthnAllowed);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

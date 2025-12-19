@@ -138,6 +138,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.UserSettingsArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("webAuthnAllowed", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WebAuthnAllowed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
