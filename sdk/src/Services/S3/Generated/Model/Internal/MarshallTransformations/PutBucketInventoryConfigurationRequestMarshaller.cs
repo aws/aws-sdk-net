@@ -78,27 +78,27 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetInventoryConfiguration())
                 {
                     xmlWriter.WriteStartElement("InventoryConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.InventoryConfiguration.Destination != null)
+                    if (publicRequest.InventoryConfiguration.IsSetDestination())
                     {
                         xmlWriter.WriteStartElement("Destination");
-                        if (publicRequest.InventoryConfiguration.Destination.S3BucketDestination != null)
+                        if (publicRequest.InventoryConfiguration.Destination.IsSetS3BucketDestination())
                         {
                             xmlWriter.WriteStartElement("S3BucketDestination");
                             if(publicRequest.InventoryConfiguration.Destination.S3BucketDestination.IsSetAccountId())
                                 xmlWriter.WriteElementString("AccountId", StringUtils.FromString(publicRequest.InventoryConfiguration.Destination.S3BucketDestination.AccountId));
                             if(publicRequest.InventoryConfiguration.Destination.S3BucketDestination.IsSetBucketName())
                                 xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.InventoryConfiguration.Destination.S3BucketDestination.BucketName));
-                            if (publicRequest.InventoryConfiguration.Destination.S3BucketDestination.InventoryEncryption != null)
+                            if (publicRequest.InventoryConfiguration.Destination.S3BucketDestination.IsSetInventoryEncryption())
                             {
                                 xmlWriter.WriteStartElement("Encryption");
-                                if (publicRequest.InventoryConfiguration.Destination.S3BucketDestination.InventoryEncryption.SSEKMS != null)
+                                if (publicRequest.InventoryConfiguration.Destination.S3BucketDestination.InventoryEncryption.IsSetSSEKMS())
                                 {
                                     xmlWriter.WriteStartElement("SSE-KMS");
                                     if(publicRequest.InventoryConfiguration.Destination.S3BucketDestination.InventoryEncryption.SSEKMS.IsSetKeyId())
                                         xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.InventoryConfiguration.Destination.S3BucketDestination.InventoryEncryption.SSEKMS.KeyId));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if (publicRequest.InventoryConfiguration.Destination.S3BucketDestination.InventoryEncryption.SSES3 != null)
+                                if (publicRequest.InventoryConfiguration.Destination.S3BucketDestination.InventoryEncryption.IsSetSSES3())
                                 {
                                     xmlWriter.WriteStartElement("SSE-S3");
                                     xmlWriter.WriteEndElement();
@@ -133,7 +133,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     CustomIsEnabledMarshall(publicRequest, xmlWriter);
-                    if (publicRequest.InventoryConfiguration.Schedule != null)
+                    if (publicRequest.InventoryConfiguration.IsSetSchedule())
                     {
                         xmlWriter.WriteStartElement("Schedule");
                         if(publicRequest.InventoryConfiguration.Schedule.IsSetFrequency())

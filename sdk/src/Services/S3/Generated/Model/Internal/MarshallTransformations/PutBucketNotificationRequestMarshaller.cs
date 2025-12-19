@@ -76,7 +76,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                     xmlWriter.WriteStartElement("NotificationConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.EventBridgeConfiguration != null)
+                    if (publicRequest.IsSetEventBridgeConfiguration())
                     {
                         xmlWriter.WriteStartElement("EventBridgeConfiguration");
                         xmlWriter.WriteEndElement();
@@ -99,10 +99,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();
                                 }            
                             }
-                            if (publicRequestLambdaFunctionConfigurationsValue.Filter != null)
+                            if (publicRequestLambdaFunctionConfigurationsValue.IsSetFilter())
                             {
                                 xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestLambdaFunctionConfigurationsValue.Filter.S3KeyFilter != null)
+                                if (publicRequestLambdaFunctionConfigurationsValue.Filter.IsSetS3KeyFilter())
                                 {
                                     xmlWriter.WriteStartElement("S3Key");
                                     var publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestLambdaFunctionConfigurationsValue.Filter.S3KeyFilter.FilterRules;
@@ -149,10 +149,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();
                                 }            
                             }
-                            if (publicRequestQueueConfigurationsValue.Filter != null)
+                            if (publicRequestQueueConfigurationsValue.IsSetFilter())
                             {
                                 xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestQueueConfigurationsValue.Filter.S3KeyFilter != null)
+                                if (publicRequestQueueConfigurationsValue.Filter.IsSetS3KeyFilter())
                                 {
                                     xmlWriter.WriteStartElement("S3Key");
                                     var publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestQueueConfigurationsValue.Filter.S3KeyFilter.FilterRules;
@@ -199,10 +199,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();
                                 }            
                             }
-                            if (publicRequestTopicConfigurationsValue.Filter != null)
+                            if (publicRequestTopicConfigurationsValue.IsSetFilter())
                             {
                                 xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestTopicConfigurationsValue.Filter.S3KeyFilter != null)
+                                if (publicRequestTopicConfigurationsValue.Filter.IsSetS3KeyFilter())
                                 {
                                     xmlWriter.WriteStartElement("S3Key");
                                     var publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestTopicConfigurationsValue.Filter.S3KeyFilter.FilterRules;

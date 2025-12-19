@@ -83,7 +83,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetMetadataTableConfiguration())
                 {
                     xmlWriter.WriteStartElement("MetadataTableConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.MetadataTableConfiguration.S3TablesDestination != null)
+                    if (publicRequest.MetadataTableConfiguration.IsSetS3TablesDestination())
                     {
                         xmlWriter.WriteStartElement("S3TablesDestination");
                         if(publicRequest.MetadataTableConfiguration.S3TablesDestination.IsSetTableBucketArn())

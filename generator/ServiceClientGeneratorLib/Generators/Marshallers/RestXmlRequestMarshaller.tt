@@ -490,16 +490,24 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 	void ProcessStructure(int level, string variableName, Member member)
 	{
 			var shape = member.Shape.IsList ?  member.Shape.ListShape : member.Shape ;
-			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
-
 			// Use shape's ListMarshallName if the structure is a list.
 			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName ?? "member" : member.MarshallName;
 			if(member.Shape.IsFlattened || member.IsFlattened)
 				marshallName =  member.LocationName ?? member.ModeledName;
+			if (member.Shape.IsList)
+			{
 #>
 <#=new string(' ', level * 4)#>				if (<#=variableName#> != null)
 <#=new string(' ', level * 4)#>				{
 <#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>				if (<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>				{
+<#+
+			}
 			if (!string.IsNullOrEmpty(member.Shape.XmlNamespace))
 			{
 				if (!string.IsNullOrEmpty(member.Shape.XmlNamespacePrefix))
@@ -521,6 +529,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 <#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>");
 <#+
 			}
+			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
 			ProcessMembers(level + 1, variableName, shape.Members);
 #>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
