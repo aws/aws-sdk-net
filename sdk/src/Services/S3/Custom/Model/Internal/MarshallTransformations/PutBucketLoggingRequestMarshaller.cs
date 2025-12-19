@@ -67,7 +67,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (bucketLoggingStatusBucketLoggingStatus != null)
                     {
                         var loggingEnabledLoggingEnabled = bucketLoggingStatusBucketLoggingStatus;
-                        if (loggingEnabledLoggingEnabled != null && loggingEnabledLoggingEnabled.IsSetTargetBucket())
+                        if (loggingEnabledLoggingEnabled != null && loggingEnabledLoggingEnabled.IsSetTargetBucketName())
                         {
                             xmlWriter.WriteStartElement("LoggingEnabled");
                             xmlWriter.WriteElementString("TargetBucket", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetBucketName));

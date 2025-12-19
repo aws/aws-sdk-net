@@ -12,28 +12,33 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  GetBucketLogging response and response metadata.
+    /// To use simple format for S3 keys for log objects, set SimplePrefix to an empty object.
+    /// 
+    ///  
+    /// <para>
+    ///  <c>[DestinationPrefix][YYYY]-[MM]-[DD]-[hh]-[mm]-[ss]-[UniqueString]</c> 
+    /// </para>
     /// </summary>
-    public partial class GetBucketLoggingResponse : AmazonWebServiceResponse
+    public partial class SimplePrefix
     {
-        S3BucketLoggingConfig BucketLoggingConfigCustomGetter()
-        {
-            if (this._bucketLoggingConfig == null)
-            {
-                this._bucketLoggingConfig = new S3BucketLoggingConfig();
-            }
-            return this._bucketLoggingConfig;
-        }
+
     }
 }
-    
