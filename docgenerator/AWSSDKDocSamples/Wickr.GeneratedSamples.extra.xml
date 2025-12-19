@@ -1,0 +1,1960 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchCreateUser(Amazon.Wickr.Model.BatchCreateUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchCreateUser(Amazon.Wickr.Model.BatchCreateUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchCreateUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchCreateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create multiple users"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchCreateUser(Amazon.Wickr.Model.BatchCreateUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchCreateUser(Amazon.Wickr.Model.BatchCreateUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchCreateUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchCreateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Partial failure - duplicate user"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchDeleteUser(Amazon.Wickr.Model.BatchDeleteUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchDeleteUser(Amazon.Wickr.Model.BatchDeleteUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchDeleteUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchDeleteUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete multiple users"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchDeleteUser(Amazon.Wickr.Model.BatchDeleteUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchDeleteUser(Amazon.Wickr.Model.BatchDeleteUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchDeleteUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchDeleteUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Partial failure - user not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchLookupUserUname(Amazon.Wickr.Model.BatchLookupUserUnameRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchLookupUserUname(Amazon.Wickr.Model.BatchLookupUserUnameRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchLookupUserUnameRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchLookupUserUnameResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Lookup multiple user unames"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchLookupUserUname(Amazon.Wickr.Model.BatchLookupUserUnameRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchLookupUserUname(Amazon.Wickr.Model.BatchLookupUserUnameRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchLookupUserUnameRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchLookupUserUnameResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Partial failure - uname not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchReinviteUser(Amazon.Wickr.Model.BatchReinviteUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchReinviteUser(Amazon.Wickr.Model.BatchReinviteUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchReinviteUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchReinviteUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Batch reinvite users successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchReinviteUser(Amazon.Wickr.Model.BatchReinviteUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchReinviteUser(Amazon.Wickr.Model.BatchReinviteUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchReinviteUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchReinviteUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Batch reinvite users - partial success"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchReinviteUser(Amazon.Wickr.Model.BatchReinviteUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchReinviteUser(Amazon.Wickr.Model.BatchReinviteUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchReinviteUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchReinviteUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Batch reinvite users - cannot reinvite"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchResetDevicesForUser(Amazon.Wickr.Model.BatchResetDevicesForUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchResetDevicesForUser(Amazon.Wickr.Model.BatchResetDevicesForUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchResetDevicesForUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchResetDevicesForUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful device reset"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchResetDevicesForUser(Amazon.Wickr.Model.BatchResetDevicesForUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchResetDevicesForUser(Amazon.Wickr.Model.BatchResetDevicesForUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchResetDevicesForUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchResetDevicesForUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Partial failure device reset"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchResetDevicesForUser(Amazon.Wickr.Model.BatchResetDevicesForUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchResetDevicesForUser(Amazon.Wickr.Model.BatchResetDevicesForUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchResetDevicesForUserRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchResetDevicesForUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invalid network ID error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchToggleUserSuspendStatus(Amazon.Wickr.Model.BatchToggleUserSuspendStatusRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchToggleUserSuspendStatus(Amazon.Wickr.Model.BatchToggleUserSuspendStatusRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchToggleUserSuspendStatusRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchToggleUserSuspendStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Suspend multiple users"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.BatchToggleUserSuspendStatus(Amazon.Wickr.Model.BatchToggleUserSuspendStatusRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.BatchToggleUserSuspendStatus(Amazon.Wickr.Model.BatchToggleUserSuspendStatusRequest)" />
+            <member name="T:Amazon.Wickr.Model.BatchToggleUserSuspendStatusRequest" />
+            <member name="T:Amazon.Wickr.Model.BatchToggleUserSuspendStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Unsuspend users with partial failure"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateBot(Amazon.Wickr.Model.CreateBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateBot(Amazon.Wickr.Model.CreateBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateBotRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create bot successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateBot(Amazon.Wickr.Model.CreateBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateBot(Amazon.Wickr.Model.CreateBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateBotRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create bot - username unavailable"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateBot(Amazon.Wickr.Model.CreateBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateBot(Amazon.Wickr.Model.CreateBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateBotRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create bot - invalid username format"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateDataRetentionBot(Amazon.Wickr.Model.CreateDataRetentionBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateDataRetentionBot(Amazon.Wickr.Model.CreateDataRetentionBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateDataRetentionBotRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateDataRetentionBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create data retention bot successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateDataRetentionBot(Amazon.Wickr.Model.CreateDataRetentionBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateDataRetentionBot(Amazon.Wickr.Model.CreateDataRetentionBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateDataRetentionBotRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateDataRetentionBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create data retention bot - users already exist"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateDataRetentionBotChallenge(Amazon.Wickr.Model.CreateDataRetentionBotChallengeRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateDataRetentionBotChallenge(Amazon.Wickr.Model.CreateDataRetentionBotChallengeRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateDataRetentionBotChallengeRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateDataRetentionBotChallengeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create data retention bot challenge successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateNetwork(Amazon.Wickr.Model.CreateNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateNetwork(Amazon.Wickr.Model.CreateNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create network successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateNetwork(Amazon.Wickr.Model.CreateNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateNetwork(Amazon.Wickr.Model.CreateNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create network with free trial"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateNetwork(Amazon.Wickr.Model.CreateNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateNetwork(Amazon.Wickr.Model.CreateNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create network - invalid name"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateSecurityGroup(Amazon.Wickr.Model.CreateSecurityGroupRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateSecurityGroup(Amazon.Wickr.Model.CreateSecurityGroupRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateSecurityGroupRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create security group successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.CreateSecurityGroup(Amazon.Wickr.Model.CreateSecurityGroupRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.CreateSecurityGroup(Amazon.Wickr.Model.CreateSecurityGroupRequest)" />
+            <member name="T:Amazon.Wickr.Model.CreateSecurityGroupRequest" />
+            <member name="T:Amazon.Wickr.Model.CreateSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create security group - missing name"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.DeleteBot(Amazon.Wickr.Model.DeleteBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.DeleteBot(Amazon.Wickr.Model.DeleteBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.DeleteBotRequest" />
+            <member name="T:Amazon.Wickr.Model.DeleteBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete bot successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.DeleteBot(Amazon.Wickr.Model.DeleteBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.DeleteBot(Amazon.Wickr.Model.DeleteBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.DeleteBotRequest" />
+            <member name="T:Amazon.Wickr.Model.DeleteBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete bot - bot not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.DeleteDataRetentionBot(Amazon.Wickr.Model.DeleteDataRetentionBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.DeleteDataRetentionBot(Amazon.Wickr.Model.DeleteDataRetentionBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.DeleteDataRetentionBotRequest" />
+            <member name="T:Amazon.Wickr.Model.DeleteDataRetentionBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete data retention bot successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.DeleteNetwork(Amazon.Wickr.Model.DeleteNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.DeleteNetwork(Amazon.Wickr.Model.DeleteNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.DeleteNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.DeleteNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete network successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.DeleteNetwork(Amazon.Wickr.Model.DeleteNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.DeleteNetwork(Amazon.Wickr.Model.DeleteNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.DeleteNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.DeleteNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete network - not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.DeleteSecurityGroup(Amazon.Wickr.Model.DeleteSecurityGroupRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.DeleteSecurityGroup(Amazon.Wickr.Model.DeleteSecurityGroupRequest)" />
+            <member name="T:Amazon.Wickr.Model.DeleteSecurityGroupRequest" />
+            <member name="T:Amazon.Wickr.Model.DeleteSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete security group successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.DeleteSecurityGroup(Amazon.Wickr.Model.DeleteSecurityGroupRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.DeleteSecurityGroup(Amazon.Wickr.Model.DeleteSecurityGroupRequest)" />
+            <member name="T:Amazon.Wickr.Model.DeleteSecurityGroupRequest" />
+            <member name="T:Amazon.Wickr.Model.DeleteSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete security group - not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetBot(Amazon.Wickr.Model.GetBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetBot(Amazon.Wickr.Model.GetBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetBotRequest" />
+            <member name="T:Amazon.Wickr.Model.GetBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get bot successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetBot(Amazon.Wickr.Model.GetBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetBot(Amazon.Wickr.Model.GetBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetBotRequest" />
+            <member name="T:Amazon.Wickr.Model.GetBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get bot - bot not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetBotsCount(Amazon.Wickr.Model.GetBotsCountRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetBotsCount(Amazon.Wickr.Model.GetBotsCountRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetBotsCountRequest" />
+            <member name="T:Amazon.Wickr.Model.GetBotsCountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get bots count successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetBotsCount(Amazon.Wickr.Model.GetBotsCountRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetBotsCount(Amazon.Wickr.Model.GetBotsCountRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetBotsCountRequest" />
+            <member name="T:Amazon.Wickr.Model.GetBotsCountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get bots count with filters"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetDataRetentionBot(Amazon.Wickr.Model.GetDataRetentionBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetDataRetentionBot(Amazon.Wickr.Model.GetDataRetentionBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetDataRetentionBotRequest" />
+            <member name="T:Amazon.Wickr.Model.GetDataRetentionBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get data retention bot successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetDataRetentionBot(Amazon.Wickr.Model.GetDataRetentionBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetDataRetentionBot(Amazon.Wickr.Model.GetDataRetentionBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetDataRetentionBotRequest" />
+            <member name="T:Amazon.Wickr.Model.GetDataRetentionBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get data retention bot - not provisioned"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetGuestUserHistoryCount(Amazon.Wickr.Model.GetGuestUserHistoryCountRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetGuestUserHistoryCount(Amazon.Wickr.Model.GetGuestUserHistoryCountRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetGuestUserHistoryCountRequest" />
+            <member name="T:Amazon.Wickr.Model.GetGuestUserHistoryCountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get guest user history count"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetGuestUserHistoryCount(Amazon.Wickr.Model.GetGuestUserHistoryCountRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetGuestUserHistoryCount(Amazon.Wickr.Model.GetGuestUserHistoryCountRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetGuestUserHistoryCountRequest" />
+            <member name="T:Amazon.Wickr.Model.GetGuestUserHistoryCountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Empty response for network with no guest user history"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetNetwork(Amazon.Wickr.Model.GetNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetNetwork(Amazon.Wickr.Model.GetNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get network successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetNetwork(Amazon.Wickr.Model.GetNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetNetwork(Amazon.Wickr.Model.GetNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get network - not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetNetworkSettings(Amazon.Wickr.Model.GetNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetNetworkSettings(Amazon.Wickr.Model.GetNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get network settings with mixed value types"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetNetworkSettings(Amazon.Wickr.Model.GetNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetNetworkSettings(Amazon.Wickr.Model.GetNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get settings for network with defaults only"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetNetworkSettings(Amazon.Wickr.Model.GetNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetNetworkSettings(Amazon.Wickr.Model.GetNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.GetNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Network not found error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetOidcInfo(Amazon.Wickr.Model.GetOidcInfoRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetOidcInfo(Amazon.Wickr.Model.GetOidcInfoRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetOidcInfoRequest" />
+            <member name="T:Amazon.Wickr.Model.GetOidcInfoResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get OIDC info successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetOidcInfo(Amazon.Wickr.Model.GetOidcInfoRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetOidcInfo(Amazon.Wickr.Model.GetOidcInfoRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetOidcInfoRequest" />
+            <member name="T:Amazon.Wickr.Model.GetOidcInfoResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get OIDC info - not configured"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetSecurityGroup(Amazon.Wickr.Model.GetSecurityGroupRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetSecurityGroup(Amazon.Wickr.Model.GetSecurityGroupRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetSecurityGroupRequest" />
+            <member name="T:Amazon.Wickr.Model.GetSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get security group successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetSecurityGroup(Amazon.Wickr.Model.GetSecurityGroupRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetSecurityGroup(Amazon.Wickr.Model.GetSecurityGroupRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetSecurityGroupRequest" />
+            <member name="T:Amazon.Wickr.Model.GetSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get security group - not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetUser(Amazon.Wickr.Model.GetUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetUser(Amazon.Wickr.Model.GetUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetUserRequest" />
+            <member name="T:Amazon.Wickr.Model.GetUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get user information"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetUser(Amazon.Wickr.Model.GetUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetUser(Amazon.Wickr.Model.GetUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetUserRequest" />
+            <member name="T:Amazon.Wickr.Model.GetUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get user info with activity time range"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetUser(Amazon.Wickr.Model.GetUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetUser(Amazon.Wickr.Model.GetUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetUserRequest" />
+            <member name="T:Amazon.Wickr.Model.GetUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="User not found error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetUser(Amazon.Wickr.Model.GetUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetUser(Amazon.Wickr.Model.GetUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetUserRequest" />
+            <member name="T:Amazon.Wickr.Model.GetUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invalid userId error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetUsersCount(Amazon.Wickr.Model.GetUsersCountRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetUsersCount(Amazon.Wickr.Model.GetUsersCountRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetUsersCountRequest" />
+            <member name="T:Amazon.Wickr.Model.GetUsersCountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get user counts for network"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetUsersCount(Amazon.Wickr.Model.GetUsersCountRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetUsersCount(Amazon.Wickr.Model.GetUsersCountRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetUsersCountRequest" />
+            <member name="T:Amazon.Wickr.Model.GetUsersCountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Network with no users"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListBlockedGuestUsers(Amazon.Wickr.Model.ListBlockedGuestUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListBlockedGuestUsers(Amazon.Wickr.Model.ListBlockedGuestUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListBlockedGuestUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListBlockedGuestUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get paginated list of blocked guest users"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListBlockedGuestUsers(Amazon.Wickr.Model.ListBlockedGuestUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListBlockedGuestUsers(Amazon.Wickr.Model.ListBlockedGuestUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListBlockedGuestUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListBlockedGuestUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Filter by username"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListBlockedGuestUsers(Amazon.Wickr.Model.ListBlockedGuestUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListBlockedGuestUsers(Amazon.Wickr.Model.ListBlockedGuestUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListBlockedGuestUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListBlockedGuestUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Empty blocklist"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListBots(Amazon.Wickr.Model.ListBotsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListBots(Amazon.Wickr.Model.ListBotsRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListBotsRequest" />
+            <member name="T:Amazon.Wickr.Model.ListBotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List bots with pagination"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListBots(Amazon.Wickr.Model.ListBotsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListBots(Amazon.Wickr.Model.ListBotsRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListBotsRequest" />
+            <member name="T:Amazon.Wickr.Model.ListBotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List bots with filters"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListDevicesForUser(Amazon.Wickr.Model.ListDevicesForUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListDevicesForUser(Amazon.Wickr.Model.ListDevicesForUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListDevicesForUserRequest" />
+            <member name="T:Amazon.Wickr.Model.ListDevicesForUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful device list retrieval"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListDevicesForUser(Amazon.Wickr.Model.ListDevicesForUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListDevicesForUser(Amazon.Wickr.Model.ListDevicesForUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListDevicesForUserRequest" />
+            <member name="T:Amazon.Wickr.Model.ListDevicesForUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Retrieving subsequent page of devices"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListDevicesForUser(Amazon.Wickr.Model.ListDevicesForUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListDevicesForUser(Amazon.Wickr.Model.ListDevicesForUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListDevicesForUserRequest" />
+            <member name="T:Amazon.Wickr.Model.ListDevicesForUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invalid userId error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListGuestUsers(Amazon.Wickr.Model.ListGuestUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListGuestUsers(Amazon.Wickr.Model.ListGuestUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListGuestUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListGuestUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get paginated list of guest users"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListGuestUsers(Amazon.Wickr.Model.ListGuestUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListGuestUsers(Amazon.Wickr.Model.ListGuestUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListGuestUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListGuestUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Filter by billing period"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListGuestUsers(Amazon.Wickr.Model.ListGuestUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListGuestUsers(Amazon.Wickr.Model.ListGuestUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListGuestUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListGuestUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Empty guest list"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListNetworks(Amazon.Wickr.Model.ListNetworksRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListNetworks(Amazon.Wickr.Model.ListNetworksRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListNetworksRequest" />
+            <member name="T:Amazon.Wickr.Model.ListNetworksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List networks with pagination"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListNetworks(Amazon.Wickr.Model.ListNetworksRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListNetworks(Amazon.Wickr.Model.ListNetworksRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListNetworksRequest" />
+            <member name="T:Amazon.Wickr.Model.ListNetworksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List networks - first page"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListSecurityGroups(Amazon.Wickr.Model.ListSecurityGroupsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListSecurityGroups(Amazon.Wickr.Model.ListSecurityGroupsRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListSecurityGroupsRequest" />
+            <member name="T:Amazon.Wickr.Model.ListSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List security groups with pagination"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListSecurityGroups(Amazon.Wickr.Model.ListSecurityGroupsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListSecurityGroups(Amazon.Wickr.Model.ListSecurityGroupsRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListSecurityGroupsRequest" />
+            <member name="T:Amazon.Wickr.Model.ListSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List security groups - first page"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListSecurityGroupUsers(Amazon.Wickr.Model.ListSecurityGroupUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListSecurityGroupUsers(Amazon.Wickr.Model.ListSecurityGroupUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListSecurityGroupUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListSecurityGroupUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List security group users with pagination"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListUsers(Amazon.Wickr.Model.ListUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListUsers(Amazon.Wickr.Model.ListUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get paginated list of users"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListUsers(Amazon.Wickr.Model.ListUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListUsers(Amazon.Wickr.Model.ListUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Filter by status and group"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.ListUsers(Amazon.Wickr.Model.ListUsersRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.ListUsers(Amazon.Wickr.Model.ListUsersRequest)" />
+            <member name="T:Amazon.Wickr.Model.ListUsersRequest" />
+            <member name="T:Amazon.Wickr.Model.ListUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Empty user list for network with no users"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOidcConfig(Amazon.Wickr.Model.RegisterOidcConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOidcConfig(Amazon.Wickr.Model.RegisterOidcConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Save OIDC config successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOidcConfig(Amazon.Wickr.Model.RegisterOidcConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOidcConfig(Amazon.Wickr.Model.RegisterOidcConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Save OIDC config - missing company ID"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOidcConfig(Amazon.Wickr.Model.RegisterOidcConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOidcConfig(Amazon.Wickr.Model.RegisterOidcConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Save OIDC config - invalid company ID prefix"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOidcConfigTest(Amazon.Wickr.Model.RegisterOidcConfigTestRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOidcConfigTest(Amazon.Wickr.Model.RegisterOidcConfigTestRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigTestRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigTestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Test OIDC config successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOidcConfigTest(Amazon.Wickr.Model.RegisterOidcConfigTestRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOidcConfigTest(Amazon.Wickr.Model.RegisterOidcConfigTestRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigTestRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigTestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Test OIDC config - missing issuer"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOidcConfigTest(Amazon.Wickr.Model.RegisterOidcConfigTestRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOidcConfigTest(Amazon.Wickr.Model.RegisterOidcConfigTestRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigTestRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOidcConfigTestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Test OIDC config - invalid endpoint"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateBot(Amazon.Wickr.Model.UpdateBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateBot(Amazon.Wickr.Model.UpdateBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateBotRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update bot successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateBot(Amazon.Wickr.Model.UpdateBotRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateBot(Amazon.Wickr.Model.UpdateBotRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateBotRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateBotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update bot - bot not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateDataRetention(Amazon.Wickr.Model.UpdateDataRetentionRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateDataRetention(Amazon.Wickr.Model.UpdateDataRetentionRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateDataRetentionRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateDataRetentionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update data retention - enable service"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateDataRetention(Amazon.Wickr.Model.UpdateDataRetentionRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateDataRetention(Amazon.Wickr.Model.UpdateDataRetentionRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateDataRetentionRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateDataRetentionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update data retention - disable service"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateDataRetention(Amazon.Wickr.Model.UpdateDataRetentionRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateDataRetention(Amazon.Wickr.Model.UpdateDataRetentionRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateDataRetentionRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateDataRetentionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update data retention - acknowledge pubkey message"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateGuestUser(Amazon.Wickr.Model.UpdateGuestUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateGuestUser(Amazon.Wickr.Model.UpdateGuestUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateGuestUserRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateGuestUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Block a guest user"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateGuestUser(Amazon.Wickr.Model.UpdateGuestUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateGuestUser(Amazon.Wickr.Model.UpdateGuestUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateGuestUserRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateGuestUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Unblock a guest user"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateGuestUser(Amazon.Wickr.Model.UpdateGuestUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateGuestUser(Amazon.Wickr.Model.UpdateGuestUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateGuestUserRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateGuestUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="User already blocked error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetwork(Amazon.Wickr.Model.UpdateNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetwork(Amazon.Wickr.Model.UpdateNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update network name successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetwork(Amazon.Wickr.Model.UpdateNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetwork(Amazon.Wickr.Model.UpdateNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update network - invalid name"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetwork(Amazon.Wickr.Model.UpdateNetworkRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetwork(Amazon.Wickr.Model.UpdateNetworkRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update network - not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update multiple network settings"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update single boolean setting"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update client metrics settings"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invalid setting name error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Network not found error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateNetworkSettings(Amazon.Wickr.Model.UpdateNetworkSettingsRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateNetworkSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invalid value type error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateSecurityGroup(Amazon.Wickr.Model.UpdateSecurityGroupRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateSecurityGroup(Amazon.Wickr.Model.UpdateSecurityGroupRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateSecurityGroupRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update security group successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateSecurityGroup(Amazon.Wickr.Model.UpdateSecurityGroupRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateSecurityGroup(Amazon.Wickr.Model.UpdateSecurityGroupRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateSecurityGroupRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update security group - not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateUser(Amazon.Wickr.Model.UpdateUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateUser(Amazon.Wickr.Model.UpdateUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateUserRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update user information"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateUser(Amazon.Wickr.Model.UpdateUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateUser(Amazon.Wickr.Model.UpdateUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateUserRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update user with invite code"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateUser(Amazon.Wickr.Model.UpdateUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateUser(Amazon.Wickr.Model.UpdateUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateUserRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="User not found error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.UpdateUser(Amazon.Wickr.Model.UpdateUserRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.UpdateUser(Amazon.Wickr.Model.UpdateUserRequest)" />
+            <member name="T:Amazon.Wickr.Model.UpdateUserRequest" />
+            <member name="T:Amazon.Wickr.Model.UpdateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invalid userId error"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+</docs>
