@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
     {
         private LogLevel _defaultLogLevel;
         private bool? _disableAllLogs;
+        private List<LogEventConfiguration> _eventConfigurations = AWSConfigs.InitializeCollections ? new List<LogEventConfiguration>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetDisableAllLogs()
         {
             return this._disableAllLogs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventConfigurations. 
+        /// <para>
+        ///  The list of event configurations that override account-level logging. 
+        /// </para>
+        /// </summary>
+        public List<LogEventConfiguration> EventConfigurations
+        {
+            get { return this._eventConfigurations; }
+            set { this._eventConfigurations = value; }
+        }
+
+        // Check to see if EventConfigurations property is set
+        internal bool IsSetEventConfigurations()
+        {
+            return this._eventConfigurations != null && (this._eventConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

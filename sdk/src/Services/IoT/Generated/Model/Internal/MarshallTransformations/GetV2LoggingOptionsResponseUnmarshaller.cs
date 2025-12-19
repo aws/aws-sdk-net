@@ -64,6 +64,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.DisableAllLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LogEventConfiguration, LogEventConfigurationUnmarshaller>(LogEventConfigurationUnmarshaller.Instance);
+                    response.EventConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
