@@ -1,3 +1,22 @@
+### 3.7.1189.0 (2025-12-19 19:20 UTC)
+* ARCRegionswitch (3.7.503.0)
+	* Automatic Plan Execution Reports allow customers to maintain a concise record of their Region switch Plan executions.  This enables customer SREs and leadership to have a clear view of their recovery posture based on the generated reports for their Plan executions.
+* Connect (3.7.519.0)
+	* Adding support for Custom Metrics and Pre-Defined Attributes to GetCurrentMetricData API.
+* EMRServerless (3.7.503.0)
+	* Added JobLevelCostAllocationConfiguration field to enable cost allocation reporting at the job level, providing more granular visibility into EMR Serverless charges
+* IoT (3.7.505.0)
+	* This release adds event-based logging feature that enables granular event logging controls for AWS IoT logs.
+* QBusiness (3.7.504.0)
+	* It is a internal bug fix for region expansion
+* Wickr (3.7.500.0)
+	* AWS Wickr now provides a suite of admin APIs to allow you to programmatically manage secure communication for Wickr networks at scale. These APIs enable you to automate administrative workflows including user lifecycle management, network configuration, and security group administration.
+* WorkSpacesWeb (3.7.505.0)
+	* Add support for WebAuthn under user settings.
+* Core 3.7.500.58
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1188.0 (2025-12-18 19:18 UTC)
 * AppStream (3.7.505.0)
 	* Added support for new operating systems (1) Ubuntu 24.04 Pro LTS on Elastic fleets, and (2) Microsoft Server 2025 on Always-On and On-Demand fleets
