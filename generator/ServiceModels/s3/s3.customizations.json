@@ -510,7 +510,11 @@
                     "VersioningConfig":{"injectXmlPropertyGetter": ["get {return CustomVersioningConfigGetter();}"]}
                 },
                 {
-                    "MfaCodes":{"injectXmlIsSet":["return CustomMfaCodesIsSet();"]}
+                    "MfaCodes":{"injectXmlIsSet":["return CustomMfaCodesIsSet();"],"injectXmlMarshallCode":[
+                        "if (publicRequest.IsSetMfaCodes())",
+                        "   request.Headers[\"x-amz-mfa\"] = publicRequest.MfaCodes.FormattedMfaCodes;"
+                        ]
+                    }
                 }
             ]
         },
@@ -1844,6 +1848,13 @@
             "modify":[
                 {
                     "MFADelete":{"emitPropertyName": "EnableMfaDelete"}
+                },
+                {
+                    "EnableMfaDelete":{"injectXmlIsSet": ["return this._enableMfaDelete.HasValue;"], "injectXmlMarshallCode":[
+                        "if (publicRequest.VersioningConfig.IsSetEnableMfaDelete())",
+                        "     xmlWriter.WriteElementString(\"MfaDelete\", publicRequest.VersioningConfig.EnableMfaDelete.Value ? \"Enabled\" : \"Disabled\");"
+
+                    ]}
                 },
                 {
                     "Status":{"injectXmlPrivateMemberAssignment":["private VersionStatus _status = \"Off\";"], "injectXmlIsSet": ["return this._status != null && this._status != VersionStatus.Off;"]}

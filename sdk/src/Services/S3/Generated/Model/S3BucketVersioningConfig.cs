@@ -56,7 +56,7 @@ namespace Amazon.S3.Model
         // Check to see if EnableMfaDelete property is set
         internal bool IsSetEnableMfaDelete()
         {
-            return this._enableMfaDelete != null;
+            return this._enableMfaDelete.HasValue;
         }
 
         /// <summary>

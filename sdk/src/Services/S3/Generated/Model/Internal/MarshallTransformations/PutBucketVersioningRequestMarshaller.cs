@@ -74,11 +74,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
-        
-            if (publicRequest.IsSetMfaCodes()) 
-            {
-                request.Headers["x-amz-mfa"] = publicRequest.MfaCodes;
-            }
+                if (publicRequest.IsSetMfaCodes())
+                   request.Headers["x-amz-mfa"] = publicRequest.MfaCodes.FormattedMfaCodes;
             if (string.IsNullOrEmpty(publicRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketVersioningRequest.BucketName");
             request.ResourcePath = "/";
@@ -88,9 +85,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetVersioningConfig())
                 {
                     xmlWriter.WriteStartElement("VersioningConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if(publicRequest.VersioningConfig.IsSetEnableMfaDelete())
-                        xmlWriter.WriteElementString("MfaDelete", StringUtils.FromString(publicRequest.VersioningConfig.EnableMfaDelete));
-
+                    if (publicRequest.VersioningConfig.IsSetEnableMfaDelete())
+                         xmlWriter.WriteElementString("MfaDelete", publicRequest.VersioningConfig.EnableMfaDelete.Value ? "Enabled" : "Disabled");
                     if(publicRequest.VersioningConfig.IsSetStatus())
                         xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.VersioningConfig.Status));
 
