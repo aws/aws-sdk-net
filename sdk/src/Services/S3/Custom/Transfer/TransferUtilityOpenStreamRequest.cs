@@ -57,6 +57,6 @@ namespace Amazon.S3.Transfer
         /// This internal property allows overriding the chunk size for performance tuning.
         /// It can be used during testing or as an emergency performance tuning knob.
         /// </remarks>
-        internal int? ChunkBufferSize { get; set; }
+        public int? ChunkBufferSize { get; set; }
     }
 }
