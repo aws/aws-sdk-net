@@ -36,21 +36,22 @@ namespace Amazon.S3.Transfer.Internal
     /// <remarks>
     /// <para><strong>Design Goals:</strong></para>
     /// <list type="bullet">
-    /// <item>Keep each buffer chunk below 85KB to avoid LOH allocation</item>
+    /// <item>Keep each buffer chunk below 85KB to avoid LOH allocation (default)</item>
     /// <item>Support parts larger than 2GB (int.MaxValue)</item>
     /// <item>Efficient memory management via ArrayPool</item>
     /// <item>Present standard Stream interface for easy integration</item>
+    /// <item>Allow configurable chunk size for performance tuning</item>
     /// </list>
     /// 
     /// <para><strong>Size Limits:</strong></para>
     /// <para>
-    /// Maximum supported stream size is approximately 140TB (int.MaxValue * CHUNK_SIZE bytes).
+    /// Maximum supported stream size is approximately 140TB (int.MaxValue * chunkSize bytes).
     /// This limit exists because chunk indexing uses int for List indexing.
     /// </para>
     /// 
     /// <para><strong>Usage Pattern:</strong></para>
     /// <code>
-    /// var stream = new ChunkedBufferStream();
+    /// var stream = new ChunkedBufferStream(expectedSize, chunkSize);
     /// 
     /// // Write phase: Stream data in
     /// await response.WriteResponseStreamAsync(stream, ...);
@@ -69,53 +70,51 @@ namespace Amazon.S3.Transfer.Internal
     internal class ChunkedBufferStream : Stream
     {
         /// <summary>
-        /// Size of each buffer chunk. Set to 64KB to match ArrayPool bucket size and stay below the 85KB Large Object Heap threshold.
+        /// Default chunk size of 64KB - matches ArrayPool bucket size and stays below the 85KB Large Object Heap threshold.
         /// If we chose any higher than 64KB, ArrayPool would round up to 128KB (which would go to LOH).
         /// </summary>
-        private const int CHUNK_SIZE = 65536; // 64KB - matches ArrayPool bucket, safely below 85KB LOH threshold
+        private const int DEFAULT_CHUNK_SIZE = 65536; // 64KB - matches ArrayPool bucket, safely below 85KB LOH threshold
 
-        /// <summary>
-        /// Maximum supported stream size. This limit exists because chunk indexing uses int for List indexing.
-        /// With 64KB chunks, this allows approximately 140TB of data.
-        /// </summary>
-        private const long MAX_STREAM_SIZE = (long)int.MaxValue * CHUNK_SIZE;
 
         private readonly List<byte[]> _chunks;
+        private readonly int _chunkSize;
+        private readonly long _maxStreamSize;
         private long _length = 0;
         private long _position = 0;
         private bool _isReadMode = false;
         private bool _disposed = false;
 
         /// <summary>
-        /// Creates a new ChunkedBufferStream with default initial capacity.
-        /// </summary>
-        public ChunkedBufferStream()
-        {
-            _chunks = new List<byte[]>();
-        }
-
-        /// <summary>
         /// Creates a new ChunkedBufferStream with pre-allocated capacity for the expected size.
         /// This avoids List resizing during writes, improving performance for known sizes.
         /// </summary>
-        /// <param name="estimatedSize">The estimated total size in bytes. Used to pre-allocate the chunk list capacity.</param>
-        public ChunkedBufferStream(long estimatedSize)
+        /// <param name="estimatedSize">The estimated total size in bytes. Must be greater than 0. Used to pre-allocate the chunk list capacity.</param>
+        /// <param name="chunkSize">The size of each buffer chunk. Defaults to 64KB if not specified.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when estimatedSize is less than or equal to 0.</exception>
+        public ChunkedBufferStream(long estimatedSize, int? chunkSize = null)
         {
-            if (estimatedSize > 0)
-            {
-                // Ceiling division formula: (n + d - 1) / d calculates ceil(n / d) using integer arithmetic.
-                // This computes how many chunks are needed to hold estimatedSize bytes, rounding up to
-                // ensure the last partial chunk is accounted for. Avoids floating-point math for performance.
-                // Example: For 100 bytes with CHUNK_SIZE=32: (100 + 31) / 32 = 131 / 32 = 4 chunks
-                //          (simple division 100/32=3 would only hold 96 bytes, losing 4 bytes)
-                long estimatedChunks = (estimatedSize + CHUNK_SIZE - 1) / CHUNK_SIZE;
-                int capacity = (int)Math.Min(estimatedChunks, int.MaxValue);
-                _chunks = new List<byte[]>(capacity);
-            }
-            else
-            {
-                _chunks = new List<byte[]>();
-            }
+            if (estimatedSize <= 0)
+                throw new ArgumentOutOfRangeException(nameof(estimatedSize), "EstimatedSize must be greater than 0");
+
+            int requestedChunkSize = chunkSize ?? DEFAULT_CHUNK_SIZE;
+
+            // Validate that chunk size doesn't exceed data size to prevent memory waste
+            if (chunkSize.HasValue && requestedChunkSize > estimatedSize)
+                throw new ArgumentOutOfRangeException(nameof(chunkSize),
+                    $"Chunk size ({requestedChunkSize:N0} bytes) cannot exceed estimated data size ({estimatedSize:N0} bytes). " +
+                    "For multipart downloads, chunk size should be less than or equal to part size.");
+
+            _chunkSize = requestedChunkSize;
+            _maxStreamSize = (long)int.MaxValue * _chunkSize;
+
+            // Ceiling division formula: (n + d - 1) / d calculates ceil(n / d) using integer arithmetic.
+            // This computes how many chunks are needed to hold estimatedSize bytes, rounding up to
+            // ensure the last partial chunk is accounted for. Avoids floating-point math for performance.
+            // Example: For 100 bytes with _chunkSize=32: (100 + 31) / 32 = 131 / 32 = 4 chunks
+            //          (simple division 100/32=3 would only hold 96 bytes, losing 4 bytes)
+            long estimatedChunks = (estimatedSize + _chunkSize - 1) / _chunkSize;
+            int capacity = (int)Math.Min(estimatedChunks, int.MaxValue);
+            _chunks = new List<byte[]>(capacity);
         }
 
         /// <summary>
@@ -190,7 +189,7 @@ namespace Amazon.S3.Transfer.Internal
         public override void Write(byte[] buffer, int offset, int count)
         {
             ThrowIfDisposed();
-            
+
             if (_isReadMode)
                 throw new NotSupportedException("Cannot write after switching to read mode");
 
@@ -204,8 +203,8 @@ namespace Amazon.S3.Transfer.Internal
                 throw new ArgumentException("Offset and count exceed buffer bounds");
 
             // Check for overflow before writing - prevents chunk index overflow for extremely large streams
-            if (_length > MAX_STREAM_SIZE - count)
-                throw new IOException($"Write would exceed maximum supported stream size of {MAX_STREAM_SIZE} bytes (approximately 175TB).");
+            if (_length > _maxStreamSize - count)
+                throw new IOException($"Write would exceed maximum supported stream size of {_maxStreamSize} bytes.");
 
             int remaining = count;
             int sourceOffset = offset;
@@ -213,17 +212,17 @@ namespace Amazon.S3.Transfer.Internal
             while (remaining > 0)
             {
                 // Calculate which chunk and offset within chunk for current write position
-                int chunkIndex = (int)(_length / CHUNK_SIZE);
-                int offsetInChunk = (int)(_length % CHUNK_SIZE);
+                int chunkIndex = (int)(_length / _chunkSize);
+                int offsetInChunk = (int)(_length % _chunkSize);
 
                 // Allocate new chunk if we've filled all existing chunks
                 if (chunkIndex >= _chunks.Count)
                 {
-                    _chunks.Add(ArrayPool<byte>.Shared.Rent(CHUNK_SIZE));
+                    _chunks.Add(ArrayPool<byte>.Shared.Rent(_chunkSize));
                 }
 
                 // Copy data to current chunk
-                int bytesToWrite = Math.Min(remaining, CHUNK_SIZE - offsetInChunk);
+                int bytesToWrite = Math.Min(remaining, _chunkSize - offsetInChunk);
                 Buffer.BlockCopy(buffer, sourceOffset, _chunks[chunkIndex], offsetInChunk, bytesToWrite);
 
                 _length += bytesToWrite;
@@ -269,7 +268,7 @@ namespace Amazon.S3.Transfer.Internal
         public override int Read(byte[] buffer, int offset, int count)
         {
             ThrowIfDisposed();
-            
+
             // Automatically switch to read mode on first read
             if (!_isReadMode)
             {
@@ -295,9 +294,9 @@ namespace Amazon.S3.Transfer.Internal
 
             while (bytesRead < bytesToRead)
             {
-                int chunkIndex = (int)(_position / CHUNK_SIZE);
-                int offsetInChunk = (int)(_position % CHUNK_SIZE);
-                int bytesInThisChunk = Math.Min(bytesToRead - bytesRead, CHUNK_SIZE - offsetInChunk);
+                int chunkIndex = (int)(_position / _chunkSize);
+                int offsetInChunk = (int)(_position % _chunkSize);
+                int bytesInThisChunk = Math.Min(bytesToRead - bytesRead, _chunkSize - offsetInChunk);
 
                 Buffer.BlockCopy(_chunks[chunkIndex], offsetInChunk, buffer, offset + bytesRead, bytesInThisChunk);
 
@@ -340,7 +339,7 @@ namespace Amazon.S3.Transfer.Internal
         public void SwitchToReadMode()
         {
             ThrowIfDisposed();
-            
+
             if (_isReadMode)
                 throw new InvalidOperationException("Stream is already in read mode");
 
