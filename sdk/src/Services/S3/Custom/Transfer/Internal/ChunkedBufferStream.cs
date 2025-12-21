@@ -69,11 +69,18 @@ namespace Amazon.S3.Transfer.Internal
     /// </remarks>
     internal class ChunkedBufferStream : Stream
     {
-        /// <summary>
-        /// Default chunk size of 64KB - matches ArrayPool bucket size and stays below the 85KB Large Object Heap threshold.
-        /// If we chose any higher than 64KB, ArrayPool would round up to 128KB (which would go to LOH).
-        /// </summary>
-        private const int DEFAULT_CHUNK_SIZE = 65536; // 64KB - matches ArrayPool bucket, safely below 85KB LOH threshold
+    /// <summary>
+    /// Default chunk size of 64KB - matches ArrayPool bucket size and stays below the 85KB Large Object Heap threshold.
+    /// If we chose any higher than 64KB, ArrayPool would round up to 128KB (which would go to LOH).
+    /// </summary>
+    private const int DEFAULT_CHUNK_SIZE = 65536; // 64KB - matches ArrayPool bucket, safely below 85KB LOH threshold
+
+    /// <summary>
+    /// Maximum chunk size of just under 1GB - the ArrayPool.Shared boundary.
+    /// ArrayPool.Shared.Rent() can fail or cause severe GC pressure at exactly 1GB (2^30 bytes).
+    /// This limit prevents ArrayPool allocation failures and memory issues.
+    /// </summary>
+    private const int MAX_CHUNK_SIZE = (1 << 30) - 1; // 1,073,741,823 bytes - just under ArrayPool 1GB boundary
 
         private readonly List<byte[]> _chunks;
         private readonly int _chunkSize;
@@ -95,7 +102,12 @@ namespace Amazon.S3.Transfer.Internal
             if (estimatedSize <= 0)
                 throw new ArgumentOutOfRangeException(nameof(estimatedSize), "EstimatedSize must be greater than 0");
 
-            _chunkSize = chunkSize ?? DEFAULT_CHUNK_SIZE;
+            int requestedChunkSize = chunkSize ?? DEFAULT_CHUNK_SIZE;
+            if (requestedChunkSize > MAX_CHUNK_SIZE)
+                throw new ArgumentOutOfRangeException(nameof(chunkSize), 
+                    $"Chunk size cannot exceed {MAX_CHUNK_SIZE} bytes (ArrayPool boundary limit)");
+            
+            _chunkSize = requestedChunkSize;
             _maxStreamSize = (long)int.MaxValue * _chunkSize;
 
             // Ceiling division formula: (n + d - 1) / d calculates ceil(n / d) using integer arithmetic.
