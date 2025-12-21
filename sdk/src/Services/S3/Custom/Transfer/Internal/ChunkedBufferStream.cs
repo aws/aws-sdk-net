@@ -107,6 +107,12 @@ namespace Amazon.S3.Transfer.Internal
                 throw new ArgumentOutOfRangeException(nameof(chunkSize), 
                     $"Chunk size cannot exceed {MAX_CHUNK_SIZE} bytes (ArrayPool boundary limit)");
             
+            // Validate that chunk size doesn't exceed data size to prevent memory waste
+            if (chunkSize.HasValue && requestedChunkSize > estimatedSize)
+                throw new ArgumentOutOfRangeException(nameof(chunkSize),
+                    $"Chunk size ({requestedChunkSize:N0} bytes) cannot exceed estimated data size ({estimatedSize:N0} bytes). " +
+                    "For multipart downloads, chunk size should be less than or equal to part size.");
+            
             _chunkSize = requestedChunkSize;
             _maxStreamSize = (long)int.MaxValue * _chunkSize;
 
