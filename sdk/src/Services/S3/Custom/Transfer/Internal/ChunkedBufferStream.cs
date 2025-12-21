@@ -75,14 +75,6 @@ namespace Amazon.S3.Transfer.Internal
     /// </summary>
     private const int DEFAULT_CHUNK_SIZE = 65536; // 64KB - matches ArrayPool bucket, safely below 85KB LOH threshold
 
-    /// <summary>
-    /// Maximum chunk size of 2GB.
-    /// WARNING: ArrayPool.Shared.Rent() has known issues at and above 1GB (2^30 bytes).
-    /// Allocations at 1GB+ may fail with OutOfMemoryException or cause severe GC pressure.
-    /// Use large chunk sizes with caution - they are primarily for performance testing.
-    /// </summary>
-    private const int MAX_CHUNK_SIZE = (1 << 31); // 2,147,483,648 bytes - 2GB limit for testing
-
         private readonly List<byte[]> _chunks;
         private readonly int _chunkSize;
         private readonly long _maxStreamSize;
@@ -104,9 +96,6 @@ namespace Amazon.S3.Transfer.Internal
                 throw new ArgumentOutOfRangeException(nameof(estimatedSize), "EstimatedSize must be greater than 0");
 
             int requestedChunkSize = chunkSize ?? DEFAULT_CHUNK_SIZE;
-            if (requestedChunkSize > MAX_CHUNK_SIZE)
-                throw new ArgumentOutOfRangeException(nameof(chunkSize), 
-                    $"Chunk size cannot exceed {MAX_CHUNK_SIZE} bytes (ArrayPool boundary limit)");
             
             // Validate that chunk size doesn't exceed data size to prevent memory waste
             if (chunkSize.HasValue && requestedChunkSize > estimatedSize)
