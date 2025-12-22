@@ -75,7 +75,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The default value for <c>mode</c> is <c>STANDARD</c>. A value of <c>STANDARD</c> means
+        /// The default value for <c>mode</c> is <c>NONE</c>. A value of <c>STANDARD</c> means
         /// Slurm accounting is enabled.
         /// </para>
         /// </summary>
