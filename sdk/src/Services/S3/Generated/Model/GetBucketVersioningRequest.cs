@@ -12,22 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketVersioning operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
@@ -40,12 +46,12 @@ namespace Amazon.S3.Model
     ///  
     /// <para>
     /// This implementation also returns the MFA Delete status of the versioning state. If
-    /// the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
+    /// the MFA Delete status is <c>enabled</c>, the bucket owner must use an authentication
     /// device to change the versioning state of the bucket.
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>GetBucketVersioning</code>:
+    /// The following operations are related to <c>GetBucketVersioning</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -62,26 +68,36 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetBucketVersioningRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
-        private string expectedBucketOwner;
+        private string _bucketName;
+        private string _expectedBucketOwner;
 
         /// <summary>
-        /// The name of the bucket to be queried.
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket for which to get the versioning information.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.bucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -89,24 +105,20 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return !String.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
     }
 }
-    

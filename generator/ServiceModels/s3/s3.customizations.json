@@ -1860,6 +1860,23 @@
                     "Status":{"injectXmlPrivateMemberAssignment":["private VersionStatus _status = \"Off\";"], "injectXmlIsSet": ["return this._status != null && this._status != VersionStatus.Off;"]}
                 }
             ]
+        },
+        "GetBucketVersioningOutput":{
+            "modify":[
+                {
+                    "MFADelete":{"injectXmlUnmarshallCode":["response.VersioningConfig.EnableMfaDelete = string.Equals(StringUnmarshaller.GetInstance().Unmarshall(context), \"Enabled\");"], "skipContextTestExpressionUnmarshallingLogic" : true}
+                },
+                {
+                    "Status":{"injectXmlUnmarshallCode":["response.VersioningConfig.Status = StringUnmarshaller.GetInstance().Unmarshall(context);"], "skipContextTestExpressionUnmarshallingLogic" : true}
+                }
+            ]
+        },
+        "GetBucketVersioningRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -2372,6 +2389,10 @@
         ],
         "ListObjectVersionsOutput":[
             "DeleteMarkers"
+        ],
+        "GetBucketVersioningOutput":[
+            "Status",
+            "MFADelete"
         ]
     },
     "unwrapXmlOutput":{
