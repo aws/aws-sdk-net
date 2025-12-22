@@ -53,10 +53,6 @@ namespace Amazon.S3.Transfer
         /// Gets or sets the chunk buffer size for ChunkedBufferStream.
         /// When null, the default 64KB chunk size is used.
         /// </summary>
-        /// <remarks>
-        /// This internal property allows overriding the chunk size for performance tuning.
-        /// It can be used during testing or as an emergency performance tuning knob.
-        /// </remarks>
         public int? ChunkBufferSize { get; set; }
     }
 }
