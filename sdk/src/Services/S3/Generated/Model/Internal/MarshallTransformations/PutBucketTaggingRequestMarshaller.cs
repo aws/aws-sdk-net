@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutBucketOwnershipControls Request Marshaller
+    /// PutBucketTagging Request Marshaller
     /// </summary>       
-    public partial class PutBucketOwnershipControlsRequestMarshaller : IMarshaller<IRequest, PutBucketOwnershipControlsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class PutBucketTaggingRequestMarshaller : IMarshaller<IRequest, PutBucketTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutBucketOwnershipControlsRequest)input);
+            return this.Marshall((PutBucketTaggingRequest)input);
         }
 
         /// <summary>
@@ -53,12 +53,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutBucketOwnershipControlsRequest publicRequest)
+        public IRequest Marshall(PutBucketTaggingRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
-            request.AddSubResource("ownershipControls");
+            request.AddSubResource("tagging");
         
             if (publicRequest.IsSetChecksumAlgorithm()) 
             {
@@ -75,31 +75,32 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketOwnershipControlsRequest.BucketName");
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketTaggingRequest.BucketName");
             request.ResourcePath = "/";
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                if (publicRequest.IsSetOwnershipControls())
-                {
-                    xmlWriter.WriteStartElement("OwnershipControls", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    var publicRequestOwnershipControlsRules = publicRequest.OwnershipControls.Rules;
-                    if (publicRequest.OwnershipControls.IsSetRules()) 
+                    xmlWriter.WriteStartElement("Tagging", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    var publicRequestTagSet = publicRequest.TagSet;
+                    if (publicRequest.IsSetTagSet()) 
                     {
-                        foreach (var publicRequestOwnershipControlsRulesValue in publicRequestOwnershipControlsRules) 
+                        xmlWriter.WriteStartElement("TagSet");
+                        foreach (var publicRequestTagSetValue in publicRequestTagSet) 
                         {
-                        if (publicRequestOwnershipControlsRulesValue != null)
+                        if (publicRequestTagSetValue != null)
                         {
-                            xmlWriter.WriteStartElement("Rule");
-                            if(publicRequestOwnershipControlsRulesValue.IsSetObjectOwnership())
-                                xmlWriter.WriteElementString("ObjectOwnership", StringUtils.FromString(publicRequestOwnershipControlsRulesValue.ObjectOwnership));
+                            xmlWriter.WriteStartElement("Tag");
+                            if(publicRequestTagSetValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagSetValue.Key));
+                            if(publicRequestTagSetValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagSetValue.Value));
                             xmlWriter.WriteEndElement();
                         }
                         }            
+                        xmlWriter.WriteEndElement();            
                     }
 
                     xmlWriter.WriteEndElement();
-                }
             }
             PostMarshallCustomization(request, publicRequest);
             try 
@@ -122,9 +123,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return request;
         }
-        private static PutBucketOwnershipControlsRequestMarshaller _instance = new PutBucketOwnershipControlsRequestMarshaller();        
+        private static PutBucketTaggingRequestMarshaller _instance = new PutBucketTaggingRequestMarshaller();        
 
-        internal static PutBucketOwnershipControlsRequestMarshaller GetInstance()
+        internal static PutBucketTaggingRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +133,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutBucketOwnershipControlsRequestMarshaller Instance
+        public static PutBucketTaggingRequestMarshaller Instance
         {
             get
             {
@@ -140,7 +141,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketOwnershipControlsRequest publicRequest);
-        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketOwnershipControlsRequest publicRequest);
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketTaggingRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketTaggingRequest publicRequest);
     }    
 }
