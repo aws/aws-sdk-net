@@ -44,7 +44,7 @@ namespace Amazon.GuardDuty.Model
         /// A list of account identifiers of the GuardDuty member account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
