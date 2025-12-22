@@ -406,8 +406,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.
 * [AWSSDK.Elasticsearch](https://www.nuget.org/packages/AWSSDK.Elasticsearch/)
 	* Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.
-* [AWSSDK.ElasticTranscoder](https://www.nuget.org/packages/AWSSDK.ElasticTranscoder/)
-	* Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.
 * [AWSSDK.EMRContainers](https://www.nuget.org/packages/AWSSDK.EMRContainers/)
 	* This release adds support for Amazon EMR on EKS, a simple way to run Spark on Kubernetes.
 * [AWSSDK.EMRServerless](https://www.nuget.org/packages/AWSSDK.EMRServerless/)

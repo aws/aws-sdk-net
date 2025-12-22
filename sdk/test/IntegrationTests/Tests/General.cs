@@ -26,7 +26,6 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.SecurityToken.SAML;
 using Amazon.DynamoDBv2;
-using Amazon.ElasticTranscoder;
 using System.Threading;
 using System.Text.Json;
 using AWSSDK_DotNet.CommonTest.Utils;
@@ -92,18 +91,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     client.GetInstance(new Amazon.Lightsail.Model.GetInstanceRequest
                     {
                         InstanceName = fakeData
-                    });
-                });
-                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
-            }
-
-            using (var client = new Amazon.ElasticTranscoder.AmazonElasticTranscoderClient())
-            {
-                var ex = AssertExtensions.ExpectException<Amazon.ElasticTranscoder.Model.ValidationException>(() =>
-                {
-                    client.DeletePipeline(new Amazon.ElasticTranscoder.Model.DeletePipelineRequest
-                    {
-                        Id = fakeData
                     });
                 });
                 Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
