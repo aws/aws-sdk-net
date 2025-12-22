@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("linkedGroupId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LinkedGroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("partitionCount", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
