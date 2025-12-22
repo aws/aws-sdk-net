@@ -1,3 +1,13 @@
+### 4.0.158.0 (2025-12-22 19:25 UTC)
+* ConfigService (4.0.5.0)
+	* Added supported resourceTypes for Config from July to November 2025
+* EC2 (4.0.65.0)
+	* Adds support for linkedGroupId on the CreatePlacementGroup and DescribePlacementGroups APIs. The linkedGroupId parameter is reserved for future use.
+* GuardDuty (4.0.15.0)
+	* Make accountIds a required field in GetRemainingFreeTrialDays API to reflect service behavior.
+* PCS (4.0.11.6)
+	* Change API Reference Documentation for default Mode in Accounting and SlurmRest
+
 ### 4.0.157.0 (2025-12-19 19:17 UTC)
 * ARCRegionswitch (4.0.3.0)
 	* Automatic Plan Execution Reports allow customers to maintain a concise record of their Region switch Plan executions.  This enables customer SREs and leadership to have a clear view of their recovery posture based on the generated reports for their Plan executions.
