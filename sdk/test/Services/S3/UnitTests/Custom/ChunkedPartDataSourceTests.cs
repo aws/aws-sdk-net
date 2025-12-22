@@ -20,8 +20,8 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithValidStream_CreatesDataSource()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = Encoding.UTF8.GetBytes("Test data for part");
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -47,8 +47,8 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithStreamNotInReadMode_ThrowsException()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = Encoding.UTF8.GetBytes("Test data");
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             // Don't call SwitchToReadMode()
 
@@ -60,7 +60,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_SetsPartNumberCorrectly()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(1024);
             stream.SwitchToReadMode();
 
             // Act
@@ -79,8 +79,8 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_DelegatesToUnderlyingStream()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = Encoding.UTF8.GetBytes("Test data for reading");
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -100,8 +100,8 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_ReturnsCorrectByteCount()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[1000];
+            var stream = new ChunkedBufferStream(testData.Length);
             for (int i = 0; i < testData.Length; i++)
                 testData[i] = (byte)(i % 256);
 
@@ -125,8 +125,8 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_HandlesPartialReads()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[100];
+            var stream = new ChunkedBufferStream(testData.Length);
             for (int i = 0; i < testData.Length; i++)
                 testData[i] = (byte)i;
 
@@ -150,8 +150,8 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_RespectsCancellationToken()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = Encoding.UTF8.GetBytes("Test cancellation");
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -178,8 +178,8 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_WorksWithVariousBufferSizes()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             int totalSize = 10000;
+            var stream = new ChunkedBufferStream(totalSize);
             byte[] testData = new byte[totalSize];
             for (int i = 0; i < totalSize; i++)
                 testData[i] = (byte)(i % 256);
@@ -210,8 +210,8 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_ReturnsZeroAtEndOfStream()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[100];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -237,8 +237,8 @@ namespace AWSSDK.UnitTests
         public void IsComplete_ReturnsFalse_WhenDataRemains()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[1000];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -253,8 +253,8 @@ namespace AWSSDK.UnitTests
         public async Task IsComplete_ReturnsTrue_WhenFullyConsumed()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[100];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -273,8 +273,8 @@ namespace AWSSDK.UnitTests
         public async Task IsComplete_UpdatesCorrectly_AsDataIsRead()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[300];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -308,7 +308,7 @@ namespace AWSSDK.UnitTests
         public void IsComplete_ReturnsTrue_ForEmptyStream()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(1024);
             stream.SwitchToReadMode(); // Empty stream
 
             using (var dataSource = new ChunkedPartDataSource(1, stream))
@@ -326,8 +326,8 @@ namespace AWSSDK.UnitTests
         public void Dispose_ReleasesUnderlyingStream()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[1000];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -352,8 +352,8 @@ namespace AWSSDK.UnitTests
         public void Dispose_MultipleCalls_AreSafe()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[1000];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -371,9 +371,9 @@ namespace AWSSDK.UnitTests
         public void Dispose_ReturnsChunksToArrayPool()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             // Write enough data to allocate multiple chunks
             byte[] testData = new byte[200 * 1024]; // 200KB
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -403,8 +403,8 @@ namespace AWSSDK.UnitTests
         public void ToString_ReturnsExpectedFormat()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[1500];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -424,8 +424,8 @@ namespace AWSSDK.UnitTests
         public async Task ToString_ReflectsCurrentPosition()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[1000];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 
@@ -453,8 +453,8 @@ namespace AWSSDK.UnitTests
         public async Task FullReadCycle_FromCreationToDisposal()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             int totalSize = 100 * 1024; // 100KB
+            var stream = new ChunkedBufferStream(totalSize);
             byte[] testData = new byte[totalSize];
             for (int i = 0; i < totalSize; i++)
                 testData[i] = (byte)(i % 256);
@@ -501,8 +501,8 @@ namespace AWSSDK.UnitTests
         public async Task SequentialReading_HandlesCorrectly()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[5000];
+            var stream = new ChunkedBufferStream(testData.Length);
             for (int i = 0; i < testData.Length; i++)
                 testData[i] = (byte)(i % 256);
 
@@ -541,9 +541,9 @@ namespace AWSSDK.UnitTests
         public async Task LargePartData_HandlesMultipleChunks()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             // Write 300KB spanning multiple 80KB chunks
             int totalSize = 300 * 1024;
+            var stream = new ChunkedBufferStream(totalSize);
             byte[] testData = new byte[totalSize];
             var random = new Random(42); // Fixed seed for reproducibility
             random.NextBytes(testData);
@@ -583,8 +583,8 @@ namespace AWSSDK.UnitTests
         public void PartNumber_RemainsConstant()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
             byte[] testData = new byte[1000];
+            var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
             stream.SwitchToReadMode();
 

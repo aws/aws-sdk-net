@@ -81,7 +81,7 @@ namespace AWSSDK.UnitTests
             {
                 // Add part 1
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -141,7 +141,7 @@ namespace AWSSDK.UnitTests
                 {
                     await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                     byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                    var chunkedStream = new ChunkedBufferStream();
+                    var chunkedStream = new ChunkedBufferStream(512);
                     await chunkedStream.WriteAsync(testData, 0, 512);
                     chunkedStream.SwitchToReadMode();
                     var dataSource = new ChunkedPartDataSource(i, chunkedStream);
@@ -179,7 +179,7 @@ namespace AWSSDK.UnitTests
                 // Take the one available slot
                 await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -252,7 +252,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -315,7 +315,7 @@ namespace AWSSDK.UnitTests
 
                 // Add the part
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -346,7 +346,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -399,7 +399,7 @@ namespace AWSSDK.UnitTests
             {
                 // Add part 1
                 byte[] testData1 = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream1 = new ChunkedBufferStream();
+                var chunkedStream1 = new ChunkedBufferStream(512);
                 await chunkedStream1.WriteAsync(testData1, 0, 512);
                 chunkedStream1.SwitchToReadMode();
                 var dataSource1 = new ChunkedPartDataSource(1, chunkedStream1);
@@ -407,7 +407,7 @@ namespace AWSSDK.UnitTests
 
                 // Try to add duplicate part 1
                 byte[] testData2 = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream2 = new ChunkedBufferStream();
+                var chunkedStream2 = new ChunkedBufferStream(512);
                 await chunkedStream2.WriteAsync(testData2, 0, 512);
                 chunkedStream2.SwitchToReadMode();
                 var dataSource2 = new ChunkedPartDataSource(1, chunkedStream2);
@@ -437,7 +437,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -469,7 +469,7 @@ namespace AWSSDK.UnitTests
             {
                 // Add part 1
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -606,7 +606,7 @@ namespace AWSSDK.UnitTests
 
                 // Add the part asynchronously
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -689,7 +689,7 @@ namespace AWSSDK.UnitTests
             {
                 // Add Part 1 (100 bytes)
                 byte[] testData1 = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
-                var chunkedStream1 = new ChunkedBufferStream();
+                var chunkedStream1 = new ChunkedBufferStream(100);
                 await chunkedStream1.WriteAsync(testData1, 0, 100);
                 chunkedStream1.SwitchToReadMode();
                 var dataSource1 = new ChunkedPartDataSource(1, chunkedStream1);
@@ -698,7 +698,7 @@ namespace AWSSDK.UnitTests
 
                 // Add Part 2 (100 bytes) 
                 byte[] testData2 = MultipartDownloadTestHelpers.GenerateTestData(100, 100);
-                var chunkedStream2 = new ChunkedBufferStream();
+                var chunkedStream2 = new ChunkedBufferStream(100);
                 await chunkedStream2.WriteAsync(testData2, 0, 100);
                 chunkedStream2.SwitchToReadMode();
                 var dataSource2 = new ChunkedPartDataSource(2, chunkedStream2);
@@ -740,7 +740,7 @@ namespace AWSSDK.UnitTests
                 for (int i = 1; i <= 3; i++)
                 {
                     byte[] testData = MultipartDownloadTestHelpers.GeneratePartSpecificData(50, i);
-                    var chunkedStream = new ChunkedBufferStream();
+                    var chunkedStream = new ChunkedBufferStream(50);
                     await chunkedStream.WriteAsync(testData, 0, 50);
                     chunkedStream.SwitchToReadMode();
                     var dataSource = new ChunkedPartDataSource(i, chunkedStream);
@@ -773,7 +773,7 @@ namespace AWSSDK.UnitTests
             {
                 // Add part 1
                 byte[] testData1 = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
-                var chunkedStream1 = new ChunkedBufferStream();
+                var chunkedStream1 = new ChunkedBufferStream(100);
                 await chunkedStream1.WriteAsync(testData1, 0, 100);
                 chunkedStream1.SwitchToReadMode();
                 var dataSource1 = new ChunkedPartDataSource(1, chunkedStream1);
@@ -789,7 +789,7 @@ namespace AWSSDK.UnitTests
 
                 // Add part 2
                 byte[] testData2 = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
-                var chunkedStream2 = new ChunkedBufferStream();
+                var chunkedStream2 = new ChunkedBufferStream(100);
                 await chunkedStream2.WriteAsync(testData2, 0, 100);
                 chunkedStream2.SwitchToReadMode();
                 var dataSource2 = new ChunkedPartDataSource(2, chunkedStream2);
@@ -819,7 +819,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 // Add empty part 1
-                var chunkedStream1 = new ChunkedBufferStream();
+                var chunkedStream1 = new ChunkedBufferStream(1024);
                 // Write 0 bytes - empty part
                 chunkedStream1.SwitchToReadMode();
                 var dataSource1 = new ChunkedPartDataSource(1, chunkedStream1);
@@ -828,7 +828,7 @@ namespace AWSSDK.UnitTests
 
                 // Add part 2 with data
                 byte[] testData2 = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
-                var chunkedStream2 = new ChunkedBufferStream();
+                var chunkedStream2 = new ChunkedBufferStream(100);
                 await chunkedStream2.WriteAsync(testData2, 0, 100);
                 chunkedStream2.SwitchToReadMode();
                 var dataSource2 = new ChunkedPartDataSource(2, chunkedStream2);
@@ -1039,7 +1039,7 @@ namespace AWSSDK.UnitTests
             {
                 // Create a ChunkedPartDataSource
                 byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream = new ChunkedBufferStream();
+                var chunkedStream = new ChunkedBufferStream(512);
                 await chunkedStream.WriteAsync(testData, 0, 512);
                 chunkedStream.SwitchToReadMode();
                 var chunkedSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -1189,7 +1189,7 @@ namespace AWSSDK.UnitTests
 
                 // Add buffered source for part 2
                 var testData2 = MultipartDownloadTestHelpers.GenerateTestData(500, 500);
-                var chunkedStream2 = new ChunkedBufferStream();
+                var chunkedStream2 = new ChunkedBufferStream(500);
                 await chunkedStream2.WriteAsync(testData2, 0, 500);
                 chunkedStream2.SwitchToReadMode();
                 var dataSource2 = new ChunkedPartDataSource(2, chunkedStream2);
@@ -1300,7 +1300,7 @@ namespace AWSSDK.UnitTests
             var manager = new PartBufferManager(config);
             
             byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-            var chunkedStream = new ChunkedBufferStream();
+            var chunkedStream = new ChunkedBufferStream(512);
             await chunkedStream.WriteAsync(testData, 0, 512);
             chunkedStream.SwitchToReadMode();
             var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -1321,7 +1321,7 @@ namespace AWSSDK.UnitTests
             var manager = new PartBufferManager(config);
             
             byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-            var chunkedStream = new ChunkedBufferStream();
+            var chunkedStream = new ChunkedBufferStream(100);
             await chunkedStream.WriteAsync(testData, 0, 512);
             chunkedStream.SwitchToReadMode();
             var dataSource = new ChunkedPartDataSource(1, chunkedStream);
@@ -1442,7 +1442,7 @@ namespace AWSSDK.UnitTests
 
                     // Add part
                     byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
-                    var chunkedStream = new ChunkedBufferStream();
+                    var chunkedStream = new ChunkedBufferStream(100);
                     await chunkedStream.WriteAsync(testData, 0, 100);
                     chunkedStream.SwitchToReadMode();
                     var dataSource = new ChunkedPartDataSource(partNum, chunkedStream);
@@ -1667,7 +1667,7 @@ namespace AWSSDK.UnitTests
 
                         // Simulate buffering the part
                         byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
-                        var chunkedStream = new ChunkedBufferStream();
+                        var chunkedStream = new ChunkedBufferStream(100);
                         await chunkedStream.WriteAsync(testData, 0, 100);
                         chunkedStream.SwitchToReadMode();
                         var dataSource = new ChunkedPartDataSource(capturedPartNum, chunkedStream);

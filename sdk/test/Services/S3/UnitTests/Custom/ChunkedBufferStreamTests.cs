@@ -21,7 +21,7 @@ namespace AWSSDK.UnitTests
         public void Constructor_InitializesInWriteMode()
         {
             // Arrange & Act
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Assert
                 Assert.IsTrue(stream.CanWrite);
@@ -33,12 +33,129 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Constructor_WithEstimatedSizeZero_ThrowsArgumentOutOfRangeException()
+        {
+            // Act - Should throw
+            var stream = new ChunkedBufferStream(0);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Constructor_WithNegativeEstimatedSize_ThrowsArgumentOutOfRangeException()
+        {
+            // Act - Should throw
+            var stream = new ChunkedBufferStream(-100);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Constructor_WithChunkSizeExceedingEstimatedSize_ThrowsArgumentOutOfRangeException()
+        {
+            // Arrange
+            long estimatedSize = 1024;
+            int chunkSize = 2048; // Larger than estimated size
+
+            // Act - Should throw
+            var stream = new ChunkedBufferStream(estimatedSize, chunkSize);
+        }
+
+        [TestMethod]
+        public void Constructor_WithCustomChunkSize_UsesProvidedChunkSize()
+        {
+            // Arrange
+            long estimatedSize = 200 * 1024; // 200KB
+            int customChunkSize = 32 * 1024; // 32KB
+
+            // Act
+            using (var stream = new ChunkedBufferStream(estimatedSize, customChunkSize))
+            {
+                // Write enough data to span multiple chunks
+                byte[] testData = new byte[100 * 1024]; // 100KB
+                for (int i = 0; i < testData.Length; i++)
+                    testData[i] = (byte)(i % 256);
+
+                stream.Write(testData, 0, testData.Length);
+
+                // Assert - Should have allocated ~4 chunks (100KB / 32KB ≈ 3.125, rounded up to 4)
+                Assert.AreEqual(testData.Length, stream.Length);
+
+                // Verify data integrity
+                stream.SwitchToReadMode();
+                byte[] readBuffer = new byte[testData.Length];
+                int bytesRead = stream.Read(readBuffer, 0, readBuffer.Length);
+
+                Assert.AreEqual(testData.Length, bytesRead);
+                CollectionAssert.AreEqual(testData, readBuffer);
+            }
+        }
+
+        [TestMethod]
+        public void Constructor_WithNullChunkSize_UsesDefaultChunkSize()
+        {
+            // Arrange
+            long estimatedSize = 200 * 1024; // 200KB
+
+            // Act
+            using (var stream = new ChunkedBufferStream(estimatedSize, null))
+            {
+                // Write data and verify it works correctly with default chunk size
+                byte[] testData = new byte[150 * 1024]; // 150KB
+                for (int i = 0; i < testData.Length; i++)
+                    testData[i] = (byte)(i % 256);
+
+                stream.Write(testData, 0, testData.Length);
+
+                // Assert
+                Assert.AreEqual(testData.Length, stream.Length);
+
+                // Verify data integrity
+                stream.SwitchToReadMode();
+                byte[] readBuffer = new byte[testData.Length];
+                int bytesRead = stream.Read(readBuffer, 0, readBuffer.Length);
+
+                Assert.AreEqual(testData.Length, bytesRead);
+                CollectionAssert.AreEqual(testData, readBuffer);
+            }
+        }
+
+        [TestMethod]
+        public void Constructor_WithValidEstimatedSize_PreAllocatesCapacity()
+        {
+            // Arrange
+            long estimatedSize = 256 * 1024; // 256KB
+            int customChunkSize = 64 * 1024; // 64KB
+
+            // Act - Constructor should pre-allocate capacity for 4 chunks (256KB / 64KB = 4)
+            using (var stream = new ChunkedBufferStream(estimatedSize, customChunkSize))
+            {
+                // Write the expected amount of data
+                byte[] testData = new byte[estimatedSize];
+                for (int i = 0; i < testData.Length; i++)
+                    testData[i] = (byte)(i % 256);
+
+                stream.Write(testData, 0, testData.Length);
+
+                // Assert
+                Assert.AreEqual(estimatedSize, stream.Length);
+
+                // Verify data integrity
+                stream.SwitchToReadMode();
+                byte[] readBuffer = new byte[estimatedSize];
+                int bytesRead = stream.Read(readBuffer, 0, readBuffer.Length);
+
+                Assert.AreEqual(estimatedSize, bytesRead);
+                CollectionAssert.AreEqual(testData, readBuffer);
+            }
+        }
+
+        [TestMethod]
         public void SwitchToReadMode_TransitionsCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            byte[] testData = Encoding.UTF8.GetBytes("Test data for read mode");
+            using (var stream = new ChunkedBufferStream(testData.Length))
             {
-                byte[] testData = Encoding.UTF8.GetBytes("Test data for read mode");
                 stream.Write(testData, 0, testData.Length);
 
                 // Act
@@ -58,7 +175,7 @@ namespace AWSSDK.UnitTests
         public void SwitchToReadMode_CalledTwice_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
 
@@ -72,7 +189,7 @@ namespace AWSSDK.UnitTests
         public void Write_AfterSwitchToReadMode_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
                 byte[] testData = new byte[100];
@@ -90,12 +207,12 @@ namespace AWSSDK.UnitTests
         public void Write_SingleChunk_WritesCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
-            {
-                byte[] testData = new byte[1024];
-                for (int i = 0; i < testData.Length; i++)
-                    testData[i] = (byte)(i % 256);
+            byte[] testData = new byte[1024];
+            for (int i = 0; i < testData.Length; i++)
+                testData[i] = (byte)(i % 256);
 
+            using (var stream = new ChunkedBufferStream(testData.Length))
+            {
                 // Act
                 stream.Write(testData, 0, testData.Length);
 
@@ -117,14 +234,14 @@ namespace AWSSDK.UnitTests
         public void Write_MultipleChunks_WritesCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
-            {
-                // Write 200KB of data (spans multiple 80KB chunks)
-                int totalSize = 200 * 1024;
-                byte[] testData = new byte[totalSize];
-                for (int i = 0; i < testData.Length; i++)
-                    testData[i] = (byte)(i % 256);
+            // Write 200KB of data (spans multiple 80KB chunks)
+            int totalSize = 200 * 1024;
+            byte[] testData = new byte[totalSize];
+            for (int i = 0; i < testData.Length; i++)
+                testData[i] = (byte)(i % 256);
 
+            using (var stream = new ChunkedBufferStream(totalSize))
+            {
                 // Act
                 stream.Write(testData, 0, testData.Length);
 
@@ -145,14 +262,14 @@ namespace AWSSDK.UnitTests
         public void Write_AtChunkBoundary_WritesCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
-            {
-                // Write exactly 80KB (one chunk size)
-                int chunkSize = 81920; // 80KB
-                byte[] testData = new byte[chunkSize];
-                for (int i = 0; i < testData.Length; i++)
-                    testData[i] = (byte)(i % 256);
+            // Write exactly 80KB (one chunk size)
+            int chunkSize = 81920; // 80KB
+            byte[] testData = new byte[chunkSize];
+            for (int i = 0; i < testData.Length; i++)
+                testData[i] = (byte)(i % 256);
 
+            using (var stream = new ChunkedBufferStream(chunkSize + 1))
+            {
                 // Act
                 stream.Write(testData, 0, testData.Length);
 
@@ -180,10 +297,10 @@ namespace AWSSDK.UnitTests
         public async Task WriteAsync_DelegatesToWrite()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            byte[] testData = Encoding.UTF8.GetBytes("Test async write");
+            
+            using (var stream = new ChunkedBufferStream(testData.Length))
             {
-                byte[] testData = Encoding.UTF8.GetBytes("Test async write");
-
                 // Act
                 await stream.WriteAsync(testData, 0, testData.Length, CancellationToken.None);
 
@@ -197,7 +314,7 @@ namespace AWSSDK.UnitTests
         public void Write_NullBuffer_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Act - Should throw
                 stream.Write(null, 0, 100);
@@ -209,7 +326,7 @@ namespace AWSSDK.UnitTests
         public void Write_NegativeOffset_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 byte[] buffer = new byte[100];
 
@@ -223,7 +340,7 @@ namespace AWSSDK.UnitTests
         public void Write_NegativeCount_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 byte[] buffer = new byte[100];
 
@@ -237,7 +354,7 @@ namespace AWSSDK.UnitTests
         public void Write_OffsetAndCountExceedBufferBounds_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 byte[] buffer = new byte[100];
 
@@ -254,12 +371,12 @@ namespace AWSSDK.UnitTests
         public void Read_SingleChunk_ReadsCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
-            {
-                byte[] testData = new byte[1024];
-                for (int i = 0; i < testData.Length; i++)
-                    testData[i] = (byte)(i % 256);
+            byte[] testData = new byte[1024];
+            for (int i = 0; i < testData.Length; i++)
+                testData[i] = (byte)(i % 256);
 
+            using (var stream = new ChunkedBufferStream(testData.Length))
+            {
                 stream.Write(testData, 0, testData.Length);
                 stream.SwitchToReadMode();
 
@@ -278,14 +395,14 @@ namespace AWSSDK.UnitTests
         public void Read_AcrossMultipleChunks_ReadsCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
-            {
-                // Write 200KB spanning multiple chunks
-                int totalSize = 200 * 1024;
-                byte[] testData = new byte[totalSize];
-                for (int i = 0; i < testData.Length; i++)
-                    testData[i] = (byte)(i % 256);
+            // Write 200KB spanning multiple chunks
+            int totalSize = 200 * 1024;
+            byte[] testData = new byte[totalSize];
+            for (int i = 0; i < testData.Length; i++)
+                testData[i] = (byte)(i % 256);
 
+            using (var stream = new ChunkedBufferStream(totalSize))
+            {
                 stream.Write(testData, 0, testData.Length);
                 stream.SwitchToReadMode();
 
@@ -303,12 +420,12 @@ namespace AWSSDK.UnitTests
         public void Read_InMultipleChunks_ReadsCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
-            {
-                byte[] testData = new byte[10000];
-                for (int i = 0; i < testData.Length; i++)
-                    testData[i] = (byte)(i % 256);
+            byte[] testData = new byte[10000];
+            for (int i = 0; i < testData.Length; i++)
+                testData[i] = (byte)(i % 256);
 
+            using (var stream = new ChunkedBufferStream(testData.Length))
+            {
                 stream.Write(testData, 0, testData.Length);
                 stream.SwitchToReadMode();
 
@@ -333,9 +450,10 @@ namespace AWSSDK.UnitTests
         public void Read_AtEndOfStream_ReturnsZero()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            byte[] testData = new byte[100];
+            
+            using (var stream = new ChunkedBufferStream(testData.Length))
             {
-                byte[] testData = new byte[100];
                 stream.Write(testData, 0, testData.Length);
                 stream.SwitchToReadMode();
 
@@ -356,12 +474,12 @@ namespace AWSSDK.UnitTests
         public void Read_PartialData_ReadsAvailableBytes()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
-            {
-                byte[] testData = new byte[50];
-                for (int i = 0; i < testData.Length; i++)
-                    testData[i] = (byte)i;
+            byte[] testData = new byte[50];
+            for (int i = 0; i < testData.Length; i++)
+                testData[i] = (byte)i;
 
+            using (var stream = new ChunkedBufferStream(testData.Length))
+            {
                 stream.Write(testData, 0, testData.Length);
                 stream.SwitchToReadMode();
 
@@ -380,9 +498,10 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_DelegatesToRead()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            byte[] testData = Encoding.UTF8.GetBytes("Test async read");
+            
+            using (var stream = new ChunkedBufferStream(testData.Length))
             {
-                byte[] testData = Encoding.UTF8.GetBytes("Test async read");
                 stream.Write(testData, 0, testData.Length);
                 stream.SwitchToReadMode();
 
@@ -401,7 +520,7 @@ namespace AWSSDK.UnitTests
         public void Read_NullBuffer_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
 
@@ -415,7 +534,7 @@ namespace AWSSDK.UnitTests
         public void Read_NegativeOffset_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
                 byte[] buffer = new byte[100];
@@ -430,7 +549,7 @@ namespace AWSSDK.UnitTests
         public void Read_NegativeCount_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
                 byte[] buffer = new byte[100];
@@ -445,7 +564,7 @@ namespace AWSSDK.UnitTests
         public void Read_OffsetAndCountExceedBufferBounds_ThrowsException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
                 byte[] buffer = new byte[100];
@@ -463,7 +582,7 @@ namespace AWSSDK.UnitTests
         public void CanRead_ReflectsCurrentMode()
         {
             // Arrange & Act
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Assert - In write mode
                 Assert.IsFalse(stream.CanRead);
@@ -478,7 +597,7 @@ namespace AWSSDK.UnitTests
         public void CanWrite_ReflectsCurrentMode()
         {
             // Arrange & Act
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Assert - In write mode
                 Assert.IsTrue(stream.CanWrite);
@@ -493,7 +612,7 @@ namespace AWSSDK.UnitTests
         public void CanSeek_AlwaysReturnsFalse()
         {
             // Arrange & Act
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Assert - In write mode
                 Assert.IsFalse(stream.CanSeek);
@@ -508,7 +627,7 @@ namespace AWSSDK.UnitTests
         public void Length_ReturnsCorrectValue()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(5000))
             {
                 // Assert - Initially zero
                 Assert.AreEqual(0, stream.Length);
@@ -532,7 +651,7 @@ namespace AWSSDK.UnitTests
         public void Position_GetReturnsCorrectValue()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1000))
             {
                 byte[] testData = new byte[1000];
                 stream.Write(testData, 0, testData.Length);
@@ -560,7 +679,7 @@ namespace AWSSDK.UnitTests
         public void Position_Set_ThrowsNotSupportedException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Act - Should throw
                 stream.Position = 100;
@@ -576,7 +695,7 @@ namespace AWSSDK.UnitTests
         public void Seek_ThrowsNotSupportedException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Act - Should throw
                 stream.Seek(0, SeekOrigin.Begin);
@@ -588,7 +707,7 @@ namespace AWSSDK.UnitTests
         public void SetLength_ThrowsNotSupportedException()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Act - Should throw
                 stream.SetLength(1000);
@@ -599,7 +718,7 @@ namespace AWSSDK.UnitTests
         public void Flush_DoesNotThrow()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 byte[] testData = new byte[100];
                 stream.Write(testData, 0, testData.Length);
@@ -620,7 +739,7 @@ namespace AWSSDK.UnitTests
         public void Dispose_ReturnsChunksToArrayPool()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(100000);
             byte[] testData = new byte[100000]; // Enough to allocate chunks
             stream.Write(testData, 0, testData.Length);
 
@@ -643,7 +762,7 @@ namespace AWSSDK.UnitTests
         public void Dispose_MultipleCalls_IsIdempotent()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(1000);
             byte[] testData = new byte[1000];
             stream.Write(testData, 0, testData.Length);
 
@@ -660,7 +779,7 @@ namespace AWSSDK.UnitTests
         public void Write_AfterDispose_ThrowsObjectDisposedException()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(1024);
             stream.Dispose();
 
             // Act - Should throw
@@ -673,7 +792,7 @@ namespace AWSSDK.UnitTests
         public void Read_AfterDispose_ThrowsObjectDisposedException()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(1024);
             stream.SwitchToReadMode();
             stream.Dispose();
 
@@ -687,7 +806,7 @@ namespace AWSSDK.UnitTests
         public void Length_AfterDispose_ThrowsObjectDisposedException()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(1024);
             stream.Dispose();
 
             // Act - Should throw
@@ -699,7 +818,7 @@ namespace AWSSDK.UnitTests
         public void Position_AfterDispose_ThrowsObjectDisposedException()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(1024);
             stream.Dispose();
 
             // Act - Should throw
@@ -711,7 +830,7 @@ namespace AWSSDK.UnitTests
         public void SwitchToReadMode_AfterDispose_ThrowsObjectDisposedException()
         {
             // Arrange
-            var stream = new ChunkedBufferStream();
+            var stream = new ChunkedBufferStream(1024);
             stream.Dispose();
 
             // Act - Should throw
@@ -726,7 +845,7 @@ namespace AWSSDK.UnitTests
         public void EmptyStream_SwitchToReadMode_WorksCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            using (var stream = new ChunkedBufferStream(1024))
             {
                 // Act - Don't write any data, just switch to read mode
                 stream.SwitchToReadMode();
@@ -747,10 +866,9 @@ namespace AWSSDK.UnitTests
         public void Write_AtExactChunkBoundaries_HandlesCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            int chunkSize = 81920; // 80KB
+            using (var stream = new ChunkedBufferStream(chunkSize * 2))
             {
-                int chunkSize = 81920; // 80KB
-
                 // Write exactly 2 chunks
                 byte[] chunk1 = new byte[chunkSize];
                 byte[] chunk2 = new byte[chunkSize];
@@ -789,12 +907,13 @@ namespace AWSSDK.UnitTests
         public void Read_AtChunkBoundary_HandlesCorrectly()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            int chunkSize = 81920; // 80KB
+            int totalSize = chunkSize * 2 + chunkSize / 2;
+            
+            using (var stream = new ChunkedBufferStream(totalSize))
             {
-                int chunkSize = 81920; // 80KB
-                
                 // Write 2.5 chunks worth of data
-                byte[] testData = new byte[chunkSize * 2 + chunkSize / 2];
+                byte[] testData = new byte[totalSize];
                 for (int i = 0; i < testData.Length; i++)
                     testData[i] = (byte)(i % 256);
 
@@ -834,10 +953,10 @@ namespace AWSSDK.UnitTests
         public void LargeData_HandlesMultipleChunks()
         {
             // Arrange
-            using (var stream = new ChunkedBufferStream())
+            int totalSize = 500 * 1024;
+            using (var stream = new ChunkedBufferStream(totalSize))
             {
                 // Write 500KB of data (spans ~6 chunks)
-                int totalSize = 500 * 1024;
                 byte[] testData = new byte[totalSize];
                 var random = new Random(42); // Fixed seed for reproducibility
                 random.NextBytes(testData);

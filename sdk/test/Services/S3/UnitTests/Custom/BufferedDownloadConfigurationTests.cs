@@ -30,6 +30,70 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(maxInMemoryParts, config.MaxInMemoryParts);
             Assert.AreEqual(bufferSize, config.BufferSize);
             Assert.AreEqual(targetPartSize, config.TargetPartSizeBytes);
+            Assert.IsNull(config.ChunkBufferSize); // Default should be null
+        }
+
+        [TestMethod]
+        public void Constructor_WithChunkBufferSize_SetsProperty()
+        {
+            // Arrange
+            int concurrentRequests = 10;
+            int maxInMemoryParts = 5;
+            int bufferSize = 8192;
+            long targetPartSize = 8 * 1024 * 1024; // 8MB
+            int chunkBufferSize = 32 * 1024; // 32KB
+
+            // Act
+            var config = new BufferedDownloadConfiguration(concurrentRequests, maxInMemoryParts, bufferSize, targetPartSize, chunkBufferSize);
+
+            // Assert
+            Assert.AreEqual(concurrentRequests, config.ConcurrentServiceRequests);
+            Assert.AreEqual(maxInMemoryParts, config.MaxInMemoryParts);
+            Assert.AreEqual(bufferSize, config.BufferSize);
+            Assert.AreEqual(targetPartSize, config.TargetPartSizeBytes);
+            Assert.AreEqual(chunkBufferSize, config.ChunkBufferSize);
+        }
+
+        [TestMethod]
+        public void Constructor_WithNullChunkBufferSize_LeavesPropertyNull()
+        {
+            // Arrange
+            int concurrentRequests = 10;
+            int maxInMemoryParts = 5;
+            int bufferSize = 8192;
+            long targetPartSize = 8 * 1024 * 1024; // 8MB
+
+            // Act
+            var config = new BufferedDownloadConfiguration(concurrentRequests, maxInMemoryParts, bufferSize, targetPartSize, null);
+
+            // Assert
+            Assert.IsNull(config.ChunkBufferSize);
+        }
+
+        [TestMethod]
+        public void Constructor_WithSmallChunkBufferSize_AcceptsValue()
+        {
+            // Arrange
+            int chunkBufferSize = 16 * 1024; // 16KB
+
+            // Act
+            var config = new BufferedDownloadConfiguration(10, 5, 8192, 8 * 1024 * 1024, chunkBufferSize);
+
+            // Assert
+            Assert.AreEqual(chunkBufferSize, config.ChunkBufferSize);
+        }
+
+        [TestMethod]
+        public void Constructor_WithLargeChunkBufferSize_AcceptsValue()
+        {
+            // Arrange
+            int chunkBufferSize = 128 * 1024; // 128KB
+
+            // Act
+            var config = new BufferedDownloadConfiguration(10, 5, 8192, 8 * 1024 * 1024, chunkBufferSize);
+
+            // Assert
+            Assert.AreEqual(chunkBufferSize, config.ChunkBufferSize);
         }
 
         [TestMethod]

@@ -520,5 +520,149 @@ namespace AWSSDK.UnitTests
         }
 
         #endregion
+
+        #region ChunkBufferSize Tests
+
+        [TestMethod]
+        public async Task ExecuteAsync_WithChunkBufferSize_PassedToStream()
+        {
+            // Arrange
+            var customChunkSize = 32 * 1024; // 32KB
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024, "test-etag");
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            request.ChunkBufferSize = customChunkSize;
+            
+            var config = new TransferUtilityConfig();
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ResponseStream);
+            // Stream should be created successfully with request's ChunkBufferSize value
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_WithNullChunkBufferSize_UsesDefaultChunkSize()
+        {
+            // Arrange
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(2048, "test-etag");
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            // Don't set ChunkBufferSize - should use default
+            Assert.IsNull(request.ChunkBufferSize, "ChunkBufferSize should default to null");
+            
+            var config = new TransferUtilityConfig();
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ResponseStream);
+            
+            // Should work with default chunk size
+            var buffer = new byte[1024];
+            var bytesRead = await response.ResponseStream.ReadAsync(buffer, 0, buffer.Length);
+            Assert.IsTrue(bytesRead > 0, "Should successfully read with default chunk size");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        [DataTestMethod]
+        [DataRow(16 * 1024, DisplayName = "Small (16KB)")]
+        [DataRow(64 * 1024, DisplayName = "Medium (64KB)")]
+        [DataRow(128 * 1024, DisplayName = "Large (128KB)")]
+        [DataRow(256 * 1024, DisplayName = "Extra Large (256KB)")]
+        public async Task ExecuteAsync_WithVariousChunkBufferSizes_CreatesStreamSuccessfully(
+            int chunkBufferSize)
+        {
+            // Arrange
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            request.ChunkBufferSize = chunkBufferSize;
+            
+            var config = new TransferUtilityConfig { ConcurrentServiceRequests = 1 };
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ResponseStream);
+            Assert.IsInstanceOfType(response.ResponseStream, typeof(BufferedMultipartStream));
+            
+            // Verify stream works with custom chunk size
+            var stream = (BufferedMultipartStream)response.ResponseStream;
+            Assert.IsNotNull(stream.DiscoveryResult);
+            
+            // Verify we can read from the stream
+            var buffer = new byte[chunkBufferSize];
+            var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+            Assert.IsTrue(bytesRead > 0, 
+                $"Should successfully read with ChunkBufferSize={chunkBufferSize}");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_MultipartWithCustomChunkBufferSize_IntegrationTest()
+        {
+            // Arrange - Larger multipart download with custom chunk size
+            var customChunkSize = 32 * 1024; // 32KB chunks
+            var totalParts = 5;
+            var partSize = 10 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "multipart-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(partSize: partSize);
+            request.ChunkBufferSize = customChunkSize;
+            
+            var config = new TransferUtilityConfig { ConcurrentServiceRequests = 2 };
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ResponseStream);
+            
+            var stream = (BufferedMultipartStream)response.ResponseStream;
+            Assert.AreEqual(totalParts, stream.DiscoveryResult.TotalParts);
+            
+            // Verify we can read from the stream with custom chunk size
+            var buffer = new byte[customChunkSize * 2]; // Read 2 chunks worth
+            var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+            Assert.IsTrue(bytesRead > 0, 
+                $"Should successfully read multipart download with ChunkBufferSize={customChunkSize}");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        #endregion
     }
 }
