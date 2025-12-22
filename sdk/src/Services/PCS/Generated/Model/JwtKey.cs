@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// The JWT key stored in AWS Secrets Manager for Slurm REST API authentication.
+    /// The JWT key stored in Amazon Web Services Secrets Manager for Slurm REST API authentication.
     /// </summary>
     public partial class JwtKey
     {
@@ -40,8 +40,8 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Secrets Manager secret containing the JWT
-        /// key.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing
+        /// the JWT key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property SecretVersion. 
         /// <para>
-        /// The version of the AWS Secrets Manager secret containing the JWT key.
+        /// The version of the Amazon Web Services Secrets Manager secret containing the JWT key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
