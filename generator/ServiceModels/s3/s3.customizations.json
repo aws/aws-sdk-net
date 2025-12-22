@@ -59,6 +59,271 @@
             "modify": [
                 {
                     "Bucket": { "emitPropertyName": "DestinationBucket" }
+                },
+                {
+                    "DestinationBucket":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._destinationBucket);"
+                        ]
+                    }
+                },
+                {
+                    "DestinationKey":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._destinationKey);"
+                        ]
+                    }
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._expectedBucketOwner);"
+                        ]
+                    }
+                },
+                {
+                    "ExpectedSourceBucketOwner":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._expectedSourceBucketOwner);"
+                        ]
+                    }
+                },
+                {
+                    "SourceBucket":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._sourceBucket);"
+                        ],
+                        "injectXmlMarshallCode": [
+                            "request.Headers.Add(Amazon.Util.HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(publicRequest.SourceBucket, publicRequest.SourceKey, publicRequest.SourceVersionId));"
+                        ]
+                    }
+                },
+                {
+                    "SourceKey":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._sourceKey);"
+                        ]
+                    }
+                },
+                {
+                    "SourceVersionId":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._sourceVersionId);"
+                        ]
+                    }
+                },
+                {
+                    "ACL": {"emitPropertyName": "CannedACL"}
+                },
+                {
+                    "CannedACL":{
+                        "injectXmlIsSet":[
+                            "return _cannedACL != null && _cannedACL != S3CannedACL.NoACL;"
+                        ]
+                    }
+                },
+                {
+                    "CopySourceIfModifiedSince": {"emitPropertyName": "ModifiedSinceDate"}
+                },
+                {
+                    "ModifiedSinceDate":{
+                        "injectXmlPropertyGetter":[
+                            "get { return this._modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }"
+                        ]
+                    }
+                },
+                {
+                    "CopySourceIfUnmodifiedSince": {"emitPropertyName": "UnmodifiedSinceDate"}
+                },
+                {
+                    "UnmodifiedSinceDate":{
+                        "injectXmlPropertyGetter":[
+                            "get { return this._unmodifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }"
+                        ]
+                    }
+                },
+                {
+                    "SSECustomerAlgorithm" : {"emitPropertyName": "ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKey" : { "emitPropertyName" : "ServerSideEncryptionCustomerProvidedKey" }
+                },
+                {
+                    "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "CopySourceSSECustomerAlgorithm" : {"emitPropertyName" : "CopySourceServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "CopySourceServerSideEncryptionCustomerMethod":{
+                        "injectXmlIsSet":[
+                            "return this._copySourceServerSideEncryptionCustomerMethod != null && this._copySourceServerSideEncryptionCustomerMethod != ServerSideEncryptionCustomerMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "CopySourceSSECustomerKey" : {"emitPropertyName" : "CopySourceServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+                    "CopySourceServerSideEncryptionCustomerProvidedKey":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._copySourceServerSideEncryptionCustomerProvidedKey);"
+                        ],
+                        "injectXmlMarshallCode": [
+                            "request.Headers.Add(Amazon.Util.HeaderKeys.XAmzCopySourceSSECustomerKeyHeader, publicRequest.CopySourceServerSideEncryptionCustomerProvidedKey);",
+                            "if(publicRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5())",
+                            "    request.Headers.Add(Amazon.Util.HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, publicRequest.CopySourceServerSideEncryptionCustomerProvidedKeyMD5);",
+                            "else",
+                            "    request.Headers.Add(Amazon.Util.HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, Util.AmazonS3Util.ComputeEncodedMD5FromEncodedString(publicRequest.CopySourceServerSideEncryptionCustomerProvidedKey));"
+                        ]
+                    }
+                },
+                {
+                    "CopySourceSSECustomerKeyMD5" : {"emitPropertyName":"CopySourceServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "CopySourceServerSideEncryptionCustomerProvidedKeyMD5":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._copySourceServerSideEncryptionCustomerProvidedKeyMD5);"
+                        ]
+                    }
+                },
+                {
+                    "CopySourceIfMatch" : {"emitPropertyName" : "ETagToMatch"}
+                },
+                {
+                    "CopySourceIfNoneMatch" : {"emitPropertyName" : "ETagToNotMatch"}
+                },
+                {
+                    "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
+                },
+                {
+                    "ServerSideEncryptionMethod":{
+                        "injectXmlIsSet":[
+                            "return this._serverSideEncryptionMethod != null && this._serverSideEncryptionMethod != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryptionCustomerMethod":{
+                        "injectXmlIsSet":[
+                            "return this._serverSideEncryptionCustomerMethod != null && this._serverSideEncryptionCustomerMethod != ServerSideEncryptionCustomerMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryptionCustomerProvidedKey":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKey);"
+                        ],
+                        "injectXmlMarshallCode": [
+                            "CustomServerSideEncryptionCustomerProvidedKeyMarshalling(request, publicRequest);"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryptionCustomerProvidedKeyMD5":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKeyMD5);"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryptionKeyManagementServiceKeyId":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceKeyId);"
+                        ]
+                    }
+                },
+                {
+                    "SSEKMSEncryptionContext" : {"emitPropertyName":"ServerSideEncryptionKeyManagementServiceEncryptionContext"}
+                },
+                {
+                    "ServerSideEncryptionKeyManagementServiceEncryptionContext":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceEncryptionContext);"
+                        ]
+                    }
+                },
+                {
+                    "ETagToMatch":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._eTagToMatch);"
+                        ]
+                    }
+                },
+                {
+                    "ETagToNotMatch":{
+                        "injectXmlIsSet":[
+                            "return !System.String.IsNullOrEmpty(this._eTagToNotMatch);"
+                        ]
+                    }
+                },
+                {
+                    "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "Tagging" : {"emitPropertyName" : "TagSet"}
+                },
+                {
+                    "ContentType":{
+                        "injectXmlPropertyGetter":[
+                            "get { return this.Headers.ContentType; }"
+                        ],
+                        "injectXmlPropertySetter":[
+                            "set { this.Headers.ContentType = value; }"
+                        ],
+                        "injectXmlPrivateMemberAssignment" :[
+                            ""
+                        ],
+                        "skipXmlIsSet" : true
+                    }
+                },
+                {
+                    "Metadata":{
+                        "injectXmlPropertyGetter":[
+                            "get {",
+                            "    if (this._metadata == null) this._metadata = new MetadataCollection();",
+                            "    return this._metadata;",
+                            "}"
+                        ]
+                    }
+                },
+                {
+                    "Headers":{
+                        "skipXmlIsSet" : true,
+                        "injectXmlPropertyGetter":[
+                            "get {",
+                            "    if (this._headers == null) this._headers = new HeadersCollection();",
+                            "    return this._headers;",
+                            "}"
+                        ],
+                        "injectXmlMarshallCode": [
+                            "CustomHeadersMarshalling(request, publicRequest);"
+                        ]
+                    }
+                },
+                {
+                    "MetadataDirective":{
+                        "skipXmlIsSet" : true,
+                        "injectXmlMarshallCode": [
+                            "request.Headers.Add(Amazon.Util.HeaderKeys.XAmzMetadataDirectiveHeader, S3Transforms.ToStringValue(publicRequest.MetadataDirective.ToString()));"
+                        ]
+                    }
+                },
+                {
+                    "BucketKeyEnabled":{
+                        "injectXmlMarshallCode": [
+                            "request.Headers.Add(Util.S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(publicRequest.BucketKeyEnabled.Value));"
+                        ]
+                    }
+                },
+                {
+                    "TaggingDirective": {
+                        "injectXmlMarshallCode": [
+                            "CustomTaggingDirectiveMarshalling(request, publicRequest);"
+                        ]
+                    }
                 }
             ],
             "exclude": [
@@ -68,7 +333,8 @@
             "inject": [
                 {
                     "SourceBucket": {
-                        "shape": "BucketName"
+                        "shape": "BucketName",
+                        "location": "header"
                     }
                 },
                 {
@@ -83,18 +349,61 @@
                     }
                 },
                 {
-                    "DestinationBucket": {
-                        "shape": "BucketName"                    
-                    }
-                },
-                {
                     "DestinationKey": {
                         "shape": "ObjectKey",
                         "originalMember":"Key"
                     }
+                },
+                {
+                    "Headers": {
+                        "shape": "Metadata",
+                        "location": "header"
+                    }
+                }
+            ],
+            "excludeFromMarshalling":[
+                "Metadata",
+                "ServerSideEncryptionCustomerProvidedKeyMD5",
+                "CopySourceServerSideEncryptionCustomerProvidedKeyMD5",
+                "DestinationKey",
+                "SourceKey",
+                "SourceVersionId",
+                "TagSet",
+                "ContentType"
+            ]
+        },
+        "CopyObjectOutput":{
+            "modify":[
+                {
+                    "CopySourceVersionId":{"emitPropertyName": "SourceVersionId"}
+                },
+                {
+                    "ServerSideEncryption":{"emitPropertyName": "ServerSideEncryptionMethod"}
+                },
+                {
+                    "SSECustomerAlgorithm":{"emitPropertyName": "ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKeyMD5":{"emitPropertyName": "ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "SSEKMSEncryptionContext":{"emitPropertyName": "ServerSideEncryptionKeyManagementServiceEncryptionContext"}
+                },
+                {
+                    "SSEKMSKeyId":{"emitPropertyName": "ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "Expiration": 
+                    {
+                        "injectXmlUnmarshallCode": [
+                            "if (context.ResponseData.IsHeaderPresent(\"x-amz-expiration\"))",
+                            "   response.Expiration = new Expiration(context.ResponseData.GetHeaderValue(\"x-amz-expiration\"));"
+                        ]
+                    }
                 }
             ]
         },
+        
         "DeleteObjectsRequest": {
             "exclude": [
                 "Delete"
@@ -1521,6 +1830,78 @@
                 "Unmarshaller": "StringUnmarshaller"
             }
         },
+        "CopyObjectRequest":{
+            "ServerSideEncryptionCustomerMethod" : {
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            },
+            "CopySourceServerSideEncryptionCustomerMethod":{
+                "Type": "ServerSideEncryptionCustomerMethod"              
+            },
+            "CannedACL":{
+                "Type": "S3CannedACL",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            },
+            "Headers":{
+                "Type": "HeadersCollection"
+            },
+            "TagSet" : {
+                "Type" : "List<Tag>",
+                "Marshaller": "Amazon.S3.Util.AmazonS3Util.TagSetToQueryString",
+                "Unmarshaller" : "StringUnmarshaller"
+            },
+            "Metadata" : {
+                "Type" : "MetadataCollection",
+                "Marshaller": "AmazonS3Util.SetMetadataHeaders"
+            },
+            "MetadataDirective" : {
+                "Type" : "S3MetadataDirective",
+                "Marshaller": "S3Transforms.ToStringValue",
+                "Unmarshaller": "StringUnmarshaller"
+            },
+            "ObjectLockLegalHoldStatus" :{
+                "Type" : "ObjectLockLegalHoldStatus",
+                "Marshaller": "S3Transforms.ToStringValue"
+            },
+            "WebsiteRedirectLocation" :{
+                "Type" : "string",
+                "Marshaller": "S3Transforms.ToStringValue"
+            },
+            "StorageClass" :{
+                "Type" : "S3StorageClass",
+                "Marshaller": "S3Transforms.ToStringValue"
+            },
+            "RequestPayer" :{
+                "Type" : "RequestPayer",
+                "Marshaller": "S3Transforms.ToStringValue"
+            },
+            "ExpectedBucketOwner" :{
+                "Type" : "string",
+                "Marshaller": "S3Transforms.ToStringValue"
+            },
+            "ExpectedSourceBucketOwner" :{
+                "Type" : "string",
+                "Marshaller": "S3Transforms.ToStringValue"
+            },
+            "ChecksumAlgorithm" :{
+                "Type" : "ChecksumAlgorithm",
+                "Marshaller": "S3Transforms.ToStringValue"
+            }
+        },
+        "CopyObjectOutput":{
+            "Expiration" : {
+                "Type": "Expiration"
+            },
+            "ServerSideEncryptionCustomerMethod":{
+                "Type": "ServerSideEncryptionCustomerMethod"           
+            },
+            "LastModified":{
+                "Type": "string",
+                "Unmarshaller" : "StringUnmarshaller"          
+            }
+        },
         "FilterRule":{
             "Name": {
                 "Type": "string",
@@ -1700,6 +2081,9 @@
         },
         "PartDetail":{
             "alternateBaseClass": "PartETag"
+        },
+        "CopyObjectRequest":{
+            "alternateBaseClass": "PutWithACLRequest"
         }
     },
     "flattenShapes" : {
@@ -1711,11 +2095,15 @@
         ],
         "PutBucketTaggingRequest":[
             "Tagging"
+        ],
+        "CopyObjectOutput" : [
+            "CopyObjectResult"
         ]
     },
     "excludeShapes":[
         "NotificationConfiguration",
         "CopyPartResult",
+        "CopyObjectResult",
         "MetricsFilter",
         "MetricsAndOperator",
         "AnalyticsFilter",

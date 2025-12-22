@@ -27,12 +27,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public static void Marshall(IRequest request, PutWithACLRequest aclRequest)
         {
             var protoHeaders = new Dictionary<S3Permission, string>();
-            if( aclRequest != null )
+            if (aclRequest != null)
             {
                 if (aclRequest.Grants != null)
                 {
                     foreach (var grant in aclRequest.Grants)
                     {
+                        if (grant == null)
+                            continue;
                         string grantee = null;
                         if (grant.Grantee.CanonicalUser != null && !string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
                             grantee = string.Format(CultureInfo.InvariantCulture, "id=\"{0}\"", grant.Grantee.CanonicalUser);
@@ -53,6 +55,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             foreach (var permission in protoHeaders.Keys)
             {
+                if (permission == null)
+                    continue;
                 if (S3Permission.READ == permission)
                     request.Headers[S3Constants.AmzGrantHeaderRead] = protoHeaders[permission];
                 else if (S3Permission.WRITE == permission)

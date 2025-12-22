@@ -404,6 +404,8 @@ namespace <#=this.Config.Namespace#>.Model
 
 <#
                     }
+if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propertyModifier) && propertyModifier.SkipXmlIsSet)
+    continue;
 #>
         // Check to see if <#=member.PropertyName#> property is set
         internal bool IsSet<#=member.PropertyName#>()
@@ -457,9 +459,7 @@ namespace <#=this.Config.Namespace#>.Model
                     {
                         if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlIsSetCode.Count > 0)
                         {
-#>
-<#WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);#>
-<#
+                            WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);
                         }
                         else
                         {
