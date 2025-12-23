@@ -1335,9 +1335,9 @@ WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);
                     }
                     else
                     {
-                        if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlIsSetCode.Count > 0)
+                        if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifierTwo) && injectModifierTwo.InjectXmlIsSetCode.Count > 0)
                         {
-                            WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);
+                            WriteInjectXmlCode(injectModifierTwo.InjectXmlIsSetCode, 3);
                         }
                         else
                         {
