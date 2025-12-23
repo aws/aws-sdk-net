@@ -314,6 +314,12 @@ namespace Amazon.GeoPlaces
         /// with valid address completion. Also, the API supports the filtering of results based
         /// on geographic location, country, or specific place types, and can be tailored using
         /// optional parameters like language and political views.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/autocomplete.html">Autocomplete</a>
+        /// in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Autocomplete service method.</param>
         /// <param name="cancellationToken">
@@ -365,6 +371,12 @@ namespace Amazon.GeoPlaces
         /// components like street names, postal codes, and regions. The Geocode API can also
         /// provide additional features such as time zone information and the inclusion of political
         /// views.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/geocode.html">Geocode</a>
+        /// in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Geocode service method.</param>
         /// <param name="cancellationToken">
@@ -412,6 +424,12 @@ namespace Amazon.GeoPlaces
         /// <summary>
         /// <c>GetPlace</c> finds a place by its unique ID. A <c>PlaceId</c> is returned by other
         /// place operations.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/get-place.html">GetPlace</a>
+        /// in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlace service method.</param>
         /// <param name="cancellationToken">
@@ -463,6 +481,12 @@ namespace Amazon.GeoPlaces
         /// to on place type so that you can refine result based on your need. Also, The Reverse
         /// Geocode API can also provide additional features such as time zone information and
         /// the inclusion of political views.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/reverse-geocode.html">Reverse
+        /// Geocode</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReverseGeocode service method.</param>
         /// <param name="cancellationToken">
@@ -513,6 +537,12 @@ namespace Amazon.GeoPlaces
         /// chains, food types and more. The API returns details such as a place name, address,
         /// phone, category, food type, contact, opening hours. Also, the API can return phonemes,
         /// time zones and more based on requested parameters.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/search-nearby.html">Search
+        /// Nearby</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchNearby service method.</param>
         /// <param name="cancellationToken">
@@ -560,6 +590,12 @@ namespace Amazon.GeoPlaces
         /// <summary>
         /// <c>SearchText</c> searches for geocode and place information. You can then complete
         /// a follow-up query suggested from the <c>Suggest</c> API via a query id.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/search-text.html">Search
+        /// Text</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchText service method.</param>
         /// <param name="cancellationToken">
@@ -614,6 +650,12 @@ namespace Amazon.GeoPlaces
         /// The API provides options for filtering results by location and other attributes, and
         /// allows for additional features like phonemes and timezones. The response includes
         /// refined query terms and detailed place information.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/suggest.html">Suggest</a>
+        /// in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Suggest service method.</param>
         /// <param name="cancellationToken">

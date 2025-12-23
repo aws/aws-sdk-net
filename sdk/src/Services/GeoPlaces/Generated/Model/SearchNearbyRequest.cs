@@ -36,6 +36,12 @@ namespace Amazon.GeoPlaces.Model
     /// chains, food types and more. The API returns details such as a place name, address,
     /// phone, category, food type, contact, opening hours. Also, the API can return phonemes,
     /// time zones and more based on requested parameters.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/search-nearby.html">Search
+    /// Nearby</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class SearchNearbyRequest : AmazonGeoPlacesRequest
     {
@@ -161,6 +167,10 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// An optional limit for the number of results returned in a single call.
         /// </para>
+        ///  
+        /// <para>
+        /// Default value: 20
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -219,9 +229,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property QueryPosition. 
         /// <para>
-        /// The position, in <c>[lng, lat]</c> for which you are querying nearby results for.
-        /// Results closer to the position will be ranked higher then results further away from
-        /// the position
+        /// The position in World Geodetic System (WGS 84) format: [longitude, latitude] for which
+        /// you are querying nearby results for. Results closer to the position will be ranked
+        /// higher then results further away from the position
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]

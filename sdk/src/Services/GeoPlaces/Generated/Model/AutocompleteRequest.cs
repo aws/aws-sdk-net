@@ -37,6 +37,12 @@ namespace Amazon.GeoPlaces.Model
     /// with valid address completion. Also, the API supports the filtering of results based
     /// on geographic location, country, or specific place types, and can be tailored using
     /// optional parameters like language and political views.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/autocomplete.html">Autocomplete</a>
+    /// in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AutocompleteRequest : AmazonGeoPlacesRequest
     {
@@ -75,7 +81,7 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// The position in longitude and latitude that the results should be close to. Typically,
         /// place results returned are ranked higher the closer they are to this position. Stored
-        /// in <c>[lng, lat]</c> and in the WSG84 format.
+        /// in <c>[lng, lat]</c> and in the WGS 84 format.
         /// </para>
         ///  <note> 
         /// <para>
@@ -178,7 +184,11 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// An optional limit for the number of results returned in a single call. 
+        /// An optional limit for the number of results returned in a single call.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: 5
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

@@ -37,11 +37,18 @@ namespace Amazon.GeoPlaces.Model
     /// to on place type so that you can refine result based on your need. Also, The Reverse
     /// Geocode API can also provide additional features such as time zone information and
     /// the inclusion of political views.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/reverse-geocode.html">Reverse
+    /// Geocode</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ReverseGeocodeRequest : AmazonGeoPlacesRequest
     {
         private List<string> _additionalFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ReverseGeocodeFilter _filter;
+        private double? _heading;
         private ReverseGeocodeIntendedUse _intendedUse;
         private string _key;
         private string _language;
@@ -57,7 +64,7 @@ namespace Amazon.GeoPlaces.Model
         /// for each result.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> AdditionalFeatures
         {
             get { return this._additionalFeatures; }
@@ -87,6 +94,31 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetFilter()
         {
             return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Heading. 
+        /// <para>
+        /// The heading in degrees from true north in a navigation context. The heading is measured
+        /// as the angle clockwise from the North direction.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: North is <c>0</c> degrees, East is <c>90</c> degrees, South is <c>180</c>
+        /// degrees, and West is <c>270</c> degrees.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=360)]
+        public double Heading
+        {
+            get { return this._heading.GetValueOrDefault(); }
+            set { this._heading = value; }
+        }
+
+        // Check to see if Heading property is set
+        internal bool IsSetHeading()
+        {
+            return this._heading.HasValue; 
         }
 
         /// <summary>
@@ -161,6 +193,10 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// An optional limit for the number of results returned in a single call.
         /// </para>
+        ///  
+        /// <para>
+        /// Default value: 1
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -199,9 +235,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property QueryPosition. 
         /// <para>
-        /// The position, in <c>[lng, lat]</c> for which you are querying nearby results for.
-        /// Results closer to the position will be ranked higher then results further away from
-        /// the position
+        /// The position in World Geodetic System (WGS 84) format: [longitude, latitude] for which
+        /// you are querying nearby results for. Results closer to the position will be ranked
+        /// higher then results further away from the position
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]

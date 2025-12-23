@@ -243,6 +243,12 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// Match scores for the secondary address components in the result.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Coverage for this functionality is available in the following countries: AUS, AUT,
+        /// BRA, CAN, ESP, FRA, GBR, IDN, IND, NZL, TUR, TWN, USA.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<SecondaryAddressComponentMatchScore> SecondaryAddressComponents
         {

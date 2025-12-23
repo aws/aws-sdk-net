@@ -37,6 +37,12 @@ namespace Amazon.GeoPlaces.Model
     /// components like street names, postal codes, and regions. The Geocode API can also
     /// provide additional features such as time zone information and the inclusion of political
     /// views.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/geocode.html">Geocode</a>
+    /// in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GeocodeRequest : AmazonGeoPlacesRequest
     {
@@ -58,7 +64,7 @@ namespace Amazon.GeoPlaces.Model
         /// for each result.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=4)]
         public List<string> AdditionalFeatures
         {
             get { return this._additionalFeatures; }
@@ -76,14 +82,8 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// The position, in longitude and latitude, that the results should be close to. Typically,
         /// place results returned are ranked higher the closer they are to this position. Stored
-        /// in <c>[lng, lat]</c> and in the WSG84 format.
+        /// in <c>[lng, lat]</c> and in the WGS 84 format.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The fields <c>BiasPosition</c>, <c>FilterBoundingBox</c>, and <c>FilterCircle</c>
-        /// are mutually exclusive.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=2)]
         public List<double> BiasPosition
@@ -189,6 +189,10 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// An optional limit for the number of results returned in a single call.
         /// </para>
+        ///  
+        /// <para>
+        /// Default value: 20
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -245,11 +249,6 @@ namespace Amazon.GeoPlaces.Model
         /// The free-form text query to match addresses against. This is usually a partially typed
         /// address from an end user in an address box or form.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
         public string QueryText

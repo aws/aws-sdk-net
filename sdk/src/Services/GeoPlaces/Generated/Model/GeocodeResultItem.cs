@@ -57,7 +57,8 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property AccessPoints. 
         /// <para>
-        /// Position of the access point represented by longitude and latitude.
+        /// Position of the access point in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude].
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -328,7 +329,7 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The position in longitude and latitude.
+        /// The position in World Geodetic System (WGS 84) format: [longitude, latitude].
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=2)]
@@ -370,6 +371,12 @@ namespace Amazon.GeoPlaces.Model
         /// is one that includes secondary designators, such as a Suite or Unit Number, Building,
         /// or Floor information.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Coverage for this functionality is available in the following countries: AUS, CAN,
+        /// NZL, USA, PRI.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<RelatedPlace> SecondaryAddresses

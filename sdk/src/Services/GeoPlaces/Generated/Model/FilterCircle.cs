@@ -40,7 +40,7 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Center. 
         /// <para>
-        /// The center position, in longitude and latitude, of the <c>FilterCircle</c>.
+        /// The center position in World Geodetic System (WGS 84) format: [longitude, latitude].
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]

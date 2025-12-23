@@ -92,6 +92,19 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetHeading())
+                {
+                    context.Writer.WritePropertyName("Heading");
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Heading))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Heading));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Heading);
+                    }
+                }
+
                 if(publicRequest.IsSetIntendedUse())
                 {
                     context.Writer.WritePropertyName("IntendedUse");

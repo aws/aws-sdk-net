@@ -219,6 +219,16 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// Parsed secondary address components from the provided query text.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Coverage for <c>ParsedQuery.Address.SecondaryAddressComponents</c> is available in
+        /// the following countries:
+        /// </para>
+        ///  
+        /// <para>
+        /// AUS, AUT, BRA, CAN, ESP, FRA, GBR, HKG, IDN, IND, NZL, TUR, TWN, USA
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<ParsedQuerySecondaryAddressComponent> SecondaryAddressComponents

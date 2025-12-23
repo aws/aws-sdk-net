@@ -40,6 +40,12 @@ namespace Amazon.GeoPlaces.Model
     /// The API provides options for filtering results by location and other attributes, and
     /// allows for additional features like phonemes and timezones. The response includes
     /// refined query terms and detailed place information.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/suggest.html">Suggest</a>
+    /// in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class SuggestRequest : AmazonGeoPlacesRequest
     {
@@ -79,7 +85,7 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// The position, in longitude and latitude, that the results should be close to. Typically,
         /// place results returned are ranked higher the closer they are to this position. Stored
-        /// in <c>[lng, lat]</c> and in the WSG84 format.
+        /// in <c>[lng, lat]</c> and in the WGS 84 format.
         /// </para>
         ///  <note> 
         /// <para>
@@ -203,6 +209,10 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// An optional limit for the number of results returned in a single call.
         /// </para>
+        ///  
+        /// <para>
+        /// Default value: 20
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -246,7 +256,7 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// The fields <c>QueryText</c> and <c>QueryID</c> are mutually exclusive.
         /// </para>
         ///  </note>
         /// </summary>

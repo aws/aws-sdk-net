@@ -263,8 +263,18 @@ namespace Amazon.GeoPlaces.Model
         /// Components that correspond to secondary identifiers on an Address. Secondary address
         /// components include information such as Suite or Unit Number, Building, or Floor.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Coverage for <c>Address.SecondaryAddressComponents</c> is available in the following
+        /// countries:
+        /// </para>
+        ///  
+        /// <para>
+        /// AUS, CAN, NZL, USA, PRI
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=3)]
         public List<SecondaryAddressComponent> SecondaryAddressComponents
         {
             get { return this._secondaryAddressComponents; }

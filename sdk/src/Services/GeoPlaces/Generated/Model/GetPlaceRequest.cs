@@ -33,6 +33,12 @@ namespace Amazon.GeoPlaces.Model
     /// Container for the parameters to the GetPlace operation.
     /// <c>GetPlace</c> finds a place by its unique ID. A <c>PlaceId</c> is returned by other
     /// place operations.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/get-place.html">GetPlace</a>
+    /// in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetPlaceRequest : AmazonGeoPlacesRequest
     {
@@ -50,7 +56,7 @@ namespace Amazon.GeoPlaces.Model
         /// each result.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=5)]
         public List<string> AdditionalFeatures
         {
             get { return this._additionalFeatures; }

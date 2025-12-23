@@ -66,6 +66,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Designator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Designator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Number", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
