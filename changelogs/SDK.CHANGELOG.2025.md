@@ -1,3 +1,20 @@
+### 4.0.159.0 (2025-12-23 19:31 UTC)
+* CloudFront (4.0.10.5)
+	* Fix spacing in request marshallers.
+* GeoPlaces (4.0.4.0)
+	* Adds support for InferredSecondaryAddress place type, Designator in SecondaryAddressComponent and Heading in ReverseGeocode.
+* PinpointSMSVoiceV2 (4.0.6.0)
+	* This release adds support for the Registration Reviewer feature, which provides generative AI feedback on a phone number or sender ID registration to ensure completeness before sending to downstream (carrier) review.
+* Route53 (4.0.8.4)
+	* Fix spacing in request marshallers.
+* S3 (4.0.16.0)
+	* Add additional validation to Outpost bucket names.
+	* Generate RenameObject, PutBucketOwnershipControls, PutBucketTagging, and CopyObject
+	* [Breaking Change] SourceIfUnmodifiedSince, DestinationIfUnmodifiedSince, DestinationIfModifiedSince and SourceIfModifiedSince in Amazon.S3.Model.RenameObjectRequest has been changed to nullable to be consistent with the nullability changes in V4.
+	* Fix spacing in request marshallers.
+* S3Control (4.0.8.5)
+	* Fix spacing in request marshallers.
+
 ### 4.0.158.0 (2025-12-22 19:25 UTC)
 * ConfigService (4.0.5.0)
 	* Added supported resourceTypes for Config from July to November 2025
