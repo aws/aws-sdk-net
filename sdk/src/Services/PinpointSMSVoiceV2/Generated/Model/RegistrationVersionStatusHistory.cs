@@ -37,6 +37,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private DateTime? _approvedTimestamp;
         private DateTime? _archivedTimestamp;
+        private DateTime? _awsReviewingTimestamp;
         private DateTime? _deniedTimestamp;
         private DateTime? _discardedTimestamp;
         private DateTime? _draftTimestamp;
@@ -81,6 +82,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetArchivedTimestamp()
         {
             return this._archivedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsReviewingTimestamp. 
+        /// <para>
+        /// The time when the registration was in the AWS reviewing state, in <a href="https://www.epochconverter.com/">UNIX
+        /// epoch time</a> format.
+        /// </para>
+        /// </summary>
+        public DateTime AwsReviewingTimestamp
+        {
+            get { return this._awsReviewingTimestamp.GetValueOrDefault(); }
+            set { this._awsReviewingTimestamp = value; }
+        }
+
+        // Check to see if AwsReviewingTimestamp property is set
+        internal bool IsSetAwsReviewingTimestamp()
+        {
+            return this._awsReviewingTimestamp.HasValue; 
         }
 
         /// <summary>

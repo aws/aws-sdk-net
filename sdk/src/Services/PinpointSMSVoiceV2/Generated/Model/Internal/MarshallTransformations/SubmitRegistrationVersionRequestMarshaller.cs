@@ -69,6 +69,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAwsReview())
+                {
+                    context.Writer.WritePropertyName("AwsReview");
+                    context.Writer.Write(publicRequest.AwsReview);
+                }
+
                 if(publicRequest.IsSetRegistrationId())
                 {
                     context.Writer.WritePropertyName("RegistrationId");

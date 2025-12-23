@@ -35,6 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class RegistrationVersionInformation
     {
         private List<RegistrationDeniedReasonInformation> _deniedReasons = AWSConfigs.InitializeCollections ? new List<RegistrationDeniedReasonInformation>() : null;
+        private string _feedback;
         private RegistrationVersionStatus _registrationVersionStatus;
         private RegistrationVersionStatusHistory _registrationVersionStatusHistory;
         private long? _versionNumber;
@@ -55,6 +56,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetDeniedReasons()
         {
             return this._deniedReasons != null && (this._deniedReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Feedback. 
+        /// <para>
+        /// Feedback information provided during the registration review process. This includes
+        /// comments, suggestions, or additional requirements.
+        /// </para>
+        /// </summary>
+        public string Feedback
+        {
+            get { return this._feedback; }
+            set { this._feedback = value; }
+        }
+
+        // Check to see if Feedback property is set
+        internal bool IsSetFeedback()
+        {
+            return this._feedback != null;
         }
 
         /// <summary>

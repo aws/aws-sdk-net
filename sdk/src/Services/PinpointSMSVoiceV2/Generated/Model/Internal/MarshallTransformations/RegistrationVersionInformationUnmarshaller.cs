@@ -72,6 +72,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeniedReasons = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Feedback", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Feedback = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RegistrationVersionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

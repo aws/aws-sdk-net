@@ -79,8 +79,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the End User MessagingSMS resource attached to the
-        /// resource-based policy.
+        /// The Amazon Resource Name (ARN) of the End User Messaging SMS resource attached to
+        /// the resource-based policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=256)]

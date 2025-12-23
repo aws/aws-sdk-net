@@ -32,7 +32,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Container for the parameters to the GetResourcePolicy operation.
     /// Retrieves the JSON text of the resource-based policy document attached to the End
-    /// User MessagingSMS resource. A shared resource can be a Pool, Opt-out list, Sender
+    /// User Messaging SMS resource. A shared resource can be a Pool, Opt-out list, Sender
     /// Id, or Phone number.
     /// </summary>
     public partial class GetResourcePolicyRequest : AmazonPinpointSMSVoiceV2Request
@@ -42,8 +42,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the End User MessagingSMS resource attached to the
-        /// resource-based policy.
+        /// The Amazon Resource Name (ARN) of the End User Messaging SMS resource attached to
+        /// the resource-based policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=256)]

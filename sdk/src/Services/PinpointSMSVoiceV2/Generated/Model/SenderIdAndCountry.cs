@@ -32,7 +32,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// The alphanumeric sender ID in a specific country that you want to describe. For more
     /// information on sender IDs see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sender-id-request.html">Requesting
-    /// sender IDs </a> in the <i>End User MessagingSMS User Guide</i>.
+    /// sender IDs </a> in the <i>End User Messaging SMS User Guide</i>.
     /// </summary>
     public partial class SenderIdAndCountry
     {

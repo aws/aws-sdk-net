@@ -96,7 +96,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you are using a shared End User MessagingSMS resource then you must use the full
+        /// If you are using a shared End User Messaging SMS resource then you must use the full
         /// Amazon Resource Name(ARN).
         /// </para>
         ///  </important>
@@ -122,7 +122,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you are using a shared End User MessagingSMS resource then you must use the full
+        /// If you are using a shared End User Messaging SMS resource then you must use the full
         /// Amazon Resource Name(ARN).
         /// </para>
         ///  </important>

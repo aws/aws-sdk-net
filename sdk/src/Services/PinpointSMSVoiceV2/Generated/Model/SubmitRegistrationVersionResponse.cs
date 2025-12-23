@@ -34,11 +34,31 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class SubmitRegistrationVersionResponse : AmazonWebServiceResponse
     {
+        private bool? _awsReview;
         private string _registrationArn;
         private string _registrationId;
         private RegistrationVersionStatus _registrationVersionStatus;
         private RegistrationVersionStatusHistory _registrationVersionStatusHistory;
         private long? _versionNumber;
+
+        /// <summary>
+        /// Gets and sets the property AwsReview. 
+        /// <para>
+        /// Indicates whether AWS review was requested for this registration submission.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool AwsReview
+        {
+            get { return this._awsReview.GetValueOrDefault(); }
+            set { this._awsReview = value; }
+        }
+
+        // Check to see if AwsReview property is set
+        internal bool IsSetAwsReview()
+        {
+            return this._awsReview.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RegistrationArn. 
