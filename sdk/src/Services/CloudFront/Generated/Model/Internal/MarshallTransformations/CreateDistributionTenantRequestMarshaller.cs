@@ -116,13 +116,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Domains");
                     foreach (var publicRequestDomainsValue in publicRequestDomains) 
                     {
-                    if (publicRequestDomainsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if(publicRequestDomainsValue.IsSetDomain())
-                            xmlWriter.WriteElementString("Domain", StringUtils.FromString(publicRequestDomainsValue.Domain));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestDomainsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("member");
+                            if(publicRequestDomainsValue.IsSetDomain())
+                                xmlWriter.WriteElementString("Domain", StringUtils.FromString(publicRequestDomainsValue.Domain));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
@@ -149,15 +149,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Parameters");
                     foreach (var publicRequestParametersValue in publicRequestParameters) 
                     {
-                    if (publicRequestParametersValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if(publicRequestParametersValue.IsSetName())
-                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestParametersValue.Name));
-                        if(publicRequestParametersValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestParametersValue.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestParametersValue != null)
+                        {
+                            xmlWriter.WriteStartElement("member");
+                            if(publicRequestParametersValue.IsSetName())
+                                xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestParametersValue.Name));
+                            if(publicRequestParametersValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestParametersValue.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
@@ -170,15 +170,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
                         {
-                        if (publicRequestTagsItemsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestTagsItemsValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
-                            if(publicRequestTagsItemsValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestTagsItemsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tag");
+                                if(publicRequestTagsItemsValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
+                                if(publicRequestTagsItemsValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }

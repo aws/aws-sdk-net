@@ -88,80 +88,80 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         foreach (var publicRequestConfigurationRulesValue in publicRequestConfigurationRules) 
                         {
-                        if (publicRequestConfigurationRulesValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Rule");
-                            if (publicRequestConfigurationRulesValue.IsSetAbortIncompleteMultipartUpload())
+                            if (publicRequestConfigurationRulesValue != null)
                             {
-                                xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload");
-                                if(publicRequestConfigurationRulesValue.AbortIncompleteMultipartUpload.IsSetDaysAfterInitiation())
-                                    xmlWriter.WriteElementString("DaysAfterInitiation", StringUtils.FromInt(publicRequestConfigurationRulesValue.AbortIncompleteMultipartUpload.DaysAfterInitiation.Value));
-                                xmlWriter.WriteEndElement();
-                            }
-                            if (publicRequestConfigurationRulesValue.IsSetExpiration())
-                            {
-                                xmlWriter.WriteStartElement("Expiration");
-                                if(publicRequestConfigurationRulesValue.Expiration.IsSetDate())
-                                    xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationRulesValue.Expiration.Date.Value));
-                                if(publicRequestConfigurationRulesValue.Expiration.IsSetDays())
-                                    xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestConfigurationRulesValue.Expiration.Days.Value));
-                                if(publicRequestConfigurationRulesValue.Expiration.IsSetExpiredObjectDeleteMarker())
-                                    xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", StringUtils.FromBool(publicRequestConfigurationRulesValue.Expiration.ExpiredObjectDeleteMarker.Value));
-                                xmlWriter.WriteEndElement();
-                            }
-                            FilterCustomMarshall(publicRequestConfigurationRulesValue, xmlWriter);
-                            if(publicRequestConfigurationRulesValue.IsSetId())
-                                xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
-                            if (publicRequestConfigurationRulesValue.IsSetNoncurrentVersionExpiration())
-                            {
-                                xmlWriter.WriteStartElement("NoncurrentVersionExpiration");
-                                if(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
-                                    xmlWriter.WriteElementString("NewerNoncurrentVersions", StringUtils.FromInt(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.NewerNoncurrentVersions.Value));
-                                if(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNoncurrentDays())
-                                    xmlWriter.WriteElementString("NoncurrentDays", StringUtils.FromInt(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.NoncurrentDays.Value));
-                                xmlWriter.WriteEndElement();
-                            }
-                            var publicRequestConfigurationRulesValueNoncurrentVersionTransitions = publicRequestConfigurationRulesValue.NoncurrentVersionTransitions;
-                            if (publicRequestConfigurationRulesValue.IsSetNoncurrentVersionTransitions()) 
-                            {
-                                foreach (var publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue in publicRequestConfigurationRulesValueNoncurrentVersionTransitions) 
+                                xmlWriter.WriteStartElement("Rule");
+                                if (publicRequestConfigurationRulesValue.IsSetAbortIncompleteMultipartUpload())
                                 {
-                                if (publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("NoncurrentVersionTransition");
-                                    if(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetNewerNoncurrentVersions())
-                                        xmlWriter.WriteElementString("NewerNoncurrentVersions", StringUtils.FromInt(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.NewerNoncurrentVersions.Value));
-                                    if(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetNoncurrentDays())
-                                        xmlWriter.WriteElementString("NoncurrentDays", StringUtils.FromInt(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.NoncurrentDays.Value));
-                                    if(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetStorageClass())
-                                        xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.StorageClass));
+                                    xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload");
+                                    if(publicRequestConfigurationRulesValue.AbortIncompleteMultipartUpload.IsSetDaysAfterInitiation())
+                                        xmlWriter.WriteElementString("DaysAfterInitiation", StringUtils.FromInt(publicRequestConfigurationRulesValue.AbortIncompleteMultipartUpload.DaysAfterInitiation.Value));
                                     xmlWriter.WriteEndElement();
                                 }
-                                }            
-                            }
-                            if(publicRequestConfigurationRulesValue.IsSetPrefix())
-                                xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Prefix));
-                            CustomStatusMarshalling(xmlWriter, publicRequestConfigurationRulesValue);
-                            var publicRequestConfigurationRulesValueTransitions = publicRequestConfigurationRulesValue.Transitions;
-                            if (publicRequestConfigurationRulesValue.IsSetTransitions()) 
-                            {
-                                foreach (var publicRequestConfigurationRulesValueTransitionsValue in publicRequestConfigurationRulesValueTransitions) 
+                                if (publicRequestConfigurationRulesValue.IsSetExpiration())
                                 {
-                                if (publicRequestConfigurationRulesValueTransitionsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("Transition");
-                                    if(publicRequestConfigurationRulesValueTransitionsValue.IsSetDate())
-                                        xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationRulesValueTransitionsValue.Date.Value));
-                                    if(publicRequestConfigurationRulesValueTransitionsValue.IsSetDays())
-                                        xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestConfigurationRulesValueTransitionsValue.Days.Value));
-                                    if(publicRequestConfigurationRulesValueTransitionsValue.IsSetStorageClass())
-                                        xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequestConfigurationRulesValueTransitionsValue.StorageClass));
+                                    xmlWriter.WriteStartElement("Expiration");
+                                    if(publicRequestConfigurationRulesValue.Expiration.IsSetDate())
+                                        xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationRulesValue.Expiration.Date.Value));
+                                    if(publicRequestConfigurationRulesValue.Expiration.IsSetDays())
+                                        xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestConfigurationRulesValue.Expiration.Days.Value));
+                                    if(publicRequestConfigurationRulesValue.Expiration.IsSetExpiredObjectDeleteMarker())
+                                        xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", StringUtils.FromBool(publicRequestConfigurationRulesValue.Expiration.ExpiredObjectDeleteMarker.Value));
                                     xmlWriter.WriteEndElement();
                                 }
-                                }            
+                                FilterCustomMarshall(publicRequestConfigurationRulesValue, xmlWriter);
+                                if(publicRequestConfigurationRulesValue.IsSetId())
+                                    xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
+                                if (publicRequestConfigurationRulesValue.IsSetNoncurrentVersionExpiration())
+                                {
+                                    xmlWriter.WriteStartElement("NoncurrentVersionExpiration");
+                                    if(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
+                                        xmlWriter.WriteElementString("NewerNoncurrentVersions", StringUtils.FromInt(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.NewerNoncurrentVersions.Value));
+                                    if(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNoncurrentDays())
+                                        xmlWriter.WriteElementString("NoncurrentDays", StringUtils.FromInt(publicRequestConfigurationRulesValue.NoncurrentVersionExpiration.NoncurrentDays.Value));
+                                    xmlWriter.WriteEndElement();
+                                }
+                                var publicRequestConfigurationRulesValueNoncurrentVersionTransitions = publicRequestConfigurationRulesValue.NoncurrentVersionTransitions;
+                                if (publicRequestConfigurationRulesValue.IsSetNoncurrentVersionTransitions()) 
+                                {
+                                    foreach (var publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue in publicRequestConfigurationRulesValueNoncurrentVersionTransitions) 
+                                    {
+                                        if (publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue != null)
+                                        {
+                                            xmlWriter.WriteStartElement("NoncurrentVersionTransition");
+                                            if(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetNewerNoncurrentVersions())
+                                                xmlWriter.WriteElementString("NewerNoncurrentVersions", StringUtils.FromInt(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.NewerNoncurrentVersions.Value));
+                                            if(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetNoncurrentDays())
+                                                xmlWriter.WriteElementString("NoncurrentDays", StringUtils.FromInt(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.NoncurrentDays.Value));
+                                            if(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetStorageClass())
+                                                xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequestConfigurationRulesValueNoncurrentVersionTransitionsValue.StorageClass));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                    }            
+                                }
+                                if(publicRequestConfigurationRulesValue.IsSetPrefix())
+                                    xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Prefix));
+                                CustomStatusMarshalling(xmlWriter, publicRequestConfigurationRulesValue);
+                                var publicRequestConfigurationRulesValueTransitions = publicRequestConfigurationRulesValue.Transitions;
+                                if (publicRequestConfigurationRulesValue.IsSetTransitions()) 
+                                {
+                                    foreach (var publicRequestConfigurationRulesValueTransitionsValue in publicRequestConfigurationRulesValueTransitions) 
+                                    {
+                                        if (publicRequestConfigurationRulesValueTransitionsValue != null)
+                                        {
+                                            xmlWriter.WriteStartElement("Transition");
+                                            if(publicRequestConfigurationRulesValueTransitionsValue.IsSetDate())
+                                                xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationRulesValueTransitionsValue.Date.Value));
+                                            if(publicRequestConfigurationRulesValueTransitionsValue.IsSetDays())
+                                                xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestConfigurationRulesValueTransitionsValue.Days.Value));
+                                            if(publicRequestConfigurationRulesValueTransitionsValue.IsSetStorageClass())
+                                                xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequestConfigurationRulesValueTransitionsValue.StorageClass));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                    }            
+                                }
+                                xmlWriter.WriteEndElement();
                             }
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                     }
 

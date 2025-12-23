@@ -78,17 +78,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("RouteUpdates");
                     foreach (var publicRequestRouteUpdatesValue in publicRequestRouteUpdates) 
                     {
-                    if (publicRequestRouteUpdatesValue != null)
-                    {
-                        xmlWriter.WriteStartElement("Route");
-                        if(publicRequestRouteUpdatesValue.IsSetBucket())
-                            xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));
-                        if(publicRequestRouteUpdatesValue.IsSetRegion())
-                            xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));
-                        if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
-                            xmlWriter.WriteElementString("TrafficDialPercentage", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestRouteUpdatesValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Route");
+                            if(publicRequestRouteUpdatesValue.IsSetBucket())
+                                xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));
+                            if(publicRequestRouteUpdatesValue.IsSetRegion())
+                                xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));
+                            if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
+                                xmlWriter.WriteElementString("TrafficDialPercentage", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }

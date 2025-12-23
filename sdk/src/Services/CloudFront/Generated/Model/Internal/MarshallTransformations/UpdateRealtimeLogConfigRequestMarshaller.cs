@@ -73,22 +73,22 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("EndPoints");
                     foreach (var publicRequestEndPointsValue in publicRequestEndPoints) 
                     {
-                    if (publicRequestEndPointsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if (publicRequestEndPointsValue.IsSetKinesisStreamConfig())
+                        if (publicRequestEndPointsValue != null)
                         {
-                            xmlWriter.WriteStartElement("KinesisStreamConfig");
-                            if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
-                                xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));
-                            if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
-                                xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));
+                            xmlWriter.WriteStartElement("member");
+                            if (publicRequestEndPointsValue.IsSetKinesisStreamConfig())
+                            {
+                                xmlWriter.WriteStartElement("KinesisStreamConfig");
+                                if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
+                                    xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));
+                                if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
+                                    xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));
+                                xmlWriter.WriteEndElement();
+                            }
+                            if(publicRequestEndPointsValue.IsSetStreamType())
+                                xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));
                             xmlWriter.WriteEndElement();
                         }
-                        if(publicRequestEndPointsValue.IsSetStreamType())
-                            xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));
-                        xmlWriter.WriteEndElement();
-                    }
                     }            
                     xmlWriter.WriteEndElement();            
                 }

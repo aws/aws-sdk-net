@@ -100,15 +100,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("TagSet");
                         foreach (var publicRequestTaggingTagSetValue in publicRequestTaggingTagSet) 
                         {
-                        if (publicRequestTaggingTagSetValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestTaggingTagSetValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));
-                            if(publicRequestTaggingTagSetValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTaggingTagSetValue.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestTaggingTagSetValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tag");
+                                if(publicRequestTaggingTagSetValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));
+                                if(publicRequestTaggingTagSetValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTaggingTagSetValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }

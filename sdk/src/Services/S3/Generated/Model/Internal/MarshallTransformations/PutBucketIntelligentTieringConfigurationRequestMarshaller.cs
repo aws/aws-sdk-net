@@ -90,15 +90,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         foreach (var publicRequestIntelligentTieringConfigurationTieringsValue in publicRequestIntelligentTieringConfigurationTierings) 
                         {
-                        if (publicRequestIntelligentTieringConfigurationTieringsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tiering");
-                            if(publicRequestIntelligentTieringConfigurationTieringsValue.IsSetAccessTier())
-                                xmlWriter.WriteElementString("AccessTier", StringUtils.FromString(publicRequestIntelligentTieringConfigurationTieringsValue.AccessTier));
-                            if(publicRequestIntelligentTieringConfigurationTieringsValue.IsSetDays())
-                                xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestIntelligentTieringConfigurationTieringsValue.Days.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestIntelligentTieringConfigurationTieringsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tiering");
+                                if(publicRequestIntelligentTieringConfigurationTieringsValue.IsSetAccessTier())
+                                    xmlWriter.WriteElementString("AccessTier", StringUtils.FromString(publicRequestIntelligentTieringConfigurationTieringsValue.AccessTier));
+                                if(publicRequestIntelligentTieringConfigurationTieringsValue.IsSetDays())
+                                    xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestIntelligentTieringConfigurationTieringsValue.Days.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                     }
 

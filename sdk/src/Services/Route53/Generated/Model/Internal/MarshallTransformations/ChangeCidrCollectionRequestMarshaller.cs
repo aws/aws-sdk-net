@@ -76,27 +76,27 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Changes");
                     foreach (var publicRequestChangesValue in publicRequestChanges) 
                     {
-                    if (publicRequestChangesValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if(publicRequestChangesValue.IsSetLocationName())
-                            xmlWriter.WriteElementString("LocationName", StringUtils.FromString(publicRequestChangesValue.LocationName));
-                        if(publicRequestChangesValue.IsSetAction())
-                            xmlWriter.WriteElementString("Action", StringUtils.FromString(publicRequestChangesValue.Action));
-                        var publicRequestChangesValueCidrList = publicRequestChangesValue.CidrList;
-                        if (publicRequestChangesValue.IsSetCidrList()) 
+                        if (publicRequestChangesValue != null)
                         {
-                            xmlWriter.WriteStartElement("CidrList");
-                            foreach (var publicRequestChangesValueCidrListValue in publicRequestChangesValueCidrList) 
+                            xmlWriter.WriteStartElement("member");
+                            if(publicRequestChangesValue.IsSetLocationName())
+                                xmlWriter.WriteElementString("LocationName", StringUtils.FromString(publicRequestChangesValue.LocationName));
+                            if(publicRequestChangesValue.IsSetAction())
+                                xmlWriter.WriteElementString("Action", StringUtils.FromString(publicRequestChangesValue.Action));
+                            var publicRequestChangesValueCidrList = publicRequestChangesValue.CidrList;
+                            if (publicRequestChangesValue.IsSetCidrList()) 
                             {
-                                xmlWriter.WriteStartElement("Cidr");
-                                xmlWriter.WriteValue(publicRequestChangesValueCidrListValue);
-                                xmlWriter.WriteEndElement();
-                            }            
-                            xmlWriter.WriteEndElement();            
+                                xmlWriter.WriteStartElement("CidrList");
+                                foreach (var publicRequestChangesValueCidrListValue in publicRequestChangesValueCidrList) 
+                                {
+                                    xmlWriter.WriteStartElement("Cidr");
+                                    xmlWriter.WriteValue(publicRequestChangesValueCidrListValue);
+                                    xmlWriter.WriteEndElement();
+                                }            
+                                xmlWriter.WriteEndElement();            
+                            }
+                            xmlWriter.WriteEndElement();
                         }
-                        xmlWriter.WriteEndElement();
-                    }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
