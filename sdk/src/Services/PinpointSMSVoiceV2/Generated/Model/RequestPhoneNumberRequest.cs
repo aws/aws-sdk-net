@@ -33,7 +33,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// Container for the parameters to the RequestPhoneNumber operation.
     /// Request an origination phone number for use in your account. For more information
     /// on phone number request see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-request.html">Request
-    /// a phone number</a> in the <i>End User MessagingSMS User Guide</i>.
+    /// a phone number</a> in the <i>End User Messaging SMS User Guide</i>.
     /// </summary>
     public partial class RequestPhoneNumberRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -203,7 +203,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you are using a shared End User MessagingSMS resource then you must use the full
+        /// If you are using a shared End User Messaging SMS resource then you must use the full
         /// Amazon Resource Name(ARN).
         /// </para>
         ///  </important>
@@ -228,7 +228,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you are using a shared End User MessagingSMS resource then you must use the full
+        /// If you are using a shared End User Messaging SMS resource then you must use the full
         /// Amazon Resource Name(ARN).
         /// </para>
         ///  </important>

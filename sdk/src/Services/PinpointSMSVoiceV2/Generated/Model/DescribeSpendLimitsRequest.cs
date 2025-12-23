@@ -39,7 +39,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// spend limit in a given Region. For more information on increasing your monthly spend
     /// limit, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/awssupport-spend-threshold.html">
     /// Requesting increases to your monthly SMS, MMS, or Voice spending quota </a> in the
-    /// <i>End User MessagingSMS User Guide</i>.
+    /// <i>End User Messaging SMS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeSpendLimitsRequest : AmazonPinpointSMSVoiceV2Request
