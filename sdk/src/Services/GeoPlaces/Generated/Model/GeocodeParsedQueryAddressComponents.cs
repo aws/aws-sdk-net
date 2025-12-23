@@ -259,6 +259,16 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// Parsed secondary address components from the provided query text.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Coverage for <c>ParsedQuery.Address.SecondaryAddressComponents</c> is available in
+        /// the following countries:
+        /// </para>
+        ///  
+        /// <para>
+        /// AUS, AUT, BRA, CAN, ESP, FRA, GBR, HKG, IDN, IND, NZL, TUR, TWN, USA
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
