@@ -90,7 +90,8 @@ namespace Amazon.S3.Transfer.Internal
                 transferConfig.ConcurrentServiceRequests,
                 request.MaxInMemoryParts,
                 s3Client.Config.BufferSize,
-                targetPartSize);
+                targetPartSize,
+                request.ChunkBufferSize);
             
             var partBufferManager = new PartBufferManager(config);
             var dataHandler = new BufferedPartDataHandler(partBufferManager, config);

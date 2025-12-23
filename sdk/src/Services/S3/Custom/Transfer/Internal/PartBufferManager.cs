@@ -82,8 +82,8 @@ namespace Amazon.S3.Transfer.Internal
     ///    - Blocks if <see cref="BufferedDownloadConfiguration.MaxInMemoryParts"/> are already buffered in memory
     ///    - Example: With MaxInMemoryParts=10, if parts 5-14 are buffered, the task downloading
     ///      part 15 blocks here until the reader consumes and releases part 5's buffer
-    /// 2. Read part data from S3 into pooled buffer
-    /// 3. Add buffered part: await <see cref="AddBuffer(StreamPartBuffer)"/>
+    /// 2. Read part data from S3 into chunked ArrayPool buffers
+    /// 3. Add buffered part: await <see cref="AddDataSource(IPartDataSource)"/>
     ///    - Adds buffer to _partDataSources dictionary
     ///    - Signals _partAvailable to wake consumer if waiting
     /// 4. Consumer eventually releases the buffer slot after reading the part
@@ -176,17 +176,8 @@ namespace Amazon.S3.Transfer.Internal
 
         #endregion
 
-        #region Logger
+        private readonly Logger _logger = Logger.GetLogger(typeof(PartBufferManager));
 
-        private Logger Logger
-        {
-            get
-            {
-                return Logger.GetLogger(typeof(TransferUtility));
-            }
-        }
-
-        #endregion
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PartBufferManager"/> class.
@@ -205,7 +196,7 @@ namespace Amazon.S3.Transfer.Internal
             );
             _partAvailable = new AutoResetEvent(false);
             
-            Logger.DebugFormat("PartBufferManager initialized with MaxInMemoryParts={0}", config.MaxInMemoryParts);
+            _logger.DebugFormat("PartBufferManager initialized with MaxInMemoryParts={0}", config.MaxInMemoryParts);
         }
 
         /// <inheritdoc/>
@@ -236,12 +227,12 @@ namespace Amazon.S3.Transfer.Internal
             ThrowIfDisposed();
             
             var availableBefore = _bufferSpaceAvailable.CurrentCount;
-            Logger.DebugFormat("PartBufferManager: Waiting for buffer space (Available slots before wait: {0})", availableBefore);
+            _logger.DebugFormat("PartBufferManager: Waiting for buffer space (Available slots before wait: {0})", availableBefore);
             
             await _bufferSpaceAvailable.WaitAsync(cancellationToken).ConfigureAwait(false);
             
             var availableAfter = _bufferSpaceAvailable.CurrentCount;
-            Logger.DebugFormat("PartBufferManager: Buffer space acquired (Available slots after acquire: {0})", availableAfter);
+            _logger.DebugFormat("PartBufferManager: Buffer space acquired (Available slots after acquire: {0})", availableAfter);
         }
 
         /// <summary>
@@ -267,48 +258,23 @@ namespace Amazon.S3.Transfer.Internal
             if (dataSource == null)
                 throw new ArgumentNullException(nameof(dataSource));
 
-            Logger.DebugFormat("PartBufferManager: Adding part {0} (BufferedParts count before add: {1})", 
+            _logger.DebugFormat("PartBufferManager: Adding part {0} (BufferedParts count before add: {1})", 
                 dataSource.PartNumber, _partDataSources.Count);
 
             // Add the data source to the collection
             if (!_partDataSources.TryAdd(dataSource.PartNumber, dataSource))
             {
                 // Duplicate part number - this shouldn't happen in normal operation
-                Logger.Error(null, "PartBufferManager: Duplicate part {0} attempted to be added", dataSource.PartNumber);
+                _logger.Error(null, "PartBufferManager: Duplicate part {0} attempted to be added", dataSource.PartNumber);
                 dataSource?.Dispose(); // Clean up the duplicate part
                 throw new InvalidOperationException($"Duplicate part {dataSource.PartNumber} attempted to be added");
             }
 
-            Logger.DebugFormat("PartBufferManager: Part {0} added successfully (BufferedParts count after add: {1}). Signaling _partAvailable.", 
+            _logger.DebugFormat("PartBufferManager: Part {0} added successfully (BufferedParts count after add: {1}). Signaling _partAvailable.", 
                 dataSource.PartNumber, _partDataSources.Count);
 
             // Signal that a new part is available
             _partAvailable.Set();
-        }
-
-        /// <inheritdoc/>
-        public void AddBuffer(StreamPartBuffer buffer)
-        {
-            ThrowIfDisposed();
-            
-            if (buffer == null)
-                throw new ArgumentNullException(nameof(buffer));
-
-            // Create a BufferedDataSource and add it
-            var bufferedSource = new BufferedDataSource(buffer);
-            AddDataSource(bufferedSource);
-        }
-
-        /// <inheritdoc/>
-        public void AddBuffer(IPartDataSource dataSource)
-        {
-            ThrowIfDisposed();
-            
-            if (dataSource == null)
-                throw new ArgumentNullException(nameof(dataSource));
-
-            // Delegate directly to AddDataSourceAsync which already handles IPartDataSource
-            AddDataSource(dataSource);
         }
 
         /// <inheritdoc/>
@@ -395,7 +361,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             var currentPartNumber = _nextExpectedPartNumber;
 
-            Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Expecting part {0} (Requested bytes: {1}, BufferedParts count: {2})", 
+            _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Expecting part {0} (Requested bytes: {1}, BufferedParts count: {2})", 
                 currentPartNumber, count, _partDataSources.Count);
 
             // Wait for the current part to become available.
@@ -405,7 +371,7 @@ namespace Amazon.S3.Transfer.Internal
             // Example: If parts 3, 5, 7 are available but we need part 2, we wait here.
             while (!_partDataSources.ContainsKey(currentPartNumber))
             {
-                Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} not yet available. Waiting on _partAvailable event...", 
+                _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} not yet available. Waiting on _partAvailable event...", 
                     currentPartNumber);
 
                 // Check for completion first to avoid indefinite waiting.
@@ -414,12 +380,12 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     if (state.Item2 != null)  // Check for exception
                     {
-                        Logger.Error(state.Item2, "PartBufferManager.ReadFromCurrentPart: Download failed while waiting for part {0}", 
+                        _logger.Error(state.Item2, "PartBufferManager.ReadFromCurrentPart: Download failed while waiting for part {0}", 
                             currentPartNumber);
                         throw new InvalidOperationException("Multipart download failed", state.Item2);
                     }
                     
-                    Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Download complete, part {0} not available. Returning EOF.", 
+                    _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Download complete, part {0} not available. Returning EOF.", 
                         currentPartNumber);
                     // True EOF - all parts downloaded, no more data coming
                     return (0, false);
@@ -434,11 +400,11 @@ namespace Amazon.S3.Transfer.Internal
                 // and calls AddDataSourceAsync, it signals this event, waking us to check again.
                 await Task.Run(() => _partAvailable.WaitOne(), cancellationToken).ConfigureAwait(false);
                 
-                Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Woke from _partAvailable wait. Rechecking for part {0}...", 
+                _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Woke from _partAvailable wait. Rechecking for part {0}...", 
                     currentPartNumber);
             }
 
-            Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} is available. Reading from data source...", 
+            _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} is available. Reading from data source...", 
                 currentPartNumber);
 
             // At this point, the expected part is available in the dictionary.
@@ -446,7 +412,7 @@ namespace Amazon.S3.Transfer.Internal
             if (!_partDataSources.TryGetValue(currentPartNumber, out var dataSource))
             {
                 // Log technical details for troubleshooting
-                Logger.Error(null, "PartBufferManager: Part {0} disappeared after availability check. This indicates a race condition in the buffer manager.", currentPartNumber);
+                _logger.Error(null, "PartBufferManager: Part {0} disappeared after availability check. This indicates a race condition in the buffer manager.", currentPartNumber);
                 
                 // Throw user-friendly exception
                 throw new InvalidOperationException("Multipart download failed due to an internal error.");
@@ -457,13 +423,13 @@ namespace Amazon.S3.Transfer.Internal
                 // Read from this part's buffer into the caller's buffer.
                 var partBytesRead = await dataSource.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
                 
-                Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Read {0} bytes from part {1}. IsComplete={2}", 
+                _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Read {0} bytes from part {1}. IsComplete={2}", 
                     partBytesRead, currentPartNumber, dataSource.IsComplete);
                 
                 // If this part is fully consumed, perform cleanup and advance to next part.
                 if (dataSource.IsComplete)
                 {
-                    Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} is complete. Cleaning up and advancing to next part...", 
+                    _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} is complete. Cleaning up and advancing to next part...", 
                         currentPartNumber);
 
                     // Remove from collection
@@ -482,7 +448,7 @@ namespace Amazon.S3.Transfer.Internal
                     // Advance to next part.
                     _nextExpectedPartNumber++;
                     
-                    Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Cleaned up part {0}. Next expected part: {1} (BufferedParts count: {2})", 
+                    _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Cleaned up part {0}. Next expected part: {1} (BufferedParts count: {2})", 
                         currentPartNumber, _nextExpectedPartNumber, _partDataSources.Count);
                     
                     // Continue reading to fill buffer across part boundaries.
@@ -498,11 +464,11 @@ namespace Amazon.S3.Transfer.Internal
                 // If part is not complete but we got 0 bytes, it's EOF
                 if (partBytesRead == 0)
                 {
-                    Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} returned 0 bytes (EOF)", currentPartNumber);
+                    _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} returned 0 bytes (EOF)", currentPartNumber);
                     return (0, false);
                 }
                 
-                Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} has more data. Returning {1} bytes (will resume on next call)", 
+                _logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} has more data. Returning {1} bytes (will resume on next call)", 
                     currentPartNumber, partBytesRead);
                 
                 // Part still has more data available. Return what we read.
@@ -511,7 +477,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "PartBufferManager.ReadFromCurrentPart: Error reading from part {0}: {1}", 
+                _logger.Error(ex, "PartBufferManager.ReadFromCurrentPart: Error reading from part {0}: {1}", 
                     currentPartNumber, ex.Message);
                 
                 // Clean up on failure to prevent resource leaks
@@ -543,7 +509,7 @@ namespace Amazon.S3.Transfer.Internal
             _bufferSpaceAvailable.Release();
             
             var availableAfter = _bufferSpaceAvailable.CurrentCount;
-            Logger.DebugFormat("PartBufferManager: Buffer space released (Available slots after release: {0})", availableAfter);
+            _logger.DebugFormat("PartBufferManager: Buffer space released (Available slots after release: {0})", availableAfter);
         }
 
         /// <inheritdoc/>
@@ -568,11 +534,11 @@ namespace Amazon.S3.Transfer.Internal
         {
             if (exception != null)
             {
-                Logger.Error(exception, "PartBufferManager: Download marked complete with error. Signaling completion.");
+                _logger.Error(exception, "PartBufferManager: Download marked complete with error. Signaling completion.");
             }
             else
             {
-                Logger.DebugFormat("PartBufferManager: Download marked complete successfully. Signaling completion.");
+                _logger.DebugFormat("PartBufferManager: Download marked complete successfully. Signaling completion.");
             }
 
             // Create and assign new completion state atomically

@@ -40,18 +40,25 @@ namespace Amazon.S3.Transfer.Internal
         public int BufferSize { get; set; }
         
         /// <summary>
+        /// Chunk buffer size for ChunkedBufferStream. When null, the default 64KB chunk size is used.
+        /// </summary>
+        public int? ChunkBufferSize { get; set; }
+        
+        /// <summary>
         /// Creates a BufferedDownloadConfiguration with the specified configuration values.
         /// </summary>
         /// <param name="concurrentServiceRequests">Maximum concurrent HTTP requests for downloading parts.</param>
         /// <param name="maxInMemoryParts">Maximum number of parts to keep in memory simultaneously.</param>
         /// <param name="bufferSize">Buffer size used for optimal I/O operations.</param>
         /// <param name="targetPartSizeBytes">Target size for each part in bytes.</param>
+        /// <param name="chunkBufferSize">Optional chunk buffer size for ChunkedBufferStream. When null, defaults to 64KB.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when any parameter is less than or equal to 0.</exception>
         public BufferedDownloadConfiguration(
             int concurrentServiceRequests,
             int maxInMemoryParts,
             int bufferSize,
-            long targetPartSizeBytes)
+            long targetPartSizeBytes,
+            int? chunkBufferSize = null)
             : base(concurrentServiceRequests, targetPartSizeBytes)
         {
             if (maxInMemoryParts <= 0)
@@ -61,6 +68,7 @@ namespace Amazon.S3.Transfer.Internal
             
             MaxInMemoryParts = maxInMemoryParts;
             BufferSize = bufferSize;
+            ChunkBufferSize = chunkBufferSize;
         }
     }
 }

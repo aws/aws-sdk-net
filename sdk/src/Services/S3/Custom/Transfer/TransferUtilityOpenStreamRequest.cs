@@ -48,5 +48,11 @@ namespace Amazon.S3.Transfer
             get { return this._maxInMemoryParts; }
             set { this._maxInMemoryParts = value; }
         }
+
+        /// <summary>
+        /// Gets or sets the chunk buffer size for ChunkedBufferStream.
+        /// When null, the default 64KB chunk size is used.
+        /// </summary>
+        internal int? ChunkBufferSize { get; set; }
     }
 }
