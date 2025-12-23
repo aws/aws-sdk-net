@@ -64,28 +64,8 @@ namespace Amazon.QueryCompatibleJSONRPC10.Model.Internal.MarshallTransformations
                 context.Read(ref reader);
             }
 
-            var errorCode = errorResponse.Code;
-            var errorType = errorResponse.Type;
-            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
-            {
-                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
-                {
-                    var queryErrorParts = queryError.Split(';');
-                    if (queryErrorParts.Length == 2)
-                    {
-                        errorCode = queryErrorParts[0];
-                        var errorTypeString = queryErrorParts[1];
-                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
-                        {
-                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
-                        }
-                    }
-                }
-            }
             NoCustomCodeErrorException unmarshalledObject = new NoCustomCodeErrorException(errorResponse.Message, errorResponse.InnerException,
-                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             if (context.Stream.Length > 0)

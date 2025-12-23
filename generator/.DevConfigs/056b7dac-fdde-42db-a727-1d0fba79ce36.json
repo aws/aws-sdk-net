@@ -1,0 +1,18 @@
+{
+  "services": [
+    {
+      "serviceName": "CloudWatch",
+      "type": "patch",
+      "changeLogMessages": [
+        "Improve AWS Query compatible error handling in unmarshallers."
+      ]
+    },
+    {
+      "serviceName": "SQS",
+      "type": "patch",
+      "changeLogMessages": [
+        "Improve AWS Query compatible error handling in unmarshallers."
+      ]
+    }
+  ]
+}
