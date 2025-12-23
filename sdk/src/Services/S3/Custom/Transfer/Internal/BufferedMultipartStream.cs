@@ -39,7 +39,6 @@ namespace Amazon.S3.Transfer.Internal
     {
         private readonly IDownloadManager _downloadCoordinator;
         private readonly IPartBufferManager _partBufferManager;
-        private readonly BufferedDownloadConfiguration _config;
         
         private bool _initialized = false;
         private bool _disposed = false;
@@ -59,12 +58,10 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="downloadCoordinator"><see cref="IDownloadManager"/> that coordinates download discovery and orchestration.</param>
         /// <param name="partBufferManager"><see cref="IPartBufferManager"/> that manages part buffer lifecycle and synchronization.</param>
-        /// <param name="config"><see cref="BufferedDownloadConfiguration"/> with settings for the stream.</param>
-        public BufferedMultipartStream(IDownloadManager downloadCoordinator, IPartBufferManager partBufferManager, BufferedDownloadConfiguration config)
+        public BufferedMultipartStream(IDownloadManager downloadCoordinator, IPartBufferManager partBufferManager)
         {
             _downloadCoordinator = downloadCoordinator ?? throw new ArgumentNullException(nameof(downloadCoordinator));
             _partBufferManager = partBufferManager ?? throw new ArgumentNullException(nameof(partBufferManager));
-            _config = config ?? throw new ArgumentNullException(nameof(config));
         }
 
         /// <summary>
@@ -97,7 +94,7 @@ namespace Amazon.S3.Transfer.Internal
             var dataHandler = new BufferedPartDataHandler(partBufferManager, config);
             var downloadCoordinator = new MultipartDownloadManager(s3Client, request, config, dataHandler, requestEventHandler);
             
-            return new BufferedMultipartStream(downloadCoordinator, partBufferManager, config);
+            return new BufferedMultipartStream(downloadCoordinator, partBufferManager);
         }
 
         /// <summary>
