@@ -58,28 +58,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public InvalidNextTokenException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            var errorCode = errorResponse.Code;
-            var errorType = errorResponse.Type;
-            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
-            {
-                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
-                {
-                    var queryErrorParts = queryError.Split(';');
-                    if (queryErrorParts.Length == 2)
-                    {
-                        errorCode = queryErrorParts[0];
-                        var errorTypeString = queryErrorParts[1];
-                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
-                        {
-                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
-                        }
-                    }
-                }
-            }
             InvalidNextTokenException unmarshalledObject = new InvalidNextTokenException(errorResponse.Message, errorResponse.InnerException,
-                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
             var reader = context.Reader;
             context.AddPathSegment("InvalidNextTokenException");
             reader.ReadStartMap();
