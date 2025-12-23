@@ -88,55 +88,55 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         foreach (var publicRequestConfigurationRulesValue in publicRequestConfigurationRules) 
                         {
-                        if (publicRequestConfigurationRulesValue != null)
-                        {
-                            xmlWriter.WriteStartElement("CORSRule");
-                            var publicRequestConfigurationRulesValueAllowedHeaders = publicRequestConfigurationRulesValue.AllowedHeaders;
-                            if (publicRequestConfigurationRulesValue.IsSetAllowedHeaders()) 
+                            if (publicRequestConfigurationRulesValue != null)
                             {
-                                foreach (var publicRequestConfigurationRulesValueAllowedHeadersValue in publicRequestConfigurationRulesValueAllowedHeaders) 
+                                xmlWriter.WriteStartElement("CORSRule");
+                                var publicRequestConfigurationRulesValueAllowedHeaders = publicRequestConfigurationRulesValue.AllowedHeaders;
+                                if (publicRequestConfigurationRulesValue.IsSetAllowedHeaders()) 
                                 {
-                                    xmlWriter.WriteStartElement("AllowedHeader");
-                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedHeadersValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            var publicRequestConfigurationRulesValueAllowedMethods = publicRequestConfigurationRulesValue.AllowedMethods;
-                            if (publicRequestConfigurationRulesValue.IsSetAllowedMethods()) 
-                            {
-                                foreach (var publicRequestConfigurationRulesValueAllowedMethodsValue in publicRequestConfigurationRulesValueAllowedMethods) 
+                                    foreach (var publicRequestConfigurationRulesValueAllowedHeadersValue in publicRequestConfigurationRulesValueAllowedHeaders) 
+                                    {
+                                        xmlWriter.WriteStartElement("AllowedHeader");
+                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedHeadersValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                var publicRequestConfigurationRulesValueAllowedMethods = publicRequestConfigurationRulesValue.AllowedMethods;
+                                if (publicRequestConfigurationRulesValue.IsSetAllowedMethods()) 
                                 {
-                                    xmlWriter.WriteStartElement("AllowedMethod");
-                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedMethodsValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            var publicRequestConfigurationRulesValueAllowedOrigins = publicRequestConfigurationRulesValue.AllowedOrigins;
-                            if (publicRequestConfigurationRulesValue.IsSetAllowedOrigins()) 
-                            {
-                                foreach (var publicRequestConfigurationRulesValueAllowedOriginsValue in publicRequestConfigurationRulesValueAllowedOrigins) 
+                                    foreach (var publicRequestConfigurationRulesValueAllowedMethodsValue in publicRequestConfigurationRulesValueAllowedMethods) 
+                                    {
+                                        xmlWriter.WriteStartElement("AllowedMethod");
+                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedMethodsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                var publicRequestConfigurationRulesValueAllowedOrigins = publicRequestConfigurationRulesValue.AllowedOrigins;
+                                if (publicRequestConfigurationRulesValue.IsSetAllowedOrigins()) 
                                 {
-                                    xmlWriter.WriteStartElement("AllowedOrigin");
-                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedOriginsValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            var publicRequestConfigurationRulesValueExposeHeaders = publicRequestConfigurationRulesValue.ExposeHeaders;
-                            if (publicRequestConfigurationRulesValue.IsSetExposeHeaders()) 
-                            {
-                                foreach (var publicRequestConfigurationRulesValueExposeHeadersValue in publicRequestConfigurationRulesValueExposeHeaders) 
+                                    foreach (var publicRequestConfigurationRulesValueAllowedOriginsValue in publicRequestConfigurationRulesValueAllowedOrigins) 
+                                    {
+                                        xmlWriter.WriteStartElement("AllowedOrigin");
+                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedOriginsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                var publicRequestConfigurationRulesValueExposeHeaders = publicRequestConfigurationRulesValue.ExposeHeaders;
+                                if (publicRequestConfigurationRulesValue.IsSetExposeHeaders()) 
                                 {
-                                    xmlWriter.WriteStartElement("ExposeHeader");
-                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueExposeHeadersValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
+                                    foreach (var publicRequestConfigurationRulesValueExposeHeadersValue in publicRequestConfigurationRulesValueExposeHeaders) 
+                                    {
+                                        xmlWriter.WriteStartElement("ExposeHeader");
+                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueExposeHeadersValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                if(publicRequestConfigurationRulesValue.IsSetId())
+                                    xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
+                                if(publicRequestConfigurationRulesValue.IsSetMaxAgeSeconds())
+                                    xmlWriter.WriteElementString("MaxAgeSeconds", StringUtils.FromInt(publicRequestConfigurationRulesValue.MaxAgeSeconds.Value));
+                                xmlWriter.WriteEndElement();
                             }
-                            if(publicRequestConfigurationRulesValue.IsSetId())
-                                xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
-                            if(publicRequestConfigurationRulesValue.IsSetMaxAgeSeconds())
-                                xmlWriter.WriteElementString("MaxAgeSeconds", StringUtils.FromInt(publicRequestConfigurationRulesValue.MaxAgeSeconds.Value));
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                     }
 

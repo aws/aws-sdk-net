@@ -97,37 +97,37 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("TransformationConfigurations");
                         foreach (var publicRequestConfigurationTransformationConfigurationsValue in publicRequestConfigurationTransformationConfigurations) 
                         {
-                        if (publicRequestConfigurationTransformationConfigurationsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("TransformationConfiguration");
-                            var publicRequestConfigurationTransformationConfigurationsValueActions = publicRequestConfigurationTransformationConfigurationsValue.Actions;
-                            if (publicRequestConfigurationTransformationConfigurationsValue.IsSetActions()) 
+                            if (publicRequestConfigurationTransformationConfigurationsValue != null)
                             {
-                                xmlWriter.WriteStartElement("Actions");
-                                foreach (var publicRequestConfigurationTransformationConfigurationsValueActionsValue in publicRequestConfigurationTransformationConfigurationsValueActions) 
+                                xmlWriter.WriteStartElement("TransformationConfiguration");
+                                var publicRequestConfigurationTransformationConfigurationsValueActions = publicRequestConfigurationTransformationConfigurationsValue.Actions;
+                                if (publicRequestConfigurationTransformationConfigurationsValue.IsSetActions()) 
                                 {
-                                    xmlWriter.WriteStartElement("Action");
-                                    xmlWriter.WriteValue(publicRequestConfigurationTransformationConfigurationsValueActionsValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                                xmlWriter.WriteEndElement();            
-                            }
-                            if (publicRequestConfigurationTransformationConfigurationsValue.IsSetContentTransformation())
-                            {
-                                xmlWriter.WriteStartElement("ContentTransformation");
-                                if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.IsSetAwsLambda())
+                                    xmlWriter.WriteStartElement("Actions");
+                                    foreach (var publicRequestConfigurationTransformationConfigurationsValueActionsValue in publicRequestConfigurationTransformationConfigurationsValueActions) 
+                                    {
+                                        xmlWriter.WriteStartElement("Action");
+                                        xmlWriter.WriteValue(publicRequestConfigurationTransformationConfigurationsValueActionsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
+                                }
+                                if (publicRequestConfigurationTransformationConfigurationsValue.IsSetContentTransformation())
                                 {
-                                    xmlWriter.WriteStartElement("AwsLambda");
-                                    if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionArn())
-                                        xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionArn));
-                                    if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionPayload())
-                                        xmlWriter.WriteElementString("FunctionPayload", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionPayload));
+                                    xmlWriter.WriteStartElement("ContentTransformation");
+                                    if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.IsSetAwsLambda())
+                                    {
+                                        xmlWriter.WriteStartElement("AwsLambda");
+                                        if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionArn())
+                                            xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionArn));
+                                        if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionPayload())
+                                            xmlWriter.WriteElementString("FunctionPayload", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionPayload));
+                                        xmlWriter.WriteEndElement();
+                                    }
                                     xmlWriter.WriteEndElement();
                                 }
                                 xmlWriter.WriteEndElement();
                             }
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                         xmlWriter.WriteEndElement();            
                     }

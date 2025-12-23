@@ -88,13 +88,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         foreach (var publicRequestOwnershipControlsRulesValue in publicRequestOwnershipControlsRules) 
                         {
-                        if (publicRequestOwnershipControlsRulesValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Rule");
-                            if(publicRequestOwnershipControlsRulesValue.IsSetObjectOwnership())
-                                xmlWriter.WriteElementString("ObjectOwnership", StringUtils.FromString(publicRequestOwnershipControlsRulesValue.ObjectOwnership));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestOwnershipControlsRulesValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Rule");
+                                if(publicRequestOwnershipControlsRulesValue.IsSetObjectOwnership())
+                                    xmlWriter.WriteElementString("ObjectOwnership", StringUtils.FromString(publicRequestOwnershipControlsRulesValue.ObjectOwnership));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                     }
 

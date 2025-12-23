@@ -106,15 +106,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("Tags");
                         foreach (var publicRequestPutBucketConfigurationTagsValue in publicRequestPutBucketConfigurationTags) 
                         {
-                        if (publicRequestPutBucketConfigurationTagsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestPutBucketConfigurationTagsValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestPutBucketConfigurationTagsValue.Key));
-                            if(publicRequestPutBucketConfigurationTagsValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestPutBucketConfigurationTagsValue.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestPutBucketConfigurationTagsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tag");
+                                if(publicRequestPutBucketConfigurationTagsValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestPutBucketConfigurationTagsValue.Key));
+                                if(publicRequestPutBucketConfigurationTagsValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestPutBucketConfigurationTagsValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }

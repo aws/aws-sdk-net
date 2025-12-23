@@ -165,17 +165,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue in publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItems) 
                             {
-                            if (publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("ResponseHeadersPolicyCustomHeader");
-                                if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetHeader())
-                                    xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Header));
-                                if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetOverride())
-                                    xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Override.Value));
-                                if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetValue())
-                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Value));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("ResponseHeadersPolicyCustomHeader");
+                                    if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetHeader())
+                                        xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Header));
+                                    if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetOverride())
+                                        xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Override.Value));
+                                    if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetValue())
+                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Value));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }
@@ -195,13 +195,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue in publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItems) 
                             {
-                            if (publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("ResponseHeadersPolicyRemoveHeader");
-                                if(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.IsSetHeader())
-                                    xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.Header));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("ResponseHeadersPolicyRemoveHeader");
+                                    if(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.IsSetHeader())
+                                        xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.Header));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }

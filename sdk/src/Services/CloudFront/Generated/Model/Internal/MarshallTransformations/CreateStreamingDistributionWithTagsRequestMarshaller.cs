@@ -149,15 +149,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestStreamingDistributionConfigWithTagsTagsItemsValue in publicRequestStreamingDistributionConfigWithTagsTagsItems) 
                             {
-                            if (publicRequestStreamingDistributionConfigWithTagsTagsItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("Tag");
-                                if(publicRequestStreamingDistributionConfigWithTagsTagsItemsValue.IsSetKey())
-                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStreamingDistributionConfigWithTagsTagsItemsValue.Key));
-                                if(publicRequestStreamingDistributionConfigWithTagsTagsItemsValue.IsSetValue())
-                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStreamingDistributionConfigWithTagsTagsItemsValue.Value));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestStreamingDistributionConfigWithTagsTagsItemsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("Tag");
+                                    if(publicRequestStreamingDistributionConfigWithTagsTagsItemsValue.IsSetKey())
+                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStreamingDistributionConfigWithTagsTagsItemsValue.Key));
+                                    if(publicRequestStreamingDistributionConfigWithTagsTagsItemsValue.IsSetValue())
+                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStreamingDistributionConfigWithTagsTagsItemsValue.Value));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }

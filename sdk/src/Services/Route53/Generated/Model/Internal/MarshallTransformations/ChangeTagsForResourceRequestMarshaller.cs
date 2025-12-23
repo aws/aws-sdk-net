@@ -76,15 +76,15 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("AddTags");
                     foreach (var publicRequestAddTagsValue in publicRequestAddTags) 
                     {
-                    if (publicRequestAddTagsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("Tag");
-                        if(publicRequestAddTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestAddTagsValue.Key));
-                        if(publicRequestAddTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestAddTagsValue.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestAddTagsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Tag");
+                            if(publicRequestAddTagsValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestAddTagsValue.Key));
+                            if(publicRequestAddTagsValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestAddTagsValue.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }

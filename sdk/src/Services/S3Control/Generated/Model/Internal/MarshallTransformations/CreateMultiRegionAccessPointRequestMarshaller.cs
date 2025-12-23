@@ -98,15 +98,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("Regions");
                         foreach (var publicRequestDetailsRegionsValue in publicRequestDetailsRegions) 
                         {
-                        if (publicRequestDetailsRegionsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Region");
-                            if(publicRequestDetailsRegionsValue.IsSetBucket())
-                                xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));
-                            if(publicRequestDetailsRegionsValue.IsSetBucketAccountId())
-                                xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestDetailsRegionsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Region");
+                                if(publicRequestDetailsRegionsValue.IsSetBucket())
+                                    xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));
+                                if(publicRequestDetailsRegionsValue.IsSetBucketAccountId())
+                                    xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }

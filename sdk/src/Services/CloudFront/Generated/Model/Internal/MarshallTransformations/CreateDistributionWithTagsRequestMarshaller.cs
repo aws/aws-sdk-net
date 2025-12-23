@@ -100,247 +100,247 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItems) 
                                 {
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("CacheBehavior");
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetAllowedMethods())
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue != null)
                                     {
-                                        xmlWriter.WriteStartElement("AllowedMethods");
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.IsSetCachedMethods())
+                                        xmlWriter.WriteStartElement("CacheBehavior");
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetAllowedMethods())
                                         {
-                                            xmlWriter.WriteStartElement("CachedMethods");
-                                            var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.Items;
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.IsSetItems()) 
+                                            xmlWriter.WriteStartElement("AllowedMethods");
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.IsSetCachedMethods())
                                             {
-                                                xmlWriter.WriteStartElement("Items");
-                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItems) 
-                                                {
-                                                    xmlWriter.WriteStartElement("Method");
-                                                    xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItemsValue);
-                                                    xmlWriter.WriteEndElement();
-                                                }            
-                                                xmlWriter.WriteEndElement();            
-                                            }
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.IsSetQuantity())
-                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.Quantity.Value));
-                                            xmlWriter.WriteEndElement();
-                                        }
-                                        var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Items;
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.IsSetItems()) 
-                                        {
-                                            xmlWriter.WriteStartElement("Items");
-                                            foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems) 
-                                            {
-                                                xmlWriter.WriteStartElement("Method");
-                                                xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItemsValue);
-                                                xmlWriter.WriteEndElement();
-                                            }            
-                                            xmlWriter.WriteEndElement();            
-                                        }
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Quantity.Value));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetCachePolicyId())
-                                        xmlWriter.WriteElementString("CachePolicyId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.CachePolicyId));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetCompress())
-                                        xmlWriter.WriteElementString("Compress", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.Compress.Value));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetDefaultTTL())
-                                        xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.DefaultTTL.Value));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetFieldLevelEncryptionId())
-                                        xmlWriter.WriteElementString("FieldLevelEncryptionId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FieldLevelEncryptionId));
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetForwardedValues())
-                                    {
-                                        xmlWriter.WriteStartElement("ForwardedValues");
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetCookies())
-                                        {
-                                            xmlWriter.WriteStartElement("Cookies");
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.IsSetForward())
-                                                xmlWriter.WriteElementString("Forward", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.Forward));
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.IsSetWhitelistedNames())
-                                            {
-                                                xmlWriter.WriteStartElement("WhitelistedNames");
-                                                var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Items;
-                                                if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.IsSetItems()) 
+                                                xmlWriter.WriteStartElement("CachedMethods");
+                                                var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.Items;
+                                                if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.IsSetItems()) 
                                                 {
                                                     xmlWriter.WriteStartElement("Items");
-                                                    foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems) 
+                                                    foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItems) 
                                                     {
-                                                        xmlWriter.WriteStartElement("Name");
-                                                        xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItemsValue);
+                                                        xmlWriter.WriteStartElement("Method");
+                                                        xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItemsValue);
                                                         xmlWriter.WriteEndElement();
                                                     }            
                                                     xmlWriter.WriteEndElement();            
                                                 }
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.IsSetQuantity())
-                                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Quantity.Value));
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.IsSetQuantity())
+                                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.Quantity.Value));
                                                 xmlWriter.WriteEndElement();
                                             }
-                                            xmlWriter.WriteEndElement();
-                                        }
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetHeaders())
-                                        {
-                                            xmlWriter.WriteStartElement("Headers");
-                                            var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Items;
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.IsSetItems()) 
+                                            var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Items;
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.IsSetItems()) 
                                             {
                                                 xmlWriter.WriteStartElement("Items");
-                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems) 
+                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems) 
                                                 {
-                                                    xmlWriter.WriteStartElement("Name");
-                                                    xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItemsValue);
+                                                    xmlWriter.WriteStartElement("Method");
+                                                    xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItemsValue);
                                                     xmlWriter.WriteEndElement();
                                                 }            
                                                 xmlWriter.WriteEndElement();            
                                             }
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.IsSetQuantity())
-                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Quantity.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.IsSetQuantity())
+                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Quantity.Value));
                                             xmlWriter.WriteEndElement();
                                         }
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetQueryString())
-                                            xmlWriter.WriteElementString("QueryString", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryString.Value));
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetQueryStringCacheKeys())
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetCachePolicyId())
+                                            xmlWriter.WriteElementString("CachePolicyId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.CachePolicyId));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetCompress())
+                                            xmlWriter.WriteElementString("Compress", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.Compress.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetDefaultTTL())
+                                            xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.DefaultTTL.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetFieldLevelEncryptionId())
+                                            xmlWriter.WriteElementString("FieldLevelEncryptionId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FieldLevelEncryptionId));
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetForwardedValues())
                                         {
-                                            xmlWriter.WriteStartElement("QueryStringCacheKeys");
-                                            var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.Items;
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.IsSetItems()) 
+                                            xmlWriter.WriteStartElement("ForwardedValues");
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetCookies())
+                                            {
+                                                xmlWriter.WriteStartElement("Cookies");
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.IsSetForward())
+                                                    xmlWriter.WriteElementString("Forward", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.Forward));
+                                                if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.IsSetWhitelistedNames())
+                                                {
+                                                    xmlWriter.WriteStartElement("WhitelistedNames");
+                                                    var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Items;
+                                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.IsSetItems()) 
+                                                    {
+                                                        xmlWriter.WriteStartElement("Items");
+                                                        foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems) 
+                                                        {
+                                                            xmlWriter.WriteStartElement("Name");
+                                                            xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItemsValue);
+                                                            xmlWriter.WriteEndElement();
+                                                        }            
+                                                        xmlWriter.WriteEndElement();            
+                                                    }
+                                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.IsSetQuantity())
+                                                        xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Quantity.Value));
+                                                    xmlWriter.WriteEndElement();
+                                                }
+                                                xmlWriter.WriteEndElement();
+                                            }
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetHeaders())
+                                            {
+                                                xmlWriter.WriteStartElement("Headers");
+                                                var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Items;
+                                                if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.IsSetItems()) 
+                                                {
+                                                    xmlWriter.WriteStartElement("Items");
+                                                    foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems) 
+                                                    {
+                                                        xmlWriter.WriteStartElement("Name");
+                                                        xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItemsValue);
+                                                        xmlWriter.WriteEndElement();
+                                                    }            
+                                                    xmlWriter.WriteEndElement();            
+                                                }
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.IsSetQuantity())
+                                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Quantity.Value));
+                                                xmlWriter.WriteEndElement();
+                                            }
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetQueryString())
+                                                xmlWriter.WriteElementString("QueryString", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryString.Value));
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetQueryStringCacheKeys())
+                                            {
+                                                xmlWriter.WriteStartElement("QueryStringCacheKeys");
+                                                var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.Items;
+                                                if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.IsSetItems()) 
+                                                {
+                                                    xmlWriter.WriteStartElement("Items");
+                                                    foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItems) 
+                                                    {
+                                                        xmlWriter.WriteStartElement("Name");
+                                                        xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItemsValue);
+                                                        xmlWriter.WriteEndElement();
+                                                    }            
+                                                    xmlWriter.WriteEndElement();            
+                                                }
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.IsSetQuantity())
+                                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.Quantity.Value));
+                                                xmlWriter.WriteEndElement();
+                                            }
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetFunctionAssociations())
+                                        {
+                                            xmlWriter.WriteStartElement("FunctionAssociations");
+                                            var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.Items;
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.IsSetItems()) 
                                             {
                                                 xmlWriter.WriteStartElement("Items");
-                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItems) 
+                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItems) 
                                                 {
-                                                    xmlWriter.WriteStartElement("Name");
-                                                    xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItemsValue);
+                                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue != null)
+                                                    {
+                                                        xmlWriter.WriteStartElement("FunctionAssociation");
+                                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.IsSetEventType())
+                                                            xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.EventType));
+                                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.IsSetFunctionARN())
+                                                            xmlWriter.WriteElementString("FunctionARN", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.FunctionARN));
+                                                        xmlWriter.WriteEndElement();
+                                                    }
+                                                }            
+                                                xmlWriter.WriteEndElement();            
+                                            }
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.IsSetQuantity())
+                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.Quantity.Value));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetGrpcConfig())
+                                        {
+                                            xmlWriter.WriteStartElement("GrpcConfig");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.GrpcConfig.IsSetEnabled())
+                                                xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.GrpcConfig.Enabled.Value));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetLambdaFunctionAssociations())
+                                        {
+                                            xmlWriter.WriteStartElement("LambdaFunctionAssociations");
+                                            var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.Items;
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.IsSetItems()) 
+                                            {
+                                                xmlWriter.WriteStartElement("Items");
+                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItems) 
+                                                {
+                                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue != null)
+                                                    {
+                                                        xmlWriter.WriteStartElement("LambdaFunctionAssociation");
+                                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetEventType())
+                                                            xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.EventType));
+                                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetIncludeBody())
+                                                            xmlWriter.WriteElementString("IncludeBody", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IncludeBody.Value));
+                                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetLambdaFunctionARN())
+                                                            xmlWriter.WriteElementString("LambdaFunctionARN", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.LambdaFunctionARN));
+                                                        xmlWriter.WriteEndElement();
+                                                    }
+                                                }            
+                                                xmlWriter.WriteEndElement();            
+                                            }
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.IsSetQuantity())
+                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.Quantity.Value));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetMaxTTL())
+                                            xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.MaxTTL.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetMinTTL())
+                                            xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.MinTTL.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetOriginRequestPolicyId())
+                                            xmlWriter.WriteElementString("OriginRequestPolicyId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.OriginRequestPolicyId));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetPathPattern())
+                                            xmlWriter.WriteElementString("PathPattern", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.PathPattern));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetRealtimeLogConfigArn())
+                                            xmlWriter.WriteElementString("RealtimeLogConfigArn", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.RealtimeLogConfigArn));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetResponseHeadersPolicyId())
+                                            xmlWriter.WriteElementString("ResponseHeadersPolicyId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ResponseHeadersPolicyId));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetSmoothStreaming())
+                                            xmlWriter.WriteElementString("SmoothStreaming", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.SmoothStreaming.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetTargetOriginId())
+                                            xmlWriter.WriteElementString("TargetOriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TargetOriginId));
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetTrustedKeyGroups())
+                                        {
+                                            xmlWriter.WriteStartElement("TrustedKeyGroups");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetEnabled())
+                                                xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Enabled.Value));
+                                            var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Items;
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetItems()) 
+                                            {
+                                                xmlWriter.WriteStartElement("Items");
+                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems) 
+                                                {
+                                                    xmlWriter.WriteStartElement("KeyGroup");
+                                                    xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItemsValue);
                                                     xmlWriter.WriteEndElement();
                                                 }            
                                                 xmlWriter.WriteEndElement();            
                                             }
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.IsSetQuantity())
-                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.Quantity.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetQuantity())
+                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Quantity.Value));
                                             xmlWriter.WriteEndElement();
                                         }
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetFunctionAssociations())
-                                    {
-                                        xmlWriter.WriteStartElement("FunctionAssociations");
-                                        var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.Items;
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.IsSetItems()) 
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetTrustedSigners())
                                         {
-                                            xmlWriter.WriteStartElement("Items");
-                                            foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItems) 
+                                            xmlWriter.WriteStartElement("TrustedSigners");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetEnabled())
+                                                xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Enabled.Value));
+                                            var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Items;
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetItems()) 
                                             {
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue != null)
-                                            {
-                                                xmlWriter.WriteStartElement("FunctionAssociation");
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.IsSetEventType())
-                                                    xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.EventType));
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.IsSetFunctionARN())
-                                                    xmlWriter.WriteElementString("FunctionARN", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.FunctionARN));
-                                                xmlWriter.WriteEndElement();
+                                                xmlWriter.WriteStartElement("Items");
+                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems) 
+                                                {
+                                                    xmlWriter.WriteStartElement("AwsAccountNumber");
+                                                    xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItemsValue);
+                                                    xmlWriter.WriteEndElement();
+                                                }            
+                                                xmlWriter.WriteEndElement();            
                                             }
-                                            }            
-                                            xmlWriter.WriteEndElement();            
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetQuantity())
+                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Quantity.Value));
+                                            xmlWriter.WriteEndElement();
                                         }
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.Quantity.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetViewerProtocolPolicy())
+                                            xmlWriter.WriteElementString("ViewerProtocolPolicy", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ViewerProtocolPolicy));
                                         xmlWriter.WriteEndElement();
                                     }
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetGrpcConfig())
-                                    {
-                                        xmlWriter.WriteStartElement("GrpcConfig");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.GrpcConfig.IsSetEnabled())
-                                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.GrpcConfig.Enabled.Value));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetLambdaFunctionAssociations())
-                                    {
-                                        xmlWriter.WriteStartElement("LambdaFunctionAssociations");
-                                        var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.Items;
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.IsSetItems()) 
-                                        {
-                                            xmlWriter.WriteStartElement("Items");
-                                            foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItems) 
-                                            {
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue != null)
-                                            {
-                                                xmlWriter.WriteStartElement("LambdaFunctionAssociation");
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetEventType())
-                                                    xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.EventType));
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetIncludeBody())
-                                                    xmlWriter.WriteElementString("IncludeBody", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IncludeBody.Value));
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetLambdaFunctionARN())
-                                                    xmlWriter.WriteElementString("LambdaFunctionARN", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.LambdaFunctionARN));
-                                                xmlWriter.WriteEndElement();
-                                            }
-                                            }            
-                                            xmlWriter.WriteEndElement();            
-                                        }
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.Quantity.Value));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetMaxTTL())
-                                        xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.MaxTTL.Value));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetMinTTL())
-                                        xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.MinTTL.Value));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetOriginRequestPolicyId())
-                                        xmlWriter.WriteElementString("OriginRequestPolicyId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.OriginRequestPolicyId));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetPathPattern())
-                                        xmlWriter.WriteElementString("PathPattern", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.PathPattern));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetRealtimeLogConfigArn())
-                                        xmlWriter.WriteElementString("RealtimeLogConfigArn", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.RealtimeLogConfigArn));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetResponseHeadersPolicyId())
-                                        xmlWriter.WriteElementString("ResponseHeadersPolicyId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ResponseHeadersPolicyId));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetSmoothStreaming())
-                                        xmlWriter.WriteElementString("SmoothStreaming", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.SmoothStreaming.Value));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetTargetOriginId())
-                                        xmlWriter.WriteElementString("TargetOriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TargetOriginId));
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetTrustedKeyGroups())
-                                    {
-                                        xmlWriter.WriteStartElement("TrustedKeyGroups");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetEnabled())
-                                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Enabled.Value));
-                                        var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Items;
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetItems()) 
-                                        {
-                                            xmlWriter.WriteStartElement("Items");
-                                            foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems) 
-                                            {
-                                                xmlWriter.WriteStartElement("KeyGroup");
-                                                xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItemsValue);
-                                                xmlWriter.WriteEndElement();
-                                            }            
-                                            xmlWriter.WriteEndElement();            
-                                        }
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Quantity.Value));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetTrustedSigners())
-                                    {
-                                        xmlWriter.WriteStartElement("TrustedSigners");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetEnabled())
-                                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Enabled.Value));
-                                        var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Items;
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetItems()) 
-                                        {
-                                            xmlWriter.WriteStartElement("Items");
-                                            foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems) 
-                                            {
-                                                xmlWriter.WriteStartElement("AwsAccountNumber");
-                                                xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItemsValue);
-                                                xmlWriter.WriteEndElement();
-                                            }            
-                                            xmlWriter.WriteEndElement();            
-                                        }
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Quantity.Value));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetViewerProtocolPolicy())
-                                        xmlWriter.WriteElementString("ViewerProtocolPolicy", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ViewerProtocolPolicy));
-                                    xmlWriter.WriteEndElement();
-                                }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
@@ -372,19 +372,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItems) 
                                 {
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("CustomErrorResponse");
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCachingMinTTL())
-                                        xmlWriter.WriteElementString("ErrorCachingMinTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ErrorCachingMinTTL.Value));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCode())
-                                        xmlWriter.WriteElementString("ErrorCode", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ErrorCode.Value));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetResponseCode())
-                                        xmlWriter.WriteElementString("ResponseCode", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ResponseCode));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetResponsePagePath())
-                                        xmlWriter.WriteElementString("ResponsePagePath", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ResponsePagePath));
-                                    xmlWriter.WriteEndElement();
-                                }
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue != null)
+                                    {
+                                        xmlWriter.WriteStartElement("CustomErrorResponse");
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCachingMinTTL())
+                                            xmlWriter.WriteElementString("ErrorCachingMinTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ErrorCachingMinTTL.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCode())
+                                            xmlWriter.WriteElementString("ErrorCode", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ErrorCode.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetResponseCode())
+                                            xmlWriter.WriteElementString("ResponseCode", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ResponseCode));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetResponsePagePath())
+                                            xmlWriter.WriteElementString("ResponsePagePath", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ResponsePagePath));
+                                        xmlWriter.WriteEndElement();
+                                    }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
@@ -521,15 +521,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItems) 
                                     {
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue != null)
-                                    {
-                                        xmlWriter.WriteStartElement("FunctionAssociation");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.IsSetEventType())
-                                            xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.EventType));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.IsSetFunctionARN())
-                                            xmlWriter.WriteElementString("FunctionARN", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.FunctionARN));
-                                        xmlWriter.WriteEndElement();
-                                    }
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue != null)
+                                        {
+                                            xmlWriter.WriteStartElement("FunctionAssociation");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.IsSetEventType())
+                                                xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.EventType));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.IsSetFunctionARN())
+                                                xmlWriter.WriteElementString("FunctionARN", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.FunctionARN));
+                                            xmlWriter.WriteEndElement();
+                                        }
                                     }            
                                     xmlWriter.WriteEndElement();            
                                 }
@@ -553,17 +553,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItems) 
                                     {
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue != null)
-                                    {
-                                        xmlWriter.WriteStartElement("LambdaFunctionAssociation");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetEventType())
-                                            xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.EventType));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetIncludeBody())
-                                            xmlWriter.WriteElementString("IncludeBody", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IncludeBody.Value));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetLambdaFunctionARN())
-                                            xmlWriter.WriteElementString("LambdaFunctionARN", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.LambdaFunctionARN));
-                                        xmlWriter.WriteEndElement();
-                                    }
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue != null)
+                                        {
+                                            xmlWriter.WriteStartElement("LambdaFunctionAssociation");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetEventType())
+                                                xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.EventType));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetIncludeBody())
+                                                xmlWriter.WriteElementString("IncludeBody", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IncludeBody.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetLambdaFunctionARN())
+                                                xmlWriter.WriteElementString("LambdaFunctionARN", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.LambdaFunctionARN));
+                                            xmlWriter.WriteEndElement();
+                                        }
                                     }            
                                     xmlWriter.WriteEndElement();            
                                 }
@@ -661,62 +661,62 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItems) 
                                 {
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("OriginGroup");
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetFailoverCriteria())
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue != null)
                                     {
-                                        xmlWriter.WriteStartElement("FailoverCriteria");
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.IsSetStatusCodes())
+                                        xmlWriter.WriteStartElement("OriginGroup");
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetFailoverCriteria())
                                         {
-                                            xmlWriter.WriteStartElement("StatusCodes");
-                                            var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.Items;
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.IsSetItems()) 
+                                            xmlWriter.WriteStartElement("FailoverCriteria");
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.IsSetStatusCodes())
+                                            {
+                                                xmlWriter.WriteStartElement("StatusCodes");
+                                                var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.Items;
+                                                if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.IsSetItems()) 
+                                                {
+                                                    xmlWriter.WriteStartElement("Items");
+                                                    foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItems) 
+                                                    {
+                                                        xmlWriter.WriteStartElement("StatusCode");
+                                                        xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItemsValue);
+                                                        xmlWriter.WriteEndElement();
+                                                    }            
+                                                    xmlWriter.WriteEndElement();            
+                                                }
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.IsSetQuantity())
+                                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.Quantity.Value));
+                                                xmlWriter.WriteEndElement();
+                                            }
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetId())
+                                            xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Id));
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetMembers())
+                                        {
+                                            xmlWriter.WriteStartElement("Members");
+                                            var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.Items;
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.IsSetItems()) 
                                             {
                                                 xmlWriter.WriteStartElement("Items");
-                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItems) 
+                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItems) 
                                                 {
-                                                    xmlWriter.WriteStartElement("StatusCode");
-                                                    xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItemsValue);
-                                                    xmlWriter.WriteEndElement();
+                                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue != null)
+                                                    {
+                                                        xmlWriter.WriteStartElement("OriginGroupMember");
+                                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue.IsSetOriginId())
+                                                            xmlWriter.WriteElementString("OriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue.OriginId));
+                                                        xmlWriter.WriteEndElement();
+                                                    }
                                                 }            
                                                 xmlWriter.WriteEndElement();            
                                             }
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.IsSetQuantity())
-                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.Quantity.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.IsSetQuantity())
+                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.Quantity.Value));
                                             xmlWriter.WriteEndElement();
                                         }
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetSelectionCriteria())
+                                            xmlWriter.WriteElementString("SelectionCriteria", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.SelectionCriteria));
                                         xmlWriter.WriteEndElement();
                                     }
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetId())
-                                        xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Id));
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetMembers())
-                                    {
-                                        xmlWriter.WriteStartElement("Members");
-                                        var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.Items;
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.IsSetItems()) 
-                                        {
-                                            xmlWriter.WriteStartElement("Items");
-                                            foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItems) 
-                                            {
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue != null)
-                                            {
-                                                xmlWriter.WriteStartElement("OriginGroupMember");
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue.IsSetOriginId())
-                                                    xmlWriter.WriteElementString("OriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue.OriginId));
-                                                xmlWriter.WriteEndElement();
-                                            }
-                                            }            
-                                            xmlWriter.WriteEndElement();            
-                                        }
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.Quantity.Value));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetSelectionCriteria())
-                                        xmlWriter.WriteElementString("SelectionCriteria", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.SelectionCriteria));
-                                    xmlWriter.WriteEndElement();
-                                }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
@@ -733,117 +733,117 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginsItems) 
                                 {
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("Origin");
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetConnectionAttempts())
-                                        xmlWriter.WriteElementString("ConnectionAttempts", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ConnectionAttempts.Value));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetConnectionTimeout())
-                                        xmlWriter.WriteElementString("ConnectionTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ConnectionTimeout.Value));
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetCustomHeaders())
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue != null)
                                     {
-                                        xmlWriter.WriteStartElement("CustomHeaders");
-                                        var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.Items;
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.IsSetItems()) 
+                                        xmlWriter.WriteStartElement("Origin");
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetConnectionAttempts())
+                                            xmlWriter.WriteElementString("ConnectionAttempts", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ConnectionAttempts.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetConnectionTimeout())
+                                            xmlWriter.WriteElementString("ConnectionTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ConnectionTimeout.Value));
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetCustomHeaders())
                                         {
-                                            xmlWriter.WriteStartElement("Items");
-                                            foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItems) 
-                                            {
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue != null)
-                                            {
-                                                xmlWriter.WriteStartElement("OriginCustomHeader");
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.IsSetHeaderName())
-                                                    xmlWriter.WriteElementString("HeaderName", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.HeaderName));
-                                                if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.IsSetHeaderValue())
-                                                    xmlWriter.WriteElementString("HeaderValue", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.HeaderValue));
-                                                xmlWriter.WriteEndElement();
-                                            }
-                                            }            
-                                            xmlWriter.WriteEndElement();            
-                                        }
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.Quantity.Value));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetCustomOriginConfig())
-                                    {
-                                        xmlWriter.WriteStartElement("CustomOriginConfig");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPPort())
-                                            xmlWriter.WriteElementString("HTTPPort", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPPort.Value));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPSPort())
-                                            xmlWriter.WriteElementString("HTTPSPort", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPSPort.Value));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetIpAddressType())
-                                            xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IpAddressType));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginKeepaliveTimeout())
-                                            xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginKeepaliveTimeout.Value));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginProtocolPolicy())
-                                            xmlWriter.WriteElementString("OriginProtocolPolicy", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginProtocolPolicy));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginReadTimeout())
-                                            xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginReadTimeout.Value));
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginSslProtocols())
-                                        {
-                                            xmlWriter.WriteStartElement("OriginSslProtocols");
-                                            var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.Items;
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.IsSetItems()) 
+                                            xmlWriter.WriteStartElement("CustomHeaders");
+                                            var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.Items;
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.IsSetItems()) 
                                             {
                                                 xmlWriter.WriteStartElement("Items");
-                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItems) 
+                                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItems) 
                                                 {
-                                                    xmlWriter.WriteStartElement("SslProtocol");
-                                                    xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItemsValue);
-                                                    xmlWriter.WriteEndElement();
+                                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue != null)
+                                                    {
+                                                        xmlWriter.WriteStartElement("OriginCustomHeader");
+                                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.IsSetHeaderName())
+                                                            xmlWriter.WriteElementString("HeaderName", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.HeaderName));
+                                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.IsSetHeaderValue())
+                                                            xmlWriter.WriteElementString("HeaderValue", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.HeaderValue));
+                                                        xmlWriter.WriteEndElement();
+                                                    }
                                                 }            
                                                 xmlWriter.WriteEndElement();            
                                             }
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.IsSetQuantity())
-                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.Quantity.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.IsSetQuantity())
+                                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.Quantity.Value));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetCustomOriginConfig())
+                                        {
+                                            xmlWriter.WriteStartElement("CustomOriginConfig");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPPort())
+                                                xmlWriter.WriteElementString("HTTPPort", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPPort.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPSPort())
+                                                xmlWriter.WriteElementString("HTTPSPort", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPSPort.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetIpAddressType())
+                                                xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IpAddressType));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginKeepaliveTimeout())
+                                                xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginKeepaliveTimeout.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginProtocolPolicy())
+                                                xmlWriter.WriteElementString("OriginProtocolPolicy", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginProtocolPolicy));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginReadTimeout())
+                                                xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginReadTimeout.Value));
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginSslProtocols())
+                                            {
+                                                xmlWriter.WriteStartElement("OriginSslProtocols");
+                                                var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.Items;
+                                                if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.IsSetItems()) 
+                                                {
+                                                    xmlWriter.WriteStartElement("Items");
+                                                    foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItems) 
+                                                    {
+                                                        xmlWriter.WriteStartElement("SslProtocol");
+                                                        xmlWriter.WriteValue(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItemsValue);
+                                                        xmlWriter.WriteEndElement();
+                                                    }            
+                                                    xmlWriter.WriteEndElement();            
+                                                }
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.IsSetQuantity())
+                                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.Quantity.Value));
+                                                xmlWriter.WriteEndElement();
+                                            }
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetDomainName())
+                                            xmlWriter.WriteElementString("DomainName", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.DomainName));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetId())
+                                            xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.Id));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetOriginAccessControlId())
+                                            xmlWriter.WriteElementString("OriginAccessControlId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginAccessControlId));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetOriginPath())
+                                            xmlWriter.WriteElementString("OriginPath", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginPath));
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetOriginShield())
+                                        {
+                                            xmlWriter.WriteStartElement("OriginShield");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.IsSetEnabled())
+                                                xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.Enabled.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.IsSetOriginShieldRegion())
+                                                xmlWriter.WriteElementString("OriginShieldRegion", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.OriginShieldRegion));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetResponseCompletionTimeout())
+                                            xmlWriter.WriteElementString("ResponseCompletionTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ResponseCompletionTimeout.Value));
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetS3OriginConfig())
+                                        {
+                                            xmlWriter.WriteStartElement("S3OriginConfig");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginAccessIdentity())
+                                                xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.OriginAccessIdentity));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginReadTimeout())
+                                                xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.OriginReadTimeout.Value));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetVpcOriginConfig())
+                                        {
+                                            xmlWriter.WriteStartElement("VpcOriginConfig");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginKeepaliveTimeout())
+                                                xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginKeepaliveTimeout.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginReadTimeout())
+                                                xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginReadTimeout.Value));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOwnerAccountId())
+                                                xmlWriter.WriteElementString("OwnerAccountId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OwnerAccountId));
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetVpcOriginId())
+                                                xmlWriter.WriteElementString("VpcOriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.VpcOriginId));
                                             xmlWriter.WriteEndElement();
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetDomainName())
-                                        xmlWriter.WriteElementString("DomainName", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.DomainName));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetId())
-                                        xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.Id));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetOriginAccessControlId())
-                                        xmlWriter.WriteElementString("OriginAccessControlId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginAccessControlId));
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetOriginPath())
-                                        xmlWriter.WriteElementString("OriginPath", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginPath));
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetOriginShield())
-                                    {
-                                        xmlWriter.WriteStartElement("OriginShield");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.IsSetEnabled())
-                                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.Enabled.Value));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.IsSetOriginShieldRegion())
-                                            xmlWriter.WriteElementString("OriginShieldRegion", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.OriginShieldRegion));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetResponseCompletionTimeout())
-                                        xmlWriter.WriteElementString("ResponseCompletionTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ResponseCompletionTimeout.Value));
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetS3OriginConfig())
-                                    {
-                                        xmlWriter.WriteStartElement("S3OriginConfig");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginAccessIdentity())
-                                            xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.OriginAccessIdentity));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginReadTimeout())
-                                            xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.OriginReadTimeout.Value));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetVpcOriginConfig())
-                                    {
-                                        xmlWriter.WriteStartElement("VpcOriginConfig");
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginKeepaliveTimeout())
-                                            xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginKeepaliveTimeout.Value));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginReadTimeout())
-                                            xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginReadTimeout.Value));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOwnerAccountId())
-                                            xmlWriter.WriteElementString("OwnerAccountId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OwnerAccountId));
-                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetVpcOriginId())
-                                            xmlWriter.WriteElementString("VpcOriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.VpcOriginId));
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                    xmlWriter.WriteEndElement();
-                                }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
@@ -890,29 +890,29 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("ParameterDefinitions");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue in publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitions) 
                                 {
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("member");
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.IsSetDefinition())
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue != null)
                                     {
-                                        xmlWriter.WriteStartElement("Definition");
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.IsSetStringSchema())
+                                        xmlWriter.WriteStartElement("member");
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.IsSetDefinition())
                                         {
-                                            xmlWriter.WriteStartElement("StringSchema");
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetComment())
-                                                xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.Comment));
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetDefaultValue())
-                                                xmlWriter.WriteElementString("DefaultValue", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.DefaultValue));
-                                            if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetRequired())
-                                                xmlWriter.WriteElementString("Required", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.Required.Value));
+                                            xmlWriter.WriteStartElement("Definition");
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.IsSetStringSchema())
+                                            {
+                                                xmlWriter.WriteStartElement("StringSchema");
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetComment())
+                                                    xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.Comment));
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetDefaultValue())
+                                                    xmlWriter.WriteElementString("DefaultValue", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.DefaultValue));
+                                                if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetRequired())
+                                                    xmlWriter.WriteElementString("Required", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.Required.Value));
+                                                xmlWriter.WriteEndElement();
+                                            }
                                             xmlWriter.WriteEndElement();
                                         }
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.IsSetName())
+                                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Name));
                                         xmlWriter.WriteEndElement();
                                     }
-                                    if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.IsSetName())
-                                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Name));
-                                    xmlWriter.WriteEndElement();
-                                }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
@@ -968,15 +968,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestDistributionConfigWithTagsTagsItemsValue in publicRequestDistributionConfigWithTagsTagsItems) 
                             {
-                            if (publicRequestDistributionConfigWithTagsTagsItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("Tag");
-                                if(publicRequestDistributionConfigWithTagsTagsItemsValue.IsSetKey())
-                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestDistributionConfigWithTagsTagsItemsValue.Key));
-                                if(publicRequestDistributionConfigWithTagsTagsItemsValue.IsSetValue())
-                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestDistributionConfigWithTagsTagsItemsValue.Value));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestDistributionConfigWithTagsTagsItemsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("Tag");
+                                    if(publicRequestDistributionConfigWithTagsTagsItemsValue.IsSetKey())
+                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestDistributionConfigWithTagsTagsItemsValue.Key));
+                                    if(publicRequestDistributionConfigWithTagsTagsItemsValue.IsSetValue())
+                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestDistributionConfigWithTagsTagsItemsValue.Value));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }

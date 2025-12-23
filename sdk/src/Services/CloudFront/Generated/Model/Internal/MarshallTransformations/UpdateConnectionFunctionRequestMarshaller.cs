@@ -89,13 +89,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue in publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItems) 
                             {
-                            if (publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("KeyValueStoreAssociation");
-                                if(publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
-                                    xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("KeyValueStoreAssociation");
+                                    if(publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
+                                        xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }

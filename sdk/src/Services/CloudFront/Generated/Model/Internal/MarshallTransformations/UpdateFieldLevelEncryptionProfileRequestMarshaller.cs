@@ -89,34 +89,34 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems) 
                             {
-                            if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("EncryptionEntity");
-                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetFieldPatterns())
+                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("FieldPatterns");
-                                    var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems = publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Items;
-                                    if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetItems()) 
+                                    xmlWriter.WriteStartElement("EncryptionEntity");
+                                    if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetFieldPatterns())
                                     {
-                                        xmlWriter.WriteStartElement("Items");
-                                        foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems) 
+                                        xmlWriter.WriteStartElement("FieldPatterns");
+                                        var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems = publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Items;
+                                        if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetItems()) 
                                         {
-                                            xmlWriter.WriteStartElement("FieldPattern");
-                                            xmlWriter.WriteValue(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue);
-                                            xmlWriter.WriteEndElement();
-                                        }            
-                                        xmlWriter.WriteEndElement();            
+                                            xmlWriter.WriteStartElement("Items");
+                                            foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems) 
+                                            {
+                                                xmlWriter.WriteStartElement("FieldPattern");
+                                                xmlWriter.WriteValue(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue);
+                                                xmlWriter.WriteEndElement();
+                                            }            
+                                            xmlWriter.WriteEndElement();            
+                                        }
+                                        if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetQuantity())
+                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity.Value));
+                                        xmlWriter.WriteEndElement();
                                     }
-                                    if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity.Value));
+                                    if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetProviderId())
+                                        xmlWriter.WriteElementString("ProviderId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.ProviderId));
+                                    if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetPublicKeyId())
+                                        xmlWriter.WriteElementString("PublicKeyId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.PublicKeyId));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetProviderId())
-                                    xmlWriter.WriteElementString("ProviderId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.ProviderId));
-                                if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetPublicKeyId())
-                                    xmlWriter.WriteElementString("PublicKeyId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.PublicKeyId));
-                                xmlWriter.WriteEndElement();
-                            }
                             }            
                             xmlWriter.WriteEndElement();            
                         }

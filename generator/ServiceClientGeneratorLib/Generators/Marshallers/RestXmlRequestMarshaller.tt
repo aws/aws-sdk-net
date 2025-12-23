@@ -479,6 +479,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 				marshallName =  member.LocationName ?? member.ModeledName;
 			if (member.Shape.IsList)
 			{
+				level++;
 #>
 <#=new string(' ', level * 4)#>				if (<#=variableName#> != null)
 <#=new string(' ', level * 4)#>				{

@@ -73,19 +73,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("IpamCidrConfigs");
                     foreach (var publicRequestIpamCidrConfigsValue in publicRequestIpamCidrConfigs) 
                     {
-                    if (publicRequestIpamCidrConfigsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("IpamCidrConfig");
-                        if(publicRequestIpamCidrConfigsValue.IsSetAnycastIp())
-                            xmlWriter.WriteElementString("AnycastIp", StringUtils.FromString(publicRequestIpamCidrConfigsValue.AnycastIp));
-                        if(publicRequestIpamCidrConfigsValue.IsSetCidr())
-                            xmlWriter.WriteElementString("Cidr", StringUtils.FromString(publicRequestIpamCidrConfigsValue.Cidr));
-                        if(publicRequestIpamCidrConfigsValue.IsSetIpamPoolArn())
-                            xmlWriter.WriteElementString("IpamPoolArn", StringUtils.FromString(publicRequestIpamCidrConfigsValue.IpamPoolArn));
-                        if(publicRequestIpamCidrConfigsValue.IsSetStatus())
-                            xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestIpamCidrConfigsValue.Status));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestIpamCidrConfigsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("IpamCidrConfig");
+                            if(publicRequestIpamCidrConfigsValue.IsSetAnycastIp())
+                                xmlWriter.WriteElementString("AnycastIp", StringUtils.FromString(publicRequestIpamCidrConfigsValue.AnycastIp));
+                            if(publicRequestIpamCidrConfigsValue.IsSetCidr())
+                                xmlWriter.WriteElementString("Cidr", StringUtils.FromString(publicRequestIpamCidrConfigsValue.Cidr));
+                            if(publicRequestIpamCidrConfigsValue.IsSetIpamPoolArn())
+                                xmlWriter.WriteElementString("IpamPoolArn", StringUtils.FromString(publicRequestIpamCidrConfigsValue.IpamPoolArn));
+                            if(publicRequestIpamCidrConfigsValue.IsSetStatus())
+                                xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestIpamCidrConfigsValue.Status));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
@@ -104,15 +104,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
                         {
-                        if (publicRequestTagsItemsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestTagsItemsValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
-                            if(publicRequestTagsItemsValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestTagsItemsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tag");
+                                if(publicRequestTagsItemsValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
+                                if(publicRequestTagsItemsValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }

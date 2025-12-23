@@ -108,15 +108,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("MatchAnyTag");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnyTagValue in publicRequestStorageLensGroupFilterAndMatchAnyTag) 
                                 {
-                                if (publicRequestStorageLensGroupFilterAndMatchAnyTagValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("Tag");
-                                    if(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.IsSetKey())
-                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Key));
-                                    if(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.IsSetValue())
-                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Value));
-                                    xmlWriter.WriteEndElement();
-                                }
+                                    if (publicRequestStorageLensGroupFilterAndMatchAnyTagValue != null)
+                                    {
+                                        xmlWriter.WriteStartElement("Tag");
+                                        if(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.IsSetKey())
+                                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Key));
+                                        if(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.IsSetValue())
+                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Value));
+                                        xmlWriter.WriteEndElement();
+                                    }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
@@ -170,15 +170,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("MatchAnyTag");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnyTagValue in publicRequestStorageLensGroupFilterMatchAnyTag) 
                             {
-                            if (publicRequestStorageLensGroupFilterMatchAnyTagValue != null)
-                            {
-                                xmlWriter.WriteStartElement("Tag");
-                                if(publicRequestStorageLensGroupFilterMatchAnyTagValue.IsSetKey())
-                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Key));
-                                if(publicRequestStorageLensGroupFilterMatchAnyTagValue.IsSetValue())
-                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Value));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestStorageLensGroupFilterMatchAnyTagValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("Tag");
+                                    if(publicRequestStorageLensGroupFilterMatchAnyTagValue.IsSetKey())
+                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Key));
+                                    if(publicRequestStorageLensGroupFilterMatchAnyTagValue.IsSetValue())
+                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Value));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }
@@ -233,15 +233,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("MatchAnyTag");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnyTagValue in publicRequestStorageLensGroupFilterOrMatchAnyTag) 
                                 {
-                                if (publicRequestStorageLensGroupFilterOrMatchAnyTagValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("Tag");
-                                    if(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.IsSetKey())
-                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Key));
-                                    if(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.IsSetValue())
-                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Value));
-                                    xmlWriter.WriteEndElement();
-                                }
+                                    if (publicRequestStorageLensGroupFilterOrMatchAnyTagValue != null)
+                                    {
+                                        xmlWriter.WriteStartElement("Tag");
+                                        if(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.IsSetKey())
+                                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Key));
+                                        if(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.IsSetValue())
+                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Value));
+                                        xmlWriter.WriteEndElement();
+                                    }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
@@ -279,15 +279,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                    if (publicRequestTagsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("Tag");
-                        if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
-                        if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestTagsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Tag");
+                            if(publicRequestTagsValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
+                            if(publicRequestTagsValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
