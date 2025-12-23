@@ -63,12 +63,6 @@ namespace Amazon.S3.Model
             set { this._objects = value; }
         }
 
-        // Check to see if Objects property is set
-        internal bool IsSetObjects()
-        {
-            return this._objects != null && (this._objects.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
         /// <summary>
         /// Gets and sets the property Quiet. 
         /// <para>

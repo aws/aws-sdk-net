@@ -338,10 +338,10 @@ namespace <#=this.Config.Namespace#>.Model
             }
 <#
                     }
-                    else if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPropertyGetter.Count > 0)
+                    else if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifierTwo) && injectModifierTwo.InjectXmlPropertyGetter.Count > 0)
                     {
 #>
-<#WriteInjectXmlCode(injectModifier.InjectXmlPropertyGetter, 3);#>
+<#WriteInjectXmlCode(injectModifierTwo.InjectXmlPropertyGetter, 3);#>
 <#
                     }
                     else
@@ -463,15 +463,16 @@ if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.Owning
                     }
                     else
                     {
-                        if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlIsSetCode.Count > 0)
+                        if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifierThree) && injectModifierThree.InjectXmlIsSetCode.Count > 0)
                         {
-                            WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);
+                            WriteInjectXmlCode(injectModifierThree.InjectXmlIsSetCode, 3);
                         }
                         else
                         {
 #>
             return this.<#=member.VariableName#> != null;
 <#
+                        }
                     }
 #>
         }

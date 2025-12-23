@@ -83,7 +83,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-if-match-size"] = StringUtils.FromLong(publicRequest.IfMatchSize);
             }
+        
+            if (publicRequest.IsSetMfaCodes()) 
+            {
                 MfaCodesCustomMarshall(request, publicRequest);
+            }
         
             if (publicRequest.IsSetRequestPayer()) 
             {

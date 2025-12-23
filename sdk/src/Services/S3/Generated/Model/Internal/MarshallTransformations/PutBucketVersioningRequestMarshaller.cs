@@ -74,8 +74,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
+        
+            if (publicRequest.IsSetMfaCodes()) 
+            {
                 if (publicRequest.IsSetMfaCodes())
                    request.Headers["x-amz-mfa"] = publicRequest.MfaCodes.FormattedMfaCodes;
+            }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketVersioningRequest.BucketName");
             request.ResourcePath = "/";

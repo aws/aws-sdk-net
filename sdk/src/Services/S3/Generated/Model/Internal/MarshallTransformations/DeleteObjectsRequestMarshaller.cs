@@ -74,7 +74,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
+        
+            if (publicRequest.IsSetMfaCodes()) 
+            {
                 MfaCodesCustomMarshall(request, publicRequest);
+            }
         
             if (publicRequest.IsSetRequestPayer()) 
             {
