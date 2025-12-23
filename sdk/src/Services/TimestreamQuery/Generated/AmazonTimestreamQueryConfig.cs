@@ -32,7 +32,7 @@ namespace Amazon.TimestreamQuery
     public partial class AmazonTimestreamQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Timestream Query", "3.7.502.25");
+            InternalSDKUtils.BuildUserAgentString("Timestream Query", "3.7.502.26");
 
         private string _userAgent = UserAgentString;
         ///<summary>

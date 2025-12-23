@@ -1,3 +1,18 @@
+### 3.7.1191.0 (2025-12-23 19:32 UTC)
+* CloudWatch (3.7.505.7)
+	* Improve AWS Query compatible error handling in unmarshallers.
+* GeoPlaces (3.7.503.0)
+	* Adds support for InferredSecondaryAddress place type, Designator in SecondaryAddressComponent and Heading in ReverseGeocode.
+* PinpointSMSVoiceV2 (3.7.505.0)
+	* This release adds support for the Registration Reviewer feature, which provides generative AI feedback on a phone number or sender ID registration to ensure completeness before sending to downstream (carrier) review.
+* S3 (3.7.509.0)
+	* Add additional validation to Outpost bucket names.
+* SQS (3.7.502.20)
+	* Improve AWS Query compatible error handling in unmarshallers.
+* Core 3.7.500.59
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1190.0 (2025-12-22 19:20 UTC)
 * ConfigService (3.7.504.0)
 	* Added supported resourceTypes for Config from July to November 2025

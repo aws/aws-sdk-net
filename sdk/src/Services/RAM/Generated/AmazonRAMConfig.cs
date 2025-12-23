@@ -32,7 +32,7 @@ namespace Amazon.RAM
     public partial class AmazonRAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RAM", "3.7.502.19");
+            InternalSDKUtils.BuildUserAgentString("RAM", "3.7.502.20");
 
         private string _userAgent = UserAgentString;
         ///<summary>
