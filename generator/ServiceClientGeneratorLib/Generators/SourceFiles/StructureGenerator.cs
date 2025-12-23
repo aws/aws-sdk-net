@@ -1004,7 +1004,7 @@ WriteInjectXmlCode(injectModifier.InjectXmlPrivateMemberAssignment, 2);
             #line 339 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
-                    else if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPropertyGetter.Count > 0)
+                    else if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectXmlPropertyGetterModifier) && injectXmlPropertyGetterModifier.InjectXmlPropertyGetter.Count > 0)
                     {
 
             
@@ -1012,7 +1012,7 @@ WriteInjectXmlCode(injectModifier.InjectXmlPrivateMemberAssignment, 2);
             #line hidden
             
             #line 344 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-WriteInjectXmlCode(injectModifier.InjectXmlPropertyGetter, 3);
+WriteInjectXmlCode(injectXmlPropertyGetterModifier.InjectXmlPropertyGetter, 3);
             
             #line default
             #line hidden
