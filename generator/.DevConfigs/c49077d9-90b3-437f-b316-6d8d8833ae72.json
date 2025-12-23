@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Added ContentLanguage property to the header collection of the Amazon.S3.Model.GetObjectResponse class."
+      ]
+    }
+  ]
+}

@@ -55,120 +55,21 @@ namespace Amazon.S3.Transfer
     public partial class TransferUtility : ITransferUtility
     {
         #region Upload
-        /// <summary>
-        /// 	Uploads the specified file.  
-        /// 	The object key is derived from the file's name.
-        /// 	Multiple threads are used to read the file and perform multiple uploads in parallel.  
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
-        /// </para>
-        /// <para>
-        /// For nonseekable streams or streams with an unknown length, TransferUtility will use multipart upload and buffer up to a part size in memory
-        /// until the final part is reached and complete the upload. The buffer for the multipart upload is controlled by S3Constants.MinPartSize
-        /// and the default value is 5 megabytes. You can also adjust the read buffer size(i.e.how many bytes to read before writing to the part buffer)
-        /// via the BufferSize property on the ClientConfig.The default value for this is 8192 bytes.
-        /// </para>
-        /// </remarks>
-        /// <param name="filePath">
-        /// 	The file path of the file to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the file to.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task UploadAsync(string filePath, string bucketName, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = ConstructUploadRequest(filePath, bucketName);
             await UploadAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// 	Uploads the specified file.  
-        /// 	Multiple threads are used to read the file and perform multiple uploads in parallel.  
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
-        /// </para>
-        /// <para>
-        /// For nonseekable streams or streams with an unknown length, TransferUtility will use multipart upload and buffer up to a part size in memory
-        /// until the final part is reached and complete the upload. The buffer for the multipart upload is controlled by S3Constants.MinPartSize
-        /// and the default value is 5 megabytes. You can also adjust the read buffer size(i.e.how many bytes to read before writing to the part buffer)
-        /// via the BufferSize property on the ClientConfig.The default value for this is 8192 bytes.
-        /// </para>
-        /// </remarks>
-        /// <param name="filePath">
-        /// 	The file path of the file to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the file to.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task UploadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = ConstructUploadRequest(filePath, bucketName,key);
             await UploadAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// 	Uploads the contents of the specified stream.  
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
-        /// </para>
-        /// <para>
-        /// For nonseekable streams or streams with an unknown length, TransferUtility will use multipart upload and buffer up to a part size in memory
-        /// until the final part is reached and complete the upload. The buffer for the multipart upload is controlled by S3Constants.MinPartSize
-        /// and the default value is 5 megabytes. You can also adjust the read buffer size(i.e.how many bytes to read before writing to the part buffer)
-        /// via the BufferSize property on the ClientConfig.The default value for this is 8192 bytes.
-        /// </para>
-        /// </remarks>
-        /// <param name="stream">
-        /// 	The stream to read to obtain the content to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the stream to.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task UploadAsync(Stream stream, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = ConstructUploadRequest(stream, bucketName, key);
@@ -177,37 +78,7 @@ namespace Amazon.S3.Transfer
 
 
 
-        /// <summary>
-        /// 	Uploads the file or stream specified by the request.  
-        /// 	To track the progress of the upload,
-        /// 	add an event listener to the request's <c>UploadProgressEvent</c>.
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
-        /// </para>
-        /// <para>
-        /// For nonseekable streams or streams with an unknown length, TransferUtility will use multipart upload and buffer up to a part size in memory 
-        /// until the final part is reached and complete the upload. The part size buffer for the multipart upload is controlled by the partSize
-        /// specified on the TransferUtilityUploadRequest, and if none is specified it defaults to S3Constants.MinPartSize (5 megabytes).
-        /// You can also adjust the read buffer size (i.e. how many bytes to read before adding it to the 
-        /// part buffer) via the BufferSize property on the ClientConfig. The default value for this is 8192 bytes.
-        /// </para>
-        /// </remarks>
-        /// <param name="request">
-        /// 	Contains all the parameters required to upload to Amazon S3.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task UploadAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             using(CreateSpan(nameof(UploadAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
@@ -217,22 +88,42 @@ namespace Amazon.S3.Transfer
                 await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
             }
         }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityUploadResponse> UploadWithResponseAsync(string filePath, string bucketName, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructUploadRequest(filePath, bucketName);
+            return await UploadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityUploadResponse> UploadWithResponseAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructUploadRequest(filePath, bucketName, key);
+            return await UploadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityUploadResponse> UploadWithResponseAsync(Stream stream, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructUploadRequest(stream, bucketName, key);
+            return await UploadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityUploadResponse> UploadWithResponseAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(UploadWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "Upload");
+                var command = GetUploadCommand(request, null);
+                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
+        }
     #endregion
 
         #region AbortMultipartUploads
-        /// <summary>
-        /// 	Aborts the multipart uploads that were initiated before the specified date.
-        /// </summary>
-        /// <param name="bucketName">
-        /// 	The name of the bucket containing multipart uploads.
-        /// </param>
-        /// <param name="initiatedDate">
-        /// 	The date before which the multipart uploads were initiated.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task AbortMultipartUploadsAsync(string bucketName, DateTime initiatedDate, CancellationToken cancellationToken = default(CancellationToken))
         {
             using(CreateSpan(nameof(AbortMultipartUploadsAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
@@ -248,16 +139,7 @@ namespace Amazon.S3.Transfer
             }
         }
 
-        /// <summary>
-        /// 	Aborts the multipart uploads based on the specified request parameters.
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to abort multipart uploads.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task AbortMultipartUploadsAsync(TransferUtilityAbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             using(CreateSpan(nameof(AbortMultipartUploadsAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
@@ -271,18 +153,7 @@ namespace Amazon.S3.Transfer
 
         #region Download
 
-        /// <summary>
-        /// 	Downloads the content from Amazon S3 and writes it to the specified file.    
-        /// 	If the key is not specified in the request parameter,
-        /// 	the file name will used as the key name.
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to download an Amazon S3 object.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task DownloadAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             using(CreateSpan(nameof(DownloadAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
@@ -293,24 +164,28 @@ namespace Amazon.S3.Transfer
             }
         }
 
+        /// <inheritdoc/>
+        public async Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructDownloadRequest(filePath, bucketName, key);
+            return await DownloadWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityDownloadResponse> DownloadWithResponseAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(DownloadWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "Download");
+                var command = new MultipartDownloadCommand(this._s3Client, request, this._config);
+                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
+        }
+
     #endregion
 
         #region OpenStream
-        /// <summary>
-        /// 	Returns a stream from which the caller can read the content from the specified
-        /// 	Amazon S3  bucket and key.
-        /// 	The caller of this method is responsible for closing the stream.
-        /// </summary>
-        /// <param name="bucketName">
-        /// 	The name of the bucket.
-        /// </param>
-        /// <param name="key">
-        /// 	The object key.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task<Stream> OpenStreamAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
         {
             TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
@@ -321,18 +196,7 @@ namespace Amazon.S3.Transfer
             return await OpenStreamAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// 	Returns a stream to read the contents from Amazon S3 as 
-        /// 	specified by the <c>TransferUtilityOpenStreamRequest</c>.
-        /// 	The caller of this method is responsible for closing the stream.
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required for the OpenStream operation.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task<Stream> OpenStreamAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             using(CreateSpan(nameof(OpenStreamAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
@@ -344,9 +208,54 @@ namespace Amazon.S3.Transfer
             }
         }
 
+        /// <inheritdoc/>
+        public async Task<TransferUtilityOpenStreamResponse> OpenStreamWithResponseAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
+            {
+                BucketName = bucketName,
+                Key = key
+            };
+            return await OpenStreamWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityOpenStreamResponse> OpenStreamWithResponseAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(OpenStreamWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "OpenStreamWithResponse");
+                OpenStreamWithResponseCommand command = new OpenStreamWithResponseCommand(this._s3Client, request, this._config);
+                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
+            }
+        }
+
         #endregion
 
-        internal BaseCommand GetUploadCommand(TransferUtilityUploadRequest request, SemaphoreSlim asyncThrottler)
+        #region DownloadDirectory
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityDownloadDirectoryResponse> DownloadDirectoryWithResponseAsync(string bucketName, string s3Directory, string localDirectory, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructDownloadDirectoryRequest(bucketName, s3Directory, localDirectory);
+            return await DownloadDirectoryWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityDownloadDirectoryResponse> DownloadDirectoryWithResponseAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(DownloadDirectoryWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "DownloadDirectory");
+                var command = new DownloadDirectoryCommand(this._s3Client, request, this._config, true);
+                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
+                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        #endregion
+
+        internal BaseCommand<TransferUtilityUploadResponse> GetUploadCommand(TransferUtilityUploadRequest request, SemaphoreSlim asyncThrottler)
         {
             validate(request);
             if (IsMultipartUpload(request))

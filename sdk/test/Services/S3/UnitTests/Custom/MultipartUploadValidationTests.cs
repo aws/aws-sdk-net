@@ -69,6 +69,18 @@ namespace AWSSDK.UnitTests
                     return new UploadPartResponse { PartNumber = request.PartNumber };
                 });
 
+            s3Client
+                .Setup(x => x.CompleteMultipartUploadAsync(
+                    It.IsAny<CompleteMultipartUploadRequest>(),
+                    It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new CompleteMultipartUploadResponse
+                {
+                    BucketName = "test-bucket",
+                    Key = "test",
+                    ETag = "test-etag",
+                    Location = "https://test-bucket.s3.amazonaws.com/test"
+                });
+
             var uploadRequest = new TransferUtilityUploadRequest
             {
                 FilePath = _tempFilePath,

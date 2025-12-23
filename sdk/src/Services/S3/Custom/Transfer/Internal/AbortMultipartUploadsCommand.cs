@@ -28,7 +28,7 @@ using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class AbortMultipartUploadsCommand : BaseCommand
+    internal partial class AbortMultipartUploadsCommand : BaseCommand<TransferUtilityAbortMultipartUploadsResponse>
     {
         IAmazonS3 _s3Client;
         TransferUtilityAbortMultipartUploadRequest _request;

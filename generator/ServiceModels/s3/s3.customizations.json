@@ -998,7 +998,8 @@
                 "SSECustomerAlgorithm",
                 "ServerSideEncryption",
                 "Expires",
-                "Restore"
+                "Restore",
+                "ContentLanguage"
             ],
             "excludeFromUnmarshalling" : [
                 "Expiration"

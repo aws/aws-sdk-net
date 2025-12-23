@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "minor",
+      "changeLogMessages": [
+        "Created new UploadWithResponse methods on the Amazon.S3.Transfer.TransferUtility class that return response metadata information."
+      ]
+    }
+  ]
+}
