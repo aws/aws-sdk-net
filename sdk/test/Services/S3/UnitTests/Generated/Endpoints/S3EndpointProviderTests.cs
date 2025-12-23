@@ -4676,6 +4676,24 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
+        [Description("S3 Outposts invalid bucket name")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Outposts Bucket alias - it must be a valid bucket name.")]
+        public void S3_Outposts_invalid_bucket_name_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "test-accessp-o0b1de75431d83bebd/8xz5w8ijx1qzlbp3i3kbeta0--op-s3";
+            parameters["Endpoint"] = "https://example.amazonaws.com";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
         [Description("S3 Outposts bucketAlias Invalid hardware type")]
         [ExpectedException(typeof(AmazonClientException), @"Unrecognized hardware type: ""Expected hardware type o or e but got h""")]
         public void S3_Outposts_bucketAlias_Invalid_hardware_type_Test()
