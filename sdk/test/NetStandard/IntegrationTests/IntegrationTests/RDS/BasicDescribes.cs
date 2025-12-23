@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using Amazon.ElasticTranscoder.Model;
 using Amazon.RDS;
 using Amazon.RDS.Model;
 using Xunit;

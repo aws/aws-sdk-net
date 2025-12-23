@@ -176,13 +176,6 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         }
 
         [TestMethod][TestCategory("UnitTest")]
-        public void EnsureElasticTranscoderCustomizationsExists()
-        {
-            EnsureParameterlessMethodExists(typeof(Amazon.ElasticTranscoder.AmazonElasticTranscoderClient), "ListPresets");
-            EnsureParameterlessMethodExists(typeof(Amazon.ElasticTranscoder.AmazonElasticTranscoderClient), "ListPipelines");
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
         public void EnsureSimpleEmailCustomizationsExists()
         {
             EnsureParameterlessMethodExists(typeof(Amazon.SimpleEmail.AmazonSimpleEmailServiceClient), "GetSendQuota");

@@ -42,7 +42,6 @@
     <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net35.csproj" />
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net35.csproj" />
     <ProjectReference Include="../../../../src/Services/RDS/AWSSDK.RDS.Net35.csproj" />
-    <ProjectReference Include="../../../../src/Services/ElasticTranscoder/AWSSDK.ElasticTranscoder.Net35.csproj" />
   </ItemGroup>
 
   <ItemGroup>

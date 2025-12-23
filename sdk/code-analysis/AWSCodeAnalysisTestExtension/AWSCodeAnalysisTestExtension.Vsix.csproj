@@ -532,10 +532,6 @@
       <Project>{D1101A58-0D6F-4546-B00D-86B35EC6BBB1}</Project>
       <Name>AWSSDK.Elasticsearch.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/ElasticTranscoder/AWSSDK.ElasticTranscoder.CodeAnalysis.csproj">
-      <Project>{806022E5-5F4C-49FC-A902-AE2AC19298E9}</Project>
-      <Name>AWSSDK.ElasticTranscoder.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/EMRContainers/AWSSDK.EMRContainers.CodeAnalysis.csproj">
       <Project>{32155965-B54C-4833-9ACD-7FF1694AA241}</Project>
       <Name>AWSSDK.EMRContainers.CodeAnalysis</Name>

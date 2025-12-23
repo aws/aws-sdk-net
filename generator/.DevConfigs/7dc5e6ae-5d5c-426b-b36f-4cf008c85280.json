@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "ElasticTranscoder",
+            "type": "removal",
+            "changeLogMessages": [
+                "Amazon Elastic Transcoder has been removed from the SDK because it has been discontinued."
+            ]
+        }
+    ]
+}

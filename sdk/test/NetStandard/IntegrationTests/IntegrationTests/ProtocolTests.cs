@@ -1,7 +1,5 @@
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
-using Amazon.ElasticTranscoder;
-using Amazon.ElasticTranscoder.Model;
 using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;

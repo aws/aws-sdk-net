@@ -1,5 +1,4 @@
 ﻿using System;
-using Amazon.ElasticTranscoder.Model;
 using Amazon.RDS;
 using Amazon.RDS.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

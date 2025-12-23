@@ -505,11 +505,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_ELASTIC_BEANSTALK"
   },
   {
-    "service_id": "Elastic Transcoder",
-    "services_section_name": "elastic_transcoder",
-    "service_envvar_name": "AWS_ENDPOINT_URL_ELASTIC_TRANSCODER"
-  },
-  {
     "service_id": "Elastic Load Balancing",
     "services_section_name": "elastic_load_balancing",
     "service_envvar_name": "AWS_ENDPOINT_URL_ELASTIC_LOAD_BALANCING"
