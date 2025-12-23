@@ -42,7 +42,6 @@ namespace Amazon.S3.Transfer.Internal
         TransferUtilityConfig _config;
 
         int _totalNumberOfFiles;
-        int _numberOfFilesUploaded;
         int _numberOfFilesSuccessfullyUploaded;
         long _totalBytes;
         long _transferredBytes;
@@ -165,11 +164,7 @@ namespace Amazon.S3.Transfer.Internal
             
             var totalTransferredBytes = Interlocked.Add(ref _transferredBytes, e.IncrementTransferred - e.CompensationForRetry);
 
-            int numberOfFilesUploaded = _numberOfFilesUploaded;
-            if (e.TransferredBytes == e.TotalBytes)
-            {
-                numberOfFilesUploaded = Interlocked.Increment(ref _numberOfFilesUploaded);
-            }
+            int numberOfFilesUploaded = _numberOfFilesSuccessfullyUploaded;
 
             UploadDirectoryProgressArgs uploadDirectoryProgressArgs = null;
             if (_request.UploadFilesConcurrently)
