@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Fix signature calculation error when using the Content-Language header in S3 requests (e.g., PutObjectRequest)"
+        "Update directory upload progress calculation to properly keep track of the number of files successfully uploaded."
       ]
     }
   ]
