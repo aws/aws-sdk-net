@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   RoutingRule Unmarshaller
-     /// </summary>
-    public class RoutingRuleUnmarshaller : IXmlUnmarshaller<RoutingRule, XmlUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for RoutingRule Object
+    /// </summary>  
+    public partial class RoutingRuleUnmarshaller : IXmlUnmarshaller<RoutingRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RoutingRule Unmarshall(XmlUnmarshallerContext context) 
+        public RoutingRule Unmarshall(XmlUnmarshallerContext context)
         {
-            RoutingRule routingRule = new RoutingRule();
+            RoutingRule unmarshalledObject = new RoutingRule();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -44,44 +58,40 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Condition", targetDepth))
                     {
-                        routingRule.Condition = RoutingRuleConditionUnmarshaller.Instance.Unmarshall(context);
-                            
+                        var unmarshaller = RoutingRuleConditionUnmarshaller.Instance;
+                        unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Redirect", targetDepth))
                     {
-                        routingRule.Redirect = RoutingRuleRedirectUnmarshaller.Instance.Unmarshall(context);
-                            
+                        var unmarshaller = RoutingRuleRedirectUnmarshaller.Instance;
+                        unmarshalledObject.Redirect = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return routingRule;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return routingRule;
+            }          
+            return unmarshalledObject;
         }
 
-        private static RoutingRuleUnmarshaller _instance;
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, RoutingRule unmarshalledObject, int targetDepth);
+
+        private static RoutingRuleUnmarshaller _instance = new RoutingRuleUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RoutingRuleUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new RoutingRuleUnmarshaller();
-                }
                 return _instance;
             }
         }
     }
 }
-    
