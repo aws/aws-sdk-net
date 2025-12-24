@@ -21,7 +21,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Specifies Parquet as object's input serialization format.
     /// </summary>
-    public class ParquetInput
+    public partial class ParquetInput
     {
         
         [SuppressMessage("Microsoft.Performance", "CA1822", 
