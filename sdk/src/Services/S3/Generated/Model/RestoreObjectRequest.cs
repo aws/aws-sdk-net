@@ -12,21 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
-using System.Xml;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.S3.Model.Internal.MarshallTransformations;
-using Amazon.S3.Util;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreObject operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
@@ -73,17 +80,16 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </dd> <dt>Restoring objects</dt> <dd> 
     /// <para>
-    /// Objects that you archive to the S3 Glacier Flexible Retrieval Flexible Retrieval or
-    /// S3 Glacier Deep Archive storage class, and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering
-    /// Deep Archive tiers, are not accessible in real time. For objects in the S3 Glacier
-    /// Flexible Retrieval Flexible Retrieval or S3 Glacier Deep Archive storage classes,
-    /// you must first initiate a restore request, and then wait until a temporary copy of
-    /// the object is available. If you want a permanent copy of the object, create a copy
-    /// of it in the Amazon S3 Standard storage class in your S3 bucket. To access an archived
-    /// object, you must restore the object for the duration (number of days) that you specify.
-    /// For objects in the Archive Access or Deep Archive Access tiers of S3 Intelligent-Tiering,
-    /// you must first initiate a restore request, and then wait until the object is moved
-    /// into the Frequent Access tier.
+    /// Objects that you archive to the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive
+    /// storage class, and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive
+    /// tiers, are not accessible in real time. For objects in the S3 Glacier Flexible Retrieval
+    /// or S3 Glacier Deep Archive storage classes, you must first initiate a restore request,
+    /// and then wait until a temporary copy of the object is available. If you want a permanent
+    /// copy of the object, create a copy of it in the Amazon S3 Standard storage class in
+    /// your S3 bucket. To access an archived object, you must restore the object for the
+    /// duration (number of days) that you specify. For objects in the Archive Access or Deep
+    /// Archive Access tiers of S3 Intelligent-Tiering, you must first initiate a restore
+    /// request, and then wait until the object is moved into the Frequent Access tier.
     /// </para>
     ///  
     /// <para>
@@ -98,11 +104,11 @@ namespace Amazon.S3.Model
     ///  <ul> <li> 
     /// <para>
     ///  <c>Expedited</c> - Expedited retrievals allow you to quickly access your data stored
-    /// in the S3 Glacier Flexible Retrieval Flexible Retrieval storage class or S3 Intelligent-Tiering
-    /// Archive tier when occasional urgent requests for restoring archives are required.
-    /// For all but the largest archived objects (250 MB+), data accessed using Expedited
-    /// retrievals is typically made available within 1–5 minutes. Provisioned capacity ensures
-    /// that retrieval capacity for Expedited retrievals is available when you need it. Expedited
+    /// in the S3 Glacier Flexible Retrieval storage class or S3 Intelligent-Tiering Archive
+    /// tier when occasional urgent requests for restoring archives are required. For all
+    /// but the largest archived objects (250 MB+), data accessed using Expedited retrievals
+    /// is typically made available within 1–5 minutes. Provisioned capacity ensures that
+    /// retrieval capacity for Expedited retrievals is available when you need it. Expedited
     /// retrievals and provisioned capacity are not available for objects stored in the S3
     /// Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
     /// </para>
@@ -111,21 +117,21 @@ namespace Amazon.S3.Model
     ///  <c>Standard</c> - Standard retrievals allow you to access any of your archived objects
     /// within several hours. This is the default option for retrieval requests that do not
     /// specify the retrieval option. Standard retrievals typically finish within 3–5 hours
-    /// for objects stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage
-    /// class or S3 Intelligent-Tiering Archive tier. They typically finish within 12 hours
-    /// for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering
-    /// Deep Archive tier. Standard retrievals are free for objects stored in S3 Intelligent-Tiering.
+    /// for objects stored in the S3 Glacier Flexible Retrieval storage class or S3 Intelligent-Tiering
+    /// Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier
+    /// Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals
+    /// are free for objects stored in S3 Intelligent-Tiering.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <c>Bulk</c> - Bulk retrievals free for objects stored in the S3 Glacier Flexible
     /// Retrieval and S3 Intelligent-Tiering storage classes, enabling you to retrieve large
     /// amounts, even petabytes, of data at no cost. Bulk retrievals typically finish within
-    /// 5–12 hours for objects stored in the S3 Glacier Flexible Retrieval Flexible Retrieval
-    /// storage class or S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the
-    /// lowest-cost retrieval option when restoring objects from S3 Glacier Deep Archive.
-    /// They typically finish within 48 hours for objects stored in the S3 Glacier Deep Archive
-    /// storage class or S3 Intelligent-Tiering Deep Archive tier. 
+    /// 5–12 hours for objects stored in the S3 Glacier Flexible Retrieval storage class or
+    /// S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost retrieval
+    /// option when restoring objects from S3 Glacier Deep Archive. They typically finish
+    /// within 48 hours for objects stored in the S3 Glacier Deep Archive storage class or
+    /// S3 Intelligent-Tiering Deep Archive tier. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -233,58 +239,70 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class RestoreObjectRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
+        private string _bucketName;
         private ChecksumAlgorithm _checksumAlgorithm;
-        private int? days;
-        private string expectedBucketOwner;
-        private string description;
-        private string key;
-        private GlacierJobTier tier;
-        private GlacierJobTier retrievalTier;
-        private RestoreRequestType type;
-        private SelectParameters selectParameters;
-        private OutputLocation outputLocation;
-        private RequestPayer requestPayer;
-        private string versionId;
+        private int? _days;
+        private string _description;
+        private string _expectedBucketOwner;
+        private string _key;
+        private OutputLocation _outputLocation;
+        private RequestPayer _requestPayer;
+        private RestoreRequestType _restoreRequestType;
+        private GlacierJobTier _retrievalTier;
+        private SelectParameters _selectParameters;
+        private GlacierJobTier _tier;
+        private string _versionId;
+
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
         /// The bucket name containing the object to restore. 
-        /// </para> 
-        /// <para> 
-        /// <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must 
-        /// provide the alias of the access point in place of the bucket name or specify the access point ARN. When you 
-        /// use this action with an access point for directory buckets, you must provide the access point name in place 
-        /// of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The 
-        /// access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When 
-        /// using this action with an access point through the Amazon Web Services SDKs, you provide the access point 
-        /// ARN in place of the bucket name. For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in 
-        /// the <i>Amazon S3 User Guide</i>.
-        /// </para> 
-        /// <para> 
-        /// <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts 
-        /// hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When 
-        /// you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access 
-        /// point alias. For more information about S3 on Outposts, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in 
-        /// the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access points</b> - When you use this action with an access point for general
+        /// purpose buckets, you must provide the alias of the access point in place of the bucket
+        /// name or specify the access point ARN. When you use this action with an access point
+        /// for directory buckets, you must provide the access point name in place of the bucket
+        /// name. When using the access point ARN, you must direct requests to the access point
+        /// hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the Amazon Web Services SDKs,
+        /// you provide the access point ARN in place of the bucket name. For more information
+        /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct
+        /// requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form
+        /// <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
+        /// When you use this action with S3 on Outposts, the destination bucket must be the Outposts
+        /// access point ARN or the access point alias. For more information about S3 on Outposts,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.bucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -293,9 +311,8 @@ namespace Amazon.S3.Model
         /// Indicates the algorithm used to create the checksum for the object when you use the
         /// SDK. This header will not provide any additional functionality if you don't use the
         /// SDK. When you send this header, there must be a corresponding <c>x-amz-checksum</c>
-        /// or <c>x-amz-trailer</c> header sent. Otherwise, Amazon S3 fails the request
-        /// with the HTTP status code <c>400 Bad Request</c>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// or <c>x-amz-trailer</c> header sent. Otherwise, Amazon S3 fails the request with the
+        /// HTTP status code <c>400 Bad Request</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -317,21 +334,44 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>Lifetime of the active copy in days. 
-        /// Do not use with restores that specify <c>OutputLocation</c>.</para> 
-        /// <para>The Days element is required for regular restores, and must not be provided for 
-        /// select requests.</para>
+        /// Gets and sets the property Days. 
+        /// <para>
+        /// Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Days element is required for regular restores, and must not be provided for select
+        /// requests.
+        /// </para>
         /// </summary>
         public int? Days
         {
-            get { return this.days; }
-            set { this.days = value; }
+            get { return this._days; }
+            set { this._days = value; }
         }
 
         // Check to see if Days property is set
         internal bool IsSetDays()
         {
-            return this.days.HasValue;
+            return this._days.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The optional description for the job.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -344,197 +384,170 @@ namespace Amazon.S3.Model
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return !String.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
         /// <summary>
-        /// The optional description for the job.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// Object key for which the action was initiated.
+        /// </para>
         /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-        
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the Key property. This key indicates the S3 object to restore.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// This property will be used as part of the resource path of the HTTP request. In .NET the System.Uri class
-        /// is used to construct the uri for the request. The System.Uri class will canonicalize the uri string by compacting characters like "..". 
-        /// For example an object key of "foo/../bar/file.txt" will be transformed into "bar/file.txt" because the ".." 
-        /// is interpreted as use parent directory.
-        /// </para>
-        /// <para>
-        /// Starting with .NET 8, the AWS .NET SDK disables System.Uri's feature of canonicalizing the resource path. This allows S3 keys like
-        /// "foo/../bar/file.txt" to work correctly with the AWS .NET SDK.
-        /// </para>
-        /// <para>
-        /// For further information view the documentation for the Uri class: https://docs.microsoft.com/en-us/dotnet/api/system.uri
-        /// </para>
-        /// </remarks>
+        [AWSProperty(Required=true, Min=1)]
         public string Key
         {
-            get { return this.key; }
-            set { this.key = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// <para>Tier at which the restore will be processed.</para>
-        /// </summary>
-        public GlacierJobTier Tier
-        {
-            get { return this.tier; }
-            set { this.tier = value; }
-        }
-        
-        // Check to see if Tier property is set
-        internal bool IsSetTier()
-        {
-            return this.tier != null;
-        }
-
-        /// <summary>
-        /// <para>Retrieval tier at which the restore will be processed.</para>
-        /// </summary>
-        public GlacierJobTier RetrievalTier
-        {
-            get { return this.retrievalTier; }
-            set { this.retrievalTier = value; }
-        }
-
-        internal bool IsSetRetrievalTier()
-        {
-            return this.retrievalTier != null;
-        }
-
-        /// <summary>
-        /// Type of restore request.
-        /// </summary>
-        public RestoreRequestType RestoreRequestType
-        {
-            get { return this.type; }
-            set { this.type = value; }
-        }
-
-        internal bool IsSetType()
-        {
-            return this.type != null;
-        }
-        
-        /// <summary>
-        /// Describes the parameters for Select job types.
-        /// </summary>
-        public SelectParameters SelectParameters
-        {
-            get { return this.selectParameters; }
-            set { this.selectParameters = value; }
-        }
-
-        internal bool IsSetSelectParameters()
-        {
-            return this.selectParameters != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property OutputLocation. 
+        /// <para>
         /// Describes the location where the restore job's output is stored.
+        /// </para>
         /// </summary>
         public OutputLocation OutputLocation
         {
-            get { return this.outputLocation; }
-            set { this.outputLocation = value; }
+            get { return this._outputLocation; }
+            set { this._outputLocation = value; }
         }
 
+        // Check to see if OutputLocation property is set
         internal bool IsSetOutputLocation()
         {
-            return this.outputLocation != null;
-        }
-
-        internal void Marshall(string propertyName, XmlWriter xmlWriter)
-        {
-            xmlWriter.WriteStartElement(propertyName, S3Constants.S3RequestXmlNamespace);
-            {
-                if (IsSetRetrievalTier())
-                    xmlWriter.WriteElementString("Tier", S3Transforms.ToXmlStringValue(RetrievalTier));
-
-                if (IsSetTier())
-                {
-                    xmlWriter.WriteStartElement("GlacierJobParameters");
-                    {
-                        xmlWriter.WriteElementString("Tier", S3Transforms.ToXmlStringValue(Tier));
-                    }
-                    xmlWriter.WriteEndElement();
-                }
-
-                if (IsSetDays())
-                    xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(Days.Value));
-                if (IsSetType())
-                    xmlWriter.WriteElementString("Type", S3Transforms.ToXmlStringValue(RestoreRequestType.Value));
-                if (IsSetDescription())
-                    xmlWriter.WriteElementString("Description", S3Transforms.ToXmlStringValue(Description));
-                if (IsSetSelectParameters())
-                    SelectParameters.Marshall("SelectParameters", xmlWriter);
-                if (IsSetOutputLocation())
-                    OutputLocation.Marshall("OutputLocation", xmlWriter);
-            }
-            xmlWriter.WriteEndElement();
+            return this._outputLocation != null;
         }
 
         /// <summary>
-        /// Confirms that the requester knows that she or he will be charged for the request.
-        /// Bucket owners need not specify this parameter in their requests.
+        /// Gets and sets the property RequestPayer.
         /// </summary>
         public RequestPayer RequestPayer
         {
-            get { return this.requestPayer; }
-            set { this.requestPayer = value; }
+            get { return this._requestPayer; }
+            set { this._requestPayer = value; }
         }
-        
-        /// <summary>
-        /// Checks to see if RequetsPayer is set.
-        /// </summary>
-        /// <returns>true, if RequestPayer property is set.</returns>
+
+        // Check to see if RequestPayer property is set
         internal bool IsSetRequestPayer()
         {
-            return requestPayer != null;
+            return this._requestPayer != null;
         }
 
         /// <summary>
+        /// Gets and sets the property RestoreRequestType. <important> 
+        /// <para>
+        /// Amazon S3 Select is no longer available to new customers. Existing customers of Amazon
+        /// S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Type of restore request.
+        /// </para>
+        /// </summary>
+        public RestoreRequestType RestoreRequestType
+        {
+            get { return this._restoreRequestType; }
+            set { this._restoreRequestType = value; }
+        }
+
+        // Check to see if RestoreRequestType property is set
+        internal bool IsSetRestoreRequestType()
+        {
+            return this._restoreRequestType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrievalTier. 
+        /// <para>
+        /// Retrieval tier at which the restore will be processed.
+        /// </para>
+        /// </summary>
+        public GlacierJobTier RetrievalTier
+        {
+            get { return this._retrievalTier; }
+            set { this._retrievalTier = value; }
+        }
+
+        // Check to see if RetrievalTier property is set
+        internal bool IsSetRetrievalTier()
+        {
+            return this._retrievalTier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectParameters. <important> 
+        /// <para>
+        /// Amazon S3 Select is no longer available to new customers. Existing customers of Amazon
+        /// S3 Select can continue to use the feature as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Describes the parameters for Select job types.
+        /// </para>
+        /// </summary>
+        public SelectParameters SelectParameters
+        {
+            get { return this._selectParameters; }
+            set { this._selectParameters = value; }
+        }
+
+        // Check to see if SelectParameters property is set
+        internal bool IsSetSelectParameters()
+        {
+            return this._selectParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// S3 Glacier related parameters pertaining to this job. Do not use with restores that
+        /// specify <c>OutputLocation</c>.
+        /// </para>
+        /// </summary>
+        public GlacierJobTier Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
         /// VersionId used to reference a specific version of the object.
+        /// </para>
         /// </summary>
         public string VersionId
         {
-            get { return this.versionId; }
-            set { this.versionId = value; }
+            get { return this._versionId; }
+            set { this._versionId = value; }
         }
 
         // Check to see if VersionId property is set
         internal bool IsSetVersionId()
         {
-            return this.versionId != null;
+            return this._versionId != null;
         }
+
     }
 }
-    
