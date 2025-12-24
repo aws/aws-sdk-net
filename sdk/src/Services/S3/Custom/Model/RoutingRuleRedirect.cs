@@ -24,30 +24,11 @@ namespace Amazon.S3.Model
     /// <para>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event
     /// of an error, you can can specify a different error code to return.</para>
     /// </summary>
-    public class RoutingRuleRedirect
+    public partial class RoutingRuleRedirect
     {
-        
-        private string hostName;
         private string httpRedirectCode;
-        private string protocol;
         private string replaceKeyPrefixWith;
         private string replaceKeyWith;
-
-        /// <summary>
-        /// Name of the host where requests will be redirected.
-        ///  
-        /// </summary>
-        public string HostName
-        {
-            get { return this.hostName; }
-            set { this.hostName = value; }
-        }
-
-        // Check to see if HostName property is set
-        internal bool IsSetHostName()
-        {
-            return this.hostName != null;
-        }
 
         /// <summary>
         /// The HTTP redirect code to use on the response. Not required if one of the siblings is present.
@@ -65,21 +46,6 @@ namespace Amazon.S3.Model
             return this.httpRedirectCode != null;
         }
 
-        /// <summary>
-        /// Protocol to use (http, https) when redirecting requests. The default is the protocol that is used in the original request.
-        ///  
-        /// </summary>
-        public string Protocol
-        {
-            get { return this.protocol; }
-            set { this.protocol = value; }
-        }
-
-        // Check to see if Protocol property is set
-        internal bool IsSetProtocol()
-        {
-            return this.protocol != null;
-        }
 
         /// <summary>
         /// The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ (objects in the

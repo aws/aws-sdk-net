@@ -583,6 +583,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "PutBucketOwnershipControls", DocumentRoot[OperationsKey]["PutBucketOwnershipControls"]),
                         new Operation(this, "PutBucketTagging", DocumentRoot[OperationsKey]["PutBucketTagging"]),
                         new Operation(this, "CopyObject", DocumentRoot[OperationsKey]["CopyObject"]),
+                        new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"])
                     };
                 }
                 return _s3AllowListOperations.Where(operation => operation.data != null).ToList();

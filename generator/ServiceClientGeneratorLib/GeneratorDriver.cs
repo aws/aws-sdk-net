@@ -1725,7 +1725,10 @@ namespace ServiceClientGenerator
                 { "IntelligentTieringFilter", 3 },
                 { "MetricsAndOperator", 3 },
                 { "AnalyticsAndOperator", 2 },
-                { "IntelligentTieringAndOperator", 2}
+                { "IntelligentTieringAndOperator", 2},
+                // these two shapes have been changed from a structure to a string. 
+                { "IndexDocument", 1 },
+                { "ErrorDocument", 1 }
             };
             if (customUpdateShapes.TryGetValue(shape.Name, out int membersCount))
             {

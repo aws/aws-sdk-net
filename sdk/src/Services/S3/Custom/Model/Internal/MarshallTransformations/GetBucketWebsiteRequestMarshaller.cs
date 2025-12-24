@@ -24,49 +24,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Website Request Marshaller
     /// </summary>       
-    public class GetBucketWebsiteRequestMarshaller : IMarshaller<IRequest, GetBucketWebsiteRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class GetBucketWebsiteRequestMarshaller : IMarshaller<IRequest, GetBucketWebsiteRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((GetBucketWebsiteRequest)input);
-		}
-
-        public IRequest Marshall(GetBucketWebsiteRequest getBucketWebsiteRequest)
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetBucketWebsiteRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getBucketWebsiteRequest, "Amazon.S3");
-
-            request.Suppress404Exceptions = true;
-            request.HttpMethod = "GET";
-
-            if (getBucketWebsiteRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getBucketWebsiteRequest.ExpectedBucketOwner));
-
-            if (string.IsNullOrEmpty(getBucketWebsiteRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketWebsiteRequest.BucketName");
-
-            request.ResourcePath = "/";
-            request.AddSubResource("website");
-            request.UseQueryString = true;
-            
-            return request;
+            defaultRequest.Suppress404Exceptions = true;
         }
-
-	    private static GetBucketWebsiteRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static GetBucketWebsiteRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new GetBucketWebsiteRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
     }
 }
     
