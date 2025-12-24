@@ -1829,6 +1829,37 @@
                     "LoggingEnabled":{"emitPropertyName":"LoggingConfig"}
                 }
             ]
+        },
+        "GetBucketWebsiteRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner": {"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketWebsiteOutput":{
+            "modify":[
+                {
+                    "ErrorDocument":{"injectXmlUnmarshallCode":["response.WebsiteConfiguration.ErrorDocument = StringUnmarshaller.Instance.Unmarshall(context);"], "skipContextTestExpressionUnmarshallingLogic" : true}
+                },
+                {
+                    "IndexDocument":{"emitPropertyName":"IndexDocumentSuffix"}
+                },
+                {
+                    "IndexDocumentSuffix":{"injectXmlUnmarshallCode":["response.WebsiteConfiguration.IndexDocumentSuffix = StringUnmarshaller.Instance.Unmarshall(context);"],"skipContextTestExpressionUnmarshallingLogic" : true}
+                },
+                {
+                    "RoutingRules":{
+                        "injectXmlUnmarshallCode":["RoutingRuleCustomUnmarshall(response);","response.WebsiteConfiguration.RoutingRules.Add(RoutingRuleUnmarshaller.Instance.Unmarshall(context));"], 
+                        "skipContextTestExpressionUnmarshallingLogic" : true
+                    }
+                },
+                {
+                    "RedirectAllRequestsTo":{"injectXmlUnmarshallCode":["response.WebsiteConfiguration.RedirectAllRequestsTo = RoutingRuleRedirectUnmarshaller.Instance.Unmarshall(context);"],
+                    "skipContextTestExpressionUnmarshallingLogic":true}
+                }
+            ],
+            "injectXmlUnmarshallResultCode":["response.WebsiteConfiguration = new WebsiteConfiguration();"]
         }
     },
     "operationModifiers": {
@@ -2001,6 +2032,12 @@
         },
         "TargetGrant":{
             "renameShape":"S3Grant"
+        },
+        "Redirect":{
+            "renameShape":"RoutingRuleRedirect"
+        },
+        "Condition":{
+            "renameShape":"RoutingRuleCondition"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -2288,6 +2325,21 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"
             }
+        },
+        "GetBucketWebsiteOutput":{
+            "ErrorDocument":{
+                "Type":"String",
+                "alternateLocationName":"ErrorDocument/Key"
+            },
+            "IndexDocumentSuffix":{
+                "Type":"string",
+                "alternateLocationName":"IndexDocument/Suffix"
+            }
+        },
+        "RoutingRuleRedirect":{
+            "Protocol":{
+                "Type":"string"
+            }
         }
     },
     "excludeMembers":{
@@ -2325,6 +2377,12 @@
         ],
         "ListObjectVersionsOutput":[
             "DeleteMarkers"
+        ],
+        "GetBucketWebsiteOutput":[
+            "RedirectAllRequestsTo",
+            "IndexDocumentSuffix",
+            "ErrorDocument",
+            "RoutingRules"
         ]
     },
     "unwrapXmlOutput":{
@@ -2398,6 +2456,9 @@
         "InventoryFilter",
         "GlacierJobTier",
         "CompletedMultipartUpload",
-        "BucketLoggingStatus"
+        "BucketLoggingStatus",
+        "ErrorDocument",
+        "IndexDocument",
+        "RedirectAllRequestsTo"
     ]
 }
