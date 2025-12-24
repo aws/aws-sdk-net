@@ -2060,9 +2060,6 @@
         "TargetGrant":{
             "renameShape":"S3Grant"
         },
-        "RedirectAllRequestsTo":{
-            "renameShape":"RoutingRuleRedirect"
-        },
         "Redirect":{
             "renameShape":"RoutingRuleRedirect"
         },
@@ -2496,6 +2493,7 @@
         "CompletedMultipartUpload",
         "BucketLoggingStatus",
         "ErrorDocument",
-        "IndexDocument"
+        "IndexDocument",
+        "RedirectAllRequestsTo"
     ]
 }

@@ -30,21 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Specifies the redirect behavior of all requests to a website endpoint of an Amazon
-    /// S3 bucket.
+    /// Specifies how requests are redirected. In the event of an error, you can specify a
+    /// different error code to return.
     /// </summary>
     public partial class RoutingRuleRedirect
     {
         private string _hostName;
+        private string _httpRedirectCode;
         private string _protocol;
+        private string _replaceKeyPrefixWith;
+        private string _replaceKeyWith;
 
         /// <summary>
         /// Gets and sets the property HostName. 
         /// <para>
-        /// Name of the host where requests are redirected.
+        /// The host name to use in the redirect request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string HostName
         {
             get { return this._hostName; }
@@ -55,6 +57,25 @@ namespace Amazon.S3.Model
         internal bool IsSetHostName()
         {
             return this._hostName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpRedirectCode. 
+        /// <para>
+        /// The HTTP redirect code to use on the response. Not required if one of the siblings
+        /// is present.
+        /// </para>
+        /// </summary>
+        public string HttpRedirectCode
+        {
+            get { return this._httpRedirectCode; }
+            set { this._httpRedirectCode = value; }
+        }
+
+        // Check to see if HttpRedirectCode property is set
+        internal bool IsSetHttpRedirectCode()
+        {
+            return this._httpRedirectCode != null;
         }
 
         /// <summary>
@@ -74,6 +95,63 @@ namespace Amazon.S3.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplaceKeyPrefixWith. 
+        /// <para>
+        /// The object key prefix to use in the redirect request. For example, to redirect requests
+        /// for all pages with prefix <c>docs/</c> (objects in the <c>docs/</c> folder) to <c>documents/</c>,
+        /// you can set a condition block with <c>KeyPrefixEquals</c> set to <c>docs/</c> and
+        /// in the Redirect set <c>ReplaceKeyPrefixWith</c> to <c>/documents</c>. Not required
+        /// if one of the siblings is present. Can be present only if <c>ReplaceKeyWith</c> is
+        /// not provided.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Replacement must be made for object keys containing special characters (such as carriage
+        /// returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+        /// XML related object key constraints</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public string ReplaceKeyPrefixWith
+        {
+            get { return this._replaceKeyPrefixWith; }
+            set { this._replaceKeyPrefixWith = value; }
+        }
+
+        // Check to see if ReplaceKeyPrefixWith property is set
+        internal bool IsSetReplaceKeyPrefixWith()
+        {
+            return this._replaceKeyPrefixWith != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplaceKeyWith. 
+        /// <para>
+        /// The specific object key to use in the redirect request. For example, redirect request
+        /// to <c>error.html</c>. Not required if one of the siblings is present. Can be present
+        /// only if <c>ReplaceKeyPrefixWith</c> is not provided.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Replacement must be made for object keys containing special characters (such as carriage
+        /// returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+        /// XML related object key constraints</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public string ReplaceKeyWith
+        {
+            get { return this._replaceKeyWith; }
+            set { this._replaceKeyWith = value; }
+        }
+
+        // Check to see if ReplaceKeyWith property is set
+        internal bool IsSetReplaceKeyWith()
+        {
+            return this._replaceKeyWith != null;
         }
 
     }
