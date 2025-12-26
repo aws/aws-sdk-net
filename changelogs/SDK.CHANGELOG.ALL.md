@@ -1,3 +1,9 @@
+### 4.0.160.0 (2025-12-26 19:19 UTC)
+* ElasticTranscoder (Removed)
+	* Amazon Elastic Transcoder has been removed from the SDK because it has been discontinued.
+* MediaLive (4.0.12.0)
+	* AWS Elemental MediaLive now supports Pipeline Locking using Video Alignment as well as linked single pipeline channels to enable cross-channel and cross-region Pipeline Locking workflows.
+
 ### 4.0.159.0 (2025-12-23 19:31 UTC)
 * CloudFront (4.0.10.5)
 	* Fix spacing in request marshallers.
