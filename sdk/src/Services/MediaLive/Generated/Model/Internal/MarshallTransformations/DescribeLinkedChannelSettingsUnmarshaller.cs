@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineLockingSettings Object
+    /// Response Unmarshaller for DescribeLinkedChannelSettings Object
     /// </summary>  
-    public class PipelineLockingSettingsUnmarshaller : IUnmarshaller<PipelineLockingSettings, XmlUnmarshallerContext>, IUnmarshaller<PipelineLockingSettings, JsonUnmarshallerContext>
+    public class DescribeLinkedChannelSettingsUnmarshaller : IUnmarshaller<DescribeLinkedChannelSettings, XmlUnmarshallerContext>, IUnmarshaller<DescribeLinkedChannelSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineLockingSettings IUnmarshaller<PipelineLockingSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DescribeLinkedChannelSettings IUnmarshaller<DescribeLinkedChannelSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipelineLockingSettings Unmarshall(JsonUnmarshallerContext context)
+        public DescribeLinkedChannelSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            PipelineLockingSettings unmarshalledObject = new PipelineLockingSettings();
+            DescribeLinkedChannelSettings unmarshalledObject = new DescribeLinkedChannelSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,10 +66,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("pipelineLockingMethod", targetDepth))
+                if (context.TestExpression("followerChannelSettings", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineLockingMethod = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DescribeFollowerChannelSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FollowerChannelSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("primaryChannelSettings", targetDepth))
+                {
+                    var unmarshaller = DescribePrimaryChannelSettingsUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryChannelSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -77,12 +83,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static PipelineLockingSettingsUnmarshaller _instance = new PipelineLockingSettingsUnmarshaller();        
+        private static DescribeLinkedChannelSettingsUnmarshaller _instance = new DescribeLinkedChannelSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineLockingSettingsUnmarshaller Instance
+        public static DescribeLinkedChannelSettingsUnmarshaller Instance
         {
             get
             {

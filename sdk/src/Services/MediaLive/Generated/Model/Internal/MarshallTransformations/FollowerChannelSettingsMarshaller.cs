@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PipelineLockingSettings Marshaller
+    /// FollowerChannelSettings Marshaller
     /// </summary>
-    public class PipelineLockingSettingsMarshaller : IRequestMarshaller<PipelineLockingSettings, JsonMarshallerContext> 
+    public class FollowerChannelSettingsMarshaller : IRequestMarshaller<FollowerChannelSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,14 +44,20 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PipelineLockingSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(FollowerChannelSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetPipelineLockingMethod())
+            if(requestObject.IsSetLinkedChannelType())
             {
-                context.Writer.WritePropertyName("pipelineLockingMethod");
-                context.Writer.Write(requestObject.PipelineLockingMethod);
+                context.Writer.WritePropertyName("linkedChannelType");
+                context.Writer.Write(requestObject.LinkedChannelType);
+            }
+
+            if(requestObject.IsSetPrimaryChannelArn())
+            {
+                context.Writer.WritePropertyName("primaryChannelArn");
+                context.Writer.Write(requestObject.PrimaryChannelArn);
             }
 
         }
@@ -59,7 +65,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PipelineLockingSettingsMarshaller Instance = new PipelineLockingSettingsMarshaller();
+        public readonly static FollowerChannelSettingsMarshaller Instance = new FollowerChannelSettingsMarshaller();
 
     }
 }
