@@ -172,6 +172,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetLinkedChannelSettings())
+            {
+                context.Writer.WritePropertyName("linkedChannelSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LinkedChannelSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LinkedChannelSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetLogLevel())
             {
                 context.Writer.WritePropertyName("logLevel");

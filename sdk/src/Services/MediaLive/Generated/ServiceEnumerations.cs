@@ -12247,6 +12247,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type LinkedChannelType.
+    /// </summary>
+    public class LinkedChannelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FOLLOWING_CHANNEL for LinkedChannelType
+        /// </summary>
+        public static readonly LinkedChannelType FOLLOWING_CHANNEL = new LinkedChannelType("FOLLOWING_CHANNEL");
+        /// <summary>
+        /// Constant PRIMARY_CHANNEL for LinkedChannelType
+        /// </summary>
+        public static readonly LinkedChannelType PRIMARY_CHANNEL = new LinkedChannelType("PRIMARY_CHANNEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LinkedChannelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LinkedChannelType FindValue(string value)
+        {
+            return FindValue<LinkedChannelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LinkedChannelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogLevel.
     /// </summary>
     public class LogLevel : ConstantClass
@@ -15020,6 +15070,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PipelineId(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PipelineLockingMethod.
+    /// </summary>
+    public class PipelineLockingMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SOURCE_TIMECODE for PipelineLockingMethod
+        /// </summary>
+        public static readonly PipelineLockingMethod SOURCE_TIMECODE = new PipelineLockingMethod("SOURCE_TIMECODE");
+        /// <summary>
+        /// Constant VIDEO_ALIGNMENT for PipelineLockingMethod
+        /// </summary>
+        public static readonly PipelineLockingMethod VIDEO_ALIGNMENT = new PipelineLockingMethod("VIDEO_ALIGNMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PipelineLockingMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipelineLockingMethod FindValue(string value)
+        {
+            return FindValue<PipelineLockingMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipelineLockingMethod(string value)
         {
             return FindValue(value);
         }

@@ -30,29 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Pipeline Locking Settings
+    /// Settings for a primary (leader) channel in a linked pair
     /// </summary>
-    public partial class PipelineLockingSettings
+    public partial class PrimaryChannelSettings
     {
-        private PipelineLockingMethod _pipelineLockingMethod;
+        private LinkedChannelType _linkedChannelType;
 
         /// <summary>
-        /// Gets and sets the property PipelineLockingMethod. The method to use to lock the video
-        /// frames in the pipelines. sourceTimecode (default): Use the timecode in the source.
-        /// videoAlignment: Lock frames that the encoder identifies as having matching content.
-        /// If videoAlignment is selected, existing timecodes will not be used for any locking
-        /// decisions.
+        /// Gets and sets the property LinkedChannelType. Specifies this as a primary channel
         /// </summary>
-        public PipelineLockingMethod PipelineLockingMethod
+        public LinkedChannelType LinkedChannelType
         {
-            get { return this._pipelineLockingMethod; }
-            set { this._pipelineLockingMethod = value; }
+            get { return this._linkedChannelType; }
+            set { this._linkedChannelType = value; }
         }
 
-        // Check to see if PipelineLockingMethod property is set
-        internal bool IsSetPipelineLockingMethod()
+        // Check to see if LinkedChannelType property is set
+        internal bool IsSetLinkedChannelType()
         {
-            return this._pipelineLockingMethod != null;
+            return this._linkedChannelType != null;
         }
 
     }

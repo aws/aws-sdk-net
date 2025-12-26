@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PipelineLockingSettings Marshaller
+    /// LinkedChannelSettings Marshaller
     /// </summary>
-    public class PipelineLockingSettingsMarshaller : IRequestMarshaller<PipelineLockingSettings, JsonMarshallerContext> 
+    public class LinkedChannelSettingsMarshaller : IRequestMarshaller<LinkedChannelSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,14 +42,30 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PipelineLockingSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(LinkedChannelSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetPipelineLockingMethod())
+            if(requestObject.IsSetFollowerChannelSettings())
             {
-                context.Writer.WritePropertyName("pipelineLockingMethod");
-                context.Writer.WriteStringValue(requestObject.PipelineLockingMethod);
+                context.Writer.WritePropertyName("followerChannelSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FollowerChannelSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FollowerChannelSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPrimaryChannelSettings())
+            {
+                context.Writer.WritePropertyName("primaryChannelSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrimaryChannelSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrimaryChannelSettings, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -57,7 +73,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PipelineLockingSettingsMarshaller Instance = new PipelineLockingSettingsMarshaller();
+        public readonly static LinkedChannelSettingsMarshaller Instance = new LinkedChannelSettingsMarshaller();
 
     }
 }
