@@ -32,7 +32,7 @@ namespace Amazon.IdentityStore
     public partial class AmazonIdentityStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("identitystore", "3.7.504.8");
+            InternalSDKUtils.BuildUserAgentString("identitystore", "3.7.504.9");
 
         private string _userAgent = UserAgentString;
         ///<summary>

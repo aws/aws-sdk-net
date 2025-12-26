@@ -1,3 +1,12 @@
+### 3.7.1192.0 (2025-12-26 19:20 UTC)
+* ElasticTranscoder (Removed)
+	* Amazon Elastic Transcoder has been removed from the SDK because it has been discontinued.
+* MediaLive (3.7.510.0)
+	* AWS Elemental MediaLive now supports Pipeline Locking using Video Alignment as well as linked single pipeline channels to enable cross-channel and cross-region Pipeline Locking workflows.
+* Core 3.7.500.60
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1191.0 (2025-12-23 19:32 UTC)
 * CloudWatch (3.7.505.7)
 	* Improve AWS Query compatible error handling in unmarshallers.
