@@ -262,6 +262,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, gsi4PriorityResults.Count);
         }
 
+        /// <summary>
+        /// Tests regression reported in https://github.com/aws/aws-sdk-net/issues/4243 is resolved.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestTransactWrite_SkipVersionCheck()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+
+            var vp = new VersionedProduct
+            {
+                Id = 1000,
+                Name = "TestProduct",
+                Price = 100
+            };
+            await Context.SaveAsync(vp);
+
+            // Load to get initial version
+            vp = await Context.LoadAsync<VersionedProduct>(vp.Id);
+            Assert.AreEqual(0, vp.Version);
+
+            // Set wrong version - normally would fail with a ConditionalCheck error
+            vp.Version = 9999;
+            vp.Price = 200;
+
+            // With SkipVersionCheck = true, should succeed
+            var transactWrite = Context.CreateTransactWrite<VersionedProduct>(new TransactWriteConfig 
+            { 
+                SkipVersionCheck = true 
+            });
+            transactWrite.AddSaveItem(vp);
+            await transactWrite.ExecuteAsync();
+
+            // Verify update succeeded
+            var updated = await Context.LoadAsync<VersionedProduct>(vp.Id);
+            Assert.AreEqual(200, updated.Price);
+            Assert.AreEqual(9999, updated.Version);
+        }
+
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public async Task TestContextWithEmptyStringDisabled()
