@@ -18319,6 +18319,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -20737,6 +20743,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -21572,6 +21584,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -21719,6 +21737,12 @@ namespace Amazon.Connect
         /// <returns>The response from the StopContactRecording service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -21945,6 +21969,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -22009,6 +22039,12 @@ namespace Amazon.Connect
         /// <returns>The response from the TagContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -22269,6 +22305,12 @@ namespace Amazon.Connect
         /// <returns>The response from the UntagContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -22577,6 +22619,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -22663,6 +22711,12 @@ namespace Amazon.Connect
         /// <returns>The response from the UpdateContactAttributes service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -23289,6 +23343,12 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
