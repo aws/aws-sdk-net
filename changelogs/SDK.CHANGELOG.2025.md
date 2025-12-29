@@ -1,3 +1,9 @@
+### 3.7.1193.0 (2025-12-29 19:18 UTC)
+* Connect (3.7.520.0)
+	* Changes for Contact for Global Search
+* QuickSight (3.7.509.0)
+	* This release adds support for quick users to be able to perform role upgrades on their own. Additionally it allows admins to make this feature admin or auto approval along with new self upgrade capability that can be restricted by Admins.
+
 ### 3.7.1192.0 (2025-12-26 19:20 UTC)
 * ElasticTranscoder (Removed)
 	* Amazon Elastic Transcoder has been removed from the SDK because it has been discontinued.
