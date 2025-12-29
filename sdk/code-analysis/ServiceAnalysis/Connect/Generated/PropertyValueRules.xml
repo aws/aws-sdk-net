@@ -5926,6 +5926,20 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.GlobalResiliencyMetadata.ActiveRegion</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GlobalResiliencyMetadata.OriginRegion</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GlobalResiliencyMetadata.TrafficDistributionGroupId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.HierarchyGroup.LastModifiedRegion</property>
     <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
