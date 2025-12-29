@@ -165,8 +165,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Obtain identity-enhanced IAM role session credentials from AWS Security Token Service
-    /// (STS).
+    /// Obtain identity-enhanced IAM role session credentials from Amazon Web Services Security
+    /// Token Service (STS).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -179,8 +179,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// If your Quick Sight users are backed by <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS
-    /// Identity Center</a>, then you need to set up a <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/setuptrustedtokenissuer.html">trusted
+    /// If your Quick Sight users are backed by <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
+    /// Web Services Identity Center</a>, then you need to set up a <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/setuptrustedtokenissuer.html">trusted
     /// token issuer</a>. Then, getting identity-enhanced IAM credentials for a Quick Sight
     /// user will look like the following:
     /// </para>

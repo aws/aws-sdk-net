@@ -12167,6 +12167,172 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type SelfUpgradeAdminAction.
+    /// </summary>
+    public class SelfUpgradeAdminAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVE for SelfUpgradeAdminAction
+        /// </summary>
+        public static readonly SelfUpgradeAdminAction APPROVE = new SelfUpgradeAdminAction("APPROVE");
+        /// <summary>
+        /// Constant DENY for SelfUpgradeAdminAction
+        /// </summary>
+        public static readonly SelfUpgradeAdminAction DENY = new SelfUpgradeAdminAction("DENY");
+        /// <summary>
+        /// Constant VERIFY for SelfUpgradeAdminAction
+        /// </summary>
+        public static readonly SelfUpgradeAdminAction VERIFY = new SelfUpgradeAdminAction("VERIFY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelfUpgradeAdminAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelfUpgradeAdminAction FindValue(string value)
+        {
+            return FindValue<SelfUpgradeAdminAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelfUpgradeAdminAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SelfUpgradeRequestStatus.
+    /// </summary>
+    public class SelfUpgradeRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for SelfUpgradeRequestStatus
+        /// </summary>
+        public static readonly SelfUpgradeRequestStatus APPROVED = new SelfUpgradeRequestStatus("APPROVED");
+        /// <summary>
+        /// Constant DENIED for SelfUpgradeRequestStatus
+        /// </summary>
+        public static readonly SelfUpgradeRequestStatus DENIED = new SelfUpgradeRequestStatus("DENIED");
+        /// <summary>
+        /// Constant PENDING for SelfUpgradeRequestStatus
+        /// </summary>
+        public static readonly SelfUpgradeRequestStatus PENDING = new SelfUpgradeRequestStatus("PENDING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for SelfUpgradeRequestStatus
+        /// </summary>
+        public static readonly SelfUpgradeRequestStatus UPDATE_FAILED = new SelfUpgradeRequestStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant VERIFY_FAILED for SelfUpgradeRequestStatus
+        /// </summary>
+        public static readonly SelfUpgradeRequestStatus VERIFY_FAILED = new SelfUpgradeRequestStatus("VERIFY_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelfUpgradeRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelfUpgradeRequestStatus FindValue(string value)
+        {
+            return FindValue<SelfUpgradeRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelfUpgradeRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SelfUpgradeStatus.
+    /// </summary>
+    public class SelfUpgradeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADMIN_APPROVAL for SelfUpgradeStatus
+        /// </summary>
+        public static readonly SelfUpgradeStatus ADMIN_APPROVAL = new SelfUpgradeStatus("ADMIN_APPROVAL");
+        /// <summary>
+        /// Constant AUTO_APPROVAL for SelfUpgradeStatus
+        /// </summary>
+        public static readonly SelfUpgradeStatus AUTO_APPROVAL = new SelfUpgradeStatus("AUTO_APPROVAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelfUpgradeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelfUpgradeStatus FindValue(string value)
+        {
+            return FindValue<SelfUpgradeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelfUpgradeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceType.
     /// </summary>
     public class ServiceType : ConstantClass

@@ -6521,6 +6521,66 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  DescribeSelfUpgradeConfiguration
+
+        internal virtual DescribeSelfUpgradeConfigurationResponse DescribeSelfUpgradeConfiguration(DescribeSelfUpgradeConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeSelfUpgradeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSelfUpgradeConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSelfUpgradeConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the self-upgrade configuration for a Quick Suite account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSelfUpgradeConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSelfUpgradeConfiguration service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeSelfUpgradeConfiguration">REST API Reference for DescribeSelfUpgradeConfiguration Operation</seealso>
+        public virtual Task<DescribeSelfUpgradeConfigurationResponse> DescribeSelfUpgradeConfigurationAsync(DescribeSelfUpgradeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeSelfUpgradeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSelfUpgradeConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSelfUpgradeConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeTemplate
 
         internal virtual DescribeTemplateResponse DescribeTemplate(DescribeTemplateRequest request)
@@ -9302,6 +9362,69 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  ListSelfUpgrades
+
+        internal virtual ListSelfUpgradesResponse ListSelfUpgrades(ListSelfUpgradesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSelfUpgradesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSelfUpgradesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSelfUpgradesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all self-upgrade requests for a Quick Suite account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSelfUpgrades service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSelfUpgrades service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListSelfUpgrades">REST API Reference for ListSelfUpgrades Operation</seealso>
+        public virtual Task<ListSelfUpgradesResponse> ListSelfUpgradesAsync(ListSelfUpgradesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSelfUpgradesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSelfUpgradesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSelfUpgradesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -11089,8 +11212,8 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Obtain identity-enhanced IAM role session credentials from AWS Security Token Service
-        /// (STS).
+        /// Obtain identity-enhanced IAM role session credentials from Amazon Web Services Security
+        /// Token Service (STS).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11103,8 +11226,8 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// If your Quick Sight users are backed by <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS
-        /// Identity Center</a>, then you need to set up a <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/setuptrustedtokenissuer.html">trusted
+        /// If your Quick Sight users are backed by <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
+        /// Web Services Identity Center</a>, then you need to set up a <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/setuptrustedtokenissuer.html">trusted
         /// token issuer</a>. Then, getting identity-enhanced IAM credentials for a Quick Sight
         /// user will look like the following:
         /// </para>
@@ -13501,6 +13624,130 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdateRoleCustomPermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRoleCustomPermissionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateSelfUpgrade
+
+        internal virtual UpdateSelfUpgradeResponse UpdateSelfUpgrade(UpdateSelfUpgradeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSelfUpgradeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSelfUpgradeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSelfUpgradeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a self-upgrade request for a Quick Suite user by approving, denying, or verifying
+        /// the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSelfUpgrade service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSelfUpgrade service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSelfUpgrade">REST API Reference for UpdateSelfUpgrade Operation</seealso>
+        public virtual Task<UpdateSelfUpgradeResponse> UpdateSelfUpgradeAsync(UpdateSelfUpgradeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSelfUpgradeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSelfUpgradeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSelfUpgradeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateSelfUpgradeConfiguration
+
+        internal virtual UpdateSelfUpgradeConfigurationResponse UpdateSelfUpgradeConfiguration(UpdateSelfUpgradeConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSelfUpgradeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSelfUpgradeConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSelfUpgradeConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the self-upgrade configuration for a Quick Suite account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSelfUpgradeConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSelfUpgradeConfiguration service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSelfUpgradeConfiguration">REST API Reference for UpdateSelfUpgradeConfiguration Operation</seealso>
+        public virtual Task<UpdateSelfUpgradeConfigurationResponse> UpdateSelfUpgradeConfigurationAsync(UpdateSelfUpgradeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSelfUpgradeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSelfUpgradeConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSelfUpgradeConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         
