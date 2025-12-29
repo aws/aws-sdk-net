@@ -1645,6 +1645,17 @@
     <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeSelfUpgradeConfigurationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeSelfUpgradeConfigurationRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeTemplateRequest.AliasName</property>
     <min>1</min>
     <max>2048</max>
@@ -2302,6 +2313,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListRoleMembershipsRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListSelfUpgradesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListSelfUpgradesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListSelfUpgradesRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
@@ -3249,6 +3276,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateRoleCustomPermissionRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateSelfUpgradeRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateSelfUpgradeRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateSelfUpgradeConfigurationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateSelfUpgradeConfigurationRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
@@ -6453,6 +6502,11 @@
     <min>1</min>
     <max>17</max>
     <pattern>^(?:LAST_DAY_OF_MONTH|1[0-9]|2[0-8]|[12]|[3-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SelfUpgradeRequestDetail.UserName</property>
+    <min>1</min>
+    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.SemanticEntityType.SubTypeName</property>

@@ -234,6 +234,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Research = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SelfUpgradeUserRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SelfUpgradeUserRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ShareAnalyses", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

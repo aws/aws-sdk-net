@@ -62,6 +62,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _publishWithoutApproval;
         private CapabilityState _renameSharedFolders;
         private CapabilityState _research;
+        private CapabilityState _selfUpgradeUserRole;
         private CapabilityState _shareAnalyses;
         private CapabilityState _shareDashboards;
         private CapabilityState _shareDatasets;
@@ -575,6 +576,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetResearch()
         {
             return this._research != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfUpgradeUserRole. 
+        /// <para>
+        /// The ability to enable users to upgrade their user role.
+        /// </para>
+        /// </summary>
+        public CapabilityState SelfUpgradeUserRole
+        {
+            get { return this._selfUpgradeUserRole; }
+            set { this._selfUpgradeUserRole = value; }
+        }
+
+        // Check to see if SelfUpgradeUserRole property is set
+        internal bool IsSetSelfUpgradeUserRole()
+        {
+            return this._selfUpgradeUserRole != null;
         }
 
         /// <summary>

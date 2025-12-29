@@ -30,32 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// This is the response object from the GetIdentityContext operation.
+    /// This is the response object from the ListSelfUpgrades operation.
     /// </summary>
-    public partial class GetIdentityContextResponse : AmazonWebServiceResponse
+    public partial class ListSelfUpgradesResponse : AmazonWebServiceResponse
     {
-        private string _context;
+        private string _nextToken;
         private string _requestId;
+        private List<SelfUpgradeRequestDetail> _selfUpgradeRequestDetails = AWSConfigs.InitializeCollections ? new List<SelfUpgradeRequestDetail>() : null;
         private int? _status;
 
         /// <summary>
-        /// Gets and sets the property Context. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The identity context information for the user. This is an identity token that should
-        /// be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS
-        /// AssumeRole API</a> call to obtain identity enhanced Amazon Web Services credentials.
+        /// The token for the next set of results, or null if there are no more results.
         /// </para>
         /// </summary>
-        public string Context
+        public string NextToken
         {
-            get { return this._context; }
-            set { this._context = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Context property is set
-        internal bool IsSetContext()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._context != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
@@ -64,7 +63,6 @@ namespace Amazon.QuickSight.Model
         /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string RequestId
         {
             get { return this._requestId; }
@@ -78,12 +76,29 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SelfUpgradeRequestDetails. 
+        /// <para>
+        /// A list of self-upgrade request details.
+        /// </para>
+        /// </summary>
+        public List<SelfUpgradeRequestDetail> SelfUpgradeRequestDetails
+        {
+            get { return this._selfUpgradeRequestDetails; }
+            set { this._selfUpgradeRequestDetails = value; }
+        }
+
+        // Check to see if SelfUpgradeRequestDetails property is set
+        internal bool IsSetSelfUpgradeRequestDetails()
+        {
+            return this._selfUpgradeRequestDetails != null && (this._selfUpgradeRequestDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The HTTP status of the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int Status
         {
             get { return this._status.GetValueOrDefault(); }

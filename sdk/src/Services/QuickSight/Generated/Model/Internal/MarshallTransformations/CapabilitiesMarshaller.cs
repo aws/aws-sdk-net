@@ -216,6 +216,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Research);
             }
 
+            if(requestObject.IsSetSelfUpgradeUserRole())
+            {
+                context.Writer.WritePropertyName("SelfUpgradeUserRole");
+                context.Writer.Write(requestObject.SelfUpgradeUserRole);
+            }
+
             if(requestObject.IsSetShareAnalyses())
             {
                 context.Writer.WritePropertyName("ShareAnalyses");
