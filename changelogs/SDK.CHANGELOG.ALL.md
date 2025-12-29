@@ -1,3 +1,11 @@
+### 4.0.161.0 (2025-12-29 19:16 UTC)
+* Connect (4.0.24.0)
+	* Changes for Contact for Global Search
+* DynamoDBv2 (4.0.10.5)
+	* Add missing `SkipVersionCheck` property to the `TransactWriteConfig` class (https://github.com/aws/aws-sdk-net/issues/4243)
+* QuickSight (4.0.12.0)
+	* This release adds support for quick users to be able to perform role upgrades on their own. Additionally it allows admins to make this feature admin or auto approval along with new self upgrade capability that can be restricted by Admins.
+
 ### 4.0.160.0 (2025-12-26 19:19 UTC)
 * ElasticTranscoder (Removed)
 	* Amazon Elastic Transcoder has been removed from the SDK because it has been discontinued.
