@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update directory upload progress calculation to properly keep track of the number of files successfully uploaded."
+      ]
+    }
+  ]
+}
