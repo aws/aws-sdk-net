@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SearchCriteria
     {
+        private List<string> _activeRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SearchContactsAdditionalTimeRange _additionalTimeRange;
         private AgentHierarchyGroups _agentHierarchyGroups;
         private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -45,6 +46,24 @@ namespace Amazon.Connect.Model
         private SearchableRoutingCriteria _routingCriteria;
         private SearchableContactAttributes _searchableContactAttributes;
         private SearchableSegmentAttributes _searchableSegmentAttributes;
+
+        /// <summary>
+        /// Gets and sets the property ActiveRegions. 
+        /// <para>
+        /// The list of active regions for contacts in ACGR instances.
+        /// </para>
+        /// </summary>
+        public List<string> ActiveRegions
+        {
+            get { return this._activeRegions; }
+            set { this._activeRegions = value; }
+        }
+
+        // Check to see if ActiveRegions property is set
+        internal bool IsSetActiveRegions()
+        {
+            return this._activeRegions != null && (this._activeRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AdditionalTimeRange. 

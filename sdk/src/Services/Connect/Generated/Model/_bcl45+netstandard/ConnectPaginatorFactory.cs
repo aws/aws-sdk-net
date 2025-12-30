@@ -205,6 +205,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListEntitySecurityProfiles operation
+        ///</summary>
+        public IListEntitySecurityProfilesPaginator ListEntitySecurityProfiles(ListEntitySecurityProfilesRequest request) 
+        {
+            return new ListEntitySecurityProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEvaluationForms operation
         ///</summary>
         public IListEvaluationFormsPaginator ListEvaluationForms(ListEvaluationFormsRequest request) 
@@ -402,6 +410,14 @@ namespace Amazon.Connect.Model
         public IListSecurityProfileApplicationsPaginator ListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request) 
         {
             return new ListSecurityProfileApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSecurityProfileFlowModules operation
+        ///</summary>
+        public IListSecurityProfileFlowModulesPaginator ListSecurityProfileFlowModules(ListSecurityProfileFlowModulesRequest request) 
+        {
+            return new ListSecurityProfileFlowModulesPaginator(this.client, request);
         }
 
         /// <summary>

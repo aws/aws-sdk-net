@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private string _arn;
         private Channel _channel;
         private DateTime? _disconnectTimestamp;
+        private GlobalResiliencyMetadata _globalResiliencyMetadata;
         private string _id;
         private string _initialContactId;
         private ContactInitiationMethod _initiationMethod;
@@ -119,6 +120,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetDisconnectTimestamp()
         {
             return this._disconnectTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalResiliencyMetadata. 
+        /// <para>
+        /// Additional routing information for contacts created in ACGR instances.
+        /// </para>
+        /// </summary>
+        public GlobalResiliencyMetadata GlobalResiliencyMetadata
+        {
+            get { return this._globalResiliencyMetadata; }
+            set { this._globalResiliencyMetadata = value; }
+        }
+
+        // Check to see if GlobalResiliencyMetadata property is set
+        internal bool IsSetGlobalResiliencyMetadata()
+        {
+            return this._globalResiliencyMetadata != null;
         }
 
         /// <summary>
