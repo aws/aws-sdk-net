@@ -1,21 +1,32 @@
-﻿using System;
+﻿/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-
-using Amazon.Runtime;
-using Amazon.Util;
-
-using System.Text.Json;
-
-using Amazon.Runtime.Internal.Util;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using Amazon.Util.Internal;
+using System.Text;
+using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace Amazon.SimpleNotificationService.Util
 {
@@ -58,34 +69,47 @@ namespace Amazon.SimpleNotificationService.Util
             JsonDocument jsonData;
             jsonData = JsonDocument.Parse(messageText);
 
-            Func<string, string> extractField = ((fieldName) =>
+            Func<string, string> extractField = (fieldName) =>
+            {
+                if (jsonData.RootElement.TryGetProperty(fieldName, out var value) && value.ValueKind == JsonValueKind.String)
                 {
-                    if (jsonData.RootElement.TryGetProperty(fieldName, out var value) && value.ValueKind == JsonValueKind.String)
-                    {
-                        return value.GetString();
-                    }
-                    var anyCaseKey = jsonData.RootElement.EnumerateObject().FirstOrDefault(x => string.Equals(x.Name, fieldName, StringComparison.OrdinalIgnoreCase));
-                    // Check to see if the field can be found with a different case.
-                    if (!string.IsNullOrEmpty(anyCaseKey.Value.ToString()) && anyCaseKey.Value.ValueKind == JsonValueKind.String)
-                    {
-                        return anyCaseKey.Value.GetString();
-                    }
+                    return value.GetString();
+                }
 
-                    return null;
-                });
+                // Check to see if the field can be found with a different case.
+                var anyCaseKey = jsonData.RootElement.EnumerateObject().FirstOrDefault(x => string.Equals(x.Name, fieldName, StringComparison.OrdinalIgnoreCase));
+                if (!string.IsNullOrEmpty(anyCaseKey.Value.ToString()) && anyCaseKey.Value.ValueKind == JsonValueKind.String)
+                {
+                    return anyCaseKey.Value.GetString();
+                }
+
+                return null;
+            };
 
             message.MessageId = extractField("MessageId");
             message.MessageText = extractField("Message");
             message.Signature = extractField("Signature");
-            message.SignatureVersion = ValidateSignatureVersion(extractField("SignatureVersion"));
-            message.SigningCertURL = ValidateCertUrl(extractField("SigningCertURL"));
-            message.SubscribeURL = extractField("SubscribeURL");
             message.Subject = extractField("Subject");
             message.TimestampString = extractField("Timestamp");
             message.Token = extractField("Token");
             message.TopicArn = extractField("TopicArn");
             message.Type = extractField("Type");
+            message.SubscribeURL = extractField("SubscribeURL");
             message.UnsubscribeURL = extractField("UnsubscribeURL");
+            message.SequenceNumber = extractField("SequenceNumber");
+
+            // The signature fields will not be set for FIFO topics, so only attempt to validate them if present.
+            var signatureVersionField = extractField("SignatureVersion");
+            if (!string.IsNullOrEmpty(signatureVersionField))
+            {
+                message.SignatureVersion = ValidateSignatureVersion(signatureVersionField);
+            }
+
+            var signingCertUrlField = extractField("SigningCertURL");
+            if (!string.IsNullOrEmpty(signingCertUrlField))
+            {
+                message.SigningCertURL = ValidateCertUrl(signingCertUrlField);
+            }
 
             return message;
         }
@@ -198,6 +222,15 @@ namespace Amazon.SimpleNotificationService.Util
         /// Gets the type of message. Possible values are Notification, SubscriptionConfirmation, and UnsubscribeConfirmation.
         /// </summary>
         public string Type
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// Gets the sequence number of the message. This is only applicable for FIFO topics.
+        /// </summary>
+        public string SequenceNumber
         {
             get;
             private set;
