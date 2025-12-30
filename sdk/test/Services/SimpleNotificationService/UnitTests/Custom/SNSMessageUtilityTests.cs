@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.SimpleNotificationService.Util;
+using Amazon.Runtime;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -141,6 +142,8 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNull(actualMessage.Signature);
             Assert.IsNull(actualMessage.SigningCertURL);
             Assert.IsNull(actualMessage.SignatureVersion);
+
+            Assert.ThrowsException<AmazonClientException>(() => actualMessage.IsMessageSignatureValid());
         }
     }
 }

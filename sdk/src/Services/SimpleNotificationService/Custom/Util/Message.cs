@@ -368,8 +368,16 @@ namespace Amazon.SimpleNotificationService.Util
         /// the signature to the signature provided as part of the message.
         /// </summary>
         /// <returns>Returns true if the message is authentic.</returns>
+        /// <remarks>
+        /// This method does not support messages from FIFO topics as those do not include signature fields.
+        /// </remarks>
         public bool IsMessageSignatureValid()
         {
+            if (string.IsNullOrEmpty(this.SigningCertURL))
+            {
+                throw new AmazonClientException($"Signature cannot be validated as message does not contain a {nameof(SigningCertURL)}");
+            }
+
             var bytesToSign = GetMessageBytesToSign();
             var certificate = GetX509Certificate();
 
