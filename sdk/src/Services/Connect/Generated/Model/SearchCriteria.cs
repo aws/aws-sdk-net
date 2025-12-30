@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SearchCriteria
     {
+        private List<string> _activeRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SearchContactsAdditionalTimeRange _additionalTimeRange;
         private AgentHierarchyGroups _agentHierarchyGroups;
         private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -45,6 +46,29 @@ namespace Amazon.Connect.Model
         private SearchableRoutingCriteria _routingCriteria;
         private SearchableContactAttributes _searchableContactAttributes;
         private SearchableSegmentAttributes _searchableSegmentAttributes;
+
+        /// <summary>
+        /// Gets and sets the property ActiveRegions. 
+        /// <para>
+        /// The list of active regions for contacts in ACGR instances.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ActiveRegions
+        {
+            get { return this._activeRegions; }
+            set { this._activeRegions = value; }
+        }
+
+        // Check to see if ActiveRegions property is set
+        internal bool IsSetActiveRegions()
+        {
+            return this._activeRegions != null && (this._activeRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AdditionalTimeRange. 
