@@ -32,7 +32,7 @@ namespace Amazon.RDSDataService
     public partial class AmazonRDSDataServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RDS Data", "3.7.502.22");
+            InternalSDKUtils.BuildUserAgentString("RDS Data", "3.7.502.23");
 
         private string _userAgent = UserAgentString;
         ///<summary>

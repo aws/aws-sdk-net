@@ -1,3 +1,12 @@
+### 3.7.1194.0 (2025-12-30 19:18 UTC)
+* Connect (3.7.521.0)
+	* Adds support for searching global contacts using the ActiveRegions filter, and pagination support for ListSecurityProfileFlowModules and ListEntitySecurityProfiles.
+* KafkaConnect (3.7.504.0)
+	* This change sets the KafkaConnect GovCloud FIPS and FIPS DualStack endpoints to use kafkaconnect instead of kafkaconnect-fips as the service name. This is done to match the Kafka endpoints.
+* Core 3.7.500.61
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1193.0 (2025-12-29 19:18 UTC)
 * Connect (3.7.520.0)
 	* Changes for Contact for Global Search
