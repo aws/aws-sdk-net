@@ -1,3 +1,16 @@
+### 4.0.162.0 (2025-12-30 19:16 UTC)
+* CloudWatch (4.0.6.2)
+	* Improve AWS Query compatible error handling in unmarshallers.
+* Connect (4.0.25.0)
+	* Adds support for searching global contacts using the ActiveRegions filter, and pagination support for ListSecurityProfileFlowModules and ListEntitySecurityProfiles.
+* KafkaConnect (4.0.4.0)
+	* This change sets the KafkaConnect GovCloud FIPS and FIPS DualStack endpoints to use kafkaconnect instead of kafkaconnect-fips as the service name. This is done to match the Kafka endpoints.
+* S3 (4.0.16.1)
+	* Generate CompleteMultipartUpload and RestoreObject operations
+	* [Breaking Change] MpuObjectSize in Amazon.S3.Model.CompleteMultipartUploadRequest has been changed to nullable to be consistent with the nullability changes in V4.
+* SQS (4.0.2.9)
+	* Improve AWS Query compatible error handling in unmarshallers.
+
 ### 4.0.161.0 (2025-12-29 19:16 UTC)
 * Connect (4.0.24.0)
 	* Changes for Contact for Global Search
