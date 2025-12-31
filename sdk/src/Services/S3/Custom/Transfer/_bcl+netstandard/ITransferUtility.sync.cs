@@ -372,7 +372,7 @@ namespace Amazon.S3.Transfer
         /// 	<item><description><b>RANGE</b>: Uses range-based downloads with configurable part sizes via the <see cref="BaseDownloadRequest.PartSize"/> property. 
         /// 	This works with any object (whether uploaded as single-part or multipart) and provides more flexibility in controlling download part sizes.</description></item>
         /// 	</list>
-        /// 	<para>f
+        /// 	<para>
         /// 	<b>When to use PART vs RANGE:</b>
         /// 	</para>
         /// 	<list type="bullet">
