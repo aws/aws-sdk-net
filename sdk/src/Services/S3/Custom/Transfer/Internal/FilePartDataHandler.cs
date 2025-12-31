@@ -63,6 +63,18 @@ namespace Amazon.S3.Transfer.Internal
             
             _logger.DebugFormat("FilePartDataHandler: Created temporary file for download");
             
+            // Pre-allocate file to full object size to prevent file extension contention
+            // This is critical for performance with concurrent writes on .NET Framework
+            var setLengthStopwatch = Stopwatch.StartNew();
+            using (var fs = new FileStream(_tempFilePath, FileMode.Open, FileAccess.Write, FileShare.None))
+            {
+                fs.SetLength(discoveryResult.ObjectSize);
+            }
+            setLengthStopwatch.Stop();
+            
+            _logger.InfoFormat("FilePartDataHandler: Pre-allocated temp file to {0} bytes in {1}ms",
+                discoveryResult.ObjectSize, setLengthStopwatch.ElapsedMilliseconds);
+            
             return Task.CompletedTask;
         }
 
