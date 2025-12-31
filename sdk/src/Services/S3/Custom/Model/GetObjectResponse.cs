@@ -25,6 +25,7 @@ using System.Globalization;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3;
 using Amazon.Runtime.Internal;
+using Amazon.S3.Transfer;
 
 namespace Amazon.S3.Model
 {
@@ -68,7 +69,6 @@ namespace Amazon.S3.Model
         private string _checksumSHA1;
         private string _checksumSHA256;
         private ChecksumType _checksumType;
-        private string _contentLanguage;
 
         /// <summary>
         /// The date and time at which the object is no longer cacheable.
@@ -174,14 +174,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public string ContentLanguage
         {
-            get { return this._contentLanguage; }
-            set { this._contentLanguage = value; }
-        }
-
-        // Check to see if ContentLanguage property is set
-        internal bool IsSetContentLanguage()
-        {
-            return this._contentLanguage != null;
+            get { return this.Headers.ContentLanguage; }
+            set { this.Headers.ContentLanguage = value; }
         }
 
         /// <summary>
@@ -910,6 +904,59 @@ namespace Amazon.S3.Model
 
 #if BCL || NETSTANDARD
         /// <summary>
+        /// Copies data from ResponseStream to destination stream with progress tracking and validation.
+        /// Internal method to enable reuse across different download scenarios.
+        /// </summary>
+        /// <param name="destinationStream">Stream to write data to</param>
+        /// <param name="filePath">File path for progress event reporting (can be null)</param>
+        /// <param name="bufferSize">Buffer size for reading/writing operations</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <param name="validateSize">Whether to validate copied bytes match ContentLength</param>
+        internal async System.Threading.Tasks.Task WriteResponseStreamAsync(
+            Stream destinationStream,
+            string filePath,
+            int bufferSize,
+            System.Threading.CancellationToken cancellationToken,
+            bool validateSize = true)
+        {
+            long current = 0;
+#if NETSTANDARD
+            Stream stream = this.ResponseStream;
+#else
+            Stream stream = new BufferedStream(this.ResponseStream);
+#endif
+            byte[] buffer = new byte[bufferSize];
+            int bytesRead = 0;
+            long totalIncrementTransferred = 0;
+            
+            while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false)) > 0)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                await destinationStream.WriteAsync(buffer, 0, bytesRead, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                current += bytesRead;
+                totalIncrementTransferred += bytesRead;
+
+                if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval)
+                {
+                    this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed: false);
+                    totalIncrementTransferred = 0;
+                }
+            }
+
+            if (validateSize)
+            {
+                ValidateWrittenStreamSize(current);
+            }
+
+            // Encrypted objects may have size smaller than the total amount of data transferred due to padding.
+            // Instead of changing the file size or the total downloaded size, pass a flag that indicates transfer is complete.
+            this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed: true);
+        }
+
+        /// <summary>
         /// Writes the content of the ResponseStream a file indicated by the filePath argument.
         /// </summary>
         /// <param name="filePath">The location where to write the ResponseStream</param>
@@ -929,37 +976,8 @@ namespace Amazon.S3.Model
 
             try
             {
-                long current = 0;
-#if NETSTANDARD
-                Stream stream = this.ResponseStream;
-#else
-                Stream stream = new BufferedStream(this.ResponseStream);
-#endif
-                byte[] buffer = new byte[S3Constants.DefaultBufferSize];
-                int bytesRead = 0;
-                long totalIncrementTransferred = 0;
-                while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length, cancellationToken)
-                    .ConfigureAwait(continueOnCapturedContext: false)) > 0)
-                {
-                    cancellationToken.ThrowIfCancellationRequested();
-
-                    await downloadStream.WriteAsync(buffer, 0, bytesRead, cancellationToken)
-                        .ConfigureAwait(continueOnCapturedContext: false);
-                    current += bytesRead;
-                    totalIncrementTransferred += bytesRead;
-
-                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval)
-                    {
-                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed:false);
-                        totalIncrementTransferred = 0;
-                    }
-                }
-
-                ValidateWrittenStreamSize(current);
-
-                // Encrypted objects may have size smaller than the total amount of data trasnfered due to padding.
-                // Instead of changing the file size or the total downloaded size, pass a flag that indicate that the transfer is complete.
-                this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength, completed:true);
+                await WriteResponseStreamAsync(downloadStream, filePath, S3Constants.DefaultBufferSize, cancellationToken, validateSize: true)
+                    .ConfigureAwait(continueOnCapturedContext: false);
             }
             finally
             {
@@ -1042,5 +1060,10 @@ namespace Amazon.S3.Model
         /// True if writing is complete
         /// </summary>
         public bool IsCompleted { get; private set; }
+
+        /// <summary>
+        /// The original TransferUtilityDownloadRequest created by the user.
+        /// </summary>
+        public TransferUtilityDownloadRequest Request { get; internal set; }
     }  
 }

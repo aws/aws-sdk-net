@@ -1,67 +1,67 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
-    <DebugType>portable</DebugType>
-    <GenerateDocumentationFile>false</GenerateDocumentationFile>
-    <AssemblyName>AWSSDK.IntegrationTests.S3.NetFramework</AssemblyName>
-    <PackageId>AWSSDK.IntegrationTests.S3.NetFramework</PackageId>
+	<TargetFramework>net472</TargetFramework>
+	<DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
+	<DebugType>portable</DebugType>
+	<GenerateDocumentationFile>false</GenerateDocumentationFile>
+	<AssemblyName>AWSSDK.IntegrationTests.S3.NetFramework</AssemblyName>
+	<PackageId>AWSSDK.IntegrationTests.S3.NetFramework</PackageId>
 
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NoWarn>CS1591,CS0612,CS0618</NoWarn>
+	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+	<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+	<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+	<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+	<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+	<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+	<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+	<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+	<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	<NoWarn>CS1591,CS0612,CS0618</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
 
-    <Compile Remove="**/obj/**" />
-    <None Remove="**/obj/**" />
-    <Compile Include="../../KeyManagementService/IntegrationTests/KeyManagementService.cs" />
+	<Compile Remove="**/obj/**" />
+	<None Remove="**/obj/**" />
+	<Compile Include="../../KeyManagementService/IntegrationTests/KeyManagementService.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter" Version="1.2.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
+	<PackageReference Include="MSTest.TestAdapter" Version="1.2.1" />
+	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+	<PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
 
-    <PackageReference Include="System.Data.SQLite" Version="1.0.97" />
-    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.97" />
-    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97" />
+	<PackageReference Include="System.Data.SQLite" Version="1.0.97" />
+	<PackageReference Include="System.Data.SQLite.EF6" Version="1.0.97" />
+	<PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
-    <ProjectReference Include="../../../../src/Services/S3Control/AWSSDK.S3Control.NetFramework.csproj" />
-    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.NetFramework.csproj" />
-    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
-    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
-    <ProjectReference Include="../../../../src/Services/KeyManagementService/AWSSDK.KeyManagementService.NetFramework.csproj" />
-    <ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.NetFramework.csproj" />
+	<ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
+	<ProjectReference Include="../../../../src/Services/S3Control/AWSSDK.S3Control.NetFramework.csproj" />
+	<ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.NetFramework.csproj" />
+	<ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
+	<ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
+	<ProjectReference Include="../../../../src/Services/KeyManagementService/AWSSDK.KeyManagementService.NetFramework.csproj" />
+	<ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.NetFramework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Net.Http" />
+	<Reference Include="System.Configuration" />
+	<Reference Include="System.ComponentModel.DataAnnotations" />
+	<Reference Include="System.IO.Compression" />
+	<Reference Include="System.Web" />
+	<Reference Include="System.Net.Http" />
 
   </ItemGroup>
 
   <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+	<Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="EmbeddedResource/*" />
+	<EmbeddedResource Include="EmbeddedResource/*" />
   </ItemGroup>
 
 </Project>
