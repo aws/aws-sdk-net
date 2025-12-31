@@ -379,6 +379,22 @@ namespace Amazon.S3.Transfer
         /// 	<para>
         /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
         /// 	</para>
+        /// 	<para>
+        /// 	<b>Additional Performance Settings:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	You can also tune the S3 client's <see cref="Amazon.S3.AmazonS3Config.BufferSize"/> property to control 
+        /// 	the buffer size used when reading from S3 response streams and writing to the local file. The default buffer size 
+        /// 	is 8KB. Increasing this value may improve throughput for large downloads at the cost of increased memory usage.
+        /// 	</para>
+        /// 	<code>
+        /// 	var s3Config = new AmazonS3Config
+        /// 	{
+        /// 	    BufferSize = 64 * 1024  // Use 64KB buffer instead of default 8KB
+        /// 	};
+        /// 	var s3Client = new AmazonS3Client(s3Config);
+        /// 	var transferUtility = new TransferUtility(s3Client);
+        /// 	</code>
         /// </remarks>
         /// <param name="filePath">
         /// 	The file path where the downloaded content will be written.
@@ -462,6 +478,22 @@ namespace Amazon.S3.Transfer
         /// 	    MultipartDownloadType = MultipartDownloadType.RANGE  // Enable RANGE mode to use custom PartSize
         /// 	};
         /// 	var response = await transferUtility.DownloadWithResponseAsync(request);
+        /// 	</code>
+        /// 	<para>
+        /// 	<b>Additional Performance Settings:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	You can also tune the S3 client's <see cref="Amazon.S3.AmazonS3Config.BufferSize"/> property to control 
+        /// 	the buffer size used when reading from S3 response streams and writing to the local file. The default buffer size 
+        /// 	is 8KB. Increasing this value may improve throughput for large downloads at the cost of increased memory usage.
+        /// 	</para>
+        /// 	<code>
+        /// 	var s3Config = new AmazonS3Config
+        /// 	{
+        /// 	    BufferSize = 64 * 1024  // Use 64KB buffer instead of default 8KB
+        /// 	};
+        /// 	var s3Client = new AmazonS3Client(s3Config);
+        /// 	var transferUtility = new TransferUtility(s3Client);
         /// 	</code>
         /// </remarks>
         /// <param name="request">
@@ -612,7 +644,26 @@ namespace Amazon.S3.Transfer
         /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
         /// 	Use <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> to limit memory consumption by capping the number 
         /// 	of buffered parts in memory.
+        /// 	Use <see cref="TransferUtilityOpenStreamRequest.ChunkBufferSize"/> to control the size of individual memory chunks 
+        /// 	allocated from the ArrayPool when buffering downloaded parts. The default is 64KB, chosen to avoid Large Object Heap allocations. 
+        /// 	Larger chunks may improve throughput but can increase memory fragmentation.
         /// 	</para>
+        /// 	<para>
+        /// 	<b>Additional Performance Settings:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	You can also tune the S3 client's <see cref="Amazon.S3.AmazonS3Config.BufferSize"/> property to control 
+        /// 	the buffer size used when reading from S3 response streams and writing to the buffered stream. The default buffer size 
+        /// 	is 8KB. Increasing this value may improve throughput for large downloads at the cost of increased memory usage.
+        /// 	</para>
+        /// 	<code>
+        /// 	var s3Config = new AmazonS3Config
+        /// 	{
+        /// 	    BufferSize = 64 * 1024  // Use 64KB buffer instead of default 8KB
+        /// 	};
+        /// 	var s3Client = new AmazonS3Client(s3Config);
+        /// 	var transferUtility = new TransferUtility(s3Client);
+        /// 	</code>
         /// 	<para>
         /// 	<b>Memory Considerations:</b> The buffering mechanism uses memory to store downloaded parts. 
         /// 	Adjust <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> if you need to limit memory usage, 
@@ -687,6 +738,9 @@ namespace Amazon.S3.Transfer
         /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
         /// 	Use <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> to limit memory consumption by capping the number 
         /// 	of buffered parts in memory.
+        /// 	Use <see cref="TransferUtilityOpenStreamRequest.ChunkBufferSize"/> to control the size of individual memory chunks 
+        /// 	allocated from the ArrayPool when buffering downloaded parts. The default is 64KB, chosen to avoid Large Object Heap allocations. 
+        /// 	Larger chunks may improve throughput but can increase memory fragmentation.
         /// 	</para>
         /// 	<para>
         /// 	You can also customize the part size per request using <see cref="BaseDownloadRequest.PartSize"/>:
@@ -700,6 +754,22 @@ namespace Amazon.S3.Transfer
         /// 	    MultipartDownloadType = MultipartDownloadType.RANGE  // Enable RANGE mode to use custom PartSize
         /// 	};
         /// 	var response = await transferUtility.OpenStreamWithResponseAsync(request);
+        /// 	</code>
+        /// 	<para>
+        /// 	<b>Additional Performance Settings:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	You can also tune the S3 client's <see cref="Amazon.S3.AmazonS3Config.BufferSize"/> property to control 
+        /// 	the buffer size used when reading from S3 response streams and writing to the buffered stream. The default buffer size 
+        /// 	is 8KB. Increasing this value may improve throughput for large downloads at the cost of increased memory usage.
+        /// 	</para>
+        /// 	<code>
+        /// 	var s3Config = new AmazonS3Config
+        /// 	{
+        /// 	    BufferSize = 64 * 1024  // Use 64KB buffer instead of default 8KB
+        /// 	};
+        /// 	var s3Client = new AmazonS3Client(s3Config);
+        /// 	var transferUtility = new TransferUtility(s3Client);
         /// 	</code>
         /// 	<para>
         /// 	<b>Memory Considerations:</b> The buffering mechanism uses memory to store downloaded parts. 
