@@ -63,18 +63,6 @@ namespace Amazon.S3.Transfer.Internal
             
             _logger.DebugFormat("FilePartDataHandler: Created temporary file for download");
             
-            // Pre-allocate file to full object size to prevent file extension contention
-            // This is critical for performance with concurrent writes on .NET Framework
-            var setLengthStopwatch = Stopwatch.StartNew();
-            using (var fs = new FileStream(_tempFilePath, FileMode.Open, FileAccess.Write, FileShare.None))
-            {
-                fs.SetLength(discoveryResult.ObjectSize);
-            }
-            setLengthStopwatch.Stop();
-            
-            _logger.InfoFormat("FilePartDataHandler: Pre-allocated temp file to {0} bytes in {1}ms",
-                discoveryResult.ObjectSize, setLengthStopwatch.ElapsedMilliseconds);
-            
             return Task.CompletedTask;
         }
 
@@ -259,14 +247,9 @@ namespace Amazon.S3.Transfer.Internal
                 _logger.InfoFormat("FilePartDataHandler: [Part {0}] TIMING: WriteResponseStreamAsync completed in {1}ms ({2:F2} MB/s)",
                     partNumber, writeStopwatch.ElapsedMilliseconds, writeMBps);
 
-                var flushStopwatch = Stopwatch.StartNew();
-                // Ensure data is written to disk
-                await fileStream.FlushAsync(cancellationToken)
-                    .ConfigureAwait(false);
-                flushStopwatch.Stop();
-
-                _logger.InfoFormat("FilePartDataHandler: [Part {0}] TIMING: FlushAsync completed in {1}ms",
-                    partNumber, flushStopwatch.ElapsedMilliseconds);
+                // NOTE: FlushAsync removed - FileStream will flush on Dispose
+                // Removing FlushAsync saves ~163ms per part on .NET Framework
+                // The OS will handle write-back caching automatically
 
                 totalStopwatch.Stop();
                 var totalMBps = response.ContentLength / (1024.0 * 1024.0) / (totalStopwatch.ElapsedMilliseconds / 1000.0);
