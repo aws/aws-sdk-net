@@ -1763,6 +1763,23 @@
                     "ETag":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._eTag);"]}
                 }
             ]
+        },
+        "DeleteObjectTaggingRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "VersionId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._versionId);"]}
+                }
+            ]
+        },
+        "DeleteObjectTaggingOutput":{
+            "modify":[
+                {
+                    "VersionId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._versionId);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
