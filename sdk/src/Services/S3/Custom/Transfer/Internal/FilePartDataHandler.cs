@@ -20,6 +20,7 @@
  *
  */
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -200,6 +201,9 @@ namespace Amazon.S3.Transfer.Internal
             if (string.IsNullOrEmpty(_tempFilePath))
                 throw new InvalidOperationException("Temporary file has not been created");
 
+            var totalStopwatch = Stopwatch.StartNew();
+            var fileOpenStopwatch = Stopwatch.StartNew();
+
             _logger.DebugFormat("FilePartDataHandler: Opening file for writing at offset {0} with BufferSize={1}",
                 offset, _config.BufferSize);
 
@@ -212,12 +216,20 @@ namespace Amazon.S3.Transfer.Internal
                 _config.BufferSize,
                 FileOptions.Asynchronous))
             {
+                fileOpenStopwatch.Stop();
+                
+                var seekStopwatch = Stopwatch.StartNew();
                 // Seek to the correct offset for this part
                 fileStream.Seek(offset, SeekOrigin.Begin);
+                seekStopwatch.Stop();
+
+                _logger.InfoFormat("FilePartDataHandler: [Part {0}] TIMING: FileStream opened in {1}ms, Seek completed in {2}ms",
+                    partNumber, fileOpenStopwatch.ElapsedMilliseconds, seekStopwatch.ElapsedMilliseconds);
 
                 _logger.DebugFormat("FilePartDataHandler: [Part {0}] Writing {1} bytes to file at offset {2}", partNumber,
                     response.ContentLength, offset);
 
+                var writeStopwatch = Stopwatch.StartNew();
                 // Use GetObjectResponse's stream copy logic which includes:
                 // - Progress tracking with events
                 // - Size validation
@@ -229,10 +241,25 @@ namespace Amazon.S3.Transfer.Internal
                     cancellationToken,
                     validateSize: true)
                     .ConfigureAwait(false);
+                writeStopwatch.Stop();
 
+                var writeMBps = response.ContentLength / (1024.0 * 1024.0) / (writeStopwatch.ElapsedMilliseconds / 1000.0);
+                _logger.InfoFormat("FilePartDataHandler: [Part {0}] TIMING: WriteResponseStreamAsync completed in {1}ms ({2:F2} MB/s)",
+                    partNumber, writeStopwatch.ElapsedMilliseconds, writeMBps);
+
+                var flushStopwatch = Stopwatch.StartNew();
                 // Ensure data is written to disk
                 await fileStream.FlushAsync(cancellationToken)
                     .ConfigureAwait(false);
+                flushStopwatch.Stop();
+
+                _logger.InfoFormat("FilePartDataHandler: [Part {0}] TIMING: FlushAsync completed in {1}ms",
+                    partNumber, flushStopwatch.ElapsedMilliseconds);
+
+                totalStopwatch.Stop();
+                var totalMBps = response.ContentLength / (1024.0 * 1024.0) / (totalStopwatch.ElapsedMilliseconds / 1000.0);
+                _logger.InfoFormat("FilePartDataHandler: [Part {0}] TIMING: Total WritePartToFile: {1}ms ({2:F2} MB/s) - Content: {3} bytes",
+                    partNumber, totalStopwatch.ElapsedMilliseconds, totalMBps, response.ContentLength);
 
                 _logger.DebugFormat("FilePartDataHandler: [Part {0}] Successfully wrote {1} bytes at offset {2}", partNumber,
                     response.ContentLength, offset);

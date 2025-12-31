@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Xml.Serialization;
 using System.Text;
@@ -929,13 +930,36 @@ namespace Amazon.S3.Model
             int bytesRead = 0;
             long totalIncrementTransferred = 0;
             
-            while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false)) > 0)
+            // Timing accumulators for detailed performance analysis
+            long totalReadMs = 0;
+            long totalWriteMs = 0;
+            int readCount = 0;
+            int writeCount = 0;
+            var loopStopwatch = Stopwatch.StartNew();
+            
+            while (true)
             {
+                var readStopwatch = Stopwatch.StartNew();
+                bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                readStopwatch.Stop();
+                
+                if (bytesRead == 0)
+                    break;
+                    
+                totalReadMs += readStopwatch.ElapsedMilliseconds;
+                readCount++;
+                
                 cancellationToken.ThrowIfCancellationRequested();
 
+                var writeStopwatch = Stopwatch.StartNew();
                 await destinationStream.WriteAsync(buffer, 0, bytesRead, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
+                writeStopwatch.Stop();
+                
+                totalWriteMs += writeStopwatch.ElapsedMilliseconds;
+                writeCount++;
+                
                 current += bytesRead;
                 totalIncrementTransferred += bytesRead;
 
@@ -945,6 +969,21 @@ namespace Amazon.S3.Model
                     totalIncrementTransferred = 0;
                 }
             }
+            
+            loopStopwatch.Stop();
+            
+            // Log detailed timing breakdown
+            var logger = Runtime.Internal.Util.Logger.GetLogger(typeof(GetObjectResponse));
+            var totalMB = current / (1024.0 * 1024.0);
+            var readMBps = totalReadMs > 0 ? totalMB / (totalReadMs / 1000.0) : 0;
+            var writeMBps = totalWriteMs > 0 ? totalMB / (totalWriteMs / 1000.0) : 0;
+            var overallMBps = loopStopwatch.ElapsedMilliseconds > 0 ? totalMB / (loopStopwatch.ElapsedMilliseconds / 1000.0) : 0;
+            
+            logger.InfoFormat("GetObjectResponse.WriteResponseStreamAsync: TIMING BREAKDOWN - " +
+                "TotalBytes={0}, Reads={1} ({2}ms, {3:F2} MB/s), Writes={4} ({5}ms, {6:F2} MB/s), " +
+                "Total={7}ms ({8:F2} MB/s overall), BufferSize={9}",
+                current, readCount, totalReadMs, readMBps, writeCount, totalWriteMs, writeMBps,
+                loopStopwatch.ElapsedMilliseconds, overallMBps, bufferSize);
 
             if (validateSize)
             {
