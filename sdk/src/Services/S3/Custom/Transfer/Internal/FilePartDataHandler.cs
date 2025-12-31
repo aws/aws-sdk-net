@@ -209,7 +209,8 @@ namespace Amazon.S3.Transfer.Internal
                 FileMode.Open,          // Open existing file
                 FileAccess.Write,
                 FileShare.Write,        // Allow concurrent writes to different offsets
-                _config.BufferSize))
+                _config.BufferSize,
+                FileOptions.Asynchronous))
             {
                 // Seek to the correct offset for this part
                 fileStream.Seek(offset, SeekOrigin.Begin);
