@@ -1,0 +1,18 @@
+{
+    "services": [
+        {
+            "serviceName": "RDS",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add missing overloads to the async versions of the `GenerateAuthToken` method (https://github.com/aws/aws-sdk-net/issues/3123)"
+            ]
+        },
+        {
+            "serviceName": "DSQL",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add missing overloads to the async versions of the `GenerateDbConnect` and `GenerateDbConnectAdmin` methods (https://github.com/aws/aws-sdk-net/issues/3123)"
+            ]
+        }
+    ]
+}

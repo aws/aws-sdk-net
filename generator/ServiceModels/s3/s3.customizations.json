@@ -409,25 +409,6 @@
                 }
             ]
         },
-        
-        "DeleteObjectsRequest": {
-            "exclude": [
-                "Delete"
-            ],
-            "inject": [
-                {
-                    "Objects": {
-                        "shape": "ObjectIdentifierList",
-                        "originalMember" : "Delete"
-                    }
-                },
-                {
-                    "Quiet": {
-                        "shape": "Quiet"
-                    }
-                }
-            ]
-        },
         "ReplicationDestination" : {
             "modify": [
                 {
@@ -1712,6 +1693,93 @@
                     "Parts": {"emitPropertyName":"PartETags"}
                 }
             ]
+        },
+        "DeleteObjectRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet": ["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "IfMatch" : {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._ifMatch);"]}
+                },
+                {
+                    "MFA": {"emitPropertyName": "MfaCodes"}
+                },
+                {
+                    "MfaCodes":{
+                        "injectXmlIsSet": ["return CustomMfaCodesIsSet();"],
+                        "injectXmlMarshallCode" : ["MfaCodesCustomMarshall(request, publicRequest);"]
+                    }
+                }
+            ]
+        },
+        "DeleteObjectOutput":{
+            "modify":[
+                {
+                    "DeleteMarker":{"injectXmlUnmarshallCode": ["DeleteMarkerCustomUnmarshall(context, response);"]}
+                }
+            ]
+        },
+        "DeleteObjectsRequest":{
+            "modify":[
+                {
+                    "MFA":{"emitPropertyName" :"MfaCodes"}
+                },
+                {
+                    "MfaCodes":{
+                        "injectXmlIsSet": ["return CustomMfaCodesIsSet();"],
+                        "injectXmlMarshallCode" : ["MfaCodesCustomMarshall(request, publicRequest);"]
+                    }
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet": ["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "DeleteObjectsOutput":{
+            "modify":[
+                {
+                    "Deleted":{"emitPropertyName":"DeletedObjects"}
+                },
+                {
+                    "Errors":{"emitPropertyName":"DeleteErrors"}
+                }
+            ]
+        },
+        "Delete":{
+            "modify":[
+                {
+                    "Objects":{
+                        "skipXmlIsSet": true
+                    }
+                }
+            ]
+        },
+        "KeyVersion" : {
+            "modify":[
+                {
+                    "ETag":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._eTag);"]}
+                }
+            ]
+        },
+        "DeleteObjectTaggingRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "VersionId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._versionId);"]}
+                }
+            ]
+        },
+        "DeleteObjectTaggingOutput":{
+            "modify":[
+                {
+                    "VersionId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._versionId);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1869,6 +1937,15 @@
         },
         "CompletedPart":{
             "renameShape":"PartETag"
+        },
+        "MFA":{
+            "renameShape": "MfaCodes"
+        },
+        "ObjectIdentifier":{
+            "renameShape": "KeyVersion"
+        },
+        "Error":{
+            "renameShape": "DeleteError"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -2135,6 +2212,27 @@
                 "Marshaller":"blah",
                 "Unmarshaller":"StringUnmarshaller"
             }
+        },
+        "DeleteObjectOutput":{
+            "DeleteMarker":{
+                "Type":"string",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "DeleteObjectRequest":{
+            "MfaCodes":{
+                "Type": "MfaCodes",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "DeleteObjectsRequest":{
+            "MfaCodes":{
+                "Type": "MfaCodes",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
@@ -2224,6 +2322,9 @@
         ],
         "CompleteMultipartUploadRequest":[
             "MultipartUpload"
+        ],
+        "DeleteObjectsRequest":[
+            "Delete"
         ]
     },
     "excludeShapes":[
