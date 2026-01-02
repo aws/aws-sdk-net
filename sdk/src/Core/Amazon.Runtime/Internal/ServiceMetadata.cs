@@ -31,6 +31,11 @@ namespace Amazon.Runtime.Internal
         public string ServiceId { get; }
 
         /// <summary>
+        /// Gets the value of the Service Full Name.
+        /// </summary>
+        public string ServiceFullName { get; }
+
+        /// <summary>
         /// Gets the dictionary that gives mapping of renamed operations
         /// </summary>
         public IDictionary<string, string> OperationNameMapping { get; } = new Dictionary<string, string>();
