@@ -50,6 +50,7 @@ namespace Amazon.IdentityStore.Model
         private List<Photo> _photos = AWSConfigs.InitializeCollections ? new List<Photo>() : null;
         private string _preferredLanguage;
         private string _profileUrl;
+        private List<Role> _roles = AWSConfigs.InitializeCollections ? new List<Role>() : null;
         private string _timezone;
         private string _title;
         private DateTime? _updatedAt;
@@ -363,6 +364,25 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetProfileUrl()
         {
             return this._profileUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Roles. 
+        /// <para>
+        /// The roles of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Role> Roles
+        {
+            get { return this._roles; }
+            set { this._roles = value; }
+        }
+
+        // Check to see if Roles property is set
+        internal bool IsSetRoles()
+        {
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

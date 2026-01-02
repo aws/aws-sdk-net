@@ -126,7 +126,6 @@ namespace Amazon.IdentityStore.Model
         /// resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
         public bool Primary
         {
             get { return this._primary.GetValueOrDefault(); }

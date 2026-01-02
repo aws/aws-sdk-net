@@ -200,6 +200,22 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProfileUrl);
                 }
 
+                if(publicRequest.IsSetRoles())
+                {
+                    context.Writer.WritePropertyName("Roles");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRolesListValue in publicRequest.Roles)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RoleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRolesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTimezone())
                 {
                     context.Writer.WritePropertyName("Timezone");
