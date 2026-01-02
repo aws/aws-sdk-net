@@ -15,17 +15,17 @@
       <group targetFramework="net472">
         <dependency id="AWSSDK.Core" version="4.0.3.6" />
         <dependency id="AWSSDK.BedrockRuntime" version="4.0.14.3" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.9.1" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="10.1.1" />
       </group>
       <group targetFramework="netstandard2.0">
         <dependency id="AWSSDK.Core" version="4.0.3.6" />
         <dependency id="AWSSDK.BedrockRuntime" version="4.0.14.3" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.9.1" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="10.1.1" />
       </group>
       <group targetFramework="net8.0">
         <dependency id="AWSSDK.Core" version="4.0.3.6" />
         <dependency id="AWSSDK.BedrockRuntime" version="4.0.14.3" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.9.1" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="10.1.1" />
       </group>
     </dependencies>
   </metadata>
