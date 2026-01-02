@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
-    /// The phone number associated with the user.
+    /// The role associated with the user.
     /// </summary>
-    public partial class PhoneNumber
+    public partial class Role
     {
         private bool? _primary;
         private string _type;
@@ -41,8 +41,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Primary. 
         /// <para>
-        /// A Boolean value representing whether this is the primary phone number for the associated
-        /// resource.
+        /// A Boolean value representing whether this is the primary role for the associated resource.
         /// </para>
         /// </summary>
         public bool? Primary
@@ -60,7 +59,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// A string representing the type of a phone number. For example, "Mobile."
+        /// A string representing the type of role. For example, "Work."
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -79,8 +78,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
-        /// 
+        /// A string containing a role name. For example, "Researcher."
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
