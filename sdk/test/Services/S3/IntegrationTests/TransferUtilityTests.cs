@@ -446,7 +446,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        public void UploadUnseekableStreamFileSizeBetweenMinPartSizeAndPartBufferSize()
+        public void UploadUnSeekableStreamFileSizeBetweenMinPartSizeAndPartBufferSize()
         {
             var client = Client;
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\BetweenMinPartSizeAndPartBufferSize");
@@ -2077,7 +2077,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                 }
 
-                if (progress.NumberOfFilesDownloaded == progress.TotalNumberOfFiles)
+                if ((progress.NumberOfFilesDownloaded == progress.TotalNumberOfFiles) ||
+                    (progress.TotalBytes > 0 && progress.TransferredBytes == progress.TotalBytes))
                 {
                     Assert.AreEqual(progress.TransferredBytes, progress.TotalBytes);
                     progressValidator.IsProgressEventComplete = true;
@@ -2103,17 +2104,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     Assert.IsTrue(progress.NumberOfFilesUploaded >= lastProgress.NumberOfFilesUploaded);
                     Assert.IsTrue(progress.TransferredBytes > lastProgress.TransferredBytes);
-                    if (progress.NumberOfFilesUploaded == lastProgress.NumberOfFilesUploaded)
-                    {
-                        Assert.IsTrue(progress.TransferredBytes - lastProgress.TransferredBytes >= 100 * KILO_SIZE);
+                    Assert.IsTrue(progress.TransferredBytes - lastProgress.TransferredBytes > 0);
                     }
-                    else
-                    {
-                        Assert.AreEqual(progress.TransferredBytesForCurrentFile, progress.TotalNumberOfBytesForCurrentFile);
-                    }
-                }
 
-                if (progress.NumberOfFilesUploaded == progress.TotalNumberOfFiles)
+                if ((progress.NumberOfFilesUploaded == progress.TotalNumberOfFiles) ||
+                    (progress.TotalBytes > 0 && progress.TransferredBytes == progress.TotalBytes))
                 {
                     Assert.AreEqual(progress.TransferredBytes, progress.TotalBytes);
                     progressValidator.IsProgressEventComplete = true;

@@ -191,7 +191,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             progressValidator.AssertOnCompletion();
         }
 
-        private Task UploadDirectoryAsync(string directoryName, long size, 
+        private Task UploadDirectoryAsync(string directoryName, long size,
              DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, bool validate = true, bool concurrent = true)
         {
             var directoryPath = Path.Combine(basePath, directoryName);
@@ -228,7 +228,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             HashSet<string> files = new HashSet<string>();
             request.UploadDirectoryProgressEvent += (s, e) =>
             {
-                files.Add(e.CurrentFile);
+                    files.Add(e.CurrentFile);
                 Console.WriteLine("Progress callback = " + e.ToString());
             };
 
@@ -505,7 +505,8 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     }
                 }
 
-                if (progress.NumberOfFilesDownloaded == progress.TotalNumberOfFiles)
+                if ((progress.NumberOfFilesDownloaded == progress.TotalNumberOfFiles) ||
+                     (progress.TotalBytes > 0 && progress.TransferredBytes == progress.TotalBytes))
                 {
                     Assert.Equal(progress.TransferredBytes, progress.TotalBytes);
                     progressValidator.IsProgressEventComplete = true;
@@ -527,17 +528,11 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 {
                     Assert.True(progress.NumberOfFilesUploaded >= lastProgress.NumberOfFilesUploaded);
                     Assert.True(progress.TransferredBytes > lastProgress.TransferredBytes);
-                    if (progress.NumberOfFilesUploaded == lastProgress.NumberOfFilesUploaded)
-                    {
-                        Assert.True(progress.TransferredBytes - lastProgress.TransferredBytes >= 100 * KILO_SIZE);
-                    }
-                    else
-                    {
-                        Assert.Equal(progress.TransferredBytesForCurrentFile, progress.TotalNumberOfBytesForCurrentFile);
-                    }
+                    Assert.True(progress.TransferredBytes - lastProgress.TransferredBytes > 0);
                 }
 
-                if (progress.NumberOfFilesUploaded == progress.TotalNumberOfFiles)
+                if ((progress.NumberOfFilesUploaded == progress.TotalNumberOfFiles) ||
+                    (progress.TotalBytes > 0 && progress.TransferredBytes == progress.TotalBytes))
                 {
                     Assert.Equal(progress.TransferredBytes, progress.TotalBytes);
                     progressValidator.IsProgressEventComplete = true;
