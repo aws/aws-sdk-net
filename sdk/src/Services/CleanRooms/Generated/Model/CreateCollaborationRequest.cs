@@ -44,6 +44,7 @@ namespace Amazon.CleanRooms.Model
         private PaymentConfiguration _creatorPaymentConfiguration;
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
+        private bool? _isMetricsEnabled;
         private CollaborationJobLogStatus _jobLogStatus;
         private List<MemberSpecification> _members = AWSConfigs.InitializeCollections ? new List<MemberSpecification>() : null;
         private string _name;
@@ -228,6 +229,29 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMetricsEnabled. 
+        /// <para>
+        /// An indicator as to whether metrics have been enabled or disabled for the collaboration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>true</c>, collaboration members can opt in to Amazon CloudWatch metrics for
+        /// their membership queries. The default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool IsMetricsEnabled
+        {
+            get { return this._isMetricsEnabled.GetValueOrDefault(); }
+            set { this._isMetricsEnabled = value; }
+        }
+
+        // Check to see if IsMetricsEnabled property is set
+        internal bool IsSetIsMetricsEnabled()
+        {
+            return this._isMetricsEnabled.HasValue; 
         }
 
         /// <summary>

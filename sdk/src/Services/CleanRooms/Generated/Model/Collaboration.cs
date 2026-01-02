@@ -45,6 +45,7 @@ namespace Amazon.CleanRooms.Model
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
         private string _id;
+        private bool? _isMetricsEnabled;
         private CollaborationJobLogStatus _jobLogStatus;
         private string _membershipArn;
         private string _membershipId;
@@ -246,6 +247,29 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMetricsEnabled. 
+        /// <para>
+        /// An indicator as to whether metrics are enabled for the collaboration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>true</c>, collaboration members can opt in to Amazon CloudWatch metrics for
+        /// their membership queries.
+        /// </para>
+        /// </summary>
+        public bool IsMetricsEnabled
+        {
+            get { return this._isMetricsEnabled.GetValueOrDefault(); }
+            set { this._isMetricsEnabled = value; }
+        }
+
+        // Check to see if IsMetricsEnabled property is set
+        internal bool IsSetIsMetricsEnabled()
+        {
+            return this._isMetricsEnabled.HasValue; 
         }
 
         /// <summary>
