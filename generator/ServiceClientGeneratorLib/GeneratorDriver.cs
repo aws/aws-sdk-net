@@ -937,38 +937,6 @@ namespace ServiceClientGenerator
             updater.Execute();
         }
 
-        public static void UpdateNuGetPackagesInReadme(GenerationManifest manifest, GeneratorOptions options)
-        {
-            var nugetPackages = new Dictionary<string, string>();
-            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ClassName))
-            {
-                if (service.ParentConfig != null || service.IsTestService)
-                    continue;
-
-                if (string.IsNullOrEmpty(service.Synopsis))
-                    throw new Exception(string.Format("{0} is missing a synopsis in the manifest.", service.ClassName));
-                var assemblyName = service.Namespace.Replace("Amazon.", "AWSSDK.");
-                nugetPackages[assemblyName] = service.Synopsis;
-            }
-
-            NuGetPackageReadmeSection generator = new NuGetPackageReadmeSection();
-            var session = new Dictionary<string, object> { { "NugetPackages", nugetPackages } };
-            generator.Session = session;
-            var nugetPackagesText = generator.TransformText();
-
-            var readmePath = Utils.PathCombineAlt(options.SdkRootFolder, "..", "README.md");
-            var originalContent = File.ReadAllText(readmePath);
-
-            int startPos = originalContent.IndexOf('\n', originalContent.IndexOf("### NuGet Packages")) + 1;
-            int endPos = originalContent.IndexOf("### Code Generator");
-
-            var newContent = originalContent.Substring(0, startPos);
-            newContent += nugetPackagesText + "\r\n";
-            newContent += originalContent.Substring(endPos);
-
-            File.WriteAllText(readmePath, newContent);
-        }
-
         /// <summary>
         /// Provides a way to generate the necessary attributes and marshallers/unmarshallers for nested structures to work
         /// </summary>
