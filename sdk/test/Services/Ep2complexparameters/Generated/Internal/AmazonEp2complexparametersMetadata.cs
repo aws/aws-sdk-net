@@ -40,6 +40,17 @@ namespace Amazon.Ep2complexparameters.Internal
         }
 
         /// <summary>
+        /// Gets the value of the Service Full Name.
+        /// </summary>
+        public string ServiceFullName
+        {
+            get
+            {
+                return "Endpoints 2.0 complex-parameters";
+            }
+        }
+
+        /// <summary>
         /// Gets the dictionary that gives mapping of renamed operations
         /// </summary>
         public System.Collections.Generic.IDictionary<string, string> OperationNameMapping

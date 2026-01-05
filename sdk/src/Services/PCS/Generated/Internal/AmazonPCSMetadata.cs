@@ -40,6 +40,17 @@ namespace Amazon.PCS.Internal
         }
 
         /// <summary>
+        /// Gets the value of the Service Full Name.
+        /// </summary>
+        public string ServiceFullName
+        {
+            get
+            {
+                return "AWS Parallel Computing Service";
+            }
+        }
+
+        /// <summary>
         /// Gets the dictionary that gives mapping of renamed operations
         /// </summary>
         public System.Collections.Generic.IDictionary<string, string> OperationNameMapping
