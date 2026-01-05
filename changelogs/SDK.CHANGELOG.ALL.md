@@ -1,3 +1,10 @@
+### 4.0.164.0 (2026-01-05 19:15 UTC)
+* CleanRoomsML (4.0.8.0)
+	* AWS Clean Rooms ML now supports advanced Spark configurations to optimize SQL performance when creating an MLInputChannel or an audience generation job.
+* Core 4.0.3.7
+	* Added ServiceFullName to IServiceMetadata
+	* All service and extension packages updated to require new Core
+
 ### 4.0.163.0 (2026-01-02 19:19 UTC)
 * CleanRooms (4.0.13.0)
 	* Added support for publishing detailed metrics to CloudWatch for operational monitoring of collaborations, including query performance and resource utilization.
