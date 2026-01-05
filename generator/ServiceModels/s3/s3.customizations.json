@@ -1860,6 +1860,32 @@
                 }
             ],
             "injectXmlUnmarshallResultCode":["response.WebsiteConfiguration = new WebsiteConfiguration();"]
+        },
+        "PutBucketWebsiteRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "WebsiteConfiguration":{
+            "modify":[
+                {
+                    "ErrorDocument":{"injectXmlMarshallCode":[
+                        "if (publicRequest.WebsiteConfiguration.IsSetErrorDocument())",
+                        "   xmlWriter.WriteElementString(\"Key\", StringUtils.FromString(publicRequest.WebsiteConfiguration.ErrorDocument));"
+                        ]}
+                },
+                {
+                    "IndexDocument":{"emitPropertyName":"IndexDocumentSuffix"}
+                },
+                {
+                    "IndexDocumentSuffix":{"injectXmlMarshallCode":[
+                        "if (publicRequest.WebsiteConfiguration.IsSetIndexDocumentSuffix())",
+                        "   xmlWriter.WriteElementString(\"Suffix\", StringUtils.FromString(publicRequest.WebsiteConfiguration.IndexDocumentSuffix));"
+                    ]}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -2341,6 +2367,14 @@
         },
         "RoutingRuleRedirect":{
             "Protocol":{
+                "Type":"string"
+            }
+        },
+        "WebsiteConfiguration":{
+            "ErrorDocument" :{
+                "Type":"string"
+            },
+            "IndexDocumentSuffix":{
                 "Type":"string"
             }
         }
