@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// WorkerComputeConfiguration Marshaller
+    /// WorkerComputeConfigurationProperties Marshaller
     /// </summary>
-    public class WorkerComputeConfigurationMarshaller : IRequestMarshaller<WorkerComputeConfiguration, JsonMarshallerContext> 
+    public class WorkerComputeConfigurationPropertiesMarshaller : IRequestMarshaller<WorkerComputeConfigurationProperties, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,22 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WorkerComputeConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(WorkerComputeConfigurationProperties requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetNumber())
+            if(requestObject.IsSetSpark())
             {
-                context.Writer.WritePropertyName("number");
-                context.Writer.Write(requestObject.Number);
-            }
-
-            if(requestObject.IsSetProperties())
-            {
-                context.Writer.WritePropertyName("properties");
+                context.Writer.WritePropertyName("spark");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectSparkKvp in requestObject.Spark)
+                {
+                    context.Writer.WritePropertyName(requestObjectSparkKvp.Key);
+                    var requestObjectSparkValue = requestObjectSparkKvp.Value;
 
-                var marshaller = WorkerComputeConfigurationPropertiesMarshaller.Instance;
-                marshaller.Marshall(requestObject.Properties, context);
-
+                        context.Writer.Write(requestObjectSparkValue);
+                }
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -76,7 +67,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static WorkerComputeConfigurationMarshaller Instance = new WorkerComputeConfigurationMarshaller();
+        public readonly static WorkerComputeConfigurationPropertiesMarshaller Instance = new WorkerComputeConfigurationPropertiesMarshaller();
 
     }
 }
