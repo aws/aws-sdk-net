@@ -32,7 +32,7 @@ namespace Amazon.Neptunedata
     public partial class AmazonNeptunedataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("neptunedata", "3.7.502.25");
+            InternalSDKUtils.BuildUserAgentString("neptunedata", "3.7.502.26");
 
         private string _userAgent = UserAgentString;
         ///<summary>
