@@ -83,10 +83,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetWebsiteConfiguration())
                 {
                     xmlWriter.WriteStartElement("WebsiteConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.WebsiteConfiguration.IsSetErrorDocument())
-                       xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequest.WebsiteConfiguration.ErrorDocument));
-                    if (publicRequest.WebsiteConfiguration.IsSetIndexDocumentSuffix())
-                       xmlWriter.WriteElementString("Suffix", StringUtils.FromString(publicRequest.WebsiteConfiguration.IndexDocumentSuffix));
+                    ErrorDocumentCustomMarshall(publicRequest, xmlWriter);
+                    IndexDocumentSuffixCustomMarshall(publicRequest, xmlWriter);
                     if (publicRequest.WebsiteConfiguration.IsSetRedirectAllRequestsTo())
                     {
                         xmlWriter.WriteStartElement("RedirectAllRequestsTo");

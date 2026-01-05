@@ -1871,19 +1871,13 @@
         "WebsiteConfiguration":{
             "modify":[
                 {
-                    "ErrorDocument":{"injectXmlMarshallCode":[
-                        "if (publicRequest.WebsiteConfiguration.IsSetErrorDocument())",
-                        "   xmlWriter.WriteElementString(\"Key\", StringUtils.FromString(publicRequest.WebsiteConfiguration.ErrorDocument));"
-                        ]}
+                    "ErrorDocument":{"injectXmlMarshallCode":["ErrorDocumentCustomMarshall(publicRequest, xmlWriter);"]}
                 },
                 {
                     "IndexDocument":{"emitPropertyName":"IndexDocumentSuffix"}
                 },
                 {
-                    "IndexDocumentSuffix":{"injectXmlMarshallCode":[
-                        "if (publicRequest.WebsiteConfiguration.IsSetIndexDocumentSuffix())",
-                        "   xmlWriter.WriteElementString(\"Suffix\", StringUtils.FromString(publicRequest.WebsiteConfiguration.IndexDocumentSuffix));"
-                    ]}
+                    "IndexDocumentSuffix":{"injectXmlMarshallCode":["IndexDocumentSuffixCustomMarshall(publicRequest, xmlWriter);"]}
                 }
             ]
         },
