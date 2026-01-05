@@ -12,28 +12,44 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  GetBucketLogging response and response metadata.
+    /// This is the response object from the GetBucketLogging operation.
     /// </summary>
     public partial class GetBucketLoggingResponse : AmazonWebServiceResponse
     {
-        S3BucketLoggingConfig BucketLoggingConfigCustomGetter()
+        private S3BucketLoggingConfig _bucketLoggingConfig;
+
+        /// <summary>
+        /// Gets and sets the property BucketLoggingConfig.
+        /// </summary>
+        public S3BucketLoggingConfig BucketLoggingConfig
         {
-            if (this._bucketLoggingConfig == null)
-            {
-                this._bucketLoggingConfig = new S3BucketLoggingConfig();
-            }
-            return this._bucketLoggingConfig;
+            get {return BucketLoggingConfigCustomGetter();}
+            set { this._bucketLoggingConfig = value; }
         }
+
+        // Check to see if BucketLoggingConfig property is set
+        internal bool IsSetBucketLoggingConfig()
+        {
+            return this._bucketLoggingConfig != null;
+        }
+
     }
 }
-    
