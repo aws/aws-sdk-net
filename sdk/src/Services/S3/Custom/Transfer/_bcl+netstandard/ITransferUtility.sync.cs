@@ -405,7 +405,7 @@ namespace Amazon.S3.Transfer
         /// 	<b>Additional Performance Settings:</b>
         /// 	</para>
         /// 	<para>
-        /// 	You can also tune the S3 client's <see cref="Amazon.S3.AmazonS3Config.BufferSize"/> property to control 
+        /// 	You can also tune the S3 client's <see cref="Amazon.Runtime.ClientConfig.BufferSize"/> property to control 
         /// 	the buffer size used when reading from S3 response streams and writing to the buffered stream. The default buffer size 
         /// 	is 8KB. Increasing this value may improve throughput for large downloads at the cost of increased memory usage.
         /// 	</para>
@@ -511,7 +511,7 @@ namespace Amazon.S3.Transfer
         /// 	<b>Additional Performance Settings:</b>
         /// 	</para>
         /// 	<para>
-        /// 	You can also tune the S3 client's <see cref="Amazon.S3.AmazonS3Config.BufferSize"/> property to control 
+        /// 	You can also tune the S3 client's <see cref="Amazon.Runtime.ClientConfig.BufferSize"/> property to control 
         /// 	the buffer size used when reading from S3 response streams and writing to the buffered stream. The default buffer size 
         /// 	is 8KB. Increasing this value may improve throughput for large downloads at the cost of increased memory usage.
         /// 	</para>
@@ -635,7 +635,7 @@ namespace Amazon.S3.Transfer
         /// 	<b>Additional Performance Settings:</b>
         /// 	</para>
         /// 	<para>
-        /// 	You can also tune the S3 client's <see cref="Amazon.S3.AmazonS3Config.BufferSize"/> property to control 
+        /// 	You can also tune the S3 client's <see cref="Amazon.Runtime.ClientConfig.BufferSize"/> property to control 
         /// 	the buffer size used when reading from S3 response streams and writing to the local file. The default buffer size 
         /// 	is 8KB. Increasing this value may improve throughput for large downloads at the cost of increased memory usage.
         /// 	</para>
@@ -732,7 +732,7 @@ namespace Amazon.S3.Transfer
         /// 	<b>Additional Performance Settings:</b>
         /// 	</para>
         /// 	<para>
-        /// 	You can also tune the S3 client's <see cref="Amazon.S3.AmazonS3Config.BufferSize"/> property to control 
+        /// 	You can also tune the S3 client's <see cref="Amazon.Runtime.ClientConfig.BufferSize"/> property to control 
         /// 	the buffer size used when reading from S3 response streams and writing to the local file. The default buffer size 
         /// 	is 8KB. Increasing this value may improve throughput for large downloads at the cost of increased memory usage.
         /// 	</para>
