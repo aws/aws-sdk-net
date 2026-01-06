@@ -78,6 +78,26 @@ namespace Amazon.CostExplorer.Model
         IGetCostComparisonDriversPaginator GetCostComparisonDrivers(GetCostComparisonDriversRequest request);
 
         /// <summary>
+        /// Paginator for GetReservationPurchaseRecommendation operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextPageToken" }
+        )]
+        IGetReservationPurchaseRecommendationPaginator GetReservationPurchaseRecommendation(GetReservationPurchaseRecommendationRequest request);
+
+        /// <summary>
+        /// Paginator for GetRightsizingRecommendation operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextPageToken" }
+        )]
+        IGetRightsizingRecommendationPaginator GetRightsizingRecommendation(GetRightsizingRecommendationRequest request);
+
+        /// <summary>
         /// Paginator for GetSavingsPlansCoverage operation
         ///</summary>
         [AWSPaginator(
@@ -96,6 +116,16 @@ namespace Amazon.CostExplorer.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetSavingsPlansUtilizationDetailsPaginator GetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCommitmentPurchaseAnalyses operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextPageToken" }
+        )]
+        IListCommitmentPurchaseAnalysesPaginator ListCommitmentPurchaseAnalyses(ListCommitmentPurchaseAnalysesRequest request);
 
         /// <summary>
         /// Paginator for ListCostAllocationTagBackfillHistory operation
@@ -136,5 +166,15 @@ namespace Amazon.CostExplorer.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListCostCategoryResourceAssociationsPaginator ListCostCategoryResourceAssociations(ListCostCategoryResourceAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSavingsPlansPurchaseRecommendationGeneration operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextPageToken" }
+        )]
+        IListSavingsPlansPurchaseRecommendationGenerationPaginator ListSavingsPlansPurchaseRecommendationGeneration(ListSavingsPlansPurchaseRecommendationGenerationRequest request);
     }
 }

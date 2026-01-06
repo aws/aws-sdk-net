@@ -38,6 +38,7 @@ namespace Amazon.CostExplorer.Model
         private bool? _currentGeneration;
         private string _databaseEdition;
         private string _databaseEngine;
+        private string _deploymentModel;
         private string _deploymentOption;
         private string _family;
         private string _instanceType;
@@ -99,6 +100,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetDatabaseEngine()
         {
             return this._databaseEngine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentModel. 
+        /// <para>
+        /// Determines whether the recommendation is for a reservation for RDS Custom.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string DeploymentModel
+        {
+            get { return this._deploymentModel; }
+            set { this._deploymentModel = value; }
+        }
+
+        // Check to see if DeploymentModel property is set
+        internal bool IsSetDeploymentModel()
+        {
+            return this._deploymentModel != null;
         }
 
         /// <summary>
