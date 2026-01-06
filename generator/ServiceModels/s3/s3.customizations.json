@@ -1805,6 +1805,28 @@
                 },
                 {
                     "TargetGrants":{"emitPropertyName":"Grants"}
+                },
+                {
+                    "TargetPrefix":{"injectXmlMarshallCode":["TargetPrefixCustomMarshall(publicRequest, xmlWriter);"]}
+                }
+            ]
+        },
+        "PutBucketLoggingRequest":{
+            "modify":[
+                {
+                    "LoggingEnabled":{"emitPropertyName": "LoggingConfig", "injectXmlIsSet":[
+                        "return this._loggingConfig != null && this._loggingConfig.IsSetTargetBucketName();"
+                    ]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "BucketLoggingStatus":{
+            "modify":[
+                {
+                    "LoggingEnabled":{"emitPropertyName":"LoggingConfig"}
                 }
             ]
         }
@@ -2358,6 +2380,9 @@
         ],
         "DeleteObjectsRequest":[
             "Delete"
+        ],
+        "PutBucketLoggingRequest":[
+            "BucketLoggingStatus"
         ]
     },
     "excludeShapes":[
@@ -2372,6 +2397,7 @@
         "IntelligentTieringAndOperator",
         "InventoryFilter",
         "GlacierJobTier",
-        "CompletedMultipartUpload"
+        "CompletedMultipartUpload",
+        "BucketLoggingStatus"
     ]
 }

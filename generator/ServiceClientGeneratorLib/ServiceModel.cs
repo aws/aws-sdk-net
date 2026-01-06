@@ -588,6 +588,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "DeleteObjects", DocumentRoot[OperationsKey]["DeleteObjects"]),
                         new Operation(this, "DeleteObjectTagging",  DocumentRoot[OperationsKey]["DeleteObjectTagging"]),
                         new Operation(this, "GetBucketLogging",  DocumentRoot[OperationsKey]["GetBucketLogging"]),
+                        new Operation(this, "PutBucketLogging", DocumentRoot[OperationsKey]["PutBucketLogging"])
 
                     };
                 }
