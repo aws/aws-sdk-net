@@ -49,6 +49,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 xmlWriter.WriteElementString("Suffix", StringUtils.FromString(publicRequest.WebsiteConfiguration.IndexDocumentSuffix));
                 xmlWriter.WriteEndElement();
             }
-        })
+        }
     }
 }
