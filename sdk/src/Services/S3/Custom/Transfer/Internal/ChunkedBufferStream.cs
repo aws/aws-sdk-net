@@ -385,20 +385,26 @@ namespace Amazon.S3.Transfer.Internal
         {
             if (!_disposed && disposing)
             {
-                try
+                // Return all chunks to ArrayPool
+                foreach (var chunk in _chunks)
                 {
-                    // Return all chunks to ArrayPool
-                    foreach (var chunk in _chunks)
+                    try
                     {
                         ArrayPool<byte>.Shared.Return(chunk);
                     }
+                    catch (Exception)
+                    {
+                        // Suppress exceptions in Dispose - continue cleanup
+                    }
+                }
+                try
+                {
                     _chunks.Clear();
                 }
                 catch (Exception)
                 {
                     // Suppress exceptions in Dispose - continue cleanup
                 }
-
                 _disposed = true;
             }
 
