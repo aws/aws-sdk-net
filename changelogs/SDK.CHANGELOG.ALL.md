@@ -1,3 +1,9 @@
+### 4.0.165.0 (2026-01-06 19:15 UTC)
+* CostExplorer (4.0.11.0)
+	* This release updates existing reservation recommendations API to support deployment model.
+* EMRServerless (4.0.8.0)
+	* Added support for enabling disk encryption using customer managed AWS KMS keys to CreateApplication, UpdateApplication and StartJobRun APIs.
+
 ### 4.0.164.0 (2026-01-05 19:15 UTC)
 * CleanRoomsML (4.0.8.0)
 	* AWS Clean Rooms ML now supports advanced Spark configurations to optimize SQL performance when creating an MLInputChannel or an audience generation job.
