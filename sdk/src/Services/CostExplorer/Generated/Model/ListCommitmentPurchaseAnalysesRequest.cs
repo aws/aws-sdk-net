@@ -102,7 +102,7 @@ namespace Amazon.CostExplorer.Model
         /// The number of analyses that you want returned in a single response object.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=600)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }

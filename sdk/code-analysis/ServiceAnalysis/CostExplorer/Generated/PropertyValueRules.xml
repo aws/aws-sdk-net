@@ -364,6 +364,7 @@
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetReservationPurchaseRecommendationRequest.PageSize</property>
     <min>0</min>
+    <max>6000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetReservationPurchaseRecommendationRequest.Service</property>
@@ -402,6 +403,7 @@
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetRightsizingRecommendationRequest.PageSize</property>
     <min>0</min>
+    <max>6000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetRightsizingRecommendationRequest.Service</property>
@@ -452,6 +454,7 @@
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetSavingsPlansPurchaseRecommendationRequest.PageSize</property>
     <min>0</min>
+    <max>6000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetSavingsPlansPurchaseRecommendationResponse.NextPageToken</property>
@@ -529,6 +532,7 @@
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.ListCommitmentPurchaseAnalysesRequest.PageSize</property>
     <min>0</min>
+    <max>600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.ListCommitmentPurchaseAnalysesResponse.NextPageToken</property>
@@ -625,6 +629,7 @@
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.ListSavingsPlansPurchaseRecommendationGenerationRequest.PageSize</property>
     <min>0</min>
+    <max>6000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.ListSavingsPlansPurchaseRecommendationGenerationResponse.NextPageToken</property>
@@ -1472,6 +1477,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.RDSInstanceDetails.DatabaseEngine</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RDSInstanceDetails.DeploymentModel</property>
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>

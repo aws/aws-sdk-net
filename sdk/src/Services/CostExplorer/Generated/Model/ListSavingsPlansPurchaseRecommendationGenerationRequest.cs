@@ -84,7 +84,7 @@ namespace Amazon.CostExplorer.Model
         /// The number of recommendations that you want returned in a single response object.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=6000)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }

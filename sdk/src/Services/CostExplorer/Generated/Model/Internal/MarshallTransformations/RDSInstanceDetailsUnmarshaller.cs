@@ -84,6 +84,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseEngine = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeploymentModel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeploymentOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
