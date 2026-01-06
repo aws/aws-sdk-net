@@ -21,6 +21,7 @@ class DownloadMetrics:
         self.vma_current = []
         self.vma_percent = []
         self.arraypool_rent = []
+        self.arraypool_pooled = []  # NEW: Reused from pool
         self.arraypool_return = []
         self.arraypool_allocate = []
         self.arraypool_outstanding = []
@@ -94,14 +95,27 @@ class DownloadMetrics:
                             vma_current = int(vma_match.group(1)) if vma_match.group(1) != '-1' else None
                             vma_percent = float(vma_match.group(2))
                     
-                    # ArrayPool metrics
+                    # ArrayPool metrics - NEW FORMAT: Rent=X (Pooled=Y, New=Z), Return=A, Outstanding=B, AllocatedMB=C
                     if rent is None:
-                        arraypool_match = re.search(r'ArrayPool: Rent=([\d,]+), Return=([\d,]+), Allocate=([\d,]+), AllocatedMB=([\d,]+\.?\d*)', next_line)
+                        # Try new format first
+                        arraypool_match = re.search(r'ArrayPool: Rent=([\d,]+) \(Pooled=([\d,]+), New=([\d,]+)\), Return=([\d,]+), Outstanding=([\d,]+), AllocatedMB=([\d,]+\.?\d*)', next_line)
                         if arraypool_match:
                             rent = int(arraypool_match.group(1).replace(',', ''))
-                            ret = int(arraypool_match.group(2).replace(',', ''))
-                            allocate = int(arraypool_match.group(3).replace(',', ''))
-                            allocated_mb = float(arraypool_match.group(4).replace(',', ''))
+                            pooled = int(arraypool_match.group(2).replace(',', ''))
+                            allocate = int(arraypool_match.group(3).replace(',', ''))  # "New" in new format
+                            ret = int(arraypool_match.group(4).replace(',', ''))
+                            outstanding = int(arraypool_match.group(5).replace(',', ''))
+                            allocated_mb = float(arraypool_match.group(6).replace(',', ''))
+                        else:
+                            # Fall back to old format for backwards compatibility
+                            arraypool_match = re.search(r'ArrayPool: Rent=([\d,]+), Return=([\d,]+), Allocate=([\d,]+), AllocatedMB=([\d,]+\.?\d*)', next_line)
+                            if arraypool_match:
+                                rent = int(arraypool_match.group(1).replace(',', ''))
+                                ret = int(arraypool_match.group(2).replace(',', ''))
+                                allocate = int(arraypool_match.group(3).replace(',', ''))
+                                allocated_mb = float(arraypool_match.group(4).replace(',', ''))
+                                pooled = max(0, rent - allocate)  # Calculate pooled for old format
+                                outstanding = rent - ret  # Calculate outstanding for old format
                     
                     # Stop if we hit the next Progress line
                     if j > i and re.search(r'Progress: ([\d.]+) (GB|MB)', next_line):
@@ -136,12 +150,14 @@ class DownloadMetrics:
                     
                     if rent is not None:
                         self.arraypool_rent.append(rent)
+                        self.arraypool_pooled.append(pooled)
                         self.arraypool_return.append(ret)
                         self.arraypool_allocate.append(allocate)
-                        self.arraypool_outstanding.append(rent - ret)
+                        self.arraypool_outstanding.append(outstanding)
                         self.arraypool_allocated_mb.append(allocated_mb)
                     else:
                         self.arraypool_rent.append(self.arraypool_rent[-1] if self.arraypool_rent else 0)
+                        self.arraypool_pooled.append(self.arraypool_pooled[-1] if self.arraypool_pooled else 0)
                         self.arraypool_return.append(self.arraypool_return[-1] if self.arraypool_return else 0)
                         self.arraypool_allocate.append(self.arraypool_allocate[-1] if self.arraypool_allocate else 0)
                         self.arraypool_outstanding.append(self.arraypool_outstanding[-1] if self.arraypool_outstanding else 0)
@@ -266,16 +282,29 @@ class DownloadMetrics:
                     ha='center', fontsize=10, fontweight='bold', 
                     bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.5))
         
-        # 6. ArrayPool - Allocations
+        # 6. ArrayPool - Pool Efficiency
         ax6 = axes[2, 1]
-        ax6.plot(self.timestamps, [x/1000 for x in self.arraypool_rent], 'g-', linewidth=2, label='Rent (Request)')
-        ax6.plot(self.timestamps, [x/1000 for x in self.arraypool_return], 'b-', linewidth=2, label='Return (Release)')
-        ax6.plot(self.timestamps, [x/1000 for x in self.arraypool_allocate], 'r-', linewidth=2, label='Allocate (NEW - Pool Exhausted)')
+        # Show pooled (reused) vs allocate (new) - stacked area chart
+        if self.arraypool_pooled:
+            ax6.fill_between(self.timestamps, 0, [x/1000 for x in self.arraypool_pooled], 
+                            alpha=0.6, color='green', label='Pooled (Reused - No VMA)')
+            ax6.fill_between(self.timestamps, [x/1000 for x in self.arraypool_pooled], 
+                            [(p+a)/1000 for p, a in zip(self.arraypool_pooled, self.arraypool_allocate)],
+                            alpha=0.6, color='red', label='Allocate (NEW - Creates VMA)')
         ax6.set_xlabel('Time')
-        ax6.set_ylabel('Operations (thousands)')
-        ax6.set_title('ArrayPool Operations (Allocate = New Buffer Creation)')
+        ax6.set_ylabel('Buffer Requests (thousands)')
+        ax6.set_title('ArrayPool Efficiency: Reuse vs New Allocation')
         ax6.legend(fontsize=9)
         ax6.grid(True, alpha=0.3)
+        
+        # Add efficiency annotation
+        if self.arraypool_rent[-1] > 0:
+            pool_efficiency = (self.arraypool_pooled[-1] / self.arraypool_rent[-1]) * 100
+            color = 'green' if pool_efficiency > 80 else 'orange' if pool_efficiency > 50 else 'red'
+            ax6.text(self.timestamps[len(self.timestamps)//2], max(self.arraypool_rent)/2000, 
+                    f'Pool Efficiency: {pool_efficiency:.1f}%\n({self.arraypool_pooled[-1]:,} reused / {self.arraypool_rent[-1]:,} total)', 
+                    ha='center', fontsize=10, fontweight='bold', 
+                    bbox=dict(boxstyle='round', facecolor=color, alpha=0.3))
         
         # Format time axis for all plots
         for ax in axes.flat:
@@ -325,8 +354,16 @@ class DownloadMetrics:
             max_out = max(self.arraypool_outstanding)
             print(f"   Peak outstanding: {max_out:,} buffers")
             print(f"   Estimated memory: {max_out * 64 / 1024:.0f} MB ({max_out * 64 / 1024 / 1024:.1f} GB)")
-            print(f"   Total allocations: {self.arraypool_allocate[-1]:,}")
+            print(f"   Total rent requests: {self.arraypool_rent[-1]:,}")
+            print(f"   Pool reuse (no VMA): {self.arraypool_pooled[-1]:,}")
+            print(f"   New allocations (VMA): {self.arraypool_allocate[-1]:,}")
             print(f"   Total allocated: {self.arraypool_allocated_mb[-1]:,.0f} MB")
+            
+            # Calculate and display pool efficiency
+            if self.arraypool_rent[-1] > 0:
+                pool_efficiency = (self.arraypool_pooled[-1] / self.arraypool_rent[-1]) * 100
+                status = "✓ Excellent" if pool_efficiency > 80 else "⚠️ Poor" if pool_efficiency < 20 else "○ Moderate"
+                print(f"   Pool efficiency: {pool_efficiency:.1f}% {status}")
         
         print(f"\n💡 Diagnosis:")
         if max(self.vma_percent) >= 100:
