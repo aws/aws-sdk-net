@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigurationOverrides Object
+    /// Response Unmarshaller for DiskEncryptionConfiguration Object
     /// </summary>  
-    public class ConfigurationOverridesUnmarshaller : IJsonUnmarshaller<ConfigurationOverrides, JsonUnmarshallerContext>
+    public class DiskEncryptionConfigurationUnmarshaller : IJsonUnmarshaller<DiskEncryptionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationOverrides Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DiskEncryptionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ConfigurationOverrides unmarshalledObject = new ConfigurationOverrides();
+            DiskEncryptionConfiguration unmarshalledObject = new DiskEncryptionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationConfiguration", targetDepth))
+                if (context.TestExpression("encryptionContext", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.ApplicationConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.EncryptionContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("diskEncryptionConfiguration", targetDepth))
+                if (context.TestExpression("encryptionKeyArn", targetDepth))
                 {
-                    var unmarshaller = DiskEncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DiskEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("monitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigurationOverridesUnmarshaller _instance = new ConfigurationOverridesUnmarshaller();        
+        private static DiskEncryptionConfigurationUnmarshaller _instance = new DiskEncryptionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationOverridesUnmarshaller Instance
+        public static DiskEncryptionConfigurationUnmarshaller Instance
         {
             get
             {
