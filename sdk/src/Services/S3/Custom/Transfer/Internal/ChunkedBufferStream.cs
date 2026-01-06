@@ -75,10 +75,15 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         private const int DEFAULT_CHUNK_SIZE = 65536; // 64KB - matches ArrayPool bucket, safely below 85KB LOH threshold
 
+        // LEAK TRACKING: Static counters for monitoring object lifecycle
+        private static long _totalCreated = 0;
+        private static long _totalDisposed = 0;
 
         private readonly List<byte[]> _chunks;
         private readonly int _chunkSize;
         private readonly long _maxStreamSize;
+        private readonly DateTime _createdAt;
+        private readonly long _instanceId;
         private long _length = 0;
         private long _position = 0;
         private bool _isReadMode = false;
@@ -115,6 +120,19 @@ namespace Amazon.S3.Transfer.Internal
             long estimatedChunks = (estimatedSize + _chunkSize - 1) / _chunkSize;
             int capacity = (int)Math.Min(estimatedChunks, int.MaxValue);
             _chunks = new List<byte[]>(capacity);
+
+            // LEAK TRACKING: Monitor object creation and lifecycle balance
+            _instanceId = Interlocked.Increment(ref _totalCreated);
+            _createdAt = DateTime.UtcNow;
+            
+            // Log every 100th creation to avoid excessive logging
+            if (_instanceId % 100 == 0)
+            {
+                long currentDisposed = Interlocked.Read(ref _totalDisposed);
+                long currentActive = _instanceId - currentDisposed;
+                Console.WriteLine($"[LEAK-TRACK] ChunkedBufferStream #{_instanceId} created. " +
+                    $"Active: {currentActive}, Created: {_instanceId}, Disposed: {currentDisposed}");
+            }
         }
 
         /// <summary>
@@ -385,20 +403,57 @@ namespace Amazon.S3.Transfer.Internal
         {
             if (!_disposed && disposing)
             {
-                // Return all chunks to ArrayPool
+                int successfulReturns = 0;
+                int failedReturns = 0;
+                Exception firstException = null;
+                var startTime = DateTime.UtcNow;
+
+                // Return all chunks to ArrayPool with detailed tracking
                 foreach (var chunk in _chunks)
                 {
-                    try
+                    if (chunk != null)
                     {
-                        ArrayPool<byte>.Shared.Return(chunk);
-                    }
-                    catch (Exception)
-                    {
-                        // Suppress exceptions in Dispose - continue cleanup
+                        try
+                        {
+                            ArrayPool<byte>.Shared.Return(chunk);
+                            successfulReturns++;
+                        }
+                        catch (Exception ex)
+                        {
+                            failedReturns++;
+                            if (firstException == null)
+                                firstException = ex;
+                            
+                            // CRITICAL: Continue with next chunk - don't let one failure stop cleanup
+                        }
                     }
                 }
+                
                 _chunks.Clear();
                 _disposed = true;
+                
+                // Track disposal lifecycle
+                long currentDisposed = Interlocked.Increment(ref _totalDisposed);
+                var disposeTime = DateTime.UtcNow - startTime;
+                var lifetime = DateTime.UtcNow - _createdAt;
+                
+                // Log disposal details - focus on failures and large objects
+                if (failedReturns > 0 || _chunks.Count > 50 || _instanceId % 100 == 0)
+                {
+                    long currentCreated = Interlocked.Read(ref _totalCreated);
+                    long currentActive = currentCreated - currentDisposed;
+                    
+                    Console.WriteLine($"[LEAK-TRACK] ChunkedBufferStream #{_instanceId} disposed. " +
+                        $"Chunks: {_chunks.Count} ({successfulReturns} returned, {failedReturns} failed). " +
+                        $"Active: {currentActive}, Lifetime: {lifetime.TotalSeconds:F1}s, " +
+                        $"DisposeTime: {disposeTime.TotalMilliseconds:F1}ms");
+                        
+                    if (failedReturns > 0)
+                    {
+                        Console.WriteLine($"[LEAK-ERROR] ArrayPool.Return failures in #{_instanceId}: {failedReturns}/{_chunks.Count} failed. " +
+                            $"First error: {firstException?.GetType().Name} - {firstException?.Message}");
+                    }
+                }
             }
 
             base.Dispose(disposing);
