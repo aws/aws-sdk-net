@@ -97,13 +97,26 @@ namespace Amazon.S3.Transfer.Internal
             GetObjectResponse response, 
             CancellationToken cancellationToken)
         {
-            if (partNumber == _partBufferManager.NextExpectedPartNumber)
+            // Track response creation and ownership transfer
+            int responseId = ResponseLeakLogger.TrackResponseCreated(partNumber, "BufferedPartDataHandler.ProcessPartAsync");
+            
+            try
             {
-                ProcessStreamingPart(partNumber, response);
+                if (partNumber == _partBufferManager.NextExpectedPartNumber)
+                {
+                    ResponseLeakLogger.TrackProcessingPath(responseId, "STREAMING");
+                    ProcessStreamingPart(partNumber, response, responseId);
+                }
+                else
+                {
+                    ResponseLeakLogger.TrackProcessingPath(responseId, "BUFFERED");
+                    await ProcessBufferedPartAsync(partNumber, response, responseId, cancellationToken).ConfigureAwait(false);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await ProcessBufferedPartAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
+                ResponseLeakLogger.TrackException(responseId, "ProcessPartAsync", ex);
+                throw;
             }
         }
         
@@ -113,6 +126,7 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="partNumber">The part number being processed.</param>
         /// <param name="response">The GetObjectResponse containing the part data. Ownership is transferred to StreamingDataSource.</param>
+        /// <param name="responseId">The unique ID for tracking this response through the disposal chain.</param>
         /// <remarks>
         /// This method is called when the part arrives in the expected sequential order, allowing
         /// for optimal zero-copy streaming directly to the consumer without buffering into memory.
@@ -130,7 +144,8 @@ namespace Amazon.S3.Transfer.Internal
         /// </remarks>
         private void ProcessStreamingPart(
             int partNumber,
-            GetObjectResponse response)
+            GetObjectResponse response,
+            int responseId)
         {
             _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Matches NextExpectedPartNumber - streaming directly without buffering",
                 partNumber);
@@ -140,10 +155,14 @@ namespace Amazon.S3.Transfer.Internal
             
             try
             {
+                ResponseLeakLogger.TrackOwnershipTransfer(responseId, "BufferedPartDataHandler", "StreamingDataSource.Constructor");
+                
                 // Create a StreamingDataSource that will stream directly from the response
                 // If successful, StreamingDataSource takes ownership of the response and will dispose it
                 streamingDataSource = new StreamingDataSource(partNumber, response);
                 ownsResponse = false; // Ownership transferred to StreamingDataSource
+                
+                ResponseLeakLogger.TrackOwnershipTransfer(responseId, "StreamingDataSource.Constructor", "PartBufferManager");
 
                 // Add the streaming data source to the buffer manager
                 // After this succeeds, the buffer manager owns the data source
@@ -158,15 +177,25 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
+                ResponseLeakLogger.TrackException(responseId, "ProcessStreamingPart", ex);
                 _logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to process streaming part", partNumber);
                 
                 // Dispose response if we still own it (constructor failed before taking ownership)
                 if (ownsResponse)
+                {
+                    ResponseLeakLogger.TrackDisposalAttempt(responseId, "ProcessStreamingPart.ErrorHandler.OwnsResponse");
                     response?.Dispose();
+                    ResponseLeakLogger.TrackResponseDisposed(responseId, "ProcessStreamingPart.ErrorHandler.OwnsResponse");
+                }
                 
                 // Dispose StreamingDataSource if we created it but buffer manager doesn't own it yet
                 // If null, the buffer manager owns it and will handle cleanup
-                streamingDataSource?.Dispose();
+                if (streamingDataSource != null)
+                {
+                    ResponseLeakLogger.TrackDisposalAttempt(responseId, "ProcessStreamingPart.ErrorHandler.StreamingDataSource");
+                    streamingDataSource?.Dispose();
+                    ResponseLeakLogger.TrackResponseDisposed(responseId, "ProcessStreamingPart.ErrorHandler.StreamingDataSource");
+                }
                 
                 throw;
             }
@@ -178,6 +207,7 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="partNumber">The part number being processed.</param>
         /// <param name="response">The GetObjectResponse containing the part data. This method owns and disposes it.</param>
+        /// <param name="responseId">The unique ID for tracking this response through the disposal chain.</param>
         /// <param name="cancellationToken">Cancellation token for the operation.</param>
         /// <remarks>
         /// This method is called when the part arrives out of the expected sequential order.
@@ -195,7 +225,8 @@ namespace Amazon.S3.Transfer.Internal
         /// </remarks>
         private async Task ProcessBufferedPartAsync(
             int partNumber,
-            GetObjectResponse response, 
+            GetObjectResponse response,
+            int responseId,
             CancellationToken cancellationToken)
         {
             _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Out of order (NextExpected={1}) - buffering to memory",
@@ -203,17 +234,25 @@ namespace Amazon.S3.Transfer.Internal
 
             try
             {
+                ResponseLeakLogger.TrackOwnershipTransfer(responseId, "BufferedPartDataHandler", "BufferPartFromResponseAsync");
+                
                 // Buffer the part from the response stream into memory
                 var dataSource = await BufferPartFromResponseAsync(
                     partNumber, 
                     response, 
                     cancellationToken).ConfigureAwait(false);
 
+                ResponseLeakLogger.TrackDisposalAttempt(responseId, "ProcessBufferedPartAsync.PostBuffering");
+                
                 // Response has been fully read and buffered - dispose it now
                 response?.Dispose();
+                
+                ResponseLeakLogger.TrackResponseDisposed(responseId, "ProcessBufferedPartAsync.PostBuffering");
 
                 _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Successfully buffered part data",
                     partNumber);
+                
+                ResponseLeakLogger.TrackOwnershipTransfer(responseId, "ProcessBufferedPartAsync", "PartBufferManager");
                     
                 // Add the buffered part to the buffer manager
                 _partBufferManager.AddDataSource(dataSource);
@@ -223,10 +262,15 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception ex)
             {
+                ResponseLeakLogger.TrackException(responseId, "ProcessBufferedPartAsync", ex);
                 _logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to process buffered part", partNumber);
+                
+                ResponseLeakLogger.TrackDisposalAttempt(responseId, "ProcessBufferedPartAsync.ErrorHandler");
                 
                 // We own the response throughout this method, so dispose it on error
                 response?.Dispose();
+                
+                ResponseLeakLogger.TrackResponseDisposed(responseId, "ProcessBufferedPartAsync.ErrorHandler");
                 
                 throw;
             }
