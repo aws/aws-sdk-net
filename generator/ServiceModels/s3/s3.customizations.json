@@ -2374,6 +2374,9 @@
             },
             "IndexDocumentSuffix":{
                 "Type":"string"
+            },
+            "RedirectAllRequestsTo":{
+                "Type":"RoutingRuleRedirect"
             }
         }
     },
