@@ -201,18 +201,21 @@ namespace Amazon.S3.Transfer.Internal
             _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Out of order (NextExpected={1}) - buffering to memory",
                 partNumber, _partBufferManager.NextExpectedPartNumber);
 
+            IPartDataSource dataSource = null;
             try
             {
                 // Buffer the part from the response stream into memory
-                var dataSource = await BufferPartFromResponseAsync(
+                dataSource = await BufferPartFromResponseAsync(
                     partNumber, 
                     response, 
                     cancellationToken).ConfigureAwait(false);
 
-                // Response has been fully read and buffered - dispose it now
-                response?.Dispose();
+                // MEMORY LEAK FIX: Dispose response immediately after buffering completes
+                // Don't wait until after AddDataSource - dispose as soon as data is copied
+                response.Dispose();
+                response = null; // Mark as disposed
 
-                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Successfully buffered part data",
+                _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Successfully buffered part data and disposed response",
                     partNumber);
                     
                 // Add the buffered part to the buffer manager
@@ -225,10 +228,18 @@ namespace Amazon.S3.Transfer.Internal
             {
                 _logger.Error(ex, "BufferedPartDataHandler: [Part {0}] Failed to process buffered part", partNumber);
                 
-                // We own the response throughout this method, so dispose it on error
-                response?.Dispose();
-                
+                // Cleanup on error
+                dataSource?.Dispose();
                 throw;
+            }
+            finally
+            {
+                // MEMORY LEAK FIX: Ensure response is always disposed even if AddDataSource throws
+                if (response != null)
+                {
+                    _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Disposing response in finally block", partNumber);
+                    response.Dispose();
+                }
             }
         }
         
@@ -256,6 +267,10 @@ namespace Amazon.S3.Transfer.Internal
             // _partBufferManager is owned by caller, don't dispose
         }
         
+        // MEMORY LEAK FIX: Disposal synchronization semaphore
+        // Ensures proper cleanup timing for concurrent 64KB operations
+        private static readonly SemaphoreSlim _disposalSemaphore = new SemaphoreSlim(1, 1);
+
         /// <summary>
         /// Buffers a part from the GetObjectResponse stream into memory using ChunkedBufferStream.
         /// Uses multiple small ArrayPool chunks (80KB each) to avoid the 2GB byte[] array size limitation
@@ -285,15 +300,29 @@ namespace Amazon.S3.Transfer.Internal
                 _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Reading response stream into chunked buffers",
                     partNumber);
 
-                // Write response stream to chunked buffer stream
-                // ChunkedBufferStream automatically allocates chunks as needed
-                await response.WriteResponseStreamAsync(
-                    chunkedStream,
-                    null,
-                    _config.BufferSize,
-                    cancellationToken,
-                    validateSize: true)
-                    .ConfigureAwait(false);
+                // MEMORY LEAK FIX: Add disposal synchronization for concurrent operations
+                await _disposalSemaphore.WaitAsync(cancellationToken).ConfigureAwait(false);
+                try
+                {
+                    // Write response stream to chunked buffer stream
+                    // ChunkedBufferStream automatically allocates chunks as needed
+                    await response.WriteResponseStreamAsync(
+                        chunkedStream,
+                        null,
+                        _config.BufferSize,
+                        cancellationToken,
+                        validateSize: true)
+                        .ConfigureAwait(false);
+                    
+                    // MEMORY LEAK FIX: Allow brief delay for kernel cleanup of temporary maps
+                    // This helps prevent memory map accumulation when 20 concurrent parts
+                    // all dispose their responses simultaneously
+                    await Task.Delay(10, cancellationToken).ConfigureAwait(false);
+                }
+                finally
+                {
+                    _disposalSemaphore.Release();
+                }
                 
                 _logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Buffered {1} bytes into chunked stream",
                     partNumber, chunkedStream.Length);

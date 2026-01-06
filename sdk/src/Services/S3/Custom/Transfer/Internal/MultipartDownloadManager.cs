@@ -541,7 +541,6 @@ namespace Amazon.S3.Transfer.Internal
         private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken)
         {            
             GetObjectResponse response = null;
-            var ownsResponse = false;  // Track if we still own the response
             
             try
             {
@@ -583,7 +582,6 @@ namespace Amazon.S3.Transfer.Internal
                     }
                     
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
-                    ownsResponse = true;  // We now own the response
                     
                     // Attach progress callback to response if provided
                     if (progressCallback != null)
@@ -616,7 +614,7 @@ namespace Amazon.S3.Transfer.Internal
                     // - If buffering: Handler disposes immediately after copying data to buffer
                     // - On error: Handler disposes in its catch block before rethrowing
                     await _dataHandler.ProcessPartAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
-                    ownsResponse = false;  // Ownership transferred to handler
+                    response = null; // Ownership transferred successfully to handler
 
                     _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Processing completed successfully", partNumber);
                 }
@@ -633,13 +631,19 @@ namespace Amazon.S3.Transfer.Internal
             {
                 _logger.Error(ex, "MultipartDownloadManager: [Part {0}] Download failed", partNumber);
                 
-                // Dispose response if we still own it (error occurred before handler took ownership)
-                if (ownsResponse)
-                    response?.Dispose();
-                
                 // Release capacity on failure
                 _dataHandler.ReleaseCapacity();
                 throw;
+            }
+            finally
+            {
+                // MEMORY LEAK FIX: Always dispose response if ownership transfer failed
+                // This ensures response disposal even if ProcessPartAsync throws after taking ownership
+                if (response != null)
+                {
+                    _logger.DebugFormat("MultipartDownloadManager: [Part {0}] Disposing response in finally block - ownership transfer may have failed", partNumber);
+                    response.Dispose();
+                }
             }
         }
 
