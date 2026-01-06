@@ -40,6 +40,7 @@ namespace Amazon.EMRServerless.Model
         private AutoStartConfig _autoStartConfiguration;
         private AutoStopConfig _autoStopConfiguration;
         private DateTime? _createdAt;
+        private DiskEncryptionConfiguration _diskEncryptionConfiguration;
         private IdentityCenterConfiguration _identityCenterConfiguration;
         private ImageConfiguration _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = AWSConfigs.InitializeCollections ? new Dictionary<string, InitialCapacityConfig>() : null;
@@ -169,6 +170,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiskEncryptionConfiguration. 
+        /// <para>
+        /// The configuration object that allows encrypting local disks.
+        /// </para>
+        /// </summary>
+        public DiskEncryptionConfiguration DiskEncryptionConfiguration
+        {
+            get { return this._diskEncryptionConfiguration; }
+            set { this._diskEncryptionConfiguration = value; }
+        }
+
+        // Check to see if DiskEncryptionConfiguration property is set
+        internal bool IsSetDiskEncryptionConfiguration()
+        {
+            return this._diskEncryptionConfiguration != null;
         }
 
         /// <summary>

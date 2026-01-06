@@ -39,6 +39,7 @@ namespace Amazon.EMRServerless.Model
         private AutoStartConfig _autoStartConfiguration;
         private AutoStopConfig _autoStopConfiguration;
         private string _clientToken;
+        private DiskEncryptionConfiguration _diskEncryptionConfiguration;
         private IdentityCenterConfigurationInput _identityCenterConfiguration;
         private ImageConfigurationInput _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = AWSConfigs.InitializeCollections ? new Dictionary<string, InitialCapacityConfig>() : null;
@@ -128,6 +129,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiskEncryptionConfiguration. 
+        /// <para>
+        /// The configuration object that allows encrypting local disks.
+        /// </para>
+        /// </summary>
+        public DiskEncryptionConfiguration DiskEncryptionConfiguration
+        {
+            get { return this._diskEncryptionConfiguration; }
+            set { this._diskEncryptionConfiguration = value; }
+        }
+
+        // Check to see if DiskEncryptionConfiguration property is set
+        internal bool IsSetDiskEncryptionConfiguration()
+        {
+            return this._diskEncryptionConfiguration != null;
         }
 
         /// <summary>

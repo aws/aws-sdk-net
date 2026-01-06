@@ -109,6 +109,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetDiskEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("diskEncryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DiskEncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DiskEncryptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIdentityCenterConfiguration())
                 {
                     context.Writer.WritePropertyName("identityCenterConfiguration");
