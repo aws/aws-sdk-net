@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Temp devconfig, which will be removed and consolidated in the base branch. This is only for dry run."
+      ]
+    }
+  ]
+}
