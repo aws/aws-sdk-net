@@ -429,7 +429,16 @@ namespace Amazon.S3.Transfer.Internal
                     }
                 }
                 
-                _chunks.Clear();
+                // Clear chunks list - defensive programming in case Clear() fails
+                try
+                {
+                    _chunks.Clear();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[LEAK-ERROR] _chunks.Clear() failed in #{_instanceId}: {ex.GetType().Name} - {ex.Message}");
+                }
+                
                 _disposed = true;
                 
                 // Track disposal lifecycle
