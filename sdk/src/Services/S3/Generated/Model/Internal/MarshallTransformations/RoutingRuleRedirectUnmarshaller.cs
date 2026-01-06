@@ -62,10 +62,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.HostName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HttpRedirectCode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HttpRedirectCode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Protocol", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReplaceKeyPrefixWith", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplaceKeyPrefixWith = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReplaceKeyWith", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplaceKeyWith = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
