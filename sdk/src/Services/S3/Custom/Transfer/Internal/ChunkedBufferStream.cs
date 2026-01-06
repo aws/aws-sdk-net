@@ -26,6 +26,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -123,7 +124,7 @@ namespace Amazon.S3.Transfer.Internal
 
             // LEAK TRACKING: Monitor object creation and lifecycle balance
             _instanceId = Interlocked.Increment(ref _totalCreated);
-            _createdAt = DateTime.UtcNow;
+            _createdAt = AWSSDKUtils.CorrectedUtcNow;
             
             // Log every 100th creation to avoid excessive logging
             if (_instanceId % 100 == 0)
@@ -406,7 +407,7 @@ namespace Amazon.S3.Transfer.Internal
                 int successfulReturns = 0;
                 int failedReturns = 0;
                 Exception firstException = null;
-                var startTime = DateTime.UtcNow;
+                var startTime = AWSSDKUtils.CorrectedUtcNow;
 
                 // Return all chunks to ArrayPool with detailed tracking
                 foreach (var chunk in _chunks)
@@ -429,7 +430,6 @@ namespace Amazon.S3.Transfer.Internal
                     }
                 }
                 
-                // Clear chunks list - defensive programming in case Clear() fails
                 try
                 {
                     _chunks.Clear();
@@ -443,8 +443,8 @@ namespace Amazon.S3.Transfer.Internal
                 
                 // Track disposal lifecycle
                 long currentDisposed = Interlocked.Increment(ref _totalDisposed);
-                var disposeTime = DateTime.UtcNow - startTime;
-                var lifetime = DateTime.UtcNow - _createdAt;
+                var disposeTime = AWSSDKUtils.CorrectedUtcNow - startTime;
+                var lifetime = AWSSDKUtils.CorrectedUtcNow - _createdAt;
                 
                 // Log disposal details - focus on failures and large objects
                 if (failedReturns > 0 || _chunks.Count > 50 || _instanceId % 100 == 0)
