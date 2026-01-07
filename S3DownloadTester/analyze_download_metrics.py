@@ -1,484 +1,284 @@
 #!/usr/bin/env python3
 """
-S3 Download Metrics Analyzer
-Parses log output and creates visualizations to understand memory and VMA issues
+Enhanced VMA Exhaustion Analyzer
+Creates critical visualizations from log file data
 """
 
+import matplotlib.pyplot as plt
+import numpy as np
 import re
 import sys
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-from datetime import datetime, timedelta
 import argparse
 
-class DownloadMetrics:
-    def __init__(self):
-        self.timestamps = []
-        self.progress_gb = []
-        self.speed_gbps = []
-        self.heap_mb = []
-        self.gen2_mb = []
-        self.vma_current = []
-        self.vma_percent = []
-        self.arraypool_rent = []
-        self.arraypool_pooled = []  # NEW: Reused from pool
-        self.arraypool_return = []
-        self.arraypool_allocate = []
-        self.arraypool_outstanding = []
-        self.arraypool_allocated_mb = []
-        
-        # NEW: HTTP tracking metrics
-        self.http_active = []
-        self.http_total = []
-        self.http_received_mb = []
-        
-        # NEW: Buffer flow analysis metrics
-        self.download_rate_mbps = []
-        self.buffer_growth_rate = []
-        self.memory_growth_rate_gbps = []
-        self.buffer_efficiency = []
-        self.vma_growth_rate = []
-        # NEW: Enhanced VMA analysis metrics
-        self.vma_total = []
-        self.vma_median_kb = []
-        self.vma_avg_kb = []
-        self.vma_64kb = []
-        self.vma_under1mb = []
-        self.vma_1to10mb = []
-        self.vma_10to100mb = []
-        self.vma_over100mb = []
-        self.vma_rw_anon = []
-        self.vma_reserved_anon = []
-        self.vma_gc_match_percent = []
-        
-    def parse_log_file(self, filename):
-        """Parse the log file and extract metrics"""
-        print(f"Parsing log file: {filename}")
-        
-        with open(filename, 'r') as f:
-            lines = f.readlines()
-        
-        # Collect metrics for each progress report
-        start_time = None
-        i = 0
-        
-        while i < len(lines):
-            line = lines[i]
-            
-            # Look for Progress line as the start of a data point
-            progress_match = re.search(r'Progress: ([\d.]+) (GB|MB)', line)
-            if progress_match:
-                # Found a progress line - now collect all metrics for this data point
-                value = float(progress_match.group(1))
-                unit = progress_match.group(2)
-                progress = value if unit == 'GB' else value / 1024.0
-                
-                # Initialize variables for this data point
-                speed_gbps = None
-                timestamp = None
-                heap = None
-                gen2 = None
-                vma_current = None
-                vma_percent = None
-                rent = None
-                ret = None
-                allocate = None
-                allocated_mb = None
-                http_active = None
-                http_total = None
-                http_received = None
-                
-                # Look ahead at the next few lines for associated metrics
-                for j in range(i, min(i + 10, len(lines))):
-                    next_line = lines[j]
-                    
-                    # Speed and elapsed time
-                    if speed_gbps is None:
-                        speed_match = re.search(r'Speed: ([\d.]+) (Gbps|Mbps)', next_line)
-                        if speed_match:
-                            speed = float(speed_match.group(1))
-                            unit = speed_match.group(2)
-                            speed_gbps = speed if unit == 'Gbps' else speed / 1000.0
-                            
-                            elapsed_match = re.search(r'Elapsed: ([\dhms ]+)', next_line)
-                            if elapsed_match:
-                                elapsed_str = elapsed_match.group(1)
-                                elapsed = self._parse_timespan(elapsed_str)
-                                if start_time is None:
-                                    start_time = datetime.now()
-                                timestamp = start_time + elapsed
-                    
-                    # GC metrics
-                    if heap is None:
-                        gc_match = re.search(r'GC: Gen0=(\d+), Gen1=(\d+), Gen2=(\d+) \| Heap=([\d,]+)MB \| Gen2=([\d,]+)MB', next_line)
-                        if gc_match:
-                            heap = float(gc_match.group(4).replace(',', ''))
-                            gen2 = float(gc_match.group(5).replace(',', ''))
-                    
-                    # VMA metrics
-                    if vma_current is None and vma_percent is None:
-                        vma_match = re.search(r'VMAs: Current=([\d-]+) \(([\d.]+)%\)', next_line)
-                        if vma_match:
-                            vma_current = int(vma_match.group(1)) if vma_match.group(1) != '-1' else None
-                            vma_percent = float(vma_match.group(2))
-                    
-                    # ArrayPool metrics - NEW FORMAT: Rent=X (Pooled=Y, New=Z), Return=A, Outstanding=B, AllocatedMB=C
-                    if rent is None:
-                        # Try new format first
-                        arraypool_match = re.search(r'ArrayPool: Rent=([\d,]+) \(Pooled=([\d,]+), New=([\d,]+)\), Return=([\d,]+), Outstanding=([\d,]+), AllocatedMB=([\d,]+\.?\d*)', next_line)
-                        if arraypool_match:
-                            rent = int(arraypool_match.group(1).replace(',', ''))
-                            pooled = int(arraypool_match.group(2).replace(',', ''))
-                            allocate = int(arraypool_match.group(3).replace(',', ''))  # "New" in new format
-                            ret = int(arraypool_match.group(4).replace(',', ''))
-                            outstanding = int(arraypool_match.group(5).replace(',', ''))
-                            allocated_mb = float(arraypool_match.group(6).replace(',', ''))
-                        else:
-                            # Fall back to old format for backwards compatibility
-                            arraypool_match = re.search(r'ArrayPool: Rent=([\d,]+), Return=([\d,]+), Allocate=([\d,]+), AllocatedMB=([\d,]+\.?\d*)', next_line)
-                            if arraypool_match:
-                                rent = int(arraypool_match.group(1).replace(',', ''))
-                                ret = int(arraypool_match.group(2).replace(',', ''))
-                                allocate = int(arraypool_match.group(3).replace(',', ''))
-                                allocated_mb = float(arraypool_match.group(4).replace(',', ''))
-                                pooled = max(0, rent - allocate)  # Calculate pooled for old format
-                                outstanding = rent - ret  # Calculate outstanding for old format
-                    
-                    # HTTP tracking metrics - NEW
-                    if http_active is None:
-                        http_match = re.search(r'HTTP: Active=(\d+), Total=(\d+), Received=([\d,]+)MB', next_line)
-                        if http_match:
-                            http_active = int(http_match.group(1))
-                            http_total = int(http_match.group(2))
-                    # Enhanced VMA analysis - NEW
-                    if 'Total VMAs:' in next_line:
-                        vma_total_match = re.search(r'Total VMAs: ([\d,]+)', next_line)
-                        if vma_total_match:
-                            vma_total = int(vma_total_match.group(1).replace(',', ''))
-                    
-                    if 'VMA Size Stats:' in next_line:
-                        vma_stats_match = re.search(r'Median=([\d,]+)KB, Avg=([\d,]+)KB', next_line)
-                        if vma_stats_match:
-                            vma_median = int(vma_stats_match.group(1).replace(',', ''))
-                            vma_avg = int(vma_stats_match.group(2).replace(',', ''))
-                    
-                    if '1-10MB VMAs:' in next_line:
-                        vma_breakdown_match = re.search(r'1-10MB VMAs: ([\d,]+)', next_line)
-                        if vma_breakdown_match:
-                            vma_1to10mb = int(vma_breakdown_match.group(1).replace(',', ''))
-                    
-                    if '10-100MB VMAs:' in next_line:
-                        vma_large_match = re.search(r'10-100MB VMAs: ([\d,]+)', next_line)
-                        if vma_large_match:
-                            vma_10to100mb = int(vma_large_match.group(1).replace(',', ''))
-                    
-                    if 'rw-p anon:' in next_line:
-                        rw_anon_match = re.search(r'rw-p anon: ([\d,]+) VMAs', next_line)
-                        if rw_anon_match:
-                            vma_rw_anon = int(rw_anon_match.group(1).replace(',', ''))
-                    
-                    if 'GC vs VMA Match:' in next_line:
-                        gc_match_match = re.search(r'GC vs VMA Match: ([\d.]+)%', next_line)
-                        if gc_match_match:
-                            vma_gc_match = float(gc_match_match.group(1))
-                    
-                    # Stop if we hit the next Progress line
-                    if j > i and re.search(r'Progress: ([\d.]+) (GB|MB)', next_line):
-                        break
-                
-                # Only add this data point if we have all required metrics
-                if timestamp is not None and speed_gbps is not None:
-                    self.timestamps.append(timestamp)
-                    self.progress_gb.append(progress)
-                    self.speed_gbps.append(speed_gbps)
-                    
-                    # Optional metrics - use last known value or None
-                    if heap is not None:
-                        self.heap_mb.append(heap)
-                        self.gen2_mb.append(gen2)
-                    else:
-                        # Use last value if available, otherwise 0
-                        self.heap_mb.append(self.heap_mb[-1] if self.heap_mb else 0)
-                        self.gen2_mb.append(self.gen2_mb[-1] if self.gen2_mb else 0)
-                    
-                    # DEBUG: Check array lengths after heap append
-                    if len(self.timestamps) != len(self.heap_mb):
-                        print(f"⚠️  DESYNC at line {i}: timestamps={len(self.timestamps)}, heap_mb={len(self.heap_mb)}")
-                        print(f"   Progress={progress}, heap={'found' if heap is not None else 'missing'}")
-                    
-                    if vma_current is not None or vma_percent is not None:
-                        self.vma_current.append(vma_current)
-                        self.vma_percent.append(vma_percent if vma_percent is not None else 0)
-                    else:
-                        self.vma_current.append(self.vma_current[-1] if self.vma_current else None)
-                        self.vma_percent.append(self.vma_percent[-1] if self.vma_percent else 0)
-                    
-                    if rent is not None:
-                        self.arraypool_rent.append(rent)
-                        self.arraypool_pooled.append(pooled)
-                        self.arraypool_return.append(ret)
-                        self.arraypool_allocate.append(allocate)
-                        self.arraypool_outstanding.append(outstanding)
-                        self.arraypool_allocated_mb.append(allocated_mb)
-                    else:
-                        self.arraypool_rent.append(self.arraypool_rent[-1] if self.arraypool_rent else 0)
-                        self.arraypool_pooled.append(self.arraypool_pooled[-1] if self.arraypool_pooled else 0)
-                        self.arraypool_return.append(self.arraypool_return[-1] if self.arraypool_return else 0)
-                        self.arraypool_allocate.append(self.arraypool_allocate[-1] if self.arraypool_allocate else 0)
-                        self.arraypool_outstanding.append(self.arraypool_outstanding[-1] if self.arraypool_outstanding else 0)
-                        self.arraypool_allocated_mb.append(self.arraypool_allocated_mb[-1] if self.arraypool_allocated_mb else 0)
-                    
-                    # HTTP metrics - NEW
-                    if http_active is not None:
-                        self.http_active.append(http_active)
-                        self.http_total.append(http_total)
-                        self.http_received_mb.append(http_received)
-                    else:
-                        self.http_active.append(self.http_active[-1] if self.http_active else 0)
-                        self.http_total.append(self.http_total[-1] if self.http_total else 0)
-                        self.http_received_mb.append(self.http_received_mb[-1] if self.http_received_mb else 0)
-            
-            i += 1
-        
-        print(f"Parsed {len(self.timestamps)} data points")
-        print(f"Array lengths: timestamps={len(self.timestamps)}, heap_mb={len(self.heap_mb)}, gen2_mb={len(self.gen2_mb)}")
-        print(f"               vma_current={len(self.vma_current)}, arraypool_outstanding={len(self.arraypool_outstanding)}")
-        
-    def _parse_timespan(self, timespan_str):
-        """Parse timespan like '1m 21s' or '3d 0h 20m' to timedelta"""
-        total_seconds = 0
-        
-        # Days
-        days_match = re.search(r'(\d+)d', timespan_str)
-        if days_match:
-            total_seconds += int(days_match.group(1)) * 86400
-        
-        # Hours
-        hours_match = re.search(r'(\d+)h', timespan_str)
-        if hours_match:
-            total_seconds += int(hours_match.group(1)) * 3600
-        
-        # Minutes
-        minutes_match = re.search(r'(\d+)m', timespan_str)
-        if minutes_match:
-            total_seconds += int(minutes_match.group(1)) * 60
-        
-        # Seconds
-        seconds_match = re.search(r'(\d+)s', timespan_str)
-        if seconds_match:
-            total_seconds += int(seconds_match.group(1))
-        
-        return timedelta(seconds=total_seconds)
+def parse_vma_data_from_log(filename):
+    """Parse VMA and ArrayPool data from log file"""
     
-    def plot_metrics(self, output_file='download_metrics.png'):
-        """Create comprehensive visualization"""
-        fig, axes = plt.subplots(3, 2, figsize=(16, 12))
-        fig.suptitle('S3 Download Metrics Analysis - VMA Exhaustion', fontsize=16, fontweight='bold')
-        
-        # 1. Progress and Speed
-        ax1 = axes[0, 0]
-        ax1_twin = ax1.twinx()
-        ax1.plot(self.timestamps, self.progress_gb, 'b-', linewidth=2, label='Progress (GB)')
-        ax1_twin.plot(self.timestamps, self.speed_gbps, 'g--', linewidth=2, label='Speed (Gbps)')
-        ax1.set_xlabel('Time')
-        ax1.set_ylabel('Progress (GB)', color='b')
-        ax1_twin.set_ylabel('Speed (Gbps)', color='g')
-        ax1.tick_params(axis='y', labelcolor='b')
-        ax1_twin.tick_params(axis='y', labelcolor='g')
-        ax1.set_title('Download Progress & Speed')
-        ax1.grid(True, alpha=0.3)
-        
-        # 2. Memory Usage (Heap)
-        ax2 = axes[0, 1]
-        ax2.plot(self.timestamps, self.heap_mb, 'r-', linewidth=2, label='Total Heap')
-        ax2.plot(self.timestamps, self.gen2_mb, 'orange', linewidth=2, label='Gen2')
-        ax2.set_xlabel('Time')
-        ax2.set_ylabel('Memory (MB)')
-        ax2.set_title('GC Heap Memory Usage')
-        ax2.legend()
-        ax2.grid(True, alpha=0.3)
-        
-        # Add danger zone annotation
-        max_heap = max(self.heap_mb) if self.heap_mb else 0
-        if max_heap > 100000:  # Over 100GB
-            ax2.axhspan(100000, max(self.heap_mb), alpha=0.2, color='red', label='Danger Zone')
-            ax2.text(self.timestamps[len(self.timestamps)//2], max_heap * 0.9, 
-                    'EXCESSIVE\nMEMORY', ha='center', fontsize=12, fontweight='bold', color='red')
-        
-        # 3. VMA Usage - THE KEY METRIC
-        ax3 = axes[1, 0]
-        valid_vmas = [(t, v) for t, v in zip(self.timestamps, self.vma_current) if v is not None]
-        if valid_vmas:
-            times, vmas = zip(*valid_vmas)
-            ax3.plot(times, vmas, 'purple', linewidth=3, label='VMA Count')
-        ax3.axhline(y=65530, color='red', linestyle='--', linewidth=2, label='Kernel Limit (65,530)')
-        ax3.axhspan(60000, 65530, alpha=0.2, color='red')
-        ax3.set_xlabel('Time')
-        ax3.set_ylabel('VMA Count')
-        ax3.set_title('⚠️ VMA Exhaustion (Crash at 100%)')
-        ax3.legend()
-        ax3.grid(True, alpha=0.3)
-        
-        # Add crash annotation if we hit the limit
-        if any(v and v >= 65530 for v in self.vma_current if v is not None):
-            crash_idx = next(i for i, v in enumerate(self.vma_current) if v and v >= 65530)
-            ax3.annotate('CRASH!', 
-                        xy=(self.timestamps[crash_idx], 65530),
-                        xytext=(self.timestamps[crash_idx], 55000),
-                        arrowprops=dict(facecolor='red', shrink=0.05, width=3),
-                        fontsize=14, fontweight='bold', color='red',
-                        bbox=dict(boxstyle='round', facecolor='red', alpha=0.3))
-        
-        # 4. VMA Percentage
-        ax4 = axes[1, 1]
-        ax4.plot(self.timestamps, self.vma_percent, 'purple', linewidth=3)
-        ax4.axhline(y=100, color='red', linestyle='--', linewidth=2, label='100% Limit')
-        ax4.axhspan(90, 100, alpha=0.2, color='red')
-        ax4.set_xlabel('Time')
-        ax4.set_ylabel('VMA Usage (%)')
-        ax4.set_title('VMA Usage Percentage (Crash Zone)')
-        ax4.set_ylim([0, 105])
-        ax4.grid(True, alpha=0.3)
-        ax4.legend()
-        
-        # 5. ArrayPool - Outstanding Buffers
-        ax5 = axes[2, 0]
-        ax5.plot(self.timestamps, [x/1000 for x in self.arraypool_outstanding], 'brown', linewidth=2)
-        ax5.set_xlabel('Time')
-        ax5.set_ylabel('Outstanding Buffers (thousands)')
-        ax5.set_title('ArrayPool Outstanding Buffers (Rent - Return)')
-        ax5.grid(True, alpha=0.3)
-        
-        # Add annotation for excessive buffers
-        max_outstanding = max(self.arraypool_outstanding) if self.arraypool_outstanding else 0
-        if max_outstanding > 100000:
-            ax5.text(self.timestamps[len(self.timestamps)//2], max_outstanding/2000, 
-                    f'Peak: {max_outstanding:,} buffers\n~{max_outstanding * 64 / 1024 / 1024:.0f} GB!', 
-                    ha='center', fontsize=10, fontweight='bold', 
-                    bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.5))
-        
-        # 6. ArrayPool - Pool Efficiency
-        ax6 = axes[2, 1]
-        # Show pooled (reused) vs allocate (new) - stacked area chart
-        if self.arraypool_pooled:
-            ax6.fill_between(self.timestamps, 0, [x/1000 for x in self.arraypool_pooled], 
-                            alpha=0.6, color='green', label='Pooled (Reused - No VMA)')
-            ax6.fill_between(self.timestamps, [x/1000 for x in self.arraypool_pooled], 
-                            [(p+a)/1000 for p, a in zip(self.arraypool_pooled, self.arraypool_allocate)],
-                            alpha=0.6, color='red', label='Allocate (NEW - Creates VMA)')
-        ax6.set_xlabel('Time')
-        ax6.set_ylabel('Buffer Requests (thousands)')
-        ax6.set_title('ArrayPool Efficiency: Reuse vs New Allocation')
-        ax6.legend(fontsize=9)
-        ax6.grid(True, alpha=0.3)
-        
-        # Add efficiency annotation
-        if self.arraypool_rent[-1] > 0:
-            pool_efficiency = (self.arraypool_pooled[-1] / self.arraypool_rent[-1]) * 100
-            color = 'green' if pool_efficiency > 80 else 'orange' if pool_efficiency > 50 else 'red'
-            ax6.text(self.timestamps[len(self.timestamps)//2], max(self.arraypool_rent)/2000, 
-                    f'Pool Efficiency: {pool_efficiency:.1f}%\n({self.arraypool_pooled[-1]:,} reused / {self.arraypool_rent[-1]:,} total)', 
-                    ha='center', fontsize=10, fontweight='bold', 
-                    bbox=dict(boxstyle='round', facecolor=color, alpha=0.3))
-        
-        # Format time axis for all plots
-        for ax in axes.flat:
-            ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
-            plt.setp(ax.xaxis.get_majorticklabels(), rotation=45, ha='right')
-        
-        plt.tight_layout()
-        plt.savefig(output_file, dpi=300, bbox_inches='tight')
-        print(f"\n✓ Visualization saved to: {output_file}")
-        
-        # Show the plot
-        plt.show()
+    with open(filename, 'r') as f:
+        content = f.read()
     
-    def print_summary(self):
-        """Print summary statistics"""
-        if not self.timestamps:
-            print("No data to summarize")
-            return
-        
-        print("\n" + "="*70)
-        print("DOWNLOAD METRICS SUMMARY")
-        print("="*70)
-        
-        print(f"\n📊 Progress:")
-        print(f"   Total downloaded: {self.progress_gb[-1]:.2f} GB")
-        print(f"   Average speed: {sum(self.speed_gbps)/len(self.speed_gbps):.2f} Gbps")
-        print(f"   Duration: {self.timestamps[-1] - self.timestamps[0]}")
-        
-        print(f"\n💾 Memory:")
-        print(f"   Peak heap: {max(self.heap_mb):,.0f} MB ({max(self.heap_mb)/1024:.1f} GB)")
-        print(f"   Peak Gen2: {max(self.gen2_mb):,.0f} MB")
-        
-        print(f"\n🗺️  VMAs:")
-        valid_vmas = [v for v in self.vma_current if v is not None]
-        if valid_vmas:
-            print(f"   Peak VMAs: {max(valid_vmas):,} ({max(self.vma_percent):.1f}%)")
-            print(f"   Max limit: 65,530")
-            if max(valid_vmas) >= 65530:
-                print(f"   ⚠️  STATUS: CRASHED - Hit VMA limit!")
-            elif max(self.vma_percent) > 90:
-                print(f"   ⚠️  STATUS: DANGER - Approaching limit!")
-            else:
-                print(f"   ✓ STATUS: Safe")
-        
-        print(f"\n🌐 HTTP Requests:")
-        if self.http_total:
-            print(f"   Total requests: {self.http_total[-1]:,}")
-            print(f"   Peak active: {max(self.http_active):,}")
-            print(f"   Data received: {self.http_received_mb[-1]:,} MB")
-            if self.progress_gb[-1] > 0:
-                efficiency = (self.http_received_mb[-1] / 1024) / self.progress_gb[-1] * 100
-                print(f"   HTTP efficiency: {efficiency:.1f}% (should be ~100%)")
-        
-        print(f"\n🔄 ArrayPool:")
-        if self.arraypool_outstanding:
-            max_out = max(self.arraypool_outstanding)
-            print(f"   Peak outstanding: {max_out:,} buffers")
-            print(f"   Estimated memory: {max_out * 64 / 1024:.0f} MB ({max_out * 64 / 1024 / 1024:.1f} GB)")
-            print(f"   Total rent requests: {self.arraypool_rent[-1]:,}")
-            print(f"   Pool reuse (no VMA): {self.arraypool_pooled[-1]:,}")
-            print(f"   New allocations (VMA): {self.arraypool_allocate[-1]:,}")
-            print(f"   Total allocated: {self.arraypool_allocated_mb[-1]:,.0f} MB")
-            
-            # Calculate and display pool efficiency
-            if self.arraypool_rent[-1] > 0:
-                pool_efficiency = (self.arraypool_pooled[-1] / self.arraypool_rent[-1]) * 100
-                status = "✓ Excellent" if pool_efficiency > 80 else "⚠️ Poor" if pool_efficiency < 20 else "○ Moderate"
-                print(f"   Pool efficiency: {pool_efficiency:.1f}% {status}")
-        
-        print(f"\n💡 Diagnosis:")
-        if max(self.vma_percent) >= 100:
-            print("   ❌ VMA EXHAUSTION CRASH OCCURRED")
-            print("   Root cause: 64KB default chunk size creating millions of allocations")
-            print("   Solution: Set ChunkBufferSize = 8 * 1024 * 1024 (8MB)")
-        elif max(self.vma_percent) > 80:
-            print("   ⚠️  High risk of VMA exhaustion")
-            print("   Recommendation: Reduce chunk size or increase vm.max_map_count")
-        else:
-            print("   ✓ VMA usage is acceptable")
-        
-        print("\n" + "="*70 + "\n")
+    # Find the most recent data points
+    vma_data = {
+        'total_vmas': 0,
+        'vma_limit': 65530,
+        'percent_used': 0,
+        'categories': {},
+        'size_breakdown': {},
+        'memory': {},
+        'arraypool': {}
+    }
+    
+    # Extract VMA current count and percentage
+    vma_matches = re.findall(r'VMAs: Current=(\d+) \(([\d.]+)%\)', content)
+    if vma_matches:
+        latest_vma = vma_matches[-1]
+        vma_data['total_vmas'] = int(latest_vma[0])
+        vma_data['percent_used'] = float(latest_vma[1])
+    
+    # Extract VMA categories from enhanced analysis
+    category_patterns = {
+        'rw-p anon': r'rw-p anon: ([\d,]+) VMAs',
+        '---p anon': r'---p anon: ([\d,]+) VMAs',
+        'Files': r'r--p file: (\d+) VMAs',
+        'Libraries': r'r--p lib: (\d+) VMAs'
+    }
+    
+    for category, pattern in category_patterns.items():
+        matches = re.findall(pattern, content)
+        if matches:
+            vma_data['categories'][category] = int(matches[-1].replace(',', ''))
+    
+    # Extract VMA size breakdown
+    size_patterns = {
+        '64KB VMAs': r'64KB VMAs: (\d+)',
+        '<1MB VMAs': r'<1MB VMAs: (\d+)',
+        '1-10MB VMAs': r'1-10MB VMAs: ([\d,]+)',
+        '10-100MB VMAs': r'10-100MB VMAs: ([\d,]+)',
+        '>100MB VMAs': r'>100MB VMAs: (\d+)'
+    }
+    
+    for size_cat, pattern in size_patterns.items():
+        matches = re.findall(pattern, content)
+        if matches:
+            vma_data['size_breakdown'][size_cat] = int(matches[-1].replace(',', ''))
+    
+    # Extract memory data
+    gc_matches = re.findall(r'GC Committed:\s+([\d.]+)GB', content)
+    if gc_matches:
+        vma_data['memory']['gc_committed_gb'] = float(gc_matches[-1])
+    
+    rw_anon_matches = re.findall(r'rw-p anon \(committed\): ([\d.]+)GB', content)
+    if rw_anon_matches:
+        vma_data['memory']['rw_anon_gb'] = float(rw_anon_matches[-1])
+    
+    reserved_matches = re.findall(r'---p anon \(reserved\):\s+([\d.]+)GB', content)
+    if reserved_matches:
+        vma_data['memory']['reserved_gb'] = float(reserved_matches[-1])
+    
+    # Extract ArrayPool data
+    arraypool_matches = re.findall(r'ArrayPool: Rent=([\d,]+) \(Pooled=([\d,]+), New=([\d,]+)\), Return=([\d,]+), Outstanding=([\d,]+), AllocatedMB=([\d,]+\.?\d*)', content)
+    if arraypool_matches:
+        latest_pool = arraypool_matches[-1]
+        vma_data['arraypool'] = {
+            'rent': int(latest_pool[0].replace(',', '')),
+            'pooled': int(latest_pool[1].replace(',', '')),
+            'new': int(latest_pool[2].replace(',', '')),
+            'return': int(latest_pool[3].replace(',', '')),
+            'outstanding': int(latest_pool[4].replace(',', '')),
+            'allocated_mb': float(latest_pool[5].replace(',', ''))
+        }
+        vma_data['memory']['arraypool_virtual_tb'] = vma_data['arraypool']['allocated_mb'] / 1024 / 1024
+    
+    return vma_data
 
+def create_vma_crisis_visualization(vma_data):
+    """Create visualization based on parsed VMA data"""
+    
+    fig, axes = plt.subplots(2, 3, figsize=(20, 12))
+    fig.suptitle('🚨 CRITICAL VMA EXHAUSTION ANALYSIS 🚨\nS3 Download Creating Massive Memory Pressure', 
+                 fontsize=16, fontweight='bold', color='red')
+    
+    # 1. VMA Usage Gauge
+    ax1 = axes[0, 0]
+    current = vma_data['total_vmas']
+    limit = vma_data['vma_limit']
+    percent = vma_data['percent_used']
+    
+    # Create gauge chart
+    theta = np.linspace(0, np.pi, 100)
+    
+    # Color zones
+    green_zone = theta[theta <= np.pi * 0.6]
+    yellow_zone = theta[(theta > np.pi * 0.6) & (theta <= np.pi * 0.8)]
+    red_zone = theta[theta > np.pi * 0.8]
+    
+    ax1.fill_between(green_zone, 0, 1, color='green', alpha=0.3, label='Safe')
+    ax1.fill_between(yellow_zone, 0, 1, color='yellow', alpha=0.3, label='Warning')
+    ax1.fill_between(red_zone, 0, 1, color='red', alpha=0.3, label='DANGER')
+    
+    # Current position
+    current_angle = np.pi * (percent / 100)
+    ax1.plot([current_angle, current_angle], [0, 1], 'black', linewidth=5)
+    ax1.plot(current_angle, 1, 'ro', markersize=15)
+    
+    ax1.set_xlim(0, np.pi)
+    ax1.set_ylim(0, 1.2)
+    ax1.set_title(f'VMA Usage: {current:,} / {limit:,}\n{percent:.1f}% - CRITICAL!', 
+                  fontweight='bold', color='red')
+    ax1.text(np.pi/2, 0.5, f'{percent:.1f}%', ha='center', va='center', 
+             fontsize=20, fontweight='bold', color='red')
+    ax1.set_xticks([])
+    ax1.set_yticks([])
+    
+    # 2. VMA Categories Pie Chart
+    ax2 = axes[0, 1]
+    if vma_data['categories']:
+        categories = list(vma_data['categories'].keys())
+        sizes = list(vma_data['categories'].values())
+        colors = ['red', 'orange', 'lightblue', 'gray']
+        
+        wedges, texts, autotexts = ax2.pie(sizes, labels=categories, colors=colors[:len(sizes)], 
+                                           autopct='%1.1f%%', startangle=90)
+        ax2.set_title('VMA Categories\n(GC Heap Dominates)', fontweight='bold')
+    
+    # 3. VMA Size Distribution
+    ax3 = axes[0, 2]
+    if vma_data['size_breakdown']:
+        size_categories = list(vma_data['size_breakdown'].keys())
+        size_counts = list(vma_data['size_breakdown'].values())
+        
+        bars = ax3.bar(range(len(size_categories)), size_counts, 
+                       color=['lightblue', 'blue', 'orange', 'red', 'darkred'])
+        ax3.set_xticks(range(len(size_categories)))
+        ax3.set_xticklabels(size_categories, rotation=45, ha='right')
+        ax3.set_ylabel('VMA Count')
+        ax3.set_title('VMA Size Distribution\n(1-10MB segments dominate)', fontweight='bold')
+        
+        # Add value labels
+        for bar, count in zip(bars, size_counts):
+            if count > 0:
+                ax3.text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(size_counts)*0.01,
+                        f'{count:,}', ha='center', fontweight='bold')
+    
+    # 4. Memory Explosion
+    ax4 = axes[1, 0]
+    if vma_data['memory']:
+        memory_types = ['GC Heap\n(Physical)', 'ArrayPool\n(Virtual)', 'Reserved\n(Virtual)']
+        memory_sizes = [
+            vma_data['memory'].get('gc_committed_gb', 0), 
+            vma_data['memory'].get('arraypool_virtual_tb', 0) * 1024,  # Convert TB to GB
+            vma_data['memory'].get('reserved_gb', 0)
+        ]
+        colors = ['blue', 'red', 'orange']
+        
+        bars = ax4.bar(memory_types, memory_sizes, color=colors)
+        ax4.set_ylabel('Memory (GB)')
+        ax4.set_title('Memory Allocation (Virtual vs Physical)\nArrayPool = VIRTUAL!', fontweight='bold', color='red')
+        ax4.set_yscale('log')  # Log scale due to huge differences
+        
+        # Add value labels
+        for bar, size in zip(bars, memory_sizes):
+            if size > 0:
+                if size < 1000:
+                    label = f'{size:.0f}GB'
+                else:
+                    label = f'{size/1024:.0f}TB\n(VIRTUAL)'
+                ax4.text(bar.get_x() + bar.get_width()/2, bar.get_height() * 1.1,
+                        label, ha='center', fontweight='bold')
+    
+    # 5. ArrayPool Efficiency Crisis
+    ax5 = axes[1, 1]
+    if vma_data['arraypool']:
+        pool_data = vma_data['arraypool']
+        
+        # Stacked bar showing pooled vs new allocations
+        pooled_pct = (pool_data['pooled'] / pool_data['rent']) * 100 if pool_data['rent'] > 0 else 0
+        new_pct = (pool_data['new'] / pool_data['rent']) * 100 if pool_data['rent'] > 0 else 0
+        
+        ax5.bar(['ArrayPool Requests'], [pooled_pct], color='green', alpha=0.7, label='Pooled (Good)')
+        ax5.bar(['ArrayPool Requests'], [new_pct], bottom=[pooled_pct], color='red', alpha=0.7, label='NEW (Creates VMAs)')
+        
+        ax5.set_ylabel('Percentage of Requests')
+        ax5.set_title(f'ArrayPool Efficiency Crisis\n{new_pct:.1f}% are NEW allocations!', 
+                      fontweight='bold', color='red')
+        ax5.legend()
+        
+        # Add text annotations
+        if pooled_pct > 5:
+            ax5.text(0, pooled_pct/2, f'{pooled_pct:.1f}%\nPooled', ha='center', va='center', 
+                     fontweight='bold', color='white')
+        if new_pct > 5:
+            ax5.text(0, pooled_pct + new_pct/2, f'{new_pct:.1f}%\nNEW\n(VMA creators!)', 
+                     ha='center', va='center', fontweight='bold', color='white')
+    
+    # 6. Crisis Summary
+    ax6 = axes[1, 2]
+    ax6.axis('off')
+    
+    # Calculate time to crash (rough estimate)
+    growth_rate = vma_data['total_vmas'] / (7 * 60) if vma_data['total_vmas'] > 0 else 0  # VMAs per minute
+    remaining_vmas = vma_data['vma_limit'] - vma_data['total_vmas']
+    minutes_to_crash = remaining_vmas / growth_rate if growth_rate > 0 else float('inf')
+    
+    outstanding = vma_data['arraypool'].get('outstanding', 0)
+    new_allocs = vma_data['arraypool'].get('new', 0)
+    virtual_tb = vma_data['memory'].get('arraypool_virtual_tb', 0)
+    
+    crisis_text = f"""
+🚨 CRISIS SUMMARY 🚨
+
+Current VMAs: {vma_data['total_vmas']:,}
+Limit: {vma_data['vma_limit']:,}
+Usage: {vma_data['percent_used']:.1f}%
+
+⏰ Est. Time to Crash:
+{minutes_to_crash:.0f} minutes
+
+🔥 Root Causes:
+• {new_allocs:,} NEW ArrayPool buffers
+• {outstanding:,} outstanding buffers
+• Each creates a VMA
+• {virtual_tb:.0f}TB VIRTUAL memory allocated
+• Only ~{vma_data['memory'].get('gc_committed_gb', 0):.0f}GB actually committed
+
+💡 The {virtual_tb:.0f}TB is VIRTUAL:
+• ArrayPool reserves address space
+• Only small portion is physical RAM
+• But each buffer = 1 VMA
+• {outstanding:,} outstanding buffers
+• = {outstanding:,} VMAs approaching limit!
+
+💡 IMMEDIATE FIXES:
+• Reduce ConcurrentServiceRequests
+• Reduce MaxInMemoryParts  
+• Increase buffer sizes
+• Force GC more frequently
+
+⚠️ STATUS: CRITICAL
+System will crash soon!
+    """
+    
+    ax6.text(0.05, 0.95, crisis_text, transform=ax6.transAxes, fontsize=10,
+             verticalalignment='top', fontfamily='monospace',
+             bbox=dict(boxstyle='round', facecolor='red', alpha=0.2))
+    
+    plt.tight_layout()
+    plt.savefig('vma_crisis_analysis.png', dpi=300, bbox_inches='tight')
+    print("\n🚨 CRITICAL VMA CRISIS ANALYSIS saved to: vma_crisis_analysis.png")
+    plt.show()
 
 def main():
-    parser = argparse.ArgumentParser(description='Analyze S3 download metrics from log file')
+    parser = argparse.ArgumentParser(description='Analyze VMA exhaustion from log file')
     parser.add_argument('logfile', help='Path to log file')
-    parser.add_argument('-o', '--output', default='download_metrics.png', 
-                       help='Output file for plot (default: download_metrics.png)')
-    parser.add_argument('--no-plot', action='store_true', help='Skip creating plot')
     
     args = parser.parse_args()
     
-    metrics = DownloadMetrics()
-    metrics.parse_log_file(args.logfile)
-    metrics.print_summary()
+    print(f"Parsing VMA data from: {args.logfile}")
+    vma_data = parse_vma_data_from_log(args.logfile)
     
-    if not args.no_plot:
-        metrics.plot_metrics(args.output)
-
+    print(f"Found {vma_data['total_vmas']:,} VMAs ({vma_data['percent_used']:.1f}% of limit)")
+    print(f"Outstanding ArrayPool buffers: {vma_data['arraypool'].get('outstanding', 0):,}")
+    
+    create_vma_crisis_visualization(vma_data)
 
 if __name__ == '__main__':
     main()
