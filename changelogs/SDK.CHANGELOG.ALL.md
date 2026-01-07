@@ -1,3 +1,11 @@
+### 3.7.1198.0 (2026-01-07 19:16 UTC)
+* WorkSpaces (3.7.505.0)
+	* Add StateMessage and ProgressPercentage fields to DescribeCustomWorkspaceImageImport API response.
+* Core 3.7.500.63
+	* Revert [Added ServiceFullName to IServiceMetadata](https://github.com/aws/aws-sdk-net/pull/4267/changes/65fce5311313e9bcd9e1d9d7f7d3f2d4d82c95ed) as it caused other service packages to throw an exception.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1197.0 (2026-01-06 19:17 UTC)
 * CostExplorer (3.7.509.0)
 	* This release updates existing reservation recommendations API to support deployment model.
