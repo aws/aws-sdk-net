@@ -15,10 +15,6 @@ with open('arraypool_simulation_results.json', 'r') as f:
 # Extract data
 data = []
 for r in results:
-    # Skip cases with 512MB parts as they show anomalous behavior
-    if r['PartSize'] >= 512 * 1024 * 1024:
-        continue
-    
     data.append({
         'part_size_mb': r['PartSize'] / (1024 * 1024),
         'chunk_size_kb': r['ChunkSize'] / 1024,
@@ -212,6 +208,169 @@ for m_val in sorted(set(m_values)):
     print(f"\nM = {m_val}:")
     print(f"  Average Real_VMAs / Unique_Arrays = {avg_ratio:.4f}")
     print(f"  Suggests: Real_VMAs ≈ Unique_Arrays × {avg_ratio:.4f}")
+
+# Chunk size analysis
+print("\n" + "="*80)
+print("CHUNK SIZE IMPACT ANALYSIS:")
+print("="*80)
+
+chunk_sizes_kb = np.array([d['chunk_size_kb'] for d in data])
+part_sizes_mb = np.array([d['part_size_mb'] for d in data])
+
+unique_chunk_sizes = sorted(set(chunk_sizes_kb))
+unique_part_sizes = sorted(set(part_sizes_mb))
+
+if len(unique_chunk_sizes) > 1 and len(unique_part_sizes) > 1:
+    print(f"\nPart sizes tested: {unique_part_sizes}")
+    print(f"Chunk sizes tested: {unique_chunk_sizes}")
+    
+    # Create chunk size visualization
+    fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+    
+    # Plot 1: Heatmap of VMAs by Part Size and Chunk Size
+    ax1 = axes[0, 0]
+    
+    # Build heatmap data
+    from collections import defaultdict
+    vma_matrix = defaultdict(lambda: defaultdict(list))
+    for d in data:
+        vma_matrix[d['part_size_mb']][d['chunk_size_kb']].append(d['real_vmas'])
+    
+    heatmap_data = []
+    for ps in unique_part_sizes:
+        row = []
+        for cs in unique_chunk_sizes:
+            if vma_matrix[ps][cs]:
+                row.append(np.mean(vma_matrix[ps][cs]))
+            else:
+                row.append(0)
+        heatmap_data.append(row)
+    
+    heatmap_data = np.array(heatmap_data)
+    
+    im = ax1.imshow(heatmap_data, cmap='RdYlGn_r', aspect='auto')
+    ax1.set_xticks(range(len(unique_chunk_sizes)))
+    ax1.set_yticks(range(len(unique_part_sizes)))
+    ax1.set_xticklabels([f'{int(cs)}KB' if cs < 1024 else f'{int(cs/1024)}MB' 
+                         for cs in unique_chunk_sizes], rotation=45)
+    ax1.set_yticklabels([f'{int(ps)}MB' for ps in unique_part_sizes])
+    ax1.set_xlabel('Chunk Size', fontsize=12, fontweight='bold')
+    ax1.set_ylabel('Part Size', fontsize=12, fontweight='bold')
+    ax1.set_title('Real OS VMAs: Part Size × Chunk Size', fontsize=14, fontweight='bold')
+    plt.colorbar(im, ax=ax1, label='Real OS VMAs')
+    
+    # Add text annotations
+    for i in range(len(unique_part_sizes)):
+        for j in range(len(unique_chunk_sizes)):
+            if heatmap_data[i, j] > 0:
+                ax1.text(j, i, f'{int(heatmap_data[i, j])}',
+                        ha="center", va="center", color="white" if heatmap_data[i, j] > heatmap_data.max()/2 else "black",
+                        fontsize=8, fontweight='bold')
+    
+    # Plot 2: VMAs vs Chunk Size for each Part Size
+    ax2 = axes[0, 1]
+    colors = plt.cm.tab10(np.linspace(0, 1, len(unique_part_sizes)))
+    
+    for idx, ps in enumerate(unique_part_sizes):
+        chunk_vma_pairs = []
+        for cs in unique_chunk_sizes:
+            if vma_matrix[ps][cs]:
+                chunk_vma_pairs.append((cs, np.mean(vma_matrix[ps][cs])))
+        
+        if chunk_vma_pairs:
+            chunks, vmas = zip(*chunk_vma_pairs)
+            ax2.plot(chunks, vmas, 'o-', color=colors[idx], linewidth=2,
+                    markersize=8, label=f'{int(ps)}MB parts')
+    
+    ax2.set_xlabel('Chunk Size (KB)', fontsize=12, fontweight='bold')
+    ax2.set_ylabel('Real OS VMAs', fontsize=12, fontweight='bold')
+    ax2.set_title('VMAs vs Chunk Size by Part Size', fontsize=14, fontweight='bold')
+    ax2.set_xscale('log', base=2)
+    ax2.set_yscale('log')
+    ax2.grid(True, alpha=0.3, which='both')
+    ax2.legend(fontsize=9)
+    ax2.axhline(y=65536, color='red', linestyle='--', linewidth=2, alpha=0.5)
+    
+    # Plot 3: Chunks per Part impact
+    ax3 = axes[1, 0]
+    
+    # Group by similar chunks/part ratios
+    chunks_bins = [0, 128, 512, 2048, 8192, 100000]
+    bin_labels = ['0-128', '128-512', '512-2K', '2K-8K', '8K+']
+    
+    for label, (low, high) in zip(bin_labels, zip(chunks_bins[:-1], chunks_bins[1:])):
+        mask = (chunks_per_part >= low) & (chunks_per_part < high)
+        if np.any(mask):
+            ax3.scatter(chunks_per_part[mask], real_vmas[mask], 
+                       alpha=0.6, s=100, label=f'{label} chunks/part')
+    
+    ax3.set_xlabel('Chunks Per Part', fontsize=12, fontweight='bold')
+    ax3.set_ylabel('Real OS VMAs', fontsize=12, fontweight='bold')
+    ax3.set_title('VMAs vs Chunks Per Part', fontsize=14, fontweight='bold')
+    ax3.set_xscale('log')
+    ax3.set_yscale('log')
+    ax3.grid(True, alpha=0.3, which='both')
+    ax3.legend(fontsize=9)
+    ax3.axhline(y=65536, color='red', linestyle='--', linewidth=2, alpha=0.5, label='VMA Limit')
+    
+    # Plot 4: Pool efficiency by chunk size
+    ax4 = axes[1, 1]
+    
+    for idx, ps in enumerate(unique_part_sizes):
+        chunk_eff_pairs = []
+        for cs in unique_chunk_sizes:
+            mask = (part_sizes_mb == ps) & (chunk_sizes_kb == cs)
+            if np.any(mask):
+                avg_miss_rate = np.mean(pool_miss_rate[mask])
+                chunk_eff_pairs.append((cs, avg_miss_rate))
+        
+        if chunk_eff_pairs:
+            chunks, miss_rates = zip(*chunk_eff_pairs)
+            ax4.scatter(chunks, miss_rates, color=colors[idx], s=100, 
+                       alpha=0.6, label=f'{int(ps)}MB parts')
+    
+    ax4.set_xlabel('Chunk Size (KB)', fontsize=12, fontweight='bold')
+    ax4.set_ylabel('Pool Miss Rate', fontsize=12, fontweight='bold')
+    ax4.set_title('Pool Miss Rate vs Chunk Size', fontsize=14, fontweight='bold')
+    ax4.set_xscale('log', base=2)
+    ax4.grid(True, alpha=0.3, which='both')
+    ax4.legend(fontsize=9)
+    
+    plt.tight_layout()
+    plt.savefig('vma_chunk_size_analysis.png', dpi=150, bbox_inches='tight')
+    print(f"\n✓ Chunk size analysis saved to: vma_chunk_size_analysis.png")
+    
+    # Print findings
+    print(f"\nKey findings:")
+    max_vma_idx = np.argmax(real_vmas)
+    min_vma_idx = np.argmin(real_vmas)
+    vma_ratio = real_vmas.max() / real_vmas.min() if real_vmas.min() > 0 else 0
+    print(f"  • Highest VMAs: {real_vmas[max_vma_idx]:.0f} - {data[max_vma_idx]['scenario']}")
+    print(f"  • Lowest VMAs: {real_vmas[min_vma_idx]:.0f} - {data[min_vma_idx]['scenario']}")
+    print(f"  • VMA range: {real_vmas.min():.0f} to {real_vmas.max():.0f} ({vma_ratio:.1f}× difference)")
+    
+    # Analyze chunk size effect
+    print(f"\n  Chunk size effect on VMAs (holding part size constant):")
+    for ps in unique_part_sizes[:3]:  # Show first 3 part sizes
+        mask = part_sizes_mb == ps
+        if np.any(mask):
+            vmas_for_ps = real_vmas[mask]
+            if len(vmas_for_ps) > 1:
+                vma_range = vmas_for_ps.max() - vmas_for_ps.min()
+                vma_pct = (vma_range / vmas_for_ps.mean()) * 100
+                print(f"    {int(ps)}MB parts: VMAs vary by {vma_range:.0f} ({vma_pct:.1f}% of mean)")
+    
+    # Analyze M and C effect
+    print(f"\n  MaxInMemoryParts (M) and ConcurrentRequests (C) effect:")
+    for m_val in sorted(set(m_values))[:3]:  # Show first 3 M values
+        mask = m_values == m_val
+        if np.any(mask):
+            vmas_for_m = real_vmas[mask]
+            if len(vmas_for_m) > 1:
+                print(f"    M={int(m_val)}: VMAs range from {vmas_for_m.min():.0f} to {vmas_for_m.max():.0f}")
+
+else:
+    print("\nInsufficient chunk size variations for detailed analysis")
 
 print("\n" + "="*80)
 print("Analysis complete!")
