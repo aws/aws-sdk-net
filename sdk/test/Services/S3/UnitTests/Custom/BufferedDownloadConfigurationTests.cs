@@ -18,7 +18,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             int concurrentRequests = 10;
-            int maxInMemoryParts = 5;
+            int? maxInMemoryParts = 5;
             int bufferSize = 8192;
             long targetPartSize = 8 * 1024 * 1024; // 8MB
 
@@ -38,7 +38,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             int concurrentRequests = 10;
-            int maxInMemoryParts = 5;
+            int? maxInMemoryParts = 5;
             int bufferSize = 8192;
             long targetPartSize = 8 * 1024 * 1024; // 8MB
             int chunkBufferSize = 32 * 1024; // 32KB
@@ -59,7 +59,7 @@ namespace AWSSDK.UnitTests
         {
             // Arrange
             int concurrentRequests = 10;
-            int maxInMemoryParts = 5;
+            int? maxInMemoryParts = 5;
             int bufferSize = 8192;
             long targetPartSize = 8 * 1024 * 1024; // 8MB
 
@@ -160,6 +160,22 @@ namespace AWSSDK.UnitTests
         {
             // Act & Assert - ExpectedException
             var config = new BufferedDownloadConfiguration(0, 5, 8192, 8 * 1024 * 1024);
+        }
+
+        [TestMethod]
+        public void Constructor_WithNullMaxInMemoryParts_AcceptsValue()
+        {
+            // Arrange
+            int concurrentRequests = 10;
+            int? maxInMemoryParts = null;
+            int bufferSize = 8192;
+            long targetPartSize = 8 * 1024 * 1024; // 8MB
+
+            // Act
+            var config = new BufferedDownloadConfiguration(concurrentRequests, maxInMemoryParts, bufferSize, targetPartSize);
+
+            // Assert
+            Assert.IsNull(config.MaxInMemoryParts);
         }
 
         [TestMethod]
