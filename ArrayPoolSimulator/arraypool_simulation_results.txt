@@ -1,0 +1,7 @@
+════════════════════════════════════════════════════════════════════════
+ArrayPool Behavior Simulator for OpenStreamWithResponse
+(Accurate simulation with MaxInMemoryParts and streaming behavior)
+════════════════════════════════════════════════════════════════════════
+
+Scenario: 128MB parts, C=10, M=50, 10K parts
+────────────────────────────────────────────────────────────────────────
