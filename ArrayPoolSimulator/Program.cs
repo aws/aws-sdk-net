@@ -25,21 +25,39 @@
         {
             static async Task Main(string[] args)
             {
+                // Check for custom pool flag
+                bool useCustomPool = args.Contains("--custom-pool");
+                
+                // Check for iterations flag
+                int iterations = 1;
+                for (int i = 0; i < args.Length; i++)
+                {
+                    if ((args[i] == "--iterations" || args[i] == "-n") && i + 1 < args.Length)
+                    {
+                        if (int.TryParse(args[i + 1], out int parsedIterations) && parsedIterations > 0)
+                        {
+                            iterations = parsedIterations;
+                        }
+                        break;
+                    }
+                }
+                
                 // Check if running as child process
                 if (args.Length >= 2 && args[0] == "--scenario")
                 {
-                    await RunSingleScenarioAsync(int.Parse(args[1]));
+                    await RunSingleScenarioAsync(int.Parse(args[1]), useCustomPool);
                     return;
                 }
                 
                 // Parent mode: spawn child processes for each scenario
-                await RunAllScenariosAsProcessesAsync();
+                await RunAllScenariosAsProcessesAsync(useCustomPool, iterations);
             }
 
-            static async Task RunAllScenariosAsProcessesAsync()
+            static async Task RunAllScenariosAsProcessesAsync(bool useCustomPool, int iterations)
             {
-                var outputFile = "arraypool_simulation_results.txt";
-                var jsonFile = "arraypool_simulation_results.json";
+                var poolType = useCustomPool ? "custom" : "shared";
+                var outputFile = $"arraypool_simulation_results_{poolType}.txt";
+                var jsonFile = $"arraypool_simulation_results_{poolType}.json";
                 
                 using var writer = new StreamWriter(outputFile) { AutoFlush = true };
                 var results = new List<SimulationResult>();
@@ -48,7 +66,7 @@
                 
                 output.WriteLine("════════════════════════════════════════════════════════════════════════");
                 output.WriteLine("ArrayPool Behavior Simulator for OpenStreamWithResponse");
-                output.WriteLine("(Accurate simulation with MaxInMemoryParts and streaming behavior)");
+                output.WriteLine($"(Running {iterations} iteration{(iterations > 1 ? "s" : "")} per scenario)");
                 output.WriteLine("════════════════════════════════════════════════════════════════════════");
                 output.WriteLine();
      
@@ -59,21 +77,40 @@
                 {
                     var (name, partSize, chunkSize, concurrent, maxInMemory, totalParts) = scenarios[i];
                     
-                    output.WriteLine($"Running scenario {i + 1}/{scenarios.Length} in separate process...");
+                    output.WriteLine($"Running scenario {i + 1}/{scenarios.Length}...");
                     output.WriteLine($"Scenario: {name}");
                     output.WriteLine("────────────────────────────────────────────────────────────────────────");
                     
-                    // Spawn child process for this scenario
-                    var result = await RunScenarioInProcessAsync(i, output);
-                    
-                    if (result != null)
+                    // Run multiple iterations
+                    var iterationResults = new List<SimulationResult>();
+                    for (int iter = 1; iter <= iterations; iter++)
                     {
-                        results.Add(result);
-                        output.WriteLine($"✓ Scenario {i + 1} complete: RealOSVMAsCreated = {result.RealOSVMAsCreated:N0}");
+                        output.WriteLine($"  Iteration {iter}/{iterations}...");
+                        var result = await RunScenarioInProcessAsync(i, output, useCustomPool);
+                        
+                        if (result != null)
+                        {
+                            iterationResults.Add(result);
+                        }
+                        else
+                        {
+                            output.WriteLine($"  ✗ Iteration {iter} failed");
+                        }
+                    }
+                    
+                    if (iterationResults.Count > 0)
+                    {
+                        // Calculate averaged result
+                        var avgResult = CalculateAverageResult(iterationResults);
+                        results.Add(avgResult);
+                        output.WriteLine($"✓ Scenario complete ({iterationResults.Count}/{iterations} successful)");
+                        output.WriteLine($"  Average UniqueArrays: {avgResult.UniqueArrays:N0}");
+                        output.WriteLine($"  Average RealOSVMAs: {avgResult.RealOSVMAsCreated:N0}");
+                        output.WriteLine($"  Average PoolHitRate: {avgResult.PoolHitRate:P1}");
                     }
                     else
                     {
-                        output.WriteLine($"✗ Scenario {i + 1} failed");
+                        output.WriteLine($"✗ Scenario {i + 1} failed (no successful iterations)");
                     }
                     
                     output.WriteLine();
@@ -101,65 +138,79 @@
                 Console.WriteLine("\nSimulation complete! Check output files for results.");
             }
 
+            static SimulationResult CalculateAverageResult(List<SimulationResult> results)
+            {
+                if (results.Count == 0)
+                {
+                    throw new ArgumentException("Cannot calculate average of empty result list");
+                }
+
+                // Take the first result as a template for non-numeric fields
+                var template = results[0];
+
+                // Calculate averages for all numeric fields
+                var avgResult = new SimulationResult
+                {
+                    ScenarioName = template.ScenarioName,
+                    PoolType = template.PoolType,
+                    PartSize = template.PartSize,
+                    ChunkSize = template.ChunkSize,
+                    ConcurrentRequests = template.ConcurrentRequests,
+                    MaxInMemoryParts = template.MaxInMemoryParts,
+                    PartsDownloaded = template.PartsDownloaded,
+                    ChunksPerPart = template.ChunksPerPart,
+                    
+                    // Averaged values
+                    PartsStreamed = (int)results.Average(r => r.PartsStreamed),
+                    PartsBuffered = (int)results.Average(r => r.PartsBuffered),
+                    PeakBufferedParts = (int)results.Average(r => r.PeakBufferedParts),
+                    BufferFullCount = (int)results.Average(r => r.BufferFullCount),
+                    TotalRents = (long)results.Average(r => r.TotalRents),
+                    TotalReturns = (long)results.Average(r => r.TotalReturns),
+                    UniqueArrays = (long)results.Average(r => r.UniqueArrays),
+                    PeakConcurrentArrays = (long)results.Average(r => r.PeakConcurrentArrays),
+                    PoolHitRate = results.Average(r => r.PoolHitRate),
+                    PoolMissRate = results.Average(r => r.PoolMissRate),
+                    TheoreticalMaxVMAs = (long)results.Average(r => r.TheoreticalMaxVMAs),
+                    SimulatedUniqueArrays = (long)results.Average(r => r.SimulatedUniqueArrays),
+                    RealOSVMAsCreated = (int)results.Average(r => r.RealOSVMAsCreated),
+                    SimulationTimeMs = (long)results.Average(r => r.SimulationTimeMs),
+                    
+                    // Boolean flags - consider safe if ALL iterations were safe
+                    IsSafeTheoretical = results.All(r => r.IsSafeTheoretical),
+                    IsSafeSimulated = results.All(r => r.IsSafeSimulated)
+                };
+
+                return avgResult;
+            }
+
             static (string, long, int, int, int, int)[] GetScenarios()
             {
-                // Define test parameter arrays (power-of-2 progression)
-                var partSizeMB = new[] { 8, 16, 32, 64, 128, 256 };
-                var chunkSizeKB = new[] { 64, 128, 256, 512, 1024, 2048, 4096, 8192 }; // 64KB to 8MB
-                var mValues = new[] { 4, 8, 12, 16, 24, 32, 48, 64 };
-                var cValues = new[] { 2, 4, 8, 16, 32, 64 };
+                // Define test parameter arrays
+                var partSizeMB = new[] { 4096 };
+                var chunkSizeKB = new[] { 64};
+                var mValues = new[] { 48 };
+                var cValues = new[] { 20 };
                 
                 var scenarios = new List<(string, long, int, int, int, int)>();
                 const int totalParts = 100;
                 
-                // === PART 1: M value variations (64MB parts, 64KB chunks, C=2) ===
-                // Goal: Understand M's impact on VMA creation
-                foreach (var m in mValues)
-                {
-                    scenarios.Add(CreateScenario(64, 64, 2, m, totalParts));
-                }
-                
-                // === PART 2: C scaling with M (64MB parts, 64KB chunks) ===
-                // Test different C values for each M (only where C <= M)
-                var cScalingConfigs = new[] { 
-                    (m: 8, cList: new[] { 2, 4, 8 }),
-                    (m: 16, cList: new[] { 4, 8, 16 }),
-                    (m: 32, cList: new[] { 8, 16, 32 }),
-                    (m: 64, cList: new[] { 16, 32, 64 })
-                };
-                
-                foreach (var config in cScalingConfigs)
-                {
-                    foreach (var c in config.cList)
-                    {
-                        scenarios.Add(CreateScenario(64, 64, c, config.m, totalParts));
-                    }
-                }
-                
-                // === PART 3: Chunk Size × Part Size Matrix (C=10, M=16) ===
-                // Test ALL chunk sizes across ALL part sizes to validate formula
+                // Simple 4-level nested loops over all combinations
                 foreach (var partMB in partSizeMB)
                 {
                     foreach (var chunkKB in chunkSizeKB)
                     {
-                        scenarios.Add(CreateScenario(partMB, chunkKB, 10, 16, totalParts));
-                    }
-                }
-                
-                // === PART 4: Full C×M matrix for representative part sizes ===
-                // Test various C×M combinations for 8MB, 32MB, and 128MB parts (64KB chunks)
-                var matrixPartSizes = new[] { 8, 32, 128 };
-                var matrixConfigs = new[] {
-                    (c: 2, m: 8), (c: 4, m: 8), (c: 8, m: 8),
-                    (c: 2, m: 16), (c: 8, m: 16), (c: 16, m: 16),
-                    (c: 4, m: 32), (c: 16, m: 32), (c: 32, m: 32)
-                };
-                
-                foreach (var partMB in matrixPartSizes)
-                {
-                    foreach (var (c, m) in matrixConfigs)
-                    {
-                        scenarios.Add(CreateScenario(partMB, 64, c, m, totalParts));
+                        foreach (var m in mValues)
+                        {
+                            foreach (var c in cValues)
+                            {
+                                // Skip invalid combinations where C > M
+                                if (c <= m)
+                                {
+                                    scenarios.Add(CreateScenario(partMB, chunkKB, c, m, totalParts));
+                                }
+                            }
+                        }
                     }
                 }
                 
@@ -182,15 +233,16 @@
                 return (name, partSize, chunkSize, c, m, totalParts);
             }
 
-            static async Task<SimulationResult?> RunScenarioInProcessAsync(int scenarioIndex, DualWriter output)
+            static async Task<SimulationResult?> RunScenarioInProcessAsync(int scenarioIndex, DualWriter output, bool useCustomPool)
             {
                 try
                 {
                     // Build the command to run this scenario in a child process
+                    var customPoolArg = useCustomPool ? " --custom-pool" : "";
                     var processInfo = new ProcessStartInfo
                     {
                         FileName = "dotnet",
-                        Arguments = $"run -- --scenario {scenarioIndex}",
+                        Arguments = $"run -- --scenario {scenarioIndex}{customPoolArg}",
                         UseShellExecute = false,
                         RedirectStandardOutput = true,
                         RedirectStandardError = true,
@@ -244,7 +296,7 @@
                 }
             }
 
-            static async Task RunSingleScenarioAsync(int scenarioIndex)
+            static async Task RunSingleScenarioAsync(int scenarioIndex, bool useCustomPool)
             {
                 var scenarios = GetScenarios();
                 
@@ -257,6 +309,9 @@
 
                 var (name, partSize, chunkSize, concurrent, maxInMemory, totalParts) = scenarios[scenarioIndex];
 
+                // Calculate chunks per part for custom pool sizing
+                int chunksPerPart = (int)Math.Ceiling((double)partSize / chunkSize);
+
                 // Suppress all console output during simulation - redirect to null
                 var originalOut = Console.Out;
                 Console.SetOut(TextWriter.Null);
@@ -264,7 +319,9 @@
                 try
                 {
                     // Run simulation silently (no console output)
-                    var tracker = new ArrayPoolTracker<byte>(chunkSize);
+                    var tracker = useCustomPool 
+                        ? new ArrayPoolTracker<byte>(chunkSize, maxInMemory, chunksPerPart)
+                        : new ArrayPoolTracker<byte>(chunkSize);
                     var simulator = new AccurateOpenStreamSimulator(tracker, partSize, chunkSize, concurrent, maxInMemory);
 
                     int initialVMAs = GetVMACount();
@@ -282,6 +339,7 @@
                     var result = new SimulationResult
                     {
                         ScenarioName = name,
+                        PoolType = useCustomPool ? "Custom" : "Shared",
                         PartSize = partSize,
                         ChunkSize = chunkSize,
                         ConcurrentRequests = concurrent,
@@ -553,6 +611,7 @@
         class SimulationResult
         {
             public string ScenarioName { get; set; } = "";
+            public string PoolType { get; set; } = "Shared";
             public long PartSize { get; set; }
             public int ChunkSize { get; set; }
             public int ConcurrentRequests { get; set; }
@@ -600,7 +659,7 @@
         /// </summary>
         class ArrayPoolTracker<T>
         {
-            private readonly ArrayPool<T> _underlyingPool = ArrayPool<T>.Shared;
+            private readonly ArrayPool<T> _underlyingPool;
             private readonly int _expectedArraySize;
      
             // Thread-safe counters
@@ -612,9 +671,29 @@
             // Track unique array instances to detect new allocations
             private readonly ConcurrentDictionary<int, bool> _trackedArrays = new();
      
+            // Constructor for shared pool
             public ArrayPoolTracker(int expectedArraySize)
             {
                 _expectedArraySize = expectedArraySize;
+                _underlyingPool = ArrayPool<T>.Shared;
+            }
+
+            // Constructor for custom pool with proper sizing
+            public ArrayPoolTracker(int chunkSize, int maxInMemoryParts, int chunksPerPart)
+            {
+                _expectedArraySize = chunkSize;
+                
+                // Calculate maxArraysPerBucket: MaxInMemoryParts × ChunksPerPart
+                // Add 20% buffer for safety
+                int maxArraysPerBucket = (int)Math.Ceiling(maxInMemoryParts * chunksPerPart * 1.2);
+                
+                // Create custom pool with proper sizing
+                _underlyingPool = ArrayPool<T>.Create(
+                    maxArrayLength: chunkSize,
+                    maxArraysPerBucket: maxArraysPerBucket
+                );
+                
+                Console.WriteLine($"[CustomPool] Created with maxArrayLength={chunkSize}, maxArraysPerBucket={maxArraysPerBucket} (M={maxInMemoryParts}, chunks={chunksPerPart})");
             }
      
             public T[] Rent(int minimumLength)
