@@ -1,0 +1,12 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Revert [Added ServiceFullName to IServiceMetadata](https://github.com/aws/aws-sdk-net/pull/4266/changes/00ec2fca1e84da1a42bc815f0a1de0b4c912b323) as it caused other service packages to throw an exception."
+        ],
+        "backwardIncompatibilitiesToIgnore": [ 
+            "Amazon.Runtime.Internal.IServiceMetadata/MethodRemoved"
+        ]
+    }
+}
