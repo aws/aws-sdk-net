@@ -27,6 +27,30 @@ class DownloadMetrics:
         self.arraypool_outstanding = []
         self.arraypool_allocated_mb = []
         
+        # NEW: HTTP tracking metrics
+        self.http_active = []
+        self.http_total = []
+        self.http_received_mb = []
+        
+        # NEW: Buffer flow analysis metrics
+        self.download_rate_mbps = []
+        self.buffer_growth_rate = []
+        self.memory_growth_rate_gbps = []
+        self.buffer_efficiency = []
+        self.vma_growth_rate = []
+        # NEW: Enhanced VMA analysis metrics
+        self.vma_total = []
+        self.vma_median_kb = []
+        self.vma_avg_kb = []
+        self.vma_64kb = []
+        self.vma_under1mb = []
+        self.vma_1to10mb = []
+        self.vma_10to100mb = []
+        self.vma_over100mb = []
+        self.vma_rw_anon = []
+        self.vma_reserved_anon = []
+        self.vma_gc_match_percent = []
+        
     def parse_log_file(self, filename):
         """Parse the log file and extract metrics"""
         print(f"Parsing log file: {filename}")
@@ -60,6 +84,9 @@ class DownloadMetrics:
                 ret = None
                 allocate = None
                 allocated_mb = None
+                http_active = None
+                http_total = None
+                http_received = None
                 
                 # Look ahead at the next few lines for associated metrics
                 for j in range(i, min(i + 10, len(lines))):
@@ -117,6 +144,44 @@ class DownloadMetrics:
                                 pooled = max(0, rent - allocate)  # Calculate pooled for old format
                                 outstanding = rent - ret  # Calculate outstanding for old format
                     
+                    # HTTP tracking metrics - NEW
+                    if http_active is None:
+                        http_match = re.search(r'HTTP: Active=(\d+), Total=(\d+), Received=([\d,]+)MB', next_line)
+                        if http_match:
+                            http_active = int(http_match.group(1))
+                            http_total = int(http_match.group(2))
+                    # Enhanced VMA analysis - NEW
+                    if 'Total VMAs:' in next_line:
+                        vma_total_match = re.search(r'Total VMAs: ([\d,]+)', next_line)
+                        if vma_total_match:
+                            vma_total = int(vma_total_match.group(1).replace(',', ''))
+                    
+                    if 'VMA Size Stats:' in next_line:
+                        vma_stats_match = re.search(r'Median=([\d,]+)KB, Avg=([\d,]+)KB', next_line)
+                        if vma_stats_match:
+                            vma_median = int(vma_stats_match.group(1).replace(',', ''))
+                            vma_avg = int(vma_stats_match.group(2).replace(',', ''))
+                    
+                    if '1-10MB VMAs:' in next_line:
+                        vma_breakdown_match = re.search(r'1-10MB VMAs: ([\d,]+)', next_line)
+                        if vma_breakdown_match:
+                            vma_1to10mb = int(vma_breakdown_match.group(1).replace(',', ''))
+                    
+                    if '10-100MB VMAs:' in next_line:
+                        vma_large_match = re.search(r'10-100MB VMAs: ([\d,]+)', next_line)
+                        if vma_large_match:
+                            vma_10to100mb = int(vma_large_match.group(1).replace(',', ''))
+                    
+                    if 'rw-p anon:' in next_line:
+                        rw_anon_match = re.search(r'rw-p anon: ([\d,]+) VMAs', next_line)
+                        if rw_anon_match:
+                            vma_rw_anon = int(rw_anon_match.group(1).replace(',', ''))
+                    
+                    if 'GC vs VMA Match:' in next_line:
+                        gc_match_match = re.search(r'GC vs VMA Match: ([\d.]+)%', next_line)
+                        if gc_match_match:
+                            vma_gc_match = float(gc_match_match.group(1))
+                    
                     # Stop if we hit the next Progress line
                     if j > i and re.search(r'Progress: ([\d.]+) (GB|MB)', next_line):
                         break
@@ -162,6 +227,16 @@ class DownloadMetrics:
                         self.arraypool_allocate.append(self.arraypool_allocate[-1] if self.arraypool_allocate else 0)
                         self.arraypool_outstanding.append(self.arraypool_outstanding[-1] if self.arraypool_outstanding else 0)
                         self.arraypool_allocated_mb.append(self.arraypool_allocated_mb[-1] if self.arraypool_allocated_mb else 0)
+                    
+                    # HTTP metrics - NEW
+                    if http_active is not None:
+                        self.http_active.append(http_active)
+                        self.http_total.append(http_total)
+                        self.http_received_mb.append(http_received)
+                    else:
+                        self.http_active.append(self.http_active[-1] if self.http_active else 0)
+                        self.http_total.append(self.http_total[-1] if self.http_total else 0)
+                        self.http_received_mb.append(self.http_received_mb[-1] if self.http_received_mb else 0)
             
             i += 1
         
@@ -348,6 +423,15 @@ class DownloadMetrics:
                 print(f"   ⚠️  STATUS: DANGER - Approaching limit!")
             else:
                 print(f"   ✓ STATUS: Safe")
+        
+        print(f"\n🌐 HTTP Requests:")
+        if self.http_total:
+            print(f"   Total requests: {self.http_total[-1]:,}")
+            print(f"   Peak active: {max(self.http_active):,}")
+            print(f"   Data received: {self.http_received_mb[-1]:,} MB")
+            if self.progress_gb[-1] > 0:
+                efficiency = (self.http_received_mb[-1] / 1024) / self.progress_gb[-1] * 100
+                print(f"   HTTP efficiency: {efficiency:.1f}% (should be ~100%)")
         
         print(f"\n🔄 ArrayPool:")
         if self.arraypool_outstanding:

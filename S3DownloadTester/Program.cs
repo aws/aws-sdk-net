@@ -377,7 +377,7 @@ namespace S3DownloadTester
 
             var transferConfig = new TransferUtilityConfig
             {
-                ConcurrentServiceRequests = 20
+                ConcurrentServiceRequests = 10
             };
 
             Console.WriteLine("Transfer Utility Configuration:");
@@ -392,7 +392,7 @@ namespace S3DownloadTester
                 // Create S3 client with HTTP tracking
                 var s3config = new AmazonS3Config()
                 {
-                    // HttpClientFactory = new TrackingHttpClientFactory()
+                    HttpClientFactory = new TrackingHttpClientFactory()
                 };
                 
                 using var s3Client = new AmazonS3Client(s3config);
@@ -537,7 +537,7 @@ namespace S3DownloadTester
                         var speedBytesPerSecond = totalBytesRead / elapsedSeconds;
                         
                         // Snapshot VMAs if significant growth
-                        // vmaTracker.SnapshotIfGrowth(5000);
+                        vmaTracker.SnapshotIfGrowth(5000);
                         
                         if (contentLength.HasValue)
                         {
@@ -545,18 +545,17 @@ namespace S3DownloadTester
                             var etaSeconds = remainingBytes / speedBytesPerSecond;
                             var eta = TimeSpan.FromSeconds(etaSeconds);
                             
-                      
-                            
-                            // Debug logging every 500MB
-                            if (totalBytesRead % (500 * 1024 * 1024) == 0)
-                            {
                             Console.WriteLine($"  Progress: {FormatBytes(totalBytesRead)} / {FormatBytes(contentLength.Value)} ({(double)totalBytesRead / contentLength.Value * 100:F2}%)");
                             Console.WriteLine($"    Speed: {FormatThroughputGbps(speedBytesPerSecond)} | Elapsed: {FormatTimeSpan(downloadStart.Elapsed)} | ETA: {FormatTimeSpan(eta)}");
                             Console.WriteLine($"    GC: {GetGCStats()}");
                             Console.WriteLine($"    GC Events: {gcListener}");
                             Console.WriteLine($"    VMAs: {vmaTracker}");
                             Console.WriteLine($"    ArrayPool: {arrayPoolListener}");
-                            // Console.WriteLine($"    {TrackingHttpClientFactory.GetStats()}");
+                            Console.WriteLine($"    {TrackingHttpClientFactory.GetStats()}");
+                            
+                            // Debug logging every 500MB
+                            if (totalBytesRead % (500 * 1024 * 1024) == 0)
+                            {
                                 LogSuspiciousThreads();
                                 LogArrayPoolLeaks();
                                 LogMemoryPressure();
@@ -619,24 +618,37 @@ namespace S3DownloadTester
                 int reservedAnon = 0;
                 int vma64KB = 0;
                 int vmaUnder1MB = 0;
+                int vma10to100MB = 0;
+                int vmaOver100MB = 0;
                 long totalRwAnon = 0;
                 long totalReserved = 0;
+                
+                // Categorize all VMAs by size and type
+                var vmaCategories = new Dictionary<string, int>();
+                var vmaSizes = new List<long>();
                 
                 foreach (var line in maps)
                 {
                     var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                    if (parts.Length < 6) // anonymous (no pathname)
+                    var addrs = parts[0].Split('-');
+                    long size = Convert.ToInt64(addrs[1], 16) - Convert.ToInt64(addrs[0], 16);
+                    var perms = parts[1];
+                    
+                    vmaSizes.Add(size);
+                    
+                    // Categorize by permissions and backing
+                    string category;
+                    if (parts.Length < 6) // anonymous
                     {
-                        var addrs = parts[0].Split('-');
-                        long size = Convert.ToInt64(addrs[1], 16) - Convert.ToInt64(addrs[0], 16);
-                        var perms = parts[1];
-                        
+                        category = $"{perms} anon";
                         if (perms == "rw-p") // read-write private = committed heap
                         {
                             totalRwAnon += size;
                             if (size == 64*1024) vma64KB++;
                             else if (size < 1024*1024) vmaUnder1MB++;
                             else if (size <= 10*1024*1024) rwAnon1to10MB++;
+                            else if (size <= 100*1024*1024) vma10to100MB++;
+                            else vmaOver100MB++;
                         }
                         else if (perms == "---p") // reserved address space
                         {
@@ -644,23 +656,65 @@ namespace S3DownloadTester
                             reservedAnon++;
                         }
                     }
+                    else
+                    {
+                        var backing = parts[5];
+                        if (backing.Contains(".so") || backing.Contains("lib"))
+                            category = $"{perms} lib";
+                        else if (backing.Contains("["))
+                            category = $"{perms} {backing}";
+                        else
+                            category = $"{perms} file";
+                    }
+                    
+                    vmaCategories[category] = vmaCategories.GetValueOrDefault(category, 0) + 1;
                 }
                 
-                Console.WriteLine($"    [VMA vs GC Analysis]");
-                Console.WriteLine($"      64KB VMAs: {vma64KB} (ArrayPool)");
-                Console.WriteLine($"      <1MB VMAs: {vmaUnder1MB}");
-                Console.WriteLine($"      1-10MB VMAs: {rwAnon1to10MB} (GC segments)");
-                Console.WriteLine($"      rw-p anon (committed): {totalRwAnon/1024.0/1024.0/1024.0:F1}GB");
-                Console.WriteLine($"      ---p anon (reserved):  {totalReserved/1024.0/1024.0/1024.0:F1}GB across {reservedAnon} VMAs");
-                Console.WriteLine($"      GC Committed:          {gcInfo.TotalCommittedBytes/1024.0/1024.0/1024.0:F1}GB");
+                // Calculate statistics
+                vmaSizes.Sort();
+                var medianSize = vmaSizes[vmaSizes.Count / 2];
+                var avgSize = vmaSizes.Average();
+                
+                Console.WriteLine($"    [ENHANCED VMA vs GC Analysis]");
+                Console.WriteLine($"      Total VMAs: {maps.Length:N0}");
+                Console.WriteLine($"      VMA Size Stats: Median={medianSize/1024:N0}KB, Avg={avgSize/1024:N0}KB");
+                Console.WriteLine($"      ");
+                Console.WriteLine($"      Anonymous Memory Breakdown:");
+                Console.WriteLine($"        64KB VMAs: {vma64KB:N0} (likely ArrayPool small buffers)");
+                Console.WriteLine($"        <1MB VMAs: {vmaUnder1MB:N0} (small allocations)");
+                Console.WriteLine($"        1-10MB VMAs: {rwAnon1to10MB:N0} (GC segments + large ArrayPool)");
+                Console.WriteLine($"        10-100MB VMAs: {vma10to100MB:N0} (very large segments)");
+                Console.WriteLine($"        >100MB VMAs: {vmaOver100MB:N0} (huge segments)");
+                Console.WriteLine($"      ");
+                Console.WriteLine($"      Memory Totals:");
+                Console.WriteLine($"        rw-p anon (committed): {totalRwAnon/1024.0/1024.0/1024.0:F1}GB");
+                Console.WriteLine($"        ---p anon (reserved):  {totalReserved/1024.0/1024.0/1024.0:F1}GB across {reservedAnon:N0} VMAs");
+                Console.WriteLine($"        GC Committed:          {gcInfo.TotalCommittedBytes/1024.0/1024.0/1024.0:F1}GB");
+                Console.WriteLine($"      ");
                 
                 var diff = Math.Abs(totalRwAnon - (long)gcInfo.TotalCommittedBytes);
                 var matchPercent = 100.0 - (diff * 100.0 / Math.Max(totalRwAnon, (long)gcInfo.TotalCommittedBytes));
-                Console.WriteLine($"      Match: {matchPercent:F1}% (if >90%, GC is creating the VMAs)");
+                Console.WriteLine($"      GC vs VMA Match: {matchPercent:F1}% (if >90%, GC is creating most VMAs)");
+                
+                // Show top VMA categories
+                Console.WriteLine($"      ");
+                Console.WriteLine($"      Top VMA Categories:");
+                foreach (var kvp in vmaCategories.OrderByDescending(x => x.Value).Take(8))
+                {
+                    Console.WriteLine($"        {kvp.Key}: {kvp.Value:N0} VMAs");
+                }
+                
+                // ArrayPool correlation analysis
+                Console.WriteLine($"      ");
+                Console.WriteLine($"      ArrayPool Correlation:");
+                var potentialArrayPoolVMAs = vma64KB + vmaUnder1MB + rwAnon1to10MB;
+                Console.WriteLine($"        Potential ArrayPool VMAs: {potentialArrayPoolVMAs:N0}");
+                Console.WriteLine($"        Non-GC VMAs: {maps.Length - potentialArrayPoolVMAs - reservedAnon:N0}");
+                
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"    [VMA vs GC Analysis] Error: {ex.Message}");
+                Console.WriteLine($"    [Enhanced VMA vs GC Analysis] Error: {ex.Message}");
             }
         }
 
