@@ -2,6 +2,10 @@ using Amazon.S3;
 using Amazon.S3.Transfer;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
+using System.Text;
+using System.Linq;
+using Amazon.Runtime;
+using System.Net.Http;
 
 namespace S3DownloadTester
 {
@@ -12,7 +16,6 @@ namespace S3DownloadTester
         private long _returnCount = 0;
         private long _allocateCount = 0;
         private long _allocatedBytes = 0;
-        private bool _debugMode = false;
         
         public long RentCount => _rentCount;
         public long ReturnCount => _returnCount;
@@ -23,38 +26,32 @@ namespace S3DownloadTester
         public long RentFromPoolCount => Math.Max(0, _rentCount - _allocateCount); // Reused from pool
         public long OutstandingCount => _rentCount - _returnCount; // Currently unreturned
 
-        public ArrayPoolEventListener(bool debugMode = false)
-        {
-            _debugMode = debugMode;
-        }
+        public ArrayPoolEventListener() { }
 
         protected override void OnEventSourceCreated(EventSource eventSource)
         {
-            // ArrayPoolEventSource is the internal name
             if (eventSource.Name == "System.Buffers.ArrayPoolEventSource")
             {
-                if (_debugMode)
-                {
-                    Console.WriteLine($"[DEBUG] Found ArrayPoolEventSource, enabling events");
-                }
+                // Note: Don't log here - it can trigger ArrayPool events
                 EnableEvents(eventSource, EventLevel.Verbose, EventKeywords.All);
             }
         }
 
         protected override void OnEventWritten(EventWrittenEventArgs eventData)
         {
-            // Debug: Log all events to see what's actually firing
-            if (_debugMode && eventData.EventSource.Name == "System.Buffers.ArrayPoolEventSource")
-            {
-                Console.WriteLine($"[DEBUG] Event: {eventData.EventName}, Payload count: {eventData.Payload?.Count ?? 0}");
-            }
+            // Note: Cannot log here in debug mode - Console.WriteLine uses ArrayPool, causing stack overflow
 
-            // Try both possible event name formats
             switch (eventData.EventName)
             {
                 case "BufferRented":
                 case "Rent":
                     Interlocked.Increment(ref _rentCount);
+                    // Track large buffer rents
+                    if (eventData.Payload?.Count > 0 && eventData.Payload[0] is int rentSize && rentSize >= 1024*1024)
+                    {
+                        // Use Debug.WriteLine to avoid ArrayPool recursion
+                        System.Diagnostics.Debug.WriteLine($"[ArrayPool] Large rent: {rentSize/1024}KB");
+                    }
                     break;
                 case "BufferReturned":
                 case "Return":
@@ -62,16 +59,19 @@ namespace S3DownloadTester
                     break;
                 case "BufferAllocated":
                 case "Allocate":
-                    // This fires when ArrayPool allocates a NEW buffer (not reusing)
                     Interlocked.Increment(ref _allocateCount);
-                    // Try different payload positions
                     if (eventData.Payload?.Count > 0)
                     {
                         for (int i = 0; i < eventData.Payload.Count; i++)
                         {
-                            if (eventData.Payload[i] is int size && size > 0 && size < 100_000_000)
+                            if (eventData.Payload[i] is int allocSize && allocSize > 0 && allocSize < 100_000_000)
                             {
-                                Interlocked.Add(ref _allocatedBytes, size);
+                                Interlocked.Add(ref _allocatedBytes, allocSize);
+                                // Log large allocations
+                                if (allocSize >= 1024*1024)
+                                {
+                                    System.Diagnostics.Debug.WriteLine($"[ArrayPool] Large alloc: {allocSize/1024}KB");
+                                }
                                 break;
                             }
                         }
@@ -86,19 +86,145 @@ namespace S3DownloadTester
         }
     }
 
+    // HTTP connection tracker
+    public class HttpConnectionTracker
+    {
+        private static int _activeConnections = 0;
+        private static int _totalConnections = 0;
+        
+        public static void ConnectionOpened()
+        {
+            Interlocked.Increment(ref _activeConnections);
+            Interlocked.Increment(ref _totalConnections);
+        }
+        
+        public static void ConnectionClosed()
+        {
+            Interlocked.Decrement(ref _activeConnections);
+        }
+        
+        public static string GetStats() => $"HTTP: Active={_activeConnections}, Total={_totalConnections}";
+    }
+
+    // Finalizer tracker to detect leaked objects
+    public class FinalizerTracker
+    {
+        private static int _pendingFinalizers = 0;
+        
+        public static void RegisterFinalizable()
+        {
+            Interlocked.Increment(ref _pendingFinalizers);
+        }
+        
+        public static void Finalized()
+        {
+            Interlocked.Decrement(ref _pendingFinalizers);
+        }
+        
+        public static string GetStats() => $"Finalizers: Pending={_pendingFinalizers}";
+    }
+
+    // Custom HttpClientFactory for AWS SDK tracking
+    public class TrackingHttpClientFactory : HttpClientFactory
+    {
+        private static int _activeRequests = 0;
+        private static int _totalRequests = 0;
+        private static long _totalBytesReceived = 0;
+        
+        public static string GetStats() => $"HTTP: Active={_activeRequests}, Total={_totalRequests}, Received={_totalBytesReceived/1024/1024:N0}MB";
+        
+        public override HttpClient CreateHttpClient(IClientConfig clientConfig)
+        {
+            var handler = new TrackingHttpHandler();
+            return new HttpClient(handler);
+        }
+        
+        private class TrackingHttpHandler : HttpClientHandler
+        {
+            protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                Interlocked.Increment(ref _activeRequests);
+                Interlocked.Increment(ref _totalRequests);
+                
+                try
+                {
+                    var response = await base.SendAsync(request, cancellationToken);
+                    
+                    // Track response size
+                    if (response.Content?.Headers?.ContentLength.HasValue == true)
+                    {
+                        Interlocked.Add(ref _totalBytesReceived, response.Content.Headers.ContentLength.Value);
+                    }
+                    
+                    return response;
+                }
+                finally
+                {
+                    Interlocked.Decrement(ref _activeRequests);
+                }
+            }
+        }
+    }
+
+    public class GCEventListener : EventListener
+    {
+        public int HeapExpandCount = 0;
+        public int GCCount = 0;
+        public long LastHeapSize = 0;
+        private bool _debugMode = false;
+
+        public GCEventListener(bool debugMode = false)
+        {
+            _debugMode = debugMode;
+        }
+
+        protected override void OnEventSourceCreated(EventSource source)
+        {
+            if (source.Name == "Microsoft-Windows-DotNETRuntime")
+            {
+                if (_debugMode)
+                    Console.WriteLine("[DEBUG] Found DotNETRuntime EventSource, enabling GC events");
+                EnableEvents(source, EventLevel.Informational, (EventKeywords)0x1); // GC keyword
+            }
+        }
+
+        protected override void OnEventWritten(EventWrittenEventArgs e)
+        {
+            if (e.EventName?.Contains("GCStart") == true)
+            {
+                Interlocked.Increment(ref GCCount);
+            }
+            else if (e.EventName?.Contains("HeapStats") == true && e.Payload?.Count > 0)
+            {
+                if (e.Payload[0] is long heapSize && heapSize > LastHeapSize * 1.1)
+                {
+                    Interlocked.Increment(ref HeapExpandCount);
+                    var oldSize = LastHeapSize;
+                    LastHeapSize = heapSize;
+                    Console.WriteLine($"[GC] Heap expanded: {oldSize / 1024.0 / 1024.0 / 1024.0:F2} GB -> {heapSize / 1024.0 / 1024.0 / 1024.0:F2} GB");
+                }
+            }
+        }
+
+        public override string ToString() => $"GCs={GCCount}, HeapExpands={HeapExpandCount}, LastHeap={LastHeapSize / 1024.0 / 1024.0 / 1024.0:F2}GB";
+    }
+
     // VMA tracker for Linux diagnostics
     public class VMATracker
     {
         private int _initialVMACount;
         private int _peakVMACount;
-        private int _maxMapCount = 65530; // default
+        private int _maxMapCount = 65530;
+        private int _lastSnapshotVMACount = 0;
+        private string _snapshotDir;
 
-        public VMATracker()
+        public VMATracker(string snapshotDir = "/tmp")
         {
+            _snapshotDir = snapshotDir;
             _initialVMACount = GetCurrentVMACount();
             _peakVMACount = _initialVMACount;
+            _lastSnapshotVMACount = _initialVMACount;
             
-            // Read max_map_count on initialization
             try
             {
                 var maxMapStr = File.ReadAllText("/proc/sys/vm/max_map_count").Trim();
@@ -118,6 +244,26 @@ namespace S3DownloadTester
             var current = GetCurrentVMACount();
             if (current > _peakVMACount)
                 _peakVMACount = current;
+        }
+
+        // Snapshot VMAs if growth exceeds threshold
+        public void SnapshotIfGrowth(int threshold = 5000)
+        {
+            var current = GetCurrentVMACount();
+            if (current - _lastSnapshotVMACount > threshold)
+            {
+                try
+                {
+                    var filename = $"{_snapshotDir}/maps_vma{current}_{DateTime.Now:HHmmss}.txt";
+                    File.Copy("/proc/self/maps", filename);
+                    Console.WriteLine($"[VMA] Snapshot saved: {filename}");
+                    _lastSnapshotVMACount = current;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[VMA] Snapshot failed: {ex.Message}");
+                }
+            }
         }
 
         private int GetCurrentVMACount()
@@ -145,6 +291,36 @@ namespace S3DownloadTester
         }
     }
 
+    // GC Heap detailed stats
+    public static class GCHeapTracker
+    {
+        public static string GetStats()
+        {
+            var gcInfo = GC.GetGCMemoryInfo();
+            var sb = new StringBuilder();
+            
+            sb.AppendLine($"      Committed: {gcInfo.TotalCommittedBytes / 1024.0 / 1024.0 / 1024.0:F2} GB");
+            sb.AppendLine($"      HeapSize: {gcInfo.HeapSizeBytes / 1024.0 / 1024.0 / 1024.0:F2} GB");
+            sb.AppendLine($"      MemoryLoad: {gcInfo.MemoryLoadBytes / 1024.0 / 1024.0 / 1024.0:F2} GB");
+            sb.AppendLine($"      Fragmented: {gcInfo.FragmentedBytes / 1024.0 / 1024.0:F0} MB");
+            sb.AppendLine($"      PauseTime%: {gcInfo.PauseTimePercentage:F2}%");
+            
+            for (int i = 0; i < gcInfo.GenerationInfo.Length && i < 4; i++)
+            {
+                var gen = gcInfo.GenerationInfo[i];
+                sb.AppendLine($"      Gen{i}: Size={gen.SizeAfterBytes / 1024.0 / 1024.0:F0}MB, Frag={gen.FragmentationAfterBytes / 1024.0 / 1024.0:F0}MB");
+            }
+            
+            return sb.ToString().TrimEnd();
+        }
+
+        public static string GetOneLiner()
+        {
+            var gcInfo = GC.GetGCMemoryInfo();
+            return $"Committed={gcInfo.TotalCommittedBytes / 1024.0 / 1024.0 / 1024.0:F1}GB, Heap={gcInfo.HeapSizeBytes / 1024.0 / 1024.0 / 1024.0:F1}GB, Frag={gcInfo.FragmentedBytes / 1024.0 / 1024.0:F0}MB";
+        }
+    }
+
     class Program
     {
         private const string BucketName = "hagrid-garrett-test";
@@ -154,75 +330,77 @@ namespace S3DownloadTester
         static async Task Main(string[] args)
         {
             bool useStreamApi = args.Contains("--stream");
+            bool verboseAll = args.Contains("--verbose") || args.Contains("-v");
+            bool debugArrayPool = verboseAll || args.Contains("--debug-arraypool");
+            bool debugGC = verboseAll || args.Contains("--debug-gc");
+            bool verboseHeap = verboseAll || args.Contains("--verbose-heap");
 
-            // Initialize diagnostics (set debug=true to see all ArrayPool events)
-            bool debugArrayPool = args.Contains("--debug-arraypool");
-            var arrayPoolListener = new ArrayPoolEventListener(debugArrayPool);
+            // Initialize diagnostics
+            var arrayPoolListener = new ArrayPoolEventListener();
+            var gcListener = new GCEventListener(debugGC);
             var vmaTracker = new VMATracker();
-            
-            if (debugArrayPool)
+
+            // Catch unhandled exceptions
+            AppDomain.CurrentDomain.UnhandledException += (s, e) =>
             {
-                Console.WriteLine("ArrayPool debug mode enabled - will show all events");
-            }
-
-            // Amazon.AWSConfigs.LoggingConfig.LogResponses = Amazon.ResponseLoggingOption.Always;
-            // Amazon.AWSConfigs.LoggingConfig.LogTo = Amazon.LoggingOptions.Console;
-            // Amazon.AWSConfigs.LoggingConfig.LogMetrics = true;
-            // Amazon.AWSConfigs.AddTraceListener("Amazon", new System.Diagnostics.ConsoleTraceListener());
-
+                Console.WriteLine($"\n[FATAL] Unhandled: {e.ExceptionObject}");
+                Console.WriteLine($"  VMAs: {vmaTracker}");
+                Console.WriteLine($"  GC: {GCHeapTracker.GetOneLiner()}");
+                try { File.Copy("/proc/self/maps", $"/tmp/maps_fatal_{DateTime.Now:HHmmss}.txt"); } catch { }
+            };
+            
             Console.WriteLine("S3 Download Tester");
             Console.WriteLine("==================");
             Console.WriteLine($"Bucket: {BucketName}");
             Console.WriteLine($"Key: {Key}");
             Console.WriteLine($"Download Directory: {DownloadDirectory}");
             Console.WriteLine($"API: {(useStreamApi ? "OpenStreamWithResponseAsync" : "DownloadWithResponseAsync")}");
+            Console.WriteLine($"Debug flags: ArrayPool={debugArrayPool}, GC={debugGC}, VerboseHeap={verboseHeap}");
             Console.WriteLine();
 
-            // Ensure download directory exists
             Directory.CreateDirectory(DownloadDirectory);
 
-            // Create file path - extract filename from key
             string fileName = Path.GetFileName(Key);
             string filePath = Path.Combine(DownloadDirectory, fileName);
 
             Console.WriteLine($"Downloading to: {filePath}");
             Console.WriteLine();
-            Console.WriteLine("Diagnostics:");
-            Console.WriteLine($"  Initial VMAs: {vmaTracker.InitialCount}");
-            Console.WriteLine($"  Initial ArrayPool: {arrayPoolListener}");
-            Console.WriteLine();
-            Console.WriteLine("Starting download...");
+            Console.WriteLine("Initial Diagnostics:");
+            Console.WriteLine($"  VMAs: {vmaTracker}");
+            Console.WriteLine($"  ArrayPool: {arrayPoolListener}");
+            Console.WriteLine($"  GC Events: {gcListener}");
+            Console.WriteLine($"  GC Heap: {GCHeapTracker.GetOneLiner()}");
             Console.WriteLine();
 
             var stopwatch = Stopwatch.StartNew();
-
-            // Create cancellation token with 40-hour timeout
             using var cts = new CancellationTokenSource(TimeSpan.FromHours(40));
-            Console.WriteLine($"Cancellation token timeout: 40 hours");
-            Console.WriteLine();
 
-            // Configure TransferUtility for high performance with reasonable memory usage
             var transferConfig = new TransferUtilityConfig
             {
-                ConcurrentServiceRequests = 10
+                ConcurrentServiceRequests = 20
             };
 
             Console.WriteLine("Transfer Utility Configuration:");
             Console.WriteLine($"  Concurrent Service Requests: {transferConfig.ConcurrentServiceRequests}");
-            Console.WriteLine($"  Max In-Memory Parts: 128 (for stream API)");
+            Console.WriteLine($"  Max In-Memory Parts: 50 (for stream API)");
+            Console.WriteLine();
+            Console.WriteLine("Starting download...");
             Console.WriteLine();
 
             try
             {
-                var s3config = new AmazonS3Config{
-                //    BufferSize = 8 * 1024 * 1024    
+                // Create S3 client with HTTP tracking
+                var s3config = new AmazonS3Config()
+                {
+                    // HttpClientFactory = new TrackingHttpClientFactory()
                 };
+                
                 using var s3Client = new AmazonS3Client(s3config);
                 var transferUtility = new TransferUtility(s3Client, transferConfig);
 
                 if (useStreamApi)
                 {
-                    await DownloadUsingStreamAsync(transferUtility, filePath, cts.Token, vmaTracker, arrayPoolListener);
+                    await DownloadUsingStreamAsync(transferUtility, filePath, cts.Token, vmaTracker, arrayPoolListener, gcListener, verboseHeap);
                 }
                 else
                 {
@@ -230,13 +408,10 @@ namespace S3DownloadTester
                 }
 
                 stopwatch.Stop();
-
                 Console.WriteLine();
                 Console.WriteLine("Download completed successfully!");
-                Console.WriteLine($"Total elapsed time: {stopwatch.ElapsedMilliseconds:N0} ms");
-                Console.WriteLine($"Formatted time: {stopwatch.Elapsed}");
+                Console.WriteLine($"Total elapsed time: {stopwatch.Elapsed}");
                 
-                // Display file info
                 if (File.Exists(filePath))
                 {
                     var fileInfo = new FileInfo(filePath);
@@ -247,12 +422,35 @@ namespace S3DownloadTester
             {
                 stopwatch.Stop();
                 Console.WriteLine();
-                Console.WriteLine($"Error: {ex.Message}");
-                Console.WriteLine($"Elapsed time before error: {stopwatch.ElapsedMilliseconds:N0} ms");
+                Console.WriteLine($"[ERROR] {ex.GetType().Name}: {ex.Message}");
+                Console.WriteLine($"Elapsed: {stopwatch.Elapsed}");
                 Console.WriteLine();
-                Console.WriteLine("Stack trace:");
-                Console.WriteLine(ex.StackTrace);
-                return;
+                Console.WriteLine("=== CRASH DIAGNOSTICS ===");
+                Console.WriteLine($"VMAs: {vmaTracker}");
+                Console.WriteLine($"ArrayPool: {arrayPoolListener}");
+                Console.WriteLine($"GC Events: {gcListener}");
+                Console.WriteLine($"GC Heap: {GCHeapTracker.GetOneLiner()}");
+                
+                // Full inner exception chain
+                var inner = ex;
+                int depth = 0;
+                while (inner != null && depth < 5)
+                {
+                    Console.WriteLine($"\n[Exception {depth}] {inner.GetType().FullName}");
+                    Console.WriteLine($"  Message: {inner.Message}");
+                    Console.WriteLine($"  Stack:\n{inner.StackTrace}");
+                    inner = inner.InnerException;
+                    depth++;
+                }
+                
+                // Save VMA snapshot
+                try
+                {
+                    var path = $"/tmp/maps_error_{DateTime.Now:HHmmss}.txt";
+                    File.Copy("/proc/self/maps", path);
+                    Console.WriteLine($"\nVMA snapshot: {path}");
+                }
+                catch { }
             }
         }
 
@@ -273,22 +471,19 @@ namespace S3DownloadTester
             Console.WriteLine($"  ETag: {response.ETag}");
             Console.WriteLine($"  Last Modified: {response.LastModified}");
             if (response.PartsCount.HasValue)
-            {
                 Console.WriteLine($"  Parts Count: {response.PartsCount}");
-            }
-            
-            // Try to get Content-Length from Headers
-            if (response.Headers != null && response.Headers["Content-Length"] != null)
-            {
+            if (response.Headers?["Content-Length"] != null)
                 Console.WriteLine($"  Content Length: {response.Headers["Content-Length"]}");
-            }
-            if (response.Headers != null && response.Headers["Content-Type"] != null)
-            {
-                Console.WriteLine($"  Content Type: {response.Headers["Content-Type"]}");
-            }
         }
 
-        private static async Task DownloadUsingStreamAsync(TransferUtility transferUtility, string filePath, CancellationToken cancellationToken, VMATracker vmaTracker, ArrayPoolEventListener arrayPoolListener)
+        private static async Task DownloadUsingStreamAsync(
+            TransferUtility transferUtility, 
+            string filePath, 
+            CancellationToken cancellationToken, 
+            VMATracker vmaTracker, 
+            ArrayPoolEventListener arrayPoolListener,
+            GCEventListener gcListener,
+            bool verboseHeap)
         {
             Console.WriteLine("Using OpenStreamWithResponseAsync API...");
             Console.WriteLine("NOTE: Stream mode only reads data (no file write) to test pure streaming performance");
@@ -299,9 +494,6 @@ namespace S3DownloadTester
                 BucketName = BucketName,
                 Key = Key,
                 MaxInMemoryParts = 50,
-                // MultipartDownloadType = MultipartDownloadType.RANGE, // comment out to use default 5GB
-                // PartSize = 8 * 1024 * 1024,
-                // ChunkBufferSize = 2 * 1024 * 1024 * 1000
             };
 
             var response = await transferUtility.OpenStreamWithResponseAsync(request, cancellationToken);
@@ -310,13 +502,10 @@ namespace S3DownloadTester
             Console.WriteLine($"  ETag: {response.ETag}");
             Console.WriteLine($"  Last Modified: {response.LastModified}");
             if (response.PartsCount.HasValue)
-            {
                 Console.WriteLine($"  Parts Count: {response.PartsCount}");
-            }
             
-            // Try to get Content-Length from Headers
             long? contentLength = null;
-            if (response.Headers != null && response.Headers["Content-Length"] != null)
+            if (response.Headers?["Content-Length"] != null)
             {
                 if (long.TryParse(response.Headers["Content-Length"], out long parsedLength))
                 {
@@ -324,16 +513,13 @@ namespace S3DownloadTester
                     Console.WriteLine($"  Content Length: {FormatBytes(parsedLength)}");
                 }
             }
-            if (response.Headers != null && response.Headers["Content-Type"] != null)
-            {
-                Console.WriteLine($"  Content Type: {response.Headers["Content-Type"]}");
-            }
 
             Console.WriteLine();
-            Console.WriteLine("Reading stream (consuming data without writing to disk)...");
+            Console.WriteLine("Reading stream...");
 
-            // Read from stream only (no file write) - tests pure streaming performance
             var downloadStart = Stopwatch.StartNew();
+            int lastVmaCount = vmaTracker.CurrentCount;
+            
             using (var stream = response.ResponseStream)
             {
                 byte[] buffer = new byte[8 * 1024 * 1024]; 
@@ -343,34 +529,56 @@ namespace S3DownloadTester
 
                 while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
                 {
-                    // Just consume the data - no disk write
                     totalBytesRead += bytesRead;
 
-                    // Report progress every 100 MB
                     if (totalBytesRead - lastReportedBytes >= 100 * 1024 * 1024)
                     {
                         var elapsedSeconds = downloadStart.Elapsed.TotalSeconds;
                         var speedBytesPerSecond = totalBytesRead / elapsedSeconds;
                         
-                         if (contentLength.HasValue)
+                        // Snapshot VMAs if significant growth
+                        // vmaTracker.SnapshotIfGrowth(5000);
+                        
+                        if (contentLength.HasValue)
                         {
                             var remainingBytes = contentLength.Value - totalBytesRead;
                             var etaSeconds = remainingBytes / speedBytesPerSecond;
                             var eta = TimeSpan.FromSeconds(etaSeconds);
                             
+                      
+                            
+                            // Debug logging every 500MB
+                            if (totalBytesRead % (500 * 1024 * 1024) == 0)
+                            {
                             Console.WriteLine($"  Progress: {FormatBytes(totalBytesRead)} / {FormatBytes(contentLength.Value)} ({(double)totalBytesRead / contentLength.Value * 100:F2}%)");
                             Console.WriteLine($"    Speed: {FormatThroughputGbps(speedBytesPerSecond)} | Elapsed: {FormatTimeSpan(downloadStart.Elapsed)} | ETA: {FormatTimeSpan(eta)}");
                             Console.WriteLine($"    GC: {GetGCStats()}");
+                            Console.WriteLine($"    GC Events: {gcListener}");
                             Console.WriteLine($"    VMAs: {vmaTracker}");
                             Console.WriteLine($"    ArrayPool: {arrayPoolListener}");
+                            // Console.WriteLine($"    {TrackingHttpClientFactory.GetStats()}");
+                                LogSuspiciousThreads();
+                                LogArrayPoolLeaks();
+                                LogMemoryPressure();
+                                LogBufferFlow(arrayPoolListener, totalBytesRead, downloadStart.Elapsed);
+                            }
+                            
+                            if (verboseHeap)
+                            {
+                                Console.WriteLine($"    GC Heap Detail:");
+                                Console.WriteLine(GCHeapTracker.GetStats());
+                                AnalyzeVMAvsGCHeap();
+                            }
                         }
                         else
                         {
                             Console.WriteLine($"  Progress: {FormatBytes(totalBytesRead)}");
                             Console.WriteLine($"    Speed: {FormatThroughputGbps(speedBytesPerSecond)} | Elapsed: {FormatTimeSpan(downloadStart.Elapsed)}");
                             Console.WriteLine($"    GC: {GetGCStats()}");
+                            Console.WriteLine($"    GC Events: {gcListener}");
                             Console.WriteLine($"    VMAs: {vmaTracker}");
                             Console.WriteLine($"    ArrayPool: {arrayPoolListener}");
+                            Console.WriteLine($"    {TrackingHttpClientFactory.GetStats()}");
                         }
                         lastReportedBytes = totalBytesRead;
                     }
@@ -395,87 +603,64 @@ namespace S3DownloadTester
             
             var totalHeapMB = GC.GetTotalMemory(false) / 1024.0 / 1024.0;
             var gen2SizeMB = gcMemInfo.GenerationInfo[2].SizeAfterBytes / 1024.0 / 1024.0;
-            var fragPercent = gcMemInfo.FragmentedBytes * 100.0 / gcMemInfo.HeapSizeBytes;
+            var fragPercent = gcMemInfo.HeapSizeBytes > 0 ? gcMemInfo.FragmentedBytes * 100.0 / gcMemInfo.HeapSizeBytes : 0;
             
             return $"Gen0={gen0Count}, Gen1={gen1Count}, Gen2={gen2Count} | Heap={totalHeapMB:N0}MB | Gen2={gen2SizeMB:N0}MB | Frag={fragPercent:F1}%";
         }
 
-        private static string GetVMAStats()
+        private static void AnalyzeVMAvsGCHeap()
         {
             try
             {
-                // Read /proc/self/maps to get VMA information
+                var gcInfo = GC.GetGCMemoryInfo();
                 var maps = File.ReadAllLines("/proc/self/maps");
-                var totalVMAs = maps.Length;
                 
-                // Count different types and sizes
-                int anonCount = 0;
-                int libraryCount = 0;
-                int stackCount = 0;
-                int heapCount = 0;
-                
-                // Size distribution for anonymous mappings
-                int anon_under64KB = 0;
-                int anon_64KB_1MB = 0;
-                int anon_1MB_10MB = 0;
-                int anon_10MB_100MB = 0;
-                int anon_over100MB = 0;
+                int rwAnon1to10MB = 0;
+                int reservedAnon = 0;
+                int vma64KB = 0;
+                int vmaUnder1MB = 0;
+                long totalRwAnon = 0;
+                long totalReserved = 0;
                 
                 foreach (var line in maps)
                 {
-                    var parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    
-                    // Parse address range
-                    var addressRange = parts[0].Split('-');
-                    long startAddr = Convert.ToInt64(addressRange[0], 16);
-                    long endAddr = Convert.ToInt64(addressRange[1], 16);
-                    long sizeBytes = endAddr - startAddr;
-                    
-                    if (parts.Length >= 6)
+                    var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                    if (parts.Length < 6) // anonymous (no pathname)
                     {
-                        var name = parts[5];
-                        if (name.Contains("[stack"))
-                            stackCount++;
-                        else if (name.Contains("[heap"))
-                            heapCount++;
-                        else if (name.StartsWith("/"))
-                            libraryCount++;
-                    }
-                    else
-                    {
-                        // No name = anonymous mapping - categorize by size
-                        anonCount++;
+                        var addrs = parts[0].Split('-');
+                        long size = Convert.ToInt64(addrs[1], 16) - Convert.ToInt64(addrs[0], 16);
+                        var perms = parts[1];
                         
-                        if (sizeBytes < 65536)
-                            anon_under64KB++;
-                        else if (sizeBytes < 1048576)
-                            anon_64KB_1MB++;
-                        else if (sizeBytes < 10485760)
-                            anon_1MB_10MB++;
-                        else if (sizeBytes < 104857600)
-                            anon_10MB_100MB++;
-                        else
-                            anon_over100MB++;
+                        if (perms == "rw-p") // read-write private = committed heap
+                        {
+                            totalRwAnon += size;
+                            if (size == 64*1024) vma64KB++;
+                            else if (size < 1024*1024) vmaUnder1MB++;
+                            else if (size <= 10*1024*1024) rwAnon1to10MB++;
+                        }
+                        else if (perms == "---p") // reserved address space
+                        {
+                            totalReserved += size;
+                            reservedAnon++;
+                        }
                     }
                 }
                 
-                // Read vm.max_map_count
-                int maxMapCount = 65530; // default
-                try
-                {
-                    var maxMapStr = File.ReadAllText("/proc/sys/vm/max_map_count").Trim();
-                    maxMapCount = int.Parse(maxMapStr);
-                }
-                catch { }
+                Console.WriteLine($"    [VMA vs GC Analysis]");
+                Console.WriteLine($"      64KB VMAs: {vma64KB} (ArrayPool)");
+                Console.WriteLine($"      <1MB VMAs: {vmaUnder1MB}");
+                Console.WriteLine($"      1-10MB VMAs: {rwAnon1to10MB} (GC segments)");
+                Console.WriteLine($"      rw-p anon (committed): {totalRwAnon/1024.0/1024.0/1024.0:F1}GB");
+                Console.WriteLine($"      ---p anon (reserved):  {totalReserved/1024.0/1024.0/1024.0:F1}GB across {reservedAnon} VMAs");
+                Console.WriteLine($"      GC Committed:          {gcInfo.TotalCommittedBytes/1024.0/1024.0/1024.0:F1}GB");
                 
-                var percent = (totalVMAs * 100.0) / maxMapCount;
-                
-                return $"Total={totalVMAs}/{maxMapCount} ({percent:F1}%) | Anon={anonCount} (<64K:{anon_under64KB} 1-10M:{anon_1MB_10MB} 10-100M:{anon_10MB_100MB} >100M:{anon_over100MB})";
+                var diff = Math.Abs(totalRwAnon - (long)gcInfo.TotalCommittedBytes);
+                var matchPercent = 100.0 - (diff * 100.0 / Math.Max(totalRwAnon, (long)gcInfo.TotalCommittedBytes));
+                Console.WriteLine($"      Match: {matchPercent:F1}% (if >90%, GC is creating the VMAs)");
             }
             catch (Exception ex)
             {
-                // On non-Linux systems or if /proc isn't available
-                return $"N/A (Error: {ex.Message})";
+                Console.WriteLine($"    [VMA vs GC Analysis] Error: {ex.Message}");
             }
         }
 
@@ -496,45 +681,123 @@ namespace S3DownloadTester
 
         private static string FormatThroughputGbps(double bytesPerSecond)
         {
-            // Convert bytes/s to bits/s, then to Gbps using decimal (SI) units
             double bitsPerSecond = bytesPerSecond * 8;
-            double gbps = bitsPerSecond / 1_000_000_000; // 10^9 for Gbps
+            double gbps = bitsPerSecond / 1_000_000_000;
             
             if (gbps >= 1)
-            {
                 return $"{gbps:N2} Gbps";
-            }
             else if (gbps >= 0.001)
-            {
-                double mbps = bitsPerSecond / 1_000_000; // 10^6 for Mbps
-                return $"{mbps:N2} Mbps";
-            }
+                return $"{bitsPerSecond / 1_000_000:N2} Mbps";
             else
-            {
-                double kbps = bitsPerSecond / 1_000; // 10^3 for Kbps
-                return $"{kbps:N2} Kbps";
-            }
+                return $"{bitsPerSecond / 1_000:N2} Kbps";
         }
 
         private static string FormatTimeSpan(TimeSpan timeSpan)
         {
             if (timeSpan.TotalDays >= 1)
-            {
                 return $"{(int)timeSpan.TotalDays}d {timeSpan.Hours}h {timeSpan.Minutes}m";
-            }
             else if (timeSpan.TotalHours >= 1)
-            {
                 return $"{(int)timeSpan.TotalHours}h {timeSpan.Minutes}m {timeSpan.Seconds}s";
-            }
             else if (timeSpan.TotalMinutes >= 1)
-            {
                 return $"{(int)timeSpan.TotalMinutes}m {timeSpan.Seconds}s";
-            }
             else
-            {
                 return $"{timeSpan.Seconds}s";
-            }
         }
 
+        private static void LogSuspiciousThreads()
+        {
+            try
+            {
+                var threads = Process.GetCurrentProcess().Threads.Cast<ProcessThread>()
+                    .Where(t => t.TotalProcessorTime.TotalSeconds > 1)
+                    .OrderByDescending(t => t.TotalProcessorTime.TotalSeconds)
+                    .Take(3);
+                
+                foreach (var thread in threads)
+                {
+                    Console.WriteLine($"    Thread {thread.Id}: CPU={thread.TotalProcessorTime.TotalSeconds:F1}s, State={thread.ThreadState}");
+                }
+            }
+            catch { }
+        }
+
+        private static void LogArrayPoolLeaks()
+        {
+            try
+            {
+                // Force GC to see if it helps with ArrayPool returns
+                var before = GC.GetTotalMemory(false);
+                GC.Collect(2, GCCollectionMode.Forced, true);
+                GC.WaitForPendingFinalizers();
+                var after = GC.GetTotalMemory(false);
+                
+                Console.WriteLine($"    [DEBUG] Forced GC: {(before-after)/1024/1024:F1}MB freed");
+            }
+            catch { }
+        }
+
+        private static void LogMemoryPressure()
+        {
+            try
+            {
+                var workingSet = Process.GetCurrentProcess().WorkingSet64;
+                var privateMemory = Process.GetCurrentProcess().PrivateMemorySize64;
+                var gcMemory = GC.GetTotalMemory(false);
+                
+                Console.WriteLine($"    [MEMORY] WorkingSet={workingSet/1024/1024/1024:F1}GB, Private={privateMemory/1024/1024/1024:F1}GB, GC={gcMemory/1024/1024/1024:F1}GB");
+                
+                // Check if we're approaching memory limits
+                var memInfo = GC.GetGCMemoryInfo();
+                if (memInfo.MemoryLoadBytes > memInfo.TotalCommittedBytes * 2)
+                {
+                    Console.WriteLine($"    [WARNING] High memory pressure detected!");
+                }
+            }
+            catch { }
+        }
+
+        private static void LogBufferFlow(ArrayPoolEventListener arrayPoolListener, long totalBytesRead, TimeSpan elapsed)
+        {
+            try
+            {
+                var outstanding = arrayPoolListener.OutstandingCount;
+                var allocated = arrayPoolListener.AllocatedBytes;
+                
+                // Calculate rates
+                var downloadRateMBps = totalBytesRead / elapsed.TotalSeconds / 1024 / 1024;
+                var bufferGrowthRate = outstanding / elapsed.TotalSeconds;
+                var memoryGrowthRateGBps = (allocated / 1024.0 / 1024.0 / 1024.0) / elapsed.TotalSeconds;
+                
+                Console.WriteLine($"    [BUFFER FLOW]");
+                Console.WriteLine($"      Download Rate: {downloadRateMBps:F1} MB/s");
+                Console.WriteLine($"      Buffer Growth: {bufferGrowthRate:F0} buffers/sec");
+                Console.WriteLine($"      Memory Growth: {memoryGrowthRateGBps:F2} GB/sec");
+                Console.WriteLine($"      Buffer Efficiency: {totalBytesRead / (double)allocated * 100:F1}% (should be ~100%)");
+                
+                // Predict time to VMA exhaustion
+                var currentVMAs = GetCurrentVMACount();
+                if (currentVMAs > 0)
+                {
+                    var vmaGrowthRate = currentVMAs / elapsed.TotalSeconds;
+                    var timeToLimit = (65530 - currentVMAs) / vmaGrowthRate;
+                    Console.WriteLine($"      VMA Growth: {vmaGrowthRate:F1} VMAs/sec");
+                    if (timeToLimit > 0 && timeToLimit < 3600)
+                        Console.WriteLine($"      Time to VMA limit: {TimeSpan.FromSeconds(timeToLimit):mm\\:ss}");
+                }
+            }
+            catch { }
+        }
+
+        private static int GetCurrentVMACount()
+        {
+            try
+            {
+                return File.ReadAllLines("/proc/self/maps").Length;
+            }
+            catch
+            {
+                return -1;
+            }
+        }
     }
 }
