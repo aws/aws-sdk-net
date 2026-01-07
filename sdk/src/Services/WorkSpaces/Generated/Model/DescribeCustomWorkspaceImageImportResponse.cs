@@ -41,7 +41,9 @@ namespace Amazon.WorkSpaces.Model
         private ImageSourceIdentifier _imageSource;
         private string _infrastructureConfigurationArn;
         private DateTime? _lastUpdatedTime;
+        private int? _progressPercentage;
         private CustomWorkspaceImageImportState _state;
+        private string _stateMessage;
 
         /// <summary>
         /// Gets and sets the property Created. 
@@ -178,6 +180,25 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProgressPercentage. 
+        /// <para>
+        /// The estimated progress percentage of the WorkSpace image import workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public int? ProgressPercentage
+        {
+            get { return this._progressPercentage; }
+            set { this._progressPercentage = value; }
+        }
+
+        // Check to see if ProgressPercentage property is set
+        internal bool IsSetProgressPercentage()
+        {
+            return this._progressPercentage.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the WorkSpace image.
@@ -193,6 +214,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateMessage. 
+        /// <para>
+        /// The state message of the WorkSpace image import workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string StateMessage
+        {
+            get { return this._stateMessage; }
+            set { this._stateMessage = value; }
+        }
+
+        // Check to see if StateMessage property is set
+        internal bool IsSetStateMessage()
+        {
+            return this._stateMessage != null;
         }
 
     }
