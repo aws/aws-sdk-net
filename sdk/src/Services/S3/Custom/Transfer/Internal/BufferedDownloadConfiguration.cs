@@ -30,9 +30,9 @@ namespace Amazon.S3.Transfer.Internal
     internal class BufferedDownloadConfiguration : DownloadManagerConfiguration
     {
         /// <summary>
-        /// Maximum parts to keep in memory simultaneously.
+        /// Maximum parts to keep in memory simultaneously. When null, defaults to 1024.
         /// </summary>
-        public int MaxInMemoryParts { get; set; }
+        public int? MaxInMemoryParts { get; set; }
         
         /// <summary>
         /// Buffer size for I/O operations.
@@ -48,20 +48,20 @@ namespace Amazon.S3.Transfer.Internal
         /// Creates a BufferedDownloadConfiguration with the specified configuration values.
         /// </summary>
         /// <param name="concurrentServiceRequests">Maximum concurrent HTTP requests for downloading parts.</param>
-        /// <param name="maxInMemoryParts">Maximum number of parts to keep in memory simultaneously.</param>
+        /// <param name="maxInMemoryParts">Maximum number of parts to keep in memory simultaneously. When null, defaults to 1024.</param>
         /// <param name="bufferSize">Buffer size used for optimal I/O operations.</param>
         /// <param name="targetPartSizeBytes">Target size for each part in bytes.</param>
         /// <param name="chunkBufferSize">Optional chunk buffer size for ChunkedBufferStream. When null, defaults to 64KB.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when any parameter is less than or equal to 0.</exception>
         public BufferedDownloadConfiguration(
             int concurrentServiceRequests,
-            int maxInMemoryParts,
+            int? maxInMemoryParts,
             int bufferSize,
             long targetPartSizeBytes,
             int? chunkBufferSize = null)
             : base(concurrentServiceRequests, targetPartSizeBytes)
         {
-            if (maxInMemoryParts <= 0)
+            if (maxInMemoryParts.HasValue && maxInMemoryParts.Value <= 0)
                 throw new ArgumentOutOfRangeException(nameof(maxInMemoryParts), "Must be greater than 0");
             if (bufferSize <= 0)
                 throw new ArgumentOutOfRangeException(nameof(bufferSize), "Must be greater than 0");

@@ -32,22 +32,17 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public class TransferUtilityOpenStreamRequest : BaseDownloadRequest
     {
-        private int _maxInMemoryParts = 1024;
-
         /// <summary>
         /// Gets or sets the maximum number of parts to buffer in memory during multipart downloads.
-        /// The default value is 1024.
+        /// When null, defaults to 1024.
         /// </summary>
         /// <remarks>
         /// This property controls memory usage during streaming downloads. When combined with the 
         /// default part size of 8MB, the default value of 1024 parts allows up to 8GB of memory usage.
         /// Adjust this value based on your application's memory constraints and performance requirements.
+        /// Set to null to use the default value of 1024.
         /// </remarks>
-        public int MaxInMemoryParts
-        {
-            get { return this._maxInMemoryParts; }
-            set { this._maxInMemoryParts = value; }
-        }
+        public int? MaxInMemoryParts { get; set; }
 
         /// <summary>
         /// Gets or sets the chunk buffer size (in bytes) used for buffering out-of-order parts during multipart downloads.

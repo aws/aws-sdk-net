@@ -189,14 +189,17 @@ namespace Amazon.S3.Transfer.Internal
             if (config == null)
                 throw new ArgumentNullException(nameof(config));
             
+            // Resolve null MaxInMemoryParts to default value of 1024
+            var maxInMemoryParts = config.MaxInMemoryParts ?? 1024;
+            
             _partDataSources = new ConcurrentDictionary<int, IPartDataSource>();
             _bufferSpaceAvailable = new SemaphoreSlim(
-                config.MaxInMemoryParts,  // initialCount
-                config.MaxInMemoryParts   // maxCount - prevents exceeding configured limit
+                maxInMemoryParts,  // initialCount
+                maxInMemoryParts   // maxCount - prevents exceeding configured limit
             );
             _partAvailable = new AutoResetEvent(false);
             
-            _logger.DebugFormat("PartBufferManager initialized with MaxInMemoryParts={0}", config.MaxInMemoryParts);
+            _logger.DebugFormat("PartBufferManager initialized with MaxInMemoryParts={0}", maxInMemoryParts);
         }
 
         /// <inheritdoc/>
