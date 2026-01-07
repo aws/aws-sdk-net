@@ -94,10 +94,22 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     response.LastUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProgressPercentage", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ProgressPercentage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StateMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
