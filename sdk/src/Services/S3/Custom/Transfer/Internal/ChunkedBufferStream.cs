@@ -26,6 +26,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -79,6 +80,7 @@ namespace Amazon.S3.Transfer.Internal
         private readonly List<byte[]> _chunks;
         private readonly int _chunkSize;
         private readonly long _maxStreamSize;
+        private readonly Logger _logger = Logger.GetLogger(typeof(ChunkedBufferStream));
         private long _length = 0;
         private long _position = 0;
         private bool _isReadMode = false;
@@ -385,20 +387,28 @@ namespace Amazon.S3.Transfer.Internal
         {
             if (!_disposed && disposing)
             {
-                try
+                // Return all chunks to ArrayPool
+                foreach (var chunk in _chunks)
                 {
-                    // Return all chunks to ArrayPool
-                    foreach (var chunk in _chunks)
+                    try
                     {
                         ArrayPool<byte>.Shared.Return(chunk);
                     }
+                    catch (Exception ex)
+                    {
+                        // Suppress exceptions in Dispose - continue cleanup
+                        _logger.DebugFormat("ChunkedBufferStream.Dispose: Exception returning chunk to ArrayPool: {0}", ex.Message);
+                    }
+                }
+                try
+                {
                     _chunks.Clear();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     // Suppress exceptions in Dispose - continue cleanup
+                    _logger.DebugFormat("ChunkedBufferStream.Dispose: Exception clearing chunks list: {0}", ex.Message);
                 }
-
                 _disposed = true;
             }
 
