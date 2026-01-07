@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
+    #line 1 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class NuGetPackageReadmeSection : NuGetPackageReadmeSectionBase
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.NuGet
         {
             this.Write("\r\n");
             
-            #line 7 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
+            #line 7 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
 
     foreach(var kvp in ((IDictionary<string, string>)this.Session["NugetPackages"]))
     {
@@ -40,28 +40,28 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("* [");
             
-            #line 11 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
+            #line 11 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(kvp.Key));
             
             #line default
             #line hidden
             this.Write("](https://www.nuget.org/packages/");
             
-            #line 11 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
+            #line 11 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(kvp.Key));
             
             #line default
             #line hidden
             this.Write("/)\r\n\t* ");
             
-            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
+            #line 12 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(kvp.Value));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 13 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
+            #line 13 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\NuGet\NuGetPackageReadmeSection.tt"
 
     }
 
