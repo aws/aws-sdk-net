@@ -108,74 +108,85 @@
                     // (Name, PartSize, ChunkSize, ConcurrentRequests, MaxInMemoryParts, TotalParts)
                     // NOTE: Only including scenarios where C <= M (since M throttles C)
                     
-                    // === Part 1: Different Part Sizes with varying M (C=10, 64KB chunks) ===
-                    // Power-of-2 progression from 1MB to 512MB
-                    // Removed M=8 cases (since C=10 > M=8)
+                    // === PART 1: Different M values (64MB parts, 64KB chunks, C=2) ===
+                    // Goal: Understand M's impact on VMA creation
+                    ("64MB parts, 64KB chunks, C=2, M=4", 64L * 1024 * 1024, 64 * 1024, 2, 4, 100),
+                    ("64MB parts, 64KB chunks, C=2, M=8", 64L * 1024 * 1024, 64 * 1024, 2, 8, 100),
+                    ("64MB parts, 64KB chunks, C=2, M=12", 64L * 1024 * 1024, 64 * 1024, 2, 12, 100),
+                    ("64MB parts, 64KB chunks, C=2, M=16", 64L * 1024 * 1024, 64 * 1024, 2, 16, 100),
+                    ("64MB parts, 64KB chunks, C=2, M=24", 64L * 1024 * 1024, 64 * 1024, 2, 24, 100),
+                    ("64MB parts, 64KB chunks, C=2, M=32", 64L * 1024 * 1024, 64 * 1024, 2, 32, 100),
+                    ("64MB parts, 64KB chunks, C=2, M=48", 64L * 1024 * 1024, 64 * 1024, 2, 48, 100),
+                    ("64MB parts, 64KB chunks, C=2, M=64", 64L * 1024 * 1024, 64 * 1024, 2, 64, 100),
                     
-                    // 1MB parts
-                    ("1MB parts, 64KB chunks, C=10, M=16", 1L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("1MB parts, 64KB chunks, C=10, M=32", 1L * 1024 * 1024, 64 * 1024, 10, 32, 100),
+                    // === PART 2: C scaling with M (64MB parts, 64KB chunks) ===
+                    // M=8: C at different fractions
+                    ("64MB parts, 64KB chunks, C=2, M=8", 64L * 1024 * 1024, 64 * 1024, 2, 8, 100),
+                    ("64MB parts, 64KB chunks, C=4, M=8", 64L * 1024 * 1024, 64 * 1024, 4, 8, 100),
+                    ("64MB parts, 64KB chunks, C=8, M=8", 64L * 1024 * 1024, 64 * 1024, 8, 8, 100),
                     
-                    // 2MB parts
-                    ("2MB parts, 64KB chunks, C=10, M=16", 2L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("2MB parts, 64KB chunks, C=10, M=32", 2L * 1024 * 1024, 64 * 1024, 10, 32, 100),
+                    // M=16: C at different fractions
+                    ("64MB parts, 64KB chunks, C=4, M=16", 64L * 1024 * 1024, 64 * 1024, 4, 16, 100),
+                    ("64MB parts, 64KB chunks, C=8, M=16", 64L * 1024 * 1024, 64 * 1024, 8, 16, 100),
+                    ("64MB parts, 64KB chunks, C=16, M=16", 64L * 1024 * 1024, 64 * 1024, 16, 16, 100),
                     
-                    // 4MB parts
-                    ("4MB parts, 64KB chunks, C=10, M=16", 4L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("4MB parts, 64KB chunks, C=10, M=32", 4L * 1024 * 1024, 64 * 1024, 10, 32, 100),
+                    // M=32: C at different fractions
+                    ("64MB parts, 64KB chunks, C=8, M=32", 64L * 1024 * 1024, 64 * 1024, 8, 32, 100),
+                    ("64MB parts, 64KB chunks, C=16, M=32", 64L * 1024 * 1024, 64 * 1024, 16, 32, 100),
+                    ("64MB parts, 64KB chunks, C=32, M=32", 64L * 1024 * 1024, 64 * 1024, 32, 32, 100),
                     
-                    // 8MB parts
-                    ("8MB parts, 64KB chunks, C=10, M=16", 8L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("8MB parts, 64KB chunks, C=10, M=32", 8L * 1024 * 1024, 64 * 1024, 10, 32, 100),
+                    // M=64: C at different fractions
+                    ("64MB parts, 64KB chunks, C=16, M=64", 64L * 1024 * 1024, 64 * 1024, 16, 64, 100),
+                    ("64MB parts, 64KB chunks, C=32, M=64", 64L * 1024 * 1024, 64 * 1024, 32, 64, 100),
+                    ("64MB parts, 64KB chunks, C=64, M=64", 64L * 1024 * 1024, 64 * 1024, 64, 64, 100),
                     
-                    // 16MB parts
-                    ("16MB parts, 64KB chunks, C=10, M=16", 16L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("16MB parts, 64KB chunks, C=10, M=32", 16L * 1024 * 1024, 64 * 1024, 10, 32, 100),
-                    
-                    // 32MB parts
-                    ("32MB parts, 64KB chunks, C=10, M=16", 32L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("32MB parts, 64KB chunks, C=10, M=32", 32L * 1024 * 1024, 64 * 1024, 10, 32, 100),
-                    
-                    // 64MB parts
+                    // === PART 3: Different Chunk Sizes (64MB parts, C=10, M=16) ===
+                    ("64MB parts, 32KB chunks, C=10, M=16", 64L * 1024 * 1024, 32 * 1024, 10, 16, 100),
                     ("64MB parts, 64KB chunks, C=10, M=16", 64L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("64MB parts, 64KB chunks, C=10, M=32", 64L * 1024 * 1024, 64 * 1024, 10, 32, 100),
+                    ("64MB parts, 128KB chunks, C=10, M=16", 64L * 1024 * 1024, 128 * 1024, 10, 16, 100),
+                    ("64MB parts, 256KB chunks, C=10, M=16", 64L * 1024 * 1024, 256 * 1024, 10, 16, 100),
                     
-                    // 128MB parts
-                    ("128MB parts, 64KB chunks, C=10, M=16", 128L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("128MB parts, 64KB chunks, C=10, M=32", 128L * 1024 * 1024, 64 * 1024, 10, 32, 100),
+                    // === PART 4: Part Size progression (64KB chunks, C=4, M=16) ===
+                    ("8MB parts, 64KB chunks, C=4, M=16", 8L * 1024 * 1024, 64 * 1024, 4, 16, 100),
+                    ("16MB parts, 64KB chunks, C=4, M=16", 16L * 1024 * 1024, 64 * 1024, 4, 16, 100),
+                    ("32MB parts, 64KB chunks, C=4, M=16", 32L * 1024 * 1024, 64 * 1024, 4, 16, 100),
+                    ("64MB parts, 64KB chunks, C=4, M=16", 64L * 1024 * 1024, 64 * 1024, 4, 16, 100),
+                    ("128MB parts, 64KB chunks, C=4, M=16", 128L * 1024 * 1024, 64 * 1024, 4, 16, 100),
+                    ("256MB parts, 64KB chunks, C=4, M=16", 256L * 1024 * 1024, 64 * 1024, 4, 16, 100),
                     
-                    // 256MB parts
-                    ("256MB parts, 64KB chunks, C=10, M=16", 256L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("256MB parts, 64KB chunks, C=10, M=32", 256L * 1024 * 1024, 64 * 1024, 10, 32, 100),
+                    // === PART 5: Full Matrix for key configurations ===
+                    // 8MB parts - various C×M combinations
+                    ("8MB parts, 64KB chunks, C=2, M=8", 8L * 1024 * 1024, 64 * 1024, 2, 8, 100),
+                    ("8MB parts, 64KB chunks, C=4, M=8", 8L * 1024 * 1024, 64 * 1024, 4, 8, 100),
+                    ("8MB parts, 64KB chunks, C=8, M=8", 8L * 1024 * 1024, 64 * 1024, 8, 8, 100),
+                    ("8MB parts, 64KB chunks, C=2, M=16", 8L * 1024 * 1024, 64 * 1024, 2, 16, 100),
+                    ("8MB parts, 64KB chunks, C=8, M=16", 8L * 1024 * 1024, 64 * 1024, 8, 16, 100),
+                    ("8MB parts, 64KB chunks, C=16, M=16", 8L * 1024 * 1024, 64 * 1024, 16, 16, 100),
+                    ("8MB parts, 64KB chunks, C=4, M=32", 8L * 1024 * 1024, 64 * 1024, 4, 32, 100),
+                    ("8MB parts, 64KB chunks, C=16, M=32", 8L * 1024 * 1024, 64 * 1024, 16, 32, 100),
+                    ("8MB parts, 64KB chunks, C=32, M=32", 8L * 1024 * 1024, 64 * 1024, 32, 32, 100),
                     
-                    // 512MB parts
-                    ("512MB parts, 64KB chunks, C=10, M=16", 512L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("512MB parts, 64KB chunks, C=10, M=32", 512L * 1024 * 1024, 64 * 1024, 10, 32, 100),
+                    // 32MB parts - various C×M combinations
+                    ("32MB parts, 64KB chunks, C=2, M=8", 32L * 1024 * 1024, 64 * 1024, 2, 8, 100),
+                    ("32MB parts, 64KB chunks, C=4, M=8", 32L * 1024 * 1024, 64 * 1024, 4, 8, 100),
+                    ("32MB parts, 64KB chunks, C=8, M=8", 32L * 1024 * 1024, 64 * 1024, 8, 8, 100),
+                    ("32MB parts, 64KB chunks, C=2, M=16", 32L * 1024 * 1024, 64 * 1024, 2, 16, 100),
+                    ("32MB parts, 64KB chunks, C=8, M=16", 32L * 1024 * 1024, 64 * 1024, 8, 16, 100),
+                    ("32MB parts, 64KB chunks, C=16, M=16", 32L * 1024 * 1024, 64 * 1024, 16, 16, 100),
+                    ("32MB parts, 64KB chunks, C=4, M=32", 32L * 1024 * 1024, 64 * 1024, 4, 32, 100),
+                    ("32MB parts, 64KB chunks, C=16, M=32", 32L * 1024 * 1024, 64 * 1024, 16, 32, 100),
+                    ("32MB parts, 64KB chunks, C=32, M=32", 32L * 1024 * 1024, 64 * 1024, 32, 32, 100),
                     
-                    // === Part 2: Different Concurrency with varying M (64MB parts as baseline, 64KB chunks) ===
-                    // C=1: All M values work
-                    ("64MB parts, 64KB chunks, C=1, M=8", 64L * 1024 * 1024, 64 * 1024, 1, 8, 100),
-                    ("64MB parts, 64KB chunks, C=1, M=16", 64L * 1024 * 1024, 64 * 1024, 1, 16, 100),
-                    ("64MB parts, 64KB chunks, C=1, M=32", 64L * 1024 * 1024, 64 * 1024, 1, 32, 100),
-                    
-                    // C=5: All M values work
-                    ("64MB parts, 64KB chunks, C=5, M=8", 64L * 1024 * 1024, 64 * 1024, 5, 8, 100),
-                    ("64MB parts, 64KB chunks, C=5, M=16", 64L * 1024 * 1024, 64 * 1024, 5, 16, 100),
-                    ("64MB parts, 64KB chunks, C=5, M=32", 64L * 1024 * 1024, 64 * 1024, 5, 32, 100),
-                    
-                    // C=10: Only M=16 and M=32 work
-                    ("64MB parts, 64KB chunks, C=10, M=16", 64L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("64MB parts, 64KB chunks, C=10, M=32", 64L * 1024 * 1024, 64 * 1024, 10, 32, 100),
-                    
-                    // C=20: Only M=32 works (removed M=8 and M=16 since C > M)
-                    ("64MB parts, 64KB chunks, C=20, M=32", 64L * 1024 * 1024, 64 * 1024, 20, 32, 100),
-                    
-                    // Removed C=50 cases entirely (C=50 > all M values 8, 16, 32)
-                    
-                    // === Part 3: Cross-dimensional tests (varying all three: PartSize, C, M) ===
-                    // Removed scenarios where C > M
-                    ("128MB parts, 64KB chunks, C=5, M=16", 128L * 1024 * 1024, 64 * 1024, 5, 16, 100),
-                    ("256MB parts, 64KB chunks, C=5, M=16", 256L * 1024 * 1024, 64 * 1024, 5, 16, 100),
+                    // 128MB parts - various C×M combinations
+                    ("128MB parts, 64KB chunks, C=2, M=8", 128L * 1024 * 1024, 64 * 1024, 2, 8, 100),
+                    ("128MB parts, 64KB chunks, C=4, M=8", 128L * 1024 * 1024, 64 * 1024, 4, 8, 100),
+                    ("128MB parts, 64KB chunks, C=8, M=8", 128L * 1024 * 1024, 64 * 1024, 8, 8, 100),
+                    ("128MB parts, 64KB chunks, C=2, M=16", 128L * 1024 * 1024, 64 * 1024, 2, 16, 100),
+                    ("128MB parts, 64KB chunks, C=8, M=16", 128L * 1024 * 1024, 64 * 1024, 8, 16, 100),
+                    ("128MB parts, 64KB chunks, C=16, M=16", 128L * 1024 * 1024, 64 * 1024, 16, 16, 100),
+                    ("128MB parts, 64KB chunks, C=4, M=32", 128L * 1024 * 1024, 64 * 1024, 4, 32, 100),
+                    ("128MB parts, 64KB chunks, C=16, M=32", 128L * 1024 * 1024, 64 * 1024, 16, 32, 100),
+                    ("128MB parts, 64KB chunks, C=32, M=32", 128L * 1024 * 1024, 64 * 1024, 32, 32, 100),
                 };
             }
 
