@@ -103,91 +103,83 @@
 
             static (string, long, int, int, int, int)[] GetScenarios()
             {
-                return new[]
+                // Define test parameter arrays (power-of-2 progression)
+                var partSizeMB = new[] { 8, 16, 32, 64, 128, 256 };
+                var chunkSizeKB = new[] { 64, 128, 256, 512, 1024, 2048, 4096, 8192 }; // 64KB to 8MB
+                var mValues = new[] { 4, 8, 12, 16, 24, 32, 48, 64 };
+                var cValues = new[] { 2, 4, 8, 16, 32, 64 };
+                
+                var scenarios = new List<(string, long, int, int, int, int)>();
+                const int totalParts = 100;
+                
+                // === PART 1: M value variations (64MB parts, 64KB chunks, C=2) ===
+                // Goal: Understand M's impact on VMA creation
+                foreach (var m in mValues)
                 {
-                    // (Name, PartSize, ChunkSize, ConcurrentRequests, MaxInMemoryParts, TotalParts)
-                    // NOTE: Only including scenarios where C <= M (since M throttles C)
-                    
-                    // === PART 1: Different M values (64MB parts, 64KB chunks, C=2) ===
-                    // Goal: Understand M's impact on VMA creation
-                    ("64MB parts, 64KB chunks, C=2, M=4", 64L * 1024 * 1024, 64 * 1024, 2, 4, 100),
-                    ("64MB parts, 64KB chunks, C=2, M=8", 64L * 1024 * 1024, 64 * 1024, 2, 8, 100),
-                    ("64MB parts, 64KB chunks, C=2, M=12", 64L * 1024 * 1024, 64 * 1024, 2, 12, 100),
-                    ("64MB parts, 64KB chunks, C=2, M=16", 64L * 1024 * 1024, 64 * 1024, 2, 16, 100),
-                    ("64MB parts, 64KB chunks, C=2, M=24", 64L * 1024 * 1024, 64 * 1024, 2, 24, 100),
-                    ("64MB parts, 64KB chunks, C=2, M=32", 64L * 1024 * 1024, 64 * 1024, 2, 32, 100),
-                    ("64MB parts, 64KB chunks, C=2, M=48", 64L * 1024 * 1024, 64 * 1024, 2, 48, 100),
-                    ("64MB parts, 64KB chunks, C=2, M=64", 64L * 1024 * 1024, 64 * 1024, 2, 64, 100),
-                    
-                    // === PART 2: C scaling with M (64MB parts, 64KB chunks) ===
-                    // M=8: C at different fractions
-                    ("64MB parts, 64KB chunks, C=2, M=8", 64L * 1024 * 1024, 64 * 1024, 2, 8, 100),
-                    ("64MB parts, 64KB chunks, C=4, M=8", 64L * 1024 * 1024, 64 * 1024, 4, 8, 100),
-                    ("64MB parts, 64KB chunks, C=8, M=8", 64L * 1024 * 1024, 64 * 1024, 8, 8, 100),
-                    
-                    // M=16: C at different fractions
-                    ("64MB parts, 64KB chunks, C=4, M=16", 64L * 1024 * 1024, 64 * 1024, 4, 16, 100),
-                    ("64MB parts, 64KB chunks, C=8, M=16", 64L * 1024 * 1024, 64 * 1024, 8, 16, 100),
-                    ("64MB parts, 64KB chunks, C=16, M=16", 64L * 1024 * 1024, 64 * 1024, 16, 16, 100),
-                    
-                    // M=32: C at different fractions
-                    ("64MB parts, 64KB chunks, C=8, M=32", 64L * 1024 * 1024, 64 * 1024, 8, 32, 100),
-                    ("64MB parts, 64KB chunks, C=16, M=32", 64L * 1024 * 1024, 64 * 1024, 16, 32, 100),
-                    ("64MB parts, 64KB chunks, C=32, M=32", 64L * 1024 * 1024, 64 * 1024, 32, 32, 100),
-                    
-                    // M=64: C at different fractions
-                    ("64MB parts, 64KB chunks, C=16, M=64", 64L * 1024 * 1024, 64 * 1024, 16, 64, 100),
-                    ("64MB parts, 64KB chunks, C=32, M=64", 64L * 1024 * 1024, 64 * 1024, 32, 64, 100),
-                    ("64MB parts, 64KB chunks, C=64, M=64", 64L * 1024 * 1024, 64 * 1024, 64, 64, 100),
-                    
-                    // === PART 3: Different Chunk Sizes (64MB parts, C=10, M=16) ===
-                    ("64MB parts, 32KB chunks, C=10, M=16", 64L * 1024 * 1024, 32 * 1024, 10, 16, 100),
-                    ("64MB parts, 64KB chunks, C=10, M=16", 64L * 1024 * 1024, 64 * 1024, 10, 16, 100),
-                    ("64MB parts, 128KB chunks, C=10, M=16", 64L * 1024 * 1024, 128 * 1024, 10, 16, 100),
-                    ("64MB parts, 256KB chunks, C=10, M=16", 64L * 1024 * 1024, 256 * 1024, 10, 16, 100),
-                    
-                    // === PART 4: Part Size progression (64KB chunks, C=4, M=16) ===
-                    ("8MB parts, 64KB chunks, C=4, M=16", 8L * 1024 * 1024, 64 * 1024, 4, 16, 100),
-                    ("16MB parts, 64KB chunks, C=4, M=16", 16L * 1024 * 1024, 64 * 1024, 4, 16, 100),
-                    ("32MB parts, 64KB chunks, C=4, M=16", 32L * 1024 * 1024, 64 * 1024, 4, 16, 100),
-                    ("64MB parts, 64KB chunks, C=4, M=16", 64L * 1024 * 1024, 64 * 1024, 4, 16, 100),
-                    ("128MB parts, 64KB chunks, C=4, M=16", 128L * 1024 * 1024, 64 * 1024, 4, 16, 100),
-                    ("256MB parts, 64KB chunks, C=4, M=16", 256L * 1024 * 1024, 64 * 1024, 4, 16, 100),
-                    
-                    // === PART 5: Full Matrix for key configurations ===
-                    // 8MB parts - various C×M combinations
-                    ("8MB parts, 64KB chunks, C=2, M=8", 8L * 1024 * 1024, 64 * 1024, 2, 8, 100),
-                    ("8MB parts, 64KB chunks, C=4, M=8", 8L * 1024 * 1024, 64 * 1024, 4, 8, 100),
-                    ("8MB parts, 64KB chunks, C=8, M=8", 8L * 1024 * 1024, 64 * 1024, 8, 8, 100),
-                    ("8MB parts, 64KB chunks, C=2, M=16", 8L * 1024 * 1024, 64 * 1024, 2, 16, 100),
-                    ("8MB parts, 64KB chunks, C=8, M=16", 8L * 1024 * 1024, 64 * 1024, 8, 16, 100),
-                    ("8MB parts, 64KB chunks, C=16, M=16", 8L * 1024 * 1024, 64 * 1024, 16, 16, 100),
-                    ("8MB parts, 64KB chunks, C=4, M=32", 8L * 1024 * 1024, 64 * 1024, 4, 32, 100),
-                    ("8MB parts, 64KB chunks, C=16, M=32", 8L * 1024 * 1024, 64 * 1024, 16, 32, 100),
-                    ("8MB parts, 64KB chunks, C=32, M=32", 8L * 1024 * 1024, 64 * 1024, 32, 32, 100),
-                    
-                    // 32MB parts - various C×M combinations
-                    ("32MB parts, 64KB chunks, C=2, M=8", 32L * 1024 * 1024, 64 * 1024, 2, 8, 100),
-                    ("32MB parts, 64KB chunks, C=4, M=8", 32L * 1024 * 1024, 64 * 1024, 4, 8, 100),
-                    ("32MB parts, 64KB chunks, C=8, M=8", 32L * 1024 * 1024, 64 * 1024, 8, 8, 100),
-                    ("32MB parts, 64KB chunks, C=2, M=16", 32L * 1024 * 1024, 64 * 1024, 2, 16, 100),
-                    ("32MB parts, 64KB chunks, C=8, M=16", 32L * 1024 * 1024, 64 * 1024, 8, 16, 100),
-                    ("32MB parts, 64KB chunks, C=16, M=16", 32L * 1024 * 1024, 64 * 1024, 16, 16, 100),
-                    ("32MB parts, 64KB chunks, C=4, M=32", 32L * 1024 * 1024, 64 * 1024, 4, 32, 100),
-                    ("32MB parts, 64KB chunks, C=16, M=32", 32L * 1024 * 1024, 64 * 1024, 16, 32, 100),
-                    ("32MB parts, 64KB chunks, C=32, M=32", 32L * 1024 * 1024, 64 * 1024, 32, 32, 100),
-                    
-                    // 128MB parts - various C×M combinations
-                    ("128MB parts, 64KB chunks, C=2, M=8", 128L * 1024 * 1024, 64 * 1024, 2, 8, 100),
-                    ("128MB parts, 64KB chunks, C=4, M=8", 128L * 1024 * 1024, 64 * 1024, 4, 8, 100),
-                    ("128MB parts, 64KB chunks, C=8, M=8", 128L * 1024 * 1024, 64 * 1024, 8, 8, 100),
-                    ("128MB parts, 64KB chunks, C=2, M=16", 128L * 1024 * 1024, 64 * 1024, 2, 16, 100),
-                    ("128MB parts, 64KB chunks, C=8, M=16", 128L * 1024 * 1024, 64 * 1024, 8, 16, 100),
-                    ("128MB parts, 64KB chunks, C=16, M=16", 128L * 1024 * 1024, 64 * 1024, 16, 16, 100),
-                    ("128MB parts, 64KB chunks, C=4, M=32", 128L * 1024 * 1024, 64 * 1024, 4, 32, 100),
-                    ("128MB parts, 64KB chunks, C=16, M=32", 128L * 1024 * 1024, 64 * 1024, 16, 32, 100),
-                    ("128MB parts, 64KB chunks, C=32, M=32", 128L * 1024 * 1024, 64 * 1024, 32, 32, 100),
+                    scenarios.Add(CreateScenario(64, 64, 2, m, totalParts));
+                }
+                
+                // === PART 2: C scaling with M (64MB parts, 64KB chunks) ===
+                // Test different C values for each M (only where C <= M)
+                var cScalingConfigs = new[] { 
+                    (m: 8, cList: new[] { 2, 4, 8 }),
+                    (m: 16, cList: new[] { 4, 8, 16 }),
+                    (m: 32, cList: new[] { 8, 16, 32 }),
+                    (m: 64, cList: new[] { 16, 32, 64 })
                 };
+                
+                foreach (var config in cScalingConfigs)
+                {
+                    foreach (var c in config.cList)
+                    {
+                        scenarios.Add(CreateScenario(64, 64, c, config.m, totalParts));
+                    }
+                }
+                
+                // === PART 3: Chunk Size × Part Size Matrix (C=10, M=16) ===
+                // Test ALL chunk sizes across ALL part sizes to validate formula
+                foreach (var partMB in partSizeMB)
+                {
+                    foreach (var chunkKB in chunkSizeKB)
+                    {
+                        scenarios.Add(CreateScenario(partMB, chunkKB, 10, 16, totalParts));
+                    }
+                }
+                
+                // === PART 4: Full C×M matrix for representative part sizes ===
+                // Test various C×M combinations for 8MB, 32MB, and 128MB parts (64KB chunks)
+                var matrixPartSizes = new[] { 8, 32, 128 };
+                var matrixConfigs = new[] {
+                    (c: 2, m: 8), (c: 4, m: 8), (c: 8, m: 8),
+                    (c: 2, m: 16), (c: 8, m: 16), (c: 16, m: 16),
+                    (c: 4, m: 32), (c: 16, m: 32), (c: 32, m: 32)
+                };
+                
+                foreach (var partMB in matrixPartSizes)
+                {
+                    foreach (var (c, m) in matrixConfigs)
+                    {
+                        scenarios.Add(CreateScenario(partMB, 64, c, m, totalParts));
+                    }
+                }
+                
+                return scenarios.ToArray();
+            }
+            
+            static (string, long, int, int, int, int) CreateScenario(
+                int partSizeMB, int chunkSizeKB, int c, int m, int totalParts)
+            {
+                long partSize = (long)partSizeMB * 1024 * 1024;
+                int chunkSize = chunkSizeKB * 1024;
+                
+                // Format chunk size nicely (KB or MB)
+                string chunkStr = chunkSizeKB >= 1024 
+                    ? $"{chunkSizeKB / 1024}MB" 
+                    : $"{chunkSizeKB}KB";
+                
+                string name = $"{partSizeMB}MB parts, {chunkStr} chunks, C={c}, M={m}";
+                
+                return (name, partSize, chunkSize, c, m, totalParts);
             }
 
             static async Task<SimulationResult?> RunScenarioInProcessAsync(int scenarioIndex, DualWriter output)
