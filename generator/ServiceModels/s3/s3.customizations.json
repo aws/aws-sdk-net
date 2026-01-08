@@ -1830,6 +1830,13 @@
                     "LoggingEnabled":{"emitPropertyName":"LoggingConfig"}
                 }
             ]
+        },
+        "GetObjectTorrentRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
