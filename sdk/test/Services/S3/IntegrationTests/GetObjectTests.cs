@@ -246,5 +246,50 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     "Original ContentLanguage should still be stored when no override is specified");
             }
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestContentLanguageHeadersCollection()
+        {
+            var key = "TestContentLanguageHeadersCollection";
+            var expectedLanguage = "de-DE";
+
+            // Put object with Content-Language header
+            var putRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = "Test content for Content-Language headers collection"
+            };
+            putRequest.Headers["Content-Language"] = expectedLanguage;
+
+            Client.PutObject(putRequest);
+
+            // Get object and verify both ContentLanguage properties are set
+            var response = Client.GetObject(new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key
+            });
+
+            using (response)
+            {
+                // Verify the direct ContentLanguage property
+                Assert.IsNotNull(response.ContentLanguage, 
+                    "ContentLanguage property should not be null");
+                Assert.AreEqual(expectedLanguage, response.ContentLanguage,
+                    "ContentLanguage property should match the value set during PutObject");
+
+                // Verify the Headers.ContentLanguage property
+                Assert.IsNotNull(response.Headers.ContentLanguage, 
+                    "Headers.ContentLanguage property should not be null");
+                Assert.AreEqual(expectedLanguage, response.Headers.ContentLanguage,
+                    "Headers.ContentLanguage property should match the value set during PutObject");
+
+                // Verify both properties have the same value
+                Assert.AreEqual(response.ContentLanguage, response.Headers.ContentLanguage,
+                    "ContentLanguage and Headers.ContentLanguage should have the same value");
+            }
+        }
     }
 }

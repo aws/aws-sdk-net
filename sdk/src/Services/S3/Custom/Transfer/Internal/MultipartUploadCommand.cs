@@ -37,7 +37,7 @@ namespace Amazon.S3.Transfer.Internal
     /// <summary>
     /// The command to manage an upload using the S3 multipart API.
     /// </summary>
-    internal partial class MultipartUploadCommand : BaseCommand
+    internal partial class MultipartUploadCommand : BaseCommand<TransferUtilityUploadResponse>
     {
         IAmazonS3 _s3Client;
         long _partSize;
@@ -50,13 +50,7 @@ namespace Amazon.S3.Transfer.Internal
         Queue<UploadPartRequest> _partsToUpload = new Queue<UploadPartRequest>();
 
         long _contentLength;
-        private static Logger Logger
-        {
-            get
-            {
-                return Logger.GetLogger(typeof(TransferUtility));
-            }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(MultipartUploadCommand));
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MultipartUploadCommand"/> class.
@@ -70,11 +64,11 @@ namespace Amazon.S3.Transfer.Internal
 
             if (fileTransporterRequest.IsSetFilePath())
             {
-                Logger.DebugFormat("Beginning upload of file {0}.", fileTransporterRequest.FilePath);
+                _logger.DebugFormat("Beginning upload of file {0}.", fileTransporterRequest.FilePath);
             }
             else
             {
-                Logger.DebugFormat("Beginning upload of stream.");
+                _logger.DebugFormat("Beginning upload of stream.");
             }
 
             this._s3Client = s3Client;
@@ -95,7 +89,7 @@ namespace Amazon.S3.Transfer.Internal
                 }
             }
 
-            Logger.DebugFormat("Upload part size {0}.", this._partSize);
+            _logger.DebugFormat("Upload part size {0}.", this._partSize);
         }
 
         private static long calculatePartSize(long contentLength, long targetPartSize)
@@ -387,8 +381,44 @@ namespace Amazon.S3.Transfer.Internal
             long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
 
             var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, this._contentLength,
-                e.CompensationForRetry, this._fileTransporterRequest.FilePath);
+                e.CompensationForRetry, this._fileTransporterRequest.FilePath, this._fileTransporterRequest);
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
+        }
+
+        private void FireTransferInitiatedEvent()
+        {
+            var initiatedArgs = new UploadInitiatedEventArgs(
+                request: _fileTransporterRequest,
+                totalBytes: _contentLength,
+                filePath: _fileTransporterRequest.FilePath
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferInitiatedEvent(initiatedArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityUploadResponse response)
+        {
+            var completedArgs = new UploadCompletedEventArgs(
+                request: _fileTransporterRequest,
+                filePath: _fileTransporterRequest.FilePath,
+                response: response,
+                transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
+                totalBytes: _contentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferCompletedEvent(completedArgs);
+        }
+
+        private void FireTransferFailedEvent()
+        {
+            var failedArgs = new UploadFailedEventArgs(
+                request: _fileTransporterRequest,
+                filePath: _fileTransporterRequest.FilePath,
+                transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
+                totalBytes: _contentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferFailedEvent(failedArgs);
         }
 
         /// <summary>

@@ -20,6 +20,7 @@
  *
  */
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -32,22 +33,65 @@ namespace Amazon.S3.Transfer.Internal
     /// This command files all the files that meets the criteria specified in the TransferUtilityUploadDirectoryRequest request
     /// and uploads them.
     /// </summary>
-    internal partial class UploadDirectoryCommand : BaseCommand
+    internal partial class UploadDirectoryCommand : BaseCommand<TransferUtilityUploadDirectoryResponse>
     {
+        private IFailurePolicy _failurePolicy;
+        private ConcurrentBag<Exception> _errors = new ConcurrentBag<Exception>();
         TransferUtilityUploadDirectoryRequest _request;
         TransferUtility _utility;
         TransferUtilityConfig _config;
 
         int _totalNumberOfFiles;
         int _numberOfFilesUploaded;
+        int _numberOfFilesSuccessfullyUploaded;
         long _totalBytes;
-        long _transferredBytes;        
+        long _transferredBytes;
+
+        #region Event Firing Methods
+
+        private void FireTransferInitiatedEvent()
+        {
+            var eventArgs = new UploadDirectoryInitiatedEventArgs(
+                _request,
+                _totalNumberOfFiles,
+                _totalBytes);
+            _request.OnRaiseUploadDirectoryInitiatedEvent(eventArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityUploadDirectoryResponse response)
+        {
+            var eventArgs = new UploadDirectoryCompletedEventArgs(
+                _request,
+                response,
+                _numberOfFilesSuccessfullyUploaded,
+                _totalNumberOfFiles,
+                Interlocked.Read(ref _transferredBytes),
+                _totalBytes);
+            _request.OnRaiseUploadDirectoryCompletedEvent(eventArgs);
+        }
+
+        private void FireTransferFailedEvent()
+        {
+            var eventArgs = new UploadDirectoryFailedEventArgs(
+                _request,
+                _numberOfFilesSuccessfullyUploaded,
+                _totalNumberOfFiles,
+                Interlocked.Read(ref _transferredBytes),
+                _totalBytes);
+            _request.OnRaiseUploadDirectoryFailedEvent(eventArgs);
+        }
+
+        #endregion
 
         internal UploadDirectoryCommand(TransferUtility utility, TransferUtilityConfig config, TransferUtilityUploadDirectoryRequest request)
         {
             this._utility = utility;
             this._request = request;
             this._config = config;
+            _failurePolicy =
+                request.FailurePolicy == FailurePolicy.AbortOnFailure
+                    ? new AbortOnFailurePolicy()
+                    : new ContinueOnFailurePolicy(_errors);
         }
 
         internal TransferUtilityUploadRequest ConstructRequest(string basePath, string filepath, string prefix)

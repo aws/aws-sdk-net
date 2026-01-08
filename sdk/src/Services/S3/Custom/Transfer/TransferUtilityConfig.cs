@@ -49,6 +49,7 @@ namespace Amazon.S3.Transfer
         public TransferUtilityConfig()
         {
             this.ConcurrentServiceRequests = 10;
+            this.SkipDirectoryCaseSensitivityCheck = false;
         }
 
         /// <summary>
@@ -81,5 +82,12 @@ namespace Amazon.S3.Transfer
                 this._concurrentServiceRequests = value;
             }
         }
+
+        /// <summary>
+        /// When true, disables directory case-sensitivity checks that are used to detect
+        /// potential filename collisions (for example, S3 keys that differ only by case
+        /// on a case-insensitive filesystem). The default is false.
+        /// </summary>
+        public bool SkipDirectoryCaseSensitivityCheck { get; set; }
     }
 }
