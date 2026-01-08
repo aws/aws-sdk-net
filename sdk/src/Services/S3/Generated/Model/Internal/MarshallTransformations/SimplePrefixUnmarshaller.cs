@@ -12,23 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime.Internal.Transform;
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TargetObjectKeyFormat Object
+    /// Response Unmarshaller for SimplePrefix Object
     /// </summary>  
-    public class TargetObjectKeyFormatUnmarshaller : IXmlUnmarshaller<TargetObjectKeyFormat, XmlUnmarshallerContext>
+    public partial class SimplePrefixUnmarshaller : IXmlUnmarshaller<SimplePrefix, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TargetObjectKeyFormat Unmarshall(XmlUnmarshallerContext context)
+        public SimplePrefix Unmarshall(XmlUnmarshallerContext context)
         {
-            TargetObjectKeyFormat unmarshalledObject = new TargetObjectKeyFormat();
+            SimplePrefix unmarshalledObject = new SimplePrefix();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,18 +56,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("PartitionedPrefix", targetDepth))
-                    {
-                        var unmarshaller = PartitionedPrefixUnmarshaller.Instance;
-                        unmarshalledObject.PartitionedPrefix = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SimplePrefix", targetDepth))
-                    {
-                        var unmarshaller = SimplePrefixUnmarshaller.Instance;
-                        unmarshalledObject.SimplePrefix = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -60,12 +67,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static TargetObjectKeyFormatUnmarshaller _instance = new TargetObjectKeyFormatUnmarshaller();        
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, SimplePrefix unmarshalledObject, int targetDepth);
+
+        private static SimplePrefixUnmarshaller _instance = new SimplePrefixUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TargetObjectKeyFormatUnmarshaller Instance
+        public static SimplePrefixUnmarshaller Instance
         {
             get
             {

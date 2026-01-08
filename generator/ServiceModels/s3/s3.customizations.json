@@ -1781,6 +1781,55 @@
                     "VersionId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._versionId);"]}
                 }
             ]
+        },
+        "GetBucketLoggingRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketLoggingOutput":{
+            "modify":[
+                {
+                    "LoggingEnabled":{"emitPropertyName":"BucketLoggingConfig"}
+                },
+                {
+                    "BucketLoggingConfig":{"injectXmlPropertyGetter":["get {return BucketLoggingConfigCustomGetter();}"]}
+                }
+            ]
+        },
+        "S3BucketLoggingConfig":{
+            "modify":[
+                {
+                    "TargetBucket":{"emitPropertyName":"TargetBucketName"}
+                },
+                {
+                    "TargetGrants":{"emitPropertyName":"Grants"}
+                },
+                {
+                    "TargetPrefix":{"injectXmlMarshallCode":["TargetPrefixCustomMarshall(publicRequest, xmlWriter);"]}
+                }
+            ]
+        },
+        "PutBucketLoggingRequest":{
+            "modify":[
+                {
+                    "LoggingEnabled":{"emitPropertyName": "LoggingConfig", "injectXmlIsSet":[
+                        "return this._loggingConfig != null && this._loggingConfig.IsSetTargetBucketName();"
+                    ]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "BucketLoggingStatus":{
+            "modify":[
+                {
+                    "LoggingEnabled":{"emitPropertyName":"LoggingConfig"}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1947,6 +1996,12 @@
         },
         "Error":{
             "renameShape": "DeleteError"
+        },
+        "LoggingEnabled":{
+            "renameShape":"S3BucketLoggingConfig"
+        },
+        "TargetGrant":{
+            "renameShape":"S3Grant"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -2326,6 +2381,9 @@
         ],
         "DeleteObjectsRequest":[
             "Delete"
+        ],
+        "PutBucketLoggingRequest":[
+            "BucketLoggingStatus"
         ]
     },
     "excludeShapes":[
@@ -2340,6 +2398,7 @@
         "IntelligentTieringAndOperator",
         "InventoryFilter",
         "GlacierJobTier",
-        "CompletedMultipartUpload"
+        "CompletedMultipartUpload",
+        "BucketLoggingStatus"
     ]
 }
