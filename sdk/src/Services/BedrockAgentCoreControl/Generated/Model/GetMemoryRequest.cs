@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class GetMemoryRequest : AmazonBedrockAgentCoreControlRequest
     {
         private string _memoryId;
+        private MemoryView _view;
 
         /// <summary>
         /// Gets and sets the property MemoryId. 
@@ -54,6 +55,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetMemoryId()
         {
             return this._memoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property View. 
+        /// <para>
+        /// The level of detail to return for the memory.
+        /// </para>
+        /// </summary>
+        public MemoryView View
+        {
+            get { return this._view; }
+            set { this._view = value; }
+        }
+
+        // Check to see if View property is set
+        internal bool IsSetView()
+        {
+            return this._view != null;
         }
 
     }
