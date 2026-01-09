@@ -9532,6 +9532,72 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetMaterializedViewRefreshTaskRun
+
+        /// <summary>
+        /// Get the associated metadata/information for a task run, given a task run ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMaterializedViewRefreshTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the GetMaterializedViewRefreshTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMaterializedViewRefreshTaskRun">REST API Reference for GetMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual GetMaterializedViewRefreshTaskRunResponse GetMaterializedViewRefreshTaskRun(GetMaterializedViewRefreshTaskRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMaterializedViewRefreshTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaterializedViewRefreshTaskRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetMaterializedViewRefreshTaskRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaterializedViewRefreshTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaterializedViewRefreshTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaterializedViewRefreshTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMaterializedViewRefreshTaskRun">REST API Reference for GetMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual IAsyncResult BeginGetMaterializedViewRefreshTaskRun(GetMaterializedViewRefreshTaskRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMaterializedViewRefreshTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaterializedViewRefreshTaskRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMaterializedViewRefreshTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaterializedViewRefreshTaskRun.</param>
+        /// 
+        /// <returns>Returns a  GetMaterializedViewRefreshTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMaterializedViewRefreshTaskRun">REST API Reference for GetMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual GetMaterializedViewRefreshTaskRunResponse EndGetMaterializedViewRefreshTaskRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMaterializedViewRefreshTaskRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMLTaskRun
 
         /// <summary>
@@ -13280,6 +13346,69 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListMaterializedViewRefreshTaskRuns
+
+        /// <summary>
+        /// List all task runs for a particular account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMaterializedViewRefreshTaskRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListMaterializedViewRefreshTaskRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMaterializedViewRefreshTaskRuns">REST API Reference for ListMaterializedViewRefreshTaskRuns Operation</seealso>
+        public virtual ListMaterializedViewRefreshTaskRunsResponse ListMaterializedViewRefreshTaskRuns(ListMaterializedViewRefreshTaskRunsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMaterializedViewRefreshTaskRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMaterializedViewRefreshTaskRunsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMaterializedViewRefreshTaskRunsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMaterializedViewRefreshTaskRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMaterializedViewRefreshTaskRuns operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMaterializedViewRefreshTaskRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMaterializedViewRefreshTaskRuns">REST API Reference for ListMaterializedViewRefreshTaskRuns Operation</seealso>
+        public virtual IAsyncResult BeginListMaterializedViewRefreshTaskRuns(ListMaterializedViewRefreshTaskRunsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMaterializedViewRefreshTaskRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMaterializedViewRefreshTaskRunsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMaterializedViewRefreshTaskRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMaterializedViewRefreshTaskRuns.</param>
+        /// 
+        /// <returns>Returns a  ListMaterializedViewRefreshTaskRunsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMaterializedViewRefreshTaskRuns">REST API Reference for ListMaterializedViewRefreshTaskRuns Operation</seealso>
+        public virtual ListMaterializedViewRefreshTaskRunsResponse EndListMaterializedViewRefreshTaskRuns(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMaterializedViewRefreshTaskRunsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListMLTransforms
 
         /// <summary>
@@ -15667,6 +15796,78 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StartMaterializedViewRefreshTaskRun
+
+        /// <summary>
+        /// Starts a materialized view refresh task run, for a specified table and columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMaterializedViewRefreshTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the StartMaterializedViewRefreshTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.MaterializedViewRefreshTaskRunningException">
+        /// Exception thrown when a task is already in running state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMaterializedViewRefreshTaskRun">REST API Reference for StartMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual StartMaterializedViewRefreshTaskRunResponse StartMaterializedViewRefreshTaskRun(StartMaterializedViewRefreshTaskRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMaterializedViewRefreshTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMaterializedViewRefreshTaskRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartMaterializedViewRefreshTaskRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMaterializedViewRefreshTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMaterializedViewRefreshTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMaterializedViewRefreshTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMaterializedViewRefreshTaskRun">REST API Reference for StartMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual IAsyncResult BeginStartMaterializedViewRefreshTaskRun(StartMaterializedViewRefreshTaskRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMaterializedViewRefreshTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMaterializedViewRefreshTaskRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMaterializedViewRefreshTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMaterializedViewRefreshTaskRun.</param>
+        /// 
+        /// <returns>Returns a  StartMaterializedViewRefreshTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMaterializedViewRefreshTaskRun">REST API Reference for StartMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual StartMaterializedViewRefreshTaskRunResponse EndStartMaterializedViewRefreshTaskRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMaterializedViewRefreshTaskRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartMLEvaluationTaskRun
 
         /// <summary>
@@ -16249,6 +16450,75 @@ namespace Amazon.Glue
         public virtual StopCrawlerScheduleResponse EndStopCrawlerSchedule(IAsyncResult asyncResult)
         {
             return EndInvoke<StopCrawlerScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopMaterializedViewRefreshTaskRun
+
+        /// <summary>
+        /// Stops a materialized view refresh task run, for a specified table and columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMaterializedViewRefreshTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the StopMaterializedViewRefreshTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.MaterializedViewRefreshTaskNotRunningException">
+        /// Exception thrown when stopping a task that is not in running state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.MaterializedViewRefreshTaskStoppingException">
+        /// Exception thrown when a task is already in stopping state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopMaterializedViewRefreshTaskRun">REST API Reference for StopMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual StopMaterializedViewRefreshTaskRunResponse StopMaterializedViewRefreshTaskRun(StopMaterializedViewRefreshTaskRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopMaterializedViewRefreshTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMaterializedViewRefreshTaskRunResponseUnmarshaller.Instance;
+
+            return Invoke<StopMaterializedViewRefreshTaskRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopMaterializedViewRefreshTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopMaterializedViewRefreshTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopMaterializedViewRefreshTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopMaterializedViewRefreshTaskRun">REST API Reference for StopMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual IAsyncResult BeginStopMaterializedViewRefreshTaskRun(StopMaterializedViewRefreshTaskRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopMaterializedViewRefreshTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMaterializedViewRefreshTaskRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopMaterializedViewRefreshTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopMaterializedViewRefreshTaskRun.</param>
+        /// 
+        /// <returns>Returns a  StopMaterializedViewRefreshTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopMaterializedViewRefreshTaskRun">REST API Reference for StopMaterializedViewRefreshTaskRun Operation</seealso>
+        public virtual StopMaterializedViewRefreshTaskRunResponse EndStopMaterializedViewRefreshTaskRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopMaterializedViewRefreshTaskRunResponse>(asyncResult);
         }
 
         #endregion
