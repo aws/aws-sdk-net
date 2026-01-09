@@ -132,6 +132,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
         /// </exception>
@@ -164,6 +167,9 @@ namespace Amazon.CloudFront
         /// <returns>The response from the AssociateDistributionWebACL service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
@@ -6928,6 +6934,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
