@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Placeholder file for dry-run"
+    ]
+  }
+}
