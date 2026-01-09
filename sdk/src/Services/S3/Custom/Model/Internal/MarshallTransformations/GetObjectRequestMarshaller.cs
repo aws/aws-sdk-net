@@ -26,112 +26,39 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Object Request Marshaller
     /// </summary>       
-    public class GetObjectRequestMarshaller : IMarshaller<IRequest, GetObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class GetObjectRequestMarshaller : IMarshaller<IRequest, GetObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((GetObjectRequest)input);
-		}
-
-        public IRequest Marshall(GetObjectRequest getObjectRequest)
+        void ServerSideEncryptionCustomerProvidedKeyCustomMarshall(DefaultRequest request, GetObjectRequest publicRequest)
         {
-            if (string.IsNullOrEmpty(getObjectRequest.Key))
-                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectRequest.Key");
-
-            IRequest request = new DefaultRequest(getObjectRequest, "Amazon.S3");
-
-            request.HttpMethod = "GET";
-
-            if (getObjectRequest.IsSetEtagToMatch())
-                request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(getObjectRequest.EtagToMatch));
-
-            if (getObjectRequest.IsSetModifiedSinceDate())
-                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.ModifiedSinceDate.Value));
-
-            if (getObjectRequest.IsSetEtagToNotMatch())
-                request.Headers.Add(HeaderKeys.IfNoneMatchHeader, S3Transforms.ToStringValue(getObjectRequest.EtagToNotMatch));
-            
-            if(getObjectRequest.IsSetUnmodifiedSinceDate())
-                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.UnmodifiedSinceDate.Value));
-            
-            if(getObjectRequest.IsSetByteRange())
-                request.Headers.Add(HeaderKeys.RangeHeader, getObjectRequest.ByteRange.FormattedByteRange);
-
-            if (getObjectRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, getObjectRequest.ServerSideEncryptionCustomerMethod);
-            if (getObjectRequest.IsSetServerSideEncryptionCustomerProvidedKey())
-            {
-                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, getObjectRequest.ServerSideEncryptionCustomerProvidedKey);
-                if (getObjectRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, getObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
-                else
-                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(getObjectRequest.ServerSideEncryptionCustomerProvidedKey));
-            }
-            if (getObjectRequest.IsSetRequestPayer())
-                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(getObjectRequest.RequestPayer.ToString()));
-
-            if (getObjectRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getObjectRequest.ExpectedBucketOwner));
-
-            if (getObjectRequest.IsSetChecksumMode())
-                request.Headers.Add(S3Constants.AmzHeaderChecksumMode, S3Transforms.ToStringValue(getObjectRequest.ChecksumMode));
-
-            if (string.IsNullOrEmpty(getObjectRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetObjectRequest.BucketName");
-            if (string.IsNullOrEmpty(getObjectRequest.Key))
-                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectRequest.Key");
-
-
-            request.ResourcePath = "/{Key+}";
-            request.AddPathResource("{Key+}",S3Transforms.ToStringValue(getObjectRequest.Key));
-
-            var headerOverrides = getObjectRequest.ResponseHeaderOverrides;
-            if (headerOverrides.CacheControl != null)
-                request.Parameters.Add("response-cache-control", S3Transforms.ToStringValue(headerOverrides.CacheControl));
-            if (headerOverrides.ContentDisposition != null)
-                request.Parameters.Add("response-content-disposition", S3Transforms.ToStringValue(headerOverrides.ContentDisposition));
-            if (headerOverrides.ContentEncoding != null)
-                request.Parameters.Add("response-content-encoding", S3Transforms.ToStringValue(headerOverrides.ContentEncoding));
-            if (headerOverrides.ContentLanguage != null)
-                request.Parameters.Add("response-content-language", S3Transforms.ToStringValue(headerOverrides.ContentLanguage));
-            if (headerOverrides.ContentType != null)
-                request.Parameters.Add("response-content-type", S3Transforms.ToStringValue(headerOverrides.ContentType));
-            
-            if (getObjectRequest.IsSetResponseExpires())
-            {
-                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(getObjectRequest.ResponseExpires.Value));
-            }
-            else if (headerOverrides.Expires != null)
-            {
-                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(headerOverrides.Expires));
-            }
-            
-            if (getObjectRequest.IsSetVersionId())
-                request.AddSubResource("versionId", S3Transforms.ToStringValue(getObjectRequest.VersionId));
-            if (getObjectRequest.IsSetPartNumber())
-                request.AddSubResource("partNumber", S3Transforms.ToStringValue(getObjectRequest.PartNumber.Value));
-
-            request.UseQueryString = true;
-
-            return request;
+            request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, publicRequest.ServerSideEncryptionCustomerProvidedKey);
+            if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, publicRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+            else
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(publicRequest.ServerSideEncryptionCustomerProvidedKey));
         }
 
-	    private static GetObjectRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static GetObjectRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new GetObjectRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectRequest publicRequest)
+        {
+            if (publicRequest.IsSetResponseExpires())
+            {
+                defaultRequest.Parameters.Add("response-expires", S3Transforms.ToStringValue(publicRequest.ResponseExpires.Value));
+            }
+            else if (publicRequest.ResponseHeaderOverrides.Expires != null)
+            {
+                defaultRequest.Parameters.Add("response-expires", S3Transforms.ToStringValue(publicRequest.ResponseHeaderOverrides.Expires));
+            }
+            var headerOverrides = publicRequest.ResponseHeaderOverrides;
+            if (headerOverrides.CacheControl != null)
+                defaultRequest.Parameters.Add("response-cache-control", S3Transforms.ToStringValue(headerOverrides.CacheControl));
+            if (headerOverrides.ContentDisposition != null)
+                defaultRequest.Parameters.Add("response-content-disposition", S3Transforms.ToStringValue(headerOverrides.ContentDisposition));
+            if (headerOverrides.ContentEncoding != null)
+                defaultRequest.Parameters.Add("response-content-encoding", S3Transforms.ToStringValue(headerOverrides.ContentEncoding));
+            if (headerOverrides.ContentLanguage != null)
+                defaultRequest.Parameters.Add("response-content-language", S3Transforms.ToStringValue(headerOverrides.ContentLanguage));
+            if (headerOverrides.ContentType != null)
+                defaultRequest.Parameters.Add("response-content-type", S3Transforms.ToStringValue(headerOverrides.ContentType));
+        }
     }
 }
     
