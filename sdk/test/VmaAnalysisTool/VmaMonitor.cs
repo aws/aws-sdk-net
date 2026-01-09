@@ -276,3 +276,185 @@ public record VmaSnapshot
     /// </summary>
     public bool IsSafe => CurrentVmaCount < VmaMonitor.SafeVmaThreshold;
 }
+
+/// <summary>
+/// Provides system memory information.
+/// </summary>
+public static class SystemMemoryInfo
+{
+    /// <summary>
+    /// Gets the total physical memory in bytes.
+    /// </summary>
+    public static long GetTotalPhysicalMemoryBytes()
+    {
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            return GetLinuxMemoryBytes();
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return GetWindowsMemoryBytes();
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+        {
+            return GetMacOSMemoryBytes();
+        }
+        
+        // Fallback: assume 8GB
+        return 8L * 1024 * 1024 * 1024;
+    }
+
+    /// <summary>
+    /// Gets the available physical memory in bytes.
+    /// </summary>
+    public static long GetAvailableMemoryBytes()
+    {
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            return GetLinuxAvailableMemoryBytes();
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return GetWindowsAvailableMemoryBytes();
+        }
+        
+        // Fallback: assume 50% of total
+        return GetTotalPhysicalMemoryBytes() / 2;
+    }
+
+    /// <summary>
+    /// Gets total memory formatted as string.
+    /// </summary>
+    public static string GetTotalMemoryFormatted()
+    {
+        return FormatBytes(GetTotalPhysicalMemoryBytes());
+    }
+
+    /// <summary>
+    /// Gets available memory formatted as string.
+    /// </summary>
+    public static string GetAvailableMemoryFormatted()
+    {
+        return FormatBytes(GetAvailableMemoryBytes());
+    }
+
+    private static long GetLinuxMemoryBytes()
+    {
+        try
+        {
+            var lines = File.ReadAllLines("/proc/meminfo");
+            foreach (var line in lines)
+            {
+                if (line.StartsWith("MemTotal:"))
+                {
+                    // Format: "MemTotal:       16384000 kB"
+                    var parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (parts.Length >= 2 && long.TryParse(parts[1], out var kb))
+                    {
+                        return kb * 1024; // Convert KB to bytes
+                    }
+                }
+            }
+        }
+        catch
+        {
+            // Ignore errors
+        }
+        
+        return 8L * 1024 * 1024 * 1024; // Fallback 8GB
+    }
+
+    private static long GetLinuxAvailableMemoryBytes()
+    {
+        try
+        {
+            var lines = File.ReadAllLines("/proc/meminfo");
+            foreach (var line in lines)
+            {
+                if (line.StartsWith("MemAvailable:"))
+                {
+                    var parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (parts.Length >= 2 && long.TryParse(parts[1], out var kb))
+                    {
+                        return kb * 1024;
+                    }
+                }
+            }
+        }
+        catch
+        {
+            // Ignore errors
+        }
+        
+        return GetLinuxMemoryBytes() / 2; // Fallback 50% of total
+    }
+
+    private static long GetWindowsMemoryBytes()
+    {
+        try
+        {
+            // Use GC to get approximate memory info
+            var gcInfo = GC.GetGCMemoryInfo();
+            return gcInfo.TotalAvailableMemoryBytes;
+        }
+        catch
+        {
+            return 8L * 1024 * 1024 * 1024; // Fallback 8GB
+        }
+    }
+
+    private static long GetWindowsAvailableMemoryBytes()
+    {
+        try
+        {
+            var gcInfo = GC.GetGCMemoryInfo();
+            return gcInfo.TotalAvailableMemoryBytes - gcInfo.MemoryLoadBytes;
+        }
+        catch
+        {
+            return 4L * 1024 * 1024 * 1024; // Fallback 4GB
+        }
+    }
+
+    private static long GetMacOSMemoryBytes()
+    {
+        try
+        {
+            // Try sysctl on macOS
+            var psi = new ProcessStartInfo
+            {
+                FileName = "sysctl",
+                Arguments = "-n hw.memsize",
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            
+            using var process = Process.Start(psi);
+            if (process != null)
+            {
+                var output = process.StandardOutput.ReadToEnd().Trim();
+                process.WaitForExit();
+                if (long.TryParse(output, out var bytes))
+                {
+                    return bytes;
+                }
+            }
+        }
+        catch
+        {
+            // Ignore errors
+        }
+        
+        return 8L * 1024 * 1024 * 1024; // Fallback 8GB
+    }
+
+    private static string FormatBytes(long bytes)
+    {
+        if (bytes >= 1024L * 1024 * 1024 * 1024) return $"{bytes / 1024.0 / 1024.0 / 1024.0 / 1024.0:F1} TB";
+        if (bytes >= 1024L * 1024 * 1024) return $"{bytes / 1024.0 / 1024.0 / 1024.0:F1} GB";
+        if (bytes >= 1024 * 1024) return $"{bytes / 1024.0 / 1024.0:F1} MB";
+        if (bytes >= 1024) return $"{bytes / 1024.0:F0} KB";
+        return $"{bytes} B";
+    }
+}

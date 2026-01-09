@@ -311,6 +311,17 @@ public class SimulationConfig
     public int EstimatedPeakVmaCount => MaxConcurrentChunks;
 
     /// <summary>
+    /// Estimated peak memory usage in bytes.
+    /// Memory = MaxInMemoryParts × PartSize (chunk size doesn't affect total memory!)
+    /// </summary>
+    public long EstimatedMemoryUsageBytes => (long)MaxInMemoryParts * PartSizeBytes;
+
+    /// <summary>
+    /// Estimated peak memory usage formatted as string.
+    /// </summary>
+    public string EstimatedMemoryUsageFormatted => FormatBytes(EstimatedMemoryUsageBytes);
+
+    /// <summary>
     /// Creates a copy with a different chunk size.
     /// </summary>
     public SimulationConfig WithChunkSize(int chunkSizeBytes)

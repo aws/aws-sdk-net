@@ -7,30 +7,42 @@ public class TestMatrix
 {
     /// <summary>
     /// Default chunk sizes to test (in bytes).
+    /// Extended to support up to 1GB chunks for testing VMA reduction with very large allocations.
     /// </summary>
     public static readonly int[] DefaultChunkSizes = 
     {
-        64 * 1024,      // 64KB (default)
-        128 * 1024,     // 128KB
-        256 * 1024,     // 256KB
-        512 * 1024,     // 512KB
+        64 * 1024,           // 64KB (default)
+        128 * 1024,          // 128KB
+        256 * 1024,          // 256KB
+        512 * 1024,          // 512KB
         1 * 1024 * 1024,     // 1MB
         2 * 1024 * 1024,     // 2MB
         4 * 1024 * 1024,     // 4MB
         8 * 1024 * 1024,     // 8MB
-        16 * 1024 * 1024     // 16MB
+        16 * 1024 * 1024,    // 16MB
+        32 * 1024 * 1024,    // 32MB
+        64 * 1024 * 1024,    // 64MB
+        128 * 1024 * 1024,   // 128MB
+        256 * 1024 * 1024,   // 256MB
+        512 * 1024 * 1024,   // 512MB
+        1024 * 1024 * 1024   // 1GB
     };
 
     /// <summary>
     /// Default part sizes to test (in bytes).
+    /// Extended to support up to 5GB parts for S3's maximum part size.
     /// </summary>
     public static readonly long[] DefaultPartSizes =
     {
-        5 * 1024 * 1024,     // 5MB
-        10 * 1024 * 1024,    // 10MB
-        20 * 1024 * 1024,    // 20MB
-        50 * 1024 * 1024,    // 50MB
-        100 * 1024 * 1024    // 100MB
+        5 * 1024 * 1024L,         // 5MB (minimum multipart size)
+        10 * 1024 * 1024L,        // 10MB
+        20 * 1024 * 1024L,        // 20MB
+        50 * 1024 * 1024L,        // 50MB
+        100 * 1024 * 1024L,       // 100MB
+        500 * 1024 * 1024L,       // 500MB
+        1024 * 1024 * 1024L,      // 1GB
+        2 * 1024L * 1024 * 1024,  // 2GB
+        5 * 1024L * 1024 * 1024   // 5GB (S3 maximum part size)
     };
 
     /// <summary>
