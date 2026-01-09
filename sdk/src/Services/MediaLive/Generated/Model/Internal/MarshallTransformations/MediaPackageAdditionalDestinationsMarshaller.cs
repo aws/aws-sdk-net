@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MediaPackageOutputDestinationSettings Marshaller
+    /// MediaPackageAdditionalDestinations Marshaller
     /// </summary>
-    public class MediaPackageOutputDestinationSettingsMarshaller : IRequestMarshaller<MediaPackageOutputDestinationSettings, JsonMarshallerContext> 
+    public class MediaPackageAdditionalDestinationsMarshaller : IRequestMarshaller<MediaPackageAdditionalDestinations, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +42,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MediaPackageOutputDestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(MediaPackageAdditionalDestinations requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetChannelEndpointId())
+            if(requestObject.IsSetDestination())
             {
-                context.Writer.WritePropertyName("channelEndpointId");
-                context.Writer.WriteStringValue(requestObject.ChannelEndpointId);
-            }
+                context.Writer.WritePropertyName("destination");
+                context.Writer.WriteStartObject();
 
-            if(requestObject.IsSetChannelGroup())
-            {
-                context.Writer.WritePropertyName("channelGroup");
-                context.Writer.WriteStringValue(requestObject.ChannelGroup);
-            }
+                var marshaller = OutputLocationRefMarshaller.Instance;
+                marshaller.Marshall(requestObject.Destination, context);
 
-            if(requestObject.IsSetChannelId())
-            {
-                context.Writer.WritePropertyName("channelId");
-                context.Writer.WriteStringValue(requestObject.ChannelId);
-            }
-
-            if(requestObject.IsSetChannelName())
-            {
-                context.Writer.WritePropertyName("channelName");
-                context.Writer.WriteStringValue(requestObject.ChannelName);
-            }
-
-            if(requestObject.IsSetMediaPackageRegionName())
-            {
-                context.Writer.WritePropertyName("mediaPackageRegionName");
-                context.Writer.WriteStringValue(requestObject.MediaPackageRegionName);
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -81,7 +62,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MediaPackageOutputDestinationSettingsMarshaller Instance = new MediaPackageOutputDestinationSettingsMarshaller();
+        public readonly static MediaPackageAdditionalDestinationsMarshaller Instance = new MediaPackageAdditionalDestinationsMarshaller();
 
     }
 }
