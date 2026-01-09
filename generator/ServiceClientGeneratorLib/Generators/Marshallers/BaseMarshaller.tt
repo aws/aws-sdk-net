@@ -274,6 +274,8 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach(var member in operation.RequestQueryStringMembers)
 			{
+                if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(member.OwningShape.Name, out var modifier) && modifier.ExcludedMarshallingProperties.Contains(member.ModeledName))
+                    continue;
                 if (member.IsRequired)
                 {
                     if (member.Shape.IsString)

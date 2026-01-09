@@ -14,7 +14,8 @@ namespace ServiceClientGenerator
         CRC32C,
         CRC32,
         SHA256,
-        SHA1
+        SHA1,
+        CRC64NVME
     }
 
     /// <summary>
