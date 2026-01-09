@@ -1,4 +1,5 @@
 using System.CommandLine;
+using System.Text.Json;
 using Amazon.S3.VmaAnalysis;
 
 // Root command
@@ -8,17 +9,57 @@ var rootCommand = new RootCommand("VMA Analysis Tool - Analyze ArrayPool VMA imp
 var verboseOption = new Option<bool>("--verbose", "Enable verbose output");
 var exportCsvOption = new Option<string?>("--export-csv", "Export results to CSV file");
 var maxMemoryGbOption = new Option<double?>("--max-memory-gb", "Maximum memory to use in GB (default: 80% of available RAM)");
+var isolatedOption = new Option<bool>("--isolated", "Run each test in a separate process for accurate VMA measurements");
 
 rootCommand.AddGlobalOption(verboseOption);
 rootCommand.AddGlobalOption(exportCsvOption);
 rootCommand.AddGlobalOption(maxMemoryGbOption);
+rootCommand.AddGlobalOption(isolatedOption);
+
+// Internal command for running isolated tests (used by parent process)
+var isolatedTestCommand = new Command("_run-isolated-test", "Internal command - runs a single test from base64-encoded config");
+isolatedTestCommand.IsHidden = true;
+var configArg = new Argument<string>("config", "Base64-encoded JSON config");
+isolatedTestCommand.AddArgument(configArg);
+isolatedTestCommand.SetHandler(async (string configBase64) =>
+{
+    try
+    {
+        var configJson = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(configBase64));
+        var config = JsonSerializer.Deserialize<SimulationConfig>(configJson, IsolatedJsonContext.Default.SimulationConfig);
+        
+        if (config == null)
+        {
+            Console.Error.WriteLine("Failed to deserialize config");
+            Environment.Exit(1);
+            return;
+        }
+        
+        using var vmaMonitor = new VmaMonitor();
+        using var simulator = new DownloadSimulator(vmaMonitor);
+        
+        var result = await simulator.SimulateDownloadAsync(config);
+        
+        // Output result as JSON (prefix with JSON_RESULT: for easy parsing)
+        var resultJson = JsonSerializer.Serialize(result, IsolatedJsonContext.Default.SimulationMetrics);
+        Console.WriteLine($"JSON_RESULT:{resultJson}");
+        
+        Environment.Exit(0);
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Error: {ex.Message}");
+        Console.Error.WriteLine(ex.StackTrace);
+        Environment.Exit(1);
+    }
+}, configArg);
 
 // Quick test command
 var quickCommand = new Command("quick", "Run a quick test to verify the tool works");
-quickCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb) =>
+quickCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool isolated) =>
 {
-    await RunTestsAsync(TestMatrix.GenerateQuickTest(), verbose, csvPath, maxMemoryGb, "Quick Test");
-}, verboseOption, exportCsvOption, maxMemoryGbOption);
+    await RunTestsAsync(TestMatrix.GenerateQuickTest(), verbose, csvPath, maxMemoryGb, isolated, "Quick Test");
+}, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption);
 
 // Chunk size sweep command
 var chunkSweepCommand = new Command("chunk-sweep", "Test impact of different chunk sizes");
@@ -32,15 +73,15 @@ chunkSweepCommand.AddOption(maxInMemOption);
 chunkSweepCommand.AddOption(concurrentOption);
 chunkSweepCommand.AddOption(totalPartsOption);
 
-chunkSweepCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, int partSize, int maxInMem, int concurrent, int totalParts) =>
+chunkSweepCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool isolated, int partSize, int maxInMem, int concurrent, int totalParts) =>
 {
     var configs = TestMatrix.GenerateChunkSizeSweep(
         partSize * 1024 * 1024,
         maxInMem,
         concurrent,
         totalParts);
-    await RunTestsAsync(configs, verbose, csvPath, maxMemoryGb, "Chunk Size Sweep");
-}, verboseOption, exportCsvOption, maxMemoryGbOption, partSizeOption, maxInMemOption, concurrentOption, totalPartsOption);
+    await RunTestsAsync(configs, verbose, csvPath, maxMemoryGb, isolated, "Chunk Size Sweep");
+}, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption, partSizeOption, maxInMemOption, concurrentOption, totalPartsOption);
 
 // Concurrency sweep command
 var concurrencySweepCommand = new Command("concurrency-sweep", "Test impact of different concurrency levels");
@@ -51,15 +92,15 @@ concurrencySweepCommand.AddOption(totalPartsOption);
 var chunkSizeOption = new Option<int>("--chunk-size", () => 64, "Chunk size in KB");
 concurrencySweepCommand.AddOption(chunkSizeOption);
 
-concurrencySweepCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, int partSize, int maxInMem, int totalParts, int chunkSize) =>
+concurrencySweepCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool isolated, int partSize, int maxInMem, int totalParts, int chunkSize) =>
 {
     var configs = TestMatrix.GenerateConcurrencySweep(
         partSize * 1024 * 1024,
         chunkSize * 1024,
         maxInMem,
         totalParts);
-    await RunTestsAsync(configs, verbose, csvPath, maxMemoryGb, "Concurrency Sweep");
-}, verboseOption, exportCsvOption, maxMemoryGbOption, partSizeOption, maxInMemOption, totalPartsOption, chunkSizeOption);
+    await RunTestsAsync(configs, verbose, csvPath, maxMemoryGb, isolated, "Concurrency Sweep");
+}, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption, partSizeOption, maxInMemOption, totalPartsOption, chunkSizeOption);
 
 // Max in-memory sweep command
 var maxInMemSweepCommand = new Command("maxinmem-sweep", "Test impact of different MaxInMemoryParts values");
@@ -68,43 +109,43 @@ maxInMemSweepCommand.AddOption(concurrentOption);
 maxInMemSweepCommand.AddOption(totalPartsOption);
 maxInMemSweepCommand.AddOption(chunkSizeOption);
 
-maxInMemSweepCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, int partSize, int concurrent, int totalParts, int chunkSize) =>
+maxInMemSweepCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool isolated, int partSize, int concurrent, int totalParts, int chunkSize) =>
 {
     var configs = TestMatrix.GenerateMaxInMemorySweep(
         partSize * 1024 * 1024,
         chunkSize * 1024,
         concurrent,
         totalParts);
-    await RunTestsAsync(configs, verbose, csvPath, maxMemoryGb, "MaxInMemoryParts Sweep");
-}, verboseOption, exportCsvOption, maxMemoryGbOption, partSizeOption, concurrentOption, totalPartsOption, chunkSizeOption);
+    await RunTestsAsync(configs, verbose, csvPath, maxMemoryGb, isolated, "MaxInMemoryParts Sweep");
+}, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption, partSizeOption, concurrentOption, totalPartsOption, chunkSizeOption);
 
 // VMA limit tests command
 var vmaLimitCommand = new Command("vma-limit", "Test configurations near VMA limits");
-vmaLimitCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb) =>
+vmaLimitCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool isolated) =>
 {
-    await RunTestsAsync(TestMatrix.GenerateVmaLimitTests(), verbose, csvPath, maxMemoryGb, "VMA Limit Tests");
-}, verboseOption, exportCsvOption, maxMemoryGbOption);
+    await RunTestsAsync(TestMatrix.GenerateVmaLimitTests(), verbose, csvPath, maxMemoryGb, isolated, "VMA Limit Tests");
+}, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption);
 
 // Dynamic vs Fixed comparison command
 var compareCommand = new Command("compare", "Compare dynamic vs fixed chunk sizing");
-compareCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb) =>
+compareCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool isolated) =>
 {
-    await RunTestsAsync(TestMatrix.GenerateDynamicVsFixedComparison(), verbose, csvPath, maxMemoryGb, "Dynamic vs Fixed Comparison", showDynamicComparison: true);
-}, verboseOption, exportCsvOption, maxMemoryGbOption);
+    await RunTestsAsync(TestMatrix.GenerateDynamicVsFixedComparison(), verbose, csvPath, maxMemoryGb, isolated, "Dynamic vs Fixed Comparison", showDynamicComparison: true);
+}, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption);
 
 // Optimal analysis command
 var optimalCommand = new Command("optimal", "Find optimal chunk sizes for various scenarios");
-optimalCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb) =>
+optimalCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool isolated) =>
 {
-    await RunTestsAsync(TestMatrix.GenerateOptimalChunkAnalysis(), verbose, csvPath, maxMemoryGb, "Optimal Chunk Analysis", showRecommendations: true);
-}, verboseOption, exportCsvOption, maxMemoryGbOption);
+    await RunTestsAsync(TestMatrix.GenerateOptimalChunkAnalysis(), verbose, csvPath, maxMemoryGb, isolated, "Optimal Chunk Analysis", showRecommendations: true);
+}, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption);
 
 // Full matrix command (warning: can take a long time)
 var fullMatrixCommand = new Command("full-matrix", "Run complete test matrix (warning: slow!)");
 var confirmOption = new Option<bool>("--confirm", "Confirm running full matrix");
 fullMatrixCommand.AddOption(confirmOption);
 
-fullMatrixCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool confirm) =>
+fullMatrixCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, bool isolated, bool confirm) =>
 {
     var configs = TestMatrix.GenerateFullMatrix();
     Console.WriteLine($"Full matrix contains {configs.Count} configurations.");
@@ -115,8 +156,8 @@ fullMatrixCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMe
         return;
     }
     
-    await RunTestsAsync(configs, verbose, csvPath, maxMemoryGb, "Full Test Matrix", showRecommendations: true);
-}, verboseOption, exportCsvOption, maxMemoryGbOption, confirmOption);
+    await RunTestsAsync(configs, verbose, csvPath, maxMemoryGb, isolated, "Full Test Matrix", showRecommendations: true);
+}, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption, confirmOption);
 
 // Single test command
 var singleCommand = new Command("single", "Run a single test with specific parameters");
@@ -126,6 +167,7 @@ singleCommand.AddOption(maxInMemOption);
 singleCommand.AddOption(concurrentOption);
 singleCommand.AddOption(totalPartsOption);
 
+// Single test doesn't need --isolated since there's only one test (nothing to isolate from)
 singleCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemoryGb, int partSize, int chunkSize, int maxInMem, int concurrent, int totalParts) =>
 {
     var config = new SimulationConfig
@@ -137,7 +179,7 @@ singleCommand.SetHandler(async (bool verbose, string? csvPath, double? maxMemory
         ConcurrentServiceRequests = concurrent,
         TotalParts = totalParts
     };
-    await RunTestsAsync(new List<SimulationConfig> { config }, verbose, csvPath, maxMemoryGb, "Single Test", showDetailed: true);
+    await RunTestsAsync(new List<SimulationConfig> { config }, verbose, csvPath, maxMemoryGb, false, "Single Test", showDetailed: true);
 }, verboseOption, exportCsvOption, maxMemoryGbOption, partSizeOption, chunkSizeOption, maxInMemOption, concurrentOption, totalPartsOption);
 
 // Calculate chunk size command
@@ -234,6 +276,7 @@ infoCommand.SetHandler(() =>
 });
 
 // Add all commands
+rootCommand.AddCommand(isolatedTestCommand);
 rootCommand.AddCommand(quickCommand);
 rootCommand.AddCommand(chunkSweepCommand);
 rootCommand.AddCommand(concurrencySweepCommand);
@@ -255,6 +298,7 @@ static async Task RunTestsAsync(
     bool verbose, 
     string? csvPath, 
     double? maxMemoryGb,
+    bool isolated,
     string testName,
     bool showDetailed = false,
     bool showRecommendations = false,
@@ -263,6 +307,11 @@ static async Task RunTestsAsync(
     Console.WriteLine($"\n{'═',80}");
     Console.WriteLine($"  {testName}");
     Console.WriteLine($"{'═',80}");
+    
+    if (isolated)
+    {
+        Console.WriteLine("\n🔒 ISOLATED MODE: Each test runs in a separate process for accurate VMA measurements");
+    }
     
     // Calculate memory limit
     var totalMemoryBytes = SystemMemoryInfo.GetTotalPhysicalMemoryBytes();
@@ -320,29 +369,64 @@ static async Task RunTestsAsync(
     
     Console.WriteLine($"\nRunning {validConfigs.Count} test configuration(s)...\n");
 
-    using var vmaMonitor = new VmaMonitor();
-    using var simulator = new DownloadSimulator(vmaMonitor);
     var analyzer = new ResultsAnalyzer();
+    var failedTests = 0;
 
-    var progress = 0;
-    foreach (var config in validConfigs)
+    if (isolated)
     {
-        progress++;
-        Console.Write($"\r[{progress}/{validConfigs.Count}] Testing: {TruncateName(config.Name, 50)}...");
-        
-        try
-        {
-            var result = await simulator.SimulateDownloadAsync(config);
-            analyzer.AddResult(result);
-            
-            if (verbose)
+        // Run each test in a separate process
+        var runner = new IsolatedTestRunner(verbose, maxMemoryGb);
+        var results = await runner.RunTestsAsync(
+            validConfigs,
+            (current, total, name) =>
             {
-                Console.WriteLine($" Peak VMA: {result.PeakVmaCount:N0} {result.Status}");
+                Console.Write($"\r[{current}/{total}] Testing (isolated): {TruncateName(name, 40)}...");
+            });
+        
+        foreach (var result in results)
+        {
+            if (result.Success && result.Metrics != null)
+            {
+                analyzer.AddResult(result.Metrics);
+                if (verbose)
+                {
+                    Console.WriteLine($" Peak VMA: {result.Metrics.PeakVmaCount:N0} {result.Metrics.Status} ({result.ProcessDurationMs}ms)");
+                }
+            }
+            else
+            {
+                failedTests++;
+                Console.WriteLine($" ERROR: {result.Error}");
             }
         }
-        catch (Exception ex)
+    }
+    else
+    {
+        // Run all tests in the current process (faster but less accurate VMA measurements)
+        using var vmaMonitor = new VmaMonitor();
+        using var simulator = new DownloadSimulator(vmaMonitor);
+
+        var progress = 0;
+        foreach (var config in validConfigs)
         {
-            Console.WriteLine($" ERROR: {ex.Message}");
+            progress++;
+            Console.Write($"\r[{progress}/{validConfigs.Count}] Testing: {TruncateName(config.Name, 50)}...");
+            
+            try
+            {
+                var result = await simulator.SimulateDownloadAsync(config);
+                analyzer.AddResult(result);
+                
+                if (verbose)
+                {
+                    Console.WriteLine($" Peak VMA: {result.PeakVmaCount:N0} {result.Status}");
+                }
+            }
+            catch (Exception ex)
+            {
+                failedTests++;
+                Console.WriteLine($" ERROR: {ex.Message}");
+            }
         }
     }
 
@@ -351,6 +435,11 @@ static async Task RunTestsAsync(
     if (skippedConfigs.Count > 0)
     {
         Console.WriteLine($"Note: {skippedConfigs.Count} configuration(s) were skipped due to memory constraints.");
+    }
+    
+    if (failedTests > 0)
+    {
+        Console.WriteLine($"Warning: {failedTests} test(s) failed.");
     }
 
     // Print results
