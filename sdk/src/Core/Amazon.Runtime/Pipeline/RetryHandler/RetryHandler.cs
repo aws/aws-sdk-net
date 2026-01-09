@@ -294,16 +294,6 @@ namespace Amazon.Runtime.Internal
                           requestContext.Retries + 1);
         }
 
-        private void LogForStaleConnection(IRequestContext requestContext, Exception exception, int staleConnectionRetries)
-        {
-            Logger.DebugFormat(
-                "Detected stale pooled connection error ({0}). Automatic retry {1} of {2} for request {3}",
-                exception.GetType().Name,
-                staleConnectionRetries,
-                requestContext.ClientConfig.MaxStaleConnectionRetries,
-                requestContext.RequestName);
-        }
-
         /// <summary>
         /// Checks if exception is a stale connection error that should be retried.
         /// Logs the decision and returns true if it qualifies for a stale connection retry.
@@ -335,7 +325,12 @@ namespace Amazon.Runtime.Internal
                 staleConnectionRetries < maxStaleConnectionRetries &&
                 canRetry)
             {
-                LogForStaleConnection(requestContext, exception, staleConnectionRetries + 1);
+                Logger.DebugFormat(
+                    "Detected stale pooled connection error ({0}). Automatic retry {1} of {2} for request {3}",
+                    exception.GetType().Name,
+                    staleConnectionRetries + 1,
+                    requestContext.ClientConfig.MaxStaleConnectionRetries,
+                    requestContext.RequestName);
                 return true;
             }
             
