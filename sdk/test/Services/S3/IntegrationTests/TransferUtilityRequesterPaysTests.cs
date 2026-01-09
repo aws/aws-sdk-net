@@ -12,6 +12,7 @@ using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using System.Drawing;
 using Amazon.SimpleNotificationService.Model;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -27,12 +28,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string plainTextContentType = "text/plain";
 
         [ClassInitialize()]
-        public static void ClassInitialize(TestContext a)
+        public static async Task ClassInitialize(TestContext a)
         {
             // Create standard bucket for operations
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
 
-            Client.PutBucketRequestPayment(new PutBucketRequestPaymentRequest
+            await Client.PutBucketRequestPaymentAsync(new PutBucketRequestPaymentRequest
             {
                 BucketName = bucketName,
                 RequestPaymentConfiguration = new RequestPaymentConfiguration()
@@ -43,9 +44,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             
             BaseClean();
             if (Directory.Exists(BasePath))

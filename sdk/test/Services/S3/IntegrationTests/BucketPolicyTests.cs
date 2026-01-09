@@ -18,8 +18,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using System.Net;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -32,15 +31,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static string bucketName;
 
         [TestInitialize]
-        public void Init()
+        public async Task Init()
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client, true);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public async Task Cleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
         }
 
         [TestMethod]

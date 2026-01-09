@@ -1,28 +1,18 @@
- using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using System.Diagnostics;
-using Amazon.Util;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Summary description for PutObjectTest
-    /// </summary>
     [TestClass]
     public class AccelerateTests : TestBase<AmazonS3Client>
     {
@@ -35,14 +25,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private Random random = new Random();
 
-        [ClassInitialize()]
-        public static void Initialize(TestContext a)
+        [ClassInitialize]
+        public static async Task Initialize(TestContext a)
         {
             s3Client = new AmazonS3Client(TestRegionEndpoint);
-            bucketName = S3TestUtils.CreateBucketWithWait(s3Client, true);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(s3Client, true);
             BucketAccelerateStatus bucketStatus = null;
 
-            s3Client.PutBucketAccelerateConfiguration(new PutBucketAccelerateConfigurationRequest
+            await s3Client.PutBucketAccelerateConfigurationAsync(new PutBucketAccelerateConfigurationRequest
             {
                 BucketName = bucketName,
                 AccelerateConfiguration = new AccelerateConfiguration
@@ -51,9 +41,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
 
-            var response = S3TestUtils.WaitForConsistency(() =>
+            var response = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = s3Client.GetBucketAccelerateConfiguration(bucketName);
+                var res = await s3Client.GetBucketAccelerateConfigurationAsync(bucketName);
                 return res.Status == BucketAccelerateStatus.Enabled ? res : null;
             });
 
@@ -62,17 +52,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
             if (leftoverBuckets.Any())
             {
                 foreach (var bucket in leftoverBuckets)
                 {
-                    AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucket);
+                    await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucket);
                 }
             }
 
-            AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucketName);
             s3Client.Dispose();
             BaseClean();
         }

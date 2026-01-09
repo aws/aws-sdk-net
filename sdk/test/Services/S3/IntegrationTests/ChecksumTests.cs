@@ -57,21 +57,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
         [ClassInitialize]
-        public static void Setup(TestContext context)
+        public static async Task Setup(TestContext context)
         {
-            _bucketName = S3TestUtils.CreateBucketWithWait(Client);
-            _mrapArn = S3TestUtils.GetOrCreateTestMRAP(new AmazonS3ControlClient(RegionEndpoint.USWest2), Client);
+            _bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            _mrapArn = await S3TestUtils.GetOrCreateTestMRAP(new AmazonS3ControlClient(RegionEndpoint.USWest2), Client);
         }
 
         [ClassCleanup]
-        public static void Cleanup()
+        public static async Task Cleanup()
         {
             // Delete the objects in the MRAP bucket, but leave the
             // MRAP and bucket for future test runs
-            S3TestUtils.DeleteObjects(Client, _mrapArn);
+            await S3TestUtils.DeleteObjects(Client, _mrapArn);
 
             // Delete the entire bucket used for the SigV4 tests
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, _bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, _bucketName);
         }
 
         /// <summary>

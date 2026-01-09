@@ -17,12 +17,11 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -41,19 +40,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         };
 
         [ClassInitialize()]
-        public static void Initialize(TestContext a)
+        public static async Task Initialize(TestContext a)
         {   
-            bucketName = S3TestUtils.CreateBucketWithWait(Client, new PutBucketRequest
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, new PutBucketRequest
             {
-                ObjectLockEnabledForBucket = true                
+                ObjectLockEnabledForBucket = true
             });
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
             DeleteBucketObjectsIncludingLocked(Client, bucketName);
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 

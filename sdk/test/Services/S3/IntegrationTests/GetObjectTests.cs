@@ -1,38 +1,26 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Summary description for PutObjectTest
-    /// </summary>
     [TestClass]
     public class GetObjectTests : TestBase<AmazonS3Client>
     {
         private const string content = "0123456789";
         private static string bucketName;
 
-        [ClassInitialize()]
-        public static void Initialize(TestContext a)
+        [ClassInitialize]
+        public static async Task Initialize(TestContext a)
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
 
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 ContentBody = content,
@@ -41,9 +29,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 

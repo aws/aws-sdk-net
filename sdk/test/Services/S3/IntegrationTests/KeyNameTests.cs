@@ -1,17 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
-
-using Amazon;
-using Amazon.S3;
-using Amazon.S3.Model;
+﻿using Amazon.S3;
 using Amazon.S3.Util;
-
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using System.Net;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -37,17 +28,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         static string bucketName;
 
         [ClassInitialize]
-        public static void Initialize(TestContext a)
+        public static async Task Initialize(TestContext a)
         {
             IAmazonS3 s3Client = new AmazonS3Client();
-            bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(s3Client);
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
             IAmazonS3 s3Client = new AmazonS3Client();
-            AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucketName);
         }
                 
         [TestCategory("S3")]

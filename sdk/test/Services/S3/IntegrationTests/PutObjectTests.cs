@@ -32,21 +32,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private const string testContent = "This is the content body!";
         private const string testKey = "test-key.json.gz";
 
-        [ClassInitialize()]
-        public static void Initialize(TestContext a)
+        [ClassInitialize]
+        public static async Task Initialize(TestContext a)
         {
             StreamWriter writer = File.CreateText("PutObjectFile.txt");
             writer.Write("This is some sample text.!!");
             writer.Close();
 
-            bucketName = S3TestUtils.CreateBucketWithWait(Client, true);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
         }
 
-
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 

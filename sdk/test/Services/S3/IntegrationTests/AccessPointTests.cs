@@ -1,21 +1,17 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon;
-
-using Amazon.SecurityToken;
-using Amazon.SecurityToken.Model;
-
+﻿using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
-
+using Amazon.S3.Util;
 using Amazon.S3Control;
 using Amazon.S3Control.Model;
-
-
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -25,22 +21,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         static string _bucketName;
         static string _accesspointName = "sdk-integtests-" + DateTime.UtcNow.Ticks;
         static string _accesspointArn;
-
         static string _accountId;
 
-        
-
         [ClassInitialize]
-        public static void Setup(TestContext context)
+        public static async Task Setup(TestContext context)
         {
             using (var stsClient = new AmazonSecurityTokenServiceClient())
             using (var s3ControlClient = new AmazonS3ControlClient())
             {
-                _accountId = stsClient.GetCallerIdentity(new GetCallerIdentityRequest()).Account;
-
-                _bucketName = S3TestUtils.CreateBucketWithWait(Client);
+                _accountId = (await stsClient.GetCallerIdentityAsync(new GetCallerIdentityRequest())).Account;
+                _bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
                 
-                var response = s3ControlClient.CreateAccessPoint(new CreateAccessPointRequest
+                var response = await s3ControlClient.CreateAccessPointAsync(new CreateAccessPointRequest
                 {
                     AccountId = _accountId,
                     Bucket = _bucketName,
@@ -52,20 +44,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
             using (var s3ControlClient = new AmazonS3ControlClient())
             {
-                s3ControlClient.DeleteAccessPoint(new DeleteAccessPointRequest
+                await s3ControlClient.DeleteAccessPointAsync(new DeleteAccessPointRequest
                 {
                     AccountId = _accountId,
                     Name = _accesspointName
                 });
 
-                Amazon.S3.Util.AmazonS3Util.DeleteS3BucketWithObjects(Client, _bucketName);
+                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, _bucketName);
             }
         }
-
 
         [TestMethod]
         public void PutAndGetObject()

@@ -9,6 +9,7 @@ using System.IO;
 using System.Net;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -27,7 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private AmazonS3Client usWestClient;
 
         [TestInitialize]
-        public void Initialize()
+        public async Task Initialize()
         {
             usEastClient = new AmazonS3Client(new AmazonS3Config
             {
@@ -35,7 +36,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
             });
 
-            eastBucketName = S3TestUtils.CreateBucketWithWait(usEastClient);
+            eastBucketName = await S3TestUtils.CreateBucketWithWaitAsync(usEastClient);
 
             usEastClient.PutObject(new PutObjectRequest
             {
@@ -52,26 +53,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             usWestClient = new AmazonS3Client(RegionEndpoint.USWest1);
-            westBucketName = S3TestUtils.CreateBucketWithWait(usWestClient);
+            westBucketName = await S3TestUtils.CreateBucketWithWaitAsync(usWestClient);
         }
 
         [TestCleanup]
-        public void TestCleanup()
+        public async Task TestCleanup()
         {
             if (usEastClient != null)
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(usEastClient, eastBucketName);
+                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(usEastClient, eastBucketName);
                 usEastClient.Dispose();
             }
 
             if (usWestClient != null)
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(usWestClient, westBucketName);
+                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(usWestClient, westBucketName);
                 usWestClient.Dispose();
             }
             
             BaseClean();
         }
+
         [DataTestMethod]
         [DataRow(testKey, testKey)]
         [DataRow("ObjectWithAllSpecialCharacters/'()!*$+,;=&", "DestinationObjectWithAllSpecialCharacters/'()!*$+,;=&")]

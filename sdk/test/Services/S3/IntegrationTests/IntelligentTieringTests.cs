@@ -45,15 +45,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestInitialize]
-        public void Init()
+        public async Task Init()
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public async Task Cleanup()
         {
-           AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+           await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
         }
 
         [TestCategory("S3")]

@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon;
+﻿using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.S3.Transfer;
+using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -55,11 +49,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private static List<string> keysToValidate = new List<string>();
 
-        [ClassInitialize()]
-        public static void Initialize(TestContext a)
+        [ClassInitialize]
+        public static async Task Initialize(TestContext a)
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
-            Client.PutBucketVersioning(new PutBucketVersioningRequest 
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            await Client.PutBucketVersioningAsync(new PutBucketVersioningRequest 
             {
                 BucketName = bucketName ,
                 VersioningConfig = new S3BucketVersioningConfig
@@ -70,11 +64,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             if (Directory.Exists(basePath))
+            {
                 Directory.Delete(basePath, true);
+            }
 
             BaseClean();
         }
