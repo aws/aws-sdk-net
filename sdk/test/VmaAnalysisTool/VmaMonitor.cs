@@ -235,11 +235,13 @@ public class VmaMonitor : IDisposable
     }
 
     /// <summary>
-    /// Creates a snapshot of current VMA state.
+    /// Creates a snapshot of current VMA state including memory metrics.
     /// </summary>
     public VmaSnapshot TakeSnapshot()
     {
         UpdatePeak();
+        var process = Process.GetCurrentProcess();
+        
         return new VmaSnapshot
         {
             Timestamp = DateTime.UtcNow,
@@ -248,7 +250,12 @@ public class VmaMonitor : IDisposable
             BaselineVmaCount = _baselineVmaCount,
             VmaCountAboveBaseline = VmaCountAboveBaseline,
             IsRealTracking = _isLinux,
-            Breakdown = GetVmaBreakdown()
+            Breakdown = GetVmaBreakdown(),
+            // Memory metrics
+            WorkingSetBytes = process.WorkingSet64,
+            PrivateMemoryBytes = process.PrivateMemorySize64,
+            GcTotalMemoryBytes = GC.GetTotalMemory(false),
+            ManagedMemoryBytes = GC.GetTotalAllocatedBytes(false)
         };
     }
 
@@ -270,6 +277,12 @@ public record VmaSnapshot
     public int VmaCountAboveBaseline { get; init; }
     public bool IsRealTracking { get; init; }
     public Dictionary<string, int> Breakdown { get; init; } = new();
+    
+    // Memory metrics
+    public long WorkingSetBytes { get; init; }
+    public long PrivateMemoryBytes { get; init; }
+    public long GcTotalMemoryBytes { get; init; }
+    public long ManagedMemoryBytes { get; init; }
 
     /// <summary>
     /// Percentage of default Linux VMA limit used.

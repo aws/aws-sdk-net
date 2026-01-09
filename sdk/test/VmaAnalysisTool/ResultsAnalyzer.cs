@@ -105,6 +105,14 @@ public class ResultsAnalyzer
         Console.WriteLine($"  Safety Margin:              {result.SafetyMarginPercent:F1}%");
         Console.WriteLine($"  Status:                     {result.Status}");
         
+        Console.WriteLine("\nMemory Metrics:");
+        Console.WriteLine($"  Expected Memory:            {result.ExpectedMemoryFormatted} (MaxInMemoryParts × PartSize)");
+        Console.WriteLine($"  Baseline Working Set:       {FormatBytes(result.BaselineWorkingSetBytes)}");
+        Console.WriteLine($"  Peak Working Set:           {result.PeakWorkingSetFormatted}");
+        Console.WriteLine($"  Working Set Delta:          {result.WorkingSetDeltaFormatted}");
+        Console.WriteLine($"  Peak GC Memory:             {FormatBytes(result.PeakGcMemoryBytes)}");
+        Console.WriteLine($"  Memory Efficiency Ratio:    {result.MemoryEfficiencyRatio:F2}x (actual/expected, ~1.0 is ideal)");
+        
         Console.WriteLine("\nPerformance:");
         Console.WriteLine($"  Duration:                   {result.DurationMs:N0} ms");
         Console.WriteLine($"  Completed Parts:            {result.CompletedParts}");
@@ -350,22 +358,108 @@ public class ResultsAnalyzer
     {
         using var writer = new StreamWriter(filePath);
         
-        // Header
+        // Header with memory columns
         writer.WriteLine("Name,PartSizeBytes,ChunkSizeBytes,TotalParts,MaxInMemoryParts,ConcurrentServiceRequests," +
-                        "ChunksPerPart,MaxConcurrentChunks,EstimatedPeakVma,ActualPeakVma,PeakActiveChunks," +
-                        "DurationMs,TotalAllocations,IsSafe,SafetyMarginPercent");
+                        "ChunksPerPart,MaxConcurrentChunks,EstimatedPeakVma,PeakVmaCount,PeakActiveChunks," +
+                        "DurationMs,TotalAllocations,IsSafe,SafetyMarginPercent," +
+                        "ExpectedMemoryBytes,BaselineWorkingSetBytes,PeakWorkingSetBytes,WorkingSetDeltaBytes," +
+                        "PeakPrivateMemoryBytes,PeakGcMemoryBytes,MemoryEfficiencyRatio,WasAborted");
 
         foreach (var result in _results)
         {
             var config = result.Config;
-            writer.WriteLine($"{config.Name},{config.PartSizeBytes},{config.ChunkSizeBytes}," +
+            writer.WriteLine($"{EscapeCsv(config.Name)},{config.PartSizeBytes},{config.ChunkSizeBytes}," +
                            $"{config.TotalParts},{config.MaxInMemoryParts},{config.ConcurrentServiceRequests}," +
                            $"{config.ChunksPerPart},{config.MaxConcurrentChunks},{config.EstimatedPeakVmaCount}," +
                            $"{result.PeakVmaCount},{result.PeakActiveChunks},{result.DurationMs}," +
-                           $"{result.TotalAllocations},{result.VmaSafe},{result.SafetyMarginPercent:F2}");
+                           $"{result.TotalAllocations},{result.VmaSafe},{result.SafetyMarginPercent:F2}," +
+                           $"{result.ExpectedMemoryUsageBytes},{result.BaselineWorkingSetBytes},{result.PeakWorkingSetBytes},{result.WorkingSetDeltaBytes}," +
+                           $"{result.PeakPrivateMemoryBytes},{result.PeakGcMemoryBytes},{result.MemoryEfficiencyRatio:F4},{result.WasAborted}");
         }
 
         Console.WriteLine($"\nResults exported to: {filePath}");
+    }
+
+    /// <summary>
+    /// Prints memory usage analysis showing actual vs expected memory.
+    /// </summary>
+    public void PrintMemoryAnalysis()
+    {
+        Console.WriteLine("\n" + new string('═', 120));
+        Console.WriteLine("MEMORY USAGE ANALYSIS");
+        Console.WriteLine(new string('═', 120));
+        Console.WriteLine("\nFormula: Expected Memory = MaxInMemoryParts × PartSize");
+        Console.WriteLine("         (Chunk size affects VMA count but NOT total memory usage)\n");
+
+        var table = new ConsoleTable(
+            "Name",
+            "Part Size",
+            "MaxInMem",
+            "Expected Mem",
+            "Actual Delta",
+            "Efficiency",
+            "Validation");
+
+        foreach (var result in _results.OrderBy(r => r.Config.PartSizeBytes).ThenBy(r => r.Config.MaxInMemoryParts))
+        {
+            var config = result.Config;
+            var efficiencyPct = result.MemoryEfficiencyRatio * 100;
+            
+            // Validation: ratio should be close to 1.0 (between 0.5 and 2.0 is reasonable)
+            var validation = result.MemoryEfficiencyRatio switch
+            {
+                <= 0 => "⚠ No data",
+                < 0.5 => "⚠ Under",
+                > 2.0 => "⚠ Over",
+                _ => "✓ OK"
+            };
+
+            table.AddRow(
+                TruncateName(config.Name, 30),
+                FormatBytes(config.PartSizeBytes),
+                config.MaxInMemoryParts,
+                FormatBytes(result.ExpectedMemoryUsageBytes),
+                FormatBytes(result.WorkingSetDeltaBytes),
+                $"{efficiencyPct:F0}%",
+                validation
+            );
+        }
+
+        table.Write(Format.MarkDown);
+
+        // Summary statistics
+        var validResults = _results.Where(r => r.MemoryEfficiencyRatio > 0).ToList();
+        if (validResults.Any())
+        {
+            Console.WriteLine("\n--- Memory Formula Validation Summary ---\n");
+            Console.WriteLine($"  Average Efficiency Ratio: {validResults.Average(r => r.MemoryEfficiencyRatio):F2}x");
+            Console.WriteLine($"  Min Efficiency Ratio:     {validResults.Min(r => r.MemoryEfficiencyRatio):F2}x");
+            Console.WriteLine($"  Max Efficiency Ratio:     {validResults.Max(r => r.MemoryEfficiencyRatio):F2}x");
+            
+            var closeToExpected = validResults.Count(r => r.MemoryEfficiencyRatio >= 0.5 && r.MemoryEfficiencyRatio <= 2.0);
+            Console.WriteLine($"\n  Tests within expected range (0.5x - 2.0x): {closeToExpected}/{validResults.Count} ({100.0 * closeToExpected / validResults.Count:F0}%)");
+            
+            if (validResults.Average(r => r.MemoryEfficiencyRatio) is >= 0.7 and <= 1.5)
+            {
+                Console.WriteLine("\n  ✓ Formula Validated: Memory ≈ MaxInMemoryParts × PartSize");
+            }
+            else
+            {
+                Console.WriteLine("\n  ⚠ Results deviate significantly from expected formula.");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Escapes a string for CSV output.
+    /// </summary>
+    private static string EscapeCsv(string value)
+    {
+        if (value.Contains(',') || value.Contains('"') || value.Contains('\n'))
+        {
+            return $"\"{value.Replace("\"", "\"\"")}\"";
+        }
+        return value;
     }
 
     /// <summary>

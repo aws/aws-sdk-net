@@ -54,10 +54,16 @@ public class DownloadSimulator : IDisposable
     public async Task<SimulationMetrics> SimulateDownloadAsync(SimulationConfig config, CancellationToken cancellationToken = default)
     {
         _vmaMonitor.Reset();
+        
+        // Capture baseline memory
+        var process = Process.GetCurrentProcess();
+        var baselineWorkingSet = process.WorkingSet64;
+        
         Metrics = new SimulationMetrics
         {
             Config = config,
-            StartTime = DateTime.UtcNow
+            StartTime = DateTime.UtcNow,
+            BaselineWorkingSetBytes = baselineWorkingSet
         };
 
         var stopwatch = Stopwatch.StartNew();
@@ -70,10 +76,10 @@ public class DownloadSimulator : IDisposable
         using var vmaAbortCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         var linkedToken = vmaAbortCts.Token;
 
-        // Start VMA monitoring task
+        // Start VMA and memory monitoring task
         var vmaMonitorTask = VmaAbortThreshold > 0 
-            ? StartVmaMonitoringAsync(vmaAbortCts, VmaAbortThreshold)
-            : Task.CompletedTask;
+            ? StartVmaAndMemoryMonitoringAsync(vmaAbortCts, VmaAbortThreshold)
+            : StartMemoryOnlyMonitoringAsync(vmaAbortCts);
 
         try
         {
@@ -181,15 +187,18 @@ public class DownloadSimulator : IDisposable
     }
 
     /// <summary>
-    /// Background task that monitors VMA count and cancels if threshold exceeded.
+    /// Background task that monitors VMA count and memory, cancels if VMA threshold exceeded.
     /// </summary>
-    private async Task StartVmaMonitoringAsync(CancellationTokenSource abortCts, int threshold)
+    private async Task StartVmaAndMemoryMonitoringAsync(CancellationTokenSource abortCts, int threshold)
     {
         try
         {
             while (!abortCts.Token.IsCancellationRequested)
             {
                 await Task.Delay(100, abortCts.Token); // Check every 100ms
+                
+                // Update memory metrics
+                UpdateMemoryMetrics();
                 
                 var currentVma = _vmaMonitor.CurrentVmaCount;
                 if (currentVma >= threshold)
@@ -203,6 +212,57 @@ public class DownloadSimulator : IDisposable
         catch (OperationCanceledException)
         {
             // Expected when test completes or is cancelled
+        }
+    }
+    
+    /// <summary>
+    /// Background task that monitors memory only (when VMA threshold is disabled).
+    /// </summary>
+    private async Task StartMemoryOnlyMonitoringAsync(CancellationTokenSource abortCts)
+    {
+        try
+        {
+            while (!abortCts.Token.IsCancellationRequested)
+            {
+                await Task.Delay(100, abortCts.Token); // Check every 100ms
+                UpdateMemoryMetrics();
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            // Expected when test completes or is cancelled
+        }
+    }
+    
+    /// <summary>
+    /// Updates peak memory metrics from current process state.
+    /// </summary>
+    private void UpdateMemoryMetrics()
+    {
+        try
+        {
+            var process = Process.GetCurrentProcess();
+            process.Refresh(); // Refresh to get latest values
+            
+            lock (_lock)
+            {
+                var workingSet = process.WorkingSet64;
+                var privateMemory = process.PrivateMemorySize64;
+                var gcMemory = GC.GetTotalMemory(false);
+                
+                if (workingSet > Metrics.PeakWorkingSetBytes)
+                    Metrics.PeakWorkingSetBytes = workingSet;
+                    
+                if (privateMemory > Metrics.PeakPrivateMemoryBytes)
+                    Metrics.PeakPrivateMemoryBytes = privateMemory;
+                    
+                if (gcMemory > Metrics.PeakGcMemoryBytes)
+                    Metrics.PeakGcMemoryBytes = gcMemory;
+            }
+        }
+        catch
+        {
+            // Ignore errors in monitoring
         }
     }
 
@@ -467,6 +527,44 @@ public class SimulationMetrics
     public int CurrentActiveChunks { get; set; }
     public int PeakActiveChunks { get; set; }
     
+    // Memory metrics
+    /// <summary>
+    /// Peak working set (total physical memory used by process) in bytes.
+    /// </summary>
+    public long PeakWorkingSetBytes { get; set; }
+    
+    /// <summary>
+    /// Peak private memory (memory exclusive to this process) in bytes.
+    /// </summary>
+    public long PeakPrivateMemoryBytes { get; set; }
+    
+    /// <summary>
+    /// Peak GC managed memory in bytes.
+    /// </summary>
+    public long PeakGcMemoryBytes { get; set; }
+    
+    /// <summary>
+    /// Baseline working set at start of test in bytes.
+    /// </summary>
+    public long BaselineWorkingSetBytes { get; set; }
+    
+    /// <summary>
+    /// Delta of working set from baseline (actual memory used by test) in bytes.
+    /// </summary>
+    public long WorkingSetDeltaBytes => PeakWorkingSetBytes - BaselineWorkingSetBytes;
+    
+    /// <summary>
+    /// Expected memory usage based on formula: MaxInMemoryParts × PartSize
+    /// </summary>
+    public long ExpectedMemoryUsageBytes => (long)Config.MaxInMemoryParts * Config.PartSizeBytes;
+    
+    /// <summary>
+    /// Ratio of actual to expected memory usage (should be close to 1.0).
+    /// </summary>
+    public double MemoryEfficiencyRatio => ExpectedMemoryUsageBytes > 0 
+        ? (double)WorkingSetDeltaBytes / ExpectedMemoryUsageBytes 
+        : 0;
+    
     // Abort tracking
     /// <summary>
     /// Whether the test was aborted due to VMA limit approaching.
@@ -501,5 +599,28 @@ public class SimulationMetrics
             if (PeakVmaCount >= VmaMonitor.SafeVmaThreshold * 0.8) return "⚠ WARNING";
             return "✓ SAFE";
         }
+    }
+    
+    /// <summary>
+    /// Formatted peak working set.
+    /// </summary>
+    public string PeakWorkingSetFormatted => FormatBytes(PeakWorkingSetBytes);
+    
+    /// <summary>
+    /// Formatted working set delta.
+    /// </summary>
+    public string WorkingSetDeltaFormatted => FormatBytes(WorkingSetDeltaBytes);
+    
+    /// <summary>
+    /// Formatted expected memory.
+    /// </summary>
+    public string ExpectedMemoryFormatted => FormatBytes(ExpectedMemoryUsageBytes);
+    
+    private static string FormatBytes(long bytes)
+    {
+        if (bytes >= 1024L * 1024 * 1024) return $"{bytes / 1024.0 / 1024.0 / 1024.0:F2}GB";
+        if (bytes >= 1024 * 1024) return $"{bytes / 1024.0 / 1024.0:F2}MB";
+        if (bytes >= 1024) return $"{bytes / 1024.0:F0}KB";
+        return $"{bytes}B";
     }
 }
