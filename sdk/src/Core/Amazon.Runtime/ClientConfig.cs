@@ -91,7 +91,7 @@ namespace Amazon.Runtime
         private RequestRetryMode? retryMode = null;
         private int? maxRetries = null;
         private const int MaxRetriesDefault = 2;
-        private int _maxStaleConnectionRetries = 3;
+        private int? maxStaleConnectionRetries;
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
         private AWSCredentials _defaultAWSCredentials = null;
@@ -597,13 +597,20 @@ namespace Amazon.Runtime
         /// </summary>
         public int MaxStaleConnectionRetries
         {
-            get { return this._maxStaleConnectionRetries; }
+            get
+            {
+                if (!this.maxStaleConnectionRetries.HasValue)
+                {
+                    return 3;
+                }
+                return this.maxStaleConnectionRetries.Value;
+            }
             set
             {
                 if (value < 0)
                     throw new ArgumentOutOfRangeException(nameof(value), "MaxStaleConnectionRetries must be non-negative.");
 
-                this._maxStaleConnectionRetries = value;
+                this.maxStaleConnectionRetries = value;
             }
         }
 
