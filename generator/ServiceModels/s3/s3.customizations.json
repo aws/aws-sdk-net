@@ -1895,6 +1895,189 @@
                     "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
+        },
+        "GetObjectOutput":{
+            "modify":[
+                {
+                    "Restore":{"emitPropertyName":"RestoreExpiration"}
+                },
+                {
+                    "SSECustomerAlgorithm":{"emitPropertyName":"ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "SSEKMSKeyId":{"emitPropertyName":"ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "Metadata":{"injectXmlUnmarshallCode":["MetadataCustomUnmarshall(context, response);"]}
+                },
+                {
+                    "RestoreExpiration":{"injectXmlUnmarshallCode":["RestoreExpirationCustomUnmarshall(context, response);"]}
+                },
+                {
+                    "DeleteMarker":{"injectXmlUnmarshallCode":[
+                        "if (context.ResponseData.IsHeaderPresent(\"x-amz-delete-marker\"))",
+                        "    response.DeleteMarker = S3Transforms.ToString(context.ResponseData.GetHeaderValue(\"x-amz-delete-marker\"));"]}
+                },
+                {
+                    "ServerSideEncryptionKeyManagementServiceKeyId":{"injectXmlIsSet":[" return !String.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceKeyId);"]}
+                },
+                {
+                    "ServerSideEncryptionCustomerMethod":{"injectXmlPropertyGetter":["get { return CustomSSECustomerMethodGetter(); }"]}
+                },
+                {
+                    "ServerSideEncryption" : {"emitPropertyName": "ServerSideEncryptionMethod"}
+                },
+                {
+                    "TagCount": {"injectXmlPropertyGetter":["get { return this._tagCount ?? 0; }"]}
+                },
+                {
+                    "Expiration" : {"injectXmlUnmarshallCode":[
+                        "if (context.ResponseData.IsHeaderPresent(\"x-amz-expiration\"))",
+                        "    response.Expiration = new Expiration(context.ResponseData.GetHeaderValue(\"x-amz-expiration\"));"
+                    
+                    ]}
+                },
+                {
+                    "ContentDisposition": {"injectXmlUnmarshallCode":[
+                    "if (context.ResponseData.IsHeaderPresent(\"Content-Disposition\"))",
+                    "   response.Headers.ContentDisposition = S3Transforms.ToString(context.ResponseData.GetHeaderValue(\"Content-Disposition\"));"
+                    ]}
+                },
+                {
+                    "ContentEncoding":{"injectXmlUnmarshallCode" : [
+                        "if (context.ResponseData.IsHeaderPresent(\"Content-Encoding\"))",
+                        "   response.Headers.ContentEncoding = S3Transforms.ToString(context.ResponseData.GetHeaderValue(\"Content-Encoding\"));"
+                    ]}
+                },
+                {
+                    "ContentLanguage" : {"injectXmlUnmarshallCode": [
+                        "if (context.ResponseData.IsHeaderPresent(\"Content-Language\"))",
+                        "   response.Headers.ContentLanguage = S3Transforms.ToString(context.ResponseData.GetHeaderValue(\"Content-Language\"));"
+                    ]}
+                },
+                {
+                    "ContentLength": {"injectXmlUnmarshallCode": [
+                        "if (context.ResponseData.IsHeaderPresent(\"Content-Length\"))",
+                        "    response.Headers.ContentLength = long.Parse(context.ResponseData.GetHeaderValue(\"Content-Length\"), CultureInfo.InvariantCulture);"
+                    ]}
+                },
+                {
+                    "CacheControl": {"injectXmlUnmarshallCode": [
+                        "if (context.ResponseData.IsHeaderPresent(\"Cache-Control\"))",
+                        "   response.Headers.CacheControl = S3Transforms.ToString(context.ResponseData.GetHeaderValue(\"Cache-Control\"));"
+                    ]}
+                },
+                {
+                    "ContentType" : {"injectXmlUnmarshallCode": [
+                        "if (context.ResponseData.IsHeaderPresent(\"Content-Type\"))",
+                        "    response.Headers.ContentType = S3Transforms.ToString(context.ResponseData.GetHeaderValue(\"Content-Type\"));"
+                    ]}
+                },
+                {
+                    "Expires":{"injectXmlUnmarshallCode":[
+                        "if (context.ResponseData.IsHeaderPresent(\"Expires\"))",
+                        "    response.ExpiresString = S3Transforms.ToString(context.ResponseData.GetHeaderValue(\"Expires\"));"]}
+                }
+            ]
+        },
+        "GetObjectRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "IfModifiedSince":{"emitPropertyName":"ModifiedSinceDate"}
+                },
+                {
+                    "ModifiedSinceDate": {"injectXmlPropertyGetter":["get { return this._modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }"]}
+                },
+                {
+                    "IfUnmodifiedSince": {"emitPropertyName":"UnmodifiedSinceDate"}
+                },
+                {
+                    "UnmodifiedSinceDate":{"injectXmlPropertyGetter":["get { return this._unmodifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }"]}
+                },
+                {
+                    "IfMatch": {"emitPropertyName": "EtagToMatch"}
+                },
+                {
+                    "IfNoneMatch" : {"emitPropertyName": "EtagToNotMatch"}
+                },
+                {
+                    "Range" : {"emitPropertyName" : "ByteRange"}
+                },
+                {
+                    "SSECustomerAlgorithm":{"emitPropertyName":"ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKey" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+                    "SSECustomerKeyMD5" :{"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "PartNumber": {"injectXmlPropertySetter":["set { PartNumberCustomSetter(value); }"]}
+                },
+                {
+                    "ServerSideEncryptionCustomerMethod": {"injectXmlIsSet":["return this._serverSideEncryptionCustomerMethod != null && this._serverSideEncryptionCustomerMethod != Amazon.S3.ServerSideEncryptionCustomerMethod.None;"]}
+                },
+                {
+                    "ServerSideEncryptionCustomerProvidedKey": {
+                        "injectXmlIsSet":["return !System.String.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKey);"],
+                        "injectXmlMarshallCode":["ServerSideEncryptionCustomerProvidedKeyCustomMarshall(request, publicRequest);"]
+                    }
+                },
+                {
+                    "ServerSideEncryptionCustomerProvidedKeyMD5":{"injectXmlIsSet":[" return !System.String.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKeyMD5);"]}
+                },
+                {
+                    "Key":{"additionalDocumentation" : [
+                        "<remarks>\n",
+                        "<para>\n",
+                        "This property will be used as part of the resource path of the HTTP request. In .NET the System.Uri class\n",
+                        "is used to construct the uri for the request. The System.Uri class will canonicalize the uri string by compacting characters like \"..\".\n",
+                        "For example an object key of \"foo/../bar/file.txt\" will be transformed into \"bar/file.txt\" because the \"..\"\n",
+                        "is interpreted as use parent directory.\n",
+                        "</para>\n",
+                        "<para>\n",
+                        "Starting with .NET 8, the AWS .NET SDK disables System.Uri's feature of canonicalizing the resource path. This allows S3 keys like\n",
+                        "\"foo/../bar/file.txt\" to work correctly with the AWS .NET SDK.\n",
+                        "</para>\n",
+                        "<para>\n",
+                        "For further information view the documentation for the Uri class: https://docs.microsoft.com/en-us/dotnet/api/system.uri\n",
+                        "</para>\n",
+                        "</remarks>\n"
+                        ]
+                    }
+                },
+                {
+                    "ByteRange":{
+                        "injectXmlIsSet":["return this._byteRange != null && this._byteRange.FormattedByteRange != null;"],
+                        "injectXmlMarshallCode":[
+                            "request.Headers[\"Range\"] = publicRequest.ByteRange.FormattedByteRange;"
+                        ]}
+                },
+                {
+                    "ChecksumMode":{"additionalDocumentation":["para\n",
+                    "<b>General purpose buckets</b> - In addition, if you enable checksum mode and the object is uploaded with a <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html\">checksum</a>\n",
+                    "and encrypted with an Key Management Service (KMS) key, you must have permission to use the <c>kms:Decrypt</c> action to retrieve the checksum.\n",
+                    "</para>" ]}
+                }
+            ],
+            "excludeFromMarshalling":[
+                "ServerSideEncryptionCustomerProvidedKeyMD5",
+                "ResponseExpires"
+            ],
+            "exclude":[
+                "ResponseCacheControl",
+                "ResponseContentDisposition",
+                "ResponseContentEncoding",
+                "ResponseContentLanguage",
+                "ResponseContentType"
+            ]
         }
     },
     "operationModifiers": {
@@ -2386,6 +2569,28 @@
             "RedirectAllRequestsTo":{
                 "Type":"RoutingRuleRedirect"
             }
+        },
+        "GetObjectOutput":{
+            "DeleteMarker":{
+                "Type":"string"
+            },
+            "Expiration":{
+                "Type":"Expiration"
+            },
+            "RestoreExpiration":{
+                "Type":"DateTime?"
+            },
+            "ServerSideEncryptionCustomerMethod":{
+                "Type" : "ServerSideEncryptionCustomerMethod"
+            }
+        },
+        "GetObjectRequest":{
+            "ByteRange":{
+                "Type": "ByteRange"
+            },
+            "ServerSideEncryptionCustomerMethod":{
+                "Type":"ServerSideEncryptionCustomerMethod"
+            }
         }
     },
     "excludeMembers":{
@@ -2429,6 +2634,14 @@
             "IndexDocumentSuffix",
             "ErrorDocument",
             "RoutingRules"
+        ],
+        "GetObjectOutput":[
+            "Metadata",
+            "Expires",
+            "ContentDisposition",
+            "CacheControl",
+            "ContentEncoding",
+            "ContentType"
         ]
     },
     "unwrapXmlOutput":{
