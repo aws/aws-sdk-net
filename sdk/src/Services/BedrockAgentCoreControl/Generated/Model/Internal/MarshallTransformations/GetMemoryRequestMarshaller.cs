@@ -62,7 +62,11 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetMemoryId())
                 throw new AmazonBedrockAgentCoreControlException("Request object does not have required field MemoryId set");
             request.AddPathResource("{memoryId}", StringUtils.FromString(publicRequest.MemoryId));
+            
+            if (publicRequest.IsSetView())
+                request.Parameters.Add("view", StringUtils.FromString(publicRequest.View));
             request.ResourcePath = "/memories/{memoryId}/details";
+            request.UseQueryString = true;
 
             return request;
         }
