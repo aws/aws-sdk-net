@@ -1,3 +1,18 @@
+### 3.7.1199.0 (2026-01-09 19:20 UTC)
+* BedrockAgentCoreControl (3.7.514.0)
+	* Adds optional field "view" to GetMemory API input to give customers control over whether CMK encrypted data such as strategy decryption or override prompts is returned or not.
+* CloudFront (3.7.509.0)
+	* Added EntityLimitExceeded exception handling to the following API operations AssociateDistributionWebACL, AssociateDistributionTenantWebACL, UpdateDistributionWithStagingConfig
+* Glue (3.7.513.0)
+	* Adding MaterializedViews task run APIs
+* MediaLive (3.7.511.0)
+	* MediaPackage v2 output groups in MediaLive can now accept one additional destination for single pipeline channels and up to two additional destinations for standard channels. MediaPackage v2 destinations now support sending to cross region MediaPackage channels.
+* TranscribeService (3.7.503.0)
+	* Adds waiters to Amazon Transcribe.
+* Core 3.7.500.64
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1198.0 (2026-01-07 19:16 UTC)
 * WorkSpaces (3.7.505.0)
 	* Add StateMessage and ProgressPercentage fields to DescribeCustomWorkspaceImageImport API response.
