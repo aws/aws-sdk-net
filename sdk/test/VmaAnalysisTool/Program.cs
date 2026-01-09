@@ -10,11 +10,14 @@ var verboseOption = new Option<bool>("--verbose", "Enable verbose output");
 var exportCsvOption = new Option<string?>("--export-csv", "Export results to CSV file");
 var maxMemoryGbOption = new Option<double?>("--max-memory-gb", "Maximum memory to use in GB (default: 80% of available RAM)");
 var isolatedOption = new Option<bool>("--isolated", "Run each test in a separate process for accurate VMA measurements");
+var vmaAbortThresholdOption = new Option<int>("--vma-abort-threshold", () => VmaMonitor.DefaultAbortVmaThreshold, 
+    $"Abort test if VMA count exceeds this value (default: {VmaMonitor.DefaultAbortVmaThreshold:N0}). Set to 0 to disable.");
 
 rootCommand.AddGlobalOption(verboseOption);
 rootCommand.AddGlobalOption(exportCsvOption);
 rootCommand.AddGlobalOption(maxMemoryGbOption);
 rootCommand.AddGlobalOption(isolatedOption);
+rootCommand.AddGlobalOption(vmaAbortThresholdOption);
 
 // Internal command for running isolated tests (used by parent process)
 var isolatedTestCommand = new Command("_run-isolated-test", "Internal command - runs a single test from base64-encoded config");

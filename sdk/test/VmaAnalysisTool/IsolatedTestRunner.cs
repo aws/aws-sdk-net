@@ -14,12 +14,14 @@ public class IsolatedTestRunner
     private readonly TimeSpan _timeout;
     private readonly bool _verbose;
     private readonly double? _maxMemoryGb;
+    private readonly int _vmaAbortThreshold;
 
-    public IsolatedTestRunner(bool verbose = false, double? maxMemoryGb = null, TimeSpan? timeout = null)
+    public IsolatedTestRunner(bool verbose = false, double? maxMemoryGb = null, TimeSpan? timeout = null, int? vmaAbortThreshold = null)
     {
         _verbose = verbose;
         _maxMemoryGb = maxMemoryGb;
-        _timeout = timeout ?? TimeSpan.FromMinutes(10);
+        _timeout = timeout ?? TimeSpan.FromMinutes(10); // 10 minute default timeout
+        _vmaAbortThreshold = vmaAbortThreshold ?? VmaMonitor.DefaultAbortVmaThreshold;
         
         // Get the path to the current executable
         _executablePath = GetExecutablePath();

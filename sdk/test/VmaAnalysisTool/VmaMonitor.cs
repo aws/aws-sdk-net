@@ -53,6 +53,16 @@ public class VmaMonitor : IDisposable
     /// </summary>
     public const int SafeVmaThreshold = 50000;
 
+    /// <summary>
+    /// VMA count at which to abort a test (default: 60000, leaving 5536 headroom).
+    /// </summary>
+    public const int DefaultAbortVmaThreshold = 60000;
+
+    /// <summary>
+    /// Critical VMA threshold - test should have been aborted before this.
+    /// </summary>
+    public const int CriticalVmaThreshold = 63000;
+
     public VmaMonitor()
     {
         _isLinux = RuntimeInformation.IsOSPlatform(OSPlatform.Linux);

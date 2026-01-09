@@ -4,6 +4,22 @@ using System.Diagnostics;
 namespace Amazon.S3.VmaAnalysis;
 
 /// <summary>
+/// Exception thrown when VMA limit is about to be exceeded.
+/// </summary>
+public class VmaLimitExceededException : Exception
+{
+    public int CurrentVmaCount { get; }
+    public int AbortThreshold { get; }
+    
+    public VmaLimitExceededException(int currentVmaCount, int abortThreshold)
+        : base($"VMA count ({currentVmaCount:N0}) exceeded abort threshold ({abortThreshold:N0}). Test aborted to prevent system instability.")
+    {
+        CurrentVmaCount = currentVmaCount;
+        AbortThreshold = abortThreshold;
+    }
+}
+
+/// <summary>
 /// Simulates multipart downloads using real ArrayPool allocations.
 /// Mimics the ChunkedBufferStream and PartBufferManager behavior from the SDK.
 /// </summary>
@@ -18,6 +34,11 @@ public class DownloadSimulator : IDisposable
     /// Metrics collected during simulation.
     /// </summary>
     public SimulationMetrics Metrics { get; private set; } = new();
+
+    /// <summary>
+    /// VMA threshold at which to abort test (0 = disabled).
+    /// </summary>
+    public int VmaAbortThreshold { get; set; } = VmaMonitor.DefaultAbortVmaThreshold;
 
     public DownloadSimulator(VmaMonitor vmaMonitor)
     {
@@ -44,21 +65,30 @@ public class DownloadSimulator : IDisposable
         var semaphore = new SemaphoreSlim(config.ConcurrentServiceRequests);
         var bufferCapacity = new SemaphoreSlim(config.MaxInMemoryParts);
         var random = new Random(42); // Fixed seed for reproducibility
+        
+        // Create a linked cancellation token that we can cancel if VMA limit is exceeded
+        using var vmaAbortCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        var linkedToken = vmaAbortCts.Token;
+
+        // Start VMA monitoring task
+        var vmaMonitorTask = VmaAbortThreshold > 0 
+            ? StartVmaMonitoringAsync(vmaAbortCts, VmaAbortThreshold)
+            : Task.CompletedTask;
 
         try
         {
             var downloadTasks = new List<Task>();
 
             // Simulate downloading all parts
-            for (int partNum = 1; partNum <= config.TotalParts && !cancellationToken.IsCancellationRequested; partNum++)
+            for (int partNum = 1; partNum <= config.TotalParts && !linkedToken.IsCancellationRequested; partNum++)
             {
                 var currentPart = partNum;
                 
                 // Wait for buffer capacity
-                await bufferCapacity.WaitAsync(cancellationToken);
+                await bufferCapacity.WaitAsync(linkedToken);
                 
                 // Wait for HTTP concurrency slot
-                await semaphore.WaitAsync(cancellationToken);
+                await semaphore.WaitAsync(linkedToken);
 
                 downloadTasks.Add(Task.Run(async () =>
                 {
@@ -68,24 +98,24 @@ public class DownloadSimulator : IDisposable
                         var downloadTimeMs = config.SimulateNetworkDelay 
                             ? random.Next(10, 100) 
                             : 0;
-                        await Task.Delay(downloadTimeMs, cancellationToken);
+                        await Task.Delay(downloadTimeMs, linkedToken);
 
                         // Allocate chunks for this part (mimics ChunkedBufferStream)
                         var part = AllocatePart(currentPart, config.PartSizeBytes, config.ChunkSizeBytes);
                         
-                        // Update VMA tracking
+                        // Update VMA tracking and check threshold
                         _vmaMonitor.UpdatePeak();
                         
                         // Simulate processing time
                         if (config.SimulateProcessingDelay)
                         {
-                            await Task.Delay(random.Next(5, 50), cancellationToken);
+                            await Task.Delay(random.Next(5, 50), linkedToken);
                         }
 
                         // Simulate consumer reading and releasing the part
                         // In real scenario, consumer reads sequentially
                         // Here we simulate with a delay before release
-                        await Task.Delay(config.SimulateConsumerReadTimeMs, cancellationToken);
+                        await Task.Delay(config.SimulateConsumerReadTimeMs, linkedToken);
                         
                         ReleasePart(part);
                         
@@ -97,7 +127,7 @@ public class DownloadSimulator : IDisposable
                         semaphore.Release();
                         bufferCapacity.Release();
                     }
-                }, cancellationToken));
+                }, linkedToken));
 
                 // Periodically update metrics
                 if (partNum % 10 == 0)
@@ -110,8 +140,25 @@ public class DownloadSimulator : IDisposable
             // Wait for all downloads to complete
             await Task.WhenAll(downloadTasks);
         }
+        catch (OperationCanceledException) when (vmaAbortCts.IsCancellationRequested && !cancellationToken.IsCancellationRequested)
+        {
+            // VMA limit was exceeded - record as aborted
+            Metrics.WasAborted = true;
+            Metrics.AbortReason = $"VMA count exceeded abort threshold ({VmaAbortThreshold:N0})";
+        }
+        catch (VmaLimitExceededException ex)
+        {
+            Metrics.WasAborted = true;
+            Metrics.AbortReason = ex.Message;
+        }
         finally
         {
+            // Cancel the VMA monitoring task
+            if (!vmaAbortCts.IsCancellationRequested)
+            {
+                vmaAbortCts.Cancel();
+            }
+            
             stopwatch.Stop();
             semaphore.Dispose();
             bufferCapacity.Dispose();
@@ -122,10 +169,41 @@ public class DownloadSimulator : IDisposable
             Metrics.CompletedParts = completedParts;
             Metrics.FinalVmaSnapshot = _vmaMonitor.TakeSnapshot();
             Metrics.PeakVmaCount = _vmaMonitor.PeakVmaCount;
-            Metrics.ThroughputMBps = Metrics.TotalBytesProcessed / 1024.0 / 1024.0 / (Metrics.DurationMs / 1000.0);
+            Metrics.ThroughputMBps = Metrics.DurationMs > 0 
+                ? Metrics.TotalBytesProcessed / 1024.0 / 1024.0 / (Metrics.DurationMs / 1000.0)
+                : 0;
+            
+            // Wait for VMA monitor task to complete
+            try { await vmaMonitorTask; } catch { /* ignore */ }
         }
 
         return Metrics;
+    }
+
+    /// <summary>
+    /// Background task that monitors VMA count and cancels if threshold exceeded.
+    /// </summary>
+    private async Task StartVmaMonitoringAsync(CancellationTokenSource abortCts, int threshold)
+    {
+        try
+        {
+            while (!abortCts.Token.IsCancellationRequested)
+            {
+                await Task.Delay(100, abortCts.Token); // Check every 100ms
+                
+                var currentVma = _vmaMonitor.CurrentVmaCount;
+                if (currentVma >= threshold)
+                {
+                    Console.Error.WriteLine($"\n⚠ VMA ABORT: Count {currentVma:N0} exceeded threshold {threshold:N0}. Aborting test...");
+                    abortCts.Cancel();
+                    return;
+                }
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            // Expected when test completes or is cancelled
+        }
     }
 
     /// <summary>
@@ -388,11 +466,22 @@ public class SimulationMetrics
     public int TotalDeallocations { get; set; }
     public int CurrentActiveChunks { get; set; }
     public int PeakActiveChunks { get; set; }
+    
+    // Abort tracking
+    /// <summary>
+    /// Whether the test was aborted due to VMA limit approaching.
+    /// </summary>
+    public bool WasAborted { get; set; }
+    
+    /// <summary>
+    /// Reason for abort (if WasAborted is true).
+    /// </summary>
+    public string? AbortReason { get; set; }
 
     /// <summary>
     /// Whether the simulation stayed within safe VMA limits.
     /// </summary>
-    public bool VmaSafe => PeakVmaCount < VmaMonitor.SafeVmaThreshold;
+    public bool VmaSafe => !WasAborted && PeakVmaCount < VmaMonitor.SafeVmaThreshold;
 
     /// <summary>
     /// Safety margin as percentage.
@@ -406,6 +495,7 @@ public class SimulationMetrics
     {
         get
         {
+            if (WasAborted) return "⚠ ABORTED";
             if (PeakVmaCount >= VmaMonitor.DefaultLinuxVmaLimit) return "✗ EXCEEDED LIMIT";
             if (PeakVmaCount >= VmaMonitor.SafeVmaThreshold) return "⚠ UNSAFE";
             if (PeakVmaCount >= VmaMonitor.SafeVmaThreshold * 0.8) return "⚠ WARNING";
