@@ -43,7 +43,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassCleanup]
         public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 
