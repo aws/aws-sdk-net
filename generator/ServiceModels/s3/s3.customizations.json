@@ -1880,6 +1880,13 @@
                     "IndexDocumentSuffix":{"injectXmlMarshallCode":["IndexDocumentSuffixCustomMarshall(publicRequest, xmlWriter);"]}
                 }
             ]
+        },
+        "DeleteBucketWebsiteRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
