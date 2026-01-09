@@ -370,7 +370,7 @@ namespace Amazon.DNXCore.IntegrationTests.Core
             public int FailFirstNAttempts { get; set; } = 1;
             public SocketError SocketErrorToThrow { get; set; } = SocketError.ConnectionReset;
             public bool ThrowNonSocketException { get; set; } = false;
-            public int TotalAttempts { get; internal set; } = 0;
+            public int TotalAttempts { get; set; } = 0;
 
             public override HttpClient CreateHttpClient(IClientConfig clientConfig)
             {
