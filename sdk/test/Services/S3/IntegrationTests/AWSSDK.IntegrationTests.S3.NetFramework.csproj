@@ -21,10 +21,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-
 	<Compile Remove="**/obj/**" />
 	<None Remove="**/obj/**" />
-	<Compile Include="../../KeyManagementService/IntegrationTests/KeyManagementService.cs" />
   </ItemGroup>
 
   <ItemGroup>
