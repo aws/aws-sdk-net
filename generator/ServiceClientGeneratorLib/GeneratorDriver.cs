@@ -1693,8 +1693,10 @@ namespace ServiceClientGenerator
                 { "MetricsAndOperator", 3 },
                 { "AnalyticsAndOperator", 2 },
                 { "IntelligentTieringAndOperator", 2},
-                //TODO: Add runbook entry as to why this excluded and how to do a customization for this.
-                { "GlacierJobParameters", 1 }
+                { "GlacierJobParameters", 1 },
+                // these two shapes have been changed from a structure to a string. 
+                { "IndexDocument", 1 },
+                { "ErrorDocument", 1 }
             };
             if (customUpdateShapes.TryGetValue(shape.Name, out int membersCount))
             {
