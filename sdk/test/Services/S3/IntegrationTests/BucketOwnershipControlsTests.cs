@@ -12,19 +12,13 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Amazon;
-using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -38,16 +32,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private IAmazonS3 s3Client;
 
         [TestInitialize]
-        public void Init()
+        public async Task Init()
         {
             s3Client = new AmazonS3Client();
-            bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(s3Client);
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public async Task Cleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucketName);
             s3Client.Dispose();
         }
 

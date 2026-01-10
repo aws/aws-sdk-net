@@ -17,12 +17,11 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -41,19 +40,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         };
 
         [ClassInitialize()]
-        public static void Initialize(TestContext a)
+        public static async Task Initialize(TestContext a)
         {   
-            bucketName = S3TestUtils.CreateBucketWithWait(Client, new PutBucketRequest
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, new PutBucketRequest
             {
-                ObjectLockEnabledForBucket = true                
+                ObjectLockEnabledForBucket = true
             });
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            DeleteBucketObjectsIncludingLocked(Client, bucketName);
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await DeleteBucketObjectsIncludingLocked(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 
@@ -326,7 +325,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private static void DeleteBucketObjectsIncludingLocked(IAmazonS3 s3Client, string bucketName)
+        private static async Task DeleteBucketObjectsIncludingLocked(IAmazonS3 s3Client, string bucketName)
         {            
             var listVersionsRequest = new ListVersionsRequest
             {
@@ -339,7 +338,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             do
             {
                 // List all the versions of all the objects in the bucket.
-                listVersionsResponse = s3Client.ListVersions(listVersionsRequest);
+                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest);
 
                 if (listVersionsResponse.Versions.Count == 0)
                 {
@@ -360,7 +359,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 try
                 {
                     // Delete the current set of objects.
-                    var deleteObjectsResponse = s3Client.DeleteObjects(new DeleteObjectsRequest
+                    await s3Client.DeleteObjectsAsync(new DeleteObjectsRequest
                     {
                         BucketName = bucketName,
                         Objects = keyVersionList,                        
@@ -374,7 +373,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // Set the markers to get next set of objects from the bucket.
                 listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
                 listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
-
             }
             // Continue listing objects and deleting them until the bucket is empty.
             while (listVersionsResponse.IsTruncated.Value);

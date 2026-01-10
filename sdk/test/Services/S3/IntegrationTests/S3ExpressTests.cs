@@ -14,6 +14,7 @@ using Amazon.S3.Transfer;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon;
 using Amazon.Util;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -35,13 +36,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         };
 
         [ClassInitialize()]
-        public static void Initialize(TestContext a)
+        public static async Task Initialize(TestContext a)
         {
-            bucketName = S3TestUtils.CreateS3ExpressBucketWithWait(Client, "use1-az5");
+            bucketName = await S3TestUtils.CreateS3ExpressBucketWithWaitAsync(Client, "use1-az5");
 
             foreach (var key in keys)
             {
-                Client.PutObject(new PutObjectRequest
+                await Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -51,9 +52,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 

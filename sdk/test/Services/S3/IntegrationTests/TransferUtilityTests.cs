@@ -12,7 +12,6 @@ using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.Util;
 using System.Net.Mime;
-using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -32,16 +31,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private const string testContent = "This is the content body!";
         private const string testFile = "PutObjectFile.txt";
 
-        [ClassInitialize()]
-        public static void ClassInitialize(TestContext a)
+        [ClassInitialize]
+        public static async Task ClassInitialize(TestContext a)
         {
             // Create standard bucket for operations
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
 
             // Create a bucket specifically for the SSE-C tests as a bucket policy has to be set on it to require SSE-C.
-            ssecBucketName = S3TestUtils.CreateBucketWithWait(Client);
+            ssecBucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+
             // Apply the bucket policy to SSE-C: https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html
-            Client.PutBucketPolicy(new PutBucketPolicyRequest
+            await Client.PutBucketPolicyAsync(new PutBucketPolicyRequest
             {
                 Policy =
                 @"{
@@ -70,10 +70,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, ssecBucketName);
+            await Task.WhenAll(
+                AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName),
+                AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, ssecBucketName)
+            );
+            
             BaseClean();
             if (Directory.Exists(BasePath))
             {

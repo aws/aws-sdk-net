@@ -31,16 +31,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static readonly long MB = 1024 * 1024;
         private static string bucketName;
 
-        [ClassInitialize()]
-        public static void ClassInitialize(TestContext testContext)
+        [ClassInitialize]
+        public static async Task ClassInitialize(TestContext testContext)
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 
