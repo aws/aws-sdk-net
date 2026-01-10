@@ -29,8 +29,8 @@ namespace Amazon.BedrockRuntime;
     UseStringEnumConverter = true,
     DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
     WriteIndented = true)]
-[JsonSerializable(typeof(Dictionary<string, object>))]
-[JsonSerializable(typeof(IDictionary<string, object>))]
+[JsonSerializable(typeof(Dictionary<string, object?>))]
+[JsonSerializable(typeof(IDictionary<string, object?>))]
 [JsonSerializable(typeof(bool))]
 [JsonSerializable(typeof(int))]
 [JsonSerializable(typeof(long))]
