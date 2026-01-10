@@ -257,6 +257,38 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Determines if an exception indicates a stale pooled connection.
+        /// These errors occur when an HTTP connection from the pool has been 
+        /// closed by the server but the client hasn't detected this yet.
+        /// </summary>
+        /// <param name="exception">The exception to check.</param>
+        /// <returns>true if the exception indicates a stale connection error, else false.</returns>
+        public virtual bool IsStaleConnectionError(Exception exception)
+        {
+            // Walk the exception chain looking for SocketException with known stale connection error codes
+            var currentException = exception;
+            while (currentException != null)
+            {
+                if (currentException is System.Net.Sockets.SocketException socketException)
+                {
+                    // SocketError.Shutdown (32) = Broken pipe on Unix/Linux
+                    // SocketError.ConnectionReset (10054) = Connection reset by peer
+                    // SocketError.ConnectionAborted (10053) = Connection aborted
+                    if (socketException.SocketErrorCode == System.Net.Sockets.SocketError.Shutdown ||
+                        socketException.SocketErrorCode == System.Net.Sockets.SocketError.ConnectionReset ||
+                        socketException.SocketErrorCode == System.Net.Sockets.SocketError.ConnectionAborted)
+                    {
+                        return true;
+                    }
+                }
+
+                currentException = currentException.InnerException;
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Determines if an AmazonServiceException is a transient error that
         /// should be retried.
         /// </summary>

@@ -1,0 +1,10 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Update the retry behavior of the SDK to automatically retry on stale connections (e.g Broken pipe), which do not count against the standard retry amount.",
+      "Add MaxStaleConnectionRetries to Amazon.Runtime.ClientConfig to allow users to customize the amount of retries available for stale connections."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
