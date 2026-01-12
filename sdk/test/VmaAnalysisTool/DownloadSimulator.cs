@@ -24,7 +24,7 @@ public class VmaLimitExceededException : Exception
 /// Mimics the ChunkedBufferStream and PartBufferManager behavior from the SDK.
 /// Uses realistic producer-consumer pattern to ensure MaxInMemoryParts is reached.
 /// </summary>
-public class DownloadSimulator : IDisposable
+public class DownloadSimulator : IDownloadExecutor
 {
     private readonly VmaMonitor _vmaMonitor;
     private readonly List<SimulatedPart> _activeParts = new();
@@ -32,26 +32,69 @@ public class DownloadSimulator : IDisposable
     private readonly object _lock = new();
     private bool _disposed;
 
-    /// <summary>
-    /// Metrics collected during simulation.
-    /// </summary>
+    /// <inheritdoc />
+    public string Name => "Simulated";
+    
+    /// <inheritdoc />
+    public string Description => "Simulates multipart downloads using ArrayPool allocations without network I/O";
+    
+    /// <inheritdoc />
+    public bool RequiresS3Access => false;
+
+    /// <inheritdoc />
     public SimulationMetrics Metrics { get; private set; } = new();
 
-    /// <summary>
-    /// VMA threshold at which to abort test (0 = disabled).
-    /// </summary>
+    /// <inheritdoc />
     public int VmaAbortThreshold { get; set; } = VmaMonitor.DefaultAbortVmaThreshold;
 
     public DownloadSimulator(VmaMonitor vmaMonitor)
     {
         _vmaMonitor = vmaMonitor;
     }
+    
+    /// <inheritdoc />
+    public bool ValidateConfig(SimulationConfig config, out string? errorMessage)
+    {
+        if (config.PartSizeBytes <= 0)
+        {
+            errorMessage = "Part size must be greater than 0";
+            return false;
+        }
+        
+        if (config.ChunkSizeBytes <= 0)
+        {
+            errorMessage = "Chunk size must be greater than 0";
+            return false;
+        }
+        
+        if (config.TotalParts <= 0)
+        {
+            errorMessage = "Total parts must be greater than 0";
+            return false;
+        }
+        
+        if (config.MaxInMemoryParts <= 0)
+        {
+            errorMessage = "MaxInMemoryParts must be greater than 0";
+            return false;
+        }
+        
+        if (config.ConcurrentServiceRequests <= 0)
+        {
+            errorMessage = "ConcurrentServiceRequests must be greater than 0";
+            return false;
+        }
+        
+        errorMessage = null;
+        return true;
+    }
 
+    /// <inheritdoc />
     /// <summary>
     /// Simulates a multipart download with specified parameters using realistic producer-consumer pattern.
     /// Ensures MaxInMemoryParts is reached and maintained throughout the download.
     /// </summary>
-    public async Task<SimulationMetrics> SimulateDownloadAsync(SimulationConfig config, CancellationToken cancellationToken = default)
+    public async Task<SimulationMetrics> ExecuteDownloadAsync(SimulationConfig config, CancellationToken cancellationToken = default)
     {
         _vmaMonitor.Reset();
         
