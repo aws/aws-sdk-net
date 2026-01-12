@@ -121,7 +121,7 @@ namespace Amazon.DNXCore.IntegrationTests.Core
         /// 2. SDK exhausts MaxStaleConnectionRetries (2 stale retries)
         /// 3. SDK continues with normal retry logic (MaxErrorRetry = 2)
         /// 4. Total: 1 initial + 2 stale + 2 normal = 5 attempts
-        /// 5. Finally throws AmazonServiceException
+        /// 5. Finally throws HttpRequestException (connection-level failures aren't wrapped in AmazonServiceException)
         /// 
         /// This demonstrates that stale connection retries provide immediate recovery,
         /// while normal retries offer additional resilience with backoff for persistent issues.
@@ -137,7 +137,7 @@ namespace Amazon.DNXCore.IntegrationTests.Core
 
             var client = CreateClientWithCustomHttpFactory(httpClientFactory, maxStaleRetries: 2);
 
-            await Assert.ThrowsAsync<AmazonServiceException>(async () =>
+            await Assert.ThrowsAsync<HttpRequestException>(async () =>
             {
                 await client.PutObjectAsync(new PutObjectRequest
                 {
@@ -315,7 +315,7 @@ namespace Amazon.DNXCore.IntegrationTests.Core
         /// - Does NOT use stale connection retry logic (no "free" immediate retries)
         /// - Uses normal retry logic with backoff delays
         /// - Total attempts: ≤5 (1 initial + up to 4 normal retries with backoff)
-        /// - Finally throws AmazonServiceException
+        /// - Finally throws HttpRequestException (connection-level failures aren't wrapped in AmazonServiceException)
         /// 
         /// Why This Matters:
         /// It's critical that the SDK distinguishes between stale connection errors (which deserve
@@ -335,7 +335,7 @@ namespace Amazon.DNXCore.IntegrationTests.Core
             var client = CreateClientWithCustomHttpFactory(httpClientFactory, maxStaleRetries: 2);
 
             // Should throw after normal retries, not stale connection retries
-            await Assert.ThrowsAsync<AmazonServiceException>(async () =>
+            await Assert.ThrowsAsync<HttpRequestException>(async () =>
             {
                 await client.PutObjectAsync(new PutObjectRequest
                 {
