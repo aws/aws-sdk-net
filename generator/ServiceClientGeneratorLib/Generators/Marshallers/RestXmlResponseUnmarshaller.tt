@@ -148,6 +148,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             {
                 return;
             }
+<#
+        if (this.Config.ServiceModel.Customizations.TryGetShapeModifier(this.Structure.Name, out var injectUnmarshallResultShapeModifier) && injectUnmarshallResultShapeModifier.InjectXmlUnmarshallResultCode.Count > 0)
+        {
+            WriteInjectXmlCode(injectUnmarshallResultShapeModifier.InjectXmlUnmarshallResultCode, 3);
+        }
+#>
             while (context.Read())
             {
 				if (context.IsStartElement || context.IsAttribute)

@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Redirect Unmarshaller
-     /// </summary>
-    public class RoutingRuleRedirectUnmarshaller : IXmlUnmarshaller<RoutingRuleRedirect, XmlUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for RoutingRuleRedirect Object
+    /// </summary>  
+    public partial class RoutingRuleRedirectUnmarshaller : IXmlUnmarshaller<RoutingRuleRedirect, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RoutingRuleRedirect Unmarshall(XmlUnmarshallerContext context) 
+        public RoutingRuleRedirect Unmarshall(XmlUnmarshallerContext context)
         {
-            RoutingRuleRedirect redirect = new RoutingRuleRedirect();
+            RoutingRuleRedirect unmarshalledObject = new RoutingRuleRedirect();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -44,62 +58,58 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HostName", targetDepth))
                     {
-                        redirect.HostName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HttpRedirectCode", targetDepth))
                     {
-                        redirect.HttpRedirectCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HttpRedirectCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Protocol", targetDepth))
                     {
-                        redirect.Protocol = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReplaceKeyPrefixWith", targetDepth))
                     {
-                        redirect.ReplaceKeyPrefixWith = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplaceKeyPrefixWith = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReplaceKeyWith", targetDepth))
                     {
-                        redirect.ReplaceKeyWith = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplaceKeyWith = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return redirect;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return redirect;
+            }          
+            return unmarshalledObject;
         }
 
-        private static RoutingRuleRedirectUnmarshaller _instance;
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, RoutingRuleRedirect unmarshalledObject, int targetDepth);
+
+        private static RoutingRuleRedirectUnmarshaller _instance = new RoutingRuleRedirectUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RoutingRuleRedirectUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new RoutingRuleRedirectUnmarshaller();
-                }
                 return _instance;
             }
         }
     }
 }
-    

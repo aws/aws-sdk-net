@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Condition Unmarshaller
-     /// </summary>
-    public class RoutingRuleConditionUnmarshaller : IXmlUnmarshaller<RoutingRuleCondition, XmlUnmarshallerContext>
+    /// <summary>
+    /// Response Unmarshaller for RoutingRuleCondition Object
+    /// </summary>  
+    public partial class RoutingRuleConditionUnmarshaller : IXmlUnmarshaller<RoutingRuleCondition, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RoutingRuleCondition Unmarshall(XmlUnmarshallerContext context) 
+        public RoutingRuleCondition Unmarshall(XmlUnmarshallerContext context)
         {
-            RoutingRuleCondition condition = new RoutingRuleCondition();
+            RoutingRuleCondition unmarshalledObject = new RoutingRuleCondition();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -44,44 +58,40 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HttpErrorCodeReturnedEquals", targetDepth))
                     {
-                        condition.HttpErrorCodeReturnedEquals = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HttpErrorCodeReturnedEquals = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("KeyPrefixEquals", targetDepth))
                     {
-                        condition.KeyPrefixEquals = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KeyPrefixEquals = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return condition;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return condition;
+            }          
+            return unmarshalledObject;
         }
 
-        private static RoutingRuleConditionUnmarshaller _instance;
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, RoutingRuleCondition unmarshalledObject, int targetDepth);
+
+        private static RoutingRuleConditionUnmarshaller _instance = new RoutingRuleConditionUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RoutingRuleConditionUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new RoutingRuleConditionUnmarshaller();
-                }
                 return _instance;
             }
         }
     }
 }
-    
