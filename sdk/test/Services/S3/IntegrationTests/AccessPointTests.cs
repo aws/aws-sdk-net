@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class AccessPointTests : TestBase<AmazonS3Client>
     {
         static string _bucketName;
@@ -59,7 +60,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void PutAndGetObject()
+        public async Task PutAndGetObject()
         {
             var objectKey = Guid.NewGuid().ToString();
             var putRequest = new PutObjectRequest
@@ -69,25 +70,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ContentBody = "access point test data"
             };
 
-            Client.PutObject(putRequest);
+            await Client.PutObjectAsync(putRequest);
 
-            using (var getResponse = Client.GetObject(_accesspointArn, objectKey))
+            using (var getResponse = await Client.GetObjectAsync(_accesspointArn, objectKey))
             {
-                var getBody = new StreamReader(getResponse.ResponseStream).ReadToEnd();
+                var getBody = await new StreamReader(getResponse.ResponseStream).ReadToEndAsync();
                 Assert.AreEqual(putRequest.ContentBody, getBody);
             }
 
-            var listResponse = Client.ListObjects(_accesspointArn);
+            var listResponse = await Client.ListObjectsAsync(_accesspointArn);
             Assert.IsTrue(listResponse.S3Objects.Count > 0);
         }
 
         [TestMethod]
-        public void TestMultipartUploadViaTransferUtility()
+        public async Task TestMultipartUploadViaTransferUtility()
         {
             var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
             var transfer = new TransferUtility(Client, transferConfig);
             var content = new string('a', 7000000);
-            var body = new MemoryStream(System.Text.UTF8Encoding.UTF8.GetBytes(content));
+            var body = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(content));
 
             var uploadRequest = new TransferUtilityUploadRequest
             {
@@ -96,17 +97,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 InputStream = body
             };
 
-            transfer.Upload(uploadRequest);
+            await transfer.UploadAsync(uploadRequest);
 
-            using (var getResponse = Client.GetObject(_accesspointArn, uploadRequest.Key))
+            using (var getResponse = await Client.GetObjectAsync(_accesspointArn, uploadRequest.Key))
             {
-                var getBody = new StreamReader(getResponse.ResponseStream).ReadToEnd();
+                var getBody = await new StreamReader(getResponse.ResponseStream).ReadToEndAsync();
                 Assert.AreEqual(content, getBody);
             }
         }
 
         [TestMethod]
-        public void TestPresignedUrl()
+        public async Task TestPresignedUrl()
         {
             var objectKey = Guid.NewGuid().ToString();
             var putRequest = new PutObjectRequest
@@ -116,9 +117,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ContentBody = "access point test data"
             };
 
-            Client.PutObject(putRequest);
+            await Client.PutObjectAsync(putRequest);
 
-            var getPresignedUrl = Client.GetPreSignedURL(new GetPreSignedUrlRequest
+            var getPresignedUrl = await Client.GetPreSignedURLAsync(new GetPreSignedUrlRequest
             {
                 BucketName = _accesspointArn,
                 Key = objectKey,
@@ -126,11 +127,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Expires = DateTime.UtcNow.AddDays(1)
             });
 
-            var request = WebRequest.CreateHttp(getPresignedUrl) as HttpWebRequest;
-            using (var response = request.GetResponse())
+            var request = WebRequest.CreateHttp(getPresignedUrl);
+            using (var response = await request.GetResponseAsync())
             using (var reader = new StreamReader(response.GetResponseStream()))
             {
-                var content = reader.ReadToEnd();
+                var content = await reader.ReadToEndAsync();
                 Assert.AreEqual(putRequest.ContentBody, content);
             }
         }
