@@ -107,7 +107,8 @@ namespace Amazon.Billing.Model
         /// Gets and sets the property DataFilterExpression. 
         /// <para>
         ///  See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
-        /// Billing view only supports <c>LINKED_ACCOUNT</c> and <c>Tags</c>. 
+        /// Billing view only supports <c>LINKED_ACCOUNT</c>, <c>Tags</c>, and <c>CostCategories</c>.
+        /// 
         /// </para>
         /// </summary>
         public Expression DataFilterExpression
