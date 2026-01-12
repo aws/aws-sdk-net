@@ -199,6 +199,17 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWiFiSimpleSetupConfiguration())
+                {
+                    context.Writer.WritePropertyName("WiFiSimpleSetupConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WiFiSimpleSetupConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WiFiSimpleSetupConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

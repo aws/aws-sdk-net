@@ -123,6 +123,18 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DiscoveryType);
                 }
 
+                if(publicRequest.IsSetEndDeviceIdentifier())
+                {
+                    context.Writer.WritePropertyName("EndDeviceIdentifier");
+                    context.Writer.Write(publicRequest.EndDeviceIdentifier);
+                }
+
+                if(publicRequest.IsSetProtocol())
+                {
+                    context.Writer.WritePropertyName("Protocol");
+                    context.Writer.Write(publicRequest.Protocol);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

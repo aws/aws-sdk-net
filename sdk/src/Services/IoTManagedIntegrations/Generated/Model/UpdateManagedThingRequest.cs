@@ -48,6 +48,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _name;
         private string _owner;
         private string _serialNumber;
+        private WiFiSimpleSetupConfiguration _wiFiSimpleSetupConfiguration;
 
         /// <summary>
         /// Gets and sets the property Brand. 
@@ -294,6 +295,25 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetSerialNumber()
         {
             return this._serialNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WiFiSimpleSetupConfiguration. 
+        /// <para>
+        /// The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning
+        /// capabilities and timeout settings.
+        /// </para>
+        /// </summary>
+        public WiFiSimpleSetupConfiguration WiFiSimpleSetupConfiguration
+        {
+            get { return this._wiFiSimpleSetupConfiguration; }
+            set { this._wiFiSimpleSetupConfiguration = value; }
+        }
+
+        // Check to see if WiFiSimpleSetupConfiguration property is set
+        internal bool IsSetWiFiSimpleSetupConfiguration()
+        {
+            return this._wiFiSimpleSetupConfiguration != null;
         }
 
     }

@@ -53,6 +53,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private Role _role;
         private string _serialNumber;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private WiFiSimpleSetupConfiguration _wiFiSimpleSetupConfiguration;
 
         /// <summary>
         /// Gets and sets the property AuthenticationMaterial. 
@@ -369,6 +370,25 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WiFiSimpleSetupConfiguration. 
+        /// <para>
+        /// The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning
+        /// capabilities and timeout settings.
+        /// </para>
+        /// </summary>
+        public WiFiSimpleSetupConfiguration WiFiSimpleSetupConfiguration
+        {
+            get { return this._wiFiSimpleSetupConfiguration; }
+            set { this._wiFiSimpleSetupConfiguration = value; }
+        }
+
+        // Check to see if WiFiSimpleSetupConfiguration property is set
+        internal bool IsSetWiFiSimpleSetupConfiguration()
+        {
+            return this._wiFiSimpleSetupConfiguration != null;
         }
 
     }

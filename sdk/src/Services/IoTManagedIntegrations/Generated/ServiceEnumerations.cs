@@ -773,6 +773,10 @@ namespace Amazon.IoTManagedIntegrations
         /// </summary>
         public static readonly DiscoveryType CLOUD = new DiscoveryType("CLOUD");
         /// <summary>
+        /// Constant CONTROLLER_CAPABILITY_REDISCOVERY for DiscoveryType
+        /// </summary>
+        public static readonly DiscoveryType CONTROLLER_CAPABILITY_REDISCOVERY = new DiscoveryType("CONTROLLER_CAPABILITY_REDISCOVERY");
+        /// <summary>
         /// Constant CUSTOM for DiscoveryType
         /// </summary>
         public static readonly DiscoveryType CUSTOM = new DiscoveryType("CUSTOM");
@@ -962,6 +966,10 @@ namespace Amazon.IoTManagedIntegrations
         /// Constant DEVICE_STATE for EventType
         /// </summary>
         public static readonly EventType DEVICE_STATE = new EventType("DEVICE_STATE");
+        /// <summary>
+        /// Constant DEVICE_WSS for EventType
+        /// </summary>
+        public static readonly EventType DEVICE_WSS = new EventType("DEVICE_WSS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1378,6 +1386,60 @@ namespace Amazon.IoTManagedIntegrations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OtaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtocolType.
+    /// </summary>
+    public class ProtocolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for ProtocolType
+        /// </summary>
+        public static readonly ProtocolType CUSTOM = new ProtocolType("CUSTOM");
+        /// <summary>
+        /// Constant ZIGBEE for ProtocolType
+        /// </summary>
+        public static readonly ProtocolType ZIGBEE = new ProtocolType("ZIGBEE");
+        /// <summary>
+        /// Constant ZWAVE for ProtocolType
+        /// </summary>
+        public static readonly ProtocolType ZWAVE = new ProtocolType("ZWAVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtocolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtocolType FindValue(string value)
+        {
+            return FindValue<ProtocolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtocolType(string value)
         {
             return FindValue(value);
         }
