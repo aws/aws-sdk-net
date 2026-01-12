@@ -556,7 +556,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var httpClient = new HttpClient())
             {
                 // Send the valid POST request
-                var validResponse = httpClient.PostAsync(response.Url, validFormData).Result;
+                var validResponse = await httpClient.PostAsync(response.Url, validFormData);
                 
                 // Verify the upload was successful
                 Assert.IsTrue(validResponse.IsSuccessStatusCode);
@@ -565,7 +565,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var getObjectResponse = await Client.GetObjectAsync(testParams.BucketName, objectKey);
                 using (var reader = new StreamReader(getObjectResponse.ResponseStream))
                 {
-                    var content = reader.ReadToEnd();
+                    var content = await reader.ReadToEndAsync();
                     Assert.AreEqual(TestContent, content);
                 }
 
@@ -598,7 +598,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     invalidFormData.Add(fileContent, "file", objectKey);
                     
                     // This request should fail with 403 Forbidden
-                    var invalidResponse = httpClient.PostAsync(response.Url, invalidFormData).Result;
+                    var invalidResponse = await httpClient.PostAsync(response.Url, invalidFormData);
                     Assert.AreEqual(HttpStatusCode.Forbidden, invalidResponse.StatusCode);
                 }
 
@@ -622,7 +622,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     oversizeFormData.Add(new ByteArrayContent(largeContent), "file", objectKey);
                     
                     // This request should fail
-                    var oversizeResponse = httpClient.PostAsync(response.Url, oversizeFormData).Result;
+                    var oversizeResponse = await httpClient.PostAsync(response.Url, oversizeFormData);
                     Assert.AreEqual(HttpStatusCode.BadRequest, oversizeResponse.StatusCode);
                 }
             }
