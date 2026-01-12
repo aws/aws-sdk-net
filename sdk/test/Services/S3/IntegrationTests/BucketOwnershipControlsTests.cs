@@ -26,7 +26,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestCategory("S3")]
     public class BucketOwnershipControlsTests : TestBase<AmazonS3Client>
     {
-        public static string bucketName;
+        private static string bucketName;
         private IAmazonS3 s3Client;
 
         [TestInitialize]
