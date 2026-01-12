@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ActionArns. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the lineage metadata action. 
+        ///  The Amazon Resource Name (ARN) of the lineage action. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ArtifactArns. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the lineage metadata artifact. 
+        ///  The Amazon Resource Name (ARN) of the lineage artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Associations. 
         /// <para>
-        ///  The lineage metadata associations. 
+        ///  The lineage associations. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContextArns. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the lineage metadata context. 
+        ///  The Amazon Resource Name (ARN) of the lineage context. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
