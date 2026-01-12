@@ -37,11 +37,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// Integration tests for putting flexible checksums to S3
     /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class ChecksumTests : TestBase<AmazonS3Client>
     {
         private static string _bucketName;
         private static string _mrapArn;
-
         private static string _testContent = "Hello world";
         private const long MegSize = 1048576;
 
@@ -79,18 +79,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4SignedHeadersPut(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4SignedHeadersPut(CoreChecksumAlgorithm algorithm)
         {
-            var putRequest = new PutObjectRequest()
+            await PutAndGetChecksumTestHelper(algorithm, new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = $"sigv4-headers-{algorithm}",
                 ContentBody = _testContent,
                 ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
                 UseChunkEncoding = false
-            };
-
-            PutAndGetChecksumTestHelper(algorithm, putRequest);
+            });
         }
 
         /// <summary>
@@ -98,9 +96,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4SignedTrailersPut(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4SignedTrailersPut(CoreChecksumAlgorithm algorithm)
         {
-            var putRequest = new PutObjectRequest()
+            await PutAndGetChecksumTestHelper(algorithm, new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = $"sigv4-trailers-{algorithm}",
@@ -108,9 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DisablePayloadSigning = false,
                 ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
                 UseChunkEncoding = true
-            };
-
-            PutAndGetChecksumTestHelper(algorithm, putRequest);
+            });
         }
 
         /// <summary>
@@ -118,9 +114,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4UnsignedTrailersPut(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4UnsignedTrailersPut(CoreChecksumAlgorithm algorithm)
         {
-            var putRequest = new PutObjectRequest()
+            await PutAndGetChecksumTestHelper(algorithm, new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = $"sigv4-unsignedcontent-trailers-{algorithm}",
@@ -128,9 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DisablePayloadSigning = true,
                 ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
                 UseChunkEncoding = true
-            };
-
-            PutAndGetChecksumTestHelper(algorithm, putRequest);
+            });
         }
 
         /// <summary>
@@ -138,18 +132,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4aSignedHeadersPut(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4aSignedHeadersPut(CoreChecksumAlgorithm algorithm)
         {
-            var putRequest = new PutObjectRequest()
+            await PutAndGetChecksumTestHelper(algorithm, new PutObjectRequest
             {
                 BucketName = _mrapArn,
                 Key = $"sigv4a-headers-{algorithm}",
                 ContentBody = _testContent,
                 ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
                 UseChunkEncoding = false
-            };
-
-            PutAndGetChecksumTestHelper(algorithm, putRequest);
+            });
         }
 
         /// <summary>
@@ -157,18 +149,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4aSignedTrailersPut(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4aSignedTrailersPut(CoreChecksumAlgorithm algorithm)
         {
-            var putRequest = new PutObjectRequest()
+            await PutAndGetChecksumTestHelper(algorithm, new PutObjectRequest
             {
                 BucketName = _mrapArn,
                 Key = $"sigv4a-trailers-{algorithm}",
                 ContentBody = _testContent,
                 ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
                 UseChunkEncoding = true
-            };
-
-            PutAndGetChecksumTestHelper(algorithm, putRequest);
+            });
         }
 
         /// <summary>
@@ -176,9 +166,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4aUnsignedTrailersPut(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4aUnsignedTrailersPut(CoreChecksumAlgorithm algorithm)
         {
-            var putRequest = new PutObjectRequest()
+            await PutAndGetChecksumTestHelper(algorithm, new PutObjectRequest
             {
                 BucketName = _mrapArn,
                 Key = $"sigv4a-unsignedcontent-trailers-{algorithm}",
@@ -186,17 +176,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DisablePayloadSigning = true,
                 ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
                 UseChunkEncoding = true
-            };
-
-            PutAndGetChecksumTestHelper(algorithm, putRequest);
+            });
         }
 
+#if NETFRAMEWORK
         /// <summary>
         /// Validates the PutObject request does not fail when adding the trailing header key for retried requests.
         /// </summary>
         /// <remarks>https://github.com/aws/aws-sdk-net/issues/3154</remarks>
         [TestMethod]
-        [TestCategory("S3")]
         public void TestDuplicateTrailingHeaderKey()
         {
             var s3Config = new AmazonS3Config
@@ -222,15 +210,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 AssertExtensions.ExpectException<AmazonServiceException>(() => s3Client.PutObject(putObjectRequest));
             }
         }
+#endif
 
         /// <summary>
         /// Validates when a pre-calculated checksum is provided, it's used instead of calculating a new value.
         /// </summary>
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestPrecalculatedHeaderIsUsed()
+        public async Task TestPrecalculatedHeaderIsUsed()
         {
-            var response = Client.PutObject(new PutObjectRequest
+            var response = await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = "test-file.txt",
@@ -242,13 +230,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNull(response.ChecksumCRC32);
         }
 
-        [TestCategory("S3")]
         [DataTestMethod]
         [DataRow(CoreChecksumAlgorithm.CRC64NVME)]
         [DataRow(CoreChecksumAlgorithm.CRC32C)]
-        public void TestCrtChecksumIsCalculated(CoreChecksumAlgorithm algorithm)
+        public async Task TestCrtChecksumIsCalculated(CoreChecksumAlgorithm algorithm)
         {
-            var putResponse = Client.PutObject(new PutObjectRequest
+            var putResponse = await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = $"test-file-{algorithm}.txt",
@@ -271,34 +258,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         /// <param name="algorithm">Checksum algorithm to use</param>
         /// <param name="putRequest">PutObject request</param>
-        private void PutAndGetChecksumTestHelper(CoreChecksumAlgorithm algorithm, PutObjectRequest putRequest)
+        private async Task PutAndGetChecksumTestHelper(CoreChecksumAlgorithm algorithm, PutObjectRequest putRequest)
         {
-            Client.PutObject(putRequest);
+            await Client.PutObjectAsync(putRequest);
 
-            var getObjectAttributesRequest = new GetObjectAttributesRequest()
+            var getObjectAttributesResponse = await Client.GetObjectAttributesAsync(new GetObjectAttributesRequest
             {
                 BucketName = putRequest.BucketName,
                 Key = putRequest.Key,
                 ObjectAttributes = new List<ObjectAttributes> { ObjectAttributes.Checksum }
-            };
-
-            var getObjectAttributesResponse = Client.GetObjectAttributes(getObjectAttributesRequest);
+            });
             Assert.IsNotNull(getObjectAttributesResponse);
 
-            var getRequest = new GetObjectRequest
+            var response = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = putRequest.BucketName,
                 Key = putRequest.Key,
                 ChecksumMode = ChecksumMode.ENABLED
-            };
-
-            var response = Client.GetObject(getRequest);
-
+            });
             Assert.AreEqual(algorithm, response.ResponseMetadata.ChecksumAlgorithm);
             Assert.AreEqual(ChecksumValidationStatus.PENDING_RESPONSE_READ, response.ResponseMetadata.ChecksumValidationStatus);
 
             // Ensures checksum was calculated, an exception will have been thrown if it didn't match
-            new StreamReader(response.ResponseStream).ReadToEnd();
+            await new StreamReader(response.ResponseStream).ReadToEndAsync();
             response.ResponseStream.Dispose();
         }
 
@@ -307,9 +289,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestSignedCopyObjectUsingMultipartUpload(CoreChecksumAlgorithm algorithm)
+        public async Task TestSignedCopyObjectUsingMultipartUpload(CoreChecksumAlgorithm algorithm)
         {
-            CopyObjectUsingMultipartTestHelper(algorithm, _bucketName);
+            await CopyObjectUsingMultipartTestHelper(algorithm, _bucketName);
         }
 
         /// <summary>
@@ -317,9 +299,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4SignedMultipartUpload(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4SignedMultipartUpload(CoreChecksumAlgorithm algorithm)
         {
-            MultipartTestHelper(algorithm, _bucketName, false);
+            await MultipartTestHelper(algorithm, _bucketName, false);
         }
 
         /// <summary>
@@ -327,9 +309,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4UnsignedMultipartUpload(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4UnsignedMultipartUpload(CoreChecksumAlgorithm algorithm)
         {
-            MultipartTestHelper(algorithm, _bucketName, true);
+            await MultipartTestHelper(algorithm, _bucketName, true);
         }
 
         /// <summary>
@@ -337,9 +319,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4aSignedMultipartUpload(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4aSignedMultipartUpload(CoreChecksumAlgorithm algorithm)
         {
-            MultipartTestHelper(algorithm, _mrapArn, false);
+            await MultipartTestHelper(algorithm, _mrapArn, false);
         }
 
         /// <summary>
@@ -347,9 +329,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestV4aUnsignedMultipartUpload(CoreChecksumAlgorithm algorithm)
+        public async Task TestV4aUnsignedMultipartUpload(CoreChecksumAlgorithm algorithm)
         {
-            MultipartTestHelper(algorithm, _mrapArn, true);
+            await MultipartTestHelper(algorithm, _mrapArn, true);
         }
 
         /// <summary>
@@ -357,7 +339,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         /// <param name="algorithm">checksum algorithm</param>
         /// <param name="bucketName">bucket to upload the object to</param>
-        private void CopyObjectUsingMultipartTestHelper(CoreChecksumAlgorithm algorithm, string bucketName)
+        private async Task CopyObjectUsingMultipartTestHelper(CoreChecksumAlgorithm algorithm, string bucketName)
         {
             var random = new Random();
             var nextRandom = random.Next();
@@ -374,7 +356,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // Upload the source file for testing copy using multipartupload.
                 var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
                 var transfer = new TransferUtility(Client, transferConfig);
-                transfer.Upload(new TransferUtilityUploadRequest
+                await transfer.UploadAsync(new TransferUtilityUploadRequest
                 {
                     BucketName = bucketName,
                     Key = sourceKey,
@@ -383,23 +365,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 // Test copy using multipartupload with ChecksumAlgorithm set.
                 List<CopyPartResponse> copyResponses = new List<CopyPartResponse>();
-                InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
+                var initResponse = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = copiedKey,
                     ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString())
-                };
-
-                InitiateMultipartUploadResponse initResponse = Client.InitiateMultipartUpload(initRequest);
+                });
 
                 // Get the size of the object.
-                GetObjectMetadataRequest metadataRequest = new GetObjectMetadataRequest
+                var metadataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                 {
                     BucketName = bucketName,
                     Key = sourceKey
-                };
-
-                GetObjectMetadataResponse metadataResponse = Client.GetObjectMetadata(metadataRequest);
+                });
                 long objectSize = metadataResponse.ContentLength; // Length in bytes.
 
                 // Copy the parts.
@@ -408,7 +386,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 long bytePosition = 0;
                 for (int i = 1; bytePosition < objectSize; i++)
                 {
-                    CopyPartRequest copyRequest = new CopyPartRequest
+                    var copyRequest = new CopyPartRequest
                     {
                         DestinationBucket = bucketName,
                         DestinationKey = copiedKey,
@@ -420,14 +398,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         PartNumber = i
                     };
 
-                    copyResponses.Add(Client.CopyPart(copyRequest));
-
+                    copyResponses.Add(await Client.CopyPartAsync(copyRequest));
                     bytePosition += partSize;
                 }
 
                 // Set up to complete the copy.
-                CompleteMultipartUploadRequest completeRequest =
-                new CompleteMultipartUploadRequest
+                var completeRequest = new CompleteMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = copiedKey,
@@ -436,29 +412,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 completeRequest.AddPartETagsAndChecksums(copyResponses);
 
                 // Complete the copy.
-                CompleteMultipartUploadResponse completeUploadResponse = Client.CompleteMultipartUpload(completeRequest);
-
+                var completeUploadResponse = await Client.CompleteMultipartUploadAsync(completeRequest);
                 Assert.IsNotNull(completeUploadResponse.ETag);
                 Assert.AreEqual(copiedKey, completeUploadResponse.Key);
                 Assert.IsNotNull(completeUploadResponse.Location);
 
                 // Get the file back from S3 and assert it is still the same.
-                var getRequest = new GetObjectRequest
+                var getResponse = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = bucketName,
                     Key = copiedKey
-                };
-
-                var getResponse = Client.GetObject(getRequest);
-                getResponse.WriteResponseStreamToFile(retrievedFilepath);
+                });
+                await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, append: false, cancellationToken: default);
                 UtilityMethods.CompareFiles(filePath, retrievedFilepath);
             }
             finally
             {
                 if (File.Exists(filePath))
+                {
                     File.Delete(filePath);
+                }
                 if (File.Exists(retrievedFilepath))
+                {
                     File.Delete(retrievedFilepath);
+                }
             }
         }
 
@@ -468,7 +445,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <param name="algorithm">checksum algorithm</param>
         /// <param name="bucketName">bucket to upload the object to</param>
         /// <param name="disablePayloadSigning">whether the request payload should be signed</param>
-        private void MultipartTestHelper(CoreChecksumAlgorithm algorithm, string bucketName, bool disablePayloadSigning)
+        private async Task MultipartTestHelper(CoreChecksumAlgorithm algorithm, string bucketName, bool disablePayloadSigning)
         {
             var random = new Random();
             var nextRandom = random.Next();
@@ -482,17 +459,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Stream inputStream = File.OpenRead(filePath);
             try
             {
-                InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
+                var initResponse = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString())
-                };
-
-                InitiateMultipartUploadResponse initResponse = Client.InitiateMultipartUpload(initRequest);
+                });
 
                 // Upload part 1
-                UploadPartRequest uploadRequest = new UploadPartRequest()
+                var uploadRequest = new UploadPartRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -503,10 +478,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
                     DisablePayloadSigning = disablePayloadSigning
                 };
-                UploadPartResponse up1Response = Client.UploadPart(uploadRequest);
+                var up1Response = await Client.UploadPartAsync(uploadRequest);
 
                 // Upload part 2
-                uploadRequest = new UploadPartRequest()
+                uploadRequest = new UploadPartRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -517,11 +492,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
                     DisablePayloadSigning = disablePayloadSigning
                 };
-
-                UploadPartResponse up2Response = Client.UploadPart(uploadRequest);
+                var up2Response = await Client.UploadPartAsync(uploadRequest);
 
                 // Upload part 3
-                uploadRequest = new UploadPartRequest()
+                uploadRequest = new UploadPartRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -532,23 +506,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     DisablePayloadSigning = disablePayloadSigning,
                     IsLastPart = true
                 };
+                var up3Response = await Client.UploadPartAsync(uploadRequest);
 
-                UploadPartResponse up3Response = Client.UploadPart(uploadRequest);
-
-                ListPartsRequest listPartRequest = new ListPartsRequest()
+                var listPartResponse = await Client.ListPartsAsync(new ListPartsRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     UploadId = initResponse.UploadId
-                };
-
-                ListPartsResponse listPartResponse = Client.ListParts(listPartRequest);
+                });
                 Assert.AreEqual(3, listPartResponse.Parts.Count);
                 AssertPartsAreEqual(up1Response, listPartResponse.Parts[0]);
                 AssertPartsAreEqual(up2Response, listPartResponse.Parts[1]);
                 AssertPartsAreEqual(up3Response, listPartResponse.Parts[2]);
 
-                CompleteMultipartUploadRequest compRequest = new CompleteMultipartUploadRequest()
+                var compRequest = new CompleteMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -556,21 +527,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 };
                 compRequest.AddPartETagsAndChecksums(up1Response, up2Response, up3Response);
 
-                CompleteMultipartUploadResponse compResponse = Client.CompleteMultipartUpload(compRequest);
+                var compResponse = await Client.CompleteMultipartUploadAsync(compRequest);
                 Assert.IsNotNull(compResponse.ETag);
                 Assert.AreEqual(key, compResponse.Key);
                 Assert.IsNotNull(compResponse.Location);
 
                 // Get the file back from S3 and assert it is still the same.
-                var getRequest = new GetObjectRequest
+                var getResponse = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     ChecksumMode = ChecksumMode.ENABLED
-                };
-
-                var getResponse = Client.GetObject(getRequest);
-                getResponse.WriteResponseStreamToFile(retrievedFilepath);
+                });
+                await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, append: false, cancellationToken: default);
                 UtilityMethods.CompareFiles(filePath, retrievedFilepath);
 
                 // We don't expect the checksum to be validated on getting an entire multipart object,
@@ -589,9 +558,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 inputStream.Close();
                 if (File.Exists(filePath))
+                {
                     File.Delete(filePath);
+                }
                 if (File.Exists(retrievedFilepath))
+                {
                     File.Delete(retrievedFilepath);
+                }
             }
         }
 
@@ -611,11 +584,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(uploadPartResponse.ChecksumSHA256, partDetail.ChecksumSHA256);
         }
 
-        [TestMethod]
-        [TestCategory("S3")]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestMultipartUploadViaTransferUtility(CoreChecksumAlgorithm algorithm)
+        public async Task TestMultipartUploadViaTransferUtility(CoreChecksumAlgorithm algorithm)
         {
             var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
             var transfer = new TransferUtility(Client, transferConfig);
@@ -626,10 +597,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                // Create the file
                 using (StreamWriter writer = File.CreateText(filePath))
                 {
-                    writer.Write(content);
+                    await writer.WriteAsync(content);
                 }
 
                 var uploadRequest = new TransferUtilityUploadRequest
@@ -639,19 +609,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     FilePath = filePath,
                     ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString())
                 };
-
-                transfer.Upload(uploadRequest);
+                await transfer.UploadAsync(uploadRequest);
 
                 // Get the file back from S3 and assert it is still the same.
-                GetObjectRequest getRequest = new GetObjectRequest
+                var getResponse = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = _bucketName,
                     Key = uploadRequest.Key,
                     ChecksumMode = ChecksumMode.ENABLED
-                };
-
-                var getResponse = Client.GetObject(getRequest);
-                var getBody = new StreamReader(getResponse.ResponseStream).ReadToEnd();
+                });
+                var getBody = await new StreamReader(getResponse.ResponseStream).ReadToEndAsync();
                 Assert.AreEqual(content, getBody);
 
                 // We don't expect the checksum to be validated on getting an entire multipart object,
@@ -671,20 +638,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 if (algorithm != CoreChecksumAlgorithm.CRC64NVME)
                 {
                     // Get the object attributes. Parts collection in ObjectParts is only returned if ChecksumAlgorithm is set different from default value.
-                    GetObjectAttributesRequest getObjectAttributesRequest = new GetObjectAttributesRequest()
+                    var getObjectAttributesResponse = await Client.GetObjectAttributesAsync(new GetObjectAttributesRequest
                     {
                         BucketName = _bucketName,
                         Key = uploadRequest.Key,
-                        ObjectAttributes = new List<ObjectAttributes>()
+                        ObjectAttributes = new List<ObjectAttributes>
                         {
                             new ObjectAttributes("Checksum"),
                             new ObjectAttributes("ObjectParts"),
                             new ObjectAttributes("ObjectSize")
                         }
-                    };
-
-                    GetObjectAttributesResponse getObjectAttributesResponse = Client.GetObjectAttributes(getObjectAttributesRequest);
+                    });
                     Assert.IsTrue(getObjectAttributesResponse.ObjectParts.Parts.Count > 0);
+                    
                     // Number of Parts returned is controlled by GetObjectAttributesRequest.MaxParts.
                     Assert.AreEqual(getObjectAttributesResponse.ObjectParts.Parts.Count, getObjectAttributesResponse.ObjectParts.TotalPartsCount);
 
@@ -712,7 +678,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 // Similarily we don't expect this to validate either,
                 // though it doesn't expose the reponse metadata
-                transfer.Download(new TransferUtilityDownloadRequest
+                await transfer.DownloadAsync(new TransferUtilityDownloadRequest
                 {
                     BucketName = _bucketName,
                     Key = uploadRequest.Key,
@@ -723,17 +689,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             finally
             {
                 if (File.Exists(filePath))
+                {
                     File.Delete(filePath);
+                }
                 if (File.Exists(retrievedFilepath))
+                {
                     File.Delete(retrievedFilepath);
+                }
             }
         }
 
-        [TestMethod]
-        [TestCategory("S3")]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
-        public void TestSingleUploadViaTransferUtility(CoreChecksumAlgorithm algorithm)
+        public async Task TestSingleUploadViaTransferUtility(CoreChecksumAlgorithm algorithm)
         {
             var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
             var transfer = new TransferUtility(Client, transferConfig);
@@ -744,10 +712,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                // Create the file
                 using (StreamWriter writer = File.CreateText(filePath))
                 {
-                    writer.Write(content);
+                    await writer.WriteAsync(content);
                 }
 
                 var uploadRequest = new TransferUtilityUploadRequest
@@ -757,27 +724,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     FilePath = filePath,
                     ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString())
                 };
-
-                transfer.Upload(uploadRequest);
+                await transfer.UploadAsync(uploadRequest);
 
                 // Get the file back from S3 and assert it is still the same.
-                var getRequest = new GetObjectRequest
+                var getResponse = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = _bucketName,
                     Key = uploadRequest.Key,
                     ChecksumMode = ChecksumMode.ENABLED
-                };
-
-                var getResponse = Client.GetObject(getRequest);
-                var getBody = new StreamReader(getResponse.ResponseStream).ReadToEnd();
+                });
+                var getBody = await new StreamReader(getResponse.ResponseStream).ReadToEndAsync();
                 Assert.AreEqual(content, getBody);
-
                 Assert.AreEqual(algorithm.ToString(), getResponse.ResponseMetadata.ChecksumAlgorithm.ToString(), true);
                 Assert.AreEqual(ChecksumValidationStatus.PENDING_RESPONSE_READ, getResponse.ResponseMetadata.ChecksumValidationStatus);
 
                 // This should validate the checksum, so "assert" that no exceptions are thrown,
                 // though it doesn't expose the response metadata like above
-                transfer.Download(new TransferUtilityDownloadRequest
+                await transfer.DownloadAsync(new TransferUtilityDownloadRequest
                 {
                     BucketName = _bucketName,
                     Key = uploadRequest.Key,
@@ -788,9 +751,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             finally
             {
                 if (File.Exists(filePath))
+                {
                     File.Delete(filePath);
+                }
                 if (File.Exists(retrievedFilepath))
+                {
                     File.Delete(retrievedFilepath);
+                }
             }
         }
 
@@ -803,7 +770,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         // When the user sets ResponseChecksumValidation to WHEN_REQUIRED, and the user has NOT set the requestValidationModeMember to ENABLED, assert that the response checksum is NOT validated.
         [DataRow(ResponseChecksumValidation.WHEN_REQUIRED, false, false)]
         [DataTestMethod]
-        public void TestResponseChecksumValidation(ResponseChecksumValidation responseChecksumValidation, bool enableChecksumMode, bool isChecksumAlgorithmSet)
+        public async Task TestResponseChecksumValidation(ResponseChecksumValidation responseChecksumValidation, bool enableChecksumMode, bool isChecksumAlgorithmSet)
         {
             var s3Config = new AmazonS3Config
             {
@@ -813,14 +780,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var s3Client = new AmazonS3Client(s3Config))
             {
                 var key = UtilityMethods.GenerateName(nameof(ChecksumTests));
-                var putRequest = new PutObjectRequest()
+                var putRequest = new PutObjectRequest
                 {
                     BucketName = _bucketName,
                     Key = key,
                     ContentBody = _testContent,
                 };
-
-                s3Client.PutObject(putRequest);
+                await s3Client.PutObjectAsync(putRequest);
 
                 var getRequest = new GetObjectRequest
                 {
@@ -828,16 +794,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Key = putRequest.Key,
                 };
                 if (enableChecksumMode)
+                {
                     getRequest.ChecksumMode = ChecksumMode.ENABLED;
+                }
 
-                var response = s3Client.GetObject(getRequest);
-
+                var response = await s3Client.GetObjectAsync(getRequest);
                 Assert.AreEqual(response.ResponseMetadata.ChecksumAlgorithm == CoreChecksumAlgorithm.NONE, !isChecksumAlgorithmSet);
             }
         }
 
-        [TestMethod]
-        [TestCategory("S3")]
+#if NETFRAMEWORK
         // All of these DataRow tests test a case where the first request fails with an internal server error, the input stream
         // file is then changed before retry, and the cached checksum is used on the second request. Because the cached checksum
         // is used on a different file S3 will checksum the new file and then try to match it against the cached checksum being
@@ -879,12 +845,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 };
 
                 AssertExtensions.ExpectException(() => s3Client.PutObject(putObjectRequest), typeof(AmazonS3Exception), exceptionMessage);
-
                 Assert.IsTrue(s3Client.ChecksumValueEachRequest.Count == 2);                
                 Assert.IsTrue(s3Client.ChecksumValueEachRequest[0] == checksumValue);
                 Assert.AreEqual(s3Client.ChecksumValueEachRequest[0], s3Client.ChecksumValueEachRequest[1]);
             }
-        }                
+        }
     }
 
     public class MockInspectFileStream : FileStream
@@ -1172,4 +1137,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             ((IDisposable)_httpRequest).Dispose();
         }
     }
+#endif
 }
