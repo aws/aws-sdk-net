@@ -22,10 +22,8 @@ using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Integration tests for the bucket ownership controls
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class BucketOwnershipControlsTests : TestBase<AmazonS3Client>
     {
         public static string bucketName;
@@ -46,64 +44,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestGetBucketOwnershipControls_ObjectWriter()
+        public async Task TestGetBucketOwnershipControls_ObjectWriter()
         {
-            PutAndGetBucketOwnershipControls(ObjectOwnership.ObjectWriter);
+            await PutAndGetBucketOwnershipControls(ObjectOwnership.ObjectWriter);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestGetBucketOwnershipControls_BucketOwnerPreferred()
+        public async Task TestGetBucketOwnershipControls_BucketOwnerPreferred()
         {
-            PutAndGetBucketOwnershipControls(ObjectOwnership.BucketOwnerPreferred);
+            await PutAndGetBucketOwnershipControls(ObjectOwnership.BucketOwnerPreferred);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonS3Exception), "The bucket ownership controls were not found")]
-        public void TestDeleteBucketOwnershipControls()
+        public async Task TestDeleteBucketOwnershipControls()
         {
-            PutAndGetBucketOwnershipControls(ObjectOwnership.BucketOwnerPreferred);
+            await PutAndGetBucketOwnershipControls(ObjectOwnership.BucketOwnerPreferred);
 
-            var deleteRequest = new DeleteBucketOwnershipControlsRequest
+            await s3Client.DeleteBucketOwnershipControlsAsync(new DeleteBucketOwnershipControlsRequest
             {
                 BucketName = bucketName
-            };
+            });
 
-            s3Client.DeleteBucketOwnershipControls(deleteRequest);
-
-            GetBucketOwnershipControlsRequest getRequest = new GetBucketOwnershipControlsRequest
-            {
-                BucketName = bucketName
-            };
-
-            var getResponse = s3Client.GetBucketOwnershipControls(getRequest);
+            await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() =>
+                s3Client.GetBucketOwnershipControlsAsync(new GetBucketOwnershipControlsRequest
+                {
+                    BucketName = bucketName
+                })
+            );
         }
 
-        private void PutAndGetBucketOwnershipControls(ObjectOwnership objectOwnership)
+        private async Task PutAndGetBucketOwnershipControls(ObjectOwnership objectOwnership)
         {
-            var putRequest = new PutBucketOwnershipControlsRequest
+            await s3Client.PutBucketOwnershipControlsAsync(new PutBucketOwnershipControlsRequest
             {
                 BucketName = bucketName,
                 OwnershipControls = new OwnershipControls
                 {
                     Rules = new List<OwnershipControlsRule> { new OwnershipControlsRule { ObjectOwnership = objectOwnership } }
                 }
-            };
+            });
 
-            s3Client.PutBucketOwnershipControls(putRequest);
-
-            GetBucketOwnershipControlsRequest getRequest = new GetBucketOwnershipControlsRequest
+            var getResponse = await s3Client.GetBucketOwnershipControlsAsync(new GetBucketOwnershipControlsRequest
             {
                 BucketName = bucketName
-            };
-
-            var getResponse = s3Client.GetBucketOwnershipControls(getRequest);
+            });
             Assert.IsNotNull(getResponse.OwnershipControls);
             Assert.AreEqual(1, getResponse.OwnershipControls.Rules.Count());
             Assert.AreEqual(objectOwnership, getResponse.OwnershipControls.Rules[0].ObjectOwnership);
-
         }
     }
 }
