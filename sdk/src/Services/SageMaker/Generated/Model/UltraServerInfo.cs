@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class UltraServerInfo
     {
         private string _id;
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -52,6 +53,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the UltraServer.
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

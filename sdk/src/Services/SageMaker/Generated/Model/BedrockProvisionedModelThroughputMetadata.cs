@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput
-        /// metadata. 
+        ///  The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

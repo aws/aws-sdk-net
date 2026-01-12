@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the inference component metadata. 
+        ///  The Amazon Resource Name (ARN) of the inference component. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
