@@ -11,12 +11,32 @@ namespace SDKDocGenerator.Writers
     public class ClassWriter : BaseWriter
     {
         readonly TypeWrapper _versionType;
+        readonly IEnumerable<MethodInfoWrapper> _supplementalMethods;
 
         public ClassWriter(GenerationManifest artifacts, FrameworkVersion version, TypeWrapper versionType)
             : base(artifacts, version)
         {
             _versionType = versionType;
             _version = version;
+            _supplementalMethods = Enumerable.Empty<MethodInfoWrapper>();
+        }
+
+        /// <summary>
+        /// Creates a ClassWriter that includes supplemental methods from another platform.
+        /// This is used when generating documentation for types where methods differ between platforms
+        /// (e.g., H2 eventstream APIs that only exist in net8.0).
+        /// </summary>
+        /// <param name="artifacts">The generation manifest</param>
+        /// <param name="version">The framework version for documentation</param>
+        /// <param name="versionType">The type to document</param>
+        /// <param name="supplementalMethods">Additional methods to include that don't exist in the primary platform</param>
+        public ClassWriter(GenerationManifest artifacts, FrameworkVersion version, TypeWrapper versionType,
+                          IEnumerable<MethodInfoWrapper> supplementalMethods)
+            : base(artifacts, version)
+        {
+            _versionType = versionType;
+            _version = version;
+            _supplementalMethods = supplementalMethods ?? Enumerable.Empty<MethodInfoWrapper>();
         }
 
         protected override string GenerateFilename()
@@ -304,9 +324,29 @@ namespace SDKDocGenerator.Writers
 
         void AddMethods(TextWriter writer)
         {
-            var methods = this._versionType.GetMethodsToDocument();
+            // Get methods from the type and merge with any supplemental methods
+            var methods = this._versionType.GetMethodsToDocument().ToList();
+
+            // Add supplemental methods (methods that exist only in supplemental platforms like net8.0)
+            if (_supplementalMethods.Any())
+            {
+                // Create a set of existing method signatures to avoid duplicates
+                var existingSignatures = new HashSet<string>(
+                    methods.Select(m => $"{m.Name}({string.Join(",", m.GetParameters().Select(p => p.ParameterType.FullName))})"));
+
+                foreach (var supplementalMethod in _supplementalMethods)
+                {
+                    var sig = $"{supplementalMethod.Name}({string.Join(",", supplementalMethod.GetParameters().Select(p => p.ParameterType.FullName))})";
+                    if (!existingSignatures.Contains(sig))
+                    {
+                        methods.Add(supplementalMethod);
+                    }
+                }
+            }
+
             if (!methods.Any())
                 return;
+
             AddMemberTableSectionHeader(writer, "Methods");
 
             const string netFrameworkPatternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>" +

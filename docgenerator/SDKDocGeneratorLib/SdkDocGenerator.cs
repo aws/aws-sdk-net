@@ -24,6 +24,12 @@ namespace SDKDocGenerator
             "AWSSDK.Extensions.Bedrock.MEAI"
         };
 
+        /// <summary>
+        /// Platforms to scan for APIs not present in the primary platform.
+        /// This enables documentation of H2-only APIs that exist in modern frameworks.
+        /// </summary>
+        private static readonly string[] SupplementalPlatforms = { "net8.0" };
+
         public GeneratorOptions Options { get; private set; }
         
         /// <summary>
@@ -118,10 +124,20 @@ namespace SDKDocGenerator
                 m.Generate(deferredTypes, TOCWriter);
             }
 
-            // now all service assemblies are processed, handle core plus any types in those assemblies that 
+            // now all service assemblies are processed, handle core plus any types in those assemblies that
             // we elected to defer until we processed core.
             coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
             coreManifest.Generate(null, TOCWriter);
+
+            // Process supplemental platforms for H2-only APIs
+            var platformSubfolders = Directory.GetDirectories(Options.SDKAssembliesRoot, "*", SearchOption.TopDirectoryOnly);
+            var availablePlatforms = platformSubfolders.Select(Path.GetFileName).ToList();
+            var supplementalManifests = ConstructSupplementalManifests(manifests, availablePlatforms);
+
+            foreach (var supManifest in supplementalManifests)
+            {
+                supManifest.GenerateSupplementalOnly(TOCWriter);
+            }
 
             Info("Generating table of contents entries...");
             TOCWriter.Write();
@@ -251,6 +267,63 @@ namespace SDKDocGenerator
             }
 
             return manifests;
+        }
+
+        /// <summary>
+        /// Constructs supplemental manifests for platforms that may contain APIs
+        /// not present in the primary platform (e.g., H2 eventstream APIs in net8.0).
+        /// </summary>
+        private IList<GenerationManifest> ConstructSupplementalManifests(
+            IList<GenerationManifest> primaryManifests,
+            IEnumerable<string> availablePlatforms)
+        {
+            var supplementalManifests = new List<GenerationManifest>();
+
+            Info("Discovering supplemental platforms for additional APIs...");
+
+            foreach (var supPlatform in SupplementalPlatforms)
+            {
+                if (supPlatform.Equals(Options.Platform, StringComparison.OrdinalIgnoreCase))
+                    continue; // Skip if supplemental is same as primary
+
+                var supAssemblyPath = Path.Combine(Options.SDKAssembliesRoot, supPlatform);
+                if (!Directory.Exists(supAssemblyPath))
+                {
+                    InfoVerbose("Supplemental platform folder not found: {0}", supAssemblyPath);
+                    continue;
+                }
+
+                Info("Discovering supplemental assemblies in {0}", supAssemblyPath);
+
+                foreach (var primary in primaryManifests)
+                {
+                    if (primary.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    var supAssemblyFile = Path.Combine(supAssemblyPath, Path.GetFileName(primary.AssemblyPath));
+                    if (!File.Exists(supAssemblyFile))
+                        continue;
+
+                    var supManifest = new GenerationManifest(
+                        supAssemblyFile,
+                        Options.ComputedContentFolder,
+                        availablePlatforms,
+                        Options,
+                        primary);
+
+                    if (supManifest.HasSupplementalMethods)
+                    {
+                        supplementalManifests.Add(supManifest);
+                        Info("Found {0} supplemental method(s) in {1}/{2}",
+                            supManifest.SupplementalMethodCount,
+                            supPlatform,
+                            Path.GetFileName(supAssemblyFile));
+                    }
+                }
+            }
+
+            Info("Found {0} assemblies with supplemental content", supplementalManifests.Count);
+            return supplementalManifests;
         }
 
         private void Info(string message)

@@ -63,7 +63,12 @@ namespace SDKDocGenerator
             if (File.Exists(platformSpecificNdocFile))
             {
                 var docId = GenerateDocId(serviceName, platform);
-                _ndocCache.Add(docId, CreateNDocTable(platformSpecificNdocFile, serviceName, options));
+                // Check if already loaded to support both primary and supplemental manifest processing
+                // without duplicate key exceptions
+                if (!_ndocCache.ContainsKey(docId))
+                {
+                    _ndocCache.Add(docId, CreateNDocTable(platformSpecificNdocFile, serviceName, options));
+                }
             }
         }
 
