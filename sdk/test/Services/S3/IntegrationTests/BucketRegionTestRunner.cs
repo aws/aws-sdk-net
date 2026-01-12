@@ -43,7 +43,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Creates and initializes a new instance of BucketRegionTestRunner asynchronously.
         /// </summary>
-        /// <param name="setupClientWithSessionCredentials">Whether to set up a client with session credentials</param>
         /// <returns>A fully initialized BucketRegionTestRunner instance</returns>
         public static async Task<BucketRegionTestRunner> CreateAsync()
         {
