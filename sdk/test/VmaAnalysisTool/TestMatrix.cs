@@ -393,6 +393,63 @@ public class TestMatrix
     }
 
     /// <summary>
+    /// Gets the required file sizes for testing all scenarios.
+    /// Returns a list of file sizes in bytes that cover the test matrix.
+    /// </summary>
+    /// <param name="includeLarge">Include large files (5GB, 10GB) for stress testing</param>
+    /// <param name="includeXLarge">Include extra-large files (50GB) for testing 5GB part sizes</param>
+    public static long[] GetRequiredFileSizes(bool includeLarge = false, bool includeXLarge = false)
+    {
+        // Standard test file sizes that cover most scenarios:
+        // - 100MB: Quick tests, small file scenarios (10-20 parts at 5-10MB each)
+        // - 500MB: Medium files, common download scenario (50 parts at 10MB each)
+        // - 1GB: Large file testing, multipart stress (100 parts at 10MB each)
+        //
+        // Large files (for stress testing):
+        // - 5GB: Stress testing (100 parts at 50MB, or 50 parts at 100MB)
+        // - 10GB: Large scale testing (100 parts at 100MB, or 200 parts at 50MB)
+        //
+        // Extra-large files (for 5GB part size testing):
+        // - 50GB: Testing with 5GB part sizes (10 parts at 5GB each)
+        
+        var standardSizes = new List<long>
+        {
+            100 * 1024 * 1024L,   // 100MB
+            500 * 1024 * 1024L,   // 500MB
+            1024 * 1024 * 1024L,  // 1GB
+        };
+        
+        if (includeLarge)
+        {
+            standardSizes.Add(5L * 1024 * 1024 * 1024);   // 5GB
+            standardSizes.Add(10L * 1024 * 1024 * 1024);  // 10GB
+        }
+        
+        if (includeXLarge)
+        {
+            standardSizes.Add(50L * 1024 * 1024 * 1024);  // 50GB
+        }
+        
+        return standardSizes.ToArray();
+    }
+
+    /// <summary>
+    /// Gets a description of what each test file size is used for.
+    /// </summary>
+    public static Dictionary<long, string> GetFileSizeDescriptions()
+    {
+        return new Dictionary<long, string>
+        {
+            { 100 * 1024 * 1024L, "Quick tests, baseline scenarios (10-20 parts at 5-10MB)" },
+            { 500 * 1024 * 1024L, "Medium files, typical download scenarios (50 parts at 10MB)" },
+            { 1024 * 1024 * 1024L, "Large files, multipart stress testing (100 parts at 10MB)" },
+            { 5L * 1024 * 1024 * 1024, "Stress testing, high memory scenarios (100 parts at 50MB)" },
+            { 10L * 1024 * 1024 * 1024, "Large scale testing, VMA limit scenarios (100 parts at 100MB)" },
+            { 50L * 1024 * 1024 * 1024, "Extra-large testing, 5GB part sizes (10 parts at 5GB)" },
+        };
+    }
+
+    /// <summary>
     /// Generates configs comparing calculated vs fixed chunk sizes.
     /// </summary>
     public static List<SimulationConfig> GenerateDynamicVsFixedComparison()

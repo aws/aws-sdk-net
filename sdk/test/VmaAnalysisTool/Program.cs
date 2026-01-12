@@ -361,28 +361,68 @@ var setupS3Command = new Command("setup-s3", "Create S3 bucket and test objects 
 var setupBucketOption = new Option<string>("--bucket", "S3 bucket name to create/use") { IsRequired = true };
 var setupRegionOpt = new Option<string>("--region", () => "us-east-1", "AWS region");
 var setupProfileOpt = new Option<string?>("--profile", "AWS profile name");
-var setupSizesOption = new Option<string>("--sizes", () => "100,500,1000", "Comma-separated list of object sizes in MB");
+var setupSizesOption = new Option<string?>("--sizes", "Comma-separated list of object sizes in MB (e.g., '100,500,1000')");
 var setupPrefixOption = new Option<string>("--prefix", () => "vma-test/", "Key prefix for test objects");
 var setupForceOption = new Option<bool>("--force", "Force recreate objects even if they exist");
+var setupAutoOption = new Option<bool>("--auto", "Auto-create all standard test files (100MB, 500MB, 1GB)");
+var setupIncludeLargeOption = new Option<bool>("--include-large", "With --auto, also create large files (5GB, 10GB) for stress testing");
+var setupIncludeXLargeOption = new Option<bool>("--include-xlarge", "With --auto, also create extra-large files (50GB) for 5GB part size testing");
 setupS3Command.AddOption(setupBucketOption);
 setupS3Command.AddOption(setupRegionOpt);
 setupS3Command.AddOption(setupProfileOpt);
 setupS3Command.AddOption(setupSizesOption);
 setupS3Command.AddOption(setupPrefixOption);
 setupS3Command.AddOption(setupForceOption);
+setupS3Command.AddOption(setupAutoOption);
+setupS3Command.AddOption(setupIncludeLargeOption);
+setupS3Command.AddOption(setupIncludeXLargeOption);
 setupS3Command.SetHandler(async (InvocationContext ctx) =>
 {
     var bucket = ctx.ParseResult.GetValueForOption(setupBucketOption)!;
     var region = ctx.ParseResult.GetValueForOption(setupRegionOpt)!;
     var profile = ctx.ParseResult.GetValueForOption(setupProfileOpt);
-    var sizesStr = ctx.ParseResult.GetValueForOption(setupSizesOption)!;
+    var sizesStr = ctx.ParseResult.GetValueForOption(setupSizesOption);
     var prefix = ctx.ParseResult.GetValueForOption(setupPrefixOption)!;
     var force = ctx.ParseResult.GetValueForOption(setupForceOption);
+    var auto = ctx.ParseResult.GetValueForOption(setupAutoOption);
+    var includeLarge = ctx.ParseResult.GetValueForOption(setupIncludeLargeOption);
+    var includeXLarge = ctx.ParseResult.GetValueForOption(setupIncludeXLargeOption);
     
-    // Parse sizes
-    var sizes = sizesStr.Split(',')
-        .Select(s => long.Parse(s.Trim()) * 1024 * 1024)
-        .ToArray();
+    long[] sizes;
+    
+    if (auto || string.IsNullOrWhiteSpace(sizesStr))
+    {
+        // Use auto-detected sizes from TestMatrix
+        sizes = TestMatrix.GetRequiredFileSizes(includeLarge, includeXLarge);
+        var descriptions = TestMatrix.GetFileSizeDescriptions();
+        
+        Console.WriteLine("\n🔧 Auto-setup mode enabled");
+        Console.WriteLine("\nFiles to create:");
+        foreach (var size in sizes)
+        {
+            var desc = descriptions.TryGetValue(size, out var d) ? d : "";
+            Console.WriteLine($"  • {FormatBytes(size),-8} - {desc}");
+        }
+        
+        if (!includeLarge && !includeXLarge)
+        {
+            Console.WriteLine("\n💡 Tips:");
+            Console.WriteLine("   • Use --include-large to also create 5GB and 10GB files for stress testing");
+            Console.WriteLine("   • Use --include-xlarge to create a 50GB file for 5GB part size testing");
+        }
+        else if (!includeXLarge)
+        {
+            Console.WriteLine("\n💡 Tip: Use --include-xlarge to create a 50GB file for 5GB part size testing");
+        }
+        Console.WriteLine();
+    }
+    else
+    {
+        // Parse manual sizes
+        sizes = sizesStr.Split(',')
+            .Select(s => long.Parse(s.Trim()) * 1024 * 1024)
+            .ToArray();
+    }
     
     using var setup = new S3TestDataSetup(region, profile);
     await setup.SetupTestDataAsync(bucket, sizes, prefix, force);
@@ -390,7 +430,7 @@ setupS3Command.SetHandler(async (InvocationContext ctx) =>
     Console.WriteLine("\n📋 Example usage:");
     foreach (var size in sizes)
     {
-        var key = $"{prefix}{size / 1024 / 1024}mb.bin";
+        var key = $"{prefix}{FormatBytesForKey(size)}.bin";
         Console.WriteLine($"  dotnet run -- quick --mode Real --s3-bucket {bucket} --s3-key {key} --s3-region {region}");
     }
 });
@@ -697,4 +737,12 @@ static string TruncateName(string name, int maxLength)
 {
     if (name.Length <= maxLength) return name.PadRight(maxLength);
     return name.Substring(0, maxLength - 3) + "...";
+}
+
+static string FormatBytesForKey(long bytes)
+{
+    if (bytes >= 1024L * 1024 * 1024) return $"{bytes / 1024 / 1024 / 1024}gb";
+    if (bytes >= 1024 * 1024) return $"{bytes / 1024 / 1024}mb";
+    if (bytes >= 1024) return $"{bytes / 1024}kb";
+    return $"{bytes}b";
 }
