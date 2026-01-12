@@ -317,6 +317,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.MaxErrorRetry = defaultConfig.MaxErrorRetry.Value;
             }
+            if (defaultConfig.MaxStaleConnectionRetries.HasValue)
+            {
+                config.MaxStaleConnectionRetries = defaultConfig.MaxStaleConnectionRetries.Value;
+            }
             if (defaultConfig.ProgressUpdateInterval.HasValue)
             {
                 config.ProgressUpdateInterval = defaultConfig.ProgressUpdateInterval.Value;
