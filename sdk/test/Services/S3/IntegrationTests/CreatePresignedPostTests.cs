@@ -160,7 +160,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
         
         // Helper methods for creating and working with presigned POST URLs
-        private Task<CreatePresignedPostResponse> GeneratePresignedPostRequest(
+        private CreatePresignedPostResponse GeneratePresignedPostRequest(
             string bucketName, 
             string objectKey, 
             DateTime expiration,
@@ -192,7 +192,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             }
 
-            return Client.CreatePresignedPostAsync(request);
+            return Client.CreatePresignedPost(request);
         }
 
         // Validates that Content-Type field exists with expected value
@@ -299,7 +299,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             string objectKey = TestKey + DateTime.UtcNow.Ticks;
 
             // Step 1: Generate presigned POST response
-            var response = await GeneratePresignedPostRequest(
+            var response = GeneratePresignedPostRequest(
                 testParams.BucketName,
                 objectKey,
                 testParams.Expiration,
@@ -351,7 +351,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Expires = testParams.Expiration
             };
 
-            var response = await Client.CreatePresignedPostAsync(request);
+            var response = Client.CreatePresignedPost(request);
 
             // Verify required fields
             Assert.IsNotNull(response.Url);
@@ -436,7 +436,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             string actualFilename = "test-file-" + DateTime.UtcNow.Ticks + ".txt";
 
             // Verify policy contains starts-with condition
-            var response = await GeneratePresignedPostRequest(testParams.BucketName, objectKey, testParams.Expiration);
+            var response = GeneratePresignedPostRequest(testParams.BucketName, objectKey, testParams.Expiration);
             var policyBytes = Convert.FromBase64String(response.Fields["Policy"]);
             var policyJson = Encoding.UTF8.GetString(policyBytes);
             var policyDoc = JsonDocument.Parse(policyJson);
@@ -513,7 +513,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.Conditions.Add(condition);
             }
 
-            var response = await Client.CreatePresignedPostAsync(request);
+            var response = Client.CreatePresignedPost(request);
 
             // Use the presigned post form to upload a file that meets the conditions
             var validFormData = new MultipartFormDataContent();
