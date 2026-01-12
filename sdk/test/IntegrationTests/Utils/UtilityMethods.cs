@@ -258,22 +258,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return result;
         }
 
-        public static async Task WaitUntilExceptionAsync(Func<Task> asyncAction, int sleepSeconds = 5, int maxWaitSeconds = 300)
-        {
-            await WaitUntilAsync(async () =>
-            {
-                try
-                {
-                    await asyncAction();
-                    return false;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }, sleepSeconds, maxWaitSeconds);
-        }
-
         public static async Task WaitUntilSuccessAsync(Func<Task> asyncAction, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
             if (sleepSeconds < 0) throw new ArgumentOutOfRangeException(nameof(sleepSeconds));
