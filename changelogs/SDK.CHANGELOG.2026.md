@@ -1,3 +1,13 @@
+### 4.0.168.0 (2026-01-12 19:24 UTC)
+* Billing (4.0.6.0)
+	* Cost Categories filtering support to BillingView data filter expressions through the new costCategories parameter, enabling users to filter billing views by AWS Cost Categories for more granular cost management and allocation.
+* IoTManagedIntegrations (4.0.5.0)
+	* This release introduces WiFi Simple Setup (WSS) enabling device provisioning via barcode scanning with automated network discovery, authentication, and credential provisioning. Additionally, it introduces 2P Device Capability Rediscovery for updating hub-managed device capabilities post-onboarding.
+* S3 (4.0.17.1)
+	* Generate GetBucketWebsite, PutBucketWebsite, and DeleteBucketWebsite
+* SageMaker (4.0.40.0)
+	* Added ultraServerType to the UltraServerInfo structure to support server type identification for SageMaker HyperPod
+
 ### 4.0.167.0 (2026-01-09 19:18 UTC)
 * BedrockAgentCoreControl (4.0.14.0)
 	* Adds optional field "view" to GetMemory API input to give customers control over whether CMK encrypted data such as strategy decryption or override prompts is returned or not.
