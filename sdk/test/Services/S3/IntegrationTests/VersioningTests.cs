@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Tests for versioned S3 buckets
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class VersioningTests : TestBase<AmazonS3Client>
     {
         private const string content = "Test content";
         private const string key = "test.txt";
-
         private static string bucketName;
 
         [ClassInitialize]
@@ -48,13 +45,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestVersionBucketName()
+        public async Task TestVersionBucketName()
         {
             var count = 5;
             for (int i = 0; i < count; i++)
             {
-                Client.PutObject(new PutObjectRequest
+                await Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -62,16 +58,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 });
             }
                         
-            var response = S3TestUtils.WaitForConsistency(() =>
+            var response = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.ListVersions(bucketName);                
+                var res = await Client.ListVersionsAsync(bucketName);                
                 return res.Versions?.Count == count ? res : null;
             });
 
-            var versions = response.Versions;
-            Assert.AreEqual(count, versions.Count);
-
-            foreach(var version in versions)
+            Assert.AreEqual(count, response.Versions.Count);
+            foreach (var version in response.Versions)
             {
                 Assert.AreEqual(bucketName, version.BucketName);
                 Assert.AreEqual(key, version.Key);
