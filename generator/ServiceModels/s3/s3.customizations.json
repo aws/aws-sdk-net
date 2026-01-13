@@ -2078,6 +2078,67 @@
                 "ResponseContentLanguage",
                 "ResponseContentType"
             ]
+        },
+        "WriteGetObjectResponseRequest":{
+            "modify":[
+                {
+                    "Metadata" : {
+                        "injectXmlPropertyGetter":[
+                                    "get {",
+                                    "    if (this._metadata == null) this._metadata = new MetadataCollection();",
+                                    "    return this._metadata;",
+                                    "}"
+                                ],
+                        "skipSetter" : true
+                    }
+                },
+                {
+                    "SSECustomerAlgorithm":{
+                        "injectXmlIsSet":[
+                            "return this._sseCustomerAlgorithm != null && this._sseCustomerAlgorithm != ServerSideEncryptionCustomerMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
+                },
+                {
+                    "ServerSideEncryptionMethod":{
+                        "injectXmlIsSet":[
+                            "return this._serverSideEncryptionMethod != null && this._serverSideEncryptionMethod != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryptionCustomerMethod":{
+                        "injectXmlIsSet":[
+                            "return this._serverSideEncryptionCustomerMethod != null && this._serverSideEncryptionCustomerMethod != ServerSideEncryptionCustomerMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "RequestToken":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._requestToken);"]}
+                },
+                {
+                    "RequestRoute":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._requestRoute);"]}
+                },
+                {
+                    "Restore":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._restore);"]}
+                },
+                {
+                    "SSECustomerKeyMD5":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._sseCustomerKeyMD5);"]}
+                },
+                {
+                    "SSEKMSKeyId":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._ssekmsKeyId);"]}
+                },
+                {
+                    "VersionId":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._versionId);"]}
+                }
+            ],
+            "excludeFromMarshalling":[
+                "Metadata",
+                "Body"
+            ]
         }
     },
     "operationModifiers": {
@@ -2590,6 +2651,28 @@
             },
             "ServerSideEncryptionCustomerMethod":{
                 "Type":"ServerSideEncryptionCustomerMethod"
+            }
+        },
+        "WriteGetObjectResponseRequest":{
+            "Metadata" : {
+                "Type" : "MetadataCollection"
+            },
+            "Body" : {
+                "Type" : "Stream"
+            },
+            "SSECustomerAlgorithm":{
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            },
+            "ServerSideEncryptionMethod":{
+                "Type": "ServerSideEncryptionMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            },
+            "Expires":{
+                "Type": "DateTime?",
+                "Marshaller": "StringUtils.FromDateTimeToRFC822"
             }
         }
     },
