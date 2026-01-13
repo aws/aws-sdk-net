@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class CopyPartTests : TestBase<AmazonS3Client>
     {
         private const string testContent = "This is the content body!";
@@ -37,22 +38,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestCopyPartWithLeadingSlash()
+        public async Task TestCopyPartWithLeadingSlash()
         {
             var destinationKeyWithSlash = "/destinationTestKey.txt";
             string uploadId = null;
 
             try
             {
-                var multiPartUploadResponse = Client.InitiateMultipartUpload(new InitiateMultipartUploadRequest
+                var multiPartUploadResponse = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = destinationKeyWithSlash,
                 });
 
                 uploadId = multiPartUploadResponse.UploadId;
-                var copyPartResponse = Client.CopyPart(new CopyPartRequest
+                var copyPartResponse = await Client.CopyPartAsync(new CopyPartRequest
                 {
                     DestinationBucket = bucketName,
                     DestinationKey = destinationKeyWithSlash,
@@ -76,10 +76,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 };
                 completeUploadRequest.AddPartETags(copyPartResponse);
 
-                var completeUploadResponse = Client.CompleteMultipartUpload(completeUploadRequest);
+                var completeUploadResponse = await Client.CompleteMultipartUploadAsync(completeUploadRequest);
                 Assert.AreEqual(HttpStatusCode.OK, completeUploadResponse.HttpStatusCode);
 
-                var getObjectResponse = Client.GetObject(new GetObjectRequest
+                var getObjectResponse = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = bucketName,
                     Key = destinationKeyWithSlash
@@ -88,7 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 using (getObjectResponse.ResponseStream)
                 using (var reader = new StreamReader(getObjectResponse.ResponseStream))
                 {
-                    var actualText = reader.ReadToEnd();
+                    var actualText = await reader.ReadToEndAsync();
                     Assert.AreEqual(testContent, actualText);
                 }
             }
@@ -96,7 +96,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 if (uploadId != null)
                 {
-                    Client.AbortMultipartUpload(new AbortMultipartUploadRequest
+                    await Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
                     {
                         BucketName = bucketName,
                         Key = destinationKeyWithSlash,
