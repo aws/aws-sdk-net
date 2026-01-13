@@ -111,7 +111,7 @@ namespace Amazon.Bedrock.Model
         /// The updated content to be validated by the Automated Reasoning policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=2048)]
         public string GuardContent
         {
             get { return this._guardContent; }
