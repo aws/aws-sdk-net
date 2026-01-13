@@ -11,6 +11,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// will be fully satisifed and leave us alone :-)
     /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class KeyNameTests
     {
         private static readonly string[] AwkwardKeyNameBases =
@@ -41,16 +42,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucketName);
         }
                 
-        [TestCategory("S3")]
         [TestMethod]
-        public void TestKeyNameWithAwkwardChars_AWS4Signing()
+        public async Task TestKeyNameWithAwkwardChars_AWS4Signing()
         {
             IAmazonS3 s3Client = new AmazonS3Client();
 
             foreach (var k in AwkwardKeyNameBases)
             {
                 var keyName = k + ".SigV4.AWS2.CLRv" + Environment.Version;
-                S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
+                await S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
             }
         }
     }

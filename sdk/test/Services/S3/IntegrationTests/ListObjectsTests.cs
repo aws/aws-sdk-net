@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class ListObjectsTests : TestBase<AmazonS3Client>
     {
         private const string content = "Test content";
@@ -26,7 +27,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             "a/g&j",
         };
 
-        [ClassInitialize()]
+        [ClassInitialize]
         public static async Task Initialize(TestContext a)
         {
             bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
@@ -55,10 +56,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestS3ObjectsContainBucketName()
+        public async Task TestS3ObjectsContainBucketName()
         {
-            var response = Client.ListObjects(new ListObjectsRequest
+            var response = await Client.ListObjectsAsync(new ListObjectsRequest
             {
                 BucketName = bucketName
             });
@@ -70,10 +70,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestListV2()
+        public async Task TestListV2()
         {
-            var response = Client.ListObjectsV2(new ListObjectsV2Request
+            var response = await Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = bucketName,
                 StartAfter = keys[0],
@@ -88,7 +87,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsTrue(response.S3Objects.Any(o => o.Key.Contains("\n")));
             Assert.IsTrue(response.S3Objects.Any(o => o.Key.Contains("&")));
 
-            response = Client.ListObjectsV2(new ListObjectsV2Request
+            response = await Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = bucketName,
                 MaxKeys = 1,
@@ -104,7 +103,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNotNull(response.S3Objects[0].Owner);
             Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
-            response = Client.ListObjectsV2(new ListObjectsV2Request
+            response = await Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = bucketName,
                 MaxKeys = 1,
@@ -120,7 +119,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNotNull(response.S3Objects[0].Owner);
             Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
-            response = Client.ListObjectsV2(new ListObjectsV2Request
+            response = await Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = bucketName,
                 MaxKeys = 1,
@@ -134,7 +133,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNull(response.S3Objects[0].Owner);
             Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
-            response = Client.ListObjectsV2(new ListObjectsV2Request
+            response = await Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = bucketName,
                 MaxKeys = 1,

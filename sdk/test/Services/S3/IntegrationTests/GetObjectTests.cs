@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class GetObjectTests : TestBase<AmazonS3Client>
     {
         private const string content = "0123456789";
@@ -35,12 +36,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
-
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestRangedGetWithStartAndEnd()
+        public async Task TestRangedGetWithStartAndEnd()
         {
-            var response = Client.GetObject(new GetObjectRequest
+            var response = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 ByteRange = new ByteRange(1, 5),
@@ -51,17 +50,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 using (var reader = new StreamReader(response.ResponseStream))
                 {
-                    var text = reader.ReadToEnd();
+                    var text = await reader.ReadToEndAsync();
                     Assert.AreEqual("12345", text);
                 }
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestRangedGetWithByteRange()
+        public async Task TestRangedGetWithByteRange()
         {
-            var response = Client.GetObject(new GetObjectRequest
+            var response = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 ByteRange = new ByteRange("bytes=-2"),
@@ -72,24 +70,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 using (var reader = new StreamReader(response.ResponseStream))
                 {
-                    var text = reader.ReadToEnd();
+                    var text = await reader.ReadToEndAsync();
                     Assert.AreEqual("89", text);
                 }
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestObjectAttributesLastModified()
+        public async Task TestObjectAttributesLastModified()
         {
-            var getObjectAttributesResponse = Client.GetObjectAttributes(new GetObjectAttributesRequest
+            var getObjectAttributesResponse = await Client.GetObjectAttributesAsync(new GetObjectAttributesRequest
             {
                 BucketName = bucketName,
                 Key = "TestObject",
                 ObjectAttributes = new List<ObjectAttributes> { ObjectAttributes.ObjectSize }
             });
 
-            var getObjectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            var getObjectMetadataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = "TestObject"
@@ -100,8 +97,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestServerSideEncryptionCustomerProvidedKeyMD5()
+        public async Task TestServerSideEncryptionCustomerProvidedKeyMD5()
         {
             var key = "TestServerSideEncryptionCustomerProvidedKeyMD5";
             
@@ -119,7 +115,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var keyMD5 = Convert.ToBase64String(md5.ComputeHash(encryptionKeyBytes));
                 
                 // Put object with SSE-C
-                Client.PutObject(new PutObjectRequest
+                await Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -129,7 +125,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     ServerSideEncryptionCustomerProvidedKeyMD5 = keyMD5
                 });
 
-               var response = Client.GetObject(new GetObjectRequest
+                var response = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -141,7 +137,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 using (response)
                 {
                     // Verify the ServerSideEncryptionCustomerProvidedKeyMD5 property is populated
-                    Assert.IsNotNull(response.ServerSideEncryptionCustomerProvidedKeyMD5, 
+                    Assert.IsNotNull(response.ServerSideEncryptionCustomerProvidedKeyMD5,
                         "ServerSideEncryptionCustomerProvidedKeyMD5 should not be null");
                     Assert.AreEqual(keyMD5, response.ServerSideEncryptionCustomerProvidedKeyMD5,
                         "ServerSideEncryptionCustomerProvidedKeyMD5 should match the provided MD5");
@@ -150,8 +146,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestContentLanguageHeader()
+        public async Task TestContentLanguageHeader()
         {
             var key = "TestContentLanguageHeader";
             var expectedLanguage = "en-US";
@@ -165,10 +160,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
             putRequest.Headers["Content-Language"] = expectedLanguage;
 
-            Client.PutObject(putRequest);
+            await Client.PutObjectAsync(putRequest);
 
             // Get object and verify Content-Language header
-            var response = Client.GetObject(new GetObjectRequest
+            var response = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = key
@@ -176,7 +171,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (response)
             {
-                Assert.IsNotNull(response.ContentLanguage, 
+                Assert.IsNotNull(response.ContentLanguage,
                     "ContentLanguage should not be null");
                 Assert.AreEqual(expectedLanguage, response.ContentLanguage,
                     "ContentLanguage should match the value set during PutObject");
@@ -184,8 +179,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestContentLanguageResponseHeaderOverride()
+        public async Task TestContentLanguageResponseHeaderOverride()
         {
             var key = "TestContentLanguageResponseHeaderOverride";
             var originalLanguage = "fr-FR";
@@ -200,10 +194,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
             putRequest.Headers["Content-Language"] = originalLanguage;
 
-            Client.PutObject(putRequest);
+            await Client.PutObjectAsync(putRequest);
 
             // Get object with response header override
-            var response = Client.GetObject(new GetObjectRequest
+            var response = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -222,7 +216,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
 
             // Verify original value is still stored by getting without override
-            var responseWithoutOverride = Client.GetObject(new GetObjectRequest
+            var responseWithoutOverride = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = key
@@ -236,8 +230,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestContentLanguageHeadersCollection()
+        public async Task TestContentLanguageHeadersCollection()
         {
             var key = "TestContentLanguageHeadersCollection";
             var expectedLanguage = "de-DE";
@@ -251,10 +244,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
             putRequest.Headers["Content-Language"] = expectedLanguage;
 
-            Client.PutObject(putRequest);
+            await Client.PutObjectAsync(putRequest);
 
             // Get object and verify both ContentLanguage properties are set
-            var response = Client.GetObject(new GetObjectRequest
+            var response = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = key
@@ -263,13 +256,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (response)
             {
                 // Verify the direct ContentLanguage property
-                Assert.IsNotNull(response.ContentLanguage, 
+                Assert.IsNotNull(response.ContentLanguage,
                     "ContentLanguage property should not be null");
                 Assert.AreEqual(expectedLanguage, response.ContentLanguage,
                     "ContentLanguage property should match the value set during PutObject");
 
                 // Verify the Headers.ContentLanguage property
-                Assert.IsNotNull(response.Headers.ContentLanguage, 
+                Assert.IsNotNull(response.Headers.ContentLanguage,
                     "Headers.ContentLanguage property should not be null");
                 Assert.AreEqual(expectedLanguage, response.Headers.ContentLanguage,
                     "Headers.ContentLanguage property should match the value set during PutObject");

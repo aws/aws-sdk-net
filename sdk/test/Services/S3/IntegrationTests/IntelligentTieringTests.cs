@@ -3,45 +3,39 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Tests for IntelligentTieringConfiguration
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class IntelligentTieringTests : TestBase<AmazonS3Client>
     {
         public static string bucketName;
         public const string intelligentTieringId = "configId";
 
-        private PutBucketIntelligentTieringConfigurationRequest GeneratePutRequest (string intelligentTieringId, IntelligentTieringFilter intelligentTieringfilter)
-		{
-            PutBucketIntelligentTieringConfigurationRequest putBucketIntelligentTieringConfigurationRequest = new PutBucketIntelligentTieringConfigurationRequest()
+        private PutBucketIntelligentTieringConfigurationRequest GeneratePutRequest(string intelligentTieringId, IntelligentTieringFilter intelligentTieringfilter)
+        {
+            return new PutBucketIntelligentTieringConfigurationRequest
             {
                 BucketName = bucketName,
                 IntelligentTieringId = intelligentTieringId,
-                IntelligentTieringConfiguration = new IntelligentTieringConfiguration()
+                IntelligentTieringConfiguration = new IntelligentTieringConfiguration
                 {
                     IntelligentTieringId = intelligentTieringId,
                     Status = IntelligentTieringStatus.Enabled,
                     IntelligentTieringFilter = intelligentTieringfilter,
-                    Tierings = new List<Tiering>()
+                    Tierings = new List<Tiering>
                     {
-                        new Tiering()
+                        new Tiering
                         {
                             Days = 90,
                             AccessTier = IntelligentTieringAccessTier.ARCHIVE_ACCESS
                         }
                     }
-
                 }
             };
-            return putBucketIntelligentTieringConfigurationRequest;
         }
 
         [TestInitialize]
@@ -53,35 +47,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCleanup]
         public async Task Cleanup()
         {
-           await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
         }
 
-        [TestCategory("S3")]
         [TestMethod]
-        public void BucketIntelligentTieringConfigurationsTagFilterTest()
+        public async Task BucketIntelligentTieringConfigurationsTagFilterTest()
         {
-            Tag tag = new Tag()
+            var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, new IntelligentTieringFilter
             {
-                Key = "tagK",
-                Value = "tagV"
-            };
-            var intelligentTieringFilter = new IntelligentTieringFilter()
-            {
-                IntelligentTieringFilterPredicate = new IntelligentTieringTagPredicate(tag)
-            };
+                IntelligentTieringFilterPredicate = new IntelligentTieringTagPredicate(new Tag
+                {
+                    Key = "tagK",
+                    Value = "tagV"
+                })
+            });
+            await Client.PutBucketIntelligentTieringConfigurationAsync(putBucketIntelligentTieringConfigurationRequest);
 
-            var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, intelligentTieringFilter);
-            var putBucketIntelligentTieringConfigurationResponse = Client.PutBucketIntelligentTieringConfiguration(putBucketIntelligentTieringConfigurationRequest);
-
-            GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest = new GetBucketIntelligentTieringConfigurationRequest()
+            var getBucketIntelligentTieringConfigurationRequest = new GetBucketIntelligentTieringConfigurationRequest
             {
                 IntelligentTieringId = intelligentTieringId,
                 BucketName = bucketName
             };
-                        
-            var getBucketIntelligentTieringConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            var getBucketIntelligentTieringConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketIntelligentTieringConfiguration(getBucketIntelligentTieringConfigurationRequest);
+                var res = await Client.GetBucketIntelligentTieringConfigurationAsync(getBucketIntelligentTieringConfigurationRequest);
                 return res.IntelligentTieringConfiguration?.IntelligentTieringId == getBucketIntelligentTieringConfigurationRequest.IntelligentTieringId ? res : null;
             });
 
@@ -92,65 +81,61 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(((IntelligentTieringTagPredicate)getConfiguration.IntelligentTieringFilter.IntelligentTieringFilterPredicate).Tag.Value, "tagV");
         }
 
-        [TestCategory("S3")]
         [TestMethod]
-        public void BucketIntelligentTieringConfigurationsPrefixFilterTest()
+        public async Task BucketIntelligentTieringConfigurationsPrefixFilterTest()
         {
-            var intelligentTieringFilter = new IntelligentTieringFilter()
+            var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, new IntelligentTieringFilter
             {
                 IntelligentTieringFilterPredicate = new IntelligentTieringPrefixPredicate("string")
-            };
+            });
+            await Client.PutBucketIntelligentTieringConfigurationAsync(putBucketIntelligentTieringConfigurationRequest);
 
-            var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, intelligentTieringFilter);
-            var putBucketIntelligentTieringConfigurationResponse = Client.PutBucketIntelligentTieringConfiguration(putBucketIntelligentTieringConfigurationRequest);
-
-            GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest = new GetBucketIntelligentTieringConfigurationRequest()
+            var getBucketIntelligentTieringConfigurationRequest = new GetBucketIntelligentTieringConfigurationRequest
             {
                 IntelligentTieringId = intelligentTieringId,
                 BucketName = bucketName
             };
 
-            var getBucketIntelligentTieringConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            var getBucketIntelligentTieringConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketIntelligentTieringConfiguration(getBucketIntelligentTieringConfigurationRequest);
+                var res = await Client.GetBucketIntelligentTieringConfigurationAsync(getBucketIntelligentTieringConfigurationRequest);
                 return res.IntelligentTieringConfiguration?.IntelligentTieringId == getBucketIntelligentTieringConfigurationRequest.IntelligentTieringId ? res : null;
             });
 
             var getConfiguration = getBucketIntelligentTieringConfigurationResponse.IntelligentTieringConfiguration;
             var putConfiguration = putBucketIntelligentTieringConfigurationRequest.IntelligentTieringConfiguration;
-			Assert.AreEqual(getConfiguration.IntelligentTieringId, putConfiguration.IntelligentTieringId);
-			Assert.AreEqual(((IntelligentTieringPrefixPredicate)getConfiguration.IntelligentTieringFilter.IntelligentTieringFilterPredicate).Prefix, "string");
+            Assert.AreEqual(getConfiguration.IntelligentTieringId, putConfiguration.IntelligentTieringId);
+            Assert.AreEqual(((IntelligentTieringPrefixPredicate)getConfiguration.IntelligentTieringFilter.IntelligentTieringFilterPredicate).Prefix, "string");
         }
 
-        [TestCategory("S3")]
         [TestMethod]
-        public void BucketIntelligentTieringConfigurationsAndFilterTest()
+        public async Task BucketIntelligentTieringConfigurationsAndFilterTest()
         {
-            Tag tag = new Tag()
+            var list = new List<IntelligentTieringFilterPredicate>
             {
-                Key = "tagK",
-                Value = "tagV"
+                new IntelligentTieringPrefixPredicate("string"),
+                new IntelligentTieringTagPredicate(new Tag
+                {
+                    Key = "tagK",
+                    Value = "tagV"
+                })
             };
-            List<IntelligentTieringFilterPredicate> list = new List<IntelligentTieringFilterPredicate>();
-            list.Add(new IntelligentTieringPrefixPredicate("string"));
-            list.Add(new IntelligentTieringTagPredicate(tag));
 
-            var intelligentTieringFilter = new IntelligentTieringFilter()
+            var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, new IntelligentTieringFilter
             {
                 IntelligentTieringFilterPredicate = new IntelligentTieringAndOperator(list)
-            };
-            var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, intelligentTieringFilter);
-            var putBucketIntelligentTieringConfigurationResponse = Client.PutBucketIntelligentTieringConfiguration(putBucketIntelligentTieringConfigurationRequest);
+            });
+            await Client.PutBucketIntelligentTieringConfigurationAsync(putBucketIntelligentTieringConfigurationRequest);
 
-            GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest = new GetBucketIntelligentTieringConfigurationRequest()
+            var getBucketIntelligentTieringConfigurationRequest = new GetBucketIntelligentTieringConfigurationRequest
             {
                 IntelligentTieringId = intelligentTieringId,
                 BucketName = bucketName
             };
 
-            var getBucketIntelligentTieringConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            var getBucketIntelligentTieringConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketIntelligentTieringConfiguration(getBucketIntelligentTieringConfigurationRequest);
+                var res = await Client.GetBucketIntelligentTieringConfigurationAsync(getBucketIntelligentTieringConfigurationRequest);
                 return res.IntelligentTieringConfiguration?.IntelligentTieringId == getBucketIntelligentTieringConfigurationRequest.IntelligentTieringId ? res : null;
             });
 
@@ -160,28 +145,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             foreach (var predicate in ((IntelligentTieringNAryOperator)getConfiguration.IntelligentTieringFilter.IntelligentTieringFilterPredicate).Operands)
             {
-                if (predicate is IntelligentTieringPrefixPredicate)
+                if (predicate is IntelligentTieringPrefixPredicate prefixPredicate)
                 {
-                    Assert.AreEqual(((IntelligentTieringPrefixPredicate)predicate).Prefix, "string");
+                    Assert.AreEqual(prefixPredicate.Prefix, "string");
                 }
-                else if (predicate is IntelligentTieringTagPredicate)
+                else if (predicate is IntelligentTieringTagPredicate tagPredicate)
                 {
-                    Assert.AreEqual(((IntelligentTieringTagPredicate)predicate).Tag.Key, "tagK");
-                    Assert.AreEqual(((IntelligentTieringTagPredicate)predicate).Tag.Value, "tagV");
+                    Assert.AreEqual(tagPredicate.Tag.Key, "tagK");
+                    Assert.AreEqual(tagPredicate.Tag.Value, "tagV");
                 }
             }
         }
 
-        [TestCategory("S3")]
         [TestMethod]
-        public void BucketIntelligentTieringConfigurationsTieringListTest()
-		{
-            var intelligentTieringFilter = new IntelligentTieringFilter()
+        public async Task BucketIntelligentTieringConfigurationsTieringListTest()
+        {
+            var intelligentTieringFilter = new IntelligentTieringFilter
             {
                 IntelligentTieringFilterPredicate = new IntelligentTieringPrefixPredicate("string")
             };
 
-            var tiering = new Tiering()
+            var tiering = new Tiering
             {
                 Days = 180,
                 AccessTier = IntelligentTieringAccessTier.DEEP_ARCHIVE_ACCESS
@@ -189,17 +173,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, intelligentTieringFilter);
             putBucketIntelligentTieringConfigurationRequest.IntelligentTieringConfiguration.Tierings.Add(tiering);
-            var putBucketIntelligentTieringConfigurationResponse = Client.PutBucketIntelligentTieringConfiguration(putBucketIntelligentTieringConfigurationRequest);
+            await Client.PutBucketIntelligentTieringConfigurationAsync(putBucketIntelligentTieringConfigurationRequest);
 
-            GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest = new GetBucketIntelligentTieringConfigurationRequest()
+            var getBucketIntelligentTieringConfigurationRequest = new GetBucketIntelligentTieringConfigurationRequest
             {
                 IntelligentTieringId = intelligentTieringId,
                 BucketName = bucketName
             };
 
-            var getBucketIntelligentTieringConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            var getBucketIntelligentTieringConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketIntelligentTieringConfiguration(getBucketIntelligentTieringConfigurationRequest);
+                var res = await Client.GetBucketIntelligentTieringConfigurationAsync(getBucketIntelligentTieringConfigurationRequest);
                 return res.IntelligentTieringConfiguration?.IntelligentTieringId == getBucketIntelligentTieringConfigurationRequest.IntelligentTieringId ? res : null;
             });
 
@@ -208,70 +192,64 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(getConfiguration.IntelligentTieringId, putConfiguration.IntelligentTieringId);
             Assert.AreEqual(getConfiguration.Status, putConfiguration.Status);
 
-			Assert.AreEqual(getConfiguration.Tierings.Count, putConfiguration.Tierings.Count);
-			for (int i = 0; i < getConfiguration.Tierings.Count; i++)
-			{
-				var tiering_get = getConfiguration.Tierings[i];
-				var tiering_put = putConfiguration.Tierings[i];
-				Assert.AreEqual(tiering_get.Days, tiering_put.Days);
-				Assert.AreEqual(tiering_get.AccessTier, tiering_put.AccessTier);
-			}
-		}
+            Assert.AreEqual(getConfiguration.Tierings.Count, putConfiguration.Tierings.Count);
+            for (int i = 0; i < getConfiguration.Tierings.Count; i++)
+            {
+                var tiering_get = getConfiguration.Tierings[i];
+                var tiering_put = putConfiguration.Tierings[i];
+                Assert.AreEqual(tiering_get.Days, tiering_put.Days);
+                Assert.AreEqual(tiering_get.AccessTier, tiering_put.AccessTier);
+            }
+        }
 
-        [TestCategory("S3")]
         [TestMethod]
-        public void ListBucketIntelligentTiering()
+        public async Task ListBucketIntelligentTiering()
         {
-            var intelligentTieringFilter = new IntelligentTieringFilter()
+            var intelligentTieringFilter = new IntelligentTieringFilter
             {
                 IntelligentTieringFilterPredicate = new IntelligentTieringPrefixPredicate("string")
             };
 
             var putBucketIntelligentTieringConfigurationRequest_1 = GeneratePutRequest("config-1", intelligentTieringFilter);
             var putBucketIntelligentTieringConfigurationRequest_2 = GeneratePutRequest("config-2", intelligentTieringFilter);
+            await Client.PutBucketIntelligentTieringConfigurationAsync(putBucketIntelligentTieringConfigurationRequest_1);
+            await Client.PutBucketIntelligentTieringConfigurationAsync(putBucketIntelligentTieringConfigurationRequest_2);
 
-            Client.PutBucketIntelligentTieringConfiguration(putBucketIntelligentTieringConfigurationRequest_1);
-            Client.PutBucketIntelligentTieringConfiguration(putBucketIntelligentTieringConfigurationRequest_2);
-
-            ListBucketIntelligentTieringConfigurationsRequest listBucketIntelligentTieringConfigurationsRequest = new ListBucketIntelligentTieringConfigurationsRequest()
+            var listResponse = await Client.ListBucketIntelligentTieringConfigurationsAsync(new ListBucketIntelligentTieringConfigurationsRequest
             {
                 BucketName = bucketName
-            };
-
-            var listBucketIntelligentTieringConfigurationsResponse = Client.ListBucketIntelligentTieringConfigurations(listBucketIntelligentTieringConfigurationsRequest);
-            Assert.AreEqual(listBucketIntelligentTieringConfigurationsResponse.IntelligentTieringConfigurationList.Count, 2);
+            });
+            Assert.AreEqual(listResponse.IntelligentTieringConfigurationList.Count, 2);
         }
-
-        [TestCategory("S3")]
+        
         [TestMethod]
-        public void DeleteBucketIntelligentTieringConfigurationTest()
-		{
-            var intelligentTieringFilter = new IntelligentTieringFilter()
+        public async Task DeleteBucketIntelligentTieringConfigurationTest()
+        {
+            var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, new IntelligentTieringFilter
             {
                 IntelligentTieringFilterPredicate = new IntelligentTieringPrefixPredicate("string")
-            };
+            });
+            await Client.PutBucketIntelligentTieringConfigurationAsync(putBucketIntelligentTieringConfigurationRequest);
 
-            var putBucketIntelligentTieringConfigurationRequest = GeneratePutRequest(intelligentTieringId, intelligentTieringFilter);
-            Client.PutBucketIntelligentTieringConfiguration(putBucketIntelligentTieringConfigurationRequest);
-
-            DeleteBucketIntelligentTieringConfigurationRequest deleteBucketIntelligentTieringConfigurationRequest = new DeleteBucketIntelligentTieringConfigurationRequest()
+            await Client.DeleteBucketIntelligentTieringConfigurationAsync(new DeleteBucketIntelligentTieringConfigurationRequest
             {
                 BucketName = bucketName,
                 IntelligentTieringId = intelligentTieringId
-            };
-            var deleteBucketIntelligentTieringConfigurationResponse = Client.DeleteBucketIntelligentTieringConfiguration(deleteBucketIntelligentTieringConfigurationRequest);
+            });
 
-            ListBucketIntelligentTieringConfigurationsRequest listBucketIntelligentTieringConfigurationsRequest = new ListBucketIntelligentTieringConfigurationsRequest()
+            var listResponse = await Client.ListBucketIntelligentTieringConfigurationsAsync(new ListBucketIntelligentTieringConfigurationsRequest
             {
                 BucketName = bucketName
-            };
-
-            var listBucketIntelligentTieringConfigurationsResponse = Client.ListBucketIntelligentTieringConfigurations(listBucketIntelligentTieringConfigurationsRequest);
+            });
 
             if (AWSConfigs.InitializeCollections)
-                Assert.AreEqual(listBucketIntelligentTieringConfigurationsResponse.IntelligentTieringConfigurationList.Count, 0);
+            {
+                Assert.AreEqual(listResponse.IntelligentTieringConfigurationList.Count, 0);
+            }
             else
-                Assert.IsNull(listBucketIntelligentTieringConfigurationsResponse.IntelligentTieringConfigurationList);
+            {
+                Assert.IsNull(listResponse.IntelligentTieringConfigurationList);
+            }
         }
     }
 }
