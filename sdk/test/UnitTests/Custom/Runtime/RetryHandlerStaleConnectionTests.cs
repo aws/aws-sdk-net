@@ -24,15 +24,23 @@ using System.Net.Sockets;
 
 namespace AWSSDK.UnitTests
 {
+    /// <summary>
+    /// Tests for stale connection retry logic in RetryHandler.
+    /// This class uses its own isolated RuntimePipeline to avoid interference with 
+    /// other retry tests (which share a static pipeline via RuntimePipelineTestBase&lt;RetryHandler&gt;).
+    /// </summary>
     [TestClass]
-    public class RetryHandlerStaleConnectionTests : RuntimePipelineTestBase<RetryHandler>
+    public class RetryHandlerStaleConnectionTests : RuntimePipelineTestBase
     {
         const int MAX_RETRIES = 2;
         const int MAX_STALE_CONNECTION_RETRIES = 3;
         
         private static ClientConfig TestConfig;
-
         
+        // Use our own isolated pipeline and tester to avoid sharing with RetryHandlerTests
+        private static MockActionHandler Tester;
+        private static RetryHandler Handler;
+        private static RuntimePipeline IsolatedPipeline;
 
         [ClassInitialize]
         public static void Initialize(TestContext t)
@@ -43,8 +51,13 @@ namespace AWSSDK.UnitTests
                 MaxErrorRetry = MAX_RETRIES,
                 MaxStaleConnectionRetries = MAX_STALE_CONNECTION_RETRIES
             };
+            
+            // Create our own tester and pipeline
+            Tester = new MockActionHandler();
+            IsolatedPipeline = new RuntimePipeline(Tester);
+            
             Handler = new RetryHandler(new DefaultRetryPolicy(TestConfig));
-            RuntimePipeline.AddHandler(Handler);
+            IsolatedPipeline.AddHandler(Handler);
         }
 
         /// <summary>
@@ -68,7 +81,7 @@ namespace AWSSDK.UnitTests
             };
 
             var request = CreateTestContext();
-            RuntimePipeline.InvokeSync(request);
+            IsolatedPipeline.InvokeSync(request);
 
             Assert.AreEqual(2, Tester.CallCount, "Should have made 2 attempts (initial + stale connection retry)");
             Assert.AreEqual(0, request.RequestContext.Retries, "Stale connection retries should not count against MaxErrorRetry");
@@ -92,7 +105,7 @@ namespace AWSSDK.UnitTests
             };
 
             var request = CreateTestContext();
-            RuntimePipeline.InvokeSync(request);
+            IsolatedPipeline.InvokeSync(request);
 
             Assert.AreEqual(2, Tester.CallCount, "Should have made 2 attempts (initial + stale connection retry)");
             Assert.AreEqual(0, request.RequestContext.Retries, "Stale connection retries should not count against MaxErrorRetry");
@@ -116,7 +129,7 @@ namespace AWSSDK.UnitTests
             };
 
             var request = CreateTestContext();
-            RuntimePipeline.InvokeSync(request);
+            IsolatedPipeline.InvokeSync(request);
 
             Assert.AreEqual(2, Tester.CallCount, "Should have made 2 attempts (initial + stale connection retry)");
             Assert.AreEqual(0, request.RequestContext.Retries, "Stale connection retries should not count against MaxErrorRetry");
@@ -141,7 +154,7 @@ namespace AWSSDK.UnitTests
             };
 
             var request = CreateTestContext();
-            RuntimePipeline.InvokeSync(request);
+            IsolatedPipeline.InvokeSync(request);
 
             Assert.AreEqual(2, Tester.CallCount, "Should have made 2 attempts (initial + stale connection retry)");
             Assert.AreEqual(0, request.RequestContext.Retries, "Stale connection retries should not count against MaxErrorRetry");
@@ -165,7 +178,7 @@ namespace AWSSDK.UnitTests
             Utils.AssertExceptionExpected(() =>
             {
                 var request = CreateTestContext();
-                RuntimePipeline.InvokeSync(request);
+                IsolatedPipeline.InvokeSync(request);
             },
             typeof(SocketException));
 
@@ -192,7 +205,7 @@ namespace AWSSDK.UnitTests
             Utils.AssertExceptionExpected(() =>
             {
                 var request = CreateTestContext();
-                RuntimePipeline.InvokeSync(request);
+                IsolatedPipeline.InvokeSync(request);
             },
             typeof(System.IO.IOException));
 
@@ -227,7 +240,7 @@ namespace AWSSDK.UnitTests
             Utils.AssertExceptionExpected(() =>
             {
                 var request = CreateTestContext();
-                RuntimePipeline.InvokeSync(request);
+                IsolatedPipeline.InvokeSync(request);
             },
             typeof(System.IO.IOException));
 
@@ -293,7 +306,7 @@ namespace AWSSDK.UnitTests
             };
 
             var request = CreateTestContext();
-            RuntimePipeline.InvokeSync(request);
+            IsolatedPipeline.InvokeSync(request);
 
             Assert.AreEqual(1, Tester.CallCount, "Should have made only 1 attempt (successful)");
             Assert.AreEqual(0, request.RequestContext.Retries, "Should have 0 retries");
@@ -319,7 +332,7 @@ namespace AWSSDK.UnitTests
             };
 
             var request = CreateTestContext();
-            await RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(request);
+            await IsolatedPipeline.InvokeAsync<AmazonWebServiceResponse>(request);
 
             Assert.AreEqual(2, Tester.CallCount, "Should have made 2 attempts (initial + stale connection retry)");
             Assert.AreEqual(0, request.RequestContext.Retries, "Stale connection retries should not count against MaxErrorRetry");
@@ -344,7 +357,7 @@ namespace AWSSDK.UnitTests
             await Utils.AssertExceptionExpectedAsync(() =>
             {
                 var request = CreateTestContext();
-                return RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(request);
+                return IsolatedPipeline.InvokeAsync<AmazonWebServiceResponse>(request);
             },
             typeof(SocketException));
 
