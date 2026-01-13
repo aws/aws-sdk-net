@@ -450,6 +450,55 @@ public class TestMatrix
     }
 
     /// <summary>
+    /// Generates a matrix varying both part sizes and chunk sizes.
+    /// Useful for finding optimal chunk sizes across different part size scenarios.
+    /// </summary>
+    /// <param name="maxInMemoryParts">Fixed MaxInMemoryParts value</param>
+    /// <param name="concurrentServiceRequests">Fixed ConcurrentServiceRequests value</param>
+    /// <param name="totalParts">Fixed total parts count</param>
+    /// <returns>List of configurations testing all valid part size / chunk size combinations</returns>
+    public static List<SimulationConfig> GeneratePartChunkMatrix(
+        int maxInMemoryParts = 50,
+        int concurrentServiceRequests = 10,
+        int totalParts = 1000)
+    {
+        var configs = new List<SimulationConfig>();
+
+        foreach (var partSize in DefaultPartSizes)
+        foreach (var chunkSize in DefaultChunkSizes)
+        {
+            // Skip invalid combinations (chunk size > part size)
+            if (chunkSize > partSize) continue;
+
+            configs.Add(new SimulationConfig
+            {
+                Name = $"PCM_PS{FormatSize(partSize)}_CS{FormatSize(chunkSize)}",
+                PartSizeBytes = partSize,
+                ChunkSizeBytes = chunkSize,
+                MaxInMemoryParts = maxInMemoryParts,
+                ConcurrentServiceRequests = concurrentServiceRequests,
+                TotalParts = totalParts
+            });
+        }
+
+        return configs;
+    }
+
+    /// <summary>
+    /// Formats a byte size to a human-readable string for config names.
+    /// </summary>
+    private static string FormatSize(long bytes)
+    {
+        if (bytes >= 1024L * 1024 * 1024)
+            return $"{bytes / 1024 / 1024 / 1024}GB";
+        if (bytes >= 1024 * 1024)
+            return $"{bytes / 1024 / 1024}MB";
+        if (bytes >= 1024)
+            return $"{bytes / 1024}KB";
+        return $"{bytes}B";
+    }
+
+    /// <summary>
     /// Generates configs comparing calculated vs fixed chunk sizes.
     /// </summary>
     public static List<SimulationConfig> GenerateDynamicVsFixedComparison()

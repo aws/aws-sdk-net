@@ -209,6 +209,32 @@ optimalCommand.SetHandler(async (InvocationContext ctx) =>
     await RunTestsAsync(TestMatrix.GenerateOptimalChunkAnalysis(), opts, "Optimal Chunk Analysis", showRecommendations: true);
 });
 
+// Part-chunk matrix command - varies both part sizes and chunk sizes with fixed other params
+var partChunkMatrixCommand = new Command("part-chunk-matrix", "Test all part size × chunk size combinations (fixed MaxInMemory, Concurrent, TotalParts)");
+partChunkMatrixCommand.AddOption(maxInMemOption);
+partChunkMatrixCommand.AddOption(concurrentOption);
+partChunkMatrixCommand.AddOption(totalPartsOption);
+partChunkMatrixCommand.SetHandler(async (InvocationContext ctx) =>
+{
+    var opts = GetCommonOptions(ctx, verboseOption, exportCsvOption, maxMemoryGbOption, isolatedOption,
+        modeOption, s3BucketOption, s3KeyOption, s3RegionOption, awsProfileOption, downloadDirOption, keepDownloadsOption);
+    var maxInMem = ctx.ParseResult.GetValueForOption(maxInMemOption);
+    var concurrent = ctx.ParseResult.GetValueForOption(concurrentOption);
+    var totalParts = ctx.ParseResult.GetValueForOption(totalPartsOption);
+    
+    var configs = TestMatrix.GeneratePartChunkMatrix(maxInMem, concurrent, totalParts);
+    
+    Console.WriteLine($"\nPart-Chunk Matrix Parameters:");
+    Console.WriteLine($"  MaxInMemoryParts:         {maxInMem}");
+    Console.WriteLine($"  ConcurrentServiceRequests: {concurrent}");
+    Console.WriteLine($"  TotalParts:               {totalParts}");
+    Console.WriteLine($"  Part Sizes:               5MB, 10MB, 20MB, 50MB, 100MB, 500MB, 1GB, 2GB, 5GB");
+    Console.WriteLine($"  Chunk Sizes:              64KB to 1GB (valid combinations only)");
+    Console.WriteLine($"  Total Configurations:     {configs.Count}");
+    
+    await RunTestsAsync(configs, opts, $"Part-Chunk Matrix (MIM={maxInMem}, CR={concurrent}, TP={totalParts})", showRecommendations: true);
+});
+
 // Full matrix command (warning: can take a long time)
 var fullMatrixCommand = new Command("full-matrix", "Run complete test matrix (warning: slow!)");
 var confirmOption = new Option<bool>("--confirm", "Confirm running full matrix");
@@ -502,6 +528,7 @@ rootCommand.AddCommand(maxInMemSweepCommand);
 rootCommand.AddCommand(vmaLimitCommand);
 rootCommand.AddCommand(compareCommand);
 rootCommand.AddCommand(optimalCommand);
+rootCommand.AddCommand(partChunkMatrixCommand);
 rootCommand.AddCommand(fullMatrixCommand);
 rootCommand.AddCommand(singleCommand);
 rootCommand.AddCommand(calculateCommand);
