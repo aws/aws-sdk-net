@@ -91,6 +91,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             await AmazonS3Util.DeleteS3BucketWithObjectsAsync(_euNorth1Client, _euNorth1BucketName);
             _euNorth1Client.Dispose();
+
+            BaseClean();
         }
 
         [TestMethod]
