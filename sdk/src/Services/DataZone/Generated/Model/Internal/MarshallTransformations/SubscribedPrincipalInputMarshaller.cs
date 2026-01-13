@@ -59,6 +59,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIam())
+            {
+                context.Writer.WritePropertyName("iam");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SubscribedIamPrincipalInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.Iam, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProject())
             {
                 context.Writer.WritePropertyName("project");

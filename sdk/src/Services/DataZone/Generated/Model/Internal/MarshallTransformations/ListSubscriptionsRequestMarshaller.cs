@@ -75,6 +75,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOwningGroupId())
                 request.Parameters.Add("owningGroupId", StringUtils.FromString(publicRequest.OwningGroupId));
             
+            if (publicRequest.IsSetOwningIamPrincipalArn())
+                request.Parameters.Add("owningIamPrincipalArn", StringUtils.FromString(publicRequest.OwningIamPrincipalArn));
+            
             if (publicRequest.IsSetOwningProjectId())
                 request.Parameters.Add("owningProjectId", StringUtils.FromString(publicRequest.OwningProjectId));
             

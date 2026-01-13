@@ -40,6 +40,7 @@ namespace Amazon.DataZone.Model
         private int? _maxResults;
         private string _nextToken;
         private string _owningGroupId;
+        private string _owningIamPrincipalArn;
         private string _owningProjectId;
         private string _owningUserId;
         private SortKey _sortBy;
@@ -146,6 +147,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetOwningGroupId()
         {
             return this._owningGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwningIamPrincipalArn. 
+        /// <para>
+        /// The ARN of the owning IAM principal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string OwningIamPrincipalArn
+        {
+            get { return this._owningIamPrincipalArn; }
+            set { this._owningIamPrincipalArn = value; }
+        }
+
+        // Check to see if OwningIamPrincipalArn property is set
+        internal bool IsSetOwningIamPrincipalArn()
+        {
+            return this._owningIamPrincipalArn != null;
         }
 
         /// <summary>

@@ -132,6 +132,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.Provider = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subscriptionGrantCreationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubscriptionGrantCreationMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("subscriptionTargetConfig", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<SubscriptionTargetForm, SubscriptionTargetFormUnmarshaller>(SubscriptionTargetFormUnmarshaller.Instance);

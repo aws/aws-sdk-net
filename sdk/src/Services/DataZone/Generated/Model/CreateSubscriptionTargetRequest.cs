@@ -43,6 +43,7 @@ namespace Amazon.DataZone.Model
         private string _manageAccessRole;
         private string _name;
         private string _provider;
+        private SubscriptionGrantCreationMode _subscriptionGrantCreationMode;
         private List<SubscriptionTargetForm> _subscriptionTargetConfig = AWSConfigs.InitializeCollections ? new List<SubscriptionTargetForm>() : null;
         private string _type;
 
@@ -195,6 +196,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetProvider()
         {
             return this._provider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionGrantCreationMode. 
+        /// <para>
+        ///  Determines the subscription grant creation mode for this target, defining if grants
+        /// are auto-created upon subscription approval or managed manually. 
+        /// </para>
+        /// </summary>
+        public SubscriptionGrantCreationMode SubscriptionGrantCreationMode
+        {
+            get { return this._subscriptionGrantCreationMode; }
+            set { this._subscriptionGrantCreationMode = value; }
+        }
+
+        // Check to see if SubscriptionGrantCreationMode property is set
+        internal bool IsSetSubscriptionGrantCreationMode()
+        {
+            return this._subscriptionGrantCreationMode != null;
         }
 
         /// <summary>
