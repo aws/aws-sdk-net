@@ -1,3 +1,9 @@
+### 4.0.169.0 (2026-01-13 19:20 UTC)
+* Bedrock (4.0.19.0)
+	* This change will increase TestCase guardContent input size from 1024 to 2028 characters and PolicyBuildDocumentDescription from 2000 to 4000 characters
+* DataZone (4.0.18.0)
+	* Adds support for IAM role subscriptions to Glue table listings via CreateSubscriptionRequest API. Also adds owningIamPrincipalArn filter to List APIs and subscriptionGrantCreationMode parameter to subscription target APIs for controlling grant creation behavior.
+
 ### 4.0.168.0 (2026-01-12 19:24 UTC)
 * Billing (4.0.6.0)
 	* Cost Categories filtering support to BillingView data filter expressions through the new costCategories parameter, enabling users to filter billing views by AWS Cost Categories for more granular cost management and allocation.
