@@ -126,7 +126,7 @@ namespace Amazon.Bedrock.Model
         /// policy generation process.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=2000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4000)]
         public string DocumentDescription
         {
             get { return this._documentDescription; }
