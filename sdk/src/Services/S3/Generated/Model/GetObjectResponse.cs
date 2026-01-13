@@ -42,7 +42,6 @@ namespace Amazon.S3.Model
         private string _checksumSHA1;
         private string _checksumSHA256;
         private ChecksumType _checksumType;
-        private string _contentLanguage;
         private string _contentRange;
         private string _deleteMarker;
         private string _eTag;
@@ -226,24 +225,6 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumType()
         {
             return this._checksumType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContentLanguage. 
-        /// <para>
-        /// The language the content is in.
-        /// </para>
-        /// </summary>
-        public string ContentLanguage
-        {
-            get { return this.Headers.ContentLanguage; }
-            set { this.Headers.ContentLanguage = value; }
-        }
-
-        // Check to see if ContentLanguage property is set
-        internal bool IsSetContentLanguage()
-        {
-            return this._contentLanguage != null;
         }
 
         /// <summary>

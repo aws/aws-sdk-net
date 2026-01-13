@@ -2641,7 +2641,8 @@
             "ContentDisposition",
             "CacheControl",
             "ContentEncoding",
-            "ContentType"
+            "ContentType",
+            "ContentLanguage"
         ]
     },
     "unwrapXmlOutput":{

@@ -113,6 +113,19 @@ namespace Amazon.S3.Model
 
             return this._serverSideEncryptionCustomerMethod;
         }
+
+        /// <summary>
+        /// Gets and sets the property ContentLanguage. 
+        /// <para>
+        /// The language the content is in.
+        /// </para>
+        /// </summary>
+
+        public string ContentLanguage
+        {
+            get { return this.Headers.ContentLanguage; }
+            set { this.Headers.ContentLanguage = value; }
+        }
 #if BCL
 
         /// <summary>
