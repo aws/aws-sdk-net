@@ -15,10 +15,12 @@
 ## Breaking Changes Assessment
 
 1. Identify all breaking changes including the following details:
-    a. What functionality was changed?
-    b. How will this impact customers?
-    c. Why does this need to be a breaking change and what are the most notable non-breaking alternatives?
-    d. Are best practices being followed?
+    * What functionality was changed?
+    * How will this impact customers?
+    * Why does this need to be a breaking change and what are the most notable non-breaking alternatives?
+    * Are best practices being followed?
+    * How have you tested this breaking change?
+2. Has a senior/+ engineer been assigned to review this PR?
 
 ## Screenshots (if appropriate)
 
