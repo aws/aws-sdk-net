@@ -297,6 +297,8 @@ namespace SDKDocGenerator.Writers
 
             writer.WriteLine("<td>");
             writer.WriteLine(propertyInfo.Name);
+            // Add inline platform badge if property is platform-restricted
+            AddPropertyPlatformBadge(writer, propertyInfo);
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
@@ -320,6 +322,70 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("</td>");
 
             writer.WriteLine("</tr>");
+        }
+
+        /// <summary>
+        /// Adds a small inline platform badge for properties that are only available on specific platforms.
+        /// This helps users identify platform-restricted properties at a glance in the class property list.
+        /// </summary>
+        void AddPropertyPlatformBadge(TextWriter writer, PropertyInfoWrapper propertyInfo)
+        {
+            // For inherited properties, we need to look up docs from the declaring type's service,
+            // not the current service. E.g., ReadWriteTimeout is declared in Core's ClientConfig,
+            // not in BedrockRuntimeConfig.
+            var declaringServiceName = GetServiceNameFromAssembly(propertyInfo.DeclaringType.ManifestModuleName);
+
+            var ndoc472 = NDocUtilities.GetDocumentationInstance(declaringServiceName, "net472");
+            var ndocNet80 = NDocUtilities.GetDocumentationInstance(declaringServiceName, "net8.0");
+
+            // If neither platform's docs are loaded, we can't determine availability
+            if (ndoc472 == null && ndocNet80 == null)
+                return;
+
+            var docs472 = ndoc472 != null
+                ? NDocUtilities.FindDocumentation(ndoc472, propertyInfo, TypeProvider)
+                : null;
+            var docsNet80 = ndocNet80 != null
+                ? NDocUtilities.FindDocumentation(ndocNet80, propertyInfo, TypeProvider)
+                : null;
+
+            // If no docs found in either platform, assume available everywhere
+            if (docs472 == null && docsNet80 == null)
+                return;
+
+            bool availableNet472 = docs472 != null;
+            bool availableNet8 = docsNet80 != null;
+
+            // If available on both platforms, no badge needed
+            if (availableNet472 && availableNet8)
+                return;
+
+            if (availableNet472 && !availableNet8)
+            {
+                writer.WriteLine("<span class=\"platform-badge-inline net472-only\" title=\".NET Framework 4.7.2 only\">.NET FW</span>");
+            }
+            else if (!availableNet472 && availableNet8)
+            {
+                writer.WriteLine("<span class=\"platform-badge-inline net8-only\" title=\".NET 8.0+ only\">.NET 8+</span>");
+            }
+        }
+
+        /// <summary>
+        /// Extracts the service name from an assembly module name.
+        /// E.g., "AWSSDK.Core.dll" -> "Core", "AWSSDK.BedrockRuntime.dll" -> "BedrockRuntime"
+        /// </summary>
+        private static string GetServiceNameFromAssembly(string manifestModuleName)
+        {
+            // Format: AWSSDK.ServiceName.dll
+            const string prefix = "AWSSDK.";
+            const string suffix = ".dll";
+
+            if (manifestModuleName.StartsWith(prefix) && manifestModuleName.EndsWith(suffix))
+            {
+                return manifestModuleName.Substring(prefix.Length,
+                    manifestModuleName.Length - prefix.Length - suffix.Length);
+            }
+            return manifestModuleName;
         }
 
         void AddMethods(TextWriter writer)

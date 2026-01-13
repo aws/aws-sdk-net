@@ -252,6 +252,20 @@ namespace SDKDocGenerator
         }
 
         /// <summary>
+        /// Pre-loads XML documentation for all platforms without generating pages.
+        /// This is used to ensure Core documentation is available when service types
+        /// inherit from Core types and need to look up inherited member documentation.
+        /// </summary>
+        public void PreloadDocumentation()
+        {
+            Trace.WriteLine($"\tpre-loading documentation for {ServiceName}");
+            foreach (var platform in AllPlatforms)
+            {
+                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
+            }
+        }
+
+        /// <summary>
         /// Generates the documentation for the artifacts represented by this
         /// manifest, starting at the namespace(s) in the assembly and working
         /// down through the type hierarchy. Types that exist in the deferable

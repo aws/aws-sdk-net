@@ -109,15 +109,31 @@ namespace SDKDocGenerator
             GenerationManifest coreManifest = null;
             DeferredTypesProvider deferredTypes = new DeferredTypesProvider(null);
 
-            // Generate the Code Examples fragments for all services            
+            // Generate the Code Examples fragments for all services
             ExampleMetadataParser.GenerateExampleFragments(options.ExampleMetaJson, options.ExamplesErrorFile);
 
-            // Process the service manifests
+            // Find Core manifest first - we need to pre-load its documentation
+            // because service types may inherit from Core types and need to look up
+            // documentation for inherited members (e.g., ReadWriteTimeout on ClientConfig)
             foreach (var m in manifests)
             {
                 if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
                 {
                     coreManifest = m;
+                    break;
+                }
+            }
+
+            // Pre-load Core documentation for all platforms before generating service docs
+            if (coreManifest != null)
+            {
+                coreManifest.PreloadDocumentation();
+            }
+
+            foreach (var m in manifests)
+            {
+                if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
+                {
                     continue;
                 }
 
@@ -133,6 +149,15 @@ namespace SDKDocGenerator
             var platformSubfolders = Directory.GetDirectories(Options.SDKAssembliesRoot, "*", SearchOption.TopDirectoryOnly);
             var availablePlatforms = platformSubfolders.Select(Path.GetFileName).ToList();
             var supplementalManifests = ConstructSupplementalManifests(manifests, availablePlatforms);
+
+            // Re-load Core documentation before supplemental processing.
+            // Supplemental processing regenerates class pages which may contain properties
+            // inherited from Core (e.g., ReadWriteTimeout). Without Core docs loaded,
+            // platform availability badges won't be correctly generated.
+            if (coreManifest != null)
+            {
+                coreManifest.PreloadDocumentation();
+            }
 
             foreach (var supManifest in supplementalManifests)
             {
