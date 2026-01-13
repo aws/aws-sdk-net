@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class MultiRegionAccessPointsTests : TestBase<AmazonS3Client>
     {
         private static string _bucketName;
@@ -34,34 +35,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void PutObjectUnchunkedAndUnsigned()
+        public async Task PutObjectUnchunkedAndUnsigned()
         {
-            S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-unchunked-unsigned", false, true);
+            await S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-unchunked-unsigned", false, true);
         }
 
         [TestMethod]
-        public void PutObjectUnchunked()
+        public async Task PutObjectUnchunked()
         {
-            S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-unchunked", false);
+            await S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-unchunked", false);
         }
 
         [TestMethod]
-        public void PutObjectChunked()
+        public async Task PutObjectChunked()
         {
-            S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-chunked");
+            await S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-chunked");
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestPresigingOver7DaysThrowsException()
         {
-            _ = Client.GetPreSignedURL(new GetPreSignedUrlRequest
-            {
-                BucketName = _mrapArn,
-                Key = "dotnet-sdk-test",
-                Verb = HttpVerb.GET,
-                Expires = DateTime.UtcNow.AddDays(8)    // SigV4a limit is also 7 days
-            });
+            Assert.ThrowsException<ArgumentException>(() => 
+                Client.GetPreSignedURL(new GetPreSignedUrlRequest
+                {
+                    BucketName = _mrapArn,
+                    Key = "dotnet-sdk-test",
+                    Verb = HttpVerb.GET,
+                    Expires = DateTime.UtcNow.AddDays(8) // SigV4a limit is also 7 days
+                })
+            );
         }
 
         // Copied from KeyNameTests.AwkwardKeyNameBases, but as DataRows for separate results
@@ -72,11 +74,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [DataRow(@"ObjectWith!InKeynÄme")]
         [DataRow(@"ObjectWith$InKeyname.Ext")]
         [DataRow(@"ObjectWith!and?\+forgood:measureThis=And&InKeynÄme")]
-        [TestMethod]
-        public void PutAndGetQuestionableKeys(string keyVariant)
+        [DataTestMethod]
+        public async Task PutAndGetQuestionableKeys(string keyVariant)
         {
             var keyName = "dotnet-sdk-test-" + keyVariant;
-            S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, keyName, false);
+            await S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, keyName, false);
         }
     }
 }

@@ -234,12 +234,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
-        public static void WaitForObject(IAmazonS3 client, string bucketName, string key, int maxSeconds)
-        {
-            var sleeper = UtilityMethods.ListSleeper.Create();
-            UtilityMethods.WaitUntilSuccess(() => { client.GetObject(bucketName, key); }, sleeper, maxSeconds);
-        }
-
         /// <summary>
         /// Gets a long-lived S3 Multi-Region Access Point for running integration tests against if
         /// if exists in the current account. If not, creates it and waits for it to be ready.
@@ -482,11 +476,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <param name="keyName">Object key</param>
         /// <param name="useChunkEncoding">Whether to use chunked encoding for the PutObject request</param>
         /// <param name="disablePayloadSigning">Whether to disable SigV4/V4a payload signing for the PutObject request</param>
-        internal static void PutAndGetObjectTestHelper(IAmazonS3 s3Client, string bucketName, string keyName, bool useChunkEncoding = true, bool disablePayloadSigning = false)
+        internal static async Task PutAndGetObjectTestHelper(IAmazonS3 s3Client, string bucketName, string keyName, bool useChunkEncoding = true, bool disablePayloadSigning = false)
         {
             const string testContent = "Some stuff to write as content";
 
-            s3Client.PutObject(new PutObjectRequest
+            await s3Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = keyName,
@@ -495,7 +489,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DisablePayloadSigning = disablePayloadSigning
             });
 
-            var response = s3Client.GetObject(new GetObjectRequest
+            var response = await s3Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = keyName
@@ -503,11 +497,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var s = new StreamReader(response.ResponseStream))
             {
-                var responseContent = s.ReadToEnd();
+                var responseContent = await s.ReadToEndAsync();
                 Assert.AreEqual(testContent, responseContent);
             }
 
-            var presignedUrl = s3Client.GetPreSignedURL(new GetPreSignedUrlRequest
+            var presignedUrl = await s3Client.GetPreSignedURLAsync(new GetPreSignedUrlRequest
             {
                 BucketName = bucketName,
                 Key = keyName,
@@ -515,11 +509,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Expires = DateTime.UtcNow + TimeSpan.FromDays(5)
             });
 
-            var httpRequest = HttpWebRequest.Create(presignedUrl);
-            using (var httpResponse = httpRequest.GetResponse())
+            var httpRequest = WebRequest.Create(presignedUrl);
+            using (var httpResponse = await httpRequest.GetResponseAsync())
             using (var reader = new StreamReader(httpResponse.GetResponseStream()))
             {
-                var content = reader.ReadToEnd();
+                var content = await reader.ReadToEndAsync();
                 Assert.AreEqual(testContent, content);
             }
         }

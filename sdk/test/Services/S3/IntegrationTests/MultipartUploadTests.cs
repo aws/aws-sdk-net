@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class MultipartUploadTests : TestBase<AmazonS3Client>
     {
         private static string bucketName;
@@ -30,27 +31,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// https://github.com/aws/aws-sdk-net/issues/3971 
         /// </summary>
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestInitiateMultipartUploadWithNoACL()
+        public async Task TestInitiateMultipartUploadWithNoACL()
         {
-            var initMpuResponse = Client.InitiateMultipartUpload(new InitiateMultipartUploadRequest
+            var initMpuResponse = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
             {
                 BucketName = bucketName,
                 Key = "test-mpu",
                 StorageClass = S3StorageClass.Standard,
                 CannedACL = S3CannedACL.NoACL
             });
-            Assert.AreEqual<HttpStatusCode>(initMpuResponse.HttpStatusCode, HttpStatusCode.OK);
+            Assert.AreEqual(initMpuResponse.HttpStatusCode, HttpStatusCode.OK);
+            
             if (initMpuResponse.UploadId != null)
             {
-                Client.AbortMultipartUpload(new AbortMultipartUploadRequest
+                await Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = "test-mpu",
                     UploadId = initMpuResponse.UploadId
                 });
             }
-
         }
     }
 }

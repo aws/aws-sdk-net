@@ -162,5 +162,41 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("file-name", parsed.Key);
             Assert.AreEqual(RegionEndpoint.USWest2, parsed.Region);
         }
+
+        // https://github.com/aws/aws-sdk-net/issues/200 (and 197), 3rd-party
+        // storage providers compatible with S3 should not be included
+        // in the test to use Signature V4
+        [TestMethod]
+        public void TestNonS3EndpointDetection()
+        {
+            string[] thirdPartyProviderUriExamples =
+            {
+                "http://storage.googleapis.com",
+                "http://bucket.storage.googleapis.com",
+                "http://s3.mycompany.com",
+                "http://storage.s3.company.com"
+            };
+
+            string[] s3UriExamples =
+            {
+                "http://s3.amazonaws.com",
+                "http://s3-external-1.amazonaws.com",
+                "http://s3-us-west-2.amazonaws.com",
+                "http://bucketname.s3-us-west-2.amazonaws.com",
+                "http://s3.eu-central-1.amazonaws.com",
+                "http://bucketname.s3.eu-central-1.amazonaws.com",
+                "http://s3.cn-north-1.amazonaws.com.cn",
+            };
+
+            foreach (var uri in thirdPartyProviderUriExamples)
+            {
+                Assert.IsFalse(AmazonS3Uri.IsAmazonS3Endpoint(uri));
+            }
+
+            foreach (var uri in s3UriExamples)
+            {
+                Assert.IsTrue(AmazonS3Uri.IsAmazonS3Endpoint(uri));
+            }
+        }
     }
 }
