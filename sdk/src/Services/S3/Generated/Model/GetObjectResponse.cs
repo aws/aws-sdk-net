@@ -236,8 +236,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public string ContentLanguage
         {
-            get { return this._contentLanguage; }
-            set { this._contentLanguage = value; }
+            get { return this.Headers.ContentLanguage; }
+            set { this.Headers.ContentLanguage = value; }
         }
 
         // Check to see if ContentLanguage property is set
