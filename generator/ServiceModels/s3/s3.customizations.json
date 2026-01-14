@@ -2429,9 +2429,6 @@
             "IndexDocumentSuffix",
             "ErrorDocument",
             "RoutingRules"
-        ],
-        "GetObjectTorrentRequest":[
-            "Key"
         ]
     },
     "unwrapXmlOutput":{
