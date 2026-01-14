@@ -51,6 +51,26 @@ namespace Amazon.S3.Transfer
         private string _ifNoneMatch;
         private string _ifMatch;
         private long? _mpuObjectSize;
+        private string _expires;
+
+        /// <summary>
+        /// Gets and sets the property Expires. 
+        /// <para>
+        /// The date and time at which the object is no longer cacheable. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
+        /// </para>
+        /// </summary>
+        public string Expires
+        {
+            get { return this._expires; }
+            set { this._expires = value; }
+        }
+
+        // Check to see if Expires property is set
+        internal bool IsSetExpires()
+        {
+            return this._expires != null;
+        }
 
         private Stream inputStream;
 

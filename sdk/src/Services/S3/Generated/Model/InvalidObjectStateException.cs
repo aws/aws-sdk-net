@@ -52,6 +52,13 @@ namespace Amazon.S3.Model
         private S3StorageClass _storageClass;
 
         /// <summary>
+        /// Default constructor for InvalidObjectStateException
+        /// message.
+        /// </summary>
+        public InvalidObjectStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidObjectStateException with the specified error
         /// message.
         /// </summary>
