@@ -21,10 +21,8 @@ using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Tests for StorageInsightsInventory
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class StorageInsightsInventoryTests : TestBase<AmazonS3Client>
     {
         public static string bucketName;
@@ -41,16 +39,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
         }
 
-        [TestCategory("S3")]
         [TestMethod]
-        public void BucketAnalyticsConfigurationsTestWithSigV4()
+        public async Task BucketAnalyticsConfigurationsTestWithSigV4()
         {
-            BucketInventoryConfigurationsAndFilterTest();
-        }
-
-        public void BucketInventoryConfigurationsAndFilterTest()
-        {
-            PutBucketInventoryConfigurationRequest putBucketInventoryConfigurationRequest = new PutBucketInventoryConfigurationRequest()
+            var putBucketInventoryConfigurationRequest = new PutBucketInventoryConfigurationRequest
             {
                 BucketName = bucketName,
                 InventoryId = "configId",
@@ -67,52 +59,52 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         }
                     },
                     IsEnabled = true,
-                    InventoryFilter = new InventoryFilter()
+                    InventoryFilter = new InventoryFilter
                     {
                         InventoryFilterPredicate = new InventoryPrefixPredicate("string")
                     },
                     InventoryId = "configId",
                     IncludedObjectVersions = InventoryIncludedObjectVersions.All,
-                    InventoryOptionalFields = new List<InventoryOptionalField>{InventoryOptionalField.Size,
-                                                                               InventoryOptionalField.LastModifiedDate,
-                                                                               InventoryOptionalField.StorageClass,
-                                                                               InventoryOptionalField.ETag,
-                                                                               InventoryOptionalField.IsMultipartUploaded,
-                                                                               InventoryOptionalField.ReplicationStatus,
-                                                                               InventoryOptionalField.EncryptionStatus,
-                                                                               InventoryOptionalField.ObjectLockRetainUntilDate,
-                                                                               InventoryOptionalField.ObjectLockMode,
-                                                                               InventoryOptionalField.ObjectLockLegalHoldStatus,
-                                                                               },
+                    InventoryOptionalFields = new List<InventoryOptionalField>
+                    {
+                        InventoryOptionalField.Size,
+                        InventoryOptionalField.LastModifiedDate,
+                        InventoryOptionalField.StorageClass,
+                        InventoryOptionalField.ETag,
+                        InventoryOptionalField.IsMultipartUploaded,
+                        InventoryOptionalField.ReplicationStatus,
+                        InventoryOptionalField.EncryptionStatus,
+                        InventoryOptionalField.ObjectLockRetainUntilDate,
+                        InventoryOptionalField.ObjectLockMode,
+                        InventoryOptionalField.ObjectLockLegalHoldStatus,
+                    },
                     Schedule = new InventorySchedule
                     {
                         Frequency = InventoryFrequency.Daily
                     }
                 }
             };
-            var putBucketInventoryConfigurationResponse = Client.PutBucketInventoryConfiguration(putBucketInventoryConfigurationRequest);
 
-            GetBucketInventoryConfigurationRequest getBucketInventoryConfigurationRequest = new GetBucketInventoryConfigurationRequest()
+            var putBucketInventoryConfigurationResponse = await Client.PutBucketInventoryConfigurationAsync(putBucketInventoryConfigurationRequest);
+
+            var getBucketInventoryConfigurationRequest = new GetBucketInventoryConfigurationRequest
             {
                 BucketName = bucketName,
                 InventoryId = "configId"
             };
 
-            var getBucketInventoryConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            var getBucketInventoryConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketInventoryConfiguration(getBucketInventoryConfigurationRequest);
+                var res = await Client.GetBucketInventoryConfigurationAsync(getBucketInventoryConfigurationRequest);
                 return res.InventoryConfiguration?.InventoryId == putBucketInventoryConfigurationRequest.InventoryConfiguration.InventoryId ? res : null;
             });
 
             var getInventoryConfiguration = getBucketInventoryConfigurationResponse.InventoryConfiguration;
             var putInventoryConfiguration = putBucketInventoryConfigurationRequest.InventoryConfiguration;
             GetBucketInventoryAndValidate(getInventoryConfiguration, putInventoryConfiguration);
-
-            ListBucketInventory();
-
-            DeleteInventoryAndValidate();
+            await DeleteInventoryAndValidate();
         }
-
+        
         private static void GetBucketInventoryAndValidate(InventoryConfiguration getInventoryConfiguration, InventoryConfiguration putInventoryConfiguration)
         {
             Assert.AreEqual(getInventoryConfiguration.InventoryId, putInventoryConfiguration.InventoryId);
@@ -123,27 +115,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             CollectionAssert.AreEqual(getInventoryConfiguration.InventoryOptionalFields, putInventoryConfiguration.InventoryOptionalFields);
         }
 
-        private static void ListBucketInventory()
+        private static async Task DeleteInventoryAndValidate()
         {
-            ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest = new ListBucketInventoryConfigurationsRequest()
-            {
-                BucketName = bucketName
-            };
-
-            var listBucketInventoryConfigurationResponse = Client.ListBucketInventoryConfigurations(listBucketInventoryConfigurationsRequest);
-        }
-
-        private static void DeleteInventoryAndValidate()
-        {
-            DeleteBucketInventoryConfigurationRequest deleteBucketInventoryConfigurationRequest = new DeleteBucketInventoryConfigurationRequest()
+            await Client.DeleteBucketInventoryConfigurationAsync(new DeleteBucketInventoryConfigurationRequest
             {
                 BucketName = bucketName,
                 InventoryId = "configId"
-            };
+            });
 
-            var deleteBucketInventoryConfigurationResponse = Client.DeleteBucketInventoryConfiguration(deleteBucketInventoryConfigurationRequest);
-
-            var response = Client.ListObjects(new ListObjectsRequest()
+            var response = await Client.ListObjectsAsync(new ListObjectsRequest
             {
                 BucketName = bucketName
             });
