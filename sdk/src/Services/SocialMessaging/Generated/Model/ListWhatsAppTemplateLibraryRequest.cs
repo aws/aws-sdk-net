@@ -65,7 +65,7 @@ namespace Amazon.SocialMessaging.Model
         /// The ID of the WhatsApp Business Account to list library templates for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=115)]
         public string Id
         {
             get { return this._id; }

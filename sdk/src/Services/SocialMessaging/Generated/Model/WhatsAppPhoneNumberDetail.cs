@@ -163,7 +163,7 @@ namespace Amazon.SocialMessaging.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=115)]
         public string PhoneNumberId
         {
             get { return this._phoneNumberId; }

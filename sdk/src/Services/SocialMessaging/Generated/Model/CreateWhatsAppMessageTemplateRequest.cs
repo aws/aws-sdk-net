@@ -32,6 +32,13 @@ namespace Amazon.SocialMessaging.Model
     /// <summary>
     /// Container for the parameters to the CreateWhatsAppMessageTemplate operation.
     /// Creates a new WhatsApp message template from a custom definition.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Web Services End User Messaging Social does not store any WhatsApp message
+    /// template content.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateWhatsAppMessageTemplateRequest : AmazonSocialMessagingRequest
     {
@@ -44,7 +51,7 @@ namespace Amazon.SocialMessaging.Model
         /// The ID of the WhatsApp Business Account to associate with this template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=115)]
         public string Id
         {
             get { return this._id; }

@@ -101,7 +101,7 @@ namespace Amazon.SocialMessaging.Model
         /// The Amazon Resource Name (ARN) of the WhatsApp Business Account ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=115)]
         public string WabaId
         {
             get { return this._wabaId; }

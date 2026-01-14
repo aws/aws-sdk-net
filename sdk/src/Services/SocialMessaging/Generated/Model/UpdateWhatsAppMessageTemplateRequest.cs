@@ -35,10 +35,30 @@ namespace Amazon.SocialMessaging.Model
     /// </summary>
     public partial class UpdateWhatsAppMessageTemplateRequest : AmazonSocialMessagingRequest
     {
+        private bool? _ctaUrlLinkTrackingOptedOut;
         private string _id;
         private string _metaTemplateId;
+        private string _parameterFormat;
         private string _templateCategory;
         private MemoryStream _templateComponents;
+
+        /// <summary>
+        /// Gets and sets the property CtaUrlLinkTrackingOptedOut. 
+        /// <para>
+        /// When true, disables click tracking for call-to-action URL buttons in the template.
+        /// </para>
+        /// </summary>
+        public bool CtaUrlLinkTrackingOptedOut
+        {
+            get { return this._ctaUrlLinkTrackingOptedOut.GetValueOrDefault(); }
+            set { this._ctaUrlLinkTrackingOptedOut = value; }
+        }
+
+        // Check to see if CtaUrlLinkTrackingOptedOut property is set
+        internal bool IsSetCtaUrlLinkTrackingOptedOut()
+        {
+            return this._ctaUrlLinkTrackingOptedOut.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -46,7 +66,7 @@ namespace Amazon.SocialMessaging.Model
         /// The ID of the WhatsApp Business Account associated with this template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=115)]
         public string Id
         {
             get { return this._id; }
@@ -76,6 +96,26 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetMetaTemplateId()
         {
             return this._metaTemplateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterFormat. 
+        /// <para>
+        /// The format specification for parameters in the template, this can be either 'named'
+        /// or 'positional'.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=15)]
+        public string ParameterFormat
+        {
+            get { return this._parameterFormat; }
+            set { this._parameterFormat = value; }
+        }
+
+        // Check to see if ParameterFormat property is set
+        internal bool IsSetParameterFormat()
+        {
+            return this._parameterFormat != null;
         }
 
         /// <summary>

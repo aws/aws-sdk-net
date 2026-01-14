@@ -35,6 +35,7 @@ namespace Amazon.SocialMessaging.Model
     public partial class MetaLibraryTemplateDefinition
     {
         private string _templateBody;
+        private List<string> _templateBodyExampleParams = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<LibraryTemplateButtonList> _templateButtons = AWSConfigs.InitializeCollections ? new List<LibraryTemplateButtonList>() : null;
         private string _templateCategory;
         private string _templateHeader;
@@ -62,6 +63,25 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetTemplateBody()
         {
             return this._templateBody != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateBodyExampleParams. 
+        /// <para>
+        /// Example parameter values for the template body, used to demonstrate how dynamic content
+        /// appears in the template.
+        /// </para>
+        /// </summary>
+        public List<string> TemplateBodyExampleParams
+        {
+            get { return this._templateBodyExampleParams; }
+            set { this._templateBodyExampleParams = value; }
+        }
+
+        // Check to see if TemplateBodyExampleParams property is set
+        internal bool IsSetTemplateBodyExampleParams()
+        {
+            return this._templateBodyExampleParams != null && (this._templateBodyExampleParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
