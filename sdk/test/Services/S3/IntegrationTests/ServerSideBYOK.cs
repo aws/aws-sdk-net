@@ -1,33 +1,39 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
-using Amazon.S3;
+﻿using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
 using Amazon.S3.Transfer;
-using System.Security.Cryptography;
+using Amazon.S3.Util;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
 using ThirdParty.MD5;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class ServerSideBYOK : TestBase<AmazonS3Client>
     {
         private const string key = "Encrypted|Object.png";
+        private static string bucketName;
+        private static readonly MD5Managed md5 = new MD5Managed();
 
-        [ClassCleanup]
-        public static void Cleanup()
+        [ClassInitialize]
+        public static async Task Initialize(TestContext testContext)
         {
-            BaseClean();
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
         }
 
-        //internal static string ComputeEncodedMD5FromEncodedString(string base64EncodedString)
-        private static MD5Managed md5 = new MD5Managed();
+        [ClassCleanup]
+        public static async Task ClassCleanup()
+        {
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
+            BaseClean();
+        }
+        
         private static string ComputeEncodedMD5FromEncodedString(string base64EncodedString)
         {
             var unencodedValue = Convert.FromBase64String(base64EncodedString);
@@ -36,204 +42,157 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return encodedMD5;
         }
 
-        private static AmazonS3Client CreateHttpClient()
-        {
-            var config = new AmazonS3Config { UseHttp = true };
-            var client = new AmazonS3Client(config);
-
-            return client;
-        }
-
+        private static AmazonS3Client CreateHttpClient() => new AmazonS3Client(new AmazonS3Config { UseHttp = true });
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void ServerSideEncryptionBYOKPutAndGet()
+        public async Task ServerSideEncryptionBYOKPutAndGet()
         {
-            var bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            Aes aesEncryption = Aes.Create();
+            aesEncryption.KeySize = 256;
+            aesEncryption.GenerateKey();
+            string base64Key = Convert.ToBase64String(aesEncryption.Key);
+            string base64KeyMd5 = ComputeEncodedMD5FromEncodedString(base64Key);
 
-            try
+            var putRequest = new PutObjectRequest
             {
-                Aes aesEncryption = Aes.Create();
-                aesEncryption.KeySize = 256;
-                aesEncryption.GenerateKey();
-                string base64Key = Convert.ToBase64String(aesEncryption.Key);
-                string base64KeyMd5 = ComputeEncodedMD5FromEncodedString(base64Key);
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = "The Data To Encrypt in S3",
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key,
+                ServerSideEncryptionCustomerProvidedKeyMD5 = base64KeyMd5
+            };
+            await Client.PutObjectAsync(putRequest);
 
-                PutObjectRequest putRequest = new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ContentBody = "The Data To Encrypt in S3",
+            var getObjectMetadataRequest = new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key,
+                ServerSideEncryptionCustomerProvidedKeyMD5 = base64KeyMd5
+            };
+            var getObjectMetadataResponse = await Client.GetObjectMetadataAsync(getObjectMetadataRequest);
+            Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getObjectMetadataResponse.ServerSideEncryptionCustomerMethod);
 
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key,
-                    ServerSideEncryptionCustomerProvidedKeyMD5 = base64KeyMd5
-                };
-
-                Client.PutObject(putRequest);
-
-                GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key,
-                    ServerSideEncryptionCustomerProvidedKeyMD5 = base64KeyMd5
-                };
-
-                GetObjectMetadataResponse getObjectMetadataResponse = Client.GetObjectMetadata(getObjectMetadataRequest);
-                Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getObjectMetadataResponse.ServerSideEncryptionCustomerMethod);
-
-                GetObjectRequest getObjectRequest = new GetObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key,
-                    ServerSideEncryptionCustomerProvidedKeyMD5 = base64KeyMd5
-                };
-
-                using (GetObjectResponse getResponse = Client.GetObject(getObjectRequest))
-                using (StreamReader reader = new StreamReader(getResponse.ResponseStream))
-                {
-                    string content = reader.ReadToEnd();
-                    Assert.AreEqual(putRequest.ContentBody, content);
-                    Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getResponse.ServerSideEncryptionCustomerMethod);
-                }
-
-                GetPreSignedUrlRequest getPresignedUrlRequest = new GetPreSignedUrlRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    Expires = DateTime.UtcNow.AddMinutes(5)
-                };
-                var url = Client.GetPreSignedURL(getPresignedUrlRequest);
-                var webRequest = HttpWebRequest.Create(url);
-                webRequest.Headers.Add("x-amz-server-side-encryption-customer-algorithm", "AES256");
-                webRequest.Headers.Add("x-amz-server-side-encryption-customer-key", base64Key);
-                webRequest.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", base64KeyMd5);
-
-                using (var response = webRequest.GetResponse())
-                using (var reader = new StreamReader(response.GetResponseStream()))
-                {
-                    var contents = reader.ReadToEnd();
-                    Assert.AreEqual(putRequest.ContentBody, contents);
-                }
-
-                aesEncryption.GenerateKey();
-                string copyBase64Key = Convert.ToBase64String(aesEncryption.Key);
-
-                CopyObjectRequest copyRequest = new CopyObjectRequest
-                {
-                    SourceBucket = bucketName,
-                    SourceKey = key,
-                    DestinationBucket = bucketName,
-                    DestinationKey = "EncryptedObject_Copy",
-
-                    CopySourceServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    CopySourceServerSideEncryptionCustomerProvidedKey = base64Key,
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = copyBase64Key
-                };
-                Client.CopyObject(copyRequest);
-
-                getObjectMetadataRequest = new GetObjectMetadataRequest
-                {
-                    BucketName = bucketName,
-                    Key = "EncryptedObject_Copy",
-
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = copyBase64Key
-                };
-
-                getObjectMetadataResponse = Client.GetObjectMetadata(getObjectMetadataRequest);
-                Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getObjectMetadataResponse.ServerSideEncryptionCustomerMethod);
-
-                // Test calls against HTTP client, some should fail on the client
-                using (var httpClient = CreateHttpClient())
-                {
-                    getObjectMetadataRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.None;
-                    getObjectMetadataRequest.ServerSideEncryptionCustomerProvidedKey = null;
-                    AssertExtensions.ExpectException(() =>
-                        httpClient.GetObjectMetadata(getObjectMetadataRequest), typeof(AmazonS3Exception));
-
-                    getObjectMetadataRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
-                    AssertExtensions.ExpectException(() =>
-                        httpClient.GetObjectMetadata(getObjectMetadataRequest), typeof(AmazonS3Exception));
-
-                    getObjectMetadataRequest.ServerSideEncryptionCustomerProvidedKey = copyBase64Key;
-                    AssertExtensions.ExpectException(() =>
-                        httpClient.GetObjectMetadata(getObjectMetadataRequest), typeof(AmazonS3Exception));
-
-                    url = httpClient.GetPreSignedURL(getPresignedUrlRequest);
-                    Assert.IsFalse(string.IsNullOrEmpty(url));
-                }
+            var getObjectRequest = new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key,
+                ServerSideEncryptionCustomerProvidedKeyMD5 = base64KeyMd5
+            };
+            using (GetObjectResponse getResponse = await Client.GetObjectAsync(getObjectRequest))
+            using (StreamReader reader = new StreamReader(getResponse.ResponseStream))
+            {
+                string content = await reader.ReadToEndAsync();
+                Assert.AreEqual(putRequest.ContentBody, content);
+                Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getResponse.ServerSideEncryptionCustomerMethod);
             }
-            finally
+
+            var getPresignedUrlRequest = new GetPreSignedUrlRequest
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+                BucketName = bucketName,
+                Key = key,
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                Expires = DateTime.UtcNow.AddMinutes(5)
+            };
+            var url = await Client.GetPreSignedURLAsync(getPresignedUrlRequest);
+            var webRequest = WebRequest.Create(url);
+            webRequest.Headers.Add("x-amz-server-side-encryption-customer-algorithm", "AES256");
+            webRequest.Headers.Add("x-amz-server-side-encryption-customer-key", base64Key);
+            webRequest.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", base64KeyMd5);
+
+            using (var response = await webRequest.GetResponseAsync())
+            using (var reader = new StreamReader(response.GetResponseStream()))
+            {
+                var contents = await reader.ReadToEndAsync();
+                Assert.AreEqual(putRequest.ContentBody, contents);
+            }
+
+            aesEncryption.GenerateKey();
+            string copyBase64Key = Convert.ToBase64String(aesEncryption.Key);
+            await Client.CopyObjectAsync(new CopyObjectRequest
+            {
+                SourceBucket = bucketName,
+                SourceKey = key,
+                DestinationBucket = bucketName,
+                DestinationKey = "EncryptedObject_Copy",
+                CopySourceServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                CopySourceServerSideEncryptionCustomerProvidedKey = base64Key,
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = copyBase64Key
+            });
+
+            getObjectMetadataRequest = new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = "EncryptedObject_Copy",
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = copyBase64Key
+            };
+
+            getObjectMetadataResponse = await Client.GetObjectMetadataAsync(getObjectMetadataRequest);
+            Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getObjectMetadataResponse.ServerSideEncryptionCustomerMethod);
+
+            // Test calls against HTTP client, some should fail on the client
+            using (var httpClient = CreateHttpClient())
+            {
+                getObjectMetadataRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.None;
+                getObjectMetadataRequest.ServerSideEncryptionCustomerProvidedKey = null;
+                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => httpClient.GetObjectMetadataAsync(getObjectMetadataRequest));
+
+                getObjectMetadataRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
+                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => httpClient.GetObjectMetadataAsync(getObjectMetadataRequest));
+
+                getObjectMetadataRequest.ServerSideEncryptionCustomerProvidedKey = copyBase64Key;
+                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => httpClient.GetObjectMetadataAsync(getObjectMetadataRequest));
+
+                url = httpClient.GetPreSignedURL(getPresignedUrlRequest);
+                Assert.IsFalse(string.IsNullOrEmpty(url));
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void ServerSideEncryptionBYOKTransferUtility()
+        public async Task ServerSideEncryptionBYOKTransferUtility()
         {
-            var bucketName = S3TestUtils.CreateBucketWithWait(Client);
-            try
+            Aes aesEncryption = Aes.Create();
+            aesEncryption.KeySize = 256;
+            aesEncryption.GenerateKey();
+            string base64Key = Convert.ToBase64String(aesEncryption.Key);
+
+            var utility = new TransferUtility(Client);
+            await utility.UploadAsync(new TransferUtilityUploadRequest
             {
-                Aes aesEncryption = Aes.Create();
-                aesEncryption.KeySize = 256;
-                aesEncryption.GenerateKey();
-                string base64Key = Convert.ToBase64String(aesEncryption.Key);
+                BucketName = bucketName,
+                Key = key,
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key,
+                InputStream = new MemoryStream(Encoding.UTF8.GetBytes("Encrypted Content"))
+            });
 
-                TransferUtility utility = new TransferUtility(Client);
-
-                var uploadRequest = new TransferUtilityUploadRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key
-                };
-
-                uploadRequest.InputStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes("Encrypted Content"));
-
-                utility.Upload(uploadRequest);
-
-                GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key
-                };
-
-                GetObjectMetadataResponse getObjectMetadataResponse = Client.GetObjectMetadata(getObjectMetadataRequest);
-                Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getObjectMetadataResponse.ServerSideEncryptionCustomerMethod);
-
-                var openRequest = new TransferUtilityOpenStreamRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key
-                };
-
-                using(var stream = new StreamReader(utility.OpenStream(openRequest)))
-                {
-                    var content = stream.ReadToEnd();
-                    Assert.AreEqual(content, "Encrypted Content");
-                }
-            }
-            finally
+            var getObjectMetadataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+                BucketName = bucketName,
+                Key = key,
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key
+            });
+            Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getObjectMetadataResponse.ServerSideEncryptionCustomerMethod);
+
+            var openRequest = new TransferUtilityOpenStreamRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key
+            };
+
+            using (var stream = new StreamReader(await utility.OpenStreamAsync(openRequest)))
+            {
+                var content = await stream.ReadToEndAsync();
+                Assert.AreEqual(content, "Encrypted Content");
             }
         }
     }
