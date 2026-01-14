@@ -67,6 +67,7 @@ namespace Amazon.Redshift.Model
         private bool? _enhancedVpcRouting;
         private DateTime? _expectedNextSnapshotScheduleTime;
         private string _expectedNextSnapshotScheduleTimeStatus;
+        private string _extraComputeForAutomaticOptimization;
         private HsmStatus _hsmStatus;
         private List<ClusterIamRole> _iamRoles = AWSConfigs.InitializeCollections ? new List<ClusterIamRole>() : null;
         private string _ipAddressType;
@@ -867,6 +868,30 @@ namespace Amazon.Redshift.Model
         internal bool IsSetExpectedNextSnapshotScheduleTimeStatus()
         {
             return this._expectedNextSnapshotScheduleTimeStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtraComputeForAutomaticOptimization. 
+        /// <para>
+        /// A boolean value that, if <c>true</c>, indicates that the cluster allocates additional
+        /// compute resources to run automatic optimization operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string ExtraComputeForAutomaticOptimization
+        {
+            get { return this._extraComputeForAutomaticOptimization; }
+            set { this._extraComputeForAutomaticOptimization = value; }
+        }
+
+        // Check to see if ExtraComputeForAutomaticOptimization property is set
+        internal bool IsSetExtraComputeForAutomaticOptimization()
+        {
+            return this._extraComputeForAutomaticOptimization != null;
         }
 
         /// <summary>

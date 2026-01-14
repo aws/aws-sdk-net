@@ -2350,6 +2350,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.ExtraComputeForAutomaticOptimization</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.IpAddressType</property>
     <max>2147483647</max>
   </property-value-rule>
