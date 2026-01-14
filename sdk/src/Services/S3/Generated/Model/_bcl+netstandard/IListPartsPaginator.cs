@@ -13,29 +13,27 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using Amazon.Runtime;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Paginator for the ListVersions operation
+    /// Paginator for the ListParts operation
     ///</summary>
-    public interface IListVersionsPaginator
+    public partial interface IListPartsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<ListVersionsResponse> Responses { get; }
-        
-        /// <summary>
-        /// Enumerable containing all of the Versions
-        /// </summary>
-        IPaginatedEnumerable<S3ObjectVersion> Versions { get; }
+        IPaginatedEnumerable<ListPartsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the CommonPrefixes
+        /// Enumerable containing all of the Parts
         /// </summary>
-        IPaginatedEnumerable<string> CommonPrefixes { get; }
-
+        IPaginatedEnumerable<PartDetail> Parts { get; }
     }
 }

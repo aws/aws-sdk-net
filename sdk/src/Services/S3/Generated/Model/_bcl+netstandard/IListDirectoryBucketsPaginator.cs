@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,22 +13,26 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using Amazon.Runtime;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Paginator for the ListBuckets operation
-    /// </summary>
-    public interface IListBucketsPaginator
+    /// Paginator for the ListDirectoryBuckets operation
+    ///</summary>
+    public partial interface IListDirectoryBucketsPaginator
     {
         /// <summary>
-        /// Enumerable containing all full responses for the operation.
+        /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<ListBucketsResponse> Responses { get; }
+        IPaginatedEnumerable<ListDirectoryBucketsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the buckets.
+        /// Enumerable containing all of the Buckets
         /// </summary>
         IPaginatedEnumerable<S3Bucket> Buckets { get; }
     }

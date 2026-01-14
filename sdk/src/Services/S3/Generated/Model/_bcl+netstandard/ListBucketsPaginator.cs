@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,11 +13,19 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+
 using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Collections;
 using System.Threading;
+using System.Threading.Tasks;
 using Amazon.Runtime;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -28,16 +36,16 @@ namespace Amazon.S3.Model
         private readonly IAmazonS3 _client;
         private readonly ListBucketsRequest _request;
         private int _isPaginatorInUse = 0;
-
+        
         /// <summary>
-        /// Enumerable containing all full responses for the operation.
+        /// Enumerable containing all full responses for the operation
         /// </summary>
         public IPaginatedEnumerable<ListBucketsResponse> Responses => new PaginatedResponse<ListBucketsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the buckets.
+        /// Enumerable containing all of the Buckets
         /// </summary>
-        public IPaginatedEnumerable<S3Bucket> Buckets =>
+        public IPaginatedEnumerable<S3Bucket> Buckets => 
             new PaginatedResultKeyResponse<ListBucketsResponse, S3Bucket>(this, (i) => i.Buckets ?? new List<S3Bucket>());
 
         internal ListBucketsPaginator(IAmazonS3 client, ListBucketsRequest request)
@@ -45,13 +53,12 @@ namespace Amazon.S3.Model
             this._client = client;
             this._request = request;
         }
-
 #if BCL
         IEnumerable<ListBucketsResponse> IPaginator<ListBucketsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
-                throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var continuationToken = _request.ContinuationToken;
@@ -71,7 +78,7 @@ namespace Amazon.S3.Model
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
-                throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var continuationToken = _request.ContinuationToken;
