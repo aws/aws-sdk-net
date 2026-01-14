@@ -112,6 +112,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnhancedVpcRouting", StringUtils.FromBool(publicRequest.EnhancedVpcRouting));
                 }
+                if(publicRequest.IsSetExtraComputeForAutomaticOptimization())
+                {
+                    request.Parameters.Add("ExtraComputeForAutomaticOptimization", StringUtils.FromBool(publicRequest.ExtraComputeForAutomaticOptimization));
+                }
                 if(publicRequest.IsSetHsmClientCertificateIdentifier())
                 {
                     request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));

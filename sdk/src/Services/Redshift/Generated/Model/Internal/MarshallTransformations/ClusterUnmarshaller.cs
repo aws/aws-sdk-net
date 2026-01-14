@@ -273,6 +273,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExpectedNextSnapshotScheduleTimeStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExtraComputeForAutomaticOptimization", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExtraComputeForAutomaticOptimization = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HsmStatus", targetDepth))
                     {
                         var unmarshaller = HsmStatusUnmarshaller.Instance;
