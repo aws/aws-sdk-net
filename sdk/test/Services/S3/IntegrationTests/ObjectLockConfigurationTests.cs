@@ -25,10 +25,8 @@ using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Integration tests for the object lock configuration operations
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class ObjectLockConfigurationTests : TestBase<AmazonS3Client>
     {
         private static string bucketName;        
@@ -56,48 +54,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
-        public PutObjectLockConfigurationResponse AddObjectLockConfiguration()
-        {            
-            var objectLockConfiguration = new ObjectLockConfiguration();
-            objectLockConfiguration.ObjectLockEnabled = ObjectLockEnabled.Enabled;
-            objectLockConfiguration.Rule = new ObjectLockRule
-            {
-                DefaultRetention = new DefaultRetention
-                {
-                    Days = 1,                    
-                    Mode = ObjectLockRetentionMode.Governance
-                }
-            };
-
-            var putRequest = new PutObjectLockConfigurationRequest
+        public async Task AddObjectLockConfiguration()
+        {
+            var putResponse = await Client.PutObjectLockConfigurationAsync(new PutObjectLockConfigurationRequest
             {
                 BucketName = bucketName,
                 RequestPayer = RequestPayer.Requester,
-                ObjectLockConfiguration = objectLockConfiguration
-            };
+                ObjectLockConfiguration = new ObjectLockConfiguration
+                {
+                    ObjectLockEnabled = ObjectLockEnabled.Enabled,
+                    Rule = new ObjectLockRule
+                    {
+                        DefaultRetention = new DefaultRetention
+                        {
+                            Days = 1,
+                            Mode = ObjectLockRetentionMode.Governance
+                        }
+                    }
+                }
+            });
+            Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
 
-            var putResponse = Client.PutObjectLockConfiguration(putRequest);
-            Assert.AreEqual(true, putResponse.HttpStatusCode == HttpStatusCode.OK);
+            // Make sure the object lock has been enabled
+            await S3TestUtils.WaitForConsistencyAsync(async () =>
+            {
+                var res = await Client.GetObjectLockConfigurationAsync(new GetObjectLockConfigurationRequest
+                {
+                    BucketName = bucketName
+                });
 
-            //Make sure the object lock has been enabled
-            var getRequest = new GetObjectLockConfigurationRequest()
-            {
-                BucketName = bucketName
-            };
-            var getResponse = S3TestUtils.WaitForConsistency(() =>
-            {
-                var res = Client.GetObjectLockConfiguration(getRequest);
                 return res.ObjectLockConfiguration?.ObjectLockEnabled == ObjectLockEnabled.Enabled ? res : null;
             });
-
-            return putResponse;
         }
 
-        public string PutObject(DateTime? retainUntilDate = null)
+        public async Task<string> PutObject(DateTime? retainUntilDate = null)
         {
             var key = "contentBodyPut" + random.Next();
             var content = "This is the content body!";
-            var putObjectRequest = new PutObjectRequest()
+            var putObjectRequest = new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -111,97 +105,83 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 putObjectRequest.ObjectLockRetainUntilDate = retainUntilDate.Value;
             }
             
-            //Set the headers
             foreach (var kvp in headers)
             {
                 putObjectRequest.Headers[kvp.Key] = kvp.Value;
             }                
 
-            Client.PutObject(putObjectRequest);
+            await Client.PutObjectAsync(putObjectRequest);
             return key;
         }
 
-        public void DeleteObject(string key)
+        public async Task DeleteObject(string key)
         {
-            var deleteRequest = new DeleteObjectRequest
+            var deleteResponse = await Client.DeleteObjectAsync(new DeleteObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 RequestPayer = RequestPayer.Requester,
                 BypassGovernanceRetention = true
-            };
-
-            var deleteResponse = Client.DeleteObject(deleteRequest);
-            Assert.AreEqual(true, deleteResponse.HttpStatusCode == HttpStatusCode.NoContent);
+            });
+            Assert.AreEqual(HttpStatusCode.NoContent, deleteResponse.HttpStatusCode);
         }
-        public void DeleteObjects(List<KeyVersion> objects)
+
+        public async Task DeleteObjects(List<KeyVersion> objects)
         {
-            var deleteRequest = new DeleteObjectsRequest
+            var deleteResponse = await Client.DeleteObjectsAsync(new DeleteObjectsRequest
             {
                 BucketName = bucketName,
                 Objects = objects,
                 RequestPayer = RequestPayer.Requester,
                 BypassGovernanceRetention = true
-            };
-
-            var deleteResponse = Client.DeleteObjects(deleteRequest);
-            Assert.AreEqual(true, deleteResponse.HttpStatusCode == HttpStatusCode.OK);
+            });
+            Assert.AreEqual(HttpStatusCode.OK, deleteResponse.HttpStatusCode);
         }
 
-        public void PutObjectLegalHold(string key, ObjectLockLegalHoldStatus status)
+        public async Task PutObjectLegalHold(string key, ObjectLockLegalHoldStatus status)
         {
-            //Put the legal hold
-            var objectLegalHold = new ObjectLockLegalHold();
-            objectLegalHold.Status = status;
-            var putRequest = new PutObjectLegalHoldRequest
+            var putResponse = await Client.PutObjectLegalHoldAsync(new PutObjectLegalHoldRequest
             {
                 BucketName = bucketName,
-                LegalHold = objectLegalHold,
+                LegalHold = new ObjectLockLegalHold
+                {
+                    Status = status
+                },
                 RequestPayer = RequestPayer.Requester,
                 Key = key
-            };
+            });
+            Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
 
-            var putResponse = Client.PutObjectLegalHold(putRequest);
-            Assert.AreEqual(true, putResponse.HttpStatusCode == HttpStatusCode.OK);
-
-            //Get the legal hold
-            var getRequest = new GetObjectLegalHoldRequest
+            var getResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                BucketName = bucketName,
-                Key = key,
-                RequestPayer = RequestPayer.Requester
-            };
-
-            var getResponse = S3TestUtils.WaitForConsistency(() =>
-            {
-                var res = Client.GetObjectLegalHold(getRequest);
+                var res = await Client.GetObjectLegalHoldAsync(new GetObjectLegalHoldRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    RequestPayer = RequestPayer.Requester
+                });
                 return res.LegalHold?.Status == status ? res : null;
             });
-                        
-            Assert.AreEqual(true, getResponse.HttpStatusCode == HttpStatusCode.OK);
+            Assert.AreEqual(HttpStatusCode.OK, getResponse.HttpStatusCode);
             Assert.AreEqual(status, getResponse.LegalHold.Status);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestObjectLockConfiguration_Set()
+        public async Task TestObjectLockConfiguration_Set()
         {
-            AddObjectLockConfiguration();
+            await AddObjectLockConfiguration();
         }
         
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestObjectRetention_SetCompliance()
+        public async Task TestObjectRetention_SetCompliance()
         {
-            AddObjectLockConfiguration();
-
+            await AddObjectLockConfiguration();
             DateTime date = DateTime.UtcNow.AddMinutes(15);
-            var key = PutObject();
+            var key = await PutObject();
 
             try
             {
-                //Put the object retention on the specific object
-                var putRequest = new PutObjectRetentionRequest
+                var putResponse = await Client.PutObjectRetentionAsync(new PutObjectRetentionRequest
                 {
                     BucketName = bucketName,
                     BypassGovernanceRetention = true,
@@ -212,98 +192,71 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     },
                     RequestPayer = RequestPayer.Requester,
                     Key = key
-                };
+                });
+                Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
 
-                var putResponse = Client.PutObjectRetention(putRequest);
-                Assert.AreEqual(true, putResponse.HttpStatusCode == HttpStatusCode.OK);
-
-                //Get the object retention
-                var getRequest = new GetObjectRetentionRequest
+                var getResponse = await Client.GetObjectRetentionAsync(new GetObjectRetentionRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     RequestPayer = RequestPayer.Requester
-                };
-
-                var getResponse = Client.GetObjectRetention(getRequest);
-                Assert.AreEqual(true, getResponse.HttpStatusCode == HttpStatusCode.OK);
-
+                });
+                Assert.AreEqual(HttpStatusCode.OK, getResponse.HttpStatusCode);
                 Assert.AreEqual(ObjectLockRetentionMode.Governance, getResponse.Retention.Mode);
                 Assert.AreEqual(date.ToString(), getResponse.Retention.RetainUntilDate.ToString());
             }
-            catch
-            {
-                throw;
-            }
             finally
             {
-                DeleteObject(key);
+                await DeleteObject(key);
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestObjectLockRetainUntilDate()
+        public async Task TestObjectLockRetainUntilDate()
         {
-            AddObjectLockConfiguration();
-
+            await AddObjectLockConfiguration();
             DateTime date = DateTime.UtcNow.AddMinutes(15);
-            var key = PutObject(date);
+            var key = await PutObject(date);
 
             try
             {                
-                //Get the object
-                var getRequest = new GetObjectRequest
+                var getResponse = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     RequestPayer = RequestPayer.Requester
-                };
-
-                var getResponse = Client.GetObject(getRequest);
-                Assert.AreEqual(true, getResponse.HttpStatusCode == HttpStatusCode.OK);
-
+                });
+                Assert.AreEqual(HttpStatusCode.OK, getResponse.HttpStatusCode);
                 Assert.AreEqual(date.ToUniversalTime().ToString(), getResponse.ObjectLockRetainUntilDate.ToString());                
             }
-            catch
-            {
-                throw;
-            }
             finally
             {
-                DeleteObject(key);
+                await DeleteObject(key);
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestObjectLegalHold_SetUnset()
+        public async Task TestObjectLegalHold_SetUnset()
         {
-            AddObjectLockConfiguration();
+            await AddObjectLockConfiguration();
+            var key = await PutObject();
 
-            var key = PutObject();
             try
             {
-                PutObjectLegalHold(key, ObjectLockLegalHoldStatus.On);
-                PutObjectLegalHold(key, ObjectLockLegalHoldStatus.Off);
-            }
-            catch
-            {
-                throw;
+                await PutObjectLegalHold(key, ObjectLockLegalHoldStatus.On);
+                await PutObjectLegalHold(key, ObjectLockLegalHoldStatus.Off);
             }
             finally
             {
-                DeleteObject(key);
+                await DeleteObject(key);
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestMultipleObjectDeleteWithBypass()
+        public async Task TestMultipleObjectDeleteWithBypass()
         {
-            AddObjectLockConfiguration();
-
-            List<KeyVersion> objects = new List<KeyVersion>();
+            await AddObjectLockConfiguration();
+            var objects = new List<KeyVersion>();
                             
             try
             {
@@ -311,17 +264,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     objects.Add(new KeyVersion
                     {
-                        Key = PutObject()
+                        Key = await PutObject()
                     });
                 }
             }
-            catch
-            {
-                throw;
-            }
             finally
             {
-                DeleteObjects(objects);
+                await DeleteObjects(objects);
             }
         }
 
@@ -367,7 +316,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     });
                 }
                 catch
-                {                    
+                {
+                    // Ignore exceptions and continue deleting remaining objects.
                 }
 
                 // Set the markers to get next set of objects from the bucket.
