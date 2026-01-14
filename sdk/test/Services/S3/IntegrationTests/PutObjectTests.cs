@@ -9,6 +9,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -19,10 +20,8 @@ using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Summary description for PutObjectTest
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class PutObjectTest : TestBase<AmazonS3Client>
     {
         public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
@@ -31,13 +30,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string bucketName;
         private const string testContent = "This is the content body!";
         private const string testKey = "test-key.json.gz";
+        private const string testFileName = "PutObjectFile.txt";
 
         [ClassInitialize]
         public static async Task Initialize(TestContext a)
         {
-            StreamWriter writer = File.CreateText("PutObjectFile.txt");
-            writer.Write("This is some sample text.!!");
-            writer.Close();
+            using (var writer = File.CreateText(testFileName))
+            {
+                await writer.WriteAsync("This is some sample text.!!");
+            }
 
             bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
         }
@@ -50,40 +51,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestPutAndGetWithInvalidExpires()
+        public async Task TestPutAndGetWithInvalidExpires()
         {
             var content = "TestInvalidExpiresHeader";
             var key = UtilityMethods.GenerateName("TestPutAndGetWithInvalidExpires");
             var putObjectRequest = new PutObjectRequest
             {
-               BucketName = bucketName,               
+               BucketName = bucketName,
                Key = key,
                ContentBody = content
             };
 
             var invalidValue = "InvalidHeaderValue";
-            putObjectRequest.Headers["Expires"] = invalidValue;           
-            Client.PutObject(putObjectRequest);
+            putObjectRequest.Headers["Expires"] = invalidValue;
+            await Client.PutObjectAsync(putObjectRequest);
 
-            var newExpires = DateTime.UtcNow.AddDays(1);
-            var getObjectResponse = Client.GetObject(bucketName, key);
+            var getObjectResponse = await Client.GetObjectAsync(bucketName, key);
             using (getObjectResponse)
             {
                 var reader = new StreamReader(getObjectResponse.ResponseStream);
-                var contentRead = reader.ReadToEnd();
+                var contentRead = await reader.ReadToEndAsync();
                 Assert.IsTrue(content.Equals(contentRead));
-
                 Assert.AreEqual(getObjectResponse.ExpiresString, invalidValue);
             }
-            var getObjectMetadataResponse = Client.GetObjectMetadata(bucketName, key);
 
+            var getObjectMetadataResponse = await Client.GetObjectMetadataAsync(bucketName, key);
             Assert.AreEqual(getObjectMetadataResponse.ExpiresString, invalidValue);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestPutAndGetWithBidiCharacters()
+        public async Task TestPutAndGetWithBidiCharacters()
         {
             var bidiChar = '\u200E';
             var encodedBidiChar = "%E2%80%8E";
@@ -101,17 +98,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsTrue(uri.AbsoluteUri.Contains($"TestPutAndGetWithBidi{encodedBidiChar}Characters"));
 
             // Verify the bidi key can be used to put an object
-            var putObjectRequest = new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = bidiKey,
                 ContentBody = content
-            };
-                        
-            Client.PutObject(putObjectRequest);
+            });
 
             // Verify the bidi key object can be read
-            var response = Client.GetObject(new GetObjectRequest
+            var response = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = bidiKey,
@@ -121,7 +116,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var responseBody = string.Empty;
             using (var reader = new StreamReader(response.ResponseStream))
             {
-                responseBody = reader.ReadToEnd();                
+                responseBody = await reader.ReadToEndAsync();                
             }
 
             // Verify the correct response was read
@@ -129,12 +124,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestStorageClass()
+        public async Task TestStorageClass()
         {
             var key = "contentBodyPut" + random.Next();
             var storageClass = S3StorageClass.ReducedRedundancy;
-            PutObjectRequest request = new PutObjectRequest()
+            var request = new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -143,158 +137,100 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 StorageClass = storageClass
             };
             request.Metadata.Add("Subject", "Content-As-Object");
-            PutObjectResponse response = Client.PutObject(request);
-
-            Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+            
+            var response = await Client.PutObjectAsync(request);
             Assert.IsTrue(response.ETag.Length > 0);
 
-            var metadata = Client.GetObjectMetadata(bucketName, key);
+            var metadata = await Client.GetObjectMetadataAsync(bucketName, key);
             Assert.IsNotNull(metadata);
             Assert.IsNotNull(metadata.StorageClass);
             Assert.AreEqual(metadata.StorageClass, storageClass);
-
-            VerifyPut(testContent, request);
+            await VerifyPut(testContent, request);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestHttpErrorResponseUnmarshalling()
+        public async Task PutObjectCancellationTest()
         {
-            try
-            {
-                Client.PutObject(new PutObjectRequest
-                {
-                    BucketName = UtilityMethods.GenerateName("NonExistentBucket"),
-                    Key = "1",
-                    ContentBody = "TestContent"
-                });
-            }
-            catch (AmazonS3Exception exception)
-            {
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.ErrorCode);
-                Console.WriteLine(exception.StatusCode);
-
-                Assert.IsTrue(exception.Message.Contains("The specified bucket does not exist"));
-                Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
-                Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
-            }
-        }
-
- #if ASYNC_AWAIT
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public async System.Threading.Tasks.Task PutObjectAsync()
-        {
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "contentBodyPut" + random.Next(),
-                ContentBody = testContent,
-                CannedACL = S3CannedACL.AuthenticatedRead
-            };
-            PutObjectResponse response = await Client.PutObjectAsync(request);
-
-            Console.WriteLine("S3 generated ETag: {0}", response.ETag);
-            Assert.IsTrue(response.ETag.Length > 0);
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public async System.Threading.Tasks.Task PutObjectCancellationTest()
-        {
-            var fileName = UtilityMethods.GenerateName(@"CancellationTest\LargeFile");
-            string basePath = @"c:\temp\test\";
+            var fileName = UtilityMethods.GenerateName(@"CancellationTest-LargeFile");
+            var basePath = Path.Combine(Path.GetTempPath(), "PutObjectCancellation-" + Guid.NewGuid().ToString());
             var path = Path.Combine(basePath, fileName);
             UtilityMethods.GenerateFile(path, 50 * MEG_SIZE);
-
-            var putObjectRequest = new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = "CancellationTest" + random.Next(),
-                CannedACL = S3CannedACL.AuthenticatedRead,
-                FilePath = path
-            };
 
             var cts = new CancellationTokenSource();
             cts.CancelAfter(1000);
             var token = cts.Token;
             try
             {
-                await Client.PutObjectAsync(putObjectRequest, token);
+                await Client.PutObjectAsync(new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = "CancellationTest" + random.Next(),
+                    CannedACL = S3CannedACL.AuthenticatedRead,
+                    FilePath = path
+                }, token);
+
+                Assert.Fail("An OperationCanceledException was not thrown");
             }
-            catch(OperationCanceledException exception)
+            catch (OperationCanceledException exception)
             {
                 Assert.AreEqual(token, exception.CancellationToken);
                 Assert.AreEqual(true, exception.CancellationToken.IsCancellationRequested);
-                return;
             }
             finally
             {
                 Directory.Delete(basePath, true);
             }
-            Assert.Fail("An OperationCanceledException was not thrown");
         }
-#endif
+      
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWithExternalEndpoint()
+        public async Task PutObjectWithExternalEndpoint()
         {            
             var s3Client = new AmazonS3Client(new AmazonS3Config
             {
                 ServiceURL = "https://s3-external-1.amazonaws.com"
             });
+
             var testBucketName = "aws-net-sdk-external" + random.Next();
             var key = "testKey";
+            
             try
             {
-                
-                s3Client.PutBucket(testBucketName);
-                S3TestUtils.WaitForBucket(s3Client, testBucketName);
-
-                s3Client.PutObject(new PutObjectRequest
+                await s3Client.PutBucketAsync(testBucketName);
+                await s3Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = testBucketName,
                     Key = key,
                     ContentBody = "testValue"
                 });
-
-                s3Client.GetObject(testBucketName, key);
+                await s3Client.GetObjectAsync(testBucketName, key);
             }
             finally
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(s3Client, testBucketName);
+                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, testBucketName);
                 s3Client.Dispose();
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWithLeadingSlash()
+        public async Task PutObjectWithLeadingSlash()
         {
-            using(var client = new AmazonS3Client())
+            var request = new PutObjectRequest
             {
-                PutObjectRequest request = new PutObjectRequest()
-                {
-                    BucketName = bucketName,
-                    Key = "/contentBodyPut" + random.Next(),
-                    ContentBody = "This is the content body!",
-                    CannedACL = S3CannedACL.AuthenticatedRead
-                };
-                request.Metadata.Add("Subject", "Content-As-Object");
-                PutObjectResponse response = client.PutObject(request);
+                BucketName = bucketName,
+                Key = "/contentBodyPut" + random.Next(),
+                ContentBody = "This is the content body!",
+                CannedACL = S3CannedACL.AuthenticatedRead
+            };
+            request.Metadata.Add("Subject", "Content-As-Object");
 
-                Console.WriteLine("S3 generated ETag: {0}", response.ETag);
-                Assert.IsTrue(response.ETag.Length > 0);
-            }
+            var response = await Client.PutObjectAsync(request);
+            Assert.IsTrue(response.ETag.Length > 0);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectKeyWithUrlEncodedCharacters()
+        public async Task PutObjectKeyWithUrlEncodedCharacters()
         {
-            PutObjectRequest request = new PutObjectRequest()
+            var request = new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = "X$abc,xyz",
@@ -302,19 +238,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 CannedACL = S3CannedACL.AuthenticatedRead
             };
             request.Metadata.Add("Subject", "Content-As-Object");
-            PutObjectResponse response = Client.PutObject(request);
-
-            Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+            
+            var response = await Client.PutObjectAsync(request);
             Assert.IsTrue(response.ETag.Length > 0);
-
-            VerifyPut(testContent, request);
+            await VerifyPut(testContent, request);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObject()
+        public async Task PutObject()
         {
-            PutObjectRequest request = new PutObjectRequest()
+            var request = new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = "contentBodyPut" + random.Next(),
@@ -322,66 +255,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 CannedACL = S3CannedACL.AuthenticatedRead
             };
             request.Metadata.Add("Subject", "Content-As-Object");
-            PutObjectResponse response = Client.PutObject(request);
-
-            Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+            
+            var response = await Client.PutObjectAsync(request);
             Assert.IsTrue(response.ETag.Length > 0);
-
-            VerifyPut(testContent, request);
+            await VerifyPut(testContent, request);
         }
 
         [DataTestMethod]
-        [TestCategory("S3")]
         [DataRow(false, false)]
         [DataRow(true, false)]
         [DataRow(false, true)]
         [DataRow(true, true)]
-        public void PutObjectWithEmptyInputStream(bool disablePayloadSigning, bool disableDefaultChecksumValidation)
+        public async Task PutObjectWithEmptyInputStream(bool disablePayloadSigning, bool disableDefaultChecksumValidation)
         {
-            PutObjectRequest request = new PutObjectRequest()
+            var response = await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = "inputStreamPut" + random.Next(),
                 InputStream = new MemoryStream(),
                 DisableDefaultChecksumValidation = disableDefaultChecksumValidation,
                 DisablePayloadSigning = disablePayloadSigning,
-            };
-            PutObjectResponse response = Client.PutObject(request);
+            });
 
             Assert.IsTrue(response.ETag.Length > 0);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObject_SigV4()
+        public async Task PutObject_SigV4()
         {
-            using (var client = new AmazonS3Client())
+            var request = new PutObjectRequest
             {
-                RetryUtilities.ConfigureClient(client);
-
-                PutObjectRequest request = new PutObjectRequest()
-                {
-                    BucketName = bucketName,
-                    Key = "contentBodyPut" + random.Next(),
-                    ContentBody = "This is the content body!",
-                    CannedACL = S3CannedACL.AuthenticatedRead
-                };
-                request.Metadata.Add("Subject", "Content-As-Object");
-                PutObjectResponse response = client.PutObject(request);
-
-                Console.WriteLine("S3 generated ETag: {0}", response.ETag);
-                Assert.IsTrue(response.ETag.Length > 0);
-            }
+                BucketName = bucketName,
+                Key = "contentBodyPut" + random.Next(),
+                ContentBody = "This is the content body!",
+                CannedACL = S3CannedACL.AuthenticatedRead
+            };
+            request.Metadata.Add("Subject", "Content-As-Object");
+            
+            var response = await Client.PutObjectAsync(request);
+            Assert.IsTrue(response.ETag.Length > 0);
         }
 
-
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObject_WithExpires()
+        public async Task PutObject_WithExpires()
         {
             var key = "contentBodyPut" + random.Next();
             var expires = DateTime.UtcNow.AddYears(5);
-            PutObjectRequest request = new PutObjectRequest()
+            var request = new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -390,79 +310,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
             request.Metadata.Add("Subject", "Content-As-Object");
             request.Headers.Expires = expires;
-            PutObjectResponse response = Client.PutObject(request);
-
-            Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+            
+            var response = await Client.PutObjectAsync(request);
             Assert.IsTrue(response.ETag.Length > 0);
 
-            using (var getResponse = Client.GetObject(new GetObjectRequest { BucketName = bucketName, Key = key }))
-            {
-                Assert.IsTrue(expires.ApproximatelyEqual(DateTime.Parse(getResponse.ExpiresString, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeUniversal).ToUniversalTime()));
-            }
-        }
-
-        [TestCategory("S3")]
-        [TestMethod]
-        public void PutObjectWeirdKeys()
-        {
-            var keys = new List<string>
-            {
-                "b204a53f-781a-4cdd-a29c-3626818eb199:115740.pdf",
-                "46dbc16e-5f55-4bda-b275-75e2a8ab243c:115740.pdf"
-            };
-
-            string filePath = "SomeFile.txt";
-            string contents = "Sample content";
-            File.WriteAllText(filePath, contents);
-
-            foreach (var key in keys)
-            {
-                var request = new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    FilePath = filePath,
-                };
-
-                Client.PutObject(request);
-                using (var response = Client.GetObject(new GetObjectRequest { BucketName = bucketName, Key = key }))
-                using (var reader = new StreamReader(response.ResponseStream))
-                {
-                    var rtContents = reader.ReadToEnd();
-                    Assert.IsNotNull(rtContents);
-                    Assert.AreEqual(contents, rtContents);
-                }
-            }
+            var getResponse = await Client.GetObjectAsync(new GetObjectRequest { BucketName = bucketName, Key = key });
+            Assert.IsTrue(expires.ApproximatelyEqual(DateTime.Parse(getResponse.ExpiresString, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal).ToUniversalTime()));
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWithBacklashInKey()
+        public async Task PutObjectWrongRegion()
         {
-            const string writtenContent = @"an object with a \ in the key";
-            const string key = @"My\Key";
-
             var request = new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                ContentBody = writtenContent,
-            };
-            Client.PutObject(request);
-
-            using (var response = Client.GetObject(new GetObjectRequest { BucketName = bucketName, Key = key }))
-            using (var reader = new StreamReader(response.ResponseStream))
-            {
-                var readContent = reader.ReadToEnd();
-                Assert.AreEqual(readContent, writtenContent);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWrongRegion()
-        {
-            PutObjectRequest request = new PutObjectRequest()
             {
                 BucketName = bucketName,
                 Key = "contentBodyPut" + random.Next(),
@@ -473,7 +332,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var client = new AmazonS3Client(RegionEndpoint.USWest2))
             {
                 // Returns an exception with HTTP 301 MovedPermanently
-                var exception = AssertExtensions.ExpectException<AmazonS3Exception>(() => client.PutObject(request));
+                var exception = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => client.PutObjectAsync(request));
                 Assert.AreEqual("PermanentRedirect", exception.ErrorCode);
                 Assert.AreEqual(HttpStatusCode.MovedPermanently, exception.StatusCode);
                 Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
@@ -483,29 +342,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void GetObjectWithNonMatchingEtag()
+        public async Task GetObjectWithNonMatchingEtag()
         {
             var key = "TestMatchingEtag" + random.Next();
-            var request = new PutObjectRequest()
+
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 ContentBody = "This is the content body!",
                 CannedACL = S3CannedACL.AuthenticatedRead
-            };
+            });
 
-            Client.PutObject(request);
-
-            var etag = Client.GetObject(new GetObjectRequest
+            var etag = (await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = key
-            }).ETag;
+            })).ETag;
 
             // Returns an exception with HTTP 304 NotModified
-            var exception = AssertExtensions.ExpectException<AmazonS3Exception>(() =>
-                Client.GetObject(new GetObjectRequest
+            var exception = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() =>
+                Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -520,17 +377,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TemporaryRedirectForS3OperationsWithSigV4()
+        public async Task TemporaryRedirectForS3OperationsWithSigV4()
         {
-            TemporaryRedirectForS3Operations();
-        }
-
-        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TemporaryRedirectForS3Operations()
-        {            
             var testBucketName = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX);
             var config = new AmazonS3Config
             {
@@ -539,23 +387,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var client = new AmazonS3Client(config))
             {
-                var bucket = client.PutBucket(new PutBucketRequest
+                var bucket = await client.PutBucketAsync(new PutBucketRequest
                 {
                     BucketName = testBucketName,
                     BucketRegion = S3Region.USWest2
                 });
-                S3TestUtils.WaitForBucket(client, testBucketName);
 
                 try
                 {
-                    client.PutObject(new PutObjectRequest
+                    await client.PutObjectAsync(new PutObjectRequest
                     {
                         BucketName = testBucketName,
                         Key = "TestKey1",
                         ContentBody = "sample text"
                     });
 
-                    client.PutObject(new PutObjectRequest
+                    await client.PutObjectAsync(new PutObjectRequest
                     {
                         BucketName = testBucketName,
                         Key = "TestKey2",
@@ -563,73 +410,65 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     });
 
                     // Returns an exception with HTTP 307 TemporaryRedirect
-                    var exception = AssertExtensions.ExpectException<AmazonS3Exception>(() =>
-                        client.PutObject(new PutObjectRequest
+                    var exception = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() =>
+                        client.PutObjectAsync(new PutObjectRequest
                         {
                             BucketName = testBucketName,
                             Key = "TestKey3",
                             InputStream = UtilityMethods.CreateStreamFromString("sample text", new NonRewindableStream())
                         })
                     );
-
                     Assert.AreEqual("TemporaryRedirect", exception.ErrorCode);
                     Assert.AreEqual(HttpStatusCode.TemporaryRedirect, exception.StatusCode);
                     Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
                     Assert.IsFalse(string.IsNullOrEmpty(exception.RequestId));
                     Assert.IsFalse(string.IsNullOrEmpty(exception.AmazonId2));
 
-
-                    var objects = client.ListObjects(new ListObjectsRequest
+                    var listResponse = await client.ListObjectsAsync(new ListObjectsRequest
                     {
                         BucketName = testBucketName
-                    }).S3Objects;
-                    Assert.AreEqual(2, objects.Count);
+                    });
+                    Assert.AreEqual(2, listResponse.S3Objects.Count);
                 }
                 finally
                 {
-                    AmazonS3Util.DeleteS3BucketWithObjects(client, testBucketName);
+                    await AmazonS3Util.DeleteS3BucketWithObjectsAsync(client, testBucketName);
                 }
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void DeleteNonExistentBucket()
+        public async Task DeleteNonExistentBucket()
         {
             // Returns an exception with HTTP 404 NotFound
-            var exception = AssertExtensions.ExpectException<AmazonS3Exception>(() =>
-                Client.DeleteBucket(new DeleteBucketRequest { BucketName = "nonexistentbucket1234567890" })
+            var exception = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() =>
+                Client.DeleteBucketAsync(new DeleteBucketRequest { BucketName = "nonexistentbucket1234567890" })
             );
             Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
             Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
             Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
             Assert.IsFalse(string.IsNullOrEmpty(exception.RequestId));
             Assert.IsFalse(string.IsNullOrEmpty(exception.AmazonId2));
-
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void GzipTest()
+        public async Task GzipTest()
         {
             var request = CreatePutObjectRequest();
             request.Headers.ContentEncoding = "gzip";
-
-            TestPutAndGet(request);
+            await TestPutAndGet(request);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWithContentEncodingTests()
+        public async Task PutObjectWithContentEncodingTests()
         {
-            PutObjectWithContentEncoding();
-            PutObjectWithContentEncodingIdentity();
-            PutObjectWithoutContentEncoding();
+            await PutObjectWithContentEncoding();
+            await PutObjectWithContentEncodingIdentity();
+            await PutObjectWithoutContentEncoding();
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestPutObjectWithContentLanguage()
+        public async Task TestPutObjectWithContentLanguage()
         {
             var key = "contentLanguageTest" + random.Next();
             var contentLanguage = "en-US";
@@ -642,438 +481,387 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
             request.Headers.ContentLanguage = contentLanguage;
             
-            // Put the object
-            var putResponse = Client.PutObject(request);
+            var putResponse = await Client.PutObjectAsync(request);
             Assert.IsTrue(putResponse.ETag.Length > 0);
             
             // Verify via GetObject
-            using (var getResponse = Client.GetObject(bucketName, key))
+            using (var getResponse = await Client.GetObjectAsync(bucketName, key))
             {
                 Assert.AreEqual(contentLanguage, getResponse.Headers.ContentLanguage);
                 Assert.AreEqual(contentLanguage, getResponse.ContentLanguage);
-
             }
             
             // Verify via GetObjectMetadata
-            var metadata = Client.GetObjectMetadata(bucketName, key);
+            var metadata = await Client.GetObjectMetadataAsync(bucketName, key);
             Assert.AreEqual(contentLanguage, metadata.Headers.ContentLanguage);
             Assert.AreEqual(contentLanguage, metadata.ContentLanguage);
         }
 
-        private void PutObjectWithContentEncoding()
+        private async Task PutObjectWithContentEncoding()
         {
             var request = CreatePutObjectRequest();
             request.Headers.ContentEncoding = "gzip";
             request.Headers.ContentDisposition = "disposition";
 
-            var headers = TestPutAndGet(request);
+            var headers = await TestPutAndGet(request);
             Assert.AreEqual("disposition", headers.ContentDisposition);
             Assert.AreEqual("gzip", headers.ContentEncoding);
         }
-        private void PutObjectWithContentEncodingIdentity()
+
+        private async Task PutObjectWithContentEncodingIdentity()
         {
             var request = CreatePutObjectRequest();
             request.Headers.ContentEncoding = "identity";
             request.Headers.ContentDisposition = "disposition";
 
-            var headers = TestPutAndGet(request);
+            var headers = await TestPutAndGet(request);
             Assert.AreEqual("disposition", headers.ContentDisposition);
             Assert.AreEqual("identity", headers.ContentEncoding);
         }
-        private void PutObjectWithoutContentEncoding()
+
+        private async Task PutObjectWithoutContentEncoding()
         {
             var request = CreatePutObjectRequest();
             request.Headers.ContentDisposition = "disposition";
 
-            var headers = TestPutAndGet(request);
+            var headers = await TestPutAndGet(request);
             Assert.AreEqual("disposition", headers.ContentDisposition);
             Assert.IsNull(headers.ContentEncoding);
         }
 
-        private HeadersCollection TestPutAndGet(PutObjectRequest request)
+        private async Task<HeadersCollection> TestPutAndGet(PutObjectRequest request)
         {
-            Client.PutObject(request);
+            await Client.PutObjectAsync(request);
 
             var key = request.Key;
-
-            using (var response = Client.GetObject(bucketName, key))
+            using (var response = await Client.GetObjectAsync(bucketName, key))
             using (var reader = new StreamReader(response.ResponseStream))
             {
-                var contents = reader.ReadToEnd();
+                var contents = await reader.ReadToEndAsync();
                 Assert.AreEqual(testContent, contents);
             }
-            using (var response = Client.GetObject(bucketName, key))
-            {
-                response.WriteResponseStreamToFile(key, false);
 
+            using (var response = await Client.GetObjectAsync(bucketName, key))
+            {
+                await response.WriteResponseStreamToFileAsync(key, append: false, cancellationToken: default);
+                
                 var contents = File.ReadAllText(key);
                 Assert.AreEqual(testContent, contents);
             }
 
-            var meta = Client.GetObjectMetadata(bucketName, key);
+            var meta = await Client.GetObjectMetadataAsync(bucketName, key);
             return meta.Headers;
         }
-        private PutObjectRequest CreatePutObjectRequest()
-        {
-            var request = new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = DateTime.UtcNow.ToFileTime() + testKey,
-                ContentBody = testContent
-            };
-            return request;
-        }
 
+        private PutObjectRequest CreatePutObjectRequest() => new PutObjectRequest
+        {
+            BucketName = bucketName,
+            Key = DateTime.UtcNow.ToFileTime() + testKey,
+            ContentBody = testContent
+        };
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutEmptyFile()
+        public async Task PutEmptyFile()
         {
             string key = "contentBodyPut" + random.Next();
-            PutObjectRequest request = new PutObjectRequest();
-            request.BucketName = bucketName;
-            request.Key = key;
-            request.ContentBody = string.Empty;
-            PutObjectResponse response = Client.PutObject(request);
-
-            using (GetObjectResponse getResponse = Client.GetObject(new GetObjectRequest() { BucketName = bucketName, Key = key }))
+            await Client.PutObjectAsync(new PutObjectRequest
             {
-                Assert.AreEqual(0, getResponse.ContentLength);
-            }
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = string.Empty
+            });
+
+            var getResponse = await Client.GetObjectAsync(bucketName, key);
+            Assert.AreEqual(0, getResponse.ContentLength);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectLeaveStreamOpen()
+        public async Task PutObjectLeaveStreamOpen()
         {
-            string filepath = @"c:\temp\PutObjectLeaveStreamOpen.txt";
-            string key = "PutObjectLeaveStreamOpen" + random.Next();
-            writeContent(@"c:\temp", "PutObjectLeaveStreamOpen.txt", "abcdefghighfsldfsdfn");
+            var filepath = Path.GetTempFileName();
+            var key = "PutObjectLeaveStreamOpen" + random.Next();
+            File.WriteAllText(filepath, "abcdefghighfsldfsdfn");
+
             try
             {
-                Stream stream = File.OpenRead(filepath);
+                var stream = File.OpenRead(filepath);
+                var request = new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    InputStream = stream
+                };
 
-                PutObjectRequest request = new PutObjectRequest();
-                request.BucketName = bucketName;
-                request.Key = key;
-                request.InputStream = stream;
-                Client.PutObject(request);
-
+                await Client.PutObjectAsync(request);
                 Assert.IsFalse(stream.CanSeek, "Stream should be closed and seek should not be allowed");
 
                 stream = File.OpenRead(filepath);
-                request = new PutObjectRequest();
-                request.BucketName = bucketName;
-                request.Key = key;
-                request.AutoCloseStream = false;
-                request.InputStream = stream;
-                Client.PutObject(request);
-
+                request = new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    AutoCloseStream = false,
+                    InputStream = stream
+                };
+                
+                await Client.PutObjectAsync(request);
                 Assert.IsTrue(stream.CanSeek, "Stream should still be open and seek should be allowed");
-
                 stream.Close();
             }
             finally
             {
                 File.Delete(filepath);
-                try
-                {
-                    Client.DeleteObject(new DeleteObjectRequest() { BucketName = bucketName, Key = key });
-                }
-                catch { }
-            }
-        }
-
-        private void writeContent(string directory, string fileName, string content)
-        {
-            if (!Directory.Exists(directory))
-                Directory.CreateDirectory(directory);
-
-            StreamWriter writer = new StreamWriter(directory + "/" + fileName);
-            writer.Write(content);
-            writer.Close();
-        }
-
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(ArgumentException))]
-        public void PutObject_ContentAndFile()
-        {
-            PutObjectRequest request = new PutObjectRequest();
-            request.BucketName = bucketName;
-            request.Key = "PutObjectTest";
-            request.ContentBody = "CAT";
-            request.FilePath = "PutObjectFile.txt";
-
-            try
-            {
-                Client.PutObject(request);
-            }
-            catch (ArgumentException ex)
-            {
-                Assert.AreEqual<string>("Please specify one of either a FilePath or the ContentBody to be PUT as an S3 object.", ex.Message);
-                Console.WriteLine(ex.ToString());
-                throw ex;
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(ArgumentException), "Please specify one of either an InputStream or the ContentBody to be PUT as an S3 object.")]
-        public void PutObject_ContentAndStream()
+        public async Task PutObject_ContentAndFile()
         {
-            PutObjectRequest request = new PutObjectRequest();
-            request.BucketName = bucketName;
-            request.Key = "PutObjectTest";
-            request.ContentBody = "CAT";
-            using (FileStream fStream = new FileStream("PutObjectFile.txt", FileMode.Open))
+            var request = new PutObjectRequest
             {
-                request.InputStream = fStream;
+                BucketName = bucketName,
+                Key = "PutObjectTest",
+                ContentBody = "CAT",
+                FilePath = testFileName
+            };
 
-                try
+            var actual = await Assert.ThrowsExceptionAsync<ArgumentException>(() => Client.PutObjectAsync(request));
+            Assert.AreEqual("Please specify one of either a FilePath or the ContentBody to be PUT as an S3 object.", actual.Message);
+        }
+
+        [TestMethod]
+        public async Task PutObject_ContentAndStream()
+        {
+            using (var fStream = new FileStream(testFileName, FileMode.Open))
+            {
+                var request = new PutObjectRequest
                 {
-                    Client.PutObject(request);
-                }
-                catch (ArgumentException ex)
-                {
-                    Assert.AreEqual<string>("Please specify one of either an InputStream or the ContentBody to be PUT as an S3 object.", ex.Message);
-                    Console.WriteLine(ex.ToString());
-                    throw ex;
-                }
+                    BucketName = bucketName,
+                    Key = "PutObjectTest",
+                    ContentBody = "CAT",
+                    InputStream = fStream
+                };
+
+                var actual = await Assert.ThrowsExceptionAsync<ArgumentException>(() => Client.PutObjectAsync(request));
+                Assert.AreEqual("Please specify one of either an InputStream or the ContentBody to be PUT as an S3 object.", actual.Message);
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(ArgumentException), "Please specify one of either an Input FileStream or a Filename to be PUT as an S3 object.")]
-        public void PutObject_StreamAndFile()
+        public async Task PutObject_StreamAndFile()
         {
-            PutObjectRequest request = new PutObjectRequest();
-            request.BucketName = bucketName;
-            request.Key = "PutObjectTest";
-            using (FileStream fStream = new FileStream("PutObjectFile.txt", FileMode.Open))
+            using (var fStream = new FileStream(testFileName, FileMode.Open))
             {
-                request.InputStream = fStream;
-                request.FilePath = "PutObjectFile.txt";
+                var request = new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = "PutObjectTest",
+                    InputStream = fStream,
+                    FilePath = testFileName
+                };
 
-                try
-                {
-                    Client.PutObject(request);
-                }
-                catch (ArgumentException ex)
-                {
-                    Assert.AreEqual<string>("Please specify one of either an InputStream or a FilePath to be PUT as an S3 object.", ex.Message);
-                    Console.WriteLine(ex.ToString());
-                    throw ex;
-                }
+                var actual = await Assert.ThrowsExceptionAsync<ArgumentException>(() => Client.PutObjectAsync(request));
+                Assert.AreEqual("Please specify one of either an InputStream or a FilePath to be PUT as an S3 object.", actual.Message);
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObject_KeyFromPath()
+        public async Task PutObject_KeyFromPath()
         {
-            string path = "PutObjectFile.txt";
-            TestKeyFromPath(path);
+            string path = testFileName;
+            await TestKeyFromPath(path);
+            
             string fullPath = Path.GetFullPath(path);
-            TestKeyFromPath(fullPath);
+            await TestKeyFromPath(fullPath);
+            
             string fullPathUnix = fullPath.Replace('\\', '/');
-            TestKeyFromPath(fullPathUnix);
+            await TestKeyFromPath(fullPathUnix);
         }
 
-        private void TestKeyFromPath(string path)
+        private async Task TestKeyFromPath(string path)
         {
-            PutObjectRequest request = new PutObjectRequest();
-            request.BucketName = bucketName;
-            request.FilePath = path;
-            Client.PutObject(request);
+            await Client.PutObjectAsync(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                FilePath = path
+            });
 
             string key = Path.GetFileName(path);
-            var metadataRequest = new GetObjectMetadataRequest { BucketName = bucketName, Key = key };
-            var metadata = Client.GetObjectMetadata(metadataRequest);
+            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest 
+            { 
+                BucketName = bucketName, 
+                Key = key
+            });
             Assert.IsNotNull(metadata);
             Assert.IsTrue(metadata.ContentLength > 0);
 
-            Client.DeleteObject(new DeleteObjectRequest
+            await Client.DeleteObjectAsync(new DeleteObjectRequest
             {
                 BucketName = bucketName,
                 Key = key
             });
-
-            AssertExtensions.ExpectException(() => Client.GetObjectMetadata(metadataRequest));
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObject_FileNameOnly()
+        public async Task PutObject_FileNameOnly()
         {
-            PutObjectRequest request = new PutObjectRequest();
-            request.BucketName = bucketName;
-            request.FilePath = "PutObjectFile.txt";
-            Client.PutObject(request);
+            await Client.PutObjectAsync(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                FilePath = testFileName
+            });
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(FileNotFoundException))]
-        public void PutObject_FileNameNotExist()
+        public async Task PutObject_FileNameNotExist()
         {
-            PutObjectRequest request = new PutObjectRequest();
-            request.BucketName = bucketName;
-            request.FilePath = "FileThatDoesntExist";
+            var request = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                FilePath = "FileThatDoesntExist"
+            };
+
+            await Assert.ThrowsExceptionAsync<FileNotFoundException>(() => Client.PutObjectAsync(request));
+        }
+
+        [TestMethod]
+        public async Task PutObject_StreamChecksumEnabled()
+        {
+            using (var fStream = new FileStream(testFileName, FileMode.Open))
+            {
+                await Client.PutObjectAsync(new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = "PutObjectStreamChecksum" + random.Next(),
+                    InputStream = fStream
+                });
+            }
+        }
+
+        [TestMethod]
+        public async Task PutBucketPutObjectACLTest()
+        {
+            var aclBucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
             try
             {
-                Client.PutObject(request);
-            }
-            catch (FileNotFoundException ex)
-            {
-                Console.WriteLine(ex.ToString());
-                throw ex;
-            }
-        }
-
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void PutObject_StreamChecksumEnabled()
-        {
-            PutObjectRequest request = new PutObjectRequest();
-            request.BucketName = bucketName;
-            request.Key = "PutObjectStreamChecksum" + random.Next();
-
-            using (FileStream fStream = new FileStream("PutObjectFile.txt", FileMode.Open))
-            {
-                request.InputStream = fStream;
-                Client.PutObject(request);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void PutBucketPutObjectACLTest()
-        {
-            var aclBucketName = S3TestUtils.CreateBucketWithWait(Client, true);
-            try
-            {
-                Client.PutBucket(new PutBucketRequest
+                await Client.PutBucketAsync(new PutBucketRequest
                 {
                     BucketName = aclBucketName,
                 });
-                var getBucketAclResponse = Client.GetBucketAcl(new GetBucketAclRequest
+
+                var getBucketAclResponse = await Client.GetBucketAclAsync(new GetBucketAclRequest
                 {
                     BucketName = aclBucketName,
                 });
-                S3TestUtils.WaitForBucket(Client, aclBucketName);
-                var response = Client.PutBucketAcl(new PutBucketAclRequest
+                
+                await Client.PutBucketAclAsync(new PutBucketAclRequest
                 {
                     BucketName = aclBucketName,
                     AccessControlPolicy = new S3AccessControlList
                     {
-                        Grants = new List<S3Grant>()
-                    {
-                        new S3Grant()
+                        Grants = new List<S3Grant>
                         {
-                            Grantee = new S3Grantee()
+                            new S3Grant
                             {
-                                URI = "http://acs.amazonaws.com/groups/s3/LogDelivery",
+                                Grantee = new S3Grantee
+                                {
+                                    URI = "http://acs.amazonaws.com/groups/s3/LogDelivery",
+                                },
+                                Permission = S3Permission.READ
                             },
-                            Permission = S3Permission.READ
                         },
-                    },
                         Owner = getBucketAclResponse.Owner,
                     },
                 });
-                var getBucketAclResponse2 = Client.GetBucketAcl(new GetBucketAclRequest
+
+                var getBucketAclResponse2 = await Client.GetBucketAclAsync(new GetBucketAclRequest
                 {
                     BucketName = aclBucketName,
                 });
                 getBucketAclResponse2.Grants.ForEach(grant =>
                 {
-                    Assert.IsTrue(grant.Grantee.URI == "http://acs.amazonaws.com/groups/s3/LogDelivery");
-                    Assert.IsTrue(grant.Permission == S3Permission.READ);
+                    Assert.AreEqual("http://acs.amazonaws.com/groups/s3/LogDelivery", grant.Grantee.URI);
+                    Assert.AreEqual(S3Permission.READ, grant.Permission);
                 });
 
-                Client.PutObject(new PutObjectRequest
+                await Client.PutObjectAsync(new PutObjectRequest
                 {
                     Key = "putobjectwithacl",
                     ContentBody = "randomstuff",
                     BucketName = aclBucketName,
                 });
-                Client.PutObjectAcl(new PutObjectAclRequest
+
+                await Client.PutObjectAclAsync(new PutObjectAclRequest
                 {
                     BucketName = aclBucketName,
                     Key = "putobjectwithacl",
                     AccessControlPolicy = new S3AccessControlList
                     {
-                        Grants = new List<S3Grant>()
-                    {
-                        new S3Grant()
+                        Grants = new List<S3Grant>
                         {
-                            Grantee = new S3Grantee()
+                            new S3Grant
                             {
-                                URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers",
+                                Grantee = new S3Grantee
+                                {
+                                    URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers",
+                                },
+                                Permission = S3Permission.READ
                             },
-                            Permission = S3Permission.READ
                         },
-                    },
                         Owner = getBucketAclResponse.Owner,
                     },
                 });
-                var getObjectAclResponse = Client.GetObjectAcl(new GetObjectAclRequest
+
+                var getObjectAclResponse = await Client.GetObjectAclAsync(new GetObjectAclRequest
                 {
                     Key = "putobjectwithacl",
                     BucketName = aclBucketName,
                 });
-
                 getObjectAclResponse.Grants.ForEach(grant =>
                 {
-                    Assert.IsTrue(grant.Grantee.URI == "http://acs.amazonaws.com/groups/global/AuthenticatedUsers");
-                    Assert.IsTrue(grant.Permission == S3Permission.READ);
+                    Assert.AreEqual("http://acs.amazonaws.com/groups/global/AuthenticatedUsers", grant.Grantee.URI);
+                    Assert.AreEqual(S3Permission.READ, grant.Permission);
                 });
             }
             finally 
             {                 
-                AmazonS3Util.DeleteS3BucketWithObjects(Client, aclBucketName);
+                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, aclBucketName);
             }
-
         }
+
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWithACL()
+        public async Task PutObjectWithACL()
         {
-            PutObjectRequest request = new PutObjectRequest()
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = "putobjectwithacl",
                 ContentBody = "Some Random Nonsense",
-                Grants = new List<S3Grant>()
+                Grants = new List<S3Grant>
                 {
-                    //new S3Grant(){Grantee = new S3Grantee(){EmailAddress = "pavel@amazon.com"}, Permission = S3Permission.FULL_CONTROL},
-                    //new S3Grant(){Grantee = new S3Grantee(){EmailAddress = "aws-dr-tools-test@amazon.com"}, Permission = S3Permission.FULL_CONTROL},
-                    new S3Grant(){Grantee = new S3Grantee(){URI = "http://acs.amazonaws.com/groups/global/AllUsers"}, Permission = S3Permission.READ},
-                    new S3Grant(){Grantee = new S3Grantee { URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers"}, Permission = S3Permission.READ}
+                    new S3Grant
+                    {
+                        Grantee = new S3Grantee
+                        {
+                            URI = "http://acs.amazonaws.com/groups/global/AllUsers"
+                        },
+                        Permission = S3Permission.READ
+                    },
+                    new S3Grant
+                    {
+                        Grantee = new S3Grantee
+                        {
+                            URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers"
+                        },
+                        Permission = S3Permission.READ
+                    }
                 }
-            };
+            });
 
-            Client.PutObject(request);
-
-            var acl = Client.GetACL(new GetACLRequest() { BucketName = bucketName, Key = "putobjectwithacl" }).AccessControlList;
+            var acl = (await Client.GetACLAsync(new GetACLRequest { BucketName = bucketName, Key = "putobjectwithacl" })).AccessControlList;
             Assert.AreEqual(2, acl.Grants.Count);
-            foreach (var grant in acl.Grants)
-            {
-                var grantee = grant.Grantee;
-                Console.WriteLine("Grantee:");
-                if (!string.IsNullOrEmpty(grantee.URI))
-                    Console.WriteLine("Uri: {0}", grantee.URI);
-                if (!string.IsNullOrEmpty(grantee.EmailAddress))
-                    Console.WriteLine("Email: {0}", grantee.EmailAddress);
-                if (grantee.CanonicalUser != null && !string.IsNullOrEmpty(grantee.CanonicalUser))
-                    Console.WriteLine("Canonical user: {0}", grantee.CanonicalUser);
-                Console.WriteLine("Permissions: {0}", grant.Permission.ToString());
-            }
 
-            Client.PutACL(new PutACLRequest
+            await Client.PutACLAsync(new PutACLRequest
             {
                 BucketName = bucketName,
                 Key = "putobjectwithacl",
@@ -1085,34 +873,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         {
                             Grantee = new S3Grantee { URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers"},
                             Permission = S3Permission.READ,
-                            
                         },
-                        
                     },
                     Owner = acl.Owner
                 },
             });
                         
-            acl = S3TestUtils.WaitForConsistency(() =>
+            acl = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetACL(new GetACLRequest() { BucketName = bucketName, Key = "putobjectwithacl" });
+                var res = await Client.GetACLAsync(new GetACLRequest() { BucketName = bucketName, Key = "putobjectwithacl" });
                 return res.AccessControlList?.Grants?.Count > 0 ? res.AccessControlList : null;
             });            
             Assert.AreEqual(1, acl.Grants.Count);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutBucketWithCannedACL()
+        public async Task PutBucketWithCannedACL()
         {
-            string aclBucketName = "dotnet-integtests-cannedacl" + DateTime.UtcNow.Ticks;
-            PutBucketRequest request = new PutBucketRequest() { BucketName = aclBucketName, CannedACL = S3CannedACL.LogDeliveryWrite, ObjectOwnership = ObjectOwnership.ObjectWriter };
+            var aclBucketName = "dotnet-integtests-cannedacl" + DateTime.UtcNow.Ticks;
+            await Client.PutBucketAsync(new PutBucketRequest 
+            { 
+                BucketName = aclBucketName, 
+                CannedACL = S3CannedACL.LogDeliveryWrite, 
+                ObjectOwnership = ObjectOwnership.ObjectWriter 
+            });
 
-            Client.PutBucket(request);
-            S3TestUtils.WaitForBucket(Client, aclBucketName);
-
-            var acl = Client.GetACL(new GetACLRequest() { BucketName = aclBucketName }).AccessControlList;
-            Client.DeleteBucket(new DeleteBucketRequest() { BucketName = aclBucketName });
+            var acl = (await Client.GetACLAsync(new GetACLRequest { BucketName = aclBucketName })).AccessControlList;
+            await Client.DeleteBucketAsync(new DeleteBucketRequest { BucketName = aclBucketName });
 
             // should only have seen grants for full_control to test owner, LogDelivery read_acp and LogDelivery write
             Assert.AreEqual(3, acl.Grants.Count);
@@ -1121,30 +908,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 if (!string.IsNullOrEmpty(grant.Grantee.DisplayName))
                 {
                     Assert.IsNotNull(grant.Grantee.DisplayName);
-                    Assert.AreEqual<S3Permission>(S3Permission.FULL_CONTROL, grant.Permission);
+                    Assert.AreEqual(S3Permission.FULL_CONTROL, grant.Permission);
                 }
                 else if (!string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
                 {
                     Assert.IsNotNull(grant.Grantee.CanonicalUser);
-                    Assert.AreEqual<S3Permission>(S3Permission.FULL_CONTROL, grant.Permission);
+                    Assert.AreEqual(S3Permission.FULL_CONTROL, grant.Permission);
                 }
                 else
                 {
-                    Assert.AreEqual<string>("http://acs.amazonaws.com/groups/s3/LogDelivery", grant.Grantee.URI);
+                    Assert.AreEqual("http://acs.amazonaws.com/groups/s3/LogDelivery", grant.Grantee.URI);
                     Assert.IsTrue(grant.Permission == S3Permission.READ_ACP || grant.Permission == S3Permission.WRITE);
                 }
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWithContentLength()
+        public async Task PutObjectWithContentLength()
         {
             string sourceKey = "source";
             string destKey = "dest";
             string contents = "Sample contents";
             int length = contents.Length;
-            Client.PutObject(new PutObjectRequest
+
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = sourceKey,
@@ -1161,61 +948,61 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Expires = DateTime.UtcNow + TimeSpan.FromHours(2)
                 });
 
-                HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
-                using (HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse)
+                var httpRequest = WebRequest.Create(url) as HttpWebRequest;
+                using (HttpWebResponse httpResponse = await httpRequest.GetResponseAsync() as HttpWebResponse)
                 using (Stream stream = httpResponse.GetResponseStream())
                 {
-                    PutStream(destKey, length, stream);
+                    await PutStream(destKey, length, stream);
                 }
-                string finalContents = GetContents(destKey);
+
+                string finalContents = await GetContents(destKey);
                 Assert.AreEqual(contents, finalContents);
 
                 length -= 2;
-                httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
-                using (HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse)
+                httpRequest = WebRequest.Create(url) as HttpWebRequest;
+                using (HttpWebResponse httpResponse = await httpRequest.GetResponseAsync() as HttpWebResponse)
                 using (Stream stream = httpResponse.GetResponseStream())
                 {
-                    PutStream(destKey, length, stream);
+                    await PutStream(destKey, length, stream);
                 }
-                finalContents = GetContents(destKey);
+
+                finalContents = await GetContents(destKey);
                 Assert.AreEqual(contents.Substring(0, length), finalContents);
             }
         }
 
-        private void PutStream(string destKey, int length, Stream stream)
+        private async Task PutStream(string destKey, int length, Stream stream)
         {
-            PutObjectRequest request = new PutObjectRequest
+            var request = new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = destKey,
                 InputStream = stream,
             };
             request.Headers.ContentLength = length;
+            
             using (RetryUtilities.DisableClockSkewCorrection())
             {
-                Client.PutObject(request);
+                await Client.PutObjectAsync(request);
             }
         }
 
-        private string GetContents(string key)
+        private async Task<string> GetContents(string key)
         {
-            Stream stream = Client.GetObject(new GetObjectRequest
+            var response = await Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = key
-            }).ResponseStream;
+            });
 
-            using (stream)
+            using (StreamReader reader = new StreamReader(response.ResponseStream))
             {
-                using (StreamReader reader = new StreamReader(stream))
-                {
-                    return reader.ReadToEnd();
-                }
+                return await reader.ReadToEndAsync();
             }
         }
 
+#if NETFRAMEWORK
         [TestMethod]
-        [TestCategory("S3")]
         public void TestStreamRetry()
         {
             var s3ClientBufferSize = new AmazonS3Config().BufferSize;
@@ -1236,11 +1023,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             exceptions = exceptions.Where(e => e != null).ToList();
             if (exceptions.Count > 0)
-#if ASYNC_AWAIT
+            {
                 throw new AggregateException(exceptions);
-#else
-                throw exceptions.First();
-#endif
+            }
         }
 
         private static Exception TryTest(int errorSize, bool failRequest)
@@ -1250,16 +1035,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Test(errorSize, failRequest);
                 return null;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return e;
             }
         }
+
         private static void Test(int errorSize, bool failRequest)
         {
             var actualSize = errorSize + 128;
-            //var data = new string('@', actualSize + bufferSize);
-            //byte[] bytes = Encoding.UTF8.GetBytes(data);
             var bytes = CreateData(actualSize);
 
             // must precompute this and set in headers to avoid hash computation on ErrorStream
@@ -1284,6 +1068,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             CallWithTimeout(() => Client.PutObject(putRequest), TimeSpan.FromSeconds(10));
         }
+
         static void CallWithTimeout(Action action, TimeSpan timeout)
         {
             if (System.Diagnostics.Debugger.IsAttached)
@@ -1310,108 +1095,91 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 throw new TimeoutException();
             }
         }
+
         private static byte[] CreateData(int size)
         {
             var data = new byte[size];
-            for(int i=0;i<size;i++)
+            for (int i = 0; i < size; i++)
             {
                 var c = (i % 26) + 'a';
                 data[i] = (byte)c;
             }
             return data;
         }
+#endif
 
-        private static void VerifyPut(string data, PutObjectRequest putRequest)
+        private static async Task VerifyPut(string data, PutObjectRequest putRequest)
         {
             var getRequest = new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = putRequest.Key
             };
-            string responseData;
-            using (var response = Client.GetObject(getRequest))
+            
+            using (var response = await Client.GetObjectAsync(getRequest))
             using (var responseStream = response.ResponseStream)
             using (StreamReader reader = new StreamReader(responseStream))
             {
-                responseData = reader.ReadToEnd();
-
+                var responseData = await reader.ReadToEndAsync();
                 Assert.AreEqual(data, responseData);
+                
                 if (putRequest.StorageClass != null && putRequest.StorageClass != S3StorageClass.Standard)
                 {
                     Assert.IsNotNull(response.StorageClass);
-                    Assert.AreEqual(response.StorageClass, putRequest.StorageClass);
+                    Assert.AreEqual(putRequest.StorageClass, response.StorageClass);
                 }
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestResetStreamPosition()
+        public async Task TestResetStreamPosition()
         {
-            MemoryStream stream = new MemoryStream();
+            var stream = new MemoryStream();
             for (int i = 0; i < 10; i++)
             {
                 stream.WriteByte((byte)i);
             }
-
-
             Assert.AreEqual(stream.Position, stream.Length);
 
-            PutObjectRequest request = new PutObjectRequest()
+            var putObjectRequest = new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = "thestream",
                 InputStream = stream,
                 AutoCloseStream = false
             };
-            Client.PutObject(request);
+            await Client.PutObjectAsync(putObjectRequest);
 
             var getObjectRequest = new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = "thestream"
             };
-
-            for (int retries = 0; retries < 5; retries++)
+            using (var getObjectResponse = await Client.GetObjectAsync(getObjectRequest))
             {
-                Thread.Sleep(1000 * retries);
-                try
-                {
-                    using (var getObjectResponse = Client.GetObject(getObjectRequest))
-                    {
-                        Assert.AreEqual(stream.Length, getObjectResponse.ContentLength);
-                    }
-                    break;
-                }
-                catch (AmazonServiceException e)
-                {
-                    if (e.StatusCode != HttpStatusCode.NotFound || retries == 5)
-                        throw;
-                }
+                Assert.AreEqual(stream.Length, getObjectResponse.ContentLength);
             }
 
             stream.Seek(5, SeekOrigin.Begin);
-            request.InputStream = stream;
-            request.AutoResetStreamPosition = false;
-            Client.PutObject(request);
+            putObjectRequest.InputStream = stream;
+            putObjectRequest.AutoResetStreamPosition = false;
+            await Client.PutObjectAsync(putObjectRequest);
 
-            using (var getObjectResponse = Client.GetObject(getObjectRequest))
+            using (var getObjectResponse = await Client.GetObjectAsync(getObjectRequest))
             {
                 Assert.AreEqual(stream.Length - 5, getObjectResponse.ContentLength);
             }
-
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         public async Task ConfirmRetrySignature()
         {
-            var config = new AmazonS3Config
+            var s3Client = new AmazonS3Client(new AmazonS3Config
             {
                 RegionEndpoint = Client.Config.RegionEndpoint,
                 ResignRetries = true
-            };
-            var s3Client = new AmazonS3Client(config);
+            });
+
             // This test is response to this PR https://github.com/aws/aws-sdk-net/pull/4050 
             // where retries started failing with signature mismatch due to user agent modifications.
             // In this test we are confirming all retries are attempted and not failing with signature mismatch.
@@ -1426,8 +1194,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).UserAgentDetails.AddUserAgentComponent("Modifications");
-
-            await Client.PutObjectAsync(request);
+            await s3Client.PutObjectAsync(request);
         }
 
         private class FailOnceStream : WrapperStream
@@ -1558,16 +1325,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             }
         }
-    }
 
-    public class NonRewindableStream : MemoryStream
-    {
-        public override bool CanSeek
+        private class NonRewindableStream : MemoryStream
         {
-            get
-            {
-                return false;
-            }
+            public override bool CanSeek => false;
         }
     }
 }

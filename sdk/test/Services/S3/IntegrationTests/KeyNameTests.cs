@@ -23,10 +23,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             @"ObjectWith/InKeynÄme",
             @"ObjectWith$InKeynÄme",
             @"ObjectWith%2FInKeyname.Ext",
-            @"!@#$%^&*()_+_+!(@#*$)_@[]\/.txt"
+            @"!@#$%^&*()_+_+!(@#*$)_@[]\/.txt",
+            "b204a53f-781a-4cdd-a29c-3626818eb199:115740.pdf",
+            "46dbc16e-5f55-4bda-b275-75e2a8ab243c:115740.pdf"
         };
 
-        static string bucketName;
+        private static string bucketName;
 
         [ClassInitialize]
         public static async Task Initialize(TestContext a)
