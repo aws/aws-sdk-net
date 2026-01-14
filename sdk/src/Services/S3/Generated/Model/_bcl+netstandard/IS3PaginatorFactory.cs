@@ -24,7 +24,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Paginators for the S3 service
     ///</summary>
-    public interface IS3PaginatorFactory
+    public partial interface IS3PaginatorFactory
     {
 
         /// <summary>

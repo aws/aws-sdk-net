@@ -24,7 +24,6 @@ namespace Amazon.S3.Model
     ///</summary>
     public partial class S3PaginatorFactory : IS3PaginatorFactory
     {
-        private readonly IAmazonS3 _client;
         /// <summary>
         /// Paginator for ListObjects operation
         /// </summary>
@@ -32,7 +31,7 @@ namespace Amazon.S3.Model
         /// <returns></returns>
         public IListObjectsPaginator ListObjects(ListObjectsRequest request)
         {
-            return new ListObjectsPaginator(this._client, request);
+            return new ListObjectsPaginator(this.client, request);
         }
     }
 }

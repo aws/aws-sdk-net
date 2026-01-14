@@ -211,11 +211,12 @@ namespace ServiceClientGenerator
                 this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
             }
             // Any paginators for the service
-            // skip paginators for s3 until we're at the end of s3 client generation
             if (Configuration.ServiceModel.HasPaginators)
             {
                 foreach (var operation in Configuration.ServiceModel.Operations)
                 {
+                    if (operation.OperationModifiers != null && operation.OperationModifiers.ExcludePaginators)
+                        continue;
                     GeneratePaginator(operation);
                 }
                 ExecuteGenerator(new ServicePaginatorFactoryInterface(), $"I{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);

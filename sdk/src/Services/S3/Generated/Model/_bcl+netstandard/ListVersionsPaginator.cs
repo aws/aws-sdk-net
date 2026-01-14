@@ -49,12 +49,6 @@ namespace Amazon.S3.Model
             new PaginatedResultKeyResponse<ListVersionsResponse, S3ObjectVersion>(this, (i) => i.Versions ?? new List<S3ObjectVersion>());
 
         /// <summary>
-        /// Enumerable containing all of the DeleteMarkers
-        /// </summary>
-        public IPaginatedEnumerable<DeleteMarkerEntry> DeleteMarkers => 
-            new PaginatedResultKeyResponse<ListVersionsResponse, DeleteMarkerEntry>(this, (i) => i.DeleteMarkers ?? new List<DeleteMarkerEntry>());
-
-        /// <summary>
         /// Enumerable containing all of the CommonPrefixes
         /// </summary>
         public IPaginatedEnumerable<string> CommonPrefixes => 

@@ -37,11 +37,6 @@ namespace Amazon.S3.Model
         IPaginatedEnumerable<S3ObjectVersion> Versions { get; }
 
         /// <summary>
-        /// Enumerable containing all of the DeleteMarkers
-        /// </summary>
-        IPaginatedEnumerable<DeleteMarkerEntry> DeleteMarkers { get; }
-
-        /// <summary>
         /// Enumerable containing all of the CommonPrefixes
         /// </summary>
         IPaginatedEnumerable<string> CommonPrefixes { get; }
