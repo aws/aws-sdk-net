@@ -839,7 +839,6 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 	{
 		if(this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(this.Operation.RequestStructure.Name, out var modifier) && modifier.ExcludedMarshallingProperties.Contains(this.Operation.RequestPayloadMember.PropertyName))
 			return;
-
 		if(payload.Shape.IsString)
 		{
 #>

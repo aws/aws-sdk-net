@@ -1854,6 +1854,8 @@ namespace ServiceClientGenerator
                 modifiers.ExcludeResultKeys = new HashSet<string>(operation[OperationModifiers.ExcludeResultKeysKey].Cast<object>().Select(x => x.ToString()));
             if (operation[OperationModifiers.ExcludePaginatorsKey] != null && operation[OperationModifiers.ExcludePaginatorsKey].IsBoolean)
                 modifiers.ExcludePaginators = (bool)operation[OperationModifiers.ExcludePaginatorsKey];
+            if (operation[OperationModifiers.DisableChecksumHandlingKey] != null && operation[OperationModifiers.DisableChecksumHandlingKey].IsBoolean)
+                modifiers.DisableChecksumHandling = (bool)operation[OperationModifiers.DisableChecksumHandlingKey];
             return modifiers;
         }
 
@@ -1923,6 +1925,7 @@ namespace ServiceClientGenerator
             public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
             public const string ExcludeResultKeysKey = "excludeResultKey";
             public const string ExcludePaginatorsKey = "excludePaginators";
+            public const string DisableChecksumHandlingKey = "disableChecksumHandling";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
@@ -1941,7 +1944,13 @@ namespace ServiceClientGenerator
             /// <summary>
             /// Excludes the result keys specified in result_keys in the paginator model
             /// </summary>
-            public HashSet<string> ExcludeResultKeys
+            public HashSet<string> ExcludeResultKeys{
+                get;
+                set;
+            }
+            /// If true, no checksum handling will be generated
+            /// </summary>
+            public bool DisableChecksumHandling
             {
                 get;
                 set;
