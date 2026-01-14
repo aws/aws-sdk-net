@@ -10,7 +10,7 @@
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.Source</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.TargetDBClusterParameterGroupName</property>
@@ -58,13 +58,13 @@
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.Engine</property>
     <min>1</min>
     <max>35</max>
-    <pattern>^[A-Za-z0-9-]{1,35}$</pattern>
+    <pattern>[A-Za-z0-9-]{1,35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.EngineVersion</property>
     <min>1</min>
     <max>60</max>
-    <pattern>^[a-z0-9_.-]{1,60}$</pattern>
+    <pattern>[a-z0-9_.-]{1,60}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.ImageId</property>
@@ -211,13 +211,13 @@
     <property>Amazon.RDS.Model.DeleteCustomDBEngineVersionRequest.Engine</property>
     <min>1</min>
     <max>35</max>
-    <pattern>^[A-Za-z0-9-]{1,35}$</pattern>
+    <pattern>[A-Za-z0-9-]{1,35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteCustomDBEngineVersionRequest.EngineVersion</property>
     <min>1</min>
     <max>60</max>
-    <pattern>^[a-z0-9_.-]{1,60}$</pattern>
+    <pattern>[a-z0-9_.-]{1,60}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
@@ -461,13 +461,13 @@
     <property>Amazon.RDS.Model.ModifyCustomDBEngineVersionRequest.Engine</property>
     <min>1</min>
     <max>35</max>
-    <pattern>^[A-Za-z0-9-]{1,35}$</pattern>
+    <pattern>[A-Za-z0-9-]{1,35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyCustomDBEngineVersionRequest.EngineVersion</property>
     <min>1</min>
     <max>60</max>
-    <pattern>^[a-z0-9_.-]{1,60}$</pattern>
+    <pattern>[a-z0-9_.-]{1,60}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
@@ -479,13 +479,13 @@
     <property>Amazon.RDS.Model.ModifyDBClusterRequest.AwsBackupRecoveryPointArn</property>
     <min>43</min>
     <max>350</max>
-    <pattern>^arn:aws[a-z-]*:backup:[-a-z0-9]+:[0-9]{12}:[-a-z]+:([a-z0-9\-]+:)?[a-z][a-z0-9\-]{0,255}$</pattern>
+    <pattern>arn:aws[a-z-]*:backup:[-a-z0-9]+:[0-9]{12}:[-a-z]+:([a-z0-9\-]+:)?[a-z][a-z0-9\-]{0,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBInstanceRequest.AwsBackupRecoveryPointArn</property>
     <min>43</min>
     <max>350</max>
-    <pattern>^arn:aws[a-z-]*:backup:[-a-z0-9]+:[0-9]{12}:[-a-z]+:([a-z0-9\-]+:)?[a-z][a-z0-9\-]{0,255}$</pattern>
+    <pattern>arn:aws[a-z-]*:backup:[-a-z0-9]+:[0-9]{12}:[-a-z]+:([a-z0-9\-]+:)?[a-z][a-z0-9\-]{0,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBProxyRequest.DBProxyName</property>
@@ -679,13 +679,13 @@
     <property>Amazon.RDS.Model.BlueGreenDeployment.Source</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.BlueGreenDeployment.Target</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DBCluster.GlobalClusterIdentifier</property>
@@ -703,13 +703,13 @@
     <property>Amazon.RDS.Model.SwitchoverDetail.SourceMember</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.SwitchoverDetail.TargetMember</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.UserAuthConfig.Description</property>

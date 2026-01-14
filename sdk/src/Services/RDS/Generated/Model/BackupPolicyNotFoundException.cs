@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// <zonbook></zonbook><xhtml></xhtml>
     /// </summary>
     [Obsolete("Please avoid using this fault")]
     #if !NETSTANDARD
