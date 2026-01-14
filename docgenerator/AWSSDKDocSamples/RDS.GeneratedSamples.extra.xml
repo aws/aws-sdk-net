@@ -1,0 +1,2454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.AddRoleToDBCluster(Amazon.RDS.Model.AddRoleToDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.AddRoleToDBCluster(Amazon.RDS.Model.AddRoleToDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.AddRoleToDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.AddRoleToDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example associates a role with a DB cluster.
+                </para>
+                <code
+                    title="To associate an AWS Identity and Access Management (IAM) role with a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.AddRoleToDBInstance(Amazon.RDS.Model.AddRoleToDBInstanceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.AddRoleToDBInstance(Amazon.RDS.Model.AddRoleToDBInstanceRequest)" />
+            <member name="T:Amazon.RDS.Model.AddRoleToDBInstanceRequest" />
+            <member name="T:Amazon.RDS.Model.AddRoleToDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds the role to a DB instance named test-instance.
+                </para>
+                <code
+                    title="To associate an AWS Identity and Access Management (IAM) role with a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.AddSourceIdentifierToSubscription(Amazon.RDS.Model.AddSourceIdentifierToSubscriptionRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.AddSourceIdentifierToSubscription(Amazon.RDS.Model.AddSourceIdentifierToSubscriptionRequest)" />
+            <member name="T:Amazon.RDS.Model.AddSourceIdentifierToSubscriptionRequest" />
+            <member name="T:Amazon.RDS.Model.AddSourceIdentifierToSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds another source identifier to an existing subscription.
+                </para>
+                <code
+                    title="To add a source identifier to a subscription"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.AddTagsToResource(Amazon.RDS.Model.AddTagsToResourceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.AddTagsToResource(Amazon.RDS.Model.AddTagsToResourceRequest)" />
+            <member name="T:Amazon.RDS.Model.AddTagsToResourceRequest" />
+            <member name="T:Amazon.RDS.Model.AddTagsToResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds a tag to an option group.
+                </para>
+                <code
+                    title="To add tags to a resource"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ApplyPendingMaintenanceAction(Amazon.RDS.Model.ApplyPendingMaintenanceActionRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ApplyPendingMaintenanceAction(Amazon.RDS.Model.ApplyPendingMaintenanceActionRequest)" />
+            <member name="T:Amazon.RDS.Model.ApplyPendingMaintenanceActionRequest" />
+            <member name="T:Amazon.RDS.Model.ApplyPendingMaintenanceActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example applies the pending maintenance actions for a DB cluster.
+                </para>
+                <code
+                    title="To apply pending maintenance actions"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.AuthorizeDBSecurityGroupIngress(Amazon.RDS.Model.AuthorizeDBSecurityGroupIngressRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.AuthorizeDBSecurityGroupIngress(Amazon.RDS.Model.AuthorizeDBSecurityGroupIngressRequest)" />
+            <member name="T:Amazon.RDS.Model.AuthorizeDBSecurityGroupIngressRequest" />
+            <member name="T:Amazon.RDS.Model.AuthorizeDBSecurityGroupIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example authorizes access to the specified security group by the specified CIDR block.
+                </para>
+                <code
+                    title="To authorize DB security group integress"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CancelExportTask(Amazon.RDS.Model.CancelExportTaskRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CancelExportTask(Amazon.RDS.Model.CancelExportTaskRequest)" />
+            <member name="T:Amazon.RDS.Model.CancelExportTaskRequest" />
+            <member name="T:Amazon.RDS.Model.CancelExportTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example cancels an export task in progress that is exporting a snapshot to Amazon S3.
+                </para>
+                <code
+                    title="To cancel a snapshot export to Amazon S3"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CopyDBClusterParameterGroup(Amazon.RDS.Model.CopyDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CopyDBClusterParameterGroup(Amazon.RDS.Model.CopyDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.CopyDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.CopyDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example copies a DB cluster parameter group.
+                </para>
+                <code
+                    title="To copy a DB cluster parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CopyDBClusterSnapshot(Amazon.RDS.Model.CopyDBClusterSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CopyDBClusterSnapshot(Amazon.RDS.Model.CopyDBClusterSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.CopyDBClusterSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.CopyDBClusterSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a copy of a DB cluster snapshot, including its tags.
+                </para>
+                <code
+                    title="To copy a DB cluster snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CopyDBParameterGroup(Amazon.RDS.Model.CopyDBParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CopyDBParameterGroup(Amazon.RDS.Model.CopyDBParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.CopyDBParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.CopyDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example makes a copy of a DB parameter group.
+                </para>
+                <code
+                    title="To copy a DB parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CopyDBSnapshot(Amazon.RDS.Model.CopyDBSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CopyDBSnapshot(Amazon.RDS.Model.CopyDBSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.CopyDBSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.CopyDBSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a copy of a DB snapshot.
+                </para>
+                <code
+                    title="To copy a DB snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CopyOptionGroup(Amazon.RDS.Model.CopyOptionGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CopyOptionGroup(Amazon.RDS.Model.CopyOptionGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.CopyOptionGroupRequest" />
+            <member name="T:Amazon.RDS.Model.CopyOptionGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example makes a copy of an option group.
+                </para>
+                <code
+                    title="To copy an option group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateBlueGreenDeployment(Amazon.RDS.Model.CreateBlueGreenDeploymentRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateBlueGreenDeployment(Amazon.RDS.Model.CreateBlueGreenDeploymentRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateBlueGreenDeploymentRequest" />
+            <member name="T:Amazon.RDS.Model.CreateBlueGreenDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a blue/green deployment for a MySQL DB instance.
+                </para>
+                <code
+                    title="To create a blue/green deployment for an RDS for MySQL DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateBlueGreenDeployment(Amazon.RDS.Model.CreateBlueGreenDeploymentRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateBlueGreenDeployment(Amazon.RDS.Model.CreateBlueGreenDeploymentRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateBlueGreenDeploymentRequest" />
+            <member name="T:Amazon.RDS.Model.CreateBlueGreenDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a blue/green deployment for an Aurora MySQL DB cluster.
+                </para>
+                <code
+                    title="To create a blue/green deployment for an Aurora MySQL DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a MySQL 5.7-compatible Aurora DB cluster.
+                </para>
+                <code
+                    title="To create a MySQL 5.7-compatible DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a PostgreSQL-compatible Aurora DB cluster.
+                </para>
+                <code
+                    title="To create a PostgreSQL-compatible DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBClusterEndpoint(Amazon.RDS.Model.CreateDBClusterEndpointRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBClusterEndpoint(Amazon.RDS.Model.CreateDBClusterEndpointRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterEndpointRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a custom DB cluster endpoint and associate it with the specified Aurora DB cluster.
+                </para>
+                <code
+                    title="To create a custom DB cluster endpoint"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBClusterParameterGroup(Amazon.RDS.Model.CreateDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBClusterParameterGroup(Amazon.RDS.Model.CreateDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a DB cluster parameter group.
+                </para>
+                <code
+                    title="To create a DB cluster parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBClusterSnapshot(Amazon.RDS.Model.CreateDBClusterSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBClusterSnapshot(Amazon.RDS.Model.CreateDBClusterSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a DB cluster snapshot.
+                </para>
+                <code
+                    title="To create a DB cluster snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBInstance(Amazon.RDS.Model.CreateDBInstanceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBInstance(Amazon.RDS.Model.CreateDBInstanceRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBInstanceRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uses the required options to launch a new DB instance.
+                </para>
+                <code
+                    title="To create a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBInstanceReadReplica(Amazon.RDS.Model.CreateDBInstanceReadReplicaRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBInstanceReadReplica(Amazon.RDS.Model.CreateDBInstanceReadReplicaRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBInstanceReadReplicaRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBInstanceReadReplicaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a read replica of an existing DB instance named test-instance. The read replica is named test-instance-repl.
+                </para>
+                <code
+                    title="To create a DB instance read replica"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBParameterGroup(Amazon.RDS.Model.CreateDBParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBParameterGroup(Amazon.RDS.Model.CreateDBParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a DB parameter group.
+                </para>
+                <code
+                    title="To create a DB parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBSecurityGroup(Amazon.RDS.Model.CreateDBSecurityGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBSecurityGroup(Amazon.RDS.Model.CreateDBSecurityGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBSecurityGroupRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a DB security group.
+                </para>
+                <code
+                    title="To create a DB security group."
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBSnapshot(Amazon.RDS.Model.CreateDBSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBSnapshot(Amazon.RDS.Model.CreateDBSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a DB snapshot.
+                </para>
+                <code
+                    title="To create a DB snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBSubnetGroup(Amazon.RDS.Model.CreateDBSubnetGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBSubnetGroup(Amazon.RDS.Model.CreateDBSubnetGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBSubnetGroupRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a DB subnet group called mysubnetgroup using existing subnets.
+                </para>
+                <code
+                    title="To create a DB subnet group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateEventSubscription(Amazon.RDS.Model.CreateEventSubscriptionRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateEventSubscription(Amazon.RDS.Model.CreateEventSubscriptionRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateEventSubscriptionRequest" />
+            <member name="T:Amazon.RDS.Model.CreateEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a subscription for backup and recovery events for DB instances in the current AWS account. Notifications are sent to an Amazon Simple Notification Service topic.
+                </para>
+                <code
+                    title="To create an event subscription"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateGlobalCluster(Amazon.RDS.Model.CreateGlobalClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateGlobalCluster(Amazon.RDS.Model.CreateGlobalClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateGlobalClusterRequest" />
+            <member name="T:Amazon.RDS.Model.CreateGlobalClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new Aurora MySQL-compatible global DB cluster.
+                </para>
+                <code
+                    title="To create a global DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateIntegration(Amazon.RDS.Model.CreateIntegrationRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateIntegration(Amazon.RDS.Model.CreateIntegrationRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateIntegrationRequest" />
+            <member name="T:Amazon.RDS.Model.CreateIntegrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a zero-ETL integration with Amazon Redshift.
+                </para>
+                <code
+                    title="To create a zero-ETL integration"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateOptionGroup(Amazon.RDS.Model.CreateOptionGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateOptionGroup(Amazon.RDS.Model.CreateOptionGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateOptionGroupRequest" />
+            <member name="T:Amazon.RDS.Model.CreateOptionGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new Amazon RDS option group for Oracle MySQL version 8,0 named MyOptionGroup.
+                </para>
+                <code
+                    title="To Create an Amazon RDS option group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteBlueGreenDeployment(Amazon.RDS.Model.DeleteBlueGreenDeploymentRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteBlueGreenDeployment(Amazon.RDS.Model.DeleteBlueGreenDeploymentRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteBlueGreenDeploymentRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteBlueGreenDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the resources in a green environment for an RDS for MySQL DB instance.
+                </para>
+                <code
+                    title="To delete resources in green environment for an RDS for MySQL DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteBlueGreenDeployment(Amazon.RDS.Model.DeleteBlueGreenDeploymentRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteBlueGreenDeployment(Amazon.RDS.Model.DeleteBlueGreenDeploymentRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteBlueGreenDeploymentRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteBlueGreenDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the resources in a green environment for an Aurora MySQL DB cluster.
+                </para>
+                <code
+                    title="To delete resources in green environment for an Aurora MySQL DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBCluster(Amazon.RDS.Model.DeleteDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBCluster(Amazon.RDS.Model.DeleteDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the DB cluster named mycluster and takes a final snapshot named mycluster-final-snapshot. The status of the DB cluster is available while the snapshot is being taken. 
+                </para>
+                <code
+                    title="To delete a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBClusterEndpoint(Amazon.RDS.Model.DeleteDBClusterEndpointRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBClusterEndpoint(Amazon.RDS.Model.DeleteDBClusterEndpointRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBClusterEndpointRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBClusterEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified custom DB cluster endpoint.
+                </para>
+                <code
+                    title="To delete a custom DB cluster endpoint"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBClusterParameterGroup(Amazon.RDS.Model.DeleteDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBClusterParameterGroup(Amazon.RDS.Model.DeleteDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified DB cluster parameter group.
+                </para>
+                <code
+                    title="To delete a DB cluster parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBClusterSnapshot(Amazon.RDS.Model.DeleteDBClusterSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBClusterSnapshot(Amazon.RDS.Model.DeleteDBClusterSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBClusterSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBClusterSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To delete a DB cluster snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBInstance(Amazon.RDS.Model.DeleteDBInstanceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBInstance(Amazon.RDS.Model.DeleteDBInstanceRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBInstanceRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified DB instance after creating a final DB snapshot named test-instance-final-snap.
+                </para>
+                <code
+                    title="To delete a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBInstanceAutomatedBackup(Amazon.RDS.Model.DeleteDBInstanceAutomatedBackupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBInstanceAutomatedBackup(Amazon.RDS.Model.DeleteDBInstanceAutomatedBackupRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBInstanceAutomatedBackupRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBInstanceAutomatedBackupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the automated backup with the specified Amazon Resource Name (ARN).
+                </para>
+                <code
+                    title="To delete a replicated automated backup from a Region"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBParameterGroup(Amazon.RDS.Model.DeleteDBParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBParameterGroup(Amazon.RDS.Model.DeleteDBParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a DB parameter group.
+                </para>
+                <code
+                    title="To delete a DB parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBSecurityGroup(Amazon.RDS.Model.DeleteDBSecurityGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBSecurityGroup(Amazon.RDS.Model.DeleteDBSecurityGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBSecurityGroupRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a DB security group.
+                </para>
+                <code
+                    title="To delete a DB security group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBSnapshot(Amazon.RDS.Model.DeleteDBSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBSnapshot(Amazon.RDS.Model.DeleteDBSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified DB snapshot.
+                </para>
+                <code
+                    title="To delete a DB snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBSubnetGroup(Amazon.RDS.Model.DeleteDBSubnetGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBSubnetGroup(Amazon.RDS.Model.DeleteDBSubnetGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteDBSubnetGroupRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteDBSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the DB subnet group called mysubnetgroup.
+                </para>
+                <code
+                    title="To delete a DB subnet group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteEventSubscription(Amazon.RDS.Model.DeleteEventSubscriptionRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteEventSubscription(Amazon.RDS.Model.DeleteEventSubscriptionRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteEventSubscriptionRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified event subscription.
+                </para>
+                <code
+                    title="To delete an event subscription"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteGlobalCluster(Amazon.RDS.Model.DeleteGlobalClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteGlobalCluster(Amazon.RDS.Model.DeleteGlobalClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteGlobalClusterRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteGlobalClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an Aurora MySQL-compatible global DB cluster.
+                </para>
+                <code
+                    title="To delete a global DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteIntegration(Amazon.RDS.Model.DeleteIntegrationRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteIntegration(Amazon.RDS.Model.DeleteIntegrationRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteIntegrationRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteIntegrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a zero-ETL integration with Amazon Redshift.
+                </para>
+                <code
+                    title="To delete a zero-ETL integration"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DeleteOptionGroup(Amazon.RDS.Model.DeleteOptionGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DeleteOptionGroup(Amazon.RDS.Model.DeleteOptionGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.DeleteOptionGroupRequest" />
+            <member name="T:Amazon.RDS.Model.DeleteOptionGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified option group.
+                </para>
+                <code
+                    title="To delete an option group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeAccountAttributes(Amazon.RDS.Model.DescribeAccountAttributesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeAccountAttributes(Amazon.RDS.Model.DescribeAccountAttributesRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeAccountAttributesRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeAccountAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the attributes for the current AWS account.
+                </para>
+                <code
+                    title="To describe account attributes"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeBlueGreenDeployments(Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeBlueGreenDeployments(Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeBlueGreenDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of a blue/green deployment after creation completes.
+                </para>
+                <code
+                    title="To describe a blue/green deployment of an RDS DB instance after creation completes"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeBlueGreenDeployments(Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeBlueGreenDeployments(Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeBlueGreenDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of a blue/green deployment.
+                </para>
+                <code
+                    title="To describe a blue/green deployment for an Aurora MySQL DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeBlueGreenDeployments(Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeBlueGreenDeployments(Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeBlueGreenDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details about a blue/green deployment after the green environment is promoted to be the production environment.
+                </para>
+                <code
+                    title="To describe a blue/green deployment for an Aurora MySQL cluster after switchover"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeCertificates(Amazon.RDS.Model.DescribeCertificatesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeCertificates(Amazon.RDS.Model.DescribeCertificatesRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeCertificatesRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeCertificatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of the certificate associated with the user's default region.
+                </para>
+                <code
+                    title="To describe certificates"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBClusterBacktracks(Amazon.RDS.Model.DescribeDBClusterBacktracksRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBClusterBacktracks(Amazon.RDS.Model.DescribeDBClusterBacktracksRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterBacktracksRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterBacktracksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the specified DB cluster.
+                </para>
+                <code
+                    title="To describe backtracks for a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBClusterEndpoints(Amazon.RDS.Model.DescribeDBClusterEndpointsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBClusterEndpoints(Amazon.RDS.Model.DescribeDBClusterEndpointsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterEndpointsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterEndpointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details for your DB cluster endpoints. The most common kinds of Aurora clusters have two endpoints. One endpoint has type WRITER. You can use this endpoint for all SQL statements. The other endpoint has type READER. You can use this endpoint only for SELECT and other read-only SQL statements.
+                </para>
+                <code
+                    title="To describe DB cluster endpoints"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBClusterEndpoints(Amazon.RDS.Model.DescribeDBClusterEndpointsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBClusterEndpoints(Amazon.RDS.Model.DescribeDBClusterEndpointsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterEndpointsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterEndpointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details for the DB cluster endpoints of a single specified DB cluster. Aurora Serverless clusters have only a single endpoint with a type of WRITER.
+                </para>
+                <code
+                    title="To describe DB cluster endpoints of a single DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBClusterParameterGroups(Amazon.RDS.Model.DescribeDBClusterParameterGroupsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBClusterParameterGroups(Amazon.RDS.Model.DescribeDBClusterParameterGroupsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterParameterGroupsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterParameterGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details for your DB cluster parameter groups.
+                </para>
+                <code
+                    title="To describe DB cluster parameter groups"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBClusterParameters(Amazon.RDS.Model.DescribeDBClusterParametersRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBClusterParameters(Amazon.RDS.Model.DescribeDBClusterParametersRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterParametersRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the parameters in a DB cluster parameter group.
+                </para>
+                <code
+                    title="To describe the parameters in a DB cluster parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBClusters(Amazon.RDS.Model.DescribeDBClustersRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBClusters(Amazon.RDS.Model.DescribeDBClustersRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClustersRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of the specified DB cluster.
+                </para>
+                <code
+                    title="To describe a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBClusterSnapshotAttributes(Amazon.RDS.Model.DescribeDBClusterSnapshotAttributesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBClusterSnapshotAttributes(Amazon.RDS.Model.DescribeDBClusterSnapshotAttributesRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterSnapshotAttributesRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterSnapshotAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details of the attribute names and values for the specified DB cluster snapshot.
+                </para>
+                <code
+                    title="To describe the attribute names and values for a DB cluster snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBClusterSnapshots(Amazon.RDS.Model.DescribeDBClusterSnapshotsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBClusterSnapshots(Amazon.RDS.Model.DescribeDBClusterSnapshotsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterSnapshotsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBClusterSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details for the DB cluster snapshots for the specified DB cluster.
+                </para>
+                <code
+                    title="To describe a DB cluster snapshot for a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBEngineVersions(Amazon.RDS.Model.DescribeDBEngineVersionsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBEngineVersions(Amazon.RDS.Model.DescribeDBEngineVersionsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBEngineVersionsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBEngineVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example displays details about each of the DB engine versions for the specified DB engine.
+                </para>
+                <code
+                    title="To describe the DB engine versions for the MySQL DB engine"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBInstanceAutomatedBackups(Amazon.RDS.Model.DescribeDBInstanceAutomatedBackupsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBInstanceAutomatedBackups(Amazon.RDS.Model.DescribeDBInstanceAutomatedBackupsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBInstanceAutomatedBackupsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBInstanceAutomatedBackupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example displays details about the automated backups for the specified DB instance. The details include replicated automated backups in other AWS Regions.
+                </para>
+                <code
+                    title="To describe the automated backups for a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBInstances(Amazon.RDS.Model.DescribeDBInstancesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBInstances(Amazon.RDS.Model.DescribeDBInstancesRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBInstancesRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the specified DB instance.
+                </para>
+                <code
+                    title="To describe a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBLogFiles(Amazon.RDS.Model.DescribeDBLogFilesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBLogFiles(Amazon.RDS.Model.DescribeDBLogFilesRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBLogFilesRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBLogFilesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the log files for the specified DB instance.
+                </para>
+                <code
+                    title="To describe the log files for a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBParameterGroups(Amazon.RDS.Model.DescribeDBParameterGroupsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBParameterGroups(Amazon.RDS.Model.DescribeDBParameterGroupsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBParameterGroupsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBParameterGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about your DB parameter groups.
+                </para>
+                <code
+                    title="To describe your DB parameter groups"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBParameters(Amazon.RDS.Model.DescribeDBParametersRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBParameters(Amazon.RDS.Model.DescribeDBParametersRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBParametersRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of the specified DB parameter group.
+                </para>
+                <code
+                    title="To describe the parameters in a DB parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBSecurityGroups(Amazon.RDS.Model.DescribeDBSecurityGroupsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBSecurityGroups(Amazon.RDS.Model.DescribeDBSecurityGroupsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBSecurityGroupsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists settings for the specified security group.
+                </para>
+                <code
+                    title="To list DB security group settings"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBSnapshotAttributes(Amazon.RDS.Model.DescribeDBSnapshotAttributesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBSnapshotAttributes(Amazon.RDS.Model.DescribeDBSnapshotAttributesRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBSnapshotAttributesRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBSnapshotAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example describes the attribute names and values for a DB snapshot.
+                </para>
+                <code
+                    title="To describe the attribute names and values for a DB snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBSnapshots(Amazon.RDS.Model.DescribeDBSnapshotsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBSnapshots(Amazon.RDS.Model.DescribeDBSnapshotsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBSnapshotsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of a DB snapshot for a DB instance.
+                </para>
+                <code
+                    title="To describe a DB snapshot for a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeDBSubnetGroups(Amazon.RDS.Model.DescribeDBSubnetGroupsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeDBSubnetGroups(Amazon.RDS.Model.DescribeDBSubnetGroupsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeDBSubnetGroupsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeDBSubnetGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of the specified DB subnet group.
+                </para>
+                <code
+                    title="To describe a DB subnet group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeEngineDefaultClusterParameters(Amazon.RDS.Model.DescribeEngineDefaultClusterParametersRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeEngineDefaultClusterParameters(Amazon.RDS.Model.DescribeEngineDefaultClusterParametersRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeEngineDefaultClusterParametersRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeEngineDefaultClusterParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of the default engine and system parameter information for Aurora DB clusters with MySQL 5.7 compatibility.
+                </para>
+                <code
+                    title="To describe the default engine and system parameter information for the Aurora database engine"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeEngineDefaultParameters(Amazon.RDS.Model.DescribeEngineDefaultParametersRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeEngineDefaultParameters(Amazon.RDS.Model.DescribeEngineDefaultParametersRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeEngineDefaultParametersRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeEngineDefaultParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details for the default engine and system parameter information for MySQL 5.7 DB instances.
+                </para>
+                <code
+                    title="To describe the default engine and system parameter information for the database engine"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeEventCategories(Amazon.RDS.Model.DescribeEventCategoriesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeEventCategories(Amazon.RDS.Model.DescribeEventCategoriesRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeEventCategoriesRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeEventCategoriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the event categories for all available event sources.
+                </para>
+                <code
+                    title="To describe event categories"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeEvents(Amazon.RDS.Model.DescribeEventsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeEvents(Amazon.RDS.Model.DescribeEventsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeEventsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following retrieves details for the events that have occurred for the specified DB instance.
+                </para>
+                <code
+                    title="To describe events"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeEventSubscriptions(Amazon.RDS.Model.DescribeEventSubscriptionsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeEventSubscriptions(Amazon.RDS.Model.DescribeEventSubscriptionsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeEventSubscriptionsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeEventSubscriptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes all of the Amazon RDS event subscriptions for the current AWS account.
+                </para>
+                <code
+                    title="To describe event subscriptions"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeExportTasks(Amazon.RDS.Model.DescribeExportTasksRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeExportTasks(Amazon.RDS.Model.DescribeExportTasksRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeExportTasksRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeExportTasksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about snapshot exports to Amazon S3.
+                </para>
+                <code
+                    title="To describe snapshot export tasks"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeGlobalClusters(Amazon.RDS.Model.DescribeGlobalClustersRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeGlobalClusters(Amazon.RDS.Model.DescribeGlobalClustersRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeGlobalClustersRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeGlobalClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists Aurora global DB clusters in the current AWS Region.
+                </para>
+                <code
+                    title="To describe global DB clusters"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeIntegrations(Amazon.RDS.Model.DescribeIntegrationsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeIntegrations(Amazon.RDS.Model.DescribeIntegrationsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeIntegrationsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeIntegrationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves information about a zero-ETL integration with Amazon Redshift.
+                </para>
+                <code
+                    title="To describe a zero-ETL integration"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeOptionGroupOptions(Amazon.RDS.Model.DescribeOptionGroupOptionsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeOptionGroupOptions(Amazon.RDS.Model.DescribeOptionGroupOptionsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeOptionGroupOptionsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeOptionGroupOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the options for an RDS for MySQL version 8.0 DB instance.
+                </para>
+                <code
+                    title="To describe all available options"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeOptionGroups(Amazon.RDS.Model.DescribeOptionGroupsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeOptionGroups(Amazon.RDS.Model.DescribeOptionGroupsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeOptionGroupsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeOptionGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the options groups for an Oracle Database 19c instance.
+                </para>
+                <code
+                    title="To describe the available option groups"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeOrderableDBInstanceOptions(Amazon.RDS.Model.DescribeOrderableDBInstanceOptionsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeOrderableDBInstanceOptions(Amazon.RDS.Model.DescribeOrderableDBInstanceOptionsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeOrderableDBInstanceOptionsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeOrderableDBInstanceOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the orderable options for a DB instances running the MySQL DB engine.
+                </para>
+                <code
+                    title="To describe orderable DB instance options"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribePendingMaintenanceActions(Amazon.RDS.Model.DescribePendingMaintenanceActionsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribePendingMaintenanceActions(Amazon.RDS.Model.DescribePendingMaintenanceActionsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribePendingMaintenanceActionsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribePendingMaintenanceActionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the pending maintenace action for a DB instance.
+                </para>
+                <code
+                    title="To list resources with at least one pending maintenance action"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeReservedDBInstances(Amazon.RDS.Model.DescribeReservedDBInstancesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeReservedDBInstances(Amazon.RDS.Model.DescribeReservedDBInstancesRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeReservedDBInstancesRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeReservedDBInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about any reserved DB instances in the current AWS account.
+                </para>
+                <code
+                    title="To describe reserved DB instances"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeReservedDBInstancesOfferings(Amazon.RDS.Model.DescribeReservedDBInstancesOfferingsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeReservedDBInstancesOfferings(Amazon.RDS.Model.DescribeReservedDBInstancesOfferingsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeReservedDBInstancesOfferingsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeReservedDBInstancesOfferingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about reserved DB instance options for RDS for Oracle.
+                </para>
+                <code
+                    title="To describe reserved DB instance offerings"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeSourceRegions(Amazon.RDS.Model.DescribeSourceRegionsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeSourceRegions(Amazon.RDS.Model.DescribeSourceRegionsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeSourceRegionsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeSourceRegionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about all source AWS Regions where the current AWS Region can create a read replica, copy a DB snapshot from, or replicate automated backups from. It also shows that automated backups can be replicated only from US West (Oregon) to the destination AWS Region, US East (N. Virginia).
+                </para>
+                <code
+                    title="To describe source Regions"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeValidDBInstanceModifications(Amazon.RDS.Model.DescribeValidDBInstanceModificationsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeValidDBInstanceModifications(Amazon.RDS.Model.DescribeValidDBInstanceModificationsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeValidDBInstanceModificationsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeValidDBInstanceModificationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the valid modifications for the specified DB instance.
+                </para>
+                <code
+                    title="To describe valid modifications for a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DownloadDBLogFilePortion(Amazon.RDS.Model.DownloadDBLogFilePortionRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DownloadDBLogFilePortion(Amazon.RDS.Model.DownloadDBLogFilePortionRequest)" />
+            <member name="T:Amazon.RDS.Model.DownloadDBLogFilePortionRequest" />
+            <member name="T:Amazon.RDS.Model.DownloadDBLogFilePortionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example downloads only the latest part of your log file.
+                </para>
+                <code
+                    title="To download a DB log file"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.FailoverDBCluster(Amazon.RDS.Model.FailoverDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.FailoverDBCluster(Amazon.RDS.Model.FailoverDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.FailoverDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.FailoverDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example performs a failover for the specified DB cluster to the specified DB instance.
+                </para>
+                <code
+                    title="To perform a failover for a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ListTagsForResource(Amazon.RDS.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ListTagsForResource(Amazon.RDS.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.RDS.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.RDS.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all tags on a DB instance.
+                </para>
+                <code
+                    title="To list tags on an Amazon RDS resource"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyCertificates(Amazon.RDS.Model.ModifyCertificatesRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyCertificates(Amazon.RDS.Model.ModifyCertificatesRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyCertificatesRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyCertificatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example temporarily overrides the system-default SSL/TLS certificate for new DB instances.
+                </para>
+                <code
+                    title="To temporarily override the system-default SSL/TLS certificate for new DB instances"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyCurrentDBClusterCapacity(Amazon.RDS.Model.ModifyCurrentDBClusterCapacityRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyCurrentDBClusterCapacity(Amazon.RDS.Model.ModifyCurrentDBClusterCapacityRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyCurrentDBClusterCapacityRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyCurrentDBClusterCapacityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example scales the capacity of an Aurora Serverless DB cluster to 8.
+                </para>
+                <code
+                    title="To scale the capacity of an Aurora Serverless DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBCluster(Amazon.RDS.Model.ModifyDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBCluster(Amazon.RDS.Model.ModifyDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example changes the master user password for the DB cluster named cluster-2 and sets the backup retention period to 14 days. The ApplyImmediately parameter causes the changes to be made immediately, instead of waiting until the next maintenance window.
+                </para>
+                <code
+                    title="To modify a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBClusterEndpoint(Amazon.RDS.Model.ModifyDBClusterEndpointRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBClusterEndpoint(Amazon.RDS.Model.ModifyDBClusterEndpointRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBClusterEndpointRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBClusterEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example modifies the specified custom DB cluster endpoint.
+                </para>
+                <code
+                    title="To modify a custom DB cluster endpoint"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBClusterParameterGroup(Amazon.RDS.Model.ModifyDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBClusterParameterGroup(Amazon.RDS.Model.ModifyDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example modifies the values of parameters in a DB cluster parameter group.
+                </para>
+                <code
+                    title="To modify parameters in a DB cluster parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBClusterSnapshotAttribute(Amazon.RDS.Model.ModifyDBClusterSnapshotAttributeRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBClusterSnapshotAttribute(Amazon.RDS.Model.ModifyDBClusterSnapshotAttributeRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBClusterSnapshotAttributeRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBClusterSnapshotAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example makes changes to the specified DB cluster snapshot attribute.
+                </para>
+                <code
+                    title="To modify a DB cluster snapshot attribute"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBInstance(Amazon.RDS.Model.ModifyDBInstanceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBInstance(Amazon.RDS.Model.ModifyDBInstanceRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBInstanceRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example associates an option group and a parameter group with a compatible Microsoft SQL Server DB instance. The ApplyImmediately parameter causes the option and parameter groups to be associated immediately, instead of waiting until the next maintenance window.
+                </para>
+                <code
+                    title="To modify a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBParameterGroup(Amazon.RDS.Model.ModifyDBParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBParameterGroup(Amazon.RDS.Model.ModifyDBParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example changes the value of the clr enabled parameter in a DB parameter group. The value of the ApplyMethod parameter causes the DB parameter group to be modified immediately, instead of waiting until the next maintenance window.
+                </para>
+                <code
+                    title="To modify a DB parameter group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBSnapshot(Amazon.RDS.Model.ModifyDBSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBSnapshot(Amazon.RDS.Model.ModifyDBSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example upgrades a PostgeSQL 10.6 snapshot named db5-snapshot-upg-test to PostgreSQL 11.7. The new DB engine version is shown after the snapshot has finished upgrading and its status is available.
+                </para>
+                <code
+                    title="To modify a DB snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBSnapshotAttribute(Amazon.RDS.Model.ModifyDBSnapshotAttributeRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBSnapshotAttribute(Amazon.RDS.Model.ModifyDBSnapshotAttributeRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBSnapshotAttributeRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBSnapshotAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example grants permission to two AWS accounts, with the identifiers 111122223333 and 444455556666, to restore the DB snapshot named mydbsnapshot.
+                </para>
+                <code
+                    title="To allow two AWS accounts to restore a DB snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBSnapshotAttribute(Amazon.RDS.Model.ModifyDBSnapshotAttributeRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBSnapshotAttribute(Amazon.RDS.Model.ModifyDBSnapshotAttributeRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBSnapshotAttributeRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBSnapshotAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes permission from the AWS account with the identifier 444455556666 to restore the DB snapshot named mydbsnapshot.
+                </para>
+                <code
+                    title="To prevent an AWS account from restoring a DB snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBSubnetGroup(Amazon.RDS.Model.ModifyDBSubnetGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBSubnetGroup(Amazon.RDS.Model.ModifyDBSubnetGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyDBSubnetGroupRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyDBSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds a subnet with the ID subnet-08e41f9e230222222 to the DB subnet group named mysubnetgroup. To keep the existing subnets in the subnet group, include their IDs as values in the --subnet-ids option. Make sure to have subnets with at least two different Availability Zones in the DB subnet group.
+                </para>
+                <code
+                    title="To modify a DB subnet group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyEventSubscription(Amazon.RDS.Model.ModifyEventSubscriptionRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyEventSubscription(Amazon.RDS.Model.ModifyEventSubscriptionRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyEventSubscriptionRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example turns off the specified event subscription, so that it no longer publishes notifications to the specified Amazon Simple Notification Service topic.
+                </para>
+                <code
+                    title="To modify an event subscription"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyGlobalCluster(Amazon.RDS.Model.ModifyGlobalClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyGlobalCluster(Amazon.RDS.Model.ModifyGlobalClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyGlobalClusterRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyGlobalClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example enables deletion protection for an Aurora MySQL-based global database cluster.
+                </para>
+                <code
+                    title="To modify a global database cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyIntegration(Amazon.RDS.Model.ModifyIntegrationRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyIntegration(Amazon.RDS.Model.ModifyIntegrationRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyIntegrationRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyIntegrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example modifies the name of an existing zero-ETL integration.
+                </para>
+                <code
+                    title="To modify a zero-ETL integration"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ModifyOptionGroup(Amazon.RDS.Model.ModifyOptionGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ModifyOptionGroup(Amazon.RDS.Model.ModifyOptionGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.ModifyOptionGroupRequest" />
+            <member name="T:Amazon.RDS.Model.ModifyOptionGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds an option to an option group.
+                </para>
+                <code
+                    title="To modify an option group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.PromoteReadReplica(Amazon.RDS.Model.PromoteReadReplicaRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.PromoteReadReplica(Amazon.RDS.Model.PromoteReadReplicaRequest)" />
+            <member name="T:Amazon.RDS.Model.PromoteReadReplicaRequest" />
+            <member name="T:Amazon.RDS.Model.PromoteReadReplicaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example promotes the specified read replica to become a standalone DB instance.
+                </para>
+                <code
+                    title="To promote a read replica"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.PurchaseReservedDBInstancesOffering(Amazon.RDS.Model.PurchaseReservedDBInstancesOfferingRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.PurchaseReservedDBInstancesOffering(Amazon.RDS.Model.PurchaseReservedDBInstancesOfferingRequest)" />
+            <member name="T:Amazon.RDS.Model.PurchaseReservedDBInstancesOfferingRequest" />
+            <member name="T:Amazon.RDS.Model.PurchaseReservedDBInstancesOfferingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to buy the reserved DB instance offering from the previous example.
+                </para>
+                <code
+                    title="To purchase a reserved DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RebootDBInstance(Amazon.RDS.Model.RebootDBInstanceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RebootDBInstance(Amazon.RDS.Model.RebootDBInstanceRequest)" />
+            <member name="T:Amazon.RDS.Model.RebootDBInstanceRequest" />
+            <member name="T:Amazon.RDS.Model.RebootDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts a reboot of the specified DB instance.
+                </para>
+                <code
+                    title="To reboot a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RemoveFromGlobalCluster(Amazon.RDS.Model.RemoveFromGlobalClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RemoveFromGlobalCluster(Amazon.RDS.Model.RemoveFromGlobalClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.RemoveFromGlobalClusterRequest" />
+            <member name="T:Amazon.RDS.Model.RemoveFromGlobalClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example detaches an Aurora secondary cluster from an Aurora global database cluster. The cluster changes from being read-only to a standalone cluster with read-write capability.
+                </para>
+                <code
+                    title="To detach an Aurora secondary cluster from an Aurora global database cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RemoveRoleFromDBCluster(Amazon.RDS.Model.RemoveRoleFromDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RemoveRoleFromDBCluster(Amazon.RDS.Model.RemoveRoleFromDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.RemoveRoleFromDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.RemoveRoleFromDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes a role from a DB cluster.
+                </para>
+                <code
+                    title="To disassociate an Identity and Access Management (IAM) role from a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RemoveSourceIdentifierFromSubscription(Amazon.RDS.Model.RemoveSourceIdentifierFromSubscriptionRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RemoveSourceIdentifierFromSubscription(Amazon.RDS.Model.RemoveSourceIdentifierFromSubscriptionRequest)" />
+            <member name="T:Amazon.RDS.Model.RemoveSourceIdentifierFromSubscriptionRequest" />
+            <member name="T:Amazon.RDS.Model.RemoveSourceIdentifierFromSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes the specified source identifier from an existing subscription.
+                </para>
+                <code
+                    title="To remove a source identifier from a subscription"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RemoveTagsFromResource(Amazon.RDS.Model.RemoveTagsFromResourceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RemoveTagsFromResource(Amazon.RDS.Model.RemoveTagsFromResourceRequest)" />
+            <member name="T:Amazon.RDS.Model.RemoveTagsFromResourceRequest" />
+            <member name="T:Amazon.RDS.Model.RemoveTagsFromResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes tags from a resource.
+                </para>
+                <code
+                    title="To remove tags from a resource"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ResetDBClusterParameterGroup(Amazon.RDS.Model.ResetDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ResetDBClusterParameterGroup(Amazon.RDS.Model.ResetDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.ResetDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.ResetDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example resets all parameter values in a customer-created DB cluster parameter group to their default values.
+                </para>
+                <code
+                    title="To reset all parameters to their default values"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.ResetDBParameterGroup(Amazon.RDS.Model.ResetDBParameterGroupRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.ResetDBParameterGroup(Amazon.RDS.Model.ResetDBParameterGroupRequest)" />
+            <member name="T:Amazon.RDS.Model.ResetDBParameterGroupRequest" />
+            <member name="T:Amazon.RDS.Model.ResetDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example resets all parameter values in a customer-created DB parameter group to their default values.
+                </para>
+                <code
+                    title="To reset all parameters to their default values"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RestoreDBClusterFromS3(Amazon.RDS.Model.RestoreDBClusterFromS3Request)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RestoreDBClusterFromS3(Amazon.RDS.Model.RestoreDBClusterFromS3Request)" />
+            <member name="T:Amazon.RDS.Model.RestoreDBClusterFromS3Request" />
+            <member name="T:Amazon.RDS.Model.RestoreDBClusterFromS3Response" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores an Amazon Aurora MySQL version 5.7-compatible DB cluster from a MySQL 5.7 DB backup file in Amazon S3.
+                </para>
+                <code
+                    title="To restore an Amazon Aurora DB cluster from Amazon S3"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RestoreDBClusterFromSnapshot(Amazon.RDS.Model.RestoreDBClusterFromSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RestoreDBClusterFromSnapshot(Amazon.RDS.Model.RestoreDBClusterFromSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.RestoreDBClusterFromSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.RestoreDBClusterFromSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores an Aurora PostgreSQL DB cluster compatible with PostgreSQL version 10.7 from a DB cluster snapshot named test-instance-snapshot.
+                </para>
+                <code
+                    title="To restore a DB cluster from a snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RestoreDBClusterToPointInTime(Amazon.RDS.Model.RestoreDBClusterToPointInTimeRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RestoreDBClusterToPointInTime(Amazon.RDS.Model.RestoreDBClusterToPointInTimeRequest)" />
+            <member name="T:Amazon.RDS.Model.RestoreDBClusterToPointInTimeRequest" />
+            <member name="T:Amazon.RDS.Model.RestoreDBClusterToPointInTimeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores the DB cluster named database-4 to the latest possible time. Using copy-on-write as the restore type restores the new DB cluster as a clone of the source DB cluster.
+                </para>
+                <code
+                    title="To restore a DB cluster to a specified time"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RestoreDBInstanceFromDBSnapshot(Amazon.RDS.Model.RestoreDBInstanceFromDBSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RestoreDBInstanceFromDBSnapshot(Amazon.RDS.Model.RestoreDBInstanceFromDBSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.RestoreDBInstanceFromDBSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.RestoreDBInstanceFromDBSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new DB instance named db7-new-instance with the db.t3.small DB instance class from the specified DB snapshot. The source DB instance from which the snapshot was taken uses a deprecated DB instance class, so you can't upgrade it.
+                </para>
+                <code
+                    title="To restore a DB instance from a DB snapshot"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RestoreDBInstanceToPointInTime(Amazon.RDS.Model.RestoreDBInstanceToPointInTimeRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RestoreDBInstanceToPointInTime(Amazon.RDS.Model.RestoreDBInstanceToPointInTimeRequest)" />
+            <member name="T:Amazon.RDS.Model.RestoreDBInstanceToPointInTimeRequest" />
+            <member name="T:Amazon.RDS.Model.RestoreDBInstanceToPointInTimeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores test-instance to a new DB instance named restored-test-instance, as of the specified time.
+                </para>
+                <code
+                    title="To restore a DB instance to a point in time"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RevokeDBSecurityGroupIngress(Amazon.RDS.Model.RevokeDBSecurityGroupIngressRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RevokeDBSecurityGroupIngress(Amazon.RDS.Model.RevokeDBSecurityGroupIngressRequest)" />
+            <member name="T:Amazon.RDS.Model.RevokeDBSecurityGroupIngressRequest" />
+            <member name="T:Amazon.RDS.Model.RevokeDBSecurityGroupIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example revokes ingress for the specified CIDR block associated with the specified DB security group.
+                </para>
+                <code
+                    title="To revoke ingress for a DB security group"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StartActivityStream(Amazon.RDS.Model.StartActivityStreamRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StartActivityStream(Amazon.RDS.Model.StartActivityStreamRequest)" />
+            <member name="T:Amazon.RDS.Model.StartActivityStreamRequest" />
+            <member name="T:Amazon.RDS.Model.StartActivityStreamResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts an asynchronous activity stream to monitor an Aurora cluster named my-pg-cluster.
+                </para>
+                <code
+                    title="To start a database activity stream"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StartDBCluster(Amazon.RDS.Model.StartDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StartDBCluster(Amazon.RDS.Model.StartDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.StartDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.StartDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts a DB cluster and its DB instances.
+                </para>
+                <code
+                    title="To start a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StartDBInstance(Amazon.RDS.Model.StartDBInstanceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StartDBInstance(Amazon.RDS.Model.StartDBInstanceRequest)" />
+            <member name="T:Amazon.RDS.Model.StartDBInstanceRequest" />
+            <member name="T:Amazon.RDS.Model.StartDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts the specified DB instance.
+                </para>
+                <code
+                    title="To start a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StartDBInstanceAutomatedBackupsReplication(Amazon.RDS.Model.StartDBInstanceAutomatedBackupsReplicationRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StartDBInstanceAutomatedBackupsReplication(Amazon.RDS.Model.StartDBInstanceAutomatedBackupsReplicationRequest)" />
+            <member name="T:Amazon.RDS.Model.StartDBInstanceAutomatedBackupsReplicationRequest" />
+            <member name="T:Amazon.RDS.Model.StartDBInstanceAutomatedBackupsReplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example replicates automated backups from a DB instance in the US East (N. Virginia) Region. The backup retention period is 14 days.
+                </para>
+                <code
+                    title="To enable cross-Region automated backups"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StartExportTask(Amazon.RDS.Model.StartExportTaskRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StartExportTask(Amazon.RDS.Model.StartExportTaskRequest)" />
+            <member name="T:Amazon.RDS.Model.StartExportTaskRequest" />
+            <member name="T:Amazon.RDS.Model.StartExportTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example exports a DB snapshot named db5-snapshot-test to the Amazon S3 bucket named mybucket.
+                </para>
+                <code
+                    title="To export a snapshot to Amazon S3"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StopActivityStream(Amazon.RDS.Model.StopActivityStreamRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StopActivityStream(Amazon.RDS.Model.StopActivityStreamRequest)" />
+            <member name="T:Amazon.RDS.Model.StopActivityStreamRequest" />
+            <member name="T:Amazon.RDS.Model.StopActivityStreamResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example stops an activity stream in an Aurora cluster named my-pg-cluster.
+                </para>
+                <code
+                    title="To stop a database activity stream"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StopDBCluster(Amazon.RDS.Model.StopDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StopDBCluster(Amazon.RDS.Model.StopDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.StopDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.StopDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example stops a DB cluster and its DB instances.
+                </para>
+                <code
+                    title="To stop a DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StopDBInstance(Amazon.RDS.Model.StopDBInstanceRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StopDBInstance(Amazon.RDS.Model.StopDBInstanceRequest)" />
+            <member name="T:Amazon.RDS.Model.StopDBInstanceRequest" />
+            <member name="T:Amazon.RDS.Model.StopDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example stops the specified DB instance.
+                </para>
+                <code
+                    title="To stop a DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.StopDBInstanceAutomatedBackupsReplication(Amazon.RDS.Model.StopDBInstanceAutomatedBackupsReplicationRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.StopDBInstanceAutomatedBackupsReplication(Amazon.RDS.Model.StopDBInstanceAutomatedBackupsReplicationRequest)" />
+            <member name="T:Amazon.RDS.Model.StopDBInstanceAutomatedBackupsReplicationRequest" />
+            <member name="T:Amazon.RDS.Model.StopDBInstanceAutomatedBackupsReplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example ends replication of automated backups. Replicated backups are retained according to the set backup retention period.
+                </para>
+                <code
+                    title="To stop replicating automated backups"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.SwitchoverBlueGreenDeployment(Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.SwitchoverBlueGreenDeployment(Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest)" />
+            <member name="T:Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest" />
+            <member name="T:Amazon.RDS.Model.SwitchoverBlueGreenDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example promotes the specified green environment as the new production environment.
+                </para>
+                <code
+                    title="To switch a blue/green deployment for an RDS DB instance"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.SwitchoverBlueGreenDeployment(Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.SwitchoverBlueGreenDeployment(Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest)" />
+            <member name="T:Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest" />
+            <member name="T:Amazon.RDS.Model.SwitchoverBlueGreenDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example promotes the specified green environment as the new production environment.
+                </para>
+                <code
+                    title="To promote a blue/green deployment for an Aurora MySQL DB cluster"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+</docs>
