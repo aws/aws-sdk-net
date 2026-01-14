@@ -32,7 +32,7 @@ namespace Amazon.Route53RecoveryControlConfig
     public partial class AmazonRoute53RecoveryControlConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Control Config", "3.7.502.32");
+            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Control Config", "3.7.502.33");
 
         private string _userAgent = UserAgentString;
         ///<summary>

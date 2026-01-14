@@ -32,7 +32,7 @@ namespace Amazon.ManagedBlockchainQuery
     public partial class AmazonManagedBlockchainQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "3.7.502.29");
+            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "3.7.502.30");
 
         private string _userAgent = UserAgentString;
         ///<summary>

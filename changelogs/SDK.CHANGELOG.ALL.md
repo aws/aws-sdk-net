@@ -1,3 +1,22 @@
+### 3.7.1202.0 (2026-01-14 19:22 UTC)
+* Connect (3.7.522.0)
+	* Amazon Connect makes it easier to manage contact center operating hours by enabling automated scheduling for recurring events like holidays and maintenance windows. Set up recurring patterns (weekly, monthly, etc.) or link to another hours of operation to inherit overrides.
+* CostExplorer (3.7.509.4)
+	* Cost Categories added support to BillingView data filter expressions through the new costCategories parameter, enabling users to filter billing views by AWS Cost Categories for more granular cost management and allocation.
+* EKS (3.7.508.0)
+	* Added support for BOTTLEROCKET NVIDIA FIPS AMIs to AMI types in US regions.
+* RDS (3.7.512.0)
+	* no feature changes. model migrated to Smithy
+* Redshift (3.7.506.0)
+	* Adds support for enabling extra compute resources for automatic optimization during create and modify operations in Amazon Redshift clusters.
+* RedshiftServerless (3.7.504.0)
+	* Adds support for enabling extra compute resources for automatic optimization during create and update operations in Amazon Redshift Serverless workgroups.
+* SocialMessaging (3.7.503.0)
+	* This release clarifies WhatsApp template operations as a resource-authenticated operation via the parent WhatsApp Business Account. It also introduces new parameters for parameter format, CTA URL link tracking, and template body examples, and increases the phone number ID length.
+* Core 3.7.500.66
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1201.0 (2026-01-13 19:22 UTC)
 * Bedrock (3.7.511.0)
 	* This change will increase TestCase guardContent input size from 1024 to 2028 characters and PolicyBuildDocumentDescription from 2000 to 4000 characters
