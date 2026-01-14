@@ -108,6 +108,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParentHoursOfOperations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HoursOfOperationsIdentifier, HoursOfOperationsIdentifierUnmarshaller>(HoursOfOperationsIdentifierUnmarshaller.Instance);
+                    unmarshalledObject.ParentHoursOfOperations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

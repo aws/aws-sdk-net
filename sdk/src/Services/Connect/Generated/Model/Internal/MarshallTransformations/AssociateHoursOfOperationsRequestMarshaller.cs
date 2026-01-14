@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateHoursOfOperation Request Marshaller
+    /// AssociateHoursOfOperations Request Marshaller
     /// </summary>       
-    public class CreateHoursOfOperationRequestMarshaller : IMarshaller<IRequest, CreateHoursOfOperationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateHoursOfOperationsRequestMarshaller : IMarshaller<IRequest, AssociateHoursOfOperationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateHoursOfOperationRequest)input);
+            return this.Marshall((AssociateHoursOfOperationsRequest)input);
         }
 
         /// <summary>
@@ -53,51 +53,26 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateHoursOfOperationRequest publicRequest)
+        public IRequest Marshall(AssociateHoursOfOperationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
+            if (!publicRequest.IsSetHoursOfOperationId())
+                throw new AmazonConnectException("Request object does not have required field HoursOfOperationId set");
+            request.AddPathResource("{HoursOfOperationId}", StringUtils.FromString(publicRequest.HoursOfOperationId));
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
-            request.ResourcePath = "/hours-of-operations/{InstanceId}";
+            request.ResourcePath = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/associate-hours";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfig())
-                {
-                    context.Writer.WritePropertyName("Config");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigListValue in publicRequest.Config)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HoursOfOperationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
                 if(publicRequest.IsSetParentHoursOfOperationConfigs())
                 {
                     context.Writer.WritePropertyName("ParentHoursOfOperationConfigs");
@@ -114,26 +89,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTimeZone())
-                {
-                    context.Writer.WritePropertyName("TimeZone");
-                    context.Writer.Write(publicRequest.TimeZone);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -142,9 +97,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateHoursOfOperationRequestMarshaller _instance = new CreateHoursOfOperationRequestMarshaller();        
+        private static AssociateHoursOfOperationsRequestMarshaller _instance = new AssociateHoursOfOperationsRequestMarshaller();        
 
-        internal static CreateHoursOfOperationRequestMarshaller GetInstance()
+        internal static AssociateHoursOfOperationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -152,7 +107,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateHoursOfOperationRequestMarshaller Instance
+        public static AssociateHoursOfOperationsRequestMarshaller Instance
         {
             get
             {

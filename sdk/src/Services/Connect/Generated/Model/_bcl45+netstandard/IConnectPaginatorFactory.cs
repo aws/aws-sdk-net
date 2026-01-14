@@ -118,6 +118,16 @@ namespace Amazon.Connect.Model
         IListBotsPaginator ListBots(ListBotsRequest request);
 
         /// <summary>
+        /// Paginator for ListChildHoursOfOperations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListChildHoursOfOperationsPaginator ListChildHoursOfOperations(ListChildHoursOfOperationsRequest request);
+
+        /// <summary>
         /// Paginator for ListContactEvaluations operation
         ///</summary>
         [AWSPaginator(

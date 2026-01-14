@@ -5553,6 +5553,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type OperationalStatus.
+    /// </summary>
+    public class OperationalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSED for OperationalStatus
+        /// </summary>
+        public static readonly OperationalStatus CLOSED = new OperationalStatus("CLOSED");
+        /// <summary>
+        /// Constant OPEN for OperationalStatus
+        /// </summary>
+        public static readonly OperationalStatus OPEN = new OperationalStatus("OPEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationalStatus FindValue(string value)
+        {
+            return FindValue<OperationalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OutboundMessageSourceType.
     /// </summary>
     public class OutboundMessageSourceType : ConstantClass
@@ -5712,6 +5762,60 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OverrideDays(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OverrideType.
+    /// </summary>
+    public class OverrideType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSED for OverrideType
+        /// </summary>
+        public static readonly OverrideType CLOSED = new OverrideType("CLOSED");
+        /// <summary>
+        /// Constant OPEN for OverrideType
+        /// </summary>
+        public static readonly OverrideType OPEN = new OverrideType("OPEN");
+        /// <summary>
+        /// Constant STANDARD for OverrideType
+        /// </summary>
+        public static readonly OverrideType STANDARD = new OverrideType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverrideType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideType FindValue(string value)
+        {
+            return FindValue<OverrideType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideType(string value)
         {
             return FindValue(value);
         }
@@ -7864,6 +7968,60 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecordingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecurrenceFrequency.
+    /// </summary>
+    public class RecurrenceFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MONTHLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency MONTHLY = new RecurrenceFrequency("MONTHLY");
+        /// <summary>
+        /// Constant WEEKLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency WEEKLY = new RecurrenceFrequency("WEEKLY");
+        /// <summary>
+        /// Constant YEARLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency YEARLY = new RecurrenceFrequency("YEARLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecurrenceFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecurrenceFrequency FindValue(string value)
+        {
+            return FindValue<RecurrenceFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecurrenceFrequency(string value)
         {
             return FindValue(value);
         }

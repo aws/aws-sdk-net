@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class GetEffectiveHoursOfOperationsResponse : AmazonWebServiceResponse
     {
         private List<EffectiveHoursOfOperations> _effectiveHoursOfOperationList = AWSConfigs.InitializeCollections ? new List<EffectiveHoursOfOperations>() : null;
+        private List<EffectiveOverrideHours> _effectiveOverrideHoursList = AWSConfigs.InitializeCollections ? new List<EffectiveOverrideHours>() : null;
         private string _timeZone;
 
         /// <summary>
@@ -53,6 +54,30 @@ namespace Amazon.Connect.Model
         internal bool IsSetEffectiveHoursOfOperationList()
         {
             return this._effectiveHoursOfOperationList != null && (this._effectiveHoursOfOperationList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveOverrideHoursList. 
+        /// <para>
+        /// Information about override configurations applied to the base hours of operation to
+        /// calculate the effective hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how override types are applied, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build
+        /// your list of overrides</a> in the <i> Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<EffectiveOverrideHours> EffectiveOverrideHoursList
+        {
+            get { return this._effectiveOverrideHoursList; }
+            set { this._effectiveOverrideHoursList = value; }
+        }
+
+        // Check to see if EffectiveOverrideHoursList property is set
+        internal bool IsSetEffectiveOverrideHoursList()
+        {
+            return this._effectiveOverrideHoursList != null && (this._effectiveOverrideHoursList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

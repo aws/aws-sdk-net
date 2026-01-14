@@ -65,6 +65,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The manual assignment queues to associate with this routing profile.
         /// </para>
+        ///  
+        /// <para>
+        /// Note: Use this config for chat, email, and task contacts. It does not support voice
+        /// contacts.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<RoutingProfileManualAssignmentQueueConfig> ManualAssignmentQueueConfigs

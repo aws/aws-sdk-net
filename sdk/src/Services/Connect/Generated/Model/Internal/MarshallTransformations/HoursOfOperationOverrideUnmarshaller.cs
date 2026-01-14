@@ -114,6 +114,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverrideType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OverrideType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RecurrenceConfig", targetDepth))
+                {
+                    var unmarshaller = RecurrenceConfigUnmarshaller.Instance;
+                    unmarshalledObject.RecurrenceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

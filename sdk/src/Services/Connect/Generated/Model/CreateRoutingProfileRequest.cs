@@ -133,6 +133,11 @@ namespace Amazon.Connect.Model
         /// from the quota of 50 queues per routing profile per instance that is listed in Amazon
         /// Connect service quotas.
         /// </para>
+        ///  
+        /// <para>
+        /// Note: Use this config for chat, email, and task contacts. It does not support voice
+        /// contacts.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<RoutingProfileManualAssignmentQueueConfig> ManualAssignmentQueueConfigs

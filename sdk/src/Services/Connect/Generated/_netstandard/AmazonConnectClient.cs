@@ -891,6 +891,63 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateHoursOfOperations
+
+        internal virtual AssociateHoursOfOperationsResponse AssociateHoursOfOperations(AssociateHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateHoursOfOperationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a set of hours of operations with another hours of operation. Refer to
+        /// Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">REST API Reference for AssociateHoursOfOperations Operation</seealso>
+        public virtual Task<AssociateHoursOfOperationsResponse> AssociateHoursOfOperationsAsync(AssociateHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateInstanceStorageConfig
 
         internal virtual AssociateInstanceStorageConfigResponse AssociateInstanceStorageConfig(AssociateInstanceStorageConfigRequest request)
@@ -2899,6 +2956,9 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
@@ -8348,6 +8408,60 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateHoursOfOperations
+
+        internal virtual DisassociateHoursOfOperationsResponse DisassociateHoursOfOperations(DisassociateHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateHoursOfOperationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a set of hours of operations with another hours of operation. Refer
+        /// to Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">REST API Reference for DisassociateHoursOfOperations Operation</seealso>
+        public virtual Task<DisassociateHoursOfOperationsResponse> DisassociateHoursOfOperationsAsync(DisassociateHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateInstanceStorageConfig
 
         internal virtual DisassociateInstanceStorageConfigResponse DisassociateInstanceStorageConfig(DisassociateInstanceStorageConfigRequest request)
@@ -10373,6 +10487,62 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListBotsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBotsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListChildHoursOfOperations
+
+        internal virtual ListChildHoursOfOperationsResponse ListChildHoursOfOperations(ListChildHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListChildHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChildHoursOfOperationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides information about the child hours of operations for the specified parent
+        /// hours of operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link
+        /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChildHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChildHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">REST API Reference for ListChildHoursOfOperations Operation</seealso>
+        public virtual Task<ListChildHoursOfOperationsResponse> ListChildHoursOfOperationsAsync(ListChildHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListChildHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListChildHoursOfOperationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

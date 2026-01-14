@@ -42,6 +42,8 @@ namespace Amazon.Connect.Model
         private string _hoursOfOperationId;
         private string _hoursOfOperationOverrideId;
         private string _name;
+        private OverrideType _overrideType;
+        private RecurrenceConfig _recurrenceConfig;
 
         /// <summary>
         /// Gets and sets the property Config. 
@@ -188,6 +190,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideType. 
+        /// <para>
+        /// Whether the override will be defined as a <i>standard</i> or as a <i>recurring event</i>.
+        /// </para>
+        /// </summary>
+        public OverrideType OverrideType
+        {
+            get { return this._overrideType; }
+            set { this._overrideType = value; }
+        }
+
+        // Check to see if OverrideType property is set
+        internal bool IsSetOverrideType()
+        {
+            return this._overrideType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecurrenceConfig. 
+        /// <para>
+        /// Configuration for a recurring event.
+        /// </para>
+        /// </summary>
+        public RecurrenceConfig RecurrenceConfig
+        {
+            get { return this._recurrenceConfig; }
+            set { this._recurrenceConfig = value; }
+        }
+
+        // Check to see if RecurrenceConfig property is set
+        internal bool IsSetRecurrenceConfig()
+        {
+            return this._recurrenceConfig != null;
         }
 
     }

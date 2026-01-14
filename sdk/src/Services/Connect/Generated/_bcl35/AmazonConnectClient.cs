@@ -1047,6 +1047,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateHoursOfOperations
+
+        /// <summary>
+        /// Associates a set of hours of operations with another hours of operation. Refer to
+        /// Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the AssociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">REST API Reference for AssociateHoursOfOperations Operation</seealso>
+        public virtual AssociateHoursOfOperationsResponse AssociateHoursOfOperations(AssociateHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateHoursOfOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHoursOfOperations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateHoursOfOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">REST API Reference for AssociateHoursOfOperations Operation</seealso>
+        public virtual IAsyncResult BeginAssociateHoursOfOperations(AssociateHoursOfOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateHoursOfOperations.</param>
+        /// 
+        /// <returns>Returns a  AssociateHoursOfOperationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">REST API Reference for AssociateHoursOfOperations Operation</seealso>
+        public virtual AssociateHoursOfOperationsResponse EndAssociateHoursOfOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateHoursOfOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateInstanceStorageConfig
 
         /// <summary>
@@ -3701,6 +3778,9 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
@@ -11064,6 +11144,80 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateHoursOfOperations
+
+        /// <summary>
+        /// Disassociates a set of hours of operations with another hours of operation. Refer
+        /// to Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">REST API Reference for DisassociateHoursOfOperations Operation</seealso>
+        public virtual DisassociateHoursOfOperationsResponse DisassociateHoursOfOperations(DisassociateHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateHoursOfOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHoursOfOperations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateHoursOfOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">REST API Reference for DisassociateHoursOfOperations Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateHoursOfOperations(DisassociateHoursOfOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateHoursOfOperations.</param>
+        /// 
+        /// <returns>Returns a  DisassociateHoursOfOperationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">REST API Reference for DisassociateHoursOfOperations Operation</seealso>
+        public virtual DisassociateHoursOfOperationsResponse EndDisassociateHoursOfOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateHoursOfOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateInstanceStorageConfig
 
         /// <summary>
@@ -13789,6 +13943,82 @@ namespace Amazon.Connect
         public virtual ListBotsResponse EndListBots(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBotsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListChildHoursOfOperations
+
+        /// <summary>
+        /// Provides information about the child hours of operations for the specified parent
+        /// hours of operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link
+        /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChildHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListChildHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">REST API Reference for ListChildHoursOfOperations Operation</seealso>
+        public virtual ListChildHoursOfOperationsResponse ListChildHoursOfOperations(ListChildHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListChildHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChildHoursOfOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChildHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChildHoursOfOperations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChildHoursOfOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">REST API Reference for ListChildHoursOfOperations Operation</seealso>
+        public virtual IAsyncResult BeginListChildHoursOfOperations(ListChildHoursOfOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListChildHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChildHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChildHoursOfOperations.</param>
+        /// 
+        /// <returns>Returns a  ListChildHoursOfOperationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">REST API Reference for ListChildHoursOfOperations Operation</seealso>
+        public virtual ListChildHoursOfOperationsResponse EndListChildHoursOfOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListChildHoursOfOperationsResponse>(asyncResult);
         }
 
         #endregion

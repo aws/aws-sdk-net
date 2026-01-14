@@ -39,6 +39,7 @@ namespace Amazon.Connect.Model
         private string _description;
         private string _instanceId;
         private string _name;
+        private List<ParentHoursOfOperationConfig> _parentHoursOfOperationConfigs = AWSConfigs.InitializeCollections ? new List<ParentHoursOfOperationConfig>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _timeZone;
 
@@ -117,6 +118,30 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentHoursOfOperationConfigs. 
+        /// <para>
+        /// Configuration for parent hours of operations. Eg: ResourceArn. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about parent hours of operations, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
+        /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<ParentHoursOfOperationConfig> ParentHoursOfOperationConfigs
+        {
+            get { return this._parentHoursOfOperationConfigs; }
+            set { this._parentHoursOfOperationConfigs = value; }
+        }
+
+        // Check to see if ParentHoursOfOperationConfigs property is set
+        internal bool IsSetParentHoursOfOperationConfigs()
+        {
+            return this._parentHoursOfOperationConfigs != null && (this._parentHoursOfOperationConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

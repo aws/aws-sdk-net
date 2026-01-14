@@ -97,6 +97,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateHoursOfOperationsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateInstanceStorageConfigRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -1741,6 +1746,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateHoursOfOperationsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateInstanceStorageConfigRequest.AssociationId</property>
     <min>1</min>
     <max>100</max>
@@ -2186,6 +2196,20 @@
     <property>Amazon.Connect.Model.ListBotsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListChildHoursOfOperationsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListChildHoursOfOperationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListChildHoursOfOperationsResponse.LastModifiedRegion</property>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListContactEvaluationsRequest.ContactId</property>
@@ -5627,6 +5651,10 @@
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EffectiveOverrideHours.Date</property>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EmailAddressInfo.DisplayName</property>
     <min>0</min>
     <max>256</max>
@@ -5987,6 +6015,11 @@
     <pattern>^[\P{C}\r\n\t]{1,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.HoursOfOperationsIdentifier.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.HoursOfOperationSummary.LastModifiedRegion</property>
     <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
@@ -6197,6 +6230,10 @@
     <property>Amazon.Connect.Model.OutboundRawMessage.Subject</property>
     <min>1</min>
     <max>998</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.OverrideHour.OverrideName</property>
+    <pattern>^[\P{C}\r\n\t]{1,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.OverrideTimeSlice.Hours</property>
@@ -6644,6 +6681,11 @@
     <property>Amazon.Connect.Model.RecordPrimaryValue.RecordId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RecurrencePattern.Interval</property>
+    <min>1</min>
+    <max>6</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Reference.Arn</property>

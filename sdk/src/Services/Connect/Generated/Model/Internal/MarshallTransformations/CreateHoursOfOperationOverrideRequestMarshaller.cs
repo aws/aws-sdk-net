@@ -113,6 +113,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOverrideType())
+                {
+                    context.Writer.WritePropertyName("OverrideType");
+                    context.Writer.Write(publicRequest.OverrideType);
+                }
+
+                if(publicRequest.IsSetRecurrenceConfig())
+                {
+                    context.Writer.WritePropertyName("RecurrenceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecurrenceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RecurrenceConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

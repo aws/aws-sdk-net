@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetEffectiveHoursOfOperations operation
+    /// Response Unmarshaller for ListChildHoursOfOperations operation
     /// </summary>  
-    public class GetEffectiveHoursOfOperationsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListChildHoursOfOperationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,34 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetEffectiveHoursOfOperationsResponse response = new GetEffectiveHoursOfOperationsResponse();
+            ListChildHoursOfOperationsResponse response = new ListChildHoursOfOperationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EffectiveHoursOfOperationList", targetDepth))
+                if (context.TestExpression("ChildHoursOfOperationsSummaryList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EffectiveHoursOfOperations, EffectiveHoursOfOperationsUnmarshaller>(EffectiveHoursOfOperationsUnmarshaller.Instance);
-                    response.EffectiveHoursOfOperationList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<HoursOfOperationsIdentifier, HoursOfOperationsIdentifierUnmarshaller>(HoursOfOperationsIdentifierUnmarshaller.Instance);
+                    response.ChildHoursOfOperationsSummaryList = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EffectiveOverrideHoursList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EffectiveOverrideHours, EffectiveOverrideHoursUnmarshaller>(EffectiveOverrideHoursUnmarshaller.Instance);
-                    response.EffectiveOverrideHoursList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeZone", targetDepth))
+                if (context.TestExpression("LastModifiedRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TimeZone = unmarshaller.Unmarshall(context);
+                    response.LastModifiedRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -117,9 +123,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetEffectiveHoursOfOperationsResponseUnmarshaller _instance = new GetEffectiveHoursOfOperationsResponseUnmarshaller();        
+        private static ListChildHoursOfOperationsResponseUnmarshaller _instance = new ListChildHoursOfOperationsResponseUnmarshaller();        
 
-        internal static GetEffectiveHoursOfOperationsResponseUnmarshaller GetInstance()
+        internal static ListChildHoursOfOperationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -127,7 +133,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetEffectiveHoursOfOperationsResponseUnmarshaller Instance
+        public static ListChildHoursOfOperationsResponseUnmarshaller Instance
         {
             get
             {
