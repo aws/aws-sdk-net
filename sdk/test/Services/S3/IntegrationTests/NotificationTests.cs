@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
 
             snsClient = new AmazonSimpleNotificationServiceClient(region: Client.Config.RegionEndpoint);
-            var snsCreateResponse = snsClient.CreateTopic("events-test-" + DateTime.UtcNow.Ticks);
+            var snsCreateResponse = await snsClient.CreateTopicAsync("events-test-" + DateTime.UtcNow.Ticks);
             topicArn = snsCreateResponse.TopicArn;
         }
 

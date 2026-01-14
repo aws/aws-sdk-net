@@ -87,8 +87,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = TestObjectKey
             });
 
-            Assert.AreEqual(response.Tagging[0].Key, "key" + iUmlautChar);
-            Assert.AreEqual(response.Tagging[0].Value, "value");
+            Assert.AreEqual("key" + iUmlautChar, response.Tagging[0].Key);
+            Assert.AreEqual("value", response.Tagging[0].Value);
         }
 
         [TestMethod]
@@ -108,8 +108,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = TestObjectKey
             });
 
-            Assert.AreEqual(response.Tagging[0].Key, "key");
-            Assert.AreEqual(response.Tagging[0].Value, "value" + iUmlautChar);
+            Assert.AreEqual("key", response.Tagging[0].Key);
+            Assert.AreEqual("value" + iUmlautChar, response.Tagging[0].Value);
         }
 
         [TestMethod]
@@ -264,9 +264,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName,
                 Key = objectKey
             });
-            Assert.AreEqual(response.Tagging.Count, 1);
-            Assert.AreEqual(response.Tagging[0].Key, "hello");
-            Assert.AreEqual(response.Tagging[0].Value, "world");
+            Assert.AreEqual(1, response.Tagging.Count);
+            Assert.AreEqual("hello", response.Tagging[0].Key);
+            Assert.AreEqual("world", response.Tagging[0].Value);
         }
 
         private async Task EnableBucketVersioning()
