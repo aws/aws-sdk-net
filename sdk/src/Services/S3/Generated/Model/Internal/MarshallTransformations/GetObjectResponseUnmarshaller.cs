@@ -124,12 +124,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }        
         /// <summary>
-        /// Returns true for being a having a streaming property.
+        /// Specifies that the response payload should be streamed
         /// </summary>
-        public override bool HasStreamingProperty
-        {
-           get { return true;}
-        }
+        public override bool HasStreamingProperty => true;
   
 
         /// <summary>
