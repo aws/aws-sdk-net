@@ -35,6 +35,7 @@ namespace Amazon.SocialMessaging.Model
     public partial class MetaLibraryTemplateDefinition
     {
         private string _templateBody;
+        private List<string> _templateBodyExampleParams = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<LibraryTemplateButtonList> _templateButtons = AWSConfigs.InitializeCollections ? new List<LibraryTemplateButtonList>() : null;
         private string _templateCategory;
         private string _templateHeader;
@@ -62,6 +63,30 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetTemplateBody()
         {
             return this._templateBody != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateBodyExampleParams. 
+        /// <para>
+        /// Example parameter values for the template body, used to demonstrate how dynamic content
+        /// appears in the template.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> TemplateBodyExampleParams
+        {
+            get { return this._templateBodyExampleParams; }
+            set { this._templateBodyExampleParams = value; }
+        }
+
+        // Check to see if TemplateBodyExampleParams property is set
+        internal bool IsSetTemplateBodyExampleParams()
+        {
+            return this._templateBodyExampleParams != null && (this._templateBodyExampleParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
