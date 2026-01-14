@@ -43,6 +43,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _customDomainName;
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
+        private bool? _extraComputeForAutomaticOptimization;
         private string _ipAddressType;
         private int? _maxCapacity;
         private string _namespaceName;
@@ -84,7 +85,11 @@ namespace Amazon.RedshiftServerless.Model
         /// An array of parameters to set for advanced control over a database. The options are
         /// <c>auto_mv</c>, <c>datestyle</c>, <c>enable_case_sensitive_identifier</c>, <c>enable_user_activity_logging</c>,
         /// <c>query_group</c>, <c>search_path</c>, <c>require_ssl</c>, <c>use_fips_ssl</c>, and
-        /// query monitoring metrics that let you define performance boundaries. For more information
+        /// either <c>wlm_json_configuration</c> or query monitoring metrics that let you define
+        /// performance boundaries. You can either specify individual query monitoring metrics
+        /// (such as <c>max_scan_row_count</c>, <c>max_query_execution_time</c>) or use <c>wlm_json_configuration</c>
+        /// to define query queues with rules, but not both. If you're using <c>wlm_json_configuration</c>,
+        /// the maximum size of <c>parameterValue</c> is 8000 characters. For more information
         /// about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">
         /// Query monitoring metrics for Amazon Redshift Serverless</a>.
         /// </para>
@@ -230,6 +235,29 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetEnhancedVpcRouting()
         {
             return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtraComputeForAutomaticOptimization. 
+        /// <para>
+        /// A boolean value that, if <c>true</c>, indicates that the workgroup allocates additional
+        /// compute resources to run automatic optimization operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool ExtraComputeForAutomaticOptimization
+        {
+            get { return this._extraComputeForAutomaticOptimization.GetValueOrDefault(); }
+            set { this._extraComputeForAutomaticOptimization = value; }
+        }
+
+        // Check to see if ExtraComputeForAutomaticOptimization property is set
+        internal bool IsSetExtraComputeForAutomaticOptimization()
+        {
+            return this._extraComputeForAutomaticOptimization.HasValue; 
         }
 
         /// <summary>

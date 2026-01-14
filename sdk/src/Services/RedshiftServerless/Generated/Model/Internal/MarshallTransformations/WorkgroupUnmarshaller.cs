@@ -120,6 +120,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnhancedVpcRouting = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("extraComputeForAutomaticOptimization", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ExtraComputeForAutomaticOptimization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ipAddressType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
