@@ -4,6 +4,7 @@ using Amazon.S3.Transfer;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,32 +13,40 @@ using System.Threading.Tasks;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
-    public class ObjecTaggingTest : TestBase<AmazonS3Client>
+    [TestCategory("S3")]
+    public class ObjectTaggingTest : TestBase<AmazonS3Client>
     {
         private const char iUmlautChar = (char)0x00EF;
         private const string TestObjectKey = "testObjectKey";
         private const string TestObjectContent = "content";
-
         private static string bucketName;
+        private static string tempFilePath;
 
         [ClassInitialize]
         public static async Task ClassInitialize(TestContext a)
         {
             bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            
+            tempFilePath = Path.GetTempFileName();
+            UtilityMethods.GenerateFile(tempFilePath, 1024 * 1024 * 20);
         }
 
         [ClassCleanup]
         public static async Task ClassCleanup()
         {
             await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
+            if (File.Exists(tempFilePath))
+            {
+                File.Delete(tempFilePath);
+            }
+
             BaseClean();
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TagBucket()
+        public async Task TagBucket()
         {
-            var request = new PutBucketTaggingRequest
+            await Client.PutBucketTaggingAsync(new PutBucketTaggingRequest
             {
                 BucketName = bucketName,
                 TagSet = new List<Tag>
@@ -48,13 +57,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         Value = "TagBucketValue"
                     }
                 }
-            };
-
-            Client.PutBucketTagging(request);
+            });
                         
-            var tags = S3TestUtils.WaitForConsistency(() =>
+            var tags = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketTagging(new GetBucketTaggingRequest { BucketName = bucketName });
+                var res = await Client.GetBucketTaggingAsync(new GetBucketTaggingRequest { BucketName = bucketName });
                 return res.TagSet?.FirstOrDefault(x => string.Equals(x.Key, "TagBucketKey")) != null ? res.TagSet : null;
             });
 
@@ -64,10 +71,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TagWithUnicodeKey()
+        public async Task TagWithUnicodeKey()
         {
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = TestObjectKey,
@@ -75,7 +81,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TagSet = new List<Tag> { new Tag { Key = "key" + iUmlautChar, Value = "value" } }
             });
 
-            var response = Client.GetObjectTagging(new GetObjectTaggingRequest
+            var response = await Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
             {
                 BucketName = bucketName,
                 Key = TestObjectKey
@@ -86,10 +92,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TagWithUnicodeValue()
+        public async Task TagWithUnicodeValue()
         {
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = TestObjectKey,
@@ -97,7 +102,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TagSet = new List<Tag> { new Tag { Key = "key", Value = "value" + iUmlautChar } }
             });
 
-            var response = Client.GetObjectTagging(new GetObjectTaggingRequest
+            var response = await Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
             {
                 BucketName = bucketName,
                 Key = TestObjectKey
@@ -108,169 +113,165 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void GetObjectTaggingWithVersionTest()
+        public async Task GetObjectTaggingWithVersionTest()
         {
             string key = "getobjectWithVersions";
-
-            //
-            // Set up the test by uploading mulitple versions of an object
-            //
-            EnableBucketVersioning();
+            await EnableBucketVersioning();
             
-            var putResponseV = Client.PutObject(new PutObjectRequest{
+            var putResponseV = await Client.PutObjectAsync(new PutObjectRequest
+            {
                 BucketName = bucketName,
                 Key = key,
                 ContentBody = "hello",
-                TagSet = new List<Tag>{
-                    new Tag {Key = "k", Value="v"}
+                TagSet = new List<Tag>
+                {
+                    new Tag { Key = "k", Value = "v" }
                 }
             });
-
-            var metadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            var metadataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = key
             });
-
             Assert.AreEqual(putResponseV.VersionId, metadataResponse.VersionId);
 
-            var putResponseV2 = Client.PutObject(new PutObjectRequest
+            var putResponseV2 = await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 ContentBody = "hello2",
                 TagSet = new List<Tag>
                 {
-                    new Tag{Key="k", Value="v2"}
+                    new Tag { Key = "k", Value = "v2" }
                 }
             });
-
-            var metadataResponse2 = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            var metadataResponse2 = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = key
             });
-
             Assert.AreEqual(putResponseV2.VersionId, metadataResponse2.VersionId);
 
-            //
-            // Verify that object tagging are correctly associated with the version
-            //
-
-            var taggingResponse = Client.GetObjectTagging(new GetObjectTaggingRequest
+            var taggingResponse = await Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 VersionId = metadataResponse.VersionId
             });
-
             Assert.AreEqual("v", taggingResponse.Tagging[0].Value);
 
-            taggingResponse = Client.GetObjectTagging(new GetObjectTaggingRequest
+            taggingResponse = await Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
             {
                 BucketName = bucketName,
                 Key = key
             });
-
             Assert.AreEqual("v2", taggingResponse.Tagging[0].Value);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectTaggingWithVersionTest()
+        public async Task PutObjectTaggingWithVersionTest()
         {
             string key = "putobjectWithVersions";
+            await EnableBucketVersioning();
 
-            //
-            // Set up the test by uploading mulitple versions of an object
-            //
-
-            EnableBucketVersioning();
-
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 ContentBody = "hello"
             });
-
-            var metadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            var metadataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = key
             });
 
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 ContentBody = "hello2"
             });
-            
-            var metadataResponse2 = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            var metadataResponse2 = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = key
             });
 
-
-            //
-            // Put tagging for each version of the object
-            //
-
-            Client.PutObjectTagging(new PutObjectTaggingRequest
+            await Client.PutObjectTaggingAsync(new PutObjectTaggingRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 Tagging = new Tagging
                 {
-                    TagSet = new List<Tag>{
-                        new Tag{ Key = "key", Value = "Value"}
+                    TagSet = new List<Tag>
+                    {
+                        new Tag { Key = "key", Value = "Value" }
                     }
                 },
                 VersionId = metadataResponse.VersionId
             });
 
-            Client.PutObjectTagging(new PutObjectTaggingRequest
+            await Client.PutObjectTaggingAsync(new PutObjectTaggingRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 Tagging = new Tagging
                 {
-                    TagSet = new List<Tag>{
-                        new Tag{ Key = "key", Value = "Value2"}
+                    TagSet = new List<Tag>
+                    {
+                        new Tag { Key = "key", Value = "Value2" }
                     },
                 }
             });
 
-
-            //
-            // Verify that object tagging are correctly associated with the version
-            //
-
-            var taggingResponse = Client.GetObjectTagging(new GetObjectTaggingRequest
+            var taggingResponse = await Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 VersionId = metadataResponse.VersionId
             });
-
             Assert.AreEqual("Value", taggingResponse.Tagging[0].Value);
 
-            taggingResponse = Client.GetObjectTagging(new GetObjectTaggingRequest
+            taggingResponse = await Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 VersionId = metadataResponse2.VersionId
             });
-
             Assert.AreEqual("Value2", taggingResponse.Tagging[0].Value);
         }
 
-        private void EnableBucketVersioning()
+        [TestMethod]
+        public async Task MultipartObjectTaggingTest()
         {
-            Client.PutBucketVersioning(new PutBucketVersioningRequest
+            var transferClient = new TransferUtility(Client);
+            var objectKey = $"multipart-tagging-{Guid.NewGuid()}";
+
+            await transferClient.UploadAsync(new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey,
+                FilePath = tempFilePath,
+                TagSet = new List<Tag>
+                {
+                    new Tag { Key = "hello", Value = "world" }
+                }
+            });
+
+            var response = await Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey
+            });
+            Assert.AreEqual(response.Tagging.Count, 1);
+            Assert.AreEqual(response.Tagging[0].Key, "hello");
+            Assert.AreEqual(response.Tagging[0].Value, "world");
+        }
+
+        private async Task EnableBucketVersioning()
+        {
+            await Client.PutBucketVersioningAsync(new PutBucketVersioningRequest
             {
                 BucketName = bucketName,
                 VersioningConfig = new S3BucketVersioningConfig
@@ -279,79 +280,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
 
-            //Wait for versioning to be set on the bucket or multiple PutObject with the same key may not add a new version
-            S3TestUtils.WaitForConsistency(() =>
+            // Wait for versioning to be set on the bucket or multiple PutObject with the same key may not add a new version
+            await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketVersioning(new GetBucketVersioningRequest
+                var res = await Client.GetBucketVersioningAsync(new GetBucketVersioningRequest
                 {
                     BucketName = bucketName
                 });
                 return res.VersioningConfig?.Status == VersionStatus.Enabled ? res : null;
             });
-        }
-    }
-
-    [TestClass]
-    public class MultipartTaggingTest : TestBase<AmazonS3Client>
-    {
-        private string tempFilePath;
-        private string bucketName;
-        private string objectKey = "helloworld";
-
-        private TransferUtility transferClient;
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            transferClient = new TransferUtility(Client);
-
-            tempFilePath = System.IO.Path.GetTempFileName();
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
-
-            UtilityMethods.GenerateFile(tempFilePath, 1024 * 1024 * 20);
-        }
-
-        [TestCleanup]
-        public void TestCleanup()
-        {
-            try
-            {
-                if (File.Exists(tempFilePath)) File.Delete(tempFilePath);
-            }
-            finally{};
-
-            try
-            {
-                AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
-            }
-            finally{};
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void MultipartObjectTaggingTest()
-        {
-
-            transferClient.Upload(new TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                FilePath = tempFilePath,
-                TagSet = new List<Tag>
-                {
-                    new Tag{Key = "hello", Value="world"}
-                }
-            });
-
-            var response = Client.GetObjectTagging(new GetObjectTaggingRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey
-            });
-
-            Assert.AreEqual(response.Tagging.Count, 1);
-            Assert.AreEqual(response.Tagging[0].Key, "hello");
-            Assert.AreEqual(response.Tagging[0].Value, "world");
         }
     }
 }
