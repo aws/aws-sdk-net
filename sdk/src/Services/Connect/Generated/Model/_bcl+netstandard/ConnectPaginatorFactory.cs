@@ -109,6 +109,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListChildHoursOfOperations operation
+        ///</summary>
+        public IListChildHoursOfOperationsPaginator ListChildHoursOfOperations(ListChildHoursOfOperationsRequest request) 
+        {
+            return new ListChildHoursOfOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactEvaluations operation
         ///</summary>
         public IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request) 

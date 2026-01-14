@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateHoursOfOperation operation
+    /// Response Unmarshaller for AssociateHoursOfOperations operation
     /// </summary>  
-    public class CreateHoursOfOperationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateHoursOfOperationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,25 +46,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateHoursOfOperationResponse response = new CreateHoursOfOperationResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("HoursOfOperationArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HoursOfOperationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("HoursOfOperationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HoursOfOperationId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            AssociateHoursOfOperationsResponse response = new AssociateHoursOfOperationsResponse();
 
             return response;
         }
@@ -89,9 +71,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateResourceException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConditionalOperationFailedException"))
                 {
-                    return DuplicateResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ConditionalOperationFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
                 {
@@ -104,10 +86,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -125,9 +103,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateHoursOfOperationResponseUnmarshaller _instance = new CreateHoursOfOperationResponseUnmarshaller();        
+        private static AssociateHoursOfOperationsResponseUnmarshaller _instance = new AssociateHoursOfOperationsResponseUnmarshaller();        
 
-        internal static CreateHoursOfOperationResponseUnmarshaller GetInstance()
+        internal static AssociateHoursOfOperationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +113,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateHoursOfOperationResponseUnmarshaller Instance
+        public static AssociateHoursOfOperationsResponseUnmarshaller Instance
         {
             get
             {

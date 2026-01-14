@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateHoursOfOperationOverride Request Marshaller
+    /// AssociateHoursOfOperations Request Marshaller
     /// </summary>       
-    public class CreateHoursOfOperationOverrideRequestMarshaller : IMarshaller<IRequest, CreateHoursOfOperationOverrideRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateHoursOfOperationsRequestMarshaller : IMarshaller<IRequest, AssociateHoursOfOperationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateHoursOfOperationOverrideRequest)input);
+            return this.Marshall((AssociateHoursOfOperationsRequest)input);
         }
 
         /// <summary>
@@ -56,12 +56,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateHoursOfOperationOverrideRequest publicRequest)
+        public IRequest Marshall(AssociateHoursOfOperationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetHoursOfOperationId())
                 throw new AmazonConnectException("Request object does not have required field HoursOfOperationId set");
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
-            request.ResourcePath = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/overrides";
+            request.ResourcePath = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/associate-hours";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -79,61 +79,20 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetConfig())
+            if(publicRequest.IsSetParentHoursOfOperationConfigs())
             {
-                context.Writer.WritePropertyName("Config");
+                context.Writer.WritePropertyName("ParentHoursOfOperationConfigs");
                 context.Writer.WriteStartArray();
-                foreach(var publicRequestConfigListValue in publicRequest.Config)
+                foreach(var publicRequestParentHoursOfOperationConfigsListValue in publicRequest.ParentHoursOfOperationConfigs)
                 {
                     context.Writer.WriteStartObject();
 
-                    var marshaller = HoursOfOperationOverrideConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequestConfigListValue, context);
+                    var marshaller = ParentHoursOfOperationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParentHoursOfOperationConfigsListValue, context);
 
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetEffectiveFrom())
-            {
-                context.Writer.WritePropertyName("EffectiveFrom");
-                context.Writer.WriteStringValue(publicRequest.EffectiveFrom);
-            }
-
-            if(publicRequest.IsSetEffectiveTill())
-            {
-                context.Writer.WritePropertyName("EffectiveTill");
-                context.Writer.WriteStringValue(publicRequest.EffectiveTill);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetOverrideType())
-            {
-                context.Writer.WritePropertyName("OverrideType");
-                context.Writer.WriteStringValue(publicRequest.OverrideType);
-            }
-
-            if(publicRequest.IsSetRecurrenceConfig())
-            {
-                context.Writer.WritePropertyName("RecurrenceConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RecurrenceConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.RecurrenceConfig, context);
-
-                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();
@@ -149,9 +108,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateHoursOfOperationOverrideRequestMarshaller _instance = new CreateHoursOfOperationOverrideRequestMarshaller();        
+        private static AssociateHoursOfOperationsRequestMarshaller _instance = new AssociateHoursOfOperationsRequestMarshaller();        
 
-        internal static CreateHoursOfOperationOverrideRequestMarshaller GetInstance()
+        internal static AssociateHoursOfOperationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -159,7 +118,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateHoursOfOperationOverrideRequestMarshaller Instance
+        public static AssociateHoursOfOperationsRequestMarshaller Instance
         {
             get
             {
