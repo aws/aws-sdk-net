@@ -14,19 +14,17 @@
  */
 
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class PutBucketLoggingTests : TestBase<AmazonS3Client>
     {
         public static string bucketName;
@@ -44,16 +42,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void TestPutBucketLogging()
+        public async Task TestPutBucketLogging()
         {
-            S3Grant grant = new S3Grant
+            var grantList = new List<S3Grant>
             {
-                Grantee = new S3Grantee() { URI = "http://acs.amazonaws.com/groups/s3/LogDelivery" },
-                Permission = S3Permission.READ
+                new S3Grant
+                {
+                    Grantee = new S3Grantee() { URI = "http://acs.amazonaws.com/groups/s3/LogDelivery" },
+                    Permission = S3Permission.READ
+                }
             };
-            List<S3Grant> grantList = new List<S3Grant>();
-            grantList.Add(grant);
-            var putBucketLoggingRequest = new PutBucketLoggingRequest
+
+            var response = await Client.PutBucketLoggingAsync(new PutBucketLoggingRequest
             {
                 BucketName = bucketName,
                 LoggingConfig = new S3BucketLoggingConfig
@@ -61,8 +61,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     TargetBucketName = bucketName,
                     Grants = grantList
                 }
-            };
-            var response = Client.PutBucketLogging(putBucketLoggingRequest);
+            });
             Assert.IsNotNull(response);
         }
     }
