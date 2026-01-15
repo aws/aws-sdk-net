@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Add default constructors for all generted service exceptions"
+      "Add default constructors for all generated service exceptions"
     ]
   }
 }
