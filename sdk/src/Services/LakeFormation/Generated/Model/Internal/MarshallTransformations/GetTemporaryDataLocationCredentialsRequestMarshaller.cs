@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateResource Request Marshaller
+    /// GetTemporaryDataLocationCredentials Request Marshaller
     /// </summary>       
-    public class UpdateResourceRequestMarshaller : IMarshaller<IRequest, UpdateResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetTemporaryDataLocationCredentialsRequestMarshaller : IMarshaller<IRequest, GetTemporaryDataLocationCredentialsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateResourceRequest)input);
+            return this.Marshall((GetTemporaryDataLocationCredentialsRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateResourceRequest publicRequest)
+        public IRequest Marshall(GetTemporaryDataLocationCredentialsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LakeFormation");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/UpdateResource";
+            request.ResourcePath = "/GetTemporaryDataLocationCredentials";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,34 +73,38 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetExpectedResourceOwnerAccount())
+            if(publicRequest.IsSetAuditContext())
             {
-                context.Writer.WritePropertyName("ExpectedResourceOwnerAccount");
-                context.Writer.WriteStringValue(publicRequest.ExpectedResourceOwnerAccount);
+                context.Writer.WritePropertyName("AuditContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuditContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AuditContext, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetHybridAccessEnabled())
+            if(publicRequest.IsSetCredentialsScope())
             {
-                context.Writer.WritePropertyName("HybridAccessEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.HybridAccessEnabled.Value);
+                context.Writer.WritePropertyName("CredentialsScope");
+                context.Writer.WriteStringValue(publicRequest.CredentialsScope);
             }
 
-            if(publicRequest.IsSetResourceArn())
+            if(publicRequest.IsSetDataLocations())
             {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+                context.Writer.WritePropertyName("DataLocations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDataLocationsListValue in publicRequest.DataLocations)
+                {
+                        context.Writer.WriteStringValue(publicRequestDataLocationsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetRoleArn())
+            if(publicRequest.IsSetDurationSeconds())
             {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(publicRequest.RoleArn);
-            }
-
-            if(publicRequest.IsSetWithFederation())
-            {
-                context.Writer.WritePropertyName("WithFederation");
-                context.Writer.WriteBooleanValue(publicRequest.WithFederation.Value);
+                context.Writer.WritePropertyName("DurationSeconds");
+                context.Writer.WriteNumberValue(publicRequest.DurationSeconds.Value);
             }
 
             writer.WriteEndObject();
@@ -116,9 +120,9 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateResourceRequestMarshaller _instance = new UpdateResourceRequestMarshaller();        
+        private static GetTemporaryDataLocationCredentialsRequestMarshaller _instance = new GetTemporaryDataLocationCredentialsRequestMarshaller();        
 
-        internal static UpdateResourceRequestMarshaller GetInstance()
+        internal static GetTemporaryDataLocationCredentialsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +130,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateResourceRequestMarshaller Instance
+        public static GetTemporaryDataLocationCredentialsRequestMarshaller Instance
         {
             get
             {
