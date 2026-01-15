@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCollection Request Marshaller
+    /// DeleteCollectionGroup Request Marshaller
     /// </summary>       
-    public class CreateCollectionRequestMarshaller : IMarshaller<IRequest, CreateCollectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteCollectionGroupRequestMarshaller : IMarshaller<IRequest, DeleteCollectionGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateCollectionRequest)input);
+            return this.Marshall((DeleteCollectionGroupRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateCollectionRequest publicRequest)
+        public IRequest Marshall(DeleteCollectionGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchServerless");
-            string target = "OpenSearchServerless.CreateCollection";
+            string target = "OpenSearchServerless.DeleteCollectionGroup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-01";
@@ -80,72 +80,10 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
-                if(publicRequest.IsSetCollectionGroupName())
+                if(publicRequest.IsSetId())
                 {
-                    context.Writer.WritePropertyName("collectionGroupName");
-                    context.Writer.Write(publicRequest.CollectionGroupName);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEncryptionConfig())
-                {
-                    context.Writer.WritePropertyName("encryptionConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetStandbyReplicas())
-                {
-                    context.Writer.WritePropertyName("standbyReplicas");
-                    context.Writer.Write(publicRequest.StandbyReplicas);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetVectorOptions())
-                {
-                    context.Writer.WritePropertyName("vectorOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VectorOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VectorOptions, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("id");
+                    context.Writer.Write(publicRequest.Id);
                 }
 
                 writer.WriteObjectEnd();
@@ -156,9 +94,9 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateCollectionRequestMarshaller _instance = new CreateCollectionRequestMarshaller();        
+        private static DeleteCollectionGroupRequestMarshaller _instance = new DeleteCollectionGroupRequestMarshaller();        
 
-        internal static CreateCollectionRequestMarshaller GetInstance()
+        internal static DeleteCollectionGroupRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -166,7 +104,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateCollectionRequestMarshaller Instance
+        public static DeleteCollectionGroupRequestMarshaller Instance
         {
             get
             {

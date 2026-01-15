@@ -30,21 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateCollection operation.
-    /// Creates a new OpenSearch Serverless collection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
-    /// and managing Amazon OpenSearch Serverless collections</a>.
+    /// Container for the parameters to the CreateCollectionGroup operation.
+    /// Creates a collection group within OpenSearch Serverless. Collection groups let you
+    /// manage OpenSearch Compute Units (OCUs) at a group level, with multiple collections
+    /// sharing the group's capacity limits.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-collection-groups.html">Managing
+    /// collection groups</a>.
+    /// </para>
     /// </summary>
-    public partial class CreateCollectionRequest : AmazonOpenSearchServerlessRequest
+    public partial class CreateCollectionGroupRequest : AmazonOpenSearchServerlessRequest
     {
+        private CollectionGroupCapacityLimits _capacityLimits;
         private string _clientToken;
-        private string _collectionGroupName;
         private string _description;
-        private EncryptionConfig _encryptionConfig;
         private string _name;
         private StandbyReplicas _standbyReplicas;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
-        private CollectionType _type;
-        private VectorOptions _vectorOptions;
+
+        /// <summary>
+        /// Gets and sets the property CapacityLimits. 
+        /// <para>
+        /// The capacity limits for the collection group, in OpenSearch Compute Units (OCUs).
+        /// These limits control the maximum and minimum capacity for collections within the group.
+        /// </para>
+        /// </summary>
+        public CollectionGroupCapacityLimits CapacityLimits
+        {
+            get { return this._capacityLimits; }
+            set { this._capacityLimits = value; }
+        }
+
+        // Check to see if CapacityLimits property is set
+        internal bool IsSetCapacityLimits()
+        {
+            return this._capacityLimits != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -66,28 +89,9 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CollectionGroupName. 
-        /// <para>
-        /// The name of the collection group to associate with the collection.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=3, Max=32)]
-        public string CollectionGroupName
-        {
-            get { return this._collectionGroupName; }
-            set { this._collectionGroupName = value; }
-        }
-
-        // Check to see if CollectionGroupName property is set
-        internal bool IsSetCollectionGroupName()
-        {
-            return this._collectionGroupName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the collection.
+        /// A description of the collection group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -104,27 +108,9 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionConfig. 
-        /// <para>
-        /// Encryption settings for the collection.
-        /// </para>
-        /// </summary>
-        public EncryptionConfig EncryptionConfig
-        {
-            get { return this._encryptionConfig; }
-            set { this._encryptionConfig = value; }
-        }
-
-        // Check to see if EncryptionConfig property is set
-        internal bool IsSetEncryptionConfig()
-        {
-            return this._encryptionConfig != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the collection.
+        /// The name of the collection group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=32)]
@@ -143,9 +129,10 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property StandbyReplicas. 
         /// <para>
-        /// Indicates whether standby replicas should be used for a collection.
+        /// Indicates whether standby replicas should be used for a collection group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StandbyReplicas StandbyReplicas
         {
             get { return this._standbyReplicas; }
@@ -162,7 +149,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless
-        /// collection.
+        /// collection group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -176,42 +163,6 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of collection.
-        /// </para>
-        /// </summary>
-        public CollectionType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VectorOptions. 
-        /// <para>
-        /// Configuration options for vector search capabilities in the collection.
-        /// </para>
-        /// </summary>
-        public VectorOptions VectorOptions
-        {
-            get { return this._vectorOptions; }
-            set { this._vectorOptions = value; }
-        }
-
-        // Check to see if VectorOptions property is set
-        internal bool IsSetVectorOptions()
-        {
-            return this._vectorOptions != null;
         }
 
     }

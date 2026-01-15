@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CollectionSummary Object
+    /// Response Unmarshaller for CollectionGroupErrorDetail Object
     /// </summary>  
-    public class CollectionSummaryUnmarshaller : IUnmarshaller<CollectionSummary, XmlUnmarshallerContext>, IUnmarshaller<CollectionSummary, JsonUnmarshallerContext>
+    public class CollectionGroupErrorDetailUnmarshaller : IUnmarshaller<CollectionGroupErrorDetail, XmlUnmarshallerContext>, IUnmarshaller<CollectionGroupErrorDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CollectionSummary IUnmarshaller<CollectionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CollectionGroupErrorDetail IUnmarshaller<CollectionGroupErrorDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CollectionSummary Unmarshall(JsonUnmarshallerContext context)
+        public CollectionGroupErrorDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            CollectionSummary unmarshalledObject = new CollectionSummary();
+            CollectionGroupErrorDetail unmarshalledObject = new CollectionGroupErrorDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("errorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("collectionGroupName", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CollectionGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -84,22 +84,10 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("kmsKeyArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +95,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static CollectionSummaryUnmarshaller _instance = new CollectionSummaryUnmarshaller();        
+        private static CollectionGroupErrorDetailUnmarshaller _instance = new CollectionGroupErrorDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CollectionSummaryUnmarshaller Instance
+        public static CollectionGroupErrorDetailUnmarshaller Instance
         {
             get
             {

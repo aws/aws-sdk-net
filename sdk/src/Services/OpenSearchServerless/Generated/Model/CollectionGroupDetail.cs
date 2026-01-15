@@ -30,27 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// Details about the created OpenSearch Serverless collection.
+    /// Details about a collection group.
     /// </summary>
-    public partial class CreateCollectionDetail
+    public partial class CollectionGroupDetail
     {
         private string _arn;
-        private string _collectionGroupName;
+        private CollectionGroupCapacityLimits _capacityLimits;
         private long? _createdDate;
         private string _description;
         private string _id;
-        private string _kmsKeyArn;
-        private long? _lastModifiedDate;
         private string _name;
+        private int? _numberOfCollections;
         private StandbyReplicas _standbyReplicas;
-        private CollectionStatus _status;
-        private CollectionType _type;
-        private VectorOptions _vectorOptions;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the collection.
+        /// The Amazon Resource Name (ARN) of the collection group.
         /// </para>
         /// </summary>
         public string Arn
@@ -66,28 +63,27 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CollectionGroupName. 
+        /// Gets and sets the property CapacityLimits. 
         /// <para>
-        /// The name of the collection group that contains this collection.
+        /// The capacity limits for the collection group, in OpenSearch Compute Units (OCUs).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
-        public string CollectionGroupName
+        public CollectionGroupCapacityLimits CapacityLimits
         {
-            get { return this._collectionGroupName; }
-            set { this._collectionGroupName = value; }
+            get { return this._capacityLimits; }
+            set { this._capacityLimits = value; }
         }
 
-        // Check to see if CollectionGroupName property is set
-        internal bool IsSetCollectionGroupName()
+        // Check to see if CapacityLimits property is set
+        internal bool IsSetCapacityLimits()
         {
-            return this._collectionGroupName != null;
+            return this._capacityLimits != null;
         }
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The Epoch time when the collection was created.
+        /// The Epoch time when the collection group was created.
         /// </para>
         /// </summary>
         public long CreatedDate
@@ -105,7 +101,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the collection.
+        /// The description of the collection group.
         /// </para>
         /// </summary>
         public string Description
@@ -123,7 +119,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the collection.
+        /// The unique identifier of the collection group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=40)]
@@ -140,45 +136,9 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the KMS key with which to encrypt the collection.
-        /// </para>
-        /// </summary>
-        public string KmsKeyArn
-        {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
-        }
-
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
-        {
-            return this._kmsKeyArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LastModifiedDate. 
-        /// <para>
-        /// The date and time when the collection was last modified.
-        /// </para>
-        /// </summary>
-        public long LastModifiedDate
-        {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
-            set { this._lastModifiedDate = value; }
-        }
-
-        // Check to see if LastModifiedDate property is set
-        internal bool IsSetLastModifiedDate()
-        {
-            return this._lastModifiedDate.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the collection.
+        /// The name of the collection group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=32)]
@@ -195,9 +155,27 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumberOfCollections. 
+        /// <para>
+        /// The number of collections associated with the collection group.
+        /// </para>
+        /// </summary>
+        public int NumberOfCollections
+        {
+            get { return this._numberOfCollections.GetValueOrDefault(); }
+            set { this._numberOfCollections = value; }
+        }
+
+        // Check to see if NumberOfCollections property is set
+        internal bool IsSetNumberOfCollections()
+        {
+            return this._numberOfCollections.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StandbyReplicas. 
         /// <para>
-        /// Creates details about an OpenSearch Serverless collection.
+        /// Indicates whether standby replicas are used for the collection group.
         /// </para>
         /// </summary>
         public StandbyReplicas StandbyReplicas
@@ -213,57 +191,22 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The current status of the collection.
+        /// A map of key-value pairs associated with the collection group.
         /// </para>
         /// </summary>
-        public CollectionStatus Status
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of collection.
-        /// </para>
-        /// </summary>
-        public CollectionType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VectorOptions. 
-        /// <para>
-        /// Configuration options for vector search capabilities in the collection.
-        /// </para>
-        /// </summary>
-        public VectorOptions VectorOptions
-        {
-            get { return this._vectorOptions; }
-            set { this._vectorOptions = value; }
-        }
-
-        // Check to see if VectorOptions property is set
-        internal bool IsSetVectorOptions()
-        {
-            return this._vectorOptions != null;
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

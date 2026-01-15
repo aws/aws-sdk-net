@@ -72,6 +72,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("collectionGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CollectionGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

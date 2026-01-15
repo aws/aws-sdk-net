@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CollectionSummary Object
+    /// Response Unmarshaller for CollectionGroupSummary Object
     /// </summary>  
-    public class CollectionSummaryUnmarshaller : IUnmarshaller<CollectionSummary, XmlUnmarshallerContext>, IUnmarshaller<CollectionSummary, JsonUnmarshallerContext>
+    public class CollectionGroupSummaryUnmarshaller : IUnmarshaller<CollectionGroupSummary, XmlUnmarshallerContext>, IUnmarshaller<CollectionGroupSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CollectionSummary IUnmarshaller<CollectionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CollectionGroupSummary IUnmarshaller<CollectionGroupSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CollectionSummary Unmarshall(JsonUnmarshallerContext context)
+        public CollectionGroupSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            CollectionSummary unmarshalledObject = new CollectionSummary();
+            CollectionGroupSummary unmarshalledObject = new CollectionGroupSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,10 +72,16 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("collectionGroupName", targetDepth))
+                if (context.TestExpression("capacityLimits", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CollectionGroupName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CollectionGroupCapacityLimitsUnmarshaller.Instance;
+                    unmarshalledObject.CapacityLimits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("createdDate", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -84,22 +90,16 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("kmsKeyArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("numberOfCollections", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfCollections = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +107,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static CollectionSummaryUnmarshaller _instance = new CollectionSummaryUnmarshaller();        
+        private static CollectionGroupSummaryUnmarshaller _instance = new CollectionGroupSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CollectionSummaryUnmarshaller Instance
+        public static CollectionGroupSummaryUnmarshaller Instance
         {
             get
             {
