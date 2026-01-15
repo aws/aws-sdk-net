@@ -67,6 +67,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExpectedResourceOwnerAccount())
+                {
+                    context.Writer.WritePropertyName("ExpectedResourceOwnerAccount");
+                    context.Writer.Write(publicRequest.ExpectedResourceOwnerAccount);
+                }
+
                 if(publicRequest.IsSetHybridAccessEnabled())
                 {
                     context.Writer.WritePropertyName("HybridAccessEnabled");

@@ -62,12 +62,32 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class RegisterResourceRequest : AmazonLakeFormationRequest
     {
+        private string _expectedResourceOwnerAccount;
         private bool? _hybridAccessEnabled;
         private string _resourceArn;
         private string _roleArn;
         private bool? _useServiceLinkedRole;
         private bool? _withFederation;
         private bool? _withPrivilegedAccess;
+
+        /// <summary>
+        /// Gets and sets the property ExpectedResourceOwnerAccount. 
+        /// <para>
+        /// The Amazon Web Services account that owns the Glue tables associated with specific
+        /// Amazon S3 locations. 
+        /// </para>
+        /// </summary>
+        public string ExpectedResourceOwnerAccount
+        {
+            get { return this._expectedResourceOwnerAccount; }
+            set { this._expectedResourceOwnerAccount = value; }
+        }
+
+        // Check to see if ExpectedResourceOwnerAccount property is set
+        internal bool IsSetExpectedResourceOwnerAccount()
+        {
+            return this._expectedResourceOwnerAccount != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HybridAccessEnabled. 

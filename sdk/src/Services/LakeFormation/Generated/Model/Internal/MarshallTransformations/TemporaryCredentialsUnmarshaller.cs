@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceInfo Object
+    /// Response Unmarshaller for TemporaryCredentials Object
     /// </summary>  
-    public class ResourceInfoUnmarshaller : IUnmarshaller<ResourceInfo, XmlUnmarshallerContext>, IUnmarshaller<ResourceInfo, JsonUnmarshallerContext>
+    public class TemporaryCredentialsUnmarshaller : IUnmarshaller<TemporaryCredentials, XmlUnmarshallerContext>, IUnmarshaller<TemporaryCredentials, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceInfo IUnmarshaller<ResourceInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TemporaryCredentials IUnmarshaller<TemporaryCredentials, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceInfo Unmarshall(JsonUnmarshallerContext context)
+        public TemporaryCredentials Unmarshall(JsonUnmarshallerContext context)
         {
-            ResourceInfo unmarshalledObject = new ResourceInfo();
+            TemporaryCredentials unmarshalledObject = new TemporaryCredentials();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,52 +66,28 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ExpectedResourceOwnerAccount", targetDepth))
+                if (context.TestExpression("AccessKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedResourceOwnerAccount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HybridAccessEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.HybridAccessEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModified", targetDepth))
+                if (context.TestExpression("Expiration", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("SecretAccessKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecretAccessKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("SessionToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VerificationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VerificationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WithFederation", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.WithFederation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WithPrivilegedAccess", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.WithPrivilegedAccess = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SessionToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -119,12 +95,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceInfoUnmarshaller _instance = new ResourceInfoUnmarshaller();        
+        private static TemporaryCredentialsUnmarshaller _instance = new TemporaryCredentialsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceInfoUnmarshaller Instance
+        public static TemporaryCredentialsUnmarshaller Instance
         {
             get
             {

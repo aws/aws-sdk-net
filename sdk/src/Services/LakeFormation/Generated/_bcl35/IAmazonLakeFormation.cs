@@ -1931,6 +1931,101 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  GetTemporaryDataLocationCredentials
+
+
+        /// <summary>
+        /// Allows a user or application in a secure environment to access data in a specific
+        /// Amazon S3 location registered with Lake Formation by providing temporary scoped credentials
+        /// that are limited to the requested data location and the caller's authorized access
+        /// level.
+        /// 
+        ///  
+        /// <para>
+        ///  The API operation returns an error in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data location is not registered with Lake Formation. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No Glue table is associated with the data location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller doesn't have required permissions on the associated table. The caller must
+        /// have <c>SELECT</c> or <c>SUPER</c> permissions on the associated table, and credential
+        /// vending for full table access must be enabled in the data lake settings. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/full-table-credential-vending.html">Application
+        /// integration for full table access</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The data location is in a different Amazon Web Services Region. Lake Formation doesn't
+        /// support cross-Region access when vending credentials for a data location. Lake Formation
+        /// only supports Amazon S3 paths registered within the same Region as the API call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryDataLocationCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetTemporaryDataLocationCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConflictException">
+        /// Multiple resources exist with the same Amazon S3 location
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryDataLocationCredentials">REST API Reference for GetTemporaryDataLocationCredentials Operation</seealso>
+        GetTemporaryDataLocationCredentialsResponse GetTemporaryDataLocationCredentials(GetTemporaryDataLocationCredentialsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTemporaryDataLocationCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryDataLocationCredentials operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemporaryDataLocationCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryDataLocationCredentials">REST API Reference for GetTemporaryDataLocationCredentials Operation</seealso>
+        IAsyncResult BeginGetTemporaryDataLocationCredentials(GetTemporaryDataLocationCredentialsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTemporaryDataLocationCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTemporaryDataLocationCredentials.</param>
+        /// 
+        /// <returns>Returns a  GetTemporaryDataLocationCredentialsResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryDataLocationCredentials">REST API Reference for GetTemporaryDataLocationCredentials Operation</seealso>
+        GetTemporaryDataLocationCredentialsResponse EndGetTemporaryDataLocationCredentials(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetTemporaryGluePartitionCredentials
 
 
