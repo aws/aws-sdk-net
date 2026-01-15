@@ -60,6 +60,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Ec2InstanceProfileArn);
             }
 
+            if(requestObject.IsSetFipsEnabled())
+            {
+                context.Writer.WritePropertyName("fipsEnabled");
+                context.Writer.Write(requestObject.FipsEnabled);
+            }
+
             if(requestObject.IsSetInstanceRequirements())
             {
                 context.Writer.WritePropertyName("instanceRequirements");

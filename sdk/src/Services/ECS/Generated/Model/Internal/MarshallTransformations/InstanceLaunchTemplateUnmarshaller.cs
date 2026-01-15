@@ -78,6 +78,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2InstanceProfileArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fipsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.FipsEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceRequirements", targetDepth))
                 {
                     var unmarshaller = InstanceRequirementsRequestUnmarshaller.Instance;

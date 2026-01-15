@@ -39,6 +39,7 @@ namespace Amazon.ECS.Model
     {
         private CapacityOptionType _capacityOptionType;
         private string _ec2InstanceProfileArn;
+        private bool? _fipsEnabled;
         private InstanceRequirementsRequest _instanceRequirements;
         private ManagedInstancesMonitoringOptions _monitoring;
         private ManagedInstancesNetworkConfiguration _networkConfiguration;
@@ -112,6 +113,32 @@ namespace Amazon.ECS.Model
         internal bool IsSetEc2InstanceProfileArn()
         {
             return this._ec2InstanceProfileArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FipsEnabled. 
+        /// <para>
+        /// Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances
+        /// launched by the capacity provider. If <c>true</c>, instances use FIPS-compliant cryptographic
+        /// algorithms and modules for enhanced security compliance. If <c>false</c>, instances
+        /// use standard cryptographic implementations.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions
+        /// and FIPS disabled in other regions.
+        /// </para>
+        /// </summary>
+        public bool FipsEnabled
+        {
+            get { return this._fipsEnabled.GetValueOrDefault(); }
+            set { this._fipsEnabled = value; }
+        }
+
+        // Check to see if FipsEnabled property is set
+        internal bool IsSetFipsEnabled()
+        {
+            return this._fipsEnabled.HasValue; 
         }
 
         /// <summary>
