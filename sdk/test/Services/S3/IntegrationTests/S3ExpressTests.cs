@@ -1,10 +1,11 @@
-using Amazon;
+﻿using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Util;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
+using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -288,6 +289,167 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
+        public async Task Test_MultipartUpload()
+        {
+            var random = new Random();
+            var nextRandom = random.Next();
+            var filePath = Path.Combine(Path.GetTempPath(), "multi-" + nextRandom + ".txt");
+            var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retrieved-" + nextRandom + ".txt");
+            var totalSize = megSize * 15;
+
+            UtilityMethods.GenerateFile(filePath, totalSize);
+            var key = "key-" + random.Next();
+
+            var inputStream = File.OpenRead(filePath);
+            try
+            {
+                var initRequest = new InitiateMultipartUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    ContentType = "text/html",
+                };
+                var initResponse = await Client.InitiateMultipartUploadAsync(initRequest);
+                
+                var uploadRequest = new UploadPartRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    UploadId = initResponse.UploadId,
+                    PartNumber = 1,
+                    PartSize = 5 * megSize,
+                    InputStream = inputStream,
+                };
+                var up1Response = await Client.UploadPartAsync(uploadRequest);
+
+                uploadRequest = new UploadPartRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    UploadId = initResponse.UploadId,
+                    PartNumber = 2,
+                    PartSize = 5 * megSize,
+                    InputStream = inputStream,
+                };
+                var up2Response = await Client.UploadPartAsync(uploadRequest);
+
+                uploadRequest = new UploadPartRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    UploadId = initResponse.UploadId,
+                    PartNumber = 3,
+                    InputStream = inputStream,
+                    IsLastPart = true
+                };
+                var up3Response = await Client.UploadPartAsync(uploadRequest);
+
+                var listPartRequest = new ListPartsRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    UploadId = initResponse.UploadId
+                };
+                var listPartResponse = await Client.ListPartsAsync(listPartRequest);
+                Assert.AreEqual(3, listPartResponse.Parts.Count);
+                Assert.AreEqual(up1Response.PartNumber, listPartResponse.Parts[0].PartNumber);
+                Assert.AreEqual(up1Response.ETag, listPartResponse.Parts[0].ETag);
+                Assert.AreEqual(up2Response.PartNumber, listPartResponse.Parts[1].PartNumber);
+                Assert.AreEqual(up2Response.ETag, listPartResponse.Parts[1].ETag);
+                Assert.AreEqual(up3Response.PartNumber, listPartResponse.Parts[2].PartNumber);
+                Assert.AreEqual(up3Response.ETag, listPartResponse.Parts[2].ETag);
+
+                listPartRequest.MaxParts = 1;
+                listPartResponse = await Client.ListPartsAsync(listPartRequest);
+                Assert.AreEqual(1, listPartResponse.Parts.Count);
+
+                var compRequest = new CompleteMultipartUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    UploadId = initResponse.UploadId
+                };
+                compRequest.AddPartETags(up1Response, up2Response, up3Response);
+                var compResponse = await Client.CompleteMultipartUploadAsync(compRequest);
+                Assert.IsNotNull(compResponse.ETag);
+                Assert.AreEqual(key, compResponse.Key);
+                Assert.IsNotNull(compResponse.Location);
+
+                // Get the file back from S3 and make sure it is still the same.
+                var getResponse = await Client.GetObjectAsync(new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+                await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, append: false, cancellationToken: default);
+                UtilityMethods.CompareFiles(filePath, retrievedFilepath);
+
+                var metaDataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+                Assert.AreEqual("text/html", metaDataResponse.Headers.ContentType);
+
+                var key2 = "key-" + random.Next();
+                var initResponse2 = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = key2,
+                });
+
+                var response = await Client.CopyPartAsync(new CopyPartRequest
+                {
+                    DestinationBucket = bucketName,
+                    DestinationKey = key2,
+                    SourceBucket = bucketName,
+                    SourceKey = key,
+                    UploadId = initResponse2.UploadId,
+                    PartNumber = 1,
+                });
+                Assert.IsNotNull(response.ETag);
+                Assert.IsTrue((response.ETag != null) && (response.ETag.Length > 0));
+                Assert.IsTrue(response.PartNumber == 1);
+
+                listPartRequest = new ListPartsRequest
+                {
+                    BucketName = bucketName,
+                    Key = key2,
+                    UploadId = initResponse2.UploadId
+                };
+                listPartResponse = await Client.ListPartsAsync(listPartRequest);
+                Assert.AreEqual(1, listPartResponse.Parts.Count);
+                Assert.AreEqual(response.PartNumber, listPartResponse.Parts[0].PartNumber);
+                Assert.AreEqual(response.ETag, listPartResponse.Parts[0].ETag);
+
+                await Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = key2,
+                    UploadId = initResponse2.UploadId
+                });
+
+                await Client.DeleteObjectAsync(new DeleteObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+            }
+            finally
+            {
+                inputStream.Close();
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+                if (File.Exists(retrievedFilepath))
+                {
+                    File.Delete(retrievedFilepath);
+                }
+            }
+        }
+
+        [TestMethod]
         public async Task Test_TransferUtility()
         {
             var random = new Random();
@@ -339,6 +501,52 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 if (File.Exists(retrievedFilepath))
                 {
                     File.Delete(retrievedFilepath);
+                }
+            }
+        }
+
+        [TestMethod]
+        public async Task Test_TransferUtility_Precalculated()
+        {
+            var random = new Random();
+            var key = "key-" + random.Next() + ".txt";
+            var filePath = Path.Combine(Path.GetTempPath(), key);
+            var totalSize = megSize * 20;
+
+            UtilityMethods.GenerateFile(filePath, totalSize);
+            var precalculatedChecksum = CryptoUtilFactory.CryptoInstance.ComputeCRC32CHash(File.ReadAllBytes(filePath));
+
+            try
+            {
+                using (var tu = new TransferUtility(Client))
+                {
+                    await tu.UploadAsync(new TransferUtilityUploadRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key,
+                        FilePath = filePath,
+                        ChecksumCRC32C = precalculatedChecksum,
+                    });
+
+                    var getObjectResponse = await Client.GetObjectAsync(new GetObjectRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key
+                    });
+                    Assert.IsNotNull(getObjectResponse.ChecksumCRC32C);
+                }
+
+                await Client.DeleteObjectAsync(new DeleteObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+            }
+            finally
+            {
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
                 }
             }
         }
