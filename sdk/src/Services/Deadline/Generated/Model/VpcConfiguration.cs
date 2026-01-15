@@ -42,6 +42,7 @@ namespace Amazon.Deadline.Model
         /// The ARNs of the VPC Lattice resource configurations attached to the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> ResourceConfigurationArns
         {
             get { return this._resourceConfigurationArns; }

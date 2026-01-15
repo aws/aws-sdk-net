@@ -42,6 +42,7 @@ namespace Amazon.Deadline.Model
         private string _displayName;
         private string _farmId;
         private BudgetSchedule _schedule;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UsageTrackingResource _usageTrackingResource;
 
         /// <summary>
@@ -187,6 +188,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Each tag consists of a tag key and a tag value. Tag keys and values are both required,
+        /// but tag values can be empty strings.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

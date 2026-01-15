@@ -43,7 +43,7 @@ namespace Amazon.Deadline.Model
         /// The capability amounts that the step requires.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=0, Max=25)]
         public List<StepAmountCapability> Amounts
         {
             get { return this._amounts; }
@@ -62,7 +62,7 @@ namespace Amazon.Deadline.Model
         /// The capability attributes that the step requires.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=0, Max=25)]
         public List<StepAttributeCapability> Attributes
         {
             get { return this._attributes; }

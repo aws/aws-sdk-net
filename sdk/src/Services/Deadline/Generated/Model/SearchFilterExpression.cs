@@ -39,6 +39,7 @@ namespace Amazon.Deadline.Model
         private ParameterFilterExpression _parameterFilter;
         private SearchTermFilterExpression _searchTermFilter;
         private StringFilterExpression _stringFilter;
+        private StringListFilterExpression _stringListFilter;
 
         /// <summary>
         /// Gets and sets the property DateTimeFilter. 
@@ -128,6 +129,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStringFilter()
         {
             return this._stringFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StringListFilter. 
+        /// <para>
+        /// Filters by a list of string values.
+        /// </para>
+        /// </summary>
+        public StringListFilterExpression StringListFilter
+        {
+            get { return this._stringListFilter; }
+            set { this._stringListFilter = value; }
+        }
+
+        // Check to see if StringListFilter property is set
+        internal bool IsSetStringListFilter()
+        {
+            return this._stringListFilter != null;
         }
 
     }

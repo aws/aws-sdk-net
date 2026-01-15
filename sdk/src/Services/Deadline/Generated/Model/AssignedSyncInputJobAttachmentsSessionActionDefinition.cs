@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The details for an assigned session action as it relates to a job attachment.
+    /// The assigned session action definition for syncing input job attachments.
     /// </summary>
     public partial class AssignedSyncInputJobAttachmentsSessionActionDefinition
     {
@@ -39,7 +39,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property StepId. 
         /// <para>
-        /// The step ID.
+        /// The step ID for the assigned sync input job attachments session action.
         /// </para>
         /// </summary>
         public string StepId

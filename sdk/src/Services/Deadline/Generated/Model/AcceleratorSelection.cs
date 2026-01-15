@@ -45,28 +45,23 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <c>l4</c> as the name of the accelerator, you must specify <c>latest</c>
-        /// or <c>grid:r570</c> as the runtime.
-        /// </para>
-        ///  
-        /// <para>
         /// The available GPU accelerators are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>t4</c> - NVIDIA T4 Tensor Core GPU
+        ///  <c>t4</c> - NVIDIA T4 Tensor Core GPU (16 GiB memory)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>a10g</c> - NVIDIA A10G Tensor Core GPU
+        ///  <c>a10g</c> - NVIDIA A10G Tensor Core GPU (24 GiB memory)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>l4</c> - NVIDIA L4 Tensor Core GPU
+        ///  <c>l4</c> - NVIDIA L4 Tensor Core GPU (24 GiB memory)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>l40s</c> - NVIDIA L40S Tensor Core GPU
+        ///  <c>l40s</c> - NVIDIA L40S Tensor Core GPU (48 GiB memory)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -87,7 +82,7 @@ namespace Amazon.Deadline.Model
         /// Gets and sets the property Runtime. 
         /// <para>
         /// Specifies the runtime driver to use for the GPU accelerator. You must use the same
-        /// runtime for all GPUs. 
+        /// runtime for all GPUs in a fleet. 
         /// </para>
         ///  
         /// <para>
@@ -110,10 +105,33 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify a runtime, Deadline Cloud uses <c>latest</c> as the default.
-        /// However, if you have multiple accelerators and specify <c>latest</c> for some and
-        /// leave others blank, Deadline Cloud raises an exception.
+        /// If you don't specify a runtime, Amazon Web Services Deadline Cloud uses <c>latest</c>
+        /// as the default. However, if you have multiple accelerators and specify <c>latest</c>
+        /// for some and leave others blank, Amazon Web Services Deadline Cloud raises an exception.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Not all runtimes are compatible with all accelerator types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>t4</c> and <c>a10g</c>: Support all runtimes (<c>grid:r570</c>, <c>grid:r535</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>l4</c> and <c>l40s</c>: Only support <c>grid:r570</c> and newer
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// All accelerators in a fleet must use the same runtime version. You cannot mix different
+        /// runtime versions within a single fleet.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// When you specify <c>latest</c>, it resolves to <c>grid:r570</c> for all currently
+        /// supported accelerators.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string Runtime

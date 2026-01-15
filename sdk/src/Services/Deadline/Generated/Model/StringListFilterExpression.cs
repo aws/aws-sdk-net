@@ -30,40 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The search terms for a resource.
+    /// Searches for a match within a list of strings.
     /// </summary>
-    public partial class SearchGroupedFilterExpressions
+    public partial class StringListFilterExpression
     {
-        private List<SearchFilterExpression> _filters = AWSConfigs.InitializeCollections ? new List<SearchFilterExpression>() : null;
-        private LogicalOperator _operator;
+        private string _name;
+        private ComparisonOperator _operator;
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The filters to use for the search.
+        /// The field name to search.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3)]
-        public List<SearchFilterExpression> Filters
+        [AWSProperty(Required=true)]
+        public string Name
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._name != null;
         }
 
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operators to include in the search.
+        /// The type of comparison to use for this search. ANY_EQUALS and ALL_NOT_EQUALS are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public LogicalOperator Operator
+        public ComparisonOperator Operator
         {
             get { return this._operator; }
             set { this._operator = value; }
@@ -73,6 +74,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOperator()
         {
             return this._operator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// The list of string values to search for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16)]
+        public List<string> Values
+        {
+            get { return this._values; }
+            set { this._values = value; }
+        }
+
+        // Check to see if Values property is set
+        internal bool IsSetValues()
+        {
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

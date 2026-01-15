@@ -78,7 +78,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property SyncInputJobAttachments. 
         /// <para>
-        /// The job attachments to sync with a session action.
+        /// The session action definition for syncing input job attachments.
         /// </para>
         /// </summary>
         public SyncInputJobAttachmentsSessionActionDefinition SyncInputJobAttachments

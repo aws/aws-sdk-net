@@ -64,12 +64,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property FilterExpressions. 
         /// <para>
-        /// The filter expression, <c>AND</c> or <c>OR</c>, to use when searching among a group
-        /// of search strings in a resource. 
-        /// <para>
-        /// You can use two groupings per search each within parenthesis <c>()</c>.
-        /// </para>
-        /// 
+        /// The search terms for a resource.
         /// </para>
         /// </summary>
         public SearchGroupedFilterExpressions FilterExpressions
@@ -106,7 +101,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property ItemOffset. 
         /// <para>
-        /// Defines how far into the scrollable list to start the return of results.
+        /// The offset for the search results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
@@ -125,7 +120,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// Specifies the number of items per page for the resource.
+        /// Specifies the number of results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

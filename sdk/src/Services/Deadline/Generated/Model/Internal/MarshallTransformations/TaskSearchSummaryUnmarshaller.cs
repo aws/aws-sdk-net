@@ -84,6 +84,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("latestSessionActionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestSessionActionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parameters", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, TaskParameterValue, StringUnmarshaller, TaskParameterValueUnmarshaller>(StringUnmarshaller.Instance, TaskParameterValueUnmarshaller.Instance);

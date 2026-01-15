@@ -125,7 +125,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property LatestSessionActionId. 
         /// <para>
-        /// The latest session ID for the task.
+        /// The latest session action ID for the task.
         /// </para>
         /// </summary>
         public string LatestSessionActionId

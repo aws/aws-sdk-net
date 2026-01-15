@@ -156,7 +156,6 @@ namespace Amazon.Deadline.Model
         /// The ARN of the KMS key used on the farm.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }

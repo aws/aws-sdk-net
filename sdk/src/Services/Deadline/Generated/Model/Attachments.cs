@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The attachments for jobs.
+    /// The job attachments.
     /// </summary>
     public partial class Attachments
     {
@@ -40,7 +40,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property FileSystem. 
         /// <para>
-        /// The file system.
+        /// The file system location for the attachments.
         /// </para>
         /// </summary>
         public JobAttachmentsFileSystem FileSystem
@@ -58,7 +58,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Manifests. 
         /// <para>
-        /// A list of manifests which describe job attachment configurations.
+        /// The manifest properties for the attachments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
