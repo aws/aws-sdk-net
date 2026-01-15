@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class RestoreObjectTests : TestBase<AmazonS3Client>
     {
         private static string bucketName;
@@ -26,10 +27,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void TestRestoreObject()
+        public async Task TestRestoreObject()
         {
             // Put object with Glacier storage class
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = keyName,
@@ -38,23 +39,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             // Restore the object
-            var restoreRequest = new RestoreObjectRequest
+            var response = await Client.RestoreObjectAsync(new RestoreObjectRequest
             {
                 BucketName = bucketName,
                 Key = keyName,
                 Days = 1
-            };
-
-            var response = Client.RestoreObject(restoreRequest);
+            });
             Assert.IsNotNull(response);
             Assert.AreEqual(HttpStatusCode.Accepted, response.HttpStatusCode);
         }
 
         [TestMethod]
-        public void TestRestoreObjectWithTier()
+        public async Task TestRestoreObjectWithTier()
         {
             // Put object with Glacier storage class
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = keyName,
@@ -66,15 +65,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // note: S3 does not accept RetrievalTier + Days combination for some reason. S3 expects the tier that is wrapped in
             // glacier job parameters when doing a barebones restore with tier and days set.
             // https://github.com/aws/aws-sdk/issues/246
-            var restoreRequest = new RestoreObjectRequest
+            var response = await Client.RestoreObjectAsync(new RestoreObjectRequest
             {
                 BucketName = bucketName,
                 Key = keyName,
                 Days = 1,
                 Tier = GlacierJobTier.Standard
-            };
-
-            var response = Client.RestoreObject(restoreRequest);
+            });
             Assert.IsNotNull(response);
             Assert.AreEqual(HttpStatusCode.Accepted, response.HttpStatusCode);
         }

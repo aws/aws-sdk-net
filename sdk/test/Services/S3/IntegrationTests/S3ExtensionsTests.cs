@@ -8,7 +8,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestClass]
     public class S3ExtensionsTests : TestBase<AmazonS3Client>
     {
-        static string _bucketName;
+        private static string _bucketName;
 
         [ClassInitialize]
         public static async Task Setup(TestContext context)
@@ -22,12 +22,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, _bucketName);
         }
 
-
         [TestMethod]
-        public void EnsureBucketExists()
+        public async Task EnsureBucketExists()
         {
             IAmazonS3 s3Client = Client;
-            s3Client.EnsureBucketExists(_bucketName);
+            await s3Client.EnsureBucketExistsAsync(_bucketName);
         }
     }
 }

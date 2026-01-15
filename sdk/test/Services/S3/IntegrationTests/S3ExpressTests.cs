@@ -1,30 +1,31 @@
+﻿using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.S3.Transfer;
+using Amazon.S3.Util;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.S3;
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.SecurityToken;
-using Amazon.SecurityToken.Model;
-using Amazon.S3.Transfer;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon;
-using Amazon.Util;
 using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class S3ExpressTests : TestBase<AmazonS3Client>
     {
-        public static readonly int megSize = (int)Math.Pow(2, 20);
+        private static readonly int megSize = (int)Math.Pow(2, 20);
         private const string content = "Test content";
         private static string bucketName;
-        private static List<string> keys = new List<string>
+        private static readonly AmazonS3Client _usEast1Client = new AmazonS3Client(RegionEndpoint.USEast1);
+
+        private static readonly List<string> keys = new List<string>
         {
             "a/b/c",
             "a/b/d",
@@ -35,14 +36,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             "a/g&j",
         };
 
-        [ClassInitialize()]
+        [ClassInitialize]
         public static async Task Initialize(TestContext a)
         {
-            bucketName = await S3TestUtils.CreateS3ExpressBucketWithWaitAsync(Client, "use1-az5");
+            bucketName = await S3TestUtils.CreateS3ExpressBucketWithWaitAsync(_usEast1Client, "use1-az5");
 
             foreach (var key in keys)
             {
-                await Client.PutObjectAsync(new PutObjectRequest
+                await _usEast1Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -54,41 +55,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassCleanup]
         public static async Task ClassCleanup()
         {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(_usEast1Client, bucketName);
             BaseClean();
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void ListDirectoryBuckets_ShouldReturnTheCreatedS3ExpressBucket()
+        public async Task ListDirectoryBuckets_ShouldReturnTheCreatedS3ExpressBucket()
         {
-            var response = Client.ListDirectoryBuckets(new ListDirectoryBucketsRequest
+            var response = await _usEast1Client.ListDirectoryBucketsAsync(new ListDirectoryBucketsRequest
             {
                 MaxDirectoryBuckets = 100,
             });
             Assert.IsTrue(response.Buckets.Count >= 1);
-
             Assert.IsTrue(response.Buckets.Any(b => b.BucketName == bucketName));
         }
 
-
         [TestMethod]
-        [TestCategory("S3")]
-        public void ListBuckets_ShouldNotContainS3ExpressBucket()
+        public async Task ListBuckets_ShouldNotContainS3ExpressBucket()
         {
-            var response = Client.ListBuckets();
+            var response = await _usEast1Client.ListBucketsAsync();
             Assert.IsFalse(response.Buckets.Any(b => b.BucketName == bucketName));
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void Test_S3Express_BucketPolicy()
+        public async Task Test_S3Express_BucketPolicy()
         {
-            IAmazonSecurityTokenService stsClient = new AmazonSecurityTokenServiceClient();
-            var accountId = stsClient.GetCallerIdentity(new GetCallerIdentityRequest()).Account;
-
+            var stsClient = new AmazonSecurityTokenServiceClient();
+            var accountId = (await stsClient.GetCallerIdentityAsync(new GetCallerIdentityRequest())).Account;
             var policyId = Guid.NewGuid().ToString();
-
             var policy = string.Format(@"{{
                 ""Statement"":[
                     {{
@@ -99,28 +93,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         ""Action"": [""s3express:CreateSession""]
                     }}]
                 }}", policyId, accountId, bucketName);
-
-
-            var putRequest = new PutBucketPolicyRequest
+            
+            await _usEast1Client.PutBucketPolicyAsync(new PutBucketPolicyRequest
             {
                 BucketName = bucketName,
                 Policy = policy
-            };
+            });
 
-            Client.PutBucketPolicy(putRequest);
-
-            var getBucketPolicyResponse = Client.GetBucketPolicy(bucketName);
-
+            var getBucketPolicyResponse = await _usEast1Client.GetBucketPolicyAsync(bucketName);
             Assert.IsTrue(getBucketPolicyResponse.Policy.Contains(policyId));
-
-            Client.DeleteBucketPolicy(bucketName);
+            await _usEast1Client.DeleteBucketPolicyAsync(bucketName);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void ListObjects_ShouldContainBucketName()
+        public async Task ListObjects_ShouldContainBucketName()
         {
-            var response = Client.ListObjectsV2(new ListObjectsV2Request
+            var response = await _usEast1Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = bucketName
             });
@@ -128,16 +116,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             foreach (var s3object in response.S3Objects)
             {
                 if (!keys.Contains(s3object.Key))
+                {
                     continue;
+                }
 
-                var res = Client.GetObject(bucketName, s3object.Key);
-                StreamReader reader = new StreamReader(res.ResponseStream);
-                var objectContent = reader.ReadToEnd();
+                var res = await _usEast1Client.GetObjectAsync(bucketName, s3object.Key);
+                var reader = new StreamReader(res.ResponseStream);
+                var objectContent = await reader.ReadToEndAsync();
                 Assert.AreEqual(objectContent, content);
             }
 
             Assert.IsTrue(response.S3Objects.Count >= keys.Count);
-
             foreach (var s3Object in response.S3Objects)
             {
                 Assert.AreEqual(s3Object.BucketName, bucketName);
@@ -145,12 +134,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void Test_HeadObject_NoVersionIdExists()
+        public async Task Test_HeadObject_NoVersionIdExists()
         {
             foreach (var key in keys)
             {
-                var response = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                var response = await _usEast1Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -161,14 +149,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void Test_CopyObject_BetweenS3ExpressBuckets()
+        public async Task Test_CopyObject_BetweenS3ExpressBuckets()
         {
             var newObjectKey = "Test Object 123";
+            var destinationbucketName = await S3TestUtils.CreateS3ExpressBucketWithWaitAsync(_usEast1Client, "use1-az5");
 
-            var destinationbucketName = S3TestUtils.CreateS3ExpressBucketWithWait(Client, "use1-az5");
-
-            Client.CopyObject(new CopyObjectRequest
+            await _usEast1Client.CopyObjectAsync(new CopyObjectRequest
             {
                 SourceBucket = bucketName,
                 SourceKey = keys[0],
@@ -176,27 +162,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DestinationKey = newObjectKey,
             });
 
-            var response = Client.ListObjectsV2(new ListObjectsV2Request
+            var response = await _usEast1Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = destinationbucketName
             });
-
             Assert.IsTrue(response.S3Objects.Count == 1);
             Assert.IsTrue(response.S3Objects.Any(s3Object => s3Object.Key == newObjectKey));
 
-            var getObjectResponse = Client.GetObject(destinationbucketName, newObjectKey);
-            StreamReader reader = new StreamReader(getObjectResponse.ResponseStream);
-            var objectContent = reader.ReadToEnd();
+            var getObjectResponse = await _usEast1Client.GetObjectAsync(destinationbucketName, newObjectKey);
+            var reader = new StreamReader(getObjectResponse.ResponseStream);
+            var objectContent = await reader.ReadToEndAsync();
             Assert.AreEqual(objectContent, content);
 
-
-            Client.DeleteObject(new DeleteObjectRequest
+            await _usEast1Client.DeleteObjectAsync(new DeleteObjectRequest
             {
                 BucketName = destinationbucketName,
                 Key = newObjectKey
             });
 
-            response = Client.ListObjectsV2(new ListObjectsV2Request
+            response = await _usEast1Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = destinationbucketName
             });
@@ -206,15 +190,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             else
                 Assert.IsNull(response.S3Objects);
 
-            Client.DeleteBucket(destinationbucketName);
-
-            var listDirectoryBucketsResponse = Client.ListDirectoryBuckets(new ListDirectoryBucketsRequest());
+            await _usEast1Client.DeleteBucketAsync(destinationbucketName);
+            var listDirectoryBucketsResponse = await _usEast1Client.ListDirectoryBucketsAsync(new ListDirectoryBucketsRequest());
             Assert.IsFalse(listDirectoryBucketsResponse.Buckets.Any(b => b.BucketName == destinationbucketName));
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void Test_CopyObject_BetweenRegularBucket_And_S3ExpressBucket()
+        public async Task Test_CopyObject_BetweenRegularBucket_And_S3ExpressBucket()
         {
             var oldObjectKey = "Test Object 123";
             var newObjectKey = "New Test Object 123";
@@ -222,13 +204,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             // Create regular bucket
             var newRegularBucket = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}";
-
-            Client.PutBucket(newRegularBucket);
-            S3TestUtils.WaitForBucket(Client, newRegularBucket);
-
+            await _usEast1Client.PutBucketAsync(newRegularBucket);
 
             // Copy object from S3Express bucket to regular bucket
-            Client.CopyObject(new CopyObjectRequest
+            await _usEast1Client.CopyObjectAsync(new CopyObjectRequest
             {
                 SourceBucket = bucketName,
                 SourceKey = keys[0],
@@ -236,26 +215,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DestinationKey = oldObjectKey,
             });
 
-            var listObjectsResponse = Client.ListObjectsV2(new ListObjectsV2Request
+            var listObjectsResponse = await _usEast1Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = newRegularBucket
             });
-
             Assert.IsTrue(listObjectsResponse.S3Objects.Count == 1);
             Assert.IsTrue(listObjectsResponse.S3Objects.Any(s3Object => s3Object.Key == oldObjectKey));
 
-            var getObjectResponse = Client.GetObject(newRegularBucket, oldObjectKey);
-            StreamReader reader = new StreamReader(getObjectResponse.ResponseStream);
-            var objectContent = reader.ReadToEnd();
+            var getObjectResponse = await _usEast1Client.GetObjectAsync(newRegularBucket, oldObjectKey);
+            var reader = new StreamReader(getObjectResponse.ResponseStream);
+            var objectContent = await reader.ReadToEndAsync();
             Assert.AreEqual(objectContent, content);
 
-            Client.DeleteObject(new DeleteObjectRequest
+            await _usEast1Client.DeleteObjectAsync(new DeleteObjectRequest
             {
                 BucketName = newRegularBucket,
                 Key = oldObjectKey
             });
 
-            listObjectsResponse = Client.ListObjectsV2(new ListObjectsV2Request
+            listObjectsResponse = await _usEast1Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = newRegularBucket
             });
@@ -265,9 +243,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             else
                 Assert.IsNull(listObjectsResponse.S3Objects);
 
-
             // Add new object to regular bucket
-            Client.PutObject(new PutObjectRequest
+            await _usEast1Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = newRegularBucket,
                 Key = newObjectKey,
@@ -275,7 +252,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             // Copy object from S3Express bucket to regular bucket
-            Client.CopyObject(new CopyObjectRequest
+            await _usEast1Client.CopyObjectAsync(new CopyObjectRequest
             {
                 SourceBucket = newRegularBucket,
                 SourceKey = newObjectKey,
@@ -283,45 +260,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DestinationKey = newObjectKey,
             });
 
-            listObjectsResponse = Client.ListObjectsV2(new ListObjectsV2Request
+            listObjectsResponse = await _usEast1Client.ListObjectsV2Async(new ListObjectsV2Request
             {
                 BucketName = bucketName
             });
-
             Assert.IsTrue(listObjectsResponse.S3Objects.Any(s3Object => s3Object.Key == newObjectKey));
 
-            getObjectResponse = Client.GetObject(bucketName, newObjectKey);
+            getObjectResponse = await _usEast1Client.GetObjectAsync(bucketName, newObjectKey);
             reader = new StreamReader(getObjectResponse.ResponseStream);
-            objectContent = reader.ReadToEnd();
+            objectContent = await reader.ReadToEndAsync();
             Assert.AreEqual(objectContent, newObjectContent);
 
-
-
-            //Cleanup created objects and bucket
-            Client.DeleteObject(new DeleteObjectRequest
+            // Cleanup created objects and bucket
+            await _usEast1Client.DeleteObjectAsync(new DeleteObjectRequest
             {
                 BucketName = newRegularBucket,
                 Key = newObjectKey
             });
-
-            Client.DeleteObject(new DeleteObjectRequest
+            await _usEast1Client.DeleteObjectAsync(new DeleteObjectRequest
             {
                 BucketName = bucketName,
                 Key = newObjectKey
             });
+            await _usEast1Client.DeleteBucketAsync(newRegularBucket);
 
-            Client.DeleteBucket(newRegularBucket);
-
-            var listBucketsResponse = Client.ListBuckets(new ListBucketsRequest());
+            var listBucketsResponse = await _usEast1Client.ListBucketsAsync(new ListBucketsRequest());
             Assert.IsFalse(listBucketsResponse.Buckets.Any(b => b.BucketName == newRegularBucket));
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void Test_MultipartUpload()
+        public async Task Test_MultipartUpload()
         {
             var random = new Random();
-
             var nextRandom = random.Next();
             var filePath = Path.Combine(Path.GetTempPath(), "multi-" + nextRandom + ".txt");
             var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retrieved-" + nextRandom + ".txt");
@@ -330,20 +300,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             UtilityMethods.GenerateFile(filePath, totalSize);
             var key = "key-" + random.Next();
 
-            Stream inputStream = File.OpenRead(filePath);
+            var inputStream = File.OpenRead(filePath);
             try
             {
-                InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
+                var initRequest = new InitiateMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     ContentType = "text/html",
                 };
-
-                InitiateMultipartUploadResponse initResponse = Client.InitiateMultipartUpload(initRequest);
-
-                // Upload part 1
-                UploadPartRequest uploadRequest = new UploadPartRequest()
+                var initResponse = await Client.InitiateMultipartUploadAsync(initRequest);
+                
+                var uploadRequest = new UploadPartRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -352,11 +320,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     PartSize = 5 * megSize,
                     InputStream = inputStream,
                 };
+                var up1Response = await Client.UploadPartAsync(uploadRequest);
 
-                UploadPartResponse up1Response = Client.UploadPart(uploadRequest);
-
-                // Upload part 2
-                uploadRequest = new UploadPartRequest()
+                uploadRequest = new UploadPartRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -365,11 +331,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     PartSize = 5 * megSize,
                     InputStream = inputStream,
                 };
+                var up2Response = await Client.UploadPartAsync(uploadRequest);
 
-                UploadPartResponse up2Response = Client.UploadPart(uploadRequest);
-
-                // Upload part 3
-                uploadRequest = new UploadPartRequest()
+                uploadRequest = new UploadPartRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -378,17 +342,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     InputStream = inputStream,
                     IsLastPart = true
                 };
+                var up3Response = await Client.UploadPartAsync(uploadRequest);
 
-                UploadPartResponse up3Response = Client.UploadPart(uploadRequest);
-
-                ListPartsRequest listPartRequest = new ListPartsRequest()
+                var listPartRequest = new ListPartsRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     UploadId = initResponse.UploadId
                 };
-
-                ListPartsResponse listPartResponse = Client.ListParts(listPartRequest);
+                var listPartResponse = await Client.ListPartsAsync(listPartRequest);
                 Assert.AreEqual(3, listPartResponse.Parts.Count);
                 Assert.AreEqual(up1Response.PartNumber, listPartResponse.Parts[0].PartNumber);
                 Assert.AreEqual(up1Response.ETag, listPartResponse.Parts[0].ETag);
@@ -398,60 +360,45 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(up3Response.ETag, listPartResponse.Parts[2].ETag);
 
                 listPartRequest.MaxParts = 1;
-                listPartResponse = Client.ListParts(listPartRequest);
+                listPartResponse = await Client.ListPartsAsync(listPartRequest);
                 Assert.AreEqual(1, listPartResponse.Parts.Count);
 
-                // Complete the response
-                CompleteMultipartUploadRequest compRequest = new CompleteMultipartUploadRequest()
+                var compRequest = new CompleteMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     UploadId = initResponse.UploadId
                 };
                 compRequest.AddPartETags(up1Response, up2Response, up3Response);
-
-                CompleteMultipartUploadResponse compResponse = Client.CompleteMultipartUpload(compRequest);
-
-                // Currently failing because it returns bucketName without S3Express's section.
-                // S3Express team is aware of this bug and planning to fix it.
-                // Assert.AreEqual(bucketName, compResponse.BucketName);
-
+                var compResponse = await Client.CompleteMultipartUploadAsync(compRequest);
                 Assert.IsNotNull(compResponse.ETag);
                 Assert.AreEqual(key, compResponse.Key);
                 Assert.IsNotNull(compResponse.Location);
 
                 // Get the file back from S3 and make sure it is still the same.
-                GetObjectRequest getRequest = new GetObjectRequest()
+                var getResponse = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key
-                };
-
-                GetObjectResponse getResponse = Client.GetObject(getRequest);
-                getResponse.WriteResponseStreamToFile(retrievedFilepath);
-
+                });
+                await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, append: false, cancellationToken: default);
                 UtilityMethods.CompareFiles(filePath, retrievedFilepath);
 
-                GetObjectMetadataRequest metaDataRequest = new GetObjectMetadataRequest()
+                var metaDataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                 {
                     BucketName = bucketName,
                     Key = key
-                };
-                GetObjectMetadataResponse metaDataResponse = Client.GetObjectMetadata(metaDataRequest);
+                });
                 Assert.AreEqual("text/html", metaDataResponse.Headers.ContentType);
 
-
                 var key2 = "key-" + random.Next();
-
-
-                //Start�another�multipart�upload to test CopyPart
-                InitiateMultipartUploadResponse initResponse2 = Client.InitiateMultipartUpload(new InitiateMultipartUploadRequest
+                var initResponse2 = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = key2,
                 });
 
-                CopyPartRequest request = new CopyPartRequest
+                var response = await Client.CopyPartAsync(new CopyPartRequest
                 {
                     DestinationBucket = bucketName,
                     DestinationKey = key2,
@@ -459,97 +406,87 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     SourceKey = key,
                     UploadId = initResponse2.UploadId,
                     PartNumber = 1,
-                };
-                CopyPartResponse response = Client.CopyPart(request);
-
-                //ETag
+                });
                 Assert.IsNotNull(response.ETag);
                 Assert.IsTrue((response.ETag != null) && (response.ETag.Length > 0));
-
-                //PartNumber
                 Assert.IsTrue(response.PartNumber == 1);
 
-
-                listPartRequest = new ListPartsRequest()
+                listPartRequest = new ListPartsRequest
                 {
                     BucketName = bucketName,
                     Key = key2,
                     UploadId = initResponse2.UploadId
                 };
-
-
-                listPartResponse = Client.ListParts(listPartRequest);
+                listPartResponse = await Client.ListPartsAsync(listPartRequest);
                 Assert.AreEqual(1, listPartResponse.Parts.Count);
                 Assert.AreEqual(response.PartNumber, listPartResponse.Parts[0].PartNumber);
                 Assert.AreEqual(response.ETag, listPartResponse.Parts[0].ETag);
 
-                Client.AbortMultipartUpload(new AbortMultipartUploadRequest
+                await Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = key2,
                     UploadId = initResponse2.UploadId
                 });
 
-                Client.DeleteObject(new DeleteObjectRequest
+                await Client.DeleteObjectAsync(new DeleteObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key
                 });
-
             }
             finally
             {
                 inputStream.Close();
                 if (File.Exists(filePath))
+                {
                     File.Delete(filePath);
+                }
                 if (File.Exists(retrievedFilepath))
+                {
                     File.Delete(retrievedFilepath);
+                }
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void Test_TransferUtility()
+        public async Task Test_TransferUtility()
         {
             var random = new Random();
-
             var key = "key-" + random.Next() + ".txt";
             var filePath = Path.Combine(Path.GetTempPath(), key);
-
             var retrievedFilepath = filePath + ".download";
-            var totalSize = megSize * 15;
-
-            UtilityMethods.GenerateFile(filePath, totalSize);
+            UtilityMethods.GenerateFile(filePath, megSize * 15);
 
             try
             {
-                using (var tu = new TransferUtility(Client))
+                using (var tu = new TransferUtility(_usEast1Client))
                 {
-                    tu.Upload(filePath, bucketName);
+                    await tu.UploadAsync(filePath, bucketName);
 
-                    var getObjectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                    var getObjectMetadataResponse = await _usEast1Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                     {
                         BucketName = bucketName,
                         Key = key
                     });
                     Assert.IsTrue(getObjectMetadataResponse.ETag.Length > 0);
 
-                    var downloadRequest = new TransferUtilityDownloadRequest
+                    await tu.DownloadAsync(new TransferUtilityDownloadRequest
                     {
                         BucketName = bucketName,
                         Key = key,
                         FilePath = retrievedFilepath
-                    };
-                    tu.Download(downloadRequest);
+                    });
 
                     var fileExists = File.Exists(retrievedFilepath);
                     Assert.IsTrue(fileExists);
+
                     var fileContent = File.ReadAllText(retrievedFilepath);
                     var testContent = File.ReadAllText(filePath);
                     Assert.AreEqual(testContent, fileContent);
                 }
 
-                Client.DeleteObject(new DeleteObjectRequest
+                await _usEast1Client.DeleteObjectAsync(new DeleteObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key
@@ -558,15 +495,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             finally
             {
                 if (File.Exists(filePath))
+                {
                     File.Delete(filePath);
+                }
                 if (File.Exists(retrievedFilepath))
+                {
                     File.Delete(retrievedFilepath);
+                }
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void Test_TransferUtility_Precalculated()
+        public async Task Test_TransferUtility_Precalculated()
         {
             var random = new Random();
             var key = "key-" + random.Next() + ".txt";
@@ -580,7 +520,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 using (var tu = new TransferUtility(Client))
                 {
-                    tu.Upload(new TransferUtilityUploadRequest
+                    await tu.UploadAsync(new TransferUtilityUploadRequest
                     {
                         BucketName = bucketName,
                         Key = key,
@@ -588,7 +528,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         ChecksumCRC32C = precalculatedChecksum,
                     });
 
-                    var getObjectResponse = Client.GetObject(new GetObjectRequest
+                    var getObjectResponse = await Client.GetObjectAsync(new GetObjectRequest
                     {
                         BucketName = bucketName,
                         Key = key
@@ -596,7 +536,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.IsNotNull(getObjectResponse.ChecksumCRC32C);
                 }
 
-                Client.DeleteObject(new DeleteObjectRequest
+                await Client.DeleteObjectAsync(new DeleteObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key
@@ -608,83 +548,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     File.Delete(filePath);
                 }
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void Test_TransferUtility_Directory()
-        {
-            var size = 1 * megSize;
-            var random = new Random();
-
-            var key = "key-" + random.Next();
-            var directoryPath = Path.Combine(Path.GetTempPath(), key);
-
-            for (int i = 0; i < 5; i++)
-            {
-                var filePath = Path.Combine(Path.Combine(directoryPath, i.ToString()), "file.txt");
-                UtilityMethods.GenerateFile(filePath, size);
-            }
-
-            var retrievedDirectoryPath = directoryPath + "download";
-
-            try
-            {
-                var directory = new DirectoryInfo(directoryPath);
-                var retrievedDirectory = new DirectoryInfo(retrievedDirectoryPath);
-
-                using (var tu = new TransferUtility(Client))
-                {
-                    var uploadDirectoryRequest = new TransferUtilityUploadDirectoryRequest
-                    {
-                        BucketName = bucketName,
-                        Directory = directoryPath,
-                        KeyPrefix = directory.Name,
-                        SearchPattern = "*",
-                        SearchOption = SearchOption.AllDirectories,
-                    };
-
-                    HashSet<string> files = new HashSet<string>();
-                    uploadDirectoryRequest.UploadDirectoryProgressEvent += (s, e) => files.Add(e.CurrentFile);
-
-                    tu.UploadDirectory(uploadDirectoryRequest);
-
-                    Assert.AreEqual(5, files.Count);
-
-                    var transferUtility = new TransferUtility(Client);
-                    var request = new TransferUtilityDownloadDirectoryRequest
-                    {
-                        BucketName = bucketName,
-                        LocalDirectory = retrievedDirectoryPath,
-                        S3Directory = directory.Name
-                    };
-
-                    transferUtility.DownloadDirectory(request);
-
-                    var oldFiles = directory.GetFiles("*", SearchOption.AllDirectories);
-                    var retrievedFiles = retrievedDirectory.GetFiles("*", SearchOption.AllDirectories);
-
-                    foreach (var file in oldFiles)
-                    {
-                        var retrievedFile = retrievedFiles.FirstOrDefault(e => e.Name == file.Name);
-                        Assert.IsTrue(retrievedFile != null);
-
-                        var fileExists = File.Exists(retrievedFile.FullName);
-                        Assert.IsTrue(fileExists);
-
-                        var retrievedContent = File.ReadAllText(retrievedFile.FullName);
-                        var fileContent = File.ReadAllText(file.FullName);
-                        Assert.AreEqual(retrievedContent, fileContent);
-                    }
-                }
-            }
-            finally
-            {
-                if (Directory.Exists(directoryPath))
-                    Directory.Delete(directoryPath, true);
-                if (File.Exists(retrievedDirectoryPath))
-                    Directory.Delete(retrievedDirectoryPath, true);
             }
         }
     }
