@@ -15,6 +15,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// Tests the initiated, completed, and failed events for directory uploads.
     /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class TransferUtilityUploadDirectoryLifecycleTests : TestBase<AmazonS3Client>
     {
         public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
@@ -42,8 +43,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void UploadDirectoryInitiatedEventTest()
+        public async Task UploadDirectoryInitiatedEventTest()
         {
             var eventValidator = new TransferLifecycleEventValidator<UploadDirectoryInitiatedEventArgs>
             {
@@ -56,16 +56,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     // Verify that total files and bytes are provided in initiated event
                     Assert.IsTrue(args.TotalFiles > 0, "TotalFiles should be greater than 0");
                     Assert.IsTrue(args.TotalBytes > 0, "TotalBytes should be greater than 0");
-
                 }
             };
-            UploadDirectoryWithLifecycleEvents(10 * MEG_SIZE, eventValidator, null, null);
+            
+            await UploadDirectoryWithLifecycleEvents(10 * MEG_SIZE, eventValidator, null, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void UploadDirectoryCompletedEventTest()
+        public async Task UploadDirectoryCompletedEventTest()
         {
             var eventValidator = new TransferLifecycleEventValidator<UploadDirectoryCompletedEventArgs>
             {
@@ -84,16 +83,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(args.TransferredFiles, args.Response.ObjectsUploaded, "Response ObjectsUploaded should match TransferredFiles");
                     Assert.AreEqual(0, args.Response.ObjectsFailed, "No objects should have failed");
                     Assert.AreEqual(DirectoryResult.Success, args.Response.Result, "Result should be Success");
-                
                 }
             };
-            UploadDirectoryWithLifecycleEvents(12 * MEG_SIZE, null, eventValidator, null);
+            
+            await UploadDirectoryWithLifecycleEvents(12 * MEG_SIZE, null, eventValidator, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void UploadDirectoryFailedEventTest()
+        public async Task UploadDirectoryFailedEventTest()
         {
             var eventValidator = new TransferLifecycleEventValidator<UploadDirectoryFailedEventArgs>
             {
@@ -106,7 +104,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Use an invalid bucket name to force a real exception
             // Bucket names with uppercase letters are invalid and will cause an exception
             var invalidBucketName = "INVALID-BUCKET-NAME-" + Guid.NewGuid().ToString();
-            
             var directory = CreateTestDirectory(5 * MEG_SIZE);
             var directoryPath = directory.FullName;
             
@@ -124,7 +121,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                transferUtility.UploadDirectory(request);
+                await transferUtility.UploadDirectoryAsync(request);
                 Assert.Fail("Expected an exception to be thrown for invalid bucket name");
             }
             catch (Exception ex)
@@ -137,8 +134,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void UploadDirectoryCompleteLifecycleTest()
+        public async Task UploadDirectoryCompleteLifecycleTest()
         {
             var initiatedValidator = new TransferLifecycleEventValidator<UploadDirectoryInitiatedEventArgs>
             {
@@ -165,7 +161,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            UploadDirectoryWithLifecycleEvents(15 * MEG_SIZE, initiatedValidator, completedValidator, null);
+            await UploadDirectoryWithLifecycleEvents(15 * MEG_SIZE, initiatedValidator, completedValidator, null);
             
             initiatedValidator.AssertEventFired();
             completedValidator.AssertEventFired();
@@ -173,7 +169,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         #region Helper Methods
 
-        void UploadDirectoryWithLifecycleEvents(long fileSize,
+        async Task UploadDirectoryWithLifecycleEvents(long fileSize,
             TransferLifecycleEventValidator<UploadDirectoryInitiatedEventArgs> initiatedValidator,
             TransferLifecycleEventValidator<UploadDirectoryCompletedEventArgs> completedValidator,
             TransferLifecycleEventValidator<UploadDirectoryFailedEventArgs> failedValidator)
@@ -182,10 +178,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var keyPrefix = directory.Name;
             var directoryPath = directory.FullName;
             
-            UploadDirectoryWithLifecycleEventsAndDirectory(directoryPath, keyPrefix, initiatedValidator, completedValidator, failedValidator);
+            await UploadDirectoryWithLifecycleEventsAndDirectory(directoryPath, keyPrefix, initiatedValidator, completedValidator, failedValidator);
         }
 
-        void UploadDirectoryWithLifecycleEventsAndDirectory(string directoryPath, string keyPrefix,
+        async Task UploadDirectoryWithLifecycleEventsAndDirectory(string directoryPath, string keyPrefix,
             TransferLifecycleEventValidator<UploadDirectoryInitiatedEventArgs> initiatedValidator,
             TransferLifecycleEventValidator<UploadDirectoryCompletedEventArgs> completedValidator,
             TransferLifecycleEventValidator<UploadDirectoryFailedEventArgs> failedValidator)
@@ -216,17 +212,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.UploadDirectoryFailedEvent += failedValidator.OnEventFired;
             }
 
-            transferUtility.UploadDirectory(request);
+            await transferUtility.UploadDirectoryAsync(request);
             
             // Validate uploaded directory contents if it was successful
             var directory = new DirectoryInfo(directoryPath);
-            ValidateDirectoryContentsInS3(Client, bucketName, keyPrefix, directory);
+            await ValidateDirectoryContentsInS3(Client, bucketName, keyPrefix, directory);
         }
 
-        public static DirectoryInfo CreateTestDirectory(long fileSize = 0, int numberOfTestFiles = 3)
+        static DirectoryInfo CreateTestDirectory(long fileSize = 0, int numberOfTestFiles = 3)
         {
             if (fileSize == 0)
+            {
                 fileSize = 1 * MEG_SIZE;
+            }
 
             var directoryPath = GenerateDirectoryPath();
             for (int i = 0; i < numberOfTestFiles; i++)
@@ -238,14 +236,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return new DirectoryInfo(directoryPath);
         }
 
-        public static string GenerateDirectoryPath(string baseName = "UploadDirectoryLifecycleTest")
+        static string GenerateDirectoryPath(string baseName = "UploadDirectoryLifecycleTest")
         {
             var directoryName = UtilityMethods.GenerateName(baseName);
             var directoryPath = Path.Combine(BasePath, directoryName);
             return directoryPath;
         }
 
-        public static void ValidateDirectoryContentsInS3(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo sourceDirectory)
+        static async Task ValidateDirectoryContentsInS3(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo sourceDirectory)
         {
             var directoryPath = sourceDirectory.FullName;
             var files = sourceDirectory.GetFiles("*", SearchOption.AllDirectories);
@@ -256,7 +254,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var key = (!string.IsNullOrEmpty(keyPrefix) ? keyPrefix + "/" : string.Empty) + relativePath.Replace("\\", "/");
                 
                 // Verify the object exists in S3
-                var metadata = s3client.GetObjectMetadata(new GetObjectMetadataRequest
+                var metadata = await s3client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                 {
                     BucketName = bucketName,
                     Key = key
