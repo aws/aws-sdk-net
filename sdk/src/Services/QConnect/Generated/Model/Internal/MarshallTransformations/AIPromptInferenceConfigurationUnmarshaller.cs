@@ -66,10 +66,28 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("textAIPromptInferenceConfiguration", targetDepth))
+                if (context.TestExpression("maxTokensToSample", targetDepth))
                 {
-                    var unmarshaller = TextAIPromptInferenceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TextAIPromptInferenceConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxTokensToSample = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("temperature", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Temperature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("topK", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TopK = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("topP", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.TopP = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

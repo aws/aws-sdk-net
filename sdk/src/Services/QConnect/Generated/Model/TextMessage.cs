@@ -80,7 +80,7 @@ namespace Amazon.QConnect.Model
         /// The value of the message data in text type.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=25000)]
         public string Value
         {
             get { return this._value; }

@@ -48,15 +48,42 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetTextAIPromptInferenceConfiguration())
+            if(requestObject.IsSetMaxTokensToSample())
             {
-                context.Writer.WritePropertyName("textAIPromptInferenceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("maxTokensToSample");
+                context.Writer.Write(requestObject.MaxTokensToSample);
+            }
 
-                var marshaller = TextAIPromptInferenceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TextAIPromptInferenceConfiguration, context);
+            if(requestObject.IsSetTemperature())
+            {
+                context.Writer.WritePropertyName("temperature");
+                if(StringUtils.IsSpecialFloatValue(requestObject.Temperature))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Temperature));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Temperature);
+                }
+            }
 
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetTopK())
+            {
+                context.Writer.WritePropertyName("topK");
+                context.Writer.Write(requestObject.TopK);
+            }
+
+            if(requestObject.IsSetTopP())
+            {
+                context.Writer.WritePropertyName("topP");
+                if(StringUtils.IsSpecialFloatValue(requestObject.TopP))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TopP));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TopP);
+                }
             }
 
         }
