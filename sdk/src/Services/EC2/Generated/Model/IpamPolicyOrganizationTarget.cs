@@ -39,7 +39,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OrganizationTargetId. 
         /// <para>
-        /// The ID of a Amazon Web Services Organizations target for an IPAM policy.
+        /// The ID of the Amazon Web Services Organizations target.
+        /// </para>
+        ///  
+        /// <para>
+        /// A target can be an individual Amazon Web Services account or an entity within an Amazon
+        /// Web Services Organization to which an IPAM policy can be applied.
         /// </para>
         /// </summary>
         public string OrganizationTargetId
