@@ -1642,6 +1642,26 @@
     <pattern>[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.AIPromptInferenceConfiguration.MaxTokensToSample</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AIPromptInferenceConfiguration.Temperature</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AIPromptInferenceConfiguration.TopK</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AIPromptInferenceConfiguration.TopP</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.AIPromptSummary.AiPromptArn</property>
     <pattern>arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}</pattern>
   </property-value-rule>
@@ -3473,34 +3493,14 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.QConnect.Model.TextAIPromptInferenceConfiguration.MaxTokensToSample</property>
-    <min>0</min>
-    <max>4096</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.QConnect.Model.TextAIPromptInferenceConfiguration.Temperature</property>
-    <min>0</min>
-    <max>1</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.QConnect.Model.TextAIPromptInferenceConfiguration.TopK</property>
-    <min>0</min>
-    <max>200</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.QConnect.Model.TextAIPromptInferenceConfiguration.TopP</property>
-    <min>0</min>
-    <max>1</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.QConnect.Model.TextFullAIPromptEditTemplateConfiguration.Text</property>
     <min>1</min>
     <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.TextMessage.Value</property>
-    <min>1</min>
-    <max>1024</max>
+    <min>0</min>
+    <max>25000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.ToolConfiguration.Title</property>
