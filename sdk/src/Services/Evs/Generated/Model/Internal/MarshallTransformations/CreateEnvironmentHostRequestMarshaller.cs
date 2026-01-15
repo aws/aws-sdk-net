@@ -86,6 +86,12 @@ namespace Amazon.Evs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnvironmentId);
                 }
 
+                if(publicRequest.IsSetEsxVersion())
+                {
+                    context.Writer.WritePropertyName("esxVersion");
+                    context.Writer.Write(publicRequest.EsxVersion);
+                }
+
                 if(publicRequest.IsSetHost())
                 {
                     context.Writer.WritePropertyName("host");

@@ -92,6 +92,11 @@ namespace Amazon.Evs.Model
         /// <para>
         /// The EC2 instance type that represents the host.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, Amazon EVS supports only the <c>i4i.metal</c> instance type.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public InstanceType InstanceType

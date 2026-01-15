@@ -69,9 +69,8 @@ namespace Amazon.Evs
         /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.ThrottlingException">
-        /// The operation couldn't be performed because the service is throttling requests. This
-        /// exception is thrown when there are too many requests accepted concurrently from the
-        /// service endpoint.
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.ValidationException">
         /// The input fails to satisfy the specified constraints. You will see this exception
@@ -126,7 +125,14 @@ namespace Amazon.Evs
         /// It can take several hours to create an environment. After the deployment completes,
         /// you can configure VCF in the vSphere user interface according to your needs.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// When creating a new environment, the default ESX version for the selected VCF version
+        /// will be used, you cannot choose a specific ESX version in <c>CreateEnvironment</c>
+        /// action. When a host has been added with a specific ESX version, it can only be upgraded
+        /// using vCenter Lifecycle Manager.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
         /// in the same <c>CreateEnvironment</c> action. This results in a <c>ValidationException</c>
@@ -177,7 +183,7 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// Creates an ESXi host and adds it to an Amazon EVS environment. Amazon EVS supports
+        /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
         /// 4-16 hosts per environment.
         /// 
         ///  
@@ -187,7 +193,7 @@ namespace Amazon.Evs
         ///  
         /// <para>
         /// You can use the <c>dedicatedHostId</c> parameter to specify an Amazon EC2 Dedicated
-        /// Host for ESXi host creation.
+        /// Host for ESX host creation.
         /// </para>
         ///  
         /// <para>
@@ -195,6 +201,13 @@ namespace Amazon.Evs
         /// placement group to launch EC2 instances into.
         /// </para>
         ///  <note> 
+        /// <para>
+        /// If you don't specify an ESX version when adding hosts using <c>CreateEnvironmentHost</c>
+        /// action, Amazon EVS automatically uses the default ESX version associated with your
+        /// environment's VCF version. To find the default ESX version for a particular VCF version,
+        /// use the <c>GetVersions</c> action.
+        /// </para>
+        ///  </note> <note> 
         /// <para>
         /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
         /// in the same <c>CreateEnvironmentHost</c> action. This results in a <c>ValidationException</c>
@@ -206,9 +219,8 @@ namespace Amazon.Evs
         /// 
         /// <returns>The response from the CreateEnvironmentHost service method, as returned by Evs.</returns>
         /// <exception cref="Amazon.Evs.Model.ThrottlingException">
-        /// The operation couldn't be performed because the service is throttling requests. This
-        /// exception is thrown when there are too many requests accepted concurrently from the
-        /// service endpoint.
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.ValidationException">
         /// The input fails to satisfy the specified constraints. You will see this exception
@@ -379,9 +391,8 @@ namespace Amazon.Evs
         /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.ThrottlingException">
-        /// The operation couldn't be performed because the service is throttling requests. This
-        /// exception is thrown when there are too many requests accepted concurrently from the
-        /// service endpoint.
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.ValidationException">
         /// The input fails to satisfy the specified constraints. You will see this exception
@@ -465,6 +476,55 @@ namespace Amazon.Evs
         /// <returns>Returns a  GetEnvironmentResult from Evs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         GetEnvironmentResponse EndGetEnvironment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetVersions
+
+
+        /// <summary>
+        /// Returns information about VCF versions, ESX versions and EC2 instance types provided
+        /// by Amazon EVS. For each VCF version, the response also includes the default ESX version
+        /// and provided EC2 instance types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVersions service method.</param>
+        /// 
+        /// <returns>The response from the GetVersions service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetVersions">REST API Reference for GetVersions Operation</seealso>
+        GetVersionsResponse GetVersions(GetVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVersions operation on AmazonEvsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetVersions">REST API Reference for GetVersions Operation</seealso>
+        IAsyncResult BeginGetVersions(GetVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVersions.</param>
+        /// 
+        /// <returns>Returns a  GetVersionsResult from Evs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetVersions">REST API Reference for GetVersions Operation</seealso>
+        GetVersionsResponse EndGetVersions(IAsyncResult asyncResult);
 
         #endregion
         
