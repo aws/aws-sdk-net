@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "patch",
-    "changeLogMessages": [
-      "For .NET 8\u002B targets use ExceptionDispatchInfo.Throw when rethrowing inner HTTP exceptions to preserve original exception context"
-    ]
-  }
-}

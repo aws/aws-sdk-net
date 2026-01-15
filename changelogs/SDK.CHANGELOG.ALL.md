@@ -1,3 +1,28 @@
+### 4.0.171.0 (2026-01-15 19:19 UTC)
+* CleanRooms (4.0.14.0)
+	* This release adds support for parameters in PySpark analysis templates.
+* Deadline (4.0.11.0)
+	* AWS Deadline Cloud now supports tagging Budget resources with ABAC for permissions management and selecting up to 16 filter values in the monitor and Search API.
+* EC2 (4.0.65.3)
+	* This release includes documentation updates to support up to four Elastic Volume modifications per Amazon EBS volume within a rolling 24-hour period.
+* ECS (4.0.12.0)
+	* Adds support for configuring FIPS in AWS GovCloud (US) Regions via a new ECS Capacity Provider field fipsEnabled. When enabled, instances launched by the capacity provider will use a FIPS-140 enabled AMI. Instances will use FIPS-140 compliant cryptographic modules and AWS FIPS endpoints.
+* Evs (4.0.5.0)
+	* A new GetVersions API has been added to retrieve VCF, ESX versions, and EC2 instances provided by Amazon EVS. The CreateEnvironment API now allows you to select a VCF version and the CreateEnvironmentHost API introduces a optional esxVersion parameter.
+* LakeFormation (4.0.4.0)
+	* API Changes for GTCForLocation feature. Includes a new API, GetTemporaryDataLocationCredentials and updates to the APIs RegisterResource and UpdateResource
+* OpenSearchServerless (4.0.6.0)
+	* Collection groups in Amazon OpenSearch Serverless enables to organize multiple collections and enable compute resource sharing across collections with different KMS keys. This shared compute model reduces costs by eliminating the need for separate OpenSearch Compute Units (OCUs) for each KMS key.
+* QConnect (4.0.6.0)
+	* Fix inference configuration shapes for the CreateAIPrompt and UpdateAIPrompt APIs, Modify Text Length Limit for SendMessage API
+* S3 (4.0.17.2)
+	* Generate paginators for S3
+* Core 4.0.3.9
+	* Add default constructors for all generated service exceptions
+	* For .NET 8+ targets use ExceptionDispatchInfo.Throw when rethrowing inner HTTP exceptions to preserve original exception context
+	* Updating partitions.json file.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.170.0 (2026-01-14 19:21 UTC)
 * Connect (4.0.26.0)
 	* Amazon Connect makes it easier to manage contact center operating hours by enabling automated scheduling for recurring events like holidays and maintenance windows. Set up recurring patterns (weekly, monthly, etc.) or link to another hours of operation to inherit overrides.
