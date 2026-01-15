@@ -25,6 +25,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// - Response validation
     /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class TransferUtilityUploadDirectoryWithResponseTests : TestBase<AmazonS3Client>
     {
         private static readonly long MB = 1024 * 1024;
@@ -84,7 +85,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Basic Upload Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_BasicUpload_ReturnsCorrectResponse()
         {
@@ -119,7 +119,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_EmptyDirectory_ReturnsZeroObjectsUploaded()
         {
@@ -151,7 +150,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Progress Tracking Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_WithProgressTracking_FiresProgressEvents()
         {
@@ -199,7 +197,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_WithLifecycleEvents_FiresInitiatedAndCompleted()
         {
@@ -255,7 +252,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_SequentialMode_IncludesCurrentFileDetails()
         {
@@ -302,7 +298,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_ConcurrentMode_OmitsCurrentFileDetails()
         {
@@ -356,7 +351,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Multipart Upload Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         [TestCategory("Multipart")]
         public async Task UploadDirectoryWithResponse_WithMultipartFiles_UploadsSuccessfully()
@@ -397,7 +391,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Nested Directory Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_NestedDirectories_PreservesStructure()
         {
@@ -446,7 +439,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Concurrent vs Sequential Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_ConcurrentMode_UploadsAllFiles()
         {
@@ -480,7 +472,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_SequentialMode_UploadsAllFiles()
         {
@@ -518,7 +509,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Mixed File Size Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("UploadDirectory")]
         public async Task UploadDirectoryWithResponse_MixedFileSizes_UploadsAll()
         {

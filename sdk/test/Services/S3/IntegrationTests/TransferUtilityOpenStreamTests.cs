@@ -1,14 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Util;
-using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -26,6 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// - Real S3 metadata preservation
     /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class TransferUtilityOpenStreamTests : TestBase<AmazonS3Client>
     {
         private static readonly long MB = 1024 * 1024;
@@ -47,7 +45,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Single-Part Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         public async Task OpenStream_SinglePart_SmallObject()
         {
@@ -73,7 +70,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         public async Task OpenStream_SinglePart_EmptyObject()
         {
@@ -106,7 +102,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Multipart Test
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("Multipart")]
         public async Task OpenStream_Multipart_BasicDownload()
@@ -167,7 +162,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("Multipart")]
         public async Task OpenStream_Multipart_RangeDownload()
@@ -235,7 +229,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Checksum Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("Checksum")]
         public async Task OpenStream_MultipartObjectWithChecksums_NullsCompositeChecksums()
@@ -310,7 +303,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Metadata Validation Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("Metadata")]
         public async Task OpenStream_PreservesMetadata()
@@ -353,7 +345,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("Metadata")]
         public async Task OpenStream_PreservesETag()
@@ -393,7 +384,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region MaxInMemoryParts Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("MaxInMemoryParts")]
         [TestCategory("Multipart")]
@@ -459,7 +449,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("MaxInMemoryParts")]
         [TestCategory("Multipart")]
@@ -524,7 +513,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [DataTestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("MaxInMemoryParts")]
         [TestCategory("Multipart")]
@@ -593,7 +581,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("OpenStream")]
         [TestCategory("MaxInMemoryParts")]
         [TestCategory("Multipart")]

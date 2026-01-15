@@ -28,6 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// - Checksum validation
     /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class TransferUtilityDownloadWithResponseTests : TestBase<AmazonS3Client>
     {
         private static readonly long MB = 1024 * 1024;
@@ -86,7 +87,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Single-Part Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         public async Task DownloadWithResponse_SinglePart_SmallObject()
         {
@@ -116,7 +116,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         public async Task DownloadWithResponse_SinglePart_EmptyObject()
         {
@@ -156,7 +155,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Multipart Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         [TestCategory("Multipart")]
         public async Task DownloadWithResponse_Multipart_BasicDownload()
@@ -225,7 +223,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         public async Task DownloadWithResponse_RangeStrategy_SmallSinglePartObject()
         {
@@ -290,7 +287,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         [TestCategory("Multipart")]
         public async Task DownloadWithResponse_Multipart_RangeDownload()
@@ -367,7 +363,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Checksum Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         [TestCategory("Checksum")]
         public async Task DownloadWithResponse_MultipartObjectWithChecksums_NullsCompositeChecksums()
@@ -447,7 +442,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Metadata Validation Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         [TestCategory("Metadata")]
         public async Task DownloadWithResponse_PreservesMetadata()
@@ -500,7 +494,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         [TestCategory("Metadata")]
         public async Task DownloadWithResponse_PreservesETag()
@@ -550,7 +543,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region File Handling Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         [TestCategory("FileHandling")]
         public async Task DownloadWithResponse_CreatesDirectoryIfNeeded()
@@ -582,7 +574,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("Download")]
         [TestCategory("FileHandling")]
         public async Task DownloadWithResponse_OverwritesExistingFile()
