@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCollection Request Marshaller
+    /// BatchGetCollectionGroup Request Marshaller
     /// </summary>       
-    public class CreateCollectionRequestMarshaller : IMarshaller<IRequest, CreateCollectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchGetCollectionGroupRequestMarshaller : IMarshaller<IRequest, BatchGetCollectionGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateCollectionRequest)input);
+            return this.Marshall((BatchGetCollectionGroupRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateCollectionRequest publicRequest)
+        public IRequest Marshall(BatchGetCollectionGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchServerless");
-            string target = "OpenSearchServerless.CreateCollection";
+            string target = "OpenSearchServerless.BatchGetCollectionGroup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-01";
@@ -75,83 +75,26 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientToken())
+            if(publicRequest.IsSetIds())
             {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetCollectionGroupName())
-            {
-                context.Writer.WritePropertyName("collectionGroupName");
-                context.Writer.WriteStringValue(publicRequest.CollectionGroupName);
-            }
-
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetEncryptionConfig())
-            {
-                context.Writer.WritePropertyName("encryptionConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EncryptionConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetStandbyReplicas())
-            {
-                context.Writer.WritePropertyName("standbyReplicas");
-                context.Writer.WriteStringValue(publicRequest.StandbyReplicas);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
+                context.Writer.WritePropertyName("ids");
                 context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                foreach(var publicRequestIdsListValue in publicRequest.Ids)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteStringValue(publicRequestIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetType())
+            if(publicRequest.IsSetNames())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(publicRequest.Type);
-            }
-
-            if(publicRequest.IsSetVectorOptions())
-            {
-                context.Writer.WritePropertyName("vectorOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = VectorOptionsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.VectorOptions, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("names");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNamesListValue in publicRequest.Names)
+                {
+                        context.Writer.WriteStringValue(publicRequestNamesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();
@@ -167,9 +110,9 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateCollectionRequestMarshaller _instance = new CreateCollectionRequestMarshaller();        
+        private static BatchGetCollectionGroupRequestMarshaller _instance = new BatchGetCollectionGroupRequestMarshaller();        
 
-        internal static CreateCollectionRequestMarshaller GetInstance()
+        internal static BatchGetCollectionGroupRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -177,7 +120,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateCollectionRequestMarshaller Instance
+        public static BatchGetCollectionGroupRequestMarshaller Instance
         {
             get
             {

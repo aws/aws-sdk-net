@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CollectionSummary Object
+    /// Response Unmarshaller for CollectionGroupCapacityLimits Object
     /// </summary>  
-    public class CollectionSummaryUnmarshaller : IJsonUnmarshaller<CollectionSummary, JsonUnmarshallerContext>
+    public class CollectionGroupCapacityLimitsUnmarshaller : IJsonUnmarshaller<CollectionGroupCapacityLimits, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CollectionSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CollectionGroupCapacityLimits Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CollectionSummary unmarshalledObject = new CollectionSummary();
+            CollectionGroupCapacityLimits unmarshalledObject = new CollectionGroupCapacityLimits();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,28 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("maxIndexingCapacityInOCU", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    unmarshalledObject.MaxIndexingCapacityInOCU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("collectionGroupName", targetDepth))
+                if (context.TestExpression("maxSearchCapacityInOCU", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CollectionGroupName = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    unmarshalledObject.MaxSearchCapacityInOCU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("minIndexingCapacityInOCU", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    unmarshalledObject.MinIndexingCapacityInOCU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kmsKeyArn", targetDepth))
+                if (context.TestExpression("minSearchCapacityInOCU", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    unmarshalledObject.MinSearchCapacityInOCU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +85,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static CollectionSummaryUnmarshaller _instance = new CollectionSummaryUnmarshaller();        
+        private static CollectionGroupCapacityLimitsUnmarshaller _instance = new CollectionGroupCapacityLimitsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CollectionSummaryUnmarshaller Instance
+        public static CollectionGroupCapacityLimitsUnmarshaller Instance
         {
             get
             {

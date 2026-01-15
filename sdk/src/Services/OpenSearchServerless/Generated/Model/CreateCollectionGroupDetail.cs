@@ -30,67 +30,79 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateCollection operation.
-    /// Creates a new OpenSearch Serverless collection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
-    /// and managing Amazon OpenSearch Serverless collections</a>.
+    /// Details about the created collection group.
     /// </summary>
-    public partial class CreateCollectionRequest : AmazonOpenSearchServerlessRequest
+    public partial class CreateCollectionGroupDetail
     {
-        private string _clientToken;
-        private string _collectionGroupName;
+        private string _arn;
+        private CollectionGroupCapacityLimits _capacityLimits;
+        private long? _createdDate;
         private string _description;
-        private EncryptionConfig _encryptionConfig;
+        private string _id;
         private string _name;
         private StandbyReplicas _standbyReplicas;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
-        private CollectionType _type;
-        private VectorOptions _vectorOptions;
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// Unique, case-sensitive identifier to ensure idempotency of the request.
+        /// The Amazon Resource Name (ARN) of the collection group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string ClientToken
+        public string Arn
         {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._clientToken != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CollectionGroupName. 
+        /// Gets and sets the property CapacityLimits. 
         /// <para>
-        /// The name of the collection group to associate with the collection.
+        /// The capacity limits for the collection group, in OpenSearch Compute Units (OCUs).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
-        public string CollectionGroupName
+        public CollectionGroupCapacityLimits CapacityLimits
         {
-            get { return this._collectionGroupName; }
-            set { this._collectionGroupName = value; }
+            get { return this._capacityLimits; }
+            set { this._capacityLimits = value; }
         }
 
-        // Check to see if CollectionGroupName property is set
-        internal bool IsSetCollectionGroupName()
+        // Check to see if CapacityLimits property is set
+        internal bool IsSetCapacityLimits()
         {
-            return this._collectionGroupName != null;
+            return this._capacityLimits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The Epoch time when the collection group was created.
+        /// </para>
+        /// </summary>
+        public long? CreatedDate
+        {
+            get { return this._createdDate; }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the collection.
+        /// The description of the collection group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -104,30 +116,31 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionConfig. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// Encryption settings for the collection.
+        /// The unique identifier of the collection group.
         /// </para>
         /// </summary>
-        public EncryptionConfig EncryptionConfig
+        [AWSProperty(Min=3, Max=40)]
+        public string Id
         {
-            get { return this._encryptionConfig; }
-            set { this._encryptionConfig = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if EncryptionConfig property is set
-        internal bool IsSetEncryptionConfig()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._encryptionConfig != null;
+            return this._id != null;
         }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the collection.
+        /// The name of the collection group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=32)]
+        [AWSProperty(Min=3, Max=32)]
         public string Name
         {
             get { return this._name; }
@@ -143,7 +156,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property StandbyReplicas. 
         /// <para>
-        /// Indicates whether standby replicas should be used for a collection.
+        /// Indicates whether standby replicas are used for the collection group.
         /// </para>
         /// </summary>
         public StandbyReplicas StandbyReplicas
@@ -161,8 +174,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless
-        /// collection.
+        /// A map of key-value pairs associated with the collection group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -181,42 +193,6 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of collection.
-        /// </para>
-        /// </summary>
-        public CollectionType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VectorOptions. 
-        /// <para>
-        /// Configuration options for vector search capabilities in the collection.
-        /// </para>
-        /// </summary>
-        public VectorOptions VectorOptions
-        {
-            get { return this._vectorOptions; }
-            set { this._vectorOptions = value; }
-        }
-
-        // Check to see if VectorOptions property is set
-        internal bool IsSetVectorOptions()
-        {
-            return this._vectorOptions != null;
         }
 
     }

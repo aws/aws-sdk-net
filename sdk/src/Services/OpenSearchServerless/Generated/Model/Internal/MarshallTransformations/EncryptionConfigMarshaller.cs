@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CollectionFilters Marshaller
+    /// EncryptionConfig Marshaller
     /// </summary>
-    public class CollectionFiltersMarshaller : IRequestMarshaller<CollectionFilters, JsonMarshallerContext> 
+    public class EncryptionConfigMarshaller : IRequestMarshaller<EncryptionConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,20 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CollectionFilters requestObject, JsonMarshallerContext context)
+        public void Marshall(EncryptionConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCollectionGroupName())
+            if(requestObject.IsSetAWSOwnedKey())
             {
-                context.Writer.WritePropertyName("collectionGroupName");
-                context.Writer.WriteStringValue(requestObject.CollectionGroupName);
+                context.Writer.WritePropertyName("aWSOwnedKey");
+                context.Writer.WriteBooleanValue(requestObject.AWSOwnedKey.Value);
             }
 
-            if(requestObject.IsSetName())
+            if(requestObject.IsSetKmsKeyArn())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
-            }
-
-            if(requestObject.IsSetStatus())
-            {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WritePropertyName("kmsKeyArn");
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
         }
@@ -69,7 +63,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CollectionFiltersMarshaller Instance = new CollectionFiltersMarshaller();
+        public readonly static EncryptionConfigMarshaller Instance = new EncryptionConfigMarshaller();
 
     }
 }

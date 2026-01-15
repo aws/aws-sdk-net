@@ -30,58 +30,57 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// Details about each OpenSearch Serverless collection.
+    /// Error details for a collection group operation.
     /// </summary>
-    public partial class CollectionSummary
+    public partial class CollectionGroupErrorDetail
     {
-        private string _arn;
-        private string _collectionGroupName;
+        private string _errorCode;
+        private string _errorMessage;
         private string _id;
-        private string _kmsKeyArn;
         private string _name;
-        private CollectionStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the collection.
+        /// The error code for the request. For example, <c>NOT_FOUND</c>.
         /// </para>
         /// </summary>
-        public string Arn
+        public string ErrorCode
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
         {
-            return this._arn != null;
+            return this._errorCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CollectionGroupName. 
+        /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The name of the collection group that contains this collection.
+        /// A description of the error. For example, <c>The specified Collection Group is not
+        /// found.</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
-        public string CollectionGroupName
+        public string ErrorMessage
         {
-            get { return this._collectionGroupName; }
-            set { this._collectionGroupName = value; }
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
         }
 
-        // Check to see if CollectionGroupName property is set
-        internal bool IsSetCollectionGroupName()
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
         {
-            return this._collectionGroupName != null;
+            return this._errorMessage != null;
         }
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the collection.
+        /// If the request contains collection group IDs, the response includes the IDs provided
+        /// in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=40)]
@@ -98,28 +97,10 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
-        /// <para>
-        /// The ARN of the Amazon Web Services Key Management Service key used to encrypt the
-        /// collection.
-        /// </para>
-        /// </summary>
-        public string KmsKeyArn
-        {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
-        }
-
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
-        {
-            return this._kmsKeyArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the collection.
+        /// If the request contains collection group names, the response includes the names provided
+        /// in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=32)]
@@ -133,24 +114,6 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The current status of the collection.
-        /// </para>
-        /// </summary>
-        public CollectionStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
         }
 
     }

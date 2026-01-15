@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCollection Request Marshaller
+    /// CreateCollectionGroup Request Marshaller
     /// </summary>       
-    public class CreateCollectionRequestMarshaller : IMarshaller<IRequest, CreateCollectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateCollectionGroupRequestMarshaller : IMarshaller<IRequest, CreateCollectionGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateCollectionRequest)input);
+            return this.Marshall((CreateCollectionGroupRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateCollectionRequest publicRequest)
+        public IRequest Marshall(CreateCollectionGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchServerless");
-            string target = "OpenSearchServerless.CreateCollection";
+            string target = "OpenSearchServerless.CreateCollectionGroup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-01";
@@ -75,6 +75,17 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCapacityLimits())
+            {
+                context.Writer.WritePropertyName("capacityLimits");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CollectionGroupCapacityLimitsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CapacityLimits, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -86,27 +97,10 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetCollectionGroupName())
-            {
-                context.Writer.WritePropertyName("collectionGroupName");
-                context.Writer.WriteStringValue(publicRequest.CollectionGroupName);
-            }
-
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetEncryptionConfig())
-            {
-                context.Writer.WritePropertyName("encryptionConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EncryptionConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionConfig, context);
-
-                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetName())
@@ -137,23 +131,6 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(publicRequest.Type);
-            }
-
-            if(publicRequest.IsSetVectorOptions())
-            {
-                context.Writer.WritePropertyName("vectorOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = VectorOptionsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.VectorOptions, context);
-
-                context.Writer.WriteEndObject();
-            }
-
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array
@@ -167,9 +144,9 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateCollectionRequestMarshaller _instance = new CreateCollectionRequestMarshaller();        
+        private static CreateCollectionGroupRequestMarshaller _instance = new CreateCollectionGroupRequestMarshaller();        
 
-        internal static CreateCollectionRequestMarshaller GetInstance()
+        internal static CreateCollectionGroupRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -177,7 +154,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateCollectionRequestMarshaller Instance
+        public static CreateCollectionGroupRequestMarshaller Instance
         {
             get
             {
