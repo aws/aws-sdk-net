@@ -134,8 +134,8 @@ namespace Amazon.Evs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must have at least three Elastic IP addresses to be allocated from the public IPAM
-        /// pool for HCX components.
+        /// Must have at least two Elastic IP addresses to be allocated from the public IPAM pool
+        /// for HCX components.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -214,7 +214,7 @@ namespace Amazon.Evs.Model
         /// Gets and sets the property VmkManagement. 
         /// <para>
         ///  The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing
-        /// ESXi hosts and communicating with VMware vCenter Server.
+        /// ESX hosts and communicating with VMware vCenter Server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -272,7 +272,7 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property VSan. 
         /// <para>
-        ///  The vSAN VLAN subnet. This VLAN subnet carries the communication between ESXi hosts
+        ///  The vSAN VLAN subnet. This VLAN subnet carries the communication between ESX hosts
         /// to implement a vSAN shared storage pool.
         /// </para>
         /// </summary>

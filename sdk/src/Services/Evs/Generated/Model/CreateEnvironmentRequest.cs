@@ -44,7 +44,14 @@ namespace Amazon.Evs.Model
     /// It can take several hours to create an environment. After the deployment completes,
     /// you can configure VCF in the vSphere user interface according to your needs.
     /// </para>
-    ///  <note> 
+    ///  <important> 
+    /// <para>
+    /// When creating a new environment, the default ESX version for the selected VCF version
+    /// will be used, you cannot choose a specific ESX version in <c>CreateEnvironment</c>
+    /// action. When a host has been added with a specific ESX version, it can only be upgraded
+    /// using vCenter Lifecycle Manager.
+    /// </para>
+    ///  </important> <note> 
     /// <para>
     /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
     /// in the same <c>CreateEnvironment</c> action. This results in a <c>ValidationException</c>
@@ -148,7 +155,7 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property Hosts. 
         /// <para>
-        /// The ESXi hosts to add to the environment. Amazon EVS requires that you provide details
+        /// The ESX hosts to add to the environment. Amazon EVS requires that you provide details
         /// for a minimum of 4 hosts during environment creation.
         /// </para>
         ///  
@@ -415,8 +422,7 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property VcfVersion. 
         /// <para>
-        ///  The VCF version to use for the environment. Amazon EVS only supports VCF version
-        /// 5.2.1 at this time.
+        ///  The VCF version to use for the environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -457,7 +463,8 @@ namespace Amazon.Evs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.
+        /// Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS
+        /// subnets.
         /// </para>
         ///  </note>
         /// </summary>

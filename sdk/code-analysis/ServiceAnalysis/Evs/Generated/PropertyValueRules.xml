@@ -56,6 +56,11 @@
     <pattern>(env-[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Evs.Model.CreateEnvironmentHostRequest.EsxVersion</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Evs.Model.DeleteEnvironmentRequest.ClientToken</property>
     <min>1</min>
     <max>100</max>
