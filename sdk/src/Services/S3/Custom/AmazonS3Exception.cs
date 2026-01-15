@@ -32,6 +32,14 @@ namespace Amazon.S3
         /// <summary>
         /// Construct an instance of AmazonS3Exception
         /// </summary>
+        public AmazonS3Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct an instance of AmazonS3Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonS3Exception(string message)
             : base(message)
