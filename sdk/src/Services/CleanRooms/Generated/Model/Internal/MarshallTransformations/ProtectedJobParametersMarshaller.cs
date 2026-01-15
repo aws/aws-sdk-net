@@ -54,6 +54,20 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AnalysisTemplateArn);
             }
 
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
+
+                        context.Writer.Write(requestObjectParametersValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

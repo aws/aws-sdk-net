@@ -62,8 +62,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the parameter. The name must use only alphanumeric, underscore (_), or
-        /// hyphen (-) characters but cannot start or end with a hyphen.
+        /// The name of the parameter. The name must use only alphanumeric or underscore (_) characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

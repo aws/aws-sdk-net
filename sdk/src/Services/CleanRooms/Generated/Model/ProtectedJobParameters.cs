@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ProtectedJobParameters
     {
         private string _analysisTemplateArn;
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalysisTemplateArn. 
@@ -53,6 +54,26 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAnalysisTemplateArn()
         {
             return this._analysisTemplateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// Runtime configuration values passed to the PySpark analysis script. Parameter names
+        /// and types must match those defined in the analysis template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Dictionary<string, string> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
