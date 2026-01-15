@@ -214,9 +214,9 @@ namespace Amazon
         public static readonly RegionEndpoint CNNorthWest1 = GetRegionEndpoint("cn-northwest-1", "China (Ningxia)", "aws-cn", "amazonaws.com.cn", @"^cn\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
-        /// The EU (Germany) endpoint.
+        /// The AWS European Sovereign Cloud (Germany) endpoint.
         /// </summary>
-        public static readonly RegionEndpoint EUSCDeEast1 = GetRegionEndpoint("eusc-de-east-1", "EU (Germany)", "aws-eusc", "amazonaws.eu", @"^eusc\-(de)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+        public static readonly RegionEndpoint EUSCDeEast1 = GetRegionEndpoint("eusc-de-east-1", "AWS European Sovereign Cloud (Germany)", "aws-eusc", "amazonaws.eu", @"^eusc\-(de)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
         /// The US ISO East endpoint.
