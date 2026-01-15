@@ -563,9 +563,9 @@ namespace Amazon.Runtime
         }
 #endif
 
-                        /// <summary>
-                        /// Aborts the HTTP request.
-                        /// </summary>
+        /// <summary>
+        /// Aborts the HTTP request.
+        /// </summary>
         public void Abort()
         {
             // NOP since HttRequestMessage does not have an Abort operation. 
