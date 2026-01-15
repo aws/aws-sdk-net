@@ -91,8 +91,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance that authenticates
-        /// monitor users.
+        /// The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor
+        /// users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,9 +111,9 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that the monitor uses to connect to
-        /// Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center
-        /// uses this role to access Deadline Cloud resources.
+        /// The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline
+        /// Cloud. Every user that signs in to the monitor using IAM Identity Center uses this
+        /// role to access Deadline Cloud resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

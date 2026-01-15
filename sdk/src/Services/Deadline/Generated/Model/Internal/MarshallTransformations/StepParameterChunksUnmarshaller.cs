@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StepParameter Object
+    /// Response Unmarshaller for StepParameterChunks Object
     /// </summary>  
-    public class StepParameterUnmarshaller : IJsonUnmarshaller<StepParameter, JsonUnmarshallerContext>
+    public class StepParameterChunksUnmarshaller : IJsonUnmarshaller<StepParameterChunks, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StepParameter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public StepParameterChunks Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            StepParameter unmarshalledObject = new StepParameter();
+            StepParameterChunks unmarshalledObject = new StepParameterChunks();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,22 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("chunks", targetDepth))
+                if (context.TestExpression("defaultTaskCount", targetDepth))
                 {
-                    var unmarshaller = StepParameterChunksUnmarshaller.Instance;
-                    unmarshalledObject.Chunks = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("rangeConstraint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RangeConstraint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("targetRuntimeSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TargetRuntimeSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +79,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         }
 
 
-        private static StepParameterUnmarshaller _instance = new StepParameterUnmarshaller();        
+        private static StepParameterChunksUnmarshaller _instance = new StepParameterChunksUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StepParameterUnmarshaller Instance
+        public static StepParameterChunksUnmarshaller Instance
         {
             get
             {

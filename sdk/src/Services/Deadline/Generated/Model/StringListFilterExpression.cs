@@ -30,56 +30,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the SearchWorkers operation.
+    /// Searches for a match within a list of strings.
     /// </summary>
-    public partial class SearchWorkersResponse : AmazonWebServiceResponse
+    public partial class StringListFilterExpression
     {
-        private int? _nextItemOffset;
-        private int? _totalResults;
-        private List<WorkerSearchSummary> _workers = AWSConfigs.InitializeCollections ? new List<WorkerSearchSummary>() : null;
+        private string _name;
+        private ComparisonOperator _operator;
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextItemOffset. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The next item offset for the search results.
+        /// The field name to search.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
-        public int? NextItemOffset
+        [AWSProperty(Required=true)]
+        public string Name
         {
-            get { return this._nextItemOffset; }
-            set { this._nextItemOffset = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if NextItemOffset property is set
-        internal bool IsSetNextItemOffset()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._nextItemOffset.HasValue; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TotalResults. 
+        /// Gets and sets the property Operator. 
         /// <para>
-        /// The total number of results in the search.
+        /// The type of comparison to use for this search. ANY_EQUALS and ALL_NOT_EQUALS are supported.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10000)]
-        public int? TotalResults
+        [AWSProperty(Required=true)]
+        public ComparisonOperator Operator
         {
-            get { return this._totalResults; }
-            set { this._totalResults = value; }
+            get { return this._operator; }
+            set { this._operator = value; }
         }
 
-        // Check to see if TotalResults property is set
-        internal bool IsSetTotalResults()
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
         {
-            return this._totalResults.HasValue; 
+            return this._operator != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Workers. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// The workers for the search.
+        /// The list of string values to search for.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -87,17 +87,17 @@ namespace Amazon.Deadline.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<WorkerSearchSummary> Workers
+        [AWSProperty(Required=true, Min=1, Max=16)]
+        public List<string> Values
         {
-            get { return this._workers; }
-            set { this._workers = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if Workers property is set
-        internal bool IsSetWorkers()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._workers != null && (this._workers.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

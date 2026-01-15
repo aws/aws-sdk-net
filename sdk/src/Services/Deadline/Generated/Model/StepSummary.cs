@@ -220,7 +220,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property TargetTaskRunStatus. 
         /// <para>
-        /// The task status to start with on the job.
+        /// The task status to update the job's tasks to.
         /// </para>
         /// </summary>
         public StepTargetTaskRunStatus TargetTaskRunStatus

@@ -2322,7 +2322,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.HostPropertiesResponse.Ec2InstanceType</property>
-    <pattern>[a-zA-Z0-9]+\.[a-zA-Z0-9]+</pattern>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.HostPropertiesResponse.HostName</property>
@@ -2753,7 +2754,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.InstanceType</property>
-    <pattern>[a-zA-Z0-9]+\.[a-zA-Z0-9]+</pattern>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.JobId</property>
@@ -2816,6 +2818,16 @@
     <property>Amazon.Deadline.Model.StepParameter.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.StepParameterChunks.DefaultTaskCount</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.StepParameterChunks.TargetRuntimeSeconds</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSearchSummary.JobId</property>
@@ -2931,6 +2943,10 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSearchSummary.JobId</property>
     <pattern>job-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.TaskSearchSummary.LatestSessionActionId</property>
+    <pattern>sessionaction-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.TaskSearchSummary.QueueId</property>
