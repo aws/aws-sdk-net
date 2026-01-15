@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for FacetAlreadyExistsException
+        /// message.
+        /// </summary>
+        public FacetAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FacetAlreadyExistsException with the specified error
         /// message.
         /// </summary>

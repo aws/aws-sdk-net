@@ -42,6 +42,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for FunctionVersionsPerCapacityProviderLimitExceededException
+        /// message.
+        /// </summary>
+        public FunctionVersionsPerCapacityProviderLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FunctionVersionsPerCapacityProviderLimitExceededException with the specified error
         /// message.
         /// </summary>

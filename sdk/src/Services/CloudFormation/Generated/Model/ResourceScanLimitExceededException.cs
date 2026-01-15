@@ -55,6 +55,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceScanLimitExceededException
+        /// message.
+        /// </summary>
+        public ResourceScanLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceScanLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -43,6 +43,13 @@ namespace Amazon.Backup.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for LimitExceededException
+        /// message.
+        /// </summary>
+        public LimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LimitExceededException with the specified error
         /// message.
         /// </summary>

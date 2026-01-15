@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for RedshiftInvalidParameterException
+        /// message.
+        /// </summary>
+        public RedshiftInvalidParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RedshiftInvalidParameterException with the specified error
         /// message.
         /// </summary>

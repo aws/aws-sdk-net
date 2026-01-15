@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for SourceDatabaseNotSupportedException
+        /// message.
+        /// </summary>
+        public SourceDatabaseNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SourceDatabaseNotSupportedException with the specified error
         /// message.
         /// </summary>

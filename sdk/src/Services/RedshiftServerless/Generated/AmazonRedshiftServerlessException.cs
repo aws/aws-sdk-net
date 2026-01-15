@@ -36,6 +36,14 @@ namespace Amazon.RedshiftServerless
         /// <summary>
         /// Construct instance of AmazonRedshiftServerlessException
         /// </summary>
+        public AmazonRedshiftServerlessException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRedshiftServerlessException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRedshiftServerlessException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for TransactionCommitInProgressException
+        /// message.
+        /// </summary>
+        public TransactionCommitInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TransactionCommitInProgressException with the specified error
         /// message.
         /// </summary>

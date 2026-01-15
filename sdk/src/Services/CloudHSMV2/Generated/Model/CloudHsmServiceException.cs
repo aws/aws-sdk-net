@@ -39,6 +39,13 @@ namespace Amazon.CloudHSMV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmServiceException
+        /// message.
+        /// </summary>
+        public CloudHsmServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmServiceException with the specified error
         /// message.
         /// </summary>

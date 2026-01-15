@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for DependentServiceUnavailableException
+        /// message.
+        /// </summary>
+        public DependentServiceUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependentServiceUnavailableException with the specified error
         /// message.
         /// </summary>

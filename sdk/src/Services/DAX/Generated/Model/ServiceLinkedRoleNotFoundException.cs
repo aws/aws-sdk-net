@@ -39,6 +39,13 @@ namespace Amazon.DAX.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceLinkedRoleNotFoundException
+        /// message.
+        /// </summary>
+        public ServiceLinkedRoleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceLinkedRoleNotFoundException with the specified error
         /// message.
         /// </summary>

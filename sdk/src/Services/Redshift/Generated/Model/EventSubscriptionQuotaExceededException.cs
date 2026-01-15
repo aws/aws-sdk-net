@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for EventSubscriptionQuotaExceededException
+        /// message.
+        /// </summary>
+        public EventSubscriptionQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventSubscriptionQuotaExceededException with the specified error
         /// message.
         /// </summary>

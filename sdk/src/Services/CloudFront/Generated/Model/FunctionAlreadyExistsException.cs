@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for FunctionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public FunctionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FunctionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

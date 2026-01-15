@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for PathRequiredException
+        /// message.
+        /// </summary>
+        public PathRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PathRequiredException with the specified error
         /// message.
         /// </summary>

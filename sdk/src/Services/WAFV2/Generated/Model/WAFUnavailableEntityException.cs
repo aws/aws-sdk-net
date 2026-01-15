@@ -43,6 +43,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFUnavailableEntityException
+        /// message.
+        /// </summary>
+        public WAFUnavailableEntityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFUnavailableEntityException with the specified error
         /// message.
         /// </summary>

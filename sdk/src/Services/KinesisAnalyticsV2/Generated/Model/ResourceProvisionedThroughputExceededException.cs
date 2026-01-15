@@ -42,6 +42,13 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceProvisionedThroughputExceededException
+        /// message.
+        /// </summary>
+        public ResourceProvisionedThroughputExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceProvisionedThroughputExceededException with the specified error
         /// message.
         /// </summary>

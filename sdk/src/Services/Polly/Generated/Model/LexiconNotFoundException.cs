@@ -47,6 +47,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for LexiconNotFoundException
+        /// message.
+        /// </summary>
+        public LexiconNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LexiconNotFoundException with the specified error
         /// message.
         /// </summary>

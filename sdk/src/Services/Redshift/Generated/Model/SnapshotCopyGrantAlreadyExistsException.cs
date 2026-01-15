@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotCopyGrantAlreadyExistsException
+        /// message.
+        /// </summary>
+        public SnapshotCopyGrantAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotCopyGrantAlreadyExistsException with the specified error
         /// message.
         /// </summary>

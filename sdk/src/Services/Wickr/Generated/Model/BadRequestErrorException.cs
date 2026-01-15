@@ -41,6 +41,13 @@ namespace Amazon.Wickr.Model
     {
 
         /// <summary>
+        /// Default constructor for BadRequestErrorException
+        /// message.
+        /// </summary>
+        public BadRequestErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BadRequestErrorException with the specified error
         /// message.
         /// </summary>

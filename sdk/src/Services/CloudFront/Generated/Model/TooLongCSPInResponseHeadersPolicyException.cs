@@ -46,6 +46,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooLongCSPInResponseHeadersPolicyException
+        /// message.
+        /// </summary>
+        public TooLongCSPInResponseHeadersPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooLongCSPInResponseHeadersPolicyException with the specified error
         /// message.
         /// </summary>

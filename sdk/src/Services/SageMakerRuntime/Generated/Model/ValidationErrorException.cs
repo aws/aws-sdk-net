@@ -39,6 +39,13 @@ namespace Amazon.SageMakerRuntime.Model
     {
 
         /// <summary>
+        /// Default constructor for ValidationErrorException
+        /// message.
+        /// </summary>
+        public ValidationErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ValidationErrorException with the specified error
         /// message.
         /// </summary>

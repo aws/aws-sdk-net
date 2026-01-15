@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for FeatureDisabledException
+        /// message.
+        /// </summary>
+        public FeatureDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FeatureDisabledException with the specified error
         /// message.
         /// </summary>

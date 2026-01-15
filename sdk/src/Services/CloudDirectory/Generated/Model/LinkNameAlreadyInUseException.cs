@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for LinkNameAlreadyInUseException
+        /// message.
+        /// </summary>
+        public LinkNameAlreadyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LinkNameAlreadyInUseException with the specified error
         /// message.
         /// </summary>

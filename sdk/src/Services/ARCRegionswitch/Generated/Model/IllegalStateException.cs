@@ -45,6 +45,13 @@ namespace Amazon.ARCRegionswitch.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalStateException
+        /// message.
+        /// </summary>
+        public IllegalStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalStateException with the specified error
         /// message.
         /// </summary>

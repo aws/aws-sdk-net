@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentReferenceUpdateException
+        /// message.
+        /// </summary>
+        public ConcurrentReferenceUpdateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentReferenceUpdateException with the specified error
         /// message.
         /// </summary>

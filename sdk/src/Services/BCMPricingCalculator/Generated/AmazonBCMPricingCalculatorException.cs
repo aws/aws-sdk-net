@@ -36,6 +36,14 @@ namespace Amazon.BCMPricingCalculator
         /// <summary>
         /// Construct instance of AmazonBCMPricingCalculatorException
         /// </summary>
+        public AmazonBCMPricingCalculatorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBCMPricingCalculatorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBCMPricingCalculatorException(string message)
             : base(message)

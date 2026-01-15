@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DocumentAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DocumentAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DocumentAlreadyExistsException with the specified error
         /// message.
         /// </summary>

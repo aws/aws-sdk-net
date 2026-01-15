@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResponseException
+        /// message.
+        /// </summary>
+        public InvalidResponseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResponseException with the specified error
         /// message.
         /// </summary>

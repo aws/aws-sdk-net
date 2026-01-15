@@ -36,6 +36,14 @@ namespace Amazon.FIS
         /// <summary>
         /// Construct instance of AmazonFISException
         /// </summary>
+        public AmazonFISException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonFISException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonFISException(string message)
             : base(message)

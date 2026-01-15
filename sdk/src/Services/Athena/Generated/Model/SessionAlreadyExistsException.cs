@@ -39,6 +39,13 @@ namespace Amazon.Athena.Model
     {
 
         /// <summary>
+        /// Default constructor for SessionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public SessionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SessionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

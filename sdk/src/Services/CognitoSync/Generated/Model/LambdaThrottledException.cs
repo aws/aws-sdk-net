@@ -39,6 +39,13 @@ namespace Amazon.CognitoSync.Model
     {
 
         /// <summary>
+        /// Default constructor for LambdaThrottledException
+        /// message.
+        /// </summary>
+        public LambdaThrottledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LambdaThrottledException with the specified error
         /// message.
         /// </summary>

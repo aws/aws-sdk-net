@@ -40,6 +40,13 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _resourceName;
 
         /// <summary>
+        /// Default constructor for BadGatewayException
+        /// message.
+        /// </summary>
+        public BadGatewayException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BadGatewayException with the specified error
         /// message.
         /// </summary>

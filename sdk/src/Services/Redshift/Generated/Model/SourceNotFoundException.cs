@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SourceNotFoundException
+        /// message.
+        /// </summary>
+        public SourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SourceNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.QBusiness
         /// <summary>
         /// Construct instance of AmazonQBusinessException
         /// </summary>
+        public AmazonQBusinessException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonQBusinessException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonQBusinessException(string message)
             : base(message)

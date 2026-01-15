@@ -46,6 +46,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksProxyUriUnreachableException
+        /// message.
+        /// </summary>
+        public XksProxyUriUnreachableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksProxyUriUnreachableException with the specified error
         /// message.
         /// </summary>

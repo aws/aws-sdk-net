@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheSubnetGroupInUseException
+        /// message.
+        /// </summary>
+        public CacheSubnetGroupInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheSubnetGroupInUseException with the specified error
         /// message.
         /// </summary>

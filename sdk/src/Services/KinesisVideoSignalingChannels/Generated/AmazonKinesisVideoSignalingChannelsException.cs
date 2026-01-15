@@ -36,6 +36,14 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// <summary>
         /// Construct instance of AmazonKinesisVideoSignalingChannelsException
         /// </summary>
+        public AmazonKinesisVideoSignalingChannelsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKinesisVideoSignalingChannelsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKinesisVideoSignalingChannelsException(string message)
             : base(message)

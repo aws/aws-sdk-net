@@ -40,6 +40,13 @@ namespace Amazon.XRay.Model
     {
 
         /// <summary>
+        /// Default constructor for LockoutPreventionException
+        /// message.
+        /// </summary>
+        public LockoutPreventionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LockoutPreventionException with the specified error
         /// message.
         /// </summary>

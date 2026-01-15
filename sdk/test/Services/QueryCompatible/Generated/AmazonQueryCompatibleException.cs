@@ -36,6 +36,14 @@ namespace Amazon.QueryCompatible
         /// <summary>
         /// Construct instance of AmazonQueryCompatibleException
         /// </summary>
+        public AmazonQueryCompatibleException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonQueryCompatibleException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonQueryCompatibleException(string message)
             : base(message)

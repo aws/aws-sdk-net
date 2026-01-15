@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for TransferAlreadyCompletedException
+        /// message.
+        /// </summary>
+        public TransferAlreadyCompletedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TransferAlreadyCompletedException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ReferenceTypeNotSupportedException
+        /// message.
+        /// </summary>
+        public ReferenceTypeNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReferenceTypeNotSupportedException with the specified error
         /// message.
         /// </summary>

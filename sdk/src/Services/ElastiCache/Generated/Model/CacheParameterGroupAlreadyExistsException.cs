@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheParameterGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CacheParameterGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheParameterGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

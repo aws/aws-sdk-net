@@ -40,6 +40,13 @@ namespace Amazon.CostAndUsageReport.Model
     {
 
         /// <summary>
+        /// Default constructor for ReportLimitReachedException
+        /// message.
+        /// </summary>
+        public ReportLimitReachedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReportLimitReachedException with the specified error
         /// message.
         /// </summary>

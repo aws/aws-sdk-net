@@ -40,6 +40,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetQuotaExceededException
+        /// message.
+        /// </summary>
+        public SubnetQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetQuotaExceededException with the specified error
         /// message.
         /// </summary>

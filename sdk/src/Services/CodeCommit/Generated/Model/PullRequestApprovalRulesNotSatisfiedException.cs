@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for PullRequestApprovalRulesNotSatisfiedException
+        /// message.
+        /// </summary>
+        public PullRequestApprovalRulesNotSatisfiedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PullRequestApprovalRulesNotSatisfiedException with the specified error
         /// message.
         /// </summary>

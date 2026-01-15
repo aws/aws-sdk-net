@@ -36,6 +36,14 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Construct instance of AmazonWorkSpacesException
         /// </summary>
+        public AmazonWorkSpacesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWorkSpacesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWorkSpacesException(string message)
             : base(message)

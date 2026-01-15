@@ -36,6 +36,14 @@ namespace Amazon.SimSpaceWeaver
         /// <summary>
         /// Construct instance of AmazonSimSpaceWeaverException
         /// </summary>
+        public AmazonSimSpaceWeaverException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSimSpaceWeaverException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSimSpaceWeaverException(string message)
             : base(message)

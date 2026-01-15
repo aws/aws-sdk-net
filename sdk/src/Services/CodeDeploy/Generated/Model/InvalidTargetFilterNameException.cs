@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTargetFilterNameException
+        /// message.
+        /// </summary>
+        public InvalidTargetFilterNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTargetFilterNameException with the specified error
         /// message.
         /// </summary>

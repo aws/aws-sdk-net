@@ -40,6 +40,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSubnetGroupDoesNotCoverEnoughAZsException
+        /// message.
+        /// </summary>
+        public DBSubnetGroupDoesNotCoverEnoughAZsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSubnetGroupDoesNotCoverEnoughAZsException with the specified error
         /// message.
         /// </summary>

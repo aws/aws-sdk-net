@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManySubscriptionsException
+        /// message.
+        /// </summary>
+        public TooManySubscriptionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManySubscriptionsException with the specified error
         /// message.
         /// </summary>

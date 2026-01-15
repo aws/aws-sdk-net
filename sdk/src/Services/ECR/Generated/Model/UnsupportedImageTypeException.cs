@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedImageTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedImageTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedImageTypeException with the specified error
         /// message.
         /// </summary>

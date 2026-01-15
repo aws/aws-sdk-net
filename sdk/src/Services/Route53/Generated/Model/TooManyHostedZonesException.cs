@@ -62,6 +62,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyHostedZonesException
+        /// message.
+        /// </summary>
+        public TooManyHostedZonesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyHostedZonesException with the specified error
         /// message.
         /// </summary>

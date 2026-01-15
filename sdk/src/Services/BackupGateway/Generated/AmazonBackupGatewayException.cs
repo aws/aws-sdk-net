@@ -36,6 +36,14 @@ namespace Amazon.BackupGateway
         /// <summary>
         /// Construct instance of AmazonBackupGatewayException
         /// </summary>
+        public AmazonBackupGatewayException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBackupGatewayException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBackupGatewayException(string message)
             : base(message)

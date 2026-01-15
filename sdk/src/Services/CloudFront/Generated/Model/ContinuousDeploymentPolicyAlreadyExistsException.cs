@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for ContinuousDeploymentPolicyAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ContinuousDeploymentPolicyAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ContinuousDeploymentPolicyAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.Chime
         /// <summary>
         /// Construct instance of AmazonChimeException
         /// </summary>
+        public AmazonChimeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonChimeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonChimeException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotAlreadyExistsException
+        /// message.
+        /// </summary>
+        public SnapshotAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotAlreadyExistsException with the specified error
         /// message.
         /// </summary>

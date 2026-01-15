@@ -36,6 +36,14 @@ namespace Amazon.ApiGatewayV2
         /// <summary>
         /// Construct instance of AmazonApiGatewayV2Exception
         /// </summary>
+        public AmazonApiGatewayV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonApiGatewayV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonApiGatewayV2Exception(string message)
             : base(message)

@@ -41,6 +41,13 @@ namespace Amazon.Wickr.Model
     {
 
         /// <summary>
+        /// Default constructor for UnauthorizedErrorException
+        /// message.
+        /// </summary>
+        public UnauthorizedErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthorizedErrorException with the specified error
         /// message.
         /// </summary>

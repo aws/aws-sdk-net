@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetNotAllowedException
+        /// message.
+        /// </summary>
+        public SubnetNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetNotAllowedException with the specified error
         /// message.
         /// </summary>

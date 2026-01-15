@@ -39,6 +39,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidClientTokenException
+        /// message.
+        /// </summary>
+        public InvalidClientTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClientTokenException with the specified error
         /// message.
         /// </summary>

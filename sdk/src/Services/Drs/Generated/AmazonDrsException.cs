@@ -36,6 +36,14 @@ namespace Amazon.Drs
         /// <summary>
         /// Construct instance of AmazonDrsException
         /// </summary>
+        public AmazonDrsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDrsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDrsException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidStageDeclarationException
+        /// message.
+        /// </summary>
+        public InvalidStageDeclarationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidStageDeclarationException with the specified error
         /// message.
         /// </summary>

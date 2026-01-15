@@ -40,6 +40,13 @@ namespace Amazon.MediaConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for RouterOutputServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public RouterOutputServiceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RouterOutputServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>

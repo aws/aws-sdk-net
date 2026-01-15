@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for HookResultNotFoundException
+        /// message.
+        /// </summary>
+        public HookResultNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HookResultNotFoundException with the specified error
         /// message.
         /// </summary>

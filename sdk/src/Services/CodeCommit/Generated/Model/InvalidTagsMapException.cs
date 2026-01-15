@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTagsMapException
+        /// message.
+        /// </summary>
+        public InvalidTagsMapException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTagsMapException with the specified error
         /// message.
         /// </summary>

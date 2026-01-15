@@ -39,6 +39,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for AnalysisNotFoundException
+        /// message.
+        /// </summary>
+        public AnalysisNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AnalysisNotFoundException with the specified error
         /// message.
         /// </summary>

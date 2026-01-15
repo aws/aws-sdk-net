@@ -41,6 +41,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for OverLimitException
+        /// message.
+        /// </summary>
+        public OverLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OverLimitException with the specified error
         /// message.
         /// </summary>

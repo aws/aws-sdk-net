@@ -36,6 +36,14 @@ namespace Amazon.CodeDeploy
         /// <summary>
         /// Construct instance of AmazonCodeDeployException
         /// </summary>
+        public AmazonCodeDeployException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeDeployException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeDeployException(string message)
             : base(message)

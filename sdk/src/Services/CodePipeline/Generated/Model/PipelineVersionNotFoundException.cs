@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for PipelineVersionNotFoundException
+        /// message.
+        /// </summary>
+        public PipelineVersionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PipelineVersionNotFoundException with the specified error
         /// message.
         /// </summary>

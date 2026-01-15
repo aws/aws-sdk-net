@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for MalformedPolicyException
+        /// message.
+        /// </summary>
+        public MalformedPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedPolicyException with the specified error
         /// message.
         /// </summary>

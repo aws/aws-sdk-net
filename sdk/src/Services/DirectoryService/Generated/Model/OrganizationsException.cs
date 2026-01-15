@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationsException
+        /// message.
+        /// </summary>
+        public OrganizationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationsException with the specified error
         /// message.
         /// </summary>

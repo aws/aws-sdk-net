@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for MalformedManifestException
+        /// message.
+        /// </summary>
+        public MalformedManifestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedManifestException with the specified error
         /// message.
         /// </summary>

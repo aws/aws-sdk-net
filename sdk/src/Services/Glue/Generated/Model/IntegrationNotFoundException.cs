@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for IntegrationNotFoundException
+        /// message.
+        /// </summary>
+        public IntegrationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IntegrationNotFoundException with the specified error
         /// message.
         /// </summary>

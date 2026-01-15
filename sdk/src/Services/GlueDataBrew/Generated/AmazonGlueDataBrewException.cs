@@ -36,6 +36,14 @@ namespace Amazon.GlueDataBrew
         /// <summary>
         /// Construct instance of AmazonGlueDataBrewException
         /// </summary>
+        public AmazonGlueDataBrewException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGlueDataBrewException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGlueDataBrewException(string message)
             : base(message)

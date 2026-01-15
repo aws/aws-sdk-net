@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAttributeNameException
+        /// message.
+        /// </summary>
+        public InvalidAttributeNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAttributeNameException with the specified error
         /// message.
         /// </summary>

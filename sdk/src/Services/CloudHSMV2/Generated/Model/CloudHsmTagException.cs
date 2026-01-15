@@ -40,6 +40,13 @@ namespace Amazon.CloudHSMV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmTagException
+        /// message.
+        /// </summary>
+        public CloudHsmTagException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmTagException with the specified error
         /// message.
         /// </summary>

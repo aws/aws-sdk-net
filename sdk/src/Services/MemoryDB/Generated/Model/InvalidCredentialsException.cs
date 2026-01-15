@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCredentialsException
+        /// message.
+        /// </summary>
+        public InvalidCredentialsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCredentialsException with the specified error
         /// message.
         /// </summary>

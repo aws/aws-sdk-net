@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSchemaDocException
+        /// message.
+        /// </summary>
+        public InvalidSchemaDocException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSchemaDocException with the specified error
         /// message.
         /// </summary>

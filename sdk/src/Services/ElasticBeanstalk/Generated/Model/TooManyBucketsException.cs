@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyBucketsException
+        /// message.
+        /// </summary>
+        public TooManyBucketsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyBucketsException with the specified error
         /// message.
         /// </summary>

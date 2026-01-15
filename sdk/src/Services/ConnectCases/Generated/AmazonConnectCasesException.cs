@@ -36,6 +36,14 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Construct instance of AmazonConnectCasesException
         /// </summary>
+        public AmazonConnectCasesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonConnectCasesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonConnectCasesException(string message)
             : base(message)

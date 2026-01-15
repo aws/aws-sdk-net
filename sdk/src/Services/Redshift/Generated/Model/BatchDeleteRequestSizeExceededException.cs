@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for BatchDeleteRequestSizeExceededException
+        /// message.
+        /// </summary>
+        public BatchDeleteRequestSizeExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchDeleteRequestSizeExceededException with the specified error
         /// message.
         /// </summary>

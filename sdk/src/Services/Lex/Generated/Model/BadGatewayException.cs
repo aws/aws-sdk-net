@@ -40,6 +40,13 @@ namespace Amazon.Lex.Model
     {
 
         /// <summary>
+        /// Default constructor for BadGatewayException
+        /// message.
+        /// </summary>
+        public BadGatewayException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BadGatewayException with the specified error
         /// message.
         /// </summary>

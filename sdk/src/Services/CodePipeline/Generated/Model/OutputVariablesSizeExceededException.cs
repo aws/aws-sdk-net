@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for OutputVariablesSizeExceededException
+        /// message.
+        /// </summary>
+        public OutputVariablesSizeExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OutputVariablesSizeExceededException with the specified error
         /// message.
         /// </summary>

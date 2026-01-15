@@ -77,6 +77,13 @@ namespace Amazon.WAF.Model
         private MigrationErrorType _migrationErrorType;
 
         /// <summary>
+        /// Default constructor for WAFEntityMigrationException
+        /// message.
+        /// </summary>
+        public WAFEntityMigrationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFEntityMigrationException with the specified error
         /// message.
         /// </summary>

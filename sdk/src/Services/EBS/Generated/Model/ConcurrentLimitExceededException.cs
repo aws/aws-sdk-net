@@ -42,6 +42,13 @@ namespace Amazon.EBS.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentLimitExceededException
+        /// message.
+        /// </summary>
+        public ConcurrentLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentLimitExceededException with the specified error
         /// message.
         /// </summary>

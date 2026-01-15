@@ -40,6 +40,13 @@ namespace Amazon.LicenseManager.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthorizationException
+        /// message.
+        /// </summary>
+        public AuthorizationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthorizationException with the specified error
         /// message.
         /// </summary>

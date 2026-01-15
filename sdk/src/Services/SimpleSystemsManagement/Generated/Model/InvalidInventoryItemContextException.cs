@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInventoryItemContextException
+        /// message.
+        /// </summary>
+        public InvalidInventoryItemContextException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInventoryItemContextException with the specified error
         /// message.
         /// </summary>

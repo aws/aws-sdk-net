@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for DuplicateItemNameException
+        /// message.
+        /// </summary>
+        public DuplicateItemNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateItemNameException with the specified error
         /// message.
         /// </summary>

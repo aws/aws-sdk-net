@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceArnRequiredException
+        /// message.
+        /// </summary>
+        public ResourceArnRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceArnRequiredException with the specified error
         /// message.
         /// </summary>

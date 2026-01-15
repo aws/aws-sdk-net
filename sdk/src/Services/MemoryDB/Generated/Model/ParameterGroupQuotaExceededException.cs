@@ -40,6 +40,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public ParameterGroupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterGroupQuotaExceededException with the specified error
         /// message.
         /// </summary>

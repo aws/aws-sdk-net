@@ -40,6 +40,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCodecPrivateDataException
+        /// message.
+        /// </summary>
+        public InvalidCodecPrivateDataException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCodecPrivateDataException with the specified error
         /// message.
         /// </summary>

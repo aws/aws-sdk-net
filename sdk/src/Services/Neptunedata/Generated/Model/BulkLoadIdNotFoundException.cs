@@ -43,6 +43,13 @@ namespace Amazon.Neptunedata.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for BulkLoadIdNotFoundException
+        /// message.
+        /// </summary>
+        public BulkLoadIdNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BulkLoadIdNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.CloudWatchEvidently
         /// <summary>
         /// Construct instance of AmazonCloudWatchEvidentlyException
         /// </summary>
+        public AmazonCloudWatchEvidentlyException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchEvidentlyException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudWatchEvidentlyException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for HealthCheckInUseException
+        /// message.
+        /// </summary>
+        public HealthCheckInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HealthCheckInUseException with the specified error
         /// message.
         /// </summary>

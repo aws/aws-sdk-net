@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for ECSServiceMappingLimitExceededException
+        /// message.
+        /// </summary>
+        public ECSServiceMappingLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ECSServiceMappingLimitExceededException with the specified error
         /// message.
         /// </summary>

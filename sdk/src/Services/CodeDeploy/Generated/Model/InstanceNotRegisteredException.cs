@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InstanceNotRegisteredException
+        /// message.
+        /// </summary>
+        public InstanceNotRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InstanceNotRegisteredException with the specified error
         /// message.
         /// </summary>

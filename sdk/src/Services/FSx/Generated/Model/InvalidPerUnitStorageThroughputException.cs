@@ -40,6 +40,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPerUnitStorageThroughputException
+        /// message.
+        /// </summary>
+        public InvalidPerUnitStorageThroughputException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPerUnitStorageThroughputException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for InvalidRedirectUriException
+        /// message.
+        /// </summary>
+        public InvalidRedirectUriException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRedirectUriException with the specified error
         /// message.
         /// </summary>

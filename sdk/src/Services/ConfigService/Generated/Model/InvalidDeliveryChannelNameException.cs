@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeliveryChannelNameException
+        /// message.
+        /// </summary>
+        public InvalidDeliveryChannelNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeliveryChannelNameException with the specified error
         /// message.
         /// </summary>

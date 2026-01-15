@@ -39,6 +39,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for TagException
+        /// message.
+        /// </summary>
+        public TagException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagException with the specified error
         /// message.
         /// </summary>

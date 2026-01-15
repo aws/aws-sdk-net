@@ -41,6 +41,13 @@ namespace Amazon.Wickr.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceNotFoundErrorException
+        /// message.
+        /// </summary>
+        public ResourceNotFoundErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotFoundErrorException with the specified error
         /// message.
         /// </summary>

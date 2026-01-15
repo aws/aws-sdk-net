@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for GenerateResponseException
+        /// message.
+        /// </summary>
+        public GenerateResponseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GenerateResponseException with the specified error
         /// message.
         /// </summary>

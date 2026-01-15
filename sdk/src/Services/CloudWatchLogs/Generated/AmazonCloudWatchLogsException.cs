@@ -36,6 +36,14 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Construct instance of AmazonCloudWatchLogsException
         /// </summary>
+        public AmazonCloudWatchLogsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchLogsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudWatchLogsException(string message)
             : base(message)

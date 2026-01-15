@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for VPCAssociationAuthorizationNotFoundException
+        /// message.
+        /// </summary>
+        public VPCAssociationAuthorizationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VPCAssociationAuthorizationNotFoundException with the specified error
         /// message.
         /// </summary>

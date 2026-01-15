@@ -40,6 +40,13 @@ namespace Amazon.CertificateManager.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestInProgressException
+        /// message.
+        /// </summary>
+        public RequestInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestInProgressException with the specified error
         /// message.
         /// </summary>

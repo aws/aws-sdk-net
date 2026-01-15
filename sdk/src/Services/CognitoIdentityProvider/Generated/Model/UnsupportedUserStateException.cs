@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedUserStateException
+        /// message.
+        /// </summary>
+        public UnsupportedUserStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedUserStateException with the specified error
         /// message.
         /// </summary>

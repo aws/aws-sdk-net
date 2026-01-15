@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMinimumProtocolVersionException
+        /// message.
+        /// </summary>
+        public InvalidMinimumProtocolVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMinimumProtocolVersionException with the specified error
         /// message.
         /// </summary>

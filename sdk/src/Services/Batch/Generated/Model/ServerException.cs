@@ -39,6 +39,13 @@ namespace Amazon.Batch.Model
     {
 
         /// <summary>
+        /// Default constructor for ServerException
+        /// message.
+        /// </summary>
+        public ServerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServerException with the specified error
         /// message.
         /// </summary>

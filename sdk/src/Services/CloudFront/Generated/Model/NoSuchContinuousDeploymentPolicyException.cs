@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchContinuousDeploymentPolicyException
+        /// message.
+        /// </summary>
+        public NoSuchContinuousDeploymentPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchContinuousDeploymentPolicyException with the specified error
         /// message.
         /// </summary>

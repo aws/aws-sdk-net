@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidClusterSubnetGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidClusterSubnetGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClusterSubnetGroupStateException with the specified error
         /// message.
         /// </summary>

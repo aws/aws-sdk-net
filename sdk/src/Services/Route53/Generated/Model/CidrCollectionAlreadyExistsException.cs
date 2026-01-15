@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for CidrCollectionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CidrCollectionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CidrCollectionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

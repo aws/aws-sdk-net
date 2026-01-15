@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for InvalidArgumentException
+        /// message.
+        /// </summary>
+        public InvalidArgumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidArgumentException with the specified error
         /// message.
         /// </summary>

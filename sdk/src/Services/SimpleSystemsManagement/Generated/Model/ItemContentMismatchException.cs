@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _typeName;
 
         /// <summary>
+        /// Default constructor for ItemContentMismatchException
+        /// message.
+        /// </summary>
+        public ItemContentMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ItemContentMismatchException with the specified error
         /// message.
         /// </summary>

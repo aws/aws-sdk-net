@@ -41,6 +41,13 @@ namespace Amazon.SimpleEmail.Model
         private string _templateName;
 
         /// <summary>
+        /// Default constructor for TemplateDoesNotExistException
+        /// message.
+        /// </summary>
+        public TemplateDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TemplateDoesNotExistException with the specified error
         /// message.
         /// </summary>

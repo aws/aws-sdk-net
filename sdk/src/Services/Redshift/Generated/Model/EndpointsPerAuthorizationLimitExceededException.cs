@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointsPerAuthorizationLimitExceededException
+        /// message.
+        /// </summary>
+        public EndpointsPerAuthorizationLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointsPerAuthorizationLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for LifecyclePolicyNotFoundException
+        /// message.
+        /// </summary>
+        public LifecyclePolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LifecyclePolicyNotFoundException with the specified error
         /// message.
         /// </summary>

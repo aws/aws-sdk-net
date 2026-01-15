@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MergeOptionRequiredException
+        /// message.
+        /// </summary>
+        public MergeOptionRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MergeOptionRequiredException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for SerialConsoleSessionLimitExceededException
+        /// message.
+        /// </summary>
+        public SerialConsoleSessionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SerialConsoleSessionLimitExceededException with the specified error
         /// message.
         /// </summary>

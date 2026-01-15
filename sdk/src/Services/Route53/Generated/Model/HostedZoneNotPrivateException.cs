@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for HostedZoneNotPrivateException
+        /// message.
+        /// </summary>
+        public HostedZoneNotPrivateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HostedZoneNotPrivateException with the specified error
         /// message.
         /// </summary>

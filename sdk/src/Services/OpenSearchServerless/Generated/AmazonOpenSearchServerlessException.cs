@@ -36,6 +36,14 @@ namespace Amazon.OpenSearchServerless
         /// <summary>
         /// Construct instance of AmazonOpenSearchServerlessException
         /// </summary>
+        public AmazonOpenSearchServerlessException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonOpenSearchServerlessException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonOpenSearchServerlessException(string message)
             : base(message)

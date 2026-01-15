@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for DependentServiceAccessDeniedException
+        /// message.
+        /// </summary>
+        public DependentServiceAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependentServiceAccessDeniedException with the specified error
         /// message.
         /// </summary>

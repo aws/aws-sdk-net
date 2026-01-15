@@ -40,6 +40,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for PermissionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public PermissionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PermissionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

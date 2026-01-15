@@ -36,6 +36,14 @@ namespace Amazon.Rekognition
         /// <summary>
         /// Construct instance of AmazonRekognitionException
         /// </summary>
+        public AmazonRekognitionException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRekognitionException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRekognitionException(string message)
             : base(message)

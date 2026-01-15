@@ -40,6 +40,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceNotFoundException
+        /// message.
+        /// </summary>
+        public ServiceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceNotFoundException with the specified error
         /// message.
         /// </summary>

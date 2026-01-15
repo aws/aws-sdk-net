@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for InvalidParameterValueException
+        /// message.
+        /// </summary>
+        public InvalidParameterValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParameterValueException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.Evs
         /// <summary>
         /// Construct instance of AmazonEvsException
         /// </summary>
+        public AmazonEvsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEvsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEvsException(string message)
             : base(message)

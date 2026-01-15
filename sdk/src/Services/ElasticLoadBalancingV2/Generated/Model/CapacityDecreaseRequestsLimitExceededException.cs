@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CapacityDecreaseRequestsLimitExceededException
+        /// message.
+        /// </summary>
+        public CapacityDecreaseRequestsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CapacityDecreaseRequestsLimitExceededException with the specified error
         /// message.
         /// </summary>

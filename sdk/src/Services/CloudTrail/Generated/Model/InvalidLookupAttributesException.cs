@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLookupAttributesException
+        /// message.
+        /// </summary>
+        public InvalidLookupAttributesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLookupAttributesException with the specified error
         /// message.
         /// </summary>

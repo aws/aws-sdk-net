@@ -39,6 +39,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceCreationFailedException
+        /// message.
+        /// </summary>
+        public ResourceCreationFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceCreationFailedException with the specified error
         /// message.
         /// </summary>

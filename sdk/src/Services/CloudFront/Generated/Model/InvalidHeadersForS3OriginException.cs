@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidHeadersForS3OriginException
+        /// message.
+        /// </summary>
+        public InvalidHeadersForS3OriginException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidHeadersForS3OriginException with the specified error
         /// message.
         /// </summary>

@@ -43,6 +43,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientThroughputCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientThroughputCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientThroughputCapacityException with the specified error
         /// message.
         /// </summary>

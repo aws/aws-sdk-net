@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTargetBranchException
+        /// message.
+        /// </summary>
+        public InvalidTargetBranchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTargetBranchException with the specified error
         /// message.
         /// </summary>

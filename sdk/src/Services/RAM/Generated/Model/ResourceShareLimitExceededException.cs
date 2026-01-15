@@ -41,6 +41,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceShareLimitExceededException
+        /// message.
+        /// </summary>
+        public ResourceShareLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceShareLimitExceededException with the specified error
         /// message.
         /// </summary>

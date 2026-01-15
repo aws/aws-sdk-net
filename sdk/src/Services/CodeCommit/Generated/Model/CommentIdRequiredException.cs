@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CommentIdRequiredException
+        /// message.
+        /// </summary>
+        public CommentIdRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CommentIdRequiredException with the specified error
         /// message.
         /// </summary>

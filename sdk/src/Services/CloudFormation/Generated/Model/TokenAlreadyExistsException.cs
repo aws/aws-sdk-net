@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for TokenAlreadyExistsException
+        /// message.
+        /// </summary>
+        public TokenAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TokenAlreadyExistsException with the specified error
         /// message.
         /// </summary>

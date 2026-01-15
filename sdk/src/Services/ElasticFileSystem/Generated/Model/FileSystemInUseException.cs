@@ -39,6 +39,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for FileSystemInUseException
+        /// message.
+        /// </summary>
+        public FileSystemInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileSystemInUseException with the specified error
         /// message.
         /// </summary>

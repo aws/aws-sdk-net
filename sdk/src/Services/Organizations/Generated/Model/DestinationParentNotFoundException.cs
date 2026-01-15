@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for DestinationParentNotFoundException
+        /// message.
+        /// </summary>
+        public DestinationParentNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DestinationParentNotFoundException with the specified error
         /// message.
         /// </summary>

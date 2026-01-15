@@ -42,6 +42,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for IncorrectKeyMaterialException
+        /// message.
+        /// </summary>
+        public IncorrectKeyMaterialException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncorrectKeyMaterialException with the specified error
         /// message.
         /// </summary>

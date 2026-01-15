@@ -39,6 +39,13 @@ namespace Amazon.IotData.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedDocumentEncodingException
+        /// message.
+        /// </summary>
+        public UnsupportedDocumentEncodingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedDocumentEncodingException with the specified error
         /// message.
         /// </summary>

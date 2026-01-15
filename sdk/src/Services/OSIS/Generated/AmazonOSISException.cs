@@ -36,6 +36,14 @@ namespace Amazon.OSIS
         /// <summary>
         /// Construct instance of AmazonOSISException
         /// </summary>
+        public AmazonOSISException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonOSISException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonOSISException(string message)
             : base(message)

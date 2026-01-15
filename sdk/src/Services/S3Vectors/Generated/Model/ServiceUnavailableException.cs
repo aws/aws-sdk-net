@@ -42,6 +42,13 @@ namespace Amazon.S3Vectors.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for ServiceUnavailableException
+        /// message.
+        /// </summary>
+        public ServiceUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceUnavailableException with the specified error
         /// message.
         /// </summary>

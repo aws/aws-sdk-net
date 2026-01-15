@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AutomationStepNotFoundException
+        /// message.
+        /// </summary>
+        public AutomationStepNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AutomationStepNotFoundException with the specified error
         /// message.
         /// </summary>

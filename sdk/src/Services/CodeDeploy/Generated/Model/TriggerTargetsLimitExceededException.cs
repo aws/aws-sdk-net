@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for TriggerTargetsLimitExceededException
+        /// message.
+        /// </summary>
+        public TriggerTargetsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TriggerTargetsLimitExceededException with the specified error
         /// message.
         /// </summary>

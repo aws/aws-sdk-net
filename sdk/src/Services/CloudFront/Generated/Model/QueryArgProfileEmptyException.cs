@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for QueryArgProfileEmptyException
+        /// message.
+        /// </summary>
+        public QueryArgProfileEmptyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueryArgProfileEmptyException with the specified error
         /// message.
         /// </summary>

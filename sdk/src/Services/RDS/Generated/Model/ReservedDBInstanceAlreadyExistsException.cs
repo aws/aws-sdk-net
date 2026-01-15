@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedDBInstanceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ReservedDBInstanceAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedDBInstanceAlreadyExistsException with the specified error
         /// message.
         /// </summary>

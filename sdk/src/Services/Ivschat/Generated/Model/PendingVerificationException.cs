@@ -39,6 +39,13 @@ namespace Amazon.Ivschat.Model
     {
 
         /// <summary>
+        /// Default constructor for PendingVerificationException
+        /// message.
+        /// </summary>
+        public PendingVerificationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PendingVerificationException with the specified error
         /// message.
         /// </summary>

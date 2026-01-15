@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyAccessPointsException
+        /// message.
+        /// </summary>
+        public TooManyAccessPointsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyAccessPointsException with the specified error
         /// message.
         /// </summary>

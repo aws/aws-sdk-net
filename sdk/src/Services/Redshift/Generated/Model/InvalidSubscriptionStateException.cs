@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSubscriptionStateException
+        /// message.
+        /// </summary>
+        public InvalidSubscriptionStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSubscriptionStateException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.S3.Model
     {
 
         /// <summary>
+        /// Default constructor for ObjectAlreadyInActiveTierErrorException
+        /// message.
+        /// </summary>
+        public ObjectAlreadyInActiveTierErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ObjectAlreadyInActiveTierErrorException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidWebhookFilterPatternException
+        /// message.
+        /// </summary>
+        public InvalidWebhookFilterPatternException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidWebhookFilterPatternException with the specified error
         /// message.
         /// </summary>

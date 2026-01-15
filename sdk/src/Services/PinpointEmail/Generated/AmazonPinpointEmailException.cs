@@ -36,6 +36,14 @@ namespace Amazon.PinpointEmail
         /// <summary>
         /// Construct instance of AmazonPinpointEmailException
         /// </summary>
+        public AmazonPinpointEmailException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPinpointEmailException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPinpointEmailException(string message)
             : base(message)

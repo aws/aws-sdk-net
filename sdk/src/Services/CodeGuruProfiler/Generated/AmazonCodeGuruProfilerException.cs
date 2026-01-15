@@ -36,6 +36,14 @@ namespace Amazon.CodeGuruProfiler
         /// <summary>
         /// Construct instance of AmazonCodeGuruProfilerException
         /// </summary>
+        public AmazonCodeGuruProfilerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeGuruProfilerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeGuruProfilerException(string message)
             : base(message)

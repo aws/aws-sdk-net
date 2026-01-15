@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for RevocationContentNotFoundException
+        /// message.
+        /// </summary>
+        public RevocationContentNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RevocationContentNotFoundException with the specified error
         /// message.
         /// </summary>

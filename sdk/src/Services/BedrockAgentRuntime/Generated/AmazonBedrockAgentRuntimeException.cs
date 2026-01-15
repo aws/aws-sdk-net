@@ -36,6 +36,14 @@ namespace Amazon.BedrockAgentRuntime
         /// <summary>
         /// Construct instance of AmazonBedrockAgentRuntimeException
         /// </summary>
+        public AmazonBedrockAgentRuntimeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBedrockAgentRuntimeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBedrockAgentRuntimeException(string message)
             : base(message)

@@ -41,6 +41,13 @@ namespace Amazon.Snowball.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterLimitExceededException
+        /// message.
+        /// </summary>
+        public ClusterLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterLimitExceededException with the specified error
         /// message.
         /// </summary>

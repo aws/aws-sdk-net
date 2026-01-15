@@ -41,6 +41,13 @@ namespace Amazon.Route53.Model
         private List<string> _messages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
+        /// Default constructor for InvalidChangeBatchException
+        /// message.
+        /// </summary>
+        public InvalidChangeBatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidChangeBatchException with the specified error
         /// message.
         /// </summary>

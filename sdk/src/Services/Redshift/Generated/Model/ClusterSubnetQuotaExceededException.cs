@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterSubnetQuotaExceededException
+        /// message.
+        /// </summary>
+        public ClusterSubnetQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterSubnetQuotaExceededException with the specified error
         /// message.
         /// </summary>

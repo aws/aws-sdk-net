@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for ReadOnlyViolationException
+        /// message.
+        /// </summary>
+        public ReadOnlyViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReadOnlyViolationException with the specified error
         /// message.
         /// </summary>

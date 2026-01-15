@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFilterKeyException
+        /// message.
+        /// </summary>
+        public InvalidFilterKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFilterKeyException with the specified error
         /// message.
         /// </summary>

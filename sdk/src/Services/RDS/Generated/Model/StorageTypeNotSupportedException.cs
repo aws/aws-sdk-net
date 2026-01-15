@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for StorageTypeNotSupportedException
+        /// message.
+        /// </summary>
+        public StorageTypeNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StorageTypeNotSupportedException with the specified error
         /// message.
         /// </summary>

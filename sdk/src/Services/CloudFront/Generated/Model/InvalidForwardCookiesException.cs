@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidForwardCookiesException
+        /// message.
+        /// </summary>
+        public InvalidForwardCookiesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidForwardCookiesException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CommitIdDoesNotExistException
+        /// message.
+        /// </summary>
+        public CommitIdDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CommitIdDoesNotExistException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for CachePolicyInUseException
+        /// message.
+        /// </summary>
+        public CachePolicyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CachePolicyInUseException with the specified error
         /// message.
         /// </summary>

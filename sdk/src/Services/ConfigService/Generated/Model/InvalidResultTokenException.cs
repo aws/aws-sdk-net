@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResultTokenException
+        /// message.
+        /// </summary>
+        public InvalidResultTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResultTokenException with the specified error
         /// message.
         /// </summary>

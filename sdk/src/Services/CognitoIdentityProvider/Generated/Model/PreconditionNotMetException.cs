@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for PreconditionNotMetException
+        /// message.
+        /// </summary>
+        public PreconditionNotMetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PreconditionNotMetException with the specified error
         /// message.
         /// </summary>

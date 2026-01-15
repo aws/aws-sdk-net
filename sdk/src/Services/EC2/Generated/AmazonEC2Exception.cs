@@ -36,6 +36,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Construct instance of AmazonEC2Exception
         /// </summary>
+        public AmazonEC2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEC2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEC2Exception(string message)
             : base(message)

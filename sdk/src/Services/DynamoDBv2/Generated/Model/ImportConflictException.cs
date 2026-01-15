@@ -41,6 +41,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for ImportConflictException
+        /// message.
+        /// </summary>
+        public ImportConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImportConflictException with the specified error
         /// message.
         /// </summary>

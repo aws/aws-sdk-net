@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for TenantDatabaseNotFoundException
+        /// message.
+        /// </summary>
+        public TenantDatabaseNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TenantDatabaseNotFoundException with the specified error
         /// message.
         /// </summary>

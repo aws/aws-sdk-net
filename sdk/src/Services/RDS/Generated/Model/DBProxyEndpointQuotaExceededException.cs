@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBProxyEndpointQuotaExceededException
+        /// message.
+        /// </summary>
+        public DBProxyEndpointQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBProxyEndpointQuotaExceededException with the specified error
         /// message.
         /// </summary>

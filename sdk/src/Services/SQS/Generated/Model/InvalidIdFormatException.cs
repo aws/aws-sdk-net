@@ -40,6 +40,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidIdFormatException
+        /// message.
+        /// </summary>
+        public InvalidIdFormatException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidIdFormatException with the specified error
         /// message.
         /// </summary>

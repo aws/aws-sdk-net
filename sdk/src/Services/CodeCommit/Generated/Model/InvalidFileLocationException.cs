@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFileLocationException
+        /// message.
+        /// </summary>
+        public InvalidFileLocationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFileLocationException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.LookoutEquipment
         /// <summary>
         /// Construct instance of AmazonLookoutEquipmentException
         /// </summary>
+        public AmazonLookoutEquipmentException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLookoutEquipmentException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLookoutEquipmentException(string message)
             : base(message)

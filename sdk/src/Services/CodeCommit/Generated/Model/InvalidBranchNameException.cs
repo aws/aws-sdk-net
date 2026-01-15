@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidBranchNameException
+        /// message.
+        /// </summary>
+        public InvalidBranchNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidBranchNameException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for TableLimitExceededException
+        /// message.
+        /// </summary>
+        public TableLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TableLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ConflictPolicyUpdateException
+        /// message.
+        /// </summary>
+        public ConflictPolicyUpdateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictPolicyUpdateException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for ReplicationNotFoundException
+        /// message.
+        /// </summary>
+        public ReplicationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplicationNotFoundException with the specified error
         /// message.
         /// </summary>

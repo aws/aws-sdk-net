@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidComputePlatformException
+        /// message.
+        /// </summary>
+        public InvalidComputePlatformException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidComputePlatformException with the specified error
         /// message.
         /// </summary>

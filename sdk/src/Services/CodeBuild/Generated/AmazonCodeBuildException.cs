@@ -36,6 +36,14 @@ namespace Amazon.CodeBuild
         /// <summary>
         /// Construct instance of AmazonCodeBuildException
         /// </summary>
+        public AmazonCodeBuildException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeBuildException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeBuildException(string message)
             : base(message)

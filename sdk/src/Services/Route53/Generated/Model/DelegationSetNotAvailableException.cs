@@ -42,6 +42,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for DelegationSetNotAvailableException
+        /// message.
+        /// </summary>
+        public DelegationSetNotAvailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DelegationSetNotAvailableException with the specified error
         /// message.
         /// </summary>

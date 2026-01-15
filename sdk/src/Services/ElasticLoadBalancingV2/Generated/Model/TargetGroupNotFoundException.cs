@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TargetGroupNotFoundException
+        /// message.
+        /// </summary>
+        public TargetGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TargetGroupNotFoundException with the specified error
         /// message.
         /// </summary>

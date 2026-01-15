@@ -36,6 +36,14 @@ namespace Amazon.Keyspaces
         /// <summary>
         /// Construct instance of AmazonKeyspacesException
         /// </summary>
+        public AmazonKeyspacesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKeyspacesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKeyspacesException(string message)
             : base(message)

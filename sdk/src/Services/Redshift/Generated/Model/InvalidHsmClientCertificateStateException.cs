@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidHsmClientCertificateStateException
+        /// message.
+        /// </summary>
+        public InvalidHsmClientCertificateStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidHsmClientCertificateStateException with the specified error
         /// message.
         /// </summary>

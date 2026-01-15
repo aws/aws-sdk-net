@@ -40,6 +40,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxNumberOfRetentionConfigurationsExceededException
+        /// message.
+        /// </summary>
+        public MaxNumberOfRetentionConfigurationsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxNumberOfRetentionConfigurationsExceededException with the specified error
         /// message.
         /// </summary>

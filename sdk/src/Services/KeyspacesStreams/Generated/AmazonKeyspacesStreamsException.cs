@@ -36,6 +36,14 @@ namespace Amazon.KeyspacesStreams
         /// <summary>
         /// Construct instance of AmazonKeyspacesStreamsException
         /// </summary>
+        public AmazonKeyspacesStreamsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKeyspacesStreamsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKeyspacesStreamsException(string message)
             : base(message)

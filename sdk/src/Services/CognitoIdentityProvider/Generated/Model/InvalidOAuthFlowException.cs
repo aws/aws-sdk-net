@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOAuthFlowException
+        /// message.
+        /// </summary>
+        public InvalidOAuthFlowException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOAuthFlowException with the specified error
         /// message.
         /// </summary>

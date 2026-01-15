@@ -36,6 +36,14 @@ namespace Amazon.ServiceCatalog
         /// <summary>
         /// Construct instance of AmazonServiceCatalogException
         /// </summary>
+        public AmazonServiceCatalogException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonServiceCatalogException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonServiceCatalogException(string message)
             : base(message)

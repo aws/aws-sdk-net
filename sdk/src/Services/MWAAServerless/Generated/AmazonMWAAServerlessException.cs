@@ -36,6 +36,14 @@ namespace Amazon.MWAAServerless
         /// <summary>
         /// Construct instance of AmazonMWAAServerlessException
         /// </summary>
+        public AmazonMWAAServerlessException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMWAAServerlessException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMWAAServerlessException(string message)
             : base(message)

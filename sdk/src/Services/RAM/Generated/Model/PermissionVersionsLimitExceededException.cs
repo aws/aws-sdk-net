@@ -42,6 +42,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for PermissionVersionsLimitExceededException
+        /// message.
+        /// </summary>
+        public PermissionVersionsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PermissionVersionsLimitExceededException with the specified error
         /// message.
         /// </summary>

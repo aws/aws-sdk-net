@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for MultiRegionClusterAlreadyExistsException
+        /// message.
+        /// </summary>
+        public MultiRegionClusterAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MultiRegionClusterAlreadyExistsException with the specified error
         /// message.
         /// </summary>

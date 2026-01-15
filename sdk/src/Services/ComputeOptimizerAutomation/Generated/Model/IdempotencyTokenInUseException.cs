@@ -39,6 +39,13 @@ namespace Amazon.ComputeOptimizerAutomation.Model
     {
 
         /// <summary>
+        /// Default constructor for IdempotencyTokenInUseException
+        /// message.
+        /// </summary>
+        public IdempotencyTokenInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IdempotencyTokenInUseException with the specified error
         /// message.
         /// </summary>

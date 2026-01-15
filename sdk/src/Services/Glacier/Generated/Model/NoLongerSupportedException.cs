@@ -41,6 +41,13 @@ namespace Amazon.Glacier.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for NoLongerSupportedException
+        /// message.
+        /// </summary>
+        public NoLongerSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoLongerSupportedException with the specified error
         /// message.
         /// </summary>

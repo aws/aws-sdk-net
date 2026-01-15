@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotScheduleNotFoundException
+        /// message.
+        /// </summary>
+        public SnapshotScheduleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotScheduleNotFoundException with the specified error
         /// message.
         /// </summary>

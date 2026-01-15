@@ -41,6 +41,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for FilterPolicyLimitExceededException
+        /// message.
+        /// </summary>
+        public FilterPolicyLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FilterPolicyLimitExceededException with the specified error
         /// message.
         /// </summary>

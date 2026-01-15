@@ -39,6 +39,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateResourceException
+        /// message.
+        /// </summary>
+        public DuplicateResourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateResourceException with the specified error
         /// message.
         /// </summary>

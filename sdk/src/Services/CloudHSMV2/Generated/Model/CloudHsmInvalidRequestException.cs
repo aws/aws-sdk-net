@@ -39,6 +39,13 @@ namespace Amazon.CloudHSMV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmInvalidRequestException
+        /// message.
+        /// </summary>
+        public CloudHsmInvalidRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmInvalidRequestException with the specified error
         /// message.
         /// </summary>

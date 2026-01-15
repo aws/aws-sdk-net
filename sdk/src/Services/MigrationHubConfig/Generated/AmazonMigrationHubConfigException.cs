@@ -36,6 +36,14 @@ namespace Amazon.MigrationHubConfig
         /// <summary>
         /// Construct instance of AmazonMigrationHubConfigException
         /// </summary>
+        public AmazonMigrationHubConfigException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMigrationHubConfigException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMigrationHubConfigException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for DeactivatingLastSystemUserException
+        /// message.
+        /// </summary>
+        public DeactivatingLastSystemUserException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeactivatingLastSystemUserException with the specified error
         /// message.
         /// </summary>

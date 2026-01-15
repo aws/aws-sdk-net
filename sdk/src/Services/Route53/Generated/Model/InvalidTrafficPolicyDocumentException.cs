@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTrafficPolicyDocumentException
+        /// message.
+        /// </summary>
+        public InvalidTrafficPolicyDocumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTrafficPolicyDocumentException with the specified error
         /// message.
         /// </summary>

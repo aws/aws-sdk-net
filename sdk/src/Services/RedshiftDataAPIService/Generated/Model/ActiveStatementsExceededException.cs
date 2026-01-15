@@ -39,6 +39,13 @@ namespace Amazon.RedshiftDataAPIService.Model
     {
 
         /// <summary>
+        /// Default constructor for ActiveStatementsExceededException
+        /// message.
+        /// </summary>
+        public ActiveStatementsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActiveStatementsExceededException with the specified error
         /// message.
         /// </summary>

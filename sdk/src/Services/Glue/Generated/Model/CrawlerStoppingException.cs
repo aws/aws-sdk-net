@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for CrawlerStoppingException
+        /// message.
+        /// </summary>
+        public CrawlerStoppingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CrawlerStoppingException with the specified error
         /// message.
         /// </summary>

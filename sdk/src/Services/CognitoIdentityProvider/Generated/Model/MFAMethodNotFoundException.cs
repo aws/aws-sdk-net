@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for MFAMethodNotFoundException
+        /// message.
+        /// </summary>
+        public MFAMethodNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MFAMethodNotFoundException with the specified error
         /// message.
         /// </summary>

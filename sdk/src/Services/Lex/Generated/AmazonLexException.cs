@@ -36,6 +36,14 @@ namespace Amazon.Lex
         /// <summary>
         /// Construct instance of AmazonLexException
         /// </summary>
+        public AmazonLexException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLexException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLexException(string message)
             : base(message)

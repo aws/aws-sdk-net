@@ -36,6 +36,14 @@ namespace Amazon.Outposts
         /// <summary>
         /// Construct instance of AmazonOutpostsException
         /// </summary>
+        public AmazonOutpostsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonOutpostsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonOutpostsException(string message)
             : base(message)

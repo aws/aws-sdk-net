@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for CallbackTimeoutException
+        /// message.
+        /// </summary>
+        public CallbackTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CallbackTimeoutException with the specified error
         /// message.
         /// </summary>

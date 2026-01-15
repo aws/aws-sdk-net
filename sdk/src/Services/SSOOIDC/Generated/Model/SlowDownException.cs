@@ -42,6 +42,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for SlowDownException
+        /// message.
+        /// </summary>
+        public SlowDownException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SlowDownException with the specified error
         /// message.
         /// </summary>

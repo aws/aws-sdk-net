@@ -36,6 +36,14 @@ namespace Amazon.ECR
         /// <summary>
         /// Construct instance of AmazonECRException
         /// </summary>
+        public AmazonECRException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonECRException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonECRException(string message)
             : base(message)

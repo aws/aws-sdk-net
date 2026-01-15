@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for ColumnStatisticsTaskNotRunningException
+        /// message.
+        /// </summary>
+        public ColumnStatisticsTaskNotRunningException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ColumnStatisticsTaskNotRunningException with the specified error
         /// message.
         /// </summary>

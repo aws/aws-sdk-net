@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for UserGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public UserGroupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserGroupQuotaExceededException with the specified error
         /// message.
         /// </summary>

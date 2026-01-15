@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for RestrictedSourceFileException
+        /// message.
+        /// </summary>
+        public RestrictedSourceFileException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RestrictedSourceFileException with the specified error
         /// message.
         /// </summary>

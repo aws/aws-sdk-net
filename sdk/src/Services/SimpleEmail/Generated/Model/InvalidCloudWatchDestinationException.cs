@@ -42,6 +42,13 @@ namespace Amazon.SimpleEmail.Model
         private string _eventDestinationName;
 
         /// <summary>
+        /// Default constructor for InvalidCloudWatchDestinationException
+        /// message.
+        /// </summary>
+        public InvalidCloudWatchDestinationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCloudWatchDestinationException with the specified error
         /// message.
         /// </summary>

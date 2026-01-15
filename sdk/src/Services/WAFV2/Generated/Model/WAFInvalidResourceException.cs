@@ -40,6 +40,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFInvalidResourceException
+        /// message.
+        /// </summary>
+        public WAFInvalidResourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFInvalidResourceException with the specified error
         /// message.
         /// </summary>

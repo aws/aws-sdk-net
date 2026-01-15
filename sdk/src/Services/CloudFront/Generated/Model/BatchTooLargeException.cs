@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for BatchTooLargeException
+        /// message.
+        /// </summary>
+        public BatchTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchTooLargeException with the specified error
         /// message.
         /// </summary>

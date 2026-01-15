@@ -36,6 +36,14 @@ namespace Amazon.SSMQuickSetup
         /// <summary>
         /// Construct instance of AmazonSSMQuickSetupException
         /// </summary>
+        public AmazonSSMQuickSetupException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSSMQuickSetupException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSSMQuickSetupException(string message)
             : base(message)

@@ -41,6 +41,13 @@ namespace Amazon.ApiGatewayV2.Model
         private string _resourceType;
 
         /// <summary>
+        /// Default constructor for NotFoundException
+        /// message.
+        /// </summary>
+        public NotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotFoundException with the specified error
         /// message.
         /// </summary>

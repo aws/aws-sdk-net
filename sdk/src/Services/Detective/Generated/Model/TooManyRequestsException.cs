@@ -40,6 +40,13 @@ namespace Amazon.Detective.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyRequestsException
+        /// message.
+        /// </summary>
+        public TooManyRequestsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRequestsException with the specified error
         /// message.
         /// </summary>

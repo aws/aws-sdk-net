@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for PublicZoneVPCAssociationException
+        /// message.
+        /// </summary>
+        public PublicZoneVPCAssociationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PublicZoneVPCAssociationException with the specified error
         /// message.
         /// </summary>

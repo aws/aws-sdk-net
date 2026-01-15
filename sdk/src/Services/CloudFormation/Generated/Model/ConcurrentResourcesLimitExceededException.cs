@@ -41,6 +41,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentResourcesLimitExceededException
+        /// message.
+        /// </summary>
+        public ConcurrentResourcesLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentResourcesLimitExceededException with the specified error
         /// message.
         /// </summary>

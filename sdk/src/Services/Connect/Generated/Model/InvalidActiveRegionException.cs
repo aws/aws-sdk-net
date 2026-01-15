@@ -42,6 +42,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidActiveRegionException
+        /// message.
+        /// </summary>
+        public InvalidActiveRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidActiveRegionException with the specified error
         /// message.
         /// </summary>

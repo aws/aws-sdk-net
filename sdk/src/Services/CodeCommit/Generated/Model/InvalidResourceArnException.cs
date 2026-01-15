@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResourceArnException
+        /// message.
+        /// </summary>
+        public InvalidResourceArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResourceArnException with the specified error
         /// message.
         /// </summary>

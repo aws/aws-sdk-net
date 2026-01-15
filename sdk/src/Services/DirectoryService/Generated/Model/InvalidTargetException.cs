@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTargetException
+        /// message.
+        /// </summary>
+        public InvalidTargetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTargetException with the specified error
         /// message.
         /// </summary>

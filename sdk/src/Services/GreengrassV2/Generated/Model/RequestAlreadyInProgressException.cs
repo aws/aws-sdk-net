@@ -41,6 +41,13 @@ namespace Amazon.GreengrassV2.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestAlreadyInProgressException
+        /// message.
+        /// </summary>
+        public RequestAlreadyInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestAlreadyInProgressException with the specified error
         /// message.
         /// </summary>

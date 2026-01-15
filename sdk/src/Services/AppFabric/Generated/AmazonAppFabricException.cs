@@ -36,6 +36,14 @@ namespace Amazon.AppFabric
         /// <summary>
         /// Construct instance of AmazonAppFabricException
         /// </summary>
+        public AmazonAppFabricException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAppFabricException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAppFabricException(string message)
             : base(message)

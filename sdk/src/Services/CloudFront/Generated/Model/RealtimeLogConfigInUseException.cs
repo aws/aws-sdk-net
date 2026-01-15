@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for RealtimeLogConfigInUseException
+        /// message.
+        /// </summary>
+        public RealtimeLogConfigInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RealtimeLogConfigInUseException with the specified error
         /// message.
         /// </summary>

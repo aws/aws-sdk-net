@@ -36,6 +36,14 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <summary>
         /// Construct instance of AmazonResourceGroupsTaggingAPIException
         /// </summary>
+        public AmazonResourceGroupsTaggingAPIException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonResourceGroupsTaggingAPIException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonResourceGroupsTaggingAPIException(string message)
             : base(message)

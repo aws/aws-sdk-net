@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTracingConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidTracingConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTracingConfigurationException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CodeBuild.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountLimitExceededException
+        /// message.
+        /// </summary>
+        public AccountLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountLimitExceededException with the specified error
         /// message.
         /// </summary>

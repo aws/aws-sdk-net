@@ -39,6 +39,13 @@ namespace Amazon.LicenseManager.Model
     {
 
         /// <summary>
+        /// Default constructor for FilterLimitExceededException
+        /// message.
+        /// </summary>
+        public FilterLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FilterLimitExceededException with the specified error
         /// message.
         /// </summary>

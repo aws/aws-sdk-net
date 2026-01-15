@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalUserStateException
+        /// message.
+        /// </summary>
+        public IllegalUserStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalUserStateException with the specified error
         /// message.
         /// </summary>

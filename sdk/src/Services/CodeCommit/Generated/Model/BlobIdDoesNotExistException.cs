@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for BlobIdDoesNotExistException
+        /// message.
+        /// </summary>
+        public BlobIdDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BlobIdDoesNotExistException with the specified error
         /// message.
         /// </summary>

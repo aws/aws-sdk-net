@@ -42,6 +42,13 @@ namespace Amazon.IoTFleetWise.Model
         private string _reason;
 
         /// <summary>
+        /// Default constructor for InvalidNodeException
+        /// message.
+        /// </summary>
+        public InvalidNodeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNodeException with the specified error
         /// message.
         /// </summary>

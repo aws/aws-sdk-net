@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxDocumentSizeExceededException
+        /// message.
+        /// </summary>
+        public MaxDocumentSizeExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxDocumentSizeExceededException with the specified error
         /// message.
         /// </summary>

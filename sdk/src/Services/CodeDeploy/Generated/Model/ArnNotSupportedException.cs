@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for ArnNotSupportedException
+        /// message.
+        /// </summary>
+        public ArnNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ArnNotSupportedException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.WorkDocs
         /// <summary>
         /// Construct instance of AmazonWorkDocsException
         /// </summary>
+        public AmazonWorkDocsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWorkDocsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWorkDocsException(string message)
             : base(message)

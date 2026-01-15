@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeploymentTargetIdException
+        /// message.
+        /// </summary>
+        public InvalidDeploymentTargetIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeploymentTargetIdException with the specified error
         /// message.
         /// </summary>

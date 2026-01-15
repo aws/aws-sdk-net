@@ -39,6 +39,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFTagOperationException
+        /// message.
+        /// </summary>
+        public WAFTagOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFTagOperationException with the specified error
         /// message.
         /// </summary>

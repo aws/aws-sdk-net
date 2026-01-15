@@ -40,6 +40,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for ImageTagAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ImageTagAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImageTagAlreadyExistsException with the specified error
         /// message.
         /// </summary>

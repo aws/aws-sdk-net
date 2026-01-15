@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for DeleteAssociationSameAccountException
+        /// message.
+        /// </summary>
+        public DeleteAssociationSameAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeleteAssociationSameAccountException with the specified error
         /// message.
         /// </summary>

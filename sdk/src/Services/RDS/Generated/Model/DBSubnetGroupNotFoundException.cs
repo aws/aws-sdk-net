@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSubnetGroupNotFoundException
+        /// message.
+        /// </summary>
+        public DBSubnetGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSubnetGroupNotFoundException with the specified error
         /// message.
         /// </summary>

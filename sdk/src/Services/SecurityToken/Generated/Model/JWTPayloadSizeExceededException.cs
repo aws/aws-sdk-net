@@ -41,6 +41,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for JWTPayloadSizeExceededException
+        /// message.
+        /// </summary>
+        public JWTPayloadSizeExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new JWTPayloadSizeExceededException with the specified error
         /// message.
         /// </summary>

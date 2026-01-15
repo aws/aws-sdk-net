@@ -41,6 +41,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedWorkspaceConfigurationException
+        /// message.
+        /// </summary>
+        public UnsupportedWorkspaceConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedWorkspaceConfigurationException with the specified error
         /// message.
         /// </summary>

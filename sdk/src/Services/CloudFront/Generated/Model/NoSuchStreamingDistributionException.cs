@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchStreamingDistributionException
+        /// message.
+        /// </summary>
+        public NoSuchStreamingDistributionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchStreamingDistributionException with the specified error
         /// message.
         /// </summary>

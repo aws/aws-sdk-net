@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for TrailAlreadyExistsException
+        /// message.
+        /// </summary>
+        public TrailAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrailAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientClusterCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientClusterCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientClusterCapacityException with the specified error
         /// message.
         /// </summary>

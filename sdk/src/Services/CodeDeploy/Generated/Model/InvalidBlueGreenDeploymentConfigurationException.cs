@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidBlueGreenDeploymentConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidBlueGreenDeploymentConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidBlueGreenDeploymentConfigurationException with the specified error
         /// message.
         /// </summary>

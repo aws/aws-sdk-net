@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for ResponsibilityTransferAlreadyInStatusException
+        /// message.
+        /// </summary>
+        public ResponsibilityTransferAlreadyInStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResponsibilityTransferAlreadyInStatusException with the specified error
         /// message.
         /// </summary>

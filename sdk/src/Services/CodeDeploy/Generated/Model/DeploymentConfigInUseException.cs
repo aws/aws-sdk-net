@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentConfigInUseException
+        /// message.
+        /// </summary>
+        public DeploymentConfigInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentConfigInUseException with the specified error
         /// message.
         /// </summary>

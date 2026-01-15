@@ -39,6 +39,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidGrantIdException
+        /// message.
+        /// </summary>
+        public InvalidGrantIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGrantIdException with the specified error
         /// message.
         /// </summary>

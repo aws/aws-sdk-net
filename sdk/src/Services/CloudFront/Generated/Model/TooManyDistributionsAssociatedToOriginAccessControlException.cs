@@ -46,6 +46,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsAssociatedToOriginAccessControlException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsAssociatedToOriginAccessControlException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsAssociatedToOriginAccessControlException with the specified error
         /// message.
         /// </summary>

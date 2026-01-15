@@ -40,6 +40,13 @@ namespace Amazon.ChimeSDKVoice.Model
     {
 
         /// <summary>
+        /// Default constructor for GoneException
+        /// message.
+        /// </summary>
+        public GoneException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GoneException with the specified error
         /// message.
         /// </summary>

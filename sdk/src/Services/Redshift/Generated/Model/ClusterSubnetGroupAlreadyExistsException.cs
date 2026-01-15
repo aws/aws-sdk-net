@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterSubnetGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ClusterSubnetGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterSubnetGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

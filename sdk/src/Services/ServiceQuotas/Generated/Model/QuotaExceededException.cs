@@ -40,6 +40,13 @@ namespace Amazon.ServiceQuotas.Model
     {
 
         /// <summary>
+        /// Default constructor for QuotaExceededException
+        /// message.
+        /// </summary>
+        public QuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QuotaExceededException with the specified error
         /// message.
         /// </summary>

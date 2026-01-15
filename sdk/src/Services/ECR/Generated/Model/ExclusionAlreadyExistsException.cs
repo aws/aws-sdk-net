@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for ExclusionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ExclusionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExclusionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for KeyPairMismatchException
+        /// message.
+        /// </summary>
+        public KeyPairMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KeyPairMismatchException with the specified error
         /// message.
         /// </summary>

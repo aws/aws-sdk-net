@@ -41,6 +41,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for VpcEncryptionControlViolationException
+        /// message.
+        /// </summary>
+        public VpcEncryptionControlViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VpcEncryptionControlViolationException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxConcurrentQueriesException
+        /// message.
+        /// </summary>
+        public MaxConcurrentQueriesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxConcurrentQueriesException with the specified error
         /// message.
         /// </summary>

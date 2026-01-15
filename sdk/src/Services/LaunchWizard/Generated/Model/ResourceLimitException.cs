@@ -40,6 +40,13 @@ namespace Amazon.LaunchWizard.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceLimitException
+        /// message.
+        /// </summary>
+        public ResourceLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceLimitException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCustomerIdentifierException
+        /// message.
+        /// </summary>
+        public InvalidCustomerIdentifierException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCustomerIdentifierException with the specified error
         /// message.
         /// </summary>

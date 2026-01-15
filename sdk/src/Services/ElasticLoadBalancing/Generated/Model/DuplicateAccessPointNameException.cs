@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateAccessPointNameException
+        /// message.
+        /// </summary>
+        public DuplicateAccessPointNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateAccessPointNameException with the specified error
         /// message.
         /// </summary>

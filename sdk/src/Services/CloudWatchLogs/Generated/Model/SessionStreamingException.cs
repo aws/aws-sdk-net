@@ -39,6 +39,13 @@ namespace Amazon.CloudWatchLogs.Model
     {
 
         /// <summary>
+        /// Default constructor for SessionStreamingException
+        /// message.
+        /// </summary>
+        public SessionStreamingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SessionStreamingException with the specified error
         /// message.
         /// </summary>

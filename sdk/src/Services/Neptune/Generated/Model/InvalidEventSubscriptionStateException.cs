@@ -39,6 +39,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEventSubscriptionStateException
+        /// message.
+        /// </summary>
+        public InvalidEventSubscriptionStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEventSubscriptionStateException with the specified error
         /// message.
         /// </summary>

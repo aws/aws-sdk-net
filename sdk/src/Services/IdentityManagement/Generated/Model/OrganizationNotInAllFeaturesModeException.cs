@@ -41,6 +41,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationNotInAllFeaturesModeException
+        /// message.
+        /// </summary>
+        public OrganizationNotInAllFeaturesModeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationNotInAllFeaturesModeException with the specified error
         /// message.
         /// </summary>

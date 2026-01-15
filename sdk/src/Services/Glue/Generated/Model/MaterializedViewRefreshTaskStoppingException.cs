@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for MaterializedViewRefreshTaskStoppingException
+        /// message.
+        /// </summary>
+        public MaterializedViewRefreshTaskStoppingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaterializedViewRefreshTaskStoppingException with the specified error
         /// message.
         /// </summary>

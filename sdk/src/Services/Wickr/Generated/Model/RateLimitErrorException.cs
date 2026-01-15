@@ -41,6 +41,13 @@ namespace Amazon.Wickr.Model
     {
 
         /// <summary>
+        /// Default constructor for RateLimitErrorException
+        /// message.
+        /// </summary>
+        public RateLimitErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RateLimitErrorException with the specified error
         /// message.
         /// </summary>

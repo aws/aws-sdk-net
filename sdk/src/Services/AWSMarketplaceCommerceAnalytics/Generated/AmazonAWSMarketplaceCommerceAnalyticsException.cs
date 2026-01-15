@@ -36,6 +36,14 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <summary>
         /// Construct instance of AmazonAWSMarketplaceCommerceAnalyticsException
         /// </summary>
+        public AmazonAWSMarketplaceCommerceAnalyticsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAWSMarketplaceCommerceAnalyticsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAWSMarketplaceCommerceAnalyticsException(string message)
             : base(message)

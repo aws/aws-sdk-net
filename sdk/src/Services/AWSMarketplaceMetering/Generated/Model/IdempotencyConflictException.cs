@@ -39,6 +39,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for IdempotencyConflictException
+        /// message.
+        /// </summary>
+        public IdempotencyConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IdempotencyConflictException with the specified error
         /// message.
         /// </summary>

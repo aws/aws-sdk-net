@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CommentDoesNotExistException
+        /// message.
+        /// </summary>
+        public CommentDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CommentDoesNotExistException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.DSQL
         /// <summary>
         /// Construct instance of AmazonDSQLException
         /// </summary>
+        public AmazonDSQLException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDSQLException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDSQLException(string message)
             : base(message)

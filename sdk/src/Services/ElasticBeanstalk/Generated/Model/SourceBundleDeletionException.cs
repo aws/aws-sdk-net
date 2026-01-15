@@ -40,6 +40,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for SourceBundleDeletionException
+        /// message.
+        /// </summary>
+        public SourceBundleDeletionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SourceBundleDeletionException with the specified error
         /// message.
         /// </summary>

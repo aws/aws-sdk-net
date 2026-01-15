@@ -40,6 +40,13 @@ namespace Amazon.SageMakerGeospatial.Model
         private string _resourceId;
 
         /// <summary>
+        /// Default constructor for InternalServerException
+        /// message.
+        /// </summary>
+        public InternalServerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServerException with the specified error
         /// message.
         /// </summary>

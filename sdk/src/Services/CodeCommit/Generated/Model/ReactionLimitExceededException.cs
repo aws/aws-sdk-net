@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ReactionLimitExceededException
+        /// message.
+        /// </summary>
+        public ReactionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReactionLimitExceededException with the specified error
         /// message.
         /// </summary>

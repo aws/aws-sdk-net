@@ -41,6 +41,13 @@ namespace Amazon.SecurityHub.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for InvalidInputException
+        /// message.
+        /// </summary>
+        public InvalidInputException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInputException with the specified error
         /// message.
         /// </summary>

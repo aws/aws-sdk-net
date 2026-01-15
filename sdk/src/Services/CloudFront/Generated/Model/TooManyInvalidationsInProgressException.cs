@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyInvalidationsInProgressException
+        /// message.
+        /// </summary>
+        public TooManyInvalidationsInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyInvalidationsInProgressException with the specified error
         /// message.
         /// </summary>

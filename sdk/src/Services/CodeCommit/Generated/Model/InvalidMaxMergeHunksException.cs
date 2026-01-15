@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMaxMergeHunksException
+        /// message.
+        /// </summary>
+        public InvalidMaxMergeHunksException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMaxMergeHunksException with the specified error
         /// message.
         /// </summary>

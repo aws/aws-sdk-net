@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryTriggerEventsListRequiredException
+        /// message.
+        /// </summary>
+        public RepositoryTriggerEventsListRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryTriggerEventsListRequiredException with the specified error
         /// message.
         /// </summary>

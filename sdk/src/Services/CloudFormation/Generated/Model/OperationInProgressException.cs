@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationInProgressException
+        /// message.
+        /// </summary>
+        public OperationInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationInProgressException with the specified error
         /// message.
         /// </summary>

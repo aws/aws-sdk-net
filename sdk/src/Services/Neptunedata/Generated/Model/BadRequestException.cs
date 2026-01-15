@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for BadRequestException
+        /// message.
+        /// </summary>
+        public BadRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BadRequestException with the specified error
         /// message.
         /// </summary>

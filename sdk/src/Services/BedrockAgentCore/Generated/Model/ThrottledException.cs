@@ -40,6 +40,13 @@ namespace Amazon.BedrockAgentCore.Model
     {
 
         /// <summary>
+        /// Default constructor for ThrottledException
+        /// message.
+        /// </summary>
+        public ThrottledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ThrottledException with the specified error
         /// message.
         /// </summary>

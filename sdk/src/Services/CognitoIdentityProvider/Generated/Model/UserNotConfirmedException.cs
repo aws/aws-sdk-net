@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UserNotConfirmedException
+        /// message.
+        /// </summary>
+        public UserNotConfirmedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserNotConfirmedException with the specified error
         /// message.
         /// </summary>

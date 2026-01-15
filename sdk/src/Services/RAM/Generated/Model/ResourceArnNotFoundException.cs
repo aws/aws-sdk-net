@@ -40,6 +40,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceArnNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceArnNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceArnNotFoundException with the specified error
         /// message.
         /// </summary>

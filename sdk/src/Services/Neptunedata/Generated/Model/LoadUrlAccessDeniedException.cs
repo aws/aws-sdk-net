@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for LoadUrlAccessDeniedException
+        /// message.
+        /// </summary>
+        public LoadUrlAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LoadUrlAccessDeniedException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyUniqueTargetGroupsPerLoadBalancerException
+        /// message.
+        /// </summary>
+        public TooManyUniqueTargetGroupsPerLoadBalancerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyUniqueTargetGroupsPerLoadBalancerException with the specified error
         /// message.
         /// </summary>

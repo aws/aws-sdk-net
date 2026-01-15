@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for EntitySizeLimitExceededException
+        /// message.
+        /// </summary>
+        public EntitySizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntitySizeLimitExceededException with the specified error
         /// message.
         /// </summary>

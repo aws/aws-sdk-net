@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TestFunctionFailedException
+        /// message.
+        /// </summary>
+        public TestFunctionFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TestFunctionFailedException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedInventorySchemaVersionException
+        /// message.
+        /// </summary>
+        public UnsupportedInventorySchemaVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedInventorySchemaVersionException with the specified error
         /// message.
         /// </summary>

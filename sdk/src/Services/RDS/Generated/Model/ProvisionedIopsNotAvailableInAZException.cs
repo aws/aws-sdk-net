@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for ProvisionedIopsNotAvailableInAZException
+        /// message.
+        /// </summary>
+        public ProvisionedIopsNotAvailableInAZException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ProvisionedIopsNotAvailableInAZException with the specified error
         /// message.
         /// </summary>

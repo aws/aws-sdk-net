@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for IamRoleMissingPermissionsException
+        /// message.
+        /// </summary>
+        public IamRoleMissingPermissionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IamRoleMissingPermissionsException with the specified error
         /// message.
         /// </summary>

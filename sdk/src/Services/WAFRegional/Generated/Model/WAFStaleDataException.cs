@@ -40,6 +40,13 @@ namespace Amazon.WAFRegional.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFStaleDataException
+        /// message.
+        /// </summary>
+        public WAFStaleDataException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFStaleDataException with the specified error
         /// message.
         /// </summary>

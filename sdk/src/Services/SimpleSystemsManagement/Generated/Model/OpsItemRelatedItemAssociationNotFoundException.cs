@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsItemRelatedItemAssociationNotFoundException
+        /// message.
+        /// </summary>
+        public OpsItemRelatedItemAssociationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsItemRelatedItemAssociationNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsKeyNotFoundException
+        /// message.
+        /// </summary>
+        public KmsKeyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsKeyNotFoundException with the specified error
         /// message.
         /// </summary>

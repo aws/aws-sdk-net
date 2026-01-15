@@ -42,6 +42,13 @@ namespace Amazon.Wickr.Model
         private List<ErrorDetail> _reasons = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
 
         /// <summary>
+        /// Default constructor for ValidationErrorException
+        /// message.
+        /// </summary>
+        public ValidationErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ValidationErrorException with the specified error
         /// message.
         /// </summary>

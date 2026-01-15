@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for DelegationSetInUseException
+        /// message.
+        /// </summary>
+        public DelegationSetInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DelegationSetInUseException with the specified error
         /// message.
         /// </summary>

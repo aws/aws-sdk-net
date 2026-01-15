@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceRegistrationFailureException
+        /// message.
+        /// </summary>
+        public ResourceRegistrationFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceRegistrationFailureException with the specified error
         /// message.
         /// </summary>

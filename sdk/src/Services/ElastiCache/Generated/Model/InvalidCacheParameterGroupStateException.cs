@@ -40,6 +40,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCacheParameterGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidCacheParameterGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCacheParameterGroupStateException with the specified error
         /// message.
         /// </summary>

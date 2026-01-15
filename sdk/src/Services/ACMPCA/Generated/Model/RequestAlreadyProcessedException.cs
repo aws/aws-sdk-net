@@ -39,6 +39,13 @@ namespace Amazon.ACMPCA.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestAlreadyProcessedException
+        /// message.
+        /// </summary>
+        public RequestAlreadyProcessedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestAlreadyProcessedException with the specified error
         /// message.
         /// </summary>

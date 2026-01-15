@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for RevisionNotCurrentException
+        /// message.
+        /// </summary>
+        public RevisionNotCurrentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RevisionNotCurrentException with the specified error
         /// message.
         /// </summary>

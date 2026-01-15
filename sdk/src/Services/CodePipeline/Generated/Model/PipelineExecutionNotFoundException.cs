@@ -40,6 +40,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for PipelineExecutionNotFoundException
+        /// message.
+        /// </summary>
+        public PipelineExecutionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PipelineExecutionNotFoundException with the specified error
         /// message.
         /// </summary>

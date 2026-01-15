@@ -48,6 +48,13 @@ namespace Amazon.CloudWatchLogs.Model
         private string _expectedSequenceToken;
 
         /// <summary>
+        /// Default constructor for InvalidSequenceTokenException
+        /// message.
+        /// </summary>
+        public InvalidSequenceTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSequenceTokenException with the specified error
         /// message.
         /// </summary>

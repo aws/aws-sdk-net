@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for ProvisionedConcurrencyConfigNotFoundException
+        /// message.
+        /// </summary>
+        public ProvisionedConcurrencyConfigNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ProvisionedConcurrencyConfigNotFoundException with the specified error
         /// message.
         /// </summary>

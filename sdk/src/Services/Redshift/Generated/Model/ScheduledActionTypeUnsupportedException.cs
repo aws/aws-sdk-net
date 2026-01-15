@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ScheduledActionTypeUnsupportedException
+        /// message.
+        /// </summary>
+        public ScheduledActionTypeUnsupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ScheduledActionTypeUnsupportedException with the specified error
         /// message.
         /// </summary>

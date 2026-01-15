@@ -53,6 +53,13 @@ namespace Amazon.S3.Model
     {
 
         /// <summary>
+        /// Default constructor for IdempotencyParameterMismatchException
+        /// message.
+        /// </summary>
+        public IdempotencyParameterMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IdempotencyParameterMismatchException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for DomainNotWhitelistedException
+        /// message.
+        /// </summary>
+        public DomainNotWhitelistedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DomainNotWhitelistedException with the specified error
         /// message.
         /// </summary>

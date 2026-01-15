@@ -39,6 +39,13 @@ namespace Amazon.DirectConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateTagKeysException
+        /// message.
+        /// </summary>
+        public DuplicateTagKeysException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateTagKeysException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Construct instance of AmazonCertificateManagerException
         /// </summary>
+        public AmazonCertificateManagerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCertificateManagerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCertificateManagerException(string message)
             : base(message)

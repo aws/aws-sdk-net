@@ -36,6 +36,14 @@ namespace Amazon.SecurityIR
         /// <summary>
         /// Construct instance of AmazonSecurityIRException
         /// </summary>
+        public AmazonSecurityIRException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSecurityIRException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSecurityIRException(string message)
             : base(message)

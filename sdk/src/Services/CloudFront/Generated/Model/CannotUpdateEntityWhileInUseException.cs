@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for CannotUpdateEntityWhileInUseException
+        /// message.
+        /// </summary>
+        public CannotUpdateEntityWhileInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotUpdateEntityWhileInUseException with the specified error
         /// message.
         /// </summary>

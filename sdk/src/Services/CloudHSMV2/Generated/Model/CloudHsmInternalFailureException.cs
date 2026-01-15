@@ -40,6 +40,13 @@ namespace Amazon.CloudHSMV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmInternalFailureException
+        /// message.
+        /// </summary>
+        public CloudHsmInternalFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmInternalFailureException with the specified error
         /// message.
         /// </summary>

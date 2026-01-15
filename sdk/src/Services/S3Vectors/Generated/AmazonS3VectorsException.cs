@@ -36,6 +36,14 @@ namespace Amazon.S3Vectors
         /// <summary>
         /// Construct instance of AmazonS3VectorsException
         /// </summary>
+        public AmazonS3VectorsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonS3VectorsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonS3VectorsException(string message)
             : base(message)

@@ -36,6 +36,14 @@ namespace Amazon.BedrockDataAutomationRuntime
         /// <summary>
         /// Construct instance of AmazonBedrockDataAutomationRuntimeException
         /// </summary>
+        public AmazonBedrockDataAutomationRuntimeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBedrockDataAutomationRuntimeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBedrockDataAutomationRuntimeException(string message)
             : base(message)

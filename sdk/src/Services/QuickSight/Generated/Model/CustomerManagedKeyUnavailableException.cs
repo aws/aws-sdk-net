@@ -40,6 +40,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomerManagedKeyUnavailableException
+        /// message.
+        /// </summary>
+        public CustomerManagedKeyUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomerManagedKeyUnavailableException with the specified error
         /// message.
         /// </summary>

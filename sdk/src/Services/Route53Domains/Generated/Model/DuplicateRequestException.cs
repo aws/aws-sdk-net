@@ -39,6 +39,13 @@ namespace Amazon.Route53Domains.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateRequestException
+        /// message.
+        /// </summary>
+        public DuplicateRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateRequestException with the specified error
         /// message.
         /// </summary>

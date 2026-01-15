@@ -41,6 +41,13 @@ namespace Amazon.SocialMessaging.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for ThrottledRequestException
+        /// message.
+        /// </summary>
+        public ThrottledRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ThrottledRequestException with the specified error
         /// message.
         /// </summary>

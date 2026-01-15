@@ -41,6 +41,13 @@ namespace Amazon.Shield.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for LimitsExceededException
+        /// message.
+        /// </summary>
+        public LimitsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LimitsExceededException with the specified error
         /// message.
         /// </summary>

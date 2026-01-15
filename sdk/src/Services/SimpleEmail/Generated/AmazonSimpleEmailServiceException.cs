@@ -36,6 +36,14 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Construct instance of AmazonSimpleEmailServiceException
         /// </summary>
+        public AmazonSimpleEmailServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSimpleEmailServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSimpleEmailServiceException(string message)
             : base(message)

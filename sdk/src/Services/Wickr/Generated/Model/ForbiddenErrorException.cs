@@ -41,6 +41,13 @@ namespace Amazon.Wickr.Model
     {
 
         /// <summary>
+        /// Default constructor for ForbiddenErrorException
+        /// message.
+        /// </summary>
+        public ForbiddenErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ForbiddenErrorException with the specified error
         /// message.
         /// </summary>

@@ -42,6 +42,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingVersionException
+        /// message.
+        /// </summary>
+        public MissingVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingVersionException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.IoTAnalytics
         /// <summary>
         /// Construct instance of AmazonIoTAnalyticsException
         /// </summary>
+        public AmazonIoTAnalyticsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTAnalyticsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTAnalyticsException(string message)
             : base(message)

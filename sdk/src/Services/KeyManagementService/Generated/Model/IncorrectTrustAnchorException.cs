@@ -48,6 +48,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for IncorrectTrustAnchorException
+        /// message.
+        /// </summary>
+        public IncorrectTrustAnchorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncorrectTrustAnchorException with the specified error
         /// message.
         /// </summary>

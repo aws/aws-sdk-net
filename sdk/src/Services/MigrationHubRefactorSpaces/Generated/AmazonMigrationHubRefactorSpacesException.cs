@@ -36,6 +36,14 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <summary>
         /// Construct instance of AmazonMigrationHubRefactorSpacesException
         /// </summary>
+        public AmazonMigrationHubRefactorSpacesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMigrationHubRefactorSpacesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMigrationHubRefactorSpacesException(string message)
             : base(message)

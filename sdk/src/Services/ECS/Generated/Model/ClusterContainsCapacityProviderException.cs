@@ -42,6 +42,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterContainsCapacityProviderException
+        /// message.
+        /// </summary>
+        public ClusterContainsCapacityProviderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterContainsCapacityProviderException with the specified error
         /// message.
         /// </summary>

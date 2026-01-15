@@ -40,6 +40,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateItemException
+        /// message.
+        /// </summary>
+        public DuplicateItemException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateItemException with the specified error
         /// message.
         /// </summary>

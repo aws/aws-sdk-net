@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for SchemaAlreadyExistsException
+        /// message.
+        /// </summary>
+        public SchemaAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SchemaAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Construct instance of AmazonDatabaseMigrationServiceException
         /// </summary>
+        public AmazonDatabaseMigrationServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDatabaseMigrationServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDatabaseMigrationServiceException(string message)
             : base(message)

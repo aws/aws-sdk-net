@@ -41,6 +41,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for KeySigningKeyInUseException
+        /// message.
+        /// </summary>
+        public KeySigningKeyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KeySigningKeyInUseException with the specified error
         /// message.
         /// </summary>

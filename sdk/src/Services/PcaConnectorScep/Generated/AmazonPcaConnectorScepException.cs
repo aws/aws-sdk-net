@@ -36,6 +36,14 @@ namespace Amazon.PcaConnectorScep
         /// <summary>
         /// Construct instance of AmazonPcaConnectorScepException
         /// </summary>
+        public AmazonPcaConnectorScepException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPcaConnectorScepException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPcaConnectorScepException(string message)
             : base(message)

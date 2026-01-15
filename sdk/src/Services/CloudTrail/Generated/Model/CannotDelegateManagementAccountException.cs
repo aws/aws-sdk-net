@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for CannotDelegateManagementAccountException
+        /// message.
+        /// </summary>
+        public CannotDelegateManagementAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotDelegateManagementAccountException with the specified error
         /// message.
         /// </summary>

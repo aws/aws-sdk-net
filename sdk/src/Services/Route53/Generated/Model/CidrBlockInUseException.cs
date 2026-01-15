@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for CidrBlockInUseException
+        /// message.
+        /// </summary>
+        public CidrBlockInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CidrBlockInUseException with the specified error
         /// message.
         /// </summary>

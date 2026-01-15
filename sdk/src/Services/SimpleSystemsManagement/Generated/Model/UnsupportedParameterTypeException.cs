@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedParameterTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedParameterTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedParameterTypeException with the specified error
         /// message.
         /// </summary>

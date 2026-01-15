@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for PullRequestCannotBeApprovedByAuthorException
+        /// message.
+        /// </summary>
+        public PullRequestCannotBeApprovedByAuthorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PullRequestCannotBeApprovedByAuthorException with the specified error
         /// message.
         /// </summary>

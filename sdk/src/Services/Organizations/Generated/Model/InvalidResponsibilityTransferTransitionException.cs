@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResponsibilityTransferTransitionException
+        /// message.
+        /// </summary>
+        public InvalidResponsibilityTransferTransitionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResponsibilityTransferTransitionException with the specified error
         /// message.
         /// </summary>

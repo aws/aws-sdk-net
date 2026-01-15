@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTagKeysListException
+        /// message.
+        /// </summary>
+        public InvalidTagKeysListException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTagKeysListException with the specified error
         /// message.
         /// </summary>

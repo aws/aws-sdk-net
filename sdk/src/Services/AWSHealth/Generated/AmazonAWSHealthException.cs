@@ -36,6 +36,14 @@ namespace Amazon.AWSHealth
         /// <summary>
         /// Construct instance of AmazonAWSHealthException
         /// </summary>
+        public AmazonAWSHealthException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAWSHealthException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAWSHealthException(string message)
             : base(message)

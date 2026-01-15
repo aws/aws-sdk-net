@@ -42,6 +42,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDateRangeException
+        /// message.
+        /// </summary>
+        public InvalidDateRangeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDateRangeException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodeConnections.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedProviderTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedProviderTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedProviderTypeException with the specified error
         /// message.
         /// </summary>

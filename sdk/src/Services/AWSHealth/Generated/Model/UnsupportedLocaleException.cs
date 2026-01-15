@@ -39,6 +39,13 @@ namespace Amazon.AWSHealth.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedLocaleException
+        /// message.
+        /// </summary>
+        public UnsupportedLocaleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedLocaleException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessPointAlreadyOwnedByYouException
+        /// message.
+        /// </summary>
+        public AccessPointAlreadyOwnedByYouException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessPointAlreadyOwnedByYouException with the specified error
         /// message.
         /// </summary>

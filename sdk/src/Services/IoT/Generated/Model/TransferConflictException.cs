@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for TransferConflictException
+        /// message.
+        /// </summary>
+        public TransferConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TransferConflictException with the specified error
         /// message.
         /// </summary>

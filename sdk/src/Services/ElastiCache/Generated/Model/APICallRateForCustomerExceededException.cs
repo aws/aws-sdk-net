@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for APICallRateForCustomerExceededException
+        /// message.
+        /// </summary>
+        public APICallRateForCustomerExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new APICallRateForCustomerExceededException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for InvalidNextTokenException
+        /// message.
+        /// </summary>
+        public InvalidNextTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNextTokenException with the specified error
         /// message.
         /// </summary>

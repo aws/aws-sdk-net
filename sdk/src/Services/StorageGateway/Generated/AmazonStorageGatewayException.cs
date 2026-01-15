@@ -36,6 +36,14 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Construct instance of AmazonStorageGatewayException
         /// </summary>
+        public AmazonStorageGatewayException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonStorageGatewayException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonStorageGatewayException(string message)
             : base(message)

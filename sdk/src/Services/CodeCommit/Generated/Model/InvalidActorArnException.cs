@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidActorArnException
+        /// message.
+        /// </summary>
+        public InvalidActorArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidActorArnException with the specified error
         /// message.
         /// </summary>

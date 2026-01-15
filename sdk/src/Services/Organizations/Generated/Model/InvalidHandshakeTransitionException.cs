@@ -41,6 +41,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidHandshakeTransitionException
+        /// message.
+        /// </summary>
+        public InvalidHandshakeTransitionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidHandshakeTransitionException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.SSMContacts
         /// <summary>
         /// Construct instance of AmazonSSMContactsException
         /// </summary>
+        public AmazonSSMContactsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSSMContactsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSSMContactsException(string message)
             : base(message)

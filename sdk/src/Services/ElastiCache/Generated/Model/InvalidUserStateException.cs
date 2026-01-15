@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidUserStateException
+        /// message.
+        /// </summary>
+        public InvalidUserStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidUserStateException with the specified error
         /// message.
         /// </summary>

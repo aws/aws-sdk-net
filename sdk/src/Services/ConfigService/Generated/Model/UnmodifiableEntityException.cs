@@ -64,6 +64,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for UnmodifiableEntityException
+        /// message.
+        /// </summary>
+        public UnmodifiableEntityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnmodifiableEntityException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ParentCommitIdOutdatedException
+        /// message.
+        /// </summary>
+        public ParentCommitIdOutdatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParentCommitIdOutdatedException with the specified error
         /// message.
         /// </summary>

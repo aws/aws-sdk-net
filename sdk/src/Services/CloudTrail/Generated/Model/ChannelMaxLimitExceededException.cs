@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for ChannelMaxLimitExceededException
+        /// message.
+        /// </summary>
+        public ChannelMaxLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChannelMaxLimitExceededException with the specified error
         /// message.
         /// </summary>

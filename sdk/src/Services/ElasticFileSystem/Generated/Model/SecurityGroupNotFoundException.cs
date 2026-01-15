@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for SecurityGroupNotFoundException
+        /// message.
+        /// </summary>
+        public SecurityGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SecurityGroupNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomDBEngineVersionQuotaExceededException
+        /// message.
+        /// </summary>
+        public CustomDBEngineVersionQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomDBEngineVersionQuotaExceededException with the specified error
         /// message.
         /// </summary>

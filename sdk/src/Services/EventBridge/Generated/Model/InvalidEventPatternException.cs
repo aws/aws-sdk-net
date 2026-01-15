@@ -39,6 +39,13 @@ namespace Amazon.EventBridge.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEventPatternException
+        /// message.
+        /// </summary>
+        public InvalidEventPatternException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEventPatternException with the specified error
         /// message.
         /// </summary>

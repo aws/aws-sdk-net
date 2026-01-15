@@ -39,6 +39,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for EmptyUploadException
+        /// message.
+        /// </summary>
+        public EmptyUploadException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EmptyUploadException with the specified error
         /// message.
         /// </summary>

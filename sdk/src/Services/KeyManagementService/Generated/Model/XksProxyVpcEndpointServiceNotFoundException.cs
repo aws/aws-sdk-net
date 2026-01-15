@@ -42,6 +42,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksProxyVpcEndpointServiceNotFoundException
+        /// message.
+        /// </summary>
+        public XksProxyVpcEndpointServiceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksProxyVpcEndpointServiceNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateSSHPublicKeyException
+        /// message.
+        /// </summary>
+        public DuplicateSSHPublicKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateSSHPublicKeyException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <summary>
         /// Construct instance of AmazonKinesisVideoArchivedMediaException
         /// </summary>
+        public AmazonKinesisVideoArchivedMediaException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKinesisVideoArchivedMediaException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKinesisVideoArchivedMediaException(string message)
             : base(message)

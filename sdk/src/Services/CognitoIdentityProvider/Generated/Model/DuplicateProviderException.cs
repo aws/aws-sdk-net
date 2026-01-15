@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateProviderException
+        /// message.
+        /// </summary>
+        public DuplicateProviderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateProviderException with the specified error
         /// message.
         /// </summary>

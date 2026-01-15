@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchCloudFrontOriginAccessIdentityException
+        /// message.
+        /// </summary>
+        public NoSuchCloudFrontOriginAccessIdentityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchCloudFrontOriginAccessIdentityException with the specified error
         /// message.
         /// </summary>

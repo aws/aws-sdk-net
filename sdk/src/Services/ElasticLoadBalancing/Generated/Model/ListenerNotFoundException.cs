@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for ListenerNotFoundException
+        /// message.
+        /// </summary>
+        public ListenerNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ListenerNotFoundException with the specified error
         /// message.
         /// </summary>

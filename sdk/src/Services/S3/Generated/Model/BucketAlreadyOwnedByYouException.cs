@@ -43,6 +43,13 @@ namespace Amazon.S3.Model
     {
 
         /// <summary>
+        /// Default constructor for BucketAlreadyOwnedByYouException
+        /// message.
+        /// </summary>
+        public BucketAlreadyOwnedByYouException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BucketAlreadyOwnedByYouException with the specified error
         /// message.
         /// </summary>

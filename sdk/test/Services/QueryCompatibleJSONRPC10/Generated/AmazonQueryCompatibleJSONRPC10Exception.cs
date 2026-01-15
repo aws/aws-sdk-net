@@ -36,6 +36,14 @@ namespace Amazon.QueryCompatibleJSONRPC10
         /// <summary>
         /// Construct instance of AmazonQueryCompatibleJSONRPC10Exception
         /// </summary>
+        public AmazonQueryCompatibleJSONRPC10Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonQueryCompatibleJSONRPC10Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonQueryCompatibleJSONRPC10Exception(string message)
             : base(message)

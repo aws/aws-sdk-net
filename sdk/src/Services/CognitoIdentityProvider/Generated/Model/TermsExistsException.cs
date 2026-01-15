@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for TermsExistsException
+        /// message.
+        /// </summary>
+        public TermsExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TermsExistsException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterRoleAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBClusterRoleAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterRoleAlreadyExistsException with the specified error
         /// message.
         /// </summary>

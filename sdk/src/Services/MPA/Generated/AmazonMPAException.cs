@@ -36,6 +36,14 @@ namespace Amazon.MPA
         /// <summary>
         /// Construct instance of AmazonMPAException
         /// </summary>
+        public AmazonMPAException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMPAException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMPAException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for MaterializedViewRefreshTaskNotRunningException
+        /// message.
+        /// </summary>
+        public MaterializedViewRefreshTaskNotRunningException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaterializedViewRefreshTaskNotRunningException with the specified error
         /// message.
         /// </summary>

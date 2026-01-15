@@ -40,6 +40,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for DependencyThrottleException
+        /// message.
+        /// </summary>
+        public DependencyThrottleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependencyThrottleException with the specified error
         /// message.
         /// </summary>

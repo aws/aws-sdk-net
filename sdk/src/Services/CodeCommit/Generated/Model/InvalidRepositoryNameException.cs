@@ -47,6 +47,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRepositoryNameException
+        /// message.
+        /// </summary>
+        public InvalidRepositoryNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRepositoryNameException with the specified error
         /// message.
         /// </summary>

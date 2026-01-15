@@ -41,6 +41,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFOptimisticLockException
+        /// message.
+        /// </summary>
+        public WAFOptimisticLockException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFOptimisticLockException with the specified error
         /// message.
         /// </summary>

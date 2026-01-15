@@ -40,6 +40,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLexiconException
+        /// message.
+        /// </summary>
+        public InvalidLexiconException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLexiconException with the specified error
         /// message.
         /// </summary>

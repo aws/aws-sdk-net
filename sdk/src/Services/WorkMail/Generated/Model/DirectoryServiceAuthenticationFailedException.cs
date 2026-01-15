@@ -39,6 +39,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryServiceAuthenticationFailedException
+        /// message.
+        /// </summary>
+        public DirectoryServiceAuthenticationFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryServiceAuthenticationFailedException with the specified error
         /// message.
         /// </summary>

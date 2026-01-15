@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAutoScalingGroupException
+        /// message.
+        /// </summary>
+        public InvalidAutoScalingGroupException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAutoScalingGroupException with the specified error
         /// message.
         /// </summary>

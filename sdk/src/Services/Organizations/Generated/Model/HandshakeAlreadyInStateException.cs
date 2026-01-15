@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for HandshakeAlreadyInStateException
+        /// message.
+        /// </summary>
+        public HandshakeAlreadyInStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HandshakeAlreadyInStateException with the specified error
         /// message.
         /// </summary>

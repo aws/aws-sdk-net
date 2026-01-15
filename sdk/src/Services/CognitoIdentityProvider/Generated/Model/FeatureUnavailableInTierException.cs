@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for FeatureUnavailableInTierException
+        /// message.
+        /// </summary>
+        public FeatureUnavailableInTierException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FeatureUnavailableInTierException with the specified error
         /// message.
         /// </summary>

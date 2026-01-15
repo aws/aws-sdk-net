@@ -279,6 +279,13 @@ namespace Amazon.DynamoDBv2.Model
         private List<CancellationReason> _cancellationReasons = AWSConfigs.InitializeCollections ? new List<CancellationReason>() : null;
 
         /// <summary>
+        /// Default constructor for TransactionCanceledException
+        /// message.
+        /// </summary>
+        public TransactionCanceledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TransactionCanceledException with the specified error
         /// message.
         /// </summary>

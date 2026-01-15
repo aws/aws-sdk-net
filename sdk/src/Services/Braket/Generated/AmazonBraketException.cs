@@ -36,6 +36,14 @@ namespace Amazon.Braket
         /// <summary>
         /// Construct instance of AmazonBraketException
         /// </summary>
+        public AmazonBraketException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBraketException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBraketException(string message)
             : base(message)

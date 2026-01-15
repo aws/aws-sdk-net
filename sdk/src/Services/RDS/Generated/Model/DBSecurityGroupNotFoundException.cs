@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSecurityGroupNotFoundException
+        /// message.
+        /// </summary>
+        public DBSecurityGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSecurityGroupNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for TagLimitExceededException
+        /// message.
+        /// </summary>
+        public TagLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagLimitExceededException with the specified error
         /// message.
         /// </summary>

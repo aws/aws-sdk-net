@@ -39,6 +39,13 @@ namespace Amazon.IoTTwinMaker.Model
     {
 
         /// <summary>
+        /// Default constructor for ConnectorTimeoutException
+        /// message.
+        /// </summary>
+        public ConnectorTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConnectorTimeoutException with the specified error
         /// message.
         /// </summary>

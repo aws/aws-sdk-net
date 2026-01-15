@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidExpressionException
+        /// message.
+        /// </summary>
+        public InvalidExpressionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidExpressionException with the specified error
         /// message.
         /// </summary>

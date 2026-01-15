@@ -40,6 +40,13 @@ namespace Amazon.FSx.Model
         private string _backupId;
 
         /// <summary>
+        /// Default constructor for SourceBackupUnavailableException
+        /// message.
+        /// </summary>
+        public SourceBackupUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SourceBackupUnavailableException with the specified error
         /// message.
         /// </summary>

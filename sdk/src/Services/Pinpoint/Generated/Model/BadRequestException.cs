@@ -40,6 +40,13 @@ namespace Amazon.Pinpoint.Model
         private string _requestID;
 
         /// <summary>
+        /// Default constructor for BadRequestException
+        /// message.
+        /// </summary>
+        public BadRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BadRequestException with the specified error
         /// message.
         /// </summary>

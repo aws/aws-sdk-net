@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingFileSystemConfigurationException
+        /// message.
+        /// </summary>
+        public MissingFileSystemConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingFileSystemConfigurationException with the specified error
         /// message.
         /// </summary>

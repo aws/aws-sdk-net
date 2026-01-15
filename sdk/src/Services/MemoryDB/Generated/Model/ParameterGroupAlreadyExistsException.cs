@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ParameterGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

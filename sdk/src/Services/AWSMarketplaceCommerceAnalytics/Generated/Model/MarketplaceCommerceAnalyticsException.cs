@@ -39,6 +39,13 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
     {
 
         /// <summary>
+        /// Default constructor for MarketplaceCommerceAnalyticsException
+        /// message.
+        /// </summary>
+        public MarketplaceCommerceAnalyticsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MarketplaceCommerceAnalyticsException with the specified error
         /// message.
         /// </summary>

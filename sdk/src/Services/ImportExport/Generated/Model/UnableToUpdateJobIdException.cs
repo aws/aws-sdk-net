@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for UnableToUpdateJobIdException
+        /// message.
+        /// </summary>
+        public UnableToUpdateJobIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnableToUpdateJobIdException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for NoPublishedVersionException
+        /// message.
+        /// </summary>
+        public NoPublishedVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoPublishedVersionException with the specified error
         /// message.
         /// </summary>

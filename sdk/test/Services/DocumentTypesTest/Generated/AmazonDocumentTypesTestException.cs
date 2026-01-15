@@ -36,6 +36,14 @@ namespace Amazon.DocumentTypesTest
         /// <summary>
         /// Construct instance of AmazonDocumentTypesTestException
         /// </summary>
+        public AmazonDocumentTypesTestException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDocumentTypesTestException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDocumentTypesTestException(string message)
             : base(message)

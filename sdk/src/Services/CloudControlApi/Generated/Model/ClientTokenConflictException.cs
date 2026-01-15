@@ -45,6 +45,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for ClientTokenConflictException
+        /// message.
+        /// </summary>
+        public ClientTokenConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClientTokenConflictException with the specified error
         /// message.
         /// </summary>

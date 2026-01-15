@@ -39,6 +39,13 @@ namespace Amazon.CloudWatchRUM.Model
     {
 
         /// <summary>
+        /// Default constructor for MalformedPolicyDocumentException
+        /// message.
+        /// </summary>
+        public MalformedPolicyDocumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedPolicyDocumentException with the specified error
         /// message.
         /// </summary>

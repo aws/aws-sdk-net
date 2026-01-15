@@ -40,6 +40,13 @@ namespace Amazon.CloudHSMV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmAccessDeniedException
+        /// message.
+        /// </summary>
+        public CloudHsmAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmAccessDeniedException with the specified error
         /// message.
         /// </summary>

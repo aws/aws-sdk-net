@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientCapabilitiesException
+        /// message.
+        /// </summary>
+        public InsufficientCapabilitiesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientCapabilitiesException with the specified error
         /// message.
         /// </summary>

@@ -43,6 +43,13 @@ namespace Amazon.Neptunedata.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for ConstraintViolationException
+        /// message.
+        /// </summary>
+        public ConstraintViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConstraintViolationException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CannotModifyApprovalRuleFromTemplateException
+        /// message.
+        /// </summary>
+        public CannotModifyApprovalRuleFromTemplateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotModifyApprovalRuleFromTemplateException with the specified error
         /// message.
         /// </summary>

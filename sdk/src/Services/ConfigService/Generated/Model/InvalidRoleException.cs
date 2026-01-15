@@ -40,6 +40,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRoleException
+        /// message.
+        /// </summary>
+        public InvalidRoleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRoleException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.IoTFleetWise.Model
         private List<InvalidSignal> _invalidSignals = AWSConfigs.InitializeCollections ? new List<InvalidSignal>() : null;
 
         /// <summary>
+        /// Default constructor for InvalidSignalsException
+        /// message.
+        /// </summary>
+        public InvalidSignalsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSignalsException with the specified error
         /// message.
         /// </summary>

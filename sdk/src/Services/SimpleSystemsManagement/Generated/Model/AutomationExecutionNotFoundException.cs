@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AutomationExecutionNotFoundException
+        /// message.
+        /// </summary>
+        public AutomationExecutionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AutomationExecutionNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.LaunchWizard
         /// <summary>
         /// Construct instance of AmazonLaunchWizardException
         /// </summary>
+        public AmazonLaunchWizardException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLaunchWizardException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLaunchWizardException(string message)
             : base(message)

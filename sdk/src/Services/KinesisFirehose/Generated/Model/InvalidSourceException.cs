@@ -41,6 +41,13 @@ namespace Amazon.KinesisFirehose.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for InvalidSourceException
+        /// message.
+        /// </summary>
+        public InvalidSourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSourceException with the specified error
         /// message.
         /// </summary>

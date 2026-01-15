@@ -36,6 +36,14 @@ namespace Amazon.Budgets
         /// <summary>
         /// Construct instance of AmazonBudgetsException
         /// </summary>
+        public AmazonBudgetsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBudgetsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBudgetsException(string message)
             : base(message)

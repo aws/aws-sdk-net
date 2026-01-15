@@ -39,6 +39,13 @@ namespace Amazon.CloudWatch.Model
     {
 
         /// <summary>
+        /// Default constructor for DashboardNotFoundErrorException
+        /// message.
+        /// </summary>
+        public DashboardNotFoundErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DashboardNotFoundErrorException with the specified error
         /// message.
         /// </summary>

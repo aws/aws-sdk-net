@@ -45,6 +45,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyCustomHeadersInResponseHeadersPolicyException
+        /// message.
+        /// </summary>
+        public TooManyCustomHeadersInResponseHeadersPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyCustomHeadersInResponseHeadersPolicyException with the specified error
         /// message.
         /// </summary>

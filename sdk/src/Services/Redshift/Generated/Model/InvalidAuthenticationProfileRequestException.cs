@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAuthenticationProfileRequestException
+        /// message.
+        /// </summary>
+        public InvalidAuthenticationProfileRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAuthenticationProfileRequestException with the specified error
         /// message.
         /// </summary>

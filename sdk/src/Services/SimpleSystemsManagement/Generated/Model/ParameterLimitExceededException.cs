@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterLimitExceededException
+        /// message.
+        /// </summary>
+        public ParameterLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterLimitExceededException with the specified error
         /// message.
         /// </summary>

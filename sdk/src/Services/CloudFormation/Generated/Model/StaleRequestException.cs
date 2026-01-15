@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for StaleRequestException
+        /// message.
+        /// </summary>
+        public StaleRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StaleRequestException with the specified error
         /// message.
         /// </summary>

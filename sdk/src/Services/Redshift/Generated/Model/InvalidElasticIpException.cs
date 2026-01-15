@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidElasticIpException
+        /// message.
+        /// </summary>
+        public InvalidElasticIpException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidElasticIpException with the specified error
         /// message.
         /// </summary>

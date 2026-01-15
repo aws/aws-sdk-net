@@ -36,6 +36,14 @@ namespace Amazon.MediaPackageVod
         /// <summary>
         /// Construct instance of AmazonMediaPackageVodException
         /// </summary>
+        public AmazonMediaPackageVodException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMediaPackageVodException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMediaPackageVodException(string message)
             : base(message)

@@ -44,6 +44,13 @@ namespace Amazon.SimpleEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountSendingPausedException
+        /// message.
+        /// </summary>
+        public AccountSendingPausedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountSendingPausedException with the specified error
         /// message.
         /// </summary>

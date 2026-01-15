@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for BackupPolicyNotFoundException
+        /// message.
+        /// </summary>
+        public BackupPolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BackupPolicyNotFoundException with the specified error
         /// message.
         /// </summary>

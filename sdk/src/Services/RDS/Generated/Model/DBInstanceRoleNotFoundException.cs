@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBInstanceRoleNotFoundException
+        /// message.
+        /// </summary>
+        public DBInstanceRoleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBInstanceRoleNotFoundException with the specified error
         /// message.
         /// </summary>

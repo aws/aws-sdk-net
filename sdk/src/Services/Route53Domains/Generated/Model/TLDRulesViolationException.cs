@@ -39,6 +39,13 @@ namespace Amazon.Route53Domains.Model
     {
 
         /// <summary>
+        /// Default constructor for TLDRulesViolationException
+        /// message.
+        /// </summary>
+        public TLDRulesViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TLDRulesViolationException with the specified error
         /// message.
         /// </summary>

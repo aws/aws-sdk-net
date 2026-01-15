@@ -39,6 +39,13 @@ namespace Amazon.AWSSupport.Model
     {
 
         /// <summary>
+        /// Default constructor for CaseIdNotFoundException
+        /// message.
+        /// </summary>
+        public CaseIdNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CaseIdNotFoundException with the specified error
         /// message.
         /// </summary>

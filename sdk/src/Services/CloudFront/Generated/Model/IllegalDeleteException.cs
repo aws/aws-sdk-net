@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalDeleteException
+        /// message.
+        /// </summary>
+        public IllegalDeleteException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalDeleteException with the specified error
         /// message.
         /// </summary>

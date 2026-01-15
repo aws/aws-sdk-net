@@ -41,6 +41,13 @@ namespace Amazon.CloudDirectory.Model
         private BatchWriteExceptionType _type;
 
         /// <summary>
+        /// Default constructor for BatchWriteException
+        /// message.
+        /// </summary>
+        public BatchWriteException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchWriteException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for UploadNotFoundException
+        /// message.
+        /// </summary>
+        public UploadNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UploadNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Account.Model
         private string _errorType;
 
         /// <summary>
+        /// Default constructor for ResourceUnavailableException
+        /// message.
+        /// </summary>
+        public ResourceUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceUnavailableException with the specified error
         /// message.
         /// </summary>

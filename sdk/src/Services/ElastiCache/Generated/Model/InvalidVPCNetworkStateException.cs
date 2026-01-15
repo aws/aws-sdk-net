@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidVPCNetworkStateException
+        /// message.
+        /// </summary>
+        public InvalidVPCNetworkStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidVPCNetworkStateException with the specified error
         /// message.
         /// </summary>

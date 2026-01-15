@@ -41,6 +41,13 @@ namespace Amazon.Route53Domains.Model
     {
 
         /// <summary>
+        /// Default constructor for DnssecLimitExceededException
+        /// message.
+        /// </summary>
+        public DnssecLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DnssecLimitExceededException with the specified error
         /// message.
         /// </summary>

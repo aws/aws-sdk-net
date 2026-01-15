@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPathException
+        /// message.
+        /// </summary>
+        public InvalidPathException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPathException with the specified error
         /// message.
         /// </summary>

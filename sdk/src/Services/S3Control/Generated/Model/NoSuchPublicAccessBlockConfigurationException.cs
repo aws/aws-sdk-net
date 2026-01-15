@@ -40,6 +40,13 @@ namespace Amazon.S3Control.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchPublicAccessBlockConfigurationException
+        /// message.
+        /// </summary>
+        public NoSuchPublicAccessBlockConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchPublicAccessBlockConfigurationException with the specified error
         /// message.
         /// </summary>

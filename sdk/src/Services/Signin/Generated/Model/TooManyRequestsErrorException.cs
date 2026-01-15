@@ -57,6 +57,13 @@ namespace Amazon.Signin.Model
         private OAuth2ErrorCode _error;
 
         /// <summary>
+        /// Default constructor for TooManyRequestsErrorException
+        /// message.
+        /// </summary>
+        public TooManyRequestsErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRequestsErrorException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.ApplicationDiscoveryService.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationNotPermittedException
+        /// message.
+        /// </summary>
+        public OperationNotPermittedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationNotPermittedException with the specified error
         /// message.
         /// </summary>

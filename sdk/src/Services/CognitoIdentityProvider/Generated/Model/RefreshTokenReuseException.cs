@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for RefreshTokenReuseException
+        /// message.
+        /// </summary>
+        public RefreshTokenReuseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RefreshTokenReuseException with the specified error
         /// message.
         /// </summary>

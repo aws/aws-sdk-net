@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for HandshakeNotFoundException
+        /// message.
+        /// </summary>
+        public HandshakeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HandshakeNotFoundException with the specified error
         /// message.
         /// </summary>

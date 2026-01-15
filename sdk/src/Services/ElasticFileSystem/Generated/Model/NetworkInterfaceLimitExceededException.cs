@@ -43,6 +43,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for NetworkInterfaceLimitExceededException
+        /// message.
+        /// </summary>
+        public NetworkInterfaceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NetworkInterfaceLimitExceededException with the specified error
         /// message.
         /// </summary>

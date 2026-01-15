@@ -40,6 +40,13 @@ namespace Amazon.AutoScaling.Model
     {
 
         /// <summary>
+        /// Default constructor for IdempotentParameterMismatchErrorException
+        /// message.
+        /// </summary>
+        public IdempotentParameterMismatchErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IdempotentParameterMismatchErrorException with the specified error
         /// message.
         /// </summary>

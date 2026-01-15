@@ -36,6 +36,14 @@ namespace Amazon.Connect
         /// <summary>
         /// Construct instance of AmazonConnectException
         /// </summary>
+        public AmazonConnectException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonConnectException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonConnectException(string message)
             : base(message)

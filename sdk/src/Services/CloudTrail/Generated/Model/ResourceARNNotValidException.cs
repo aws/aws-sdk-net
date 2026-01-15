@@ -56,6 +56,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceARNNotValidException
+        /// message.
+        /// </summary>
+        public ResourceARNNotValidException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceARNNotValidException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for PasswordResetRequiredException
+        /// message.
+        /// </summary>
+        public PasswordResetRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PasswordResetRequiredException with the specified error
         /// message.
         /// </summary>

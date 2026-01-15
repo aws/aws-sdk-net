@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for StorageLimitWillExceedException
+        /// message.
+        /// </summary>
+        public StorageLimitWillExceedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StorageLimitWillExceedException with the specified error
         /// message.
         /// </summary>

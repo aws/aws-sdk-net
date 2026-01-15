@@ -40,6 +40,13 @@ namespace Amazon.GroundStation.Model
         private string _parameterName;
 
         /// <summary>
+        /// Default constructor for ResourceLimitExceededException
+        /// message.
+        /// </summary>
+        public ResourceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceLimitExceededException with the specified error
         /// message.
         /// </summary>

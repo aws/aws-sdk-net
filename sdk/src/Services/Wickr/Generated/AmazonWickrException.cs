@@ -36,6 +36,14 @@ namespace Amazon.Wickr
         /// <summary>
         /// Construct instance of AmazonWickrException
         /// </summary>
+        public AmazonWickrException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWickrException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWickrException(string message)
             : base(message)

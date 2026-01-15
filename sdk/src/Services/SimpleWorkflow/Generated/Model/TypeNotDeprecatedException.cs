@@ -39,6 +39,13 @@ namespace Amazon.SimpleWorkflow.Model
     {
 
         /// <summary>
+        /// Default constructor for TypeNotDeprecatedException
+        /// message.
+        /// </summary>
+        public TypeNotDeprecatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TypeNotDeprecatedException with the specified error
         /// message.
         /// </summary>

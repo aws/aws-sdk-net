@@ -36,6 +36,14 @@ namespace Amazon.Transfer
         /// <summary>
         /// Construct instance of AmazonTransferException
         /// </summary>
+        public AmazonTransferException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTransferException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTransferException(string message)
             : base(message)

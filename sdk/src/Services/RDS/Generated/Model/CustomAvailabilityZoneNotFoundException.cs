@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomAvailabilityZoneNotFoundException
+        /// message.
+        /// </summary>
+        public CustomAvailabilityZoneNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomAvailabilityZoneNotFoundException with the specified error
         /// message.
         /// </summary>

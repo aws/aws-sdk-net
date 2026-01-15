@@ -39,6 +39,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidProductCodeException
+        /// message.
+        /// </summary>
+        public InvalidProductCodeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidProductCodeException with the specified error
         /// message.
         /// </summary>

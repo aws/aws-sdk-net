@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InstanceQuotaExceededException
+        /// message.
+        /// </summary>
+        public InstanceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InstanceQuotaExceededException with the specified error
         /// message.
         /// </summary>

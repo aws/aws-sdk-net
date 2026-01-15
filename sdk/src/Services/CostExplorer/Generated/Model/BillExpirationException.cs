@@ -39,6 +39,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for BillExpirationException
+        /// message.
+        /// </summary>
+        public BillExpirationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BillExpirationException with the specified error
         /// message.
         /// </summary>

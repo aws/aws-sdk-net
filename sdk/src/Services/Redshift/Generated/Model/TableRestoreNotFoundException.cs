@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for TableRestoreNotFoundException
+        /// message.
+        /// </summary>
+        public TableRestoreNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TableRestoreNotFoundException with the specified error
         /// message.
         /// </summary>

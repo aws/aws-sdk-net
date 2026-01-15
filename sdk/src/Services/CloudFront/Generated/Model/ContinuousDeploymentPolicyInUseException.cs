@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for ContinuousDeploymentPolicyInUseException
+        /// message.
+        /// </summary>
+        public ContinuousDeploymentPolicyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ContinuousDeploymentPolicyInUseException with the specified error
         /// message.
         /// </summary>

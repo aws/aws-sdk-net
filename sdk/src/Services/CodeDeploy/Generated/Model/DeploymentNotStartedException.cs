@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentNotStartedException
+        /// message.
+        /// </summary>
+        public DeploymentNotStartedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentNotStartedException with the specified error
         /// message.
         /// </summary>

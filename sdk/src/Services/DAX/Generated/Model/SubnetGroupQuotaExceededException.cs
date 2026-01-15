@@ -40,6 +40,13 @@ namespace Amazon.DAX.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public SubnetGroupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetGroupQuotaExceededException with the specified error
         /// message.
         /// </summary>

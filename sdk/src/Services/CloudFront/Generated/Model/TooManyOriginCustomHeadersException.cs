@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyOriginCustomHeadersException
+        /// message.
+        /// </summary>
+        public TooManyOriginCustomHeadersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyOriginCustomHeadersException with the specified error
         /// message.
         /// </summary>

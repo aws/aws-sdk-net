@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for EncryptionKeyDisabledException
+        /// message.
+        /// </summary>
+        public EncryptionKeyDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EncryptionKeyDisabledException with the specified error
         /// message.
         /// </summary>

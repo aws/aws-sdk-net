@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoAvailableDeliveryChannelException
+        /// message.
+        /// </summary>
+        public NoAvailableDeliveryChannelException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoAvailableDeliveryChannelException with the specified error
         /// message.
         /// </summary>

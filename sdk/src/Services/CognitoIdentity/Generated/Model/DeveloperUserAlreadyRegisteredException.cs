@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentity.Model
     {
 
         /// <summary>
+        /// Default constructor for DeveloperUserAlreadyRegisteredException
+        /// message.
+        /// </summary>
+        public DeveloperUserAlreadyRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeveloperUserAlreadyRegisteredException with the specified error
         /// message.
         /// </summary>

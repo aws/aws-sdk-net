@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourcePolicyNotFoundException
+        /// message.
+        /// </summary>
+        public ResourcePolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourcePolicyNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.S3.Model
     {
 
         /// <summary>
+        /// Default constructor for ObjectNotInActiveTierErrorException
+        /// message.
+        /// </summary>
+        public ObjectNotInActiveTierErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ObjectNotInActiveTierErrorException with the specified error
         /// message.
         /// </summary>

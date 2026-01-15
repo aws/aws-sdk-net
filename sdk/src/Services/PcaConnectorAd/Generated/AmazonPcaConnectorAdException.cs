@@ -36,6 +36,14 @@ namespace Amazon.PcaConnectorAd
         /// <summary>
         /// Construct instance of AmazonPcaConnectorAdException
         /// </summary>
+        public AmazonPcaConnectorAdException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPcaConnectorAdException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPcaConnectorAdException(string message)
             : base(message)

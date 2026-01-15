@@ -39,6 +39,13 @@ namespace Amazon.QueryCompatibleRpcV2Protocol.Model
     {
 
         /// <summary>
+        /// Default constructor for NoCustomCodeErrorException
+        /// message.
+        /// </summary>
+        public NoCustomCodeErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoCustomCodeErrorException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for LifecycleEventAlreadyCompletedException
+        /// message.
+        /// </summary>
+        public LifecycleEventAlreadyCompletedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LifecycleEventAlreadyCompletedException with the specified error
         /// message.
         /// </summary>

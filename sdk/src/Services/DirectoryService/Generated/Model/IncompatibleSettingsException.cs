@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatibleSettingsException
+        /// message.
+        /// </summary>
+        public IncompatibleSettingsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleSettingsException with the specified error
         /// message.
         /// </summary>

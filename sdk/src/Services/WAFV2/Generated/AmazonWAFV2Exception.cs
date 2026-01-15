@@ -36,6 +36,14 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Construct instance of AmazonWAFV2Exception
         /// </summary>
+        public AmazonWAFV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWAFV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWAFV2Exception(string message)
             : base(message)

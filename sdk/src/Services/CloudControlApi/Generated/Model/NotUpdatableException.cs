@@ -40,6 +40,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for NotUpdatableException
+        /// message.
+        /// </summary>
+        public NotUpdatableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotUpdatableException with the specified error
         /// message.
         /// </summary>

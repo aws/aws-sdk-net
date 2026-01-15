@@ -39,6 +39,13 @@ namespace Amazon.MigrationHub.Model
     {
 
         /// <summary>
+        /// Default constructor for HomeRegionNotSetException
+        /// message.
+        /// </summary>
+        public HomeRegionNotSetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HomeRegionNotSetException with the specified error
         /// message.
         /// </summary>

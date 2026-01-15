@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for NoFreeAddressesInSubnetException
+        /// message.
+        /// </summary>
+        public NoFreeAddressesInSubnetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoFreeAddressesInSubnetException with the specified error
         /// message.
         /// </summary>

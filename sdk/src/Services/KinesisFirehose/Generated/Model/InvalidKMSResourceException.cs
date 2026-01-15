@@ -43,6 +43,13 @@ namespace Amazon.KinesisFirehose.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for InvalidKMSResourceException
+        /// message.
+        /// </summary>
+        public InvalidKMSResourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidKMSResourceException with the specified error
         /// message.
         /// </summary>

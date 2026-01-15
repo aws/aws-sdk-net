@@ -40,6 +40,13 @@ namespace Amazon.CostAndUsageReport.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateReportNameException
+        /// message.
+        /// </summary>
+        public DuplicateReportNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateReportNameException with the specified error
         /// message.
         /// </summary>

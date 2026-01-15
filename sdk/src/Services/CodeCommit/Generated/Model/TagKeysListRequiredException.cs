@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for TagKeysListRequiredException
+        /// message.
+        /// </summary>
+        public TagKeysListRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagKeysListRequiredException with the specified error
         /// message.
         /// </summary>

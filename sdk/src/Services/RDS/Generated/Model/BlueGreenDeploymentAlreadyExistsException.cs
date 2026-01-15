@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for BlueGreenDeploymentAlreadyExistsException
+        /// message.
+        /// </summary>
+        public BlueGreenDeploymentAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BlueGreenDeploymentAlreadyExistsException with the specified error
         /// message.
         /// </summary>

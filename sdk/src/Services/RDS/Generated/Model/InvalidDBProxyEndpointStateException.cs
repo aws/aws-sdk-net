@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBProxyEndpointStateException
+        /// message.
+        /// </summary>
+        public InvalidDBProxyEndpointStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBProxyEndpointStateException with the specified error
         /// message.
         /// </summary>

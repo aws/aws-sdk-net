@@ -39,6 +39,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceNotSupportedException
+        /// message.
+        /// </summary>
+        public ServiceNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceNotSupportedException with the specified error
         /// message.
         /// </summary>

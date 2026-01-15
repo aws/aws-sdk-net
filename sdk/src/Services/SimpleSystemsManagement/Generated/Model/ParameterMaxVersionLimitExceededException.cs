@@ -61,6 +61,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterMaxVersionLimitExceededException
+        /// message.
+        /// </summary>
+        public ParameterMaxVersionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterMaxVersionLimitExceededException with the specified error
         /// message.
         /// </summary>

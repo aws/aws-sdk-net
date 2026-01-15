@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for IamUserArnAlreadyRegisteredException
+        /// message.
+        /// </summary>
+        public IamUserArnAlreadyRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IamUserArnAlreadyRegisteredException with the specified error
         /// message.
         /// </summary>

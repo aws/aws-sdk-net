@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InsightNotEnabledException
+        /// message.
+        /// </summary>
+        public InsightNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsightNotEnabledException with the specified error
         /// message.
         /// </summary>

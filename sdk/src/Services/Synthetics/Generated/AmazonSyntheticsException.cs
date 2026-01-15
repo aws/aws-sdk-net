@@ -36,6 +36,14 @@ namespace Amazon.Synthetics
         /// <summary>
         /// Construct instance of AmazonSyntheticsException
         /// </summary>
+        public AmazonSyntheticsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSyntheticsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSyntheticsException(string message)
             : base(message)

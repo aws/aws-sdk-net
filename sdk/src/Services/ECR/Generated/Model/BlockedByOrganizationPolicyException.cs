@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for BlockedByOrganizationPolicyException
+        /// message.
+        /// </summary>
+        public BlockedByOrganizationPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BlockedByOrganizationPolicyException with the specified error
         /// message.
         /// </summary>

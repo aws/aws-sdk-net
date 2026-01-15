@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for KMSNotFoundException
+        /// message.
+        /// </summary>
+        public KMSNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSNotFoundException with the specified error
         /// message.
         /// </summary>

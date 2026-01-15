@@ -40,6 +40,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFleetStatusException
+        /// message.
+        /// </summary>
+        public InvalidFleetStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFleetStatusException with the specified error
         /// message.
         /// </summary>

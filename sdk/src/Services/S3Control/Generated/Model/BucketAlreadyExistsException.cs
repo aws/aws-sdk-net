@@ -40,6 +40,13 @@ namespace Amazon.S3Control.Model
     {
 
         /// <summary>
+        /// Default constructor for BucketAlreadyExistsException
+        /// message.
+        /// </summary>
+        public BucketAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BucketAlreadyExistsException with the specified error
         /// message.
         /// </summary>

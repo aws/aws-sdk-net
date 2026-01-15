@@ -40,6 +40,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingManifestFieldException
+        /// message.
+        /// </summary>
+        public MissingManifestFieldException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingManifestFieldException with the specified error
         /// message.
         /// </summary>

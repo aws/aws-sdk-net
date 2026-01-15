@@ -40,6 +40,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyRegistrationsForTargetIdException
+        /// message.
+        /// </summary>
+        public TooManyRegistrationsForTargetIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRegistrationsForTargetIdException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryInDesiredStateException
+        /// message.
+        /// </summary>
+        public DirectoryInDesiredStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryInDesiredStateException with the specified error
         /// message.
         /// </summary>

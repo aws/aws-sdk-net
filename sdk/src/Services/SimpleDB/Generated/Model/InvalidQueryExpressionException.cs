@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for InvalidQueryExpressionException
+        /// message.
+        /// </summary>
+        public InvalidQueryExpressionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidQueryExpressionException with the specified error
         /// message.
         /// </summary>

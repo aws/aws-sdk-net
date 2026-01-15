@@ -40,6 +40,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for ACLQuotaExceededException
+        /// message.
+        /// </summary>
+        public ACLQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ACLQuotaExceededException with the specified error
         /// message.
         /// </summary>
