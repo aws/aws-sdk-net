@@ -1944,6 +1944,14 @@
         },
         "GetBucketReplication": {
             "documentation": "Retrieves the replication configuration for the given Amazon S3 bucket."
+        },
+        "ListVersions":{
+            "excludeResultKey":[
+                "DeleteMarkers"
+            ]
+        },
+        "ListParts":{
+            "excludePaginators":true
         }
     },
     "shapeSubstitutions":{

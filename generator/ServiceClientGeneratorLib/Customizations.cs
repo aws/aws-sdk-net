@@ -1835,7 +1835,10 @@ namespace ServiceClientGenerator
                     modifiers.AddMarshallNameOverride(shapeName, marshalData);
                 }
             }
-
+            if (operation[OperationModifiers.ExcludeResultKeysKey] != null && operation[OperationModifiers.ExcludeResultKeysKey].IsArray)
+                modifiers.ExcludeResultKeys = new HashSet<string>(operation[OperationModifiers.ExcludeResultKeysKey].Cast<object>().Select(x => x.ToString()));
+            if (operation[OperationModifiers.ExcludePaginatorsKey] != null && operation[OperationModifiers.ExcludePaginatorsKey].IsBoolean)
+                modifiers.ExcludePaginators = (bool)operation[OperationModifiers.ExcludePaginatorsKey];
             return modifiers;
         }
 
@@ -1902,12 +1905,31 @@ namespace ServiceClientGenerator
             public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string DocumentationKey = "documentation";
             public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
+            public const string ExcludeResultKeysKey = "excludeResultKey";
+            public const string ExcludePaginatorsKey = "excludePaginators";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
             public const string MarshallName = "marshallName";
 
             private Dictionary<string, JsonData> _marshallNameOverrides = null;
+
+            /// <summary>
+            /// Excludes Paginators for this operation is set to true
+            /// </summary>
+            public bool ExcludePaginators
+            {
+                get;set;
+            }
+
+            /// <summary>
+            /// Excludes the result keys specified in result_keys in the paginator model
+            /// </summary>
+            public HashSet<string> ExcludeResultKeys
+            {
+                get;
+                set;
+            }
 
             /// <summary>
             /// The name of the operation modified

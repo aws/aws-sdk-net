@@ -23,48 +23,13 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Paginators for the S3 service
     ///</summary>
-    public interface IS3PaginatorFactory
+    public partial interface IS3PaginatorFactory
     {
-        /// <summary>
-        /// Paginator for ListMultipartUploads operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        IListMultipartUploadsPaginator ListMultipartUploads(ListMultipartUploadsRequest request);
-       
         /// <summary>
         /// Paginator for ListObjects operation
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
         IListObjectsPaginator ListObjects(ListObjectsRequest request);
-        
-        /// <summary>
-        /// Paginator for ListObjectsV2 operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        IListObjectsV2Paginator ListObjectsV2(ListObjectsV2Request request);
-        
-        /// <summary>
-        /// Paginator for ListParts operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        IListPartsPaginator ListParts(ListPartsRequest request);
-        
-        /// <summary>
-        /// Paginator for ListVersions operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        IListVersionsPaginator ListVersions(ListVersionsRequest request);
-
-        /// <summary>
-        /// Paginator for ListBuckets operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        IListBucketsPaginator ListBuckets(ListBucketsRequest request);
     }
 }

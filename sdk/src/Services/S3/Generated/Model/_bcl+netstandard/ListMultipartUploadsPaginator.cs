@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,81 +24,76 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Base class for ListVersions paginators.
+    /// Base class for ListMultipartUploads paginators.
     /// </summary>
-    internal sealed partial class ListVersionsPaginator : IPaginator<ListVersionsResponse>, IListVersionsPaginator
+    internal sealed partial class ListMultipartUploadsPaginator : IPaginator<ListMultipartUploadsResponse>, IListMultipartUploadsPaginator
     {
         private readonly IAmazonS3 _client;
-        private readonly ListVersionsRequest _request;
+        private readonly ListMultipartUploadsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListVersionsResponse> Responses => new PaginatedResponse<ListVersionsResponse>(this);
-        
-        /// <summary>
-        /// Enumerable containing all of the Versions
-        /// </summary>
-        public IPaginatedEnumerable<S3ObjectVersion> Versions => 
-            new PaginatedResultKeyResponse<ListVersionsResponse, S3ObjectVersion>(this, (i) => i.Versions ?? new List<S3ObjectVersion>());
+        public IPaginatedEnumerable<ListMultipartUploadsResponse> Responses => new PaginatedResponse<ListMultipartUploadsResponse>(this);
 
         /// <summary>
         /// Enumerable containing all of the CommonPrefixes
         /// </summary>
         public IPaginatedEnumerable<string> CommonPrefixes => 
-            new PaginatedResultKeyResponse<ListVersionsResponse, string>(this, (i) => i.CommonPrefixes ?? new List<string>());
+            new PaginatedResultKeyResponse<ListMultipartUploadsResponse, string>(this, (i) => i.CommonPrefixes ?? new List<string>());
 
-        internal ListVersionsPaginator(IAmazonS3 client, ListVersionsRequest request)
+        internal ListMultipartUploadsPaginator(IAmazonS3 client, ListMultipartUploadsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<ListVersionsResponse> IPaginator<ListVersionsResponse>.Paginate()
+        IEnumerable<ListMultipartUploadsResponse> IPaginator<ListMultipartUploadsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
-                throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var keyMarker = _request.KeyMarker;
-            var versionIdMarker = _request.VersionIdMarker;
-            ListVersionsResponse response;
+            var uploadIdMarker = _request.UploadIdMarker;
+            ListMultipartUploadsResponse response;
             do
             {
                 _request.KeyMarker = keyMarker;
-                _request.VersionIdMarker = versionIdMarker;
-                response = _client.ListVersions(_request);
+                _request.UploadIdMarker = uploadIdMarker;
+                response = _client.ListMultipartUploads(_request);
                 keyMarker = response.NextKeyMarker;
-                versionIdMarker = response.NextVersionIdMarker;
+                uploadIdMarker = response.NextUploadIdMarker;
                 yield return response;
             }
             while (response.IsTruncated.GetValueOrDefault());
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListVersionsResponse> IPaginator<ListVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
+        async IAsyncEnumerable<ListMultipartUploadsResponse> IPaginator<ListMultipartUploadsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
-                throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var keyMarker = _request.KeyMarker;
-            var versionIdMarker = _request.VersionIdMarker;
-            ListVersionsResponse response;
+            var uploadIdMarker = _request.UploadIdMarker;
+            ListMultipartUploadsResponse response;
             do
             {
                 _request.KeyMarker = keyMarker;
-                _request.VersionIdMarker = versionIdMarker;
-                response = await _client.ListVersionsAsync(_request, cancellationToken).ConfigureAwait(false);
+                _request.UploadIdMarker = uploadIdMarker;
+                response = await _client.ListMultipartUploadsAsync(_request, cancellationToken).ConfigureAwait(false);
                 keyMarker = response.NextKeyMarker;
-                versionIdMarker = response.NextVersionIdMarker;
+                uploadIdMarker = response.NextUploadIdMarker;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
