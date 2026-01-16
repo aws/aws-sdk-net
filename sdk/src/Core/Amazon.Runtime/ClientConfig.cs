@@ -593,7 +593,7 @@ namespace Amazon.Runtime
         /// Returns the maximum number of retries for stale connection errors (e.g., "Broken pipe", 
         /// "Connection reset") that can occur when the HTTP client reuses a pooled connection that 
         /// the server has closed. These retries don't count against the MaxErrorRetry limit.
-        /// Default value is 3.
+        /// Default value is 10.
         /// </summary>
         public int MaxStaleConnectionRetries
         {
@@ -601,7 +601,7 @@ namespace Amazon.Runtime
             {
                 if (!this.maxStaleConnectionRetries.HasValue)
                 {
-                    return 3;
+                    return 10;
                 }
                 return this.maxStaleConnectionRetries.Value;
             }
