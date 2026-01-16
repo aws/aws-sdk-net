@@ -283,8 +283,8 @@ namespace Amazon.Runtime
                 }
 
 #if NETSTANDARD
-                // .NET Core/.NET 7+ fallback: HttpClient may throw HttpIOException when the response
-                // ends prematurely due to stale connections. HttpIOException is .NET 7+ - we check by
+                // .NET 8+ fallback: HttpClient may throw HttpIOException when the response
+                // ends prematurely due to stale connections. HttpIOException is .NET 8+ - we check by
                 // type name to avoid compilation issues on older targets that support NetStandard.
                 if (currentException.GetType().Name == "HttpIOException")
                 {
