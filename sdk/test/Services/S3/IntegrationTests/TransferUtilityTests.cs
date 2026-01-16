@@ -91,14 +91,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void SimpleUploadTest()
+        public async Task SimpleUploadTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallFile");
-            Upload(fileName, 10 * MEG_SIZE, null);
+            await Upload(fileName, 10 * MEG_SIZE, null);
         }
 
         [TestMethod]
-        public void SimpleUploadProgressTest()
+        public async Task SimpleUploadProgressTest()
         {
             var context = SynchronizationContext.Current;
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallFile");
@@ -109,12 +109,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(p.FilePath, Path.Combine(BasePath, fileName));
                 }
             };
-            Upload(fileName, 10 * MEG_SIZE, progressValidator);
+
+            await Upload(fileName, 10 * MEG_SIZE, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
         [TestMethod]
-        public void SimpleUploadInitiatedEventTest()
+        public async Task SimpleUploadInitiatedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\InitiatedEvent");
             var eventValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
@@ -127,12 +128,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
                 }
             };
-            UploadWithLifecycleEvents(fileName, 10 * MEG_SIZE, eventValidator, null, null);
+
+            await UploadWithLifecycleEvents(fileName, 10 * MEG_SIZE, eventValidator, null, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void SimpleUploadCompletedEventTest()
+        public async Task SimpleUploadCompletedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\CompletedEvent");
             var eventValidator = new TransferLifecycleEventValidator<UploadCompletedEventArgs>
@@ -147,12 +149,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
                 }
             };
-            UploadWithLifecycleEvents(fileName, 10 * MEG_SIZE, null, eventValidator, null);
+
+            await UploadWithLifecycleEvents(fileName, 10 * MEG_SIZE, null, eventValidator, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void SimpleUploadFailedEventTest()
+        public async Task SimpleUploadFailedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\FailedEvent");
             var eventValidator = new TransferLifecycleEventValidator<UploadFailedEventArgs>
@@ -173,7 +176,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             
             try
             {
-                UploadWithLifecycleEventsAndBucket(fileName, 5 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
+                await UploadWithLifecycleEventsAndBucket(fileName, 5 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
                 Assert.Fail("Expected an exception to be thrown for invalid bucket");
             }
             catch (AmazonS3Exception)
@@ -184,10 +187,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void SimpleUploadCompleteLifecycleTest()
+        public async Task SimpleUploadCompleteLifecycleTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\CompleteLifecycle");
-            
             var initiatedValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
             {
                 Validate = (args) =>
@@ -210,18 +212,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            UploadWithLifecycleEvents(fileName, 8 * MEG_SIZE, initiatedValidator, completedValidator, null);
-            
+            await UploadWithLifecycleEvents(fileName, 8 * MEG_SIZE, initiatedValidator, completedValidator, null);
             initiatedValidator.AssertEventFired();
             completedValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void SimpleUpload()
+        public async Task SimpleUpload()
         {
-            transferUtility.Upload(fullPath, bucketName);
-
-            var response = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            await transferUtility.UploadAsync(fullPath, bucketName);
+            var response = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = testFile
@@ -235,25 +235,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = testFile,
                 FilePath = downloadPath
             };
-            transferUtility.Download(downloadRequest);
+            await transferUtility.DownloadAsync(downloadRequest);
             TestDownloadedFile(downloadPath);
 
             // empty out file, except for 1 byte
             File.WriteAllText(downloadPath, testContent.Substring(0, 1));
             Assert.IsTrue(File.Exists(downloadPath));
-            transferUtility.Download(downloadRequest);
+            
+            await transferUtility.DownloadAsync(downloadRequest);
             TestDownloadedFile(downloadPath);
         }
 
         [TestMethod]
-        public void SimpleUploadWithPrecalculatedChecksum()
+        public async Task SimpleUploadWithPrecalculatedChecksum()
         {
             // If a pre-calculated checksum is provided for a file uploaded in a single PutObject call,
             // the TransferUtility will set the appropriate header (i.e. x-amz-checksum-<algorithm_name>).
             // An invalid header exception would be thrown if the value does not match the checksum calculated by S3.
             var precalculatedChecksum = CryptoUtilFactory.CryptoInstance.ComputeCRC32Hash(File.ReadAllBytes(fullPath));
 
-            transferUtility.Upload(new TransferUtilityUploadRequest
+            await transferUtility.UploadAsync(new TransferUtilityUploadRequest
             {
                 BucketName = bucketName,
                 Key = testFile,
@@ -263,7 +264,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void LargeUploadWithPrecalculatedValues()
+        public async Task LargeUploadWithPrecalculatedValues()
         {
             var fileName = UtilityMethods.GenerateName();
             var fullFilePath = Path.Combine(BasePath, fileName);
@@ -278,7 +279,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Another invalid header exception would be thrown if the value does not match the size calculated by S3.
             var precalculatedObjectSize = new FileInfo(fullFilePath).Length;
 
-            transferUtility.Upload(new TransferUtilityUploadRequest
+            await transferUtility.UploadAsync(new TransferUtilityUploadRequest
             {
                 BucketName = bucketName,
                 Key = fileName,
@@ -368,19 +369,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void SimpleUploadProgressTotalBytesTest()
+        public async Task SimpleUploadProgressTotalBytesTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadProgressTotalBytes\TestFile");
             var filePath = Path.Combine(BasePath, fileName);
             var fileSize = 10 * MEG_SIZE;
-            
-            // Create test file
             UtilityMethods.GenerateFile(filePath, fileSize);
-
-            var transferConfig = new TransferUtilityConfig()
-            {
-                MinSizeBeforePartUpload = 20 * MEG_SIZE,
-            };
 
             var progressValidator = new TransferProgressValidator<UploadProgressArgs>
             {
@@ -390,6 +384,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(fileSize, progress.TotalBytes, "TotalBytes should equal file size");
                     Assert.AreEqual(filePath, progress.FilePath, "FilePath should match expected path");
                 }
+            };
+
+            var transferConfig = new TransferUtilityConfig
+            {
+                MinSizeBeforePartUpload = 20 * MEG_SIZE,
             };
 
             using (var fileTransferUtility = new TransferUtility(Client, transferConfig))
@@ -402,7 +401,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 };
 
                 request.UploadProgressEvent += progressValidator.OnProgressEvent;
-                fileTransferUtility.Upload(request);
+                await fileTransferUtility.UploadAsync(request);
                 progressValidator.AssertOnCompletion();
             }
         }
@@ -424,7 +423,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private void UploadWithSSE_C(long fileSize, string name)
+        private async Task UploadWithSSE_C(long fileSize, string name)
         {
             // Create a fileSize file to upload
             var fileName = UtilityMethods.GenerateName(name);
@@ -440,31 +439,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Upload the file. A permission denied exception would be thrown if an incorrect request is made
             // missing the required ServerSideEncryptionCustomerMethod and ServerSideEncryptionCustomerProvidedKey
             // values.
-            var request = new TransferUtilityUploadRequest
+            await transferUtility.UploadAsync(new TransferUtilityUploadRequest
             {
                 BucketName = ssecBucketName,
                 FilePath = fullFilePath,
                 Key = fileName,
                 ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
                 ServerSideEncryptionCustomerProvidedKey = base64Key
-            };
-            transferUtility.Upload(request);
+            });
         }
 
         [TestMethod]
-        public void SimpleUploadWithSSE_C_SmallFile()
+        public async Task SimpleUploadWithSSE_C_SmallFile()
         {
-            UploadWithSSE_C(KILO_SIZE, @"SimpleUploadTest\SmallFile");
+            await UploadWithSSE_C(KILO_SIZE, @"SimpleUploadTest\SmallFile");
         }
 
         [TestMethod]
-        public void SimpleUploadWithSSE_C_LargeFile()
+        public async Task SimpleUploadWithSSE_C_LargeFile()
         {
-            UploadWithSSE_C(16 * MEG_SIZE, @"SimpleUploadTest\LargeFile");
+            await UploadWithSSE_C(16 * MEG_SIZE, @"SimpleUploadTest\LargeFile");
         }
 
         [TestMethod]
-        public void DirectoryUploadDonwloadWithSSE_C()
+        public async Task DirectoryUploadDonwloadWithSSE_C()
         {
             var directoryTest = CreateTestDirectory();
             var directoryTestPath = directoryTest.FullName;
@@ -477,37 +475,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             string base64Key = Convert.ToBase64String(aesEncryption.Key);
 
             // Upload test directory with SSE-C
-            var requestUpload = new TransferUtilityUploadDirectoryRequest
+            await transferUtility.UploadDirectoryAsync(new TransferUtilityUploadDirectoryRequest
             {
                 BucketName = bucketName,
                 Directory = directoryTestPath,
                 KeyPrefix = remoteDirectory,
                 SearchPattern = "*",
                 SearchOption = SearchOption.AllDirectories,
-
                 ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
                 ServerSideEncryptionCustomerProvidedKey = base64Key
-            };
-            transferUtility.UploadDirectory(requestUpload);
+            });
 
             // Download remote test directory with SSE-C
             var downloadPath = GenerateDirectoryPath();
-            var requestDownload = new TransferUtilityDownloadDirectoryRequest()
+            await transferUtility.DownloadDirectoryAsync(new TransferUtilityDownloadDirectoryRequest
             {
                 BucketName = bucketName,
                 S3Directory = remoteDirectory,
                 LocalDirectory = downloadPath,
-
                 ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
                 ServerSideEncryptionCustomerProvidedKey = base64Key
-            };
-
-            transferUtility.DownloadDirectory(requestDownload);
+            });
 
             // Compare each file in both directories
             var sourceFiles = Directory.EnumerateFiles(directoryTestPath, "*", SearchOption.AllDirectories).ToList();
             var downloadedFiles = Directory.EnumerateFiles(downloadPath, "*", SearchOption.AllDirectories).ToList();
-
             Assert.AreEqual(sourceFiles.Count, downloadedFiles.Count);
 
             sourceFiles.Sort();
@@ -527,7 +519,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void MultipartUploadProgressTest()
+        public async Task MultipartUploadProgressTest()
         {
             // disable clock skew testing, this is a multithreaded test
             using (RetryUtilities.DisableClockSkewCorrection())
@@ -541,13 +533,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         Assert.AreEqual(p.FilePath, Path.Combine(BasePath, fileName));
                     }
                 };
-                Upload(fileName, 20 * MEG_SIZE, progressValidator);
+
+                await Upload(fileName, 20 * MEG_SIZE, progressValidator);
                 progressValidator.AssertOnCompletion();
             }
         }
 
         [TestMethod]
-        public void MultipartUploadInitiatedEventTest()
+        public async Task MultipartUploadInitiatedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\InitiatedEvent");
             var eventValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
@@ -560,13 +553,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
                 }
             };
+
             // Use 20MB+ to trigger multipart upload
-            UploadWithLifecycleEvents(fileName, 20 * MEG_SIZE, eventValidator, null, null);
+            await UploadWithLifecycleEvents(fileName, 20 * MEG_SIZE, eventValidator, null, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void MultipartUploadCompletedEventTest()
+        public async Task MultipartUploadCompletedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\CompletedEvent");
             var eventValidator = new TransferLifecycleEventValidator<UploadCompletedEventArgs>
@@ -581,13 +575,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName));
                 }
             };
+
             // Use 25MB to trigger multipart upload
-            UploadWithLifecycleEvents(fileName, 25 * MEG_SIZE, null, eventValidator, null);
+            await UploadWithLifecycleEvents(fileName, 25 * MEG_SIZE, null, eventValidator, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void MultipartUploadFailedEventTest()
+        public async Task MultipartUploadFailedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\FailedEvent");
             var eventValidator = new TransferLifecycleEventValidator<UploadFailedEventArgs>
@@ -609,7 +604,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             try
             {
                 // Use 22MB to trigger multipart upload
-                UploadWithLifecycleEventsAndBucket(fileName, 22 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
+                await UploadWithLifecycleEventsAndBucket(fileName, 22 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
                 Assert.Fail("Expected an exception to be thrown for invalid bucket");
             }
             catch (AmazonS3Exception)
@@ -620,10 +615,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void MultipartUploadCompleteLifecycleTest()
+        public async Task MultipartUploadCompleteLifecycleTest()
         {
             var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\CompleteLifecycle");
-            
             var initiatedValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
             {
                 Validate = (args) =>
@@ -647,14 +641,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             // Use 30MB to trigger multipart upload
-            UploadWithLifecycleEvents(fileName, 30 * MEG_SIZE, initiatedValidator, completedValidator, null);
-            
+            await UploadWithLifecycleEvents(fileName, 30 * MEG_SIZE, initiatedValidator, completedValidator, null);
             initiatedValidator.AssertEventFired();
             completedValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void MultipartUploadUnseekableStreamInitiatedEventTest()
+        public async Task MultipartUploadUnseekableStreamInitiatedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\UnseekableStreamInitiatedEvent");
             var eventValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
@@ -665,12 +658,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(-1, args.TotalBytes); // Unseekable streams have unknown length
                 }
             };
-            UploadUnseekableStreamWithLifecycleEvents(20 * MEG_SIZE, eventValidator, null, null);
+
+            await UploadUnseekableStreamWithLifecycleEvents(20 * MEG_SIZE, eventValidator, null, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void MultipartUploadUnseekableStreamCompletedEventTest()
+        public async Task MultipartUploadUnseekableStreamCompletedEventTest()
         {
             var eventValidator = new TransferLifecycleEventValidator<UploadCompletedEventArgs>
             {
@@ -682,12 +676,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(0, args.TransferredBytes); // unseekable streams we dont attach and progress listeners so we wont have transferredbytes.
                 }
             };
-            UploadUnseekableStreamWithLifecycleEvents(20 * MEG_SIZE, null, eventValidator, null);
+
+            await UploadUnseekableStreamWithLifecycleEvents(20 * MEG_SIZE, null, eventValidator, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void MultipartUploadUnseekableStreamFailedEventTest()
+        public async Task MultipartUploadUnseekableStreamFailedEventTest()
         {
             var eventValidator = new TransferLifecycleEventValidator<UploadFailedEventArgs>
             {
@@ -703,7 +698,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             
             try
             {
-                UploadUnseekableStreamWithLifecycleEventsAndBucket(20 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
+                await UploadUnseekableStreamWithLifecycleEventsAndBucket(20 * MEG_SIZE, invalidBucketName, null, null, eventValidator);
                 Assert.Fail("Expected an exception to be thrown for invalid bucket");
             }
             catch (AmazonS3Exception)
@@ -714,7 +709,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void MultipartUploadUnseekableStreamCompleteLifecycleTest()
+        public async Task MultipartUploadUnseekableStreamCompleteLifecycleTest()
         {            
             var initiatedValidator = new TransferLifecycleEventValidator<UploadInitiatedEventArgs>
             {
@@ -736,47 +731,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            UploadUnseekableStreamWithLifecycleEvents(18 * MEG_SIZE, initiatedValidator, completedValidator, null);
-            
+            await UploadUnseekableStreamWithLifecycleEvents(18 * MEG_SIZE, initiatedValidator, completedValidator, null);
             initiatedValidator.AssertEventFired();
             completedValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void MultipartGetNumberTest()
+        public async Task MultipartGetNumberTest()
         {
             string key = "SomeTest";
-
-            Upload(key, 20 * MEG_SIZE, null);
+            await Upload(key, 20 * MEG_SIZE, null);
 
             try
             {
-
-                var objectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                var objectMetadataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     PartNumber = 1,
                 });
-
                 Assert.IsTrue(objectMetadataResponse.PartsCount > 1);
 
                 int? count = objectMetadataResponse.PartsCount;
                 for (int i = 1; i <= count; i++)
                 {
-                    var objectResponse = Client.GetObject(new GetObjectRequest
+                    var objectResponse = await Client.GetObjectAsync(new GetObjectRequest
                     {
                         BucketName = bucketName,
                         Key = key,
                         PartNumber = i
                     });
-
                     Assert.AreEqual(objectResponse.PartsCount, count);
                 }
             }
             finally
             {
-                Client.DeleteObject(new DeleteObjectRequest
+                await Client.DeleteObjectAsync(new DeleteObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key
@@ -785,27 +775,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void MultipartValidatePartSize8MbTest()
+        public async Task MultipartValidatePartSize8MbTest()
         {
             string key = "MultipartValidatePartSizeTest";
-
-            Upload(key, 20 * MEG_SIZE, null);
+            await Upload(key, 20 * MEG_SIZE, null);
             
-            var objectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            var objectMetadataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 PartNumber = 1,
             });
-
             Assert.AreEqual(3, objectMetadataResponse.PartsCount);
             Assert.AreEqual(8 * MEG_SIZE, objectMetadataResponse.ContentLength);
         }
 
-        void Upload(string fileName, long size, TransferProgressValidator<UploadProgressArgs> progressValidator)
+        async Task Upload(string fileName, long size, TransferProgressValidator<UploadProgressArgs> progressValidator)
         {
             var key = fileName;
-            Client.DeleteObject(new DeleteObjectRequest
+            await Client.DeleteObjectAsync(new DeleteObjectRequest
             {
                 BucketName = bucketName,
                 Key = key
@@ -827,30 +815,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.UploadProgressEvent += progressValidator.OnProgressEvent;
             }
 
-            transferUtility.Upload(request);
+            await transferUtility.UploadAsync(request);
 
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = key
             });
-            Console.WriteLine("Expected Size: {0} , Actual Size {1}", size, metadata.ContentLength);
             Assert.AreEqual(octetStreamContentType, metadata.Headers.ContentType);
             Assert.AreEqual(size, metadata.ContentLength);
-            ValidateFileContents(Client, bucketName, key, path);
+            await ValidateFileContents(bucketName, key, path);
         }
 
         [TestMethod]
-        public void UploadDirectoryWithProgressTracker()
+        public async Task UploadDirectoryWithProgressTracker()
         {
             var progressValidator = new DirectoryProgressValidator<UploadDirectoryProgressArgs>();
             ConfigureProgressValidator(progressValidator);
 
-            UploadDirectory(10 * MEG_SIZE, progressValidator, true);
+            await UploadDirectory(10 * MEG_SIZE, progressValidator, true);
             progressValidator.AssertOnCompletion();
         }
 
-        DirectoryInfo UploadDirectory(long size,
+        async Task<DirectoryInfo> UploadDirectory(long size,
              DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, bool validate = true)
         {
             var directory = CreateTestDirectory(size);
@@ -884,21 +871,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Console.WriteLine("Progress callback = " + e.ToString());
             };
 
-            concurrentTu.UploadDirectory(request);
-
+            await concurrentTu.UploadDirectoryAsync(request);
             Assert.AreEqual(5, files.Count);
 
             if (validate)
-                ValidateDirectoryContents(Client, bucketName, keyPrefix, directory, plainTextContentType);
+            {
+                await ValidateDirectoryContents(bucketName, keyPrefix, directory, plainTextContentType);
+            }
 
             return directory;
         }
 
         [TestMethod]
-        public void DownloadNonExistentS3Directory()
+        public async Task DownloadNonExistentS3Directory()
         {
             var downloadPath = GenerateDirectoryPath();
-            transferUtility.DownloadDirectory(new TransferUtilityDownloadDirectoryRequest
+            await transferUtility.DownloadDirectoryAsync(new TransferUtilityDownloadDirectoryRequest
             {
                 BucketName = bucketName,
                 S3Directory = "NonExistentS3Directory",
@@ -910,7 +898,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void DownloadDirectoryProgressTest()
+        public async Task DownloadDirectoryProgressTest()
         {
             // disable clock skew testing, this is a multithreaded test
             using (RetryUtilities.DisableClockSkewCorrection())
@@ -918,14 +906,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
                 ConfigureProgressValidator(progressValidator);
 
-                DownloadDirectory(progressValidator);
+                await DownloadDirectory(progressValidator);
                 progressValidator.AssertOnCompletion();
             }
         }
 
-        void DownloadDirectory(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator, bool concurrent = true)
+        async Task DownloadDirectory(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator, bool concurrent = true)
         {
-            var directory = UploadDirectory(20 * MEG_SIZE, null, false);
+            var directory = await UploadDirectory(20 * MEG_SIZE, null, false);
             var directoryPath = directory.FullName;
             var keyPrefix = directory.Name;
             Directory.Delete(directoryPath, true);
@@ -942,12 +930,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.DownloadedDirectoryProgressEvent += progressValidator.OnProgressEvent;
             }
 
-            transferUtility.DownloadDirectory(request);
-            ValidateDirectoryContents(Client, bucketName, keyPrefix, directory);
+            await transferUtility.DownloadDirectoryAsync(request);
+            await ValidateDirectoryContents(bucketName, keyPrefix, directory);
         }
 
         [TestMethod]
-        public void DownloadDirectoryWithDisableSlashCorrectionForS3DirectoryProgressTest()
+        public async Task DownloadDirectoryWithDisableSlashCorrectionForS3DirectoryProgressTest()
         {
             // disable clock skew testing, this is a multithreaded test
             using (RetryUtilities.DisableClockSkewCorrection())
@@ -956,18 +944,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ConfigureProgressValidator(progressValidator);
 
                 int numberOfTestFiles = 5;
-                var downloadDirectory = DownloadDirectoryWithDisableSlashCorrectionForS3Directory(numberOfTestFiles, progressValidator);
+                var downloadDirectory = await DownloadDirectoryWithDisableSlashCorrectionForS3Directory(numberOfTestFiles, progressValidator);
                 progressValidator.AssertOnCompletion();
 
                 Assert.AreEqual(numberOfTestFiles, downloadDirectory.GetFiles("*", SearchOption.AllDirectories).Count());
-                ValidateDirectoryContents(Client, bucketName, string.Empty, downloadDirectory);
+                await ValidateDirectoryContents(bucketName, string.Empty, downloadDirectory);
             }
         }
 
-        DirectoryInfo DownloadDirectoryWithDisableSlashCorrectionForS3Directory(int numberOfTestFiles, DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator)
+        async Task<DirectoryInfo> DownloadDirectoryWithDisableSlashCorrectionForS3Directory(int numberOfTestFiles, DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator)
         {
             var keyPrefix = DateTime.UtcNow.ToString("yyyy-MM-dd");
-            var directory = UploadDirectoryWithKeyPrefix(1 * KILO_SIZE, null, keyPrefix, numberOfTestFiles, false);
+            var directory = await UploadDirectoryWithKeyPrefix(1 * KILO_SIZE, null, keyPrefix, numberOfTestFiles, false);
             var directoryPath = directory.FullName;
             Directory.Delete(directoryPath, true);
 
@@ -984,15 +972,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.DownloadedDirectoryProgressEvent += progressValidator.OnProgressEvent;
             }
 
-            transferUtility.DownloadDirectory(request);
+            await transferUtility.DownloadDirectoryAsync(request);
             return directory;
         }
 
-        DirectoryInfo UploadDirectoryWithKeyPrefix(long size, DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, string keyPrefix, int numberOfTestFiles, bool validate = true)
+        async Task<DirectoryInfo> UploadDirectoryWithKeyPrefix(long size, DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, string keyPrefix, int numberOfTestFiles, bool validate = true)
         {
             var directory = CreateTestDirectoryWithFilePrefix(size, keyPrefix, numberOfTestFiles);
             var directoryPath = directory.FullName;
-
             var concurrentTu = new TransferUtility(Client, new TransferUtilityConfig
             {
                 ConcurrentServiceRequests = 10,
@@ -1018,16 +1005,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Console.WriteLine("Progress callback = " + e.ToString());
             };
 
-            transferUtility.UploadDirectory(request);
-
+            await transferUtility.UploadDirectoryAsync(request);
             if (validate)
-                ValidateDirectoryContents(Client, bucketName, string.Empty, directory, plainTextContentType);
+            {
+                await ValidateDirectoryContents(bucketName, string.Empty, directory, plainTextContentType);
+            }
 
             return directory;
         }
 
         [TestMethod]
-        public void DownloadProgressTest()
+        public async Task DownloadProgressTest()
         {
             var fileName = UtilityMethods.GenerateName(@"DownloadTest\File");
             var progressValidator = new TransferProgressValidator<WriteObjectProgressArgs>
@@ -1040,12 +1028,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.IsTrue(p.FilePath.Contains(fileName));
                 }
             };
-            Download(fileName, 10 * MEG_SIZE, progressValidator);
+
+            await Download(fileName, 10 * MEG_SIZE, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
         [TestMethod]
-        public void DownloadProgressZeroLengthFileTest()
+        public async Task DownloadProgressZeroLengthFileTest()
         {
             var fileName = UtilityMethods.GenerateName(@"DownloadTest\File");
             var progressValidator = new TransferProgressValidator<WriteObjectProgressArgs>
@@ -1061,12 +1050,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(p.PercentDone, 100);
                 }
             };
-            Download(fileName, 0, progressValidator);
+
+            await Download(fileName, 0, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
         [TestMethod]
-        public void SimpleDownloadInitiatedEventTest()
+        public async Task SimpleDownloadInitiatedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleDownloadTest\InitiatedEvent");
             var eventValidator = new TransferLifecycleEventValidator<DownloadInitiatedEventArgs>
@@ -1078,12 +1068,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     // Note: DownloadInitiatedEventArgs does not have TotalBytes since we don't know the size until GetObjectResponse
                 }
             };
-            DownloadWithLifecycleEvents(fileName, 10 * MEG_SIZE, eventValidator, null, null);
+            
+            await DownloadWithLifecycleEvents(fileName, 10 * MEG_SIZE, eventValidator, null, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void SimpleDownloadCompletedEventTest()
+        public async Task SimpleDownloadCompletedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleDownloadTest\CompletedEvent");
             var eventValidator = new TransferLifecycleEventValidator<DownloadCompletedEventArgs>
@@ -1098,12 +1089,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(args.FilePath, Path.Combine(BasePath, fileName + ".download"));
                 }
             };
-            DownloadWithLifecycleEvents(fileName, 10 * MEG_SIZE, null, eventValidator, null);
+
+            await DownloadWithLifecycleEvents(fileName, 10 * MEG_SIZE, null, eventValidator, null);
             eventValidator.AssertEventFired();
         }
 
         [TestMethod]
-        public void SimpleDownloadFailedEventTest()
+        public async Task SimpleDownloadFailedEventTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleDownloadTest\FailedEvent");
             var eventValidator = new TransferLifecycleEventValidator<DownloadFailedEventArgs>
@@ -1124,7 +1116,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             
             try
             {
-                DownloadWithLifecycleEventsAndKey(fileName, nonExistentKey, null, null, eventValidator);
+                await DownloadWithLifecycleEventsAndKey(fileName, nonExistentKey, null, null, eventValidator);
                 Assert.Fail("Expected an exception to be thrown for non-existent key");
             }
             catch (AmazonS3Exception)
@@ -1135,10 +1127,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void SimpleDownloadCompleteLifecycleTest()
+        public async Task SimpleDownloadCompleteLifecycleTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleDownloadTest\CompleteLifecycle");
-            
             var initiatedValidator = new TransferLifecycleEventValidator<DownloadInitiatedEventArgs>
             {
                 Validate = (args) =>
@@ -1161,8 +1152,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            DownloadWithLifecycleEvents(fileName, 8 * MEG_SIZE, initiatedValidator, completedValidator, null);
-            
+            await DownloadWithLifecycleEvents(fileName, 8 * MEG_SIZE, initiatedValidator, completedValidator, null);
             initiatedValidator.AssertEventFired();
             completedValidator.AssertEventFired();
         }
@@ -1288,7 +1278,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var fileName = UtilityMethods.GenerateName("MultipartDownloadFailed");
             var downloadedFilePath = Path.Combine(BasePath, fileName + ".dn");
-            
             bool failedEventFired = false;
             
             var request = new TransferUtilityDownloadRequest
@@ -1316,13 +1305,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        void Download(string fileName, long size, TransferProgressValidator<WriteObjectProgressArgs> progressValidator)
+        async Task Download(string fileName, long size, TransferProgressValidator<WriteObjectProgressArgs> progressValidator)
         {
             var key = fileName;
             var originalFilePath = Path.Combine(BasePath, fileName);
             UtilityMethods.GenerateFile(originalFilePath, size);
 
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -1330,7 +1319,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             var downloadedFilePath = originalFilePath + ".dn";
-
             var request = new TransferUtilityDownloadRequest
             {
                 BucketName = bucketName,
@@ -1341,26 +1329,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 request.WriteObjectProgressEvent += progressValidator.OnProgressEvent;
             }
-            transferUtility.Download(request);
-
+            
+            await transferUtility.DownloadAsync(request);
             UtilityMethods.CompareFiles(originalFilePath, downloadedFilePath);
         }
 
         [TestMethod]
-        public void OpenStreamTest()
+        public async Task OpenStreamTest()
         {
             var fileName = UtilityMethods.GenerateName(@"OpenStreamTest\File");
             var key = fileName;
             var originalFilePath = Path.Combine(BasePath, fileName);
             UtilityMethods.GenerateFile(originalFilePath, 2 * MEG_SIZE);
-            Client.PutObject(new PutObjectRequest
+
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 FilePath = originalFilePath
             });
 
-            var stream = transferUtility.OpenStream(bucketName, key);
+            var stream = await transferUtility.OpenStreamAsync(bucketName, key);
             Assert.IsNotNull(stream);
             Assert.IsTrue(stream.CanRead);
             stream.Close();
@@ -1375,11 +1364,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// access it, so we don't trigger a retry.
         /// </summary>
         [TestMethod]
-        public void TestZeroLengthDownloadToNonExistingPath()
+        public async Task TestZeroLengthDownloadToNonExistingPath()
         {
             var objectKey = "folder1/folder2/empty_file.txt";
-
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = objectKey,
@@ -1388,7 +1376,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var filename = UtilityMethods.GenerateName(objectKey.Replace('/', '\\'));
             var filePath = Path.Combine(BasePath, filename);
-            transferUtility.Download(new TransferUtilityDownloadRequest
+            await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
             {
                 BucketName = bucketName,
                 FilePath = filePath,
@@ -1399,14 +1387,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void TestMultipartUploadWithSetContentTypeNotOverwritten()
+        public async Task TestMultipartUploadWithSetContentTypeNotOverwritten()
         {
-            // 20 MB stream
             var fileName = UtilityMethods.GenerateName(@"SetContentType");
             var path = Path.Combine(BasePath, fileName);
-            var fileSize = 20 * MEG_SIZE;
             UtilityMethods.GenerateFile(path, 20 * MEG_SIZE);
-            var transferUtilityRequest = new TransferUtilityUploadRequest
+
+            await transferUtility.UploadAsync(new TransferUtilityUploadRequest
             {
                 BucketName = bucketName,
                 FilePath = path,
@@ -1416,10 +1403,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     ContentEncoding = "gzip",
                 },
-            };
-            transferUtility.Upload(transferUtilityRequest);
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest { BucketName = bucketName, Key = "test-content-type" });
-            Assert.IsTrue(metadata.Headers.ContentType.Equals(MediaTypeNames.Text.Plain));
+            });
+
+            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            { 
+                BucketName = bucketName,
+                Key = "test-content-type" 
+            });
+            Assert.AreEqual(MediaTypeNames.Text.Plain, metadata.Headers.ContentType);
         }
 
         [TestMethod]
@@ -1446,11 +1437,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Validate essential response fields that should always be present
             Assert.IsNotNull(response.ETag, "ETag should not be null");
             Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
-
-            // For small files, we expect single-part upload behavior - ETag should be MD5 format (no quotes or dashes)
-            // ETag format varies, so we just ensure it's a valid non-empty string
-            Console.WriteLine($"ETag: {response.ETag}");
-            Console.WriteLine($"VersionId: {response.VersionId}");
 
             // Validate file was actually uploaded by checking metadata
             var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
@@ -1486,11 +1472,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Validate essential response fields that should always be present
             Assert.IsNotNull(response.ETag, "ETag should not be null");
             Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
-
-            // For multipart uploads, ETag format is different (contains dashes)
-            // We just validate it's a valid string for now
-            Console.WriteLine($"ETag (multipart): {response.ETag}");
-            Console.WriteLine($"VersionId: {response.VersionId}");
 
             // Validate file was actually uploaded by checking metadata
             var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
@@ -1528,9 +1509,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // Validate essential response fields that should always be present
                 Assert.IsNotNull(response.ETag, "ETag should not be null");
                 Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
-
-                Console.WriteLine($"ETag (stream): {response.ETag}");
-                Console.WriteLine($"VersionId: {response.VersionId}");
 
                 // Validate file was actually streamed and uploaded correctly
                 var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
@@ -1582,12 +1560,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Validate essential response fields
             Assert.IsNotNull(response.ETag, "ETag should not be null");
             Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
-
-            // Validate checksum fields if they should be present
-            // Note: Checksum fields in response may not always be set depending on S3 behavior
-            Console.WriteLine($"ETag: {response.ETag}");
-            Console.WriteLine($"ChecksumCRC32: {response.ChecksumCRC32}");
-            Console.WriteLine($"ChecksumType: {response.ChecksumType}");
         }
 
         [TestMethod]
@@ -1640,10 +1612,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Validate the response contains the expected ETag
             Assert.IsNotNull(response.ETag, "Response ETag should not be null");
             Assert.AreEqual(response.ETag, responseMetadata.ETag, "Response ETag should match metadata ETag");
-
-            Console.WriteLine($"UploadWithResponseAsync ETag: {response.ETag}");
-            Console.WriteLine($"Legacy upload ETag: {legacyMetadata.ETag}");
-            Console.WriteLine($"File size: {fileSize}, Response metadata size: {responseMetadata.ContentLength}");
         }
 
         [TestMethod]
@@ -1679,7 +1647,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public void UploadDirectoryWithMixedFileTypesContentTypeTest()
+        public async Task UploadDirectoryWithMixedFileTypesContentTypeTest()
         {
             var directory = CreateMixedFileTypeTestDirectory();
             var keyPrefix = directory.Name;
@@ -1695,10 +1663,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // Note: No ContentType set - should auto-detect per file
             };
 
-            transferUtility.UploadDirectory(request);
+            await transferUtility.UploadDirectoryAsync(request);
 
             // Validate each file got correct content type based on extension
-            ValidateDirectoryContentTypes(Client, bucketName, keyPrefix, directory);
+            await ValidateDirectoryContentTypes(bucketName, keyPrefix, directory);
         }
 
         public static DirectoryInfo CreateMixedFileTypeTestDirectory()
@@ -1727,7 +1695,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return new DirectoryInfo(directoryPath);
         }
 
-        private static void ValidateDirectoryContentTypes(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo directory)
+        private static async Task ValidateDirectoryContentTypes(string bucketName, string keyPrefix, DirectoryInfo directory)
         {
             var expectedContentTypes = new Dictionary<string, string>
             {
@@ -1748,7 +1716,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var relativePath = filePath.Substring(directory.FullName.Length + 1);
                 var key = (!string.IsNullOrEmpty(keyPrefix) ? keyPrefix + "/" : string.Empty) + relativePath.Replace("\\", "/");
 
-                var metadata = s3client.GetObjectMetadata(new GetObjectMetadataRequest
+                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                 {
                     BucketName = bucketName,
                     Key = key
@@ -1761,7 +1729,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     $"File {file.Name} should have content type {expectedContentType} but got {metadata.Headers.ContentType}");
             }
         }
-
 
         public static void ConfigureProgressValidator(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator)
         {
@@ -1825,14 +1792,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
         }
 
-        public static void ValidateFileContents(IAmazonS3 s3client, string bucketName, string key, string path)
+        public static async Task ValidateFileContents(string bucketName, string key, string path)
         {
             // test assumes we used a known extension and added it to the file key
             var ext = Path.GetExtension(key);
-            ValidateFileContents(s3client, bucketName, key, path, AmazonS3Util.MimeTypeFromExtension(ext));
+            await ValidateFileContents(bucketName, key, path, AmazonS3Util.MimeTypeFromExtension(ext));
         }
 
-        public static void ValidateFileContents(IAmazonS3 s3client, string bucketName, string key, string path, string contentType)
+        public static async Task ValidateFileContents(string bucketName, string key, string path, string contentType)
         {
             var downloadPath = path + ".chk";
             var request = new GetObjectRequest
@@ -1841,27 +1808,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = key,
             };
 
-            UtilityMethods.WaitUntil(() =>
+            await UtilityMethods.WaitUntilAsync(async () =>
             {
-                using (var response = s3client.GetObject(request))
+                using (var response = await Client.GetObjectAsync(request))
                 {
                     if (!string.IsNullOrEmpty(contentType))
                     {
                         Assert.AreEqual(contentType, response.Headers.ContentType);
                     }
-                    response.WriteResponseStreamToFile(downloadPath);
+
+                    await response.WriteResponseStreamToFileAsync(downloadPath, append: false, cancellationToken: default);
                 }
                 return true;
             }, sleepSeconds: 2, maxWaitSeconds: 10);
+            
             UtilityMethods.CompareFiles(path, downloadPath);
         }
 
-        public static void ValidateDirectoryContents(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo sourceDirectory)
+        public static async Task ValidateDirectoryContents(string bucketName, string keyPrefix, DirectoryInfo sourceDirectory)
         {
-            ValidateDirectoryContents(s3client, bucketName, keyPrefix, sourceDirectory, null);
+            await ValidateDirectoryContents(bucketName, keyPrefix, sourceDirectory, null);
         }
 
-        public static void ValidateDirectoryContents(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo sourceDirectory, string contentType)
+        public static async Task ValidateDirectoryContents(string bucketName, string keyPrefix, DirectoryInfo sourceDirectory, string contentType)
         {
             var directoryPath = sourceDirectory.FullName;
             var files = sourceDirectory.GetFiles("*", SearchOption.AllDirectories);
@@ -1870,14 +1839,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var filePath = file.FullName;
                 var key = filePath.Substring(directoryPath.Length + 1);
                 key = (!string.IsNullOrEmpty(keyPrefix) ? keyPrefix + "/" : string.Empty) + key.Replace("\\", "/");
-                ValidateFileContents(s3client, bucketName, key, filePath, contentType);
+                await ValidateFileContents(bucketName, key, filePath, contentType);
             }
         }
 
         public static DirectoryInfo CreateTestDirectory(long size = 0, int numberOfTestFiles = 5)
         {
             if (size == 0)
+            {
                 size = 1 * MEG_SIZE;
+            }
 
             var directoryPath = GenerateDirectoryPath();
             for (int i = 0; i < numberOfTestFiles; i++)
@@ -1895,30 +1866,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 return CreateTestDirectory(size, numberOfTestFiles);
             }
-            else
+
+            int numberOfTestFilesInChildDirectory = numberOfTestFiles / 2;
+            int numberOfTestFilesInParentDirectory = numberOfTestFiles - numberOfTestFilesInChildDirectory;
+
+            if (size == 0)
             {
-                int numberOfTestFilesInChildDirectory = numberOfTestFiles / 2;
-                int numberOfTestFilesInParentDirectory = numberOfTestFiles - numberOfTestFilesInChildDirectory;
-
-                if (size == 0)
-                    size = 1 * KILO_SIZE;
-
-                var parentDirectory = GenerateDirectoryPath();
-                for (int i = 0; i < numberOfTestFilesInParentDirectory; i++)
-                {
-                    var parentDirectoryFilePath = Path.Combine(parentDirectory, filePrefix.Trim() + i.ToString() + "file.txt");
-                    UtilityMethods.GenerateFile(parentDirectoryFilePath, size);
-                }
-
-                var childDirectory = Path.Combine(parentDirectory, filePrefix);
-                for (int i = 0; i < numberOfTestFilesInChildDirectory; i++)
-                {
-                    var childDirectoryFilePath = Path.Combine(childDirectory, i.ToString() + "file.txt");
-                    UtilityMethods.GenerateFile(childDirectoryFilePath, size);
-                }
-
-                return new DirectoryInfo(parentDirectory);
+                size = 1 * KILO_SIZE;
             }
+
+            var parentDirectory = GenerateDirectoryPath();
+            for (int i = 0; i < numberOfTestFilesInParentDirectory; i++)
+            {
+                var parentDirectoryFilePath = Path.Combine(parentDirectory, filePrefix.Trim() + i.ToString() + "file.txt");
+                UtilityMethods.GenerateFile(parentDirectoryFilePath, size);
+            }
+
+            var childDirectory = Path.Combine(parentDirectory, filePrefix);
+            for (int i = 0; i < numberOfTestFilesInChildDirectory; i++)
+            {
+                var childDirectoryFilePath = Path.Combine(childDirectory, i.ToString() + "file.txt");
+                UtilityMethods.GenerateFile(childDirectoryFilePath, size);
+            }
+
+            return new DirectoryInfo(parentDirectory);
         }
 
         public static string GenerateDirectoryPath(string baseName = "DirectoryTest")
@@ -2069,16 +2040,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.IsTrue(EventFired, $"{typeof(T).Name} event was not fired");
             }
         }
-
-        void UploadWithLifecycleEvents(string fileName, long size,
+        
+        async Task UploadWithLifecycleEvents(string fileName, long size,
             TransferLifecycleEventValidator<UploadInitiatedEventArgs> initiatedValidator,
             TransferLifecycleEventValidator<UploadCompletedEventArgs> completedValidator,
             TransferLifecycleEventValidator<UploadFailedEventArgs> failedValidator)
         {
-            UploadWithLifecycleEventsAndBucket(fileName, size, bucketName, initiatedValidator, completedValidator, failedValidator);
+            await UploadWithLifecycleEventsAndBucket(fileName, size, bucketName, initiatedValidator, completedValidator, failedValidator);
         }
 
-        void UploadWithLifecycleEventsAndBucket(string fileName, long size, string targetBucketName,
+        async Task UploadWithLifecycleEventsAndBucket(string fileName, long size, string targetBucketName,
             TransferLifecycleEventValidator<UploadInitiatedEventArgs> initiatedValidator,
             TransferLifecycleEventValidator<UploadCompletedEventArgs> completedValidator,
             TransferLifecycleEventValidator<UploadFailedEventArgs> failedValidator)
@@ -2110,18 +2081,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.UploadFailedEvent += failedValidator.OnEventFired;
             }
 
-            transferUtility.Upload(request);
+            await transferUtility.UploadAsync(request);
         }
 
-        void UploadUnseekableStreamWithLifecycleEvents(long size,
+        async Task UploadUnseekableStreamWithLifecycleEvents(long size,
             TransferLifecycleEventValidator<UploadInitiatedEventArgs> initiatedValidator,
             TransferLifecycleEventValidator<UploadCompletedEventArgs> completedValidator,
             TransferLifecycleEventValidator<UploadFailedEventArgs> failedValidator)
         {
-            UploadUnseekableStreamWithLifecycleEventsAndBucket(size, bucketName, initiatedValidator, completedValidator, failedValidator);
+            await UploadUnseekableStreamWithLifecycleEventsAndBucket(size, bucketName, initiatedValidator, completedValidator, failedValidator);
         }
 
-        void UploadUnseekableStreamWithLifecycleEventsAndBucket(long size, string targetBucketName,
+        async Task UploadUnseekableStreamWithLifecycleEventsAndBucket(long size, string targetBucketName,
             TransferLifecycleEventValidator<UploadInitiatedEventArgs> initiatedValidator,
             TransferLifecycleEventValidator<UploadCompletedEventArgs> completedValidator,
             TransferLifecycleEventValidator<UploadFailedEventArgs> failedValidator)
@@ -2157,10 +2128,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.UploadFailedEvent += failedValidator.OnEventFired;
             }
 
-            transferUtility.Upload(request);
+            await transferUtility.UploadAsync(request);
         }
 
-        void DownloadWithLifecycleEvents(string fileName, long size,
+        async Task DownloadWithLifecycleEvents(string fileName, long size,
             TransferLifecycleEventValidator<DownloadInitiatedEventArgs> initiatedValidator,
             TransferLifecycleEventValidator<DownloadCompletedEventArgs> completedValidator,
             TransferLifecycleEventValidator<DownloadFailedEventArgs> failedValidator)
@@ -2170,7 +2141,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var originalFilePath = Path.Combine(BasePath, fileName);
             UtilityMethods.GenerateFile(originalFilePath, size);
 
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -2178,7 +2149,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             var downloadedFilePath = originalFilePath + ".download";
-
             var request = new TransferUtilityDownloadRequest
             {
                 BucketName = bucketName,
@@ -2201,10 +2171,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.DownloadFailedEvent += failedValidator.OnEventFired;
             }
 
-            transferUtility.Download(request);
+            await transferUtility.DownloadAsync(request);
         }
 
-        void DownloadWithLifecycleEventsAndKey(string fileName, string keyToDownload,
+        async Task DownloadWithLifecycleEventsAndKey(string fileName, string keyToDownload,
             TransferLifecycleEventValidator<DownloadInitiatedEventArgs> initiatedValidator,
             TransferLifecycleEventValidator<DownloadCompletedEventArgs> completedValidator,
             TransferLifecycleEventValidator<DownloadFailedEventArgs> failedValidator)
@@ -2233,7 +2203,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.DownloadFailedEvent += failedValidator.OnEventFired;
             }
 
-            transferUtility.Download(request);
+            await transferUtility.DownloadAsync(request);
         }
         
         [TestMethod]
@@ -2293,7 +2263,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(DirectoryResult.Success, response.Result);
 
                 // Validate uploaded contents
-                ValidateDirectoryContents(Client, bucketName, directory.Name, directory, plainTextContentType);
+                await ValidateDirectoryContents(bucketName, directory.Name, directory, plainTextContentType);
             }
             finally
             {

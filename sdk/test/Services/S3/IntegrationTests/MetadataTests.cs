@@ -304,7 +304,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             if (validate)
             {
-                TransferUtilityTests.ValidateDirectoryContents(Client, bucketName, keyPrefix, directory);
+                await TransferUtilityTests.ValidateDirectoryContents(bucketName, keyPrefix, directory);
             }
         }
 
