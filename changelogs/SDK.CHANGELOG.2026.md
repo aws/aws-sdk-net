@@ -1,3 +1,17 @@
+### 4.0.172.0 (2026-01-16 19:27 UTC)
+* Connect (4.0.27.0)
+	* Adds support to allow customers to create form with Dispute configuration
+* DataZone (4.0.19.0)
+	* This release adds support for numeric filtering and complex free-text searches cases for the Search and SearchListings APIs.
+* Glacier (4.0.3.4)
+	* Documentation updates for Amazon Glacier's maintenance mode
+* LaunchWizard (4.0.3.0)
+	* Added UpdateDeployment, ListDeploymentPatternVersions and GetDeploymentPatternVersion APIs for Launch Wizard
+* ResourceExplorer2 (4.0.3.0)
+	* Added ViewName to View-related responses and ServiceViewName to GetServiceView response.
+* SageMaker (4.0.40.2)
+	* Adding security consideration comments for lcc accessing execution role under root access
+
 ### 4.0.171.0 (2026-01-15 19:19 UTC)
 * CleanRooms (4.0.14.0)
 	* This release adds support for parameters in PySpark analysis templates.
