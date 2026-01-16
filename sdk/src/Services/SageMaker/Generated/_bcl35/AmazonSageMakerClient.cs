@@ -4454,6 +4454,14 @@ namespace Amazon.SageMaker
         /// For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecycle configuration scripts execute with root access and the notebook instance's
+        /// IAM execution role privileges. Grant this permission only to trusted principals. See
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig service method.</param>
         /// 
@@ -23029,6 +23037,16 @@ namespace Amazon.SageMaker
         /// Updates a notebook instance. NotebookInstance updates include upgrading or downgrading
         /// the ML compute instance used for your notebook instance to accommodate changes in
         /// your workload requirements.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API can attach lifecycle configurations to notebook instances. Lifecycle configuration
+        /// scripts execute with root access and the notebook instance's IAM execution role privileges.
+        /// Principals with this permission and access to lifecycle configurations can execute
+        /// code with the execution role's credentials. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstance service method.</param>
         /// 
@@ -23088,6 +23106,16 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Updates a notebook instance lifecycle configuration created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
         /// API.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Updates to lifecycle configurations affect all notebook instances using that configuration
+        /// upon their next start. Lifecycle configuration scripts execute with root access and
+        /// the notebook instance's IAM execution role privileges. Grant this permission only
+        /// to trusted principals. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
         /// 
