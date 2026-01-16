@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         private string _contactId;
         private EvaluationContactParticipant _contactParticipant;
         private string _evaluatorArn;
+        private EvaluationReviewMetadata _review;
         private string _samplingJobId;
         private EvaluationScore _score;
 
@@ -172,6 +173,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvaluatorArn()
         {
             return this._evaluatorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Review. 
+        /// <para>
+        /// Information about reviews of this evaluation.
+        /// </para>
+        /// </summary>
+        public EvaluationReviewMetadata Review
+        {
+            get { return this._review; }
+            set { this._review = value; }
+        }
+
+        // Check to see if Review property is set
+        internal bool IsSetReview()
+        {
+            return this._review != null;
         }
 
         /// <summary>

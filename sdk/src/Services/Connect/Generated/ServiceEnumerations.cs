@@ -3289,6 +3289,52 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type EvaluationReviewNotificationRecipientType.
+    /// </summary>
+    public class EvaluationReviewNotificationRecipientType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USER_ID for EvaluationReviewNotificationRecipientType
+        /// </summary>
+        public static readonly EvaluationReviewNotificationRecipientType USER_ID = new EvaluationReviewNotificationRecipientType("USER_ID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationReviewNotificationRecipientType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationReviewNotificationRecipientType FindValue(string value)
+        {
+            return FindValue<EvaluationReviewNotificationRecipientType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationReviewNotificationRecipientType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationStatus.
     /// </summary>
     public class EvaluationStatus : ConstantClass
@@ -3299,9 +3345,17 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EvaluationStatus DRAFT = new EvaluationStatus("DRAFT");
         /// <summary>
+        /// Constant REVIEW_REQUESTED for EvaluationStatus
+        /// </summary>
+        public static readonly EvaluationStatus REVIEW_REQUESTED = new EvaluationStatus("REVIEW_REQUESTED");
+        /// <summary>
         /// Constant SUBMITTED for EvaluationStatus
         /// </summary>
         public static readonly EvaluationStatus SUBMITTED = new EvaluationStatus("SUBMITTED");
+        /// <summary>
+        /// Constant UNDER_REVIEW for EvaluationStatus
+        /// </summary>
+        public static readonly EvaluationStatus UNDER_REVIEW = new EvaluationStatus("UNDER_REVIEW");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

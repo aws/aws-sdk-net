@@ -108,6 +108,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.LanguageConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReviewConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationReviewConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ReviewConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScoringStrategy", targetDepth))
                 {
                     var unmarshaller = EvaluationFormScoringStrategyUnmarshaller.Instance;

@@ -146,6 +146,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetReviewConfiguration())
+                {
+                    context.Writer.WritePropertyName("ReviewConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EvaluationReviewConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ReviewConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetScoringStrategy())
                 {
                     context.Writer.WritePropertyName("ScoringStrategy");

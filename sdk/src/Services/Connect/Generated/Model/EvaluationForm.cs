@@ -46,6 +46,7 @@ namespace Amazon.Connect.Model
         private string _lastModifiedBy;
         private DateTime? _lastModifiedTime;
         private bool? _locked;
+        private EvaluationReviewConfiguration _reviewConfiguration;
         private EvaluationFormScoringStrategy _scoringStrategy;
         private EvaluationFormVersionStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -276,6 +277,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetLocked()
         {
             return this._locked.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewConfiguration. 
+        /// <para>
+        /// Configuration for evaluation review settings of this evaluation form.
+        /// </para>
+        /// </summary>
+        public EvaluationReviewConfiguration ReviewConfiguration
+        {
+            get { return this._reviewConfiguration; }
+            set { this._reviewConfiguration = value; }
+        }
+
+        // Check to see if ReviewConfiguration property is set
+        internal bool IsSetReviewConfiguration()
+        {
+            return this._reviewConfiguration != null;
         }
 
         /// <summary>

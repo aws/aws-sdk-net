@@ -108,6 +108,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.EvaluatorArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Review", targetDepth))
+                {
+                    var unmarshaller = EvaluationReviewMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Review = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SamplingJobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
