@@ -30,34 +30,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDeployments operation.
-    /// Lists the deployments that have been created.
+    /// Container for the parameters to the ListDeploymentPatternVersions operation.
+    /// Lists the deployment pattern versions.
     /// </summary>
-    public partial class ListDeploymentsRequest : AmazonLaunchWizardRequest
+    public partial class ListDeploymentPatternVersionsRequest : AmazonLaunchWizardRequest
     {
-        private List<DeploymentFilter> _filters = AWSConfigs.InitializeCollections ? new List<DeploymentFilter>() : null;
+        private string _deploymentPatternName;
+        private List<DeploymentPatternVersionFilter> _filters = AWSConfigs.InitializeCollections ? new List<DeploymentPatternVersionFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
+        private string _workloadName;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentPatternName. 
+        /// <para>
+        /// The name of the deployment pattern. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
+        /// <c>ListWorkloadDeploymentPatterns</c> </a> operation to discover supported values
+        /// for this parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string DeploymentPatternName
+        {
+            get { return this._deploymentPatternName; }
+            set { this._deploymentPatternName = value; }
+        }
+
+        // Check to see if DeploymentPatternName property is set
+        internal bool IsSetDeploymentPatternName()
+        {
+            return this._deploymentPatternName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters to scope the results. The following filters are supported:
+        /// Filters to apply when listing deployment pattern versions.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>WORKLOAD_NAME</c> - The name used in deployments.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>DEPLOYMENT_STATUS</c> - <c>COMPLETED</c> | <c>CREATING</c> | <c>DELETE_IN_PROGRESS</c>
-        /// | <c>DELETE_INITIATING</c> | <c>DELETE_FAILED</c> | <c>DELETED</c> | <c>FAILED</c>
-        /// | <c>IN_PROGRESS</c> | <c>VALIDATING</c> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public List<DeploymentFilter> Filters
+        public List<DeploymentPatternVersionFilter> Filters
         {
             get { return this._filters; }
             set { this._filters = value; }
@@ -72,8 +83,7 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return for this request. To get the next page of items,
-        /// make another request with the token returned in the output.
+        /// The maximum number of deployment pattern versions to list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -92,8 +102,7 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token returned from a previous paginated request. Pagination continues from the
-        /// end of the items returned by the previous request.
+        /// The token for the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -107,6 +116,26 @@ namespace Amazon.LaunchWizard.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkloadName. 
+        /// <para>
+        /// The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+        /// <c>ListWorkloads</c> </a> operation to discover supported values for this parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string WorkloadName
+        {
+            get { return this._workloadName; }
+            set { this._workloadName = value; }
+        }
+
+        // Check to see if WorkloadName property is set
+        internal bool IsSetWorkloadName()
+        {
+            return this._workloadName != null;
         }
 
     }

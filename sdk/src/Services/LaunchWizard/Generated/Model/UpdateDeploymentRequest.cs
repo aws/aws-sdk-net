@@ -30,43 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// The data that details a workload deployment pattern.
+    /// Container for the parameters to the UpdateDeployment operation.
+    /// Updates a deployment.
     /// </summary>
-    public partial class WorkloadDeploymentPatternData
+    public partial class UpdateDeploymentRequest : AmazonLaunchWizardRequest
     {
-        private string _deploymentPatternName;
+        private string _deploymentId;
         private string _deploymentPatternVersionName;
-        private string _description;
-        private string _displayName;
-        private List<DeploymentSpecificationsField> _specifications = AWSConfigs.InitializeCollections ? new List<DeploymentSpecificationsField>() : null;
-        private WorkloadDeploymentPatternStatus _status;
-        private string _statusMessage;
-        private string _workloadName;
+        private bool? _dryRun;
+        private bool? _force;
+        private Dictionary<string, string> _specifications = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workloadVersionName;
 
         /// <summary>
-        /// Gets and sets the property DeploymentPatternName. 
+        /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The name of the deployment pattern.
+        /// The ID of the deployment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string DeploymentPatternName
+        [AWSProperty(Required=true, Min=2, Max=128)]
+        public string DeploymentId
         {
-            get { return this._deploymentPatternName; }
-            set { this._deploymentPatternName = value; }
+            get { return this._deploymentId; }
+            set { this._deploymentId = value; }
         }
 
-        // Check to see if DeploymentPatternName property is set
-        internal bool IsSetDeploymentPatternName()
+        // Check to see if DeploymentId property is set
+        internal bool IsSetDeploymentId()
         {
-            return this._deploymentPatternName != null;
+            return this._deploymentId != null;
         }
 
         /// <summary>
         /// Gets and sets the property DeploymentPatternVersionName. 
         /// <para>
-        /// The version name of the deployment pattern.
+        /// The name of the deployment pattern version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=30)]
@@ -83,39 +81,41 @@ namespace Amazon.LaunchWizard.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property DryRun. 
         /// <para>
-        /// The description of the deployment pattern.
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
         /// </para>
         /// </summary>
-        public string Description
+        public bool DryRun
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._dryRun.GetValueOrDefault(); }
+            set { this._dryRun = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
         {
-            return this._description != null;
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
+        /// Gets and sets the property Force. 
         /// <para>
-        /// The display name of the deployment pattern.
+        /// Forces the update even if validation warnings are present.
         /// </para>
         /// </summary>
-        public string DisplayName
+        public bool Force
         {
-            get { return this._displayName; }
-            set { this._displayName = value; }
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
         }
 
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
+        // Check to see if Force property is set
+        internal bool IsSetForce()
         {
-            return this._displayName != null;
+            return this._force.HasValue; 
         }
 
         /// <summary>
@@ -129,8 +129,8 @@ namespace Amazon.LaunchWizard.Model
         /// <c>GetWorkloadDeploymentPattern</c> </a> operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public List<DeploymentSpecificationsField> Specifications
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
+        public Dictionary<string, string> Specifications
         {
             get { return this._specifications; }
             set { this._specifications = value; }
@@ -143,64 +143,9 @@ namespace Amazon.LaunchWizard.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the deployment pattern.
-        /// </para>
-        /// </summary>
-        public WorkloadDeploymentPatternStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StatusMessage. 
-        /// <para>
-        /// The status message of the deployment pattern.
-        /// </para>
-        /// </summary>
-        public string StatusMessage
-        {
-            get { return this._statusMessage; }
-            set { this._statusMessage = value; }
-        }
-
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
-        {
-            return this._statusMessage != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkloadName. 
-        /// <para>
-        /// The workload name of the deployment pattern.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string WorkloadName
-        {
-            get { return this._workloadName; }
-            set { this._workloadName = value; }
-        }
-
-        // Check to see if WorkloadName property is set
-        internal bool IsSetWorkloadName()
-        {
-            return this._workloadName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property WorkloadVersionName. 
         /// <para>
-        /// The workload version name of the deployment pattern.
+        /// The name of the workload version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=30)]

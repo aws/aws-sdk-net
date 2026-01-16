@@ -30,40 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListWorkloads operation.
-    /// Lists the available workload names. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
-    /// operation to discover the available deployment patterns for a given workload.
+    /// This is the response object from the ListDeploymentPatternVersions operation.
     /// </summary>
-    public partial class ListWorkloadsRequest : AmazonLaunchWizardRequest
+    public partial class ListDeploymentPatternVersionsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<DeploymentPatternVersionDataSummary> _deploymentPatternVersions = AWSConfigs.InitializeCollections ? new List<DeploymentPatternVersionDataSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property DeploymentPatternVersions. 
         /// <para>
-        /// The maximum number of items to return for this request. To get the next page of items,
-        /// make another request with the token returned in the output.
+        /// The deployment pattern versions.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public List<DeploymentPatternVersionDataSummary> DeploymentPatternVersions
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._deploymentPatternVersions; }
+            set { this._deploymentPatternVersions = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if DeploymentPatternVersions property is set
+        internal bool IsSetDeploymentPatternVersions()
         {
-            return this._maxResults.HasValue; 
+            return this._deploymentPatternVersions != null && (this._deploymentPatternVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token returned from a previous paginated request. Pagination continues from the
-        /// end of the items returned by the previous request.
+        /// The token for the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

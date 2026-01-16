@@ -4,61 +4,79 @@
     <property>Amazon.LaunchWizard.Model.CreateDeploymentRequest.DeploymentPatternName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[A-Za-z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.CreateDeploymentRequest.Name</property>
     <min>1</min>
     <max>50</max>
-    <pattern>^[A-Za-z0-9_\.-]+$</pattern>
+    <pattern>[A-Za-z0-9_\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.CreateDeploymentRequest.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.CreateDeploymentResponse.DeploymentId</property>
     <min>2</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.DeleteDeploymentRequest.DeploymentId</property>
     <min>2</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.GetDeploymentRequest.DeploymentId</property>
     <min>2</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.GetDeploymentPatternVersionRequest.DeploymentPatternName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.GetDeploymentPatternVersionRequest.DeploymentPatternVersionName</property>
+    <min>5</min>
+    <max>30</max>
+    <pattern>(([A-Za-z0-9][a-zA-Z0-9-]*)|(\d+\.\d+\.\d+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.GetDeploymentPatternVersionRequest.WorkloadName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.GetWorkloadRequest.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.GetWorkloadDeploymentPatternRequest.DeploymentPatternName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[A-Za-z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.GetWorkloadDeploymentPatternRequest.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListDeploymentEventsRequest.DeploymentId</property>
     <min>2</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListDeploymentEventsRequest.MaxResults</property>
@@ -68,12 +86,39 @@
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListDeploymentEventsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListDeploymentEventsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest.DeploymentPatternName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest.WorkloadName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListDeploymentsRequest.MaxResults</property>
@@ -83,12 +128,12 @@
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListDeploymentsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListDeploymentsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListWorkloadDeploymentPatternsRequest.MaxResults</property>
@@ -98,18 +143,18 @@
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListWorkloadDeploymentPatternsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListWorkloadDeploymentPatternsRequest.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListWorkloadDeploymentPatternsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListWorkloadsRequest.MaxResults</property>
@@ -119,95 +164,125 @@
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListWorkloadsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.ListWorkloadsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.UpdateDeploymentRequest.DeploymentId</property>
+    <min>2</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.UpdateDeploymentRequest.DeploymentPatternVersionName</property>
+    <min>5</min>
+    <max>30</max>
+    <pattern>(([A-Za-z0-9][a-zA-Z0-9-]*)|(\d+\.\d+\.\d+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.UpdateDeploymentRequest.WorkloadVersionName</property>
+    <min>5</min>
+    <max>30</max>
+    <pattern>(([A-Za-z0-9][a-zA-Z0-9-]*)|(\d+\.\d+\.\d+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.DeploymentData.Id</property>
     <min>2</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.DeploymentData.PatternName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[A-Za-z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.DeploymentData.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.DeploymentDataSummary.Id</property>
     <min>2</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.DeploymentDataSummary.PatternName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[A-Za-z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.DeploymentDataSummary.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.WorkloadData.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.WorkloadDataSummary.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.WorkloadDeploymentPatternData.DeploymentPatternName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[A-Za-z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.WorkloadDeploymentPatternData.DeploymentPatternVersionName</property>
+    <min>5</min>
+    <max>30</max>
+    <pattern>(([A-Za-z0-9][a-zA-Z0-9-]*)|(\d+\.\d+\.\d+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.WorkloadDeploymentPatternData.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.WorkloadDeploymentPatternData.WorkloadVersionName</property>
     <min>5</min>
     <max>30</max>
-    <pattern>^[A-Za-z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>(([A-Za-z0-9][a-zA-Z0-9-]*)|(\d+\.\d+\.\d+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.WorkloadDeploymentPatternDataSummary.DeploymentPatternName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[A-Za-z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.WorkloadDeploymentPatternDataSummary.DeploymentPatternVersionName</property>
+    <min>5</min>
+    <max>30</max>
+    <pattern>(([A-Za-z0-9][a-zA-Z0-9-]*)|(\d+\.\d+\.\d+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.WorkloadDeploymentPatternDataSummary.WorkloadName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Za-z][a-zA-Z0-9-_]*$</pattern>
+    <pattern>[A-Za-z][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LaunchWizard.Model.WorkloadDeploymentPatternDataSummary.WorkloadVersionName</property>
     <min>5</min>
     <max>30</max>
-    <pattern>^[A-Za-z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>(([A-Za-z0-9][a-zA-Z0-9-]*)|(\d+\.\d+\.\d+))</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -36,6 +36,7 @@ namespace Amazon.LaunchWizard.Model
     {
         private DateTime? _createdAt;
         private string _id;
+        private DateTime? _modifiedAt;
         private string _name;
         private string _patternName;
         private DeploymentStatus _status;
@@ -76,6 +77,24 @@ namespace Amazon.LaunchWizard.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifiedAt. 
+        /// <para>
+        /// The time the deployment was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime ModifiedAt
+        {
+            get { return this._modifiedAt.GetValueOrDefault(); }
+            set { this._modifiedAt = value; }
+        }
+
+        // Check to see if ModifiedAt property is set
+        internal bool IsSetModifiedAt()
+        {
+            return this._modifiedAt.HasValue; 
         }
 
         /// <summary>

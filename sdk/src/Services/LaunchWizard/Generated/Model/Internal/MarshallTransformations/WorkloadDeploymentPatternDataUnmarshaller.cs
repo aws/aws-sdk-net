@@ -72,6 +72,12 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentPatternName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deploymentPatternVersionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentPatternVersionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

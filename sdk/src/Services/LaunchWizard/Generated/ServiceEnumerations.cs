@@ -75,6 +75,52 @@ namespace Amazon.LaunchWizard
 
 
     /// <summary>
+    /// Constants used for properties of type DeploymentPatternVersionFilterKey.
+    /// </summary>
+    public class DeploymentPatternVersionFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UpdateFromVersion for DeploymentPatternVersionFilterKey
+        /// </summary>
+        public static readonly DeploymentPatternVersionFilterKey UpdateFromVersion = new DeploymentPatternVersionFilterKey("updateFromVersion");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentPatternVersionFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentPatternVersionFilterKey FindValue(string value)
+        {
+            return FindValue<DeploymentPatternVersionFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentPatternVersionFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentStatus.
     /// </summary>
     public class DeploymentStatus : ConstantClass
@@ -112,6 +158,26 @@ namespace Amazon.LaunchWizard
         /// Constant IN_PROGRESS for DeploymentStatus
         /// </summary>
         public static readonly DeploymentStatus IN_PROGRESS = new DeploymentStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_COMPLETED for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus UPDATE_COMPLETED = new DeploymentStatus("UPDATE_COMPLETED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus UPDATE_FAILED = new DeploymentStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus UPDATE_IN_PROGRESS = new DeploymentStatus("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_ROLLBACK_COMPLETED for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus UPDATE_ROLLBACK_COMPLETED = new DeploymentStatus("UPDATE_ROLLBACK_COMPLETED");
+        /// <summary>
+        /// Constant UPDATE_ROLLBACK_FAILED for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus UPDATE_ROLLBACK_FAILED = new DeploymentStatus("UPDATE_ROLLBACK_FAILED");
         /// <summary>
         /// Constant VALIDATING for DeploymentStatus
         /// </summary>
