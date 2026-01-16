@@ -33,7 +33,7 @@ namespace AWSSDK.UnitTests
     public class RetryHandlerStaleConnectionTests : RuntimePipelineTestBase
     {
         const int MAX_RETRIES = 2;
-        const int MAX_STALE_CONNECTION_RETRIES = 3;
+        const int MAX_STALE_CONNECTION_RETRIES = 10;
         
         private static ClientConfig TestConfig;
         

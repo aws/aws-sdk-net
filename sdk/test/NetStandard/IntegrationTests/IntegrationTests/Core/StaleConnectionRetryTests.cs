@@ -258,8 +258,8 @@ namespace Amazon.DNXCore.IntegrationTests.Core
         /// 
         /// Configuration Values Tested:
         /// - MaxStaleConnectionRetries = 1 (minimal retries)
-        /// - MaxStaleConnectionRetries = 3 (default value)
-        /// - MaxStaleConnectionRetries = 5 (higher limit for connection-heavy scenarios)
+        /// - MaxStaleConnectionRetries = 10 (default value)
+        /// - MaxStaleConnectionRetries = 5 (custom value for specific scenarios)
         /// 
         /// Expected Behavior (for each configuration):
         /// - Simulator fails (N-1) times where N = MaxStaleConnectionRetries
