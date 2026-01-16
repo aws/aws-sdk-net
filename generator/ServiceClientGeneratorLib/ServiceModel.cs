@@ -591,7 +591,9 @@ namespace ServiceClientGenerator
                         new Operation(this, "PutBucketLogging", DocumentRoot[OperationsKey]["PutBucketLogging"]),
                         new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"]),
                         new Operation(this, "PutBucketWebsite", DocumentRoot[OperationsKey]["PutBucketWebsite"]),
-                        new Operation(this, "DeleteBucketWebsite", DocumentRoot[OperationsKey]["DeleteBucketWebsite"])
+                        new Operation(this, "DeleteBucketWebsite", DocumentRoot[OperationsKey]["DeleteBucketWebsite"]),
+                        new Operation(this, "GetObjectTorrent", DocumentRoot[OperationsKey]["GetObjectTorrent"])
+
                     };
                 }
                 return _s3AllowListOperations.Where(operation => operation.data != null).ToList();

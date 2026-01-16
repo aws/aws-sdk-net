@@ -428,6 +428,12 @@ if (this.Config.ServiceModel.Type == ServiceType.Cbor)
                         if (excludeMembersList.Contains(member.ModeledName))
                             continue;
                     }
+                    // for s3 streaming response payload members, we don't generate a member on the response structure since all the response classes
+                    // inherit StreamResponse which already contains its own streaming member.
+                    if (this.Config.ServiceId == "S3" && this.Operation != null && this.Operation.ResponseStructure != null && this.Operation.ResponseStructure.Name == this.Structure.Name && member.IsStreaming)
+                    {
+                        continue;   
+                    }
                     if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPrivateMemberAssignment.Count > 0)
                     {
 
@@ -820,6 +826,12 @@ WriteInjectXmlCode(injectModifier.InjectXmlPrivateMemberAssignment, 2);
                     if (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream)
                     {
                         eventPublisherDocumentation = GenerateEventPublisherDocumentation(member);
+                    }
+                    // for s3 streaming response payload members, we don't generate a member on the response structure since all the response classes
+                    // inherit StreamResponse which already contains its own streaming member.
+                    if (this.Config.ServiceId == "S3" && this.Operation != null && this.Operation.ResponseStructure != null && this.Operation.ResponseStructure.Name == this.Structure.Name && member.IsStreaming)
+                    {
+                        continue;   
                     }
 
             
