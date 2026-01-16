@@ -367,7 +367,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -436,7 +438,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -494,7 +498,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -593,7 +599,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -663,7 +671,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -749,7 +759,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
@@ -829,7 +841,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -906,7 +920,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -967,7 +983,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1035,7 +1053,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1113,7 +1133,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1186,7 +1208,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1239,7 +1263,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
@@ -1341,7 +1367,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1396,7 +1424,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1478,7 +1508,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1552,7 +1584,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1609,7 +1643,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.PolicyEnforcedException">
         /// Returned if a retrieval job would exceed the current data policy's retrieval rate
@@ -1707,7 +1743,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1803,7 +1841,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1899,7 +1939,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -1984,7 +2026,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2063,7 +2107,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2113,7 +2159,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
@@ -2161,7 +2209,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2239,7 +2289,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2298,7 +2350,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2351,7 +2405,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
@@ -2400,7 +2456,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2460,7 +2518,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
@@ -2511,7 +2571,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2605,7 +2667,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2702,7 +2766,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.RequestTimeoutException">
         /// Returned if, when uploading an archive, Amazon Glacier times out while receiving the
@@ -2814,7 +2880,9 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
-        /// 
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.RequestTimeoutException">
         /// Returned if, when uploading an archive, Amazon Glacier times out while receiving the

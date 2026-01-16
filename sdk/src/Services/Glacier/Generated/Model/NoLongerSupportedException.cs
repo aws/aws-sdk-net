@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// 
+    /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+    /// request is denied as the API is no longer supported for new customers. Please use
+    /// Amazon S3 Glacier storage classes instead.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -128,7 +130,10 @@ namespace Amazon.Glacier.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property Code.
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// 400 Bad Request
+        /// </para>
         /// </summary>
         public string Code
         {
@@ -143,7 +148,10 @@ namespace Amazon.Glacier.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Client
+        /// </para>
         /// </summary>
         public string Type
         {
