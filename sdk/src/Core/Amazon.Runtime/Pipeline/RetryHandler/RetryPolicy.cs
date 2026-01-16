@@ -282,6 +282,31 @@ namespace Amazon.Runtime
                     }
                 }
 
+#if NETSTANDARD
+                // .NET Core/.NET 7+ fallback: HttpClient may throw HttpIOException when the response
+                // ends prematurely due to stale connections. HttpIOException is .NET 7+ - we check by
+                // type name to avoid compilation issues on older targets that support NetStandard.
+                if (currentException.GetType().Name == "HttpIOException")
+                {
+                    var message = currentException.Message;
+                    if (message != null && message.Contains("The response ended prematurely"))
+                    {
+                        return true;
+                    }
+                }
+#else
+                // .NET Framework fallback: HttpWebRequest wraps stale connection errors as IOException
+                // without exposing the underlying SocketException. Check for known message patterns.
+                if (currentException is IOException ioException)
+                {
+                    var message = ioException.Message;
+                    if (message != null && message.Contains("The connection was closed"))
+                    {
+                        return true;
+                    }
+                }
+#endif
+
                 currentException = currentException.InnerException;
             }
 

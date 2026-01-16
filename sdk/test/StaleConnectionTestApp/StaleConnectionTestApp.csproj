@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>StaleConnectionTestApp</RootNamespace>
+    <AssemblyName>StaleConnectionTestApp</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.NetFramework.csproj" Condition="'$(TargetFramework)' == 'net472'" />
+    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.NetStandard.csproj" Condition="'$(TargetFramework)' == 'net8.0'" />
+    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.NetFramework.csproj" Condition="'$(TargetFramework)' == 'net472'" />
+    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.NetStandard.csproj" Condition="'$(TargetFramework)' == 'net8.0'" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+</Project>
