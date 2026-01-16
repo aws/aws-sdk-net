@@ -52,6 +52,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Attribute);
             }
 
+            if(requestObject.IsSetIntValue())
+            {
+                context.Writer.WritePropertyName("intValue");
+                context.Writer.WriteNumberValue(requestObject.IntValue.Value);
+            }
+
+            if(requestObject.IsSetOperator())
+            {
+                context.Writer.WritePropertyName("operator");
+                context.Writer.WriteStringValue(requestObject.Operator);
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");

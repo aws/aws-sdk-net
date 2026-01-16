@@ -13460,7 +13460,35 @@ namespace Amazon.DataZone
         /// <para>
         /// For paginated results, be prepared to use --next-token to fetch additional pages.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To run a standard free-text search, the <c>searchText</c> parameter must be supplied.
+        /// By default, all searchable fields are indexed for semantic search and will return
+        /// semantic matches for SearchListings queries. To prevent semantic search indexing for
+        /// a custom form attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+        /// API documentation</a>. To run a lexical search query, enclose the query with double
+        /// quotes (""). This will disable semantic search even for fields that have semantic
+        /// search enabled and will only return results that contain the keywords wrapped by double
+        /// quotes (order of tokens in the query is not enforced). Free-text search is supported
+        /// for all attributes annotated with @amazon.datazone#searchable.
+        /// </para>
+        ///  
+        /// <para>
+        /// To run a filtered search, provide filter clause using the <c>filters</c> parameter.
+        /// To filter on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To filter on an indexed numeric attribute (i.e., a numeric attribute annotated with
+        /// <c>@amazon.datazone#sortable</c>), provide a filter using the <c>intValue</c> parameter.
+        /// The filters parameter can also be used to run more advanced free-text searches that
+        /// target specific attributes (attributes must be annotated with <c>@amazon.datazone#searchable</c>
+        /// for free-text search). Create/update timestamp filtering is supported using the special
+        /// <c>creationTime</c>/<c>lastUpdatedTime</c> attributes. Filter types can be mixed and
+        /// matched to power complex queries.
+        /// </para>
+        ///  
+        /// <para>
+        ///  To find out whether an attribute has been annotated and indexed for a given search
+        /// type, use the GetFormType API to retrieve the form containing the attribute.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
         /// 
@@ -13537,7 +13565,35 @@ namespace Amazon.DataZone
         /// <para>
         /// For paginated results, be prepared to use --next-token to fetch additional pages.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To run a standard free-text search, the <c>searchText</c> parameter must be supplied.
+        /// By default, all searchable fields are indexed for semantic search and will return
+        /// semantic matches for SearchListings queries. To prevent semantic search indexing for
+        /// a custom form attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+        /// API documentation</a>. To run a lexical search query, enclose the query with double
+        /// quotes (""). This will disable semantic search even for fields that have semantic
+        /// search enabled and will only return results that contain the keywords wrapped by double
+        /// quotes (order of tokens in the query is not enforced). Free-text search is supported
+        /// for all attributes annotated with @amazon.datazone#searchable.
+        /// </para>
+        ///  
+        /// <para>
+        /// To run a filtered search, provide filter clause using the <c>filters</c> parameter.
+        /// To filter on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To filter on an indexed numeric attribute (i.e., a numeric attribute annotated with
+        /// <c>@amazon.datazone#sortable</c>), provide a filter using the <c>intValue</c> parameter.
+        /// The filters parameter can also be used to run more advanced free-text searches that
+        /// target specific attributes (attributes must be annotated with <c>@amazon.datazone#searchable</c>
+        /// for free-text search). Create/update timestamp filtering is supported using the special
+        /// <c>creationTime</c>/<c>lastUpdatedTime</c> attributes. Filter types can be mixed and
+        /// matched to power complex queries.
+        /// </para>
+        ///  
+        /// <para>
+        ///  To find out whether an attribute has been annotated and indexed for a given search
+        /// type, use the GetFormType API to retrieve the form containing the attribute.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
         /// <param name="cancellationToken">
@@ -13678,10 +13734,10 @@ namespace Amazon.DataZone
         /// </para>
         ///  
         /// <para>
-        /// To run a free-text search, the <c>searchText</c> parameter must be supplied. By default,
-        /// all searchable fields are indexed for semantic search and will return semantic matches
-        /// for SearchListings queries. To prevent semantic search indexing for a custom form
-        /// attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+        /// To run a standard free-text search, the <c>searchText</c> parameter must be supplied.
+        /// By default, all searchable fields are indexed for semantic search and will return
+        /// semantic matches for SearchListings queries. To prevent semantic search indexing for
+        /// a custom form attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
         /// API documentation</a>. To run a lexical search query, enclose the query with double
         /// quotes (""). This will disable semantic search even for fields that have semantic
         /// search enabled and will only return results that contain the keywords wrapped by double
@@ -13690,8 +13746,15 @@ namespace Amazon.DataZone
         /// </para>
         ///  
         /// <para>
-        /// To run a filtered search, provide filter clause using the filters parameter. To filter
-        /// on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To run a filtered search, provide filter clause using the <c>filters</c> parameter.
+        /// To filter on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To filter on an indexed numeric attribute (i.e., a numeric attribute annotated with
+        /// <c>@amazon.datazone#sortable</c>), provide a filter using the <c>intValue</c> parameter.
+        /// The filters parameter can also be used to run more advanced free-text searches that
+        /// target specific attributes (attributes must be annotated with <c>@amazon.datazone#searchable</c>
+        /// for free-text search). Create/update timestamp filtering is supported using the special
+        /// <c>creationTime</c>/<c>lastUpdatedTime</c> attributes. Filter types can be mixed and
+        /// matched to power complex queries.
         /// </para>
         ///  
         /// <para>
@@ -13754,10 +13817,10 @@ namespace Amazon.DataZone
         /// </para>
         ///  
         /// <para>
-        /// To run a free-text search, the <c>searchText</c> parameter must be supplied. By default,
-        /// all searchable fields are indexed for semantic search and will return semantic matches
-        /// for SearchListings queries. To prevent semantic search indexing for a custom form
-        /// attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+        /// To run a standard free-text search, the <c>searchText</c> parameter must be supplied.
+        /// By default, all searchable fields are indexed for semantic search and will return
+        /// semantic matches for SearchListings queries. To prevent semantic search indexing for
+        /// a custom form attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
         /// API documentation</a>. To run a lexical search query, enclose the query with double
         /// quotes (""). This will disable semantic search even for fields that have semantic
         /// search enabled and will only return results that contain the keywords wrapped by double
@@ -13766,8 +13829,15 @@ namespace Amazon.DataZone
         /// </para>
         ///  
         /// <para>
-        /// To run a filtered search, provide filter clause using the filters parameter. To filter
-        /// on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To run a filtered search, provide filter clause using the <c>filters</c> parameter.
+        /// To filter on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To filter on an indexed numeric attribute (i.e., a numeric attribute annotated with
+        /// <c>@amazon.datazone#sortable</c>), provide a filter using the <c>intValue</c> parameter.
+        /// The filters parameter can also be used to run more advanced free-text searches that
+        /// target specific attributes (attributes must be annotated with <c>@amazon.datazone#searchable</c>
+        /// for free-text search). Create/update timestamp filtering is supported using the special
+        /// <c>creationTime</c>/<c>lastUpdatedTime</c> attributes. Filter types can be mixed and
+        /// matched to power complex queries.
         /// </para>
         ///  
         /// <para>

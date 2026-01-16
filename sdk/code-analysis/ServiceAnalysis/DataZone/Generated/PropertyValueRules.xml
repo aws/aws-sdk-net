@@ -5626,7 +5626,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.Filter.Value</property>
-    <min>1</min>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
