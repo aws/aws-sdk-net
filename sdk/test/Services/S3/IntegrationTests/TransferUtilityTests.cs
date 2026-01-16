@@ -288,164 +288,83 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
-        [TestMethod]
-        public void UploadUnSeekableStreamTest()
+        [DataTestMethod]
+        [DataRow(20, null, "SmallFile", false, false)]
+        [DataRow(4, null, "SmallerThanMinPart", false, false)]
+        [DataRow(5, null, "EqualToMinPartSize", false, false)]
+        [DataRow(5, 8192, "EqualToPartBufferSize", false, false)]
+        [DataRow(5, 1, "BetweenMinPartSizeAndPartBufferSize", false, false)]
+        [DataRow(0, null, "EmptyFileFromDisk", false, false)]
+        [DataRow(0, null, "EmptyStreamDirect", false, true)]
+        [DataRow(20, null, "WithMetadataAndHeaders", true, false)]
+        public async Task UploadUnseekableStreamTest(long sizeInMbs, int? padding, string name, bool includeHeaders, bool useZeroLengthConstructor)
         {
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallFile");
+            var fileName = UtilityMethods.GenerateName(name);
             var path = Path.Combine(BasePath, fileName);
-            var fileSize = 20 * MEG_SIZE;
-            UtilityMethods.GenerateFile(path, fileSize);
-            //take the generated file and turn it into an unseekable stream
 
-            var stream = GenerateUnseekableStreamFromFile(path);
-            transferUtility.Upload(stream, bucketName, fileName);
+            var fileSize = sizeInMbs * MEG_SIZE;
+            if (padding.HasValue)
+            {
+                fileSize += padding.Value;
+            }
 
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            Stream stream;
+            if (useZeroLengthConstructor)
+            {
+                stream = new UnseekableStream(setZeroLengthStream: true);
+            }
+            else
+            {
+                UtilityMethods.GenerateFile(path, fileSize);
+                stream = GenerateUnseekableStreamFromFile(path);
+            }
+
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = fileName,
+                InputStream = stream,
+
+                // This test makes the assumption that the part size is 5MB, but the default value in the
+                // request was changed (to 8MB) in order to match the other SDKs.
+                PartSize = 5 * MEG_SIZE,
+            };
+
+            if (includeHeaders)
+            {
+                uploadRequest.Metadata.Add("testmetadata", "testmetadatavalue");
+                uploadRequest.Headers["Content-Disposition"] = "attachment; filename=\"" + fileName + "\"";
+            }
+
+            await transferUtility.UploadAsync(uploadRequest);
+
+            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
                 BucketName = bucketName,
                 Key = fileName
             });
             Assert.AreEqual(fileSize, metadata.ContentLength);
 
-            // Download the file and validate content of downloaded file is equal.
-            var downloadPath = path + ".download";
-            var downloadRequest = new TransferUtilityDownloadRequest
+            if (includeHeaders)
             {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = downloadPath
-            };
-            transferUtility.Download(downloadRequest);
-            UtilityMethods.CompareFiles(path, downloadPath);
-        }
+                Assert.IsTrue(metadata.Metadata.Count > 0);
+                Assert.AreEqual("testmetadatavalue", metadata.Metadata["testmetadata"]);
+                Assert.IsTrue(metadata.Headers.Count > 0);
+                Assert.AreEqual("attachment; filename=\"" + fileName + "\"", metadata.Headers["Content-Disposition"]);
+            }
 
-        [TestMethod]
-        public void UploadUnSeekableStreamFileSizeSmallerThanMinPartTest()
-        {
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallerThanMinPart");
-            var path = Path.Combine(BasePath, fileName);
-            var fileSize = 4 * MEG_SIZE;
-            UtilityMethods.GenerateFile(path, fileSize);
-            //take the generated file and turn it into an unseekable stream
-
-            var stream = GenerateUnseekableStreamFromFile(path);
-            transferUtility.Upload(stream, bucketName, fileName);
-
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            if (fileSize > 0)
             {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength);
-
-            //Download the file and validate content of downloaded file is equal.
-            var downloadPath = path + ".download";
-            var downloadRequest = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = downloadPath
-            };
-            transferUtility.Download(downloadRequest);
-            UtilityMethods.CompareFiles(path, downloadPath);
-        }
-
-        [TestMethod]
-        public void UploadUnSeekableStreamFileSizeEqualToMinPartTest()
-        {
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\EqualToMinPartSize");
-            var path = Path.Combine(BasePath, fileName);
-            var fileSize = 5 * MEG_SIZE;
-
-            UtilityMethods.GenerateFile(path, fileSize);
-            //take the generated file and turn it into an unseekable stream
-
-            var stream = GenerateUnseekableStreamFromFile(path);
-            transferUtility.Upload(stream, bucketName, fileName);
-
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
-            {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength);
-
-            //Download the file and validate content of downloaded file is equal.
-            var downloadPath = path + ".download";
-            var downloadRequest = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = downloadPath
-            };
-            transferUtility.Download(downloadRequest);
-            UtilityMethods.CompareFiles(path, downloadPath);
-        }
-
-        [TestMethod]
-        public void UploadUnSeekableStreamFileSizeEqualToPartBufferSize()
-        {
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\EqualToPartBufferSize");
-            var path = Path.Combine(BasePath, fileName);
-            var fileSize = 5 * MEG_SIZE + 8192;
-
-            UtilityMethods.GenerateFile(path, fileSize);
-            //take the generated file and turn it into an unseekable stream
-
-            var stream = GenerateUnseekableStreamFromFile(path);
-            transferUtility.Upload(stream, bucketName, fileName);
-
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
-            {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength);
-
-            //Download the file and validate content of downloaded file is equal.
-            var downloadPath = path + ".download";
-            var downloadRequest = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = downloadPath
-            };
-            transferUtility.Download(downloadRequest);
-            UtilityMethods.CompareFiles(path, downloadPath);
-        }
-
-        [TestMethod]
-        public void UploadUnseekableStreamFileSizeBetweenMinPartSizeAndPartBufferSize()
-        {
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\BetweenMinPartSizeAndPartBufferSize");
-            var path = Path.Combine(BasePath, fileName);
-            // there was a bug where the transfer utility was uploading 13MB file
-            // when the file size was between 5MB and (5MB + 8192). 8192 is the s3Client.Config.BufferSize
-            var fileSize = 5 * MEG_SIZE + 1;
-
-            UtilityMethods.GenerateFile(path, fileSize);
-            //take the generated file and turn it into an unseekable stream
-
-            var stream = GenerateUnseekableStreamFromFile(path);
-            transferUtility.Upload(stream, bucketName, fileName);
-
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
-            {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength);
-
-            //Download the file and validate content of downloaded file is equal.
-            var downloadPath = path + ".download";
-            var downloadRequest = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = downloadPath
-            };
-            transferUtility.Download(downloadRequest);
-            UtilityMethods.CompareFiles(path, downloadPath);
+                // Download the file and validate content of downloaded file is equal.
+                var downloadPath = path + ".download";
+                await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = downloadPath
+                });
+                UtilityMethods.CompareFiles(path, downloadPath);
+            }
         }
 
         [TestMethod]
@@ -486,88 +405,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 fileTransferUtility.Upload(request);
                 progressValidator.AssertOnCompletion();
             }
-        }
-
-        [TestMethod]
-        public void UploadUnSeekableStreamWithZeroLengthTest()
-        {
-            const long zeroFileSize = 0;
-            var key = UtilityMethods.GenerateName(@"SimpleUploadTest\EmptyFile");
-
-            var stream = new UnseekableStream(setZeroLengthStream: true);
-            transferUtility.Upload(stream, bucketName, key);
-
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
-            {
-                BucketName = bucketName,
-                Key = key
-            });
-            Assert.AreEqual(zeroFileSize, metadata.ContentLength);
-        }
-
-        [TestMethod]
-        public void UploadUnSeekableStreamTestWithEmptyFile()
-        {
-            var fileName = UtilityMethods.GenerateName(@"UnSeekableStream\EmptyFile");
-            var path = Path.Combine(BasePath, fileName);
-            var fileSize = 0;
-            UtilityMethods.GenerateFile(path, fileSize);
-            //take the generated file and turn it into an unseekable stream
-
-            var stream = GenerateUnseekableStreamFromFile(path);
-            transferUtility.Upload(stream, bucketName, fileName);
-
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
-            {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength);
-        }
-
-        [TestMethod]
-        public void UploadUnSeekableStreamWithMetadataAndHeadersTest()
-        {
-            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallFile");
-            var path = Path.Combine(BasePath, fileName);
-            var fileSize = 20 * MEG_SIZE;
-            UtilityMethods.GenerateFile(path, fileSize);
-            //take the generated file and turn it into an unseekable stream
-
-            var stream = GenerateUnseekableStreamFromFile(path);
-            TransferUtilityUploadRequest transferUtilityUploadRequest = new TransferUtilityUploadRequest()
-            {
-                BucketName = bucketName,
-                Key = fileName,
-                InputStream = stream
-            };
-
-            transferUtilityUploadRequest.Metadata.Add("testmetadata", "testmetadatavalue");
-            transferUtilityUploadRequest.Headers["Content-Disposition"] = "attachment; filename=\"" + fileName + "\"";
-
-            transferUtility.Upload(transferUtilityUploadRequest);
-
-            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
-            {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength);
-            Assert.IsTrue(metadata.Metadata.Count > 0);
-            Assert.AreEqual("testmetadatavalue", metadata.Metadata["testmetadata"]);
-            Assert.IsTrue(metadata.Headers.Count > 0);
-            Assert.AreEqual("attachment; filename=\"" + fileName + "\"", metadata.Headers["Content-Disposition"]);
-
-            //Download the file and validate content of downloaded file is equal.
-            var downloadPath = path + ".download";
-            var downloadRequest = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = downloadPath
-            };
-            transferUtility.Download(downloadRequest);
-            UtilityMethods.CompareFiles(path, downloadPath);
         }
 
         private UnseekableStream GenerateUnseekableStreamFromFile(string filePath)
