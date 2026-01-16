@@ -24,7 +24,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static readonly long KILO_SIZE = (int)Math.Pow(2, 10);
         public static readonly string BasePath = @"c:\temp\test\transferutility\";
 
-        private static TransferUtility transferUtility;
         private static string bucketName;
         private static string ssecBucketName;
         private static string octetStreamContentType = "application/octet-stream";
@@ -37,8 +36,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassInitialize]
         public static async Task ClassInitialize(TestContext a)
         {
-            transferUtility = new TransferUtility(Client);
-
             // Create standard bucket for operations
             bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
 
@@ -77,7 +74,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassCleanup]
         public static async Task ClassCleanup()
         {
-            transferUtility?.Dispose();
             await Task.WhenAll(
                 AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName),
                 AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, ssecBucketName)
@@ -220,30 +216,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task SimpleUpload()
         {
-            await transferUtility.UploadAsync(fullPath, bucketName);
-            var response = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                Key = testFile
-            });
-            Assert.IsTrue(response.ETag.Length > 0);
+                await transferUtility.UploadAsync(fullPath, bucketName);
+                var response = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = testFile
+                });
+                Assert.IsTrue(response.ETag.Length > 0);
 
-            var downloadPath = fullPath + ".download";
-            var downloadRequest = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = testFile,
-                FilePath = downloadPath
-            };
-            await transferUtility.DownloadAsync(downloadRequest);
-            TestDownloadedFile(downloadPath);
+                var downloadPath = fullPath + ".download";
+                var downloadRequest = new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = testFile,
+                    FilePath = downloadPath
+                };
+                await transferUtility.DownloadAsync(downloadRequest);
+                TestDownloadedFile(downloadPath);
 
-            // empty out file, except for 1 byte
-            File.WriteAllText(downloadPath, testContent.Substring(0, 1));
-            Assert.IsTrue(File.Exists(downloadPath));
-            
-            await transferUtility.DownloadAsync(downloadRequest);
-            TestDownloadedFile(downloadPath);
+                // empty out file, except for 1 byte
+                File.WriteAllText(downloadPath, testContent.Substring(0, 1));
+                Assert.IsTrue(File.Exists(downloadPath));
+
+                await transferUtility.DownloadAsync(downloadRequest);
+                TestDownloadedFile(downloadPath);
+            }
         }
 
         [TestMethod]
@@ -254,13 +253,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // An invalid header exception would be thrown if the value does not match the checksum calculated by S3.
             var precalculatedChecksum = CryptoUtilFactory.CryptoInstance.ComputeCRC32Hash(File.ReadAllBytes(fullPath));
 
-            await transferUtility.UploadAsync(new TransferUtilityUploadRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                Key = testFile,
-                FilePath = fullPath,
-                ChecksumCRC32 = precalculatedChecksum,
-            });
+                await transferUtility.UploadAsync(new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = testFile,
+                    FilePath = fullPath,
+                    ChecksumCRC32 = precalculatedChecksum,
+                });
+            }
         }
 
         [TestMethod]
@@ -279,14 +281,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Another invalid header exception would be thrown if the value does not match the size calculated by S3.
             var precalculatedObjectSize = new FileInfo(fullFilePath).Length;
 
-            await transferUtility.UploadAsync(new TransferUtilityUploadRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                Key = fileName,
-                FilePath = fullFilePath,
-                ChecksumCRC32C = precalculatedChecksum,
-                MpuObjectSize = precalculatedObjectSize,
-            });
+                await transferUtility.UploadAsync(new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = fullFilePath,
+                    ChecksumCRC32C = precalculatedChecksum,
+                    MpuObjectSize = precalculatedObjectSize,
+                });
+            }
         }
 
         [DataTestMethod]
@@ -337,34 +342,37 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 uploadRequest.Headers["Content-Disposition"] = "attachment; filename=\"" + fileName + "\"";
             }
 
-            await transferUtility.UploadAsync(uploadRequest);
-
-            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength);
+                await transferUtility.UploadAsync(uploadRequest);
 
-            if (includeHeaders)
-            {
-                Assert.IsTrue(metadata.Metadata.Count > 0);
-                Assert.AreEqual("testmetadatavalue", metadata.Metadata["testmetadata"]);
-                Assert.IsTrue(metadata.Headers.Count > 0);
-                Assert.AreEqual("attachment; filename=\"" + fileName + "\"", metadata.Headers["Content-Disposition"]);
-            }
-
-            if (fileSize > 0)
-            {
-                // Download the file and validate content of downloaded file is equal.
-                var downloadPath = path + ".download";
-                await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
+                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                 {
                     BucketName = bucketName,
-                    Key = fileName,
-                    FilePath = downloadPath
+                    Key = fileName
                 });
-                UtilityMethods.CompareFiles(path, downloadPath);
+                Assert.AreEqual(fileSize, metadata.ContentLength);
+
+                if (includeHeaders)
+                {
+                    Assert.IsTrue(metadata.Metadata.Count > 0);
+                    Assert.AreEqual("testmetadatavalue", metadata.Metadata["testmetadata"]);
+                    Assert.IsTrue(metadata.Headers.Count > 0);
+                    Assert.AreEqual("attachment; filename=\"" + fileName + "\"", metadata.Headers["Content-Disposition"]);
+                }
+
+                if (fileSize > 0)
+                {
+                    // Download the file and validate content of downloaded file is equal.
+                    var downloadPath = path + ".download";
+                    await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
+                    {
+                        BucketName = bucketName,
+                        Key = fileName,
+                        FilePath = downloadPath
+                    });
+                    UtilityMethods.CompareFiles(path, downloadPath);
+                }
             }
         }
 
@@ -410,11 +418,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             try
             {
-                byte[] fileBytes = File.ReadAllBytes(filePath);
-                UnseekableStream unseekableStream = new UnseekableStream(fileBytes);
-                unseekableStream.Position = 0;
-
-                return unseekableStream;
+                var fileBytes = File.ReadAllBytes(filePath);
+                return new UnseekableStream(fileBytes)
+                {
+                    Position = 0
+                };
             }
             catch (Exception ex)
             {
@@ -436,17 +444,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             aesEncryption.GenerateKey();
             string base64Key = Convert.ToBase64String(aesEncryption.Key);
 
-            // Upload the file. A permission denied exception would be thrown if an incorrect request is made
-            // missing the required ServerSideEncryptionCustomerMethod and ServerSideEncryptionCustomerProvidedKey
-            // values.
-            await transferUtility.UploadAsync(new TransferUtilityUploadRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = ssecBucketName,
-                FilePath = fullFilePath,
-                Key = fileName,
-                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                ServerSideEncryptionCustomerProvidedKey = base64Key
-            });
+                // Upload the file. A permission denied exception would be thrown if an incorrect request is made
+                // missing the required ServerSideEncryptionCustomerMethod and ServerSideEncryptionCustomerProvidedKey
+                // values.
+                await transferUtility.UploadAsync(new TransferUtilityUploadRequest
+                {
+                    BucketName = ssecBucketName,
+                    FilePath = fullFilePath,
+                    Key = fileName,
+                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                    ServerSideEncryptionCustomerProvidedKey = base64Key
+                });
+            }
         }
 
         [TestMethod]
@@ -474,28 +485,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             aesEncryption.GenerateKey();
             string base64Key = Convert.ToBase64String(aesEncryption.Key);
 
-            // Upload test directory with SSE-C
-            await transferUtility.UploadDirectoryAsync(new TransferUtilityUploadDirectoryRequest
-            {
-                BucketName = bucketName,
-                Directory = directoryTestPath,
-                KeyPrefix = remoteDirectory,
-                SearchPattern = "*",
-                SearchOption = SearchOption.AllDirectories,
-                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                ServerSideEncryptionCustomerProvidedKey = base64Key
-            });
-
-            // Download remote test directory with SSE-C
             var downloadPath = GenerateDirectoryPath();
-            await transferUtility.DownloadDirectoryAsync(new TransferUtilityDownloadDirectoryRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                S3Directory = remoteDirectory,
-                LocalDirectory = downloadPath,
-                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                ServerSideEncryptionCustomerProvidedKey = base64Key
-            });
+                // Upload test directory with SSE-C
+                await transferUtility.UploadDirectoryAsync(new TransferUtilityUploadDirectoryRequest
+                {
+                    BucketName = bucketName,
+                    Directory = directoryTestPath,
+                    KeyPrefix = remoteDirectory,
+                    SearchPattern = "*",
+                    SearchOption = SearchOption.AllDirectories,
+                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                    ServerSideEncryptionCustomerProvidedKey = base64Key
+                });
+
+                // Download remote test directory with SSE-C
+                await transferUtility.DownloadDirectoryAsync(new TransferUtilityDownloadDirectoryRequest
+                {
+                    BucketName = bucketName,
+                    S3Directory = remoteDirectory,
+                    LocalDirectory = downloadPath,
+                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                    ServerSideEncryptionCustomerProvidedKey = base64Key
+                });
+            }
 
             // Compare each file in both directories
             var sourceFiles = Directory.EnumerateFiles(directoryTestPath, "*", SearchOption.AllDirectories).ToList();
@@ -815,7 +829,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.UploadProgressEvent += progressValidator.OnProgressEvent;
             }
 
-            await transferUtility.UploadAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.UploadAsync(request);
+            }
 
             var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
@@ -886,12 +903,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public async Task DownloadNonExistentS3Directory()
         {
             var downloadPath = GenerateDirectoryPath();
-            await transferUtility.DownloadDirectoryAsync(new TransferUtilityDownloadDirectoryRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                S3Directory = "NonExistentS3Directory",
-                LocalDirectory = downloadPath,
-            });
+                await transferUtility.DownloadDirectoryAsync(new TransferUtilityDownloadDirectoryRequest
+                {
+                    BucketName = bucketName,
+                    S3Directory = "NonExistentS3Directory",
+                    LocalDirectory = downloadPath,
+                });
+            }
 
             var downloadedFiles = Directory.EnumerateFiles(downloadPath, "*", SearchOption.AllDirectories).ToList();
             Assert.AreEqual(0, downloadedFiles.Count);
@@ -930,7 +950,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.DownloadedDirectoryProgressEvent += progressValidator.OnProgressEvent;
             }
 
-            await transferUtility.DownloadDirectoryAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.DownloadDirectoryAsync(request);
+            }
+
             await ValidateDirectoryContents(bucketName, keyPrefix, directory);
         }
 
@@ -972,7 +996,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.DownloadedDirectoryProgressEvent += progressValidator.OnProgressEvent;
             }
 
-            await transferUtility.DownloadDirectoryAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.DownloadDirectoryAsync(request);
+            }
+
             return directory;
         }
 
@@ -1005,7 +1033,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Console.WriteLine("Progress callback = " + e.ToString());
             };
 
-            await transferUtility.UploadDirectoryAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.UploadDirectoryAsync(request);
+            }
+
             if (validate)
             {
                 await ValidateDirectoryContents(bucketName, string.Empty, directory, plainTextContentType);
@@ -1211,16 +1243,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             request.WriteObjectProgressEvent += progressValidator.OnProgressEvent;
 
             // Use DownloadWithResponseAsync to trigger MultipartDownloadCommand
-            var response = await transferUtility.DownloadWithResponseAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                var response = await transferUtility.DownloadWithResponseAsync(request);
+                Assert.IsNotNull(response);
+            }
 
             progressValidator.AssertOnCompletion();
             
             // Validate that in-progress events actually fired during the download
-            Assert.IsTrue(inProgressEventCount > 0, 
-                $"Expected in-progress events to fire during multipart download, but got {inProgressEventCount}");
+            Assert.IsTrue(inProgressEventCount > 0, $"Expected in-progress events to fire during multipart download, but got {inProgressEventCount}");
             Assert.AreEqual(1, completedEventCount);
-            
-            Assert.IsNotNull(response);
             UtilityMethods.CompareFiles(originalFilePath, downloadedFilePath);
         }
 
@@ -1266,11 +1299,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(expectedSize, e.TransferredBytes);
             };
 
-            var response = await transferUtility.DownloadWithResponseAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                var response = await transferUtility.DownloadWithResponseAsync(request);
+                Assert.IsNotNull(response);
+            }
 
             Assert.IsTrue(initiatedEventFired, "Initiated event should have fired");
             Assert.IsTrue(completedEventFired, "Completed event should have fired");
-            Assert.IsNotNull(response);
         }
 
         [TestMethod]
@@ -1295,7 +1331,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                await transferUtility.DownloadWithResponseAsync(request);
+                using (var transferUtility = new TransferUtility(Client))
+                {
+                    await transferUtility.DownloadWithResponseAsync(request);
+                }
+
                 Assert.Fail("Expected an exception to be thrown for non-existent key");
             }
             catch (AmazonS3Exception)
@@ -1329,8 +1369,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 request.WriteObjectProgressEvent += progressValidator.OnProgressEvent;
             }
-            
-            await transferUtility.DownloadAsync(request);
+
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.DownloadAsync(request);
+            }
+
             UtilityMethods.CompareFiles(originalFilePath, downloadedFilePath);
         }
 
@@ -1349,10 +1393,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 FilePath = originalFilePath
             });
 
-            var stream = await transferUtility.OpenStreamAsync(bucketName, key);
-            Assert.IsNotNull(stream);
-            Assert.IsTrue(stream.CanRead);
-            stream.Close();
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                var stream = await transferUtility.OpenStreamAsync(bucketName, key);
+                Assert.IsNotNull(stream);
+                Assert.IsTrue(stream.CanRead);
+                stream.Close();
+            }
         }
 
         /// <summary>
@@ -1376,12 +1423,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var filename = UtilityMethods.GenerateName(objectKey.Replace('/', '\\'));
             var filePath = Path.Combine(BasePath, filename);
-            await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
+
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                FilePath = filePath,
-                Key = objectKey
-            });
+                await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    FilePath = filePath,
+                    Key = objectKey
+                });
+            }
 
             Assert.IsTrue(File.Exists(filePath));
         }
@@ -1393,17 +1444,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var path = Path.Combine(BasePath, fileName);
             UtilityMethods.GenerateFile(path, 20 * MEG_SIZE);
 
-            await transferUtility.UploadAsync(new TransferUtilityUploadRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                FilePath = path,
-                Key = "test-content-type",
-                ContentType = MediaTypeNames.Text.Plain,
-                Headers =
+                await transferUtility.UploadAsync(new TransferUtilityUploadRequest
                 {
-                    ContentEncoding = "gzip",
-                },
-            });
+                    BucketName = bucketName,
+                    FilePath = path,
+                    Key = "test-content-type",
+                    ContentType = MediaTypeNames.Text.Plain,
+                    Headers =
+                    {
+                        ContentEncoding = "gzip",
+                    },
+                });
+            }
 
             var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             { 
@@ -1429,23 +1483,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ContentType = octetStreamContentType
             };
 
-            var response = await transferUtility.UploadWithResponseAsync(request);
-
-            // Validate response object is not null
-            Assert.IsNotNull(response, "Response should not be null");
-
-            // Validate essential response fields that should always be present
-            Assert.IsNotNull(response.ETag, "ETag should not be null");
-            Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
-
-            // Validate file was actually uploaded by checking metadata
-            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded file size should match original");
-            Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+                var response = await transferUtility.UploadWithResponseAsync(request);
+                Assert.IsNotNull(response, "Response should not be null");
+
+                // Validate essential response fields that should always be present
+                Assert.IsNotNull(response.ETag, "ETag should not be null");
+                Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+
+                // Validate file was actually uploaded by checking metadata
+                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded file size should match original");
+                Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+            }
         }
 
         [TestMethod]
@@ -1464,23 +1519,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ContentType = octetStreamContentType
             };
 
-            var response = await transferUtility.UploadWithResponseAsync(request);
-
-            // Validate response object is not null
-            Assert.IsNotNull(response, "Response should not be null");
-
-            // Validate essential response fields that should always be present
-            Assert.IsNotNull(response.ETag, "ETag should not be null");
-            Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
-
-            // Validate file was actually uploaded by checking metadata
-            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                Key = fileName
-            });
-            Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded file size should match original");
-            Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+                var response = await transferUtility.UploadWithResponseAsync(request);
+                Assert.IsNotNull(response, "Response should not be null");
+
+                // Validate essential response fields that should always be present
+                Assert.IsNotNull(response.ETag, "ETag should not be null");
+                Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+
+                // Validate file was actually uploaded by checking metadata
+                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded file size should match original");
+                Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+            }
         }
 
         [TestMethod]
@@ -1501,33 +1557,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     ContentType = octetStreamContentType
                 };
 
-                var response = await transferUtility.UploadWithResponseAsync(request);
-
-                // Validate response object is not null
-                Assert.IsNotNull(response, "Response should not be null");
-
-                // Validate essential response fields that should always be present
-                Assert.IsNotNull(response.ETag, "ETag should not be null");
-                Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
-
-                // Validate file was actually streamed and uploaded correctly
-                var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                using (var transferUtility = new TransferUtility(Client))
                 {
-                    BucketName = bucketName,
-                    Key = fileName
-                });
-                Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded stream size should match original");
-                Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+                    var response = await transferUtility.UploadWithResponseAsync(request);
+                    Assert.IsNotNull(response, "Response should not be null");
 
-                // Validate content by downloading and comparing
-                var downloadPath = path + ".download";
-                await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
-                {
-                    BucketName = bucketName,
-                    Key = fileName,
-                    FilePath = downloadPath
-                });
-                UtilityMethods.CompareFiles(path, downloadPath);
+                    // Validate essential response fields that should always be present
+                    Assert.IsNotNull(response.ETag, "ETag should not be null");
+                    Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+
+                    // Validate file was actually streamed and uploaded correctly
+                    var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                    {
+                        BucketName = bucketName,
+                        Key = fileName
+                    });
+                    Assert.AreEqual(fileSize, metadata.ContentLength, "Uploaded stream size should match original");
+                    Assert.AreEqual(response.ETag, metadata.ETag, "ETag from response should match object metadata");
+
+                    // Validate content by downloading and comparing
+                    var downloadPath = path + ".download";
+                    await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
+                    {
+                        BucketName = bucketName,
+                        Key = fileName,
+                        FilePath = downloadPath
+                    });
+                    UtilityMethods.CompareFiles(path, downloadPath);
+                }
             }
         }
 
@@ -1552,14 +1609,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ChecksumCRC32 = precalculatedChecksum
             };
 
-            var response = await transferUtility.UploadWithResponseAsync(request);
-
-            // Validate response object is not null
-            Assert.IsNotNull(response, "Response should not be null");
-
-            // Validate essential response fields
-            Assert.IsNotNull(response.ETag, "ETag should not be null");
-            Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                var response = await transferUtility.UploadWithResponseAsync(request);
+                Assert.IsNotNull(response, "Response should not be null");
+                Assert.IsNotNull(response.ETag, "ETag should not be null");
+                Assert.IsTrue(response.ETag.Length > 0, "ETag should not be empty");
+            }
         }
 
         [TestMethod]
@@ -1579,39 +1635,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ContentType = octetStreamContentType
             };
 
-            var response = await transferUtility.UploadWithResponseAsync(responseRequest);
-
-            // Test the legacy Upload method for comparison
-            var legacyRequest = new TransferUtilityUploadRequest
+            using (var transferUtility = new TransferUtility(Client))
             {
-                BucketName = bucketName,
-                FilePath = path,
-                Key = fileName + "-legacy",
-                ContentType = octetStreamContentType
-            };
+                var response = await transferUtility.UploadWithResponseAsync(responseRequest);
 
-            await transferUtility.UploadAsync(legacyRequest);
+                // Test the legacy Upload method for comparison
+                var legacyRequest = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    FilePath = path,
+                    Key = fileName + "-legacy",
+                    ContentType = octetStreamContentType
+                };
 
-            // Validate that both uploads resulted in the same file being uploaded
-            var responseMetadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
-            {
-                BucketName = bucketName,
-                Key = fileName + "-with-response"
-            });
+                await transferUtility.UploadAsync(legacyRequest);
 
-            var legacyMetadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
-            {
-                BucketName = bucketName,
-                Key = fileName + "-legacy"
-            });
+                // Validate that both uploads resulted in the same file being uploaded
+                var responseMetadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName + "-with-response"
+                });
 
-            // Both should have the same file size and content type
-            Assert.AreEqual(responseMetadata.ContentLength, legacyMetadata.ContentLength, "File sizes should match");
-            Assert.AreEqual(responseMetadata.Headers.ContentType, legacyMetadata.Headers.ContentType, "Content types should match");
+                var legacyMetadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName + "-legacy"
+                });
 
-            // Validate the response contains the expected ETag
-            Assert.IsNotNull(response.ETag, "Response ETag should not be null");
-            Assert.AreEqual(response.ETag, responseMetadata.ETag, "Response ETag should match metadata ETag");
+                // Both should have the same file size and content type
+                Assert.AreEqual(responseMetadata.ContentLength, legacyMetadata.ContentLength, "File sizes should match");
+                Assert.AreEqual(responseMetadata.Headers.ContentType, legacyMetadata.Headers.ContentType, "Content types should match");
+
+                // Validate the response contains the expected ETag
+                Assert.IsNotNull(response.ETag, "Response ETag should not be null");
+                Assert.AreEqual(response.ETag, responseMetadata.ETag, "Response ETag should match metadata ETag");
+            }
         }
 
         [TestMethod]
@@ -1634,9 +1693,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Task uploadTask = null;
             try
             {
-                uploadTask = transferUtility.UploadAsync(uploadRequest, token);
-                tokenSource.CancelAfter(100);
-                await uploadTask;
+                using (var transferUtility = new TransferUtility(Client))
+                {
+                    uploadTask = transferUtility.UploadAsync(uploadRequest, token);
+                    tokenSource.CancelAfter(100);
+                    await uploadTask;
+                }
             }
             catch (OperationCanceledException)
             {
@@ -1663,7 +1725,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // Note: No ContentType set - should auto-detect per file
             };
 
-            await transferUtility.UploadDirectoryAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.UploadDirectoryAsync(request);
+            }
 
             // Validate each file got correct content type based on extension
             await ValidateDirectoryContentTypes(bucketName, keyPrefix, directory);
@@ -2081,7 +2146,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.UploadFailedEvent += failedValidator.OnEventFired;
             }
 
-            await transferUtility.UploadAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.UploadAsync(request);
+            }
         }
 
         async Task UploadUnseekableStreamWithLifecycleEvents(long size,
@@ -2128,7 +2196,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.UploadFailedEvent += failedValidator.OnEventFired;
             }
 
-            await transferUtility.UploadAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.UploadAsync(request);
+            }
         }
 
         async Task DownloadWithLifecycleEvents(string fileName, long size,
@@ -2171,7 +2242,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.DownloadFailedEvent += failedValidator.OnEventFired;
             }
 
-            await transferUtility.DownloadAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.DownloadAsync(request);
+            }
         }
 
         async Task DownloadWithLifecycleEventsAndKey(string fileName, string keyToDownload,
@@ -2203,7 +2277,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 request.DownloadFailedEvent += failedValidator.OnEventFired;
             }
 
-            await transferUtility.DownloadAsync(request);
+            using (var transferUtility = new TransferUtility(Client))
+            {
+                await transferUtility.DownloadAsync(request);
+            }
         }
         
         [TestMethod]
@@ -2224,13 +2301,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     UploadFilesConcurrently = true
                 };
 
-                // ContinueOnFailure should not throw even if all uploads fail
-                var response = await transferUtility.UploadDirectoryWithResponseAsync(request);
-
-                Assert.IsNotNull(response);
-                Assert.AreEqual(0, response.ObjectsUploaded);
-                Assert.AreEqual(3, response.ObjectsFailed);
-                Assert.AreEqual(DirectoryResult.Failure, response.Result);
+                using (var transferUtility = new TransferUtility(Client))
+                {
+                    // ContinueOnFailure should not throw even if all uploads fail
+                    var response = await transferUtility.UploadDirectoryWithResponseAsync(request);
+                    Assert.IsNotNull(response);
+                    Assert.AreEqual(0, response.ObjectsUploaded);
+                    Assert.AreEqual(3, response.ObjectsFailed);
+                    Assert.AreEqual(DirectoryResult.Failure, response.Result);
+                }
             }
             finally
             {
@@ -2255,12 +2334,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     UploadFilesConcurrently = true
                 };
 
-                var response = await transferUtility.UploadDirectoryWithResponseAsync(request);
-
-                Assert.IsNotNull(response);
-                Assert.AreEqual(3, response.ObjectsUploaded);
-                Assert.AreEqual(0, response.ObjectsFailed);
-                Assert.AreEqual(DirectoryResult.Success, response.Result);
+                using (var transferUtility = new TransferUtility(Client))
+                {
+                    var response = await transferUtility.UploadDirectoryWithResponseAsync(request);
+                    Assert.IsNotNull(response);
+                    Assert.AreEqual(3, response.ObjectsUploaded);
+                    Assert.AreEqual(0, response.ObjectsFailed);
+                    Assert.AreEqual(DirectoryResult.Success, response.Result);
+                }
 
                 // Validate uploaded contents
                 await ValidateDirectoryContents(bucketName, directory.Name, directory, plainTextContentType);
@@ -2289,7 +2370,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     UploadFilesConcurrently = true
                 };
 
-                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => transferUtility.UploadDirectoryWithResponseAsync(request));
+                using (var transferUtility = new TransferUtility(Client))
+                {
+                    await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => 
+                        transferUtility.UploadDirectoryWithResponseAsync(request)
+                    );
+                }
             }
             finally
             {
