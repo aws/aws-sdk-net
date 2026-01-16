@@ -32,7 +32,7 @@ namespace Amazon.Chatbot
     public partial class AmazonChatbotConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("chatbot", "3.7.501.32");
+            InternalSDKUtils.BuildUserAgentString("chatbot", "3.7.501.33");
 
         private string _userAgent = UserAgentString;
         ///<summary>
