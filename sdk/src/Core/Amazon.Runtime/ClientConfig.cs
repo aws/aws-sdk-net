@@ -480,9 +480,9 @@ namespace Amazon.Runtime
         /// 
         /// Valid values are a list of one or more of the following:
         /// <list type="bullet">
-        /// <item><b>sigv4</b> � Signature Version 4 (fastest performance, single-region)</item>
-        /// <item><b>sigv4a</b> � Signature Version 4a (enhanced availability, cross-region support, has a slower signing performance than SigV4)</item>
-        /// <item><b>httpBearerAuth</b> � HTTP Bearer token authentication</item>
+        /// <item><b>sigv4</b> - Signature Version 4 (fastest performance, single-region)</item>
+        /// <item><b>sigv4a</b> - Signature Version 4a (enhanced availability, cross-region support, has a slower signing performance than SigV4)</item>
+        /// <item><b>httpBearerAuth</b> - HTTP Bearer token authentication</item>
         /// </list>
         /// </summary>
         /// <remarks>
