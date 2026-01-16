@@ -5838,6 +5838,20 @@
     <max>3072</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationReviewMetadata.ReviewId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationReviewNotificationRecipientValue.UserId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationReviewRequestComment.Comment</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationScore.Percentage</property>
     <min>0</min>
     <max>100</max>

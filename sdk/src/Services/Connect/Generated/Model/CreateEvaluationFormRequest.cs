@@ -45,6 +45,7 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private List<EvaluationFormItem> _items = AWSConfigs.InitializeCollections ? new List<EvaluationFormItem>() : null;
         private EvaluationFormLanguageConfiguration _languageConfiguration;
+        private EvaluationReviewConfiguration _reviewConfiguration;
         private EvaluationFormScoringStrategy _scoringStrategy;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private EvaluationFormTargetConfiguration _targetConfiguration;
@@ -187,6 +188,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetLanguageConfiguration()
         {
             return this._languageConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewConfiguration. 
+        /// <para>
+        /// Configuration information about evaluation reviews.
+        /// </para>
+        /// </summary>
+        public EvaluationReviewConfiguration ReviewConfiguration
+        {
+            get { return this._reviewConfiguration; }
+            set { this._reviewConfiguration = value; }
+        }
+
+        // Check to see if ReviewConfiguration property is set
+        internal bool IsSetReviewConfiguration()
+        {
+            return this._reviewConfiguration != null;
         }
 
         /// <summary>

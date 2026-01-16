@@ -128,6 +128,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Locked = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ReviewConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationReviewConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ReviewConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ScoringStrategy", targetDepth))
                 {
                     var unmarshaller = EvaluationFormScoringStrategyUnmarshaller.Instance;
