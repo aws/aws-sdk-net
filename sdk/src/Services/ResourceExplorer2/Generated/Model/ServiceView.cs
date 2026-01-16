@@ -38,6 +38,7 @@ namespace Amazon.ResourceExplorer2.Model
         private List<IncludedProperty> _includedProperties = AWSConfigs.InitializeCollections ? new List<IncludedProperty>() : null;
         private string _scopeType;
         private string _serviceViewArn;
+        private string _serviceViewName;
         private string _streamingAccessForService;
 
         /// <summary>
@@ -110,6 +111,24 @@ namespace Amazon.ResourceExplorer2.Model
         internal bool IsSetServiceViewArn()
         {
             return this._serviceViewArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceViewName. 
+        /// <para>
+        /// The name of the service view.
+        /// </para>
+        /// </summary>
+        public string ServiceViewName
+        {
+            get { return this._serviceViewName; }
+            set { this._serviceViewName = value; }
+        }
+
+        // Check to see if ServiceViewName property is set
+        internal bool IsSetServiceViewName()
+        {
+            return this._serviceViewName != null;
         }
 
         /// <summary>

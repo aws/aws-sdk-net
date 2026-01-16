@@ -90,6 +90,12 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServiceViewArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceViewName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceViewName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StreamingAccessForService", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

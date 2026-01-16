@@ -102,6 +102,12 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ViewArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ViewName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ViewName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
