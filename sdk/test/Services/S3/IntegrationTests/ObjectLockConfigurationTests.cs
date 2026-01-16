@@ -253,7 +253,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public async Task TestUploadFileWithViaTransferUtility()
+        public async Task TestUploadFileWithTransferUtility()
         {
             var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
             var transfer = new TransferUtility(Client, transferConfig);
