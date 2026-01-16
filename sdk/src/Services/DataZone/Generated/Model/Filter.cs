@@ -35,6 +35,8 @@ namespace Amazon.DataZone.Model
     public partial class Filter
     {
         private string _attribute;
+        private long? _intValue;
+        private FilterOperator _operator;
         private string _value;
 
         /// <summary>
@@ -57,12 +59,48 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property IntValue. 
         /// <para>
-        /// A search filter value in Amazon DataZone.
+        /// A search filter integer value in Amazon DataZone.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        public long IntValue
+        {
+            get { return this._intValue.GetValueOrDefault(); }
+            set { this._intValue = value; }
+        }
+
+        // Check to see if IntValue property is set
+        internal bool IsSetIntValue()
+        {
+            return this._intValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// Specifies the search filter operator.
+        /// </para>
+        /// </summary>
+        public FilterOperator Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// A search filter string value in Amazon DataZone.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Value
         {
             get { return this._value; }
