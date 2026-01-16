@@ -592,7 +592,8 @@ namespace ServiceClientGenerator
                         new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"]),
                         new Operation(this, "PutBucketWebsite", DocumentRoot[OperationsKey]["PutBucketWebsite"]),
                         new Operation(this, "DeleteBucketWebsite", DocumentRoot[OperationsKey]["DeleteBucketWebsite"]),
-                        new Operation(this, "GetObjectTorrent", DocumentRoot[OperationsKey]["GetObjectTorrent"])
+                        new Operation(this, "GetObjectTorrent", DocumentRoot[OperationsKey]["GetObjectTorrent"]),
+                        new Operation(this, "GetObject", DocumentRoot[OperationsKey]["GetObject"])
 
                     };
                 }
