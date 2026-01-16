@@ -64,7 +64,10 @@ public class RealS3DownloadExecutor : IDownloadExecutor
     }
 
     /// <inheritdoc />
-    public async Task<SimulationMetrics> ExecuteDownloadAsync(SimulationConfig config, CancellationToken cancellationToken = default)
+    public async Task<SimulationMetrics> ExecuteDownloadAsync(
+        SimulationConfig config, 
+        IProgress<DownloadProgress>? progress = null,
+        CancellationToken cancellationToken = default)
     {
         _vmaMonitor.Reset();
         
@@ -122,17 +125,36 @@ public class RealS3DownloadExecutor : IDownloadExecutor
                 FilePath = localFilePath
             };
 
+            // Get object size first for progress reporting
+            var objectSize = await GetObjectSizeAsync(linkedToken);
+            var expectedParts = (int)Math.Ceiling((double)objectSize / config.PartSizeBytes);
+            
             // Track progress
             long totalBytesDownloaded = 0;
             downloadRequest.WriteObjectProgressEvent += (sender, e) =>
             {
+                int completedParts;
                 lock (_lock)
                 {
                     totalBytesDownloaded = e.TransferredBytes;
                     Metrics.TotalBytesProcessed = totalBytesDownloaded;
+                    completedParts = config.PartSizeBytes > 0 
+                        ? (int)(totalBytesDownloaded / config.PartSizeBytes)
+                        : 0;
                 }
                 _vmaMonitor.UpdatePeak();
                 UpdateMemoryMetrics();
+                
+                // Report progress
+                progress?.Report(new DownloadProgress
+                {
+                    CompletedParts = completedParts,
+                    TotalParts = expectedParts,
+                    Phase = "Downloading",
+                    CurrentVmaCount = _vmaMonitor.CurrentVmaCount,
+                    BytesProcessed = totalBytesDownloaded,
+                    TotalBytes = objectSize
+                });
             };
 
             Console.WriteLine($"  Starting download: s3://{_s3Config.BucketName}/{_s3Config.ObjectKey}");

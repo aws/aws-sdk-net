@@ -669,12 +669,17 @@ static async Task RunTestsAsync(
         using var vmaMonitor = new VmaMonitor();
         using var executor = DownloadExecutorFactory.Create(opts.Mode, vmaMonitor, s3Config);
 
-        var progress = 0;
+        var testIndex = 0;
         foreach (var config in validConfigs)
         {
-            progress++;
+            testIndex++;
+            var currentTestNumber = testIndex;
+            var totalTestCount = validConfigs.Count;
             var modeIndicator = opts.Mode == ExecutorMode.Real ? "(S3)" : "";
-            Console.Write($"\r[{progress}/{validConfigs.Count}] Testing {modeIndicator}: {TruncateName(config.Name, 45)}...");
+            
+            // Initial display
+            ProgressDisplay.Reset();
+            Console.Write($"\r[{currentTestNumber}/{totalTestCount}] Testing {modeIndicator}: {TruncateName(config.Name, 45)}...");
             
             try
             {
@@ -686,12 +691,26 @@ static async Task RunTestsAsync(
                     continue;
                 }
                 
-                var result = await executor.ExecuteDownloadAsync(config);
+                // Create progress reporter
+                var progressReporter = new Progress<DownloadProgress>(p =>
+                {
+                    ProgressDisplay.RenderProgress(currentTestNumber, totalTestCount, config.Name, p, showVma: true);
+                });
+                
+                var result = await executor.ExecuteDownloadAsync(config, progressReporter);
                 analyzer.AddResult(result);
                 
+                // Clear progress line and show final result
                 if (opts.Verbose)
                 {
-                    Console.WriteLine($" Peak VMA: {result.PeakVmaCount:N0} {result.Status}");
+                    Console.Write($"\r[{currentTestNumber}/{totalTestCount}] {TruncateName(config.Name, 40)}");
+                    Console.WriteLine($" Peak VMA: {result.PeakVmaCount:N0} {result.Status}".PadRight(40));
+                }
+                else
+                {
+                    // Show completion with checkmark
+                    Console.Write($"\r[{currentTestNumber}/{totalTestCount}] {TruncateName(config.Name, 45)} ✓");
+                    Console.WriteLine($" VMA: {result.PeakVmaCount:N0}".PadRight(20));
                 }
             }
             catch (Exception ex)

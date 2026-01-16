@@ -35,10 +35,12 @@ public interface IDownloadExecutor : IDisposable
     /// Executes a download with the specified configuration and collects metrics.
     /// </summary>
     /// <param name="config">The download configuration to test.</param>
+    /// <param name="progress">Optional progress reporter for per-part progress updates.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>Metrics collected during the download.</returns>
     Task<SimulationMetrics> ExecuteDownloadAsync(
         SimulationConfig config, 
+        IProgress<DownloadProgress>? progress = null,
         CancellationToken cancellationToken = default);
         
     /// <summary>

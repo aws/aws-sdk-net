@@ -94,7 +94,10 @@ public class DownloadSimulator : IDownloadExecutor
     /// Simulates a multipart download with specified parameters using realistic producer-consumer pattern.
     /// Ensures MaxInMemoryParts is reached and maintained throughout the download.
     /// </summary>
-    public async Task<SimulationMetrics> ExecuteDownloadAsync(SimulationConfig config, CancellationToken cancellationToken = default)
+    public async Task<SimulationMetrics> ExecuteDownloadAsync(
+        SimulationConfig config, 
+        IProgress<DownloadProgress>? progress = null,
+        CancellationToken cancellationToken = default)
     {
         _vmaMonitor.Reset();
         
@@ -258,11 +261,23 @@ public class DownloadSimulator : IDownloadExecutor
                         
                         // Release the part
                         ReleasePart(part!);
-                        Interlocked.Increment(ref completedParts);
+                        var currentCompleted = Interlocked.Increment(ref completedParts);
                         lock (_lock)
                         {
                             Metrics.TotalBytesProcessed += config.PartSizeBytes;
                         }
+                        
+                        // Report progress
+                        progress?.Report(new DownloadProgress
+                        {
+                            CompletedParts = currentCompleted,
+                            TotalParts = config.TotalParts,
+                            Phase = "Steady-state",
+                            CurrentVmaCount = _vmaMonitor.CurrentVmaCount,
+                            BufferedParts = _partBuffer.Count,
+                            BytesProcessed = currentCompleted * config.PartSizeBytes,
+                            TotalBytes = config.TotalObjectSize
+                        });
                     }
                 }, linkedToken);
 
@@ -286,11 +301,23 @@ public class DownloadSimulator : IDownloadExecutor
                     }
                     
                     ReleasePart(part!);
-                    Interlocked.Increment(ref completedParts);
+                    var currentCompleted = Interlocked.Increment(ref completedParts);
                     lock (_lock)
                     {
                         Metrics.TotalBytesProcessed += config.PartSizeBytes;
                     }
+                    
+                    // Report progress
+                    progress?.Report(new DownloadProgress
+                    {
+                        CompletedParts = currentCompleted,
+                        TotalParts = config.TotalParts,
+                        Phase = "Consuming",
+                        CurrentVmaCount = _vmaMonitor.CurrentVmaCount,
+                        BufferedParts = _partBuffer.Count,
+                        BytesProcessed = currentCompleted * config.PartSizeBytes,
+                        TotalBytes = config.TotalObjectSize
+                    });
                 }
             }
             
