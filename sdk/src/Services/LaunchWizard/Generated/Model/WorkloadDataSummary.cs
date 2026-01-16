@@ -35,6 +35,7 @@ namespace Amazon.LaunchWizard.Model
     public partial class WorkloadDataSummary
     {
         private string _displayName;
+        private WorkloadStatus _status;
         private string _workloadName;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.LaunchWizard.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the workload.
+        /// </para>
+        /// </summary>
+        public WorkloadStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

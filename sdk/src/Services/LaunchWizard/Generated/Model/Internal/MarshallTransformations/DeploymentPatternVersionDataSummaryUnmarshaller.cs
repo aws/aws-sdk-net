@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WorkloadDataSummary Object
+    /// Response Unmarshaller for DeploymentPatternVersionDataSummary Object
     /// </summary>  
-    public class WorkloadDataSummaryUnmarshaller : IJsonUnmarshaller<WorkloadDataSummary, JsonUnmarshallerContext>
+    public class DeploymentPatternVersionDataSummaryUnmarshaller : IJsonUnmarshaller<DeploymentPatternVersionDataSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkloadDataSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DeploymentPatternVersionDataSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            WorkloadDataSummary unmarshalledObject = new WorkloadDataSummary();
+            DeploymentPatternVersionDataSummary unmarshalledObject = new DeploymentPatternVersionDataSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("displayName", targetDepth))
+                if (context.TestExpression("deploymentPatternName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DeploymentPatternName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("deploymentPatternVersionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DeploymentPatternVersionName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("documentationUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DocumentationUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workloadName", targetDepth))
@@ -79,12 +91,12 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkloadDataSummaryUnmarshaller _instance = new WorkloadDataSummaryUnmarshaller();        
+        private static DeploymentPatternVersionDataSummaryUnmarshaller _instance = new DeploymentPatternVersionDataSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkloadDataSummaryUnmarshaller Instance
+        public static DeploymentPatternVersionDataSummaryUnmarshaller Instance
         {
             get
             {

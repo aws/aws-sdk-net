@@ -30,26 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Describes a workload deployment pattern.
+    /// Describes a deployment pattern version summary.
     /// </summary>
-    public partial class WorkloadDeploymentPatternDataSummary
+    public partial class DeploymentPatternVersionDataSummary
     {
         private string _deploymentPatternName;
         private string _deploymentPatternVersionName;
         private string _description;
-        private string _displayName;
-        private WorkloadDeploymentPatternStatus _status;
-        private string _statusMessage;
+        private string _documentationUrl;
         private string _workloadName;
-        private string _workloadVersionName;
 
         /// <summary>
         /// Gets and sets the property DeploymentPatternName. 
         /// <para>
-        /// The name of a workload deployment pattern.
+        /// The name of the deployment pattern.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
         public string DeploymentPatternName
         {
             get { return this._deploymentPatternName; }
@@ -65,10 +61,9 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Gets and sets the property DeploymentPatternVersionName. 
         /// <para>
-        /// The version name of a workload deployment pattern.
+        /// The name of the deployment pattern version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=30)]
         public string DeploymentPatternVersionName
         {
             get { return this._deploymentPatternVersionName; }
@@ -84,7 +79,7 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of a workload deployment pattern.
+        /// The description of the deployment pattern version.
         /// </para>
         /// </summary>
         public string Description
@@ -100,57 +95,21 @@ namespace Amazon.LaunchWizard.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
+        /// Gets and sets the property DocumentationUrl. 
         /// <para>
-        /// The display name of a workload deployment pattern.
+        /// The URL of the documentation for the deployment pattern version.
         /// </para>
         /// </summary>
-        public string DisplayName
+        public string DocumentationUrl
         {
-            get { return this._displayName; }
-            set { this._displayName = value; }
+            get { return this._documentationUrl; }
+            set { this._documentationUrl = value; }
         }
 
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
+        // Check to see if DocumentationUrl property is set
+        internal bool IsSetDocumentationUrl()
         {
-            return this._displayName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of a workload deployment pattern.
-        /// </para>
-        /// </summary>
-        public WorkloadDeploymentPatternStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StatusMessage. 
-        /// <para>
-        /// A message about a workload deployment pattern's status.
-        /// </para>
-        /// </summary>
-        public string StatusMessage
-        {
-            get { return this._statusMessage; }
-            set { this._statusMessage = value; }
-        }
-
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
-        {
-            return this._statusMessage != null;
+            return this._documentationUrl != null;
         }
 
         /// <summary>
@@ -159,7 +118,6 @@ namespace Amazon.LaunchWizard.Model
         /// The name of the workload.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public string WorkloadName
         {
             get { return this._workloadName; }
@@ -170,25 +128,6 @@ namespace Amazon.LaunchWizard.Model
         internal bool IsSetWorkloadName()
         {
             return this._workloadName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkloadVersionName. 
-        /// <para>
-        /// The name of the workload deployment pattern version.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=5, Max=30)]
-        public string WorkloadVersionName
-        {
-            get { return this._workloadVersionName; }
-            set { this._workloadVersionName = value; }
-        }
-
-        // Check to see if WorkloadVersionName property is set
-        internal bool IsSetWorkloadVersionName()
-        {
-            return this._workloadVersionName != null;
         }
 
     }

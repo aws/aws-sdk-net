@@ -30,37 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// This is the response object from the ListWorkloads operation.
+    /// A filter for deployment pattern versions. Use this filter to specify criteria for
+    /// querying deployment pattern versions in Launch Wizard.
     /// </summary>
-    public partial class ListWorkloadsResponse : AmazonWebServiceResponse
+    public partial class DeploymentPatternVersionFilter
     {
-        private string _nextToken;
-        private List<WorkloadDataSummary> _workloads = AWSConfigs.InitializeCollections ? new List<WorkloadDataSummary>() : null;
+        private DeploymentPatternVersionFilterKey _name;
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The token to include in another request to get the next page of items. This value
-        /// is <c>null</c> when there are no more items to return.
+        /// The name of the filter attribute. Specifies which attribute to filter on when querying
+        /// deployment pattern versions.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string NextToken
+        [AWSProperty(Required=true)]
+        public DeploymentPatternVersionFilterKey Name
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._nextToken != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Workloads. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// Information about the workloads.
+        /// The values to filter by. Contains the specific values to match against when filtering
+        /// deployment pattern versions.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -68,16 +70,17 @@ namespace Amazon.LaunchWizard.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<WorkloadDataSummary> Workloads
+        [AWSProperty(Required=true)]
+        public List<string> Values
         {
-            get { return this._workloads; }
-            set { this._workloads = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if Workloads property is set
-        internal bool IsSetWorkloads()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._workloads != null && (this._workloads.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

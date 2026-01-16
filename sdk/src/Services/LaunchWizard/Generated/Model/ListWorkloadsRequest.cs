@@ -66,7 +66,7 @@ namespace Amazon.LaunchWizard.Model
         /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

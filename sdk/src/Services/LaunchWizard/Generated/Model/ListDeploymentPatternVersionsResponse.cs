@@ -30,17 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// This is the response object from the ListDeployments operation.
+    /// This is the response object from the ListDeploymentPatternVersions operation.
     /// </summary>
-    public partial class ListDeploymentsResponse : AmazonWebServiceResponse
+    public partial class ListDeploymentPatternVersionsResponse : AmazonWebServiceResponse
     {
-        private List<DeploymentDataSummary> _deployments = AWSConfigs.InitializeCollections ? new List<DeploymentDataSummary>() : null;
+        private List<DeploymentPatternVersionDataSummary> _deploymentPatternVersions = AWSConfigs.InitializeCollections ? new List<DeploymentPatternVersionDataSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Deployments. 
+        /// Gets and sets the property DeploymentPatternVersions. 
         /// <para>
-        /// Lists the deployments.
+        /// The deployment pattern versions.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -48,23 +48,22 @@ namespace Amazon.LaunchWizard.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<DeploymentDataSummary> Deployments
+        public List<DeploymentPatternVersionDataSummary> DeploymentPatternVersions
         {
-            get { return this._deployments; }
-            set { this._deployments = value; }
+            get { return this._deploymentPatternVersions; }
+            set { this._deploymentPatternVersions = value; }
         }
 
-        // Check to see if Deployments property is set
-        internal bool IsSetDeployments()
+        // Check to see if DeploymentPatternVersions property is set
+        internal bool IsSetDeploymentPatternVersions()
         {
-            return this._deployments != null && (this._deployments.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._deploymentPatternVersions != null && (this._deploymentPatternVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to include in another request to get the next page of items. This value
-        /// is <c>null</c> when there are no more items to return.
+        /// The token for the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
