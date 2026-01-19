@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.S3;
-using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
@@ -25,6 +24,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// - Response validation
     /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class TransferUtilityDownloadDirectoryWithResponseTests : TestBase<AmazonS3Client>
     {
         private static readonly long MB = 1024 * 1024;
@@ -84,7 +84,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Basic Download Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_BasicDownload_ReturnsCorrectResponse()
         {
@@ -120,7 +119,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_EmptyDirectory_ReturnsZeroObjectsDownloaded()
         {
@@ -156,7 +154,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Progress Tracking Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_WithProgressTracking_FiresProgressEvents()
         {
@@ -202,7 +199,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_SequentialMode_IncludesCurrentFileDetails()
         {
@@ -247,7 +243,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_ConcurrentMode_OmitsCurrentFileDetails()
         {
@@ -299,7 +294,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Multipart Download Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         [TestCategory("Multipart")]
         public async Task DownloadDirectoryWithResponse_WithMultipartFiles_DownloadsSuccessfully()
@@ -345,7 +339,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Nested Directory Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_NestedDirectories_PreservesStructure()
         {
@@ -394,7 +387,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Concurrent vs Sequential Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_ConcurrentMode_DownloadsAllFiles()
         {
@@ -426,7 +418,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_SequentialMode_DownloadsAllFiles()
         {
@@ -462,7 +453,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         #region Mixed File Size Tests
 
         [TestMethod]
-        [TestCategory("S3")]
         [TestCategory("DownloadDirectory")]
         public async Task DownloadDirectoryWithResponse_MixedFileSizes_DownloadsAll()
         {

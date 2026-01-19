@@ -1,5 +1,4 @@
-﻿using Amazon;
-using Amazon.S3;
+﻿using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.S3Control;
@@ -12,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -22,17 +20,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private const int MAX_SPIN_LOOPS = 100;
         private const string TEST_MRAP_NAME = UtilityMethods.SDK_TEST_PREFIX + "-for-mrap-tests";
 
-        public static string CreateBucket(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
-        {
-            string bucketName = string.IsNullOrEmpty(bucketRequest.BucketName) ?
-                UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks :
-                bucketRequest.BucketName;
-
-            bucketRequest.BucketName = bucketName;
-            s3Client.PutBucket(bucketRequest);
-            return bucketName;
-        }
-
         public static async Task<string> CreateBucketAsync(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
         {
             var bucketName = string.IsNullOrEmpty(bucketRequest.BucketName) ?
@@ -41,25 +28,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             bucketRequest.BucketName = bucketName;
             await s3Client.PutBucketAsync(bucketRequest);
-            return bucketName;
-        }
-
-        public static string CreateS3ExpressBucketWithWait(IAmazonS3 s3Client, string regionCode, bool setPublicACLs = false)
-        {
-            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX}-{DateTime.UtcNow.Ticks}--{regionCode}--x-s3";
-
-            s3Client.PutBucket(new PutBucketRequest
-            {
-                BucketName = bucketName,
-                PutBucketConfiguration = new PutBucketConfiguration
-                {
-                    BucketInfo = new BucketInfo { DataRedundancy = DataRedundancy.SingleAvailabilityZone, Type = BucketType.Directory },
-                    Location = new LocationInfo { Name = regionCode, Type = LocationType.AvailabilityZone }
-                }
-            });
-            WaitForBucket(s3Client, bucketName, true);
-
-
             return bucketName;
         }
 
@@ -81,20 +49,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return bucketName;
         }
 
-        public static string CreateBucketWithWait(IAmazonS3 s3Client, bool setPublicACLs = false) 
-            => CreateBucketWithWait(s3Client, new PutBucketRequest(), setPublicACLs);
-
-        public static string CreateBucketWithWait(IAmazonS3 s3Client, PutBucketRequest bucketRequest, bool setPublicACLs = false)
-        {
-            string bucketName = CreateBucket(s3Client, bucketRequest);
-            WaitForBucket(s3Client, bucketName);
-            if (setPublicACLs)
-            {
-                SetPublicBucketACLs(s3Client, bucketName);
-            }
-            return bucketName;
-        }
-
         public static Task<string> CreateBucketWithWaitAsync(IAmazonS3 s3Client, bool setPublicACLs = false) 
             => CreateBucketWithWaitAsync(s3Client, new PutBucketRequest(), setPublicACLs);
 
@@ -107,30 +61,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 await SetPublicBucketACLsAsync(s3Client, bucketName);
             }
             return bucketName;
-        }
-
-        private static void SetPublicBucketACLs(IAmazonS3 client, string bucketName)
-        {
-            client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
-            {
-                BucketName = bucketName,
-                OwnershipControls = new OwnershipControls
-                {
-                    Rules = new List<OwnershipControlsRule>
-                        {
-                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
-                        }
-                }
-            });
-
-            client.PutPublicAccessBlock(new Amazon.S3.Model.PutPublicAccessBlockRequest
-            {
-                BucketName = bucketName,
-                PublicAccessBlockConfiguration = new Amazon.S3.Model.PublicAccessBlockConfiguration
-                {
-                    BlockPublicAcls = false
-                }
-            });
         }
 
         private static async Task SetPublicBucketACLsAsync(IAmazonS3 client, string bucketName)
@@ -157,42 +87,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     BlockPublicAcls = false
                 }
-            });
-        }
-
-
-        public static void WaitForBucket(IAmazonS3 client, string bucketName, bool skipDoubleCheck = false)
-        {
-            var sleeper = UtilityMethods.ListSleeper.Create();
-            UtilityMethods.WaitUntilSuccess(() => {
-                //Check if a bucket exists by trying to put an object in it
-                var key = Guid.NewGuid().ToString() + "_existskey";
-
-                var res = client.PutObject(new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ContentBody = "exists..."
-                });
-
-                try
-                {
-                    client.Delete(bucketName, key, null);
-                }
-                catch
-                {
-                    Console.WriteLine($"Eventual consistency error: failed to delete key {key} from bucket {bucketName}");
-                }
-
-                return true;
-            });
-
-            if (skipDoubleCheck) return;
-
-            //Double check the bucket still exists using the DoesBucketExistV2 method
-            var exists = S3TestUtils.WaitForConsistency(() =>
-            {
-                return AmazonS3Util.DoesS3BucketExistV2(client, bucketName) ? (bool?)true : null;
             });
         }
 
@@ -380,49 +274,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             // Continue listing objects and deleting them until the bucket is empty.
             while (listVersionsResponse.IsTruncated.GetValueOrDefault());
-        }
-
-        public static T WaitForConsistency<T>(Func<T> loadFunction)
-        {
-            //First try waiting up to 60 seconds.    
-            var firstWaitSeconds = 60;
-            try
-            {
-                return UtilityMethods.WaitUntilSuccess(loadFunction, 10, firstWaitSeconds);
-            }
-            catch
-            {
-                Console.WriteLine($"Eventual consistency wait: could not resolve eventual consistency after {firstWaitSeconds} seconds. Attempting to resolve...");
-            }
-
-            //Spin through request to try to get the expected result. As soon as we get a non null result use it.
-            for (var spinCounter = 0; spinCounter < MAX_SPIN_LOOPS; spinCounter++)
-            {
-                try
-                {
-                    T result = loadFunction();
-                    if (result != null)
-                    {
-                        if (spinCounter != 0)
-                        {
-                            //Only log that a wait happened if it didn't do it on the first time.
-                            Console.WriteLine($"Eventual consistency wait successful on attempt {spinCounter + 1}.");
-                        }
-
-                        return result;
-                    }
-                }
-                catch
-                {
-                }
-
-                Thread.Sleep(0);
-            }
-
-            //If we don't have an ok result then spend the normal wait period to wait for eventual consistency.
-            Console.WriteLine($"Eventual consistency wait: could not resolve eventual consistency after {MAX_SPIN_LOOPS}. Waiting normally...");
-            var lastWaitSeconds = 240; //4 minute wait.
-            return UtilityMethods.WaitUntilSuccess(loadFunction, 5, lastWaitSeconds);
         }
 
         public static async Task<T> WaitForConsistencyAsync<T>(Func<Task<T>> loadFunction)

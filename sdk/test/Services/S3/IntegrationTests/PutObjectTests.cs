@@ -744,11 +744,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var aclBucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
             try
             {
-                await Client.PutBucketAsync(new PutBucketRequest
-                {
-                    BucketName = aclBucketName,
-                });
-
                 var getBucketAclResponse = await Client.GetBucketAclAsync(new GetBucketAclRequest
                 {
                     BucketName = aclBucketName,
