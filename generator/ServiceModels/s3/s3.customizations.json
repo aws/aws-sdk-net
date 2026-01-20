@@ -2139,6 +2139,88 @@
                 "Metadata",
                 "Body"
             ]
+        },
+        "UploadPartRequest":{
+            "modify":[
+                {
+                    "ContentLength" : {"emitPropertyName" : "PartSize"}
+                },
+                {
+                    "Body" : {"emitPropertyName" : "InputStream"}
+                },
+                {
+                    "ContentMD5" : {"emitPropertyName" : "MD5Digest"}
+                },
+                {
+                    "MD5Digest":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._md5Digest);"
+                        ]
+                    }
+                },
+                {
+                    "SSECustomerAlgorithm" : {"emitPropertyName" : "ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKey" : {"emitPropertyName" : "ServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+                    "SSECustomerKeyMD5" : {"emitPropertyName" : "ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._expectedBucketOwner);"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryptionCustomerMethod":{
+                        "injectXmlIsSet":[
+                            "return this._serverSideEncryptionCustomerMethod != null && this._serverSideEncryptionCustomerMethod != ServerSideEncryptionCustomerMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryptionCustomerProvidedKey":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKey);"
+                        ]
+                    }
+                },
+                {
+                    "ServerSideEncryptionCustomerProvidedKeyMD5":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKeyMD5);"
+                        ]
+                    }
+                }
+            ],
+            "excludeFromMarshalling":[
+                "InputStream",
+                "PartSize",
+                "ServerSideEncryptionCustomerProvidedKey",
+                "ServerSideEncryptionCustomerProvidedKeyMD5",
+                "PartNumber",
+                "UploadId"
+            ]
+        },
+        "UploadPartOutput":{
+            "modify":[
+                {
+                    "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
+                }
+            ],
+            "inject":[
+                {
+                    "PartNumber" : {
+                        "shape": "PartNumber"
+                    }
+                }
+            ],
+            "excludeFromUnmarshalling":[
+                "PartNumber"
+            ]
         }
     },
     "operationModifiers": {
@@ -2203,6 +2285,9 @@
         },
         "ListParts":{
             "excludePaginators":true
+        },
+        "UploadPart": {
+            "skipChecksumDuringMarshalling": true
         }
     },
     "shapeSubstitutions":{
@@ -2681,6 +2766,16 @@
             "Expires":{
                 "Type": "DateTime?",
                 "Marshaller": "StringUtils.FromDateTimeToRFC822"
+            }
+        },
+        "UploadPartRequest":{
+            "InputStream" : {
+                "Type" : "Stream"
+            },
+            "ServerSideEncryptionCustomerMethod":{
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
             }
         }
     },
