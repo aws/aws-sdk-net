@@ -30,36 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkspacesInstances.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceInstance operation.
-    /// Deletes the specified WorkSpace
-    /// 
-    ///  <important> 
-    /// <para>
-    /// Usage of this API will result in deletion of the resource in question.
-    /// </para>
-    ///  </important>
+    /// Defines billing configuration settings for WorkSpace Instances, containing the billing
+    /// mode selection.
     /// </summary>
-    public partial class DeleteWorkspaceInstanceRequest : AmazonWorkspacesInstancesRequest
+    public partial class BillingConfiguration
     {
-        private string _workspaceInstanceId;
+        private BillingMode _billingMode;
 
         /// <summary>
-        /// Gets and sets the property WorkspaceInstanceId. 
+        /// Gets and sets the property BillingMode. 
         /// <para>
-        /// Unique identifier of the WorkSpaces Instance targeted for deletion.
+        /// Specifies the billing mode for WorkSpace Instances. MONTHLY provides fixed monthly
+        /// rates for predictable budgeting, while HOURLY enables pay-per-second billing for actual
+        /// usage.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=15, Max=70)]
-        public string WorkspaceInstanceId
+        [AWSProperty(Required=true)]
+        public BillingMode BillingMode
         {
-            get { return this._workspaceInstanceId; }
-            set { this._workspaceInstanceId = value; }
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
         }
 
-        // Check to see if WorkspaceInstanceId property is set
-        internal bool IsSetWorkspaceInstanceId()
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
         {
-            return this._workspaceInstanceId != null;
+            return this._billingMode != null;
         }
 
     }

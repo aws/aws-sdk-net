@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceTypeInfo Object
+    /// Response Unmarshaller for SupportedInstanceConfiguration Object
     /// </summary>  
-    public class InstanceTypeInfoUnmarshaller : IJsonUnmarshaller<InstanceTypeInfo, JsonUnmarshallerContext>
+    public class SupportedInstanceConfigurationUnmarshaller : IJsonUnmarshaller<SupportedInstanceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InstanceTypeInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SupportedInstanceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            InstanceTypeInfo unmarshalledObject = new InstanceTypeInfo();
+            SupportedInstanceConfiguration unmarshalledObject = new SupportedInstanceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("BillingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.BillingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupportedInstanceConfigurations", targetDepth))
+                if (context.TestExpression("PlatformType", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<SupportedInstanceConfiguration, SupportedInstanceConfigurationUnmarshaller>(SupportedInstanceConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.SupportedInstanceConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlatformType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Tenancy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         }
 
 
-        private static InstanceTypeInfoUnmarshaller _instance = new InstanceTypeInfoUnmarshaller();        
+        private static SupportedInstanceConfigurationUnmarshaller _instance = new SupportedInstanceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceTypeInfoUnmarshaller Instance
+        public static SupportedInstanceConfigurationUnmarshaller Instance
         {
             get
             {
