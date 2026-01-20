@@ -1838,6 +1838,8 @@ namespace ServiceClientGenerator
                 modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
             if (operation[OperationModifiers.StopPaginationOnSameTokenKey] != null && operation[OperationModifiers.StopPaginationOnSameTokenKey].IsBoolean)
                 modifiers.StopPaginationOnSameToken = (bool)operation[OperationModifiers.StopPaginationOnSameTokenKey];
+            if (operation[OperationModifiers.SkipChecksumDuringMarshallingKey] != null && operation[OperationModifiers.SkipChecksumDuringMarshallingKey].IsBoolean)
+                modifiers.SkipChecksumDuringMarshalling = (bool)operation[OperationModifiers.SkipChecksumDuringMarshallingKey];
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
             {
@@ -1906,6 +1908,7 @@ namespace ServiceClientGenerator
         public class OperationModifiers
         {
             public const string OperationModifiersKey = "operationModifiers";
+            public const string SkipChecksumDuringMarshallingKey = "skipChecksumDuringMarshalling";
             public const string NameKey = "name";
             public const string ExcludeKey = "exclude";
             public const string InternalKey = "internal";
@@ -2020,6 +2023,12 @@ namespace ServiceClientGenerator
             }
 
             public bool StopPaginationOnSameToken
+            {
+                get;
+                set;
+            }
+
+            public bool SkipChecksumDuringMarshalling
             {
                 get;
                 set;
