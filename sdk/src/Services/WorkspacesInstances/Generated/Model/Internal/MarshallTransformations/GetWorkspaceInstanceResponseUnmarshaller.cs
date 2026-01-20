@@ -52,6 +52,12 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BillingConfiguration", targetDepth))
+                {
+                    var unmarshaller = BillingConfigurationUnmarshaller.Instance;
+                    response.BillingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EC2InstanceErrors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EC2InstanceError, EC2InstanceErrorUnmarshaller>(EC2InstanceErrorUnmarshaller.Instance);

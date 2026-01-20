@@ -179,6 +179,56 @@ namespace Amazon.WorkspacesInstances
 
 
     /// <summary>
+    /// Constants used for properties of type BillingMode.
+    /// </summary>
+    public class BillingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOURLY for BillingMode
+        /// </summary>
+        public static readonly BillingMode HOURLY = new BillingMode("HOURLY");
+        /// <summary>
+        /// Constant MONTHLY for BillingMode
+        /// </summary>
+        public static readonly BillingMode MONTHLY = new BillingMode("MONTHLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingMode FindValue(string value)
+        {
+            return FindValue<BillingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityReservationPreferenceEnum.
     /// </summary>
     public class CapacityReservationPreferenceEnum : ConstantClass
@@ -533,6 +583,56 @@ namespace Amazon.WorkspacesInstances
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceConfigurationTenancyEnum.
+    /// </summary>
+    public class InstanceConfigurationTenancyEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEDICATED for InstanceConfigurationTenancyEnum
+        /// </summary>
+        public static readonly InstanceConfigurationTenancyEnum DEDICATED = new InstanceConfigurationTenancyEnum("DEDICATED");
+        /// <summary>
+        /// Constant SHARED for InstanceConfigurationTenancyEnum
+        /// </summary>
+        public static readonly InstanceConfigurationTenancyEnum SHARED = new InstanceConfigurationTenancyEnum("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceConfigurationTenancyEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceConfigurationTenancyEnum FindValue(string value)
+        {
+            return FindValue<InstanceConfigurationTenancyEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceConfigurationTenancyEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceInterruptionBehaviorEnum.
     /// </summary>
     public class InstanceInterruptionBehaviorEnum : ConstantClass
@@ -730,6 +830,76 @@ namespace Amazon.WorkspacesInstances
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MarketTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PlatformTypeEnum.
+    /// </summary>
+    public class PlatformTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LinuxUNIX for PlatformTypeEnum
+        /// </summary>
+        public static readonly PlatformTypeEnum LinuxUNIX = new PlatformTypeEnum("Linux/UNIX");
+        /// <summary>
+        /// Constant RedHatBYOLLinux for PlatformTypeEnum
+        /// </summary>
+        public static readonly PlatformTypeEnum RedHatBYOLLinux = new PlatformTypeEnum("Red Hat BYOL Linux");
+        /// <summary>
+        /// Constant RedHatEnterpriseLinux for PlatformTypeEnum
+        /// </summary>
+        public static readonly PlatformTypeEnum RedHatEnterpriseLinux = new PlatformTypeEnum("Red Hat Enterprise Linux");
+        /// <summary>
+        /// Constant SUSELinux for PlatformTypeEnum
+        /// </summary>
+        public static readonly PlatformTypeEnum SUSELinux = new PlatformTypeEnum("SUSE Linux");
+        /// <summary>
+        /// Constant UbuntuProLinux for PlatformTypeEnum
+        /// </summary>
+        public static readonly PlatformTypeEnum UbuntuProLinux = new PlatformTypeEnum("Ubuntu Pro Linux");
+        /// <summary>
+        /// Constant Windows for PlatformTypeEnum
+        /// </summary>
+        public static readonly PlatformTypeEnum Windows = new PlatformTypeEnum("Windows");
+        /// <summary>
+        /// Constant WindowsBYOL for PlatformTypeEnum
+        /// </summary>
+        public static readonly PlatformTypeEnum WindowsBYOL = new PlatformTypeEnum("Windows BYOL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlatformTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlatformTypeEnum FindValue(string value)
+        {
+            return FindValue<PlatformTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlatformTypeEnum(string value)
         {
             return FindValue(value);
         }

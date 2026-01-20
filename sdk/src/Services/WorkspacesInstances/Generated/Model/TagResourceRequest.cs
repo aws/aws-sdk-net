@@ -44,7 +44,7 @@ namespace Amazon.WorkspacesInstances.Model
         /// Tags to be added to the WorkSpace Instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=30)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

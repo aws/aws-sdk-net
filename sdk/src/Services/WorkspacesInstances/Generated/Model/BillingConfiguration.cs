@@ -30,29 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkspacesInstances.Model
 {
     /// <summary>
-    /// Returns the list of tags for the specified WorkSpace Instance.
+    /// Defines billing configuration settings for WorkSpace Instances, containing the billing
+    /// mode selection.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class BillingConfiguration
     {
-        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private BillingMode _billingMode;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property BillingMode. 
         /// <para>
-        /// Collection of tags associated with the WorkSpace Instance.
+        /// Specifies the billing mode for WorkSpace Instances. MONTHLY provides fixed monthly
+        /// rates for predictable budgeting, while HOURLY enables pay-per-second billing for actual
+        /// usage.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
-        public List<Tag> Tags
+        [AWSProperty(Required=true)]
+        public BillingMode BillingMode
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
         {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._billingMode != null;
         }
 
     }

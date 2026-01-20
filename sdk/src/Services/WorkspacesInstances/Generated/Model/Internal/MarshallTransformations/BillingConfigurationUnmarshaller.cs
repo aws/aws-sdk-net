@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceTypeInfo Object
+    /// Response Unmarshaller for BillingConfiguration Object
     /// </summary>  
-    public class InstanceTypeInfoUnmarshaller : IUnmarshaller<InstanceTypeInfo, XmlUnmarshallerContext>, IUnmarshaller<InstanceTypeInfo, JsonUnmarshallerContext>
+    public class BillingConfigurationUnmarshaller : IUnmarshaller<BillingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<BillingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InstanceTypeInfo IUnmarshaller<InstanceTypeInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BillingConfiguration IUnmarshaller<BillingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public InstanceTypeInfo Unmarshall(JsonUnmarshallerContext context)
+        public BillingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            InstanceTypeInfo unmarshalledObject = new InstanceTypeInfo();
+            BillingConfiguration unmarshalledObject = new BillingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("BillingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SupportedInstanceConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SupportedInstanceConfiguration, SupportedInstanceConfigurationUnmarshaller>(SupportedInstanceConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.SupportedInstanceConfigurations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BillingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         }
 
 
-        private static InstanceTypeInfoUnmarshaller _instance = new InstanceTypeInfoUnmarshaller();        
+        private static BillingConfigurationUnmarshaller _instance = new BillingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceTypeInfoUnmarshaller Instance
+        public static BillingConfigurationUnmarshaller Instance
         {
             get
             {

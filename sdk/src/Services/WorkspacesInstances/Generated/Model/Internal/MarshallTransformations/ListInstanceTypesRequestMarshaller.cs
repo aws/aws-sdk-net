@@ -69,6 +69,17 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetInstanceConfigurationFilter())
+                {
+                    context.Writer.WritePropertyName("InstanceConfigurationFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceConfigurationFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InstanceConfigurationFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

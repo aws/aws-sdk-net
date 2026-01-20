@@ -69,6 +69,17 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBillingConfiguration())
+                {
+                    context.Writer.WritePropertyName("BillingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BillingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BillingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("ClientToken");

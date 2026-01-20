@@ -35,6 +35,7 @@ namespace Amazon.WorkspacesInstances.Model
     public partial class InstanceTypeInfo
     {
         private string _instanceType;
+        private List<SupportedInstanceConfiguration> _supportedInstanceConfigurations = AWSConfigs.InitializeCollections ? new List<SupportedInstanceConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
@@ -52,6 +53,26 @@ namespace Amazon.WorkspacesInstances.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedInstanceConfigurations. 
+        /// <para>
+        /// Lists all valid combinations of tenancy, platform type, and billing mode supported
+        /// for the specific WorkSpace Instance type. Contains the complete set of configuration
+        /// options available for this instance type.
+        /// </para>
+        /// </summary>
+        public List<SupportedInstanceConfiguration> SupportedInstanceConfigurations
+        {
+            get { return this._supportedInstanceConfigurations; }
+            set { this._supportedInstanceConfigurations = value; }
+        }
+
+        // Check to see if SupportedInstanceConfigurations property is set
+        internal bool IsSetSupportedInstanceConfigurations()
+        {
+            return this._supportedInstanceConfigurations != null && (this._supportedInstanceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

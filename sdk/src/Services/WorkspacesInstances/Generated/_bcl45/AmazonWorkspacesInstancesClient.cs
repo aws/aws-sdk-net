@@ -581,6 +581,12 @@ namespace Amazon.WorkspacesInstances
 
         /// <summary>
         /// Deletes the specified WorkSpace
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Usage of this API will result in deletion of the resource in question.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceInstance service method.</param>
         /// 
@@ -616,6 +622,12 @@ namespace Amazon.WorkspacesInstances
 
         /// <summary>
         /// Deletes the specified WorkSpace
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Usage of this API will result in deletion of the resource in question.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceInstance service method.</param>
         /// <param name="cancellationToken">

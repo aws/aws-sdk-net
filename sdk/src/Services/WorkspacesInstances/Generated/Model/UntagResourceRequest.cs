@@ -44,7 +44,7 @@ namespace Amazon.WorkspacesInstances.Model
         /// Keys of tags to be removed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=30)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }
