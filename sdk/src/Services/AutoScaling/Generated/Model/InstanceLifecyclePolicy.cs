@@ -30,10 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Defines the lifecycle policy for instances in an Auto Scaling group. This policy
-    /// controls instance behavior when lifecycles transition and operations fail. Use lifecycle
-    /// policies to ensure graceful shutdown for stateful workloads or applications requiring
-    /// extended draining periods.
+    /// The instance lifecycle policy for the Auto Scaling group. This policy controls instance
+    /// behavior when an instance transitions through its lifecycle states. Configure retention
+    /// triggers to specify when instances should move to a <c>Retained</c> state instead
+    /// of automatic termination. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html">
+    /// Control instance retention with instance lifecycle policies</a> in the <i>Amazon EC2
+    /// Auto Scaling User Guide</i>. 
+    /// </para>
     /// </summary>
     public partial class InstanceLifecyclePolicy
     {
@@ -43,9 +50,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property RetentionTriggers. 
         /// <para>
         ///  Specifies the conditions that trigger instance retention behavior. These triggers
-        /// determine when instances should move to a Retained state instead of being terminated.
-        /// This allows you to maintain control over instance management when lifecycle operations
-        /// fail. 
+        /// determine when instances should move to a <c>Retained</c> state instead of automatic
+        /// termination. This allows you to maintain control over instance management when lifecycles
+        /// transition and operations fail. 
         /// </para>
         /// </summary>
         public RetentionTriggers RetentionTriggers

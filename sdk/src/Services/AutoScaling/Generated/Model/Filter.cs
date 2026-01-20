@@ -57,13 +57,13 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values for <c>Name</c> depend on which API operation you're using with the
-        /// filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a>
-        /// or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).
+        ///  The valid values for <c>Name</c> depend on which API operation you're using with
+        /// the filter. 
         /// </para>
         ///  
         /// <para>
-        ///  <b>DescribeAutoScalingGroups</b> 
+        ///  <b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a>
+        /// </b> 
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>DescribeTags</b> 
+        ///  <b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>
+        /// </b> 
         /// </para>
         ///  
         /// <para>
@@ -116,6 +117,36 @@ namespace Amazon.AutoScaling.Model
         /// propagate to instances at launch. The results only include information about the tags
         /// associated with the specified Boolean value. 
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+        /// </b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <c>Name</c> include the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>StartTimeLowerBound</c> - The earliest scaling activities to return based on the
+        /// activity start time. Scaling activities with a start time earlier than this value
+        /// are not included in the results. Only activities started within the last six weeks
+        /// can be returned regardless of the value specified. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StartTimeUpperBound</c> - The latest scaling activities to return based on the
+        /// activity start time. Scaling activities with a start time later than this value are
+        /// not included in the results. Only activities started within the last six weeks can
+        /// be returned regardless of the value specified. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Status</c> - The <c>StatusCode</c> value of the scaling activity. This filter
+        /// can only be used in combination with the <c>AutoScalingGroupName</c> parameter. For
+        /// valid <c>StatusCode</c> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Name
@@ -139,9 +170,19 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// If you specify multiple values for a filter, the values are automatically logically
         /// joined with an <c>OR</c>, and the request returns all results that match any of the
-        /// specified values. For example, specify "tag:environment" for the filter name and "production,development"
-        /// for the filter values to find Auto Scaling groups with the tag "environment=production"
-        /// or "environment=development".
+        /// specified values.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>DescribeAutoScalingGroups example:</b> Specify "tag:environment" for the filter
+        /// name and "production,development" for the filter values to find Auto Scaling groups
+        /// with the tag "environment=production" or "environment=development". 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>DescribeScalingActivities example:</b> Specify "Status" for the filter name and
+        /// "Successful,Failed" for the filter values to find scaling activities with a status
+        /// of either "Successful" or "Failed". 
         /// </para>
         /// </summary>
         public List<string> Values
