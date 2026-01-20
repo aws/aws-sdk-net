@@ -34,11 +34,31 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class TokenUsage
     {
+        private List<CacheDetail> _cacheDetails = AWSConfigs.InitializeCollections ? new List<CacheDetail>() : null;
         private int? _cacheReadInputTokens;
         private int? _cacheWriteInputTokens;
         private int? _inputTokens;
         private int? _outputTokens;
         private int? _totalTokens;
+
+        /// <summary>
+        /// Gets and sets the property CacheDetails. 
+        /// <para>
+        /// Detailed breakdown of cache writes by TTL. Empty if no cache creation occurred. Sorted
+        /// by TTL duration (1h before 5m).
+        /// </para>
+        /// </summary>
+        public List<CacheDetail> CacheDetails
+        {
+            get { return this._cacheDetails; }
+            set { this._cacheDetails = value; }
+        }
+
+        // Check to see if CacheDetails property is set
+        internal bool IsSetCacheDetails()
+        {
+            return this._cacheDetails != null && (this._cacheDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CacheReadInputTokens. 

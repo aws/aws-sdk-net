@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CachePointBlock Object
+    /// Response Unmarshaller for CacheDetail Object
     /// </summary>  
-    public class CachePointBlockUnmarshaller : IUnmarshaller<CachePointBlock, XmlUnmarshallerContext>, IUnmarshaller<CachePointBlock, JsonUnmarshallerContext>
+    public class CacheDetailUnmarshaller : IUnmarshaller<CacheDetail, XmlUnmarshallerContext>, IUnmarshaller<CacheDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CachePointBlock IUnmarshaller<CachePointBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CacheDetail IUnmarshaller<CacheDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CachePointBlock Unmarshall(JsonUnmarshallerContext context)
+        public CacheDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            CachePointBlock unmarshalledObject = new CachePointBlock();
+            CacheDetail unmarshalledObject = new CacheDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("inputTokens", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.InputTokens = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ttl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ttl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static CachePointBlockUnmarshaller _instance = new CachePointBlockUnmarshaller();        
+        private static CacheDetailUnmarshaller _instance = new CacheDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CachePointBlockUnmarshaller Instance
+        public static CacheDetailUnmarshaller Instance
         {
             get
             {

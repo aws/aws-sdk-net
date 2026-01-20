@@ -30,20 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Defines a section of content to be cached for reuse in subsequent API calls.
+    /// Cache creation metrics for a specific TTL duration
     /// </summary>
-    public partial class CachePointBlock
+    public partial class CacheDetail
     {
+        private int? _inputTokens;
         private CacheTTL _ttl;
-        private CachePointType _type;
+
+        /// <summary>
+        /// Gets and sets the property InputTokens. 
+        /// <para>
+        /// Number of tokens written to cache with this TTL (cache creation tokens)
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0)]
+        public int InputTokens
+        {
+            get { return this._inputTokens.GetValueOrDefault(); }
+            set { this._inputTokens = value; }
+        }
+
+        // Check to see if InputTokens property is set
+        internal bool IsSetInputTokens()
+        {
+            return this._inputTokens.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Ttl. 
         /// <para>
-        /// Optional TTL duration for cache entries. When specified, enables extended TTL caching
-        /// with the specified duration. When omitted, uses <c>type</c> value for caching behavior.
+        /// TTL duration for these cached tokens
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CacheTTL Ttl
         {
             get { return this._ttl; }
@@ -54,25 +73,6 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetTtl()
         {
             return this._ttl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// Specifies the type of cache point within the CachePointBlock.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public CachePointType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }
