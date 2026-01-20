@@ -630,144 +630,204 @@ static async Task RunTestsAsync(
         return;
     }
     
+    // Set up incremental CSV writer for resume support
+    IncrementalCsvWriter? csvWriter = null;
+    var skippedAlreadyCompleted = 0;
+    
+    if (!string.IsNullOrEmpty(opts.CsvPath))
+    {
+        csvWriter = new IncrementalCsvWriter(opts.CsvPath);
+        
+        // Filter out already completed tests
+        var remainingConfigs = new List<SimulationConfig>();
+        foreach (var config in validConfigs)
+        {
+            if (csvWriter.IsTestCompleted(config.Name))
+            {
+                skippedAlreadyCompleted++;
+            }
+            else
+            {
+                remainingConfigs.Add(config);
+            }
+        }
+        
+        if (skippedAlreadyCompleted > 0)
+        {
+            Console.WriteLine($"\n📂 Resume mode: Found existing CSV with {csvWriter.PreviouslyCompletedCount} completed test(s)");
+            Console.WriteLine($"   Skipping {skippedAlreadyCompleted} already-completed test(s)");
+        }
+        
+        validConfigs = remainingConfigs;
+        
+        if (validConfigs.Count == 0)
+        {
+            Console.WriteLine("\n✓ All tests already completed! Use a different CSV file or delete the existing one to re-run.");
+            csvWriter.Dispose();
+            return;
+        }
+        
+        Console.WriteLine($"   Writing results incrementally to: {opts.CsvPath}");
+    }
+    
     Console.WriteLine($"\nRunning {validConfigs.Count} test configuration(s)...\n");
 
     var analyzer = new ResultsAnalyzer();
     var failedTests = 0;
 
-    if (opts.Isolated)
+    try
     {
-        // Run each test in a separate process
-        var runner = new IsolatedTestRunner(opts.Verbose, opts.MaxMemoryGb);
-        var results = await runner.RunTestsAsync(
-            validConfigs,
-            (current, total, name) =>
-            {
-                Console.Write($"\r[{current}/{total}] Testing (isolated): {TruncateName(name, 40)}...");
-            });
-        
-        foreach (var result in results)
+        if (opts.Isolated)
         {
-            if (result.Success && result.Metrics != null)
-            {
-                analyzer.AddResult(result.Metrics);
-                if (opts.Verbose)
+            // Run each test in a separate process
+            var runner = new IsolatedTestRunner(opts.Verbose, opts.MaxMemoryGb);
+            var results = await runner.RunTestsAsync(
+                validConfigs,
+                (current, total, name) =>
                 {
-                    Console.WriteLine($" Peak VMA: {result.Metrics.PeakVmaCount:N0} {result.Metrics.Status} ({result.ProcessDurationMs}ms)");
-                }
-            }
-            else
-            {
-                failedTests++;
-                Console.WriteLine($" ERROR: {result.Error}");
-            }
-        }
-    }
-    else
-    {
-        // Run all tests in the current process (faster but less accurate VMA measurements)
-        using var vmaMonitor = new VmaMonitor();
-        using var executor = DownloadExecutorFactory.Create(opts.Mode, vmaMonitor, s3Config);
-
-        var testIndex = 0;
-        foreach (var config in validConfigs)
-        {
-            testIndex++;
-            var currentTestNumber = testIndex;
-            var totalTestCount = validConfigs.Count;
-            var modeIndicator = opts.Mode == ExecutorMode.Real ? "(S3)" : "";
-            
-            // Initial display
-            ProgressDisplay.Reset();
-            Console.Write($"\r[{currentTestNumber}/{totalTestCount}] Testing {modeIndicator}: {TruncateName(config.Name, 45)}...");
-            
-            try
-            {
-                // Validate config for this executor
-                if (!executor.ValidateConfig(config, out var validationError))
-                {
-                    failedTests++;
-                    Console.WriteLine($" VALIDATION ERROR: {validationError}");
-                    continue;
-                }
-                
-                // Create progress reporter
-                var progressReporter = new Progress<DownloadProgress>(p =>
-                {
-                    ProgressDisplay.RenderProgress(currentTestNumber, totalTestCount, config.Name, p, showVma: true);
+                    Console.Write($"\r[{current}/{total}] Testing (isolated): {TruncateName(name, 40)}...");
                 });
-                
-                var result = await executor.ExecuteDownloadAsync(config, progressReporter);
-                analyzer.AddResult(result);
-                
-                // Clear progress line and show final result
-                if (opts.Verbose)
+            
+            foreach (var result in results)
+            {
+                if (result.Success && result.Metrics != null)
                 {
-                    Console.Write($"\r[{currentTestNumber}/{totalTestCount}] {TruncateName(config.Name, 40)}");
-                    Console.WriteLine($" Peak VMA: {result.PeakVmaCount:N0} {result.Status}".PadRight(40));
+                    analyzer.AddResult(result.Metrics);
+                    
+                    // Write to CSV immediately
+                    csvWriter?.WriteResult(result.Metrics);
+                    
+                    if (opts.Verbose)
+                    {
+                        Console.WriteLine($" Peak VMA: {result.Metrics.PeakVmaCount:N0} {result.Metrics.Status} ({result.ProcessDurationMs}ms)");
+                    }
                 }
                 else
                 {
-                    // Show completion with checkmark
-                    Console.Write($"\r[{currentTestNumber}/{totalTestCount}] {TruncateName(config.Name, 45)} ✓");
-                    Console.WriteLine($" VMA: {result.PeakVmaCount:N0}".PadRight(20));
+                    failedTests++;
+                    Console.WriteLine($" ERROR: {result.Error}");
                 }
             }
-            catch (Exception ex)
+        }
+        else
+        {
+            // Run all tests in the current process (faster but less accurate VMA measurements)
+            using var vmaMonitor = new VmaMonitor();
+            using var executor = DownloadExecutorFactory.Create(opts.Mode, vmaMonitor, s3Config);
+
+            var testIndex = 0;
+            foreach (var config in validConfigs)
             {
-                failedTests++;
-                Console.WriteLine($" ERROR: {ex.Message}");
+                testIndex++;
+                var currentTestNumber = testIndex;
+                var totalTestCount = validConfigs.Count;
+                var modeIndicator = opts.Mode == ExecutorMode.Real ? "(S3)" : "";
+                
+                // Initial display
+                ProgressDisplay.Reset();
+                Console.Write($"\r[{currentTestNumber}/{totalTestCount}] Testing {modeIndicator}: {TruncateName(config.Name, 45)}...");
+                
+                try
+                {
+                    // Validate config for this executor
+                    if (!executor.ValidateConfig(config, out var validationError))
+                    {
+                        failedTests++;
+                        Console.WriteLine($" VALIDATION ERROR: {validationError}");
+                        continue;
+                    }
+                    
+                    // Create progress reporter
+                    var progressReporter = new Progress<DownloadProgress>(p =>
+                    {
+                        ProgressDisplay.RenderProgress(currentTestNumber, totalTestCount, config.Name, p, showVma: true);
+                    });
+                    
+                    var result = await executor.ExecuteDownloadAsync(config, progressReporter);
+                    analyzer.AddResult(result);
+                    
+                    // Write to CSV immediately
+                    csvWriter?.WriteResult(result);
+                    
+                    // Clear progress line and show final result
+                    if (opts.Verbose)
+                    {
+                        Console.Write($"\r[{currentTestNumber}/{totalTestCount}] {TruncateName(config.Name, 40)}");
+                        Console.WriteLine($" Peak VMA: {result.PeakVmaCount:N0} {result.Status}".PadRight(40));
+                    }
+                    else
+                    {
+                        // Show completion with checkmark
+                        Console.Write($"\r[{currentTestNumber}/{totalTestCount}] {TruncateName(config.Name, 45)} ✓");
+                        Console.WriteLine($" VMA: {result.PeakVmaCount:N0}".PadRight(20));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    failedTests++;
+                    Console.WriteLine($" ERROR: {ex.Message}");
+                }
             }
         }
-    }
 
-    Console.WriteLine("\n\nTests complete. Generating report...");
-    
-    if (skippedConfigs.Count > 0)
-    {
-        Console.WriteLine($"Note: {skippedConfigs.Count} configuration(s) were skipped due to memory constraints.");
-    }
-    
-    if (failedTests > 0)
-    {
-        Console.WriteLine($"Warning: {failedTests} test(s) failed.");
-    }
-
-    // Print results
-    if (showDetailed && configs.Count == 1)
-    {
-        var result = analyzer.GetType()
-            .GetField("_results", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?
-            .GetValue(analyzer) as List<SimulationMetrics>;
-        if (result?.Any() == true)
+        Console.WriteLine("\n\nTests complete. Generating report...");
+        
+        if (skippedConfigs.Count > 0)
         {
-            analyzer.PrintDetailedResult(result.First());
+            Console.WriteLine($"Note: {skippedConfigs.Count} configuration(s) were skipped due to memory constraints.");
+        }
+        
+        if (skippedAlreadyCompleted > 0)
+        {
+            Console.WriteLine($"Note: {skippedAlreadyCompleted} test(s) were skipped (already completed in previous run).");
+        }
+        
+        if (failedTests > 0)
+        {
+            Console.WriteLine($"Warning: {failedTests} test(s) failed.");
+        }
+
+        // Print results
+        if (showDetailed && configs.Count == 1)
+        {
+            var result = analyzer.GetType()
+                .GetField("_results", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?
+                .GetValue(analyzer) as List<SimulationMetrics>;
+            if (result?.Any() == true)
+            {
+                analyzer.PrintDetailedResult(result.First());
+            }
+        }
+        
+        analyzer.PrintSummaryTable();
+        
+        if (configs.Count > 3)
+        {
+            analyzer.PrintChunkSizeAnalysis();
+            analyzer.PrintConcurrencyAnalysis();
+            analyzer.PrintMaxInMemoryAnalysis();
+        }
+        
+        if (showRecommendations)
+        {
+            analyzer.PrintRecommendations();
+        }
+        
+        if (showDynamicComparison)
+        {
+            analyzer.PrintDynamicVsFixedComparison();
+        }
+
+        // Note: CSV was written incrementally, so no final export needed
+        if (csvWriter != null)
+        {
+            Console.WriteLine($"\n✓ Results saved incrementally to: {opts.CsvPath}");
         }
     }
-    
-    analyzer.PrintSummaryTable();
-    
-    if (configs.Count > 3)
+    finally
     {
-        analyzer.PrintChunkSizeAnalysis();
-        analyzer.PrintConcurrencyAnalysis();
-        analyzer.PrintMaxInMemoryAnalysis();
-    }
-    
-    if (showRecommendations)
-    {
-        analyzer.PrintRecommendations();
-    }
-    
-    if (showDynamicComparison)
-    {
-        analyzer.PrintDynamicVsFixedComparison();
-    }
-
-    // Export to CSV if requested
-    if (!string.IsNullOrEmpty(opts.CsvPath))
-    {
-        analyzer.ExportToCsv(opts.CsvPath);
+        // Always dispose the CSV writer
+        csvWriter?.Dispose();
     }
 }
 
