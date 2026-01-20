@@ -263,6 +263,15 @@ namespace Microsoft.Extensions.Configuration
 
                     options.DefaultClientConfig.MaxErrorRetry = maxErrorRetry;
                 }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.MaxStaleConnectionRetries), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var maxStaleConnectionRetries))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.MaxStaleConnectionRetries)}.");
+                    }
+
+                    options.DefaultClientConfig.MaxStaleConnectionRetries = maxStaleConnectionRetries;
+                }
                 else if (string.Equals(element.Key, nameof(DefaultClientConfig.ProgressUpdateInterval), StringComparison.OrdinalIgnoreCase))
                 {
                     if (!long.TryParse(element.Value, out var progressUpdateInterval))
