@@ -56,6 +56,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("cacheDetails", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CacheDetail, CacheDetailUnmarshaller>(CacheDetailUnmarshaller.Instance);
+                    unmarshalledObject.CacheDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("cacheReadInputTokens", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
