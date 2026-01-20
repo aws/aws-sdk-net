@@ -218,6 +218,17 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWarmThroughputSpecification())
+                {
+                    context.Writer.WritePropertyName("warmThroughputSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WarmThroughputSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WarmThroughputSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

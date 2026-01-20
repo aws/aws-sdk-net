@@ -63,6 +63,7 @@ namespace Amazon.Keyspaces.Model
         private string _tableName;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TimeToLive _ttl;
+        private WarmThroughputSpecification _warmThroughputSpecification;
 
         /// <summary>
         /// Gets and sets the property AutoScalingSpecification. 
@@ -507,6 +508,31 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetTtl()
         {
             return this._ttl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughputSpecification. 
+        /// <para>
+        /// Specifies the warm throughput settings for the table. Pre-warming a table helps you
+        /// avoid capacity exceeded exceptions by pre-provisioning read and write capacity units
+        /// to reduce cold start latency when your table receives traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about pre-warming in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html">Pre-warm
+        /// a table in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public WarmThroughputSpecification WarmThroughputSpecification
+        {
+            get { return this._warmThroughputSpecification; }
+            set { this._warmThroughputSpecification = value; }
+        }
+
+        // Check to see if WarmThroughputSpecification property is set
+        internal bool IsSetWarmThroughputSpecification()
+        {
+            return this._warmThroughputSpecification != null;
         }
 
     }

@@ -129,7 +129,7 @@ namespace Amazon.Keyspaces.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The unique identifier in the format of Amazon Resource Name (ARN) for the resource
-        /// couldn’t be found.
+        /// couldn't be found.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=1000)]

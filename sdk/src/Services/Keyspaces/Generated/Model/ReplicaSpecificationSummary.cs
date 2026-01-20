@@ -48,6 +48,7 @@ namespace Amazon.Keyspaces.Model
         private CapacitySpecificationSummary _capacitySpecification;
         private string _region;
         private TableStatus _status;
+        private WarmThroughputSpecificationSummary _warmThroughputSpecification;
 
         /// <summary>
         /// Gets and sets the property CapacitySpecification.
@@ -99,6 +100,25 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughputSpecification. 
+        /// <para>
+        /// The warm throughput settings for this replica, including the current status and configured
+        /// read and write capacity units.
+        /// </para>
+        /// </summary>
+        public WarmThroughputSpecificationSummary WarmThroughputSpecification
+        {
+            get { return this._warmThroughputSpecification; }
+            set { this._warmThroughputSpecification = value; }
+        }
+
+        // Check to see if WarmThroughputSpecification property is set
+        internal bool IsSetWarmThroughputSpecification()
+        {
+            return this._warmThroughputSpecification != null;
         }
 
     }

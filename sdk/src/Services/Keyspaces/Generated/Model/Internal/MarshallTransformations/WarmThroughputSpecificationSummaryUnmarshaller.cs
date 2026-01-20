@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReplicaSpecificationSummary Object
+    /// Response Unmarshaller for WarmThroughputSpecificationSummary Object
     /// </summary>  
-    public class ReplicaSpecificationSummaryUnmarshaller : IUnmarshaller<ReplicaSpecificationSummary, XmlUnmarshallerContext>, IUnmarshaller<ReplicaSpecificationSummary, JsonUnmarshallerContext>
+    public class WarmThroughputSpecificationSummaryUnmarshaller : IUnmarshaller<WarmThroughputSpecificationSummary, XmlUnmarshallerContext>, IUnmarshaller<WarmThroughputSpecificationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReplicaSpecificationSummary IUnmarshaller<ReplicaSpecificationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WarmThroughputSpecificationSummary IUnmarshaller<WarmThroughputSpecificationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicaSpecificationSummary Unmarshall(JsonUnmarshallerContext context)
+        public WarmThroughputSpecificationSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            ReplicaSpecificationSummary unmarshalledObject = new ReplicaSpecificationSummary();
+            WarmThroughputSpecificationSummary unmarshalledObject = new WarmThroughputSpecificationSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("capacitySpecification", targetDepth))
+                if (context.TestExpression("readUnitsPerSecond", targetDepth))
                 {
-                    var unmarshaller = CapacitySpecificationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CapacitySpecification = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("region", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ReadUnitsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -84,10 +78,10 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("warmThroughputSpecification", targetDepth))
+                if (context.TestExpression("writeUnitsPerSecond", targetDepth))
                 {
-                    var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.WarmThroughputSpecification = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.WriteUnitsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReplicaSpecificationSummaryUnmarshaller _instance = new ReplicaSpecificationSummaryUnmarshaller();        
+        private static WarmThroughputSpecificationSummaryUnmarshaller _instance = new WarmThroughputSpecificationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReplicaSpecificationSummaryUnmarshaller Instance
+        public static WarmThroughputSpecificationSummaryUnmarshaller Instance
         {
             get
             {
