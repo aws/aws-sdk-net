@@ -82,6 +82,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionState", targetDepth))
+                {
+                    var unmarshaller = EncryptionStateUnmarshaller.Instance;
+                    response.EncryptionState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
