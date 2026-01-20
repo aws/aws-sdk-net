@@ -494,4 +494,12 @@
     <min>1</min>
     <max>256</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.WarmThroughputSpecification.ReadUnitsPerSecond</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.WarmThroughputSpecification.WriteUnitsPerSecond</property>
+    <min>1</min>
+  </property-value-rule>
 </property-value-rules>
