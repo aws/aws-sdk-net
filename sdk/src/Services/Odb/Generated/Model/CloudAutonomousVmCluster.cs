@@ -57,6 +57,7 @@ namespace Amazon.Odb.Model
         private string _domain;
         private double? _exadataStorageInTBsLowestScaledValue;
         private string _hostname;
+        private List<IamRole> _iamRoles = AWSConfigs.InitializeCollections ? new List<IamRole>() : null;
         private bool? _isMtlsEnabledVmCluster;
         private LicenseModel _licenseModel;
         private MaintenanceWindow _maintenanceWindow;
@@ -508,6 +509,25 @@ namespace Amazon.Odb.Model
         internal bool IsSetHostname()
         {
             return this._hostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoles. 
+        /// <para>
+        /// The Amazon Web Services Identity and Access Management (IAM) service roles associated
+        /// with the Autonomous VM cluster.
+        /// </para>
+        /// </summary>
+        public List<IamRole> IamRoles
+        {
+            get { return this._iamRoles; }
+            set { this._iamRoles = value; }
+        }
+
+        // Check to see if IamRoles property is set
+        internal bool IsSetIamRoles()
+        {
+            return this._iamRoles != null && (this._iamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
