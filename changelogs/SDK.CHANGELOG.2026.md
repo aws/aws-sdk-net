@@ -1,3 +1,20 @@
+### 3.7.1205.0 (2026-01-20 19:54 UTC)
+* AutoScaling (3.7.505.0)
+	* This release adds support for three new filters when describing scaling activities, StartTimeLowerBound, StartTimeUpperBound, and Status.
+* BedrockRuntime (3.7.513.0)
+	* Added support for extended prompt caching with one hour TTL.
+* Keyspaces (3.7.502.0)
+	* Adds support for managing table pre-warming in Amazon Keyspaces (for Apache Cassandra)
+* Odb (3.7.504.0)
+	* Adds support for associating and disassociating IAM roles with Autonomous VM cluster resources through the AssociateIamRoleToResource and DisassociateIamRoleFromResource APIs. The GetCloudAutonomousVmCluster and ListCloudAutonomousVmClusters API responses now include the iamRoles field.
+* VerifiedPermissions (3.7.505.0)
+	* Amazon Verified Permissions now supports encryption of resources by a customer managed KMS key. Customers can now create new encrypted policy stores by passing in their customer managed key during policy store creation.
+* WorkspacesInstances (3.7.503.0)
+	* Added billing configuration support for WorkSpaces Instances with monthly and hourly billing modes, including new filtering capabilities for instance type searches.
+* Core 3.7.500.69
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1204.0 (2026-01-16 19:28 UTC)
 * Connect (3.7.523.0)
 	* Adds support to allow customers to create form with Dispute configuration
