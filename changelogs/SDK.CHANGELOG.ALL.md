@@ -1,3 +1,13 @@
+### 4.0.174.0 (2026-01-21 19:19 UTC)
+* BedrockAgentCore (4.0.9.0)
+	* Supports custom browser extensions for AgentCore Browser and increased message payloads up to 100KB per message in an Event for AgentCore Memory
+* ConfigService (4.0.6.0)
+	* AWS Config Conformance Packs now support tag-on-create through PutConformancePack API.
+* EC2 (4.0.66.0)
+	* Added support of multiple EBS cards. New EbsCardIndex parameter enables attaching volumes to specific EBS cards on supported instance types for improved storage performance.
+* QuickSight (4.0.13.0)
+	* Added documentation and model for sheet layout groups - allows sheet elements to be grouped, Added documentation and the feature enables admins to have granular control over connectors under actions, Updated API documentation for PDF Export in Snapshot Export APIs
+
 ### 4.0.173.0 (2026-01-20 19:53 UTC)
 * AutoScaling (4.0.7.0)
 	* This release adds support for three new filters when describing scaling activities, StartTimeLowerBound, StartTimeUpperBound, and Status.
