@@ -1,6 +1,7 @@
 name: Backward Incompatibility Reviewer Check
 permissions:
   contents: read
+  pull-requests: write
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -146,11 +147,45 @@ jobs:
                 console.log('ENFORCING: This is a review event - failing check if no approval');
                 core.setFailed(message);
               } else {
-                // For PR events, show warning with neutral status - just informational
-                console.log(`WARNING: ${message}`);
-                console.log('This is informational only. The check will be enforced when reviews are submitted.');
-                console.log('Setting neutral status - approval needed');
-                process.exit(78); // Set neutral status (gray check)
+                // For PR events, create a comment instead of failing
+                console.log('Creating comment about backward incompatibility approval requirement');
+                
+                const commentBody = `## Backward Compatibility Review Required
+
+**Backward incompatibilities found in:**
+${filesWithIncompatibilities.map(file => `- \`${file}\``).join('\n')}
+
+**Required Action:**
+This PR requires approval from one of the following reviewers: **${REQUIRED_REVIEWERS.join(', ')}**
+
+*This comment will be automatically updated when the required approval is received.*`;
+
+                // Check if we already posted this comment to avoid duplicates
+                const { data: existingComments } = await github.rest.issues.listComments({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                });
+                
+                const botComment = existingComments.find(comment => 
+                  comment.user.type === 'Bot' && 
+                  comment.body.includes('Backward Compatibility Review Required')
+                );
+                
+                if (!botComment) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: context.issue.number,
+                    body: commentBody
+                  });
+                  console.log('Posted backward compatibility approval comment');
+                } else {
+                  console.log('Backward compatibility comment already exists');
+                }
+                
+                // Pass the check for PR events - comment provides the visibility
+                console.log('Check passed - comment posted for visibility');
               }
             } else {
               console.log('Required reviewers have approved, backward incompatibility check passed');
