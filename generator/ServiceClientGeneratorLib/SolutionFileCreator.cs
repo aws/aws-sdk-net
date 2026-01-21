@@ -38,8 +38,6 @@ namespace ServiceClientGenerator
         private const string CommonTestProjectGuid = "{66F78F86-68D7-4538-8EA5-A669A08E1C19}";
         private const string CommonTestProjectName = "AWSSDK.CommonTest";
 
-        private const string CommonNetStandardTestProjectGuid = "{87FCE8BC-9E24-4D84-B5CF-C1BA7A51423F}";
-        private const string CommonNetStandardTestProjectName = "AWSSDK.CommonTest.NetStandard";
         private const string UnitTestsNetStandardCoreOnlyProjectGuid = "{B969DE99-0634-4989-A318-086AE1699974}";
         private const string UnitTestsNetStandardCoreOnlyProjectName = "UnitTests.NetStandard.CoreOnly";
 
@@ -79,27 +77,12 @@ namespace ServiceClientGenerator
             ProjectPath = Utils.PathCombineAlt("..", "sdk", "test", "Common", $"{CommonTestProjectName}.csproj")
         };
 
-        private static readonly Project CommonNetStandardTestProject = new Project
-        {
-            Name = CommonNetStandardTestProjectName,
-            ProjectGuid = CommonNetStandardTestProjectGuid,
-            ProjectPath = Utils.PathCombineAlt("..", "sdk", "test", "NetStandard", "Common", $"{CommonNetStandardTestProjectName}.csproj")
-        };
-
         private static readonly Project ServiceSlnCommonTestProject = new Project
         {
             Name = CommonTestProjectName,
             ProjectGuid = CommonTestProjectGuid,
             ProjectPath = Utils.PathCombineAlt("..", "..", "..", CommonTestProject.ProjectPath),
             RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "Common", $"{CommonTestProjectName}.csproj")
-        };
-
-        private static readonly Project ServiceSlnCommonNetStandardTestProject = new Project
-        {
-            Name = CommonNetStandardTestProjectName,
-            ProjectGuid = CommonNetStandardTestProjectGuid,
-            ProjectPath = Utils.PathCombineAlt("..", "..", "..", CommonNetStandardTestProject.ProjectPath),
-            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "NetStandard", "Common", $"{CommonNetStandardTestProjectName}.csproj")
         };
 
         private static readonly Project UnitTestUtilityProject45 = new Project
@@ -402,7 +385,8 @@ namespace ServiceClientGenerator
                     testProjects.Add(GeneratorLibProject);
                     SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
 
-                    if (configuration.Name.Equals(ProjectTypes.NetFramework, StringComparison.Ordinal))
+                    // AWSSDK.CommonTest supports all target frameworks so it can be included in all solutions.
+                    if (!testProjects.Contains(CommonTestProject))
                     {
                         testProjects.Add(CommonTestProject);
                         SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
@@ -486,12 +470,10 @@ namespace ServiceClientGenerator
                 // Include service's Unit and Integ csproj files and its dependencies.
                 AddTestProjectsAndDependencies(projectFileConfigurations, buildConfigurations, serviceDirectory, projectGuidDictionary, testProjects, dependentProjects);
 
-                // Add AWSSDK.CommonTest.csproj and AWSSDK.CommonTest.NetStandard.csproj
+                // Add AWSSDK.CommonTest.csproj
                 testProjects.Add(ServiceSlnCommonTestProject);
-                testProjects.Add(ServiceSlnCommonNetStandardTestProject);
                 testProjects.Add(ServiceSlnUnitTestsNetStandardCoreOnlyProject);
                 SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
-                SelectBuildConfigurationsForProject(CommonNetStandardTestProjectName, buildConfigurations);
                 SelectBuildConfigurationsForProject(UnitTestsNetStandardCoreOnlyProjectName, buildConfigurations);
 
                 foreach (var serviceProjectDependency in serviceProjectDependencies)

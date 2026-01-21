@@ -1,19 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
     <AssemblyName>IntegrationTests</AssemblyName>
     <PackageId>IntegrationTests</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
-	<NoWarn>CS1591,CS0612,CS0618,xUnit1013,NU1701</NoWarn>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
+    <NoWarn>CS1591,CS0612,CS0618,xUnit1013,NU1701</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\src\Services\*\*.NetStandard.csproj" />
-    <ProjectReference Include="..\Common\AWSSDK.CommonTest.NetStandard.csproj" />
+	<ProjectReference Include="..\..\Common\AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,5 +34,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>
