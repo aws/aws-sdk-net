@@ -28,7 +28,7 @@ jobs:
             const path = require('path');
             
             // list of required reviewers
-            const REQUIRED_REVIEWERS = ['normj', 'boblodgett'];
+            const REQUIRED_REVIEWERS = ['normj', 'boblodgett','afroz0429'];
             
             function findDevConfigFiles() {
               const devConfigPath = 'generator/.DevConfigs';
@@ -147,20 +147,40 @@ jobs:
                 console.log('ENFORCING: This is a review event - failing check if no approval');
                 core.setFailed(message);
               } else {
-                // For PR events, create simple comment
-                console.log('Creating simple backward compatibility comment');
+                // For PR events, create simple comment only once
+                console.log('Checking for existing backward compatibility comment');
                 
-                const simpleComment = `Backward compatibility review required. Files: ${filesWithIncompatibilities.join(', ')}. Needs approval from: ${REQUIRED_REVIEWERS.join(', ')}`;
-
-                await github.rest.issues.createComment({
+                const commentSignature = '<!-- BACKWARD_COMPATIBILITY_CHECK -->';
+                
+                // Check if comment already exists
+                const { data: existingComments } = await github.rest.issues.listComments({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: context.issue.number,
-                  body: simpleComment
                 });
                 
-                console.log('Posted simple comment');
-                console.log('Check passed - comment posted');
+                const existingComment = existingComments.find(comment => 
+                  comment.user.type === 'Bot' && 
+                  comment.body.includes(commentSignature)
+                );
+                
+                if (existingComment) {
+                  console.log('Backward compatibility comment already exists, skipping');
+                } else {
+                  // Create comment only if it doesn't exist
+                  const simpleComment = `${commentSignature}
+Backward compatibility review required. Files: ${filesWithIncompatibilities.join(', ')}. Needs approval from: ${REQUIRED_REVIEWERS.join(', ')}`;
+
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: context.issue.number,
+                    body: simpleComment
+                  });
+                  console.log('Created backward compatibility comment');
+                }
+                
+                console.log('Check passed - comment handled');
               }
             } else {
               console.log('Required reviewers have approved, backward incompatibility check passed');
