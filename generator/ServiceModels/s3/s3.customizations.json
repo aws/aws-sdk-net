@@ -2061,7 +2061,7 @@
                         ]}
                 },
                 {
-                    "Operation.Mode":{"additionalDocumentation":["para\n",
+                    "ChecksumMode":{"additionalDocumentation":["para\n",
                     "<b>General purpose buckets</b> - In addition, if you enable checksum mode and the object is uploaded with a <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html\">checksum</a>\n",
                     "and encrypted with an Key Management Service (KMS) key, you must have permission to use the <c>kms:Decrypt</c> action to retrieve the checksum.\n",
                     "</para>" ]}
