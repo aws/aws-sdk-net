@@ -30,29 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains the content of a memory item.
+    /// Browser extension configuration.
     /// </summary>
-    public partial class Content
+    public partial class BrowserExtension
     {
-        private string _text;
+        private ResourceLocation _location;
 
         /// <summary>
-        /// Gets and sets the property Text. 
+        /// Gets and sets the property Location. 
         /// <para>
-        /// The text content of the memory item.
+        /// The location where the browser extension files are stored. This specifies the source
+        /// from which the extension will be loaded and installed.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=100000)]
-        public string Text
+        [AWSProperty(Required=true)]
+        public ResourceLocation Location
         {
-            get { return this._text; }
-            set { this._text = value; }
+            get { return this._location; }
+            set { this._location = value; }
         }
 
-        // Check to see if Text property is set
-        internal bool IsSetText()
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
         {
-            return this._text != null;
+            return this._location != null;
         }
 
     }

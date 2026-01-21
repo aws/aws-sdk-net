@@ -30,29 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains the content of a memory item.
+    /// The location of the browser extension.
     /// </summary>
-    public partial class Content
+    public partial class ResourceLocation
     {
-        private string _text;
+        private S3Location _s3;
 
         /// <summary>
-        /// Gets and sets the property Text. 
+        /// Gets and sets the property S3. 
         /// <para>
-        /// The text content of the memory item.
+        /// The Amazon S3 location of the resource. Use this when the resource is stored in an
+        /// Amazon S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=100000)]
-        public string Text
+        public S3Location S3
         {
-            get { return this._text; }
-            set { this._text = value; }
+            get { return this._s3; }
+            set { this._s3 = value; }
         }
 
-        // Check to see if Text property is set
-        internal bool IsSetText()
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
         {
-            return this._text != null;
+            return this._s3 != null;
         }
 
     }

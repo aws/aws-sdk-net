@@ -87,6 +87,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetExtensions())
+            {
+                context.Writer.WritePropertyName("extensions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExtensionsListValue in publicRequest.Extensions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BrowserExtensionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExtensionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
