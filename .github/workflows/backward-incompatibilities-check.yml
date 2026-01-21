@@ -10,6 +10,10 @@ on:
 jobs:
   check-backward-incompatibilities-reviewers:
     runs-on: ubuntu-latest
+    # Prevent duplicate runs: only run on PR events OR when a review is approved
+    if: >
+      (github.event_name == 'pull_request') ||
+      (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
     steps:
       - name: Checkout PR branch (sparse - only .DevConfigs)
         uses: actions/checkout@v4
