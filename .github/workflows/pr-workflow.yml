@@ -21,10 +21,13 @@ jobs:
   check-backward-incompatibilities-reviewers:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout PR branch
+      - name: Checkout PR branch (sparse - only .DevConfigs)
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
+          sparse-checkout: |
+            generator/.DevConfigs
+          sparse-checkout-cone-mode: false
 
       - name: Check backward incompatibilities and reviewers
         uses: actions/github-script@v7.0.1
@@ -32,27 +35,18 @@ jobs:
           script: |
             const fs = require('fs');
             const path = require('path');
+            const glob = require('glob');
             
             // Hardcoded list of required reviewers
             const REQUIRED_REVIEWERS = ['afroz429', 'boblodget'];
             
             // Function to find JSON files directly in .DevConfigs
             function findDevConfigFiles() {
-              const devConfigPath = 'generator/.DevConfigs';
+              const pattern = 'generator/.DevConfigs/*.json';
               try {
-                if (!fs.existsSync(devConfigPath)) {
-                  console.log('No .DevConfigs directory found');
-                  return [];
-                }
-                
-                const files = fs.readdirSync(devConfigPath);
-                const jsonFiles = files
-                  .filter(file => file.endsWith('.json'))
-                  .map(file => path.join(devConfigPath, file));
-                
-                return jsonFiles;
+                return glob.sync(pattern);
               } catch (error) {
-                console.log('Error accessing .DevConfigs directory:', error.message);
+                console.log('No .DevConfigs directory found or error accessing files:', error.message);
                 return [];
               }
             }
