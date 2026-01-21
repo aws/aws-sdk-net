@@ -2420,7 +2420,7 @@
             "skipChecksumDuringMarshalling": true
         },
         "PutObject":{
-            "disableChecksumHandling": true
+            "skipChecksumDuringMarshalling": true
         }
     },
     "shapeSubstitutions":{

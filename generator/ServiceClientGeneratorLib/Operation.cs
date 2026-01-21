@@ -204,10 +204,6 @@ namespace ServiceClientGenerator
 
                 if (HttpChecksumRequired)
                 {
-                    if (this.OperationModifiers != null && this.OperationModifiers.DisableChecksumHandling == true)
-                    {
-                        return false;
-                    }
                     return true;
                 }
 
