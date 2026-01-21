@@ -1,4 +1,4 @@
-name: PR workflow
+name: Backward Incompatibility Reviewer Check
 permissions:
   contents: read
 on:
@@ -12,22 +12,21 @@ jobs:
       - name: Checkout PR branch (sparse - only .DevConfigs)
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.pull_request.head.sha }}
           sparse-checkout: |
             generator/.DevConfigs
           sparse-checkout-cone-mode: false
 
-      - name: Check backward incompatibilities and reviewers
+      - name: Check backwardIncompatibilitiesToIgnore and reviewers
         uses: actions/github-script@v7.0.1
         with:
           script: |
             const fs = require('fs');
             const path = require('path');
             
-            // Hardcoded list of required reviewers
-            const REQUIRED_REVIEWERS = ['afroz0429', 'boblodget'];
+            // list of required reviewers
+            const REQUIRED_REVIEWERS = ['normj', 'boblodgett','afroz0429'];
             
-            // Function to find JSON files directly in .DevConfigs
             function findDevConfigFiles() {
               const devConfigPath = 'generator/.DevConfigs';
               try {
@@ -48,7 +47,6 @@ jobs:
               }
             }
             
-            // Function to check if JSON contains backwardIncompatibilitiesToIgnore
             function hasBackwardIncompatibilities(filePath) {
               try {
                 const content = fs.readFileSync(filePath, 'utf8');
@@ -86,52 +84,55 @@ jobs:
             }
             
             // Check if any file has backwardIncompatibilitiesToIgnore
-            let hasBackwardIncompatibilityFiles = false;
+            let foundBackwardIncompatibilities = false;
             const filesWithIncompatibilities = [];
             
             for (const file of devConfigFiles) {
               console.log(`Checking file: ${file}`);
               if (hasBackwardIncompatibilities(file)) {
-                hasBackwardIncompatibilityFiles = true;
+                foundBackwardIncompatibilities = true;
                 filesWithIncompatibilities.push(file);
                 console.log(`Found backwardIncompatibilitiesToIgnore in: ${file}`);
               }
             }
             
-            if (!hasBackwardIncompatibilityFiles) {
-              console.log('No backwardIncompatibilitiesToIgnore found in DevConfig files');
+            if (!foundBackwardIncompatibilities) {
+              console.log('No backward incompatibilities to ignore found in DevConfig files');
               return;
             }
             
             // If backwardIncompatibilitiesToIgnore found, check for required reviewers
-            console.log('backwardIncompatibilitiesToIgnore found, checking for required reviewers...');
+            console.log('Backward incompatibilities found, checking for required reviewers...');
             console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
             
-            // Get requested reviewers
-            const { data: reviewData } = await github.rest.pulls.listRequestedReviewers({
+            // Get PR reviews to check for approvals
+            const { data: reviews } = await github.rest.pulls.listReviews({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number,
             });
             
-            const userReviewers = reviewData.users || [];
-            const assignedUsernames = userReviewers.map(u => u.login);
+            // Find the latest review state for each reviewer
+            const latestReviewsByUser = {};
+            for (const review of reviews) {
+              if (review.user && review.user.login) {
+                latestReviewsByUser[review.user.login] = review.state;
+              }
+            }
             
-            console.log('Currently assigned reviewers:', assignedUsernames.join(', ') || 'none');
-            
-            // Check if at least one required reviewer is assigned
-            const hasRequiredReviewer = REQUIRED_REVIEWERS.some(reviewer => 
-              assignedUsernames.includes(reviewer)
+            // Check if at least one required reviewer has approved
+            const approvedRequiredReviewers = REQUIRED_REVIEWERS.filter(reviewer => 
+              latestReviewsByUser[reviewer] === 'APPROVED'
             );
             
-            if (!hasRequiredReviewer) {
+            console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
+            console.log('Reviewers who have approved:', approvedRequiredReviewers.join(', ') || 'none');
+            
+            if (approvedRequiredReviewers.length === 0) {
               const fileList = filesWithIncompatibilities.join('\n- ');
               const requiredReviewersList = REQUIRED_REVIEWERS.join(', ');
-              core.setFailed(`Backward incompatibilities detected in the following files:\n- ${fileList}\n\nThis PR requires at least one of the following reviewers to be assigned: ${requiredReviewersList}\n\nCurrently assigned reviewers: ${assignedUsernames.join(', ') || 'none'}`);
+              core.setFailed(`backwardIncompatibilitiesToIgnore in the following files:\n- ${fileList}\n\nThis PR requires at least one of the following reviewers to APPROVE the PR: ${requiredReviewersList}\n\nCurrently approved required reviewers: ${approvedRequiredReviewers.join(', ') || 'none'}`);
             } else {
-              const approvedRequiredReviewers = REQUIRED_REVIEWERS.filter(reviewer => 
-                assignedUsernames.includes(reviewer)
-              );
-              console.log('Required reviewers are assigned, backward incompatibility check passed');
-              console.log('Assigned required reviewers:', approvedRequiredReviewers.join(', '));
+              console.log('Required reviewers have approved, backward incompatibility check passed');
+              console.log('Approved required reviewers:', approvedRequiredReviewers.join(', '));
             }
