@@ -101,7 +101,7 @@
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ListInstanceTypesRequest.MaxResults</property>
     <min>1</min>
-    <max>25</max>
+    <max>600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ListInstanceTypesRequest.NextToken</property>
@@ -351,7 +351,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Placement.AvailabilityZone</property>
-    <pattern>[a-z]{2}-[a-z]+-\d[a-z](-[a-z0-9]+)?</pattern>
+    <pattern>[a-z]{2}-[a-z]+-\d(?:[a-z]|-[a-z]+-\d[a-z])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Placement.GroupId</property>

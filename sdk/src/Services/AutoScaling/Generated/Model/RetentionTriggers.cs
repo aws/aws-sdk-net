@@ -47,7 +47,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        ///  Set to <c>Retain</c> to move instances to a <c>Retained</c> state. Set to <c>Terminate</c>
+        ///  Set to <c>retain</c> to move instances to a retained state. Set to <c>terminate</c>
         /// for default termination behavior. 
         /// </para>
         ///  

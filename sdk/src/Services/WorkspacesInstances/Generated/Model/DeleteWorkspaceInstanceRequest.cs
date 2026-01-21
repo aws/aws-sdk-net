@@ -32,6 +32,12 @@ namespace Amazon.WorkspacesInstances.Model
     /// <summary>
     /// Container for the parameters to the DeleteWorkspaceInstance operation.
     /// Deletes the specified WorkSpace
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Usage of this API will result in deletion of the resource in question.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteWorkspaceInstanceRequest : AmazonWorkspacesInstancesRequest
     {

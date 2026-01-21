@@ -46,6 +46,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetTtl())
+            {
+                context.Writer.WritePropertyName("ttl");
+                context.Writer.WriteStringValue(requestObject.Ttl);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

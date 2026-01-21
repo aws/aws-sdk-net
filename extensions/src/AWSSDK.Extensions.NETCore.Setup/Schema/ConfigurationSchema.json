@@ -91,6 +91,10 @@
           "type": "integer",
           "description": "How many retry HTTP requests an SDK should make for a single SDK operation invocation before giving up."
         },
+        "MaxStaleConnectionRetries": {
+          "type": "integer",
+          "description": "Maximum number of times the SDK will retry requests that fail due to stale pooled HTTP connections."
+        },
         "Profile": {
           "type": "string",
           "description": "The AWS credential profiles the service client should be configured for."

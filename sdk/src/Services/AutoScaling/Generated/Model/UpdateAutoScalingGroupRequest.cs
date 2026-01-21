@@ -435,10 +435,16 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceLifecyclePolicy. 
         /// <para>
-        ///  The instance lifecycle policy for the Auto Scaling group. Use this to add, modify,
-        /// or remove lifecycle policies that control instance behavior when an instance transitions
-        /// through its lifecycle states. Configure retention triggers to specify when to preserve
-        /// instances for manual intervention. 
+        ///  The instance lifecycle policy for the Auto Scaling group. This policy controls instance
+        /// behavior when an instance transitions through its lifecycle states. Configure retention
+        /// triggers to specify when instances should move to a <c>Retained</c> state instead
+        /// of automatic termination. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html">
+        /// Control instance retention with instance lifecycle policies</a> in the <i>Amazon EC2
+        /// Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
         public InstanceLifecyclePolicy InstanceLifecyclePolicy

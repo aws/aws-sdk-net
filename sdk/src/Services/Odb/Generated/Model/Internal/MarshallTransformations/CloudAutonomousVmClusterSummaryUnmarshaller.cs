@@ -194,6 +194,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hostname = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("iamRoles", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<IamRole, IamRoleUnmarshaller>(IamRoleUnmarshaller.Instance);
+                    unmarshalledObject.IamRoles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("isMtlsEnabledVmCluster", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

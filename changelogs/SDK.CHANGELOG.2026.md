@@ -1,3 +1,21 @@
+### 4.0.173.0 (2026-01-20 19:53 UTC)
+* AutoScaling (4.0.7.0)
+	* This release adds support for three new filters when describing scaling activities, StartTimeLowerBound, StartTimeUpperBound, and Status.
+* BedrockRuntime (4.0.15.0)
+	* Added support for extended prompt caching with one hour TTL.
+* Keyspaces (4.0.3.0)
+	* Adds support for managing table pre-warming in Amazon Keyspaces (for Apache Cassandra)
+* Odb (4.0.4.0)
+	* Adds support for associating and disassociating IAM roles with Autonomous VM cluster resources through the AssociateIamRoleToResource and DisassociateIamRoleFromResource APIs. The GetCloudAutonomousVmCluster and ListCloudAutonomousVmClusters API responses now include the iamRoles field.
+* VerifiedPermissions (4.0.6.0)
+	* Amazon Verified Permissions now supports encryption of resources by a customer managed KMS key. Customers can now create new encrypted policy stores by passing in their customer managed key during policy store creation.
+* WorkspacesInstances (4.0.3.0)
+	* Added billing configuration support for WorkSpaces Instances with monthly and hourly billing modes, including new filtering capabilities for instance type searches.
+* Core 4.0.3.10
+	* Add MaxStaleConnectionRetries to Amazon.Runtime.ClientConfig to allow users to customize the amount of retries available for stale connections.
+	* Update the retry behavior of the SDK to automatically retry on stale connections (e.g Broken pipe), which do not count against the standard retry amount.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.172.0 (2026-01-16 19:27 UTC)
 * Connect (4.0.27.0)
 	* Adds support to allow customers to create form with Dispute configuration

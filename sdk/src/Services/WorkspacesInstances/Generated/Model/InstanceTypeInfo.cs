@@ -35,6 +35,7 @@ namespace Amazon.WorkspacesInstances.Model
     public partial class InstanceTypeInfo
     {
         private string _instanceType;
+        private List<SupportedInstanceConfiguration> _supportedInstanceConfigurations = AWSConfigs.InitializeCollections ? new List<SupportedInstanceConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
@@ -52,6 +53,31 @@ namespace Amazon.WorkspacesInstances.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedInstanceConfigurations. 
+        /// <para>
+        /// Lists all valid combinations of tenancy, platform type, and billing mode supported
+        /// for the specific WorkSpace Instance type. Contains the complete set of configuration
+        /// options available for this instance type.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<SupportedInstanceConfiguration> SupportedInstanceConfigurations
+        {
+            get { return this._supportedInstanceConfigurations; }
+            set { this._supportedInstanceConfigurations = value; }
+        }
+
+        // Check to see if SupportedInstanceConfigurations property is set
+        internal bool IsSetSupportedInstanceConfigurations()
+        {
+            return this._supportedInstanceConfigurations != null && (this._supportedInstanceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

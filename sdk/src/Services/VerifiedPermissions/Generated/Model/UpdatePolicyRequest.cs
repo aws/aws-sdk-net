@@ -133,7 +133,6 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public UpdatePolicyDefinition Definition
         {
             get { return this._definition; }

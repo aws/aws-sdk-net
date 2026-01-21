@@ -215,6 +215,10 @@
     <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.CacheDetail.InputTokens</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ContentBlockDeltaEvent.ContentBlockIndex</property>
     <min>0</min>
   </property-value-rule>

@@ -227,6 +227,56 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type CacheTTL.
+    /// </summary>
+    public class CacheTTL : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIVE_MINUTES for CacheTTL
+        /// </summary>
+        public static readonly CacheTTL FIVE_MINUTES = new CacheTTL("5m");
+        /// <summary>
+        /// Constant ONE_HOUR for CacheTTL
+        /// </summary>
+        public static readonly CacheTTL ONE_HOUR = new CacheTTL("1h");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CacheTTL(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CacheTTL FindValue(string value)
+        {
+            return FindValue<CacheTTL>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CacheTTL(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConversationRole.
     /// </summary>
     public class ConversationRole : ConstantClass
