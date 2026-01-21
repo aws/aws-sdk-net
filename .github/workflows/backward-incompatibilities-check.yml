@@ -168,7 +168,7 @@ jobs:
                   console.log('Backward compatibility comment already exists, skipping');
                 } else {
                   // Create comment only if it doesn't exist
-                  const comment = `${commentSignature} Backward compatibility review required - approval needed from: ${REQUIRED_REVIEWERS.join(' or ')}`;
+                  const comment = `${commentSignature} Backward compatibility review required - approval needed from one of the reviewers: ${REQUIRED_REVIEWERS.join(', ')}`;
 
                   await github.rest.issues.createComment({
                     owner: context.repo.owner,
