@@ -32,18 +32,27 @@ jobs:
           script: |
             const fs = require('fs');
             const path = require('path');
-            const glob = require('glob');
             
             // Hardcoded list of required reviewers
             const REQUIRED_REVIEWERS = ['afroz429', 'boblodget'];
             
             // Function to find JSON files directly in .DevConfigs
             function findDevConfigFiles() {
-              const pattern = 'generator/.DevConfigs/*.json';
+              const devConfigPath = 'generator/.DevConfigs';
               try {
-                return glob.sync(pattern);
+                if (!fs.existsSync(devConfigPath)) {
+                  console.log('No .DevConfigs directory found');
+                  return [];
+                }
+                
+                const files = fs.readdirSync(devConfigPath);
+                const jsonFiles = files
+                  .filter(file => file.endsWith('.json'))
+                  .map(file => path.join(devConfigPath, file));
+                
+                return jsonFiles;
               } catch (error) {
-                console.log('No .DevConfigs directory found or error accessing files:', error.message);
+                console.log('Error accessing .DevConfigs directory:', error.message);
                 return [];
               }
             }
