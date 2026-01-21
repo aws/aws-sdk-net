@@ -105,7 +105,6 @@ jobs:
             
             // If backwardIncompatibilitiesToIgnore found, check for required reviewers
             console.log('Backward incompatibilities found, checking for required reviewers...');
-            console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
             
             // Get PR reviews to check for approvals
             const { data: reviews } = await github.rest.pulls.listReviews({
