@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchTemplateEbsBlockDevice Object
+    /// Response Unmarshaller for EbsCardInfo Object
     /// </summary>  
-    public class LaunchTemplateEbsBlockDeviceUnmarshaller : IXmlUnmarshaller<LaunchTemplateEbsBlockDevice, XmlUnmarshallerContext>
+    public class EbsCardInfoUnmarshaller : IXmlUnmarshaller<EbsCardInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchTemplateEbsBlockDevice Unmarshall(XmlUnmarshallerContext context)
+        public EbsCardInfo Unmarshall(XmlUnmarshallerContext context)
         {
-            LaunchTemplateEbsBlockDevice unmarshalledObject = new LaunchTemplateEbsBlockDevice();
+            EbsCardInfo unmarshalledObject = new EbsCardInfo();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,10 +55,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("deleteOnTermination", targetDepth))
+                    if (context.TestExpression("baselineBandwidthInMbps", targetDepth))
                     {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.BaselineBandwidthInMbps = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("baselineIops", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.BaselineIops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("baselineThroughputInMBps", targetDepth))
+                    {
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                        unmarshalledObject.BaselineThroughputInMBps = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ebsCardIndex", targetDepth))
@@ -67,52 +79,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EbsCardIndex = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("encrypted", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("iops", targetDepth))
+                    if (context.TestExpression("maximumBandwidthInMbps", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MaximumBandwidthInMbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("kmsKeyId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("snapshotId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("throughput", targetDepth))
+                    if (context.TestExpression("maximumIops", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MaximumIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("volumeInitializationRate", targetDepth))
+                    if (context.TestExpression("maximumThroughputInMBps", targetDepth))
                     {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.VolumeInitializationRate = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("volumeSize", targetDepth))
-                    {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("volumeType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                        unmarshalledObject.MaximumThroughputInMBps = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -125,12 +107,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static LaunchTemplateEbsBlockDeviceUnmarshaller _instance = new LaunchTemplateEbsBlockDeviceUnmarshaller();        
+        private static EbsCardInfoUnmarshaller _instance = new EbsCardInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchTemplateEbsBlockDeviceUnmarshaller Instance
+        public static EbsCardInfoUnmarshaller Instance
         {
             get
             {

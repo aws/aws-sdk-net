@@ -35,10 +35,12 @@ namespace Amazon.EC2.Model
     public partial class EbsInfo
     {
         private AttachmentLimitType _attachmentLimitType;
+        private List<EbsCardInfo> _ebsCards = AWSConfigs.InitializeCollections ? new List<EbsCardInfo>() : null;
         private EbsOptimizedInfo _ebsOptimizedInfo;
         private EbsOptimizedSupport _ebsOptimizedSupport;
         private EbsEncryptionSupport _encryptionSupport;
         private int? _maximumEbsAttachments;
+        private int? _maximumEbsCards;
         private EbsNvmeSupport _nvmeSupport;
 
         /// <summary>
@@ -59,6 +61,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetAttachmentLimitType()
         {
             return this._attachmentLimitType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsCards. 
+        /// <para>
+        /// Describes the EBS cards available for the instance type.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<EbsCardInfo> EbsCards
+        {
+            get { return this._ebsCards; }
+            set { this._ebsCards = value; }
+        }
+
+        // Check to see if EbsCards property is set
+        internal bool IsSetEbsCards()
+        {
+            return this._ebsCards != null && (this._ebsCards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,6 +160,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetMaximumEbsAttachments()
         {
             return this._maximumEbsAttachments.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumEbsCards. 
+        /// <para>
+        /// Indicates the number of EBS cards supported by the instance type.
+        /// </para>
+        /// </summary>
+        public int? MaximumEbsCards
+        {
+            get { return this._maximumEbsCards; }
+            set { this._maximumEbsCards = value; }
+        }
+
+        // Check to see if MaximumEbsCards property is set
+        internal bool IsSetMaximumEbsCards()
+        {
+            return this._maximumEbsCards.HasValue; 
         }
 
         /// <summary>
