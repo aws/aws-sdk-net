@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FreeFormLayoutConfiguration Marshaller
+    /// SheetLayoutGroup Marshaller
     /// </summary>
-    public class FreeFormLayoutConfigurationMarshaller : IRequestMarshaller<FreeFormLayoutConfiguration, JsonMarshallerContext> 
+    public class SheetLayoutGroupMarshaller : IRequestMarshaller<SheetLayoutGroup, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,47 +44,26 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FreeFormLayoutConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SheetLayoutGroup requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCanvasSizeOptions())
+            if(requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("CanvasSizeOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FreeFormLayoutCanvasSizeOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.CanvasSizeOptions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Id");
+                context.Writer.Write(requestObject.Id);
             }
 
-            if(requestObject.IsSetElements())
+            if(requestObject.IsSetMembers())
             {
-                context.Writer.WritePropertyName("Elements");
+                context.Writer.WritePropertyName("Members");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectElementsListValue in requestObject.Elements)
+                foreach(var requestObjectMembersListValue in requestObject.Members)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = FreeFormLayoutElementMarshaller.Instance;
-                    marshaller.Marshall(requestObjectElementsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetGroups())
-            {
-                context.Writer.WritePropertyName("Groups");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectGroupsListValue in requestObject.Groups)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SheetLayoutGroupMarshaller.Instance;
-                    marshaller.Marshall(requestObjectGroupsListValue, context);
+                    var marshaller = SheetLayoutGroupMemberMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMembersListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -96,7 +75,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FreeFormLayoutConfigurationMarshaller Instance = new FreeFormLayoutConfigurationMarshaller();
+        public readonly static SheetLayoutGroupMarshaller Instance = new SheetLayoutGroupMarshaller();
 
     }
 }

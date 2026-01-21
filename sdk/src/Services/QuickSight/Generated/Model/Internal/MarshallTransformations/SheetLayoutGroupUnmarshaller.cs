@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FreeFormLayoutConfiguration Object
+    /// Response Unmarshaller for SheetLayoutGroup Object
     /// </summary>  
-    public class FreeFormLayoutConfigurationUnmarshaller : IUnmarshaller<FreeFormLayoutConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FreeFormLayoutConfiguration, JsonUnmarshallerContext>
+    public class SheetLayoutGroupUnmarshaller : IUnmarshaller<SheetLayoutGroup, XmlUnmarshallerContext>, IUnmarshaller<SheetLayoutGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FreeFormLayoutConfiguration IUnmarshaller<FreeFormLayoutConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SheetLayoutGroup IUnmarshaller<SheetLayoutGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FreeFormLayoutConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SheetLayoutGroup Unmarshall(JsonUnmarshallerContext context)
         {
-            FreeFormLayoutConfiguration unmarshalledObject = new FreeFormLayoutConfiguration();
+            SheetLayoutGroup unmarshalledObject = new SheetLayoutGroup();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CanvasSizeOptions", targetDepth))
+                if (context.TestExpression("Id", targetDepth))
                 {
-                    var unmarshaller = FreeFormLayoutCanvasSizeOptionsUnmarshaller.Instance;
-                    unmarshalledObject.CanvasSizeOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Elements", targetDepth))
+                if (context.TestExpression("Members", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FreeFormLayoutElement, FreeFormLayoutElementUnmarshaller>(FreeFormLayoutElementUnmarshaller.Instance);
-                    unmarshalledObject.Elements = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Groups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SheetLayoutGroup, SheetLayoutGroupUnmarshaller>(SheetLayoutGroupUnmarshaller.Instance);
-                    unmarshalledObject.Groups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<SheetLayoutGroupMember, SheetLayoutGroupMemberUnmarshaller>(SheetLayoutGroupMemberUnmarshaller.Instance);
+                    unmarshalledObject.Members = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static FreeFormLayoutConfigurationUnmarshaller _instance = new FreeFormLayoutConfigurationUnmarshaller();        
+        private static SheetLayoutGroupUnmarshaller _instance = new SheetLayoutGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FreeFormLayoutConfigurationUnmarshaller Instance
+        public static SheetLayoutGroupUnmarshaller Instance
         {
             get
             {

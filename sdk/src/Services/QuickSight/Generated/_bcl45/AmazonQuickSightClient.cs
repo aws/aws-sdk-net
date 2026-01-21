@@ -17469,7 +17469,7 @@ namespace Amazon.QuickSight
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// 1 Paginated PDF
+        /// 1 PDF
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17479,7 +17479,11 @@ namespace Amazon.QuickSight
         /// <para>
         /// 5 CSVs from table or pivot table visuals
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Exporting CSV, Excel, or Pixel Perfect PDF reports requires Pixel Perfect Report Add-on.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The status of a submitted job can be polled with the <c>DescribeDashboardSnapshotJob</c>
         /// API. When you call the <c>DescribeDashboardSnapshotJob</c> API, check the <c>JobStatus</c>
@@ -17757,7 +17761,7 @@ namespace Amazon.QuickSight
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// 1 Paginated PDF
+        /// 1 PDF
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17767,7 +17771,11 @@ namespace Amazon.QuickSight
         /// <para>
         /// 5 CSVs from table or pivot table visuals
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Exporting CSV, Excel, or Pixel Perfect PDF reports requires Pixel Perfect Report Add-on.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The status of a submitted job can be polled with the <c>DescribeDashboardSnapshotJob</c>
         /// API. When you call the <c>DescribeDashboardSnapshotJob</c> API, check the <c>JobStatus</c>
