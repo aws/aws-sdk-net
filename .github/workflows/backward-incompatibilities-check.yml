@@ -134,13 +134,20 @@ jobs:
               const requiredReviewersList = REQUIRED_REVIEWERS.join(', ');
               const message = `backwardIncompatibilitiesToIgnore in the following files:\n- ${fileList}\n\nThis PR requires at least one of the following reviewers to APPROVE the PR: ${requiredReviewersList}\n\nCurrently approved required reviewers: ${approvedRequiredReviewers.join(', ') || 'none'}`;
               
+              console.log('Event name:', github.event_name); // Debug log
+              
               if (github.event_name === 'pull_request') {
                 // For PR events, show warning but don't fail - just informational
                 console.log(`⚠️ WARNING: ${message}`);
                 console.log('ℹ️ This is informational only. The check will be enforced when reviews are submitted.');
-              } else {
+                console.log('✅ Check passed with informational warning');
+              } else if (github.event_name === 'pull_request_review') {
                 // For review events, enforce the requirement and fail if not met
                 core.setFailed(message);
+              } else {
+                // Fallback - should not happen
+                console.log(`⚠️ WARNING: ${message}`);
+                console.log('ℹ️ Unknown event type, treating as informational');
               }
             } else {
               console.log('Required reviewers have approved, backward incompatibility check passed');
