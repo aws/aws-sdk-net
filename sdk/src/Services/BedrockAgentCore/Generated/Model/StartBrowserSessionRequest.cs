@@ -67,6 +67,7 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private string _browserIdentifier;
         private string _clientToken;
+        private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private string _name;
         private int? _sessionTimeoutSeconds;
         private string _traceId;
@@ -113,6 +114,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// A list of browser extensions to load into the browser session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<BrowserExtension> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

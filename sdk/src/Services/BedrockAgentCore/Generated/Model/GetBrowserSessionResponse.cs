@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private string _browserIdentifier;
         private DateTime? _createdAt;
+        private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private DateTime? _lastUpdatedAt;
         private string _name;
         private string _sessionId;
@@ -81,6 +82,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// The list of browser extensions that are configured in the browser session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<BrowserExtension> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

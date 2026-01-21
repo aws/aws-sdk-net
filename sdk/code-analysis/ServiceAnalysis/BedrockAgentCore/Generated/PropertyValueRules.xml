@@ -677,7 +677,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Content.Text</property>
     <min>1</min>
-    <max>9000</max>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EvaluationResultContent.ErrorCode</property>
@@ -829,6 +829,22 @@
     <min>0</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.S3Location.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.S3Location.Prefix</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.S3Location.VersionId</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SearchCriteria.MemoryStrategyId</property>

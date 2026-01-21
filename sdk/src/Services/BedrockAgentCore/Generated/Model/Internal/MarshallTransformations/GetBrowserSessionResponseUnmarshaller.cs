@@ -64,6 +64,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("extensions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BrowserExtension, BrowserExtensionUnmarshaller>(BrowserExtensionUnmarshaller.Instance);
+                    response.Extensions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

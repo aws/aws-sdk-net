@@ -625,6 +625,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
         /// The service encountered an internal error. Try your request again later.
         /// </exception>
