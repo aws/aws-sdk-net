@@ -143,13 +143,14 @@ jobs:
               
               if (isReviewEvent) {
                 // For review events, enforce the requirement and fail if not met
-                console.log('🔴 ENFORCING: This is a review event - failing check if no approval');
+                console.log('ENFORCING: This is a review event - failing check if no approval');
                 core.setFailed(message);
               } else {
-                // For PR events, show warning but don't fail - just informational
-                console.log(`⚠️ WARNING: ${message}`);
-                console.log('ℹ️ This is informational only. The check will be enforced when reviews are submitted.');
-                console.log('✅ Check passed with informational warning');
+                // For PR events, show warning with neutral status - just informational
+                console.log(`WARNING: ${message}`);
+                console.log('This is informational only. The check will be enforced when reviews are submitted.');
+                console.log('Setting neutral status - approval needed');
+                process.exit(78); // Set neutral status (gray check)
               }
             } else {
               console.log('Required reviewers have approved, backward incompatibility check passed');
