@@ -18,30 +18,32 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>CS1591,CS0612,CS0618,xUnit1013,NU1701</NoWarn>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
-		<SignAssembly>true</SignAssembly>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <SignAssembly>true</SignAssembly>
     <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
   </PropertyGroup>
-	<Choose>
-		<When Condition=" '$(AWSKeyFile)' == '' ">
-			<PropertyGroup>
-				<AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
-			</PropertyGroup>
-		</When>
-		<Otherwise>
-			<PropertyGroup>
-				<AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
-			</PropertyGroup>
-		</Otherwise>
-	</Choose>
+
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
   <ItemGroup>
     <EmbeddedResource Include="sample.rsa.private.key.txt" />
     <EmbeddedResource Include="endpoint.customization.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />    
-    <ProjectReference Include="..\Common\AWSSDK.CommonTest.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="..\..\Common\AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>

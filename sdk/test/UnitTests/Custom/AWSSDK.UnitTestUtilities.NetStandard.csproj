@@ -11,6 +11,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
+
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
@@ -23,11 +24,12 @@
       </PropertyGroup>
     </Otherwise>
   </Choose>
+
   <ItemGroup>
-	<Compile Remove="**/obj/**" />
-	<None Remove="**/obj/**" />
+    <Compile Remove="**/obj/**" />
+    <None Remove="**/obj/**" />
   </ItemGroup>
-	
+
   <ItemGroup>
     <Compile Remove="**\**" />
     <Compile Include="EndpointsStandardLibraryTests.cs" />
@@ -40,11 +42,11 @@
     <Compile Include="Runtime/MockClientConfig.cs" />
     <Compile Include="Runtime/MockFileSystem.cs" />
     <Compile Include="Runtime/TerminatePipeline.cs" />
-    <Compile Include="Runtime\UserAgentTests.cs" />
+    <Compile Include="Runtime/UserAgentTests.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="ConstantClassTestBase.cs" />
     <Compile Include="CapacityManagerTests.cs" />
-    <Compile Include="TestTools/**" />	  
+    <Compile Include="TestTools/**" />
     <Compile Remove="TestTools/Credentials" />
     <Compile Remove="TestTools/CustomizationsTests.cs" />
     <Compile Remove="TestTools/ComparerTest.json" />
@@ -66,7 +68,7 @@
     <ProjectReference Include="..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj" />
     <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.Netstandard.csproj" />
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.Netstandard.csproj" />
-	  <ProjectReference Include="..\..\NetStandard\Common\AWSSDK.CommonTest.Netstandard.csproj" />
+    <ProjectReference Include="..\..\Common\AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>

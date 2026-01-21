@@ -30,7 +30,7 @@
   
     <ItemGroup>
       <ProjectReference Include="../../src/Core/AWSSDK.Core.Netstandard.csproj" />
-	  <ProjectReference Include="../Netstandard//Common/AWSSDK.CommonTest.Netstandard.csproj" />
+	  <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
       <ProjectReference Include="../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
       <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Netstandard.csproj" />
 	  <ProjectReference Include="../Services/RestJsonProtocol/AWSSDK.RestJsonProtocol.Netstandard.csproj" />
