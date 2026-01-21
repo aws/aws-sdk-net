@@ -134,20 +134,21 @@ jobs:
               const requiredReviewersList = REQUIRED_REVIEWERS.join(', ');
               const message = `backwardIncompatibilitiesToIgnore in the following files:\n- ${fileList}\n\nThis PR requires at least one of the following reviewers to APPROVE the PR: ${requiredReviewersList}\n\nCurrently approved required reviewers: ${approvedRequiredReviewers.join(', ') || 'none'}`;
               
-              console.log('Event name:', github.event_name); // Debug log
+              // Check if this is a review event by looking for review data in context
+              const isReviewEvent = context.eventName === 'pull_request_review' || (context.payload && context.payload.review);
               
-              if (github.event_name === 'pull_request') {
+              console.log('Event name:', context.eventName); // Debug log
+              console.log('Is review event:', isReviewEvent); // Debug log
+              
+              if (isReviewEvent) {
+                // For review events, enforce the requirement and fail if not met
+                console.log('🔴 ENFORCING: This is a review event - failing check if no approval');
+                core.setFailed(message);
+              } else {
                 // For PR events, show warning but don't fail - just informational
                 console.log(`⚠️ WARNING: ${message}`);
                 console.log('ℹ️ This is informational only. The check will be enforced when reviews are submitted.');
                 console.log('✅ Check passed with informational warning');
-              } else if (github.event_name === 'pull_request_review') {
-                // For review events, enforce the requirement and fail if not met
-                core.setFailed(message);
-              } else {
-                // Fallback - should not happen
-                console.log(`⚠️ WARNING: ${message}`);
-                console.log('ℹ️ Unknown event type, treating as informational');
               }
             } else {
               console.log('Required reviewers have approved, backward incompatibility check passed');
