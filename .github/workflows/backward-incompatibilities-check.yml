@@ -1,0 +1,135 @@
+name: PR workflow
+permissions:
+  contents: read
+on:
+  pull_request:
+    types: [synchronize, opened, reopened, edited, review_requested, review_request_removed]
+
+jobs:
+  check-backwardIncompatibilitiesToIgnore-reviewers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch (sparse - only .DevConfigs)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          sparse-checkout: |
+            generator/.DevConfigs
+          sparse-checkout-cone-mode: false
+
+      - name: Check backwardIncompatibilitiesToIgnore and reviewers
+        uses: actions/github-script@v7.0.1
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            // list of required reviewers
+            const REQUIRED_REVIEWERS = ['normj', 'boblodgett'];
+            
+            function findDevConfigFiles() {
+              const devConfigPath = 'generator/.DevConfigs';
+              try {
+                if (!fs.existsSync(devConfigPath)) {
+                  console.log('No .DevConfigs directory found');
+                  return [];
+                }
+                
+                const files = fs.readdirSync(devConfigPath);
+                const jsonFiles = files
+                  .filter(file => file.endsWith('.json'))
+                  .map(file => path.join(devConfigPath, file));
+                
+                return jsonFiles;
+              } catch (error) {
+                console.log('Error accessing .DevConfigs directory:', error.message);
+                return [];
+              }
+            }
+            
+            function hasBackwardIncompatibilities(filePath) {
+              try {
+                const content = fs.readFileSync(filePath, 'utf8');
+                const jsonData = JSON.parse(content);
+                
+                // Check if any key in the JSON contains backwardIncompatibilitiesToIgnore
+                function searchForKey(obj) {
+                  if (typeof obj !== 'object' || obj === null) return false;
+                  
+                  for (const key in obj) {
+                    if (key === 'backwardIncompatibilitiesToIgnore') {
+                      return true;
+                    }
+                    if (typeof obj[key] === 'object' && searchForKey(obj[key])) {
+                      return true;
+                    }
+                  }
+                  return false;
+                }
+                
+                return searchForKey(jsonData);
+              } catch (error) {
+                console.log(`Error reading or parsing ${filePath}:`, error.message);
+                return false;
+              }
+            }
+            
+            // Find all DevConfig files
+            const devConfigFiles = findDevConfigFiles();
+            console.log(`Found ${devConfigFiles.length} DevConfig files in PR branch`);
+            
+            if (devConfigFiles.length === 0) {
+              console.log('No DevConfig files found, skipping backwardIncompatibilitiesToIgnore check');
+              return;
+            }
+            
+            // Check if any file has backwardIncompatibilitiesToIgnore
+            let hasBackwardIncompatibilityFiles = false;
+            const filesWithIncompatibilities = [];
+            
+            for (const file of devConfigFiles) {
+              console.log(`Checking file: ${file}`);
+              if (hasBackwardIncompatibilities(file)) {
+                hasBackwardIncompatibilityFiles = true;
+                filesWithIncompatibilities.push(file);
+                console.log(`Found backwardIncompatibilitiesToIgnore in: ${file}`);
+              }
+            }
+            
+            if (!hasBackwardIncompatibilityFiles) {
+              console.log('No backwardIncompatibilitiesToIgnore found in DevConfig files');
+              return;
+            }
+            
+            // If backwardIncompatibilitiesToIgnore found, check for required reviewers
+            console.log('backwardIncompatibilitiesToIgnore found, checking for required reviewers...');
+            console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
+            
+            // Get requested reviewers
+            const { data: reviewData } = await github.rest.pulls.listRequestedReviewers({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+            });
+            
+            const userReviewers = reviewData.users || [];
+            const assignedUsernames = userReviewers.map(u => u.login);
+            
+            console.log('Currently assigned reviewers:', assignedUsernames.join(', ') || 'none');
+            
+            // Check if at least one required reviewer is assigned
+            const hasRequiredReviewer = REQUIRED_REVIEWERS.some(reviewer => 
+              assignedUsernames.includes(reviewer)
+            );
+            
+            if (!hasRequiredReviewer) {
+              const fileList = filesWithIncompatibilities.join('\n- ');
+              const requiredReviewersList = REQUIRED_REVIEWERS.join(', ');
+              core.setFailed(`backwardIncompatibilitiesToIgnore in the following files:\n- ${fileList}\n\nThis PR requires at least one of the following reviewers to be assigned: ${requiredReviewersList}\n\nCurrently assigned reviewers: ${assignedUsernames.join(', ') || 'none'}`);
+            } else {
+              const approvedRequiredReviewers = REQUIRED_REVIEWERS.filter(reviewer => 
+                assignedUsernames.includes(reviewer)
+              );
+              console.log('Required reviewers are assigned, backwardIncompatibilitiesToIgnore check passed');
+              console.log('Assigned required reviewers:', approvedRequiredReviewers.join(', '));
+            }
