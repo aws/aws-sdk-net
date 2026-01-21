@@ -25,7 +25,7 @@ jobs:
             const path = require('path');
             
             // Hardcoded list of required reviewers
-            const REQUIRED_REVIEWERS = ['afroz429', 'boblodget'];
+            const REQUIRED_REVIEWERS = ['afroz0429', 'boblodget'];
             
             // Function to find JSON files directly in .DevConfigs
             function findDevConfigFiles() {
@@ -85,7 +85,7 @@ jobs:
               return;
             }
             
-            // Check if any file has backward incompatibilities
+            // Check if any file has backwardIncompatibilitiesToIgnore
             let hasBackwardIncompatibilityFiles = false;
             const filesWithIncompatibilities = [];
             
@@ -99,12 +99,12 @@ jobs:
             }
             
             if (!hasBackwardIncompatibilityFiles) {
-              console.log('No backward incompatibilities found in DevConfig files');
+              console.log('No backwardIncompatibilitiesToIgnore found in DevConfig files');
               return;
             }
             
-            // If backward incompatibilities found, check for required reviewers
-            console.log('Backward incompatibilities found, checking for required reviewers...');
+            // If backwardIncompatibilitiesToIgnore found, check for required reviewers
+            console.log('backwardIncompatibilitiesToIgnore found, checking for required reviewers...');
             console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
             
             // Get requested reviewers
