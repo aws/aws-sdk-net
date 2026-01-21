@@ -60,6 +60,24 @@ namespace Amazon.ConfigService.Model
     /// You must specify only one of the follow parameters: <c>TemplateS3Uri</c>, <c>TemplateBody</c>
     /// or <c>TemplateSSMDocumentDetails</c>.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    ///  <b>Tags are added at creation and cannot be updated with this operation</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>PutConformancePack</c> is an idempotent API. Subsequent requests won't create
+    /// a duplicate resource if one was already created. If a following request has different
+    /// <c>tags</c> values, Config will ignore these differences and treat it as an idempotent
+    /// request of the previous. In this case, <c>tags</c> will not be updated, even if they
+    /// are different.
+    /// </para>
+    ///  
+    /// <para>
+    /// Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+    /// to update tags after creation.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class PutConformancePackRequest : AmazonConfigServiceRequest
@@ -68,6 +86,7 @@ namespace Amazon.ConfigService.Model
         private string _conformancePackName;
         private string _deliveryS3Bucket;
         private string _deliveryS3KeyPrefix;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _templateBody;
         private string _templateS3Uri;
         private TemplateSSMDocumentDetails _templateSSMDocumentDetails;
@@ -156,6 +175,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetDeliveryS3KeyPrefix()
         {
             return this._deliveryS3KeyPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags for the conformance pack. Each tag consists of a key and an optional value,
+        /// both of which you define.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

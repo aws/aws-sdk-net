@@ -7347,6 +7347,24 @@ namespace Amazon.ConfigService
         /// You must specify only one of the follow parameters: <c>TemplateS3Uri</c>, <c>TemplateBody</c>
         /// or <c>TemplateSSMDocumentDetails</c>.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <b>Tags are added at creation and cannot be updated with this operation</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>PutConformancePack</c> is an idempotent API. Subsequent requests won't create
+        /// a duplicate resource if one was already created. If a following request has different
+        /// <c>tags</c> values, Config will ignore these differences and treat it as an idempotent
+        /// request of the previous. In this case, <c>tags</c> will not be updated, even if they
+        /// are different.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+        /// to update tags after creation.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConformancePack service method.</param>
