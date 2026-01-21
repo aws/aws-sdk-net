@@ -134,11 +134,12 @@ jobs:
               const requiredReviewersList = REQUIRED_REVIEWERS.join(', ');
               const message = `backwardIncompatibilitiesToIgnore in the following files:\n- ${fileList}\n\nThis PR requires at least one of the following reviewers to APPROVE the PR: ${requiredReviewersList}\n\nCurrently approved required reviewers: ${approvedRequiredReviewers.join(', ') || 'none'}`;
               
-              // Check if this is a review event by looking for review data in context
-              const isReviewEvent = context.eventName === 'pull_request_review' || (context.payload && context.payload.review);
+              // Check if this is a review event
+              const isReviewEvent = context.eventName === 'pull_request_review';
               
               console.log('Event name:', context.eventName); // Debug log
               console.log('Is review event:', isReviewEvent); // Debug log
+              console.log('Has review payload:', !!(context.payload && context.payload.review)); // Debug log
               
               if (isReviewEvent) {
                 // For review events, enforce the requirement and fail if not met
