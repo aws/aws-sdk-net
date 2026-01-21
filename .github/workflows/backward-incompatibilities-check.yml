@@ -28,7 +28,7 @@ jobs:
             const path = require('path');
             
             // list of required reviewers
-            const REQUIRED_REVIEWERS = ['normj', 'boblodgett','afroz0429'];
+            const REQUIRED_REVIEWERS = ['normj', 'boblodgett'];
             
             function findDevConfigFiles() {
               const devConfigPath = 'generator/.DevConfigs';
@@ -147,45 +147,20 @@ jobs:
                 console.log('ENFORCING: This is a review event - failing check if no approval');
                 core.setFailed(message);
               } else {
-                // For PR events, create a comment instead of failing
-                console.log('Creating comment about backward incompatibility approval requirement');
+                // For PR events, create simple comment
+                console.log('Creating simple backward compatibility comment');
                 
-                const commentBody = `## Backward Compatibility Review Required
+                const simpleComment = `Backward compatibility review required. Files: ${filesWithIncompatibilities.join(', ')}. Needs approval from: ${REQUIRED_REVIEWERS.join(', ')}`;
 
-**Backward incompatibilities found in:**
-${filesWithIncompatibilities.map(file => `- \`${file}\``).join('\n')}
-
-**Required Action:**
-This PR requires approval from one of the following reviewers: **${REQUIRED_REVIEWERS.join(', ')}**
-
-*This comment will be automatically updated when the required approval is received.*`;
-
-                // Check if we already posted this comment to avoid duplicates
-                const { data: existingComments } = await github.rest.issues.listComments({
+                await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: context.issue.number,
+                  body: simpleComment
                 });
                 
-                const botComment = existingComments.find(comment => 
-                  comment.user.type === 'Bot' && 
-                  comment.body.includes('Backward Compatibility Review Required')
-                );
-                
-                if (!botComment) {
-                  await github.rest.issues.createComment({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    issue_number: context.issue.number,
-                    body: commentBody
-                  });
-                  console.log('Posted backward compatibility approval comment');
-                } else {
-                  console.log('Backward compatibility comment already exists');
-                }
-                
-                // Pass the check for PR events - comment provides the visibility
-                console.log('Check passed - comment posted for visibility');
+                console.log('Posted simple comment');
+                console.log('Check passed - comment posted');
               }
             } else {
               console.log('Required reviewers have approved, backward incompatibility check passed');
