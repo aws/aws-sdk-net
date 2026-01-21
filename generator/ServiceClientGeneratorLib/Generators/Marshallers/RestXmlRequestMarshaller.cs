@@ -4671,6 +4671,7 @@ this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\t\r\n");
 	{
 		if(this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(this.Operation.RequestStructure.Name, out var modifier) && modifier.ExcludedMarshallingProperties.Contains(this.Operation.RequestPayloadMember.PropertyName))
 			return;
+
 		if(payload.Shape.IsString)
 		{
 

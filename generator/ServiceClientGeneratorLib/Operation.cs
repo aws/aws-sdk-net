@@ -207,7 +207,6 @@ namespace ServiceClientGenerator
                     return true;
                 }
 
-
                 if (!string.IsNullOrEmpty(ChecksumConfiguration?.RequestAlgorithmMember))
                 {
                     return true;
