@@ -32,7 +32,7 @@ namespace Amazon.CodeStarconnections
     public partial class AmazonCodeStarconnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeStar connections", "3.7.502.33");
+            InternalSDKUtils.BuildUserAgentString("CodeStar connections", "3.7.502.34");
 
         private string _userAgent = UserAgentString;
         ///<summary>
