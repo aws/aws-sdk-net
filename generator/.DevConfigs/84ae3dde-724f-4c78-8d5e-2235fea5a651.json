@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Added ServiceFullName to IServiceMetadata"
+      "Added ServiceFullName to IServiceMetadata. 1"
     ],
     "backwardIncompatibilitiesToIgnore": [ 
       "Amazon.Runtime.Internal.IServiceMetadata/MethodAbstractMethodAdded"
