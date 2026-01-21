@@ -1941,7 +1941,8 @@ namespace ServiceClientGenerator
             /// <summary>
             /// Excludes the result keys specified in result_keys in the paginator model
             /// </summary>
-            public HashSet<string> ExcludeResultKeys{
+            public HashSet<string> ExcludeResultKeys
+            {
                 get;
                 set;
             }
