@@ -54,6 +54,37 @@ Classes and interfaces with `Internal` in the namespace name are logically inter
 
 Classes and interfaces in these namespaces are subject to modification or removal outside of versioning scheme described above. If you find yourself relying on `Internal` functionality directly, consider [opening a Feature Request](https://github.com/aws/aws-sdk-net/issues/new/choose) for your use case if one does not already exist.
 
+
+## Null Collections and Nullable Reference Types
+
+### Collections Default to Null in V4
+
+In V4, collection properties (`List<T>` and `Dictionary<TKey, TValue>`) on request and response types default to `null` rather than being initialized to empty collections as they were in V3. This change addresses several important issues:
+
+**Performance**: V3 created many unused collections. For example, DynamoDB's `AttributeValue` type has five collection properties covering all possible DynamoDB collection types. In a query returning 700 items with 6 attributes each, V3 would create 21,000 unused collections (5 × 6 × 700), wasting memory and CPU resources for garbage collection.
+
+**Intent clarity**: With empty collections as defaults, the SDK couldn't distinguish between a user explicitly setting an empty collection (e.g., to clear a property during an update) versus leaving it uninitialized. Similarly, when receiving responses, users couldn't tell if an empty collection was returned by the service or was just the SDK's default initialization.
+
+**Migration support**: To ease the transition, V4 provides the `Amazon.AWSConfigs.InitializeCollections` property. Setting this to `true` reverts to V3 behavior. This property was also backported to V3, allowing users to test the new behavior before upgrading.
+
+When using V4 with default settings, you must initialize collections when making requests and check for `null` when processing responses to avoid null reference exceptions.
+
+### Why Nullable Reference Types Are Not Used
+
+While V4 makes collections nullable, it does not use [C# nullable reference types](https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references) (the `List<string>?` syntax). This decision was made for several reasons:
+
+**All properties would need to be nullable**: Since request and response types use public setters without initial values, adopting nullable reference types would require marking every property as nullable, not just collections. This would generate extensive compiler warnings for users, particularly when working with response properties that are known to always have values from the service.
+
+**Compiler warning burden**: Enabling nullable reference types would produce numerous warnings in user code, potentially breaking builds configured to treat warnings as errors. Users would need to add null checks even for properties guaranteed to have values, making the SDK more cumbersome to use.
+
+**Framework support**: V4 supports .NET Framework 4.7.2 and .NET Standard 2.0, which predate nullable reference types as a fully supported feature. While the `?` syntax can be used in these targets (the compiler generates the necessary attributes), the tooling experience is not as robust.
+
+**Evolutionary approach**: V4 was designed as an evolutionary change maintaining the existing programming model of public get/set properties, rather than a revolutionary redesign that would enable alternative patterns like read-only collection properties.
+
+The decision prioritizes runtime correctness and usability over compile-time nullability checking. Value type properties (like `int`, `bool`, `DateTime`) were changed to nullable types (`int?`, `bool?`, `DateTime?`) for the same reason as collections—to distinguish between default values and explicitly set values.
+
+For more details on V4 changes, see the [V4 announcement blog post](https://aws.amazon.com/blogs/developer/preview-1-of-aws-sdk-for-net-v4/).
+
 ## Code Analyzers
 
 Each service package includes a code analyzer that's automatically included when installing from NuGet. These analyzers are created based on the rules from the service model, and will generate a warning if you use a property value that's not valid (for example, shorter than the minimum length expected by the service).
