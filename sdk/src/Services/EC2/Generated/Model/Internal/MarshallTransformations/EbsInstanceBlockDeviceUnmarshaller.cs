@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ebsCardIndex", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.EbsCardIndex = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("operator", targetDepth))
                     {
                         var unmarshaller = OperatorResponseUnmarshaller.Instance;

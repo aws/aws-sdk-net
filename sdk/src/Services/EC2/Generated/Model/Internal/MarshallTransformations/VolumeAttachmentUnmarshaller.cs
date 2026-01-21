@@ -79,6 +79,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Device = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ebsCardIndex", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.EbsCardIndex = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

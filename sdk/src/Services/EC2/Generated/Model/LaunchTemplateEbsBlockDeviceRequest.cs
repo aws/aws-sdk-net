@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class LaunchTemplateEbsBlockDeviceRequest
     {
         private bool? _deleteOnTermination;
+        private int? _ebsCardIndex;
         private bool? _encrypted;
         private int? _iops;
         private string _kmsKeyId;
@@ -60,6 +61,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeleteOnTermination()
         {
             return this._deleteOnTermination.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsCardIndex. 
+        /// <para>
+        /// The index of the EBS card. Some instance types support multiple EBS cards. The default
+        /// EBS card index is 0.
+        /// </para>
+        /// </summary>
+        public int EbsCardIndex
+        {
+            get { return this._ebsCardIndex.GetValueOrDefault(); }
+            set { this._ebsCardIndex = value; }
+        }
+
+        // Check to see if EbsCardIndex property is set
+        internal bool IsSetEbsCardIndex()
+        {
+            return this._ebsCardIndex.HasValue; 
         }
 
         /// <summary>

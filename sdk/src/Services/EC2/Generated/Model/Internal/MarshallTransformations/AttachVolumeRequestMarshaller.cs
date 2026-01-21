@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Device", StringUtils.FromString(publicRequest.Device));
                 }
+                if(publicRequest.IsSetEbsCardIndex())
+                {
+                    request.Parameters.Add("EbsCardIndex", StringUtils.FromInt(publicRequest.EbsCardIndex));
+                }
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));

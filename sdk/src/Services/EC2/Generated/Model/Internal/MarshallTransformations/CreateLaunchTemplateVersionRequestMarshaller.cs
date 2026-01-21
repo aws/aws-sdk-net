@@ -84,6 +84,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.Ebs.DeleteOnTermination));
                                 }
+                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetEbsCardIndex())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "EbsCardIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.EbsCardIndex));
+                                }
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetEncrypted())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.Ebs.Encrypted));

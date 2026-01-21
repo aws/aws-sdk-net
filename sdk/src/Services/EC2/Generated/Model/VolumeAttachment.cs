@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private DateTime? _attachTime;
         private bool? _deleteOnTermination;
         private string _device;
+        private int? _ebsCardIndex;
         private string _instanceId;
         private string _instanceOwningService;
         private VolumeAttachmentState _state;
@@ -118,6 +119,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDevice()
         {
             return this._device != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsCardIndex. 
+        /// <para>
+        /// The index of the EBS card. Some instance types support multiple EBS cards. The default
+        /// EBS card index is 0.
+        /// </para>
+        /// </summary>
+        public int EbsCardIndex
+        {
+            get { return this._ebsCardIndex.GetValueOrDefault(); }
+            set { this._ebsCardIndex = value; }
+        }
+
+        // Check to see if EbsCardIndex property is set
+        internal bool IsSetEbsCardIndex()
+        {
+            return this._ebsCardIndex.HasValue; 
         }
 
         /// <summary>
