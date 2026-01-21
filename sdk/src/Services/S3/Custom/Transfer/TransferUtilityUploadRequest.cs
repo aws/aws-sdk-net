@@ -51,6 +51,7 @@ namespace Amazon.S3.Transfer
         private string _ifNoneMatch;
         private string _ifMatch;
         private long? _mpuObjectSize;
+
         private Stream inputStream;
 
         #region Key

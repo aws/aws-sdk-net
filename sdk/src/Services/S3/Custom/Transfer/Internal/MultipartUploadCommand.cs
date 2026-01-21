@@ -322,7 +322,7 @@ namespace Amazon.S3.Transfer.Internal
                 Grants = this._fileTransporterRequest.Grants,
                 Metadata = this._fileTransporterRequest.Metadata,
                 WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
-                BucketKeyEnabled = this._fileTransporterRequest.BucketKeyEnabled
+                BucketKeyEnabled = this._fileTransporterRequest.BucketKeyEnabled,
             };
 
             if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())
