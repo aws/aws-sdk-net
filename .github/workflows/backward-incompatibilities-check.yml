@@ -1,4 +1,4 @@
-name: Backward Incompatibilities Check
+name: PR workflow
 permissions:
   contents: read
 on:
