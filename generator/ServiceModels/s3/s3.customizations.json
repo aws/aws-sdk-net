@@ -2313,7 +2313,8 @@
                 "GrantWriteACP",
                 "GrantFullControl",
                 "GrantRead",
-                "ContentLanguage"
+                "ContentLanguage",
+                "Expires"
             ],
             "excludeFromMarshalling":[
                 "ServerSideEncryptionCustomerProvidedKeyMD5",
