@@ -131,57 +131,86 @@ jobs:
             console.log('Reviewers who have approved:', approvedRequiredReviewers.join(', ') || 'none');
             
             if (approvedRequiredReviewers.length === 0) {
+              console.log('DEBUG: No approved reviewers found, constructing failure message');
+              
               const fileList = filesWithIncompatibilities.join('\n- ');
               const requiredReviewersList = REQUIRED_REVIEWERS.join(', ');
               const message = `backwardIncompatibilitiesToIgnore in the following files:\n- ${fileList}\n\nThis PR requires at least one of the following reviewers to APPROVE the PR: ${requiredReviewersList}\n\nCurrently approved required reviewers: ${approvedRequiredReviewers.join(', ') || 'none'}`;
               
+              console.log('DEBUG: Constructed message:', JSON.stringify(message));
+              console.log('DEBUG: Message type:', typeof message);
+              console.log('DEBUG: Message length:', message ? message.length : 'null/undefined');
+              
               // Check if this is a review event
               const isReviewEvent = context.eventName === 'pull_request_review';
               
-              console.log('Event name:', context.eventName); // Debug log
-              console.log('Is review event:', isReviewEvent); // Debug log
-              console.log('Has review payload:', !!(context.payload && context.payload.review)); // Debug log
+              console.log('DEBUG: Event name:', context.eventName);
+              console.log('DEBUG: Is review event:', isReviewEvent);
+              console.log('DEBUG: Context payload keys:', Object.keys(context.payload || {}));
+              console.log('DEBUG: Has review payload:', !!(context.payload && context.payload.review));
               
               if (isReviewEvent) {
                 // For review events, enforce the requirement and fail if not met
-                console.log('ENFORCING: This is a review event - failing check if no approval');
-                core.setFailed(message);
+                console.log('DEBUG: ENFORCING - This is a review event, calling core.setFailed()');
+                console.log('DEBUG: About to call core.setFailed with message:', message);
+                try {
+                  core.setFailed(message);
+                  console.log('DEBUG: core.setFailed() completed');
+                } catch (error) {
+                  console.log('DEBUG: ERROR in core.setFailed():', error);
+                  throw error;
+                }
               } else {
                 // For PR events, create simple comment only once
-                console.log('Checking for existing backward compatibility comment');
+                console.log('DEBUG: PR event - creating comment instead of failing');
+                console.log('DEBUG: Checking for existing backward compatibility comment');
                 
                 const commentSignature = '<!-- BACKWARD_COMPATIBILITY_CHECK -->';
                 
-                // Check if comment already exists
-                const { data: existingComments } = await github.rest.issues.listComments({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: context.issue.number,
-                });
-                
-                const existingComment = existingComments.find(comment => 
-                  comment.user.type === 'Bot' && 
-                  comment.body.includes(commentSignature)
-                );
-                
-                if (existingComment) {
-                  console.log('Backward compatibility comment already exists, skipping');
-                } else {
-                  // Create comment only if it doesn't exist
-                  const comment = `${commentSignature} Backward compatibility review required - approval needed from one of the reviewers: ${REQUIRED_REVIEWERS.join(', ')}`;
-
-                  await github.rest.issues.createComment({
+                try {
+                  // Check if comment already exists
+                  console.log('DEBUG: Fetching existing comments');
+                  const { data: existingComments } = await github.rest.issues.listComments({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     issue_number: context.issue.number,
-                    body: comment
                   });
-                  console.log('Created backward compatibility comment');
+                  
+                  console.log('DEBUG: Found', existingComments.length, 'existing comments');
+                  
+                  const existingComment = existingComments.find(comment => 
+                    comment.user.type === 'Bot' && 
+                    comment.body.includes(commentSignature)
+                  );
+                  
+                  console.log('DEBUG: Existing backward compatibility comment found:', !!existingComment);
+                  
+                  if (existingComment) {
+                    console.log('DEBUG: Backward compatibility comment already exists, skipping creation');
+                  } else {
+                    // Create comment only if it doesn't exist
+                    const comment = `${commentSignature} Backward compatibility review required - approval needed from one of the reviewers: ${REQUIRED_REVIEWERS.join(', ')}`;
+                    
+                    console.log('DEBUG: Creating new comment:', comment);
+                    
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: context.issue.number,
+                      body: comment
+                    });
+                    console.log('DEBUG: Successfully created backward compatibility comment');
+                  }
+                  
+                  console.log('DEBUG: PR event completed successfully - comment handled');
+                } catch (commentError) {
+                  console.log('DEBUG: ERROR in comment handling:', commentError);
+                  // Don't fail the workflow for comment errors in PR events
+                  console.log('DEBUG: Comment error occurred but not failing workflow for PR events');
                 }
-                
-                console.log('Check passed - comment handled');
               }
             } else {
-              console.log('Required reviewers have approved, backward incompatibility check passed');
-              console.log('Approved required reviewers:', approvedRequiredReviewers.join(', '));
+              console.log('DEBUG: Required reviewers have approved, workflow successful');
+              console.log('DEBUG: Approved required reviewers:', approvedRequiredReviewers.join(', '));
+              console.log('DEBUG: Workflow completing successfully');
             }
