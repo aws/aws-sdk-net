@@ -61,6 +61,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("gpuPartitionSize", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.GpuPartitionSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("logicalGpuCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.LogicalGpuCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("manufacturer", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -77,6 +89,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("workloadSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Workloads == null)
+                        {
+                            unmarshalledObject.Workloads = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Workloads.Add(item);
                         continue;
                     }
                 }
