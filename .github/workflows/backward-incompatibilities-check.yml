@@ -28,7 +28,7 @@ jobs:
             const path = require('path');
             
             // list of required reviewers
-            const REQUIRED_REVIEWERS = ['normj', 'boblodgett','afroz0429'];
+            const REQUIRED_REVIEWERS = ['normj', 'boblodgett', 'afroz0429'];
             
             function findDevConfigFiles() {
               const devConfigPath = 'generator/.DevConfigs';
