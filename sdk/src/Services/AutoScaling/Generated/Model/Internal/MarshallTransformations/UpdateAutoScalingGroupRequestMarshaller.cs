@@ -149,6 +149,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DefaultInstanceWarmup", StringUtils.FromInt(publicRequest.DefaultInstanceWarmup));
                 }
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    request.Parameters.Add("DeletionProtection", StringUtils.FromString(publicRequest.DeletionProtection));
+                }
                 if(publicRequest.IsSetDesiredCapacity())
                 {
                     request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
