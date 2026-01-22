@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Make all service paginators and interfaces partial"
+    ]
+  }
+}

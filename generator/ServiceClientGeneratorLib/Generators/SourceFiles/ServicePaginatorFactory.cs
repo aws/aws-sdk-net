@@ -51,88 +51,44 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write(" service\r\n    ///</summary>\r\n");
+            this.Write(" service\r\n    ///</summary>\r\n    public partial class ");
             
             #line 20 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
-
-if (this.Config.ServiceId == "S3")
-{
-
-            
-            #line default
-            #line hidden
-            this.Write("    public partial class ");
-            
-            #line 24 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceNameRoot));
             
             #line default
             #line hidden
             this.Write("PaginatorFactory : I");
             
-            #line 24 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 20 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceNameRoot));
             
             #line default
             #line hidden
-            this.Write("PaginatorFactory\r\n");
+            this.Write("PaginatorFactory\r\n    {\r\n        private readonly IAmazon");
             
-            #line 25 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
-
-}
-else
-{
-
-            
-            #line default
-            #line hidden
-            this.Write("    public class ");
-            
-            #line 30 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceNameRoot));
-            
-            #line default
-            #line hidden
-            this.Write("PaginatorFactory : I");
-            
-            #line 30 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceNameRoot));
-            
-            #line default
-            #line hidden
-            this.Write("PaginatorFactory\r\n");
-            
-            #line 31 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
-
-}
-
-            
-            #line default
-            #line hidden
-            this.Write("    {\r\n        private readonly IAmazon");
-            
-            #line 35 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 22 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" client;\r\n\r\n        internal ");
             
-            #line 37 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 24 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceNameRoot));
             
             #line default
             #line hidden
             this.Write("PaginatorFactory(IAmazon");
             
-            #line 37 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 24 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" client) \r\n        {\r\n            this.client = client;\r\n        }\r\n");
             
-            #line 41 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 28 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
 
 foreach(var operation in this.Config.ServiceModel.Operations)
 {
@@ -144,42 +100,42 @@ foreach(var operation in this.Config.ServiceModel.Operations)
             #line hidden
             this.Write("\r\n        /// <summary>\r\n        /// Paginator for ");
             
-            #line 49 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 36 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write(" operation\r\n        ///</summary>\r\n        public I");
             
-            #line 51 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 38 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Paginator ");
             
-            #line 51 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 38 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 51 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 38 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request) \r\n        {\r\n            return new ");
             
-            #line 53 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 40 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Paginator(this.client, request);\r\n        }\r\n");
             
-            #line 55 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
+            #line 42 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactory.tt"
 
     }
 }

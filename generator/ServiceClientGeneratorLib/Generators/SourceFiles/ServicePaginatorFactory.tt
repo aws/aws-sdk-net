@@ -17,20 +17,7 @@ namespace <#=this.Config.Namespace#>.Model
     /// <summary>
     /// Paginators for the <#=this.Config.ServiceNameRoot#> service
     ///</summary>
-<#
-if (this.Config.ServiceId == "S3")
-{
-#>
     public partial class <#=this.Config.ServiceNameRoot#>PaginatorFactory : I<#=this.Config.ServiceNameRoot#>PaginatorFactory
-<#
-}
-else
-{
-#>
-    public class <#=this.Config.ServiceNameRoot#>PaginatorFactory : I<#=this.Config.ServiceNameRoot#>PaginatorFactory
-<#
-}
-#>
     {
         private readonly IAmazon<#=this.Config.ClassName#> client;
 

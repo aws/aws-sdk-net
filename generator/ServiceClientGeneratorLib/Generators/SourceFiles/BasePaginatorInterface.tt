@@ -14,20 +14,7 @@ namespace <#=this.Config.Namespace#>.Model
     /// <summary>
     /// Paginator for the <#=this.Operation.Name#> operation
     ///</summary>
-<#
-if (this.Config.ServiceId == "S3")
-{
-#>
     public partial interface I<#=this.Operation.Name#>Paginator
-<#
-}
-else
-{
-#>
-    public interface I<#=this.Operation.Name#>Paginator
-<#
-}
-#>
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -14,20 +14,7 @@ namespace <#=this.Config.Namespace#>.Model
     /// <summary>
     /// Paginators for the <#=this.Config.ServiceNameRoot#> service
     ///</summary>
-<#
-if (this.Config.ServiceId == "S3")
-{
-#>
     public partial interface I<#=this.Config.ServiceNameRoot#>PaginatorFactory
-<#
-}
-else
-{
-#>
-    public interface I<#=this.Config.ServiceNameRoot#>PaginatorFactory
-<#
-}
-#>
     {
 <#
 foreach(var operation in this.Config.ServiceModel.Operations)
