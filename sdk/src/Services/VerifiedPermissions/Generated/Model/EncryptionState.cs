@@ -47,7 +47,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Default. 
         /// <para>
-        /// Policy store data is encrypted using AWS owned encryption keys.
+        /// This is the default encryption state. The policy store is encrypted using an Amazon
+        /// Web Services owned key.
         /// </para>
         /// </summary>
         public Unit Default
