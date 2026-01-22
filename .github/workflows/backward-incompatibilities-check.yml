@@ -171,6 +171,10 @@ jobs:
                     comment.body.includes(commentSignature)
                   );
                   
+                  if (existingComment) {
+                    console.log('Found existing comment - all properties:', JSON.stringify(existingComment, null, 2));
+                  }
+                  
                   if (!existingComment) {
                     // Create comment only if it doesn't exist
                     const comment = `${commentSignature} ${message}`;
