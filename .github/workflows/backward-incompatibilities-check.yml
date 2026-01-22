@@ -135,7 +135,8 @@ jobs:
                   }
                 });
                 
-                // Also check review requests (pending reviews)
+                // Also check review requests (pending reviews)  
+                let pendingReviewers = [];
                 try {
                   const { data: reviewRequests } = await github.rest.pulls.listRequestedReviewers({
                     owner: context.repo.owner,
@@ -143,12 +144,11 @@ jobs:
                     pull_number: context.issue.number,
                   });
                   
-                  console.log('DEBUG: Current review requests (pending):');
-                  reviewRequests.users.forEach(user => {
-                    if (REQUIRED_REVIEWERS.includes(user.login)) {
-                      console.log(`Pending review request for: ${user.login}`);
-                    }
-                  });
+                  pendingReviewers = reviewRequests.users
+                    .filter(user => REQUIRED_REVIEWERS.includes(user.login))
+                    .map(user => user.login);
+                  
+                  console.log('DEBUG: Current review requests (pending):', pendingReviewers.join(', ') || 'none');
                 } catch (requestError) {
                   console.log('Could not fetch review requests:', requestError.message);
                 }
@@ -165,8 +165,16 @@ jobs:
                   
                   if (userReviews.length > 0) {
                     hasAnyRequiredReviews = true;
-                    latestReviewsByUser[reviewer] = userReviews[0].state;
-                    console.log(`Latest review for ${reviewer}: ${userReviews[0].state} at ${userReviews[0].submitted_at}`);
+                    let reviewState = userReviews[0].state;
+                    
+                    // CRITICAL: If reviewer has pending request AND approved review, their approval was reset
+                    if (reviewState === 'APPROVED' && pendingReviewers.includes(reviewer)) {
+                      reviewState = 'RESET_BY_REQUEST';
+                      console.log(`CRITICAL: ${reviewer} approval was RESET by re-request (pending: ${pendingReviewers.includes(reviewer)})`);
+                    }
+                    
+                    latestReviewsByUser[reviewer] = reviewState;
+                    console.log(`Latest review for ${reviewer}: ${reviewState} at ${userReviews[0].submitted_at}`);
                   } else {
                     console.log(`No reviews found for ${reviewer}`);
                   }
