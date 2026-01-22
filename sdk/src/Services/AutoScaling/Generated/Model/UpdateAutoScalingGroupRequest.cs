@@ -100,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         private string _context;
         private int? _defaultCooldown;
         private int? _defaultInstanceWarmup;
+        private DeletionProtection _deletionProtection;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
         private int? _healthCheckGracePeriod;
@@ -318,6 +319,37 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetDefaultInstanceWarmup()
         {
             return this._defaultInstanceWarmup.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        ///  The deletion protection setting for the Auto Scaling group. This setting helps safeguard
+        /// your Auto Scaling group and its instances by controlling whether the <c>DeleteAutoScalingGroup</c>
+        /// operation is allowed. When deletion protection is enabled, users cannot delete the
+        /// Auto Scaling group according to the specified protection level until the setting is
+        /// changed back to a less restrictive level. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The valid values are <c>none</c>, <c>prevent-force-deletion</c>, and <c>prevent-all-deletion</c>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <c>none</c> 
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
         }
 
         /// <summary>

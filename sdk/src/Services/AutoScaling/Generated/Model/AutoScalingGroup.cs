@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         private DateTime? _createdTime;
         private int? _defaultCooldown;
         private int? _defaultInstanceWarmup;
+        private DeletionProtection _deletionProtection;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
         private List<EnabledMetric> _enabledMetrics = AWSConfigs.InitializeCollections ? new List<EnabledMetric>() : null;
@@ -277,6 +278,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetDefaultInstanceWarmup()
         {
             return this._defaultInstanceWarmup.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// The deletion protection setting for the Auto Scaling group.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
         }
 
         /// <summary>
