@@ -3359,6 +3359,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly ScanStatusReason ACCESS_DENIED = new ScanStatusReason("ACCESS_DENIED");
         /// <summary>
+        /// Constant ALL_FILES_SKIPPED_OR_FAILED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason ALL_FILES_SKIPPED_OR_FAILED = new ScanStatusReason("ALL_FILES_SKIPPED_OR_FAILED");
+        /// <summary>
         /// Constant AMI_SNAPSHOT_LIMIT_EXCEEDED for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason AMI_SNAPSHOT_LIMIT_EXCEEDED = new ScanStatusReason("AMI_SNAPSHOT_LIMIT_EXCEEDED");
