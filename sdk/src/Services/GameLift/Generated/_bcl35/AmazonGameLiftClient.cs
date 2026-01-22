@@ -11253,7 +11253,13 @@ namespace Amazon.GameLift
         ///  For examples of searching game sessions, see the ones below, and also see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search
         /// game sessions by game property</a>. 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// Avoid using periods (".") in property keys if you plan to search for game sessions
+        /// by properties. Property keys containing periods cannot be searched and will be filtered
+        /// out from search results due to search index limitations.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
         /// </para>

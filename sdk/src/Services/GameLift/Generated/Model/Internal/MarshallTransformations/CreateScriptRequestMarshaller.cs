@@ -75,6 +75,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNodeJsVersion())
+                {
+                    context.Writer.WritePropertyName("NodeJsVersion");
+                    context.Writer.Write(publicRequest.NodeJsVersion);
+                }
+
                 if(publicRequest.IsSetStorageLocation())
                 {
                     context.Writer.WritePropertyName("StorageLocation");

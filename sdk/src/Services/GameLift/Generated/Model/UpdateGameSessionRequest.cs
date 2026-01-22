@@ -71,6 +71,13 @@ namespace Amazon.GameLift.Model
         /// href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
         /// the value of a game property</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Avoid using periods (".") in property keys if you plan to search for game sessions
+        /// by properties. Property keys containing periods cannot be searched and will be filtered
+        /// out from search results due to search index limitations.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=16)]
         public List<GameProperty> GameProperties

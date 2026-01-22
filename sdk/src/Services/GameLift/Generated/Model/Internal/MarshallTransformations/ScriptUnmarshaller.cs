@@ -78,6 +78,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NodeJsVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NodeJsVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScriptArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

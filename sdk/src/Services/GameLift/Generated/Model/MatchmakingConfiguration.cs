@@ -259,6 +259,13 @@ namespace Amazon.GameLift.Model
         /// new <c>GameSession</c> object that is created for a successful match. This parameter
         /// is not used when <c>FlexMatchMode</c> is set to <c>STANDALONE</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Avoid using periods (".") in property keys if you plan to search for game sessions
+        /// by properties. Property keys containing periods cannot be searched and will be filtered
+        /// out from search results due to search index limitations.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=16)]
         public List<GameProperty> GameProperties
