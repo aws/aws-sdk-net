@@ -122,8 +122,41 @@ jobs:
                   pull_number: context.issue.number,
                 });
                 
+                // Debug: Log ALL reviews to understand re-request behavior
+                console.log('DEBUG: All reviews returned by API:');
+                reviews.forEach((review, index) => {
+                  if (REQUIRED_REVIEWERS.includes(review.user?.login)) {
+                    console.log(`Review ${index} - ${review.user.login}:`, {
+                      id: review.id,
+                      state: review.state,
+                      submitted_at: review.submitted_at,
+                      author_association: review.author_association
+                    });
+                  }
+                });
+                
+                // Also check review requests (pending reviews)
+                try {
+                  const { data: reviewRequests } = await github.rest.pulls.listRequestedReviewers({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: context.issue.number,
+                  });
+                  
+                  console.log('DEBUG: Current review requests (pending):');
+                  reviewRequests.users.forEach(user => {
+                    if (REQUIRED_REVIEWERS.includes(user.login)) {
+                      console.log(`Pending review request for: ${user.login}`);
+                    }
+                  });
+                } catch (requestError) {
+                  console.log('Could not fetch review requests:', requestError.message);
+                }
+                
                 // Find the ACTUAL latest review state for each reviewer
                 const latestReviewsByUser = {};
+                let hasAnyRequiredReviews = false;
+                
                 for (const reviewer of REQUIRED_REVIEWERS) {
                   const userReviews = reviews
                     .filter(review => review.user && review.user.login === reviewer)
@@ -131,9 +164,19 @@ jobs:
                     .slice(0, 1); // Take first 1 (most recent)
                   
                   if (userReviews.length > 0) {
+                    hasAnyRequiredReviews = true;
                     latestReviewsByUser[reviewer] = userReviews[0].state;
                     console.log(`Latest review for ${reviewer}: ${userReviews[0].state} at ${userReviews[0].submitted_at}`);
+                  } else {
+                    console.log(`No reviews found for ${reviewer}`);
                   }
+                }
+                
+                // Early exit if no required reviewers have submitted any reviews
+                if (!hasAnyRequiredReviews) {
+                  console.log('No reviews found from any required reviewers - failing check');
+                  core.setFailed(message);
+                  return;
                 }
                 
                 // Check if at least one required reviewer has approved
@@ -143,14 +186,6 @@ jobs:
                 
                 console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
                 console.log('Reviewers who have approved:', approvedRequiredReviewers.join(', ') || 'none');
-                
-                // Debug: Log all review data for approved required reviewers
-                approvedRequiredReviewers.forEach(reviewer => {
-                  const approvedReviews = reviews.filter(review => 
-                    review.user && review.user.login === reviewer && review.state === 'APPROVED'
-                  );
-                  console.log(`Debug - All APPROVED reviews for ${reviewer}:`, JSON.stringify(approvedReviews, null, 2));
-                });
                 
                 // Debug: Log latest review state for all required reviewers
                 console.log('Debug - Latest review states for all required reviewers:');
