@@ -154,6 +154,8 @@ jobs:
                 console.log('DEBUG: ENFORCING - This is a review event, calling core.setFailed()');
                 console.log('DEBUG: About to call core.setFailed with message:', message);
                 try {
+                  // Set explicit status summary for better GitHub UI display
+                  core.summary.write('## ❌ Backward Compatibility Check Failed\n\nRequired reviewer approval needed.');
                   core.setFailed(message);
                   console.log('DEBUG: core.setFailed() completed');
                 } catch (error) {
