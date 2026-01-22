@@ -122,20 +122,7 @@ jobs:
                   pull_number: context.issue.number,
                 });
                 
-                // Debug: Log ALL reviews to understand re-request behavior
-                console.log('DEBUG: All reviews returned by API:');
-                reviews.forEach((review, index) => {
-                  if (REQUIRED_REVIEWERS.includes(review.user?.login)) {
-                    console.log(`Review ${index} - ${review.user.login}:`, {
-                      id: review.id,
-                      state: review.state,
-                      submitted_at: review.submitted_at,
-                      author_association: review.author_association
-                    });
-                  }
-                });
-                
-                // Also check review requests (pending reviews)  
+                // Check review requests (pending reviews)  
                 let pendingReviewers = [];
                 try {
                   const { data: reviewRequests } = await github.rest.pulls.listRequestedReviewers({
@@ -148,12 +135,11 @@ jobs:
                     .filter(user => REQUIRED_REVIEWERS.includes(user.login))
                     .map(user => user.login);
                   
-                  console.log('DEBUG: Current review requests (pending):', pendingReviewers.join(', ') || 'none');
                 } catch (requestError) {
                   console.log('Could not fetch review requests:', requestError.message);
                 }
                 
-                // Find the ACTUAL latest review state for each reviewer
+                // Find the latest review state for each reviewer
                 const latestReviewsByUser = {};
                 let hasAnyRequiredReviews = false;
                 
@@ -166,15 +152,15 @@ jobs:
                   if (userReviews.length > 0) {
                     hasAnyRequiredReviews = true;
                     let reviewState = userReviews[0].state;
+                    console.log(`Latest review for ${reviewer}: ${reviewState} at ${userReviews[0].submitted_at}`);
                     
-                    // CRITICAL: If reviewer has pending request AND approved review, their approval was reset
+                    // If reviewer has pending request AND approved review, their approval was reset
                     if (reviewState === 'APPROVED' && pendingReviewers.includes(reviewer)) {
                       reviewState = 'RESET_BY_REQUEST';
-                      console.log(`CRITICAL: ${reviewer} approval was RESET by re-request (pending: ${pendingReviewers.includes(reviewer)})`);
+                      console.log(`${reviewer} approval reset by re-request - now pending review`);
                     }
                     
                     latestReviewsByUser[reviewer] = reviewState;
-                    console.log(`Latest review for ${reviewer}: ${reviewState} at ${userReviews[0].submitted_at}`);
                   } else {
                     console.log(`No reviews found for ${reviewer}`);
                   }
@@ -194,20 +180,6 @@ jobs:
                 
                 console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
                 console.log('Reviewers who have approved:', approvedRequiredReviewers.join(', ') || 'none');
-                
-                // Debug: Log latest review state for all required reviewers
-                console.log('Debug - Latest review states for all required reviewers:');
-                REQUIRED_REVIEWERS.forEach(reviewer => {
-                  const userReviews = reviews.filter(review => 
-                    review.user && review.user.login === reviewer
-                  ).sort((a, b) => new Date(b.submitted_at) - new Date(a.submitted_at));
-                  
-                  console.log(`${reviewer}:`, userReviews.length > 0 ? {
-                    state: userReviews[0].state,
-                    submitted_at: userReviews[0].submitted_at,
-                    id: userReviews[0].id
-                  } : 'No reviews found');
-                });
                 
                 if (approvedRequiredReviewers.length === 0) {
                   // No required reviewer has approved, fail the check
