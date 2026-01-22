@@ -413,13 +413,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// <summary>
         /// <important> 
         /// <para>
-        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation on March 31,
-        /// 2026. Use <c>CustomerAWSAccountID</c> instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
-        /// and <c>CustomerAWSAccountID</c> in the same request. 
+        ///  The <c>CustomerIdentifier</c> and <c>CustomerAWSAccountID</c> are mutually exclusive
+        /// parameters. You must use one or the other, but not both in the same API request. For
+        /// new implementations, we recommend using the <c>CustomerAWSAccountID</c>. Your current
+        /// integration will continue to work. When updating your implementation, consider migrating
+        /// to <c>CustomerAWSAccountID</c> for improved integration. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -546,31 +544,74 @@ namespace Amazon.AWSMarketplaceMetering
         #region  MeterUsage
 
         /// <summary>
-        /// API to emit metering records. For identical requests, the API is idempotent and returns
-        /// the metering record ID. This is used for metering flexible consumption pricing (FCP)
-        /// Amazon Machine Images (AMI) and container products.
+        /// As a seller, your software hosted in the buyer's Amazon Web Services account uses
+        /// this API action to emit metering records directly to Amazon Web Services Marketplace.
+        /// You must use the following buyer Amazon Web Services account credentials to sign the
+        /// API request.
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <c>MeterUsage</c> is authenticated on the buyer's Amazon Web Services account using
-        /// credentials from the Amazon EC2 instance, Amazon ECS task, or Amazon EKS pod.
+        /// For <b>Amazon EC2</b> deployments, your software must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">IAM
+        /// role for Amazon EC2</a> to sign the API call for <c>MeterUsage</c> API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon EKS</b> deployments, your software must use <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">IAM
+        /// roles for service accounts (IRSA)</a> to sign the API call for the <c>MeterUsage</c>
+        /// API operation. Using <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html">EKS
+        /// Pod Identity</a>, the node role, or long-term access keys is not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon ECS</b> deployments, your software must use <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
+        /// ECS task IAM</a> role to sign the API call for the <c>MeterUsage</c> API operation.
+        /// Using the node role or long-term access keys are not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon Bedrock AgentCore Runtime</b> deployments, your software must use the
+        /// <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-permissions.html#runtime-permissions-execution">AgentCore
+        /// Runtime execution role</a> to sign the API call for the <c>MeterUsage</c> API operation.
+        /// Long-term access keys are not supported.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The handling of <c>MeterUsage</c> requests varies between Amazon Bedrock AgentCore
+        /// Runtime and non-Amazon Bedrock AgentCore deployments.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <b>non-Amazon Bedrock AgentCore Runtime</b> deployments, you can only report usage
+        /// once per hour for each dimension. For AMI-based products, this is per dimension and
+        /// per EC2 instance. For container products, this is per dimension and per ECS task or
+        /// EKS pod. You can't modify values after they're recorded. If you report usage before
+        /// a current hour ends, you will be unable to report additional usage until the next
+        /// hour begins. The <c>Timestamp</c> request parameter is rounded down to the hour and
+        /// used to enforce this once-per-hour rule for idempotency. For requests that are identical
+        /// after the <c>Timestamp</c> is rounded down, the API is idempotent and returns the
+        /// metering record ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon Bedrock AgentCore Runtime</b> deployments, you can report usage multiple
+        /// times per hour for the same dimension. You do not need to aggregate metering records
+        /// by the hour. You must include an idempotency token in the <c>ClientToken</c> request
+        /// parameter. If using an Amazon SDK or the Amazon Web Services CLI, you must use the
+        /// latest version which automatically includes an idempotency token in the <c>ClientToken</c>
+        /// request parameter so that the request is processed successfully. The <c>Timestamp</c>
+        /// request parameter is not rounded down to the hour and is not used for duplicate validation.
+        /// Requests with duplicate <c>Timestamps</c> are aggregated as long as the <c>ClientToken</c>
+        /// is unique.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you submit records more than six hours after events occur, the records won't be
+        /// accepted. The timestamp in your request determines when an event is recorded.
         /// </para>
         ///  
         /// <para>
-        ///  <c>MeterUsage</c> can optionally include multiple usage allocations, to provide customers
-        /// with usage data split into buckets by tags that you define (or allow the customer
-        /// to define).
-        /// </para>
-        ///  
-        /// <para>
-        /// Submit usage records to report events from the previous hour. If you submit records
-        /// that are greater than six hours after events occur, the records won’t be accepted.
-        /// The timestamp in your request determines when an event is recorded. You can only report
-        /// usage once per hour for each dimension. For AMI-based products, this is per dimension
-        /// and per EC2 instance. For container products, this is per dimension and per ECS task
-        /// or EKS pod. You can’t modify values after they’re recorded. If you report usage before
-        /// the current hour ends, you will be unable to report additional usage until the next
-        /// hour begins.
+        /// You can optionally include multiple usage allocations, to provide customers with usage
+        /// data split into buckets by tags that you define or allow the customer to define.
         /// </para>
         ///  
         /// <para>
