@@ -1,18 +1,21 @@
-name: PR workflow
+name: Backward Incompatibility Reviewer Check
 permissions:
   contents: read
+  pull-requests: write
 on:
   pull_request:
-    types: [synchronize, opened, reopened, edited, review_requested, review_request_removed]
+    types: [opened, synchronize, reopened]
+  pull_request_review:
+    types: [submitted]
 
 jobs:
-  check-backwardIncompatibilitiesToIgnore-reviewers:
+  check-backward-incompatibilities-reviewers:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout PR branch (sparse - only .DevConfigs)
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.pull_request.head.sha }}
           sparse-checkout: |
             generator/.DevConfigs
           sparse-checkout-cone-mode: false
@@ -79,57 +82,154 @@ jobs:
             console.log(`Found ${devConfigFiles.length} DevConfig files in PR branch`);
             
             if (devConfigFiles.length === 0) {
-              console.log('No DevConfig files found, skipping backwardIncompatibilitiesToIgnore check');
+              console.log('No DevConfig files found, skipping backward incompatibility check');
               return;
             }
             
             // Check if any file has backwardIncompatibilitiesToIgnore
-            let hasBackwardIncompatibilityFiles = false;
+            let foundBackwardIncompatibilities = false;
             const filesWithIncompatibilities = [];
             
             for (const file of devConfigFiles) {
               console.log(`Checking file: ${file}`);
               if (hasBackwardIncompatibilities(file)) {
-                hasBackwardIncompatibilityFiles = true;
+                foundBackwardIncompatibilities = true;
                 filesWithIncompatibilities.push(file);
                 console.log(`Found backwardIncompatibilitiesToIgnore in: ${file}`);
               }
             }
             
-            if (!hasBackwardIncompatibilityFiles) {
-              console.log('No backwardIncompatibilitiesToIgnore found in DevConfig files');
+            if (!foundBackwardIncompatibilities) {
+              console.log('No backward incompatibilities to ignore found in DevConfig files');
               return;
             }
             
-            // If backwardIncompatibilitiesToIgnore found, check for required reviewers
-            console.log('backwardIncompatibilitiesToIgnore found, checking for required reviewers...');
-            console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
+            // If backwardIncompatibilitiesToIgnore found, handle based on event type
+            const isReviewEvent = context.eventName === 'pull_request_review';
+            const message = `Backward compatibility review required - approval needed from one of the reviewers: ${REQUIRED_REVIEWERS.join(', ')}`;
             
-            // Get requested reviewers
-            const { data: reviewData } = await github.rest.pulls.listRequestedReviewers({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.issue.number,
-            });
-            
-            const userReviewers = reviewData.users || [];
-            const assignedUsernames = userReviewers.map(u => u.login);
-            
-            console.log('Currently assigned reviewers:', assignedUsernames.join(', ') || 'none');
-            
-            // Check if at least one required reviewer is assigned
-            const hasRequiredReviewer = REQUIRED_REVIEWERS.some(reviewer => 
-              assignedUsernames.includes(reviewer)
-            );
-            
-            if (!hasRequiredReviewer) {
-              const fileList = filesWithIncompatibilities.join('\n- ');
-              const requiredReviewersList = REQUIRED_REVIEWERS.join(', ');
-              core.setFailed(`backwardIncompatibilitiesToIgnore in the following files:\n- ${fileList}\n\nThis PR requires at least one of the following reviewers to be assigned: ${requiredReviewersList}\n\nCurrently assigned reviewers: ${assignedUsernames.join(', ') || 'none'}`);
+            if (isReviewEvent) {
+              // For review events, check for required reviewer approvals and enforce
+              console.log('Review event - checking for required reviewer approvals...');
+              
+              let approvedRequiredReviewers = [];
+              
+              try {
+                // Get PR reviews to check for approvals
+                const { data: reviews } = await github.rest.pulls.listReviews({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: context.issue.number,
+                });
+                
+                // Check review requests (pending reviews)  
+                let pendingReviewers = [];
+                try {
+                  const { data: reviewRequests } = await github.rest.pulls.listRequestedReviewers({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: context.issue.number,
+                  });
+                  
+                  pendingReviewers = reviewRequests.users
+                    .filter(user => REQUIRED_REVIEWERS.includes(user.login))
+                    .map(user => user.login);
+                  
+                } catch (requestError) {
+                  console.log('Could not fetch review requests:', requestError.message);
+                }
+                
+                // Find the latest review state for each reviewer
+                const latestReviewsByUser = {};
+                let hasAnyRequiredReviews = false;
+                
+                for (const reviewer of REQUIRED_REVIEWERS) {
+                  const userReviews = reviews
+                    .filter(review => review.user && review.user.login === reviewer)
+                    .sort((a, b) => new Date(b.submitted_at) - new Date(a.submitted_at)) // Descending by DATE
+                    .slice(0, 1); // Take first 1 (most recent)
+                  
+                  if (userReviews.length > 0) {
+                    hasAnyRequiredReviews = true;
+                    let reviewState = userReviews[0].state;
+                    console.log(`Latest review for ${reviewer}: ${reviewState} at ${userReviews[0].submitted_at}`);
+                    
+                    // If reviewer has pending request AND approved review, their approval was reset
+                    if (reviewState === 'APPROVED' && pendingReviewers.includes(reviewer)) {
+                      reviewState = 'RESET_BY_REQUEST';
+                      console.log(`${reviewer} approval reset by re-request - now pending review`);
+                    }
+                    
+                    latestReviewsByUser[reviewer] = reviewState;
+                  } else {
+                    console.log(`No reviews found for ${reviewer}`);
+                  }
+                }
+                
+                // Early exit if no required reviewers have submitted any reviews
+                if (!hasAnyRequiredReviews) {
+                  console.log('No reviews found from any required reviewers - failing check');
+                  core.setFailed(message);
+                  return;
+                }
+                
+                // Check if at least one required reviewer has approved
+                approvedRequiredReviewers = REQUIRED_REVIEWERS.filter(reviewer => 
+                  latestReviewsByUser[reviewer] === 'APPROVED'
+                );
+                
+                console.log('Required reviewers:', REQUIRED_REVIEWERS.join(', '));
+                console.log('Reviewers who have approved:', approvedRequiredReviewers.join(', ') || 'none');
+                
+                if (approvedRequiredReviewers.length === 0) {
+                  // No required reviewer has approved, fail the check
+                  core.setFailed(message);
+                } else {
+                  console.log('Required reviewers have approved, backward incompatibility check passed');
+                }
+                
+              } catch (error) {
+                console.log('Error checking reviews:', error.message);
+                // For review events, fail securely - don't allow merge without verification
+                core.setFailed(`Unable to verify reviewer approvals due to API error: ${error.message}`);
+              }
+              
             } else {
-              const approvedRequiredReviewers = REQUIRED_REVIEWERS.filter(reviewer => 
-                assignedUsernames.includes(reviewer)
-              );
-              console.log('Required reviewers are assigned, backwardIncompatibilitiesToIgnore check passed');
-              console.log('Assigned required reviewers:', approvedRequiredReviewers.join(', '));
+              // For PR events, only handle comment creation (ignore reviewer status)
+              console.log('PR event - checking for existing comment...');
+              
+              const commentSignature = '<!-- BACKWARD_COMPATIBILITY_CHECK -->';
+              
+              try {
+                // Check if comment already exists
+                const { data: existingComments } = await github.rest.issues.listComments({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                });
+                
+                const existingComment = existingComments.find(comment => 
+                  comment.user.type === 'Bot' && 
+                  comment.body.includes(commentSignature)
+                );
+                
+                if (existingComment) {
+                  console.log('Backward compatibility comment already exists, skipping creation');
+                } else {
+                  // Create comment only if it doesn't exist
+                  const comment = `${commentSignature} ${message}`;
+                  
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: context.issue.number,
+                    body: comment
+                  });
+                  console.log('Successfully created backward compatibility comment');
+                }
+                
+              } catch (commentError) {
+                // Don't fail PR workflows for comment errors, just log warning
+                console.log('Warning: Failed to create comment:', commentError.message);
+              }
             }
