@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListInferenceRecommendationsJobSteps operation
     ///</summary>
-    public interface IListInferenceRecommendationsJobStepsPaginator
+    public partial interface IListInferenceRecommendationsJobStepsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

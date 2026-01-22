@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginator for the ListAddonSubscriptions operation
     ///</summary>
-    public interface IListAddonSubscriptionsPaginator
+    public partial interface IListAddonSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.BedrockAgent.Model
     /// <summary>
     /// Paginators for the BedrockAgent service
     ///</summary>
-    public class BedrockAgentPaginatorFactory : IBedrockAgentPaginatorFactory
+    public partial class BedrockAgentPaginatorFactory : IBedrockAgentPaginatorFactory
     {
         private readonly IAmazonBedrockAgent client;
 

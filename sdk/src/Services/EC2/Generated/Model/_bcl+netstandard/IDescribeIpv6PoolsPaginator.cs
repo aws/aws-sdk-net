@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeIpv6Pools operation
     ///</summary>
-    public interface IDescribeIpv6PoolsPaginator
+    public partial interface IDescribeIpv6PoolsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

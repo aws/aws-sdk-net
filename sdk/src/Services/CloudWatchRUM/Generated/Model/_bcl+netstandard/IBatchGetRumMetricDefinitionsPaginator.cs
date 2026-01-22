@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// <summary>
     /// Paginator for the BatchGetRumMetricDefinitions operation
     ///</summary>
-    public interface IBatchGetRumMetricDefinitionsPaginator
+    public partial interface IBatchGetRumMetricDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

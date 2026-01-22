@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListAccessKeys operation
     ///</summary>
-    public interface IListAccessKeysPaginator
+    public partial interface IListAccessKeysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

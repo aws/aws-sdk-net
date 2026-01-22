@@ -24,7 +24,7 @@ namespace Amazon.MediaConnect.Model
     /// <summary>
     /// Paginator for the ListRouterNetworkInterfaces operation
     ///</summary>
-    public interface IListRouterNetworkInterfacesPaginator
+    public partial interface IListRouterNetworkInterfacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

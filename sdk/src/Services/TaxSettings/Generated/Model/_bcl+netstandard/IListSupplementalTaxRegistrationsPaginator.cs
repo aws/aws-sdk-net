@@ -24,7 +24,7 @@ namespace Amazon.TaxSettings.Model
     /// <summary>
     /// Paginator for the ListSupplementalTaxRegistrations operation
     ///</summary>
-    public interface IListSupplementalTaxRegistrationsPaginator
+    public partial interface IListSupplementalTaxRegistrationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

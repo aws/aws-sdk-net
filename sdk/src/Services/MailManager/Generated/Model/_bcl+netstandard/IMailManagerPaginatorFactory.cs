@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginators for the MailManager service
     ///</summary>
-    public interface IMailManagerPaginatorFactory
+    public partial interface IMailManagerPaginatorFactory
     {
 
         /// <summary>

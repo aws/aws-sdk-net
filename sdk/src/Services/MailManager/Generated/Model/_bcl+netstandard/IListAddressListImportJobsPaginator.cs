@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginator for the ListAddressListImportJobs operation
     ///</summary>
-    public interface IListAddressListImportJobsPaginator
+    public partial interface IListAddressListImportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

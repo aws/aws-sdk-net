@@ -24,7 +24,7 @@ namespace Amazon.CleanRooms.Model
     /// <summary>
     /// Paginator for the ListIdNamespaceAssociations operation
     ///</summary>
-    public interface IListIdNamespaceAssociationsPaginator
+    public partial interface IListIdNamespaceAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the DescribeTrusts operation
     ///</summary>
-    public interface IDescribeTrustsPaginator
+    public partial interface IDescribeTrustsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

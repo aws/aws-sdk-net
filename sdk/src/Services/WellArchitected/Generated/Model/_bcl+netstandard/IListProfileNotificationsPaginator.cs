@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the ListProfileNotifications operation
     ///</summary>
-    public interface IListProfileNotificationsPaginator
+    public partial interface IListProfileNotificationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

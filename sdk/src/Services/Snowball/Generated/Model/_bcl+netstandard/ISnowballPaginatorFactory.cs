@@ -24,7 +24,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Paginators for the Snowball service
     ///</summary>
-    public interface ISnowballPaginatorFactory
+    public partial interface ISnowballPaginatorFactory
     {
 
         /// <summary>

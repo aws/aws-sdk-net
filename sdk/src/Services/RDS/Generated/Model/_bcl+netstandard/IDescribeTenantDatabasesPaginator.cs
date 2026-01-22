@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeTenantDatabases operation
     ///</summary>
-    public interface IDescribeTenantDatabasesPaginator
+    public partial interface IDescribeTenantDatabasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

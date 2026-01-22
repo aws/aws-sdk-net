@@ -27,7 +27,7 @@ namespace Amazon.PartnerCentralChannel.Model
     /// <summary>
     /// Paginators for the PartnerCentralChannel service
     ///</summary>
-    public class PartnerCentralChannelPaginatorFactory : IPartnerCentralChannelPaginatorFactory
+    public partial class PartnerCentralChannelPaginatorFactory : IPartnerCentralChannelPaginatorFactory
     {
         private readonly IAmazonPartnerCentralChannel client;
 

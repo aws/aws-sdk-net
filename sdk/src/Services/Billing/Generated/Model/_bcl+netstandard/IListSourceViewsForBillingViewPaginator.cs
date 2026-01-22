@@ -24,7 +24,7 @@ namespace Amazon.Billing.Model
     /// <summary>
     /// Paginator for the ListSourceViewsForBillingView operation
     ///</summary>
-    public interface IListSourceViewsForBillingViewPaginator
+    public partial interface IListSourceViewsForBillingViewPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

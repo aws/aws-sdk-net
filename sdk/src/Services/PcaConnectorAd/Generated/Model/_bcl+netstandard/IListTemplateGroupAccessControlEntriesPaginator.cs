@@ -24,7 +24,7 @@ namespace Amazon.PcaConnectorAd.Model
     /// <summary>
     /// Paginator for the ListTemplateGroupAccessControlEntries operation
     ///</summary>
-    public interface IListTemplateGroupAccessControlEntriesPaginator
+    public partial interface IListTemplateGroupAccessControlEntriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the DescribeRemediationExecutionStatus operation
     ///</summary>
-    public interface IDescribeRemediationExecutionStatusPaginator
+    public partial interface IDescribeRemediationExecutionStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the ListAssociationVersions operation
     ///</summary>
-    public interface IListAssociationVersionsPaginator
+    public partial interface IListAssociationVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

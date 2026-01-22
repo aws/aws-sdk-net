@@ -24,7 +24,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Paginator for the GetVpcLinks operation
     ///</summary>
-    public interface IGetVpcLinksPaginator
+    public partial interface IGetVpcLinksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

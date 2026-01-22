@@ -27,7 +27,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginators for the CloudFront service
     ///</summary>
-    public class CloudFrontPaginatorFactory : ICloudFrontPaginatorFactory
+    public partial class CloudFrontPaginatorFactory : ICloudFrontPaginatorFactory
     {
         private readonly IAmazonCloudFront client;
 

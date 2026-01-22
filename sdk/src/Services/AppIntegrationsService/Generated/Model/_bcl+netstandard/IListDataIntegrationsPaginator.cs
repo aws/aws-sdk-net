@@ -24,7 +24,7 @@ namespace Amazon.AppIntegrationsService.Model
     /// <summary>
     /// Paginator for the ListDataIntegrations operation
     ///</summary>
-    public interface IListDataIntegrationsPaginator
+    public partial interface IListDataIntegrationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

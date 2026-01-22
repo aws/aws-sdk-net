@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the DescribeUpdateDirectory operation
     ///</summary>
-    public interface IDescribeUpdateDirectoryPaginator
+    public partial interface IDescribeUpdateDirectoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

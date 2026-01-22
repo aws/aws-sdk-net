@@ -24,7 +24,7 @@ namespace Amazon.DataPipeline.Model
     /// <summary>
     /// Paginator for the QueryObjects operation
     ///</summary>
-    public interface IQueryObjectsPaginator
+    public partial interface IQueryObjectsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

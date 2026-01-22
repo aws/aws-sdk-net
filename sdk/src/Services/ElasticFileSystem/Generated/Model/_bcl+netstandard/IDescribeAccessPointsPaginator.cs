@@ -24,7 +24,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Paginator for the DescribeAccessPoints operation
     ///</summary>
-    public interface IDescribeAccessPointsPaginator
+    public partial interface IDescribeAccessPointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

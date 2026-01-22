@@ -24,7 +24,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Paginator for the ListSubscriptionsByTopic operation
     ///</summary>
-    public interface IListSubscriptionsByTopicPaginator
+    public partial interface IListSubscriptionsByTopicPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

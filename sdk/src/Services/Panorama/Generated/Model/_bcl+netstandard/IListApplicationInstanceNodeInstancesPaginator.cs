@@ -24,7 +24,7 @@ namespace Amazon.Panorama.Model
     /// <summary>
     /// Paginator for the ListApplicationInstanceNodeInstances operation
     ///</summary>
-    public interface IListApplicationInstanceNodeInstancesPaginator
+    public partial interface IListApplicationInstanceNodeInstancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

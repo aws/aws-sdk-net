@@ -24,7 +24,7 @@ namespace Amazon.VPCLattice.Model
     /// <summary>
     /// Paginator for the ListDomainVerifications operation
     ///</summary>
-    public interface IListDomainVerificationsPaginator
+    public partial interface IListDomainVerificationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

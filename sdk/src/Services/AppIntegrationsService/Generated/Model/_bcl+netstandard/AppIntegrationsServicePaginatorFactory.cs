@@ -27,7 +27,7 @@ namespace Amazon.AppIntegrationsService.Model
     /// <summary>
     /// Paginators for the AppIntegrationsService service
     ///</summary>
-    public class AppIntegrationsServicePaginatorFactory : IAppIntegrationsServicePaginatorFactory
+    public partial class AppIntegrationsServicePaginatorFactory : IAppIntegrationsServicePaginatorFactory
     {
         private readonly IAmazonAppIntegrationsService client;
 

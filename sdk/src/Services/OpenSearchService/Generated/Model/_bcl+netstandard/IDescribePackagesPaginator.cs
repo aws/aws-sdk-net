@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginator for the DescribePackages operation
     ///</summary>
-    public interface IDescribePackagesPaginator
+    public partial interface IDescribePackagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

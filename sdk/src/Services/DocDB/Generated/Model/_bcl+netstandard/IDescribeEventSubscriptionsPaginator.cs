@@ -24,7 +24,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Paginator for the DescribeEventSubscriptions operation
     ///</summary>
-    public interface IDescribeEventSubscriptionsPaginator
+    public partial interface IDescribeEventSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

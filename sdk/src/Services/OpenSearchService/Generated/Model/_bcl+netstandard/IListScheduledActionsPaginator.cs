@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginator for the ListScheduledActions operation
     ///</summary>
-    public interface IListScheduledActionsPaginator
+    public partial interface IListScheduledActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

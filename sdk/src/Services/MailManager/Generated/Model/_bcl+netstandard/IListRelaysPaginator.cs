@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginator for the ListRelays operation
     ///</summary>
-    public interface IListRelaysPaginator
+    public partial interface IListRelaysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

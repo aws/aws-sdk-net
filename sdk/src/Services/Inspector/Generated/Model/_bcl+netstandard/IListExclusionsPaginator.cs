@@ -24,7 +24,7 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Paginator for the ListExclusions operation
     ///</summary>
-    public interface IListExclusionsPaginator
+    public partial interface IListExclusionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

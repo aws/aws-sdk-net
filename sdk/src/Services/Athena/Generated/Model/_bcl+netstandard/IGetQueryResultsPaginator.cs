@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the GetQueryResults operation
     ///</summary>
-    public interface IGetQueryResultsPaginator
+    public partial interface IGetQueryResultsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

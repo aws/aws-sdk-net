@@ -24,7 +24,7 @@ namespace Amazon.NetworkFlowMonitor.Model
     /// <summary>
     /// Paginator for the ListScopes operation
     ///</summary>
-    public interface IListScopesPaginator
+    public partial interface IListScopesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

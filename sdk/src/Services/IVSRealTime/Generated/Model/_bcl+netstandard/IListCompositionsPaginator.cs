@@ -24,7 +24,7 @@ namespace Amazon.IVSRealTime.Model
     /// <summary>
     /// Paginator for the ListCompositions operation
     ///</summary>
-    public interface IListCompositionsPaginator
+    public partial interface IListCompositionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

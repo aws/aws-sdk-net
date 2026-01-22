@@ -24,7 +24,7 @@ namespace Amazon.Ivschat.Model
     /// <summary>
     /// Paginator for the ListLoggingConfigurations operation
     ///</summary>
-    public interface IListLoggingConfigurationsPaginator
+    public partial interface IListLoggingConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

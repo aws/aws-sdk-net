@@ -24,7 +24,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// <summary>
     /// Paginator for the ListViews operation
     ///</summary>
-    public interface IListViewsPaginator
+    public partial interface IListViewsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SSMQuickSetup.Model
     /// <summary>
     /// Paginator for the ListConfigurationManagers operation
     ///</summary>
-    public interface IListConfigurationManagersPaginator
+    public partial interface IListConfigurationManagersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

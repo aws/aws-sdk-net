@@ -24,7 +24,7 @@ namespace Amazon.PinpointEmail.Model
     /// <summary>
     /// Paginator for the ListEmailIdentities operation
     ///</summary>
-    public interface IListEmailIdentitiesPaginator
+    public partial interface IListEmailIdentitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

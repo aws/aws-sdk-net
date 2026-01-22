@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// <summary>
     /// Paginators for the MigrationHubRefactorSpaces service
     ///</summary>
-    public interface IMigrationHubRefactorSpacesPaginatorFactory
+    public partial interface IMigrationHubRefactorSpacesPaginatorFactory
     {
 
         /// <summary>

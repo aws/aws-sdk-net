@@ -24,7 +24,7 @@ namespace Amazon.ECRPublic.Model
     /// <summary>
     /// Paginator for the DescribeRegistries operation
     ///</summary>
-    public interface IDescribeRegistriesPaginator
+    public partial interface IDescribeRegistriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

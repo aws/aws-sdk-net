@@ -24,7 +24,7 @@ namespace Amazon.Ivschat.Model
     /// <summary>
     /// Paginators for the Ivschat service
     ///</summary>
-    public interface IIvschatPaginatorFactory
+    public partial interface IIvschatPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Paginator for the ListWorkflows operation
     ///</summary>
-    public interface IListWorkflowsPaginator
+    public partial interface IListWorkflowsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

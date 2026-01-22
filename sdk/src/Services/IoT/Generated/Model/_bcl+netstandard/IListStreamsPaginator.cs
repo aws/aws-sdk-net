@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListStreams operation
     ///</summary>
-    public interface IListStreamsPaginator
+    public partial interface IListStreamsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

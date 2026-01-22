@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetVpnConnectionDeviceTypes operation
     ///</summary>
-    public interface IGetVpnConnectionDeviceTypesPaginator
+    public partial interface IGetVpnConnectionDeviceTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

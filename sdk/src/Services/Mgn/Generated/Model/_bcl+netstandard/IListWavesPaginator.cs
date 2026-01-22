@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginator for the ListWaves operation
     ///</summary>
-    public interface IListWavesPaginator
+    public partial interface IListWavesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

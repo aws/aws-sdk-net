@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginator for the GetTableObjects operation
     ///</summary>
-    public interface IGetTableObjectsPaginator
+    public partial interface IGetTableObjectsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

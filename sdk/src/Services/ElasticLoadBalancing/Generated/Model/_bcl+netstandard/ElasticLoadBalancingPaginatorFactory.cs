@@ -27,7 +27,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Paginators for the ElasticLoadBalancing service
     ///</summary>
-    public class ElasticLoadBalancingPaginatorFactory : IElasticLoadBalancingPaginatorFactory
+    public partial class ElasticLoadBalancingPaginatorFactory : IElasticLoadBalancingPaginatorFactory
     {
         private readonly IAmazonElasticLoadBalancing client;
 

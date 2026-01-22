@@ -24,7 +24,7 @@ namespace Amazon.Kafka.Model
     /// <summary>
     /// Paginator for the ListKafkaVersions operation
     ///</summary>
-    public interface IListKafkaVersionsPaginator
+    public partial interface IListKafkaVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

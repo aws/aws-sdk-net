@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetTriggers operation
     ///</summary>
-    public interface IGetTriggersPaginator
+    public partial interface IGetTriggersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

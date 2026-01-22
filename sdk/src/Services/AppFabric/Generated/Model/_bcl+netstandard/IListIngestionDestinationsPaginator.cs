@@ -24,7 +24,7 @@ namespace Amazon.AppFabric.Model
     /// <summary>
     /// Paginator for the ListIngestionDestinations operation
     ///</summary>
-    public interface IListIngestionDestinationsPaginator
+    public partial interface IListIngestionDestinationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Paginator for the ListSMSSandboxPhoneNumbers operation
     ///</summary>
-    public interface IListSMSSandboxPhoneNumbersPaginator
+    public partial interface IListSMSSandboxPhoneNumbersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Paginator for the ListClosedWorkflowExecutions operation
     ///</summary>
-    public interface IListClosedWorkflowExecutionsPaginator
+    public partial interface IListClosedWorkflowExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

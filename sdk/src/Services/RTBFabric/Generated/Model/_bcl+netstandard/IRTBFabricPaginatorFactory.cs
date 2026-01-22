@@ -24,7 +24,7 @@ namespace Amazon.RTBFabric.Model
     /// <summary>
     /// Paginators for the RTBFabric service
     ///</summary>
-    public interface IRTBFabricPaginatorFactory
+    public partial interface IRTBFabricPaginatorFactory
     {
 
         /// <summary>

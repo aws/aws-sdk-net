@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetUnfilteredPartitionsMetadata operation
     ///</summary>
-    public interface IGetUnfilteredPartitionsMetadataPaginator
+    public partial interface IGetUnfilteredPartitionsMetadataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

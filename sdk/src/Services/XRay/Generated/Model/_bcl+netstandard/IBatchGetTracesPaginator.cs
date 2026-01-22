@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the BatchGetTraces operation
     ///</summary>
-    public interface IBatchGetTracesPaginator
+    public partial interface IBatchGetTracesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Paginators for the CloudDirectory service
     ///</summary>
-    public class CloudDirectoryPaginatorFactory : ICloudDirectoryPaginatorFactory
+    public partial class CloudDirectoryPaginatorFactory : ICloudDirectoryPaginatorFactory
     {
         private readonly IAmazonCloudDirectory client;
 

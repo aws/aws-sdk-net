@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginator for the ListSegmentDefinitions operation
     ///</summary>
-    public interface IListSegmentDefinitionsPaginator
+    public partial interface IListSegmentDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

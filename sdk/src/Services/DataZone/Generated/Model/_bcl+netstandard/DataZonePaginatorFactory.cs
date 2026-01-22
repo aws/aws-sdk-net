@@ -27,7 +27,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginators for the DataZone service
     ///</summary>
-    public class DataZonePaginatorFactory : IDataZonePaginatorFactory
+    public partial class DataZonePaginatorFactory : IDataZonePaginatorFactory
     {
         private readonly IAmazonDataZone client;
 

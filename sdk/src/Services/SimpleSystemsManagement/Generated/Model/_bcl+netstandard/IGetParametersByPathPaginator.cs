@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the GetParametersByPath operation
     ///</summary>
-    public interface IGetParametersByPathPaginator
+    public partial interface IGetParametersByPathPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

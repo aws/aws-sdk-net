@@ -24,7 +24,7 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Paginator for the ListGroupResources operation
     ///</summary>
-    public interface IListGroupResourcesPaginator
+    public partial interface IListGroupResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

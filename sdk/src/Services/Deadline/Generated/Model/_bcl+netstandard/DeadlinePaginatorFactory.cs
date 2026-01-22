@@ -27,7 +27,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginators for the Deadline service
     ///</summary>
-    public class DeadlinePaginatorFactory : IDeadlinePaginatorFactory
+    public partial class DeadlinePaginatorFactory : IDeadlinePaginatorFactory
     {
         private readonly IAmazonDeadline client;
 

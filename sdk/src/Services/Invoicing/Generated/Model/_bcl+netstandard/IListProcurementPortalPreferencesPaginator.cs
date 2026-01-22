@@ -24,7 +24,7 @@ namespace Amazon.Invoicing.Model
     /// <summary>
     /// Paginator for the ListProcurementPortalPreferences operation
     ///</summary>
-    public interface IListProcurementPortalPreferencesPaginator
+    public partial interface IListProcurementPortalPreferencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

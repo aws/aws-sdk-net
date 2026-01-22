@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeIamInstanceProfileAssociations operation
     ///</summary>
-    public interface IDescribeIamInstanceProfileAssociationsPaginator
+    public partial interface IDescribeIamInstanceProfileAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

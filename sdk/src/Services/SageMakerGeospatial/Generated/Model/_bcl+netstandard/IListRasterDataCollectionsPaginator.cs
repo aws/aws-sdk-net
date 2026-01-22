@@ -24,7 +24,7 @@ namespace Amazon.SageMakerGeospatial.Model
     /// <summary>
     /// Paginator for the ListRasterDataCollections operation
     ///</summary>
-    public interface IListRasterDataCollectionsPaginator
+    public partial interface IListRasterDataCollectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

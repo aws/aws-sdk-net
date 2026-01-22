@@ -27,7 +27,7 @@ namespace Amazon.ConnectContactLens.Model
     /// <summary>
     /// Paginators for the ConnectContactLens service
     ///</summary>
-    public class ConnectContactLensPaginatorFactory : IConnectContactLensPaginatorFactory
+    public partial class ConnectContactLensPaginatorFactory : IConnectContactLensPaginatorFactory
     {
         private readonly IAmazonConnectContactLens client;
 

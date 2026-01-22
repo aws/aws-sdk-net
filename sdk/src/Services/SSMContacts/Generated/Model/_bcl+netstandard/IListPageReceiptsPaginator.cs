@@ -24,7 +24,7 @@ namespace Amazon.SSMContacts.Model
     /// <summary>
     /// Paginator for the ListPageReceipts operation
     ///</summary>
-    public interface IListPageReceiptsPaginator
+    public partial interface IListPageReceiptsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

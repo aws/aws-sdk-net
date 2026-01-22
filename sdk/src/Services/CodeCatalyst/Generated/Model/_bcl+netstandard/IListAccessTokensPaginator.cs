@@ -24,7 +24,7 @@ namespace Amazon.CodeCatalyst.Model
     /// <summary>
     /// Paginator for the ListAccessTokens operation
     ///</summary>
-    public interface IListAccessTokensPaginator
+    public partial interface IListAccessTokensPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

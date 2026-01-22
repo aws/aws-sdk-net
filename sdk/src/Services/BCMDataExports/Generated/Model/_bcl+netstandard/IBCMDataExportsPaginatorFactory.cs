@@ -24,7 +24,7 @@ namespace Amazon.BCMDataExports.Model
     /// <summary>
     /// Paginators for the BCMDataExports service
     ///</summary>
-    public interface IBCMDataExportsPaginatorFactory
+    public partial interface IBCMDataExportsPaginatorFactory
     {
 
         /// <summary>

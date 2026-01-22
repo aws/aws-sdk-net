@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeIpamScopes operation
     ///</summary>
-    public interface IDescribeIpamScopesPaginator
+    public partial interface IDescribeIpamScopesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

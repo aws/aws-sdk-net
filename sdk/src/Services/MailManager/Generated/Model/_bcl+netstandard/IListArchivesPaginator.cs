@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginator for the ListArchives operation
     ///</summary>
-    public interface IListArchivesPaginator
+    public partial interface IListArchivesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

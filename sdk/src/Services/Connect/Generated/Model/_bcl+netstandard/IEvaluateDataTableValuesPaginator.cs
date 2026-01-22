@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the EvaluateDataTableValues operation
     ///</summary>
-    public interface IEvaluateDataTableValuesPaginator
+    public partial interface IEvaluateDataTableValuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

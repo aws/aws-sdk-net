@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginator for the ListSolutions operation
     ///</summary>
-    public interface IListSolutionsPaginator
+    public partial interface IListSolutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

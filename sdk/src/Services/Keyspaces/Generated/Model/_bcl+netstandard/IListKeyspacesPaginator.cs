@@ -24,7 +24,7 @@ namespace Amazon.Keyspaces.Model
     /// <summary>
     /// Paginator for the ListKeyspaces operation
     ///</summary>
-    public interface IListKeyspacesPaginator
+    public partial interface IListKeyspacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

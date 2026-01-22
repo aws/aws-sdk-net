@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListImpersonationRoles operation
     ///</summary>
-    public interface IListImpersonationRolesPaginator
+    public partial interface IListImpersonationRolesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

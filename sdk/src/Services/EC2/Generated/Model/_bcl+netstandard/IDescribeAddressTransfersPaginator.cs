@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeAddressTransfers operation
     ///</summary>
-    public interface IDescribeAddressTransfersPaginator
+    public partial interface IDescribeAddressTransfersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

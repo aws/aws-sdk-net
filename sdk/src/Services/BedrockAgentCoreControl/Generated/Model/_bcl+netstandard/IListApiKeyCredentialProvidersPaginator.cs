@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Paginator for the ListApiKeyCredentialProviders operation
     ///</summary>
-    public interface IListApiKeyCredentialProvidersPaginator
+    public partial interface IListApiKeyCredentialProvidersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

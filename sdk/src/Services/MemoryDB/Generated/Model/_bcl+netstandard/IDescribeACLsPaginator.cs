@@ -24,7 +24,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginator for the DescribeACLs operation
     ///</summary>
-    public interface IDescribeACLsPaginator
+    public partial interface IDescribeACLsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

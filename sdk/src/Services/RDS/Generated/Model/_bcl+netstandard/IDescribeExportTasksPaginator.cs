@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeExportTasks operation
     ///</summary>
-    public interface IDescribeExportTasksPaginator
+    public partial interface IDescribeExportTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

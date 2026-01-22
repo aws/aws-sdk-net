@@ -24,7 +24,7 @@ namespace Amazon.ConnectWisdomService.Model
     /// <summary>
     /// Paginators for the ConnectWisdomService service
     ///</summary>
-    public interface IConnectWisdomServicePaginatorFactory
+    public partial interface IConnectWisdomServicePaginatorFactory
     {
 
         /// <summary>

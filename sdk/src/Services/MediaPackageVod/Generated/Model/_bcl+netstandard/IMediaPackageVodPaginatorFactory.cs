@@ -24,7 +24,7 @@ namespace Amazon.MediaPackageVod.Model
     /// <summary>
     /// Paginators for the MediaPackageVod service
     ///</summary>
-    public interface IMediaPackageVodPaginatorFactory
+    public partial interface IMediaPackageVodPaginatorFactory
     {
 
         /// <summary>

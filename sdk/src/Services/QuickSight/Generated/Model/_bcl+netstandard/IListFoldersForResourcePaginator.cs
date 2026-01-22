@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListFoldersForResource operation
     ///</summary>
-    public interface IListFoldersForResourcePaginator
+    public partial interface IListFoldersForResourcePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

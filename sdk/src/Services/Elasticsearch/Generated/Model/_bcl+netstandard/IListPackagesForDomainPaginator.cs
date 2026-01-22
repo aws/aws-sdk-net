@@ -24,7 +24,7 @@ namespace Amazon.Elasticsearch.Model
     /// <summary>
     /// Paginator for the ListPackagesForDomain operation
     ///</summary>
-    public interface IListPackagesForDomainPaginator
+    public partial interface IListPackagesForDomainPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

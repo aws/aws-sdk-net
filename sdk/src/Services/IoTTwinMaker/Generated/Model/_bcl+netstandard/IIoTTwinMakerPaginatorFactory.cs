@@ -24,7 +24,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// <summary>
     /// Paginators for the IoTTwinMaker service
     ///</summary>
-    public interface IIoTTwinMakerPaginatorFactory
+    public partial interface IIoTTwinMakerPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginators for the MediaLive service
     ///</summary>
-    public interface IMediaLivePaginatorFactory
+    public partial interface IMediaLivePaginatorFactory
     {
 
         /// <summary>

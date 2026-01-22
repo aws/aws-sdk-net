@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginator for the GetSimilarProfiles operation
     ///</summary>
-    public interface IGetSimilarProfilesPaginator
+    public partial interface IGetSimilarProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Paginator for the ListAutomatedReasoningPolicyBuildWorkflows operation
     ///</summary>
-    public interface IListAutomatedReasoningPolicyBuildWorkflowsPaginator
+    public partial interface IListAutomatedReasoningPolicyBuildWorkflowsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

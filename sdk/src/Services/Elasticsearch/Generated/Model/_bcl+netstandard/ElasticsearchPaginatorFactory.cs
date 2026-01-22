@@ -27,7 +27,7 @@ namespace Amazon.Elasticsearch.Model
     /// <summary>
     /// Paginators for the Elasticsearch service
     ///</summary>
-    public class ElasticsearchPaginatorFactory : IElasticsearchPaginatorFactory
+    public partial class ElasticsearchPaginatorFactory : IElasticsearchPaginatorFactory
     {
         private readonly IAmazonElasticsearch client;
 

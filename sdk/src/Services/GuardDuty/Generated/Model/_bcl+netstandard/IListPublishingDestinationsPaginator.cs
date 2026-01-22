@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the ListPublishingDestinations operation
     ///</summary>
-    public interface IListPublishingDestinationsPaginator
+    public partial interface IListPublishingDestinationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

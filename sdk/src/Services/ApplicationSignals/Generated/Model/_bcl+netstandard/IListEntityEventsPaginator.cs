@@ -24,7 +24,7 @@ namespace Amazon.ApplicationSignals.Model
     /// <summary>
     /// Paginator for the ListEntityEvents operation
     ///</summary>
-    public interface IListEntityEventsPaginator
+    public partial interface IListEntityEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

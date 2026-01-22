@@ -24,7 +24,7 @@ namespace Amazon.ManagedGrafana.Model
     /// <summary>
     /// Paginators for the ManagedGrafana service
     ///</summary>
-    public interface IManagedGrafanaPaginatorFactory
+    public partial interface IManagedGrafanaPaginatorFactory
     {
 
         /// <summary>

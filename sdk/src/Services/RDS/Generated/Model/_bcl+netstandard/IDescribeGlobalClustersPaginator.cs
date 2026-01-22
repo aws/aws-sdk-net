@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeGlobalClusters operation
     ///</summary>
-    public interface IDescribeGlobalClustersPaginator
+    public partial interface IDescribeGlobalClustersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

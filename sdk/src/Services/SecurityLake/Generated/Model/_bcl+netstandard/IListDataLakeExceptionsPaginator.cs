@@ -24,7 +24,7 @@ namespace Amazon.SecurityLake.Model
     /// <summary>
     /// Paginator for the ListDataLakeExceptions operation
     ///</summary>
-    public interface IListDataLakeExceptionsPaginator
+    public partial interface IListDataLakeExceptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

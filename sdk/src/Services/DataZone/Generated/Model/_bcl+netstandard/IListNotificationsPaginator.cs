@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListNotifications operation
     ///</summary>
-    public interface IListNotificationsPaginator
+    public partial interface IListNotificationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

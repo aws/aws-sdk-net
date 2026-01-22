@@ -24,7 +24,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Paginator for the GetBuiltinIntents operation
     ///</summary>
-    public interface IGetBuiltinIntentsPaginator
+    public partial interface IGetBuiltinIntentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBSnapshots operation
     ///</summary>
-    public interface IDescribeDBSnapshotsPaginator
+    public partial interface IDescribeDBSnapshotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// <summary>
     /// Paginators for the KinesisAnalyticsV2 service
     ///</summary>
-    public class KinesisAnalyticsV2PaginatorFactory : IKinesisAnalyticsV2PaginatorFactory
+    public partial class KinesisAnalyticsV2PaginatorFactory : IKinesisAnalyticsV2PaginatorFactory
     {
         private readonly IAmazonKinesisAnalyticsV2 client;
 

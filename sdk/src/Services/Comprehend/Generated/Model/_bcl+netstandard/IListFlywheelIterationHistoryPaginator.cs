@@ -24,7 +24,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Paginator for the ListFlywheelIterationHistory operation
     ///</summary>
-    public interface IListFlywheelIterationHistoryPaginator
+    public partial interface IListFlywheelIterationHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

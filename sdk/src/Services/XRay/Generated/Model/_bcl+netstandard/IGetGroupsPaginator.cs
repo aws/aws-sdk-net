@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the GetGroups operation
     ///</summary>
-    public interface IGetGroupsPaginator
+    public partial interface IGetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

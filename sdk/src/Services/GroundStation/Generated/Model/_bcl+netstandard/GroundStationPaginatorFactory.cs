@@ -27,7 +27,7 @@ namespace Amazon.GroundStation.Model
     /// <summary>
     /// Paginators for the GroundStation service
     ///</summary>
-    public class GroundStationPaginatorFactory : IGroundStationPaginatorFactory
+    public partial class GroundStationPaginatorFactory : IGroundStationPaginatorFactory
     {
         private readonly IAmazonGroundStation client;
 

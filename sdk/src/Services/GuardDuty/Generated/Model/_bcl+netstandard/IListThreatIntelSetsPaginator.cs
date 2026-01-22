@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the ListThreatIntelSets operation
     ///</summary>
-    public interface IListThreatIntelSetsPaginator
+    public partial interface IListThreatIntelSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

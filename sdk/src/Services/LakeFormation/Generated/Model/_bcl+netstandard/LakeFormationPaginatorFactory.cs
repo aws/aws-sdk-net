@@ -27,7 +27,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginators for the LakeFormation service
     ///</summary>
-    public class LakeFormationPaginatorFactory : ILakeFormationPaginatorFactory
+    public partial class LakeFormationPaginatorFactory : ILakeFormationPaginatorFactory
     {
         private readonly IAmazonLakeFormation client;
 

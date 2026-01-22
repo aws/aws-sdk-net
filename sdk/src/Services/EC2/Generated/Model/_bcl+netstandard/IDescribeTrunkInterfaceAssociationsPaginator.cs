@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeTrunkInterfaceAssociations operation
     ///</summary>
-    public interface IDescribeTrunkInterfaceAssociationsPaginator
+    public partial interface IDescribeTrunkInterfaceAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

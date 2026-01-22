@@ -24,7 +24,7 @@ namespace Amazon.Detective.Model
     /// <summary>
     /// Paginator for the ListOrganizationAdminAccounts operation
     ///</summary>
-    public interface IListOrganizationAdminAccountsPaginator
+    public partial interface IListOrganizationAdminAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginators for the Mgn service
     ///</summary>
-    public interface IMgnPaginatorFactory
+    public partial interface IMgnPaginatorFactory
     {
 
         /// <summary>

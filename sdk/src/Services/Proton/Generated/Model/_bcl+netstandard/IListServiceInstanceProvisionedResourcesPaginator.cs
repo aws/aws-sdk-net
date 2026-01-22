@@ -24,7 +24,7 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Paginator for the ListServiceInstanceProvisionedResources operation
     ///</summary>
-    public interface IListServiceInstanceProvisionedResourcesPaginator
+    public partial interface IListServiceInstanceProvisionedResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

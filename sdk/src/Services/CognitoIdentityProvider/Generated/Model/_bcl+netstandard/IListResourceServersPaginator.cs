@@ -24,7 +24,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Paginator for the ListResourceServers operation
     ///</summary>
-    public interface IListResourceServersPaginator
+    public partial interface IListResourceServersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

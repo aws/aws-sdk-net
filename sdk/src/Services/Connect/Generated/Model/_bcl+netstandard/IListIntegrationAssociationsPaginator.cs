@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListIntegrationAssociations operation
     ///</summary>
-    public interface IListIntegrationAssociationsPaginator
+    public partial interface IListIntegrationAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

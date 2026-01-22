@@ -24,7 +24,7 @@ namespace Amazon.MWAA.Model
     /// <summary>
     /// Paginators for the MWAA service
     ///</summary>
-    public interface IMWAAPaginatorFactory
+    public partial interface IMWAAPaginatorFactory
     {
 
         /// <summary>

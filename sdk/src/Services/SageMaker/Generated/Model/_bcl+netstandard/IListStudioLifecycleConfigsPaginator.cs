@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListStudioLifecycleConfigs operation
     ///</summary>
-    public interface IListStudioLifecycleConfigsPaginator
+    public partial interface IListStudioLifecycleConfigsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

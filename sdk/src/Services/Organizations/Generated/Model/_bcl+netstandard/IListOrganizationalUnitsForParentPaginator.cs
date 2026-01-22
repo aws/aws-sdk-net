@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListOrganizationalUnitsForParent operation
     ///</summary>
-    public interface IListOrganizationalUnitsForParentPaginator
+    public partial interface IListOrganizationalUnitsForParentPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

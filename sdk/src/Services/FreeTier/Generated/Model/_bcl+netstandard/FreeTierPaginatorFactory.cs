@@ -27,7 +27,7 @@ namespace Amazon.FreeTier.Model
     /// <summary>
     /// Paginators for the FreeTier service
     ///</summary>
-    public class FreeTierPaginatorFactory : IFreeTierPaginatorFactory
+    public partial class FreeTierPaginatorFactory : IFreeTierPaginatorFactory
     {
         private readonly IAmazonFreeTier client;
 

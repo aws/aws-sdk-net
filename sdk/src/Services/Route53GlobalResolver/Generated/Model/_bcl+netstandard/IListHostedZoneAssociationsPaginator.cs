@@ -24,7 +24,7 @@ namespace Amazon.Route53GlobalResolver.Model
     /// <summary>
     /// Paginator for the ListHostedZoneAssociations operation
     ///</summary>
-    public interface IListHostedZoneAssociationsPaginator
+    public partial interface IListHostedZoneAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

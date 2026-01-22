@@ -24,7 +24,7 @@ namespace Amazon.TrustedAdvisor.Model
     /// <summary>
     /// Paginator for the ListChecks operation
     ///</summary>
-    public interface IListChecksPaginator
+    public partial interface IListChecksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

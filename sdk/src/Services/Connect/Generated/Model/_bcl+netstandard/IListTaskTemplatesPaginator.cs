@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListTaskTemplates operation
     ///</summary>
-    public interface IListTaskTemplatesPaginator
+    public partial interface IListTaskTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

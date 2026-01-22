@@ -24,7 +24,7 @@ namespace Amazon.CodeStarconnections.Model
     /// <summary>
     /// Paginator for the ListRepositoryLinks operation
     ///</summary>
-    public interface IListRepositoryLinksPaginator
+    public partial interface IListRepositoryLinksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

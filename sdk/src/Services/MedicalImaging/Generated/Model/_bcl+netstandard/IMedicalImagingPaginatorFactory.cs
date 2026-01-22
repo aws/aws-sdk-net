@@ -24,7 +24,7 @@ namespace Amazon.MedicalImaging.Model
     /// <summary>
     /// Paginators for the MedicalImaging service
     ///</summary>
-    public interface IMedicalImagingPaginatorFactory
+    public partial interface IMedicalImagingPaginatorFactory
     {
 
         /// <summary>

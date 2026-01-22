@@ -24,7 +24,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Paginator for the ListRestoreTestingSelections operation
     ///</summary>
-    public interface IListRestoreTestingSelectionsPaginator
+    public partial interface IListRestoreTestingSelectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

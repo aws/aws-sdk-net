@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListModelCardExportJobs operation
     ///</summary>
-    public interface IListModelCardExportJobsPaginator
+    public partial interface IListModelCardExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

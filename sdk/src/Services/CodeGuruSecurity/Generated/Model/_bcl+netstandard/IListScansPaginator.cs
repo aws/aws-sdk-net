@@ -24,7 +24,7 @@ namespace Amazon.CodeGuruSecurity.Model
     /// <summary>
     /// Paginator for the ListScans operation
     ///</summary>
-    public interface IListScansPaginator
+    public partial interface IListScansPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

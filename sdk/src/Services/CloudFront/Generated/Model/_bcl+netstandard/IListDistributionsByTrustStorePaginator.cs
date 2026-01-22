@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListDistributionsByTrustStore operation
     ///</summary>
-    public interface IListDistributionsByTrustStorePaginator
+    public partial interface IListDistributionsByTrustStorePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

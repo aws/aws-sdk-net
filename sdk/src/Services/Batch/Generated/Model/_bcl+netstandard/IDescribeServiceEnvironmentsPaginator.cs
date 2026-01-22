@@ -24,7 +24,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Paginator for the DescribeServiceEnvironments operation
     ///</summary>
-    public interface IDescribeServiceEnvironmentsPaginator
+    public partial interface IDescribeServiceEnvironmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

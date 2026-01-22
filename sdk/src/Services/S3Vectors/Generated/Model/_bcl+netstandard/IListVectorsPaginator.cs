@@ -24,7 +24,7 @@ namespace Amazon.S3Vectors.Model
     /// <summary>
     /// Paginator for the ListVectors operation
     ///</summary>
-    public interface IListVectorsPaginator
+    public partial interface IListVectorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

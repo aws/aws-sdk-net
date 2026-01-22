@@ -24,7 +24,7 @@ namespace Amazon.SsmSap.Model
     /// <summary>
     /// Paginator for the ListSubCheckResults operation
     ///</summary>
-    public interface IListSubCheckResultsPaginator
+    public partial interface IListSubCheckResultsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Paginator for the ListFileShares operation
     ///</summary>
-    public interface IListFileSharesPaginator
+    public partial interface IListFileSharesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

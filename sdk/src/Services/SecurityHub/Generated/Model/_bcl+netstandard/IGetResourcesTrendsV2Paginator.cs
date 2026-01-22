@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the GetResourcesTrendsV2 operation
     ///</summary>
-    public interface IGetResourcesTrendsV2Paginator
+    public partial interface IGetResourcesTrendsV2Paginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

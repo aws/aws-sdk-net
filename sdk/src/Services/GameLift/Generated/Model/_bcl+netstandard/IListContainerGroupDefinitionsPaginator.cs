@@ -24,7 +24,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginator for the ListContainerGroupDefinitions operation
     ///</summary>
-    public interface IListContainerGroupDefinitionsPaginator
+    public partial interface IListContainerGroupDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

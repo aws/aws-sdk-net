@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListAccountsWithInvalidEffectivePolicy operation
     ///</summary>
-    public interface IListAccountsWithInvalidEffectivePolicyPaginator
+    public partial interface IListAccountsWithInvalidEffectivePolicyPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

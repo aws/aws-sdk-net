@@ -24,7 +24,7 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Paginators for the CloudWatch service
     ///</summary>
-    public interface ICloudWatchPaginatorFactory
+    public partial interface ICloudWatchPaginatorFactory
     {
 
         /// <summary>

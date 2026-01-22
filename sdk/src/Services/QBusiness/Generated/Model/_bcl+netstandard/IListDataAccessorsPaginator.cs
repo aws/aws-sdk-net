@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginator for the ListDataAccessors operation
     ///</summary>
-    public interface IListDataAccessorsPaginator
+    public partial interface IListDataAccessorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

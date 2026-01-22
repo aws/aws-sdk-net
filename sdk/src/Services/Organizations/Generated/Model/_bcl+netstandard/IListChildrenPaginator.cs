@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListChildren operation
     ///</summary>
-    public interface IListChildrenPaginator
+    public partial interface IListChildrenPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SSMContacts.Model
     /// <summary>
     /// Paginator for the ListRotationShifts operation
     ///</summary>
-    public interface IListRotationShiftsPaginator
+    public partial interface IListRotationShiftsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

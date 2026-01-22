@@ -24,7 +24,7 @@ namespace Amazon.Repostspace.Model
     /// <summary>
     /// Paginators for the Repostspace service
     ///</summary>
-    public interface IRepostspacePaginatorFactory
+    public partial interface IRepostspacePaginatorFactory
     {
 
         /// <summary>

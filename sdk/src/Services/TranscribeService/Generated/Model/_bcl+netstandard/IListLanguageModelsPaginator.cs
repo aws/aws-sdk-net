@@ -24,7 +24,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Paginator for the ListLanguageModels operation
     ///</summary>
-    public interface IListLanguageModelsPaginator
+    public partial interface IListLanguageModelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

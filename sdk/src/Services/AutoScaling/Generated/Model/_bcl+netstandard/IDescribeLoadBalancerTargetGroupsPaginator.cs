@@ -24,7 +24,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Paginator for the DescribeLoadBalancerTargetGroups operation
     ///</summary>
-    public interface IDescribeLoadBalancerTargetGroupsPaginator
+    public partial interface IDescribeLoadBalancerTargetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

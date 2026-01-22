@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Paginator for the DescribeLogGroups operation
     ///</summary>
-    public interface IDescribeLogGroupsPaginator
+    public partial interface IDescribeLogGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

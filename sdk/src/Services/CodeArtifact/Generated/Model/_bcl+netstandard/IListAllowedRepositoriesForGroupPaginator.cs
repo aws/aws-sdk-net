@@ -24,7 +24,7 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Paginator for the ListAllowedRepositoriesForGroup operation
     ///</summary>
-    public interface IListAllowedRepositoriesForGroupPaginator
+    public partial interface IListAllowedRepositoriesForGroupPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

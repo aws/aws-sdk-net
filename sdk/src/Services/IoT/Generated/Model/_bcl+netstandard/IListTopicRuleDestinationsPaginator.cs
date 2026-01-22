@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListTopicRuleDestinations operation
     ///</summary>
-    public interface IListTopicRuleDestinationsPaginator
+    public partial interface IListTopicRuleDestinationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

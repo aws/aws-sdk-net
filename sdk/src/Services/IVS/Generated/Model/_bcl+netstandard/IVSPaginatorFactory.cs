@@ -27,7 +27,7 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Paginators for the IVS service
     ///</summary>
-    public class IVSPaginatorFactory : IIVSPaginatorFactory
+    public partial class IVSPaginatorFactory : IIVSPaginatorFactory
     {
         private readonly IAmazonIVS client;
 

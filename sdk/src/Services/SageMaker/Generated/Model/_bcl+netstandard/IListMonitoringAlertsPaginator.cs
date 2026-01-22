@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListMonitoringAlerts operation
     ///</summary>
-    public interface IListMonitoringAlertsPaginator
+    public partial interface IListMonitoringAlertsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// Paginator for the ListCentralizationRulesForOrganization operation
     ///</summary>
-    public interface IListCentralizationRulesForOrganizationPaginator
+    public partial interface IListCentralizationRulesForOrganizationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

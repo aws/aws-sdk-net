@@ -24,7 +24,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Paginators for the CloudTrail service
     ///</summary>
-    public interface ICloudTrailPaginatorFactory
+    public partial interface ICloudTrailPaginatorFactory
     {
 
         /// <summary>

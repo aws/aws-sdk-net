@@ -24,7 +24,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Paginator for the ListTapePools operation
     ///</summary>
-    public interface IListTapePoolsPaginator
+    public partial interface IListTapePoolsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

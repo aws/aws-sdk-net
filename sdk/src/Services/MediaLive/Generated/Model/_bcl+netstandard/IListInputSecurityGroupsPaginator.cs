@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListInputSecurityGroups operation
     ///</summary>
-    public interface IListInputSecurityGroupsPaginator
+    public partial interface IListInputSecurityGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

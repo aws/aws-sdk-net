@@ -24,7 +24,7 @@ namespace Amazon.ARCRegionswitch.Model
     /// <summary>
     /// Paginator for the GetPlanExecution operation
     ///</summary>
-    public interface IGetPlanExecutionPaginator
+    public partial interface IGetPlanExecutionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

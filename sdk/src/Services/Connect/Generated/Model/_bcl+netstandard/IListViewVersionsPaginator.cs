@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListViewVersions operation
     ///</summary>
-    public interface IListViewVersionsPaginator
+    public partial interface IListViewVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

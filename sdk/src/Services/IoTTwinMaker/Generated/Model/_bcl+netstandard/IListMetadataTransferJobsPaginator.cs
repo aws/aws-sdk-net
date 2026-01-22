@@ -24,7 +24,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// <summary>
     /// Paginator for the ListMetadataTransferJobs operation
     ///</summary>
-    public interface IListMetadataTransferJobsPaginator
+    public partial interface IListMetadataTransferJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

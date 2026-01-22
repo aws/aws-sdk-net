@@ -27,7 +27,7 @@ namespace Amazon.IdentityStore.Model
     /// <summary>
     /// Paginators for the IdentityStore service
     ///</summary>
-    public class IdentityStorePaginatorFactory : IIdentityStorePaginatorFactory
+    public partial class IdentityStorePaginatorFactory : IIdentityStorePaginatorFactory
     {
         private readonly IAmazonIdentityStore client;
 

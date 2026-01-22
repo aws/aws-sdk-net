@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeDataShares operation
     ///</summary>
-    public interface IDescribeDataSharesPaginator
+    public partial interface IDescribeDataSharesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the DescribeConfigurationAggregatorSourcesStatus operation
     ///</summary>
-    public interface IDescribeConfigurationAggregatorSourcesStatusPaginator
+    public partial interface IDescribeConfigurationAggregatorSourcesStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginator for the GetClustersForImage operation
     ///</summary>
-    public interface IGetClustersForImagePaginator
+    public partial interface IGetClustersForImagePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginator for the ListLocations operation
     ///</summary>
-    public interface IListLocationsPaginator
+    public partial interface IListLocationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

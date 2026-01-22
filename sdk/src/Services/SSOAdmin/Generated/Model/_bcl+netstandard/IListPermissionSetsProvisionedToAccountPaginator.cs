@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListPermissionSetsProvisionedToAccount operation
     ///</summary>
-    public interface IListPermissionSetsProvisionedToAccountPaginator
+    public partial interface IListPermissionSetsProvisionedToAccountPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

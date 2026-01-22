@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeImages operation
     ///</summary>
-    public interface IDescribeImagesPaginator
+    public partial interface IDescribeImagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

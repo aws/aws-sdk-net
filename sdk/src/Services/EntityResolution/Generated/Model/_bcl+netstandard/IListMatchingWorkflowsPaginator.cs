@@ -24,7 +24,7 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// Paginator for the ListMatchingWorkflows operation
     ///</summary>
-    public interface IListMatchingWorkflowsPaginator
+    public partial interface IListMatchingWorkflowsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

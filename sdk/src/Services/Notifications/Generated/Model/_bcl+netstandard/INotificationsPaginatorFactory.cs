@@ -24,7 +24,7 @@ namespace Amazon.Notifications.Model
     /// <summary>
     /// Paginators for the Notifications service
     ///</summary>
-    public interface INotificationsPaginatorFactory
+    public partial interface INotificationsPaginatorFactory
     {
 
         /// <summary>

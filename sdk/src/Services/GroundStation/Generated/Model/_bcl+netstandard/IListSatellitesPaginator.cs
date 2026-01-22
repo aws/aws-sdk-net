@@ -24,7 +24,7 @@ namespace Amazon.GroundStation.Model
     /// <summary>
     /// Paginator for the ListSatellites operation
     ///</summary>
-    public interface IListSatellitesPaginator
+    public partial interface IListSatellitesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

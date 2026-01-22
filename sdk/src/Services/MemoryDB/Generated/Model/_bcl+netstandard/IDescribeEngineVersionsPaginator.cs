@@ -24,7 +24,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginator for the DescribeEngineVersions operation
     ///</summary>
-    public interface IDescribeEngineVersionsPaginator
+    public partial interface IDescribeEngineVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

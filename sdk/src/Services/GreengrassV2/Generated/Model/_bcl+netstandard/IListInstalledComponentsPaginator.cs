@@ -24,7 +24,7 @@ namespace Amazon.GreengrassV2.Model
     /// <summary>
     /// Paginator for the ListInstalledComponents operation
     ///</summary>
-    public interface IListInstalledComponentsPaginator
+    public partial interface IListInstalledComponentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

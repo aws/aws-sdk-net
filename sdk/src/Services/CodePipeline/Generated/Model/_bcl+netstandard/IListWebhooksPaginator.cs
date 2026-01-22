@@ -24,7 +24,7 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Paginator for the ListWebhooks operation
     ///</summary>
-    public interface IListWebhooksPaginator
+    public partial interface IListWebhooksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

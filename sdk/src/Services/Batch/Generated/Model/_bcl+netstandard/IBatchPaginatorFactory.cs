@@ -24,7 +24,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Paginators for the Batch service
     ///</summary>
-    public interface IBatchPaginatorFactory
+    public partial interface IBatchPaginatorFactory
     {
 
         /// <summary>

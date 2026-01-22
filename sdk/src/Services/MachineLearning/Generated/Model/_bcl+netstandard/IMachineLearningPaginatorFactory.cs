@@ -24,7 +24,7 @@ namespace Amazon.MachineLearning.Model
     /// <summary>
     /// Paginators for the MachineLearning service
     ///</summary>
-    public interface IMachineLearningPaginatorFactory
+    public partial interface IMachineLearningPaginatorFactory
     {
 
         /// <summary>

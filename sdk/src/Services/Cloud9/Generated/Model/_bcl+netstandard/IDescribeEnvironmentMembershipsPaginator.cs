@@ -24,7 +24,7 @@ namespace Amazon.Cloud9.Model
     /// <summary>
     /// Paginator for the DescribeEnvironmentMemberships operation
     ///</summary>
-    public interface IDescribeEnvironmentMembershipsPaginator
+    public partial interface IDescribeEnvironmentMembershipsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

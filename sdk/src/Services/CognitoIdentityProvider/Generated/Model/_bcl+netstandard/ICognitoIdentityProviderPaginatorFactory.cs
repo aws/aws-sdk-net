@@ -24,7 +24,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Paginators for the CognitoIdentityProvider service
     ///</summary>
-    public interface ICognitoIdentityProviderPaginatorFactory
+    public partial interface ICognitoIdentityProviderPaginatorFactory
     {
 
         /// <summary>

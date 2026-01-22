@@ -24,7 +24,7 @@ namespace Amazon.PinpointEmail.Model
     /// <summary>
     /// Paginator for the ListDomainDeliverabilityCampaigns operation
     ///</summary>
-    public interface IListDomainDeliverabilityCampaignsPaginator
+    public partial interface IListDomainDeliverabilityCampaignsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

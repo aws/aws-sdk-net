@@ -24,7 +24,7 @@ namespace Amazon.Route53Profiles.Model
     /// <summary>
     /// Paginator for the ListProfileAssociations operation
     ///</summary>
-    public interface IListProfileAssociationsPaginator
+    public partial interface IListProfileAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

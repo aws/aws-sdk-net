@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesThinClient.Model
     /// <summary>
     /// Paginator for the ListSoftwareSets operation
     ///</summary>
-    public interface IListSoftwareSetsPaginator
+    public partial interface IListSoftwareSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

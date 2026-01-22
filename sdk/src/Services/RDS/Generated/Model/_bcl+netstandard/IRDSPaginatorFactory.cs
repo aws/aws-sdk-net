@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginators for the RDS service
     ///</summary>
-    public interface IRDSPaginatorFactory
+    public partial interface IRDSPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Paginator for the DescribeAddresses operation
     ///</summary>
-    public interface IDescribeAddressesPaginator
+    public partial interface IDescribeAddressesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

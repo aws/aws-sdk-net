@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginator for the ListMetricAttributions operation
     ///</summary>
-    public interface IListMetricAttributionsPaginator
+    public partial interface IListMetricAttributionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

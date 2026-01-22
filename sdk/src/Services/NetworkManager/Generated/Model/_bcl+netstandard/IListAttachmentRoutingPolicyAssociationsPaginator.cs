@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the ListAttachmentRoutingPolicyAssociations operation
     ///</summary>
-    public interface IListAttachmentRoutingPolicyAssociationsPaginator
+    public partial interface IListAttachmentRoutingPolicyAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

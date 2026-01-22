@@ -24,7 +24,7 @@ namespace Amazon.ResilienceHub.Model
     /// <summary>
     /// Paginator for the ListResourceGroupingRecommendations operation
     ///</summary>
-    public interface IListResourceGroupingRecommendationsPaginator
+    public partial interface IListResourceGroupingRecommendationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

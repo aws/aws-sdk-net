@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetSpotPlacementScores operation
     ///</summary>
-    public interface IGetSpotPlacementScoresPaginator
+    public partial interface IGetSpotPlacementScoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

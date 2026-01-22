@@ -24,7 +24,7 @@ namespace Amazon.EMRContainers.Model
     /// <summary>
     /// Paginators for the EMRContainers service
     ///</summary>
-    public interface IEMRContainersPaginatorFactory
+    public partial interface IEMRContainersPaginatorFactory
     {
 
         /// <summary>

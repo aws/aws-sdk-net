@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListTestSetRecords operation
     ///</summary>
-    public interface IListTestSetRecordsPaginator
+    public partial interface IListTestSetRecordsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

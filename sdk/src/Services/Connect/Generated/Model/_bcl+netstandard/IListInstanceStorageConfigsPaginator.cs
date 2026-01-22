@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListInstanceStorageConfigs operation
     ///</summary>
-    public interface IListInstanceStorageConfigsPaginator
+    public partial interface IListInstanceStorageConfigsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

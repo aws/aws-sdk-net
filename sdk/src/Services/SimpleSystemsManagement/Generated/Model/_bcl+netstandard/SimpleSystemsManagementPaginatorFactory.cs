@@ -27,7 +27,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginators for the SimpleSystemsManagement service
     ///</summary>
-    public class SimpleSystemsManagementPaginatorFactory : ISimpleSystemsManagementPaginatorFactory
+    public partial class SimpleSystemsManagementPaginatorFactory : ISimpleSystemsManagementPaginatorFactory
     {
         private readonly IAmazonSimpleSystemsManagement client;
 

@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the ListFindingsFilters operation
     ///</summary>
-    public interface IListFindingsFiltersPaginator
+    public partial interface IListFindingsFiltersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

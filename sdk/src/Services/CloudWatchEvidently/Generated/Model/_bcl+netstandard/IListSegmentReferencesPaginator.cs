@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// <summary>
     /// Paginator for the ListSegmentReferences operation
     ///</summary>
-    public interface IListSegmentReferencesPaginator
+    public partial interface IListSegmentReferencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

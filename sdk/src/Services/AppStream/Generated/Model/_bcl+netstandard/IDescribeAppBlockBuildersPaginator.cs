@@ -24,7 +24,7 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Paginator for the DescribeAppBlockBuilders operation
     ///</summary>
-    public interface IDescribeAppBlockBuildersPaginator
+    public partial interface IDescribeAppBlockBuildersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

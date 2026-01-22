@@ -24,7 +24,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Paginator for the DescribeLaunchConfigurations operation
     ///</summary>
-    public interface IDescribeLaunchConfigurationsPaginator
+    public partial interface IDescribeLaunchConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

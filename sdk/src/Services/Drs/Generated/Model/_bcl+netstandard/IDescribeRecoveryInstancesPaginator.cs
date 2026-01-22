@@ -24,7 +24,7 @@ namespace Amazon.Drs.Model
     /// <summary>
     /// Paginator for the DescribeRecoveryInstances operation
     ///</summary>
-    public interface IDescribeRecoveryInstancesPaginator
+    public partial interface IDescribeRecoveryInstancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

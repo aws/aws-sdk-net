@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListSessionAnalyticsData operation
     ///</summary>
-    public interface IListSessionAnalyticsDataPaginator
+    public partial interface IListSessionAnalyticsDataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <summary>
     /// Paginator for the GetImages operation
     ///</summary>
-    public interface IGetImagesPaginator
+    public partial interface IGetImagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

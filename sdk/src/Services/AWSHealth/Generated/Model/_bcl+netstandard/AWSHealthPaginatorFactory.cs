@@ -27,7 +27,7 @@ namespace Amazon.AWSHealth.Model
     /// <summary>
     /// Paginators for the AWSHealth service
     ///</summary>
-    public class AWSHealthPaginatorFactory : IAWSHealthPaginatorFactory
+    public partial class AWSHealthPaginatorFactory : IAWSHealthPaginatorFactory
     {
         private readonly IAmazonAWSHealth client;
 

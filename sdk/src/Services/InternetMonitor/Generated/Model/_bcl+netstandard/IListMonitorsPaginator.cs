@@ -24,7 +24,7 @@ namespace Amazon.InternetMonitor.Model
     /// <summary>
     /// Paginator for the ListMonitors operation
     ///</summary>
-    public interface IListMonitorsPaginator
+    public partial interface IListMonitorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

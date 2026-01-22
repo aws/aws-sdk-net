@@ -24,7 +24,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     /// <summary>
     /// Paginator for the ListApplicationDependencies operation
     ///</summary>
-    public interface IListApplicationDependenciesPaginator
+    public partial interface IListApplicationDependenciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

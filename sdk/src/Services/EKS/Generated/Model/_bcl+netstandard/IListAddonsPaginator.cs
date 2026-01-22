@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the ListAddons operation
     ///</summary>
-    public interface IListAddonsPaginator
+    public partial interface IListAddonsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

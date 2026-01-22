@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListSlots operation
     ///</summary>
-    public interface IListSlotsPaginator
+    public partial interface IListSlotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

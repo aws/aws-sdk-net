@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBProxyTargetGroups operation
     ///</summary>
-    public interface IDescribeDBProxyTargetGroupsPaginator
+    public partial interface IDescribeDBProxyTargetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

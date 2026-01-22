@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Paginators for the SimpleEmailV2 service
     ///</summary>
-    public interface ISimpleEmailV2PaginatorFactory
+    public partial interface ISimpleEmailV2PaginatorFactory
     {
 
         /// <summary>

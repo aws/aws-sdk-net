@@ -24,7 +24,7 @@ namespace Amazon.SocialMessaging.Model
     /// <summary>
     /// Paginator for the ListWhatsAppTemplateLibrary operation
     ///</summary>
-    public interface IListWhatsAppTemplateLibraryPaginator
+    public partial interface IListWhatsAppTemplateLibraryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

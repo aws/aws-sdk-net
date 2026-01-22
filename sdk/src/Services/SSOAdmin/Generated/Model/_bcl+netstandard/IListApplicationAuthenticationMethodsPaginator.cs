@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListApplicationAuthenticationMethods operation
     ///</summary>
-    public interface IListApplicationAuthenticationMethodsPaginator
+    public partial interface IListApplicationAuthenticationMethodsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

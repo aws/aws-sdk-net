@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginators for the LexModelsV2 service
     ///</summary>
-    public interface ILexModelsV2PaginatorFactory
+    public partial interface ILexModelsV2PaginatorFactory
     {
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace Amazon.CostAndUsageReport.Model
     /// <summary>
     /// Paginators for the CostAndUsageReport service
     ///</summary>
-    public class CostAndUsageReportPaginatorFactory : ICostAndUsageReportPaginatorFactory
+    public partial class CostAndUsageReportPaginatorFactory : ICostAndUsageReportPaginatorFactory
     {
         private readonly IAmazonCostAndUsageReport client;
 

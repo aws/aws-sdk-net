@@ -27,7 +27,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// Paginators for the ResourceGroupsTaggingAPI service
     ///</summary>
-    public class ResourceGroupsTaggingAPIPaginatorFactory : IResourceGroupsTaggingAPIPaginatorFactory
+    public partial class ResourceGroupsTaggingAPIPaginatorFactory : IResourceGroupsTaggingAPIPaginatorFactory
     {
         private readonly IAmazonResourceGroupsTaggingAPI client;
 

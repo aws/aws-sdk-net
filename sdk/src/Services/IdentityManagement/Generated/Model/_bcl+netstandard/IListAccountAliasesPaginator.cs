@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListAccountAliases operation
     ///</summary>
-    public interface IListAccountAliasesPaginator
+    public partial interface IListAccountAliasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListDataCatalogs operation
     ///</summary>
-    public interface IListDataCatalogsPaginator
+    public partial interface IListDataCatalogsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

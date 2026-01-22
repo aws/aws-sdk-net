@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetWorkflowRuns operation
     ///</summary>
-    public interface IGetWorkflowRunsPaginator
+    public partial interface IGetWorkflowRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Paginator for the ListClusters operation
     ///</summary>
-    public interface IListClustersPaginator
+    public partial interface IListClustersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

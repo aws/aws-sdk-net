@@ -24,7 +24,7 @@ namespace Amazon.BillingConductor.Model
     /// <summary>
     /// Paginator for the ListResourcesAssociatedToCustomLineItem operation
     ///</summary>
-    public interface IListResourcesAssociatedToCustomLineItemPaginator
+    public partial interface IListResourcesAssociatedToCustomLineItemPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

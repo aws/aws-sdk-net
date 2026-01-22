@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListStreamingDistributions operation
     ///</summary>
-    public interface IListStreamingDistributionsPaginator
+    public partial interface IListStreamingDistributionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

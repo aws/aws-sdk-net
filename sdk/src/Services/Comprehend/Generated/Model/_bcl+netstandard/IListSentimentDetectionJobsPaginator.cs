@@ -24,7 +24,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Paginator for the ListSentimentDetectionJobs operation
     ///</summary>
-    public interface IListSentimentDetectionJobsPaginator
+    public partial interface IListSentimentDetectionJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

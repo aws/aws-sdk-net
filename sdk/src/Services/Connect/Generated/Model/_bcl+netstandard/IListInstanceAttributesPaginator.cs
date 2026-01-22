@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListInstanceAttributes operation
     ///</summary>
-    public interface IListInstanceAttributesPaginator
+    public partial interface IListInstanceAttributesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

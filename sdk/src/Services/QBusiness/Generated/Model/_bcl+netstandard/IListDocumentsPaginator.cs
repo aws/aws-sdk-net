@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginator for the ListDocuments operation
     ///</summary>
-    public interface IListDocumentsPaginator
+    public partial interface IListDocumentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

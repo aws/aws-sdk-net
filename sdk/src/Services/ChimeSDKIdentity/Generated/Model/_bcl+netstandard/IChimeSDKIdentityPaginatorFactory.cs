@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKIdentity.Model
     /// <summary>
     /// Paginators for the ChimeSDKIdentity service
     ///</summary>
-    public interface IChimeSDKIdentityPaginatorFactory
+    public partial interface IChimeSDKIdentityPaginatorFactory
     {
 
         /// <summary>

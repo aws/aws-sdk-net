@@ -24,7 +24,7 @@ namespace Amazon.ConnectWisdomService.Model
     /// <summary>
     /// Paginator for the ListKnowledgeBases operation
     ///</summary>
-    public interface IListKnowledgeBasesPaginator
+    public partial interface IListKnowledgeBasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

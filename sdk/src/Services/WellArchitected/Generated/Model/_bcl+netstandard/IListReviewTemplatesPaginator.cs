@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the ListReviewTemplates operation
     ///</summary>
-    public interface IListReviewTemplatesPaginator
+    public partial interface IListReviewTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

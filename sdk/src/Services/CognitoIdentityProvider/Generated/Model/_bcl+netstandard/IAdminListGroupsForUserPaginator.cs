@@ -24,7 +24,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Paginator for the AdminListGroupsForUser operation
     ///</summary>
-    public interface IAdminListGroupsForUserPaginator
+    public partial interface IAdminListGroupsForUserPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Paginator for the LookupPolicy operation
     ///</summary>
-    public interface ILookupPolicyPaginator
+    public partial interface ILookupPolicyPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

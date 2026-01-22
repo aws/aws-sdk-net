@@ -24,7 +24,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Paginator for the GetInterpolatedAssetPropertyValues operation
     ///</summary>
-    public interface IGetInterpolatedAssetPropertyValuesPaginator
+    public partial interface IGetInterpolatedAssetPropertyValuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

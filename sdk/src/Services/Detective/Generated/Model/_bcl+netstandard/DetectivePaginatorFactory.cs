@@ -27,7 +27,7 @@ namespace Amazon.Detective.Model
     /// <summary>
     /// Paginators for the Detective service
     ///</summary>
-    public class DetectivePaginatorFactory : IDetectivePaginatorFactory
+    public partial class DetectivePaginatorFactory : IDetectivePaginatorFactory
     {
         private readonly IAmazonDetective client;
 

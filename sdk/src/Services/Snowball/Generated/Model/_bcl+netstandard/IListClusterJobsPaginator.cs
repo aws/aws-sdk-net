@@ -24,7 +24,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Paginator for the ListClusterJobs operation
     ///</summary>
-    public interface IListClusterJobsPaginator
+    public partial interface IListClusterJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

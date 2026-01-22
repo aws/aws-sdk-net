@@ -24,7 +24,7 @@ namespace Amazon.Panorama.Model
     /// <summary>
     /// Paginator for the ListPackageImportJobs operation
     ///</summary>
-    public interface IListPackageImportJobsPaginator
+    public partial interface IListPackageImportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

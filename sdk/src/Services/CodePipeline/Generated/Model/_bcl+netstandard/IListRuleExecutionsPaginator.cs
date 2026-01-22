@@ -24,7 +24,7 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Paginator for the ListRuleExecutions operation
     ///</summary>
-    public interface IListRuleExecutionsPaginator
+    public partial interface IListRuleExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

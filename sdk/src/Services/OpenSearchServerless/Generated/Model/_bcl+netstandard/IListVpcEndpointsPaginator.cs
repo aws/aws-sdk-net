@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// <summary>
     /// Paginator for the ListVpcEndpoints operation
     ///</summary>
-    public interface IListVpcEndpointsPaginator
+    public partial interface IListVpcEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

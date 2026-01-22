@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListApplicationGrants operation
     ///</summary>
-    public interface IListApplicationGrantsPaginator
+    public partial interface IListApplicationGrantsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

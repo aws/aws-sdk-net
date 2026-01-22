@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListConnectionFunctions operation
     ///</summary>
-    public interface IListConnectionFunctionsPaginator
+    public partial interface IListConnectionFunctionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

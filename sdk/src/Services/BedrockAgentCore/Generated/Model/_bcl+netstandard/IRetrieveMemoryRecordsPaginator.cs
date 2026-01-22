@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentCore.Model
     /// <summary>
     /// Paginator for the RetrieveMemoryRecords operation
     ///</summary>
-    public interface IRetrieveMemoryRecordsPaginator
+    public partial interface IRetrieveMemoryRecordsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

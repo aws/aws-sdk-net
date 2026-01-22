@@ -24,7 +24,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// <summary>
     /// Paginator for the ListTrustAnchors operation
     ///</summary>
-    public interface IListTrustAnchorsPaginator
+    public partial interface IListTrustAnchorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

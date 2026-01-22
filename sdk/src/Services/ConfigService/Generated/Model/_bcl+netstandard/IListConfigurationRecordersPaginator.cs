@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the ListConfigurationRecorders operation
     ///</summary>
-    public interface IListConfigurationRecordersPaginator
+    public partial interface IListConfigurationRecordersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

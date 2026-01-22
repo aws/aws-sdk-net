@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListTemplateVersions operation
     ///</summary>
-    public interface IListTemplateVersionsPaginator
+    public partial interface IListTemplateVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

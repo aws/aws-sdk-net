@@ -24,7 +24,7 @@ namespace Amazon.SecurityLake.Model
     /// <summary>
     /// Paginator for the ListSubscribers operation
     ///</summary>
-    public interface IListSubscribersPaginator
+    public partial interface IListSubscribersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginator for the ListDomainLayouts operation
     ///</summary>
-    public interface IListDomainLayoutsPaginator
+    public partial interface IListDomainLayoutsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

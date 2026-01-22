@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListInvalidations operation
     ///</summary>
-    public interface IListInvalidationsPaginator
+    public partial interface IListInvalidationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Paginators for the SimpleEmail service
     ///</summary>
-    public class SimpleEmailPaginatorFactory : ISimpleEmailPaginatorFactory
+    public partial class SimpleEmailPaginatorFactory : ISimpleEmailPaginatorFactory
     {
         private readonly IAmazonSimpleEmailService client;
 

@@ -24,7 +24,7 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Paginator for the DescribeCases operation
     ///</summary>
-    public interface IDescribeCasesPaginator
+    public partial interface IDescribeCasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

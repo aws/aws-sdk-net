@@ -24,7 +24,7 @@ namespace Amazon.MTurk.Model
     /// <summary>
     /// Paginator for the ListWorkersWithQualificationType operation
     ///</summary>
-    public interface IListWorkersWithQualificationTypePaginator
+    public partial interface IListWorkersWithQualificationTypePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

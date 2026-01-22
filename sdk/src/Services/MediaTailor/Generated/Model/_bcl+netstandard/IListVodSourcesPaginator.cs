@@ -24,7 +24,7 @@ namespace Amazon.MediaTailor.Model
     /// <summary>
     /// Paginator for the ListVodSources operation
     ///</summary>
-    public interface IListVodSourcesPaginator
+    public partial interface IListVodSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

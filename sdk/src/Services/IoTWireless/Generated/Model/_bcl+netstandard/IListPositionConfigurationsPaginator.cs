@@ -24,7 +24,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Paginator for the ListPositionConfigurations operation
     ///</summary>
-    public interface IListPositionConfigurationsPaginator
+    public partial interface IListPositionConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

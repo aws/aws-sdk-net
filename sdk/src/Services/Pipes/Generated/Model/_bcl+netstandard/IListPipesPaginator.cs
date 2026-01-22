@@ -24,7 +24,7 @@ namespace Amazon.Pipes.Model
     /// <summary>
     /// Paginator for the ListPipes operation
     ///</summary>
-    public interface IListPipesPaginator
+    public partial interface IListPipesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the DescribeProductsV2 operation
     ///</summary>
-    public interface IDescribeProductsV2Paginator
+    public partial interface IDescribeProductsV2Paginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

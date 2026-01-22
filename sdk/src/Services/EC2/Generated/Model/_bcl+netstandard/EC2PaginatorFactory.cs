@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginators for the EC2 service
     ///</summary>
-    public class EC2PaginatorFactory : IEC2PaginatorFactory
+    public partial class EC2PaginatorFactory : IEC2PaginatorFactory
     {
         private readonly IAmazonEC2 client;
 

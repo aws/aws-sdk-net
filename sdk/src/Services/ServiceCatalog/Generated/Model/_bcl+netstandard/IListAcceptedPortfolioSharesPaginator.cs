@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the ListAcceptedPortfolioShares operation
     ///</summary>
-    public interface IListAcceptedPortfolioSharesPaginator
+    public partial interface IListAcceptedPortfolioSharesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

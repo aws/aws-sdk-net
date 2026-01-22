@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// <summary>
     /// Paginators for the CloudWatchEvidently service
     ///</summary>
-    public interface ICloudWatchEvidentlyPaginatorFactory
+    public partial interface ICloudWatchEvidentlyPaginatorFactory
     {
 
         /// <summary>

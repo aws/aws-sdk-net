@@ -24,7 +24,7 @@ namespace Amazon.AppMesh.Model
     /// <summary>
     /// Paginator for the ListVirtualServices operation
     ///</summary>
-    public interface IListVirtualServicesPaginator
+    public partial interface IListVirtualServicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

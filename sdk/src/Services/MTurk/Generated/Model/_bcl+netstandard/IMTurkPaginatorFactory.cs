@@ -24,7 +24,7 @@ namespace Amazon.MTurk.Model
     /// <summary>
     /// Paginators for the MTurk service
     ///</summary>
-    public interface IMTurkPaginatorFactory
+    public partial interface IMTurkPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// <summary>
     /// Paginator for the ListPhoneNumberOrders operation
     ///</summary>
-    public interface IListPhoneNumberOrdersPaginator
+    public partial interface IListPhoneNumberOrdersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

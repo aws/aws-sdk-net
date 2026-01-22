@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the DescribeStandards operation
     ///</summary>
-    public interface IDescribeStandardsPaginator
+    public partial interface IDescribeStandardsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

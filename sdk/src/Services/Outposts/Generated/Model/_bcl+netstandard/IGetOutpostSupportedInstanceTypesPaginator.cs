@@ -24,7 +24,7 @@ namespace Amazon.Outposts.Model
     /// <summary>
     /// Paginator for the GetOutpostSupportedInstanceTypes operation
     ///</summary>
-    public interface IGetOutpostSupportedInstanceTypesPaginator
+    public partial interface IGetOutpostSupportedInstanceTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

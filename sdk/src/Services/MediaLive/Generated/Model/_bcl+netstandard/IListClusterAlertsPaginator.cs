@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListClusterAlerts operation
     ///</summary>
-    public interface IListClusterAlertsPaginator
+    public partial interface IListClusterAlertsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

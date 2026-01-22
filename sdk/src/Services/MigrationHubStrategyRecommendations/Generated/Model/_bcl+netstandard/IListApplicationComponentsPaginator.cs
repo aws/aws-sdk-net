@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// <summary>
     /// Paginator for the ListApplicationComponents operation
     ///</summary>
-    public interface IListApplicationComponentsPaginator
+    public partial interface IListApplicationComponentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

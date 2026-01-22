@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Paginator for the ListConfigurationSets operation
     ///</summary>
-    public interface IListConfigurationSetsPaginator
+    public partial interface IListConfigurationSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

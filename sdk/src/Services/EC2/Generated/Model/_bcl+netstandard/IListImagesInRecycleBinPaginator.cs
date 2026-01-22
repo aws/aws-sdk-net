@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the ListImagesInRecycleBin operation
     ///</summary>
-    public interface IListImagesInRecycleBinPaginator
+    public partial interface IListImagesInRecycleBinPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

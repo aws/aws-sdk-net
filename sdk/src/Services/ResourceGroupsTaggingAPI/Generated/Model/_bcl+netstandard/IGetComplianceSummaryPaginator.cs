@@ -24,7 +24,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// Paginator for the GetComplianceSummary operation
     ///</summary>
-    public interface IGetComplianceSummaryPaginator
+    public partial interface IGetComplianceSummaryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

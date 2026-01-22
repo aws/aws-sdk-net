@@ -24,7 +24,7 @@ namespace Amazon.Elasticsearch.Model
     /// <summary>
     /// Paginator for the GetPackageVersionHistory operation
     ///</summary>
-    public interface IGetPackageVersionHistoryPaginator
+    public partial interface IGetPackageVersionHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

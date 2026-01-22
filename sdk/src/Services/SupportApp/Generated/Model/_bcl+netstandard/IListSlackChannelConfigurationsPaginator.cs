@@ -24,7 +24,7 @@ namespace Amazon.SupportApp.Model
     /// <summary>
     /// Paginator for the ListSlackChannelConfigurations operation
     ///</summary>
-    public interface IListSlackChannelConfigurationsPaginator
+    public partial interface IListSlackChannelConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Paginator for the Query operation
     ///</summary>
-    public interface IQueryPaginator
+    public partial interface IQueryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

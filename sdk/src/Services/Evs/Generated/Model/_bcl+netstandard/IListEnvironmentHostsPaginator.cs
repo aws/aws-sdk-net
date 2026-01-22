@@ -24,7 +24,7 @@ namespace Amazon.Evs.Model
     /// <summary>
     /// Paginator for the ListEnvironmentHosts operation
     ///</summary>
-    public interface IListEnvironmentHostsPaginator
+    public partial interface IListEnvironmentHostsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

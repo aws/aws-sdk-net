@@ -24,7 +24,7 @@ namespace Amazon.CodeStarconnections.Model
     /// <summary>
     /// Paginator for the ListHosts operation
     ///</summary>
-    public interface IListHostsPaginator
+    public partial interface IListHostsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

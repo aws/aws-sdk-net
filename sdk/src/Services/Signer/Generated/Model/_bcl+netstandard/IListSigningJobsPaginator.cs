@@ -24,7 +24,7 @@ namespace Amazon.Signer.Model
     /// <summary>
     /// Paginator for the ListSigningJobs operation
     ///</summary>
-    public interface IListSigningJobsPaginator
+    public partial interface IListSigningJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

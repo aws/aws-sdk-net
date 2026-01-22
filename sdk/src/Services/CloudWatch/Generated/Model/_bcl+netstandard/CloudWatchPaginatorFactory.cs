@@ -27,7 +27,7 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Paginators for the CloudWatch service
     ///</summary>
-    public class CloudWatchPaginatorFactory : ICloudWatchPaginatorFactory
+    public partial class CloudWatchPaginatorFactory : ICloudWatchPaginatorFactory
     {
         private readonly IAmazonCloudWatch client;
 

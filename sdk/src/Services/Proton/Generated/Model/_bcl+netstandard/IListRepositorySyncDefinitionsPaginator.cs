@@ -24,7 +24,7 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Paginator for the ListRepositorySyncDefinitions operation
     ///</summary>
-    public interface IListRepositorySyncDefinitionsPaginator
+    public partial interface IListRepositorySyncDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

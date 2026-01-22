@@ -24,7 +24,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Paginator for the ListEventLogConfigurations operation
     ///</summary>
-    public interface IListEventLogConfigurationsPaginator
+    public partial interface IListEventLogConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

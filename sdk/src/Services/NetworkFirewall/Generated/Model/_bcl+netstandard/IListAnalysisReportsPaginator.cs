@@ -24,7 +24,7 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// Paginator for the ListAnalysisReports operation
     ///</summary>
-    public interface IListAnalysisReportsPaginator
+    public partial interface IListAnalysisReportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

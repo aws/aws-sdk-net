@@ -24,7 +24,7 @@ namespace Amazon.ComputeOptimizerAutomation.Model
     /// <summary>
     /// Paginator for the ListAutomationRulePreview operation
     ///</summary>
-    public interface IListAutomationRulePreviewPaginator
+    public partial interface IListAutomationRulePreviewPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Paginators for the Chime service
     ///</summary>
-    public class ChimePaginatorFactory : IChimePaginatorFactory
+    public partial class ChimePaginatorFactory : IChimePaginatorFactory
     {
         private readonly IAmazonChime client;
 

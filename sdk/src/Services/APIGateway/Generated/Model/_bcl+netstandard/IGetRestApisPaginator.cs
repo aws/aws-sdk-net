@@ -24,7 +24,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Paginator for the GetRestApis operation
     ///</summary>
-    public interface IGetRestApisPaginator
+    public partial interface IGetRestApisPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

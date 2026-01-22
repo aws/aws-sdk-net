@@ -24,7 +24,7 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Paginator for the ListModelVersions operation
     ///</summary>
-    public interface IListModelVersionsPaginator
+    public partial interface IListModelVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

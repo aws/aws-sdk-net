@@ -24,7 +24,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Paginator for the DescribeTapeArchives operation
     ///</summary>
-    public interface IDescribeTapeArchivesPaginator
+    public partial interface IDescribeTapeArchivesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

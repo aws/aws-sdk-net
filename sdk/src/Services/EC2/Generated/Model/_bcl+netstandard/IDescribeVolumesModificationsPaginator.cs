@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeVolumesModifications operation
     ///</summary>
-    public interface IDescribeVolumesModificationsPaginator
+    public partial interface IDescribeVolumesModificationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

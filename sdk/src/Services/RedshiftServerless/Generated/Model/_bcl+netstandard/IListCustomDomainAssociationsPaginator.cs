@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginator for the ListCustomDomainAssociations operation
     ///</summary>
-    public interface IListCustomDomainAssociationsPaginator
+    public partial interface IListCustomDomainAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

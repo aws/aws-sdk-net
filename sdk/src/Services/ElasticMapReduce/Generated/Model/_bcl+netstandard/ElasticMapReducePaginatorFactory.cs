@@ -27,7 +27,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginators for the ElasticMapReduce service
     ///</summary>
-    public class ElasticMapReducePaginatorFactory : IElasticMapReducePaginatorFactory
+    public partial class ElasticMapReducePaginatorFactory : IElasticMapReducePaginatorFactory
     {
         private readonly IAmazonElasticMapReduce client;
 

@@ -24,7 +24,7 @@ namespace Amazon.MedicalImaging.Model
     /// <summary>
     /// Paginator for the ListImageSetVersions operation
     ///</summary>
-    public interface IListImageSetVersionsPaginator
+    public partial interface IListImageSetVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

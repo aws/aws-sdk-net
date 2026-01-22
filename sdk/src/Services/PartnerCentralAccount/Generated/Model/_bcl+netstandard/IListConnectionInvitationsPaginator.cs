@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralAccount.Model
     /// <summary>
     /// Paginator for the ListConnectionInvitations operation
     ///</summary>
-    public interface IListConnectionInvitationsPaginator
+    public partial interface IListConnectionInvitationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.Pricing.Model
     /// <summary>
     /// Paginators for the Pricing service
     ///</summary>
-    public class PricingPaginatorFactory : IPricingPaginatorFactory
+    public partial class PricingPaginatorFactory : IPricingPaginatorFactory
     {
         private readonly IAmazonPricing client;
 

@@ -24,7 +24,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginator for the DescribeSnapshots operation
     ///</summary>
-    public interface IDescribeSnapshotsPaginator
+    public partial interface IDescribeSnapshotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

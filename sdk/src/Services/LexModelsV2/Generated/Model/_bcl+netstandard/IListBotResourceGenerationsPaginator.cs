@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListBotResourceGenerations operation
     ///</summary>
-    public interface IListBotResourceGenerationsPaginator
+    public partial interface IListBotResourceGenerationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

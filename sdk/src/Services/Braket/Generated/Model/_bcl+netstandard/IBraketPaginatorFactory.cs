@@ -24,7 +24,7 @@ namespace Amazon.Braket.Model
     /// <summary>
     /// Paginators for the Braket service
     ///</summary>
-    public interface IBraketPaginatorFactory
+    public partial interface IBraketPaginatorFactory
     {
 
         /// <summary>

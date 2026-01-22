@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginator for the ListRecipes operation
     ///</summary>
-    public interface IListRecipesPaginator
+    public partial interface IListRecipesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

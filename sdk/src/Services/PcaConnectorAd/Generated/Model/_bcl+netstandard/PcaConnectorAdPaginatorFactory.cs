@@ -27,7 +27,7 @@ namespace Amazon.PcaConnectorAd.Model
     /// <summary>
     /// Paginators for the PcaConnectorAd service
     ///</summary>
-    public class PcaConnectorAdPaginatorFactory : IPcaConnectorAdPaginatorFactory
+    public partial class PcaConnectorAdPaginatorFactory : IPcaConnectorAdPaginatorFactory
     {
         private readonly IAmazonPcaConnectorAd client;
 

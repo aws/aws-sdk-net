@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetManagedPrefixListEntries operation
     ///</summary>
-    public interface IGetManagedPrefixListEntriesPaginator
+    public partial interface IGetManagedPrefixListEntriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

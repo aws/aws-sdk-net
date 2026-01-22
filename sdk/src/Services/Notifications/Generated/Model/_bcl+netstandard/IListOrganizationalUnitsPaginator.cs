@@ -24,7 +24,7 @@ namespace Amazon.Notifications.Model
     /// <summary>
     /// Paginator for the ListOrganizationalUnits operation
     ///</summary>
-    public interface IListOrganizationalUnitsPaginator
+    public partial interface IListOrganizationalUnitsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

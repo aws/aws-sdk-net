@@ -24,7 +24,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Paginator for the DescribeImageScanFindings operation
     ///</summary>
-    public interface IDescribeImageScanFindingsPaginator
+    public partial interface IDescribeImageScanFindingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

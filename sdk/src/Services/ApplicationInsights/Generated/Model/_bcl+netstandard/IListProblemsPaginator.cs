@@ -24,7 +24,7 @@ namespace Amazon.ApplicationInsights.Model
     /// <summary>
     /// Paginator for the ListProblems operation
     ///</summary>
-    public interface IListProblemsPaginator
+    public partial interface IListProblemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

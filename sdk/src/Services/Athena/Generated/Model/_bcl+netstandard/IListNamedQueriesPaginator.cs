@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListNamedQueries operation
     ///</summary>
-    public interface IListNamedQueriesPaginator
+    public partial interface IListNamedQueriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeMacModificationTasks operation
     ///</summary>
-    public interface IDescribeMacModificationTasksPaginator
+    public partial interface IDescribeMacModificationTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

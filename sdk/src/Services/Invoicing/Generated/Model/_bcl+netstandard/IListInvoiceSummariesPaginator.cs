@@ -24,7 +24,7 @@ namespace Amazon.Invoicing.Model
     /// <summary>
     /// Paginator for the ListInvoiceSummaries operation
     ///</summary>
-    public interface IListInvoiceSummariesPaginator
+    public partial interface IListInvoiceSummariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

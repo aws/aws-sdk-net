@@ -24,7 +24,7 @@ namespace Amazon.NetworkFlowMonitor.Model
     /// <summary>
     /// Paginator for the GetQueryResultsWorkloadInsightsTopContributorsData operation
     ///</summary>
-    public interface IGetQueryResultsWorkloadInsightsTopContributorsDataPaginator
+    public partial interface IGetQueryResultsWorkloadInsightsTopContributorsDataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

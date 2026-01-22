@@ -27,7 +27,7 @@ namespace Amazon.ConnectCampaignService.Model
     /// <summary>
     /// Paginators for the ConnectCampaignService service
     ///</summary>
-    public class ConnectCampaignServicePaginatorFactory : IConnectCampaignServicePaginatorFactory
+    public partial class ConnectCampaignServicePaginatorFactory : IConnectCampaignServicePaginatorFactory
     {
         private readonly IAmazonConnectCampaignService client;
 

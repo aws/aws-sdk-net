@@ -24,7 +24,7 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Paginator for the ListCertificates operation
     ///</summary>
-    public interface IListCertificatesPaginator
+    public partial interface IListCertificatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

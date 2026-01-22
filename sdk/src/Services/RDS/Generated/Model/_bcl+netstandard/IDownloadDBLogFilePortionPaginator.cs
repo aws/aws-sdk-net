@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DownloadDBLogFilePortion operation
     ///</summary>
-    public interface IDownloadDBLogFilePortionPaginator
+    public partial interface IDownloadDBLogFilePortionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

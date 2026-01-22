@@ -24,7 +24,7 @@ namespace Amazon.Chatbot.Model
     /// <summary>
     /// Paginator for the DescribeChimeWebhookConfigurations operation
     ///</summary>
-    public interface IDescribeChimeWebhookConfigurationsPaginator
+    public partial interface IDescribeChimeWebhookConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

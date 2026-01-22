@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeClusterSubnetGroups operation
     ///</summary>
-    public interface IDescribeClusterSubnetGroupsPaginator
+    public partial interface IDescribeClusterSubnetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

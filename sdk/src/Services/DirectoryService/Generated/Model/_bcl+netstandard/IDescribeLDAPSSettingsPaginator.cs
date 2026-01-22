@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the DescribeLDAPSSettings operation
     ///</summary>
-    public interface IDescribeLDAPSSettingsPaginator
+    public partial interface IDescribeLDAPSSettingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

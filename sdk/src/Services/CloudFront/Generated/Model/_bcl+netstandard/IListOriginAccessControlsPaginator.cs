@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListOriginAccessControls operation
     ///</summary>
-    public interface IListOriginAccessControlsPaginator
+    public partial interface IListOriginAccessControlsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

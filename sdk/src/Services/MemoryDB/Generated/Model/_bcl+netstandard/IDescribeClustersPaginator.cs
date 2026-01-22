@@ -24,7 +24,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginator for the DescribeClusters operation
     ///</summary>
-    public interface IDescribeClustersPaginator
+    public partial interface IDescribeClustersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

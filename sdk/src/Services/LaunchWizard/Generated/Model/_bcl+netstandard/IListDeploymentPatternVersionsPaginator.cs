@@ -24,7 +24,7 @@ namespace Amazon.LaunchWizard.Model
     /// <summary>
     /// Paginator for the ListDeploymentPatternVersions operation
     ///</summary>
-    public interface IListDeploymentPatternVersionsPaginator
+    public partial interface IListDeploymentPatternVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

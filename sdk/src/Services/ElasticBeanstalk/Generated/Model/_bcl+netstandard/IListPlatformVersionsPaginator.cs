@@ -24,7 +24,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Paginator for the ListPlatformVersions operation
     ///</summary>
-    public interface IListPlatformVersionsPaginator
+    public partial interface IListPlatformVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

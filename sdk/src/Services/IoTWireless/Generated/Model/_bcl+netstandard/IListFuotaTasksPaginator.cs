@@ -24,7 +24,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Paginator for the ListFuotaTasks operation
     ///</summary>
-    public interface IListFuotaTasksPaginator
+    public partial interface IListFuotaTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

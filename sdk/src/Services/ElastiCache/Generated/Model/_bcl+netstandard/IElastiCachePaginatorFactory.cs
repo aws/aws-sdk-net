@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Paginators for the ElastiCache service
     ///</summary>
-    public interface IElastiCachePaginatorFactory
+    public partial interface IElastiCachePaginatorFactory
     {
 
         /// <summary>

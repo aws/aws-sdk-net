@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the GetResourceShareAssociations operation
     ///</summary>
-    public interface IGetResourceShareAssociationsPaginator
+    public partial interface IGetResourceShareAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

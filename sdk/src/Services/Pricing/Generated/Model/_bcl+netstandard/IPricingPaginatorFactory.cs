@@ -24,7 +24,7 @@ namespace Amazon.Pricing.Model
     /// <summary>
     /// Paginators for the Pricing service
     ///</summary>
-    public interface IPricingPaginatorFactory
+    public partial interface IPricingPaginatorFactory
     {
 
         /// <summary>

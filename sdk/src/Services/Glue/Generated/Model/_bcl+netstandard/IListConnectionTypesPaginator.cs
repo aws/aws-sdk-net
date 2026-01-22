@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the ListConnectionTypes operation
     ///</summary>
-    public interface IListConnectionTypesPaginator
+    public partial interface IListConnectionTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

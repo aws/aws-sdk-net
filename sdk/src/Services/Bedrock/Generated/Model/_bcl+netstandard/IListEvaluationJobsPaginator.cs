@@ -24,7 +24,7 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Paginator for the ListEvaluationJobs operation
     ///</summary>
-    public interface IListEvaluationJobsPaginator
+    public partial interface IListEvaluationJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

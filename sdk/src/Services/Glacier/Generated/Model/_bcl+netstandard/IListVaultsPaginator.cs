@@ -24,7 +24,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Paginator for the ListVaults operation
     ///</summary>
-    public interface IListVaultsPaginator
+    public partial interface IListVaultsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

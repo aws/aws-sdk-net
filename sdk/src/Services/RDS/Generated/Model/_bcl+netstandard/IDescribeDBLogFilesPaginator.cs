@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBLogFiles operation
     ///</summary>
-    public interface IDescribeDBLogFilesPaginator
+    public partial interface IDescribeDBLogFilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

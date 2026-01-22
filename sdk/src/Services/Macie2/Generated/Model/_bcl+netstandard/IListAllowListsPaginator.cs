@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the ListAllowLists operation
     ///</summary>
-    public interface IListAllowListsPaginator
+    public partial interface IListAllowListsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

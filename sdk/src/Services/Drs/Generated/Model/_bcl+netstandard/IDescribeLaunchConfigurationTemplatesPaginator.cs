@@ -24,7 +24,7 @@ namespace Amazon.Drs.Model
     /// <summary>
     /// Paginator for the DescribeLaunchConfigurationTemplates operation
     ///</summary>
-    public interface IDescribeLaunchConfigurationTemplatesPaginator
+    public partial interface IDescribeLaunchConfigurationTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

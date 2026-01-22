@@ -24,7 +24,7 @@ namespace Amazon.ApiGatewayV2.Model
     /// <summary>
     /// Paginator for the ListProductPages operation
     ///</summary>
-    public interface IListProductPagesPaginator
+    public partial interface IListProductPagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

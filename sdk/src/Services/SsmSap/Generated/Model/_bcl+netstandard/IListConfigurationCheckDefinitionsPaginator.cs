@@ -24,7 +24,7 @@ namespace Amazon.SsmSap.Model
     /// <summary>
     /// Paginator for the ListConfigurationCheckDefinitions operation
     ///</summary>
-    public interface IListConfigurationCheckDefinitionsPaginator
+    public partial interface IListConfigurationCheckDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

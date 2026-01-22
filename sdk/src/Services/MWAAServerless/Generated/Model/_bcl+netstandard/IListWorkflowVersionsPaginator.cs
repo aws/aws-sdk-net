@@ -24,7 +24,7 @@ namespace Amazon.MWAAServerless.Model
     /// <summary>
     /// Paginator for the ListWorkflowVersions operation
     ///</summary>
-    public interface IListWorkflowVersionsPaginator
+    public partial interface IListWorkflowVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

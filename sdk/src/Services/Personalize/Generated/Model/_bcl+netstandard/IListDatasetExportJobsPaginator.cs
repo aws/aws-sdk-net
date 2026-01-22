@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginator for the ListDatasetExportJobs operation
     ///</summary>
-    public interface IListDatasetExportJobsPaginator
+    public partial interface IListDatasetExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

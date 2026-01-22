@@ -27,7 +27,7 @@ namespace Amazon.ApplicationSignals.Model
     /// <summary>
     /// Paginators for the ApplicationSignals service
     ///</summary>
-    public class ApplicationSignalsPaginatorFactory : IApplicationSignalsPaginatorFactory
+    public partial class ApplicationSignalsPaginatorFactory : IApplicationSignalsPaginatorFactory
     {
         private readonly IAmazonApplicationSignals client;
 

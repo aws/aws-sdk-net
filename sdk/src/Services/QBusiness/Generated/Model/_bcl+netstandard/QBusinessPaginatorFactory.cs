@@ -27,7 +27,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginators for the QBusiness service
     ///</summary>
-    public class QBusinessPaginatorFactory : IQBusinessPaginatorFactory
+    public partial class QBusinessPaginatorFactory : IQBusinessPaginatorFactory
     {
         private readonly IAmazonQBusiness client;
 

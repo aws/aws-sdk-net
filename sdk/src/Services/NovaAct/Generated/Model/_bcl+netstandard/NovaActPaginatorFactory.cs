@@ -27,7 +27,7 @@ namespace Amazon.NovaAct.Model
     /// <summary>
     /// Paginators for the NovaAct service
     ///</summary>
-    public class NovaActPaginatorFactory : INovaActPaginatorFactory
+    public partial class NovaActPaginatorFactory : INovaActPaginatorFactory
     {
         private readonly IAmazonNovaAct client;
 

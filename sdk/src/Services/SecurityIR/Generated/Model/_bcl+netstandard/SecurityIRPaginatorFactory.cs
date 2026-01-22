@@ -27,7 +27,7 @@ namespace Amazon.SecurityIR.Model
     /// <summary>
     /// Paginators for the SecurityIR service
     ///</summary>
-    public class SecurityIRPaginatorFactory : ISecurityIRPaginatorFactory
+    public partial class SecurityIRPaginatorFactory : ISecurityIRPaginatorFactory
     {
         private readonly IAmazonSecurityIR client;
 

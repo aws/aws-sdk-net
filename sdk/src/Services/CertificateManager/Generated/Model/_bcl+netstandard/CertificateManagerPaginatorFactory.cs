@@ -27,7 +27,7 @@ namespace Amazon.CertificateManager.Model
     /// <summary>
     /// Paginators for the CertificateManager service
     ///</summary>
-    public class CertificateManagerPaginatorFactory : ICertificateManagerPaginatorFactory
+    public partial class CertificateManagerPaginatorFactory : ICertificateManagerPaginatorFactory
     {
         private readonly IAmazonCertificateManager client;
 

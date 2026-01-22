@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralBenefits.Model
     /// <summary>
     /// Paginator for the ListBenefitAllocations operation
     ///</summary>
-    public interface IListBenefitAllocationsPaginator
+    public partial interface IListBenefitAllocationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

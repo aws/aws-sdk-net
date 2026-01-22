@@ -24,7 +24,7 @@ namespace Amazon.Braket.Model
     /// <summary>
     /// Paginator for the SearchQuantumTasks operation
     ///</summary>
-    public interface ISearchQuantumTasksPaginator
+    public partial interface ISearchQuantumTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

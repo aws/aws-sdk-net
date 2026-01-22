@@ -24,7 +24,7 @@ namespace Amazon.LaunchWizard.Model
     /// <summary>
     /// Paginator for the ListWorkloadDeploymentPatterns operation
     ///</summary>
-    public interface IListWorkloadDeploymentPatternsPaginator
+    public partial interface IListWorkloadDeploymentPatternsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

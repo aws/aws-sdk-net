@@ -24,7 +24,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Paginators for the IoTWireless service
     ///</summary>
-    public interface IIoTWirelessPaginatorFactory
+    public partial interface IIoTWirelessPaginatorFactory
     {
 
         /// <summary>

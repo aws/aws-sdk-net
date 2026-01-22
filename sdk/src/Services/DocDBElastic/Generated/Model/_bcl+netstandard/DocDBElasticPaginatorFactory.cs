@@ -27,7 +27,7 @@ namespace Amazon.DocDBElastic.Model
     /// <summary>
     /// Paginators for the DocDBElastic service
     ///</summary>
-    public class DocDBElasticPaginatorFactory : IDocDBElasticPaginatorFactory
+    public partial class DocDBElasticPaginatorFactory : IDocDBElasticPaginatorFactory
     {
         private readonly IAmazonDocDBElastic client;
 

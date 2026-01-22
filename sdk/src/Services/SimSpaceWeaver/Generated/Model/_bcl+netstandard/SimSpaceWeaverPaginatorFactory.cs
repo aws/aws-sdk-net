@@ -27,7 +27,7 @@ namespace Amazon.SimSpaceWeaver.Model
     /// <summary>
     /// Paginators for the SimSpaceWeaver service
     ///</summary>
-    public class SimSpaceWeaverPaginatorFactory : ISimSpaceWeaverPaginatorFactory
+    public partial class SimSpaceWeaverPaginatorFactory : ISimSpaceWeaverPaginatorFactory
     {
         private readonly IAmazonSimSpaceWeaver client;
 

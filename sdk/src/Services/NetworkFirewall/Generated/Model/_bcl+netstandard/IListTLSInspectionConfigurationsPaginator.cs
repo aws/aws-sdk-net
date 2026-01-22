@@ -24,7 +24,7 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// Paginator for the ListTLSInspectionConfigurations operation
     ///</summary>
-    public interface IListTLSInspectionConfigurationsPaginator
+    public partial interface IListTLSInspectionConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

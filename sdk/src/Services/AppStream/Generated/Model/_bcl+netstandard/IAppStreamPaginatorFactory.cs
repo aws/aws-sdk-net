@@ -24,7 +24,7 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Paginators for the AppStream service
     ///</summary>
-    public interface IAppStreamPaginatorFactory
+    public partial interface IAppStreamPaginatorFactory
     {
 
         /// <summary>

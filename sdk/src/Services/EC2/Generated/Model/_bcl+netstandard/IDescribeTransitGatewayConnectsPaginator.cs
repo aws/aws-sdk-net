@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeTransitGatewayConnects operation
     ///</summary>
-    public interface IDescribeTransitGatewayConnectsPaginator
+    public partial interface IDescribeTransitGatewayConnectsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

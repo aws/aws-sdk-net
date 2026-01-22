@@ -27,7 +27,7 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Paginators for the CodeBuild service
     ///</summary>
-    public class CodeBuildPaginatorFactory : ICodeBuildPaginatorFactory
+    public partial class CodeBuildPaginatorFactory : ICodeBuildPaginatorFactory
     {
         private readonly IAmazonCodeBuild client;
 

@@ -24,7 +24,7 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Paginator for the ListManagedInsightRules operation
     ///</summary>
-    public interface IListManagedInsightRulesPaginator
+    public partial interface IListManagedInsightRulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

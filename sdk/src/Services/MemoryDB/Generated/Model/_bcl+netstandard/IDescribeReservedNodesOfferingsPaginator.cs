@@ -24,7 +24,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginator for the DescribeReservedNodesOfferings operation
     ///</summary>
-    public interface IDescribeReservedNodesOfferingsPaginator
+    public partial interface IDescribeReservedNodesOfferingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

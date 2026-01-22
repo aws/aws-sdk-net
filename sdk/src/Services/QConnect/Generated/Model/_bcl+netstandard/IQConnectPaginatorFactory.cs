@@ -24,7 +24,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginators for the QConnect service
     ///</summary>
-    public interface IQConnectPaginatorFactory
+    public partial interface IQConnectPaginatorFactory
     {
 
         /// <summary>

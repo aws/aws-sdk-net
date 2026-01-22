@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgent.Model
     /// <summary>
     /// Paginator for the ListPrompts operation
     ///</summary>
-    public interface IListPromptsPaginator
+    public partial interface IListPromptsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

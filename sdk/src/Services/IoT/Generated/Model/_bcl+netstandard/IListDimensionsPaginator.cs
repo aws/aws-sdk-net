@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListDimensions operation
     ///</summary>
-    public interface IListDimensionsPaginator
+    public partial interface IListDimensionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

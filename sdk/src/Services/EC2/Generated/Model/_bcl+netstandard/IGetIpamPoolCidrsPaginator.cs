@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetIpamPoolCidrs operation
     ///</summary>
-    public interface IGetIpamPoolCidrsPaginator
+    public partial interface IGetIpamPoolCidrsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

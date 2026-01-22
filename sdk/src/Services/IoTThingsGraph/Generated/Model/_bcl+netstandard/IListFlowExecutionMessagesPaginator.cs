@@ -24,7 +24,7 @@ namespace Amazon.IoTThingsGraph.Model
     /// <summary>
     /// Paginator for the ListFlowExecutionMessages operation
     ///</summary>
-    public interface IListFlowExecutionMessagesPaginator
+    public partial interface IListFlowExecutionMessagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Paginator for the DescribeNotificationSubscriptions operation
     ///</summary>
-    public interface IDescribeNotificationSubscriptionsPaginator
+    public partial interface IDescribeNotificationSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

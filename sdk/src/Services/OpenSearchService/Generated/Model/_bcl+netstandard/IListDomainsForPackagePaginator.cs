@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginator for the ListDomainsForPackage operation
     ///</summary>
-    public interface IListDomainsForPackagePaginator
+    public partial interface IListDomainsForPackagePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

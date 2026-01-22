@@ -27,7 +27,7 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Paginators for the Inspector service
     ///</summary>
-    public class InspectorPaginatorFactory : IInspectorPaginatorFactory
+    public partial class InspectorPaginatorFactory : IInspectorPaginatorFactory
     {
         private readonly IAmazonInspector client;
 

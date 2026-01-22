@@ -24,7 +24,7 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Paginators for the FSx service
     ///</summary>
-    public interface IFSxPaginatorFactory
+    public partial interface IFSxPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// Paginator for the DescribeDBClusters operation
     ///</summary>
-    public interface IDescribeDBClustersPaginator
+    public partial interface IDescribeDBClustersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

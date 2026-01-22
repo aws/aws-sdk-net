@@ -24,7 +24,7 @@ namespace Amazon.CleanRooms.Model
     /// <summary>
     /// Paginator for the ListAnalysisTemplates operation
     ///</summary>
-    public interface IListAnalysisTemplatesPaginator
+    public partial interface IListAnalysisTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

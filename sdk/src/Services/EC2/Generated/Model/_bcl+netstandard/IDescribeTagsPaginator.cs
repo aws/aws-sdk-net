@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeTags operation
     ///</summary>
-    public interface IDescribeTagsPaginator
+    public partial interface IDescribeTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

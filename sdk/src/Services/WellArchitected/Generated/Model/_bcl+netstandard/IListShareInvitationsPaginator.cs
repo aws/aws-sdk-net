@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the ListShareInvitations operation
     ///</summary>
-    public interface IListShareInvitationsPaginator
+    public partial interface IListShareInvitationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

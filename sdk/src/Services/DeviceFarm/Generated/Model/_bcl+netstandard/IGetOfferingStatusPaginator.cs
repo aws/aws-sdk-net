@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the GetOfferingStatus operation
     ///</summary>
-    public interface IGetOfferingStatusPaginator
+    public partial interface IGetOfferingStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

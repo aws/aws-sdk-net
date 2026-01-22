@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Paginator for the ListAnomalies operation
     ///</summary>
-    public interface IListAnomaliesPaginator
+    public partial interface IListAnomaliesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

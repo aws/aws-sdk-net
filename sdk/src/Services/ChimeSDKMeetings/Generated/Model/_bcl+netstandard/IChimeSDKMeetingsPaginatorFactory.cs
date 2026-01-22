@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// <summary>
     /// Paginators for the ChimeSDKMeetings service
     ///</summary>
-    public interface IChimeSDKMeetingsPaginatorFactory
+    public partial interface IChimeSDKMeetingsPaginatorFactory
     {
 
         /// <summary>

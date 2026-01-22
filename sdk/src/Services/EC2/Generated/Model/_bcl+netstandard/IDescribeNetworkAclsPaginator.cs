@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeNetworkAcls operation
     ///</summary>
-    public interface IDescribeNetworkAclsPaginator
+    public partial interface IDescribeNetworkAclsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

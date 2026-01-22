@@ -27,7 +27,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// <summary>
     /// Paginators for the AmplifyUIBuilder service
     ///</summary>
-    public class AmplifyUIBuilderPaginatorFactory : IAmplifyUIBuilderPaginatorFactory
+    public partial class AmplifyUIBuilderPaginatorFactory : IAmplifyUIBuilderPaginatorFactory
     {
         private readonly IAmazonAmplifyUIBuilder client;
 

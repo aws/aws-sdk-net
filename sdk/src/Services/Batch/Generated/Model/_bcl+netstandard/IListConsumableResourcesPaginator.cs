@@ -24,7 +24,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Paginator for the ListConsumableResources operation
     ///</summary>
-    public interface IListConsumableResourcesPaginator
+    public partial interface IListConsumableResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

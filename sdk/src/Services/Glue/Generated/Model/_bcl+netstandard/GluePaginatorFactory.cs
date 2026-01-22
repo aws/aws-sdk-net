@@ -27,7 +27,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginators for the Glue service
     ///</summary>
-    public class GluePaginatorFactory : IGluePaginatorFactory
+    public partial class GluePaginatorFactory : IGluePaginatorFactory
     {
         private readonly IAmazonGlue client;
 

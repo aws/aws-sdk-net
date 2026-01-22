@@ -24,7 +24,7 @@ namespace Amazon.DataPipeline.Model
     /// <summary>
     /// Paginator for the DescribeObjects operation
     ///</summary>
-    public interface IDescribeObjectsPaginator
+    public partial interface IDescribeObjectsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

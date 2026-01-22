@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralSelling.Model
     /// <summary>
     /// Paginator for the ListResourceSnapshots operation
     ///</summary>
-    public interface IListResourceSnapshotsPaginator
+    public partial interface IListResourceSnapshotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

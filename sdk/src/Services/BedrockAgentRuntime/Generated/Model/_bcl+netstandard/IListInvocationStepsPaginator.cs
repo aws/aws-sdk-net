@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// Paginator for the ListInvocationSteps operation
     ///</summary>
-    public interface IListInvocationStepsPaginator
+    public partial interface IListInvocationStepsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

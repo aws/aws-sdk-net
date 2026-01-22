@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesThinClient.Model
     /// <summary>
     /// Paginators for the WorkSpacesThinClient service
     ///</summary>
-    public interface IWorkSpacesThinClientPaginatorFactory
+    public partial interface IWorkSpacesThinClientPaginatorFactory
     {
 
         /// <summary>

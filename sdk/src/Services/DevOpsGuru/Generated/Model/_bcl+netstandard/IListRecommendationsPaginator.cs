@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the ListRecommendations operation
     ///</summary>
-    public interface IListRecommendationsPaginator
+    public partial interface IListRecommendationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

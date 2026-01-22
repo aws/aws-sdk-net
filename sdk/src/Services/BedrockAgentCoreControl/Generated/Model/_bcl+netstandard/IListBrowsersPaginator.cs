@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Paginator for the ListBrowsers operation
     ///</summary>
-    public interface IListBrowsersPaginator
+    public partial interface IListBrowsersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

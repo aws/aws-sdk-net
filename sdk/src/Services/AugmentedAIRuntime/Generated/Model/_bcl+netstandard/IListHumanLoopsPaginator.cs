@@ -24,7 +24,7 @@ namespace Amazon.AugmentedAIRuntime.Model
     /// <summary>
     /// Paginator for the ListHumanLoops operation
     ///</summary>
-    public interface IListHumanLoopsPaginator
+    public partial interface IListHumanLoopsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

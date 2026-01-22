@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeSourceRegions operation
     ///</summary>
-    public interface IDescribeSourceRegionsPaginator
+    public partial interface IDescribeSourceRegionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

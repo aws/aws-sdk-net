@@ -24,7 +24,7 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Paginators for the Proton service
     ///</summary>
-    public interface IProtonPaginatorFactory
+    public partial interface IProtonPaginatorFactory
     {
 
         /// <summary>

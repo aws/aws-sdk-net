@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListOpenIDConnectProviderTags operation
     ///</summary>
-    public interface IListOpenIDConnectProviderTagsPaginator
+    public partial interface IListOpenIDConnectProviderTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

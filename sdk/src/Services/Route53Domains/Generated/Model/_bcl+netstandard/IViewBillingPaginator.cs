@@ -24,7 +24,7 @@ namespace Amazon.Route53Domains.Model
     /// <summary>
     /// Paginator for the ViewBilling operation
     ///</summary>
-    public interface IViewBillingPaginator
+    public partial interface IViewBillingPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

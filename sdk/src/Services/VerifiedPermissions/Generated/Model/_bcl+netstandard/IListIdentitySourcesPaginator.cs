@@ -24,7 +24,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// <summary>
     /// Paginator for the ListIdentitySources operation
     ///</summary>
-    public interface IListIdentitySourcesPaginator
+    public partial interface IListIdentitySourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

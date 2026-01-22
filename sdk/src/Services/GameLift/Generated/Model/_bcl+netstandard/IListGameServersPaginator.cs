@@ -24,7 +24,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginator for the ListGameServers operation
     ///</summary>
-    public interface IListGameServersPaginator
+    public partial interface IListGameServersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

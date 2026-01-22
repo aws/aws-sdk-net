@@ -27,7 +27,7 @@ namespace Amazon.WorkspacesInstances.Model
     /// <summary>
     /// Paginators for the WorkspacesInstances service
     ///</summary>
-    public class WorkspacesInstancesPaginatorFactory : IWorkspacesInstancesPaginatorFactory
+    public partial class WorkspacesInstancesPaginatorFactory : IWorkspacesInstancesPaginatorFactory
     {
         private readonly IAmazonWorkspacesInstances client;
 

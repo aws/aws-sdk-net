@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the ListCoreNetworkPrefixListAssociations operation
     ///</summary>
-    public interface IListCoreNetworkPrefixListAssociationsPaginator
+    public partial interface IListCoreNetworkPrefixListAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

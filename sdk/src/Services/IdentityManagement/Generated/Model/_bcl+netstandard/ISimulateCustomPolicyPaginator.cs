@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the SimulateCustomPolicy operation
     ///</summary>
-    public interface ISimulateCustomPolicyPaginator
+    public partial interface ISimulateCustomPolicyPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Paginators for the CodeArtifact service
     ///</summary>
-    public class CodeArtifactPaginatorFactory : ICodeArtifactPaginatorFactory
+    public partial class CodeArtifactPaginatorFactory : ICodeArtifactPaginatorFactory
     {
         private readonly IAmazonCodeArtifact client;
 

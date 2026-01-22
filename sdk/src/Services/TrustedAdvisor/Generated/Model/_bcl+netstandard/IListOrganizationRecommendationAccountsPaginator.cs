@@ -24,7 +24,7 @@ namespace Amazon.TrustedAdvisor.Model
     /// <summary>
     /// Paginator for the ListOrganizationRecommendationAccounts operation
     ///</summary>
-    public interface IListOrganizationRecommendationAccountsPaginator
+    public partial interface IListOrganizationRecommendationAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

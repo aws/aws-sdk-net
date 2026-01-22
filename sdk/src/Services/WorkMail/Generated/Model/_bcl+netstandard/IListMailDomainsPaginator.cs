@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListMailDomains operation
     ///</summary>
-    public interface IListMailDomainsPaginator
+    public partial interface IListMailDomainsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

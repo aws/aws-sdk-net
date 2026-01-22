@@ -24,7 +24,7 @@ namespace Amazon.MediaPackageV2.Model
     /// <summary>
     /// Paginator for the ListOriginEndpoints operation
     ///</summary>
-    public interface IListOriginEndpointsPaginator
+    public partial interface IListOriginEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

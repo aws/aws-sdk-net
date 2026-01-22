@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListInstanceProfileTags operation
     ///</summary>
-    public interface IListInstanceProfileTagsPaginator
+    public partial interface IListInstanceProfileTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

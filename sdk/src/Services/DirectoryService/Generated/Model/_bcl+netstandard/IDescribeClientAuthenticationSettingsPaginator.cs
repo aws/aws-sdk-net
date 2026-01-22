@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the DescribeClientAuthenticationSettings operation
     ///</summary>
-    public interface IDescribeClientAuthenticationSettingsPaginator
+    public partial interface IDescribeClientAuthenticationSettingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

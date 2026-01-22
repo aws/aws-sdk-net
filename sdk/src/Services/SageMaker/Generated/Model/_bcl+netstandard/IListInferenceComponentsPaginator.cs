@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListInferenceComponents operation
     ///</summary>
-    public interface IListInferenceComponentsPaginator
+    public partial interface IListInferenceComponentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

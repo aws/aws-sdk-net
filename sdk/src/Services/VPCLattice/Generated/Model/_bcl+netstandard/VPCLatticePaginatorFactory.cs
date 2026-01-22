@@ -27,7 +27,7 @@ namespace Amazon.VPCLattice.Model
     /// <summary>
     /// Paginators for the VPCLattice service
     ///</summary>
-    public class VPCLatticePaginatorFactory : IVPCLatticePaginatorFactory
+    public partial class VPCLatticePaginatorFactory : IVPCLatticePaginatorFactory
     {
         private readonly IAmazonVPCLattice client;
 

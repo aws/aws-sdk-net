@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListTemplateAliases operation
     ///</summary>
-    public interface IListTemplateAliasesPaginator
+    public partial interface IListTemplateAliasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

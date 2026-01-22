@@ -24,7 +24,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// <summary>
     /// Paginator for the ListCodeReviews operation
     ///</summary>
-    public interface IListCodeReviewsPaginator
+    public partial interface IListCodeReviewsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

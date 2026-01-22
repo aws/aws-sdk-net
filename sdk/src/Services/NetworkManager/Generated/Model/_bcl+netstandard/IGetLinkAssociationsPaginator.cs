@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the GetLinkAssociations operation
     ///</summary>
-    public interface IGetLinkAssociationsPaginator
+    public partial interface IGetLinkAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

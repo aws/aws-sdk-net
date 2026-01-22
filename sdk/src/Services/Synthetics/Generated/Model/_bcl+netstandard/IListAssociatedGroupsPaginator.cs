@@ -24,7 +24,7 @@ namespace Amazon.Synthetics.Model
     /// <summary>
     /// Paginator for the ListAssociatedGroups operation
     ///</summary>
-    public interface IListAssociatedGroupsPaginator
+    public partial interface IListAssociatedGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the GetSegmentDetection operation
     ///</summary>
-    public interface IGetSegmentDetectionPaginator
+    public partial interface IGetSegmentDetectionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Paginators for the StepFunctions service
     ///</summary>
-    public interface IStepFunctionsPaginatorFactory
+    public partial interface IStepFunctionsPaginatorFactory
     {
 
         /// <summary>

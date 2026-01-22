@@ -24,7 +24,7 @@ namespace Amazon.SecurityLake.Model
     /// <summary>
     /// Paginator for the ListLogSources operation
     ///</summary>
-    public interface IListLogSourcesPaginator
+    public partial interface IListLogSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

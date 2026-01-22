@@ -24,7 +24,7 @@ namespace Amazon.AIOps.Model
     /// <summary>
     /// Paginators for the AIOps service
     ///</summary>
-    public interface IAIOpsPaginatorFactory
+    public partial interface IAIOpsPaginatorFactory
     {
 
         /// <summary>

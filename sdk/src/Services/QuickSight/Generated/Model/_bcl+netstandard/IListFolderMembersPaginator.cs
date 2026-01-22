@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListFolderMembers operation
     ///</summary>
-    public interface IListFolderMembersPaginator
+    public partial interface IListFolderMembersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

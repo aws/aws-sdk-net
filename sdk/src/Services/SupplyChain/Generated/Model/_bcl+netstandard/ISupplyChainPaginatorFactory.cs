@@ -24,7 +24,7 @@ namespace Amazon.SupplyChain.Model
     /// <summary>
     /// Paginators for the SupplyChain service
     ///</summary>
-    public interface ISupplyChainPaginatorFactory
+    public partial interface ISupplyChainPaginatorFactory
     {
 
         /// <summary>

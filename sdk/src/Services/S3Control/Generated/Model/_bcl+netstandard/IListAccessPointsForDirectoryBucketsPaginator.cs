@@ -24,7 +24,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Paginator for the ListAccessPointsForDirectoryBuckets operation
     ///</summary>
-    public interface IListAccessPointsForDirectoryBucketsPaginator
+    public partial interface IListAccessPointsForDirectoryBucketsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

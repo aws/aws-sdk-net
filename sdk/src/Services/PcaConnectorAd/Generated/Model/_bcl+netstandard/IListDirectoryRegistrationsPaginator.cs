@@ -24,7 +24,7 @@ namespace Amazon.PcaConnectorAd.Model
     /// <summary>
     /// Paginator for the ListDirectoryRegistrations operation
     ///</summary>
-    public interface IListDirectoryRegistrationsPaginator
+    public partial interface IListDirectoryRegistrationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

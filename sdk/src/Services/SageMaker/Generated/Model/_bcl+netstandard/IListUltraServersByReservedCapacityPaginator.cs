@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListUltraServersByReservedCapacity operation
     ///</summary>
-    public interface IListUltraServersByReservedCapacityPaginator
+    public partial interface IListUltraServersByReservedCapacityPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

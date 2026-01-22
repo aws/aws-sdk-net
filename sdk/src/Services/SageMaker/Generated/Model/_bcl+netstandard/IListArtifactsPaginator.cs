@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListArtifacts operation
     ///</summary>
-    public interface IListArtifactsPaginator
+    public partial interface IListArtifactsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

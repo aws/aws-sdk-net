@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetTransitGatewayPolicyTableAssociations operation
     ///</summary>
-    public interface IGetTransitGatewayPolicyTableAssociationsPaginator
+    public partial interface IGetTransitGatewayPolicyTableAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

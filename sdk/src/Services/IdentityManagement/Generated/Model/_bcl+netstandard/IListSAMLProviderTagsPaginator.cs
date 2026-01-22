@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListSAMLProviderTags operation
     ///</summary>
-    public interface IListSAMLProviderTagsPaginator
+    public partial interface IListSAMLProviderTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

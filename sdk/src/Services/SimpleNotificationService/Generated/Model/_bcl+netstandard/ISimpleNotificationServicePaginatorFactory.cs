@@ -24,7 +24,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Paginators for the SimpleNotificationService service
     ///</summary>
-    public interface ISimpleNotificationServicePaginatorFactory
+    public partial interface ISimpleNotificationServicePaginatorFactory
     {
 
         /// <summary>

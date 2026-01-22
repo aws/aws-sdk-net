@@ -24,7 +24,7 @@ namespace Amazon.GreengrassV2.Model
     /// <summary>
     /// Paginators for the GreengrassV2 service
     ///</summary>
-    public interface IGreengrassV2PaginatorFactory
+    public partial interface IGreengrassV2PaginatorFactory
     {
 
         /// <summary>

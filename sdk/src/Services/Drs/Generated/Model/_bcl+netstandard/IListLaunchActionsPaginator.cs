@@ -24,7 +24,7 @@ namespace Amazon.Drs.Model
     /// <summary>
     /// Paginator for the ListLaunchActions operation
     ///</summary>
-    public interface IListLaunchActionsPaginator
+    public partial interface IListLaunchActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.ApplicationCostProfiler.Model
     /// <summary>
     /// Paginators for the ApplicationCostProfiler service
     ///</summary>
-    public class ApplicationCostProfilerPaginatorFactory : IApplicationCostProfilerPaginatorFactory
+    public partial class ApplicationCostProfilerPaginatorFactory : IApplicationCostProfilerPaginatorFactory
     {
         private readonly IAmazonApplicationCostProfiler client;
 

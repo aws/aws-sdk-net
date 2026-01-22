@@ -24,7 +24,7 @@ namespace Amazon.MPA.Model
     /// <summary>
     /// Paginator for the ListApprovalTeams operation
     ///</summary>
-    public interface IListApprovalTeamsPaginator
+    public partial interface IListApprovalTeamsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

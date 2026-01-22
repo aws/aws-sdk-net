@@ -24,7 +24,7 @@ namespace Amazon.ARCZonalShift.Model
     /// <summary>
     /// Paginator for the ListManagedResources operation
     ///</summary>
-    public interface IListManagedResourcesPaginator
+    public partial interface IListManagedResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

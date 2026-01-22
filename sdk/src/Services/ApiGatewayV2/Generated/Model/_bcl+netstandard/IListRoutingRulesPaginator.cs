@@ -24,7 +24,7 @@ namespace Amazon.ApiGatewayV2.Model
     /// <summary>
     /// Paginator for the ListRoutingRules operation
     ///</summary>
-    public interface IListRoutingRulesPaginator
+    public partial interface IListRoutingRulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

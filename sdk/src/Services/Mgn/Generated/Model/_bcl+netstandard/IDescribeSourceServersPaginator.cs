@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginator for the DescribeSourceServers operation
     ///</summary>
-    public interface IDescribeSourceServersPaginator
+    public partial interface IDescribeSourceServersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

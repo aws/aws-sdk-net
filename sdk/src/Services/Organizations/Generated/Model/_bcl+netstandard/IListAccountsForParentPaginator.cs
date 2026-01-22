@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListAccountsForParent operation
     ///</summary>
-    public interface IListAccountsForParentPaginator
+    public partial interface IListAccountsForParentPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

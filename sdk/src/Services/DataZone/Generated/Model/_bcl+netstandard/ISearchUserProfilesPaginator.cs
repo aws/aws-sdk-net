@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the SearchUserProfiles operation
     ///</summary>
-    public interface ISearchUserProfilesPaginator
+    public partial interface ISearchUserProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

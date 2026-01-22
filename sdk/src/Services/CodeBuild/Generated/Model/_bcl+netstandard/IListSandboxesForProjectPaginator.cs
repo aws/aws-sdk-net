@@ -24,7 +24,7 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Paginator for the ListSandboxesForProject operation
     ///</summary>
-    public interface IListSandboxesForProjectPaginator
+    public partial interface IListSandboxesForProjectPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

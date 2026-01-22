@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralSelling.Model
     /// <summary>
     /// Paginators for the PartnerCentralSelling service
     ///</summary>
-    public interface IPartnerCentralSellingPaginatorFactory
+    public partial interface IPartnerCentralSellingPaginatorFactory
     {
 
         /// <summary>

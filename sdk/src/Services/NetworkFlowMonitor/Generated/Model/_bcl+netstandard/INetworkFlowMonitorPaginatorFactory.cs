@@ -24,7 +24,7 @@ namespace Amazon.NetworkFlowMonitor.Model
     /// <summary>
     /// Paginators for the NetworkFlowMonitor service
     ///</summary>
-    public interface INetworkFlowMonitorPaginatorFactory
+    public partial interface INetworkFlowMonitorPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the ListDurableExecutionsByFunction operation
     ///</summary>
-    public interface IListDurableExecutionsByFunctionPaginator
+    public partial interface IListDurableExecutionsByFunctionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

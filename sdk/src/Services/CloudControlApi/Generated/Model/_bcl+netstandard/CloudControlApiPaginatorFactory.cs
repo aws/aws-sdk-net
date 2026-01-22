@@ -27,7 +27,7 @@ namespace Amazon.CloudControlApi.Model
     /// <summary>
     /// Paginators for the CloudControlApi service
     ///</summary>
-    public class CloudControlApiPaginatorFactory : ICloudControlApiPaginatorFactory
+    public partial class CloudControlApiPaginatorFactory : ICloudControlApiPaginatorFactory
     {
         private readonly IAmazonCloudControlApi client;
 

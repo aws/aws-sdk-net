@@ -27,7 +27,7 @@ namespace Amazon.SSMIncidents.Model
     /// <summary>
     /// Paginators for the SSMIncidents service
     ///</summary>
-    public class SSMIncidentsPaginatorFactory : ISSMIncidentsPaginatorFactory
+    public partial class SSMIncidentsPaginatorFactory : ISSMIncidentsPaginatorFactory
     {
         private readonly IAmazonSSMIncidents client;
 

@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginator for the ListSystemVersions operation
     ///</summary>
-    public interface IListSystemVersionsPaginator
+    public partial interface IListSystemVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

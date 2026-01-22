@@ -24,7 +24,7 @@ namespace Amazon.MediaConvert.Model
     /// <summary>
     /// Paginator for the ListPresets operation
     ///</summary>
-    public interface IListPresetsPaginator
+    public partial interface IListPresetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

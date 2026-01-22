@@ -24,7 +24,7 @@ namespace Amazon.PCS.Model
     /// <summary>
     /// Paginator for the ListComputeNodeGroups operation
     ///</summary>
-    public interface IListComputeNodeGroupsPaginator
+    public partial interface IListComputeNodeGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

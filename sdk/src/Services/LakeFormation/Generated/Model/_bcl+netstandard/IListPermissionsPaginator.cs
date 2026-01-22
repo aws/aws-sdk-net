@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginator for the ListPermissions operation
     ///</summary>
-    public interface IListPermissionsPaginator
+    public partial interface IListPermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

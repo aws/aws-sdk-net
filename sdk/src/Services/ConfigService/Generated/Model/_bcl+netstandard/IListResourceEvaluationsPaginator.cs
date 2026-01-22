@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the ListResourceEvaluations operation
     ///</summary>
-    public interface IListResourceEvaluationsPaginator
+    public partial interface IListResourceEvaluationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

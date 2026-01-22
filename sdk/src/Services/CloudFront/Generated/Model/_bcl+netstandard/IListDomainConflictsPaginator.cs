@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListDomainConflicts operation
     ///</summary>
-    public interface IListDomainConflictsPaginator
+    public partial interface IListDomainConflictsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

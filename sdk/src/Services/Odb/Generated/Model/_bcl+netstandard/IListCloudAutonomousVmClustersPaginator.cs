@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginator for the ListCloudAutonomousVmClusters operation
     ///</summary>
-    public interface IListCloudAutonomousVmClustersPaginator
+    public partial interface IListCloudAutonomousVmClustersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

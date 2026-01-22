@@ -24,7 +24,7 @@ namespace Amazon.ResilienceHub.Model
     /// <summary>
     /// Paginators for the ResilienceHub service
     ///</summary>
-    public interface IResilienceHubPaginatorFactory
+    public partial interface IResilienceHubPaginatorFactory
     {
 
         /// <summary>

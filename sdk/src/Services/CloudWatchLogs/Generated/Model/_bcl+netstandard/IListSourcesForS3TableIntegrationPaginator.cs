@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Paginator for the ListSourcesForS3TableIntegration operation
     ///</summary>
-    public interface IListSourcesForS3TableIntegrationPaginator
+    public partial interface IListSourcesForS3TableIntegrationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

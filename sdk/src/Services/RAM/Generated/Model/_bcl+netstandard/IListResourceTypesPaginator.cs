@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the ListResourceTypes operation
     ///</summary>
-    public interface IListResourceTypesPaginator
+    public partial interface IListResourceTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

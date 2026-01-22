@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListTableMetadata operation
     ///</summary>
-    public interface IListTableMetadataPaginator
+    public partial interface IListTableMetadataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

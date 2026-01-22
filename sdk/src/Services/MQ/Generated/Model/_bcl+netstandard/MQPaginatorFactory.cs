@@ -27,7 +27,7 @@ namespace Amazon.MQ.Model
     /// <summary>
     /// Paginators for the MQ service
     ///</summary>
-    public class MQPaginatorFactory : IMQPaginatorFactory
+    public partial class MQPaginatorFactory : IMQPaginatorFactory
     {
         private readonly IAmazonMQ client;
 

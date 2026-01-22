@@ -24,7 +24,7 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Paginator for the DescribeCodeCoverages operation
     ///</summary>
-    public interface IDescribeCodeCoveragesPaginator
+    public partial interface IDescribeCodeCoveragesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

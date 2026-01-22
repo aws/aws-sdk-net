@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the ListTestGridSessionArtifacts operation
     ///</summary>
-    public interface IListTestGridSessionArtifactsPaginator
+    public partial interface IListTestGridSessionArtifactsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

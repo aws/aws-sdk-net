@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListTrials operation
     ///</summary>
-    public interface IListTrialsPaginator
+    public partial interface IListTrialsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

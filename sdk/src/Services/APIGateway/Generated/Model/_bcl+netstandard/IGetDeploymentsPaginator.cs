@@ -24,7 +24,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Paginator for the GetDeployments operation
     ///</summary>
-    public interface IGetDeploymentsPaginator
+    public partial interface IGetDeploymentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

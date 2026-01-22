@@ -24,7 +24,7 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Paginators for the LookoutEquipment service
     ///</summary>
-    public interface ILookoutEquipmentPaginatorFactory
+    public partial interface ILookoutEquipmentPaginatorFactory
     {
 
         /// <summary>

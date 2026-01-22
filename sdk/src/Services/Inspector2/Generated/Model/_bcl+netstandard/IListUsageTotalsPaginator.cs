@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginator for the ListUsageTotals operation
     ///</summary>
-    public interface IListUsageTotalsPaginator
+    public partial interface IListUsageTotalsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

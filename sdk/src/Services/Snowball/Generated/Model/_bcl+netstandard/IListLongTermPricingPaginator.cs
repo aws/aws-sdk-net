@@ -24,7 +24,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Paginator for the ListLongTermPricing operation
     ///</summary>
-    public interface IListLongTermPricingPaginator
+    public partial interface IListLongTermPricingPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

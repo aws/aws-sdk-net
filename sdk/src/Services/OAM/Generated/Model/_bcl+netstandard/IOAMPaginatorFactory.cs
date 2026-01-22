@@ -24,7 +24,7 @@ namespace Amazon.OAM.Model
     /// <summary>
     /// Paginators for the OAM service
     ///</summary>
-    public interface IOAMPaginatorFactory
+    public partial interface IOAMPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Paginator for the ListSensorStatistics operation
     ///</summary>
-    public interface IListSensorStatisticsPaginator
+    public partial interface IListSensorStatisticsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

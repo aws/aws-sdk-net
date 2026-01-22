@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeRouteServerPeers operation
     ///</summary>
-    public interface IDescribeRouteServerPeersPaginator
+    public partial interface IDescribeRouteServerPeersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

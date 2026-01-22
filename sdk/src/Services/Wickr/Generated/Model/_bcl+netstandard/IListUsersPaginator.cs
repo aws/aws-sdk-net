@@ -24,7 +24,7 @@ namespace Amazon.Wickr.Model
     /// <summary>
     /// Paginator for the ListUsers operation
     ///</summary>
-    public interface IListUsersPaginator
+    public partial interface IListUsersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

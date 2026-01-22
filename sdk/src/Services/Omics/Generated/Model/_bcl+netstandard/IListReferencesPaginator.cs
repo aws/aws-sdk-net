@@ -24,7 +24,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginator for the ListReferences operation
     ///</summary>
-    public interface IListReferencesPaginator
+    public partial interface IListReferencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchAgentStatuses operation
     ///</summary>
-    public interface ISearchAgentStatusesPaginator
+    public partial interface ISearchAgentStatusesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

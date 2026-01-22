@@ -24,7 +24,7 @@ namespace Amazon.ApiGatewayV2.Model
     /// <summary>
     /// Paginators for the ApiGatewayV2 service
     ///</summary>
-    public interface IApiGatewayV2PaginatorFactory
+    public partial interface IApiGatewayV2PaginatorFactory
     {
 
         /// <summary>

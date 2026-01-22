@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Paginator for the ListHealthChecks operation
     ///</summary>
-    public interface IListHealthChecksPaginator
+    public partial interface IListHealthChecksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

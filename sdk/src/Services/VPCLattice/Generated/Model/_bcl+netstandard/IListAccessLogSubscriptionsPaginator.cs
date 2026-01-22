@@ -24,7 +24,7 @@ namespace Amazon.VPCLattice.Model
     /// <summary>
     /// Paginator for the ListAccessLogSubscriptions operation
     ///</summary>
-    public interface IListAccessLogSubscriptionsPaginator
+    public partial interface IListAccessLogSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

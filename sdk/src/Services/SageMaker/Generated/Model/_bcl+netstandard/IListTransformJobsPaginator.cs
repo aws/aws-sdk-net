@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListTransformJobs operation
     ///</summary>
-    public interface IListTransformJobsPaginator
+    public partial interface IListTransformJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

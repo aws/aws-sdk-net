@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// <summary>
     /// Paginator for the SearchChannels operation
     ///</summary>
-    public interface ISearchChannelsPaginator
+    public partial interface ISearchChannelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

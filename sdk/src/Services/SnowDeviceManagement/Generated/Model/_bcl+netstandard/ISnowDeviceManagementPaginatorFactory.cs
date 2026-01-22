@@ -24,7 +24,7 @@ namespace Amazon.SnowDeviceManagement.Model
     /// <summary>
     /// Paginators for the SnowDeviceManagement service
     ///</summary>
-    public interface ISnowDeviceManagementPaginatorFactory
+    public partial interface ISnowDeviceManagementPaginatorFactory
     {
 
         /// <summary>

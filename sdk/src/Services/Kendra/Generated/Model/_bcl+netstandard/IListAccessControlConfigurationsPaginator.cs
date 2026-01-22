@@ -24,7 +24,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginator for the ListAccessControlConfigurations operation
     ///</summary>
-    public interface IListAccessControlConfigurationsPaginator
+    public partial interface IListAccessControlConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.MedicalImaging.Model
     /// <summary>
     /// Paginator for the ListDICOMImportJobs operation
     ///</summary>
-    public interface IListDICOMImportJobsPaginator
+    public partial interface IListDICOMImportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

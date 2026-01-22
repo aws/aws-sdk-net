@@ -24,7 +24,7 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Paginator for the ListStreamKeys operation
     ///</summary>
-    public interface IListStreamKeysPaginator
+    public partial interface IListStreamKeysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

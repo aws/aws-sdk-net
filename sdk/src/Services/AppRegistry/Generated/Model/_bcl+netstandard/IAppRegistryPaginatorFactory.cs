@@ -24,7 +24,7 @@ namespace Amazon.AppRegistry.Model
     /// <summary>
     /// Paginators for the AppRegistry service
     ///</summary>
-    public interface IAppRegistryPaginatorFactory
+    public partial interface IAppRegistryPaginatorFactory
     {
 
         /// <summary>

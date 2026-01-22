@@ -24,7 +24,7 @@ namespace Amazon.ConnectWisdomService.Model
     /// <summary>
     /// Paginator for the SearchContent operation
     ///</summary>
-    public interface ISearchContentPaginator
+    public partial interface ISearchContentPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ResilienceHub.Model
     /// <summary>
     /// Paginator for the ListAppInputSources operation
     ///</summary>
-    public interface IListAppInputSourcesPaginator
+    public partial interface IListAppInputSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

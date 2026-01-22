@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeBlueGreenDeployments operation
     ///</summary>
-    public interface IDescribeBlueGreenDeploymentsPaginator
+    public partial interface IDescribeBlueGreenDeploymentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

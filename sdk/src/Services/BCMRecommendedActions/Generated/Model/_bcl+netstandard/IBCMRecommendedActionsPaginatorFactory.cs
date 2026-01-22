@@ -24,7 +24,7 @@ namespace Amazon.BCMRecommendedActions.Model
     /// <summary>
     /// Paginators for the BCMRecommendedActions service
     ///</summary>
-    public interface IBCMRecommendedActionsPaginatorFactory
+    public partial interface IBCMRecommendedActionsPaginatorFactory
     {
 
         /// <summary>

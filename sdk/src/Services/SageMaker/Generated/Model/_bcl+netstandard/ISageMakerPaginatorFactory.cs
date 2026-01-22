@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginators for the SageMaker service
     ///</summary>
-    public interface ISageMakerPaginatorFactory
+    public partial interface ISageMakerPaginatorFactory
     {
 
         /// <summary>

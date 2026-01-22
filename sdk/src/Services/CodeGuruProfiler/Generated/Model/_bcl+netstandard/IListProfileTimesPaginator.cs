@@ -24,7 +24,7 @@ namespace Amazon.CodeGuruProfiler.Model
     /// <summary>
     /// Paginator for the ListProfileTimes operation
     ///</summary>
-    public interface IListProfileTimesPaginator
+    public partial interface IListProfileTimesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

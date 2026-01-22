@@ -24,7 +24,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Paginator for the ListByoipCidrs operation
     ///</summary>
-    public interface IListByoipCidrsPaginator
+    public partial interface IListByoipCidrsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.PCS.Model
     /// <summary>
     /// Paginators for the PCS service
     ///</summary>
-    public class PCSPaginatorFactory : IPCSPaginatorFactory
+    public partial class PCSPaginatorFactory : IPCSPaginatorFactory
     {
         private readonly IAmazonPCS client;
 

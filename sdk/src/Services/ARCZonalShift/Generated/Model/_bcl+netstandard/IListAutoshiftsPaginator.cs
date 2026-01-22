@@ -24,7 +24,7 @@ namespace Amazon.ARCZonalShift.Model
     /// <summary>
     /// Paginator for the ListAutoshifts operation
     ///</summary>
-    public interface IListAutoshiftsPaginator
+    public partial interface IListAutoshiftsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

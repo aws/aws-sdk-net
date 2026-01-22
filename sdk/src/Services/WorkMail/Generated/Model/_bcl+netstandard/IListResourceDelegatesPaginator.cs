@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListResourceDelegates operation
     ///</summary>
-    public interface IListResourceDelegatesPaginator
+    public partial interface IListResourceDelegatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

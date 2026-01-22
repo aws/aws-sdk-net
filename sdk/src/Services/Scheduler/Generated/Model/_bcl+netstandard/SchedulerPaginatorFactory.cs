@@ -27,7 +27,7 @@ namespace Amazon.Scheduler.Model
     /// <summary>
     /// Paginators for the Scheduler service
     ///</summary>
-    public class SchedulerPaginatorFactory : ISchedulerPaginatorFactory
+    public partial class SchedulerPaginatorFactory : ISchedulerPaginatorFactory
     {
         private readonly IAmazonScheduler client;
 

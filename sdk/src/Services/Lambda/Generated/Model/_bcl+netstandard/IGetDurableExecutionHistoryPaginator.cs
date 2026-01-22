@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the GetDurableExecutionHistory operation
     ///</summary>
-    public interface IGetDurableExecutionHistoryPaginator
+    public partial interface IGetDurableExecutionHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

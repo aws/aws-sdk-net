@@ -24,7 +24,7 @@ namespace Amazon.EMRServerless.Model
     /// <summary>
     /// Paginator for the ListJobRuns operation
     ///</summary>
-    public interface IListJobRunsPaginator
+    public partial interface IListJobRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

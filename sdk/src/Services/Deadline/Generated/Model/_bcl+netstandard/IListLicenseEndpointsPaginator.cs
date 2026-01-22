@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListLicenseEndpoints operation
     ///</summary>
-    public interface IListLicenseEndpointsPaginator
+    public partial interface IListLicenseEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

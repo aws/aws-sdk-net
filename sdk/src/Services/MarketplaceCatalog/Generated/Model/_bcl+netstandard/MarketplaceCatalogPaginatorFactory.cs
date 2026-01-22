@@ -27,7 +27,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// <summary>
     /// Paginators for the MarketplaceCatalog service
     ///</summary>
-    public class MarketplaceCatalogPaginatorFactory : IMarketplaceCatalogPaginatorFactory
+    public partial class MarketplaceCatalogPaginatorFactory : IMarketplaceCatalogPaginatorFactory
     {
         private readonly IAmazonMarketplaceCatalog client;
 

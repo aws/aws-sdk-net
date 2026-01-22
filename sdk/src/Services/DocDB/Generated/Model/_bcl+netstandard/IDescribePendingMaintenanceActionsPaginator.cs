@@ -24,7 +24,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Paginator for the DescribePendingMaintenanceActions operation
     ///</summary>
-    public interface IDescribePendingMaintenanceActionsPaginator
+    public partial interface IDescribePendingMaintenanceActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

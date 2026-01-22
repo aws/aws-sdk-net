@@ -24,7 +24,7 @@ namespace Amazon.KafkaConnect.Model
     /// <summary>
     /// Paginator for the ListCustomPlugins operation
     ///</summary>
-    public interface IListCustomPluginsPaginator
+    public partial interface IListCustomPluginsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

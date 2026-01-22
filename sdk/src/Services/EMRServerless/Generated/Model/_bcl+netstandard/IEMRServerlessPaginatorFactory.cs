@@ -24,7 +24,7 @@ namespace Amazon.EMRServerless.Model
     /// <summary>
     /// Paginators for the EMRServerless service
     ///</summary>
-    public interface IEMRServerlessPaginatorFactory
+    public partial interface IEMRServerlessPaginatorFactory
     {
 
         /// <summary>

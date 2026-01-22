@@ -24,7 +24,7 @@ namespace Amazon.CodeCatalyst.Model
     /// <summary>
     /// Paginator for the ListDevEnvironmentSessions operation
     ///</summary>
-    public interface IListDevEnvironmentSessionsPaginator
+    public partial interface IListDevEnvironmentSessionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

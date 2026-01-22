@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the ListWorkloadShares operation
     ///</summary>
-    public interface IListWorkloadSharesPaginator
+    public partial interface IListWorkloadSharesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.CodeCatalyst.Model
     /// <summary>
     /// Paginator for the ListEventLogs operation
     ///</summary>
-    public interface IListEventLogsPaginator
+    public partial interface IListEventLogsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

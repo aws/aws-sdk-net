@@ -24,7 +24,7 @@ namespace Amazon.GroundStation.Model
     /// <summary>
     /// Paginators for the GroundStation service
     ///</summary>
-    public interface IGroundStationPaginatorFactory
+    public partial interface IGroundStationPaginatorFactory
     {
 
         /// <summary>

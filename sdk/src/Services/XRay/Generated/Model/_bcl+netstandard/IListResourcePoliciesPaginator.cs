@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the ListResourcePolicies operation
     ///</summary>
-    public interface IListResourcePoliciesPaginator
+    public partial interface IListResourcePoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

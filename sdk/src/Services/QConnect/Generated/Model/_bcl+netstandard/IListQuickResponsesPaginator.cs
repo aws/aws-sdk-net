@@ -24,7 +24,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginator for the ListQuickResponses operation
     ///</summary>
-    public interface IListQuickResponsesPaginator
+    public partial interface IListQuickResponsesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

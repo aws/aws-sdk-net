@@ -24,7 +24,7 @@ namespace Amazon.SSMIncidents.Model
     /// <summary>
     /// Paginator for the ListRelatedItems operation
     ///</summary>
-    public interface IListRelatedItemsPaginator
+    public partial interface IListRelatedItemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

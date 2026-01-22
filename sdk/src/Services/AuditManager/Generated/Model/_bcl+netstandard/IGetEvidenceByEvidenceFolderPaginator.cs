@@ -24,7 +24,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Paginator for the GetEvidenceByEvidenceFolder operation
     ///</summary>
-    public interface IGetEvidenceByEvidenceFolderPaginator
+    public partial interface IGetEvidenceByEvidenceFolderPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

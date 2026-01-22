@@ -27,7 +27,7 @@ namespace Amazon.MTurk.Model
     /// <summary>
     /// Paginators for the MTurk service
     ///</summary>
-    public class MTurkPaginatorFactory : IMTurkPaginatorFactory
+    public partial class MTurkPaginatorFactory : IMTurkPaginatorFactory
     {
         private readonly IAmazonMTurk client;
 

@@ -24,7 +24,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Paginator for the DescribeWarmPool operation
     ///</summary>
-    public interface IDescribeWarmPoolPaginator
+    public partial interface IDescribeWarmPoolPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

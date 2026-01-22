@@ -24,7 +24,7 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Paginators for the FraudDetector service
     ///</summary>
-    public interface IFraudDetectorPaginatorFactory
+    public partial interface IFraudDetectorPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the ListOfferingTransactions operation
     ///</summary>
-    public interface IListOfferingTransactionsPaginator
+    public partial interface IListOfferingTransactionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

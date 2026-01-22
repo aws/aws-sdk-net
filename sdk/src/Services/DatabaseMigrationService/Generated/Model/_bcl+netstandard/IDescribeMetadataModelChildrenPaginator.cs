@@ -24,7 +24,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Paginator for the DescribeMetadataModelChildren operation
     ///</summary>
-    public interface IDescribeMetadataModelChildrenPaginator
+    public partial interface IDescribeMetadataModelChildrenPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

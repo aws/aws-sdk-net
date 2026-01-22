@@ -24,7 +24,7 @@ namespace Amazon.Appflow.Model
     /// <summary>
     /// Paginator for the ListFlows operation
     ///</summary>
-    public interface IListFlowsPaginator
+    public partial interface IListFlowsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

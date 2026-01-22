@@ -24,7 +24,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Paginator for the GetEvidenceFoldersByAssessmentControl operation
     ///</summary>
-    public interface IGetEvidenceFoldersByAssessmentControlPaginator
+    public partial interface IGetEvidenceFoldersByAssessmentControlPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

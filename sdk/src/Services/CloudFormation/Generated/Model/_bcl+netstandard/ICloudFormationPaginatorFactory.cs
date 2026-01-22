@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginators for the CloudFormation service
     ///</summary>
-    public interface ICloudFormationPaginatorFactory
+    public partial interface ICloudFormationPaginatorFactory
     {
 
         /// <summary>

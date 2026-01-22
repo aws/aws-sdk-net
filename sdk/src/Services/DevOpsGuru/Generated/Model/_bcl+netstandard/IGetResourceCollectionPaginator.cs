@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the GetResourceCollection operation
     ///</summary>
-    public interface IGetResourceCollectionPaginator
+    public partial interface IGetResourceCollectionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

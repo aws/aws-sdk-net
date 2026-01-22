@@ -24,7 +24,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Paginator for the GetBasePathMappings operation
     ///</summary>
-    public interface IGetBasePathMappingsPaginator
+    public partial interface IGetBasePathMappingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

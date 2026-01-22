@@ -27,7 +27,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginators for the DevOpsGuru service
     ///</summary>
-    public class DevOpsGuruPaginatorFactory : IDevOpsGuruPaginatorFactory
+    public partial class DevOpsGuruPaginatorFactory : IDevOpsGuruPaginatorFactory
     {
         private readonly IAmazonDevOpsGuru client;
 

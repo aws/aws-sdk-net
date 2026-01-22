@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginator for the GetEffectivePermissionsForPath operation
     ///</summary>
-    public interface IGetEffectivePermissionsForPathPaginator
+    public partial interface IGetEffectivePermissionsForPathPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

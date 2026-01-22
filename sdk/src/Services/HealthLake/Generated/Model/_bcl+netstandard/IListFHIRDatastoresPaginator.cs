@@ -24,7 +24,7 @@ namespace Amazon.HealthLake.Model
     /// <summary>
     /// Paginator for the ListFHIRDatastores operation
     ///</summary>
-    public interface IListFHIRDatastoresPaginator
+    public partial interface IListFHIRDatastoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

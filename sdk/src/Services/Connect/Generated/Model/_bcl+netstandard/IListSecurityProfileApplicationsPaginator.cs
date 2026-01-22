@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListSecurityProfileApplications operation
     ///</summary>
-    public interface IListSecurityProfileApplicationsPaginator
+    public partial interface IListSecurityProfileApplicationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

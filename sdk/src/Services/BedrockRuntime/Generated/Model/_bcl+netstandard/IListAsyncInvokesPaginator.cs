@@ -24,7 +24,7 @@ namespace Amazon.BedrockRuntime.Model
     /// <summary>
     /// Paginator for the ListAsyncInvokes operation
     ///</summary>
-    public interface IListAsyncInvokesPaginator
+    public partial interface IListAsyncInvokesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

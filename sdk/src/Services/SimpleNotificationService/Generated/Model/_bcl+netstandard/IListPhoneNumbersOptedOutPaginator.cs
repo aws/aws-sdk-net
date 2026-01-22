@@ -24,7 +24,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Paginator for the ListPhoneNumbersOptedOut operation
     ///</summary>
-    public interface IListPhoneNumbersOptedOutPaginator
+    public partial interface IListPhoneNumbersOptedOutPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

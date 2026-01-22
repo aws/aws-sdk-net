@@ -24,7 +24,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginator for the SearchSessions operation
     ///</summary>
-    public interface ISearchSessionsPaginator
+    public partial interface ISearchSessionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

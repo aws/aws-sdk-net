@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListAppImageConfigs operation
     ///</summary>
-    public interface IListAppImageConfigsPaginator
+    public partial interface IListAppImageConfigsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

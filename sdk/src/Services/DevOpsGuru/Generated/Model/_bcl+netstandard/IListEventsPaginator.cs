@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the ListEvents operation
     ///</summary>
-    public interface IListEventsPaginator
+    public partial interface IListEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

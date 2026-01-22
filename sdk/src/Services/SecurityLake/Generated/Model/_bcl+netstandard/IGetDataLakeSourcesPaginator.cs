@@ -24,7 +24,7 @@ namespace Amazon.SecurityLake.Model
     /// <summary>
     /// Paginator for the GetDataLakeSources operation
     ///</summary>
-    public interface IGetDataLakeSourcesPaginator
+    public partial interface IGetDataLakeSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

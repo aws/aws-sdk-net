@@ -24,7 +24,7 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Paginator for the DescribeS3AccessPointAttachments operation
     ///</summary>
-    public interface IDescribeS3AccessPointAttachmentsPaginator
+    public partial interface IDescribeS3AccessPointAttachmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

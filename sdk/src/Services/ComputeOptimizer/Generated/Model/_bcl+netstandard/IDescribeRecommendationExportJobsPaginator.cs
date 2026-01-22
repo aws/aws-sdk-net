@@ -24,7 +24,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// <summary>
     /// Paginator for the DescribeRecommendationExportJobs operation
     ///</summary>
-    public interface IDescribeRecommendationExportJobsPaginator
+    public partial interface IDescribeRecommendationExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

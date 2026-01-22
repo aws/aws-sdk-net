@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginators for the Lambda service
     ///</summary>
-    public interface ILambdaPaginatorFactory
+    public partial interface ILambdaPaginatorFactory
     {
 
         /// <summary>

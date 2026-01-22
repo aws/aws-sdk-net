@@ -24,7 +24,7 @@ namespace Amazon.Polly.Model
     /// <summary>
     /// Paginators for the Polly service
     ///</summary>
-    public interface IPollyPaginatorFactory
+    public partial interface IPollyPaginatorFactory
     {
 
         /// <summary>

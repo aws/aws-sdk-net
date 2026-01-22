@@ -24,7 +24,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// <summary>
     /// Paginator for the ListFilteredTransactionEvents operation
     ///</summary>
-    public interface IListFilteredTransactionEventsPaginator
+    public partial interface IListFilteredTransactionEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

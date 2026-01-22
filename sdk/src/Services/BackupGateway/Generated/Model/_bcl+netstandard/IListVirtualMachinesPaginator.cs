@@ -24,7 +24,7 @@ namespace Amazon.BackupGateway.Model
     /// <summary>
     /// Paginator for the ListVirtualMachines operation
     ///</summary>
-    public interface IListVirtualMachinesPaginator
+    public partial interface IListVirtualMachinesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

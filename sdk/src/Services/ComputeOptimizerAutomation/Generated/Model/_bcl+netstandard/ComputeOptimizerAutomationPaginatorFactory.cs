@@ -27,7 +27,7 @@ namespace Amazon.ComputeOptimizerAutomation.Model
     /// <summary>
     /// Paginators for the ComputeOptimizerAutomation service
     ///</summary>
-    public class ComputeOptimizerAutomationPaginatorFactory : IComputeOptimizerAutomationPaginatorFactory
+    public partial class ComputeOptimizerAutomationPaginatorFactory : IComputeOptimizerAutomationPaginatorFactory
     {
         private readonly IAmazonComputeOptimizerAutomation client;
 

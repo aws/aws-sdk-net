@@ -27,7 +27,7 @@ namespace Amazon.SageMakerGeospatial.Model
     /// <summary>
     /// Paginators for the SageMakerGeospatial service
     ///</summary>
-    public class SageMakerGeospatialPaginatorFactory : ISageMakerGeospatialPaginatorFactory
+    public partial class SageMakerGeospatialPaginatorFactory : ISageMakerGeospatialPaginatorFactory
     {
         private readonly IAmazonSageMakerGeospatial client;
 

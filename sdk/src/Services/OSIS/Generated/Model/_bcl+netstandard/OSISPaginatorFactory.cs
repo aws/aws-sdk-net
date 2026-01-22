@@ -27,7 +27,7 @@ namespace Amazon.OSIS.Model
     /// <summary>
     /// Paginators for the OSIS service
     ///</summary>
-    public class OSISPaginatorFactory : IOSISPaginatorFactory
+    public partial class OSISPaginatorFactory : IOSISPaginatorFactory
     {
         private readonly IAmazonOSIS client;
 

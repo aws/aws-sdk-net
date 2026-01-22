@@ -24,7 +24,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Paginators for the DocDB service
     ///</summary>
-    public interface IDocDBPaginatorFactory
+    public partial interface IDocDBPaginatorFactory
     {
 
         /// <summary>

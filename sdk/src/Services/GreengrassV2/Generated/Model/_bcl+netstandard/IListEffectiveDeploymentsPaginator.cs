@@ -24,7 +24,7 @@ namespace Amazon.GreengrassV2.Model
     /// <summary>
     /// Paginator for the ListEffectiveDeployments operation
     ///</summary>
-    public interface IListEffectiveDeploymentsPaginator
+    public partial interface IListEffectiveDeploymentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

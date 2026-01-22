@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetJobRuns operation
     ///</summary>
-    public interface IGetJobRunsPaginator
+    public partial interface IGetJobRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

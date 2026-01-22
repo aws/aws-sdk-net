@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the DescribeOrganizationConfiguration operation
     ///</summary>
-    public interface IDescribeOrganizationConfigurationPaginator
+    public partial interface IDescribeOrganizationConfigurationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

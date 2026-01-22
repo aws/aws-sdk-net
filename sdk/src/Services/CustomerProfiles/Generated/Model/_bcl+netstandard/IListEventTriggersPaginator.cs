@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginator for the ListEventTriggers operation
     ///</summary>
-    public interface IListEventTriggersPaginator
+    public partial interface IListEventTriggersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListAuthorizers operation
     ///</summary>
-    public interface IListAuthorizersPaginator
+    public partial interface IListAuthorizersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeSnapshotSchedules operation
     ///</summary>
-    public interface IDescribeSnapshotSchedulesPaginator
+    public partial interface IDescribeSnapshotSchedulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

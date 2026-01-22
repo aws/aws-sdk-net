@@ -24,7 +24,7 @@ namespace Amazon.CodeCatalyst.Model
     /// <summary>
     /// Paginators for the CodeCatalyst service
     ///</summary>
-    public interface ICodeCatalystPaginatorFactory
+    public partial interface ICodeCatalystPaginatorFactory
     {
 
         /// <summary>

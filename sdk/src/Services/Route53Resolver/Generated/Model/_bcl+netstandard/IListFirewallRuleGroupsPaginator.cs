@@ -24,7 +24,7 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Paginator for the ListFirewallRuleGroups operation
     ///</summary>
-    public interface IListFirewallRuleGroupsPaginator
+    public partial interface IListFirewallRuleGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

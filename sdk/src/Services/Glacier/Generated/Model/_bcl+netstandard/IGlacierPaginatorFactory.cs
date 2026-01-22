@@ -24,7 +24,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Paginators for the Glacier service
     ///</summary>
-    public interface IGlacierPaginatorFactory
+    public partial interface IGlacierPaginatorFactory
     {
 
         /// <summary>

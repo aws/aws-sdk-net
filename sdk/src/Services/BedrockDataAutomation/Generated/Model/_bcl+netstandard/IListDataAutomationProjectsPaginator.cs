@@ -24,7 +24,7 @@ namespace Amazon.BedrockDataAutomation.Model
     /// <summary>
     /// Paginator for the ListDataAutomationProjects operation
     ///</summary>
-    public interface IListDataAutomationProjectsPaginator
+    public partial interface IListDataAutomationProjectsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

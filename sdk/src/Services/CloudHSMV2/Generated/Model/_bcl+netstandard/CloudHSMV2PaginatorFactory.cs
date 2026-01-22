@@ -27,7 +27,7 @@ namespace Amazon.CloudHSMV2.Model
     /// <summary>
     /// Paginators for the CloudHSMV2 service
     ///</summary>
-    public class CloudHSMV2PaginatorFactory : ICloudHSMV2PaginatorFactory
+    public partial class CloudHSMV2PaginatorFactory : ICloudHSMV2PaginatorFactory
     {
         private readonly IAmazonCloudHSMV2 client;
 

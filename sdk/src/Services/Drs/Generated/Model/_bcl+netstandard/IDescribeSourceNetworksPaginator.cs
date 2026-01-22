@@ -24,7 +24,7 @@ namespace Amazon.Drs.Model
     /// <summary>
     /// Paginator for the DescribeSourceNetworks operation
     ///</summary>
-    public interface IDescribeSourceNetworksPaginator
+    public partial interface IDescribeSourceNetworksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

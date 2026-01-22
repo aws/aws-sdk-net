@@ -24,7 +24,7 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Paginator for the ListDataIngestionJobs operation
     ///</summary>
-    public interface IListDataIngestionJobsPaginator
+    public partial interface IListDataIngestionJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

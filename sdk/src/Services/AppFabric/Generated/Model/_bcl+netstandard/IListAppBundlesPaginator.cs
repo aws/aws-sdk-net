@@ -24,7 +24,7 @@ namespace Amazon.AppFabric.Model
     /// <summary>
     /// Paginator for the ListAppBundles operation
     ///</summary>
-    public interface IListAppBundlesPaginator
+    public partial interface IListAppBundlesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

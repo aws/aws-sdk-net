@@ -24,7 +24,7 @@ namespace Amazon.IVSRealTime.Model
     /// <summary>
     /// Paginator for the ListIngestConfigurations operation
     ///</summary>
-    public interface IListIngestConfigurationsPaginator
+    public partial interface IListIngestConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

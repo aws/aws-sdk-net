@@ -24,7 +24,7 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Paginators for the Bedrock service
     ///</summary>
-    public interface IBedrockPaginatorFactory
+    public partial interface IBedrockPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralChannel.Model
     /// <summary>
     /// Paginator for the ListChannelHandshakes operation
     ///</summary>
-    public interface IListChannelHandshakesPaginator
+    public partial interface IListChannelHandshakesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

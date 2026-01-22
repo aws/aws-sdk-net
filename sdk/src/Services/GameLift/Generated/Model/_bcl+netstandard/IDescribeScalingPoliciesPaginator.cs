@@ -24,7 +24,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginator for the DescribeScalingPolicies operation
     ///</summary>
-    public interface IDescribeScalingPoliciesPaginator
+    public partial interface IDescribeScalingPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

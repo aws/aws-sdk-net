@@ -24,7 +24,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
     /// <summary>
     /// Paginator for the GetEntitlements operation
     ///</summary>
-    public interface IGetEntitlementsPaginator
+    public partial interface IGetEntitlementsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

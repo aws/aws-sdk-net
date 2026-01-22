@@ -24,7 +24,7 @@ namespace Amazon.SageMakerGeospatial.Model
     /// <summary>
     /// Paginator for the ListVectorEnrichmentJobs operation
     ///</summary>
-    public interface IListVectorEnrichmentJobsPaginator
+    public partial interface IListVectorEnrichmentJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

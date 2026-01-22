@@ -24,7 +24,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Paginator for the ListQueuedMessages operation
     ///</summary>
-    public interface IListQueuedMessagesPaginator
+    public partial interface IListQueuedMessagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

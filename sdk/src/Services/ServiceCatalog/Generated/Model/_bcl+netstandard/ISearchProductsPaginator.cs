@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the SearchProducts operation
     ///</summary>
-    public interface ISearchProductsPaginator
+    public partial interface ISearchProductsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

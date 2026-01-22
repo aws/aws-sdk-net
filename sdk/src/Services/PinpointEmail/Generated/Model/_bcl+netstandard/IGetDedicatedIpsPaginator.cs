@@ -24,7 +24,7 @@ namespace Amazon.PinpointEmail.Model
     /// <summary>
     /// Paginator for the GetDedicatedIps operation
     ///</summary>
-    public interface IGetDedicatedIpsPaginator
+    public partial interface IGetDedicatedIpsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

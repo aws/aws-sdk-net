@@ -24,7 +24,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Paginator for the ListStreamConsumers operation
     ///</summary>
-    public interface IListStreamConsumersPaginator
+    public partial interface IListStreamConsumersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

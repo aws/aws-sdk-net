@@ -24,7 +24,7 @@ namespace Amazon.ConnectWisdomService.Model
     /// <summary>
     /// Paginator for the ListAssistants operation
     ///</summary>
-    public interface IListAssistantsPaginator
+    public partial interface IListAssistantsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

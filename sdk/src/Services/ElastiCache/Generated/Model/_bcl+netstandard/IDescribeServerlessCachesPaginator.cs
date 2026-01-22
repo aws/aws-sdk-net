@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Paginator for the DescribeServerlessCaches operation
     ///</summary>
-    public interface IDescribeServerlessCachesPaginator
+    public partial interface IDescribeServerlessCachesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

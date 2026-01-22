@@ -24,7 +24,7 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Paginator for the ListAgents operation
     ///</summary>
-    public interface IListAgentsPaginator
+    public partial interface IListAgentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

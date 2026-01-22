@@ -24,7 +24,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Paginator for the ListDeviceProfiles operation
     ///</summary>
-    public interface IListDeviceProfilesPaginator
+    public partial interface IListDeviceProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

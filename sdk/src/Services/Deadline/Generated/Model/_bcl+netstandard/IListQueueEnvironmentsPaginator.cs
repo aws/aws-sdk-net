@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListQueueEnvironments operation
     ///</summary>
-    public interface IListQueueEnvironmentsPaginator
+    public partial interface IListQueueEnvironmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

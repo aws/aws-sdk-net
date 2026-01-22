@@ -27,7 +27,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginators for the SecurityHub service
     ///</summary>
-    public class SecurityHubPaginatorFactory : ISecurityHubPaginatorFactory
+    public partial class SecurityHubPaginatorFactory : ISecurityHubPaginatorFactory
     {
         private readonly IAmazonSecurityHub client;
 

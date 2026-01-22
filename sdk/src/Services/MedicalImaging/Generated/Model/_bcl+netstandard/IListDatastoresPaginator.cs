@@ -24,7 +24,7 @@ namespace Amazon.MedicalImaging.Model
     /// <summary>
     /// Paginator for the ListDatastores operation
     ///</summary>
-    public interface IListDatastoresPaginator
+    public partial interface IListDatastoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SupplyChain.Model
     /// <summary>
     /// Paginator for the ListDataIntegrationFlows operation
     ///</summary>
-    public interface IListDataIntegrationFlowsPaginator
+    public partial interface IListDataIntegrationFlowsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

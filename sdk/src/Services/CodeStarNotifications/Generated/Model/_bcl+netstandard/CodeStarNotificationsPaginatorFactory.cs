@@ -27,7 +27,7 @@ namespace Amazon.CodeStarNotifications.Model
     /// <summary>
     /// Paginators for the CodeStarNotifications service
     ///</summary>
-    public class CodeStarNotificationsPaginatorFactory : ICodeStarNotificationsPaginatorFactory
+    public partial class CodeStarNotificationsPaginatorFactory : ICodeStarNotificationsPaginatorFactory
     {
         private readonly IAmazonCodeStarNotifications client;
 

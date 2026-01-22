@@ -24,7 +24,7 @@ namespace Amazon.SnowDeviceManagement.Model
     /// <summary>
     /// Paginator for the ListDeviceResources operation
     ///</summary>
-    public interface IListDeviceResourcesPaginator
+    public partial interface IListDeviceResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

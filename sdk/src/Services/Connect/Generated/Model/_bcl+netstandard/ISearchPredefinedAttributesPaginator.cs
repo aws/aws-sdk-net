@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchPredefinedAttributes operation
     ///</summary>
-    public interface ISearchPredefinedAttributesPaginator
+    public partial interface ISearchPredefinedAttributesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

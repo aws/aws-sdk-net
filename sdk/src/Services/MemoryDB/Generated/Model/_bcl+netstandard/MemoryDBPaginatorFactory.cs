@@ -27,7 +27,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginators for the MemoryDB service
     ///</summary>
-    public class MemoryDBPaginatorFactory : IMemoryDBPaginatorFactory
+    public partial class MemoryDBPaginatorFactory : IMemoryDBPaginatorFactory
     {
         private readonly IAmazonMemoryDB client;
 

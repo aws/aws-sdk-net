@@ -24,7 +24,7 @@ namespace Amazon.Chatbot.Model
     /// <summary>
     /// Paginator for the ListMicrosoftTeamsConfiguredTeams operation
     ///</summary>
-    public interface IListMicrosoftTeamsConfiguredTeamsPaginator
+    public partial interface IListMicrosoftTeamsConfiguredTeamsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

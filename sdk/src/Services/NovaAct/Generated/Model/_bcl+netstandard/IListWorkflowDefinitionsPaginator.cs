@@ -24,7 +24,7 @@ namespace Amazon.NovaAct.Model
     /// <summary>
     /// Paginator for the ListWorkflowDefinitions operation
     ///</summary>
-    public interface IListWorkflowDefinitionsPaginator
+    public partial interface IListWorkflowDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

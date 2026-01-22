@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListSSHPublicKeys operation
     ///</summary>
-    public interface IListSSHPublicKeysPaginator
+    public partial interface IListSSHPublicKeysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

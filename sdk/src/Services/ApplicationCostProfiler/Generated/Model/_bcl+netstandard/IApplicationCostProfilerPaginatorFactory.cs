@@ -24,7 +24,7 @@ namespace Amazon.ApplicationCostProfiler.Model
     /// <summary>
     /// Paginators for the ApplicationCostProfiler service
     ///</summary>
-    public interface IApplicationCostProfilerPaginatorFactory
+    public partial interface IApplicationCostProfilerPaginatorFactory
     {
 
         /// <summary>

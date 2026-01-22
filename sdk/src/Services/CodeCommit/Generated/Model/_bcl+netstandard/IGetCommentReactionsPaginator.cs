@@ -24,7 +24,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginator for the GetCommentReactions operation
     ///</summary>
-    public interface IGetCommentReactionsPaginator
+    public partial interface IGetCommentReactionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

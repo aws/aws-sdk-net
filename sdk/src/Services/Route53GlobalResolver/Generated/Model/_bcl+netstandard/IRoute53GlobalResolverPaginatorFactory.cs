@@ -24,7 +24,7 @@ namespace Amazon.Route53GlobalResolver.Model
     /// <summary>
     /// Paginators for the Route53GlobalResolver service
     ///</summary>
-    public interface IRoute53GlobalResolverPaginatorFactory
+    public partial interface IRoute53GlobalResolverPaginatorFactory
     {
 
         /// <summary>

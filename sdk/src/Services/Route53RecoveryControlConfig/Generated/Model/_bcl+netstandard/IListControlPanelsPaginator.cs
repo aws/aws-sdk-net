@@ -24,7 +24,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     /// <summary>
     /// Paginator for the ListControlPanels operation
     ///</summary>
-    public interface IListControlPanelsPaginator
+    public partial interface IListControlPanelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

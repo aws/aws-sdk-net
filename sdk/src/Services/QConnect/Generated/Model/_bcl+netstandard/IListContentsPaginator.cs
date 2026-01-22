@@ -24,7 +24,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginator for the ListContents operation
     ///</summary>
-    public interface IListContentsPaginator
+    public partial interface IListContentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

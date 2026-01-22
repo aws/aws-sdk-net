@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Paginator for the ListHostedZones operation
     ///</summary>
-    public interface IListHostedZonesPaginator
+    public partial interface IListHostedZonesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

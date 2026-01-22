@@ -24,7 +24,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Paginator for the ListAppsLists operation
     ///</summary>
-    public interface IListAppsListsPaginator
+    public partial interface IListAppsListsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

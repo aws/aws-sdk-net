@@ -24,7 +24,7 @@ namespace Amazon.Textract.Model
     /// <summary>
     /// Paginators for the Textract service
     ///</summary>
-    public interface ITextractPaginatorFactory
+    public partial interface ITextractPaginatorFactory
     {
 
         /// <summary>

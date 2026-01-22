@@ -27,7 +27,7 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Paginators for the ResourceGroups service
     ///</summary>
-    public class ResourceGroupsPaginatorFactory : IResourceGroupsPaginatorFactory
+    public partial class ResourceGroupsPaginatorFactory : IResourceGroupsPaginatorFactory
     {
         private readonly IAmazonResourceGroups client;
 

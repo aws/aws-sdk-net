@@ -24,7 +24,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginator for the ListAssociatedApprovalRuleTemplatesForRepository operation
     ///</summary>
-    public interface IListAssociatedApprovalRuleTemplatesForRepositoryPaginator
+    public partial interface IListAssociatedApprovalRuleTemplatesForRepositoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBInstanceAutomatedBackups operation
     ///</summary>
-    public interface IDescribeDBInstanceAutomatedBackupsPaginator
+    public partial interface IDescribeDBInstanceAutomatedBackupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

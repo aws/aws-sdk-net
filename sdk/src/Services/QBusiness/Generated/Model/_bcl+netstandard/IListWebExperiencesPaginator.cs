@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginator for the ListWebExperiences operation
     ///</summary>
-    public interface IListWebExperiencesPaginator
+    public partial interface IListWebExperiencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

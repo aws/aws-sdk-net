@@ -24,7 +24,7 @@ namespace Amazon.ResilienceHub.Model
     /// <summary>
     /// Paginator for the ListAppVersionAppComponents operation
     ///</summary>
-    public interface IListAppVersionAppComponentsPaginator
+    public partial interface IListAppVersionAppComponentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

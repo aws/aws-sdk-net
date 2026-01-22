@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the ListFindingAggregators operation
     ///</summary>
-    public interface IListFindingAggregatorsPaginator
+    public partial interface IListFindingAggregatorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

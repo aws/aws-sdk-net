@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetPartitions operation
     ///</summary>
-    public interface IGetPartitionsPaginator
+    public partial interface IGetPartitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

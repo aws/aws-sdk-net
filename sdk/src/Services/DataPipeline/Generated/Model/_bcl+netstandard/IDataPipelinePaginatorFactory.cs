@@ -24,7 +24,7 @@ namespace Amazon.DataPipeline.Model
     /// <summary>
     /// Paginators for the DataPipeline service
     ///</summary>
-    public interface IDataPipelinePaginatorFactory
+    public partial interface IDataPipelinePaginatorFactory
     {
 
         /// <summary>

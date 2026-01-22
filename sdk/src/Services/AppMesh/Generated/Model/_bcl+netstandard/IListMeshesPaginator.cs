@@ -24,7 +24,7 @@ namespace Amazon.AppMesh.Model
     /// <summary>
     /// Paginator for the ListMeshes operation
     ///</summary>
-    public interface IListMeshesPaginator
+    public partial interface IListMeshesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

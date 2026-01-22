@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchAvailablePhoneNumbers operation
     ///</summary>
-    public interface ISearchAvailablePhoneNumbersPaginator
+    public partial interface ISearchAvailablePhoneNumbersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

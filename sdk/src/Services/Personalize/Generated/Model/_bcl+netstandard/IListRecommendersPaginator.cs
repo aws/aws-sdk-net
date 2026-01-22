@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginator for the ListRecommenders operation
     ///</summary>
-    public interface IListRecommendersPaginator
+    public partial interface IListRecommendersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

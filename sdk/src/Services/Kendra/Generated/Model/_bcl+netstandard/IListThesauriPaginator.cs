@@ -24,7 +24,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginator for the ListThesauri operation
     ///</summary>
-    public interface IListThesauriPaginator
+    public partial interface IListThesauriPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

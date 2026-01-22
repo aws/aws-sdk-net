@@ -24,7 +24,7 @@ namespace Amazon.Evs.Model
     /// <summary>
     /// Paginator for the ListEnvironmentVlans operation
     ///</summary>
-    public interface IListEnvironmentVlansPaginator
+    public partial interface IListEnvironmentVlansPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

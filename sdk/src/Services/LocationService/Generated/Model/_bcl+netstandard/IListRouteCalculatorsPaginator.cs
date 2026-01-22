@@ -24,7 +24,7 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Paginator for the ListRouteCalculators operation
     ///</summary>
-    public interface IListRouteCalculatorsPaginator
+    public partial interface IListRouteCalculatorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

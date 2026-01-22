@@ -24,7 +24,7 @@ namespace Amazon.DirectoryServiceData.Model
     /// <summary>
     /// Paginator for the ListGroupMembers operation
     ///</summary>
-    public interface IListGroupMembersPaginator
+    public partial interface IListGroupMembersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

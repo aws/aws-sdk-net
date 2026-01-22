@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeEgressOnlyInternetGateways operation
     ///</summary>
-    public interface IDescribeEgressOnlyInternetGatewaysPaginator
+    public partial interface IDescribeEgressOnlyInternetGatewaysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

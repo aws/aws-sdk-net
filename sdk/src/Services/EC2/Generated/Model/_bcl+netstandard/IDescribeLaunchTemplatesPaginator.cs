@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeLaunchTemplates operation
     ///</summary>
-    public interface IDescribeLaunchTemplatesPaginator
+    public partial interface IDescribeLaunchTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

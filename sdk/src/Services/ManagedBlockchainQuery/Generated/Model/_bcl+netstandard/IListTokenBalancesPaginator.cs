@@ -24,7 +24,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// <summary>
     /// Paginator for the ListTokenBalances operation
     ///</summary>
-    public interface IListTokenBalancesPaginator
+    public partial interface IListTokenBalancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

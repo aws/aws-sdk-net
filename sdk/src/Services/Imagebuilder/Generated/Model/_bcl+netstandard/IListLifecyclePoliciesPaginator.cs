@@ -24,7 +24,7 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Paginator for the ListLifecyclePolicies operation
     ///</summary>
-    public interface IListLifecyclePoliciesPaginator
+    public partial interface IListLifecyclePoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

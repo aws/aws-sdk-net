@@ -27,7 +27,7 @@ namespace Amazon.ControlCatalog.Model
     /// <summary>
     /// Paginators for the ControlCatalog service
     ///</summary>
-    public class ControlCatalogPaginatorFactory : IControlCatalogPaginatorFactory
+    public partial class ControlCatalogPaginatorFactory : IControlCatalogPaginatorFactory
     {
         private readonly IAmazonControlCatalog client;
 

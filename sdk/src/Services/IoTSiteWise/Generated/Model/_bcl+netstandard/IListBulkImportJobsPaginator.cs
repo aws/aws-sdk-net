@@ -24,7 +24,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Paginator for the ListBulkImportJobs operation
     ///</summary>
-    public interface IListBulkImportJobsPaginator
+    public partial interface IListBulkImportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

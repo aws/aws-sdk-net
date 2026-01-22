@@ -27,7 +27,7 @@ namespace Amazon.AppSync.Model
     /// <summary>
     /// Paginators for the AppSync service
     ///</summary>
-    public class AppSyncPaginatorFactory : IAppSyncPaginatorFactory
+    public partial class AppSyncPaginatorFactory : IAppSyncPaginatorFactory
     {
         private readonly IAmazonAppSync client;
 

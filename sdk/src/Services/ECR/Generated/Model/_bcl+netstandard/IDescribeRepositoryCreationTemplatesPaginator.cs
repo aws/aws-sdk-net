@@ -24,7 +24,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Paginator for the DescribeRepositoryCreationTemplates operation
     ///</summary>
-    public interface IDescribeRepositoryCreationTemplatesPaginator
+    public partial interface IDescribeRepositoryCreationTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

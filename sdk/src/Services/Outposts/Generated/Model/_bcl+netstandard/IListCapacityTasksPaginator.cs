@@ -24,7 +24,7 @@ namespace Amazon.Outposts.Model
     /// <summary>
     /// Paginator for the ListCapacityTasks operation
     ///</summary>
-    public interface IListCapacityTasksPaginator
+    public partial interface IListCapacityTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

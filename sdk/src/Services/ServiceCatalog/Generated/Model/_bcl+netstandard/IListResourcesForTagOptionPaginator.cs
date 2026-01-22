@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the ListResourcesForTagOption operation
     ///</summary>
-    public interface IListResourcesForTagOptionPaginator
+    public partial interface IListResourcesForTagOptionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

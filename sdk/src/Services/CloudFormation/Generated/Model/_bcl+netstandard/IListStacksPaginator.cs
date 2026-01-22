@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginator for the ListStacks operation
     ///</summary>
-    public interface IListStacksPaginator
+    public partial interface IListStacksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

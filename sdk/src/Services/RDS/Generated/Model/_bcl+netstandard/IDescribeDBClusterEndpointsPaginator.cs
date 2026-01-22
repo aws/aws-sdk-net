@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBClusterEndpoints operation
     ///</summary>
-    public interface IDescribeDBClusterEndpointsPaginator
+    public partial interface IDescribeDBClusterEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchRoutingProfiles operation
     ///</summary>
-    public interface ISearchRoutingProfilesPaginator
+    public partial interface ISearchRoutingProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

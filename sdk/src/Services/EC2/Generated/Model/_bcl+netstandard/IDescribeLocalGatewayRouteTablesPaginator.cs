@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeLocalGatewayRouteTables operation
     ///</summary>
-    public interface IDescribeLocalGatewayRouteTablesPaginator
+    public partial interface IDescribeLocalGatewayRouteTablesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

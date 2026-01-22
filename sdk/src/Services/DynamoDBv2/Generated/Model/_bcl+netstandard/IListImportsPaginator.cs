@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Paginator for the ListImports operation
     ///</summary>
-    public interface IListImportsPaginator
+    public partial interface IListImportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

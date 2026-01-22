@@ -24,7 +24,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Paginator for the ListRecoveryPointsByLegalHold operation
     ///</summary>
-    public interface IListRecoveryPointsByLegalHoldPaginator
+    public partial interface IListRecoveryPointsByLegalHoldPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

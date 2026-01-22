@@ -24,7 +24,7 @@ namespace Amazon.TimestreamInfluxDB.Model
     /// <summary>
     /// Paginators for the TimestreamInfluxDB service
     ///</summary>
-    public interface ITimestreamInfluxDBPaginatorFactory
+    public partial interface ITimestreamInfluxDBPaginatorFactory
     {
 
         /// <summary>

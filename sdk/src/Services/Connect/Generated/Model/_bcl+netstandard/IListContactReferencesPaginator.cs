@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListContactReferences operation
     ///</summary>
-    public interface IListContactReferencesPaginator
+    public partial interface IListContactReferencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeCapacityManagerDataExports operation
     ///</summary>
-    public interface IDescribeCapacityManagerDataExportsPaginator
+    public partial interface IDescribeCapacityManagerDataExportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.BackupGateway.Model
     /// <summary>
     /// Paginators for the BackupGateway service
     ///</summary>
-    public interface IBackupGatewayPaginatorFactory
+    public partial interface IBackupGatewayPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Paginator for the ListComplianceStatus operation
     ///</summary>
-    public interface IListComplianceStatusPaginator
+    public partial interface IListComplianceStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

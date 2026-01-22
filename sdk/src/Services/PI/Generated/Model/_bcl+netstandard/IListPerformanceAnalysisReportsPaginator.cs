@@ -24,7 +24,7 @@ namespace Amazon.PI.Model
     /// <summary>
     /// Paginator for the ListPerformanceAnalysisReports operation
     ///</summary>
-    public interface IListPerformanceAnalysisReportsPaginator
+    public partial interface IListPerformanceAnalysisReportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

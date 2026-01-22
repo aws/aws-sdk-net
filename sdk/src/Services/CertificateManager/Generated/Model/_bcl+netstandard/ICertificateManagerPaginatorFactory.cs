@@ -24,7 +24,7 @@ namespace Amazon.CertificateManager.Model
     /// <summary>
     /// Paginators for the CertificateManager service
     ///</summary>
-    public interface ICertificateManagerPaginatorFactory
+    public partial interface ICertificateManagerPaginatorFactory
     {
 
         /// <summary>

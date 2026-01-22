@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListApprovedOrigins operation
     ///</summary>
-    public interface IListApprovedOriginsPaginator
+    public partial interface IListApprovedOriginsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

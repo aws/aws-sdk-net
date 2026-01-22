@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListStorageProfilesForQueue operation
     ///</summary>
-    public interface IListStorageProfilesForQueuePaginator
+    public partial interface IListStorageProfilesForQueuePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

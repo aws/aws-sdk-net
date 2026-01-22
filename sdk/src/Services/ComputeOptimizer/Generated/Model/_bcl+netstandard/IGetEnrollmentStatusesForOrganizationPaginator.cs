@@ -24,7 +24,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// <summary>
     /// Paginator for the GetEnrollmentStatusesForOrganization operation
     ///</summary>
-    public interface IGetEnrollmentStatusesForOrganizationPaginator
+    public partial interface IGetEnrollmentStatusesForOrganizationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

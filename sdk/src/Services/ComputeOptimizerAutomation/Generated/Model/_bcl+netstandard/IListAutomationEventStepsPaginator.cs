@@ -24,7 +24,7 @@ namespace Amazon.ComputeOptimizerAutomation.Model
     /// <summary>
     /// Paginator for the ListAutomationEventSteps operation
     ///</summary>
-    public interface IListAutomationEventStepsPaginator
+    public partial interface IListAutomationEventStepsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

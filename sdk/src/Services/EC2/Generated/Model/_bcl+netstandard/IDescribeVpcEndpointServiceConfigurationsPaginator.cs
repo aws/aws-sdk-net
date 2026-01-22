@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeVpcEndpointServiceConfigurations operation
     ///</summary>
-    public interface IDescribeVpcEndpointServiceConfigurationsPaginator
+    public partial interface IDescribeVpcEndpointServiceConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

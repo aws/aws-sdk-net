@@ -24,7 +24,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Paginator for the DescribeReplicationConfigurations operation
     ///</summary>
-    public interface IDescribeReplicationConfigurationsPaginator
+    public partial interface IDescribeReplicationConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

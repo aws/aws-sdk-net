@@ -24,7 +24,7 @@ namespace Amazon.BCMDashboards.Model
     /// <summary>
     /// Paginators for the BCMDashboards service
     ///</summary>
-    public interface IBCMDashboardsPaginatorFactory
+    public partial interface IBCMDashboardsPaginatorFactory
     {
 
         /// <summary>

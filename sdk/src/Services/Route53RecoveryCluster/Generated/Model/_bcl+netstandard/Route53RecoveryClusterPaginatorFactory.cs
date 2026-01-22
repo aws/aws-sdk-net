@@ -27,7 +27,7 @@ namespace Amazon.Route53RecoveryCluster.Model
     /// <summary>
     /// Paginators for the Route53RecoveryCluster service
     ///</summary>
-    public class Route53RecoveryClusterPaginatorFactory : IRoute53RecoveryClusterPaginatorFactory
+    public partial class Route53RecoveryClusterPaginatorFactory : IRoute53RecoveryClusterPaginatorFactory
     {
         private readonly IAmazonRoute53RecoveryCluster client;
 

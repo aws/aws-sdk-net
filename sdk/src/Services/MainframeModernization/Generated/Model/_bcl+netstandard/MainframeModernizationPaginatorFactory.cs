@@ -27,7 +27,7 @@ namespace Amazon.MainframeModernization.Model
     /// <summary>
     /// Paginators for the MainframeModernization service
     ///</summary>
-    public class MainframeModernizationPaginatorFactory : IMainframeModernizationPaginatorFactory
+    public partial class MainframeModernizationPaginatorFactory : IMainframeModernizationPaginatorFactory
     {
         private readonly IAmazonMainframeModernization client;
 

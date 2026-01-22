@@ -24,7 +24,7 @@ namespace Amazon.NotificationsContacts.Model
     /// <summary>
     /// Paginator for the ListEmailContacts operation
     ///</summary>
-    public interface IListEmailContactsPaginator
+    public partial interface IListEmailContactsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

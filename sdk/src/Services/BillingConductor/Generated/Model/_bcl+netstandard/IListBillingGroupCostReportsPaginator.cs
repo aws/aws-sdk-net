@@ -24,7 +24,7 @@ namespace Amazon.BillingConductor.Model
     /// <summary>
     /// Paginator for the ListBillingGroupCostReports operation
     ///</summary>
-    public interface IListBillingGroupCostReportsPaginator
+    public partial interface IListBillingGroupCostReportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

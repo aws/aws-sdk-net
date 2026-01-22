@@ -27,7 +27,7 @@ namespace Amazon.WorkSpacesThinClient.Model
     /// <summary>
     /// Paginators for the WorkSpacesThinClient service
     ///</summary>
-    public class WorkSpacesThinClientPaginatorFactory : IWorkSpacesThinClientPaginatorFactory
+    public partial class WorkSpacesThinClientPaginatorFactory : IWorkSpacesThinClientPaginatorFactory
     {
         private readonly IAmazonWorkSpacesThinClient client;
 

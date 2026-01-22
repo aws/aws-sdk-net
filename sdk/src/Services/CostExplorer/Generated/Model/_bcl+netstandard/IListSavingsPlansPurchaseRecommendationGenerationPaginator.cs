@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the ListSavingsPlansPurchaseRecommendationGeneration operation
     ///</summary>
-    public interface IListSavingsPlansPurchaseRecommendationGenerationPaginator
+    public partial interface IListSavingsPlansPurchaseRecommendationGenerationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

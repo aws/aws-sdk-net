@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListRoleAliases operation
     ///</summary>
-    public interface IListRoleAliasesPaginator
+    public partial interface IListRoleAliasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

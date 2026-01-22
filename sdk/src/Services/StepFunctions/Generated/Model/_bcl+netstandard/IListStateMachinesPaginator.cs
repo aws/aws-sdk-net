@@ -24,7 +24,7 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Paginator for the ListStateMachines operation
     ///</summary>
-    public interface IListStateMachinesPaginator
+    public partial interface IListStateMachinesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

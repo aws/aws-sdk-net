@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the GetReservedNodeExchangeOfferings operation
     ///</summary>
-    public interface IGetReservedNodeExchangeOfferingsPaginator
+    public partial interface IGetReservedNodeExchangeOfferingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

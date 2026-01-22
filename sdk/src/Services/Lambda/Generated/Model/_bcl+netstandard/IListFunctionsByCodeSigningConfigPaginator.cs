@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the ListFunctionsByCodeSigningConfig operation
     ///</summary>
-    public interface IListFunctionsByCodeSigningConfigPaginator
+    public partial interface IListFunctionsByCodeSigningConfigPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralChannel.Model
     /// <summary>
     /// Paginator for the ListRelationships operation
     ///</summary>
-    public interface IListRelationshipsPaginator
+    public partial interface IListRelationshipsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

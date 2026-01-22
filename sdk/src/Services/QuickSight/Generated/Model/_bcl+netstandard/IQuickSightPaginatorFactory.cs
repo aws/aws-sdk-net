@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginators for the QuickSight service
     ///</summary>
-    public interface IQuickSightPaginatorFactory
+    public partial interface IQuickSightPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginator for the DescribeParameterGroups operation
     ///</summary>
-    public interface IDescribeParameterGroupsPaginator
+    public partial interface IDescribeParameterGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

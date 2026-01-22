@@ -27,7 +27,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Paginators for the ApplicationDiscoveryService service
     ///</summary>
-    public class ApplicationDiscoveryServicePaginatorFactory : IApplicationDiscoveryServicePaginatorFactory
+    public partial class ApplicationDiscoveryServicePaginatorFactory : IApplicationDiscoveryServicePaginatorFactory
     {
         private readonly IAmazonApplicationDiscoveryService client;
 

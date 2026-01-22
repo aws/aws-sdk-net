@@ -24,7 +24,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Paginator for the ListPickupLocations operation
     ///</summary>
-    public interface IListPickupLocationsPaginator
+    public partial interface IListPickupLocationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

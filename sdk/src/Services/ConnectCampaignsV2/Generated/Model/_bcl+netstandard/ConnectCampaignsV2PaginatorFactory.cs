@@ -27,7 +27,7 @@ namespace Amazon.ConnectCampaignsV2.Model
     /// <summary>
     /// Paginators for the ConnectCampaignsV2 service
     ///</summary>
-    public class ConnectCampaignsV2PaginatorFactory : IConnectCampaignsV2PaginatorFactory
+    public partial class ConnectCampaignsV2PaginatorFactory : IConnectCampaignsV2PaginatorFactory
     {
         private readonly IAmazonConnectCampaignsV2 client;
 

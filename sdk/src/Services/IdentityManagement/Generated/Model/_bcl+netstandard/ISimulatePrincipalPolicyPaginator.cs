@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the SimulatePrincipalPolicy operation
     ///</summary>
-    public interface ISimulatePrincipalPolicyPaginator
+    public partial interface ISimulatePrincipalPolicyPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

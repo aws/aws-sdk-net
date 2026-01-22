@@ -24,7 +24,7 @@ namespace Amazon.AppMesh.Model
     /// <summary>
     /// Paginator for the ListGatewayRoutes operation
     ///</summary>
-    public interface IListGatewayRoutesPaginator
+    public partial interface IListGatewayRoutesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

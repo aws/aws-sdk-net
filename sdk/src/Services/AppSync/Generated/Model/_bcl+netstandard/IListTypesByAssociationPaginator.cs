@@ -24,7 +24,7 @@ namespace Amazon.AppSync.Model
     /// <summary>
     /// Paginator for the ListTypesByAssociation operation
     ///</summary>
-    public interface IListTypesByAssociationPaginator
+    public partial interface IListTypesByAssociationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

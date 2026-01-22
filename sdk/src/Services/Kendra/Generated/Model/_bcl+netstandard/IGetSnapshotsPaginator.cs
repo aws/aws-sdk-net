@@ -24,7 +24,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginator for the GetSnapshots operation
     ///</summary>
-    public interface IGetSnapshotsPaginator
+    public partial interface IGetSnapshotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

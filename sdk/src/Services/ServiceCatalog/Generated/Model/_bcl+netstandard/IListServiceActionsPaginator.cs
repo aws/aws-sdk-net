@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the ListServiceActions operation
     ///</summary>
-    public interface IListServiceActionsPaginator
+    public partial interface IListServiceActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

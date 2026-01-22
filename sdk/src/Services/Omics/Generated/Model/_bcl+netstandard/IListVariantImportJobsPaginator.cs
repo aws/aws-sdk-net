@@ -24,7 +24,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginator for the ListVariantImportJobs operation
     ///</summary>
-    public interface IListVariantImportJobsPaginator
+    public partial interface IListVariantImportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

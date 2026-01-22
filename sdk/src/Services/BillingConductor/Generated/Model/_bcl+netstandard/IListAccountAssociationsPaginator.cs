@@ -24,7 +24,7 @@ namespace Amazon.BillingConductor.Model
     /// <summary>
     /// Paginator for the ListAccountAssociations operation
     ///</summary>
-    public interface IListAccountAssociationsPaginator
+    public partial interface IListAccountAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

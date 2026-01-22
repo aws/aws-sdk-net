@@ -24,7 +24,7 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Paginator for the ListGeofenceCollections operation
     ///</summary>
-    public interface IListGeofenceCollectionsPaginator
+    public partial interface IListGeofenceCollectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

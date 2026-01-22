@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListUseCases operation
     ///</summary>
-    public interface IListUseCasesPaginator
+    public partial interface IListUseCasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

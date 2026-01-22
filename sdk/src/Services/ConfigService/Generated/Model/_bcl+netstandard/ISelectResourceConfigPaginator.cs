@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the SelectResourceConfig operation
     ///</summary>
-    public interface ISelectResourceConfigPaginator
+    public partial interface ISelectResourceConfigPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

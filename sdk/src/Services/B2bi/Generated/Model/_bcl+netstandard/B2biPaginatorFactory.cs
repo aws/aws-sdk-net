@@ -27,7 +27,7 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Paginators for the B2bi service
     ///</summary>
-    public class B2biPaginatorFactory : IB2biPaginatorFactory
+    public partial class B2biPaginatorFactory : IB2biPaginatorFactory
     {
         private readonly IAmazonB2bi client;
 

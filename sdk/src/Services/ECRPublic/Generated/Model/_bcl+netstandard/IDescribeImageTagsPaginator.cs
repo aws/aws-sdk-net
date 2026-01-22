@@ -24,7 +24,7 @@ namespace Amazon.ECRPublic.Model
     /// <summary>
     /// Paginator for the DescribeImageTags operation
     ///</summary>
-    public interface IDescribeImageTagsPaginator
+    public partial interface IDescribeImageTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Scheduler.Model
     /// <summary>
     /// Paginators for the Scheduler service
     ///</summary>
-    public interface ISchedulerPaginatorFactory
+    public partial interface ISchedulerPaginatorFactory
     {
 
         /// <summary>

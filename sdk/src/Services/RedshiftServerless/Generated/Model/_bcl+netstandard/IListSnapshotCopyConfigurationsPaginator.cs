@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginator for the ListSnapshotCopyConfigurations operation
     ///</summary>
-    public interface IListSnapshotCopyConfigurationsPaginator
+    public partial interface IListSnapshotCopyConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

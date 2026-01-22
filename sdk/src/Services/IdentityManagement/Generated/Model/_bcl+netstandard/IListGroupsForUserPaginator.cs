@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListGroupsForUser operation
     ///</summary>
-    public interface IListGroupsForUserPaginator
+    public partial interface IListGroupsForUserPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the ListLogSubscriptions operation
     ///</summary>
-    public interface IListLogSubscriptionsPaginator
+    public partial interface IListLogSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

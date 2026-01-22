@@ -24,7 +24,7 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Paginator for the ListWebApps operation
     ///</summary>
-    public interface IListWebAppsPaginator
+    public partial interface IListWebAppsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

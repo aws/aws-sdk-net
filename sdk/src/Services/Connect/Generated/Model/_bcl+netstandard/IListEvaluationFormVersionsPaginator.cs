@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListEvaluationFormVersions operation
     ///</summary>
-    public interface IListEvaluationFormVersionsPaginator
+    public partial interface IListEvaluationFormVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

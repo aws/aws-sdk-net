@@ -24,7 +24,7 @@ namespace Amazon.FIS.Model
     /// <summary>
     /// Paginator for the ListExperimentTemplates operation
     ///</summary>
-    public interface IListExperimentTemplatesPaginator
+    public partial interface IListExperimentTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

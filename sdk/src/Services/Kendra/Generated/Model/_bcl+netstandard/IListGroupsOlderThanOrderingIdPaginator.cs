@@ -24,7 +24,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginator for the ListGroupsOlderThanOrderingId operation
     ///</summary>
-    public interface IListGroupsOlderThanOrderingIdPaginator
+    public partial interface IListGroupsOlderThanOrderingIdPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Paginator for the DescribeApplicableIndividualAssessments operation
     ///</summary>
-    public interface IDescribeApplicableIndividualAssessmentsPaginator
+    public partial interface IDescribeApplicableIndividualAssessmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

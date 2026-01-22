@@ -24,7 +24,7 @@ namespace Amazon.ConnectParticipant.Model
     /// <summary>
     /// Paginator for the GetTranscript operation
     ///</summary>
-    public interface IGetTranscriptPaginator
+    public partial interface IGetTranscriptPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

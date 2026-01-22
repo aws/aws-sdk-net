@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListWorkGroups operation
     ///</summary>
-    public interface IListWorkGroupsPaginator
+    public partial interface IListWorkGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.FreeTier.Model
     /// <summary>
     /// Paginator for the GetFreeTierUsage operation
     ///</summary>
-    public interface IGetFreeTierUsagePaginator
+    public partial interface IGetFreeTierUsagePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// <summary>
     /// Paginator for the ListProxySessions operation
     ///</summary>
-    public interface IListProxySessionsPaginator
+    public partial interface IListProxySessionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the DescribeOrganizationResourceCollectionHealth operation
     ///</summary>
-    public interface IDescribeOrganizationResourceCollectionHealthPaginator
+    public partial interface IDescribeOrganizationResourceCollectionHealthPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

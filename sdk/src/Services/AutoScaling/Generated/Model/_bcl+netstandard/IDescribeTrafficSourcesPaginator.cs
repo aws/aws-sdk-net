@@ -24,7 +24,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Paginator for the DescribeTrafficSources operation
     ///</summary>
-    public interface IDescribeTrafficSourcesPaginator
+    public partial interface IDescribeTrafficSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginator for the ListDbSystemShapes operation
     ///</summary>
-    public interface IListDbSystemShapesPaginator
+    public partial interface IListDbSystemShapesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

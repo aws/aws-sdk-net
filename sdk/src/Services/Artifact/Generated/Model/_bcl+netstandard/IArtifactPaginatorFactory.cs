@@ -24,7 +24,7 @@ namespace Amazon.Artifact.Model
     /// <summary>
     /// Paginators for the Artifact service
     ///</summary>
-    public interface IArtifactPaginatorFactory
+    public partial interface IArtifactPaginatorFactory
     {
 
         /// <summary>

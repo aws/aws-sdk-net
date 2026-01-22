@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Paginator for the DescribeLoadBalancers operation
     ///</summary>
-    public interface IDescribeLoadBalancersPaginator
+    public partial interface IDescribeLoadBalancersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

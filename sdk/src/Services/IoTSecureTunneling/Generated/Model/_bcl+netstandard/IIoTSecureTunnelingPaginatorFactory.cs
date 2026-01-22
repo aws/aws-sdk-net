@@ -24,7 +24,7 @@ namespace Amazon.IoTSecureTunneling.Model
     /// <summary>
     /// Paginators for the IoTSecureTunneling service
     ///</summary>
-    public interface IIoTSecureTunnelingPaginatorFactory
+    public partial interface IIoTSecureTunnelingPaginatorFactory
     {
 
         /// <summary>

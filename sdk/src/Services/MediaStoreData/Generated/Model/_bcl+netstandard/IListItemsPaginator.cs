@@ -24,7 +24,7 @@ namespace Amazon.MediaStoreData.Model
     /// <summary>
     /// Paginator for the ListItems operation
     ///</summary>
-    public interface IListItemsPaginator
+    public partial interface IListItemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

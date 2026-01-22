@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the GetReservationPurchaseRecommendation operation
     ///</summary>
-    public interface IGetReservationPurchaseRecommendationPaginator
+    public partial interface IGetReservationPurchaseRecommendationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

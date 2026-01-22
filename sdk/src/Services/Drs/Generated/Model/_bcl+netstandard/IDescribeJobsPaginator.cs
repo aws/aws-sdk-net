@@ -24,7 +24,7 @@ namespace Amazon.Drs.Model
     /// <summary>
     /// Paginator for the DescribeJobs operation
     ///</summary>
-    public interface IDescribeJobsPaginator
+    public partial interface IDescribeJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

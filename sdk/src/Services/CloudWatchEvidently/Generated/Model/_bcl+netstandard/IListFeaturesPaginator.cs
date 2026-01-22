@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// <summary>
     /// Paginator for the ListFeatures operation
     ///</summary>
-    public interface IListFeaturesPaginator
+    public partial interface IListFeaturesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

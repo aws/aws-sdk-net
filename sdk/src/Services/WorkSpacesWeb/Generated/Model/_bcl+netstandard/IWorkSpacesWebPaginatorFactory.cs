@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// <summary>
     /// Paginators for the WorkSpacesWeb service
     ///</summary>
-    public interface IWorkSpacesWebPaginatorFactory
+    public partial interface IWorkSpacesWebPaginatorFactory
     {
 
         /// <summary>

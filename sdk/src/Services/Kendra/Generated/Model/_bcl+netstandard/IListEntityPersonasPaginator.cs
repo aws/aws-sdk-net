@@ -24,7 +24,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginator for the ListEntityPersonas operation
     ///</summary>
-    public interface IListEntityPersonasPaginator
+    public partial interface IListEntityPersonasPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

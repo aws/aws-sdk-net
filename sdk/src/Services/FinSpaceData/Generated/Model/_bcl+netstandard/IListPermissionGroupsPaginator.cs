@@ -24,7 +24,7 @@ namespace Amazon.FinSpaceData.Model
     /// <summary>
     /// Paginator for the ListPermissionGroups operation
     ///</summary>
-    public interface IListPermissionGroupsPaginator
+    public partial interface IListPermissionGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

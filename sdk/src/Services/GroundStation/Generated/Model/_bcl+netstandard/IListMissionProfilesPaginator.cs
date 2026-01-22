@@ -24,7 +24,7 @@ namespace Amazon.GroundStation.Model
     /// <summary>
     /// Paginator for the ListMissionProfiles operation
     ///</summary>
-    public interface IListMissionProfilesPaginator
+    public partial interface IListMissionProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

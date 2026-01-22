@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListOTAUpdates operation
     ///</summary>
-    public interface IListOTAUpdatesPaginator
+    public partial interface IListOTAUpdatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

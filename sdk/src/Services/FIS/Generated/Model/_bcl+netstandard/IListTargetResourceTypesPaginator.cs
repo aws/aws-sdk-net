@@ -24,7 +24,7 @@ namespace Amazon.FIS.Model
     /// <summary>
     /// Paginator for the ListTargetResourceTypes operation
     ///</summary>
-    public interface IListTargetResourceTypesPaginator
+    public partial interface IListTargetResourceTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

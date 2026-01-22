@@ -24,7 +24,7 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Paginator for the DescribeStorageVirtualMachines operation
     ///</summary>
-    public interface IDescribeStorageVirtualMachinesPaginator
+    public partial interface IDescribeStorageVirtualMachinesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

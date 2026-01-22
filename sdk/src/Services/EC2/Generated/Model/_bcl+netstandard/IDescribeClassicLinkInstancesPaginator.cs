@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeClassicLinkInstances operation
     ///</summary>
-    public interface IDescribeClassicLinkInstancesPaginator
+    public partial interface IDescribeClassicLinkInstancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

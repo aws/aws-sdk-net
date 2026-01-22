@@ -24,7 +24,7 @@ namespace Amazon.CodeGuruProfiler.Model
     /// <summary>
     /// Paginator for the ListFindingsReports operation
     ///</summary>
-    public interface IListFindingsReportsPaginator
+    public partial interface IListFindingsReportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

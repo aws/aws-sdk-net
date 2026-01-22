@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Paginator for the ListGatewayTargets operation
     ///</summary>
-    public interface IListGatewayTargetsPaginator
+    public partial interface IListGatewayTargetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

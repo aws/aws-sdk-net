@@ -24,7 +24,7 @@ namespace Amazon.MTurk.Model
     /// <summary>
     /// Paginator for the ListHITs operation
     ///</summary>
-    public interface IListHITsPaginator
+    public partial interface IListHITsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

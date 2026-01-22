@@ -24,7 +24,7 @@ namespace Amazon.SSMIncidents.Model
     /// <summary>
     /// Paginators for the SSMIncidents service
     ///</summary>
-    public interface ISSMIncidentsPaginatorFactory
+    public partial interface ISSMIncidentsPaginatorFactory
     {
 
         /// <summary>

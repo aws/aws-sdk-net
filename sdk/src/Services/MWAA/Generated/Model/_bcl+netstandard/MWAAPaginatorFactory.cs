@@ -27,7 +27,7 @@ namespace Amazon.MWAA.Model
     /// <summary>
     /// Paginators for the MWAA service
     ///</summary>
-    public class MWAAPaginatorFactory : IMWAAPaginatorFactory
+    public partial class MWAAPaginatorFactory : IMWAAPaginatorFactory
     {
         private readonly IAmazonMWAA client;
 

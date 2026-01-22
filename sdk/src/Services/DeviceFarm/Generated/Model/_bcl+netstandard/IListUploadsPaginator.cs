@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the ListUploads operation
     ///</summary>
-    public interface IListUploadsPaginator
+    public partial interface IListUploadsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

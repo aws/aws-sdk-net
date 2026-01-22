@@ -24,7 +24,7 @@ namespace Amazon.MedicalImaging.Model
     /// <summary>
     /// Paginator for the SearchImageSets operation
     ///</summary>
-    public interface ISearchImageSetsPaginator
+    public partial interface ISearchImageSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

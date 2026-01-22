@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListInvalidationsForDistributionTenant operation
     ///</summary>
-    public interface IListInvalidationsForDistributionTenantPaginator
+    public partial interface IListInvalidationsForDistributionTenantPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

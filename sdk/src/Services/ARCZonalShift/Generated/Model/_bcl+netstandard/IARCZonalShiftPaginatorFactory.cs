@@ -24,7 +24,7 @@ namespace Amazon.ARCZonalShift.Model
     /// <summary>
     /// Paginators for the ARCZonalShift service
     ///</summary>
-    public interface IARCZonalShiftPaginatorFactory
+    public partial interface IARCZonalShiftPaginatorFactory
     {
 
         /// <summary>

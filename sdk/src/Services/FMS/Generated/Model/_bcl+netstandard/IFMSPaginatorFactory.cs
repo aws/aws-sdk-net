@@ -24,7 +24,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Paginators for the FMS service
     ///</summary>
-    public interface IFMSPaginatorFactory
+    public partial interface IFMSPaginatorFactory
     {
 
         /// <summary>

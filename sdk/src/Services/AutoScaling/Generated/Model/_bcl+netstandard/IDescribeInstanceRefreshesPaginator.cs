@@ -24,7 +24,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Paginator for the DescribeInstanceRefreshes operation
     ///</summary>
-    public interface IDescribeInstanceRefreshesPaginator
+    public partial interface IDescribeInstanceRefreshesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

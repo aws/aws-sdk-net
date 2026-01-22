@@ -24,7 +24,7 @@ namespace Amazon.MediaConnect.Model
     /// <summary>
     /// Paginators for the MediaConnect service
     ///</summary>
-    public interface IMediaConnectPaginatorFactory
+    public partial interface IMediaConnectPaginatorFactory
     {
 
         /// <summary>

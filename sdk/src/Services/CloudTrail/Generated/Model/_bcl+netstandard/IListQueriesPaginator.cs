@@ -24,7 +24,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Paginator for the ListQueries operation
     ///</summary>
-    public interface IListQueriesPaginator
+    public partial interface IListQueriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

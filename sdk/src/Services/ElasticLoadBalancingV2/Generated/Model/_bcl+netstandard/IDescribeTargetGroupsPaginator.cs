@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Paginator for the DescribeTargetGroups operation
     ///</summary>
-    public interface IDescribeTargetGroupsPaginator
+    public partial interface IDescribeTargetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

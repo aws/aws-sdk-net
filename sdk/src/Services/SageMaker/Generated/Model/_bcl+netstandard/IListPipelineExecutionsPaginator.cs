@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListPipelineExecutions operation
     ///</summary>
-    public interface IListPipelineExecutionsPaginator
+    public partial interface IListPipelineExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

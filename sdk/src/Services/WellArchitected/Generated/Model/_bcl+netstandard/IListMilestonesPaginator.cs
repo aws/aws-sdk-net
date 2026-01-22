@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the ListMilestones operation
     ///</summary>
-    public interface IListMilestonesPaginator
+    public partial interface IListMilestonesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

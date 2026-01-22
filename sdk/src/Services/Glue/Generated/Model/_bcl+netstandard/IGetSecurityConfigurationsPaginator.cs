@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetSecurityConfigurations operation
     ///</summary>
-    public interface IGetSecurityConfigurationsPaginator
+    public partial interface IGetSecurityConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

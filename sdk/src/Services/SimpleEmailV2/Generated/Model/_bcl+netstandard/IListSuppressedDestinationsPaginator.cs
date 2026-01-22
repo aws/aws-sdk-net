@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Paginator for the ListSuppressedDestinations operation
     ///</summary>
-    public interface IListSuppressedDestinationsPaginator
+    public partial interface IListSuppressedDestinationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

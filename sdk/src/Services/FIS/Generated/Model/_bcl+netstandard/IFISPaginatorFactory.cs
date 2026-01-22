@@ -24,7 +24,7 @@ namespace Amazon.FIS.Model
     /// <summary>
     /// Paginators for the FIS service
     ///</summary>
-    public interface IFISPaginatorFactory
+    public partial interface IFISPaginatorFactory
     {
 
         /// <summary>

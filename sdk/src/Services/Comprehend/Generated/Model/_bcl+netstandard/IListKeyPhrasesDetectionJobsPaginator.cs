@@ -24,7 +24,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Paginator for the ListKeyPhrasesDetectionJobs operation
     ///</summary>
-    public interface IListKeyPhrasesDetectionJobsPaginator
+    public partial interface IListKeyPhrasesDetectionJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Paginator for the GetAssetPropertyValueHistory operation
     ///</summary>
-    public interface IGetAssetPropertyValueHistoryPaginator
+    public partial interface IGetAssetPropertyValueHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

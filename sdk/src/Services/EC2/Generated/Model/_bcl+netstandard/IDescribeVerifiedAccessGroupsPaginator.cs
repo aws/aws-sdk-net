@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeVerifiedAccessGroups operation
     ///</summary>
-    public interface IDescribeVerifiedAccessGroupsPaginator
+    public partial interface IDescribeVerifiedAccessGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

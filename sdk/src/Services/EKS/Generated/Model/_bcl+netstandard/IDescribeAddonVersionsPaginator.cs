@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the DescribeAddonVersions operation
     ///</summary>
-    public interface IDescribeAddonVersionsPaginator
+    public partial interface IDescribeAddonVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

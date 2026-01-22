@@ -27,7 +27,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// <summary>
     /// Paginators for the CloudWatchRUM service
     ///</summary>
-    public class CloudWatchRUMPaginatorFactory : ICloudWatchRUMPaginatorFactory
+    public partial class CloudWatchRUMPaginatorFactory : ICloudWatchRUMPaginatorFactory
     {
         private readonly IAmazonCloudWatchRUM client;
 

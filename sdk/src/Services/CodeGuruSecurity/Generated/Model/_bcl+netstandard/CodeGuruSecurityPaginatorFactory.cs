@@ -27,7 +27,7 @@ namespace Amazon.CodeGuruSecurity.Model
     /// <summary>
     /// Paginators for the CodeGuruSecurity service
     ///</summary>
-    public class CodeGuruSecurityPaginatorFactory : ICodeGuruSecurityPaginatorFactory
+    public partial class CodeGuruSecurityPaginatorFactory : ICodeGuruSecurityPaginatorFactory
     {
         private readonly IAmazonCodeGuruSecurity client;
 

@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListMlflowTrackingServers operation
     ///</summary>
-    public interface IListMlflowTrackingServersPaginator
+    public partial interface IListMlflowTrackingServersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

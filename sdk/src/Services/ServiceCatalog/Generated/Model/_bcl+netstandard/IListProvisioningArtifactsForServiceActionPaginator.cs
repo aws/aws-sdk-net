@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the ListProvisioningArtifactsForServiceAction operation
     ///</summary>
-    public interface IListProvisioningArtifactsForServiceActionPaginator
+    public partial interface IListProvisioningArtifactsForServiceActionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

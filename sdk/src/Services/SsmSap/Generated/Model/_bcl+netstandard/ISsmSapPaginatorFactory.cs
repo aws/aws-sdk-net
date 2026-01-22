@@ -24,7 +24,7 @@ namespace Amazon.SsmSap.Model
     /// <summary>
     /// Paginators for the SsmSap service
     ///</summary>
-    public interface ISsmSapPaginatorFactory
+    public partial interface ISsmSapPaginatorFactory
     {
 
         /// <summary>

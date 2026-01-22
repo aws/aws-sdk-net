@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListSignalMaps operation
     ///</summary>
-    public interface IListSignalMapsPaginator
+    public partial interface IListSignalMapsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the ListCommandInvocations operation
     ///</summary>
-    public interface IListCommandInvocationsPaginator
+    public partial interface IListCommandInvocationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

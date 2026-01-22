@@ -24,7 +24,7 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Paginator for the DescribeAlarmHistory operation
     ///</summary>
-    public interface IDescribeAlarmHistoryPaginator
+    public partial interface IDescribeAlarmHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListTargetsForPolicy operation
     ///</summary>
-    public interface IListTargetsForPolicyPaginator
+    public partial interface IListTargetsForPolicyPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

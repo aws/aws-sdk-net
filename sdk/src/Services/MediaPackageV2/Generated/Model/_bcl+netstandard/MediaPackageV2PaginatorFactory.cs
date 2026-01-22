@@ -27,7 +27,7 @@ namespace Amazon.MediaPackageV2.Model
     /// <summary>
     /// Paginators for the MediaPackageV2 service
     ///</summary>
-    public class MediaPackageV2PaginatorFactory : IMediaPackageV2PaginatorFactory
+    public partial class MediaPackageV2PaginatorFactory : IMediaPackageV2PaginatorFactory
     {
         private readonly IAmazonMediaPackageV2 client;
 

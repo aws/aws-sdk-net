@@ -24,7 +24,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Paginator for the DescribeSpendLimits operation
     ///</summary>
-    public interface IDescribeSpendLimitsPaginator
+    public partial interface IDescribeSpendLimitsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.BackupSearch.Model
     /// <summary>
     /// Paginators for the BackupSearch service
     ///</summary>
-    public class BackupSearchPaginatorFactory : IBackupSearchPaginatorFactory
+    public partial class BackupSearchPaginatorFactory : IBackupSearchPaginatorFactory
     {
         private readonly IAmazonBackupSearch client;
 

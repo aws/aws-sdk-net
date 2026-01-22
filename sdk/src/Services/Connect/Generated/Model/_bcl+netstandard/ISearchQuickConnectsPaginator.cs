@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchQuickConnects operation
     ///</summary>
-    public interface ISearchQuickConnectsPaginator
+    public partial interface ISearchQuickConnectsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

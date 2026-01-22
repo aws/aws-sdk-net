@@ -24,7 +24,7 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Paginator for the GetDetectors operation
     ///</summary>
-    public interface IGetDetectorsPaginator
+    public partial interface IGetDetectorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

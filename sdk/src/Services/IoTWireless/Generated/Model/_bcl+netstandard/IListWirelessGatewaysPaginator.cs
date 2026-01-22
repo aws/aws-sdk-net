@@ -24,7 +24,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Paginator for the ListWirelessGateways operation
     ///</summary>
-    public interface IListWirelessGatewaysPaginator
+    public partial interface IListWirelessGatewaysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

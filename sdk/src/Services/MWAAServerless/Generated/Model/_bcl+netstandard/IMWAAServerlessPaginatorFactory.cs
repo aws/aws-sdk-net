@@ -24,7 +24,7 @@ namespace Amazon.MWAAServerless.Model
     /// <summary>
     /// Paginators for the MWAAServerless service
     ///</summary>
-    public interface IMWAAServerlessPaginatorFactory
+    public partial interface IMWAAServerlessPaginatorFactory
     {
 
         /// <summary>

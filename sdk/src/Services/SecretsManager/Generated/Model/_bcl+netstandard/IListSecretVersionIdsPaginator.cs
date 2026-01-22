@@ -24,7 +24,7 @@ namespace Amazon.SecretsManager.Model
     /// <summary>
     /// Paginator for the ListSecretVersionIds operation
     ///</summary>
-    public interface IListSecretVersionIdsPaginator
+    public partial interface IListSecretVersionIdsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

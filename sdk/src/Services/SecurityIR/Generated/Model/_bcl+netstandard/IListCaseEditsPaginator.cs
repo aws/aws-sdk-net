@@ -24,7 +24,7 @@ namespace Amazon.SecurityIR.Model
     /// <summary>
     /// Paginator for the ListCaseEdits operation
     ///</summary>
-    public interface IListCaseEditsPaginator
+    public partial interface IListCaseEditsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

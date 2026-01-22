@@ -24,7 +24,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginator for the DescribeSubnetGroups operation
     ///</summary>
-    public interface IDescribeSubnetGroupsPaginator
+    public partial interface IDescribeSubnetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

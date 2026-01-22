@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginator for the ListDomainObjectTypes operation
     ///</summary>
-    public interface IListDomainObjectTypesPaginator
+    public partial interface IListDomainObjectTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

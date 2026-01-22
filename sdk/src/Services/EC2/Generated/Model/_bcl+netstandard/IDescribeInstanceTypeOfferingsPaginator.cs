@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeInstanceTypeOfferings operation
     ///</summary>
-    public interface IDescribeInstanceTypeOfferingsPaginator
+    public partial interface IDescribeInstanceTypeOfferingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

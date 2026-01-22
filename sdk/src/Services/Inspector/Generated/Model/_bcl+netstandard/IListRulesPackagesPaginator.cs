@@ -24,7 +24,7 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Paginator for the ListRulesPackages operation
     ///</summary>
-    public interface IListRulesPackagesPaginator
+    public partial interface IListRulesPackagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

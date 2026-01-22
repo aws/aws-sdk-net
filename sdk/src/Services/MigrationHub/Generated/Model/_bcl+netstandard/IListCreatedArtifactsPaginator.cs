@@ -24,7 +24,7 @@ namespace Amazon.MigrationHub.Model
     /// <summary>
     /// Paginator for the ListCreatedArtifacts operation
     ///</summary>
-    public interface IListCreatedArtifactsPaginator
+    public partial interface IListCreatedArtifactsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

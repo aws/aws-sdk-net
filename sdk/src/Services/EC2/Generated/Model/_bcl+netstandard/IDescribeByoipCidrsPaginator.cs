@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeByoipCidrs operation
     ///</summary>
-    public interface IDescribeByoipCidrsPaginator
+    public partial interface IDescribeByoipCidrsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

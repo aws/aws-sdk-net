@@ -24,7 +24,7 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Paginator for the ListEventSubscriptions operation
     ///</summary>
-    public interface IListEventSubscriptionsPaginator
+    public partial interface IListEventSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

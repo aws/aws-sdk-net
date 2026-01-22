@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginators for the IdentityManagement service
     ///</summary>
-    public interface IIdentityManagementPaginatorFactory
+    public partial interface IIdentityManagementPaginatorFactory
     {
 
         /// <summary>

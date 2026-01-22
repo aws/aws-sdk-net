@@ -24,7 +24,7 @@ namespace Amazon.VoiceID.Model
     /// <summary>
     /// Paginator for the ListWatchlists operation
     ///</summary>
-    public interface IListWatchlistsPaginator
+    public partial interface IListWatchlistsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

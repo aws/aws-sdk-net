@@ -24,7 +24,7 @@ namespace Amazon.ApplicationCostProfiler.Model
     /// <summary>
     /// Paginator for the ListReportDefinitions operation
     ///</summary>
-    public interface IListReportDefinitionsPaginator
+    public partial interface IListReportDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

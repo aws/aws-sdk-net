@@ -27,7 +27,7 @@ namespace Amazon.Tnb.Model
     /// <summary>
     /// Paginators for the Tnb service
     ///</summary>
-    public class TnbPaginatorFactory : ITnbPaginatorFactory
+    public partial class TnbPaginatorFactory : ITnbPaginatorFactory
     {
         private readonly IAmazonTnb client;
 

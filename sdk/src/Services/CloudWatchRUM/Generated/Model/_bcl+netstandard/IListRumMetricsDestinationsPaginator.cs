@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// <summary>
     /// Paginator for the ListRumMetricsDestinations operation
     ///</summary>
-    public interface IListRumMetricsDestinationsPaginator
+    public partial interface IListRumMetricsDestinationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

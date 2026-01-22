@@ -24,7 +24,7 @@ namespace Amazon.CleanRooms.Model
     /// <summary>
     /// Paginator for the ListConfiguredAudienceModelAssociations operation
     ///</summary>
-    public interface IListConfiguredAudienceModelAssociationsPaginator
+    public partial interface IListConfiguredAudienceModelAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

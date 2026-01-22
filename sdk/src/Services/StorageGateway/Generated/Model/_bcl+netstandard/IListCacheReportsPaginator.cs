@@ -24,7 +24,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Paginator for the ListCacheReports operation
     ///</summary>
-    public interface IListCacheReportsPaginator
+    public partial interface IListCacheReportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

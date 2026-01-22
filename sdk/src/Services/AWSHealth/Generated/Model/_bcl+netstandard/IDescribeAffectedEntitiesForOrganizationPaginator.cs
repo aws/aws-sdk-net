@@ -24,7 +24,7 @@ namespace Amazon.AWSHealth.Model
     /// <summary>
     /// Paginator for the DescribeAffectedEntitiesForOrganization operation
     ///</summary>
-    public interface IDescribeAffectedEntitiesForOrganizationPaginator
+    public partial interface IDescribeAffectedEntitiesForOrganizationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

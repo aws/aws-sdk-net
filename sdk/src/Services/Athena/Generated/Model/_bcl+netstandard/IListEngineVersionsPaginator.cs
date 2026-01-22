@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListEngineVersions operation
     ///</summary>
-    public interface IListEngineVersionsPaginator
+    public partial interface IListEngineVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

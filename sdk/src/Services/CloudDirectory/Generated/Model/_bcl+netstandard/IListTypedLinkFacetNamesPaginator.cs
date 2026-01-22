@@ -24,7 +24,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Paginator for the ListTypedLinkFacetNames operation
     ///</summary>
-    public interface IListTypedLinkFacetNamesPaginator
+    public partial interface IListTypedLinkFacetNamesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

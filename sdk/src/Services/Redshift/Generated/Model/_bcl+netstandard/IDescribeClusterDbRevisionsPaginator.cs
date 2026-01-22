@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeClusterDbRevisions operation
     ///</summary>
-    public interface IDescribeClusterDbRevisionsPaginator
+    public partial interface IDescribeClusterDbRevisionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

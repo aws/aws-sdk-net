@@ -27,7 +27,7 @@ namespace Amazon.Artifact.Model
     /// <summary>
     /// Paginators for the Artifact service
     ///</summary>
-    public class ArtifactPaginatorFactory : IArtifactPaginatorFactory
+    public partial class ArtifactPaginatorFactory : IArtifactPaginatorFactory
     {
         private readonly IAmazonArtifact client;
 

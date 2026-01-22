@@ -24,7 +24,7 @@ namespace Amazon.AppSync.Model
     /// <summary>
     /// Paginator for the ListChannelNamespaces operation
     ///</summary>
-    public interface IListChannelNamespacesPaginator
+    public partial interface IListChannelNamespacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

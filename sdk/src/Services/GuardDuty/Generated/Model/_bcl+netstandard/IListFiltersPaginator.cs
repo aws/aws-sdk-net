@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the ListFilters operation
     ///</summary>
-    public interface IListFiltersPaginator
+    public partial interface IListFiltersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     /// <summary>
     /// Paginators for the ServerlessApplicationRepository service
     ///</summary>
-    public class ServerlessApplicationRepositoryPaginatorFactory : IServerlessApplicationRepositoryPaginatorFactory
+    public partial class ServerlessApplicationRepositoryPaginatorFactory : IServerlessApplicationRepositoryPaginatorFactory
     {
         private readonly IAmazonServerlessApplicationRepository client;
 

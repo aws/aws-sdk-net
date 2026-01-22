@@ -24,7 +24,7 @@ namespace Amazon.Panorama.Model
     /// <summary>
     /// Paginator for the ListDevices operation
     ///</summary>
-    public interface IListDevicesPaginator
+    public partial interface IListDevicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

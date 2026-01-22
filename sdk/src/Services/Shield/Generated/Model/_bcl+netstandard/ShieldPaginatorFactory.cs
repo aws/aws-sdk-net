@@ -27,7 +27,7 @@ namespace Amazon.Shield.Model
     /// <summary>
     /// Paginators for the Shield service
     ///</summary>
-    public class ShieldPaginatorFactory : IShieldPaginatorFactory
+    public partial class ShieldPaginatorFactory : IShieldPaginatorFactory
     {
         private readonly IAmazonShield client;
 

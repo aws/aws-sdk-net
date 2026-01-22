@@ -24,7 +24,7 @@ namespace Amazon.DataExchange.Model
     /// <summary>
     /// Paginator for the ListEventActions operation
     ///</summary>
-    public interface IListEventActionsPaginator
+    public partial interface IListEventActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

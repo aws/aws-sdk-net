@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListComputeQuotas operation
     ///</summary>
-    public interface IListComputeQuotasPaginator
+    public partial interface IListComputeQuotasPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

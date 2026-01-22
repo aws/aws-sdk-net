@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the ListCheckSummaries operation
     ///</summary>
-    public interface IListCheckSummariesPaginator
+    public partial interface IListCheckSummariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListBotRecommendations operation
     ///</summary>
-    public interface IListBotRecommendationsPaginator
+    public partial interface IListBotRecommendationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
     /// <summary>
     /// Paginators for the MarketplaceEntitlementService service
     ///</summary>
-    public interface IMarketplaceEntitlementServicePaginatorFactory
+    public partial interface IMarketplaceEntitlementServicePaginatorFactory
     {
 
         /// <summary>

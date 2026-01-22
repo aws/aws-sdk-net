@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListAvailableMeteredProducts operation
     ///</summary>
-    public interface IListAvailableMeteredProductsPaginator
+    public partial interface IListAvailableMeteredProductsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

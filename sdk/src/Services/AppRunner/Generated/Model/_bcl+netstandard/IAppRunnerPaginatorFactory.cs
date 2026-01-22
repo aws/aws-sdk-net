@@ -24,7 +24,7 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Paginators for the AppRunner service
     ///</summary>
-    public interface IAppRunnerPaginatorFactory
+    public partial interface IAppRunnerPaginatorFactory
     {
 
         /// <summary>

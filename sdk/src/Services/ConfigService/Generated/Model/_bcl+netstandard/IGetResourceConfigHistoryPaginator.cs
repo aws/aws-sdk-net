@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the GetResourceConfigHistory operation
     ///</summary>
-    public interface IGetResourceConfigHistoryPaginator
+    public partial interface IGetResourceConfigHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetTransitGatewayPrefixListReferences operation
     ///</summary>
-    public interface IGetTransitGatewayPrefixListReferencesPaginator
+    public partial interface IGetTransitGatewayPrefixListReferencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

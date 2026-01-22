@@ -27,7 +27,7 @@ namespace Amazon.ApplicationInsights.Model
     /// <summary>
     /// Paginators for the ApplicationInsights service
     ///</summary>
-    public class ApplicationInsightsPaginatorFactory : IApplicationInsightsPaginatorFactory
+    public partial class ApplicationInsightsPaginatorFactory : IApplicationInsightsPaginatorFactory
     {
         private readonly IAmazonApplicationInsights client;
 

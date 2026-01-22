@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the ListStreamProcessors operation
     ///</summary>
-    public interface IListStreamProcessorsPaginator
+    public partial interface IListStreamProcessorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

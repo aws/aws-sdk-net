@@ -24,7 +24,7 @@ namespace Amazon.NetworkMonitor.Model
     /// <summary>
     /// Paginators for the NetworkMonitor service
     ///</summary>
-    public interface INetworkMonitorPaginatorFactory
+    public partial interface INetworkMonitorPaginatorFactory
     {
 
         /// <summary>

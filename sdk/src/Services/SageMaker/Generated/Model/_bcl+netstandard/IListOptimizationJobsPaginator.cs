@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListOptimizationJobs operation
     ///</summary>
-    public interface IListOptimizationJobsPaginator
+    public partial interface IListOptimizationJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

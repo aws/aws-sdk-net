@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListWorkspacePages operation
     ///</summary>
-    public interface IListWorkspacePagesPaginator
+    public partial interface IListWorkspacePagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

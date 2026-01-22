@@ -24,7 +24,7 @@ namespace Amazon.CleanRoomsML.Model
     /// <summary>
     /// Paginator for the ListCollaborationMLInputChannels operation
     ///</summary>
-    public interface IListCollaborationMLInputChannelsPaginator
+    public partial interface IListCollaborationMLInputChannelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

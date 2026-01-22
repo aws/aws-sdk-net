@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListCloudWatchAlarmTemplateGroups operation
     ///</summary>
-    public interface IListCloudWatchAlarmTemplateGroupsPaginator
+    public partial interface IListCloudWatchAlarmTemplateGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

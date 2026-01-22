@@ -24,7 +24,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Paginator for the GetClientCertificates operation
     ///</summary>
-    public interface IGetClientCertificatesPaginator
+    public partial interface IGetClientCertificatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

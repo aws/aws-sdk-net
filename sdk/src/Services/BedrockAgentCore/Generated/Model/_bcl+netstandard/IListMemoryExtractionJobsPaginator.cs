@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentCore.Model
     /// <summary>
     /// Paginator for the ListMemoryExtractionJobs operation
     ///</summary>
-    public interface IListMemoryExtractionJobsPaginator
+    public partial interface IListMemoryExtractionJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginators for the ServiceCatalog service
     ///</summary>
-    public interface IServiceCatalogPaginatorFactory
+    public partial interface IServiceCatalogPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.AmplifyBackend.Model
     /// <summary>
     /// Paginator for the ListBackendJobs operation
     ///</summary>
-    public interface IListBackendJobsPaginator
+    public partial interface IListBackendJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

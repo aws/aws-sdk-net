@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginator for the ListCisScanConfigurations operation
     ///</summary>
-    public interface IListCisScanConfigurationsPaginator
+    public partial interface IListCisScanConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

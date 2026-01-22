@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListOrganizations operation
     ///</summary>
-    public interface IListOrganizationsPaginator
+    public partial interface IListOrganizationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

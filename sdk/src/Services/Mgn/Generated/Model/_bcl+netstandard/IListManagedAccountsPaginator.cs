@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginator for the ListManagedAccounts operation
     ///</summary>
-    public interface IListManagedAccountsPaginator
+    public partial interface IListManagedAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

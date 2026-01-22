@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the ListPendingInvitationResources operation
     ///</summary>
-    public interface IListPendingInvitationResourcesPaginator
+    public partial interface IListPendingInvitationResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

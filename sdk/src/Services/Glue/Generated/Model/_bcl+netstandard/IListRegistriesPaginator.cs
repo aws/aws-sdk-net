@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the ListRegistries operation
     ///</summary>
-    public interface IListRegistriesPaginator
+    public partial interface IListRegistriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

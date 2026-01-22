@@ -24,7 +24,7 @@ namespace Amazon.KeyspacesStreams.Model
     /// <summary>
     /// Paginator for the GetStream operation
     ///</summary>
-    public interface IGetStreamPaginator
+    public partial interface IGetStreamPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

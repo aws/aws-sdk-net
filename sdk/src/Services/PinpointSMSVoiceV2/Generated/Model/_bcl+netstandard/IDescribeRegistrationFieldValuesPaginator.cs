@@ -24,7 +24,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Paginator for the DescribeRegistrationFieldValues operation
     ///</summary>
-    public interface IDescribeRegistrationFieldValuesPaginator
+    public partial interface IDescribeRegistrationFieldValuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

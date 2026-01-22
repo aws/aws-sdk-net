@@ -24,7 +24,7 @@ namespace Amazon.Braket.Model
     /// <summary>
     /// Paginator for the SearchJobs operation
     ///</summary>
-    public interface ISearchJobsPaginator
+    public partial interface ISearchJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

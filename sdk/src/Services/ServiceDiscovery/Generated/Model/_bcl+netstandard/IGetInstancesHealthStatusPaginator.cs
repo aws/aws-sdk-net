@@ -24,7 +24,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Paginator for the GetInstancesHealthStatus operation
     ///</summary>
-    public interface IGetInstancesHealthStatusPaginator
+    public partial interface IGetInstancesHealthStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

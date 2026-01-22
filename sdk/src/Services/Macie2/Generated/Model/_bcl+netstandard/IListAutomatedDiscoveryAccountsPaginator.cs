@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the ListAutomatedDiscoveryAccounts operation
     ///</summary>
-    public interface IListAutomatedDiscoveryAccountsPaginator
+    public partial interface IListAutomatedDiscoveryAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

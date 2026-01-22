@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchUserHierarchyGroups operation
     ///</summary>
-    public interface ISearchUserHierarchyGroupsPaginator
+    public partial interface ISearchUserHierarchyGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

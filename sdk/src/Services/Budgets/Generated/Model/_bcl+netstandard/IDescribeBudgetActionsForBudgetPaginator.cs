@@ -24,7 +24,7 @@ namespace Amazon.Budgets.Model
     /// <summary>
     /// Paginator for the DescribeBudgetActionsForBudget operation
     ///</summary>
-    public interface IDescribeBudgetActionsForBudgetPaginator
+    public partial interface IDescribeBudgetActionsForBudgetPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginator for the ListTableRestoreStatus operation
     ///</summary>
-    public interface IListTableRestoreStatusPaginator
+    public partial interface IListTableRestoreStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

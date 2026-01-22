@@ -24,7 +24,7 @@ namespace Amazon.MediaTailor.Model
     /// <summary>
     /// Paginator for the ListLiveSources operation
     ///</summary>
-    public interface IListLiveSourcesPaginator
+    public partial interface IListLiveSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Polly.Model
     /// <summary>
     /// Paginator for the ListSpeechSynthesisTasks operation
     ///</summary>
-    public interface IListSpeechSynthesisTasksPaginator
+    public partial interface IListSpeechSynthesisTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

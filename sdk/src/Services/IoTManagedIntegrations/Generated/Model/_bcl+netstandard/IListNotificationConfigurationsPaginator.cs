@@ -24,7 +24,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Paginator for the ListNotificationConfigurations operation
     ///</summary>
-    public interface IListNotificationConfigurationsPaginator
+    public partial interface IListNotificationConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

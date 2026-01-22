@@ -24,7 +24,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Paginator for the DescribeMountTargets operation
     ///</summary>
-    public interface IDescribeMountTargetsPaginator
+    public partial interface IDescribeMountTargetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

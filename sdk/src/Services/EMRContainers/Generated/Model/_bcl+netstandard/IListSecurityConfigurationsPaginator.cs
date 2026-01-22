@@ -24,7 +24,7 @@ namespace Amazon.EMRContainers.Model
     /// <summary>
     /// Paginator for the ListSecurityConfigurations operation
     ///</summary>
-    public interface IListSecurityConfigurationsPaginator
+    public partial interface IListSecurityConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

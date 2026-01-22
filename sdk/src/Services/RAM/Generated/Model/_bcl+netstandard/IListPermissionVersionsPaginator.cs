@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the ListPermissionVersions operation
     ///</summary>
-    public interface IListPermissionVersionsPaginator
+    public partial interface IListPermissionVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

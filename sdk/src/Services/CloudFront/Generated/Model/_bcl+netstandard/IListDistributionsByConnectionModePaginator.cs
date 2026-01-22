@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListDistributionsByConnectionMode operation
     ///</summary>
-    public interface IListDistributionsByConnectionModePaginator
+    public partial interface IListDistributionsByConnectionModePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

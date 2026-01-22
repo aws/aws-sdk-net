@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginator for the GetChatControlsConfiguration operation
     ///</summary>
-    public interface IGetChatControlsConfigurationPaginator
+    public partial interface IGetChatControlsConfigurationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

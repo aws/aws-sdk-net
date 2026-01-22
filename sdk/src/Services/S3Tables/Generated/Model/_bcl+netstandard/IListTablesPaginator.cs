@@ -24,7 +24,7 @@ namespace Amazon.S3Tables.Model
     /// <summary>
     /// Paginator for the ListTables operation
     ///</summary>
-    public interface IListTablesPaginator
+    public partial interface IListTablesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

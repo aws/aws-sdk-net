@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListFleetMetrics operation
     ///</summary>
-    public interface IListFleetMetricsPaginator
+    public partial interface IListFleetMetricsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

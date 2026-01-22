@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListCustomMetrics operation
     ///</summary>
-    public interface IListCustomMetricsPaginator
+    public partial interface IListCustomMetricsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

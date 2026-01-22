@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the DescribeInventoryDeletions operation
     ///</summary>
-    public interface IDescribeInventoryDeletionsPaginator
+    public partial interface IDescribeInventoryDeletionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

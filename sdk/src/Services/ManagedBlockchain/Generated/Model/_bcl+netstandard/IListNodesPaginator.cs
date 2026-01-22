@@ -24,7 +24,7 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// Paginator for the ListNodes operation
     ///</summary>
-    public interface IListNodesPaginator
+    public partial interface IListNodesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

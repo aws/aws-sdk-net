@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginator for the ListTypeRegistrations operation
     ///</summary>
-    public interface IListTypeRegistrationsPaginator
+    public partial interface IListTypeRegistrationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

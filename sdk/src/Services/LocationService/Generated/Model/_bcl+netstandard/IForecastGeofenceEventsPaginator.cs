@@ -24,7 +24,7 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Paginator for the ForecastGeofenceEvents operation
     ///</summary>
-    public interface IForecastGeofenceEventsPaginator
+    public partial interface IForecastGeofenceEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

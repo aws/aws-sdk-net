@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Paginator for the DescribeUsers operation
     ///</summary>
-    public interface IDescribeUsersPaginator
+    public partial interface IDescribeUsersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

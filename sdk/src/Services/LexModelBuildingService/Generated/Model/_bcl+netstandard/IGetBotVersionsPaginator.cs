@@ -24,7 +24,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Paginator for the GetBotVersions operation
     ///</summary>
-    public interface IGetBotVersionsPaginator
+    public partial interface IGetBotVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

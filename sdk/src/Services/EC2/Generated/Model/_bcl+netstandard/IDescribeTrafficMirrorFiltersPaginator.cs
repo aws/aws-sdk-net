@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeTrafficMirrorFilters operation
     ///</summary>
-    public interface IDescribeTrafficMirrorFiltersPaginator
+    public partial interface IDescribeTrafficMirrorFiltersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

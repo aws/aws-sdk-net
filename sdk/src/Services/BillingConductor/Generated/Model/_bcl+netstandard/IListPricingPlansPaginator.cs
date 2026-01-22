@@ -24,7 +24,7 @@ namespace Amazon.BillingConductor.Model
     /// <summary>
     /// Paginator for the ListPricingPlans operation
     ///</summary>
-    public interface IListPricingPlansPaginator
+    public partial interface IListPricingPlansPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

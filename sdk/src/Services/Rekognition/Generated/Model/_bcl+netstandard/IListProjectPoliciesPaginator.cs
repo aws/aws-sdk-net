@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the ListProjectPolicies operation
     ///</summary>
-    public interface IListProjectPoliciesPaginator
+    public partial interface IListProjectPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

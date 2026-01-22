@@ -24,7 +24,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Paginator for the GetBotAliases operation
     ///</summary>
-    public interface IGetBotAliasesPaginator
+    public partial interface IGetBotAliasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.MediaConnect.Model
     /// <summary>
     /// Paginator for the ListOfferings operation
     ///</summary>
-    public interface IListOfferingsPaginator
+    public partial interface IListOfferingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

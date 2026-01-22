@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListTrainingJobsForHyperParameterTuningJob operation
     ///</summary>
-    public interface IListTrainingJobsForHyperParameterTuningJobPaginator
+    public partial interface IListTrainingJobsForHyperParameterTuningJobPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

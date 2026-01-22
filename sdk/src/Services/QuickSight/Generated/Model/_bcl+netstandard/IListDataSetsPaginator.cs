@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListDataSets operation
     ///</summary>
-    public interface IListDataSetsPaginator
+    public partial interface IListDataSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SSMIncidents.Model
     /// <summary>
     /// Paginator for the ListTimelineEvents operation
     ///</summary>
-    public interface IListTimelineEventsPaginator
+    public partial interface IListTimelineEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

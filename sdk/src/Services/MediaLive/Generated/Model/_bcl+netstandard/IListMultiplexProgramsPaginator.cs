@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListMultiplexPrograms operation
     ///</summary>
-    public interface IListMultiplexProgramsPaginator
+    public partial interface IListMultiplexProgramsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

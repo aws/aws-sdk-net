@@ -24,7 +24,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     /// <summary>
     /// Paginator for the ListLicenseServerEndpoints operation
     ///</summary>
-    public interface IListLicenseServerEndpointsPaginator
+    public partial interface IListLicenseServerEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

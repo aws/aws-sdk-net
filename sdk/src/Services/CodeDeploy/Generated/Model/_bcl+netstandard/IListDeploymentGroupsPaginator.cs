@@ -24,7 +24,7 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Paginator for the ListDeploymentGroups operation
     ///</summary>
-    public interface IListDeploymentGroupsPaginator
+    public partial interface IListDeploymentGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Paginators for the FMS service
     ///</summary>
-    public class FMSPaginatorFactory : IFMSPaginatorFactory
+    public partial class FMSPaginatorFactory : IFMSPaginatorFactory
     {
         private readonly IAmazonFMS client;
 

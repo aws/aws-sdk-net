@@ -24,7 +24,7 @@ namespace Amazon.Drs.Model
     /// <summary>
     /// Paginator for the ListExtensibleSourceServers operation
     ///</summary>
-    public interface IListExtensibleSourceServersPaginator
+    public partial interface IListExtensibleSourceServersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

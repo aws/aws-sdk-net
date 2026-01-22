@@ -24,7 +24,7 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Paginator for the ListActivities operation
     ///</summary>
-    public interface IListActivitiesPaginator
+    public partial interface IListActivitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

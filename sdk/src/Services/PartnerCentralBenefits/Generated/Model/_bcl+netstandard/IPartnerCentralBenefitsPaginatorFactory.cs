@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralBenefits.Model
     /// <summary>
     /// Paginators for the PartnerCentralBenefits service
     ///</summary>
-    public interface IPartnerCentralBenefitsPaginatorFactory
+    public partial interface IPartnerCentralBenefitsPaginatorFactory
     {
 
         /// <summary>

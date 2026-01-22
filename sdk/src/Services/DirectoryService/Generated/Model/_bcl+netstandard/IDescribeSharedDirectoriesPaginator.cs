@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the DescribeSharedDirectories operation
     ///</summary>
-    public interface IDescribeSharedDirectoriesPaginator
+    public partial interface IDescribeSharedDirectoriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

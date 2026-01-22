@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListSecurityKeys operation
     ///</summary>
-    public interface IListSecurityKeysPaginator
+    public partial interface IListSecurityKeysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

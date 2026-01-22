@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the DescribeRetentionConfigurations operation
     ///</summary>
-    public interface IDescribeRetentionConfigurationsPaginator
+    public partial interface IDescribeRetentionConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginator for the SearchMessageTemplates operation
     ///</summary>
-    public interface ISearchMessageTemplatesPaginator
+    public partial interface ISearchMessageTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

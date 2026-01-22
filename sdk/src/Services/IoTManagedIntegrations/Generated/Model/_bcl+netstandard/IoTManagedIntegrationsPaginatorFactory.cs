@@ -27,7 +27,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Paginators for the IoTManagedIntegrations service
     ///</summary>
-    public class IoTManagedIntegrationsPaginatorFactory : IIoTManagedIntegrationsPaginatorFactory
+    public partial class IoTManagedIntegrationsPaginatorFactory : IIoTManagedIntegrationsPaginatorFactory
     {
         private readonly IAmazonIoTManagedIntegrations client;
 

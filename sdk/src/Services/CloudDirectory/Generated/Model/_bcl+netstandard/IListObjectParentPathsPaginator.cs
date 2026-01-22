@@ -24,7 +24,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Paginator for the ListObjectParentPaths operation
     ///</summary>
-    public interface IListObjectParentPathsPaginator
+    public partial interface IListObjectParentPathsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

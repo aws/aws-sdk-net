@@ -24,7 +24,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Paginator for the ListBots operation
     ///</summary>
-    public interface IListBotsPaginator
+    public partial interface IListBotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBRecommendations operation
     ///</summary>
-    public interface IDescribeDBRecommendationsPaginator
+    public partial interface IDescribeDBRecommendationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

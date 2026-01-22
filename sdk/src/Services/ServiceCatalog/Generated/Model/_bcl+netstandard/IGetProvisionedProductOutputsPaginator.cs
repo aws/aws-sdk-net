@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the GetProvisionedProductOutputs operation
     ///</summary>
-    public interface IGetProvisionedProductOutputsPaginator
+    public partial interface IGetProvisionedProductOutputsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

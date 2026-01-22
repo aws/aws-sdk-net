@@ -24,7 +24,7 @@ namespace Amazon.OAM.Model
     /// <summary>
     /// Paginator for the ListSinks operation
     ///</summary>
-    public interface IListSinksPaginator
+    public partial interface IListSinksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

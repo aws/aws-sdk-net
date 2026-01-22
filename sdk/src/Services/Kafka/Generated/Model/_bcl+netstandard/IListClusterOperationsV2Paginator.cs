@@ -24,7 +24,7 @@ namespace Amazon.Kafka.Model
     /// <summary>
     /// Paginator for the ListClusterOperationsV2 operation
     ///</summary>
-    public interface IListClusterOperationsV2Paginator
+    public partial interface IListClusterOperationsV2Paginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginator for the ListRunGroups operation
     ///</summary>
-    public interface IListRunGroupsPaginator
+    public partial interface IListRunGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

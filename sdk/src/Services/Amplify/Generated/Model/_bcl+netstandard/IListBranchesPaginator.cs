@@ -24,7 +24,7 @@ namespace Amazon.Amplify.Model
     /// <summary>
     /// Paginator for the ListBranches operation
     ///</summary>
-    public interface IListBranchesPaginator
+    public partial interface IListBranchesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

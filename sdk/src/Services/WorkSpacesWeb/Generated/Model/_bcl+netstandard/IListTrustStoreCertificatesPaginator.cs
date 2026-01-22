@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// <summary>
     /// Paginator for the ListTrustStoreCertificates operation
     ///</summary>
-    public interface IListTrustStoreCertificatesPaginator
+    public partial interface IListTrustStoreCertificatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

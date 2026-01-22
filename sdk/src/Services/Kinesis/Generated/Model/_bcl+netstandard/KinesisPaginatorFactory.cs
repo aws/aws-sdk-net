@@ -27,7 +27,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Paginators for the Kinesis service
     ///</summary>
-    public class KinesisPaginatorFactory : IKinesisPaginatorFactory
+    public partial class KinesisPaginatorFactory : IKinesisPaginatorFactory
     {
         private readonly IAmazonKinesis client;
 

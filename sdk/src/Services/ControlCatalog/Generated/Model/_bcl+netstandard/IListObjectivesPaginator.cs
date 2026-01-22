@@ -24,7 +24,7 @@ namespace Amazon.ControlCatalog.Model
     /// <summary>
     /// Paginator for the ListObjectives operation
     ///</summary>
-    public interface IListObjectivesPaginator
+    public partial interface IListObjectivesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

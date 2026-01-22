@@ -24,7 +24,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     /// <summary>
     /// Paginator for the ListCrossAccountAuthorizations operation
     ///</summary>
-    public interface IListCrossAccountAuthorizationsPaginator
+    public partial interface IListCrossAccountAuthorizationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

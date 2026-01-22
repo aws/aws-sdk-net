@@ -24,7 +24,7 @@ namespace Amazon.MigrationHub.Model
     /// <summary>
     /// Paginator for the ListDiscoveredResources operation
     ///</summary>
-    public interface IListDiscoveredResourcesPaginator
+    public partial interface IListDiscoveredResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

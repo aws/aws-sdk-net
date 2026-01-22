@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchContacts operation
     ///</summary>
-    public interface ISearchContactsPaginator
+    public partial interface ISearchContactsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

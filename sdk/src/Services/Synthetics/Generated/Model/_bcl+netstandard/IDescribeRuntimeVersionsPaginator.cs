@@ -24,7 +24,7 @@ namespace Amazon.Synthetics.Model
     /// <summary>
     /// Paginator for the DescribeRuntimeVersions operation
     ///</summary>
-    public interface IDescribeRuntimeVersionsPaginator
+    public partial interface IDescribeRuntimeVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

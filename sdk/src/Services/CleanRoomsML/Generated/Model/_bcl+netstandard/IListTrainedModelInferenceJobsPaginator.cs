@@ -24,7 +24,7 @@ namespace Amazon.CleanRoomsML.Model
     /// <summary>
     /// Paginator for the ListTrainedModelInferenceJobs operation
     ///</summary>
-    public interface IListTrainedModelInferenceJobsPaginator
+    public partial interface IListTrainedModelInferenceJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

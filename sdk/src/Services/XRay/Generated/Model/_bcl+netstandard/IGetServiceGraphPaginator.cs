@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the GetServiceGraph operation
     ///</summary>
-    public interface IGetServiceGraphPaginator
+    public partial interface IGetServiceGraphPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

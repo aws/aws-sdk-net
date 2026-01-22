@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// <summary>
     /// Paginator for the ListNetworkSettings operation
     ///</summary>
-    public interface IListNetworkSettingsPaginator
+    public partial interface IListNetworkSettingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

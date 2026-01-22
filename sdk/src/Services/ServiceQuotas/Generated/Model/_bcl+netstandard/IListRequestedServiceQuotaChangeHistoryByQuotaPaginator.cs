@@ -24,7 +24,7 @@ namespace Amazon.ServiceQuotas.Model
     /// <summary>
     /// Paginator for the ListRequestedServiceQuotaChangeHistoryByQuota operation
     ///</summary>
-    public interface IListRequestedServiceQuotaChangeHistoryByQuotaPaginator
+    public partial interface IListRequestedServiceQuotaChangeHistoryByQuotaPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

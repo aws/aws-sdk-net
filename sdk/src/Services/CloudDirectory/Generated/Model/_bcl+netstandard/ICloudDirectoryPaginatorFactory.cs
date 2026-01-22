@@ -24,7 +24,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Paginators for the CloudDirectory service
     ///</summary>
-    public interface ICloudDirectoryPaginatorFactory
+    public partial interface ICloudDirectoryPaginatorFactory
     {
 
         /// <summary>

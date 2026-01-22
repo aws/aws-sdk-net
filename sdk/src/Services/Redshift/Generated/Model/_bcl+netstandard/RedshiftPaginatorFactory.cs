@@ -27,7 +27,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginators for the Redshift service
     ///</summary>
-    public class RedshiftPaginatorFactory : IRedshiftPaginatorFactory
+    public partial class RedshiftPaginatorFactory : IRedshiftPaginatorFactory
     {
         private readonly IAmazonRedshift client;
 

@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListHandshakesForAccount operation
     ///</summary>
-    public interface IListHandshakesForAccountPaginator
+    public partial interface IListHandshakesForAccountPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

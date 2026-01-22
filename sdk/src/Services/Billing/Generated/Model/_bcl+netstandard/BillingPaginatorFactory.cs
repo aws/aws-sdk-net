@@ -27,7 +27,7 @@ namespace Amazon.Billing.Model
     /// <summary>
     /// Paginators for the Billing service
     ///</summary>
-    public class BillingPaginatorFactory : IBillingPaginatorFactory
+    public partial class BillingPaginatorFactory : IBillingPaginatorFactory
     {
         private readonly IAmazonBilling client;
 

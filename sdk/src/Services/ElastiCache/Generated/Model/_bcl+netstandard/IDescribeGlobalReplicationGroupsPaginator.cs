@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Paginator for the DescribeGlobalReplicationGroups operation
     ///</summary>
-    public interface IDescribeGlobalReplicationGroupsPaginator
+    public partial interface IDescribeGlobalReplicationGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

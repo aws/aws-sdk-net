@@ -24,7 +24,7 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Paginator for the ListTagSyncTasks operation
     ///</summary>
-    public interface IListTagSyncTasksPaginator
+    public partial interface IListTagSyncTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

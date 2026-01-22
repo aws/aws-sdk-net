@@ -24,7 +24,7 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// Paginator for the ListS3TableIntegrations operation
     ///</summary>
-    public interface IListS3TableIntegrationsPaginator
+    public partial interface IListS3TableIntegrationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

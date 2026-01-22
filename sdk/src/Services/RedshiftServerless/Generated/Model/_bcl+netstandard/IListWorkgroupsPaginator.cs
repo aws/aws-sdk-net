@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginator for the ListWorkgroups operation
     ///</summary>
-    public interface IListWorkgroupsPaginator
+    public partial interface IListWorkgroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

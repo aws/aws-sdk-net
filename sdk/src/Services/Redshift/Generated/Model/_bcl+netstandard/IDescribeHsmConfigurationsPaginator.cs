@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeHsmConfigurations operation
     ///</summary>
-    public interface IDescribeHsmConfigurationsPaginator
+    public partial interface IDescribeHsmConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

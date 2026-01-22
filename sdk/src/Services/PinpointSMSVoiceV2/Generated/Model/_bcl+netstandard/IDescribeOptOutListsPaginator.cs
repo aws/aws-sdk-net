@@ -24,7 +24,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Paginator for the DescribeOptOutLists operation
     ///</summary>
-    public interface IDescribeOptOutListsPaginator
+    public partial interface IDescribeOptOutListsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

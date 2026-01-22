@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeMacHosts operation
     ///</summary>
-    public interface IDescribeMacHostsPaginator
+    public partial interface IDescribeMacHostsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

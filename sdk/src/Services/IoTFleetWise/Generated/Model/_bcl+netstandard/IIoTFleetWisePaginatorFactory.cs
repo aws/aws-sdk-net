@@ -24,7 +24,7 @@ namespace Amazon.IoTFleetWise.Model
     /// <summary>
     /// Paginators for the IoTFleetWise service
     ///</summary>
-    public interface IIoTFleetWisePaginatorFactory
+    public partial interface IIoTFleetWisePaginatorFactory
     {
 
         /// <summary>

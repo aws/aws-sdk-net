@@ -24,7 +24,7 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Paginator for the DescribeComments operation
     ///</summary>
-    public interface IDescribeCommentsPaginator
+    public partial interface IDescribeCommentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

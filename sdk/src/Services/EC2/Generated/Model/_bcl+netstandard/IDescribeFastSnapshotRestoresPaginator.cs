@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeFastSnapshotRestores operation
     ///</summary>
-    public interface IDescribeFastSnapshotRestoresPaginator
+    public partial interface IDescribeFastSnapshotRestoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

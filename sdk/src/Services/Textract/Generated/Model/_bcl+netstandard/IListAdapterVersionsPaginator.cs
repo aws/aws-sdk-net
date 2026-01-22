@@ -24,7 +24,7 @@ namespace Amazon.Textract.Model
     /// <summary>
     /// Paginator for the ListAdapterVersions operation
     ///</summary>
-    public interface IListAdapterVersionsPaginator
+    public partial interface IListAdapterVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

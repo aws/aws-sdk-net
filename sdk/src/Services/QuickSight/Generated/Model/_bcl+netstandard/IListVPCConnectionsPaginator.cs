@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListVPCConnections operation
     ///</summary>
-    public interface IListVPCConnectionsPaginator
+    public partial interface IListVPCConnectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

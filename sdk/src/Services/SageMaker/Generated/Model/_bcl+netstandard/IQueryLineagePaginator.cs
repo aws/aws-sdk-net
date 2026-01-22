@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the QueryLineage operation
     ///</summary>
-    public interface IQueryLineagePaginator
+    public partial interface IQueryLineagePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Paginator for the GetScheduledQueryHistory operation
     ///</summary>
-    public interface IGetScheduledQueryHistoryPaginator
+    public partial interface IGetScheduledQueryHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

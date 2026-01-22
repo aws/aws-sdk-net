@@ -24,7 +24,7 @@ namespace Amazon.CostOptimizationHub.Model
     /// <summary>
     /// Paginator for the ListRecommendationSummaries operation
     ///</summary>
-    public interface IListRecommendationSummariesPaginator
+    public partial interface IListRecommendationSummariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

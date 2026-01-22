@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Paginator for the ListOauth2CredentialProviders operation
     ///</summary>
-    public interface IListOauth2CredentialProvidersPaginator
+    public partial interface IListOauth2CredentialProvidersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

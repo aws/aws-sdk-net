@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListAccountAssignmentDeletionStatus operation
     ///</summary>
-    public interface IListAccountAssignmentDeletionStatusPaginator
+    public partial interface IListAccountAssignmentDeletionStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

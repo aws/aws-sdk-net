@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the ListInvitations operation
     ///</summary>
-    public interface IListInvitationsPaginator
+    public partial interface IListInvitationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

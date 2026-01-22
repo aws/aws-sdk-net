@@ -24,7 +24,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginator for the GetCommentsForPullRequest operation
     ///</summary>
-    public interface IGetCommentsForPullRequestPaginator
+    public partial interface IGetCommentsForPullRequestPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginator for the ListGeneratedTemplates operation
     ///</summary>
-    public interface IListGeneratedTemplatesPaginator
+    public partial interface IListGeneratedTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

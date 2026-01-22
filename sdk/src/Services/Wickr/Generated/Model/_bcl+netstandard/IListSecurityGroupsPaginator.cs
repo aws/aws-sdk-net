@@ -24,7 +24,7 @@ namespace Amazon.Wickr.Model
     /// <summary>
     /// Paginator for the ListSecurityGroups operation
     ///</summary>
-    public interface IListSecurityGroupsPaginator
+    public partial interface IListSecurityGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.PartnerCentralBenefits.Model
     /// <summary>
     /// Paginators for the PartnerCentralBenefits service
     ///</summary>
-    public class PartnerCentralBenefitsPaginatorFactory : IPartnerCentralBenefitsPaginatorFactory
+    public partial class PartnerCentralBenefitsPaginatorFactory : IPartnerCentralBenefitsPaginatorFactory
     {
         private readonly IAmazonPartnerCentralBenefits client;
 

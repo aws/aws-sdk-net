@@ -24,7 +24,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Paginator for the GetCase operation
     ///</summary>
-    public interface IGetCasePaginator
+    public partial interface IGetCasePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

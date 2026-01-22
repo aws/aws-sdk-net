@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the GetSamplingRules operation
     ///</summary>
-    public interface IGetSamplingRulesPaginator
+    public partial interface IGetSamplingRulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimSpaceWeaver.Model
     /// <summary>
     /// Paginator for the ListApps operation
     ///</summary>
-    public interface IListAppsPaginator
+    public partial interface IListAppsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

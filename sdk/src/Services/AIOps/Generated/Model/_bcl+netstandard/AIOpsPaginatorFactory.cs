@@ -27,7 +27,7 @@ namespace Amazon.AIOps.Model
     /// <summary>
     /// Paginators for the AIOps service
     ///</summary>
-    public class AIOpsPaginatorFactory : IAIOpsPaginatorFactory
+    public partial class AIOpsPaginatorFactory : IAIOpsPaginatorFactory
     {
         private readonly IAmazonAIOps client;
 

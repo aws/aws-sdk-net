@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListGroupsForEntity operation
     ///</summary>
-    public interface IListGroupsForEntityPaginator
+    public partial interface IListGroupsForEntityPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

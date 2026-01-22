@@ -24,7 +24,7 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Paginator for the DescribeDocumentVersions operation
     ///</summary>
-    public interface IDescribeDocumentVersionsPaginator
+    public partial interface IDescribeDocumentVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

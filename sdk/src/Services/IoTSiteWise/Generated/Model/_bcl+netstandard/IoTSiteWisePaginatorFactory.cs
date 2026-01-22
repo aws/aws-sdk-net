@@ -27,7 +27,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Paginators for the IoTSiteWise service
     ///</summary>
-    public class IoTSiteWisePaginatorFactory : IIoTSiteWisePaginatorFactory
+    public partial class IoTSiteWisePaginatorFactory : IIoTSiteWisePaginatorFactory
     {
         private readonly IAmazonIoTSiteWise client;
 

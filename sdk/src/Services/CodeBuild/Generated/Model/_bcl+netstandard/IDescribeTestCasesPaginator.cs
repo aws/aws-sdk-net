@@ -24,7 +24,7 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Paginator for the DescribeTestCases operation
     ///</summary>
-    public interface IDescribeTestCasesPaginator
+    public partial interface IDescribeTestCasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

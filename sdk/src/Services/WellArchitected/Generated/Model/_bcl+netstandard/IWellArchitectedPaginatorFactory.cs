@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginators for the WellArchitected service
     ///</summary>
-    public interface IWellArchitectedPaginatorFactory
+    public partial interface IWellArchitectedPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <summary>
     /// Paginator for the ListFragments operation
     ///</summary>
-    public interface IListFragmentsPaginator
+    public partial interface IListFragmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

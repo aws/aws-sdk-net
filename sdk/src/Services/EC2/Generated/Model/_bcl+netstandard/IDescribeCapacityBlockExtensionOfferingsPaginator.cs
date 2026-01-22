@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeCapacityBlockExtensionOfferings operation
     ///</summary>
-    public interface IDescribeCapacityBlockExtensionOfferingsPaginator
+    public partial interface IDescribeCapacityBlockExtensionOfferingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

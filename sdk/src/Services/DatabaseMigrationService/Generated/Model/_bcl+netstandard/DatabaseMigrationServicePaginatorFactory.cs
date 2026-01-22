@@ -27,7 +27,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Paginators for the DatabaseMigrationService service
     ///</summary>
-    public class DatabaseMigrationServicePaginatorFactory : IDatabaseMigrationServicePaginatorFactory
+    public partial class DatabaseMigrationServicePaginatorFactory : IDatabaseMigrationServicePaginatorFactory
     {
         private readonly IAmazonDatabaseMigrationService client;
 

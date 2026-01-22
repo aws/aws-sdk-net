@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListLexBots operation
     ///</summary>
-    public interface IListLexBotsPaginator
+    public partial interface IListLexBotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

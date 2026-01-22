@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginator for the ListTracks operation
     ///</summary>
-    public interface IListTracksPaginator
+    public partial interface IListTracksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

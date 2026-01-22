@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginator for the ListRuleSets operation
     ///</summary>
-    public interface IListRuleSetsPaginator
+    public partial interface IListRuleSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

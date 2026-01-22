@@ -24,7 +24,7 @@ namespace Amazon.SecretsManager.Model
     /// <summary>
     /// Paginator for the BatchGetSecretValue operation
     ///</summary>
-    public interface IBatchGetSecretValuePaginator
+    public partial interface IBatchGetSecretValuePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

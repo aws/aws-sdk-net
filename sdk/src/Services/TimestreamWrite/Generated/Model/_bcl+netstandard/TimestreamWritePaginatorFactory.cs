@@ -27,7 +27,7 @@ namespace Amazon.TimestreamWrite.Model
     /// <summary>
     /// Paginators for the TimestreamWrite service
     ///</summary>
-    public class TimestreamWritePaginatorFactory : ITimestreamWritePaginatorFactory
+    public partial class TimestreamWritePaginatorFactory : ITimestreamWritePaginatorFactory
     {
         private readonly IAmazonTimestreamWrite client;
 

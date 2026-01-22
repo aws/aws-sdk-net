@@ -24,7 +24,7 @@ namespace Amazon.Account.Model
     /// <summary>
     /// Paginators for the Account service
     ///</summary>
-    public interface IAccountPaginatorFactory
+    public partial interface IAccountPaginatorFactory
     {
 
         /// <summary>

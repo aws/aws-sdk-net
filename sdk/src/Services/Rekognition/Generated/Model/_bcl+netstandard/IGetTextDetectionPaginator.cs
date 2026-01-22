@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the GetTextDetection operation
     ///</summary>
-    public interface IGetTextDetectionPaginator
+    public partial interface IGetTextDetectionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

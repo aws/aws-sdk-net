@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListReservations operation
     ///</summary>
-    public interface IListReservationsPaginator
+    public partial interface IListReservationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Paginator for the DescribeFileSystemAliases operation
     ///</summary>
-    public interface IDescribeFileSystemAliasesPaginator
+    public partial interface IDescribeFileSystemAliasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

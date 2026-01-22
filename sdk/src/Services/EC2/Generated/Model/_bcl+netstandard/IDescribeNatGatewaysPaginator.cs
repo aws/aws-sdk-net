@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeNatGateways operation
     ///</summary>
-    public interface IDescribeNatGatewaysPaginator
+    public partial interface IDescribeNatGatewaysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// <summary>
     /// Paginator for the ListSecurityPolicies operation
     ///</summary>
-    public interface IListSecurityPoliciesPaginator
+    public partial interface IListSecurityPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// <summary>
     /// Paginator for the ListSupportedResourceTypes operation
     ///</summary>
-    public interface IListSupportedResourceTypesPaginator
+    public partial interface IListSupportedResourceTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

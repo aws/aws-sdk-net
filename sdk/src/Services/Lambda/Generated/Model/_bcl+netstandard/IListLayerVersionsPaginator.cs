@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the ListLayerVersions operation
     ///</summary>
-    public interface IListLayerVersionsPaginator
+    public partial interface IListLayerVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

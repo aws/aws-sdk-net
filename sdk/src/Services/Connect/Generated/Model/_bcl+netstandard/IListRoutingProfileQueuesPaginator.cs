@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListRoutingProfileQueues operation
     ///</summary>
-    public interface IListRoutingProfileQueuesPaginator
+    public partial interface IListRoutingProfileQueuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

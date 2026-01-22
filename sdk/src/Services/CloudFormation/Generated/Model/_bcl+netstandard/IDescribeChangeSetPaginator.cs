@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginator for the DescribeChangeSet operation
     ///</summary>
-    public interface IDescribeChangeSetPaginator
+    public partial interface IDescribeChangeSetPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

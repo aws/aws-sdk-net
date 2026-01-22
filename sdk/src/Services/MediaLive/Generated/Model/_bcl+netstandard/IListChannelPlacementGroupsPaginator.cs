@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListChannelPlacementGroups operation
     ///</summary>
-    public interface IListChannelPlacementGroupsPaginator
+    public partial interface IListChannelPlacementGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

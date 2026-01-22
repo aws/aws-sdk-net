@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListProvisioningTemplates operation
     ///</summary>
-    public interface IListProvisioningTemplatesPaginator
+    public partial interface IListProvisioningTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

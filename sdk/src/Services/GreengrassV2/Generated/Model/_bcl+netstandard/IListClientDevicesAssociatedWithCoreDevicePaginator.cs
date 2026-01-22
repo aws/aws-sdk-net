@@ -24,7 +24,7 @@ namespace Amazon.GreengrassV2.Model
     /// <summary>
     /// Paginator for the ListClientDevicesAssociatedWithCoreDevice operation
     ///</summary>
-    public interface IListClientDevicesAssociatedWithCoreDevicePaginator
+    public partial interface IListClientDevicesAssociatedWithCoreDevicePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

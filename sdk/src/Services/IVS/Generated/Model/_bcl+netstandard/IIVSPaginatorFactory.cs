@@ -24,7 +24,7 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Paginators for the IVS service
     ///</summary>
-    public interface IIVSPaginatorFactory
+    public partial interface IIVSPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.PI.Model
     /// <summary>
     /// Paginator for the GetResourceMetrics operation
     ///</summary>
-    public interface IGetResourceMetricsPaginator
+    public partial interface IGetResourceMetricsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

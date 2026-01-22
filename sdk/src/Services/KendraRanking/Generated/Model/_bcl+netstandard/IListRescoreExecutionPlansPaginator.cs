@@ -24,7 +24,7 @@ namespace Amazon.KendraRanking.Model
     /// <summary>
     /// Paginator for the ListRescoreExecutionPlans operation
     ///</summary>
-    public interface IListRescoreExecutionPlansPaginator
+    public partial interface IListRescoreExecutionPlansPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

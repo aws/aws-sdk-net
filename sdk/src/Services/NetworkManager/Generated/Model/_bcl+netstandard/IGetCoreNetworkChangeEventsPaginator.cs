@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the GetCoreNetworkChangeEvents operation
     ///</summary>
-    public interface IGetCoreNetworkChangeEventsPaginator
+    public partial interface IGetCoreNetworkChangeEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

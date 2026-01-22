@@ -27,7 +27,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginators for the DeviceFarm service
     ///</summary>
-    public class DeviceFarmPaginatorFactory : IDeviceFarmPaginatorFactory
+    public partial class DeviceFarmPaginatorFactory : IDeviceFarmPaginatorFactory
     {
         private readonly IAmazonDeviceFarm client;
 

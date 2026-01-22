@@ -24,7 +24,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Paginator for the ListComputationModelResolveToResources operation
     ///</summary>
-    public interface IListComputationModelResolveToResourcesPaginator
+    public partial interface IListComputationModelResolveToResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

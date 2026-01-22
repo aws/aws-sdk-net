@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginator for the ListUsageLimits operation
     ///</summary>
-    public interface IListUsageLimitsPaginator
+    public partial interface IListUsageLimitsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

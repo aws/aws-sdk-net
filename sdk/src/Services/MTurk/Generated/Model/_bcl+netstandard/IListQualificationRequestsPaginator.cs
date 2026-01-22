@@ -24,7 +24,7 @@ namespace Amazon.MTurk.Model
     /// <summary>
     /// Paginator for the ListQualificationRequests operation
     ///</summary>
-    public interface IListQualificationRequestsPaginator
+    public partial interface IListQualificationRequestsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

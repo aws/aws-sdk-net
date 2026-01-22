@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListDefaultVocabularies operation
     ///</summary>
-    public interface IListDefaultVocabulariesPaginator
+    public partial interface IListDefaultVocabulariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

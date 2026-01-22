@@ -24,7 +24,7 @@ namespace Amazon.ServiceQuotas.Model
     /// <summary>
     /// Paginator for the ListServiceQuotas operation
     ///</summary>
-    public interface IListServiceQuotasPaginator
+    public partial interface IListServiceQuotasPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

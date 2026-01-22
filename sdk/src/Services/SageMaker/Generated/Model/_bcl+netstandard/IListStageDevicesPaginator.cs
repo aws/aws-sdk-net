@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListStageDevices operation
     ///</summary>
-    public interface IListStageDevicesPaginator
+    public partial interface IListStageDevicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

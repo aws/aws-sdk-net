@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginators for the RAM service
     ///</summary>
-    public interface IRAMPaginatorFactory
+    public partial interface IRAMPaginatorFactory
     {
 
         /// <summary>

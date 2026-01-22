@@ -24,7 +24,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Paginators for the ECS service
     ///</summary>
-    public interface IECSPaginatorFactory
+    public partial interface IECSPaginatorFactory
     {
 
         /// <summary>

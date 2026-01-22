@@ -24,7 +24,7 @@ namespace Amazon.QApps.Model
     /// <summary>
     /// Paginator for the ListLibraryItems operation
     ///</summary>
-    public interface IListLibraryItemsPaginator
+    public partial interface IListLibraryItemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

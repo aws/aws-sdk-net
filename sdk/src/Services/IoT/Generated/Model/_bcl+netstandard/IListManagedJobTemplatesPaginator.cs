@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListManagedJobTemplates operation
     ///</summary>
-    public interface IListManagedJobTemplatesPaginator
+    public partial interface IListManagedJobTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

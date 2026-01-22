@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the GetResourceShareInvitations operation
     ///</summary>
-    public interface IGetResourceShareInvitationsPaginator
+    public partial interface IGetResourceShareInvitationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

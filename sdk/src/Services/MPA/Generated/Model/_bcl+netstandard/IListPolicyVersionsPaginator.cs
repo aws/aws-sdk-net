@@ -24,7 +24,7 @@ namespace Amazon.MPA.Model
     /// <summary>
     /// Paginator for the ListPolicyVersions operation
     ///</summary>
-    public interface IListPolicyVersionsPaginator
+    public partial interface IListPolicyVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// <summary>
     /// Paginator for the ListMediaInsightsPipelineConfigurations operation
     ///</summary>
-    public interface IListMediaInsightsPipelineConfigurationsPaginator
+    public partial interface IListMediaInsightsPipelineConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

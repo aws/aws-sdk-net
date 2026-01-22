@@ -24,7 +24,7 @@ namespace Amazon.IoTFleetWise.Model
     /// <summary>
     /// Paginator for the ListDecoderManifestNetworkInterfaces operation
     ///</summary>
-    public interface IListDecoderManifestNetworkInterfacesPaginator
+    public partial interface IListDecoderManifestNetworkInterfacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

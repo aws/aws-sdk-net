@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// <summary>
     /// Paginator for the ListIpAccessSettings operation
     ///</summary>
-    public interface IListIpAccessSettingsPaginator
+    public partial interface IListIpAccessSettingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

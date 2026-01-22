@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// <summary>
     /// Paginator for the ListSipMediaApplications operation
     ///</summary>
-    public interface IListSipMediaApplicationsPaginator
+    public partial interface IListSipMediaApplicationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

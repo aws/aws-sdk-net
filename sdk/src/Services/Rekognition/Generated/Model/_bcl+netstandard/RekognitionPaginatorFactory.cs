@@ -27,7 +27,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginators for the Rekognition service
     ///</summary>
-    public class RekognitionPaginatorFactory : IRekognitionPaginatorFactory
+    public partial class RekognitionPaginatorFactory : IRekognitionPaginatorFactory
     {
         private readonly IAmazonRekognition client;
 

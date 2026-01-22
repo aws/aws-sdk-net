@@ -24,7 +24,7 @@ namespace Amazon.Signer.Model
     /// <summary>
     /// Paginators for the Signer service
     ///</summary>
-    public interface ISignerPaginatorFactory
+    public partial interface ISignerPaginatorFactory
     {
 
         /// <summary>

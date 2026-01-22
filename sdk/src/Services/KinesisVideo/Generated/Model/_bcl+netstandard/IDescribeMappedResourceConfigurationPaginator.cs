@@ -24,7 +24,7 @@ namespace Amazon.KinesisVideo.Model
     /// <summary>
     /// Paginator for the DescribeMappedResourceConfiguration operation
     ///</summary>
-    public interface IDescribeMappedResourceConfigurationPaginator
+    public partial interface IDescribeMappedResourceConfigurationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Paginators for the ACMPCA service
     ///</summary>
-    public interface IACMPCAPaginatorFactory
+    public partial interface IACMPCAPaginatorFactory
     {
 
         /// <summary>

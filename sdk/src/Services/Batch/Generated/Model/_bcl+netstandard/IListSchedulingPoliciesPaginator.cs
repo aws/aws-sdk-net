@@ -24,7 +24,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Paginator for the ListSchedulingPolicies operation
     ///</summary>
-    public interface IListSchedulingPoliciesPaginator
+    public partial interface IListSchedulingPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

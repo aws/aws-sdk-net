@@ -24,7 +24,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Paginators for the DatabaseMigrationService service
     ///</summary>
-    public interface IDatabaseMigrationServicePaginatorFactory
+    public partial interface IDatabaseMigrationServicePaginatorFactory
     {
 
         /// <summary>

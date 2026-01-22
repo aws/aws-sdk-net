@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the ListDataQualityResults operation
     ///</summary>
-    public interface IListDataQualityResultsPaginator
+    public partial interface IListDataQualityResultsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Paginator for the ListObjectPolicies operation
     ///</summary>
-    public interface IListObjectPoliciesPaginator
+    public partial interface IListObjectPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

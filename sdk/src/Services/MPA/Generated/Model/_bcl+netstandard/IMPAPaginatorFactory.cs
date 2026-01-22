@@ -24,7 +24,7 @@ namespace Amazon.MPA.Model
     /// <summary>
     /// Paginators for the MPA service
     ///</summary>
-    public interface IMPAPaginatorFactory
+    public partial interface IMPAPaginatorFactory
     {
 
         /// <summary>

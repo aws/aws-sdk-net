@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the ListSensitivityInspectionTemplates operation
     ///</summary>
-    public interface IListSensitivityInspectionTemplatesPaginator
+    public partial interface IListSensitivityInspectionTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

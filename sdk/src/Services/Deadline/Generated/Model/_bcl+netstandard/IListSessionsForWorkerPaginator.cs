@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListSessionsForWorker operation
     ///</summary>
-    public interface IListSessionsForWorkerPaginator
+    public partial interface IListSessionsForWorkerPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

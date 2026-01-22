@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginator for the DescribeDomainAutoTunes operation
     ///</summary>
-    public interface IDescribeDomainAutoTunesPaginator
+    public partial interface IDescribeDomainAutoTunesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListMFADeviceTags operation
     ///</summary>
-    public interface IListMFADeviceTagsPaginator
+    public partial interface IListMFADeviceTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

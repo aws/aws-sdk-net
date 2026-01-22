@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the ListConnectPeers operation
     ///</summary>
-    public interface IListConnectPeersPaginator
+    public partial interface IListConnectPeersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

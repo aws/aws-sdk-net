@@ -27,7 +27,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Paginators for the TranscribeService service
     ///</summary>
-    public class TranscribeServicePaginatorFactory : ITranscribeServicePaginatorFactory
+    public partial class TranscribeServicePaginatorFactory : ITranscribeServicePaginatorFactory
     {
         private readonly IAmazonTranscribeService client;
 

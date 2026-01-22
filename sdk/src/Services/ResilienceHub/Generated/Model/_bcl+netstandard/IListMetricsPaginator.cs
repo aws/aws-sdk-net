@@ -24,7 +24,7 @@ namespace Amazon.ResilienceHub.Model
     /// <summary>
     /// Paginator for the ListMetrics operation
     ///</summary>
-    public interface IListMetricsPaginator
+    public partial interface IListMetricsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

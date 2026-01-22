@@ -24,7 +24,7 @@ namespace Amazon.GlueDataBrew.Model
     /// <summary>
     /// Paginator for the ListJobs operation
     ///</summary>
-    public interface IListJobsPaginator
+    public partial interface IListJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

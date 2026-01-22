@@ -27,7 +27,7 @@ namespace Amazon.AppFabric.Model
     /// <summary>
     /// Paginators for the AppFabric service
     ///</summary>
-    public class AppFabricPaginatorFactory : IAppFabricPaginatorFactory
+    public partial class AppFabricPaginatorFactory : IAppFabricPaginatorFactory
     {
         private readonly IAmazonAppFabric client;
 

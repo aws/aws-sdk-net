@@ -24,7 +24,7 @@ namespace Amazon.MediaConvert.Model
     /// <summary>
     /// Paginator for the ListVersions operation
     ///</summary>
-    public interface IListVersionsPaginator
+    public partial interface IListVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

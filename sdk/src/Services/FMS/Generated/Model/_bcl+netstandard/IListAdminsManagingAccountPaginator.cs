@@ -24,7 +24,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Paginator for the ListAdminsManagingAccount operation
     ///</summary>
-    public interface IListAdminsManagingAccountPaginator
+    public partial interface IListAdminsManagingAccountPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

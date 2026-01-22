@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the ListRuns operation
     ///</summary>
-    public interface IListRunsPaginator
+    public partial interface IListRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

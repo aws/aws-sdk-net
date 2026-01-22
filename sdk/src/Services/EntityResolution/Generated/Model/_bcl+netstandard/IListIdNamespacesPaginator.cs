@@ -24,7 +24,7 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// Paginator for the ListIdNamespaces operation
     ///</summary>
-    public interface IListIdNamespacesPaginator
+    public partial interface IListIdNamespacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

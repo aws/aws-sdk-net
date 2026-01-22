@@ -24,7 +24,7 @@ namespace Amazon.Panorama.Model
     /// <summary>
     /// Paginator for the ListNodeFromTemplateJobs operation
     ///</summary>
-    public interface IListNodeFromTemplateJobsPaginator
+    public partial interface IListNodeFromTemplateJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

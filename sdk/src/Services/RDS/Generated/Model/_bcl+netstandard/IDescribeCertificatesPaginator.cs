@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeCertificates operation
     ///</summary>
-    public interface IDescribeCertificatesPaginator
+    public partial interface IDescribeCertificatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Paginator for the ListExportJobs operation
     ///</summary>
-    public interface IListExportJobsPaginator
+    public partial interface IListExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

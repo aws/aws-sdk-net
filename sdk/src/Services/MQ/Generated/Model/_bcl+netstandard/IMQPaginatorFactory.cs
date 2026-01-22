@@ -24,7 +24,7 @@ namespace Amazon.MQ.Model
     /// <summary>
     /// Paginators for the MQ service
     ///</summary>
-    public interface IMQPaginatorFactory
+    public partial interface IMQPaginatorFactory
     {
 
         /// <summary>

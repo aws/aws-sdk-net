@@ -27,7 +27,7 @@ namespace Amazon.KafkaConnect.Model
     /// <summary>
     /// Paginators for the KafkaConnect service
     ///</summary>
-    public class KafkaConnectPaginatorFactory : IKafkaConnectPaginatorFactory
+    public partial class KafkaConnectPaginatorFactory : IKafkaConnectPaginatorFactory
     {
         private readonly IAmazonKafkaConnect client;
 

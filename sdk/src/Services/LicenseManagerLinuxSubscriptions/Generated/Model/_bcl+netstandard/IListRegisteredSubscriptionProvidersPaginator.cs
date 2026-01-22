@@ -24,7 +24,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
     /// <summary>
     /// Paginator for the ListRegisteredSubscriptionProviders operation
     ///</summary>
-    public interface IListRegisteredSubscriptionProvidersPaginator
+    public partial interface IListRegisteredSubscriptionProvidersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

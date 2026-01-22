@@ -24,7 +24,7 @@ namespace Amazon.Wickr.Model
     /// <summary>
     /// Paginator for the ListBlockedGuestUsers operation
     ///</summary>
-    public interface IListBlockedGuestUsersPaginator
+    public partial interface IListBlockedGuestUsersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

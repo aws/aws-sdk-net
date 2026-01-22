@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the GetFaceSearch operation
     ///</summary>
-    public interface IGetFaceSearchPaginator
+    public partial interface IGetFaceSearchPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

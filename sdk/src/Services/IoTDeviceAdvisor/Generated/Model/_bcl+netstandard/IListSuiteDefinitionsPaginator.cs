@@ -24,7 +24,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     /// <summary>
     /// Paginator for the ListSuiteDefinitions operation
     ///</summary>
-    public interface IListSuiteDefinitionsPaginator
+    public partial interface IListSuiteDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

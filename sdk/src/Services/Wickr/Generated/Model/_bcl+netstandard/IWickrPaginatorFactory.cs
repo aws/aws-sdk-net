@@ -24,7 +24,7 @@ namespace Amazon.Wickr.Model
     /// <summary>
     /// Paginators for the Wickr service
     ///</summary>
-    public interface IWickrPaginatorFactory
+    public partial interface IWickrPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListFlowDefinitions operation
     ///</summary>
-    public interface IListFlowDefinitionsPaginator
+    public partial interface IListFlowDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

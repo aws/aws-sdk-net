@@ -24,7 +24,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// <summary>
     /// Paginators for the IAMRolesAnywhere service
     ///</summary>
-    public interface IIAMRolesAnywherePaginatorFactory
+    public partial interface IIAMRolesAnywherePaginatorFactory
     {
 
         /// <summary>

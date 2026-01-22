@@ -27,7 +27,7 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// Paginators for the Neptune service
     ///</summary>
-    public class NeptunePaginatorFactory : INeptunePaginatorFactory
+    public partial class NeptunePaginatorFactory : INeptunePaginatorFactory
     {
         private readonly IAmazonNeptune client;
 

@@ -24,7 +24,7 @@ namespace Amazon.TimestreamInfluxDB.Model
     /// <summary>
     /// Paginator for the ListDbParameterGroups operation
     ///</summary>
-    public interface IListDbParameterGroupsPaginator
+    public partial interface IListDbParameterGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

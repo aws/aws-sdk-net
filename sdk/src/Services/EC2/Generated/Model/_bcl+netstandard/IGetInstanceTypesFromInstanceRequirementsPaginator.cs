@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetInstanceTypesFromInstanceRequirements operation
     ///</summary>
-    public interface IGetInstanceTypesFromInstanceRequirementsPaginator
+    public partial interface IGetInstanceTypesFromInstanceRequirementsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

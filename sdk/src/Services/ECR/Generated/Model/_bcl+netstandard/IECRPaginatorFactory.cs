@@ -24,7 +24,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Paginators for the ECR service
     ///</summary>
-    public interface IECRPaginatorFactory
+    public partial interface IECRPaginatorFactory
     {
 
         /// <summary>

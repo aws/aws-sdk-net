@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the ListIPSets operation
     ///</summary>
-    public interface IListIPSetsPaginator
+    public partial interface IListIPSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

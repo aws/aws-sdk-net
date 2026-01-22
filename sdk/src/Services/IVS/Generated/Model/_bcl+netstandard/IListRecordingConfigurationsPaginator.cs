@@ -24,7 +24,7 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Paginator for the ListRecordingConfigurations operation
     ///</summary>
-    public interface IListRecordingConfigurationsPaginator
+    public partial interface IListRecordingConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// <summary>
     /// Paginator for the ListResources operation
     ///</summary>
-    public interface IListResourcesPaginator
+    public partial interface IListResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

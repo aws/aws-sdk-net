@@ -24,7 +24,7 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Paginator for the DescribeBackups operation
     ///</summary>
-    public interface IDescribeBackupsPaginator
+    public partial interface IDescribeBackupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

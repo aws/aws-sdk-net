@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListTasks operation
     ///</summary>
-    public interface IListTasksPaginator
+    public partial interface IListTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

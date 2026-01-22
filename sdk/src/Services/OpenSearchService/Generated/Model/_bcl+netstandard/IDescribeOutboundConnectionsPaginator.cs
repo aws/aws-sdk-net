@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginator for the DescribeOutboundConnections operation
     ///</summary>
-    public interface IDescribeOutboundConnectionsPaginator
+    public partial interface IDescribeOutboundConnectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

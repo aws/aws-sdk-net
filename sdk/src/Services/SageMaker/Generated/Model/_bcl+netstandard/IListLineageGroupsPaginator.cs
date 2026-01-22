@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListLineageGroups operation
     ///</summary>
-    public interface IListLineageGroupsPaginator
+    public partial interface IListLineageGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

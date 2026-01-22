@@ -27,7 +27,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// <summary>
     /// Paginators for the ChimeSDKVoice service
     ///</summary>
-    public class ChimeSDKVoicePaginatorFactory : IChimeSDKVoicePaginatorFactory
+    public partial class ChimeSDKVoicePaginatorFactory : IChimeSDKVoicePaginatorFactory
     {
         private readonly IAmazonChimeSDKVoice client;
 

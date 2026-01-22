@@ -24,7 +24,7 @@ namespace Amazon.TimestreamWrite.Model
     /// <summary>
     /// Paginator for the ListBatchLoadTasks operation
     ///</summary>
-    public interface IListBatchLoadTasksPaginator
+    public partial interface IListBatchLoadTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

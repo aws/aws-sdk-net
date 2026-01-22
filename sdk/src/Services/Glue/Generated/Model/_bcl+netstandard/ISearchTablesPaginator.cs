@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the SearchTables operation
     ///</summary>
-    public interface ISearchTablesPaginator
+    public partial interface ISearchTablesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

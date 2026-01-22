@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Paginator for the ListCodeInterpreters operation
     ///</summary>
-    public interface IListCodeInterpretersPaginator
+    public partial interface IListCodeInterpretersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

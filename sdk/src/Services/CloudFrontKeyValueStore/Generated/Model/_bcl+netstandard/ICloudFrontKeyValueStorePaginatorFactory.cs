@@ -24,7 +24,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
     /// <summary>
     /// Paginators for the CloudFrontKeyValueStore service
     ///</summary>
-    public interface ICloudFrontKeyValueStorePaginatorFactory
+    public partial interface ICloudFrontKeyValueStorePaginatorFactory
     {
 
         /// <summary>

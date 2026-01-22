@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the ListOpsItemEvents operation
     ///</summary>
-    public interface IListOpsItemEventsPaginator
+    public partial interface IListOpsItemEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

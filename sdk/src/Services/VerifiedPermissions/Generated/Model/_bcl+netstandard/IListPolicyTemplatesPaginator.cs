@@ -24,7 +24,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// <summary>
     /// Paginator for the ListPolicyTemplates operation
     ///</summary>
-    public interface IListPolicyTemplatesPaginator
+    public partial interface IListPolicyTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.MigrationHub.Model
     /// <summary>
     /// Paginator for the ListProgressUpdateStreams operation
     ///</summary>
-    public interface IListProgressUpdateStreamsPaginator
+    public partial interface IListProgressUpdateStreamsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

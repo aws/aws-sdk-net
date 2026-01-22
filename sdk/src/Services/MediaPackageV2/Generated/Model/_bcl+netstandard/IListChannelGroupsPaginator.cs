@@ -24,7 +24,7 @@ namespace Amazon.MediaPackageV2.Model
     /// <summary>
     /// Paginator for the ListChannelGroups operation
     ///</summary>
-    public interface IListChannelGroupsPaginator
+    public partial interface IListChannelGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

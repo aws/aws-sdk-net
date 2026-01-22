@@ -24,7 +24,7 @@ namespace Amazon.FreeTier.Model
     /// <summary>
     /// Paginator for the ListAccountActivities operation
     ///</summary>
-    public interface IListAccountActivitiesPaginator
+    public partial interface IListAccountActivitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

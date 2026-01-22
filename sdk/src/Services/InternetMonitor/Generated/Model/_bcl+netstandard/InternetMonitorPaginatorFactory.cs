@@ -27,7 +27,7 @@ namespace Amazon.InternetMonitor.Model
     /// <summary>
     /// Paginators for the InternetMonitor service
     ///</summary>
-    public class InternetMonitorPaginatorFactory : IInternetMonitorPaginatorFactory
+    public partial class InternetMonitorPaginatorFactory : IInternetMonitorPaginatorFactory
     {
         private readonly IAmazonInternetMonitor client;
 

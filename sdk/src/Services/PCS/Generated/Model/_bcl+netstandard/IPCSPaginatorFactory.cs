@@ -24,7 +24,7 @@ namespace Amazon.PCS.Model
     /// <summary>
     /// Paginators for the PCS service
     ///</summary>
-    public interface IPCSPaginatorFactory
+    public partial interface IPCSPaginatorFactory
     {
 
         /// <summary>

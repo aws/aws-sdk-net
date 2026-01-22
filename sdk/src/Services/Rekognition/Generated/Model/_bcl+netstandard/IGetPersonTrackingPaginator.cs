@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the GetPersonTracking operation
     ///</summary>
-    public interface IGetPersonTrackingPaginator
+    public partial interface IGetPersonTrackingPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

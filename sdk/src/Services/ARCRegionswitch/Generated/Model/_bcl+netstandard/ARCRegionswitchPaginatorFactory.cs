@@ -27,7 +27,7 @@ namespace Amazon.ARCRegionswitch.Model
     /// <summary>
     /// Paginators for the ARCRegionswitch service
     ///</summary>
-    public class ARCRegionswitchPaginatorFactory : IARCRegionswitchPaginatorFactory
+    public partial class ARCRegionswitchPaginatorFactory : IARCRegionswitchPaginatorFactory
     {
         private readonly IAmazonARCRegionswitch client;
 

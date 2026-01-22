@@ -24,7 +24,7 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Paginator for the GetExternalModels operation
     ///</summary>
-    public interface IGetExternalModelsPaginator
+    public partial interface IGetExternalModelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

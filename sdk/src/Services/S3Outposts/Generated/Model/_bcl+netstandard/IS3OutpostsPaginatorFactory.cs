@@ -24,7 +24,7 @@ namespace Amazon.S3Outposts.Model
     /// <summary>
     /// Paginators for the S3Outposts service
     ///</summary>
-    public interface IS3OutpostsPaginatorFactory
+    public partial interface IS3OutpostsPaginatorFactory
     {
 
         /// <summary>

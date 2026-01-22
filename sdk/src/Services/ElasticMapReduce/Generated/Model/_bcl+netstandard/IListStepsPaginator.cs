@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListSteps operation
     ///</summary>
-    public interface IListStepsPaginator
+    public partial interface IListStepsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

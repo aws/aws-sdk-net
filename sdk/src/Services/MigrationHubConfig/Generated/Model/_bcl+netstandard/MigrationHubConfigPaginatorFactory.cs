@@ -27,7 +27,7 @@ namespace Amazon.MigrationHubConfig.Model
     /// <summary>
     /// Paginators for the MigrationHubConfig service
     ///</summary>
-    public class MigrationHubConfigPaginatorFactory : IMigrationHubConfigPaginatorFactory
+    public partial class MigrationHubConfigPaginatorFactory : IMigrationHubConfigPaginatorFactory
     {
         private readonly IAmazonMigrationHubConfig client;
 

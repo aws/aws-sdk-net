@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the ListMonitoredResources operation
     ///</summary>
-    public interface IListMonitoredResourcesPaginator
+    public partial interface IListMonitoredResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SocialMessaging.Model
     /// <summary>
     /// Paginators for the SocialMessaging service
     ///</summary>
-    public interface ISocialMessagingPaginatorFactory
+    public partial interface ISocialMessagingPaginatorFactory
     {
 
         /// <summary>

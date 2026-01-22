@@ -27,7 +27,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Paginators for the ConnectCases service
     ///</summary>
-    public class ConnectCasesPaginatorFactory : IConnectCasesPaginatorFactory
+    public partial class ConnectCasesPaginatorFactory : IConnectCasesPaginatorFactory
     {
         private readonly IAmazonConnectCases client;
 

@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the ListSamples operation
     ///</summary>
-    public interface IListSamplesPaginator
+    public partial interface IListSamplesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

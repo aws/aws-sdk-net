@@ -24,7 +24,7 @@ namespace Amazon.GroundStation.Model
     /// <summary>
     /// Paginator for the ListConfigs operation
     ///</summary>
-    public interface IListConfigsPaginator
+    public partial interface IListConfigsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

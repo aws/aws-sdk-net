@@ -24,7 +24,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// <summary>
     /// Paginator for the GetRecommendationPreferences operation
     ///</summary>
-    public interface IGetRecommendationPreferencesPaginator
+    public partial interface IGetRecommendationPreferencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

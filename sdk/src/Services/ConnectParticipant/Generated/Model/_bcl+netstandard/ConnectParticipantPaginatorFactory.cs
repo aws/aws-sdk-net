@@ -27,7 +27,7 @@ namespace Amazon.ConnectParticipant.Model
     /// <summary>
     /// Paginators for the ConnectParticipant service
     ///</summary>
-    public class ConnectParticipantPaginatorFactory : IConnectParticipantPaginatorFactory
+    public partial class ConnectParticipantPaginatorFactory : IConnectParticipantPaginatorFactory
     {
         private readonly IAmazonConnectParticipant client;
 

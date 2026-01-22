@@ -27,7 +27,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginators for the Mgn service
     ///</summary>
-    public class MgnPaginatorFactory : IMgnPaginatorFactory
+    public partial class MgnPaginatorFactory : IMgnPaginatorFactory
     {
         private readonly IAmazonMgn client;
 

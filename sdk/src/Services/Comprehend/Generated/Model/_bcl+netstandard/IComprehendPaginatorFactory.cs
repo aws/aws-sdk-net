@@ -24,7 +24,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Paginators for the Comprehend service
     ///</summary>
-    public interface IComprehendPaginatorFactory
+    public partial interface IComprehendPaginatorFactory
     {
 
         /// <summary>

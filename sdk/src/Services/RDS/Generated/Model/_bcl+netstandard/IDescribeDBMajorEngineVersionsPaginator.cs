@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBMajorEngineVersions operation
     ///</summary>
-    public interface IDescribeDBMajorEngineVersionsPaginator
+    public partial interface IDescribeDBMajorEngineVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

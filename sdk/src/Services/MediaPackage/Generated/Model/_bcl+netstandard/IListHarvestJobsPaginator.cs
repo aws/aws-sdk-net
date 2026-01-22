@@ -24,7 +24,7 @@ namespace Amazon.MediaPackage.Model
     /// <summary>
     /// Paginator for the ListHarvestJobs operation
     ///</summary>
-    public interface IListHarvestJobsPaginator
+    public partial interface IListHarvestJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

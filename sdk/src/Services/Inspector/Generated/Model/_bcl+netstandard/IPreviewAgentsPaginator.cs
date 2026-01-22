@@ -24,7 +24,7 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Paginator for the PreviewAgents operation
     ///</summary>
-    public interface IPreviewAgentsPaginator
+    public partial interface IPreviewAgentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

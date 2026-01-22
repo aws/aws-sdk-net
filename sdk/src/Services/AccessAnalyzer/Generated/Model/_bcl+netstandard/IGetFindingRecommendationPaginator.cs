@@ -24,7 +24,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Paginator for the GetFindingRecommendation operation
     ///</summary>
-    public interface IGetFindingRecommendationPaginator
+    public partial interface IGetFindingRecommendationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

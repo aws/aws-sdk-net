@@ -24,7 +24,7 @@ namespace Amazon.Kafka.Model
     /// <summary>
     /// Paginator for the ListReplicators operation
     ///</summary>
-    public interface IListReplicatorsPaginator
+    public partial interface IListReplicatorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

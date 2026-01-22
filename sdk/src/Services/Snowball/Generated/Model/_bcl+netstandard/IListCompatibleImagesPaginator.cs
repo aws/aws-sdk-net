@@ -24,7 +24,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Paginator for the ListCompatibleImages operation
     ///</summary>
-    public interface IListCompatibleImagesPaginator
+    public partial interface IListCompatibleImagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Paginator for the ListArchiveRules operation
     ///</summary>
-    public interface IListArchiveRulesPaginator
+    public partial interface IListArchiveRulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

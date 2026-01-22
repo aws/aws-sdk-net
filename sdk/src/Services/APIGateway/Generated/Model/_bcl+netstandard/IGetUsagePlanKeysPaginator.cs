@@ -24,7 +24,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Paginator for the GetUsagePlanKeys operation
     ///</summary>
-    public interface IGetUsagePlanKeysPaginator
+    public partial interface IGetUsagePlanKeysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

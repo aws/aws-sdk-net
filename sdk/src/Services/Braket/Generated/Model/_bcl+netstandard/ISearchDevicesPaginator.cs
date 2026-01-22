@@ -24,7 +24,7 @@ namespace Amazon.Braket.Model
     /// <summary>
     /// Paginator for the SearchDevices operation
     ///</summary>
-    public interface ISearchDevicesPaginator
+    public partial interface ISearchDevicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Paginators for the ECS service
     ///</summary>
-    public class ECSPaginatorFactory : IECSPaginatorFactory
+    public partial class ECSPaginatorFactory : IECSPaginatorFactory
     {
         private readonly IAmazonECS client;
 

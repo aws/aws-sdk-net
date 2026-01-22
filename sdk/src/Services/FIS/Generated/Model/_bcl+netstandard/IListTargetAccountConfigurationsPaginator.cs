@@ -24,7 +24,7 @@ namespace Amazon.FIS.Model
     /// <summary>
     /// Paginator for the ListTargetAccountConfigurations operation
     ///</summary>
-    public interface IListTargetAccountConfigurationsPaginator
+    public partial interface IListTargetAccountConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

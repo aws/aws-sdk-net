@@ -27,7 +27,7 @@ namespace Amazon.GameLiftStreams.Model
     /// <summary>
     /// Paginators for the GameLiftStreams service
     ///</summary>
-    public class GameLiftStreamsPaginatorFactory : IGameLiftStreamsPaginatorFactory
+    public partial class GameLiftStreamsPaginatorFactory : IGameLiftStreamsPaginatorFactory
     {
         private readonly IAmazonGameLiftStreams client;
 

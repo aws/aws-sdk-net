@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBClusterBacktracks operation
     ///</summary>
-    public interface IDescribeDBClusterBacktracksPaginator
+    public partial interface IDescribeDBClusterBacktracksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

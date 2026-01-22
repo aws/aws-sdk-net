@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// <summary>
     /// Paginator for the ListMediaPipelineKinesisVideoStreamPools operation
     ///</summary>
-    public interface IListMediaPipelineKinesisVideoStreamPoolsPaginator
+    public partial interface IListMediaPipelineKinesisVideoStreamPoolsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

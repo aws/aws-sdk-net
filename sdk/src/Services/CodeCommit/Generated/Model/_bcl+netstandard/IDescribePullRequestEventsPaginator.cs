@@ -24,7 +24,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginator for the DescribePullRequestEvents operation
     ///</summary>
-    public interface IDescribePullRequestEventsPaginator
+    public partial interface IDescribePullRequestEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

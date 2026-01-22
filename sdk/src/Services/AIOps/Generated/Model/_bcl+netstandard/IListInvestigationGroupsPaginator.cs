@@ -24,7 +24,7 @@ namespace Amazon.AIOps.Model
     /// <summary>
     /// Paginator for the ListInvestigationGroups operation
     ///</summary>
-    public interface IListInvestigationGroupsPaginator
+    public partial interface IListInvestigationGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

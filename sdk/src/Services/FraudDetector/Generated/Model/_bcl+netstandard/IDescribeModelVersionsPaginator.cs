@@ -24,7 +24,7 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Paginator for the DescribeModelVersions operation
     ///</summary>
-    public interface IDescribeModelVersionsPaginator
+    public partial interface IDescribeModelVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Paginator for the ListImageBuildVersions operation
     ///</summary>
-    public interface IListImageBuildVersionsPaginator
+    public partial interface IListImageBuildVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

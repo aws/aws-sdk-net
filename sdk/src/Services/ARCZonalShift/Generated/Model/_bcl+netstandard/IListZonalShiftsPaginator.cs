@@ -24,7 +24,7 @@ namespace Amazon.ARCZonalShift.Model
     /// <summary>
     /// Paginator for the ListZonalShifts operation
     ///</summary>
-    public interface IListZonalShiftsPaginator
+    public partial interface IListZonalShiftsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

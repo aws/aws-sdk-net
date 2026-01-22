@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the GetContentModeration operation
     ///</summary>
-    public interface IGetContentModerationPaginator
+    public partial interface IGetContentModerationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

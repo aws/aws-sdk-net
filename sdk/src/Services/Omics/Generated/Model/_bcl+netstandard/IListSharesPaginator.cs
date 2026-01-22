@@ -24,7 +24,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginator for the ListShares operation
     ///</summary>
-    public interface IListSharesPaginator
+    public partial interface IListSharesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

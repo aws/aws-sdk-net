@@ -24,7 +24,7 @@ namespace Amazon.AppIntegrationsService.Model
     /// <summary>
     /// Paginator for the ListApplicationAssociations operation
     ///</summary>
-    public interface IListApplicationAssociationsPaginator
+    public partial interface IListApplicationAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the GetBehaviorModelTrainingSummaries operation
     ///</summary>
-    public interface IGetBehaviorModelTrainingSummariesPaginator
+    public partial interface IGetBehaviorModelTrainingSummariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

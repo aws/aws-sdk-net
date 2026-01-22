@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListLineageEvents operation
     ///</summary>
-    public interface IListLineageEventsPaginator
+    public partial interface IListLineageEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

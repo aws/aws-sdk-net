@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the DescribeGlobalNetworks operation
     ///</summary>
-    public interface IDescribeGlobalNetworksPaginator
+    public partial interface IDescribeGlobalNetworksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListRealtimeContactAnalysisSegmentsV2 operation
     ///</summary>
-    public interface IListRealtimeContactAnalysisSegmentsV2Paginator
+    public partial interface IListRealtimeContactAnalysisSegmentsV2Paginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

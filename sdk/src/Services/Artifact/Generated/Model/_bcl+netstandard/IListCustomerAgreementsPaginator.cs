@@ -24,7 +24,7 @@ namespace Amazon.Artifact.Model
     /// <summary>
     /// Paginator for the ListCustomerAgreements operation
     ///</summary>
-    public interface IListCustomerAgreementsPaginator
+    public partial interface IListCustomerAgreementsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

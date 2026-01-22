@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListCapacityReservations operation
     ///</summary>
-    public interface IListCapacityReservationsPaginator
+    public partial interface IListCapacityReservationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

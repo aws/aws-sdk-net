@@ -24,7 +24,7 @@ namespace Amazon.MediaTailor.Model
     /// <summary>
     /// Paginators for the MediaTailor service
     ///</summary>
-    public interface IMediaTailorPaginatorFactory
+    public partial interface IMediaTailorPaginatorFactory
     {
 
         /// <summary>

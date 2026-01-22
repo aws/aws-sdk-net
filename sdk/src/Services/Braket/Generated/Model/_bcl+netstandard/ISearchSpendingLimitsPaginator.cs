@@ -24,7 +24,7 @@ namespace Amazon.Braket.Model
     /// <summary>
     /// Paginator for the SearchSpendingLimits operation
     ///</summary>
-    public interface ISearchSpendingLimitsPaginator
+    public partial interface ISearchSpendingLimitsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

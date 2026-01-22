@@ -24,7 +24,7 @@ namespace Amazon.CostAndUsageReport.Model
     /// <summary>
     /// Paginators for the CostAndUsageReport service
     ///</summary>
-    public interface ICostAndUsageReportPaginatorFactory
+    public partial interface ICostAndUsageReportPaginatorFactory
     {
 
         /// <summary>

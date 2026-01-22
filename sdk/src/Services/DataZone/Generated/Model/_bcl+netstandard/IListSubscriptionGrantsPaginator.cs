@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListSubscriptionGrants operation
     ///</summary>
-    public interface IListSubscriptionGrantsPaginator
+    public partial interface IListSubscriptionGrantsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

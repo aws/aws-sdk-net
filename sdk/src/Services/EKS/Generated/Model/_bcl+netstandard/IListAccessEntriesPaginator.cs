@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the ListAccessEntries operation
     ///</summary>
-    public interface IListAccessEntriesPaginator
+    public partial interface IListAccessEntriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

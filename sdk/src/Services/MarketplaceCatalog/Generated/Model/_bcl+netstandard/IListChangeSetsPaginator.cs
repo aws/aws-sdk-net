@@ -24,7 +24,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// <summary>
     /// Paginator for the ListChangeSets operation
     ///</summary>
-    public interface IListChangeSetsPaginator
+    public partial interface IListChangeSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

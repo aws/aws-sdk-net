@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginator for the DescribeVcenterClients operation
     ///</summary>
-    public interface IDescribeVcenterClientsPaginator
+    public partial interface IDescribeVcenterClientsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListPartnerApps operation
     ///</summary>
-    public interface IListPartnerAppsPaginator
+    public partial interface IListPartnerAppsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

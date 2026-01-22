@@ -24,7 +24,7 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Paginators for the AppConfig service
     ///</summary>
-    public interface IAppConfigPaginatorFactory
+    public partial interface IAppConfigPaginatorFactory
     {
 
         /// <summary>

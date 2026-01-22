@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListTrustedTokenIssuers operation
     ///</summary>
-    public interface IListTrustedTokenIssuersPaginator
+    public partial interface IListTrustedTokenIssuersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

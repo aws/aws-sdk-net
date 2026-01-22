@@ -27,7 +27,7 @@ namespace Amazon.CleanRoomsML.Model
     /// <summary>
     /// Paginators for the CleanRoomsML service
     ///</summary>
-    public class CleanRoomsMLPaginatorFactory : ICleanRoomsMLPaginatorFactory
+    public partial class CleanRoomsMLPaginatorFactory : ICleanRoomsMLPaginatorFactory
     {
         private readonly IAmazonCleanRoomsML client;
 

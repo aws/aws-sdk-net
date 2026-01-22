@@ -24,7 +24,7 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Paginators for the ResourceGroups service
     ///</summary>
-    public interface IResourceGroupsPaginatorFactory
+    public partial interface IResourceGroupsPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Paginator for the ListProvisioningProfiles operation
     ///</summary>
-    public interface IListProvisioningProfilesPaginator
+    public partial interface IListProvisioningProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the GetOrganizationConformancePackDetailedStatus operation
     ///</summary>
-    public interface IGetOrganizationConformancePackDetailedStatusPaginator
+    public partial interface IGetOrganizationConformancePackDetailedStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

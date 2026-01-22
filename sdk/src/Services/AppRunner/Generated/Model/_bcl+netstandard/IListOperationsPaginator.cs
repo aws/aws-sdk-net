@@ -24,7 +24,7 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Paginator for the ListOperations operation
     ///</summary>
-    public interface IListOperationsPaginator
+    public partial interface IListOperationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

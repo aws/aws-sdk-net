@@ -27,7 +27,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     /// <summary>
     /// Paginators for the LicenseManagerUserSubscriptions service
     ///</summary>
-    public class LicenseManagerUserSubscriptionsPaginatorFactory : ILicenseManagerUserSubscriptionsPaginatorFactory
+    public partial class LicenseManagerUserSubscriptionsPaginatorFactory : ILicenseManagerUserSubscriptionsPaginatorFactory
     {
         private readonly IAmazonLicenseManagerUserSubscriptions client;
 

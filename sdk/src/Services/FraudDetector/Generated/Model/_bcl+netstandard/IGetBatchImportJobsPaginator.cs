@@ -24,7 +24,7 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Paginator for the GetBatchImportJobs operation
     ///</summary>
-    public interface IGetBatchImportJobsPaginator
+    public partial interface IGetBatchImportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

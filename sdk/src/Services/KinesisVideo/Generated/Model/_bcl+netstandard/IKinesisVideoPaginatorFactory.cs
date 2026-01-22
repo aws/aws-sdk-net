@@ -24,7 +24,7 @@ namespace Amazon.KinesisVideo.Model
     /// <summary>
     /// Paginators for the KinesisVideo service
     ///</summary>
-    public interface IKinesisVideoPaginatorFactory
+    public partial interface IKinesisVideoPaginatorFactory
     {
 
         /// <summary>

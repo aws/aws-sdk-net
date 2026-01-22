@@ -24,7 +24,7 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Paginators for the CodeArtifact service
     ///</summary>
-    public interface ICodeArtifactPaginatorFactory
+    public partial interface ICodeArtifactPaginatorFactory
     {
 
         /// <summary>

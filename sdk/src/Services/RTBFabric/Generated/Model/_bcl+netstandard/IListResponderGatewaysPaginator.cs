@@ -24,7 +24,7 @@ namespace Amazon.RTBFabric.Model
     /// <summary>
     /// Paginator for the ListResponderGateways operation
     ///</summary>
-    public interface IListResponderGatewaysPaginator
+    public partial interface IListResponderGatewaysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

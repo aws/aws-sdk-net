@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginator for the ListFindingAggregations operation
     ///</summary>
-    public interface IListFindingAggregationsPaginator
+    public partial interface IListFindingAggregationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

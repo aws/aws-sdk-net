@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeNetworkInterfaces operation
     ///</summary>
-    public interface IDescribeNetworkInterfacesPaginator
+    public partial interface IDescribeNetworkInterfacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Paginator for the ListKeyPolicies operation
     ///</summary>
-    public interface IListKeyPoliciesPaginator
+    public partial interface IListKeyPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

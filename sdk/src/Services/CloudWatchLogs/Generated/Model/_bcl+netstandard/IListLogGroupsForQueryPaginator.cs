@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Paginator for the ListLogGroupsForQuery operation
     ///</summary>
-    public interface IListLogGroupsForQueryPaginator
+    public partial interface IListLogGroupsForQueryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

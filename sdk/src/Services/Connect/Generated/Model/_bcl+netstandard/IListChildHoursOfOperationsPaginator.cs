@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListChildHoursOfOperations operation
     ///</summary>
-    public interface IListChildHoursOfOperationsPaginator
+    public partial interface IListChildHoursOfOperationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

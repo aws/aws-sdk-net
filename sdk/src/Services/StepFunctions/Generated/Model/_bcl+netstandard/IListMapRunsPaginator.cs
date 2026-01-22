@@ -24,7 +24,7 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Paginator for the ListMapRuns operation
     ///</summary>
-    public interface IListMapRunsPaginator
+    public partial interface IListMapRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

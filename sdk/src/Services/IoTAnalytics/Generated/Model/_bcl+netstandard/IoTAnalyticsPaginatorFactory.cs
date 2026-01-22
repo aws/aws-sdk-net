@@ -27,7 +27,7 @@ namespace Amazon.IoTAnalytics.Model
     /// <summary>
     /// Paginators for the IoTAnalytics service
     ///</summary>
-    public class IoTAnalyticsPaginatorFactory : IIoTAnalyticsPaginatorFactory
+    public partial class IoTAnalyticsPaginatorFactory : IIoTAnalyticsPaginatorFactory
     {
         private readonly IAmazonIoTAnalytics client;
 

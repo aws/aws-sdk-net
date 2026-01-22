@@ -24,7 +24,7 @@ namespace Amazon.IVSRealTime.Model
     /// <summary>
     /// Paginator for the ListEncoderConfigurations operation
     ///</summary>
-    public interface IListEncoderConfigurationsPaginator
+    public partial interface IListEncoderConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

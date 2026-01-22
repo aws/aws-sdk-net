@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeSubnets operation
     ///</summary>
-    public interface IDescribeSubnetsPaginator
+    public partial interface IDescribeSubnetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

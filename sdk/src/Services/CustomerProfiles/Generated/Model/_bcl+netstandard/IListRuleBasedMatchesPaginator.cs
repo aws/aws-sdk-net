@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginator for the ListRuleBasedMatches operation
     ///</summary>
-    public interface IListRuleBasedMatchesPaginator
+    public partial interface IListRuleBasedMatchesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

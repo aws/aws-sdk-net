@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginators for the RedshiftServerless service
     ///</summary>
-    public interface IRedshiftServerlessPaginatorFactory
+    public partial interface IRedshiftServerlessPaginatorFactory
     {
 
         /// <summary>

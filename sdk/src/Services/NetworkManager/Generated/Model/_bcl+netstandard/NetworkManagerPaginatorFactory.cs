@@ -27,7 +27,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginators for the NetworkManager service
     ///</summary>
-    public class NetworkManagerPaginatorFactory : INetworkManagerPaginatorFactory
+    public partial class NetworkManagerPaginatorFactory : INetworkManagerPaginatorFactory
     {
         private readonly IAmazonNetworkManager client;
 

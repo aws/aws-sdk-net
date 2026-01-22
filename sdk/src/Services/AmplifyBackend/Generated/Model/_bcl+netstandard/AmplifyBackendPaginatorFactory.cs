@@ -27,7 +27,7 @@ namespace Amazon.AmplifyBackend.Model
     /// <summary>
     /// Paginators for the AmplifyBackend service
     ///</summary>
-    public class AmplifyBackendPaginatorFactory : IAmplifyBackendPaginatorFactory
+    public partial class AmplifyBackendPaginatorFactory : IAmplifyBackendPaginatorFactory
     {
         private readonly IAmazonAmplifyBackend client;
 

@@ -24,7 +24,7 @@ namespace Amazon.GroundStation.Model
     /// <summary>
     /// Paginator for the ListDataflowEndpointGroups operation
     ///</summary>
-    public interface IListDataflowEndpointGroupsPaginator
+    public partial interface IListDataflowEndpointGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

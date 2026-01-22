@@ -24,7 +24,7 @@ namespace Amazon.Route53GlobalResolver.Model
     /// <summary>
     /// Paginator for the ListAccessSources operation
     ///</summary>
-    public interface IListAccessSourcesPaginator
+    public partial interface IListAccessSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

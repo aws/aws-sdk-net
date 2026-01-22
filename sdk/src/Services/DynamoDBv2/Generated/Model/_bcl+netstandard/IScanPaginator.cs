@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Paginator for the Scan operation
     ///</summary>
-    public interface IScanPaginator
+    public partial interface IScanPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

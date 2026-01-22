@@ -24,7 +24,7 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Paginator for the ListPlaybackRestrictionPolicies operation
     ///</summary>
-    public interface IListPlaybackRestrictionPoliciesPaginator
+    public partial interface IListPlaybackRestrictionPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

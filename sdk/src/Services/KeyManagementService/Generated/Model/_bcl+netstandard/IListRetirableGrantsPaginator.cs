@@ -24,7 +24,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Paginator for the ListRetirableGrants operation
     ///</summary>
-    public interface IListRetirableGrantsPaginator
+    public partial interface IListRetirableGrantsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

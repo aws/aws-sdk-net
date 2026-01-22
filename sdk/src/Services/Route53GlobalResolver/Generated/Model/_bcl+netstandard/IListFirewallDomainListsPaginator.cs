@@ -24,7 +24,7 @@ namespace Amazon.Route53GlobalResolver.Model
     /// <summary>
     /// Paginator for the ListFirewallDomainLists operation
     ///</summary>
-    public interface IListFirewallDomainListsPaginator
+    public partial interface IListFirewallDomainListsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

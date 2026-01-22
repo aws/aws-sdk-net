@@ -24,7 +24,7 @@ namespace Amazon.KafkaConnect.Model
     /// <summary>
     /// Paginator for the ListWorkerConfigurations operation
     ///</summary>
-    public interface IListWorkerConfigurationsPaginator
+    public partial interface IListWorkerConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

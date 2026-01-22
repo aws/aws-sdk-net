@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListDataTableAttributes operation
     ///</summary>
-    public interface IListDataTableAttributesPaginator
+    public partial interface IListDataTableAttributesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

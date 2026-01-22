@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginators for the Connect service
     ///</summary>
-    public interface IConnectPaginatorFactory
+    public partial interface IConnectPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.SecretsManager.Model
     /// <summary>
     /// Paginators for the SecretsManager service
     ///</summary>
-    public interface ISecretsManagerPaginatorFactory
+    public partial interface ISecretsManagerPaginatorFactory
     {
 
         /// <summary>

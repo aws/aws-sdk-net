@@ -27,7 +27,7 @@ namespace Amazon.Evs.Model
     /// <summary>
     /// Paginators for the Evs service
     ///</summary>
-    public class EvsPaginatorFactory : IEvsPaginatorFactory
+    public partial class EvsPaginatorFactory : IEvsPaginatorFactory
     {
         private readonly IAmazonEvs client;
 

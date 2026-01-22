@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the GetInsightEvents operation
     ///</summary>
-    public interface IGetInsightEventsPaginator
+    public partial interface IGetInsightEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

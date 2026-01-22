@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralChannel.Model
     /// <summary>
     /// Paginator for the ListProgramManagementAccounts operation
     ///</summary>
-    public interface IListProgramManagementAccountsPaginator
+    public partial interface IListProgramManagementAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

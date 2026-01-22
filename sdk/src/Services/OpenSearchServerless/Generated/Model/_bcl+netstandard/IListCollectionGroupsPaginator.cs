@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// <summary>
     /// Paginator for the ListCollectionGroups operation
     ///</summary>
-    public interface IListCollectionGroupsPaginator
+    public partial interface IListCollectionGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginator for the ListSourceServerActions operation
     ///</summary>
-    public interface IListSourceServerActionsPaginator
+    public partial interface IListSourceServerActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Paginators for the BCMPricingCalculator service
     ///</summary>
-    public interface IBCMPricingCalculatorPaginatorFactory
+    public partial interface IBCMPricingCalculatorPaginatorFactory
     {
 
         /// <summary>

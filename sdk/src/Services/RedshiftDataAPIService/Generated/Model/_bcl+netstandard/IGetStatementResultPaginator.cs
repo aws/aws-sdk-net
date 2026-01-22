@@ -24,7 +24,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// <summary>
     /// Paginator for the GetStatementResult operation
     ///</summary>
-    public interface IGetStatementResultPaginator
+    public partial interface IGetStatementResultPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

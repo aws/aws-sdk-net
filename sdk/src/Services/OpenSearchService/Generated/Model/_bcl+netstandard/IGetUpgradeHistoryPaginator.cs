@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginator for the GetUpgradeHistory operation
     ///</summary>
-    public interface IGetUpgradeHistoryPaginator
+    public partial interface IGetUpgradeHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

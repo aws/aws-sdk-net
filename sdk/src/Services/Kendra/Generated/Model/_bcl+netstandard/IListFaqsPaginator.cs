@@ -24,7 +24,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginator for the ListFaqs operation
     ///</summary>
-    public interface IListFaqsPaginator
+    public partial interface IListFaqsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

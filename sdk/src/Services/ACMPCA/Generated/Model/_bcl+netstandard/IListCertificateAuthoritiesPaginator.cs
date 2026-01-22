@@ -24,7 +24,7 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Paginator for the ListCertificateAuthorities operation
     ///</summary>
-    public interface IListCertificateAuthoritiesPaginator
+    public partial interface IListCertificateAuthoritiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

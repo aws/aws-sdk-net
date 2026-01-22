@@ -24,7 +24,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Paginator for the ListManagedThings operation
     ///</summary>
-    public interface IListManagedThingsPaginator
+    public partial interface IListManagedThingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

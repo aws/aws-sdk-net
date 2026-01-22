@@ -27,7 +27,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginators for the WorkMail service
     ///</summary>
-    public class WorkMailPaginatorFactory : IWorkMailPaginatorFactory
+    public partial class WorkMailPaginatorFactory : IWorkMailPaginatorFactory
     {
         private readonly IAmazonWorkMail client;
 

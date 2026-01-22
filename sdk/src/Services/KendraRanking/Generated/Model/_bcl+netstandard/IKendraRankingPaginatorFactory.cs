@@ -24,7 +24,7 @@ namespace Amazon.KendraRanking.Model
     /// <summary>
     /// Paginators for the KendraRanking service
     ///</summary>
-    public interface IKendraRankingPaginatorFactory
+    public partial interface IKendraRankingPaginatorFactory
     {
 
         /// <summary>

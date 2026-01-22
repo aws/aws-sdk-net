@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     /// <summary>
     /// Paginator for the ListTemplateSteps operation
     ///</summary>
-    public interface IListTemplateStepsPaginator
+    public partial interface IListTemplateStepsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

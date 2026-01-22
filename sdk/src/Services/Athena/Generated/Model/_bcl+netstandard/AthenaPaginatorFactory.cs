@@ -27,7 +27,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginators for the Athena service
     ///</summary>
-    public class AthenaPaginatorFactory : IAthenaPaginatorFactory
+    public partial class AthenaPaginatorFactory : IAthenaPaginatorFactory
     {
         private readonly IAmazonAthena client;
 

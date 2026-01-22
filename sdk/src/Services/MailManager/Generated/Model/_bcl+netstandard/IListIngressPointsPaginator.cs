@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginator for the ListIngressPoints operation
     ///</summary>
-    public interface IListIngressPointsPaginator
+    public partial interface IListIngressPointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

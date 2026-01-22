@@ -24,7 +24,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Paginator for the DescribeAgents operation
     ///</summary>
-    public interface IDescribeAgentsPaginator
+    public partial interface IDescribeAgentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

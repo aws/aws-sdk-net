@@ -24,7 +24,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Paginators for the ElasticBeanstalk service
     ///</summary>
-    public interface IElasticBeanstalkPaginatorFactory
+    public partial interface IElasticBeanstalkPaginatorFactory
     {
 
         /// <summary>

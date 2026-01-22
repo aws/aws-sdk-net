@@ -24,7 +24,7 @@ namespace Amazon.CodeCatalyst.Model
     /// <summary>
     /// Paginator for the ListWorkflowRuns operation
     ///</summary>
-    public interface IListWorkflowRunsPaginator
+    public partial interface IListWorkflowRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

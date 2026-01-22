@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Paginator for the DescribeListeners operation
     ///</summary>
-    public interface IDescribeListenersPaginator
+    public partial interface IDescribeListenersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

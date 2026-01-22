@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the ListAttachments operation
     ///</summary>
-    public interface IListAttachmentsPaginator
+    public partial interface IListAttachmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

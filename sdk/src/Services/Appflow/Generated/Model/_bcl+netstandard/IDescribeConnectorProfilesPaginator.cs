@@ -24,7 +24,7 @@ namespace Amazon.Appflow.Model
     /// <summary>
     /// Paginator for the DescribeConnectorProfiles operation
     ///</summary>
-    public interface IDescribeConnectorProfilesPaginator
+    public partial interface IDescribeConnectorProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

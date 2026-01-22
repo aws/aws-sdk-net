@@ -24,7 +24,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Paginator for the ListDatasets operation
     ///</summary>
-    public interface IListDatasetsPaginator
+    public partial interface IListDatasetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

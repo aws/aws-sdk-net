@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginator for the ListOdbNetworks operation
     ///</summary>
-    public interface IListOdbNetworksPaginator
+    public partial interface IListOdbNetworksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

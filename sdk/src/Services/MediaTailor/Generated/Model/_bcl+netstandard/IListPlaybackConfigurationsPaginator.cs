@@ -24,7 +24,7 @@ namespace Amazon.MediaTailor.Model
     /// <summary>
     /// Paginator for the ListPlaybackConfigurations operation
     ///</summary>
-    public interface IListPlaybackConfigurationsPaginator
+    public partial interface IListPlaybackConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

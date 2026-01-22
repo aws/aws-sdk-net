@@ -24,7 +24,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Paginator for the ListProtectedResources operation
     ///</summary>
-    public interface IListProtectedResourcesPaginator
+    public partial interface IListProtectedResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

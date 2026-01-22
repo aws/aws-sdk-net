@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListKeyValueStores operation
     ///</summary>
-    public interface IListKeyValueStoresPaginator
+    public partial interface IListKeyValueStoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

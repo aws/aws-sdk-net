@@ -24,7 +24,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Paginator for the ListMedicalVocabularies operation
     ///</summary>
-    public interface IListMedicalVocabulariesPaginator
+    public partial interface IListMedicalVocabulariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

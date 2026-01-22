@@ -24,7 +24,7 @@ namespace Amazon.CloudHSMV2.Model
     /// <summary>
     /// Paginators for the CloudHSMV2 service
     ///</summary>
-    public interface ICloudHSMV2PaginatorFactory
+    public partial interface ICloudHSMV2PaginatorFactory
     {
 
         /// <summary>

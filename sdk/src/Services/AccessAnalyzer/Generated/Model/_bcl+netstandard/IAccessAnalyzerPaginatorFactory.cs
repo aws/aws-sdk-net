@@ -24,7 +24,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Paginators for the AccessAnalyzer service
     ///</summary>
-    public interface IAccessAnalyzerPaginatorFactory
+    public partial interface IAccessAnalyzerPaginatorFactory
     {
 
         /// <summary>

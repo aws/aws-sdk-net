@@ -24,7 +24,7 @@ namespace Amazon.ApplicationSignals.Model
     /// <summary>
     /// Paginator for the ListServiceLevelObjectives operation
     ///</summary>
-    public interface IListServiceLevelObjectivesPaginator
+    public partial interface IListServiceLevelObjectivesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

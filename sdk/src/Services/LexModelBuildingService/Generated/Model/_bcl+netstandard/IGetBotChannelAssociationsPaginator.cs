@@ -24,7 +24,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Paginator for the GetBotChannelAssociations operation
     ///</summary>
-    public interface IGetBotChannelAssociationsPaginator
+    public partial interface IGetBotChannelAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

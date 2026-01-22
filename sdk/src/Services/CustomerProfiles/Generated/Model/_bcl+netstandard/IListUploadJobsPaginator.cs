@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginator for the ListUploadJobs operation
     ///</summary>
-    public interface IListUploadJobsPaginator
+    public partial interface IListUploadJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

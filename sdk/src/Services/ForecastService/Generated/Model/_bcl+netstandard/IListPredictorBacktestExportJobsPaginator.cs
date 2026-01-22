@@ -24,7 +24,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Paginator for the ListPredictorBacktestExportJobs operation
     ///</summary>
-    public interface IListPredictorBacktestExportJobsPaginator
+    public partial interface IListPredictorBacktestExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

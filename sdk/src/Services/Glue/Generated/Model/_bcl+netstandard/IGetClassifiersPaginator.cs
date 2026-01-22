@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetClassifiers operation
     ///</summary>
-    public interface IGetClassifiersPaginator
+    public partial interface IGetClassifiersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

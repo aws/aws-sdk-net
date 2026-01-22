@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeDBSecurityGroups operation
     ///</summary>
-    public interface IDescribeDBSecurityGroupsPaginator
+    public partial interface IDescribeDBSecurityGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

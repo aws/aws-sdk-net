@@ -24,7 +24,7 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Paginator for the ListTagsForResource operation
     ///</summary>
-    public interface IListTagsForResourcePaginator
+    public partial interface IListTagsForResourcePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

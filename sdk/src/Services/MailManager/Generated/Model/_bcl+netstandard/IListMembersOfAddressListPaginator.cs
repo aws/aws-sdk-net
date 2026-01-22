@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginator for the ListMembersOfAddressList operation
     ///</summary>
-    public interface IListMembersOfAddressListPaginator
+    public partial interface IListMembersOfAddressListPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// <summary>
     /// Paginators for the OpenSearchServerless service
     ///</summary>
-    public interface IOpenSearchServerlessPaginatorFactory
+    public partial interface IOpenSearchServerlessPaginatorFactory
     {
 
         /// <summary>

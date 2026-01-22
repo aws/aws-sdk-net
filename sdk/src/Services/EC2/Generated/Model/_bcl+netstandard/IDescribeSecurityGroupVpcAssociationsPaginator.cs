@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeSecurityGroupVpcAssociations operation
     ///</summary>
-    public interface IDescribeSecurityGroupVpcAssociationsPaginator
+    public partial interface IDescribeSecurityGroupVpcAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

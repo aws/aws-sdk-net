@@ -24,7 +24,7 @@ namespace Amazon.PrometheusService.Model
     /// <summary>
     /// Paginator for the ListScrapers operation
     ///</summary>
-    public interface IListScrapersPaginator
+    public partial interface IListScrapersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

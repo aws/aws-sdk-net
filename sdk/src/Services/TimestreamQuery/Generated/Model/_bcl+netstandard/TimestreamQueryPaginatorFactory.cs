@@ -27,7 +27,7 @@ namespace Amazon.TimestreamQuery.Model
     /// <summary>
     /// Paginators for the TimestreamQuery service
     ///</summary>
-    public class TimestreamQueryPaginatorFactory : ITimestreamQueryPaginatorFactory
+    public partial class TimestreamQueryPaginatorFactory : ITimestreamQueryPaginatorFactory
     {
         private readonly IAmazonTimestreamQuery client;
 

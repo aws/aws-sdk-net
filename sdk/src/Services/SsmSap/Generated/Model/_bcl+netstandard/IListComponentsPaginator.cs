@@ -24,7 +24,7 @@ namespace Amazon.SsmSap.Model
     /// <summary>
     /// Paginator for the ListComponents operation
     ///</summary>
-    public interface IListComponentsPaginator
+    public partial interface IListComponentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginators for the LexModelsV2 service
     ///</summary>
-    public class LexModelsV2PaginatorFactory : ILexModelsV2PaginatorFactory
+    public partial class LexModelsV2PaginatorFactory : ILexModelsV2PaginatorFactory
     {
         private readonly IAmazonLexModelsV2 client;
 

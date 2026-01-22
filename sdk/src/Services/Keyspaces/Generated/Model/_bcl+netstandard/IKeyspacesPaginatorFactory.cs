@@ -24,7 +24,7 @@ namespace Amazon.Keyspaces.Model
     /// <summary>
     /// Paginators for the Keyspaces service
     ///</summary>
-    public interface IKeyspacesPaginatorFactory
+    public partial interface IKeyspacesPaginatorFactory
     {
 
         /// <summary>

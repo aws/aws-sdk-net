@@ -24,7 +24,7 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Paginator for the ListImageScanFindingAggregations operation
     ///</summary>
-    public interface IListImageScanFindingAggregationsPaginator
+    public partial interface IListImageScanFindingAggregationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

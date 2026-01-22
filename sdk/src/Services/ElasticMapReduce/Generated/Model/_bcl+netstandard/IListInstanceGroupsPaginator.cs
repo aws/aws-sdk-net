@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListInstanceGroups operation
     ///</summary>
-    public interface IListInstanceGroupsPaginator
+    public partial interface IListInstanceGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

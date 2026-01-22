@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeFlowLogs operation
     ///</summary>
-    public interface IDescribeFlowLogsPaginator
+    public partial interface IDescribeFlowLogsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

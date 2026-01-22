@@ -24,7 +24,7 @@ namespace Amazon.GlueDataBrew.Model
     /// <summary>
     /// Paginator for the ListRecipeVersions operation
     ///</summary>
-    public interface IListRecipeVersionsPaginator
+    public partial interface IListRecipeVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

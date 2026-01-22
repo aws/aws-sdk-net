@@ -27,7 +27,7 @@ namespace Amazon.SupportApp.Model
     /// <summary>
     /// Paginators for the SupportApp service
     ///</summary>
-    public class SupportAppPaginatorFactory : ISupportAppPaginatorFactory
+    public partial class SupportAppPaginatorFactory : ISupportAppPaginatorFactory
     {
         private readonly IAmazonSupportApp client;
 

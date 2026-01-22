@@ -24,7 +24,7 @@ namespace Amazon.Detective.Model
     /// <summary>
     /// Paginator for the ListGraphs operation
     ///</summary>
-    public interface IListGraphsPaginator
+    public partial interface IListGraphsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

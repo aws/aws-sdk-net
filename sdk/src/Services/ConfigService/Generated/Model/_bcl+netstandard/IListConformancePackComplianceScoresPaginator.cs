@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the ListConformancePackComplianceScores operation
     ///</summary>
-    public interface IListConformancePackComplianceScoresPaginator
+    public partial interface IListConformancePackComplianceScoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Schemas.Model
     /// <summary>
     /// Paginators for the Schemas service
     ///</summary>
-    public interface ISchemasPaginatorFactory
+    public partial interface ISchemasPaginatorFactory
     {
 
         /// <summary>

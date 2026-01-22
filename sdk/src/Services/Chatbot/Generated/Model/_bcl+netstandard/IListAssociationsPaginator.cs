@@ -24,7 +24,7 @@ namespace Amazon.Chatbot.Model
     /// <summary>
     /// Paginator for the ListAssociations operation
     ///</summary>
-    public interface IListAssociationsPaginator
+    public partial interface IListAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

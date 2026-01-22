@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the ListADAssessments operation
     ///</summary>
-    public interface IListADAssessmentsPaginator
+    public partial interface IListADAssessmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

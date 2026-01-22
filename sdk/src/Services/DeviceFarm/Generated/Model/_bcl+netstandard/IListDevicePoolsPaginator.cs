@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the ListDevicePools operation
     ///</summary>
-    public interface IListDevicePoolsPaginator
+    public partial interface IListDevicePoolsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

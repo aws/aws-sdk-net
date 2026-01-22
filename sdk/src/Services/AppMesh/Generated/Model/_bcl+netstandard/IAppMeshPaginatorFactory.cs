@@ -24,7 +24,7 @@ namespace Amazon.AppMesh.Model
     /// <summary>
     /// Paginators for the AppMesh service
     ///</summary>
-    public interface IAppMeshPaginatorFactory
+    public partial interface IAppMeshPaginatorFactory
     {
 
         /// <summary>

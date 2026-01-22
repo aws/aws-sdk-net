@@ -24,7 +24,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// <summary>
     /// Paginator for the GetLambdaFunctionRecommendations operation
     ///</summary>
-    public interface IGetLambdaFunctionRecommendationsPaginator
+    public partial interface IGetLambdaFunctionRecommendationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

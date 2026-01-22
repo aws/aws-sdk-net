@@ -24,7 +24,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Paginators for the GlobalAccelerator service
     ///</summary>
-    public interface IGlobalAcceleratorPaginatorFactory
+    public partial interface IGlobalAcceleratorPaginatorFactory
     {
 
         /// <summary>

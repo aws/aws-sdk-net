@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeEndpointAuthorization operation
     ///</summary>
-    public interface IDescribeEndpointAuthorizationPaginator
+    public partial interface IDescribeEndpointAuthorizationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

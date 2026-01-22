@@ -24,7 +24,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginator for the ListExperiences operation
     ///</summary>
-    public interface IListExperiencesPaginator
+    public partial interface IListExperiencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

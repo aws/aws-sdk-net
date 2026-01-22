@@ -24,7 +24,7 @@ namespace Amazon.ControlCatalog.Model
     /// <summary>
     /// Paginator for the ListCommonControls operation
     ///</summary>
-    public interface IListCommonControlsPaginator
+    public partial interface IListCommonControlsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IoTSecureTunneling.Model
     /// <summary>
     /// Paginator for the ListTunnels operation
     ///</summary>
-    public interface IListTunnelsPaginator
+    public partial interface IListTunnelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Paginator for the ListSharedProjects operation
     ///</summary>
-    public interface IListSharedProjectsPaginator
+    public partial interface IListSharedProjectsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

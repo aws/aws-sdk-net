@@ -27,7 +27,7 @@ namespace Amazon.EBS.Model
     /// <summary>
     /// Paginators for the EBS service
     ///</summary>
-    public class EBSPaginatorFactory : IEBSPaginatorFactory
+    public partial class EBSPaginatorFactory : IEBSPaginatorFactory
     {
         private readonly IAmazonEBS client;
 

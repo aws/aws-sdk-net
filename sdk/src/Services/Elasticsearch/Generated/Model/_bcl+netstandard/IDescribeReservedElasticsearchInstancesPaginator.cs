@@ -24,7 +24,7 @@ namespace Amazon.Elasticsearch.Model
     /// <summary>
     /// Paginator for the DescribeReservedElasticsearchInstances operation
     ///</summary>
-    public interface IDescribeReservedElasticsearchInstancesPaginator
+    public partial interface IDescribeReservedElasticsearchInstancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

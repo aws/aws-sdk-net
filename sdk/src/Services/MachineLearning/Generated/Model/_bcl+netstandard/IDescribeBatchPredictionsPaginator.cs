@@ -24,7 +24,7 @@ namespace Amazon.MachineLearning.Model
     /// <summary>
     /// Paginator for the DescribeBatchPredictions operation
     ///</summary>
-    public interface IDescribeBatchPredictionsPaginator
+    public partial interface IDescribeBatchPredictionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

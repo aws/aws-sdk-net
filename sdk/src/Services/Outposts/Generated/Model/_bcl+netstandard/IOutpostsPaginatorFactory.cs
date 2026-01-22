@@ -24,7 +24,7 @@ namespace Amazon.Outposts.Model
     /// <summary>
     /// Paginators for the Outposts service
     ///</summary>
-    public interface IOutpostsPaginatorFactory
+    public partial interface IOutpostsPaginatorFactory
     {
 
         /// <summary>

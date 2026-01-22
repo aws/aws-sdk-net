@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginator for the ListDbServers operation
     ///</summary>
-    public interface IListDbServersPaginator
+    public partial interface IListDbServersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

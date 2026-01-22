@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the GetTraceGraph operation
     ///</summary>
-    public interface IGetTraceGraphPaginator
+    public partial interface IGetTraceGraphPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

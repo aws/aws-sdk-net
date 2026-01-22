@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginators for the Inspector2 service
     ///</summary>
-    public interface IInspector2PaginatorFactory
+    public partial interface IInspector2PaginatorFactory
     {
 
         /// <summary>

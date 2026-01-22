@@ -27,7 +27,7 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Paginators for the CodeDeploy service
     ///</summary>
-    public class CodeDeployPaginatorFactory : ICodeDeployPaginatorFactory
+    public partial class CodeDeployPaginatorFactory : ICodeDeployPaginatorFactory
     {
         private readonly IAmazonCodeDeploy client;
 

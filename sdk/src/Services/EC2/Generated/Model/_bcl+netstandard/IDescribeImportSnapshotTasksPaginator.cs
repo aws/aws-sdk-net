@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeImportSnapshotTasks operation
     ///</summary>
-    public interface IDescribeImportSnapshotTasksPaginator
+    public partial interface IDescribeImportSnapshotTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Paginator for the ListActivityTypes operation
     ///</summary>
-    public interface IListActivityTypesPaginator
+    public partial interface IListActivityTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

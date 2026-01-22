@@ -24,7 +24,7 @@ namespace Amazon.HealthLake.Model
     /// <summary>
     /// Paginators for the HealthLake service
     ///</summary>
-    public interface IHealthLakePaginatorFactory
+    public partial interface IHealthLakePaginatorFactory
     {
 
         /// <summary>

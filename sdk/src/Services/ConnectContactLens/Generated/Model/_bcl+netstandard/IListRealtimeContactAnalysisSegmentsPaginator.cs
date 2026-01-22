@@ -24,7 +24,7 @@ namespace Amazon.ConnectContactLens.Model
     /// <summary>
     /// Paginator for the ListRealtimeContactAnalysisSegments operation
     ///</summary>
-    public interface IListRealtimeContactAnalysisSegmentsPaginator
+    public partial interface IListRealtimeContactAnalysisSegmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeSpotPriceHistory operation
     ///</summary>
-    public interface IDescribeSpotPriceHistoryPaginator
+    public partial interface IDescribeSpotPriceHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

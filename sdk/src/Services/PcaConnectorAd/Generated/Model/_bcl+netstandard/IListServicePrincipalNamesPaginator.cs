@@ -24,7 +24,7 @@ namespace Amazon.PcaConnectorAd.Model
     /// <summary>
     /// Paginator for the ListServicePrincipalNames operation
     ///</summary>
-    public interface IListServicePrincipalNamesPaginator
+    public partial interface IListServicePrincipalNamesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginators for the CodeCommit service
     ///</summary>
-    public class CodeCommitPaginatorFactory : ICodeCommitPaginatorFactory
+    public partial class CodeCommitPaginatorFactory : ICodeCommitPaginatorFactory
     {
         private readonly IAmazonCodeCommit client;
 

@@ -24,7 +24,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Paginator for the ListQueues operation
     ///</summary>
-    public interface IListQueuesPaginator
+    public partial interface IListQueuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.CostOptimizationHub.Model
     /// <summary>
     /// Paginators for the CostOptimizationHub service
     ///</summary>
-    public class CostOptimizationHubPaginatorFactory : ICostOptimizationHubPaginatorFactory
+    public partial class CostOptimizationHubPaginatorFactory : ICostOptimizationHubPaginatorFactory
     {
         private readonly IAmazonCostOptimizationHub client;
 

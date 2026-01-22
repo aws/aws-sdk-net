@@ -24,7 +24,7 @@ namespace Amazon.IVSRealTime.Model
     /// <summary>
     /// Paginator for the ListStageSessions operation
     ///</summary>
-    public interface IListStageSessionsPaginator
+    public partial interface IListStageSessionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

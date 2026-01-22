@@ -24,7 +24,7 @@ namespace Amazon.PaymentCryptography.Model
     /// <summary>
     /// Paginator for the ListKeys operation
     ///</summary>
-    public interface IListKeysPaginator
+    public partial interface IListKeysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

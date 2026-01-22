@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListSecurityProfiles operation
     ///</summary>
-    public interface IListSecurityProfilesPaginator
+    public partial interface IListSecurityProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

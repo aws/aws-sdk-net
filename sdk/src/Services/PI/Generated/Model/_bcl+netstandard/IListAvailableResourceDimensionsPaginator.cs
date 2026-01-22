@@ -24,7 +24,7 @@ namespace Amazon.PI.Model
     /// <summary>
     /// Paginator for the ListAvailableResourceDimensions operation
     ///</summary>
-    public interface IListAvailableResourceDimensionsPaginator
+    public partial interface IListAvailableResourceDimensionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

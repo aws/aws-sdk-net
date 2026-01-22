@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListAssetRevisions operation
     ///</summary>
-    public interface IListAssetRevisionsPaginator
+    public partial interface IListAssetRevisionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

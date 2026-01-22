@@ -24,7 +24,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Paginators for the KeyManagementService service
     ///</summary>
-    public interface IKeyManagementServicePaginatorFactory
+    public partial interface IKeyManagementServicePaginatorFactory
     {
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace Amazon.Panorama.Model
     /// <summary>
     /// Paginators for the Panorama service
     ///</summary>
-    public class PanoramaPaginatorFactory : IPanoramaPaginatorFactory
+    public partial class PanoramaPaginatorFactory : IPanoramaPaginatorFactory
     {
         private readonly IAmazonPanorama client;
 

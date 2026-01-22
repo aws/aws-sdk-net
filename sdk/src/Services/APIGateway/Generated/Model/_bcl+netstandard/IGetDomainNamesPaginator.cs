@@ -24,7 +24,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Paginator for the GetDomainNames operation
     ///</summary>
-    public interface IGetDomainNamesPaginator
+    public partial interface IGetDomainNamesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

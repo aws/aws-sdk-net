@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListStudioSessionMappings operation
     ///</summary>
-    public interface IListStudioSessionMappingsPaginator
+    public partial interface IListStudioSessionMappingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

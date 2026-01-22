@@ -24,7 +24,7 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Paginators for the ControlTower service
     ///</summary>
-    public interface IControlTowerPaginatorFactory
+    public partial interface IControlTowerPaginatorFactory
     {
 
         /// <summary>

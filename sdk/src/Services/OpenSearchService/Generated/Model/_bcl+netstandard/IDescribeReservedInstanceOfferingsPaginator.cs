@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginator for the DescribeReservedInstanceOfferings operation
     ///</summary>
-    public interface IDescribeReservedInstanceOfferingsPaginator
+    public partial interface IDescribeReservedInstanceOfferingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

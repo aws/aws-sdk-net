@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListApplicationAccessScopes operation
     ///</summary>
-    public interface IListApplicationAccessScopesPaginator
+    public partial interface IListApplicationAccessScopesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

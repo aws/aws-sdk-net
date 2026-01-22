@@ -24,7 +24,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// Paginator for the ListRequiredTags operation
     ///</summary>
-    public interface IListRequiredTagsPaginator
+    public partial interface IListRequiredTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

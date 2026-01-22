@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginators for the XRay service
     ///</summary>
-    public interface IXRayPaginatorFactory
+    public partial interface IXRayPaginatorFactory
     {
 
         /// <summary>

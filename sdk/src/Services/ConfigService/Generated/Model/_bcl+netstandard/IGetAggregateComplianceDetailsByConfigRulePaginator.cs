@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the GetAggregateComplianceDetailsByConfigRule operation
     ///</summary>
-    public interface IGetAggregateComplianceDetailsByConfigRulePaginator
+    public partial interface IGetAggregateComplianceDetailsByConfigRulePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

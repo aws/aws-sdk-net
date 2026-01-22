@@ -24,7 +24,7 @@ namespace Amazon.Repostspace.Model
     /// <summary>
     /// Paginator for the ListSpaces operation
     ///</summary>
-    public interface IListSpacesPaginator
+    public partial interface IListSpacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

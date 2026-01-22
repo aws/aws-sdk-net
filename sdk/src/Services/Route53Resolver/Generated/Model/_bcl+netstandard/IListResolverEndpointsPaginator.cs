@@ -24,7 +24,7 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Paginator for the ListResolverEndpoints operation
     ///</summary>
-    public interface IListResolverEndpointsPaginator
+    public partial interface IListResolverEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

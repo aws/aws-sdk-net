@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListRecommendedIntents operation
     ///</summary>
-    public interface IListRecommendedIntentsPaginator
+    public partial interface IListRecommendedIntentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

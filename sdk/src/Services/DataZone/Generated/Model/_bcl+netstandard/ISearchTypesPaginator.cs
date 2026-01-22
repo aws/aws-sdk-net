@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the SearchTypes operation
     ///</summary>
-    public interface ISearchTypesPaginator
+    public partial interface ISearchTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

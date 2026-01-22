@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListCreateAccountStatus operation
     ///</summary>
-    public interface IListCreateAccountStatusPaginator
+    public partial interface IListCreateAccountStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

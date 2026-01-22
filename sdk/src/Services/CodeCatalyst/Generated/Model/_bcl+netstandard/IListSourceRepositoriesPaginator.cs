@@ -24,7 +24,7 @@ namespace Amazon.CodeCatalyst.Model
     /// <summary>
     /// Paginator for the ListSourceRepositories operation
     ///</summary>
-    public interface IListSourceRepositoriesPaginator
+    public partial interface IListSourceRepositoriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

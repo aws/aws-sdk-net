@@ -24,7 +24,7 @@ namespace Amazon.DataExchange.Model
     /// <summary>
     /// Paginators for the DataExchange service
     ///</summary>
-    public interface IDataExchangePaginatorFactory
+    public partial interface IDataExchangePaginatorFactory
     {
 
         /// <summary>

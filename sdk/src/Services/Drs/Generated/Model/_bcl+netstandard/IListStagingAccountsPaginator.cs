@@ -24,7 +24,7 @@ namespace Amazon.Drs.Model
     /// <summary>
     /// Paginator for the ListStagingAccounts operation
     ///</summary>
-    public interface IListStagingAccountsPaginator
+    public partial interface IListStagingAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

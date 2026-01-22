@@ -24,7 +24,7 @@ namespace Amazon.Invoicing.Model
     /// <summary>
     /// Paginators for the Invoicing service
     ///</summary>
-    public interface IInvoicingPaginatorFactory
+    public partial interface IInvoicingPaginatorFactory
     {
 
         /// <summary>

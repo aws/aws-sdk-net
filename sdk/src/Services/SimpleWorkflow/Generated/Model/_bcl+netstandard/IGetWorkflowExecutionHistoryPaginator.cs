@@ -24,7 +24,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Paginator for the GetWorkflowExecutionHistory operation
     ///</summary>
-    public interface IGetWorkflowExecutionHistoryPaginator
+    public partial interface IGetWorkflowExecutionHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

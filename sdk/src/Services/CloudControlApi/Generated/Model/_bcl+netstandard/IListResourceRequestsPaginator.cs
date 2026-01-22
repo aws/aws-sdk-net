@@ -24,7 +24,7 @@ namespace Amazon.CloudControlApi.Model
     /// <summary>
     /// Paginator for the ListResourceRequests operation
     ///</summary>
-    public interface IListResourceRequestsPaginator
+    public partial interface IListResourceRequestsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

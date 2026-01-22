@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginator for the ListTableStorageOptimizers operation
     ///</summary>
-    public interface IListTableStorageOptimizersPaginator
+    public partial interface IListTableStorageOptimizersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

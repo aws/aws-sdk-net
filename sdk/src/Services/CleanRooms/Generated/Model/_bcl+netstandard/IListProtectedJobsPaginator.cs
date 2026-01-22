@@ -24,7 +24,7 @@ namespace Amazon.CleanRooms.Model
     /// <summary>
     /// Paginator for the ListProtectedJobs operation
     ///</summary>
-    public interface IListProtectedJobsPaginator
+    public partial interface IListProtectedJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

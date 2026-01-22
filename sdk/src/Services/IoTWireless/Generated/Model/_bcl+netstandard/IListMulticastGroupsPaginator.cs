@@ -24,7 +24,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Paginator for the ListMulticastGroups operation
     ///</summary>
-    public interface IListMulticastGroupsPaginator
+    public partial interface IListMulticastGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

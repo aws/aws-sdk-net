@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the ListCostAllocationTagBackfillHistory operation
     ///</summary>
-    public interface IListCostAllocationTagBackfillHistoryPaginator
+    public partial interface IListCostAllocationTagBackfillHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

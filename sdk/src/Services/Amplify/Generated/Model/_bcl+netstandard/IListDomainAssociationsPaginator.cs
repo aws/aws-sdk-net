@@ -24,7 +24,7 @@ namespace Amazon.Amplify.Model
     /// <summary>
     /// Paginator for the ListDomainAssociations operation
     ///</summary>
-    public interface IListDomainAssociationsPaginator
+    public partial interface IListDomainAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// Paginator for the ListFlowExecutions operation
     ///</summary>
-    public interface IListFlowExecutionsPaginator
+    public partial interface IListFlowExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

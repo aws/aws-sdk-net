@@ -24,7 +24,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// <summary>
     /// Paginator for the ListComponentTypes operation
     ///</summary>
-    public interface IListComponentTypesPaginator
+    public partial interface IListComponentTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

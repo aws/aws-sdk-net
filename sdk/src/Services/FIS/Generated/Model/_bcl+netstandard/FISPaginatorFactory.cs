@@ -27,7 +27,7 @@ namespace Amazon.FIS.Model
     /// <summary>
     /// Paginators for the FIS service
     ///</summary>
-    public class FISPaginatorFactory : IFISPaginatorFactory
+    public partial class FISPaginatorFactory : IFISPaginatorFactory
     {
         private readonly IAmazonFIS client;
 

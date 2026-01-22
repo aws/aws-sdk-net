@@ -24,7 +24,7 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// Paginator for the DescribeDBSubnetGroups operation
     ///</summary>
-    public interface IDescribeDBSubnetGroupsPaginator
+    public partial interface IDescribeDBSubnetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

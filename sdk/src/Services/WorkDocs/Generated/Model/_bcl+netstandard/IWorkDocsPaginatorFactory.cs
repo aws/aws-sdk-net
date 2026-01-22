@@ -24,7 +24,7 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Paginators for the WorkDocs service
     ///</summary>
-    public interface IWorkDocsPaginatorFactory
+    public partial interface IWorkDocsPaginatorFactory
     {
 
         /// <summary>

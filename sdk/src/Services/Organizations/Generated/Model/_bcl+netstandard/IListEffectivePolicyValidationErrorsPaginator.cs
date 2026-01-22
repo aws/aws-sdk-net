@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListEffectivePolicyValidationErrors operation
     ///</summary>
-    public interface IListEffectivePolicyValidationErrorsPaginator
+    public partial interface IListEffectivePolicyValidationErrorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

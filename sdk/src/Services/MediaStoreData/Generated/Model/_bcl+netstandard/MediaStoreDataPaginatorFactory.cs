@@ -27,7 +27,7 @@ namespace Amazon.MediaStoreData.Model
     /// <summary>
     /// Paginators for the MediaStoreData service
     ///</summary>
-    public class MediaStoreDataPaginatorFactory : IMediaStoreDataPaginatorFactory
+    public partial class MediaStoreDataPaginatorFactory : IMediaStoreDataPaginatorFactory
     {
         private readonly IAmazonMediaStoreData client;
 

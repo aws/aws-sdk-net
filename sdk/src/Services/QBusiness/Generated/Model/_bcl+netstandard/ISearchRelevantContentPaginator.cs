@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginator for the SearchRelevantContent operation
     ///</summary>
-    public interface ISearchRelevantContentPaginator
+    public partial interface ISearchRelevantContentPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetCapacityManagerMetricData operation
     ///</summary>
-    public interface IGetCapacityManagerMetricDataPaginator
+    public partial interface IGetCapacityManagerMetricDataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

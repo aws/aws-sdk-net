@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the GetAnomalyMonitors operation
     ///</summary>
-    public interface IGetAnomalyMonitorsPaginator
+    public partial interface IGetAnomalyMonitorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

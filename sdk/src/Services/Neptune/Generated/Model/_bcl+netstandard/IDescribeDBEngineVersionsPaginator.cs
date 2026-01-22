@@ -24,7 +24,7 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// Paginator for the DescribeDBEngineVersions operation
     ///</summary>
-    public interface IDescribeDBEngineVersionsPaginator
+    public partial interface IDescribeDBEngineVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

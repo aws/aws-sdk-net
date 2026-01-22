@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListUserProficiencies operation
     ///</summary>
-    public interface IListUserProficienciesPaginator
+    public partial interface IListUserProficienciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

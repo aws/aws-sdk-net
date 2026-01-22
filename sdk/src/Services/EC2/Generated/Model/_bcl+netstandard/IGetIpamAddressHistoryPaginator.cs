@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetIpamAddressHistory operation
     ///</summary>
-    public interface IGetIpamAddressHistoryPaginator
+    public partial interface IGetIpamAddressHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

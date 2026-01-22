@@ -27,7 +27,7 @@ namespace Amazon.TaxSettings.Model
     /// <summary>
     /// Paginators for the TaxSettings service
     ///</summary>
-    public class TaxSettingsPaginatorFactory : ITaxSettingsPaginatorFactory
+    public partial class TaxSettingsPaginatorFactory : ITaxSettingsPaginatorFactory
     {
         private readonly IAmazonTaxSettings client;
 

@@ -24,7 +24,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Paginator for the ListListeners operation
     ///</summary>
-    public interface IListListenersPaginator
+    public partial interface IListListenersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

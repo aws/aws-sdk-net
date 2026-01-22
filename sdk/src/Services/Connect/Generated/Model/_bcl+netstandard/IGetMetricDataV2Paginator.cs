@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the GetMetricDataV2 operation
     ///</summary>
-    public interface IGetMetricDataV2Paginator
+    public partial interface IGetMetricDataV2Paginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

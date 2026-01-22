@@ -24,7 +24,7 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Paginator for the ListRepositories operation
     ///</summary>
-    public interface IListRepositoriesPaginator
+    public partial interface IListRepositoriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

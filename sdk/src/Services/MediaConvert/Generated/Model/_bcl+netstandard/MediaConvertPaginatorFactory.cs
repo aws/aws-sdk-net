@@ -27,7 +27,7 @@ namespace Amazon.MediaConvert.Model
     /// <summary>
     /// Paginators for the MediaConvert service
     ///</summary>
-    public class MediaConvertPaginatorFactory : IMediaConvertPaginatorFactory
+    public partial class MediaConvertPaginatorFactory : IMediaConvertPaginatorFactory
     {
         private readonly IAmazonMediaConvert client;
 

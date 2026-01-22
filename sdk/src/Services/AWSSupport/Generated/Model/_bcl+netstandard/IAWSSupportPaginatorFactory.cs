@@ -24,7 +24,7 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Paginators for the AWSSupport service
     ///</summary>
-    public interface IAWSSupportPaginatorFactory
+    public partial interface IAWSSupportPaginatorFactory
     {
 
         /// <summary>

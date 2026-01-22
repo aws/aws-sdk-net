@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the GetInventorySchema operation
     ///</summary>
-    public interface IGetInventorySchemaPaginator
+    public partial interface IGetInventorySchemaPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

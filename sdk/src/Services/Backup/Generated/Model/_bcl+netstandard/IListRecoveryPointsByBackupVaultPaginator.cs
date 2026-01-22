@@ -24,7 +24,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Paginator for the ListRecoveryPointsByBackupVault operation
     ///</summary>
-    public interface IListRecoveryPointsByBackupVaultPaginator
+    public partial interface IListRecoveryPointsByBackupVaultPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

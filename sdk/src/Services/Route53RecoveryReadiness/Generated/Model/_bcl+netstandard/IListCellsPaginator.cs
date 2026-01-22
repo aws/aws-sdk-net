@@ -24,7 +24,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     /// <summary>
     /// Paginator for the ListCells operation
     ///</summary>
-    public interface IListCellsPaginator
+    public partial interface IListCellsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

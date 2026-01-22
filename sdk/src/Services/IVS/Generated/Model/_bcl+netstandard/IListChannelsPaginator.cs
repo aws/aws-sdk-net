@@ -24,7 +24,7 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Paginator for the ListChannels operation
     ///</summary>
-    public interface IListChannelsPaginator
+    public partial interface IListChannelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

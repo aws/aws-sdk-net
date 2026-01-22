@@ -27,7 +27,7 @@ namespace Amazon.Braket.Model
     /// <summary>
     /// Paginators for the Braket service
     ///</summary>
-    public class BraketPaginatorFactory : IBraketPaginatorFactory
+    public partial class BraketPaginatorFactory : IBraketPaginatorFactory
     {
         private readonly IAmazonBraket client;
 

@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListAccountAssignmentCreationStatus operation
     ///</summary>
-    public interface IListAccountAssignmentCreationStatusPaginator
+    public partial interface IListAccountAssignmentCreationStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

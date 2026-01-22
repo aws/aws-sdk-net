@@ -24,7 +24,7 @@ namespace Amazon.Synthetics.Model
     /// <summary>
     /// Paginator for the GetCanaryRuns operation
     ///</summary>
-    public interface IGetCanaryRunsPaginator
+    public partial interface IGetCanaryRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

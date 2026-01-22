@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeVpnConcentrators operation
     ///</summary>
-    public interface IDescribeVpnConcentratorsPaginator
+    public partial interface IDescribeVpnConcentratorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

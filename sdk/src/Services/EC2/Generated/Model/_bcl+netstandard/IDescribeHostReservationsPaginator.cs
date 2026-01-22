@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeHostReservations operation
     ///</summary>
-    public interface IDescribeHostReservationsPaginator
+    public partial interface IDescribeHostReservationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeFastLaunchImages operation
     ///</summary>
-    public interface IDescribeFastLaunchImagesPaginator
+    public partial interface IDescribeFastLaunchImagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

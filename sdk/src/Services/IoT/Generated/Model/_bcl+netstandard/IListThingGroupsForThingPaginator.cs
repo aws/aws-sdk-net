@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListThingGroupsForThing operation
     ///</summary>
-    public interface IListThingGroupsForThingPaginator
+    public partial interface IListThingGroupsForThingPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

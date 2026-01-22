@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Paginator for the ListResourceRecordSets operation
     ///</summary>
-    public interface IListResourceRecordSetsPaginator
+    public partial interface IListResourceRecordSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Paginator for the ListResourceTenants operation
     ///</summary>
-    public interface IListResourceTenantsPaginator
+    public partial interface IListResourceTenantsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

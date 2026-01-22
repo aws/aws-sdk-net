@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginators for the QBusiness service
     ///</summary>
-    public interface IQBusinessPaginatorFactory
+    public partial interface IQBusinessPaginatorFactory
     {
 
         /// <summary>

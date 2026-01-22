@@ -24,7 +24,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Paginator for the ListCallAnalyticsJobs operation
     ///</summary>
-    public interface IListCallAnalyticsJobsPaginator
+    public partial interface IListCallAnalyticsJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

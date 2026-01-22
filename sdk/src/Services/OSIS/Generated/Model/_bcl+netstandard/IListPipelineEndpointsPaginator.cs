@@ -24,7 +24,7 @@ namespace Amazon.OSIS.Model
     /// <summary>
     /// Paginator for the ListPipelineEndpoints operation
     ///</summary>
-    public interface IListPipelineEndpointsPaginator
+    public partial interface IListPipelineEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

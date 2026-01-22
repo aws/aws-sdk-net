@@ -24,7 +24,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Paginator for the ListSchemaVersions operation
     ///</summary>
-    public interface IListSchemaVersionsPaginator
+    public partial interface IListSchemaVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

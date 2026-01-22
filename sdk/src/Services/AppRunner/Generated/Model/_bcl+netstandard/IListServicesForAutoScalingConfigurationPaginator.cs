@@ -24,7 +24,7 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Paginator for the ListServicesForAutoScalingConfiguration operation
     ///</summary>
-    public interface IListServicesForAutoScalingConfigurationPaginator
+    public partial interface IListServicesForAutoScalingConfigurationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

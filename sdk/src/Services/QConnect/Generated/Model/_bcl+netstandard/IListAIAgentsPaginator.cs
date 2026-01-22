@@ -24,7 +24,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginator for the ListAIAgents operation
     ///</summary>
-    public interface IListAIAgentsPaginator
+    public partial interface IListAIAgentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

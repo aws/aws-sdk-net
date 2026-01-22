@@ -24,7 +24,7 @@ namespace Amazon.ManagedGrafana.Model
     /// <summary>
     /// Paginator for the ListWorkspaceServiceAccountTokens operation
     ///</summary>
-    public interface IListWorkspaceServiceAccountTokensPaginator
+    public partial interface IListWorkspaceServiceAccountTokensPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

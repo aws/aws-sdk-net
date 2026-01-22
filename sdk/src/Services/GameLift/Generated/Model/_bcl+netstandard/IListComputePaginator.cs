@@ -24,7 +24,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginator for the ListCompute operation
     ///</summary>
-    public interface IListComputePaginator
+    public partial interface IListComputePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

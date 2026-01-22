@@ -27,7 +27,7 @@ namespace Amazon.VoiceID.Model
     /// <summary>
     /// Paginators for the VoiceID service
     ///</summary>
-    public class VoiceIDPaginatorFactory : IVoiceIDPaginatorFactory
+    public partial class VoiceIDPaginatorFactory : IVoiceIDPaginatorFactory
     {
         private readonly IAmazonVoiceID client;
 

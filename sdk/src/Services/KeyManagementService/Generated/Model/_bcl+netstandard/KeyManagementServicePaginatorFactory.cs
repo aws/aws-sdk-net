@@ -27,7 +27,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Paginators for the KeyManagementService service
     ///</summary>
-    public class KeyManagementServicePaginatorFactory : IKeyManagementServicePaginatorFactory
+    public partial class KeyManagementServicePaginatorFactory : IKeyManagementServicePaginatorFactory
     {
         private readonly IAmazonKeyManagementService client;
 

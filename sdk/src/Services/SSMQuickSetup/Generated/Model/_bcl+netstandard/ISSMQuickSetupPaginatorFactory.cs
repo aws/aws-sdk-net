@@ -24,7 +24,7 @@ namespace Amazon.SSMQuickSetup.Model
     /// <summary>
     /// Paginators for the SSMQuickSetup service
     ///</summary>
-    public interface ISSMQuickSetupPaginatorFactory
+    public partial interface ISSMQuickSetupPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListApplicationDPUSizes operation
     ///</summary>
-    public interface IListApplicationDPUSizesPaginator
+    public partial interface IListApplicationDPUSizesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

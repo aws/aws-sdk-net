@@ -24,7 +24,7 @@ namespace Amazon.MainframeModernization.Model
     /// <summary>
     /// Paginator for the ListDataSetExportHistory operation
     ///</summary>
-    public interface IListDataSetExportHistoryPaginator
+    public partial interface IListDataSetExportHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

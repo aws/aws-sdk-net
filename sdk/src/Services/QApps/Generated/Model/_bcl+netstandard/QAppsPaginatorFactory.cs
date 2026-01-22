@@ -27,7 +27,7 @@ namespace Amazon.QApps.Model
     /// <summary>
     /// Paginators for the QApps service
     ///</summary>
-    public class QAppsPaginatorFactory : IQAppsPaginatorFactory
+    public partial class QAppsPaginatorFactory : IQAppsPaginatorFactory
     {
         private readonly IAmazonQApps client;
 

@@ -24,7 +24,7 @@ namespace Amazon.Elasticsearch.Model
     /// <summary>
     /// Paginators for the Elasticsearch service
     ///</summary>
-    public interface IElasticsearchPaginatorFactory
+    public partial interface IElasticsearchPaginatorFactory
     {
 
         /// <summary>

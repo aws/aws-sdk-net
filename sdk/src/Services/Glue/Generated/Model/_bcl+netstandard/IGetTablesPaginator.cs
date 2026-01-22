@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetTables operation
     ///</summary>
-    public interface IGetTablesPaginator
+    public partial interface IGetTablesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the GetGroup operation
     ///</summary>
-    public interface IGetGroupPaginator
+    public partial interface IGetGroupPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

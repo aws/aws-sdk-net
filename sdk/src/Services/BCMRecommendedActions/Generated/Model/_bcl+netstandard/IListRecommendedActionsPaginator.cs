@@ -24,7 +24,7 @@ namespace Amazon.BCMRecommendedActions.Model
     /// <summary>
     /// Paginator for the ListRecommendedActions operation
     ///</summary>
-    public interface IListRecommendedActionsPaginator
+    public partial interface IListRecommendedActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

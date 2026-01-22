@@ -24,7 +24,7 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Paginator for the ListDeploymentStrategies operation
     ///</summary>
-    public interface IListDeploymentStrategiesPaginator
+    public partial interface IListDeploymentStrategiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

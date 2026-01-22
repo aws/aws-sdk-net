@@ -24,7 +24,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginator for the DescribeGameSessionQueues operation
     ///</summary>
-    public interface IDescribeGameSessionQueuesPaginator
+    public partial interface IDescribeGameSessionQueuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

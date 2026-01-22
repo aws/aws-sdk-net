@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginator for the DescribeJobLogItems operation
     ///</summary>
-    public interface IDescribeJobLogItemsPaginator
+    public partial interface IDescribeJobLogItemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

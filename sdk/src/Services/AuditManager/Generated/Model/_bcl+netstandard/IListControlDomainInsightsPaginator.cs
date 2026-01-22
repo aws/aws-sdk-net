@@ -24,7 +24,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Paginator for the ListControlDomainInsights operation
     ///</summary>
-    public interface IListControlDomainInsightsPaginator
+    public partial interface IListControlDomainInsightsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

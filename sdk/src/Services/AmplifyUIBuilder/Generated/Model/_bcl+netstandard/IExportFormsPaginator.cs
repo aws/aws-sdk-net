@@ -24,7 +24,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// <summary>
     /// Paginator for the ExportForms operation
     ///</summary>
-    public interface IExportFormsPaginator
+    public partial interface IExportFormsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

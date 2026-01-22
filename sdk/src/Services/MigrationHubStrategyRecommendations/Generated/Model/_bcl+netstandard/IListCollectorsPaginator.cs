@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// <summary>
     /// Paginator for the ListCollectors operation
     ///</summary>
-    public interface IListCollectorsPaginator
+    public partial interface IListCollectorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

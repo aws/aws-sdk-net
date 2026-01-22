@@ -24,7 +24,7 @@ namespace Amazon.Schemas.Model
     /// <summary>
     /// Paginator for the ListDiscoverers operation
     ///</summary>
-    public interface IListDiscoverersPaginator
+    public partial interface IListDiscoverersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

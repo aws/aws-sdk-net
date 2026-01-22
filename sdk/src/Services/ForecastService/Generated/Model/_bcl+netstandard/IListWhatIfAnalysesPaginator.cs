@@ -24,7 +24,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Paginator for the ListWhatIfAnalyses operation
     ///</summary>
-    public interface IListWhatIfAnalysesPaginator
+    public partial interface IListWhatIfAnalysesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

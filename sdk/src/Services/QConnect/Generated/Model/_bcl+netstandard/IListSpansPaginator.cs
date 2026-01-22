@@ -24,7 +24,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginator for the ListSpans operation
     ///</summary>
-    public interface IListSpansPaginator
+    public partial interface IListSpansPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

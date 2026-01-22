@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeVerifiedAccessTrustProviders operation
     ///</summary>
-    public interface IDescribeVerifiedAccessTrustProvidersPaginator
+    public partial interface IDescribeVerifiedAccessTrustProvidersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

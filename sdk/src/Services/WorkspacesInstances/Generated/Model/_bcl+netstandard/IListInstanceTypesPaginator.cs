@@ -24,7 +24,7 @@ namespace Amazon.WorkspacesInstances.Model
     /// <summary>
     /// Paginator for the ListInstanceTypes operation
     ///</summary>
-    public interface IListInstanceTypesPaginator
+    public partial interface IListInstanceTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

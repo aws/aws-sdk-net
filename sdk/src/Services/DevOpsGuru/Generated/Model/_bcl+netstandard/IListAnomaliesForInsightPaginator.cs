@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the ListAnomaliesForInsight operation
     ///</summary>
-    public interface IListAnomaliesForInsightPaginator
+    public partial interface IListAnomaliesForInsightPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

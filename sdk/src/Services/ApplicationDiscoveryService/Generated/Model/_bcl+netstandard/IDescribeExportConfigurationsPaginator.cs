@@ -24,7 +24,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Paginator for the DescribeExportConfigurations operation
     ///</summary>
-    public interface IDescribeExportConfigurationsPaginator
+    public partial interface IDescribeExportConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

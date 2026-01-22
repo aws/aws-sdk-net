@@ -24,7 +24,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Paginators for the SQS service
     ///</summary>
-    public interface ISQSPaginatorFactory
+    public partial interface ISQSPaginatorFactory
     {
 
         /// <summary>

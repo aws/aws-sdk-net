@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListInstanceFleets operation
     ///</summary>
-    public interface IListInstanceFleetsPaginator
+    public partial interface IListInstanceFleetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

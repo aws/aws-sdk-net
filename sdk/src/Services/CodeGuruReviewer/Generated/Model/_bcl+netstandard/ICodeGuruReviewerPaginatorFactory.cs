@@ -24,7 +24,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// <summary>
     /// Paginators for the CodeGuruReviewer service
     ///</summary>
-    public interface ICodeGuruReviewerPaginatorFactory
+    public partial interface ICodeGuruReviewerPaginatorFactory
     {
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace Amazon.Cloud9.Model
     /// <summary>
     /// Paginators for the Cloud9 service
     ///</summary>
-    public class Cloud9PaginatorFactory : ICloud9PaginatorFactory
+    public partial class Cloud9PaginatorFactory : ICloud9PaginatorFactory
     {
         private readonly IAmazonCloud9 client;
 

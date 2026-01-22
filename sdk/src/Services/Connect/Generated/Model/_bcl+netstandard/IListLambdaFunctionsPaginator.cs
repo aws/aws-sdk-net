@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListLambdaFunctions operation
     ///</summary>
-    public interface IListLambdaFunctionsPaginator
+    public partial interface IListLambdaFunctionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

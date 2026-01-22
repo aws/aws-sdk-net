@@ -24,7 +24,7 @@ namespace Amazon.Elasticsearch.Model
     /// <summary>
     /// Paginator for the DescribeOutboundCrossClusterSearchConnections operation
     ///</summary>
-    public interface IDescribeOutboundCrossClusterSearchConnectionsPaginator
+    public partial interface IDescribeOutboundCrossClusterSearchConnectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Paginator for the DescribeRootFolders operation
     ///</summary>
-    public interface IDescribeRootFoldersPaginator
+    public partial interface IDescribeRootFoldersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

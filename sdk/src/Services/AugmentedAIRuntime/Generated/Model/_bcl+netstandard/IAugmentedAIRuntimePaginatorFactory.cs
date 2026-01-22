@@ -24,7 +24,7 @@ namespace Amazon.AugmentedAIRuntime.Model
     /// <summary>
     /// Paginators for the AugmentedAIRuntime service
     ///</summary>
-    public interface IAugmentedAIRuntimePaginatorFactory
+    public partial interface IAugmentedAIRuntimePaginatorFactory
     {
 
         /// <summary>

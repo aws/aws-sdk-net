@@ -27,7 +27,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// <summary>
     /// Paginators for the RedshiftDataAPIService service
     ///</summary>
-    public class RedshiftDataAPIServicePaginatorFactory : IRedshiftDataAPIServicePaginatorFactory
+    public partial class RedshiftDataAPIServicePaginatorFactory : IRedshiftDataAPIServicePaginatorFactory
     {
         private readonly IAmazonRedshiftDataAPIService client;
 

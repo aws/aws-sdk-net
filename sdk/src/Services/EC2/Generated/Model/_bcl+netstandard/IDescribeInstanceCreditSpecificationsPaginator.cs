@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeInstanceCreditSpecifications operation
     ///</summary>
-    public interface IDescribeInstanceCreditSpecificationsPaginator
+    public partial interface IDescribeInstanceCreditSpecificationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

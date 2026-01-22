@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the ListEventSourceMappings operation
     ///</summary>
-    public interface IListEventSourceMappingsPaginator
+    public partial interface IListEventSourceMappingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

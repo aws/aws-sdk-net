@@ -24,7 +24,7 @@ namespace Amazon.NovaAct.Model
     /// <summary>
     /// Paginator for the ListActs operation
     ///</summary>
-    public interface IListActsPaginator
+    public partial interface IListActsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

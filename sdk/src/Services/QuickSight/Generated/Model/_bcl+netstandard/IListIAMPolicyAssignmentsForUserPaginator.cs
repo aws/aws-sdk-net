@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListIAMPolicyAssignmentsForUser operation
     ///</summary>
-    public interface IListIAMPolicyAssignmentsForUserPaginator
+    public partial interface IListIAMPolicyAssignmentsForUserPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginator for the ListInstanceTypeDetails operation
     ///</summary>
-    public interface IListInstanceTypeDetailsPaginator
+    public partial interface IListInstanceTypeDetailsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

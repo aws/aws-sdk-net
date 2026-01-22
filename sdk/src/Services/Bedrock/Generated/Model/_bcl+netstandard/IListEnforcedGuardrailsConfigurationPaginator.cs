@@ -24,7 +24,7 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Paginator for the ListEnforcedGuardrailsConfiguration operation
     ///</summary>
-    public interface IListEnforcedGuardrailsConfigurationPaginator
+    public partial interface IListEnforcedGuardrailsConfigurationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

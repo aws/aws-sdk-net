@@ -24,7 +24,7 @@ namespace Amazon.CleanRooms.Model
     /// <summary>
     /// Paginators for the CleanRooms service
     ///</summary>
-    public interface ICleanRoomsPaginatorFactory
+    public partial interface ICleanRoomsPaginatorFactory
     {
 
         /// <summary>

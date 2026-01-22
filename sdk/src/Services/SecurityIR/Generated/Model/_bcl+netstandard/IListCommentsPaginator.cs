@@ -24,7 +24,7 @@ namespace Amazon.SecurityIR.Model
     /// <summary>
     /// Paginator for the ListComments operation
     ///</summary>
-    public interface IListCommentsPaginator
+    public partial interface IListCommentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

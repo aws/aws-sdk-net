@@ -24,7 +24,7 @@ namespace Amazon.PinpointEmail.Model
     /// <summary>
     /// Paginator for the ListDedicatedIpPools operation
     ///</summary>
-    public interface IListDedicatedIpPoolsPaginator
+    public partial interface IListDedicatedIpPoolsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

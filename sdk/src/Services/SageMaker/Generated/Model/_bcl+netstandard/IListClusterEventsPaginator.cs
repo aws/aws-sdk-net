@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListClusterEvents operation
     ///</summary>
-    public interface IListClusterEventsPaginator
+    public partial interface IListClusterEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

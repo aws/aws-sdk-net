@@ -24,7 +24,7 @@ namespace Amazon.NeptuneGraph.Model
     /// <summary>
     /// Paginators for the NeptuneGraph service
     ///</summary>
-    public interface INeptuneGraphPaginatorFactory
+    public partial interface INeptuneGraphPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.ApplicationInsights.Model
     /// <summary>
     /// Paginator for the ListConfigurationHistory operation
     ///</summary>
-    public interface IListConfigurationHistoryPaginator
+    public partial interface IListConfigurationHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

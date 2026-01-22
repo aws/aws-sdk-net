@@ -24,7 +24,7 @@ namespace Amazon.EMRContainers.Model
     /// <summary>
     /// Paginator for the ListManagedEndpoints operation
     ///</summary>
-    public interface IListManagedEndpointsPaginator
+    public partial interface IListManagedEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the GetAccountAuthorizationDetails operation
     ///</summary>
-    public interface IGetAccountAuthorizationDetailsPaginator
+    public partial interface IGetAccountAuthorizationDetailsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

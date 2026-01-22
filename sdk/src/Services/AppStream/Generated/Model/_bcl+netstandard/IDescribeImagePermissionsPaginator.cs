@@ -24,7 +24,7 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Paginator for the DescribeImagePermissions operation
     ///</summary>
-    public interface IDescribeImagePermissionsPaginator
+    public partial interface IDescribeImagePermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

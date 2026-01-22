@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListDomains operation
     ///</summary>
-    public interface IListDomainsPaginator
+    public partial interface IListDomainsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

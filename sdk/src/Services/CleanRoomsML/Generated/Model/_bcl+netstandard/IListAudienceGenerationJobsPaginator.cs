@@ -24,7 +24,7 @@ namespace Amazon.CleanRoomsML.Model
     /// <summary>
     /// Paginator for the ListAudienceGenerationJobs operation
     ///</summary>
-    public interface IListAudienceGenerationJobsPaginator
+    public partial interface IListAudienceGenerationJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

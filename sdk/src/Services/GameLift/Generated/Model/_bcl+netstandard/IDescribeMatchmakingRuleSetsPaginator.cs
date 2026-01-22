@@ -24,7 +24,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginator for the DescribeMatchmakingRuleSets operation
     ///</summary>
-    public interface IDescribeMatchmakingRuleSetsPaginator
+    public partial interface IDescribeMatchmakingRuleSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

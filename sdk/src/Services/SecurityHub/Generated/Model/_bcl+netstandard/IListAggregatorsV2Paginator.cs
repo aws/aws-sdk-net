@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the ListAggregatorsV2 operation
     ///</summary>
-    public interface IListAggregatorsV2Paginator
+    public partial interface IListAggregatorsV2Paginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

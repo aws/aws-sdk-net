@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the ListResourceDataSync operation
     ///</summary>
-    public interface IListResourceDataSyncPaginator
+    public partial interface IListResourceDataSyncPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

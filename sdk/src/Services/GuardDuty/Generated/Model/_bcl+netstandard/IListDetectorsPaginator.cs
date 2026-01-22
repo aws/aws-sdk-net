@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the ListDetectors operation
     ///</summary>
-    public interface IListDetectorsPaginator
+    public partial interface IListDetectorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

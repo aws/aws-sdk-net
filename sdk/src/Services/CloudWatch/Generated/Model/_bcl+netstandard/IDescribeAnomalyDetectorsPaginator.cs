@@ -24,7 +24,7 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Paginator for the DescribeAnomalyDetectors operation
     ///</summary>
-    public interface IDescribeAnomalyDetectorsPaginator
+    public partial interface IDescribeAnomalyDetectorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

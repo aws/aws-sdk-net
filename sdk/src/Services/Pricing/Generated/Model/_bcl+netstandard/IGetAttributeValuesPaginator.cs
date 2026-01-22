@@ -24,7 +24,7 @@ namespace Amazon.Pricing.Model
     /// <summary>
     /// Paginator for the GetAttributeValues operation
     ///</summary>
-    public interface IGetAttributeValuesPaginator
+    public partial interface IGetAttributeValuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

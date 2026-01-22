@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeIntegrations operation
     ///</summary>
-    public interface IDescribeIntegrationsPaginator
+    public partial interface IDescribeIntegrationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

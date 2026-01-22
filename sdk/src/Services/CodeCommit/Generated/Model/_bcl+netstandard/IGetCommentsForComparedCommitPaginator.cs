@@ -24,7 +24,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginator for the GetCommentsForComparedCommit operation
     ///</summary>
-    public interface IGetCommentsForComparedCommitPaginator
+    public partial interface IGetCommentsForComparedCommitPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

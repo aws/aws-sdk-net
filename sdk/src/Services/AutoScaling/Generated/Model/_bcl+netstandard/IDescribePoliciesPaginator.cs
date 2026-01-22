@@ -24,7 +24,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Paginator for the DescribePolicies operation
     ///</summary>
-    public interface IDescribePoliciesPaginator
+    public partial interface IDescribePoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

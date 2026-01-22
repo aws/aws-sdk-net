@@ -24,7 +24,7 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Paginator for the ListPlaybackKeyPairs operation
     ///</summary>
-    public interface IListPlaybackKeyPairsPaginator
+    public partial interface IListPlaybackKeyPairsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

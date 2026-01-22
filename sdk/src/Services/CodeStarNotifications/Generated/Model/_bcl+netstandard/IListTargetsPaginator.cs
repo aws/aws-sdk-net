@@ -24,7 +24,7 @@ namespace Amazon.CodeStarNotifications.Model
     /// <summary>
     /// Paginator for the ListTargets operation
     ///</summary>
-    public interface IListTargetsPaginator
+    public partial interface IListTargetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

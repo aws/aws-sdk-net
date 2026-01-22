@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribePrincipalIdFormat operation
     ///</summary>
-    public interface IDescribePrincipalIdFormatPaginator
+    public partial interface IDescribePrincipalIdFormatPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

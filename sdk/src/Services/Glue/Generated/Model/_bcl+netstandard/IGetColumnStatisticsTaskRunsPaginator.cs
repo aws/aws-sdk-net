@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetColumnStatisticsTaskRuns operation
     ///</summary>
-    public interface IGetColumnStatisticsTaskRunsPaginator
+    public partial interface IGetColumnStatisticsTaskRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

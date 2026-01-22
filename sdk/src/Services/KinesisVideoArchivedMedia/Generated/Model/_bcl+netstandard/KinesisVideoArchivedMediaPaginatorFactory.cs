@@ -27,7 +27,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <summary>
     /// Paginators for the KinesisVideoArchivedMedia service
     ///</summary>
-    public class KinesisVideoArchivedMediaPaginatorFactory : IKinesisVideoArchivedMediaPaginatorFactory
+    public partial class KinesisVideoArchivedMediaPaginatorFactory : IKinesisVideoArchivedMediaPaginatorFactory
     {
         private readonly IAmazonKinesisVideoArchivedMedia client;
 

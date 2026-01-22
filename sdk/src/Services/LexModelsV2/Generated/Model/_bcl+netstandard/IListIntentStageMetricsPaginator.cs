@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListIntentStageMetrics operation
     ///</summary>
-    public interface IListIntentStageMetricsPaginator
+    public partial interface IListIntentStageMetricsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

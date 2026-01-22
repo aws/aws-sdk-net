@@ -24,7 +24,7 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Paginator for the ListGroupingStatuses operation
     ///</summary>
-    public interface IListGroupingStatusesPaginator
+    public partial interface IListGroupingStatusesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

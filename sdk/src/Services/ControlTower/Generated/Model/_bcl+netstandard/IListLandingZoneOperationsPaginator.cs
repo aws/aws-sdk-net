@@ -24,7 +24,7 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Paginator for the ListLandingZoneOperations operation
     ///</summary>
-    public interface IListLandingZoneOperationsPaginator
+    public partial interface IListLandingZoneOperationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

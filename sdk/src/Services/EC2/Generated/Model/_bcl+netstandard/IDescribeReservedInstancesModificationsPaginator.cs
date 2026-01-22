@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeReservedInstancesModifications operation
     ///</summary>
-    public interface IDescribeReservedInstancesModificationsPaginator
+    public partial interface IDescribeReservedInstancesModificationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

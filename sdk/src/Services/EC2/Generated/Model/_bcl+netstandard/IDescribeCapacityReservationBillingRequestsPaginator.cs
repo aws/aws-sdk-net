@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeCapacityReservationBillingRequests operation
     ///</summary>
-    public interface IDescribeCapacityReservationBillingRequestsPaginator
+    public partial interface IDescribeCapacityReservationBillingRequestsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

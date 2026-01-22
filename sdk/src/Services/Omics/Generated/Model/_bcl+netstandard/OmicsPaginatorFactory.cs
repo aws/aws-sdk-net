@@ -27,7 +27,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginators for the Omics service
     ///</summary>
-    public class OmicsPaginatorFactory : IOmicsPaginatorFactory
+    public partial class OmicsPaginatorFactory : IOmicsPaginatorFactory
     {
         private readonly IAmazonOmics client;
 

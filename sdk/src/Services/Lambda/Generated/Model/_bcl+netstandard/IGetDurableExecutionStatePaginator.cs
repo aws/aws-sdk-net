@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the GetDurableExecutionState operation
     ///</summary>
-    public interface IGetDurableExecutionStatePaginator
+    public partial interface IGetDurableExecutionStatePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the ListMaterializedViewRefreshTaskRuns operation
     ///</summary>
-    public interface IListMaterializedViewRefreshTaskRunsPaginator
+    public partial interface IListMaterializedViewRefreshTaskRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

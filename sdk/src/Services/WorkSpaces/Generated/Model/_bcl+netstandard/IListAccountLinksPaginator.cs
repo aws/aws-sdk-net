@@ -24,7 +24,7 @@ namespace Amazon.WorkSpaces.Model
     /// <summary>
     /// Paginator for the ListAccountLinks operation
     ///</summary>
-    public interface IListAccountLinksPaginator
+    public partial interface IListAccountLinksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

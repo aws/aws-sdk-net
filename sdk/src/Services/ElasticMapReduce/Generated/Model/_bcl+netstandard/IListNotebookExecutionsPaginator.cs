@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListNotebookExecutions operation
     ///</summary>
-    public interface IListNotebookExecutionsPaginator
+    public partial interface IListNotebookExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

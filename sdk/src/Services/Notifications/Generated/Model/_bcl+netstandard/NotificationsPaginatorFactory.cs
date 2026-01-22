@@ -27,7 +27,7 @@ namespace Amazon.Notifications.Model
     /// <summary>
     /// Paginators for the Notifications service
     ///</summary>
-    public class NotificationsPaginatorFactory : INotificationsPaginatorFactory
+    public partial class NotificationsPaginatorFactory : INotificationsPaginatorFactory
     {
         private readonly IAmazonNotifications client;
 

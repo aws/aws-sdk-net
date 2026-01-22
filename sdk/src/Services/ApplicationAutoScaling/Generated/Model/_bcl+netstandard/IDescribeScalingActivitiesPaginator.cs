@@ -24,7 +24,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <summary>
     /// Paginator for the DescribeScalingActivities operation
     ///</summary>
-    public interface IDescribeScalingActivitiesPaginator
+    public partial interface IDescribeScalingActivitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginator for the ListSubscriptions operation
     ///</summary>
-    public interface IListSubscriptionsPaginator
+    public partial interface IListSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.PcaConnectorScep.Model
     /// <summary>
     /// Paginators for the PcaConnectorScep service
     ///</summary>
-    public interface IPcaConnectorScepPaginatorFactory
+    public partial interface IPcaConnectorScepPaginatorFactory
     {
 
         /// <summary>

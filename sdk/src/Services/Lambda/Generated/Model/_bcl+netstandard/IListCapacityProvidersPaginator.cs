@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the ListCapacityProviders operation
     ///</summary>
-    public interface IListCapacityProvidersPaginator
+    public partial interface IListCapacityProvidersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

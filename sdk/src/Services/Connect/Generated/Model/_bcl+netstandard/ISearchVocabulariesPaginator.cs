@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchVocabularies operation
     ///</summary>
-    public interface ISearchVocabulariesPaginator
+    public partial interface ISearchVocabulariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Finspace.Model
     /// <summary>
     /// Paginator for the ListKxClusterNodes operation
     ///</summary>
-    public interface IListKxClusterNodesPaginator
+    public partial interface IListKxClusterNodesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

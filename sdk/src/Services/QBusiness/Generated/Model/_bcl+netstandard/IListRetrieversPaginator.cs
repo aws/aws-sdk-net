@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginator for the ListRetrievers operation
     ///</summary>
-    public interface IListRetrieversPaginator
+    public partial interface IListRetrieversPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

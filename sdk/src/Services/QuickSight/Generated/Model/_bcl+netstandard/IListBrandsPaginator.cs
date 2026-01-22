@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListBrands operation
     ///</summary>
-    public interface IListBrandsPaginator
+    public partial interface IListBrandsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

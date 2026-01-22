@@ -24,7 +24,7 @@ namespace Amazon.ApplicationSignals.Model
     /// <summary>
     /// Paginator for the ListServiceLevelObjectiveExclusionWindows operation
     ///</summary>
-    public interface IListServiceLevelObjectiveExclusionWindowsPaginator
+    public partial interface IListServiceLevelObjectiveExclusionWindowsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ARCRegionswitch.Model
     /// <summary>
     /// Paginator for the ListRoute53HealthChecksInRegion operation
     ///</summary>
-    public interface IListRoute53HealthChecksInRegionPaginator
+    public partial interface IListRoute53HealthChecksInRegionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

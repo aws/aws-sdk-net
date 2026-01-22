@@ -24,7 +24,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginator for the ListFileCommitHistory operation
     ///</summary>
-    public interface IListFileCommitHistoryPaginator
+    public partial interface IListFileCommitHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

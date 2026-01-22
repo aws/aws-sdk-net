@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginator for the DescribeReplicationConfigurationTemplates operation
     ///</summary>
-    public interface IDescribeReplicationConfigurationTemplatesPaginator
+    public partial interface IDescribeReplicationConfigurationTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.MQ.Model
     /// <summary>
     /// Paginator for the ListBrokers operation
     ///</summary>
-    public interface IListBrokersPaginator
+    public partial interface IListBrokersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

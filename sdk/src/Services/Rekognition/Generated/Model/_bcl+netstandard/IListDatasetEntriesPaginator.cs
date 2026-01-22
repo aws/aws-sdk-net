@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the ListDatasetEntries operation
     ///</summary>
-    public interface IListDatasetEntriesPaginator
+    public partial interface IListDatasetEntriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

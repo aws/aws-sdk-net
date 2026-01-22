@@ -24,7 +24,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Paginator for the ListLayouts operation
     ///</summary>
-    public interface IListLayoutsPaginator
+    public partial interface IListLayoutsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

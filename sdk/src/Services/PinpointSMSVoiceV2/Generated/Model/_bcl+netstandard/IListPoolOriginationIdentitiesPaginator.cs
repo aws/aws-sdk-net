@@ -24,7 +24,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Paginator for the ListPoolOriginationIdentities operation
     ///</summary>
-    public interface IListPoolOriginationIdentitiesPaginator
+    public partial interface IListPoolOriginationIdentitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

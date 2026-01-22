@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the ListSnapshotsInRecycleBin operation
     ///</summary>
-    public interface IListSnapshotsInRecycleBinPaginator
+    public partial interface IListSnapshotsInRecycleBinPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

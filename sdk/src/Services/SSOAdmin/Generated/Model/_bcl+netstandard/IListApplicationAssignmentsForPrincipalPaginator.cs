@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListApplicationAssignmentsForPrincipal operation
     ///</summary>
-    public interface IListApplicationAssignmentsForPrincipalPaginator
+    public partial interface IListApplicationAssignmentsForPrincipalPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.Polly.Model
     /// <summary>
     /// Paginators for the Polly service
     ///</summary>
-    public class PollyPaginatorFactory : IPollyPaginatorFactory
+    public partial class PollyPaginatorFactory : IPollyPaginatorFactory
     {
         private readonly IAmazonPolly client;
 

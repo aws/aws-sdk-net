@@ -24,7 +24,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Paginator for the DescribePullThroughCacheRules operation
     ///</summary>
-    public interface IDescribePullThroughCacheRulesPaginator
+    public partial interface IDescribePullThroughCacheRulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.MediaTailor.Model
     /// <summary>
     /// Paginator for the ListPrefetchSchedules operation
     ///</summary>
-    public interface IListPrefetchSchedulesPaginator
+    public partial interface IListPrefetchSchedulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

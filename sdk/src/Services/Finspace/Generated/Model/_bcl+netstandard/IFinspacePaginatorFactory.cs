@@ -24,7 +24,7 @@ namespace Amazon.Finspace.Model
     /// <summary>
     /// Paginators for the Finspace service
     ///</summary>
-    public interface IFinspacePaginatorFactory
+    public partial interface IFinspacePaginatorFactory
     {
 
         /// <summary>

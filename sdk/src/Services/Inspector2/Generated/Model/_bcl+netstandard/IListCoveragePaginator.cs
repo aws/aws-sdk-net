@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginator for the ListCoverage operation
     ///</summary>
-    public interface IListCoveragePaginator
+    public partial interface IListCoveragePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

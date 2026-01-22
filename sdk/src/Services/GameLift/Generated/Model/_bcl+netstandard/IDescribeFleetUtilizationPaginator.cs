@@ -24,7 +24,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginator for the DescribeFleetUtilization operation
     ///</summary>
-    public interface IDescribeFleetUtilizationPaginator
+    public partial interface IDescribeFleetUtilizationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

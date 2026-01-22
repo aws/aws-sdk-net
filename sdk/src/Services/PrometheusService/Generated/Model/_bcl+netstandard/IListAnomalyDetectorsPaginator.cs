@@ -24,7 +24,7 @@ namespace Amazon.PrometheusService.Model
     /// <summary>
     /// Paginator for the ListAnomalyDetectors operation
     ///</summary>
-    public interface IListAnomalyDetectorsPaginator
+    public partial interface IListAnomalyDetectorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

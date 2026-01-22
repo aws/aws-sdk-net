@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginator for the ListBatchSegmentJobs operation
     ///</summary>
-    public interface IListBatchSegmentJobsPaginator
+    public partial interface IListBatchSegmentJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

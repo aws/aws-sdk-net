@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the ListTemplateShares operation
     ///</summary>
-    public interface IListTemplateSharesPaginator
+    public partial interface IListTemplateSharesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

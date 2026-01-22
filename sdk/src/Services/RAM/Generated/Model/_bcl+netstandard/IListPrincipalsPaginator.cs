@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the ListPrincipals operation
     ///</summary>
-    public interface IListPrincipalsPaginator
+    public partial interface IListPrincipalsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

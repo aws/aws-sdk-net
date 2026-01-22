@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginator for the ListCustomerManagedPolicyReferencesInPermissionSet operation
     ///</summary>
-    public interface IListCustomerManagedPolicyReferencesInPermissionSetPaginator
+    public partial interface IListCustomerManagedPolicyReferencesInPermissionSetPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

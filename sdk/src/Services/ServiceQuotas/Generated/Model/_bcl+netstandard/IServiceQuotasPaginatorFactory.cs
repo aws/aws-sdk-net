@@ -24,7 +24,7 @@ namespace Amazon.ServiceQuotas.Model
     /// <summary>
     /// Paginators for the ServiceQuotas service
     ///</summary>
-    public interface IServiceQuotasPaginatorFactory
+    public partial interface IServiceQuotasPaginatorFactory
     {
 
         /// <summary>

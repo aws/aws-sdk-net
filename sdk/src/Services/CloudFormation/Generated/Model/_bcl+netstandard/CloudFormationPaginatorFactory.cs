@@ -27,7 +27,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginators for the CloudFormation service
     ///</summary>
-    public class CloudFormationPaginatorFactory : ICloudFormationPaginatorFactory
+    public partial class CloudFormationPaginatorFactory : ICloudFormationPaginatorFactory
     {
         private readonly IAmazonCloudFormation client;
 

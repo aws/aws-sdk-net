@@ -24,7 +24,7 @@ namespace Amazon.AppSync.Model
     /// <summary>
     /// Paginator for the ListApis operation
     ///</summary>
-    public interface IListApisPaginator
+    public partial interface IListApisPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

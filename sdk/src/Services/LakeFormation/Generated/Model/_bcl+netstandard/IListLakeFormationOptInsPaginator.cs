@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginator for the ListLakeFormationOptIns operation
     ///</summary>
-    public interface IListLakeFormationOptInsPaginator
+    public partial interface IListLakeFormationOptInsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.GlueDataBrew.Model
     /// <summary>
     /// Paginator for the ListRulesets operation
     ///</summary>
-    public interface IListRulesetsPaginator
+    public partial interface IListRulesetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

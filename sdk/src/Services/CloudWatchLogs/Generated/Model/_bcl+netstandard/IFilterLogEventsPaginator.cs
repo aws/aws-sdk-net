@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Paginator for the FilterLogEvents operation
     ///</summary>
-    public interface IFilterLogEventsPaginator
+    public partial interface IFilterLogEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

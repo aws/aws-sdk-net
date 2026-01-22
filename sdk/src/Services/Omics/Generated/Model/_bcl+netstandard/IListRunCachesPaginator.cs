@@ -24,7 +24,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginator for the ListRunCaches operation
     ///</summary>
-    public interface IListRunCachesPaginator
+    public partial interface IListRunCachesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

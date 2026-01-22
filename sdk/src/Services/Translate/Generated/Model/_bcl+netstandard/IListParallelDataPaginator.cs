@@ -24,7 +24,7 @@ namespace Amazon.Translate.Model
     /// <summary>
     /// Paginator for the ListParallelData operation
     ///</summary>
-    public interface IListParallelDataPaginator
+    public partial interface IListParallelDataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

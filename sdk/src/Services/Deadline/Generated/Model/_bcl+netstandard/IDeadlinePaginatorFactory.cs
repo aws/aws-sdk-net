@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginators for the Deadline service
     ///</summary>
-    public interface IDeadlinePaginatorFactory
+    public partial interface IDeadlinePaginatorFactory
     {
 
         /// <summary>

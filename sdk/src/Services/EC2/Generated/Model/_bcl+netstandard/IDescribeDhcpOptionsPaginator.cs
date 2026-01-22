@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeDhcpOptions operation
     ///</summary>
-    public interface IDescribeDhcpOptionsPaginator
+    public partial interface IDescribeDhcpOptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

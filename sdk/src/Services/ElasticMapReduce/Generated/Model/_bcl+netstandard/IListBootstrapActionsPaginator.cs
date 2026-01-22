@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListBootstrapActions operation
     ///</summary>
-    public interface IListBootstrapActionsPaginator
+    public partial interface IListBootstrapActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the ListPodIdentityAssociations operation
     ///</summary>
-    public interface IListPodIdentityAssociationsPaginator
+    public partial interface IListPodIdentityAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

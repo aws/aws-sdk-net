@@ -24,7 +24,7 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Paginator for the ListEventPredictions operation
     ///</summary>
-    public interface IListEventPredictionsPaginator
+    public partial interface IListEventPredictionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

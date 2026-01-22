@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginator for the DescribeStacks operation
     ///</summary>
-    public interface IDescribeStacksPaginator
+    public partial interface IDescribeStacksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

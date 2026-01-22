@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Paginator for the ListContributorInsights operation
     ///</summary>
-    public interface IListContributorInsightsPaginator
+    public partial interface IListContributorInsightsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

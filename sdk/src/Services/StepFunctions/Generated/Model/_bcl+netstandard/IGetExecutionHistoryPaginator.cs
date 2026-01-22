@@ -24,7 +24,7 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Paginator for the GetExecutionHistory operation
     ///</summary>
-    public interface IGetExecutionHistoryPaginator
+    public partial interface IGetExecutionHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

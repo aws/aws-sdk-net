@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListHumanTaskUis operation
     ///</summary>
-    public interface IListHumanTaskUisPaginator
+    public partial interface IListHumanTaskUisPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

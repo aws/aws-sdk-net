@@ -24,7 +24,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Paginator for the ListAppliedSchemaArns operation
     ///</summary>
-    public interface IListAppliedSchemaArnsPaginator
+    public partial interface IListAppliedSchemaArnsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

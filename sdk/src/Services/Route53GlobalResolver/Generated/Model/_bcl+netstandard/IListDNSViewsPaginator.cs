@@ -24,7 +24,7 @@ namespace Amazon.Route53GlobalResolver.Model
     /// <summary>
     /// Paginator for the ListDNSViews operation
     ///</summary>
-    public interface IListDNSViewsPaginator
+    public partial interface IListDNSViewsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

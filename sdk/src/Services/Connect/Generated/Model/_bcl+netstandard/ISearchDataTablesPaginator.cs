@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchDataTables operation
     ///</summary>
-    public interface ISearchDataTablesPaginator
+    public partial interface ISearchDataTablesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

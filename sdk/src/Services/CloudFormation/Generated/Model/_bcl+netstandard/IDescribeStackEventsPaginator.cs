@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginator for the DescribeStackEvents operation
     ///</summary>
-    public interface IDescribeStackEventsPaginator
+    public partial interface IDescribeStackEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

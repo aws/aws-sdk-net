@@ -24,7 +24,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Paginator for the ListEventDataStores operation
     ///</summary>
-    public interface IListEventDataStoresPaginator
+    public partial interface IListEventDataStoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

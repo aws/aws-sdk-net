@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetMLTransforms operation
     ///</summary>
-    public interface IGetMLTransformsPaginator
+    public partial interface IGetMLTransformsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

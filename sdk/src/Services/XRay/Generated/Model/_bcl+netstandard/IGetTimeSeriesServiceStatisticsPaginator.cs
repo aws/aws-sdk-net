@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the GetTimeSeriesServiceStatistics operation
     ///</summary>
-    public interface IGetTimeSeriesServiceStatisticsPaginator
+    public partial interface IGetTimeSeriesServiceStatisticsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Paginator for the ListInfrastructureConfigurations operation
     ///</summary>
-    public interface IListInfrastructureConfigurationsPaginator
+    public partial interface IListInfrastructureConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

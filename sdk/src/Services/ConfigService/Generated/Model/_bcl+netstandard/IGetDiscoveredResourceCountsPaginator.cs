@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the GetDiscoveredResourceCounts operation
     ///</summary>
-    public interface IGetDiscoveredResourceCountsPaginator
+    public partial interface IGetDiscoveredResourceCountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

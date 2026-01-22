@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralSelling.Model
     /// <summary>
     /// Paginator for the ListEngagementByAcceptingInvitationTasks operation
     ///</summary>
-    public interface IListEngagementByAcceptingInvitationTasksPaginator
+    public partial interface IListEngagementByAcceptingInvitationTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

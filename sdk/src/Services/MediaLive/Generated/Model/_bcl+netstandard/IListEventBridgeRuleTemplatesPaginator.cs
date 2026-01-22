@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListEventBridgeRuleTemplates operation
     ///</summary>
-    public interface IListEventBridgeRuleTemplatesPaginator
+    public partial interface IListEventBridgeRuleTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

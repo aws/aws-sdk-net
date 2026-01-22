@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the DescribeBuckets operation
     ///</summary>
-    public interface IDescribeBucketsPaginator
+    public partial interface IDescribeBucketsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

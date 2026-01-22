@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the GetCelebrityRecognition operation
     ///</summary>
-    public interface IGetCelebrityRecognitionPaginator
+    public partial interface IGetCelebrityRecognitionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

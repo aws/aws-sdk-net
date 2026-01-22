@@ -24,7 +24,7 @@ namespace Amazon.ApplicationInsights.Model
     /// <summary>
     /// Paginators for the ApplicationInsights service
     ///</summary>
-    public interface IApplicationInsightsPaginatorFactory
+    public partial interface IApplicationInsightsPaginatorFactory
     {
 
         /// <summary>

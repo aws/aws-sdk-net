@@ -24,7 +24,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Paginators for the Kinesis service
     ///</summary>
-    public interface IKinesisPaginatorFactory
+    public partial interface IKinesisPaginatorFactory
     {
 
         /// <summary>

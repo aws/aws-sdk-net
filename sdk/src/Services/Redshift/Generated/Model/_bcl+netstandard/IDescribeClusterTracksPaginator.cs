@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeClusterTracks operation
     ///</summary>
-    public interface IDescribeClusterTracksPaginator
+    public partial interface IDescribeClusterTracksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

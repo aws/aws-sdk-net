@@ -24,7 +24,7 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Paginator for the ListTags operation
     ///</summary>
-    public interface IListTagsPaginator
+    public partial interface IListTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Paginator for the ListEntityRecognizerSummaries operation
     ///</summary>
-    public interface IListEntityRecognizerSummariesPaginator
+    public partial interface IListEntityRecognizerSummariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeOptionGroupOptions operation
     ///</summary>
-    public interface IDescribeOptionGroupOptionsPaginator
+    public partial interface IDescribeOptionGroupOptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

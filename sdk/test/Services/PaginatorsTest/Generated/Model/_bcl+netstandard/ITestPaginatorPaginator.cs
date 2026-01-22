@@ -24,7 +24,7 @@ namespace Amazon.PaginatorsTest.Model
     /// <summary>
     /// Paginator for the TestPaginator operation
     ///</summary>
-    public interface ITestPaginatorPaginator
+    public partial interface ITestPaginatorPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListPersonalAccessTokens operation
     ///</summary>
-    public interface IListPersonalAccessTokensPaginator
+    public partial interface IListPersonalAccessTokensPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

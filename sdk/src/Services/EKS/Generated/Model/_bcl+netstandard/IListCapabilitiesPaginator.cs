@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the ListCapabilities operation
     ///</summary>
-    public interface IListCapabilitiesPaginator
+    public partial interface IListCapabilitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

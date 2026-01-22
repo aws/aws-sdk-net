@@ -24,7 +24,7 @@ namespace Amazon.Notifications.Model
     /// <summary>
     /// Paginator for the ListManagedNotificationChannelAssociations operation
     ///</summary>
-    public interface IListManagedNotificationChannelAssociationsPaginator
+    public partial interface IListManagedNotificationChannelAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

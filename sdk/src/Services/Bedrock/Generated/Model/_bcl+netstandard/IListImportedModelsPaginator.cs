@@ -24,7 +24,7 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Paginator for the ListImportedModels operation
     ///</summary>
-    public interface IListImportedModelsPaginator
+    public partial interface IListImportedModelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

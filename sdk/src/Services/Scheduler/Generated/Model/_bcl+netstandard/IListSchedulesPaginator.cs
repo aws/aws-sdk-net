@@ -24,7 +24,7 @@ namespace Amazon.Scheduler.Model
     /// <summary>
     /// Paginator for the ListSchedules operation
     ///</summary>
-    public interface IListSchedulesPaginator
+    public partial interface IListSchedulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

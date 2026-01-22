@@ -27,7 +27,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginators for the RAM service
     ///</summary>
-    public class RAMPaginatorFactory : IRAMPaginatorFactory
+    public partial class RAMPaginatorFactory : IRAMPaginatorFactory
     {
         private readonly IAmazonRAM client;
 

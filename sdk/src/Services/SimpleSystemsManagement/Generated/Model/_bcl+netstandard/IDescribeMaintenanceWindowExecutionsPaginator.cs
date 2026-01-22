@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the DescribeMaintenanceWindowExecutions operation
     ///</summary>
-    public interface IDescribeMaintenanceWindowExecutionsPaginator
+    public partial interface IDescribeMaintenanceWindowExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

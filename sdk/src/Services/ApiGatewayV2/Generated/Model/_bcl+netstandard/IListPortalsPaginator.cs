@@ -24,7 +24,7 @@ namespace Amazon.ApiGatewayV2.Model
     /// <summary>
     /// Paginator for the ListPortals operation
     ///</summary>
-    public interface IListPortalsPaginator
+    public partial interface IListPortalsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

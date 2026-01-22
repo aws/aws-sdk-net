@@ -24,7 +24,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Paginator for the ListKeyRotations operation
     ///</summary>
-    public interface IListKeyRotationsPaginator
+    public partial interface IListKeyRotationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

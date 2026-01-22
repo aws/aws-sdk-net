@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeFpgaImages operation
     ///</summary>
-    public interface IDescribeFpgaImagesPaginator
+    public partial interface IDescribeFpgaImagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

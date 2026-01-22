@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the GetCostEstimation operation
     ///</summary>
-    public interface IGetCostEstimationPaginator
+    public partial interface IGetCostEstimationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

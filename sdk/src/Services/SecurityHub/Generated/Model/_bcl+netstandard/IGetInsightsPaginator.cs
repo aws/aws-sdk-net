@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the GetInsights operation
     ///</summary>
-    public interface IGetInsightsPaginator
+    public partial interface IGetInsightsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

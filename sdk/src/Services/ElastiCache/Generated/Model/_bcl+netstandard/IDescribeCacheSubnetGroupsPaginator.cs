@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Paginator for the DescribeCacheSubnetGroups operation
     ///</summary>
-    public interface IDescribeCacheSubnetGroupsPaginator
+    public partial interface IDescribeCacheSubnetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

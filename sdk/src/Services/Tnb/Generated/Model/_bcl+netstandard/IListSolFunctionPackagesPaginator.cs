@@ -24,7 +24,7 @@ namespace Amazon.Tnb.Model
     /// <summary>
     /// Paginator for the ListSolFunctionPackages operation
     ///</summary>
-    public interface IListSolFunctionPackagesPaginator
+    public partial interface IListSolFunctionPackagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

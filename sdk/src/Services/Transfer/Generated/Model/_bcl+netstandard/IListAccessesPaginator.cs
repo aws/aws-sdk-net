@@ -24,7 +24,7 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Paginator for the ListAccesses operation
     ///</summary>
-    public interface IListAccessesPaginator
+    public partial interface IListAccessesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

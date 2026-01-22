@@ -24,7 +24,7 @@ namespace Amazon.IoTFleetWise.Model
     /// <summary>
     /// Paginator for the ListVehicles operation
     ///</summary>
-    public interface IListVehiclesPaginator
+    public partial interface IListVehiclesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

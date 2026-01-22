@@ -24,7 +24,7 @@ namespace Amazon.SupplyChain.Model
     /// <summary>
     /// Paginator for the ListDataLakeDatasets operation
     ///</summary>
-    public interface IListDataLakeDatasetsPaginator
+    public partial interface IListDataLakeDatasetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

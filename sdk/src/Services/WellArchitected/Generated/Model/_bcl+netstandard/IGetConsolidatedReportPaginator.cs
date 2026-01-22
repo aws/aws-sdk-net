@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the GetConsolidatedReport operation
     ///</summary>
-    public interface IGetConsolidatedReportPaginator
+    public partial interface IGetConsolidatedReportPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListBotLocales operation
     ///</summary>
-    public interface IListBotLocalesPaginator
+    public partial interface IListBotLocalesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

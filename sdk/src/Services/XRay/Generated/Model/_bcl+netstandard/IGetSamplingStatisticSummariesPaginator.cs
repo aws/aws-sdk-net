@@ -24,7 +24,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Paginator for the GetSamplingStatisticSummaries operation
     ///</summary>
-    public interface IGetSamplingStatisticSummariesPaginator
+    public partial interface IGetSamplingStatisticSummariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

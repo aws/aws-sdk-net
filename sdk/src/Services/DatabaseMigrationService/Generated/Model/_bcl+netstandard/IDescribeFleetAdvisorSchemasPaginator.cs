@@ -24,7 +24,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Paginator for the DescribeFleetAdvisorSchemas operation
     ///</summary>
-    public interface IDescribeFleetAdvisorSchemasPaginator
+    public partial interface IDescribeFleetAdvisorSchemasPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

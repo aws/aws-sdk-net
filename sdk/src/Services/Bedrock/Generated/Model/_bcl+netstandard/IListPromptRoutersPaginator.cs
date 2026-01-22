@@ -24,7 +24,7 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Paginator for the ListPromptRouters operation
     ///</summary>
-    public interface IListPromptRoutersPaginator
+    public partial interface IListPromptRoutersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.SSMContacts.Model
     /// <summary>
     /// Paginators for the SSMContacts service
     ///</summary>
-    public class SSMContactsPaginatorFactory : ISSMContactsPaginatorFactory
+    public partial class SSMContactsPaginatorFactory : ISSMContactsPaginatorFactory
     {
         private readonly IAmazonSSMContacts client;
 

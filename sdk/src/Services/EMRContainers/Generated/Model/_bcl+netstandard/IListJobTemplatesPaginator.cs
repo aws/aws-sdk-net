@@ -24,7 +24,7 @@ namespace Amazon.EMRContainers.Model
     /// <summary>
     /// Paginator for the ListJobTemplates operation
     ///</summary>
-    public interface IListJobTemplatesPaginator
+    public partial interface IListJobTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

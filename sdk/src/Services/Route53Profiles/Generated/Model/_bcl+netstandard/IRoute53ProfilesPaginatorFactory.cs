@@ -24,7 +24,7 @@ namespace Amazon.Route53Profiles.Model
     /// <summary>
     /// Paginators for the Route53Profiles service
     ///</summary>
-    public interface IRoute53ProfilesPaginatorFactory
+    public partial interface IRoute53ProfilesPaginatorFactory
     {
 
         /// <summary>

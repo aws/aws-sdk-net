@@ -27,7 +27,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Paginators for the GlobalAccelerator service
     ///</summary>
-    public class GlobalAcceleratorPaginatorFactory : IGlobalAcceleratorPaginatorFactory
+    public partial class GlobalAcceleratorPaginatorFactory : IGlobalAcceleratorPaginatorFactory
     {
         private readonly IAmazonGlobalAccelerator client;
 

@@ -24,7 +24,7 @@ namespace Amazon.EMRContainers.Model
     /// <summary>
     /// Paginator for the ListVirtualClusters operation
     ///</summary>
-    public interface IListVirtualClustersPaginator
+    public partial interface IListVirtualClustersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

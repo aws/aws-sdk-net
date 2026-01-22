@@ -24,7 +24,7 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// Paginator for the ListProposalVotes operation
     ///</summary>
-    public interface IListProposalVotesPaginator
+    public partial interface IListProposalVotesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

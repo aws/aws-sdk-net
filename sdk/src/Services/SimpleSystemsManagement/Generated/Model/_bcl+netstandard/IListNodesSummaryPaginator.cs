@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the ListNodesSummary operation
     ///</summary>
-    public interface IListNodesSummaryPaginator
+    public partial interface IListNodesSummaryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

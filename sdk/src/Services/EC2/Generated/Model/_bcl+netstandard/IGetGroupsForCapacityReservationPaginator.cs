@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetGroupsForCapacityReservation operation
     ///</summary>
-    public interface IGetGroupsForCapacityReservationPaginator
+    public partial interface IGetGroupsForCapacityReservationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

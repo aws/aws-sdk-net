@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginators for the LakeFormation service
     ///</summary>
-    public interface ILakeFormationPaginatorFactory
+    public partial interface ILakeFormationPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Paginator for the ListResourceTags operation
     ///</summary>
-    public interface IListResourceTagsPaginator
+    public partial interface IListResourceTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListUserProfiles operation
     ///</summary>
-    public interface IListUserProfilesPaginator
+    public partial interface IListUserProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

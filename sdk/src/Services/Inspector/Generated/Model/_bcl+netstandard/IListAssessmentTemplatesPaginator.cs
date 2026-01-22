@@ -24,7 +24,7 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Paginator for the ListAssessmentTemplates operation
     ///</summary>
-    public interface IListAssessmentTemplatesPaginator
+    public partial interface IListAssessmentTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

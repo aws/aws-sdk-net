@@ -27,7 +27,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Paginators for the Glacier service
     ///</summary>
-    public class GlacierPaginatorFactory : IGlacierPaginatorFactory
+    public partial class GlacierPaginatorFactory : IGlacierPaginatorFactory
     {
         private readonly IAmazonGlacier client;
 

@@ -27,7 +27,7 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Paginators for the Route53Resolver service
     ///</summary>
-    public class Route53ResolverPaginatorFactory : IRoute53ResolverPaginatorFactory
+    public partial class Route53ResolverPaginatorFactory : IRoute53ResolverPaginatorFactory
     {
         private readonly IAmazonRoute53Resolver client;
 

@@ -27,7 +27,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Paginators for the SimpleNotificationService service
     ///</summary>
-    public class SimpleNotificationServicePaginatorFactory : ISimpleNotificationServicePaginatorFactory
+    public partial class SimpleNotificationServicePaginatorFactory : ISimpleNotificationServicePaginatorFactory
     {
         private readonly IAmazonSimpleNotificationService client;
 

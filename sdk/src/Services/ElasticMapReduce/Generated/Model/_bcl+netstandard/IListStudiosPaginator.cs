@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListStudios operation
     ///</summary>
-    public interface IListStudiosPaginator
+    public partial interface IListStudiosPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

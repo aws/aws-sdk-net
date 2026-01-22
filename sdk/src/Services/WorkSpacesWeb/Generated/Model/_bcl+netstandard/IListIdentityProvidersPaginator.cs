@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// <summary>
     /// Paginator for the ListIdentityProviders operation
     ///</summary>
-    public interface IListIdentityProvidersPaginator
+    public partial interface IListIdentityProvidersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

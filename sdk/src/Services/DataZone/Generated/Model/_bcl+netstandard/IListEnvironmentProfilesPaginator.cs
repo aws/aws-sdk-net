@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListEnvironmentProfiles operation
     ///</summary>
-    public interface IListEnvironmentProfilesPaginator
+    public partial interface IListEnvironmentProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

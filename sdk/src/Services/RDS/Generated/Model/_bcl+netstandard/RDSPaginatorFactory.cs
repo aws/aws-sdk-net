@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginators for the RDS service
     ///</summary>
-    public class RDSPaginatorFactory : IRDSPaginatorFactory
+    public partial class RDSPaginatorFactory : IRDSPaginatorFactory
     {
         private readonly IAmazonRDS client;
 

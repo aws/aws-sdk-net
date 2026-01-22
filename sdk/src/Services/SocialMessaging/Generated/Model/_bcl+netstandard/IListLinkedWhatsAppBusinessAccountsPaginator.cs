@@ -24,7 +24,7 @@ namespace Amazon.SocialMessaging.Model
     /// <summary>
     /// Paginator for the ListLinkedWhatsAppBusinessAccounts operation
     ///</summary>
-    public interface IListLinkedWhatsAppBusinessAccountsPaginator
+    public partial interface IListLinkedWhatsAppBusinessAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

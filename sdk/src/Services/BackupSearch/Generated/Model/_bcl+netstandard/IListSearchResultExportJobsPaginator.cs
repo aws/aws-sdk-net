@@ -24,7 +24,7 @@ namespace Amazon.BackupSearch.Model
     /// <summary>
     /// Paginator for the ListSearchResultExportJobs operation
     ///</summary>
-    public interface IListSearchResultExportJobsPaginator
+    public partial interface IListSearchResultExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

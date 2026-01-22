@@ -24,7 +24,7 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Paginator for the ListPackageVersionAssets operation
     ///</summary>
-    public interface IListPackageVersionAssetsPaginator
+    public partial interface IListPackageVersionAssetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

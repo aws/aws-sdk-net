@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListStepDependencies operation
     ///</summary>
-    public interface IListStepDependenciesPaginator
+    public partial interface IListStepDependenciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

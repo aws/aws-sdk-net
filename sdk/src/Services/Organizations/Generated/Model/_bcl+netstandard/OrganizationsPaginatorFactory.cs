@@ -27,7 +27,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginators for the Organizations service
     ///</summary>
-    public class OrganizationsPaginatorFactory : IOrganizationsPaginatorFactory
+    public partial class OrganizationsPaginatorFactory : IOrganizationsPaginatorFactory
     {
         private readonly IAmazonOrganizations client;
 

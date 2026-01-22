@@ -24,7 +24,7 @@ namespace Amazon.LaunchWizard.Model
     /// <summary>
     /// Paginator for the ListDeploymentEvents operation
     ///</summary>
-    public interface IListDeploymentEventsPaginator
+    public partial interface IListDeploymentEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

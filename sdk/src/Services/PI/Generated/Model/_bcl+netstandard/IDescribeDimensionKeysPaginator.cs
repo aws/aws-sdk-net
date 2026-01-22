@@ -24,7 +24,7 @@ namespace Amazon.PI.Model
     /// <summary>
     /// Paginator for the DescribeDimensionKeys operation
     ///</summary>
-    public interface IDescribeDimensionKeysPaginator
+    public partial interface IDescribeDimensionKeysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

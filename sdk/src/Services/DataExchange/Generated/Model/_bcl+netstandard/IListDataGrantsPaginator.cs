@@ -24,7 +24,7 @@ namespace Amazon.DataExchange.Model
     /// <summary>
     /// Paginator for the ListDataGrants operation
     ///</summary>
-    public interface IListDataGrantsPaginator
+    public partial interface IListDataGrantsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

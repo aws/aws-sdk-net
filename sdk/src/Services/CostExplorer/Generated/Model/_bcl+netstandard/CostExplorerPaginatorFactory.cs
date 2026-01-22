@@ -27,7 +27,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginators for the CostExplorer service
     ///</summary>
-    public class CostExplorerPaginatorFactory : ICostExplorerPaginatorFactory
+    public partial class CostExplorerPaginatorFactory : ICostExplorerPaginatorFactory
     {
         private readonly IAmazonCostExplorer client;
 

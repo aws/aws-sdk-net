@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginator for the ListGiVersions operation
     ///</summary>
-    public interface IListGiVersionsPaginator
+    public partial interface IListGiVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

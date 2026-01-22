@@ -24,7 +24,7 @@ namespace Amazon.OSIS.Model
     /// <summary>
     /// Paginators for the OSIS service
     ///</summary>
-    public interface IOSISPaginatorFactory
+    public partial interface IOSISPaginatorFactory
     {
 
         /// <summary>

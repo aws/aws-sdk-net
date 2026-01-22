@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListAggregatedUtterances operation
     ///</summary>
-    public interface IListAggregatedUtterancesPaginator
+    public partial interface IListAggregatedUtterancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

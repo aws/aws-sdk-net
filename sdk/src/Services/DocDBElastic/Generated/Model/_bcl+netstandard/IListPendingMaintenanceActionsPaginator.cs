@@ -24,7 +24,7 @@ namespace Amazon.DocDBElastic.Model
     /// <summary>
     /// Paginator for the ListPendingMaintenanceActions operation
     ///</summary>
-    public interface IListPendingMaintenanceActionsPaginator
+    public partial interface IListPendingMaintenanceActionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

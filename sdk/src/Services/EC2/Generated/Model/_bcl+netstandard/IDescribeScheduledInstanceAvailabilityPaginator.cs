@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeScheduledInstanceAvailability operation
     ///</summary>
-    public interface IDescribeScheduledInstanceAvailabilityPaginator
+    public partial interface IDescribeScheduledInstanceAvailabilityPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

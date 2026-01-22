@@ -24,7 +24,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginators for the SSOAdmin service
     ///</summary>
-    public interface ISSOAdminPaginatorFactory
+    public partial interface ISSOAdminPaginatorFactory
     {
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace Amazon.SupplyChain.Model
     /// <summary>
     /// Paginators for the SupplyChain service
     ///</summary>
-    public class SupplyChainPaginatorFactory : ISupplyChainPaginatorFactory
+    public partial class SupplyChainPaginatorFactory : ISupplyChainPaginatorFactory
     {
         private readonly IAmazonSupplyChain client;
 

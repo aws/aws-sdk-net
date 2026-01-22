@@ -24,7 +24,7 @@ namespace Amazon.Drs.Model
     /// <summary>
     /// Paginators for the Drs service
     ///</summary>
-    public interface IDrsPaginatorFactory
+    public partial interface IDrsPaginatorFactory
     {
 
         /// <summary>

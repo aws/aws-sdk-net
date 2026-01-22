@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetMLTaskRuns operation
     ///</summary>
-    public interface IGetMLTaskRunsPaginator
+    public partial interface IGetMLTaskRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Paginator for the ListCustomVerificationEmailTemplates operation
     ///</summary>
-    public interface IListCustomVerificationEmailTemplatesPaginator
+    public partial interface IListCustomVerificationEmailTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

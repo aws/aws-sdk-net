@@ -27,7 +27,7 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// Paginators for the EntityResolution service
     ///</summary>
-    public class EntityResolutionPaginatorFactory : IEntityResolutionPaginatorFactory
+    public partial class EntityResolutionPaginatorFactory : IEntityResolutionPaginatorFactory
     {
         private readonly IAmazonEntityResolution client;
 

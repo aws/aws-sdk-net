@@ -24,7 +24,7 @@ namespace Amazon.PartnerCentralSelling.Model
     /// <summary>
     /// Paginator for the ListEngagementResourceAssociations operation
     ///</summary>
-    public interface IListEngagementResourceAssociationsPaginator
+    public partial interface IListEngagementResourceAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

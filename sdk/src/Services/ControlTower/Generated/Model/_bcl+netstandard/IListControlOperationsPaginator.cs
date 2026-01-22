@@ -24,7 +24,7 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Paginator for the ListControlOperations operation
     ///</summary>
-    public interface IListControlOperationsPaginator
+    public partial interface IListControlOperationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.InternetMonitor.Model
     /// <summary>
     /// Paginator for the ListHealthEvents operation
     ///</summary>
-    public interface IListHealthEventsPaginator
+    public partial interface IListHealthEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

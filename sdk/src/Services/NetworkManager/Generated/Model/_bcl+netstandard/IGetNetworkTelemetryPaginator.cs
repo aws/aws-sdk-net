@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the GetNetworkTelemetry operation
     ///</summary>
-    public interface IGetNetworkTelemetryPaginator
+    public partial interface IGetNetworkTelemetryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

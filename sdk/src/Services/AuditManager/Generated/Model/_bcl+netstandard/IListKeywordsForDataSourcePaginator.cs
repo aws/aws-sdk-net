@@ -24,7 +24,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Paginator for the ListKeywordsForDataSource operation
     ///</summary>
-    public interface IListKeywordsForDataSourcePaginator
+    public partial interface IListKeywordsForDataSourcePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListCustomPermissions operation
     ///</summary>
-    public interface IListCustomPermissionsPaginator
+    public partial interface IListCustomPermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

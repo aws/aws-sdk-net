@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Paginator for the BatchGetItem operation
     ///</summary>
-    public interface IBatchGetItemPaginator
+    public partial interface IBatchGetItemPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

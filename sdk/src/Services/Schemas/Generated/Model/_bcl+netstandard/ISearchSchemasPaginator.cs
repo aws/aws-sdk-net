@@ -24,7 +24,7 @@ namespace Amazon.Schemas.Model
     /// <summary>
     /// Paginator for the SearchSchemas operation
     ///</summary>
-    public interface ISearchSchemasPaginator
+    public partial interface ISearchSchemasPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

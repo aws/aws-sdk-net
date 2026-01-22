@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginator for the ListCloudExadataInfrastructures operation
     ///</summary>
-    public interface IListCloudExadataInfrastructuresPaginator
+    public partial interface IListCloudExadataInfrastructuresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Finspace.Model
     /// <summary>
     /// Paginator for the ListKxScalingGroups operation
     ///</summary>
-    public interface IListKxScalingGroupsPaginator
+    public partial interface IListKxScalingGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

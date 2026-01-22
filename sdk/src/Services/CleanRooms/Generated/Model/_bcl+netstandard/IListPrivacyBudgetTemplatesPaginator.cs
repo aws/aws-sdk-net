@@ -24,7 +24,7 @@ namespace Amazon.CleanRooms.Model
     /// <summary>
     /// Paginator for the ListPrivacyBudgetTemplates operation
     ///</summary>
-    public interface IListPrivacyBudgetTemplatesPaginator
+    public partial interface IListPrivacyBudgetTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

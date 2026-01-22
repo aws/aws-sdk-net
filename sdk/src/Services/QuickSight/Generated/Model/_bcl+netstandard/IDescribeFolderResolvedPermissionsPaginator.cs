@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the DescribeFolderResolvedPermissions operation
     ///</summary>
-    public interface IDescribeFolderResolvedPermissionsPaginator
+    public partial interface IDescribeFolderResolvedPermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

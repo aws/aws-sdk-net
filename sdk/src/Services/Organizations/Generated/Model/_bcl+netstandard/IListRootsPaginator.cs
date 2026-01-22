@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListRoots operation
     ///</summary>
-    public interface IListRootsPaginator
+    public partial interface IListRootsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

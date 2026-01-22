@@ -24,7 +24,7 @@ namespace Amazon.Outposts.Model
     /// <summary>
     /// Paginator for the ListAssetInstances operation
     ///</summary>
-    public interface IListAssetInstancesPaginator
+    public partial interface IListAssetInstancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

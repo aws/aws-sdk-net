@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginator for the ListRecommenderRecipes operation
     ///</summary>
-    public interface IListRecommenderRecipesPaginator
+    public partial interface IListRecommenderRecipesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

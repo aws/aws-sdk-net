@@ -24,7 +24,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Paginator for the ListStorageLensConfigurations operation
     ///</summary>
-    public interface IListStorageLensConfigurationsPaginator
+    public partial interface IListStorageLensConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

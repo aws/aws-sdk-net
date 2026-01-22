@@ -24,7 +24,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Paginator for the ListAccessPointsForObjectLambda operation
     ///</summary>
-    public interface IListAccessPointsForObjectLambdaPaginator
+    public partial interface IListAccessPointsForObjectLambdaPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

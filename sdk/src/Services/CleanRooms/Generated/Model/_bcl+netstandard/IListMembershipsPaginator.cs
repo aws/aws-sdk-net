@@ -24,7 +24,7 @@ namespace Amazon.CleanRooms.Model
     /// <summary>
     /// Paginator for the ListMemberships operation
     ///</summary>
-    public interface IListMembershipsPaginator
+    public partial interface IListMembershipsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

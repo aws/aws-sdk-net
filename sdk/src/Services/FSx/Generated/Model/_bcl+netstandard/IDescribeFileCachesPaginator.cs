@@ -24,7 +24,7 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Paginator for the DescribeFileCaches operation
     ///</summary>
-    public interface IDescribeFileCachesPaginator
+    public partial interface IDescribeFileCachesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

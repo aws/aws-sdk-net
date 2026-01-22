@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the SearchResources operation
     ///</summary>
-    public interface ISearchResourcesPaginator
+    public partial interface ISearchResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

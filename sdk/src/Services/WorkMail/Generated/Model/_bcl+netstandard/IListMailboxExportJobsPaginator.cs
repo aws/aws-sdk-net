@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListMailboxExportJobs operation
     ///</summary>
-    public interface IListMailboxExportJobsPaginator
+    public partial interface IListMailboxExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

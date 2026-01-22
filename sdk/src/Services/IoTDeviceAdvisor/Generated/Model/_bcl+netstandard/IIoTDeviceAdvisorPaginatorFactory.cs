@@ -24,7 +24,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     /// <summary>
     /// Paginators for the IoTDeviceAdvisor service
     ///</summary>
-    public interface IIoTDeviceAdvisorPaginatorFactory
+    public partial interface IIoTDeviceAdvisorPaginatorFactory
     {
 
         /// <summary>

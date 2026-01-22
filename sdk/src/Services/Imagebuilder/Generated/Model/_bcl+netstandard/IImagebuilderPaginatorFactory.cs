@@ -24,7 +24,7 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Paginators for the Imagebuilder service
     ///</summary>
-    public interface IImagebuilderPaginatorFactory
+    public partial interface IImagebuilderPaginatorFactory
     {
 
         /// <summary>

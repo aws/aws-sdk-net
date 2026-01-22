@@ -27,7 +27,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Paginators for the SSOAdmin service
     ///</summary>
-    public class SSOAdminPaginatorFactory : ISSOAdminPaginatorFactory
+    public partial class SSOAdminPaginatorFactory : ISSOAdminPaginatorFactory
     {
         private readonly IAmazonSSOAdmin client;
 

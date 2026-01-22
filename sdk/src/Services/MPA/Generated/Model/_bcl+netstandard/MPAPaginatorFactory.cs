@@ -27,7 +27,7 @@ namespace Amazon.MPA.Model
     /// <summary>
     /// Paginators for the MPA service
     ///</summary>
-    public class MPAPaginatorFactory : IMPAPaginatorFactory
+    public partial class MPAPaginatorFactory : IMPAPaginatorFactory
     {
         private readonly IAmazonMPA client;
 

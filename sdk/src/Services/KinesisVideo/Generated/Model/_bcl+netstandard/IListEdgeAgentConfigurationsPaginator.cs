@@ -24,7 +24,7 @@ namespace Amazon.KinesisVideo.Model
     /// <summary>
     /// Paginator for the ListEdgeAgentConfigurations operation
     ///</summary>
-    public interface IListEdgeAgentConfigurationsPaginator
+    public partial interface IListEdgeAgentConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

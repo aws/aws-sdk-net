@@ -24,7 +24,7 @@ namespace Amazon.LaunchWizard.Model
     /// <summary>
     /// Paginators for the LaunchWizard service
     ///</summary>
-    public interface ILaunchWizardPaginatorFactory
+    public partial interface ILaunchWizardPaginatorFactory
     {
 
         /// <summary>

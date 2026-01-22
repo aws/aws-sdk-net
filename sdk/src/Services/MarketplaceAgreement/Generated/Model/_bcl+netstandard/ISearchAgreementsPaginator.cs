@@ -24,7 +24,7 @@ namespace Amazon.MarketplaceAgreement.Model
     /// <summary>
     /// Paginator for the SearchAgreements operation
     ///</summary>
-    public interface ISearchAgreementsPaginator
+    public partial interface ISearchAgreementsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

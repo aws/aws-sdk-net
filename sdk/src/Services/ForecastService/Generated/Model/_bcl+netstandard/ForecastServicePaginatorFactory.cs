@@ -27,7 +27,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Paginators for the ForecastService service
     ///</summary>
-    public class ForecastServicePaginatorFactory : IForecastServicePaginatorFactory
+    public partial class ForecastServicePaginatorFactory : IForecastServicePaginatorFactory
     {
         private readonly IAmazonForecastService client;
 

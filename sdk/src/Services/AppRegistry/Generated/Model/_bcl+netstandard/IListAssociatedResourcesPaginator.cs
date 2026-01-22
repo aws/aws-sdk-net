@@ -24,7 +24,7 @@ namespace Amazon.AppRegistry.Model
     /// <summary>
     /// Paginator for the ListAssociatedResources operation
     ///</summary>
-    public interface IListAssociatedResourcesPaginator
+    public partial interface IListAssociatedResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

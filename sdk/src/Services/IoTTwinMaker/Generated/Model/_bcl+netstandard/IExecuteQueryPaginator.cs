@@ -24,7 +24,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// <summary>
     /// Paginator for the ExecuteQuery operation
     ///</summary>
-    public interface IExecuteQueryPaginator
+    public partial interface IExecuteQueryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

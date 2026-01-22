@@ -24,7 +24,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Paginator for the ListAttachedIndices operation
     ///</summary>
-    public interface IListAttachedIndicesPaginator
+    public partial interface IListAttachedIndicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

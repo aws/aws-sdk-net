@@ -24,7 +24,7 @@ namespace Amazon.MTurk.Model
     /// <summary>
     /// Paginator for the ListWorkerBlocks operation
     ///</summary>
-    public interface IListWorkerBlocksPaginator
+    public partial interface IListWorkerBlocksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

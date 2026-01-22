@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the DescribeProjectVersions operation
     ///</summary>
-    public interface IDescribeProjectVersionsPaginator
+    public partial interface IDescribeProjectVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

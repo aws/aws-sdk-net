@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the ListFargateProfiles operation
     ///</summary>
-    public interface IListFargateProfilesPaginator
+    public partial interface IListFargateProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Detective.Model
     /// <summary>
     /// Paginator for the ListDatasourcePackages operation
     ///</summary>
-    public interface IListDatasourcePackagesPaginator
+    public partial interface IListDatasourcePackagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

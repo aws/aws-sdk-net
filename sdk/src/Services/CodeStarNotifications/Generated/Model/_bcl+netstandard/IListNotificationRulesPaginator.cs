@@ -24,7 +24,7 @@ namespace Amazon.CodeStarNotifications.Model
     /// <summary>
     /// Paginator for the ListNotificationRules operation
     ///</summary>
-    public interface IListNotificationRulesPaginator
+    public partial interface IListNotificationRulesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

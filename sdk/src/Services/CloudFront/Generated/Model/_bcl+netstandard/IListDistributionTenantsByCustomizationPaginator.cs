@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Paginator for the ListDistributionTenantsByCustomization operation
     ///</summary>
-    public interface IListDistributionTenantsByCustomizationPaginator
+    public partial interface IListDistributionTenantsByCustomizationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

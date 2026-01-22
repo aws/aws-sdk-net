@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     /// <summary>
     /// Paginators for the MigrationHubOrchestrator service
     ///</summary>
-    public interface IMigrationHubOrchestratorPaginatorFactory
+    public partial interface IMigrationHubOrchestratorPaginatorFactory
     {
 
         /// <summary>

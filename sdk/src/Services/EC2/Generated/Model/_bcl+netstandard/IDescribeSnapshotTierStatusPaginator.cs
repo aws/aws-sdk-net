@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeSnapshotTierStatus operation
     ///</summary>
-    public interface IDescribeSnapshotTierStatusPaginator
+    public partial interface IDescribeSnapshotTierStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

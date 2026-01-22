@@ -24,7 +24,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Paginator for the ListRegionalBuckets operation
     ///</summary>
-    public interface IListRegionalBucketsPaginator
+    public partial interface IListRegionalBucketsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

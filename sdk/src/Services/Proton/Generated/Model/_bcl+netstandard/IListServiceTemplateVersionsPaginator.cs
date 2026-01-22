@@ -24,7 +24,7 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Paginator for the ListServiceTemplateVersions operation
     ///</summary>
-    public interface IListServiceTemplateVersionsPaginator
+    public partial interface IListServiceTemplateVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

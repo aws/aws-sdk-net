@@ -24,7 +24,7 @@ namespace Amazon.NeptuneGraph.Model
     /// <summary>
     /// Paginator for the ListGraphSnapshots operation
     ///</summary>
-    public interface IListGraphSnapshotsPaginator
+    public partial interface IListGraphSnapshotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

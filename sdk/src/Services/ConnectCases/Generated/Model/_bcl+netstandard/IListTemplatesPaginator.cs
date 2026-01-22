@@ -24,7 +24,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Paginator for the ListTemplates operation
     ///</summary>
-    public interface IListTemplatesPaginator
+    public partial interface IListTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

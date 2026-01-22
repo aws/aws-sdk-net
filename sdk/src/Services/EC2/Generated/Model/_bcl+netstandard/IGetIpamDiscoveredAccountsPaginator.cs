@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetIpamDiscoveredAccounts operation
     ///</summary>
-    public interface IGetIpamDiscoveredAccountsPaginator
+    public partial interface IGetIpamDiscoveredAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

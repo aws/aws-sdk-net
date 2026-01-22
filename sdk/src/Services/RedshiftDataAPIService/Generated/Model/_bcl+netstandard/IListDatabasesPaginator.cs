@@ -24,7 +24,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// <summary>
     /// Paginator for the ListDatabases operation
     ///</summary>
-    public interface IListDatabasesPaginator
+    public partial interface IListDatabasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

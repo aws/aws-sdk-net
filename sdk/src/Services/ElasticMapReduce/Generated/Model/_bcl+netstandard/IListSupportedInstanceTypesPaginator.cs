@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListSupportedInstanceTypes operation
     ///</summary>
-    public interface IListSupportedInstanceTypesPaginator
+    public partial interface IListSupportedInstanceTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

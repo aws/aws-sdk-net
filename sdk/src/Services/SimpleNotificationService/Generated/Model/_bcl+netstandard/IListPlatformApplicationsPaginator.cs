@@ -24,7 +24,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Paginator for the ListPlatformApplications operation
     ///</summary>
-    public interface IListPlatformApplicationsPaginator
+    public partial interface IListPlatformApplicationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

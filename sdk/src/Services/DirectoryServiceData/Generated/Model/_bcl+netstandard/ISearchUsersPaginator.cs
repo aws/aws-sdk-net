@@ -24,7 +24,7 @@ namespace Amazon.DirectoryServiceData.Model
     /// <summary>
     /// Paginator for the SearchUsers operation
     ///</summary>
-    public interface ISearchUsersPaginator
+    public partial interface ISearchUsersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

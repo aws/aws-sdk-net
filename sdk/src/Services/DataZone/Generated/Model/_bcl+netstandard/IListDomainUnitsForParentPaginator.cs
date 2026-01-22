@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListDomainUnitsForParent operation
     ///</summary>
-    public interface IListDomainUnitsForParentPaginator
+    public partial interface IListDomainUnitsForParentPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

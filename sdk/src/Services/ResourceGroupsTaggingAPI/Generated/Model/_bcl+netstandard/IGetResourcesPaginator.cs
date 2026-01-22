@@ -24,7 +24,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// Paginator for the GetResources operation
     ///</summary>
-    public interface IGetResourcesPaginator
+    public partial interface IGetResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

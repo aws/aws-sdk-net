@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgent.Model
     /// <summary>
     /// Paginator for the ListAgentVersions operation
     ///</summary>
-    public interface IListAgentVersionsPaginator
+    public partial interface IListAgentVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

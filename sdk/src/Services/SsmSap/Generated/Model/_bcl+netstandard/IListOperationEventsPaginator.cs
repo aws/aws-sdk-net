@@ -24,7 +24,7 @@ namespace Amazon.SsmSap.Model
     /// <summary>
     /// Paginator for the ListOperationEvents operation
     ///</summary>
-    public interface IListOperationEventsPaginator
+    public partial interface IListOperationEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

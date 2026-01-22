@@ -24,7 +24,7 @@ namespace Amazon.Appflow.Model
     /// <summary>
     /// Paginators for the Appflow service
     ///</summary>
-    public interface IAppflowPaginatorFactory
+    public partial interface IAppflowPaginatorFactory
     {
 
         /// <summary>

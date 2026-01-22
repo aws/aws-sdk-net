@@ -24,7 +24,7 @@ namespace Amazon.SsmSap.Model
     /// <summary>
     /// Paginator for the ListApplications operation
     ///</summary>
-    public interface IListApplicationsPaginator
+    public partial interface IListApplicationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

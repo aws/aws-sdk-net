@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginators for the EKS service
     ///</summary>
-    public interface IEKSPaginatorFactory
+    public partial interface IEKSPaginatorFactory
     {
 
         /// <summary>

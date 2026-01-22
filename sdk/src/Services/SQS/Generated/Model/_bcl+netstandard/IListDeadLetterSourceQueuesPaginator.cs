@@ -24,7 +24,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Paginator for the ListDeadLetterSourceQueues operation
     ///</summary>
-    public interface IListDeadLetterSourceQueuesPaginator
+    public partial interface IListDeadLetterSourceQueuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

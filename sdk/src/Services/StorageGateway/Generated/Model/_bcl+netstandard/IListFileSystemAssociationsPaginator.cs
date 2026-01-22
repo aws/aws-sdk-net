@@ -24,7 +24,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Paginator for the ListFileSystemAssociations operation
     ///</summary>
-    public interface IListFileSystemAssociationsPaginator
+    public partial interface IListFileSystemAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// <summary>
     /// Paginators for the ChimeSDKMessaging service
     ///</summary>
-    public class ChimeSDKMessagingPaginatorFactory : IChimeSDKMessagingPaginatorFactory
+    public partial class ChimeSDKMessagingPaginatorFactory : IChimeSDKMessagingPaginatorFactory
     {
         private readonly IAmazonChimeSDKMessaging client;
 

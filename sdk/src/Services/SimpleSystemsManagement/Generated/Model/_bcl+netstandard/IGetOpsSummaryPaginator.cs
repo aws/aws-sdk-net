@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the GetOpsSummary operation
     ///</summary>
-    public interface IGetOpsSummaryPaginator
+    public partial interface IGetOpsSummaryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

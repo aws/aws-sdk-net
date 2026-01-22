@@ -24,7 +24,7 @@ namespace Amazon.CostAndUsageReport.Model
     /// <summary>
     /// Paginator for the DescribeReportDefinitions operation
     ///</summary>
-    public interface IDescribeReportDefinitionsPaginator
+    public partial interface IDescribeReportDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

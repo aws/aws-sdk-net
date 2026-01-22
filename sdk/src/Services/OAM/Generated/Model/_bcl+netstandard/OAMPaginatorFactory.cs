@@ -27,7 +27,7 @@ namespace Amazon.OAM.Model
     /// <summary>
     /// Paginators for the OAM service
     ///</summary>
-    public class OAMPaginatorFactory : IOAMPaginatorFactory
+    public partial class OAMPaginatorFactory : IOAMPaginatorFactory
     {
         private readonly IAmazonOAM client;
 

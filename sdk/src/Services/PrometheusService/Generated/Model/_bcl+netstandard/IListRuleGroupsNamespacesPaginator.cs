@@ -24,7 +24,7 @@ namespace Amazon.PrometheusService.Model
     /// <summary>
     /// Paginator for the ListRuleGroupsNamespaces operation
     ///</summary>
-    public interface IListRuleGroupsNamespacesPaginator
+    public partial interface IListRuleGroupsNamespacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

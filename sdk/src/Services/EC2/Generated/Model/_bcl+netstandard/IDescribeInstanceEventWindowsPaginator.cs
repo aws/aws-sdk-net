@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeInstanceEventWindows operation
     ///</summary>
-    public interface IDescribeInstanceEventWindowsPaginator
+    public partial interface IDescribeInstanceEventWindowsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

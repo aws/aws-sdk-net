@@ -24,7 +24,7 @@ namespace Amazon.IoTThingsGraph.Model
     /// <summary>
     /// Paginators for the IoTThingsGraph service
     ///</summary>
-    public interface IIoTThingsGraphPaginatorFactory
+    public partial interface IIoTThingsGraphPaginatorFactory
     {
 
         /// <summary>

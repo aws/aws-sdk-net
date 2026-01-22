@@ -24,7 +24,7 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Paginator for the DescribeResourcePermissions operation
     ///</summary>
-    public interface IDescribeResourcePermissionsPaginator
+    public partial interface IDescribeResourcePermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

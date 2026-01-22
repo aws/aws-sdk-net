@@ -24,7 +24,7 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Paginator for the ListSubPackageGroups operation
     ///</summary>
-    public interface IListSubPackageGroupsPaginator
+    public partial interface IListSubPackageGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

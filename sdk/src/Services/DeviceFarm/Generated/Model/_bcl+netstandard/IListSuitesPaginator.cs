@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the ListSuites operation
     ///</summary>
-    public interface IListSuitesPaginator
+    public partial interface IListSuitesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

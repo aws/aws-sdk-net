@@ -24,7 +24,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Paginator for the DescribeReplicationTasks operation
     ///</summary>
-    public interface IDescribeReplicationTasksPaginator
+    public partial interface IDescribeReplicationTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

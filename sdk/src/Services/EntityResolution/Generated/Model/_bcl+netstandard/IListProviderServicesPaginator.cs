@@ -24,7 +24,7 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// Paginator for the ListProviderServices operation
     ///</summary>
-    public interface IListProviderServicesPaginator
+    public partial interface IListProviderServicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListPolicyPrincipals operation
     ///</summary>
-    public interface IListPolicyPrincipalsPaginator
+    public partial interface IListPolicyPrincipalsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListDelegatedServicesForAccount operation
     ///</summary>
-    public interface IListDelegatedServicesForAccountPaginator
+    public partial interface IListDelegatedServicesForAccountPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

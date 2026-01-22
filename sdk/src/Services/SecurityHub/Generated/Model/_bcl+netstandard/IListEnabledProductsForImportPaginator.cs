@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the ListEnabledProductsForImport operation
     ///</summary>
-    public interface IListEnabledProductsForImportPaginator
+    public partial interface IListEnabledProductsForImportPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

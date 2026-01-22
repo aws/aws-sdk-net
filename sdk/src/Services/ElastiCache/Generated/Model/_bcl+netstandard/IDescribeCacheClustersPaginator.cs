@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Paginator for the DescribeCacheClusters operation
     ///</summary>
-    public interface IDescribeCacheClustersPaginator
+    public partial interface IDescribeCacheClustersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

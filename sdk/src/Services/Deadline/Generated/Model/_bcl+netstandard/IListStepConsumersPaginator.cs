@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListStepConsumers operation
     ///</summary>
-    public interface IListStepConsumersPaginator
+    public partial interface IListStepConsumersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginator for the ListDelegatedAdminAccounts operation
     ///</summary>
-    public interface IListDelegatedAdminAccountsPaginator
+    public partial interface IListDelegatedAdminAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the SearchOrganizationInsights operation
     ///</summary>
-    public interface ISearchOrganizationInsightsPaginator
+    public partial interface ISearchOrganizationInsightsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

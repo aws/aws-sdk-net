@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListModelCardVersions operation
     ///</summary>
-    public interface IListModelCardVersionsPaginator
+    public partial interface IListModelCardVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the ListDocumentVersions operation
     ///</summary>
-    public interface IListDocumentVersionsPaginator
+    public partial interface IListDocumentVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DSQL.Model
     /// <summary>
     /// Paginators for the DSQL service
     ///</summary>
-    public interface IDSQLPaginatorFactory
+    public partial interface IDSQLPaginatorFactory
     {
 
         /// <summary>

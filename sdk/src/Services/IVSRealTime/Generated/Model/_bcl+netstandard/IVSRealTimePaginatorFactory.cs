@@ -27,7 +27,7 @@ namespace Amazon.IVSRealTime.Model
     /// <summary>
     /// Paginators for the IVSRealTime service
     ///</summary>
-    public class IVSRealTimePaginatorFactory : IIVSRealTimePaginatorFactory
+    public partial class IVSRealTimePaginatorFactory : IIVSRealTimePaginatorFactory
     {
         private readonly IAmazonIVSRealTime client;
 

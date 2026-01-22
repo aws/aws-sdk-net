@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the DescribeEntity operation
     ///</summary>
-    public interface IDescribeEntityPaginator
+    public partial interface IDescribeEntityPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

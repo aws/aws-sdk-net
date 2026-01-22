@@ -24,7 +24,7 @@ namespace Amazon.MediaPackageVod.Model
     /// <summary>
     /// Paginator for the ListAssets operation
     ///</summary>
-    public interface IListAssetsPaginator
+    public partial interface IListAssetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

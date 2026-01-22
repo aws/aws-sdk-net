@@ -24,7 +24,7 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Paginator for the ListContainerRecipes operation
     ///</summary>
-    public interface IListContainerRecipesPaginator
+    public partial interface IListContainerRecipesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

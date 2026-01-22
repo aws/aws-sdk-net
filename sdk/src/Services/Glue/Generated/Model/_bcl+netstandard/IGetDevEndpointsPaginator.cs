@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetDevEndpoints operation
     ///</summary>
-    public interface IGetDevEndpointsPaginator
+    public partial interface IGetDevEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

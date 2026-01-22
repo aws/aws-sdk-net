@@ -24,7 +24,7 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Paginator for the ListExportErrors operation
     ///</summary>
-    public interface IListExportErrorsPaginator
+    public partial interface IListExportErrorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

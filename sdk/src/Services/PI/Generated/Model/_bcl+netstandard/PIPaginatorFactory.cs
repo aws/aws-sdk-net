@@ -27,7 +27,7 @@ namespace Amazon.PI.Model
     /// <summary>
     /// Paginators for the PI service
     ///</summary>
-    public class PIPaginatorFactory : IPIPaginatorFactory
+    public partial class PIPaginatorFactory : IPIPaginatorFactory
     {
         private readonly IAmazonPI client;
 

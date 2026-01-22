@@ -24,7 +24,7 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Paginator for the ListObservabilityConfigurations operation
     ///</summary>
-    public interface IListObservabilityConfigurationsPaginator
+    public partial interface IListObservabilityConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

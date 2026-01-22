@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginator for the ListAutonomousVirtualMachines operation
     ///</summary>
-    public interface IListAutonomousVirtualMachinesPaginator
+    public partial interface IListAutonomousVirtualMachinesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

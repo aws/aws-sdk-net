@@ -24,7 +24,7 @@ namespace Amazon.IdentityStore.Model
     /// <summary>
     /// Paginator for the ListGroupMembershipsForMember operation
     ///</summary>
-    public interface IListGroupMembershipsForMemberPaginator
+    public partial interface IListGroupMembershipsForMemberPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

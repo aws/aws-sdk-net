@@ -24,7 +24,7 @@ namespace Amazon.ConnectCampaignsV2.Model
     /// <summary>
     /// Paginator for the ListCampaigns operation
     ///</summary>
-    public interface IListCampaignsPaginator
+    public partial interface IListCampaignsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Synthetics.Model
     /// <summary>
     /// Paginator for the DescribeCanaries operation
     ///</summary>
-    public interface IDescribeCanariesPaginator
+    public partial interface IDescribeCanariesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

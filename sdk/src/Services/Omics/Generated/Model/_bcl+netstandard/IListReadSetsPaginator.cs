@@ -24,7 +24,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginator for the ListReadSets operation
     ///</summary>
-    public interface IListReadSetsPaginator
+    public partial interface IListReadSetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

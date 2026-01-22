@@ -24,7 +24,7 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Paginator for the ListRetrainingSchedulers operation
     ///</summary>
-    public interface IListRetrainingSchedulersPaginator
+    public partial interface IListRetrainingSchedulersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

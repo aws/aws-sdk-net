@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginator for the ListReservationOfferings operation
     ///</summary>
-    public interface IListReservationOfferingsPaginator
+    public partial interface IListReservationOfferingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

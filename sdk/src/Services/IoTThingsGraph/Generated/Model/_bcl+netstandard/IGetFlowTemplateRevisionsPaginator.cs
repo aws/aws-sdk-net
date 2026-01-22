@@ -24,7 +24,7 @@ namespace Amazon.IoTThingsGraph.Model
     /// <summary>
     /// Paginator for the GetFlowTemplateRevisions operation
     ///</summary>
-    public interface IGetFlowTemplateRevisionsPaginator
+    public partial interface IGetFlowTemplateRevisionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

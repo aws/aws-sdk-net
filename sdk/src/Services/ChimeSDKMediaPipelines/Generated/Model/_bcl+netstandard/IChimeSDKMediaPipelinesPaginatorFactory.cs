@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// <summary>
     /// Paginators for the ChimeSDKMediaPipelines service
     ///</summary>
-    public interface IChimeSDKMediaPipelinesPaginatorFactory
+    public partial interface IChimeSDKMediaPipelinesPaginatorFactory
     {
 
         /// <summary>

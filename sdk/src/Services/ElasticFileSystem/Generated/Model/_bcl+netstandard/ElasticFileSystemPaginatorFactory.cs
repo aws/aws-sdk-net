@@ -27,7 +27,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Paginators for the ElasticFileSystem service
     ///</summary>
-    public class ElasticFileSystemPaginatorFactory : IElasticFileSystemPaginatorFactory
+    public partial class ElasticFileSystemPaginatorFactory : IElasticFileSystemPaginatorFactory
     {
         private readonly IAmazonElasticFileSystem client;
 

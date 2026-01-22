@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the SearchProductsAsAdmin operation
     ///</summary>
-    public interface ISearchProductsAsAdminPaginator
+    public partial interface ISearchProductsAsAdminPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

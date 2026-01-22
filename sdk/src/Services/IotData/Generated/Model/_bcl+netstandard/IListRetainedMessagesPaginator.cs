@@ -24,7 +24,7 @@ namespace Amazon.IotData.Model
     /// <summary>
     /// Paginator for the ListRetainedMessages operation
     ///</summary>
-    public interface IListRetainedMessagesPaginator
+    public partial interface IListRetainedMessagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

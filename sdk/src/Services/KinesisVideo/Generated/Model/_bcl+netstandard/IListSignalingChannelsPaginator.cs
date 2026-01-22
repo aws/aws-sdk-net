@@ -24,7 +24,7 @@ namespace Amazon.KinesisVideo.Model
     /// <summary>
     /// Paginator for the ListSignalingChannels operation
     ///</summary>
-    public interface IListSignalingChannelsPaginator
+    public partial interface IListSignalingChannelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

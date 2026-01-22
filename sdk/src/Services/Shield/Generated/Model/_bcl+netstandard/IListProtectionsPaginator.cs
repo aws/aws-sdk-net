@@ -24,7 +24,7 @@ namespace Amazon.Shield.Model
     /// <summary>
     /// Paginator for the ListProtections operation
     ///</summary>
-    public interface IListProtectionsPaginator
+    public partial interface IListProtectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

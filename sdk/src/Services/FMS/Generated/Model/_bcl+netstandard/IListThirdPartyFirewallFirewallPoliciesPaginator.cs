@@ -24,7 +24,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Paginator for the ListThirdPartyFirewallFirewallPolicies operation
     ///</summary>
-    public interface IListThirdPartyFirewallFirewallPoliciesPaginator
+    public partial interface IListThirdPartyFirewallFirewallPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

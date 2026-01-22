@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListTimeSeriesDataPoints operation
     ///</summary>
-    public interface IListTimeSeriesDataPointsPaginator
+    public partial interface IListTimeSeriesDataPointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

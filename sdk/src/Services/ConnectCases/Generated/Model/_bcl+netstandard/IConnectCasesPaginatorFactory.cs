@@ -24,7 +24,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Paginators for the ConnectCases service
     ///</summary>
-    public interface IConnectCasesPaginatorFactory
+    public partial interface IConnectCasesPaginatorFactory
     {
 
         /// <summary>

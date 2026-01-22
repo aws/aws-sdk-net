@@ -24,7 +24,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Paginator for the GetSlotTypeVersions operation
     ///</summary>
-    public interface IGetSlotTypeVersionsPaginator
+    public partial interface IGetSlotTypeVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

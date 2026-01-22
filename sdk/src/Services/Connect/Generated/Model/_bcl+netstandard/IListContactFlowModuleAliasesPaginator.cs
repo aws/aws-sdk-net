@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListContactFlowModuleAliases operation
     ///</summary>
-    public interface IListContactFlowModuleAliasesPaginator
+    public partial interface IListContactFlowModuleAliasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

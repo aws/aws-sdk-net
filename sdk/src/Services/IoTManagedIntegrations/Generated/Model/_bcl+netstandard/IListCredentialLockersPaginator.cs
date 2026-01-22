@@ -24,7 +24,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Paginator for the ListCredentialLockers operation
     ///</summary>
-    public interface IListCredentialLockersPaginator
+    public partial interface IListCredentialLockersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

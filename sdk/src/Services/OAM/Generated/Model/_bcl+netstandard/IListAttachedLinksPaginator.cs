@@ -24,7 +24,7 @@ namespace Amazon.OAM.Model
     /// <summary>
     /// Paginator for the ListAttachedLinks operation
     ///</summary>
-    public interface IListAttachedLinksPaginator
+    public partial interface IListAttachedLinksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginators for the Macie2 service
     ///</summary>
-    public class Macie2PaginatorFactory : IMacie2PaginatorFactory
+    public partial class Macie2PaginatorFactory : IMacie2PaginatorFactory
     {
         private readonly IAmazonMacie2 client;
 

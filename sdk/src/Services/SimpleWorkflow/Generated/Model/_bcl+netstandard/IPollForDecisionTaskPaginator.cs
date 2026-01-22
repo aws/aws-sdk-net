@@ -24,7 +24,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Paginator for the PollForDecisionTask operation
     ///</summary>
-    public interface IPollForDecisionTaskPaginator
+    public partial interface IPollForDecisionTaskPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

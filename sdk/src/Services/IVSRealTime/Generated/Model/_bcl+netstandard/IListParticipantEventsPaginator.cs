@@ -24,7 +24,7 @@ namespace Amazon.IVSRealTime.Model
     /// <summary>
     /// Paginator for the ListParticipantEvents operation
     ///</summary>
-    public interface IListParticipantEventsPaginator
+    public partial interface IListParticipantEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

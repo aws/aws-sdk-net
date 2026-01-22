@@ -24,7 +24,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Paginator for the ListBackupPlanVersions operation
     ///</summary>
-    public interface IListBackupPlanVersionsPaginator
+    public partial interface IListBackupPlanVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the ListNotificationChannels operation
     ///</summary>
-    public interface IListNotificationChannelsPaginator
+    public partial interface IListNotificationChannelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

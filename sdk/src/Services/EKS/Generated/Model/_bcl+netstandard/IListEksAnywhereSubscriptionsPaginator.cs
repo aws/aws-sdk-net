@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the ListEksAnywhereSubscriptions operation
     ///</summary>
-    public interface IListEksAnywhereSubscriptionsPaginator
+    public partial interface IListEksAnywhereSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

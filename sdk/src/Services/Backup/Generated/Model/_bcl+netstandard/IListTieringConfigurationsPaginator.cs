@@ -24,7 +24,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Paginator for the ListTieringConfigurations operation
     ///</summary>
-    public interface IListTieringConfigurationsPaginator
+    public partial interface IListTieringConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

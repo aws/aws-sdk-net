@@ -24,7 +24,7 @@ namespace Amazon.CodeStarNotifications.Model
     /// <summary>
     /// Paginator for the ListEventTypes operation
     ///</summary>
-    public interface IListEventTypesPaginator
+    public partial interface IListEventTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

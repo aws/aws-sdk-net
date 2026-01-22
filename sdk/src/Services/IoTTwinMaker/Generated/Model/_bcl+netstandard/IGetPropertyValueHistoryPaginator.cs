@@ -24,7 +24,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// <summary>
     /// Paginator for the GetPropertyValueHistory operation
     ///</summary>
-    public interface IGetPropertyValueHistoryPaginator
+    public partial interface IGetPropertyValueHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

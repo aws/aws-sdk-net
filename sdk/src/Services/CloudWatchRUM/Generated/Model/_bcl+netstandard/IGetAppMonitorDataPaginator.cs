@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// <summary>
     /// Paginator for the GetAppMonitorData operation
     ///</summary>
-    public interface IGetAppMonitorDataPaginator
+    public partial interface IGetAppMonitorDataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

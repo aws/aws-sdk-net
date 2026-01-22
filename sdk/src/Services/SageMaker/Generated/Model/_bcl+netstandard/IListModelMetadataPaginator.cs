@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListModelMetadata operation
     ///</summary>
-    public interface IListModelMetadataPaginator
+    public partial interface IListModelMetadataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

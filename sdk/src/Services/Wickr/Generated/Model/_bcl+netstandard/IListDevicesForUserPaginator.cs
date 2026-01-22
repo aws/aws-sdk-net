@@ -24,7 +24,7 @@ namespace Amazon.Wickr.Model
     /// <summary>
     /// Paginator for the ListDevicesForUser operation
     ///</summary>
-    public interface IListDevicesForUserPaginator
+    public partial interface IListDevicesForUserPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

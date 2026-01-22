@@ -24,7 +24,7 @@ namespace Amazon.PrometheusService.Model
     /// <summary>
     /// Paginators for the PrometheusService service
     ///</summary>
-    public interface IPrometheusServicePaginatorFactory
+    public partial interface IPrometheusServicePaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the ListSchemaExtensions operation
     ///</summary>
-    public interface IListSchemaExtensionsPaginator
+    public partial interface IListSchemaExtensionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// <summary>
     /// Paginators for the ResourceExplorer2 service
     ///</summary>
-    public interface IResourceExplorer2PaginatorFactory
+    public partial interface IResourceExplorer2PaginatorFactory
     {
 
         /// <summary>

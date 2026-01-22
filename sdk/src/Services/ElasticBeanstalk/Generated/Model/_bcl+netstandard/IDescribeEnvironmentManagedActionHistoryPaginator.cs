@@ -24,7 +24,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Paginator for the DescribeEnvironmentManagedActionHistory operation
     ///</summary>
-    public interface IDescribeEnvironmentManagedActionHistoryPaginator
+    public partial interface IDescribeEnvironmentManagedActionHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

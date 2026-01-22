@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListOutgoingCertificates operation
     ///</summary>
-    public interface IListOutgoingCertificatesPaginator
+    public partial interface IListOutgoingCertificatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

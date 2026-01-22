@@ -24,7 +24,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Paginator for the DescribeVTLDevices operation
     ///</summary>
-    public interface IDescribeVTLDevicesPaginator
+    public partial interface IDescribeVTLDevicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

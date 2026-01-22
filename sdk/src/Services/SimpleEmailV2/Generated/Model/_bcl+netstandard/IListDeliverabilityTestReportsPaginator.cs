@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Paginator for the ListDeliverabilityTestReports operation
     ///</summary>
-    public interface IListDeliverabilityTestReportsPaginator
+    public partial interface IListDeliverabilityTestReportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the ListResourceSharePermissions operation
     ///</summary>
-    public interface IListResourceSharePermissionsPaginator
+    public partial interface IListResourceSharePermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

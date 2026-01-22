@@ -27,7 +27,7 @@ namespace Amazon.Budgets.Model
     /// <summary>
     /// Paginators for the Budgets service
     ///</summary>
-    public class BudgetsPaginatorFactory : IBudgetsPaginatorFactory
+    public partial class BudgetsPaginatorFactory : IBudgetsPaginatorFactory
     {
         private readonly IAmazonBudgets client;
 

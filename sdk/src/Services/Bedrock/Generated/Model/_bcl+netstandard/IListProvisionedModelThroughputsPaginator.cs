@@ -24,7 +24,7 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Paginator for the ListProvisionedModelThroughputs operation
     ///</summary>
-    public interface IListProvisionedModelThroughputsPaginator
+    public partial interface IListProvisionedModelThroughputsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

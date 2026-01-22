@@ -24,7 +24,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Paginator for the ListAnalyzedResources operation
     ///</summary>
-    public interface IListAnalyzedResourcesPaginator
+    public partial interface IListAnalyzedResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

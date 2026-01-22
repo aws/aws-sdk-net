@@ -24,7 +24,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// <summary>
     /// Paginators for the ManagedBlockchainQuery service
     ///</summary>
-    public interface IManagedBlockchainQueryPaginatorFactory
+    public partial interface IManagedBlockchainQueryPaginatorFactory
     {
 
         /// <summary>

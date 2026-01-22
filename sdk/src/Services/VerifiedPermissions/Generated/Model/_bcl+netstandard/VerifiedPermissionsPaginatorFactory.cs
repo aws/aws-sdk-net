@@ -27,7 +27,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// <summary>
     /// Paginators for the VerifiedPermissions service
     ///</summary>
-    public class VerifiedPermissionsPaginatorFactory : IVerifiedPermissionsPaginatorFactory
+    public partial class VerifiedPermissionsPaginatorFactory : IVerifiedPermissionsPaginatorFactory
     {
         private readonly IAmazonVerifiedPermissions client;
 

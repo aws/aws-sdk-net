@@ -24,7 +24,7 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// Paginator for the ListResourceTelemetryForOrganization operation
     ///</summary>
-    public interface IListResourceTelemetryForOrganizationPaginator
+    public partial interface IListResourceTelemetryForOrganizationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

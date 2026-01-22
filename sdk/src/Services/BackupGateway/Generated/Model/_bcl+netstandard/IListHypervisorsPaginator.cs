@@ -24,7 +24,7 @@ namespace Amazon.BackupGateway.Model
     /// <summary>
     /// Paginator for the ListHypervisors operation
     ///</summary>
-    public interface IListHypervisorsPaginator
+    public partial interface IListHypervisorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

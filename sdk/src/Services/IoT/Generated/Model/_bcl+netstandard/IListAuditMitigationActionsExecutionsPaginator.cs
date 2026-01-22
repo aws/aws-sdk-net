@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListAuditMitigationActionsExecutions operation
     ///</summary>
-    public interface IListAuditMitigationActionsExecutionsPaginator
+    public partial interface IListAuditMitigationActionsExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

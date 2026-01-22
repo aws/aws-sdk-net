@@ -24,7 +24,7 @@ namespace Amazon.CostOptimizationHub.Model
     /// <summary>
     /// Paginator for the ListEnrollmentStatuses operation
     ///</summary>
-    public interface IListEnrollmentStatusesPaginator
+    public partial interface IListEnrollmentStatusesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the ListOpsMetadata operation
     ///</summary>
-    public interface IListOpsMetadataPaginator
+    public partial interface IListOpsMetadataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the GetResourcePolicies operation
     ///</summary>
-    public interface IGetResourcePoliciesPaginator
+    public partial interface IGetResourcePoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the GetLabelDetection operation
     ///</summary>
-    public interface IGetLabelDetectionPaginator
+    public partial interface IGetLabelDetectionPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

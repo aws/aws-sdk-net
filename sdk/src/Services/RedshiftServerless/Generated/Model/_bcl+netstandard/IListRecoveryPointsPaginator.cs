@@ -24,7 +24,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginator for the ListRecoveryPoints operation
     ///</summary>
-    public interface IListRecoveryPointsPaginator
+    public partial interface IListRecoveryPointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

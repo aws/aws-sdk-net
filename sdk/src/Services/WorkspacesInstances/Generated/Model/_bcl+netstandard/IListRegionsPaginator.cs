@@ -24,7 +24,7 @@ namespace Amazon.WorkspacesInstances.Model
     /// <summary>
     /// Paginator for the ListRegions operation
     ///</summary>
-    public interface IListRegionsPaginator
+    public partial interface IListRegionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Odb.Model
     /// <summary>
     /// Paginators for the Odb service
     ///</summary>
-    public interface IOdbPaginatorFactory
+    public partial interface IOdbPaginatorFactory
     {
 
         /// <summary>

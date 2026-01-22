@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the ListConfigurationPolicies operation
     ///</summary>
-    public interface IListConfigurationPoliciesPaginator
+    public partial interface IListConfigurationPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// Paginators for the ObservabilityAdmin service
     ///</summary>
-    public class ObservabilityAdminPaginatorFactory : IObservabilityAdminPaginatorFactory
+    public partial class ObservabilityAdminPaginatorFactory : IObservabilityAdminPaginatorFactory
     {
         private readonly IAmazonObservabilityAdmin client;
 

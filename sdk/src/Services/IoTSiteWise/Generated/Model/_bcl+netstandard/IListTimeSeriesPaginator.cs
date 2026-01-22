@@ -24,7 +24,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Paginator for the ListTimeSeries operation
     ///</summary>
-    public interface IListTimeSeriesPaginator
+    public partial interface IListTimeSeriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

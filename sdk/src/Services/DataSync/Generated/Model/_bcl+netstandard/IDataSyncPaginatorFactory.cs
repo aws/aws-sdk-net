@@ -24,7 +24,7 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Paginators for the DataSync service
     ///</summary>
-    public interface IDataSyncPaginatorFactory
+    public partial interface IDataSyncPaginatorFactory
     {
 
         /// <summary>

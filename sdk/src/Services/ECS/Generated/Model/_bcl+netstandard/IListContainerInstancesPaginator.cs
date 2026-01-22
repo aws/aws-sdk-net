@@ -24,7 +24,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Paginator for the ListContainerInstances operation
     ///</summary>
-    public interface IListContainerInstancesPaginator
+    public partial interface IListContainerInstancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListPreparedStatements operation
     ///</summary>
-    public interface IListPreparedStatementsPaginator
+    public partial interface IListPreparedStatementsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

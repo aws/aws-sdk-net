@@ -24,7 +24,7 @@ namespace Amazon.MWAAServerless.Model
     /// <summary>
     /// Paginator for the ListTaskInstances operation
     ///</summary>
-    public interface IListTaskInstancesPaginator
+    public partial interface IListTaskInstancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

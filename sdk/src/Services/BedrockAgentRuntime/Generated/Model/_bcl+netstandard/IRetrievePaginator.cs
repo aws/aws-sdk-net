@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// Paginator for the Retrieve operation
     ///</summary>
-    public interface IRetrievePaginator
+    public partial interface IRetrievePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

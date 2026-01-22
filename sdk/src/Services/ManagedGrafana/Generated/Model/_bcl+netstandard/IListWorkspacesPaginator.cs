@@ -24,7 +24,7 @@ namespace Amazon.ManagedGrafana.Model
     /// <summary>
     /// Paginator for the ListWorkspaces operation
     ///</summary>
-    public interface IListWorkspacesPaginator
+    public partial interface IListWorkspacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

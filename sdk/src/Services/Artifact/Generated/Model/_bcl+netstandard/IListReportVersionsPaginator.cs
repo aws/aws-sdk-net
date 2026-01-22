@@ -24,7 +24,7 @@ namespace Amazon.Artifact.Model
     /// <summary>
     /// Paginator for the ListReportVersions operation
     ///</summary>
-    public interface IListReportVersionsPaginator
+    public partial interface IListReportVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

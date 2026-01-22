@@ -24,7 +24,7 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Paginator for the ListHostedConfigurationVersions operation
     ///</summary>
-    public interface IListHostedConfigurationVersionsPaginator
+    public partial interface IListHostedConfigurationVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

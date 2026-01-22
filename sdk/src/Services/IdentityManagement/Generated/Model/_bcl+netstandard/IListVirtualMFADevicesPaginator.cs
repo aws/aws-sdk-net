@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListVirtualMFADevices operation
     ///</summary>
-    public interface IListVirtualMFADevicesPaginator
+    public partial interface IListVirtualMFADevicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

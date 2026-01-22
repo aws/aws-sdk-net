@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListPhoneNumbersV2 operation
     ///</summary>
-    public interface IListPhoneNumbersV2Paginator
+    public partial interface IListPhoneNumbersV2Paginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IoTAnalytics.Model
     /// <summary>
     /// Paginator for the ListDatasetContents operation
     ///</summary>
-    public interface IListDatasetContentsPaginator
+    public partial interface IListDatasetContentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

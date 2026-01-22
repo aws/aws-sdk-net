@@ -24,7 +24,7 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Paginators for the MemoryDB service
     ///</summary>
-    public interface IMemoryDBPaginatorFactory
+    public partial interface IMemoryDBPaginatorFactory
     {
 
         /// <summary>

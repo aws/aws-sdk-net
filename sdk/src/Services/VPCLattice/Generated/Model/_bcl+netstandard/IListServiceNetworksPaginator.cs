@@ -24,7 +24,7 @@ namespace Amazon.VPCLattice.Model
     /// <summary>
     /// Paginator for the ListServiceNetworks operation
     ///</summary>
-    public interface IListServiceNetworksPaginator
+    public partial interface IListServiceNetworksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Paginator for the GetMigrations operation
     ///</summary>
-    public interface IGetMigrationsPaginator
+    public partial interface IGetMigrationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

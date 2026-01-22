@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeClientVpnRoutes operation
     ///</summary>
-    public interface IDescribeClientVpnRoutesPaginator
+    public partial interface IDescribeClientVpnRoutesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

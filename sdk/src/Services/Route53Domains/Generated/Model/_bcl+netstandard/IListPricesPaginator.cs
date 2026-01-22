@@ -24,7 +24,7 @@ namespace Amazon.Route53Domains.Model
     /// <summary>
     /// Paginator for the ListPrices operation
     ///</summary>
-    public interface IListPricesPaginator
+    public partial interface IListPricesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

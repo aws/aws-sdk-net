@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListEntityOwners operation
     ///</summary>
-    public interface IListEntityOwnersPaginator
+    public partial interface IListEntityOwnersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

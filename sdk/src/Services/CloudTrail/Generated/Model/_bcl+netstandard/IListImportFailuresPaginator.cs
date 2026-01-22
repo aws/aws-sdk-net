@@ -24,7 +24,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Paginator for the ListImportFailures operation
     ///</summary>
-    public interface IListImportFailuresPaginator
+    public partial interface IListImportFailuresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

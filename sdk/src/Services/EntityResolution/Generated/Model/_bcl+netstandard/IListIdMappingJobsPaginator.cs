@@ -24,7 +24,7 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// Paginator for the ListIdMappingJobs operation
     ///</summary>
-    public interface IListIdMappingJobsPaginator
+    public partial interface IListIdMappingJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Paginator for the ListMultiRegionAccessPoints operation
     ///</summary>
-    public interface IListMultiRegionAccessPointsPaginator
+    public partial interface IListMultiRegionAccessPointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

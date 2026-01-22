@@ -24,7 +24,7 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Paginator for the ListLenses operation
     ///</summary>
-    public interface IListLensesPaginator
+    public partial interface IListLensesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.FinSpaceData.Model
     /// <summary>
     /// Paginator for the ListChangesets operation
     ///</summary>
-    public interface IListChangesetsPaginator
+    public partial interface IListChangesetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

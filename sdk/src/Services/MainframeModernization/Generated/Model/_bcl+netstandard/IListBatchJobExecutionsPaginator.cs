@@ -24,7 +24,7 @@ namespace Amazon.MainframeModernization.Model
     /// <summary>
     /// Paginator for the ListBatchJobExecutions operation
     ///</summary>
-    public interface IListBatchJobExecutionsPaginator
+    public partial interface IListBatchJobExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

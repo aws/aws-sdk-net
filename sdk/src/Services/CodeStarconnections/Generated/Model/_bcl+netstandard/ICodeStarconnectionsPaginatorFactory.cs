@@ -24,7 +24,7 @@ namespace Amazon.CodeStarconnections.Model
     /// <summary>
     /// Paginators for the CodeStarconnections service
     ///</summary>
-    public interface ICodeStarconnectionsPaginatorFactory
+    public partial interface ICodeStarconnectionsPaginatorFactory
     {
 
         /// <summary>

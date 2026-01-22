@@ -24,7 +24,7 @@ namespace Amazon.MailManager.Model
     /// <summary>
     /// Paginator for the ListTrafficPolicies operation
     ///</summary>
-    public interface IListTrafficPoliciesPaginator
+    public partial interface IListTrafficPoliciesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

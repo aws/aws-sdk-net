@@ -24,7 +24,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Paginator for the ListDataSourceSyncJobs operation
     ///</summary>
-    public interface IListDataSourceSyncJobsPaginator
+    public partial interface IListDataSourceSyncJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

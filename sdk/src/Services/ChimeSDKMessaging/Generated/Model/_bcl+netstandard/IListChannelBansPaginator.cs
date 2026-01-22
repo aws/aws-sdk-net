@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// <summary>
     /// Paginator for the ListChannelBans operation
     ///</summary>
-    public interface IListChannelBansPaginator
+    public partial interface IListChannelBansPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

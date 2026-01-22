@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListAccountPools operation
     ///</summary>
-    public interface IListAccountPoolsPaginator
+    public partial interface IListAccountPoolsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

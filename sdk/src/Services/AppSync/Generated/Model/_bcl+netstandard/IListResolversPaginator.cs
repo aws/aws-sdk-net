@@ -24,7 +24,7 @@ namespace Amazon.AppSync.Model
     /// <summary>
     /// Paginator for the ListResolvers operation
     ///</summary>
-    public interface IListResolversPaginator
+    public partial interface IListResolversPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

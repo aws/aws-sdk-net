@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginator for the ListDataCellsFilter operation
     ///</summary>
-    public interface IListDataCellsFilterPaginator
+    public partial interface IListDataCellsFilterPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

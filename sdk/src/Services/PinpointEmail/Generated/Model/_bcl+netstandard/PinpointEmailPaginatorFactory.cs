@@ -27,7 +27,7 @@ namespace Amazon.PinpointEmail.Model
     /// <summary>
     /// Paginators for the PinpointEmail service
     ///</summary>
-    public class PinpointEmailPaginatorFactory : IPinpointEmailPaginatorFactory
+    public partial class PinpointEmailPaginatorFactory : IPinpointEmailPaginatorFactory
     {
         private readonly IAmazonPinpointEmail client;
 

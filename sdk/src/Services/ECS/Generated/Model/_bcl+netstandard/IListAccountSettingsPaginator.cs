@@ -24,7 +24,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Paginator for the ListAccountSettings operation
     ///</summary>
-    public interface IListAccountSettingsPaginator
+    public partial interface IListAccountSettingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

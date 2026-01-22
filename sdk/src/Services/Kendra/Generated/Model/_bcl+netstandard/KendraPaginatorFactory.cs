@@ -27,7 +27,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginators for the Kendra service
     ///</summary>
-    public class KendraPaginatorFactory : IKendraPaginatorFactory
+    public partial class KendraPaginatorFactory : IKendraPaginatorFactory
     {
         private readonly IAmazonKendra client;
 

@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgent.Model
     /// <summary>
     /// Paginator for the ListAgentKnowledgeBases operation
     ///</summary>
-    public interface IListAgentKnowledgeBasesPaginator
+    public partial interface IListAgentKnowledgeBasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

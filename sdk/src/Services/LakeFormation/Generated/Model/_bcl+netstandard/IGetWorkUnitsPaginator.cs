@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginator for the GetWorkUnits operation
     ///</summary>
-    public interface IGetWorkUnitsPaginator
+    public partial interface IGetWorkUnitsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

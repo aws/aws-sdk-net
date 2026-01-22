@@ -24,7 +24,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Paginator for the ListExecutors operation
     ///</summary>
-    public interface IListExecutorsPaginator
+    public partial interface IListExecutorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the GetDevices operation
     ///</summary>
-    public interface IGetDevicesPaginator
+    public partial interface IGetDevicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

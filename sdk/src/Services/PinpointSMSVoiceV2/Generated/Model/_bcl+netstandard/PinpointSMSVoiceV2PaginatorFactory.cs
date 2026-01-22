@@ -27,7 +27,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Paginators for the PinpointSMSVoiceV2 service
     ///</summary>
-    public class PinpointSMSVoiceV2PaginatorFactory : IPinpointSMSVoiceV2PaginatorFactory
+    public partial class PinpointSMSVoiceV2PaginatorFactory : IPinpointSMSVoiceV2PaginatorFactory
     {
         private readonly IAmazonPinpointSMSVoiceV2 client;
 

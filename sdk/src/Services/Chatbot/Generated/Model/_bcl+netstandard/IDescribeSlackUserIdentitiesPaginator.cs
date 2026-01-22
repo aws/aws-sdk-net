@@ -24,7 +24,7 @@ namespace Amazon.Chatbot.Model
     /// <summary>
     /// Paginator for the DescribeSlackUserIdentities operation
     ///</summary>
-    public interface IDescribeSlackUserIdentitiesPaginator
+    public partial interface IDescribeSlackUserIdentitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

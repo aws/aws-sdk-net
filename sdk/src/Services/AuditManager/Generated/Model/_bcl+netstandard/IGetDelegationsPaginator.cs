@@ -24,7 +24,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Paginator for the GetDelegations operation
     ///</summary>
-    public interface IGetDelegationsPaginator
+    public partial interface IGetDelegationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

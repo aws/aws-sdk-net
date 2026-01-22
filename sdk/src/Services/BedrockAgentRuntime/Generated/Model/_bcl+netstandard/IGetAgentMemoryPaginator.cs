@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// Paginator for the GetAgentMemory operation
     ///</summary>
-    public interface IGetAgentMemoryPaginator
+    public partial interface IGetAgentMemoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

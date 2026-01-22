@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the DescribeRegions operation
     ///</summary>
-    public interface IDescribeRegionsPaginator
+    public partial interface IDescribeRegionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

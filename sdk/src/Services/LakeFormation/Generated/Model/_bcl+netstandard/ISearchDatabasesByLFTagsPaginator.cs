@@ -24,7 +24,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Paginator for the SearchDatabasesByLFTags operation
     ///</summary>
-    public interface ISearchDatabasesByLFTagsPaginator
+    public partial interface ISearchDatabasesByLFTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

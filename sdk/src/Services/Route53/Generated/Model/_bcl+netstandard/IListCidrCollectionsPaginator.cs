@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Paginator for the ListCidrCollections operation
     ///</summary>
-    public interface IListCidrCollectionsPaginator
+    public partial interface IListCidrCollectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

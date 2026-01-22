@@ -24,7 +24,7 @@ namespace Amazon.AppRegistry.Model
     /// <summary>
     /// Paginator for the ListAttributeGroupsForApplication operation
     ///</summary>
-    public interface IListAttributeGroupsForApplicationPaginator
+    public partial interface IListAttributeGroupsForApplicationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

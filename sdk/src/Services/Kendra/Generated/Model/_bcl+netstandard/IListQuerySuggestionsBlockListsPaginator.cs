@@ -24,7 +24,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Paginator for the ListQuerySuggestionsBlockLists operation
     ///</summary>
-    public interface IListQuerySuggestionsBlockListsPaginator
+    public partial interface IListQuerySuggestionsBlockListsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

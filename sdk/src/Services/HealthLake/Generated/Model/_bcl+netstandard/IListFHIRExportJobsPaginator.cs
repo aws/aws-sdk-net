@@ -24,7 +24,7 @@ namespace Amazon.HealthLake.Model
     /// <summary>
     /// Paginator for the ListFHIRExportJobs operation
     ///</summary>
-    public interface IListFHIRExportJobsPaginator
+    public partial interface IListFHIRExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

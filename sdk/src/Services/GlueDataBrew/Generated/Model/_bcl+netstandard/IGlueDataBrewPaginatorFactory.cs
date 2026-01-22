@@ -24,7 +24,7 @@ namespace Amazon.GlueDataBrew.Model
     /// <summary>
     /// Paginators for the GlueDataBrew service
     ///</summary>
-    public interface IGlueDataBrewPaginatorFactory
+    public partial interface IGlueDataBrewPaginatorFactory
     {
 
         /// <summary>

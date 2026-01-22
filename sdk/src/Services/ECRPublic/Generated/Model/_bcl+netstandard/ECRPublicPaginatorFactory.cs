@@ -27,7 +27,7 @@ namespace Amazon.ECRPublic.Model
     /// <summary>
     /// Paginators for the ECRPublic service
     ///</summary>
-    public class ECRPublicPaginatorFactory : IECRPublicPaginatorFactory
+    public partial class ECRPublicPaginatorFactory : IECRPublicPaginatorFactory
     {
         private readonly IAmazonECRPublic client;
 

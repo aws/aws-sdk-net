@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginator for the ListAccountPermissions operation
     ///</summary>
-    public interface IListAccountPermissionsPaginator
+    public partial interface IListAccountPermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

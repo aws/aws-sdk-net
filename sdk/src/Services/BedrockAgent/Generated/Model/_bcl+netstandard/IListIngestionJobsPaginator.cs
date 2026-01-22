@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgent.Model
     /// <summary>
     /// Paginator for the ListIngestionJobs operation
     ///</summary>
-    public interface IListIngestionJobsPaginator
+    public partial interface IListIngestionJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

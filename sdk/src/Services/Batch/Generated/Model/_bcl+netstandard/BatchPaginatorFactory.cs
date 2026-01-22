@@ -27,7 +27,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Paginators for the Batch service
     ///</summary>
-    public class BatchPaginatorFactory : IBatchPaginatorFactory
+    public partial class BatchPaginatorFactory : IBatchPaginatorFactory
     {
         private readonly IAmazonBatch client;
 

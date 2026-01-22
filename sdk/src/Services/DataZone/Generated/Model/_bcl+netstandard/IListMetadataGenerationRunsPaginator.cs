@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListMetadataGenerationRuns operation
     ///</summary>
-    public interface IListMetadataGenerationRunsPaginator
+    public partial interface IListMetadataGenerationRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

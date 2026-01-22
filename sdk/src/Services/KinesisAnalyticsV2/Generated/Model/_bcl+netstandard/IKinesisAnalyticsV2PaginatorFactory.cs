@@ -24,7 +24,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// <summary>
     /// Paginators for the KinesisAnalyticsV2 service
     ///</summary>
-    public interface IKinesisAnalyticsV2PaginatorFactory
+    public partial interface IKinesisAnalyticsV2PaginatorFactory
     {
 
         /// <summary>

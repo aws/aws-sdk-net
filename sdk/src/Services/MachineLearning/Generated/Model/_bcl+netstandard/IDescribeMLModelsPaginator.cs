@@ -24,7 +24,7 @@ namespace Amazon.MachineLearning.Model
     /// <summary>
     /// Paginator for the DescribeMLModels operation
     ///</summary>
-    public interface IDescribeMLModelsPaginator
+    public partial interface IDescribeMLModelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// <summary>
     /// Paginator for the ListProfiles operation
     ///</summary>
-    public interface IListProfilesPaginator
+    public partial interface IListProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

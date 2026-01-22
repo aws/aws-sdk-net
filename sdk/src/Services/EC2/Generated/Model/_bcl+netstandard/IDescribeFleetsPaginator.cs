@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeFleets operation
     ///</summary>
-    public interface IDescribeFleetsPaginator
+    public partial interface IDescribeFleetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

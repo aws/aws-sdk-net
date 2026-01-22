@@ -24,7 +24,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Paginator for the ValidatePolicy operation
     ///</summary>
-    public interface IValidatePolicyPaginator
+    public partial interface IValidatePolicyPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

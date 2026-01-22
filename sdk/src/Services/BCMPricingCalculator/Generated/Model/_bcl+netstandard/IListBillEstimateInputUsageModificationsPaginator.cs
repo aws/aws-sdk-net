@@ -24,7 +24,7 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Paginator for the ListBillEstimateInputUsageModifications operation
     ///</summary>
-    public interface IListBillEstimateInputUsageModificationsPaginator
+    public partial interface IListBillEstimateInputUsageModificationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

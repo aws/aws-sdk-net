@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Paginators for the SimpleEmail service
     ///</summary>
-    public interface ISimpleEmailPaginatorFactory
+    public partial interface ISimpleEmailPaginatorFactory
     {
 
         /// <summary>

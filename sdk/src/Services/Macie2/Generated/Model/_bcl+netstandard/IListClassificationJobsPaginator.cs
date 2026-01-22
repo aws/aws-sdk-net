@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the ListClassificationJobs operation
     ///</summary>
-    public interface IListClassificationJobsPaginator
+    public partial interface IListClassificationJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

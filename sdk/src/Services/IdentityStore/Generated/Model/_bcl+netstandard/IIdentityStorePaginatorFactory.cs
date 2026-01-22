@@ -24,7 +24,7 @@ namespace Amazon.IdentityStore.Model
     /// <summary>
     /// Paginators for the IdentityStore service
     ///</summary>
-    public interface IIdentityStorePaginatorFactory
+    public partial interface IIdentityStorePaginatorFactory
     {
 
         /// <summary>

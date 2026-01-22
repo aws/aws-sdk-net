@@ -24,7 +24,7 @@ namespace Amazon.Notifications.Model
     /// <summary>
     /// Paginator for the ListNotificationEvents operation
     ///</summary>
-    public interface IListNotificationEventsPaginator
+    public partial interface IListNotificationEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

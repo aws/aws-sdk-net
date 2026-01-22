@@ -24,7 +24,7 @@ namespace Amazon.MediaConnect.Model
     /// <summary>
     /// Paginator for the ListEntitlements operation
     ///</summary>
-    public interface IListEntitlementsPaginator
+    public partial interface IListEntitlementsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

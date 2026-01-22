@@ -24,7 +24,7 @@ namespace Amazon.S3Outposts.Model
     /// <summary>
     /// Paginator for the ListSharedEndpoints operation
     ///</summary>
-    public interface IListSharedEndpointsPaginator
+    public partial interface IListSharedEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

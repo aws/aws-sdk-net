@@ -27,7 +27,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <summary>
     /// Paginators for the ApplicationAutoScaling service
     ///</summary>
-    public class ApplicationAutoScalingPaginatorFactory : IApplicationAutoScalingPaginatorFactory
+    public partial class ApplicationAutoScalingPaginatorFactory : IApplicationAutoScalingPaginatorFactory
     {
         private readonly IAmazonApplicationAutoScaling client;
 

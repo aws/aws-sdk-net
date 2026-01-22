@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the GetCrawlers operation
     ///</summary>
-    public interface IGetCrawlersPaginator
+    public partial interface IGetCrawlersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

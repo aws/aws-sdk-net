@@ -24,7 +24,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Paginator for the DescribeDBClusterSnapshots operation
     ///</summary>
-    public interface IDescribeDBClusterSnapshotsPaginator
+    public partial interface IDescribeDBClusterSnapshotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

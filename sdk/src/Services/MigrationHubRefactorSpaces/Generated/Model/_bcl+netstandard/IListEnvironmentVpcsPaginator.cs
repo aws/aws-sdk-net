@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// <summary>
     /// Paginator for the ListEnvironmentVpcs operation
     ///</summary>
-    public interface IListEnvironmentVpcsPaginator
+    public partial interface IListEnvironmentVpcsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

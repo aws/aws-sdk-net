@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the DescribeAggregationAuthorizations operation
     ///</summary>
-    public interface IDescribeAggregationAuthorizationsPaginator
+    public partial interface IDescribeAggregationAuthorizationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

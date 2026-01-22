@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginator for the ListSchemas operation
     ///</summary>
-    public interface IListSchemasPaginator
+    public partial interface IListSchemasPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

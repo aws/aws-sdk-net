@@ -24,7 +24,7 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Paginator for the DescribeGroups operation
     ///</summary>
-    public interface IDescribeGroupsPaginator
+    public partial interface IDescribeGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

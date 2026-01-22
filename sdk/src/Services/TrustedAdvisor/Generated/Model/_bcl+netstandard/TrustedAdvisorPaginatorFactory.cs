@@ -27,7 +27,7 @@ namespace Amazon.TrustedAdvisor.Model
     /// <summary>
     /// Paginators for the TrustedAdvisor service
     ///</summary>
-    public class TrustedAdvisorPaginatorFactory : ITrustedAdvisorPaginatorFactory
+    public partial class TrustedAdvisorPaginatorFactory : ITrustedAdvisorPaginatorFactory
     {
         private readonly IAmazonTrustedAdvisor client;
 

@@ -24,7 +24,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Paginator for the DescribeCustomKeyStores operation
     ///</summary>
-    public interface IDescribeCustomKeyStoresPaginator
+    public partial interface IDescribeCustomKeyStoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

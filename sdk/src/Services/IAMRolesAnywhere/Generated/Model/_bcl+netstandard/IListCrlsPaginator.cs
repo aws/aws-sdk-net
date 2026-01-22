@@ -24,7 +24,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// <summary>
     /// Paginator for the ListCrls operation
     ///</summary>
-    public interface IListCrlsPaginator
+    public partial interface IListCrlsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

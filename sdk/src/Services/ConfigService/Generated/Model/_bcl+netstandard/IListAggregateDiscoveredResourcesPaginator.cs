@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the ListAggregateDiscoveredResources operation
     ///</summary>
-    public interface IListAggregateDiscoveredResourcesPaginator
+    public partial interface IListAggregateDiscoveredResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

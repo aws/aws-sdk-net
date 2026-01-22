@@ -24,7 +24,7 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Paginator for the ListPartnerships operation
     ///</summary>
-    public interface IListPartnershipsPaginator
+    public partial interface IListPartnershipsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

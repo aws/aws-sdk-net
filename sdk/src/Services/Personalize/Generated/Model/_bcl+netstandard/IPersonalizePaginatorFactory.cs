@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginators for the Personalize service
     ///</summary>
-    public interface IPersonalizePaginatorFactory
+    public partial interface IPersonalizePaginatorFactory
     {
 
         /// <summary>

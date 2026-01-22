@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the GetParameterHistory operation
     ///</summary>
-    public interface IGetParameterHistoryPaginator
+    public partial interface IGetParameterHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

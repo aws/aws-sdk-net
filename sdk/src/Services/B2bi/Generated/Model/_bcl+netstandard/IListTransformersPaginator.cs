@@ -24,7 +24,7 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Paginator for the ListTransformers operation
     ///</summary>
-    public interface IListTransformersPaginator
+    public partial interface IListTransformersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

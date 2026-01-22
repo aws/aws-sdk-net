@@ -24,7 +24,7 @@ namespace Amazon.GroundStation.Model
     /// <summary>
     /// Paginator for the ListEphemerides operation
     ///</summary>
-    public interface IListEphemeridesPaginator
+    public partial interface IListEphemeridesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

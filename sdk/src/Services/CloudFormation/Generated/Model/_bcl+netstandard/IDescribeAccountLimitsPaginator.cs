@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Paginator for the DescribeAccountLimits operation
     ///</summary>
-    public interface IDescribeAccountLimitsPaginator
+    public partial interface IDescribeAccountLimitsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

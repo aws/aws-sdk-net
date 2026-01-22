@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the ListFaces operation
     ///</summary>
-    public interface IListFacesPaginator
+    public partial interface IListFacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

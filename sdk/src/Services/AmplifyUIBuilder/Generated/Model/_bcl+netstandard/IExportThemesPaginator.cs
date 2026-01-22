@@ -24,7 +24,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// <summary>
     /// Paginator for the ExportThemes operation
     ///</summary>
-    public interface IExportThemesPaginator
+    public partial interface IExportThemesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

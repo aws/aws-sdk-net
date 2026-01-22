@@ -24,7 +24,7 @@ namespace Amazon.GameLiftStreams.Model
     /// <summary>
     /// Paginator for the ListStreamSessions operation
     ///</summary>
-    public interface IListStreamSessionsPaginator
+    public partial interface IListStreamSessionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

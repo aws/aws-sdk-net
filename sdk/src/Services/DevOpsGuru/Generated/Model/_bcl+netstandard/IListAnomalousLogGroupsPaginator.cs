@@ -24,7 +24,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Paginator for the ListAnomalousLogGroups operation
     ///</summary>
-    public interface IListAnomalousLogGroupsPaginator
+    public partial interface IListAnomalousLogGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

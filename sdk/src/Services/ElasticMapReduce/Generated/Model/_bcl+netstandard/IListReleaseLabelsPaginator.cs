@@ -24,7 +24,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Paginator for the ListReleaseLabels operation
     ///</summary>
-    public interface IListReleaseLabelsPaginator
+    public partial interface IListReleaseLabelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

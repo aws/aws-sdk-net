@@ -24,7 +24,7 @@ namespace Amazon.Appflow.Model
     /// <summary>
     /// Paginator for the DescribeFlowExecutionRecords operation
     ///</summary>
-    public interface IDescribeFlowExecutionRecordsPaginator
+    public partial interface IDescribeFlowExecutionRecordsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

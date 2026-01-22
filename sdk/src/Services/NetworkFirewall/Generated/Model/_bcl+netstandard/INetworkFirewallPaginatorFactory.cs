@@ -24,7 +24,7 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// Paginators for the NetworkFirewall service
     ///</summary>
-    public interface INetworkFirewallPaginatorFactory
+    public partial interface INetworkFirewallPaginatorFactory
     {
 
         /// <summary>

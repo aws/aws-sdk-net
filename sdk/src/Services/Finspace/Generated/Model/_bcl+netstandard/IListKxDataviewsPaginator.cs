@@ -24,7 +24,7 @@ namespace Amazon.Finspace.Model
     /// <summary>
     /// Paginator for the ListKxDataviews operation
     ///</summary>
-    public interface IListKxDataviewsPaginator
+    public partial interface IListKxDataviewsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

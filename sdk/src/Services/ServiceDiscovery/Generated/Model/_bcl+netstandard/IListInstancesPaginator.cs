@@ -24,7 +24,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Paginator for the ListInstances operation
     ///</summary>
-    public interface IListInstancesPaginator
+    public partial interface IListInstancesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

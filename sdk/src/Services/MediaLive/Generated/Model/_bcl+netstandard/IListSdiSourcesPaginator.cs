@@ -24,7 +24,7 @@ namespace Amazon.MediaLive.Model
     /// <summary>
     /// Paginator for the ListSdiSources operation
     ///</summary>
-    public interface IListSdiSourcesPaginator
+    public partial interface IListSdiSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

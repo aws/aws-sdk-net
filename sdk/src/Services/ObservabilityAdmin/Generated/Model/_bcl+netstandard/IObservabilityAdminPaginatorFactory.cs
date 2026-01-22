@@ -24,7 +24,7 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// Paginators for the ObservabilityAdmin service
     ///</summary>
-    public interface IObservabilityAdminPaginatorFactory
+    public partial interface IObservabilityAdminPaginatorFactory
     {
 
         /// <summary>

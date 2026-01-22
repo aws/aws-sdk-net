@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListCACertificates operation
     ///</summary>
-    public interface IListCACertificatesPaginator
+    public partial interface IListCACertificatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

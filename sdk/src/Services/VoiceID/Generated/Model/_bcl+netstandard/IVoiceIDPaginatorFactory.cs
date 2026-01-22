@@ -24,7 +24,7 @@ namespace Amazon.VoiceID.Model
     /// <summary>
     /// Paginators for the VoiceID service
     ///</summary>
-    public interface IVoiceIDPaginatorFactory
+    public partial interface IVoiceIDPaginatorFactory
     {
 
         /// <summary>

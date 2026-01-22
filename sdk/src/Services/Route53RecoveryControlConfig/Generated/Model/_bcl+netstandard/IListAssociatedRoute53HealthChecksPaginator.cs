@@ -24,7 +24,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     /// <summary>
     /// Paginator for the ListAssociatedRoute53HealthChecks operation
     ///</summary>
-    public interface IListAssociatedRoute53HealthChecksPaginator
+    public partial interface IListAssociatedRoute53HealthChecksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

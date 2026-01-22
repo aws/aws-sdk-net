@@ -24,7 +24,7 @@ namespace Amazon.Kafka.Model
     /// <summary>
     /// Paginators for the Kafka service
     ///</summary>
-    public interface IKafkaPaginatorFactory
+    public partial interface IKafkaPaginatorFactory
     {
 
         /// <summary>

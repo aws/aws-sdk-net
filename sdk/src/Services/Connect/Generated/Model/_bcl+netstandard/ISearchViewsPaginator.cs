@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchViews operation
     ///</summary>
-    public interface ISearchViewsPaginator
+    public partial interface ISearchViewsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

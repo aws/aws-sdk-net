@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the GetSavingsPlansUtilizationDetails operation
     ///</summary>
-    public interface IGetSavingsPlansUtilizationDetailsPaginator
+    public partial interface IGetSavingsPlansUtilizationDetailsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

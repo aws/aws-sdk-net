@@ -24,7 +24,7 @@ namespace Amazon.MigrationHub.Model
     /// <summary>
     /// Paginator for the ListSourceResources operation
     ///</summary>
-    public interface IListSourceResourcesPaginator
+    public partial interface IListSourceResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

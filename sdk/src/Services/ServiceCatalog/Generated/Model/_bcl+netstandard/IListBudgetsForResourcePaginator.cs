@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the ListBudgetsForResource operation
     ///</summary>
-    public interface IListBudgetsForResourcePaginator
+    public partial interface IListBudgetsForResourcePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

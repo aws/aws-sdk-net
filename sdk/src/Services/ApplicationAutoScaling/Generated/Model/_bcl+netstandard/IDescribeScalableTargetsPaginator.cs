@@ -24,7 +24,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <summary>
     /// Paginator for the DescribeScalableTargets operation
     ///</summary>
-    public interface IDescribeScalableTargetsPaginator
+    public partial interface IDescribeScalableTargetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

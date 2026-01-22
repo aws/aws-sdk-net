@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListServerCertificateTags operation
     ///</summary>
-    public interface IListServerCertificateTagsPaginator
+    public partial interface IListServerCertificateTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Paginator for the ListRestoreJobs operation
     ///</summary>
-    public interface IListRestoreJobsPaginator
+    public partial interface IListRestoreJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

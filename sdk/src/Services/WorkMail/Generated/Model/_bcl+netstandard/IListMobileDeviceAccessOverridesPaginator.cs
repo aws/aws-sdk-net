@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListMobileDeviceAccessOverrides operation
     ///</summary>
-    public interface IListMobileDeviceAccessOverridesPaginator
+    public partial interface IListMobileDeviceAccessOverridesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

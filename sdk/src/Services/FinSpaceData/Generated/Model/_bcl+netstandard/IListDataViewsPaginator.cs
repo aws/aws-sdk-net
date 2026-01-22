@@ -24,7 +24,7 @@ namespace Amazon.FinSpaceData.Model
     /// <summary>
     /// Paginator for the ListDataViews operation
     ///</summary>
-    public interface IListDataViewsPaginator
+    public partial interface IListDataViewsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

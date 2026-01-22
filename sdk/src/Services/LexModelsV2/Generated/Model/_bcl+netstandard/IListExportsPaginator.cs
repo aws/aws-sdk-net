@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListExports operation
     ///</summary>
-    public interface IListExportsPaginator
+    public partial interface IListExportsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

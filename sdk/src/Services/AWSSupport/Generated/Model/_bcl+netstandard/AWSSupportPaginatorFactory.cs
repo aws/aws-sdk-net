@@ -27,7 +27,7 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Paginators for the AWSSupport service
     ///</summary>
-    public class AWSSupportPaginatorFactory : IAWSSupportPaginatorFactory
+    public partial class AWSSupportPaginatorFactory : IAWSSupportPaginatorFactory
     {
         private readonly IAmazonAWSSupport client;
 

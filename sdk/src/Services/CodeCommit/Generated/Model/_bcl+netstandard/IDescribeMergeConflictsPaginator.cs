@@ -24,7 +24,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginator for the DescribeMergeConflicts operation
     ///</summary>
-    public interface IDescribeMergeConflictsPaginator
+    public partial interface IDescribeMergeConflictsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

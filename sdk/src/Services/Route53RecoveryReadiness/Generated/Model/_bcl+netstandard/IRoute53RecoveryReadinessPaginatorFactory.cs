@@ -24,7 +24,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     /// <summary>
     /// Paginators for the Route53RecoveryReadiness service
     ///</summary>
-    public interface IRoute53RecoveryReadinessPaginatorFactory
+    public partial interface IRoute53RecoveryReadinessPaginatorFactory
     {
 
         /// <summary>

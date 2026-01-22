@@ -24,7 +24,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// <summary>
     /// Paginator for the ListIndexesForMembers operation
     ///</summary>
-    public interface IListIndexesForMembersPaginator
+    public partial interface IListIndexesForMembersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

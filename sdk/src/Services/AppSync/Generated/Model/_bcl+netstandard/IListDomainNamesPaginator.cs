@@ -24,7 +24,7 @@ namespace Amazon.AppSync.Model
     /// <summary>
     /// Paginator for the ListDomainNames operation
     ///</summary>
-    public interface IListDomainNamesPaginator
+    public partial interface IListDomainNamesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

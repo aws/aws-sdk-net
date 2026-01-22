@@ -27,7 +27,7 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Paginators for the LocationService service
     ///</summary>
-    public class LocationServicePaginatorFactory : ILocationServicePaginatorFactory
+    public partial class LocationServicePaginatorFactory : ILocationServicePaginatorFactory
     {
         private readonly IAmazonLocationService client;
 

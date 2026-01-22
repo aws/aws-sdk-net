@@ -24,7 +24,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Paginator for the ListOriginationNumbers operation
     ///</summary>
-    public interface IListOriginationNumbersPaginator
+    public partial interface IListOriginationNumbersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

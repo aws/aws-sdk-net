@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListSbomValidationResults operation
     ///</summary>
-    public interface IListSbomValidationResultsPaginator
+    public partial interface IListSbomValidationResultsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

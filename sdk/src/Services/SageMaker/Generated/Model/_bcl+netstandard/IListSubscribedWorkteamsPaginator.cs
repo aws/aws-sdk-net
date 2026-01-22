@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListSubscribedWorkteams operation
     ///</summary>
-    public interface IListSubscribedWorkteamsPaginator
+    public partial interface IListSubscribedWorkteamsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

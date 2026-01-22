@@ -24,7 +24,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Paginator for the ListRoomMemberships operation
     ///</summary>
-    public interface IListRoomMembershipsPaginator
+    public partial interface IListRoomMembershipsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Paginator for the ListCasesForContact operation
     ///</summary>
-    public interface IListCasesForContactPaginator
+    public partial interface IListCasesForContactPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

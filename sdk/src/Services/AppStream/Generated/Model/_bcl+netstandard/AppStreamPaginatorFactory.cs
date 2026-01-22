@@ -27,7 +27,7 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Paginators for the AppStream service
     ///</summary>
-    public class AppStreamPaginatorFactory : IAppStreamPaginatorFactory
+    public partial class AppStreamPaginatorFactory : IAppStreamPaginatorFactory
     {
         private readonly IAmazonAppStream client;
 

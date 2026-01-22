@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the SearchDataSources operation
     ///</summary>
-    public interface ISearchDataSourcesPaginator
+    public partial interface ISearchDataSourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

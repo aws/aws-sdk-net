@@ -24,7 +24,7 @@ namespace Amazon.AWSHealth.Model
     /// <summary>
     /// Paginator for the DescribeEvents operation
     ///</summary>
-    public interface IDescribeEventsPaginator
+    public partial interface IDescribeEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

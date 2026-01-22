@@ -24,7 +24,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Paginator for the ListAliases operation
     ///</summary>
-    public interface IListAliasesPaginator
+    public partial interface IListAliasesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

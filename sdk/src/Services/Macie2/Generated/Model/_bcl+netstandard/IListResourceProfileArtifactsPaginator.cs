@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the ListResourceProfileArtifacts operation
     ///</summary>
-    public interface IListResourceProfileArtifactsPaginator
+    public partial interface IListResourceProfileArtifactsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.CodeConnections.Model
     /// <summary>
     /// Paginators for the CodeConnections service
     ///</summary>
-    public class CodeConnectionsPaginatorFactory : ICodeConnectionsPaginatorFactory
+    public partial class CodeConnectionsPaginatorFactory : ICodeConnectionsPaginatorFactory
     {
         private readonly IAmazonCodeConnections client;
 

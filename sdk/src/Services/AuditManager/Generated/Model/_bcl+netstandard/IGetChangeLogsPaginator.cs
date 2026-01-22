@@ -24,7 +24,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Paginator for the GetChangeLogs operation
     ///</summary>
-    public interface IGetChangeLogsPaginator
+    public partial interface IGetChangeLogsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

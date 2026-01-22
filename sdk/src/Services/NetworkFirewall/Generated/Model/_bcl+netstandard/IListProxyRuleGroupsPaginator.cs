@@ -24,7 +24,7 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// Paginator for the ListProxyRuleGroups operation
     ///</summary>
-    public interface IListProxyRuleGroupsPaginator
+    public partial interface IListProxyRuleGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

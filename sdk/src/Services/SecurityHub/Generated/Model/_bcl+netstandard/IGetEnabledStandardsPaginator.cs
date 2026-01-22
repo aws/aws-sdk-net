@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the GetEnabledStandards operation
     ///</summary>
-    public interface IGetEnabledStandardsPaginator
+    public partial interface IGetEnabledStandardsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

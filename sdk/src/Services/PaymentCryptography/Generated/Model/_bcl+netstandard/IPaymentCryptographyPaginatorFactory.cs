@@ -24,7 +24,7 @@ namespace Amazon.PaymentCryptography.Model
     /// <summary>
     /// Paginators for the PaymentCryptography service
     ///</summary>
-    public interface IPaymentCryptographyPaginatorFactory
+    public partial interface IPaymentCryptographyPaginatorFactory
     {
 
         /// <summary>

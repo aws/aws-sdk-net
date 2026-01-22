@@ -24,7 +24,7 @@ namespace Amazon.MediaConvert.Model
     /// <summary>
     /// Paginator for the DescribeEndpoints operation
     ///</summary>
-    public interface IDescribeEndpointsPaginator
+    public partial interface IDescribeEndpointsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

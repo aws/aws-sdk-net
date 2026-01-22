@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the GetFindingHistory operation
     ///</summary>
-    public interface IGetFindingHistoryPaginator
+    public partial interface IGetFindingHistoryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

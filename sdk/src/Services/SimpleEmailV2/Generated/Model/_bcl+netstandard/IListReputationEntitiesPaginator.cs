@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Paginator for the ListReputationEntities operation
     ///</summary>
-    public interface IListReputationEntitiesPaginator
+    public partial interface IListReputationEntitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

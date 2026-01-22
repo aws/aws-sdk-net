@@ -24,7 +24,7 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// Paginator for the ListMatchingJobs operation
     ///</summary>
-    public interface IListMatchingJobsPaginator
+    public partial interface IListMatchingJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

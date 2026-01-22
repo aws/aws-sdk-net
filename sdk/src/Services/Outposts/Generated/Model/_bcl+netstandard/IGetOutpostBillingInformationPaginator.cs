@@ -24,7 +24,7 @@ namespace Amazon.Outposts.Model
     /// <summary>
     /// Paginator for the GetOutpostBillingInformation operation
     ///</summary>
-    public interface IGetOutpostBillingInformationPaginator
+    public partial interface IGetOutpostBillingInformationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

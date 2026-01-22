@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListDashboards operation
     ///</summary>
-    public interface IListDashboardsPaginator
+    public partial interface IListDashboardsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

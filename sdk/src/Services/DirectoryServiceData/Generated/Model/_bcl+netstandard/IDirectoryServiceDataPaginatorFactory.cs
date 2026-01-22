@@ -24,7 +24,7 @@ namespace Amazon.DirectoryServiceData.Model
     /// <summary>
     /// Paginators for the DirectoryServiceData service
     ///</summary>
-    public interface IDirectoryServiceDataPaginatorFactory
+    public partial interface IDirectoryServiceDataPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginators for the GuardDuty service
     ///</summary>
-    public interface IGuardDutyPaginatorFactory
+    public partial interface IGuardDutyPaginatorFactory
     {
 
         /// <summary>

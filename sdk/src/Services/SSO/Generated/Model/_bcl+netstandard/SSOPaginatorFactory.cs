@@ -27,7 +27,7 @@ namespace Amazon.SSO.Model
     /// <summary>
     /// Paginators for the SSO service
     ///</summary>
-    public class SSOPaginatorFactory : ISSOPaginatorFactory
+    public partial class SSOPaginatorFactory : ISSOPaginatorFactory
     {
         private readonly IAmazonSSO client;
 

@@ -24,7 +24,7 @@ namespace Amazon.PcaConnectorScep.Model
     /// <summary>
     /// Paginator for the ListChallengeMetadata operation
     ///</summary>
-    public interface IListChallengeMetadataPaginator
+    public partial interface IListChallengeMetadataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

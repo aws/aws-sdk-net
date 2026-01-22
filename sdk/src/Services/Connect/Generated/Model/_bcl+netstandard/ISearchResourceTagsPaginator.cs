@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the SearchResourceTags operation
     ///</summary>
-    public interface ISearchResourceTagsPaginator
+    public partial interface ISearchResourceTagsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

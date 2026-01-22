@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginators for the EC2 service
     ///</summary>
-    public interface IEC2PaginatorFactory
+    public partial interface IEC2PaginatorFactory
     {
 
         /// <summary>

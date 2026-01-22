@@ -24,7 +24,7 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Paginators for the CodePipeline service
     ///</summary>
-    public interface ICodePipelinePaginatorFactory
+    public partial interface ICodePipelinePaginatorFactory
     {
 
         /// <summary>

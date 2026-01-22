@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListDelegatedAdministrators operation
     ///</summary>
-    public interface IListDelegatedAdministratorsPaginator
+    public partial interface IListDelegatedAdministratorsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

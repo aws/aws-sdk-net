@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeAwsNetworkPerformanceMetricSubscriptions operation
     ///</summary>
-    public interface IDescribeAwsNetworkPerformanceMetricSubscriptionsPaginator
+    public partial interface IDescribeAwsNetworkPerformanceMetricSubscriptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

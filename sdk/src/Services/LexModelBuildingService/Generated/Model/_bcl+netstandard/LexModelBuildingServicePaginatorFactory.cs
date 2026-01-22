@@ -27,7 +27,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Paginators for the LexModelBuildingService service
     ///</summary>
-    public class LexModelBuildingServicePaginatorFactory : ILexModelBuildingServicePaginatorFactory
+    public partial class LexModelBuildingServicePaginatorFactory : ILexModelBuildingServicePaginatorFactory
     {
         private readonly IAmazonLexModelBuildingService client;
 

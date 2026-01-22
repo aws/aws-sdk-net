@@ -24,7 +24,7 @@ namespace Amazon.MarketplaceAgreement.Model
     /// <summary>
     /// Paginators for the MarketplaceAgreement service
     ///</summary>
-    public interface IMarketplaceAgreementPaginatorFactory
+    public partial interface IMarketplaceAgreementPaginatorFactory
     {
 
         /// <summary>

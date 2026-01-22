@@ -24,7 +24,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Paginator for the DescribeImportTasks operation
     ///</summary>
-    public interface IDescribeImportTasksPaginator
+    public partial interface IDescribeImportTasksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

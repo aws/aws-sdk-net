@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListPolicyGrants operation
     ///</summary>
-    public interface IListPolicyGrantsPaginator
+    public partial interface IListPolicyGrantsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Pricing.Model
     /// <summary>
     /// Paginator for the ListPriceLists operation
     ///</summary>
-    public interface IListPriceListsPaginator
+    public partial interface IListPriceListsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

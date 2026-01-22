@@ -24,7 +24,7 @@ namespace Amazon.SSMContacts.Model
     /// <summary>
     /// Paginator for the ListPagesByContact operation
     ///</summary>
-    public interface IListPagesByContactPaginator
+    public partial interface IListPagesByContactPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Paginators for the RedshiftServerless service
     ///</summary>
-    public class RedshiftServerlessPaginatorFactory : IRedshiftServerlessPaginatorFactory
+    public partial class RedshiftServerlessPaginatorFactory : IRedshiftServerlessPaginatorFactory
     {
         private readonly IAmazonRedshiftServerless client;
 

@@ -27,7 +27,7 @@ namespace Amazon.Translate.Model
     /// <summary>
     /// Paginators for the Translate service
     ///</summary>
-    public class TranslatePaginatorFactory : ITranslatePaginatorFactory
+    public partial class TranslatePaginatorFactory : ITranslatePaginatorFactory
     {
         private readonly IAmazonTranslate client;
 

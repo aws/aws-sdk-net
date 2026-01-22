@@ -24,7 +24,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Paginator for the ListEventTrackers operation
     ///</summary>
-    public interface IListEventTrackersPaginator
+    public partial interface IListEventTrackersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

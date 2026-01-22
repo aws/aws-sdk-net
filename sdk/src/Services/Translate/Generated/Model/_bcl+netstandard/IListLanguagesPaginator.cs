@@ -24,7 +24,7 @@ namespace Amazon.Translate.Model
     /// <summary>
     /// Paginator for the ListLanguages operation
     ///</summary>
-    public interface IListLanguagesPaginator
+    public partial interface IListLanguagesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

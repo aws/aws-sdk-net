@@ -24,7 +24,7 @@ namespace Amazon.ServiceQuotas.Model
     /// <summary>
     /// Paginator for the ListServiceQuotaIncreaseRequestsInTemplate operation
     ///</summary>
-    public interface IListServiceQuotaIncreaseRequestsInTemplatePaginator
+    public partial interface IListServiceQuotaIncreaseRequestsInTemplatePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

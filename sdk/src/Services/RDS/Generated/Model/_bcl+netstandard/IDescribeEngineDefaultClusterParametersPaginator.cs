@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeEngineDefaultClusterParameters operation
     ///</summary>
-    public interface IDescribeEngineDefaultClusterParametersPaginator
+    public partial interface IDescribeEngineDefaultClusterParametersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

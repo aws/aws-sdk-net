@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the GetNetworkResources operation
     ///</summary>
-    public interface IGetNetworkResourcesPaginator
+    public partial interface IGetNetworkResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

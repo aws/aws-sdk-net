@@ -24,7 +24,7 @@ namespace Amazon.VoiceID.Model
     /// <summary>
     /// Paginator for the ListFraudsters operation
     ///</summary>
-    public interface IListFraudstersPaginator
+    public partial interface IListFraudstersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

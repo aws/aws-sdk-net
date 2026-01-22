@@ -27,7 +27,7 @@ namespace Amazon.SsmSap.Model
     /// <summary>
     /// Paginators for the SsmSap service
     ///</summary>
-    public class SsmSapPaginatorFactory : ISsmSapPaginatorFactory
+    public partial class SsmSapPaginatorFactory : ISsmSapPaginatorFactory
     {
         private readonly IAmazonSsmSap client;
 

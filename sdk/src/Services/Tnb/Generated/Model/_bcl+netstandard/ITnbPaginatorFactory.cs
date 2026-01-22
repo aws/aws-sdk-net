@@ -24,7 +24,7 @@ namespace Amazon.Tnb.Model
     /// <summary>
     /// Paginators for the Tnb service
     ///</summary>
-    public interface ITnbPaginatorFactory
+    public partial interface ITnbPaginatorFactory
     {
 
         /// <summary>

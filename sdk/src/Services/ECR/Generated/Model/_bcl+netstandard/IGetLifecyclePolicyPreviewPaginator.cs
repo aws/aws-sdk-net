@@ -24,7 +24,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Paginator for the GetLifecyclePolicyPreview operation
     ///</summary>
-    public interface IGetLifecyclePolicyPreviewPaginator
+    public partial interface IGetLifecyclePolicyPreviewPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

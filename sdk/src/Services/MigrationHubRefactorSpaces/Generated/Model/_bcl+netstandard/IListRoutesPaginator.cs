@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// <summary>
     /// Paginator for the ListRoutes operation
     ///</summary>
-    public interface IListRoutesPaginator
+    public partial interface IListRoutesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

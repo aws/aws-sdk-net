@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginators for the NetworkManager service
     ///</summary>
-    public interface INetworkManagerPaginatorFactory
+    public partial interface INetworkManagerPaginatorFactory
     {
 
         /// <summary>

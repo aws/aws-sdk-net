@@ -24,7 +24,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Paginator for the LookupEvents operation
     ///</summary>
-    public interface ILookupEventsPaginator
+    public partial interface ILookupEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

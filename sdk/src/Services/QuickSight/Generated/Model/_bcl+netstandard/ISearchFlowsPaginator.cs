@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the SearchFlows operation
     ///</summary>
-    public interface ISearchFlowsPaginator
+    public partial interface ISearchFlowsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

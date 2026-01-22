@@ -24,7 +24,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// <summary>
     /// Paginator for the ListCodegenJobs operation
     ///</summary>
-    public interface IListCodegenJobsPaginator
+    public partial interface IListCodegenJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

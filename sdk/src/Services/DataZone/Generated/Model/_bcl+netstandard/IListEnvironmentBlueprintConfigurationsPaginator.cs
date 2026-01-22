@@ -24,7 +24,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Paginator for the ListEnvironmentBlueprintConfigurations operation
     ///</summary>
-    public interface IListEnvironmentBlueprintConfigurationsPaginator
+    public partial interface IListEnvironmentBlueprintConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the DescribeNetworkInterfacePermissions operation
     ///</summary>
-    public interface IDescribeNetworkInterfacePermissionsPaginator
+    public partial interface IDescribeNetworkInterfacePermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Paginator for the ListInstanceProfilesForRole operation
     ///</summary>
-    public interface IListInstanceProfilesForRolePaginator
+    public partial interface IListInstanceProfilesForRolePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

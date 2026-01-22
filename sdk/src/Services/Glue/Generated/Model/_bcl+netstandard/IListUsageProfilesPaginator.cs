@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the ListUsageProfiles operation
     ///</summary>
-    public interface IListUsageProfilesPaginator
+    public partial interface IListUsageProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

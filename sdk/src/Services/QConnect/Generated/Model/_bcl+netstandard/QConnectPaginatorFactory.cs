@@ -27,7 +27,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginators for the QConnect service
     ///</summary>
-    public class QConnectPaginatorFactory : IQConnectPaginatorFactory
+    public partial class QConnectPaginatorFactory : IQConnectPaginatorFactory
     {
         private readonly IAmazonQConnect client;
 

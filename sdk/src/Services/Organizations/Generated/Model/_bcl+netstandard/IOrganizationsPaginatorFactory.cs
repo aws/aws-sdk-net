@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginators for the Organizations service
     ///</summary>
-    public interface IOrganizationsPaginatorFactory
+    public partial interface IOrganizationsPaginatorFactory
     {
 
         /// <summary>

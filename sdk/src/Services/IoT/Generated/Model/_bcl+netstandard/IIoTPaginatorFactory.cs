@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginators for the IoT service
     ///</summary>
-    public interface IIoTPaginatorFactory
+    public partial interface IIoTPaginatorFactory
     {
 
         /// <summary>

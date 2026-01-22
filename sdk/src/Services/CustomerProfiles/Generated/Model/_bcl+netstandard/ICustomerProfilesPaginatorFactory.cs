@@ -24,7 +24,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Paginators for the CustomerProfiles service
     ///</summary>
-    public interface ICustomerProfilesPaginatorFactory
+    public partial interface ICustomerProfilesPaginatorFactory
     {
 
         /// <summary>

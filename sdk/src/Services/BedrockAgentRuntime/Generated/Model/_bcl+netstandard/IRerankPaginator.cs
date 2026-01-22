@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// Paginator for the Rerank operation
     ///</summary>
-    public interface IRerankPaginator
+    public partial interface IRerankPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

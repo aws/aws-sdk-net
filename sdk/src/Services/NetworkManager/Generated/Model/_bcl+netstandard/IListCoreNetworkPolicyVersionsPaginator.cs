@@ -24,7 +24,7 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Paginator for the ListCoreNetworkPolicyVersions operation
     ///</summary>
-    public interface IListCoreNetworkPolicyVersionsPaginator
+    public partial interface IListCoreNetworkPolicyVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

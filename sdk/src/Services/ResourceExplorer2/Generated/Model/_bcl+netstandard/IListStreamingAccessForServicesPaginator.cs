@@ -24,7 +24,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// <summary>
     /// Paginator for the ListStreamingAccessForServices operation
     ///</summary>
-    public interface IListStreamingAccessForServicesPaginator
+    public partial interface IListStreamingAccessForServicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

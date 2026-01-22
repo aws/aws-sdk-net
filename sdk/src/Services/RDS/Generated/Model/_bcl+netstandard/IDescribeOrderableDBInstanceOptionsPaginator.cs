@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeOrderableDBInstanceOptions operation
     ///</summary>
-    public interface IDescribeOrderableDBInstanceOptionsPaginator
+    public partial interface IDescribeOrderableDBInstanceOptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

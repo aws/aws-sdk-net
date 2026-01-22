@@ -24,7 +24,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Paginator for the ListCustomRoutingPortMappingsByDestination operation
     ///</summary>
-    public interface IListCustomRoutingPortMappingsByDestinationPaginator
+    public partial interface IListCustomRoutingPortMappingsByDestinationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

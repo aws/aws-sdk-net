@@ -24,7 +24,7 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Paginator for the ListApplicationRevisions operation
     ///</summary>
-    public interface IListApplicationRevisionsPaginator
+    public partial interface IListApplicationRevisionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

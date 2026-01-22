@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the ListLaunchPaths operation
     ///</summary>
-    public interface IListLaunchPathsPaginator
+    public partial interface IListLaunchPathsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Paginator for the ListEnvironmentOutputs operation
     ///</summary>
-    public interface IListEnvironmentOutputsPaginator
+    public partial interface IListEnvironmentOutputsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

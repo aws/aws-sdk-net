@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListAssetBundleExportJobs operation
     ///</summary>
-    public interface IListAssetBundleExportJobsPaginator
+    public partial interface IListAssetBundleExportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.SecurityLake.Model
     /// <summary>
     /// Paginators for the SecurityLake service
     ///</summary>
-    public class SecurityLakePaginatorFactory : ISecurityLakePaginatorFactory
+    public partial class SecurityLakePaginatorFactory : ISecurityLakePaginatorFactory
     {
         private readonly IAmazonSecurityLake client;
 

@@ -27,7 +27,7 @@ namespace Amazon.KendraRanking.Model
     /// <summary>
     /// Paginators for the KendraRanking service
     ///</summary>
-    public class KendraRankingPaginatorFactory : IKendraRankingPaginatorFactory
+    public partial class KendraRankingPaginatorFactory : IKendraRankingPaginatorFactory
     {
         private readonly IAmazonKendraRanking client;
 

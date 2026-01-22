@@ -27,7 +27,7 @@ namespace Amazon.Pipes.Model
     /// <summary>
     /// Paginators for the Pipes service
     ///</summary>
-    public class PipesPaginatorFactory : IPipesPaginatorFactory
+    public partial class PipesPaginatorFactory : IPipesPaginatorFactory
     {
         private readonly IAmazonPipes client;
 

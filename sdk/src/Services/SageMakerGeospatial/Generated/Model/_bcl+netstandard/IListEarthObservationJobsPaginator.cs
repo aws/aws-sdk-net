@@ -24,7 +24,7 @@ namespace Amazon.SageMakerGeospatial.Model
     /// <summary>
     /// Paginator for the ListEarthObservationJobs operation
     ///</summary>
-    public interface IListEarthObservationJobsPaginator
+    public partial interface IListEarthObservationJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

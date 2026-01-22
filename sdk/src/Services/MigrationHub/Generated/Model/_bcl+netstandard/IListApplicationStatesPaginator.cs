@@ -24,7 +24,7 @@ namespace Amazon.MigrationHub.Model
     /// <summary>
     /// Paginator for the ListApplicationStates operation
     ///</summary>
-    public interface IListApplicationStatesPaginator
+    public partial interface IListApplicationStatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

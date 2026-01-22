@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the CreateHubContentPresignedUrls operation
     ///</summary>
-    public interface ICreateHubContentPresignedUrlsPaginator
+    public partial interface ICreateHubContentPresignedUrlsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

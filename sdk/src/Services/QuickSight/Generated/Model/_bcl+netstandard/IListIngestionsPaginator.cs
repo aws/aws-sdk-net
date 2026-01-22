@@ -24,7 +24,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Paginator for the ListIngestions operation
     ///</summary>
-    public interface IListIngestionsPaginator
+    public partial interface IListIngestionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

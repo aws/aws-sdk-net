@@ -27,7 +27,7 @@ namespace Amazon.KeyspacesStreams.Model
     /// <summary>
     /// Paginators for the KeyspacesStreams service
     ///</summary>
-    public class KeyspacesStreamsPaginatorFactory : IKeyspacesStreamsPaginatorFactory
+    public partial class KeyspacesStreamsPaginatorFactory : IKeyspacesStreamsPaginatorFactory
     {
         private readonly IAmazonKeyspacesStreams client;
 

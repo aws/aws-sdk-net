@@ -24,7 +24,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Paginator for the ListServicesByNamespace operation
     ///</summary>
-    public interface IListServicesByNamespacePaginator
+    public partial interface IListServicesByNamespacePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

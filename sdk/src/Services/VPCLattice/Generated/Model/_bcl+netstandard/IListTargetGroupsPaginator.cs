@@ -24,7 +24,7 @@ namespace Amazon.VPCLattice.Model
     /// <summary>
     /// Paginator for the ListTargetGroups operation
     ///</summary>
-    public interface IListTargetGroupsPaginator
+    public partial interface IListTargetGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

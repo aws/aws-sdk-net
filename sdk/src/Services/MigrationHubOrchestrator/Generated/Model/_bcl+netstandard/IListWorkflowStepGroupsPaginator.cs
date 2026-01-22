@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     /// <summary>
     /// Paginator for the ListWorkflowStepGroups operation
     ///</summary>
-    public interface IListWorkflowStepGroupsPaginator
+    public partial interface IListWorkflowStepGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

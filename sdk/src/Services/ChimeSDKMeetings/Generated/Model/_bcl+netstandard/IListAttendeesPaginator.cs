@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// <summary>
     /// Paginator for the ListAttendees operation
     ///</summary>
-    public interface IListAttendeesPaginator
+    public partial interface IListAttendeesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

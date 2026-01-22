@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// <summary>
     /// Paginators for the MigrationHubStrategyRecommendations service
     ///</summary>
-    public interface IMigrationHubStrategyRecommendationsPaginatorFactory
+    public partial interface IMigrationHubStrategyRecommendationsPaginatorFactory
     {
 
         /// <summary>

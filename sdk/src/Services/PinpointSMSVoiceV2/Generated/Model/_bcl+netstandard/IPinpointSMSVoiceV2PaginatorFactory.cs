@@ -24,7 +24,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Paginators for the PinpointSMSVoiceV2 service
     ///</summary>
-    public interface IPinpointSMSVoiceV2PaginatorFactory
+    public partial interface IPinpointSMSVoiceV2PaginatorFactory
     {
 
         /// <summary>

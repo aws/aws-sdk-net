@@ -24,7 +24,7 @@ namespace Amazon.BedrockDataAutomation.Model
     /// <summary>
     /// Paginators for the BedrockDataAutomation service
     ///</summary>
-    public interface IBedrockDataAutomationPaginatorFactory
+    public partial interface IBedrockDataAutomationPaginatorFactory
     {
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Paginators for the ElasticLoadBalancingV2 service
     ///</summary>
-    public interface IElasticLoadBalancingV2PaginatorFactory
+    public partial interface IElasticLoadBalancingV2PaginatorFactory
     {
 
         /// <summary>

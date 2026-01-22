@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListTrafficDistributionGroupUsers operation
     ///</summary>
-    public interface IListTrafficDistributionGroupUsersPaginator
+    public partial interface IListTrafficDistributionGroupUsersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

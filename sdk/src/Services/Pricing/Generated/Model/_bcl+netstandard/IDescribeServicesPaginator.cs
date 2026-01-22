@@ -24,7 +24,7 @@ namespace Amazon.Pricing.Model
     /// <summary>
     /// Paginator for the DescribeServices operation
     ///</summary>
-    public interface IDescribeServicesPaginator
+    public partial interface IDescribeServicesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

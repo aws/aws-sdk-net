@@ -24,7 +24,7 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Paginator for the ListVpcIngressConnections operation
     ///</summary>
-    public interface IListVpcIngressConnectionsPaginator
+    public partial interface IListVpcIngressConnectionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

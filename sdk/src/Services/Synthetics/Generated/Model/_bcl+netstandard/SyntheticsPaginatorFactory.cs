@@ -27,7 +27,7 @@ namespace Amazon.Synthetics.Model
     /// <summary>
     /// Paginators for the Synthetics service
     ///</summary>
-    public class SyntheticsPaginatorFactory : ISyntheticsPaginatorFactory
+    public partial class SyntheticsPaginatorFactory : ISyntheticsPaginatorFactory
     {
         private readonly IAmazonSynthetics client;
 

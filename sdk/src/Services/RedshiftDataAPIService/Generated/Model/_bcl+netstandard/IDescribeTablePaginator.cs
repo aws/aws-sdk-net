@@ -24,7 +24,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// <summary>
     /// Paginator for the DescribeTable operation
     ///</summary>
-    public interface IDescribeTablePaginator
+    public partial interface IDescribeTablePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

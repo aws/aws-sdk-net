@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the ListTrustedEntitySets operation
     ///</summary>
-    public interface IListTrustedEntitySetsPaginator
+    public partial interface IListTrustedEntitySetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

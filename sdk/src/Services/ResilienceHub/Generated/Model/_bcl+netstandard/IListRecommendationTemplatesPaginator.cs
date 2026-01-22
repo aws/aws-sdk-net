@@ -24,7 +24,7 @@ namespace Amazon.ResilienceHub.Model
     /// <summary>
     /// Paginator for the ListRecommendationTemplates operation
     ///</summary>
-    public interface IListRecommendationTemplatesPaginator
+    public partial interface IListRecommendationTemplatesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

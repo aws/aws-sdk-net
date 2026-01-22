@@ -24,7 +24,7 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Paginator for the ListMetricStreams operation
     ///</summary>
-    public interface IListMetricStreamsPaginator
+    public partial interface IListMetricStreamsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

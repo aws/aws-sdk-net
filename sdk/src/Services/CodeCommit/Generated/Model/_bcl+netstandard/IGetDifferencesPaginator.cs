@@ -24,7 +24,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Paginator for the GetDifferences operation
     ///</summary>
-    public interface IGetDifferencesPaginator
+    public partial interface IGetDifferencesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

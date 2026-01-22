@@ -24,7 +24,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Paginator for the DescribeMetricFilters operation
     ///</summary>
-    public interface IDescribeMetricFiltersPaginator
+    public partial interface IDescribeMetricFiltersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

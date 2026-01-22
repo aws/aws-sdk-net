@@ -24,7 +24,7 @@ namespace Amazon.MediaPackageVod.Model
     /// <summary>
     /// Paginator for the ListPackagingGroups operation
     ///</summary>
-    public interface IListPackagingGroupsPaginator
+    public partial interface IListPackagingGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

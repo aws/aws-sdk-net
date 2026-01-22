@@ -24,7 +24,7 @@ namespace Amazon.NotificationsContacts.Model
     /// <summary>
     /// Paginators for the NotificationsContacts service
     ///</summary>
-    public interface INotificationsContactsPaginatorFactory
+    public partial interface INotificationsContactsPaginatorFactory
     {
 
         /// <summary>

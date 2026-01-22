@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the ListNodegroups operation
     ///</summary>
-    public interface IListNodegroupsPaginator
+    public partial interface IListNodegroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

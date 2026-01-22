@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Paginator for the DescribeTrustStoreAssociations operation
     ///</summary>
-    public interface IDescribeTrustStoreAssociationsPaginator
+    public partial interface IDescribeTrustStoreAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

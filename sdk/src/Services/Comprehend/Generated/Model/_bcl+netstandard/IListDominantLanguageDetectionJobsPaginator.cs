@@ -24,7 +24,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Paginator for the ListDominantLanguageDetectionJobs operation
     ///</summary>
-    public interface IListDominantLanguageDetectionJobsPaginator
+    public partial interface IListDominantLanguageDetectionJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

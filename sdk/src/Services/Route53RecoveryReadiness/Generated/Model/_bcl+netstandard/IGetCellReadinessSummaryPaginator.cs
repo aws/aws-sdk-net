@@ -24,7 +24,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     /// <summary>
     /// Paginator for the GetCellReadinessSummary operation
     ///</summary>
-    public interface IGetCellReadinessSummaryPaginator
+    public partial interface IGetCellReadinessSummaryPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

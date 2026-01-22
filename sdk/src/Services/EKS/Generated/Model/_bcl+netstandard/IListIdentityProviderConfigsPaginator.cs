@@ -24,7 +24,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Paginator for the ListIdentityProviderConfigs operation
     ///</summary>
-    public interface IListIdentityProviderConfigsPaginator
+    public partial interface IListIdentityProviderConfigsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

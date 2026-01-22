@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the ListCostCategoryResourceAssociations operation
     ///</summary>
-    public interface IListCostCategoryResourceAssociationsPaginator
+    public partial interface IListCostCategoryResourceAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

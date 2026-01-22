@@ -24,7 +24,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Paginator for the ListCrossAccountResources operation
     ///</summary>
-    public interface IListCrossAccountResourcesPaginator
+    public partial interface IListCrossAccountResourcesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

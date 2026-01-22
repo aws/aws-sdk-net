@@ -24,7 +24,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// <summary>
     /// Paginator for the ListApplicationSnapshots operation
     ///</summary>
-    public interface IListApplicationSnapshotsPaginator
+    public partial interface IListApplicationSnapshotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the ListAuthenticationProfiles operation
     ///</summary>
-    public interface IListAuthenticationProfilesPaginator
+    public partial interface IListAuthenticationProfilesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

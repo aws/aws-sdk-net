@@ -24,7 +24,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Paginator for the ListV2LoggingLevels operation
     ///</summary>
-    public interface IListV2LoggingLevelsPaginator
+    public partial interface IListV2LoggingLevelsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Outposts.Model
     /// <summary>
     /// Paginator for the ListSites operation
     ///</summary>
-    public interface IListSitesPaginator
+    public partial interface IListSitesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

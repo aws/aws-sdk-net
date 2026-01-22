@@ -24,7 +24,7 @@ namespace Amazon.KafkaConnect.Model
     /// <summary>
     /// Paginator for the ListConnectorOperations operation
     ///</summary>
-    public interface IListConnectorOperationsPaginator
+    public partial interface IListConnectorOperationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

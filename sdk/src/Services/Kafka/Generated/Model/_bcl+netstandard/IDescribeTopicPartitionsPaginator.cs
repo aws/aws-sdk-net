@@ -24,7 +24,7 @@ namespace Amazon.Kafka.Model
     /// <summary>
     /// Paginator for the DescribeTopicPartitions operation
     ///</summary>
-    public interface IDescribeTopicPartitionsPaginator
+    public partial interface IDescribeTopicPartitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

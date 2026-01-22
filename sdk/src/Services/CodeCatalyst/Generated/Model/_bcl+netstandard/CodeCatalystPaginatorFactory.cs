@@ -27,7 +27,7 @@ namespace Amazon.CodeCatalyst.Model
     /// <summary>
     /// Paginators for the CodeCatalyst service
     ///</summary>
-    public class CodeCatalystPaginatorFactory : ICodeCatalystPaginatorFactory
+    public partial class CodeCatalystPaginatorFactory : ICodeCatalystPaginatorFactory
     {
         private readonly IAmazonCodeCatalyst client;
 

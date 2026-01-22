@@ -24,7 +24,7 @@ namespace Amazon.PaginatorsTest.Model
     /// <summary>
     /// Paginators for the PaginatorsTest service
     ///</summary>
-    public interface IPaginatorsTestPaginatorFactory
+    public partial interface IPaginatorsTestPaginatorFactory
     {
 
         /// <summary>

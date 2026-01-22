@@ -24,7 +24,7 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Paginator for the DescribeDataRepositoryAssociations operation
     ///</summary>
-    public interface IDescribeDataRepositoryAssociationsPaginator
+    public partial interface IDescribeDataRepositoryAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

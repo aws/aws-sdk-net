@@ -24,7 +24,7 @@ namespace Amazon.EBS.Model
     /// <summary>
     /// Paginator for the ListChangedBlocks operation
     ///</summary>
-    public interface IListChangedBlocksPaginator
+    public partial interface IListChangedBlocksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListAvailabilityConfigurations operation
     ///</summary>
-    public interface IListAvailabilityConfigurationsPaginator
+    public partial interface IListAvailabilityConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

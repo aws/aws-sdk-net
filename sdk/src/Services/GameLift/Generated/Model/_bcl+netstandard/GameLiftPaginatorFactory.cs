@@ -27,7 +27,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Paginators for the GameLift service
     ///</summary>
-    public class GameLiftPaginatorFactory : IGameLiftPaginatorFactory
+    public partial class GameLiftPaginatorFactory : IGameLiftPaginatorFactory
     {
         private readonly IAmazonGameLift client;
 

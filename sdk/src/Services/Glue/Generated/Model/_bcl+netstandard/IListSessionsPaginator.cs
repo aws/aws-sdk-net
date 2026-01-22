@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the ListSessions operation
     ///</summary>
-    public interface IListSessionsPaginator
+    public partial interface IListSessionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the ListProvisionedConcurrencyConfigs operation
     ///</summary>
-    public interface IListProvisionedConcurrencyConfigsPaginator
+    public partial interface IListProvisionedConcurrencyConfigsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

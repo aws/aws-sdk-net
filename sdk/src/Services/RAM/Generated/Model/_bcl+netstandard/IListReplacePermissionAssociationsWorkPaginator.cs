@@ -24,7 +24,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Paginator for the ListReplacePermissionAssociationsWork operation
     ///</summary>
-    public interface IListReplacePermissionAssociationsWorkPaginator
+    public partial interface IListReplacePermissionAssociationsWorkPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// <summary>
     /// Paginator for the ListBrowserSettings operation
     ///</summary>
-    public interface IListBrowserSettingsPaginator
+    public partial interface IListBrowserSettingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

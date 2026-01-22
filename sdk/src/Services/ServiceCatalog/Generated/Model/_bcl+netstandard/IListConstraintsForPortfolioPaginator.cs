@@ -24,7 +24,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Paginator for the ListConstraintsForPortfolio operation
     ///</summary>
-    public interface IListConstraintsForPortfolioPaginator
+    public partial interface IListConstraintsForPortfolioPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

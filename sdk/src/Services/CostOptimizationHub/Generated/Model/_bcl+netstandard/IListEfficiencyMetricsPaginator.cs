@@ -24,7 +24,7 @@ namespace Amazon.CostOptimizationHub.Model
     /// <summary>
     /// Paginator for the ListEfficiencyMetrics operation
     ///</summary>
-    public interface IListEfficiencyMetricsPaginator
+    public partial interface IListEfficiencyMetricsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

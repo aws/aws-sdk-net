@@ -27,7 +27,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// <summary>
     /// Paginators for the MigrationHubRefactorSpaces service
     ///</summary>
-    public class MigrationHubRefactorSpacesPaginatorFactory : IMigrationHubRefactorSpacesPaginatorFactory
+    public partial class MigrationHubRefactorSpacesPaginatorFactory : IMigrationHubRefactorSpacesPaginatorFactory
     {
         private readonly IAmazonMigrationHubRefactorSpaces client;
 

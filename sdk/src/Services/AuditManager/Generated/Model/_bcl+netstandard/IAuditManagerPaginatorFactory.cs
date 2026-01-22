@@ -24,7 +24,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// Paginators for the AuditManager service
     ///</summary>
-    public interface IAuditManagerPaginatorFactory
+    public partial interface IAuditManagerPaginatorFactory
     {
 
         /// <summary>

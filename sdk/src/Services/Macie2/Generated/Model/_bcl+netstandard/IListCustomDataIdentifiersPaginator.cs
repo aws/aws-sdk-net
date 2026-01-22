@@ -24,7 +24,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Paginator for the ListCustomDataIdentifiers operation
     ///</summary>
-    public interface IListCustomDataIdentifiersPaginator
+    public partial interface IListCustomDataIdentifiersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

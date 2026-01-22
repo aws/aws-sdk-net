@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the ListTableOptimizerRuns operation
     ///</summary>
-    public interface IListTableOptimizerRunsPaginator
+    public partial interface IListTableOptimizerRunsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.IoTThingsGraph.Model
     /// <summary>
     /// Paginator for the SearchEntities operation
     ///</summary>
-    public interface ISearchEntitiesPaginator
+    public partial interface ISearchEntitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

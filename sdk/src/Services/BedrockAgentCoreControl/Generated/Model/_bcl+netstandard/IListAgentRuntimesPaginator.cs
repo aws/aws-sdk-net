@@ -24,7 +24,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Paginator for the ListAgentRuntimes operation
     ///</summary>
-    public interface IListAgentRuntimesPaginator
+    public partial interface IListAgentRuntimesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

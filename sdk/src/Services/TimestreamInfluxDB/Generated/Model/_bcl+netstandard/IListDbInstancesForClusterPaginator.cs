@@ -24,7 +24,7 @@ namespace Amazon.TimestreamInfluxDB.Model
     /// <summary>
     /// Paginator for the ListDbInstancesForCluster operation
     ///</summary>
-    public interface IListDbInstancesForClusterPaginator
+    public partial interface IListDbInstancesForClusterPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

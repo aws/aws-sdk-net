@@ -27,7 +27,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Paginators for the Snowball service
     ///</summary>
-    public class SnowballPaginatorFactory : ISnowballPaginatorFactory
+    public partial class SnowballPaginatorFactory : ISnowballPaginatorFactory
     {
         private readonly IAmazonSnowball client;
 

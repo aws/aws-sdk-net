@@ -27,7 +27,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Paginators for the AccessAnalyzer service
     ///</summary>
-    public class AccessAnalyzerPaginatorFactory : IAccessAnalyzerPaginatorFactory
+    public partial class AccessAnalyzerPaginatorFactory : IAccessAnalyzerPaginatorFactory
     {
         private readonly IAmazonAccessAnalyzer client;
 

@@ -24,7 +24,7 @@ namespace Amazon.MediaTailor.Model
     /// <summary>
     /// Paginator for the ListAlerts operation
     ///</summary>
-    public interface IListAlertsPaginator
+    public partial interface IListAlertsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

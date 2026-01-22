@@ -24,7 +24,7 @@ namespace Amazon.Kafka.Model
     /// <summary>
     /// Paginator for the ListScramSecrets operation
     ///</summary>
-    public interface IListScramSecretsPaginator
+    public partial interface IListScramSecretsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

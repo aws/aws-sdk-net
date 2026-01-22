@@ -24,7 +24,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Paginator for the ListAWSServiceAccessForOrganization operation
     ///</summary>
-    public interface IListAWSServiceAccessForOrganizationPaginator
+    public partial interface IListAWSServiceAccessForOrganizationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

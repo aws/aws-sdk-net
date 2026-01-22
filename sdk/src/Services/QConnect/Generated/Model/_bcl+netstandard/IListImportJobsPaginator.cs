@@ -24,7 +24,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Paginator for the ListImportJobs operation
     ///</summary>
-    public interface IListImportJobsPaginator
+    public partial interface IListImportJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

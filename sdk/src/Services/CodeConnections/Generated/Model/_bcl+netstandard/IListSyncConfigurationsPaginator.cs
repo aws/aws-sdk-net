@@ -24,7 +24,7 @@ namespace Amazon.CodeConnections.Model
     /// <summary>
     /// Paginator for the ListSyncConfigurations operation
     ///</summary>
-    public interface IListSyncConfigurationsPaginator
+    public partial interface IListSyncConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeCustomDomainAssociations operation
     ///</summary>
-    public interface IDescribeCustomDomainAssociationsPaginator
+    public partial interface IDescribeCustomDomainAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.RecycleBin.Model
     /// <summary>
     /// Paginators for the RecycleBin service
     ///</summary>
-    public interface IRecycleBinPaginatorFactory
+    public partial interface IRecycleBinPaginatorFactory
     {
 
         /// <summary>

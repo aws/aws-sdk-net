@@ -24,7 +24,7 @@ namespace Amazon.EBS.Model
     /// <summary>
     /// Paginator for the ListSnapshotBlocks operation
     ///</summary>
-    public interface IListSnapshotBlocksPaginator
+    public partial interface IListSnapshotBlocksPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

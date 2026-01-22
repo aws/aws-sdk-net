@@ -27,7 +27,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Paginators for the SimpleWorkflow service
     ///</summary>
-    public class SimpleWorkflowPaginatorFactory : ISimpleWorkflowPaginatorFactory
+    public partial class SimpleWorkflowPaginatorFactory : ISimpleWorkflowPaginatorFactory
     {
         private readonly IAmazonSimpleWorkflow client;
 

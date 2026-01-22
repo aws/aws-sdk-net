@@ -24,7 +24,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Paginator for the SearchRelatedItems operation
     ///</summary>
-    public interface ISearchRelatedItemsPaginator
+    public partial interface ISearchRelatedItemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

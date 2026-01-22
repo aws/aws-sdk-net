@@ -27,7 +27,7 @@ namespace Amazon.NeptuneGraph.Model
     /// <summary>
     /// Paginators for the NeptuneGraph service
     ///</summary>
-    public class NeptuneGraphPaginatorFactory : INeptuneGraphPaginatorFactory
+    public partial class NeptuneGraphPaginatorFactory : INeptuneGraphPaginatorFactory
     {
         private readonly IAmazonNeptuneGraph client;
 

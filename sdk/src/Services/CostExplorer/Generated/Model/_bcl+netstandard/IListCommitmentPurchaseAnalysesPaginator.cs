@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the ListCommitmentPurchaseAnalyses operation
     ///</summary>
-    public interface IListCommitmentPurchaseAnalysesPaginator
+    public partial interface IListCommitmentPurchaseAnalysesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

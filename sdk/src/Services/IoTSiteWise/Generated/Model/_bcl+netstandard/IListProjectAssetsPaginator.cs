@@ -24,7 +24,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Paginator for the ListProjectAssets operation
     ///</summary>
-    public interface IListProjectAssetsPaginator
+    public partial interface IListProjectAssetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

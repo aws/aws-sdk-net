@@ -27,7 +27,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Paginators for the ServiceDiscovery service
     ///</summary>
-    public class ServiceDiscoveryPaginatorFactory : IServiceDiscoveryPaginatorFactory
+    public partial class ServiceDiscoveryPaginatorFactory : IServiceDiscoveryPaginatorFactory
     {
         private readonly IAmazonServiceDiscovery client;
 

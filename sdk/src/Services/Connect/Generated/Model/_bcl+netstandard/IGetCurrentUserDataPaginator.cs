@@ -24,7 +24,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Paginator for the GetCurrentUserData operation
     ///</summary>
-    public interface IGetCurrentUserDataPaginator
+    public partial interface IGetCurrentUserDataPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

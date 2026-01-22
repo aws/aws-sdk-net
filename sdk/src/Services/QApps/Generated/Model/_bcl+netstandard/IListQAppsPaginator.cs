@@ -24,7 +24,7 @@ namespace Amazon.QApps.Model
     /// <summary>
     /// Paginator for the ListQApps operation
     ///</summary>
-    public interface IListQAppsPaginator
+    public partial interface IListQAppsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

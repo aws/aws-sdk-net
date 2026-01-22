@@ -24,7 +24,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Paginator for the ListSecurityControlDefinitions operation
     ///</summary>
-    public interface IListSecurityControlDefinitionsPaginator
+    public partial interface IListSecurityControlDefinitionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

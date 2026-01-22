@@ -24,7 +24,7 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Paginator for the ListTaskExecutions operation
     ///</summary>
-    public interface IListTaskExecutionsPaginator
+    public partial interface IListTaskExecutionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

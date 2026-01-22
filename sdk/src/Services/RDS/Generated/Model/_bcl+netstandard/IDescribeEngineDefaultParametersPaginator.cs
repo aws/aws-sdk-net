@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Paginator for the DescribeEngineDefaultParameters operation
     ///</summary>
-    public interface IDescribeEngineDefaultParametersPaginator
+    public partial interface IDescribeEngineDefaultParametersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

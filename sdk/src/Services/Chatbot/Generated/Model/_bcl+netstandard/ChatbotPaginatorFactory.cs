@@ -27,7 +27,7 @@ namespace Amazon.Chatbot.Model
     /// <summary>
     /// Paginators for the Chatbot service
     ///</summary>
-    public class ChatbotPaginatorFactory : IChatbotPaginatorFactory
+    public partial class ChatbotPaginatorFactory : IChatbotPaginatorFactory
     {
         private readonly IAmazonChatbot client;
 

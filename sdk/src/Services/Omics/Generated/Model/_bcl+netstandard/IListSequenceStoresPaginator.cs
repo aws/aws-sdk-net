@@ -24,7 +24,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginator for the ListSequenceStores operation
     ///</summary>
-    public interface IListSequenceStoresPaginator
+    public partial interface IListSequenceStoresPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

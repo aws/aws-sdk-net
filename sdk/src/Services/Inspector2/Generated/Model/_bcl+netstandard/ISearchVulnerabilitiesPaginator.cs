@@ -24,7 +24,7 @@ namespace Amazon.Inspector2.Model
     /// <summary>
     /// Paginator for the SearchVulnerabilities operation
     ///</summary>
-    public interface ISearchVulnerabilitiesPaginator
+    public partial interface ISearchVulnerabilitiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

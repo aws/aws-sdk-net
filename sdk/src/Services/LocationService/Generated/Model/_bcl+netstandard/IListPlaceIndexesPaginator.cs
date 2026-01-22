@@ -24,7 +24,7 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Paginator for the ListPlaceIndexes operation
     ///</summary>
-    public interface IListPlaceIndexesPaginator
+    public partial interface IListPlaceIndexesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

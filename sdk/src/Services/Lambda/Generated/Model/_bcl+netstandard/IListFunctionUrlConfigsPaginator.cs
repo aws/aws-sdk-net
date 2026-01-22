@@ -24,7 +24,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginator for the ListFunctionUrlConfigs operation
     ///</summary>
-    public interface IListFunctionUrlConfigsPaginator
+    public partial interface IListFunctionUrlConfigsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

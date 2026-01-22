@@ -27,7 +27,7 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Paginators for the DataSync service
     ///</summary>
-    public class DataSyncPaginatorFactory : IDataSyncPaginatorFactory
+    public partial class DataSyncPaginatorFactory : IDataSyncPaginatorFactory
     {
         private readonly IAmazonDataSync client;
 

@@ -24,7 +24,7 @@ namespace Amazon.SSO.Model
     /// <summary>
     /// Paginator for the ListAccounts operation
     ///</summary>
-    public interface IListAccountsPaginator
+    public partial interface IListAccountsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

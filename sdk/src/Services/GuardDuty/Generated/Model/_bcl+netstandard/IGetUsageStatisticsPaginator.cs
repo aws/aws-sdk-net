@@ -24,7 +24,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginator for the GetUsageStatistics operation
     ///</summary>
-    public interface IGetUsageStatisticsPaginator
+    public partial interface IGetUsageStatisticsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

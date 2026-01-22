@@ -24,7 +24,7 @@ namespace Amazon.AppFabric.Model
     /// <summary>
     /// Paginator for the ListAppAuthorizations operation
     ///</summary>
-    public interface IListAppAuthorizationsPaginator
+    public partial interface IListAppAuthorizationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

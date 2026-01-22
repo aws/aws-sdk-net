@@ -24,7 +24,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Paginator for the ListIpRoutes operation
     ///</summary>
-    public interface IListIpRoutesPaginator
+    public partial interface IListIpRoutesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

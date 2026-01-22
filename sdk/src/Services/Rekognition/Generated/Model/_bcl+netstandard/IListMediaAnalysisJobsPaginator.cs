@@ -24,7 +24,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Paginator for the ListMediaAnalysisJobs operation
     ///</summary>
-    public interface IListMediaAnalysisJobsPaginator
+    public partial interface IListMediaAnalysisJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

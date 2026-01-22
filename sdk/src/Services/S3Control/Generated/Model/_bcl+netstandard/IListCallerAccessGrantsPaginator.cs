@@ -24,7 +24,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Paginator for the ListCallerAccessGrants operation
     ///</summary>
-    public interface IListCallerAccessGrantsPaginator
+    public partial interface IListCallerAccessGrantsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

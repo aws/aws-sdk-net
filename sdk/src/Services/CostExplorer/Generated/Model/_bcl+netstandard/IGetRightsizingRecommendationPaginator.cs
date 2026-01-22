@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the GetRightsizingRecommendation operation
     ///</summary>
-    public interface IGetRightsizingRecommendationPaginator
+    public partial interface IGetRightsizingRecommendationPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

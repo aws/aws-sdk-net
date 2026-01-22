@@ -27,7 +27,7 @@ namespace Amazon.PcaConnectorScep.Model
     /// <summary>
     /// Paginators for the PcaConnectorScep service
     ///</summary>
-    public class PcaConnectorScepPaginatorFactory : IPcaConnectorScepPaginatorFactory
+    public partial class PcaConnectorScepPaginatorFactory : IPcaConnectorScepPaginatorFactory
     {
         private readonly IAmazonPcaConnectorScep client;
 

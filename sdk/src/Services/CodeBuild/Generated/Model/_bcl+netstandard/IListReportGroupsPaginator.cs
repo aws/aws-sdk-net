@@ -24,7 +24,7 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Paginator for the ListReportGroups operation
     ///</summary>
-    public interface IListReportGroupsPaginator
+    public partial interface IListReportGroupsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

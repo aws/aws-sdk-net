@@ -24,7 +24,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Paginator for the GetCostComparisonDrivers operation
     ///</summary>
-    public interface IGetCostComparisonDriversPaginator
+    public partial interface IGetCostComparisonDriversPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

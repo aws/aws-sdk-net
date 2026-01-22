@@ -24,7 +24,7 @@ namespace Amazon.ApplicationInsights.Model
     /// <summary>
     /// Paginator for the ListLogPatterns operation
     ///</summary>
-    public interface IListLogPatternsPaginator
+    public partial interface IListLogPatternsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

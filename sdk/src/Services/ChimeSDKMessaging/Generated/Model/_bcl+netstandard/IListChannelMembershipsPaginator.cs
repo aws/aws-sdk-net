@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// <summary>
     /// Paginator for the ListChannelMemberships operation
     ///</summary>
-    public interface IListChannelMembershipsPaginator
+    public partial interface IListChannelMembershipsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

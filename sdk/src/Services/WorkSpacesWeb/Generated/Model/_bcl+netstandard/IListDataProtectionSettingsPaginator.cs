@@ -24,7 +24,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// <summary>
     /// Paginator for the ListDataProtectionSettings operation
     ///</summary>
-    public interface IListDataProtectionSettingsPaginator
+    public partial interface IListDataProtectionSettingsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

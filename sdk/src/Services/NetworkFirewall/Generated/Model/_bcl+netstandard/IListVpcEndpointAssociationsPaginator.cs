@@ -24,7 +24,7 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// Paginator for the ListVpcEndpointAssociations operation
     ///</summary>
-    public interface IListVpcEndpointAssociationsPaginator
+    public partial interface IListVpcEndpointAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

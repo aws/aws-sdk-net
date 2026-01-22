@@ -24,7 +24,7 @@ namespace Amazon.Shield.Model
     /// <summary>
     /// Paginators for the Shield service
     ///</summary>
-    public interface IShieldPaginatorFactory
+    public partial interface IShieldPaginatorFactory
     {
 
         /// <summary>

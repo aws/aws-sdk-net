@@ -24,7 +24,7 @@ namespace Amazon.DataExchange.Model
     /// <summary>
     /// Paginator for the ListDataSetRevisions operation
     ///</summary>
-    public interface IListDataSetRevisionsPaginator
+    public partial interface IListDataSetRevisionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

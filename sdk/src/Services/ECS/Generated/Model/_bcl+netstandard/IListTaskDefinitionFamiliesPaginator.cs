@@ -24,7 +24,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Paginator for the ListTaskDefinitionFamilies operation
     ///</summary>
-    public interface IListTaskDefinitionFamiliesPaginator
+    public partial interface IListTaskDefinitionFamiliesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

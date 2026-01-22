@@ -24,7 +24,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Paginator for the DescribeJobQueues operation
     ///</summary>
-    public interface IDescribeJobQueuesPaginator
+    public partial interface IDescribeJobQueuesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

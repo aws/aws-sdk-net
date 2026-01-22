@@ -24,7 +24,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Paginator for the ListDocumentClassifiers operation
     ///</summary>
-    public interface IListDocumentClassifiersPaginator
+    public partial interface IListDocumentClassifiersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

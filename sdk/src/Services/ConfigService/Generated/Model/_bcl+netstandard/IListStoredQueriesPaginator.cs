@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the ListStoredQueries operation
     ///</summary>
-    public interface IListStoredQueriesPaginator
+    public partial interface IListStoredQueriesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

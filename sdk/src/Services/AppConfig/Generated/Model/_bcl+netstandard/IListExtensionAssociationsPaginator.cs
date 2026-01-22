@@ -24,7 +24,7 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Paginator for the ListExtensionAssociations operation
     ///</summary>
-    public interface IListExtensionAssociationsPaginator
+    public partial interface IListExtensionAssociationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

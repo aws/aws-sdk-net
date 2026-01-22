@@ -27,7 +27,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Paginators for the DynamoDBv2 service
     ///</summary>
-    public class DynamoDBv2PaginatorFactory : IDynamoDBv2PaginatorFactory
+    public partial class DynamoDBv2PaginatorFactory : IDynamoDBv2PaginatorFactory
     {
         private readonly IAmazonDynamoDB client;
 

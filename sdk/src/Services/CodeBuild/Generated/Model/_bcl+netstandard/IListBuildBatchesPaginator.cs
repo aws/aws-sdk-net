@@ -24,7 +24,7 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Paginator for the ListBuildBatches operation
     ///</summary>
-    public interface IListBuildBatchesPaginator
+    public partial interface IListBuildBatchesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

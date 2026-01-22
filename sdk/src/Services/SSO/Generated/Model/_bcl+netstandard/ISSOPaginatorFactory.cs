@@ -24,7 +24,7 @@ namespace Amazon.SSO.Model
     /// <summary>
     /// Paginators for the SSO service
     ///</summary>
-    public interface ISSOPaginatorFactory
+    public partial interface ISSOPaginatorFactory
     {
 
         /// <summary>

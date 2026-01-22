@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubConfig.Model
     /// <summary>
     /// Paginator for the DescribeHomeRegionControls operation
     ///</summary>
-    public interface IDescribeHomeRegionControlsPaginator
+    public partial interface IDescribeHomeRegionControlsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -24,7 +24,7 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Paginator for the ListUniqueProblems operation
     ///</summary>
-    public interface IListUniqueProblemsPaginator
+    public partial interface IListUniqueProblemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

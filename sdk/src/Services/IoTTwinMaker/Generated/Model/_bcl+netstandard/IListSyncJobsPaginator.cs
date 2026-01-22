@@ -24,7 +24,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// <summary>
     /// Paginator for the ListSyncJobs operation
     ///</summary>
-    public interface IListSyncJobsPaginator
+    public partial interface IListSyncJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

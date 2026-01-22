@@ -24,7 +24,7 @@ namespace Amazon.DocDBElastic.Model
     /// <summary>
     /// Paginator for the ListClusterSnapshots operation
     ///</summary>
-    public interface IListClusterSnapshotsPaginator
+    public partial interface IListClusterSnapshotsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

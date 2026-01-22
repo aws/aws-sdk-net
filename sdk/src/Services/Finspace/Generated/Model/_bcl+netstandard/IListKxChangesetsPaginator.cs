@@ -24,7 +24,7 @@ namespace Amazon.Finspace.Model
     /// <summary>
     /// Paginator for the ListKxChangesets operation
     ///</summary>
-    public interface IListKxChangesetsPaginator
+    public partial interface IListKxChangesetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

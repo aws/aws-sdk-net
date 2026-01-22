@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Paginator for the DescribeUsageLimits operation
     ///</summary>
-    public interface IDescribeUsageLimitsPaginator
+    public partial interface IDescribeUsageLimitsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

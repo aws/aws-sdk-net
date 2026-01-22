@@ -24,7 +24,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginator for the DescribePendingAggregationRequests operation
     ///</summary>
-    public interface IDescribePendingAggregationRequestsPaginator
+    public partial interface IDescribePendingAggregationRequestsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

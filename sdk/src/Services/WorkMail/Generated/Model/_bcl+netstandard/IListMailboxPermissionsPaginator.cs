@@ -24,7 +24,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Paginator for the ListMailboxPermissions operation
     ///</summary>
-    public interface IListMailboxPermissionsPaginator
+    public partial interface IListMailboxPermissionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

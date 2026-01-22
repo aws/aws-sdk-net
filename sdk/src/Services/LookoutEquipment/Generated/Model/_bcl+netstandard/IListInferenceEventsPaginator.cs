@@ -24,7 +24,7 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Paginator for the ListInferenceEvents operation
     ///</summary>
-    public interface IListInferenceEventsPaginator
+    public partial interface IListInferenceEventsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

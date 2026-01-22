@@ -24,7 +24,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Paginator for the ListEdgeDeploymentPlans operation
     ///</summary>
-    public interface IListEdgeDeploymentPlansPaginator
+    public partial interface IListEdgeDeploymentPlansPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

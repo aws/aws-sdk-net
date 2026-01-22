@@ -24,7 +24,7 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Paginator for the ListReadSetActivationJobs operation
     ///</summary>
-    public interface IListReadSetActivationJobsPaginator
+    public partial interface IListReadSetActivationJobsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

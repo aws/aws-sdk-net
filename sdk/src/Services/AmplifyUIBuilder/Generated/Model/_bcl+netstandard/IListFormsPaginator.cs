@@ -24,7 +24,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// <summary>
     /// Paginator for the ListForms operation
     ///</summary>
-    public interface IListFormsPaginator
+    public partial interface IListFormsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

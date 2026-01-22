@@ -27,7 +27,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Paginators for the GuardDuty service
     ///</summary>
-    public class GuardDutyPaginatorFactory : IGuardDutyPaginatorFactory
+    public partial class GuardDutyPaginatorFactory : IGuardDutyPaginatorFactory
     {
         private readonly IAmazonGuardDuty client;
 

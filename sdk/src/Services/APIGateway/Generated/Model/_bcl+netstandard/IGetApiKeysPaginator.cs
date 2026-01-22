@@ -24,7 +24,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Paginator for the GetApiKeys operation
     ///</summary>
-    public interface IGetApiKeysPaginator
+    public partial interface IGetApiKeysPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

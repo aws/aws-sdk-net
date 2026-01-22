@@ -24,7 +24,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Paginator for the GetIpamPrefixListResolverVersions operation
     ///</summary>
-    public interface IGetIpamPrefixListResolverVersionsPaginator
+    public partial interface IGetIpamPrefixListResolverVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

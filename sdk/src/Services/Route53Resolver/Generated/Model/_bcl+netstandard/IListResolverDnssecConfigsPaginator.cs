@@ -24,7 +24,7 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Paginator for the ListResolverDnssecConfigs operation
     ///</summary>
-    public interface IListResolverDnssecConfigsPaginator
+    public partial interface IListResolverDnssecConfigsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

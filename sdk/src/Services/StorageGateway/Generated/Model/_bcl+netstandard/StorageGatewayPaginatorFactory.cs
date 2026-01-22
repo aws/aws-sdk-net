@@ -27,7 +27,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Paginators for the StorageGateway service
     ///</summary>
-    public class StorageGatewayPaginatorFactory : IStorageGatewayPaginatorFactory
+    public partial class StorageGatewayPaginatorFactory : IStorageGatewayPaginatorFactory
     {
         private readonly IAmazonStorageGateway client;
 

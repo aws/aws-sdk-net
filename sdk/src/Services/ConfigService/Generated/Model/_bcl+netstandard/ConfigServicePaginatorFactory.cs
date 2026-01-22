@@ -27,7 +27,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Paginators for the ConfigService service
     ///</summary>
-    public class ConfigServicePaginatorFactory : IConfigServicePaginatorFactory
+    public partial class ConfigServicePaginatorFactory : IConfigServicePaginatorFactory
     {
         private readonly IAmazonConfigService client;
 

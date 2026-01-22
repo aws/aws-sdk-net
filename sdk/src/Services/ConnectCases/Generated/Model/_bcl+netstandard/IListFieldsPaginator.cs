@@ -24,7 +24,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Paginator for the ListFields operation
     ///</summary>
-    public interface IListFieldsPaginator
+    public partial interface IListFieldsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

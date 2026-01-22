@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListJobMembers operation
     ///</summary>
-    public interface IListJobMembersPaginator
+    public partial interface IListJobMembersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

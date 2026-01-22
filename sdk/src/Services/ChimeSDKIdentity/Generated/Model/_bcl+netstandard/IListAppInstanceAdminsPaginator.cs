@@ -24,7 +24,7 @@ namespace Amazon.ChimeSDKIdentity.Model
     /// <summary>
     /// Paginator for the ListAppInstanceAdmins operation
     ///</summary>
-    public interface IListAppInstanceAdminsPaginator
+    public partial interface IListAppInstanceAdminsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

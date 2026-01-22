@@ -24,7 +24,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Paginator for the ListCustomEntityTypes operation
     ///</summary>
-    public interface IListCustomEntityTypesPaginator
+    public partial interface IListCustomEntityTypesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

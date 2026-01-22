@@ -24,7 +24,7 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Paginator for the DescribeCustomDomains operation
     ///</summary>
-    public interface IDescribeCustomDomainsPaginator
+    public partial interface IDescribeCustomDomainsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Paginators for the Lambda service
     ///</summary>
-    public class LambdaPaginatorFactory : ILambdaPaginatorFactory
+    public partial class LambdaPaginatorFactory : ILambdaPaginatorFactory
     {
         private readonly IAmazonLambda client;
 

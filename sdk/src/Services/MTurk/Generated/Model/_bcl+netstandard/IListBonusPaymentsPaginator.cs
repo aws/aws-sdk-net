@@ -24,7 +24,7 @@ namespace Amazon.MTurk.Model
     /// <summary>
     /// Paginator for the ListBonusPayments operation
     ///</summary>
-    public interface IListBonusPaymentsPaginator
+    public partial interface IListBonusPaymentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

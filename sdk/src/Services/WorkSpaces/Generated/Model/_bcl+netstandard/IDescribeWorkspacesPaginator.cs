@@ -24,7 +24,7 @@ namespace Amazon.WorkSpaces.Model
     /// <summary>
     /// Paginator for the DescribeWorkspaces operation
     ///</summary>
-    public interface IDescribeWorkspacesPaginator
+    public partial interface IDescribeWorkspacesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

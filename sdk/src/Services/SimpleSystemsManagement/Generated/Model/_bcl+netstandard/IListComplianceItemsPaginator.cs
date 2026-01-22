@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the ListComplianceItems operation
     ///</summary>
-    public interface IListComplianceItemsPaginator
+    public partial interface IListComplianceItemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Paginators for the S3Control service
     ///</summary>
-    public class S3ControlPaginatorFactory : IS3ControlPaginatorFactory
+    public partial class S3ControlPaginatorFactory : IS3ControlPaginatorFactory
     {
         private readonly IAmazonS3Control client;
 

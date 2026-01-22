@@ -24,7 +24,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Paginator for the DescribeInstanceProperties operation
     ///</summary>
-    public interface IDescribeInstancePropertiesPaginator
+    public partial interface IDescribeInstancePropertiesPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

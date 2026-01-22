@@ -27,7 +27,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Paginators for the DocDB service
     ///</summary>
-    public class DocDBPaginatorFactory : IDocDBPaginatorFactory
+    public partial class DocDBPaginatorFactory : IDocDBPaginatorFactory
     {
         private readonly IAmazonDocDB client;
 

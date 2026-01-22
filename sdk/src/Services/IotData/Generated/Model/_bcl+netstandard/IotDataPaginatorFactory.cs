@@ -27,7 +27,7 @@ namespace Amazon.IotData.Model
     /// <summary>
     /// Paginators for the IotData service
     ///</summary>
-    public class IotDataPaginatorFactory : IIotDataPaginatorFactory
+    public partial class IotDataPaginatorFactory : IIotDataPaginatorFactory
     {
         private readonly IAmazonIotData client;
 

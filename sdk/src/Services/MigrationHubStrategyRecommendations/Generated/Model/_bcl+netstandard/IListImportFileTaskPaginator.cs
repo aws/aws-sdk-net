@@ -24,7 +24,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// <summary>
     /// Paginator for the ListImportFileTask operation
     ///</summary>
-    public interface IListImportFileTaskPaginator
+    public partial interface IListImportFileTaskPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

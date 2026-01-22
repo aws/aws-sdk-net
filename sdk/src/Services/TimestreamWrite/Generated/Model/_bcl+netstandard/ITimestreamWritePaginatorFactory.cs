@@ -24,7 +24,7 @@ namespace Amazon.TimestreamWrite.Model
     /// <summary>
     /// Paginators for the TimestreamWrite service
     ///</summary>
-    public interface ITimestreamWritePaginatorFactory
+    public partial interface ITimestreamWritePaginatorFactory
     {
 
         /// <summary>

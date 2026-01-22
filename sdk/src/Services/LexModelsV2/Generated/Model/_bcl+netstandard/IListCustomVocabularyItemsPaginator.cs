@@ -24,7 +24,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Paginator for the ListCustomVocabularyItems operation
     ///</summary>
-    public interface IListCustomVocabularyItemsPaginator
+    public partial interface IListCustomVocabularyItemsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

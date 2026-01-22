@@ -27,7 +27,7 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Paginators for the Transfer service
     ///</summary>
-    public class TransferPaginatorFactory : ITransferPaginatorFactory
+    public partial class TransferPaginatorFactory : ITransferPaginatorFactory
     {
         private readonly IAmazonTransfer client;
 

@@ -24,7 +24,7 @@ namespace Amazon.CodeGuruSecurity.Model
     /// <summary>
     /// Paginators for the CodeGuruSecurity service
     ///</summary>
-    public interface ICodeGuruSecurityPaginatorFactory
+    public partial interface ICodeGuruSecurityPaginatorFactory
     {
 
         /// <summary>

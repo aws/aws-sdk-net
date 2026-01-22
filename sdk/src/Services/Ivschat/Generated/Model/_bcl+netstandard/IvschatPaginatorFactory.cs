@@ -27,7 +27,7 @@ namespace Amazon.Ivschat.Model
     /// <summary>
     /// Paginators for the Ivschat service
     ///</summary>
-    public class IvschatPaginatorFactory : IIvschatPaginatorFactory
+    public partial class IvschatPaginatorFactory : IIvschatPaginatorFactory
     {
         private readonly IAmazonIvschat client;
 

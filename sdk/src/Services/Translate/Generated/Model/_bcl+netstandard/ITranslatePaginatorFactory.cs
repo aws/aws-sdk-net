@@ -24,7 +24,7 @@ namespace Amazon.Translate.Model
     /// <summary>
     /// Paginators for the Translate service
     ///</summary>
-    public interface ITranslatePaginatorFactory
+    public partial interface ITranslatePaginatorFactory
     {
 
         /// <summary>

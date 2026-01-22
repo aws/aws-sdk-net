@@ -24,7 +24,7 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Paginator for the ListTrackerConsumers operation
     ///</summary>
-    public interface IListTrackerConsumersPaginator
+    public partial interface IListTrackerConsumersPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation

@@ -27,7 +27,7 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Paginators for the OpenSearchService service
     ///</summary>
-    public class OpenSearchServicePaginatorFactory : IOpenSearchServicePaginatorFactory
+    public partial class OpenSearchServicePaginatorFactory : IOpenSearchServicePaginatorFactory
     {
         private readonly IAmazonOpenSearchService client;
 

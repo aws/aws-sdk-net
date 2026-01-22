@@ -24,7 +24,7 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Paginator for the ListBudgets operation
     ///</summary>
-    public interface IListBudgetsPaginator
+    public partial interface IListBudgetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
