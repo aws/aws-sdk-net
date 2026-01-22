@@ -181,6 +181,9 @@ jobs:
                       issue_number: context.issue.number,
                       body: comment
                     });
+                    console.log('Successfully created backward compatibility comment');
+                  } else {
+                    console.log('Backward compatibility comment already exists, skipping creation');
                   }
                 } catch (commentError) {
                   // Don't fail PR workflows for comment errors, just log warning
