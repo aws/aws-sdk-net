@@ -29,7 +29,7 @@ jobs:
             
             // list of required reviewers
             const REQUIRED_REVIEWERS = ['normj', 'boblodgett', 'afroz0429'];
-            //
+            
             function findDevConfigFiles() {
               const devConfigPath = 'generator/.DevConfigs';
               try {
@@ -122,11 +122,17 @@ jobs:
                   pull_number: context.issue.number,
                 });
                 
-                // Find the latest review state for each reviewer
+                // Find the ACTUAL latest review state for each reviewer
                 const latestReviewsByUser = {};
-                for (const review of reviews) {
-                  if (review.user && review.user.login) {
-                    latestReviewsByUser[review.user.login] = review.state;
+                for (const reviewer of REQUIRED_REVIEWERS) {
+                  const userReviews = reviews
+                    .filter(review => review.user && review.user.login === reviewer)
+                    .sort((a, b) => new Date(b.submitted_at) - new Date(a.submitted_at)) // Descending by DATE
+                    .slice(0, 1); // Take first 1 (most recent)
+                  
+                  if (userReviews.length > 0) {
+                    latestReviewsByUser[reviewer] = userReviews[0].state;
+                    console.log(`Latest review for ${reviewer}: ${userReviews[0].state} at ${userReviews[0].submitted_at}`);
                   }
                 }
                 
