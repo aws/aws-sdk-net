@@ -343,6 +343,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateScriptRequest.NodeJsVersion</property>
+    <max>16</max>
+    <pattern>^\d+\.[x0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateScriptRequest.Version</property>
     <min>1</min>
     <max>1024</max>
@@ -3140,6 +3145,11 @@
     <property>Amazon.GameLift.Model.Script.Name</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Script.NodeJsVersion</property>
+    <max>16</max>
+    <pattern>^\d+\.[x0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.ScriptArn</property>
