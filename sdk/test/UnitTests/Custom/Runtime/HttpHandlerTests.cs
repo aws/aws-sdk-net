@@ -34,11 +34,9 @@ namespace AWSSDK.UnitTests
         {
             var factory = new MockHttpRequestFactory();
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
-
-            var listBucketsRequest = new ListBucketsRequest();
+            _ = new RuntimePipeline(httpHandler);
+            
             var executionContext = CreateExecutionContextForListBuckets();     
-
             httpHandler.InvokeSync(executionContext);
 
             Assert.IsNotNull(executionContext.ResponseContext.HttpResponse);
@@ -61,9 +59,9 @@ namespace AWSSDK.UnitTests
                 GetResponseAction = () => { throw new IOException(); }
             };
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
+            _ = new RuntimePipeline(httpHandler);
+            
             var executionContext = CreateExecutionContextForListBuckets();
-
             Utils.AssertExceptionExpected(() =>
             {
                 httpHandler.InvokeSync(executionContext);
@@ -83,11 +81,9 @@ namespace AWSSDK.UnitTests
         {
             var factory = new MockHttpRequestFactory();
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
-
-            var listBucketsRequest = new ListBucketsRequest();
+            _ = new RuntimePipeline(httpHandler);
+            
             var executionContext = CreateExecutionContextForListBuckets();
-
             await httpHandler.InvokeAsync<ListBucketsResponse>(executionContext);
 
             Assert.IsNotNull(executionContext.ResponseContext.HttpResponse);
