@@ -45,6 +45,7 @@ namespace Amazon.QConnect.Model
         /// The input schema for the tool use result.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Amazon.Runtime.Documents.Document InputSchema
         {
             get { return this._inputSchema; }
@@ -82,7 +83,7 @@ namespace Amazon.QConnect.Model
         /// The result of the tool usage.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Amazon.Runtime.Documents.Document ToolResult
         {
             get { return this._toolResult; }
