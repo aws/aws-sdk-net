@@ -219,6 +219,7 @@ namespace Amazon.S3.Model
         private string _checksumSHA256;
         
         private string _expectedBucketOwner;
+        private string _expires;
         private string _ifMatch;
         private string _ifNoneMatch;
         private Stream _inputStream;
@@ -589,6 +590,25 @@ namespace Amazon.S3.Model
         internal bool IsSetExpectedBucketOwner()
         {
             return !String.IsNullOrEmpty(this._expectedBucketOwner);
+        }
+
+        /// <summary>
+        /// Gets and sets the property Expires. 
+        /// <para>
+        /// The date and time at which the object is no longer cacheable. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
+        /// </para>
+        /// </summary>
+        public string Expires
+        {
+            get { return this._expires; }
+            set { this._expires = value; }
+        }
+
+        // Check to see if Expires property is set
+        internal bool IsSetExpires()
+        {
+            return this._expires != null;
         }
 
         /// <summary>

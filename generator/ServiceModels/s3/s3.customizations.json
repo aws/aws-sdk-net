@@ -574,7 +574,6 @@
                 "ContentEncoding",
                 "ContentLanguage",
                 "ContentType",
-                "Expires",
                 "Metadata",
                 "CacheControl"
             ],
@@ -2313,8 +2312,7 @@
                 "GrantWriteACP",
                 "GrantFullControl",
                 "GrantRead",
-                "ContentLanguage",
-                "Expires"
+                "ContentLanguage"
             ],
             "excludeFromMarshalling":[
                 "ServerSideEncryptionCustomerProvidedKeyMD5",

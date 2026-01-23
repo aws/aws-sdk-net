@@ -321,6 +321,7 @@ namespace Amazon.S3.Model
         private ChecksumAlgorithm _checksumAlgorithm;
         private ChecksumType _checksumType;
         private string _expectedBucketOwner;
+        private string _expires;
         private string _key;
         private ObjectLockLegalHoldStatus _objectLockLegalHoldStatus;
         private ObjectLockMode _objectLockMode;
@@ -529,6 +530,24 @@ namespace Amazon.S3.Model
         internal bool IsSetExpectedBucketOwner()
         {
             return this._expectedBucketOwner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Expires. 
+        /// <para>
+        /// The date and time at which the object is no longer cacheable.
+        /// </para>
+        /// </summary>
+        public string Expires
+        {
+            get { return this._expires; }
+            set { this._expires = value; }
+        }
+
+        // Check to see if Expires property is set
+        internal bool IsSetExpires()
+        {
+            return this._expires != null;
         }
 
         /// <summary>
