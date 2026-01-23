@@ -104,10 +104,11 @@ namespace AWSSDK.UnitTests
                 GetResponseAction = () => { throw new IOException(); }
             };
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
+            _ = new RuntimePipeline(httpHandler);
+            
             var executionContext = CreateExecutionContextForListBuckets();
-
             await Assert.ThrowsExceptionAsync<IOException>(() => httpHandler.InvokeAsync<AmazonWebServiceResponse>(executionContext));
+            
             var httpRequest = factory.LastCreatedRequest;
             Assert.AreEqual("GET", httpRequest.Method);
             Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
