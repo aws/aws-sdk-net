@@ -1117,10 +1117,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_SaveItem_WithTTL()
+        public async Task TestContext_SaveItem_WithTTL()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             // Create context and table if needed
@@ -1129,7 +1129,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Define TTL to be 2 minutes in the future
             var ttlEpoch = DateTimeOffset.UtcNow.AddMinutes(2).ToUnixTimeSeconds();
 
-            var item = new TtlTestItem
+            var item = new TtlTestItem  
             {
                 Id = 1,
                 Data = "Test with TTL",
