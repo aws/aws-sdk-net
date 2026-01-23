@@ -1454,6 +1454,10 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.DeleteDataExportConfigurationRequest.DomainIdentifier</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.DeleteDataProductRequest.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>

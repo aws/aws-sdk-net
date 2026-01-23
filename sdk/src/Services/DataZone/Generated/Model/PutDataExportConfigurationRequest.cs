@@ -35,11 +35,31 @@ namespace Amazon.DataZone.Model
     /// 
     ///  
     /// <para>
-    /// In the current release, you can enable exporting asset metadata only for one domain
-    /// per Amazon Web Services account per region. If you disable exporting asset metadata
-    /// feature for a domain where it's already enabled, you cannot enable this feature for
-    /// another domain in the same Amazon Web Services account and region.
+    /// If you want to temporarily disable export and later re-enable it for the same domain,
+    /// use the <c>--no-enable-export</c> flag to disable and the <c>--enable-export</c> flag
+    /// to re-enable. This preserves the configuration and allows you to re-enable export
+    /// without deleting S3 table.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// You can enable asset metadata export for only one domain per account per Region. To
+    /// enable export for a different domain, complete the following steps:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Delete the export configuration for the currently enabled domain using the DeleteDataExportConfiguration
+    /// operation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Delete the asset S3 table under the aws-sagemaker-catalog S3 table bucket. We recommend
+    /// backing up the S3 table before deletion.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call the PutDataExportConfiguration API to enable export for the new domain.
+    /// </para>
+    ///  </li> </ol> </note>
     /// </summary>
     public partial class PutDataExportConfigurationRequest : AmazonDataZoneRequest
     {
@@ -71,7 +91,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The domain ID where you want to create data export configuration details.
+        /// The domain ID for which you want to create data export configuration details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

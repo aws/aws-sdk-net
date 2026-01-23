@@ -3916,6 +3916,94 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DeleteDataExportConfiguration
+
+        /// <summary>
+        /// Deletes data export configuration for a domain.
+        /// 
+        ///  
+        /// <para>
+        /// This operation does not delete the S3 table created by the PutDataExportConfiguration
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To temporarily disable export without deleting the configuration, use the PutDataExportConfiguration
+        /// operation with the <c>--no-enable-export</c> flag instead. This allows you to re-enable
+        /// export for the same domain using the <c>--enable-export</c> flag without deleting
+        /// S3 table.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataExportConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataExportConfiguration">REST API Reference for DeleteDataExportConfiguration Operation</seealso>
+        public virtual DeleteDataExportConfigurationResponse DeleteDataExportConfiguration(DeleteDataExportConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataExportConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataExportConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataExportConfiguration operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataExportConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataExportConfiguration">REST API Reference for DeleteDataExportConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataExportConfiguration(DeleteDataExportConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataExportConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataExportConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataExportConfigurationResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataExportConfiguration">REST API Reference for DeleteDataExportConfiguration Operation</seealso>
+        public virtual DeleteDataExportConfigurationResponse EndDeleteDataExportConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataExportConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDataProduct
 
         /// <summary>
@@ -11145,11 +11233,31 @@ namespace Amazon.DataZone
         /// 
         ///  
         /// <para>
-        /// In the current release, you can enable exporting asset metadata only for one domain
-        /// per Amazon Web Services account per region. If you disable exporting asset metadata
-        /// feature for a domain where it's already enabled, you cannot enable this feature for
-        /// another domain in the same Amazon Web Services account and region.
+        /// If you want to temporarily disable export and later re-enable it for the same domain,
+        /// use the <c>--no-enable-export</c> flag to disable and the <c>--enable-export</c> flag
+        /// to re-enable. This preserves the configuration and allows you to re-enable export
+        /// without deleting S3 table.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can enable asset metadata export for only one domain per account per Region. To
+        /// enable export for a different domain, complete the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Delete the export configuration for the currently enabled domain using the DeleteDataExportConfiguration
+        /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete the asset S3 table under the aws-sagemaker-catalog S3 table bucket. We recommend
+        /// backing up the S3 table before deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call the PutDataExportConfiguration API to enable export for the new domain.
+        /// </para>
+        ///  </li> </ol> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDataExportConfiguration service method.</param>
         /// 
