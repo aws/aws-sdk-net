@@ -39,6 +39,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             Validate(request);
             var low = Map(request);
+            Table.UpdateRequestUserAgentDetails(low, isAsync: false);
             ApplyExpressions(request, low);
             var resp = InvokeSync(low);
             return PostProcess(request, resp);
