@@ -132,9 +132,10 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
                 writer.WriteLine("<title>{0} | AWS SDK for .NET Version 4</title>", GetTitle());                
                 writer.WriteLine("<script type=\"text/javascript\" src=\"/assets/js/awsdocs-boot.js\"></script>");
-                writer.WriteLine("<link rel=\"canonical\" href=\"https://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html?page={0}&tocid={1}\"/>",
-                                FilenameGenerator.Escape(this.GenerateFilename()),
-                                FilenameGenerator.Escape(this.GetTOCID()));
+                writer.WriteLine("<meta name=\"aws-tocid\" content=\"{0}\"/>", FilenameGenerator.Escape(this.GetTOCID()));
+                writer.WriteLine("<link rel=\"canonical\" href=\"https://docs.aws.amazon.com/sdkfornet/v4/apidocs/items/{0}/{1}\"/>",
+                                FilenameGenerator.Escape(this.GenerateFilepath()),
+                                FilenameGenerator.Escape(this.GenerateFilename()));
 
                 writer.WriteLine("</head>");                     
 
