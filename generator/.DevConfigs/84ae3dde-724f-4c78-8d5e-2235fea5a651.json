@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Added ServiceFullName to IServiceMetadata. backwardIncompatibilitiesToIgnore"
+    ]
+  }
+}
