@@ -44,7 +44,7 @@ namespace Amazon.QConnect.Model
         /// The tool input arguments
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Amazon.Runtime.Documents.Document Arguments
         {
             get { return this._arguments; }

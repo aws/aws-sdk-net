@@ -43,7 +43,7 @@ namespace Amazon.QConnect.Model
         /// A chunk of the case summarization completion.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string Completion
         {
             get { return this._completion; }
