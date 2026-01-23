@@ -548,6 +548,16 @@ namespace Amazon.Connect.Model
         IListTaskTemplatesPaginator ListTaskTemplates(ListTaskTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for ListTestCases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTestCasesPaginator ListTestCases(ListTestCasesRequest request);
+
+        /// <summary>
         /// Paginator for ListTrafficDistributionGroups operation
         ///</summary>
         [AWSPaginator(
@@ -796,6 +806,16 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchTestCases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchTestCasesPaginator SearchTestCases(SearchTestCasesRequest request);
 
         /// <summary>
         /// Paginator for SearchUserHierarchyGroups operation

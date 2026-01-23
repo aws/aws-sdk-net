@@ -453,6 +453,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListTestCases operation
+        ///</summary>
+        public IListTestCasesPaginator ListTestCases(ListTestCasesRequest request) 
+        {
+            return new ListTestCasesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTrafficDistributionGroups operation
         ///</summary>
         public IListTrafficDistributionGroupsPaginator ListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request) 
@@ -650,6 +658,14 @@ namespace Amazon.Connect.Model
         public ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request) 
         {
             return new SearchSecurityProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchTestCases operation
+        ///</summary>
+        public ISearchTestCasesPaginator SearchTestCases(SearchTestCasesRequest request) 
+        {
+            return new SearchTestCasesPaginator(this.client, request);
         }
 
         /// <summary>

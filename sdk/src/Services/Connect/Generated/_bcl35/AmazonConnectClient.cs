@@ -4960,6 +4960,94 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateTestCase
+
+        /// <summary>
+        /// Creates a test case with its content and metadata for the specified Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTestCase service method.</param>
+        /// 
+        /// <returns>The response from the CreateTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidTestCaseException">
+        /// The test is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTestCase">REST API Reference for CreateTestCase Operation</seealso>
+        public virtual CreateTestCaseResponse CreateTestCase(CreateTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTestCaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTestCase operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTestCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTestCase">REST API Reference for CreateTestCase Operation</seealso>
+        public virtual IAsyncResult BeginCreateTestCase(CreateTestCaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTestCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTestCase.</param>
+        /// 
+        /// <returns>Returns a  CreateTestCaseResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTestCase">REST API Reference for CreateTestCase Operation</seealso>
+        public virtual CreateTestCaseResponse EndCreateTestCase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTestCaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateTrafficDistributionGroup
 
         /// <summary>
@@ -7557,6 +7645,79 @@ namespace Amazon.Connect
         public virtual DeleteTaskTemplateResponse EndDeleteTaskTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTaskTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTestCase
+
+        /// <summary>
+        /// Deletes the test case that has already been created for the specified Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTestCase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTestCase">REST API Reference for DeleteTestCase Operation</seealso>
+        public virtual DeleteTestCaseResponse DeleteTestCase(DeleteTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTestCaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTestCase operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTestCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTestCase">REST API Reference for DeleteTestCase Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTestCase(DeleteTestCaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTestCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTestCase.</param>
+        /// 
+        /// <returns>Returns a  DeleteTestCaseResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTestCase">REST API Reference for DeleteTestCase Operation</seealso>
+        public virtual DeleteTestCaseResponse EndDeleteTestCase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTestCaseResponse>(asyncResult);
         }
 
         #endregion
@@ -10160,6 +10321,79 @@ namespace Amazon.Connect
         public virtual DescribeSecurityProfileResponse EndDescribeSecurityProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSecurityProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTestCase
+
+        /// <summary>
+        /// Describes the specified test case and allows you to get the content and metadata of
+        /// the test case for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTestCase service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTestCase">REST API Reference for DescribeTestCase Operation</seealso>
+        public virtual DescribeTestCaseResponse DescribeTestCase(DescribeTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTestCaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTestCase operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTestCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTestCase">REST API Reference for DescribeTestCase Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTestCase(DescribeTestCaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTestCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTestCase.</param>
+        /// 
+        /// <returns>Returns a  DescribeTestCaseResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTestCase">REST API Reference for DescribeTestCase Operation</seealso>
+        public virtual DescribeTestCaseResponse EndDescribeTestCase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTestCaseResponse>(asyncResult);
         }
 
         #endregion
@@ -13201,6 +13435,79 @@ namespace Amazon.Connect
         public virtual GetTaskTemplateResponse EndGetTaskTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTaskTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTestCaseExecutionSummary
+
+        /// <summary>
+        /// Retrieves an overview of a test execution that includes the status of the execution,
+        /// start and end time, and observation summary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTestCaseExecutionSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetTestCaseExecutionSummary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTestCaseExecutionSummary">REST API Reference for GetTestCaseExecutionSummary Operation</seealso>
+        public virtual GetTestCaseExecutionSummaryResponse GetTestCaseExecutionSummary(GetTestCaseExecutionSummaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTestCaseExecutionSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTestCaseExecutionSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetTestCaseExecutionSummaryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTestCaseExecutionSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTestCaseExecutionSummary operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTestCaseExecutionSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTestCaseExecutionSummary">REST API Reference for GetTestCaseExecutionSummary Operation</seealso>
+        public virtual IAsyncResult BeginGetTestCaseExecutionSummary(GetTestCaseExecutionSummaryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTestCaseExecutionSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTestCaseExecutionSummaryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTestCaseExecutionSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTestCaseExecutionSummary.</param>
+        /// 
+        /// <returns>Returns a  GetTestCaseExecutionSummaryResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTestCaseExecutionSummary">REST API Reference for GetTestCaseExecutionSummary Operation</seealso>
+        public virtual GetTestCaseExecutionSummaryResponse EndGetTestCaseExecutionSummary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTestCaseExecutionSummaryResponse>(asyncResult);
         }
 
         #endregion
@@ -17232,6 +17539,224 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListTestCaseExecutionRecords
+
+        /// <summary>
+        /// Lists detailed steps of test case execution that includes all observations along with
+        /// actions taken and data associated in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutionRecords service method.</param>
+        /// 
+        /// <returns>The response from the ListTestCaseExecutionRecords service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutionRecords">REST API Reference for ListTestCaseExecutionRecords Operation</seealso>
+        public virtual ListTestCaseExecutionRecordsResponse ListTestCaseExecutionRecords(ListTestCaseExecutionRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCaseExecutionRecordsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTestCaseExecutionRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutionRecords operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTestCaseExecutionRecords
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutionRecords">REST API Reference for ListTestCaseExecutionRecords Operation</seealso>
+        public virtual IAsyncResult BeginListTestCaseExecutionRecords(ListTestCaseExecutionRecordsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionRecordsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTestCaseExecutionRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTestCaseExecutionRecords.</param>
+        /// 
+        /// <returns>Returns a  ListTestCaseExecutionRecordsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutionRecords">REST API Reference for ListTestCaseExecutionRecords Operation</seealso>
+        public virtual ListTestCaseExecutionRecordsResponse EndListTestCaseExecutionRecords(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTestCaseExecutionRecordsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTestCaseExecutions
+
+        /// <summary>
+        /// Lists all test case executions and allows filtering by test case id, test case name,
+        /// start time, end time or status of the execution for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListTestCaseExecutions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutions">REST API Reference for ListTestCaseExecutions Operation</seealso>
+        public virtual ListTestCaseExecutionsResponse ListTestCaseExecutions(ListTestCaseExecutionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCaseExecutionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTestCaseExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutions operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTestCaseExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutions">REST API Reference for ListTestCaseExecutions Operation</seealso>
+        public virtual IAsyncResult BeginListTestCaseExecutions(ListTestCaseExecutionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTestCaseExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTestCaseExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListTestCaseExecutionsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutions">REST API Reference for ListTestCaseExecutions Operation</seealso>
+        public virtual ListTestCaseExecutionsResponse EndListTestCaseExecutions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTestCaseExecutionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTestCases
+
+        /// <summary>
+        /// Lists the test cases present in the specific Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCases service method.</param>
+        /// 
+        /// <returns>The response from the ListTestCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
+        public virtual ListTestCasesResponse ListTestCases(ListTestCasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTestCases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCases operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTestCases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
+        public virtual IAsyncResult BeginListTestCases(ListTestCasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTestCases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTestCases.</param>
+        /// 
+        /// <returns>Returns a  ListTestCasesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
+        public virtual ListTestCasesResponse EndListTestCases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTestCasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTrafficDistributionGroups
 
         /// <summary>
@@ -19971,6 +20496,78 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchTestCases
+
+        /// <summary>
+        /// Searches for test cases in the specified Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTestCases service method.</param>
+        /// 
+        /// <returns>The response from the SearchTestCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchTestCases">REST API Reference for SearchTestCases Operation</seealso>
+        public virtual SearchTestCasesResponse SearchTestCases(SearchTestCasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTestCasesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTestCasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchTestCases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchTestCases operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchTestCases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchTestCases">REST API Reference for SearchTestCases Operation</seealso>
+        public virtual IAsyncResult BeginSearchTestCases(SearchTestCasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTestCasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchTestCases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchTestCases.</param>
+        /// 
+        /// <returns>Returns a  SearchTestCasesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchTestCases">REST API Reference for SearchTestCases Operation</seealso>
+        public virtual SearchTestCasesResponse EndSearchTestCases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchTestCasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchUserHierarchyGroups
 
         /// <summary>
@@ -21703,6 +22300,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartTestCaseExecution
+
+        /// <summary>
+        /// Starts executing a published test case.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTestCaseExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartTestCaseExecution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTestCaseExecution">REST API Reference for StartTestCaseExecution Operation</seealso>
+        public virtual StartTestCaseExecutionResponse StartTestCaseExecution(StartTestCaseExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartTestCaseExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTestCaseExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTestCaseExecution operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTestCaseExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTestCaseExecution">REST API Reference for StartTestCaseExecution Operation</seealso>
+        public virtual IAsyncResult BeginStartTestCaseExecution(StartTestCaseExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTestCaseExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTestCaseExecution.</param>
+        /// 
+        /// <returns>Returns a  StartTestCaseExecutionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTestCaseExecution">REST API Reference for StartTestCaseExecution Operation</seealso>
+        public virtual StartTestCaseExecutionResponse EndStartTestCaseExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartTestCaseExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartWebRTCContact
 
         /// <summary>
@@ -22090,6 +22762,78 @@ namespace Amazon.Connect
         public virtual StopContactStreamingResponse EndStopContactStreaming(IAsyncResult asyncResult)
         {
             return EndInvoke<StopContactStreamingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopTestCaseExecution
+
+        /// <summary>
+        /// Stops a running test execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTestCaseExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopTestCaseExecution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopTestCaseExecution">REST API Reference for StopTestCaseExecution Operation</seealso>
+        public virtual StopTestCaseExecutionResponse StopTestCaseExecution(StopTestCaseExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopTestCaseExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTestCaseExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTestCaseExecution operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopTestCaseExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopTestCaseExecution">REST API Reference for StopTestCaseExecution Operation</seealso>
+        public virtual IAsyncResult BeginStopTestCaseExecution(StopTestCaseExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopTestCaseExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopTestCaseExecution.</param>
+        /// 
+        /// <returns>Returns a  StopTestCaseExecutionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopTestCaseExecution">REST API Reference for StopTestCaseExecution Operation</seealso>
+        public virtual StopTestCaseExecutionResponse EndStopTestCaseExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopTestCaseExecutionResponse>(asyncResult);
         }
 
         #endregion
@@ -26119,6 +26863,86 @@ namespace Amazon.Connect
         public virtual UpdateTaskTemplateResponse EndUpdateTaskTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTaskTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTestCase
+
+        /// <summary>
+        /// Updates any of the metadata for a test case, such as the name, description, and status
+        /// or content of an existing test case. This API doesn't allow customers to update the
+        /// tags of the test case resource for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTestCase service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidTestCaseException">
+        /// The test is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTestCase">REST API Reference for UpdateTestCase Operation</seealso>
+        public virtual UpdateTestCaseResponse UpdateTestCase(UpdateTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTestCaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTestCase operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTestCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTestCase">REST API Reference for UpdateTestCase Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTestCase(UpdateTestCaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTestCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTestCase.</param>
+        /// 
+        /// <returns>Returns a  UpdateTestCaseResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTestCase">REST API Reference for UpdateTestCase Operation</seealso>
+        public virtual UpdateTestCaseResponse EndUpdateTestCase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTestCaseResponse>(asyncResult);
         }
 
         #endregion
