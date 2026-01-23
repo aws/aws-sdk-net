@@ -27,7 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../src/AWSSDK.Extensions.Bedrock.MEAI/AWSSDK.Extensions.Bedrock.MEAI.NetFramework.csproj" />
-    <ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj" />
+    <ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -41,7 +41,7 @@ namespace ServiceClientGenerator
         private const string UnitTestsNetStandardCoreOnlyProjectGuid = "{B969DE99-0634-4989-A318-086AE1699974}";
         private const string UnitTestsNetStandardCoreOnlyProjectName = "UnitTests.NetStandard.CoreOnly";
 
-        private const string UnitTestUtilityProjectFileName = "AWSSDK.UnitTestUtilities.NetFramework";
+        private const string UnitTestUtilityProjectFileName = "AWSSDK.UnitTestUtilities";
         private const string UtilityProjectFileGuid = "{002B183F-E568-49CD-9D06-CBCFF2C2921F}";
 
         private const string IntegrationTestUtilityName = "AWSSDK.IntegrationTestUtilities.NetFramework";
@@ -70,13 +70,19 @@ namespace ServiceClientGenerator
             ProjectPath = Utils.PathCombineAlt("..", "..", "..", GeneratorLibProject.ProjectPath)
         };
 
+        /// <summary>
+        /// Common test project reference used in the uber solutions (i.e. "AWSSDK.NetFramework.sln").
+        /// </summary>
         private static readonly Project CommonTestProject = new Project
         {
             Name = CommonTestProjectName,
             ProjectGuid = CommonTestProjectGuid,
-            ProjectPath = Utils.PathCombineAlt("..", "sdk", "test", "Common", $"{CommonTestProjectName}.csproj")
+            ProjectPath = Utils.PathCombineAlt("test", "Common", $"{CommonTestProjectName}.csproj")
         };
 
+        /// <summary>
+        /// Common test project reference used in the service specific solutions (i.e. "S3.sln").
+        /// </summary>
         private static readonly Project ServiceSlnCommonTestProject = new Project
         {
             Name = CommonTestProjectName,
@@ -85,7 +91,20 @@ namespace ServiceClientGenerator
             RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "Common", $"{CommonTestProjectName}.csproj")
         };
 
-        private static readonly Project UnitTestUtilityProject45 = new Project
+        /// <summary>
+        /// Utilities project reference used in the uber solutions (i.e. "AWSSDK.NetFramework.sln").
+        /// </summary>
+        private static readonly Project UnitTestUtilityProject = new Project
+        {
+            Name = UnitTestUtilityProjectFileName,
+            ProjectGuid = UtilityProjectFileGuid,
+            ProjectPath = Utils.PathCombineAlt("test", "UnitTests", "Custom", $"{UnitTestUtilityProjectFileName}.csproj"),
+        };
+
+        /// <summary>
+        /// Utilities project reference used in the service specific solutions (i.e. "S3.sln").
+        /// </summary>
+        private static readonly Project ServiceSlnUnitTestUtilityProject = new Project
         {
             Name = UnitTestUtilityProjectFileName,
             ProjectGuid = UtilityProjectFileGuid,
@@ -358,10 +377,16 @@ namespace ServiceClientGenerator
                 });
             }
 
-            IList<Project> testProjects = new List<Project>();
-            IList<Project> integrationTestDependencies = new List<Project>();
+            var testProjects = new List<Project>();
+            var integrationTestDependencies = new List<Project>();
             if (includeTests)
             {
+                // These projects support all target frameworks so they can be included in all solutions.
+                testProjects.Add(CommonTestProject);
+                SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
+                testProjects.Add(UnitTestUtilityProject);
+                SelectBuildConfigurationsForProject(UnitTestUtilityProjectFileName, buildConfigurations);
+
                 var testProjectsRoot = Utils.PathCombineAlt(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
                 foreach (var configuration in projectFileConfigurations)
                 {
@@ -384,13 +409,6 @@ namespace ServiceClientGenerator
 
                     testProjects.Add(GeneratorLibProject);
                     SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-
-                    // AWSSDK.CommonTest supports all target frameworks so it can be included in all solutions.
-                    if (!testProjects.Contains(CommonTestProject))
-                    {
-                        testProjects.Add(CommonTestProject);
-                        SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
-                    }
 
                     // We must add the CrtIntegration extension to the target framework-specific solutions (at this point there should only be a single projectFileConfiguration)
                     var platformSpecificCRTName = string.Format("AWSSDK.Extensions.CrtIntegration.{0}", projectFileConfigurations.First().Name);
@@ -598,14 +616,21 @@ namespace ServiceClientGenerator
                     });
                 }
 
+                // The test utilities project uses classes from S3, so we need to add that as a dependency to
+                // the other service solutions in order for them to work locally as well.
+                testProjects.Add(ServiceSlnUnitTestUtilityProject);
+                dependentProjects.AddRange(AddProjectDependencies(
+                    ServiceSlnUnitTestUtilityProject.ProjectPath, 
+                    serviceDirectory.Name, 
+                    new List<string>()
+                ));
+
                 if (configuration.Name.Equals(ProjectTypes.NetFramework, StringComparison.Ordinal))
                 {
                     testProjects.Add(ServiceSlnGeneratorLibProject);
                     SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-
-                    testProjects.Add(UnitTestUtilityProject45);
+                    
                     testProjects.Add(IntegrationTestUtility45Project);
-
                     dependentProjects.AddRange(AddProjectDependencies
                         (IntegrationTestUtility45Project.ProjectPath, serviceDirectory.Name, new List<string>()));
                 }
@@ -619,31 +644,42 @@ namespace ServiceClientGenerator
         {   
             foreach (var line in File.ReadAllLines(projectFile))
             {
-                if (line.Contains("ProjectReference"))
+                if (!line.Contains("ProjectReference"))
                 {
-                    var matches = ProjectReferenceRegex.Match(line);
-                    var fileName = matches.ToString().Replace("\"", "");
-                    if (!(fileName.Contains("/Core/") || fileName.Contains($".{serviceName}.") || fileName.Contains("Test") || depsProjects.Contains(fileName)))
-                    {
-                        var split = fileName.Split(Path.AltDirectorySeparatorChar);
+                    continue;
+                }
 
-                        // Extensions are in a different folder in than the usual service dependencies.
-                        // Also skipping the recursion since these does not currently have any ProjectReferences beyond Core
-                        if (fileName.Contains("AWSSDK.Extensions."))
-                        {
-                        
-                            // Build the relative path to /extensions/src/AWSSDK.Extensions.{ExtensionName}/AWSSDK.Extensions.{ExtensionName}.<target framework>.csproj
-                            var deps = Utils.PathCombineAlt("..", "..", "..", "..", split[split.Length - 4], split[split.Length - 3], split[split.Length - 2], split[split.Length - 1]);
-                            depsProjects.Add(deps);
-                        }
-                        else
-                        {
-                            // Build the relative path to /<service folder>/AWSSDK.<service>.<target framework>.csproj
-                            var deps = Utils.PathCombineAlt("..", split[split.Length - 2], split[split.Length - 1]);
-                            depsProjects.Add(deps);
-                            AddProjectDependencies(Utils.PathCombineAlt(Options.SdkRootFolder, "src", "Services", split[split.Length - 2], split[split.Length - 1]), split[split.Length - 2], depsProjects);
-                        }
-                    }
+                var matches = ProjectReferenceRegex.Match(line);
+                var fileName = matches.ToString().Replace("\"", "");
+                
+                // Some references such as Core and the service project itself are added prior to this method being called.
+                var alreadyAdded = fileName.Contains("/Core/") || fileName.Contains($".{serviceName}.") || fileName.Contains("Test") || depsProjects.Contains(fileName);
+                if (alreadyAdded)
+                {
+                    continue;
+                }
+
+                var split = fileName.Split(Path.AltDirectorySeparatorChar);
+
+                // Extensions are in a different folder in than the usual service dependencies.
+                // Also skipping the recursion since these does not currently have any ProjectReferences beyond Core
+                if (fileName.Contains("AWSSDK.Extensions."))
+                {
+                    // Build the relative path to /extensions/src/AWSSDK.Extensions.{ExtensionName}/AWSSDK.Extensions.{ExtensionName}.<target framework>.csproj
+                    var deps = Utils.PathCombineAlt("..", "..", "..", "..", split[split.Length - 4], split[split.Length - 3], split[split.Length - 2], split[split.Length - 1]);
+                    depsProjects.Add(deps);
+                }
+                // The test utilities project references the generator as well, but that's already added to the service solutions.
+                else if (projectFile.Contains(UnitTestUtilityProjectFileName) && fileName.Contains(GeneratorLibProjectName))
+                {
+                    continue;
+                }
+                else
+                {
+                    // Build the relative path to /<service folder>/AWSSDK.<service>.<target framework>.csproj
+                    var deps = Utils.PathCombineAlt("..", split[split.Length - 2], split[split.Length - 1]);
+                    depsProjects.Add(deps);
+                    AddProjectDependencies(Utils.PathCombineAlt(Options.SdkRootFolder, "src", "Services", split[split.Length - 2], split[split.Length - 1]), split[split.Length - 2], depsProjects);
                 }
             }
             return depsProjects;

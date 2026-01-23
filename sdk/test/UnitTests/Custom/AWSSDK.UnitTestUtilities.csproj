@@ -1,12 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
-    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+    <TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' != 'net472'">$(DefineConstants);NETSTANDARD;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
     <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
-	
+
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.UnitTestUtilities</AssemblyName>
+    <PackageId>AWSSDK.UnitTestUtilities</PackageId>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <NoWarn>CS1591,CS1570,NU1701</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <SignAssembly>true</SignAssembly>
@@ -41,6 +52,7 @@
     <Compile Include="Runtime/MockAmazonWebServiceRequest.cs" />
     <Compile Include="Runtime/MockClientConfig.cs" />
     <Compile Include="Runtime/MockFileSystem.cs" />
+    <Compile Include="Runtime/RegionEndpointProviderTest.cs" />
     <Compile Include="Runtime/TerminatePipeline.cs" />
     <Compile Include="Runtime/UserAgentTests.cs" />
     <Compile Include="Utils.cs" />
@@ -51,6 +63,7 @@
     <Compile Remove="TestTools/CustomizationsTests.cs" />
     <Compile Remove="TestTools/ComparerTest.json" />
     <Compile Include="Runtime/CustomResponses.cs" />
+    <Compile Include="Util/RegionFinderTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -65,10 +78,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj" />
-    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.Netstandard.csproj" />
-    <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.Netstandard.csproj" />
-    <ProjectReference Include="..\..\Common\AWSSDK.CommonTest.csproj" />
+    <ProjectReference Include="../../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
+    <ProjectReference Include="../../Common/AWSSDK.CommonTest.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <ProjectReference Include="../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+    <ProjectReference Include="../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="../../../src/Services/S3/AWSSDK.S3.NetStandard.csproj" />
   </ItemGroup>
 
   <ItemGroup>
