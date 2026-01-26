@@ -57,9 +57,9 @@ generator/.vs/**
 **/*.partial.sln
 **/*.partial.FxCop
 **/*.partial.csproj
-
+sdk/test/VmaAnalysisTool/visualization/__pycache__
 .vscode
-
+*.png
 codesign-zip
 *.binlog
 /sdk/src/netsdk-*

@@ -23,9 +23,28 @@ def setup_style():
     plt.rcParams['axes.labelsize'] = 12
 
 
+def _format_chunk_size(x, pos):
+    """Format chunk size in KB to human-readable units (KB, MB, GB)."""
+    if x >= 1024 * 1024:  # GB
+        return f'{x / (1024 * 1024):.0f}GB'
+    elif x >= 1024:  # MB
+        return f'{x / 1024:.0f}MB'
+    else:  # KB
+        return f'{x:.0f}KB'
+
+
+def _format_part_size(size_mb: float) -> str:
+    """Format part size in MB to human-readable units (MB, GB)."""
+    if size_mb >= 1024:
+        return f'{size_mb / 1024:.0f}GB'
+    else:
+        return f'{size_mb:.0f}MB'
+
+
 def plot_chunk_size_impact(df: pd.DataFrame, output_path: Optional[str] = None, show: bool = True) -> plt.Figure:
     """
     Create a line plot showing how chunk size affects VMA count.
+    Uses two panels: one for small part sizes and one for large part sizes.
     
     Args:
         df: Prepared DataFrame
@@ -39,38 +58,121 @@ def plot_chunk_size_impact(df: pd.DataFrame, output_path: Optional[str] = None, 
         print("✗ ChunkSizeKB column not found")
         return None
     
+    if 'PartSizeMB' not in df.columns:
+        # Fall back to single plot if no part size info
+        return _plot_chunk_size_impact_single(df, output_path, show)
+    
+    # Split part sizes into small and large groups
+    part_sizes = sorted(df['PartSizeMB'].unique())
+    # Small: ≤ 50MB, Large: > 50MB
+    small_threshold = 50
+    small_parts = [p for p in part_sizes if p <= small_threshold]
+    large_parts = [p for p in part_sizes if p > small_threshold]
+    
+    # If all parts are in one category, use single plot
+    if not small_parts or not large_parts:
+        return _plot_chunk_size_impact_single(df, output_path, show)
+    
+    fig, axes = plt.subplots(1, 2, figsize=(18, 7))
+    
+    # Color palette for consistent colors across panels
+    colors = plt.cm.tab10.colors
+    
+    # Panel 1: Small part sizes (5MB - 50MB)
+    ax1 = axes[0]
+    small_df = df[df['PartSizeMB'].isin(small_parts)]
+    for i, part_size in enumerate(sorted(small_parts)):
+        subset = small_df[small_df['PartSizeMB'] == part_size].sort_values('ChunkSizeKB')
+        ax1.plot(subset['ChunkSizeKB'], subset['PeakVmaCount'], 
+                marker='o', label=_format_part_size(part_size), 
+                linewidth=2, markersize=6, color=colors[i % len(colors)])
+    
+    _configure_chunk_impact_axis(ax1, small_df, 'Small Parts (≤50MB)')
+    
+    # Panel 2: Large part sizes (100MB+)
+    ax2 = axes[1]
+    large_df = df[df['PartSizeMB'].isin(large_parts)]
+    for i, part_size in enumerate(sorted(large_parts)):
+        subset = large_df[large_df['PartSizeMB'] == part_size].sort_values('ChunkSizeKB')
+        ax2.plot(subset['ChunkSizeKB'], subset['PeakVmaCount'], 
+                marker='o', label=_format_part_size(part_size), 
+                linewidth=2, markersize=6, color=colors[i % len(colors)])
+    
+    _configure_chunk_impact_axis(ax2, large_df, 'Large Parts (>50MB)')
+    
+    fig.suptitle('Impact of Chunk Size on VMA Count', fontsize=14, fontweight='bold', y=1.02)
+    plt.tight_layout()
+    
+    if output_path:
+        fig.savefig(output_path, dpi=150, bbox_inches='tight')
+        print(f"✓ Saved: {output_path}")
+    
+    if show:
+        plt.show()
+    
+    return fig
+
+
+def _configure_chunk_impact_axis(ax, df: pd.DataFrame, title: str):
+    """Configure a single axis for chunk size impact plot."""
+    # Get chunk size range for this panel
+    chunk_sizes = sorted(df['ChunkSizeKB'].unique())
+    min_chunk = min(chunk_sizes)
+    max_chunk = max(chunk_sizes)
+    
+    # Set log scale FIRST before setting limits
+    ax.set_xscale('log', base=2)
+    
+    # Set explicit x limits with some padding on log scale
+    ax.set_xlim(min_chunk * 0.7, max_chunk * 1.4)
+    
+    # Add threshold lines
+    ax.axhline(y=SAFE_THRESHOLD, color='orange', linestyle='--', linewidth=2, 
+               label=f'Safe ({SAFE_THRESHOLD//1000}K)')
+    ax.axhline(y=ABORT_THRESHOLD, color='red', linestyle='--', linewidth=2, 
+               label=f'Abort ({ABORT_THRESHOLD//1000}K)')
+    
+    # Fill safe zone (use the actual x limits after log scale is set)
+    xlim = ax.get_xlim()
+    ax.fill_between([xlim[0], xlim[1]], 0, SAFE_THRESHOLD, alpha=0.1, color='green')
+    
+    ax.set_xlabel('Chunk Size')
+    ax.set_ylabel('Peak VMA Count')
+    ax.set_title(title)
+    ax.legend(loc='upper right', fontsize=9, ncol=2)
+    ax.grid(True, alpha=0.3)
+    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x:,.0f}'))
+    
+    # Set x-axis tick formatter to show human-readable units
+    ax.xaxis.set_major_formatter(plt.FuncFormatter(_format_chunk_size))
+    
+    # Set explicit tick locations at power-of-2 chunk sizes (filter to avoid crowding)
+    # Select a subset of ticks to avoid overcrowding
+    if len(chunk_sizes) > 8:
+        # Pick ticks at roughly logarithmic intervals
+        indices = np.linspace(0, len(chunk_sizes) - 1, 8).astype(int)
+        tick_sizes = [chunk_sizes[i] for i in indices]
+    else:
+        tick_sizes = chunk_sizes
+    ax.set_xticks(tick_sizes)
+    plt.setp(ax.get_xticklabels(), rotation=45, ha='right')
+
+
+def _plot_chunk_size_impact_single(df: pd.DataFrame, output_path: Optional[str] = None, 
+                                    show: bool = True) -> plt.Figure:
+    """Fallback single-panel chunk size impact plot."""
     fig, ax = plt.subplots(figsize=(14, 7))
     
-    # Plot lines for each part size
     if 'PartSizeMB' in df.columns:
         for part_size in sorted(df['PartSizeMB'].unique()):
             subset = df[df['PartSizeMB'] == part_size].sort_values('ChunkSizeKB')
             ax.plot(subset['ChunkSizeKB'], subset['PeakVmaCount'], 
-                   marker='o', label=f'{part_size:.0f}MB parts', linewidth=2, markersize=6)
+                   marker='o', label=_format_part_size(part_size), linewidth=2, markersize=6)
     else:
         subset = df.sort_values('ChunkSizeKB')
         ax.plot(subset['ChunkSizeKB'], subset['PeakVmaCount'], marker='o', linewidth=2)
     
-    # Add threshold lines
-    ax.axhline(y=SAFE_THRESHOLD, color='orange', linestyle='--', linewidth=2, 
-               label=f'Safe Threshold ({SAFE_THRESHOLD:,})')
-    ax.axhline(y=ABORT_THRESHOLD, color='red', linestyle='--', linewidth=2, 
-               label=f'Abort Threshold ({ABORT_THRESHOLD:,})')
-    ax.axhline(y=LINUX_LIMIT, color='darkred', linestyle='-', linewidth=1.5, 
-               label=f'Linux Limit ({LINUX_LIMIT:,})')
-    
-    # Fill safe zone
-    xlim = ax.get_xlim()
-    ax.fill_between([xlim[0], xlim[1]], 0, SAFE_THRESHOLD, alpha=0.1, color='green')
-    ax.set_xlim(xlim)
-    
-    ax.set_xlabel('Chunk Size (KB)')
-    ax.set_ylabel('Peak VMA Count')
-    ax.set_title('Impact of Chunk Size on VMA Count')
-    ax.legend(loc='upper right', fontsize=10)
-    ax.set_xscale('log', base=2)
-    ax.grid(True, alpha=0.3)
-    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x:,.0f}'))
+    _configure_chunk_impact_axis(ax, df, 'Impact of Chunk Size on VMA Count')
     
     plt.tight_layout()
     
