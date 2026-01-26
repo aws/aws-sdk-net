@@ -227,4 +227,68 @@ namespace Amazon.S3
             return StringComparer.OrdinalIgnoreCase.Equals(thisValue, value);
         }
     }
+
+    /// <summary>
+    /// The configuration state for journal tables.
+    /// </summary>
+    [Obsolete("JournalConfigurationState is deprecated and will be removed in a future version.")]
+    public sealed class JournalConfigurationState : ConstantClass
+    {
+        /// <summary>
+        /// Journal configuration is enabled.
+        /// </summary>
+        public static readonly JournalConfigurationState Enabled = new JournalConfigurationState("ENABLED");
+
+        /// <summary>
+        /// Journal configuration is disabled.
+        /// </summary>
+        public static readonly JournalConfigurationState Disabled = new JournalConfigurationState("DISABLED");
+
+        /// <summary>
+        /// Construct instance of JournalConfigurationState.
+        /// </summary>
+        /// <param name="value"></param>
+        public JournalConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JournalConfigurationState FindValue(string value)
+        {
+            return FindValue<JournalConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JournalConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// The constants for the known event names used by S3 notification. S3 might add new
+    /// events before the SDK is updated. In which case the names listed in the S3 documentation
+    /// will work as well as these constants.
+    /// </summary>
+    [Obsolete("NotificationEvents is deprecated and will be removed in a future version. Use the EventType enumeration values instead.")]
+    public sealed class NotificationEvents
+    {
+        /// <summary>
+        /// An event that says an object has been lost in the reduced redundancy storage.
+        /// </summary>
+        public static readonly string ReducedRedundancyLostObject = "s3:ReducedRedundancyLostObject";
+
+        private NotificationEvents()
+        {
+        }
+    }
 }
