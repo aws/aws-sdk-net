@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("additionalFlexibleNetworkInterfaces", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.AdditionalFlexibleNetworkInterfaces = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("baselineBandwidthInGbps", targetDepth))
                     {
                         var unmarshaller = NullableDoubleUnmarshaller.Instance;
