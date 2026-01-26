@@ -110,6 +110,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/BatchEvaluateFeature">REST API Reference for BatchEvaluateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<BatchEvaluateFeatureResponse> BatchEvaluateFeatureAsync(BatchEvaluateFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -163,6 +164,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateExperiment">REST API Reference for CreateExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<CreateExperimentResponse> CreateExperimentAsync(CreateExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -205,6 +207,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateFeature">REST API Reference for CreateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<CreateFeatureResponse> CreateFeatureAsync(CreateFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -253,6 +256,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateLaunch">REST API Reference for CreateLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<CreateLaunchResponse> CreateLaunchAsync(CreateLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -289,6 +293,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -340,6 +345,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<CreateSegmentResponse> CreateSegmentAsync(CreateSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -382,6 +388,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<DeleteExperimentResponse> DeleteExperimentAsync(DeleteExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -415,6 +422,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteFeature">REST API Reference for DeleteFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<DeleteFeatureResponse> DeleteFeatureAsync(DeleteFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -454,6 +462,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteLaunch">REST API Reference for DeleteLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<DeleteLaunchResponse> DeleteLaunchAsync(DeleteLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -488,6 +497,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -522,6 +532,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<DeleteSegmentResponse> DeleteSegmentAsync(DeleteSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -597,6 +608,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/EvaluateFeature">REST API Reference for EvaluateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<EvaluateFeatureResponse> EvaluateFeatureAsync(EvaluateFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -628,6 +640,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<GetExperimentResponse> GetExperimentAsync(GetExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -672,6 +685,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">REST API Reference for GetExperimentResults Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<GetExperimentResultsResponse> GetExperimentResultsAsync(GetExperimentResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -703,6 +717,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetFeature">REST API Reference for GetFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<GetFeatureResponse> GetFeatureAsync(GetFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -734,6 +749,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetLaunch">REST API Reference for GetLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<GetLaunchResponse> GetLaunchAsync(GetLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -765,6 +781,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetProject">REST API Reference for GetProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -796,6 +813,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<GetSegmentResponse> GetSegmentAsync(GetSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -823,6 +841,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<ListExperimentsResponse> ListExperimentsAsync(ListExperimentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -853,6 +872,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListFeatures">REST API Reference for ListFeatures Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<ListFeaturesResponse> ListFeaturesAsync(ListFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -880,6 +900,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListLaunches">REST API Reference for ListLaunches Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<ListLaunchesResponse> ListLaunchesAsync(ListLaunchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -908,6 +929,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -938,6 +960,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<ListSegmentReferencesResponse> ListSegmentReferencesAsync(ListSegmentReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -966,6 +989,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<ListSegmentsResponse> ListSegmentsAsync(ListSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -993,6 +1017,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1024,6 +1049,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/PutProjectEvents">REST API Reference for PutProjectEvents Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<PutProjectEventsResponse> PutProjectEventsAsync(PutProjectEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1060,6 +1086,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartExperiment">REST API Reference for StartExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<StartExperimentResponse> StartExperimentAsync(StartExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1096,6 +1123,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartLaunch">REST API Reference for StartLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<StartLaunchResponse> StartLaunchAsync(StartLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1133,6 +1161,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopExperiment">REST API Reference for StopExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<StopExperimentResponse> StopExperimentAsync(StopExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1167,6 +1196,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopLaunch">REST API Reference for StopLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<StopLaunchResponse> StopLaunchAsync(StopLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1224,6 +1254,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1252,6 +1283,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<TestSegmentPatternResponse> TestSegmentPatternAsync(TestSegmentPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1279,6 +1311,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1315,6 +1348,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<UpdateExperimentResponse> UpdateExperimentAsync(UpdateExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1355,6 +1389,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateFeature">REST API Reference for UpdateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<UpdateFeatureResponse> UpdateFeatureAsync(UpdateFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1392,6 +1427,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateLaunch">REST API Reference for UpdateLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<UpdateLaunchResponse> UpdateLaunchAsync(UpdateLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1441,6 +1477,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1483,6 +1520,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProjectDataDelivery">REST API Reference for UpdateProjectDataDelivery Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         Task<UpdateProjectDataDeliveryResponse> UpdateProjectDataDeliveryAsync(UpdateProjectDataDeliveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

@@ -326,6 +326,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/BatchEvaluateFeature">REST API Reference for BatchEvaluateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual BatchEvaluateFeatureResponse BatchEvaluateFeature(BatchEvaluateFeatureRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -347,6 +348,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchEvaluateFeature
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/BatchEvaluateFeature">REST API Reference for BatchEvaluateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginBatchEvaluateFeature(BatchEvaluateFeatureRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -364,6 +366,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  BatchEvaluateFeatureResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/BatchEvaluateFeature">REST API Reference for BatchEvaluateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual BatchEvaluateFeatureResponse EndBatchEvaluateFeature(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchEvaluateFeatureResponse>(asyncResult);
@@ -415,6 +418,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateExperiment">REST API Reference for CreateExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateExperimentResponse CreateExperiment(CreateExperimentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -436,6 +440,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExperiment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateExperiment">REST API Reference for CreateExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginCreateExperiment(CreateExperimentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -453,6 +458,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  CreateExperimentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateExperiment">REST API Reference for CreateExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateExperimentResponse EndCreateExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateExperimentResponse>(asyncResult);
@@ -493,6 +499,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateFeature">REST API Reference for CreateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateFeatureResponse CreateFeature(CreateFeatureRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -514,6 +521,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFeature
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateFeature">REST API Reference for CreateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginCreateFeature(CreateFeatureRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -531,6 +539,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  CreateFeatureResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateFeature">REST API Reference for CreateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateFeatureResponse EndCreateFeature(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFeatureResponse>(asyncResult);
@@ -577,6 +586,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateLaunch">REST API Reference for CreateLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateLaunchResponse CreateLaunch(CreateLaunchRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -598,6 +608,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLaunch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateLaunch">REST API Reference for CreateLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginCreateLaunch(CreateLaunchRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -615,6 +626,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  CreateLaunchResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateLaunch">REST API Reference for CreateLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateLaunchResponse EndCreateLaunch(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLaunchResponse>(asyncResult);
@@ -649,6 +661,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -670,6 +683,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -687,6 +701,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  CreateProjectResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProjectResponse>(asyncResult);
@@ -736,6 +751,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -757,6 +773,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSegment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginCreateSegment(CreateSegmentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -774,6 +791,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  CreateSegmentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual CreateSegmentResponse EndCreateSegment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSegmentResponse>(asyncResult);
@@ -814,6 +832,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteExperimentResponse DeleteExperiment(DeleteExperimentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -835,6 +854,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExperiment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginDeleteExperiment(DeleteExperimentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -852,6 +872,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  DeleteExperimentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteExperimentResponse EndDeleteExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteExperimentResponse>(asyncResult);
@@ -883,6 +904,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteFeature">REST API Reference for DeleteFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteFeatureResponse DeleteFeature(DeleteFeatureRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -904,6 +926,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFeature
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteFeature">REST API Reference for DeleteFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginDeleteFeature(DeleteFeatureRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -921,6 +944,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  DeleteFeatureResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteFeature">REST API Reference for DeleteFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteFeatureResponse EndDeleteFeature(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFeatureResponse>(asyncResult);
@@ -958,6 +982,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteLaunch">REST API Reference for DeleteLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteLaunchResponse DeleteLaunch(DeleteLaunchRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -979,6 +1004,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLaunch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteLaunch">REST API Reference for DeleteLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginDeleteLaunch(DeleteLaunchRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -996,6 +1022,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  DeleteLaunchResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteLaunch">REST API Reference for DeleteLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteLaunchResponse EndDeleteLaunch(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLaunchResponse>(asyncResult);
@@ -1028,6 +1055,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1049,6 +1077,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1066,6 +1095,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  DeleteProjectResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
@@ -1098,6 +1128,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1119,6 +1150,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSegment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginDeleteSegment(DeleteSegmentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1136,6 +1168,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  DeleteSegmentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual DeleteSegmentResponse EndDeleteSegment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSegmentResponse>(asyncResult);
@@ -1209,6 +1242,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/EvaluateFeature">REST API Reference for EvaluateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual EvaluateFeatureResponse EvaluateFeature(EvaluateFeatureRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1230,6 +1264,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEvaluateFeature
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/EvaluateFeature">REST API Reference for EvaluateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginEvaluateFeature(EvaluateFeatureRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1247,6 +1282,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  EvaluateFeatureResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/EvaluateFeature">REST API Reference for EvaluateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual EvaluateFeatureResponse EndEvaluateFeature(IAsyncResult asyncResult)
         {
             return EndInvoke<EvaluateFeatureResponse>(asyncResult);
@@ -1276,6 +1312,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetExperimentResponse GetExperiment(GetExperimentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1297,6 +1334,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExperiment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginGetExperiment(GetExperimentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1314,6 +1352,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  GetExperimentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetExperimentResponse EndGetExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetExperimentResponse>(asyncResult);
@@ -1356,6 +1395,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">REST API Reference for GetExperimentResults Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetExperimentResultsResponse GetExperimentResults(GetExperimentResultsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1377,6 +1417,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExperimentResults
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">REST API Reference for GetExperimentResults Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginGetExperimentResults(GetExperimentResultsRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1394,6 +1435,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  GetExperimentResultsResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">REST API Reference for GetExperimentResults Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetExperimentResultsResponse EndGetExperimentResults(IAsyncResult asyncResult)
         {
             return EndInvoke<GetExperimentResultsResponse>(asyncResult);
@@ -1423,6 +1465,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetFeature">REST API Reference for GetFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetFeatureResponse GetFeature(GetFeatureRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1444,6 +1487,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFeature
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetFeature">REST API Reference for GetFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginGetFeature(GetFeatureRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1461,6 +1505,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  GetFeatureResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetFeature">REST API Reference for GetFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetFeatureResponse EndGetFeature(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFeatureResponse>(asyncResult);
@@ -1490,6 +1535,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetLaunch">REST API Reference for GetLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetLaunchResponse GetLaunch(GetLaunchRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1511,6 +1557,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLaunch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetLaunch">REST API Reference for GetLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginGetLaunch(GetLaunchRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1528,6 +1575,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  GetLaunchResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetLaunch">REST API Reference for GetLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetLaunchResponse EndGetLaunch(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLaunchResponse>(asyncResult);
@@ -1557,6 +1605,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetProject">REST API Reference for GetProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetProjectResponse GetProject(GetProjectRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1578,6 +1627,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetProject">REST API Reference for GetProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginGetProject(GetProjectRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1595,6 +1645,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  GetProjectResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetProject">REST API Reference for GetProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetProjectResponse EndGetProject(IAsyncResult asyncResult)
         {
             return EndInvoke<GetProjectResponse>(asyncResult);
@@ -1624,6 +1675,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetSegmentResponse GetSegment(GetSegmentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1645,6 +1697,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginGetSegment(GetSegmentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1662,6 +1715,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  GetSegmentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual GetSegmentResponse EndGetSegment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSegmentResponse>(asyncResult);
@@ -1687,6 +1741,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListExperimentsResponse ListExperiments(ListExperimentsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1708,6 +1763,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExperiments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginListExperiments(ListExperimentsRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1725,6 +1781,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  ListExperimentsResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListExperimentsResponse EndListExperiments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListExperimentsResponse>(asyncResult);
@@ -1753,6 +1810,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListFeatures">REST API Reference for ListFeatures Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListFeaturesResponse ListFeatures(ListFeaturesRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1774,6 +1832,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFeatures
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListFeatures">REST API Reference for ListFeatures Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginListFeatures(ListFeaturesRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1791,6 +1850,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  ListFeaturesResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListFeatures">REST API Reference for ListFeatures Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListFeaturesResponse EndListFeatures(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFeaturesResponse>(asyncResult);
@@ -1816,6 +1876,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListLaunches">REST API Reference for ListLaunches Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListLaunchesResponse ListLaunches(ListLaunchesRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1837,6 +1898,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLaunches
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListLaunches">REST API Reference for ListLaunches Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginListLaunches(ListLaunchesRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1854,6 +1916,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  ListLaunchesResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListLaunches">REST API Reference for ListLaunches Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListLaunchesResponse EndListLaunches(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLaunchesResponse>(asyncResult);
@@ -1880,6 +1943,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1901,6 +1965,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProjects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1918,6 +1983,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  ListProjectsResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
@@ -1946,6 +2012,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListSegmentReferencesResponse ListSegmentReferences(ListSegmentReferencesRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1967,6 +2034,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSegmentReferences
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginListSegmentReferences(ListSegmentReferencesRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1984,6 +2052,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  ListSegmentReferencesResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListSegmentReferencesResponse EndListSegmentReferences(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSegmentReferencesResponse>(asyncResult);
@@ -2010,6 +2079,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListSegmentsResponse ListSegments(ListSegmentsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2031,6 +2101,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSegments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginListSegments(ListSegmentsRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2048,6 +2119,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  ListSegmentsResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListSegmentsResponse EndListSegments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSegmentsResponse>(asyncResult);
@@ -2073,6 +2145,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2094,6 +2167,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2111,6 +2185,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
@@ -2140,6 +2215,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/PutProjectEvents">REST API Reference for PutProjectEvents Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual PutProjectEventsResponse PutProjectEvents(PutProjectEventsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2161,6 +2237,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutProjectEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/PutProjectEvents">REST API Reference for PutProjectEvents Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginPutProjectEvents(PutProjectEventsRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2178,6 +2255,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  PutProjectEventsResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/PutProjectEvents">REST API Reference for PutProjectEvents Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual PutProjectEventsResponse EndPutProjectEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<PutProjectEventsResponse>(asyncResult);
@@ -2212,6 +2290,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartExperiment">REST API Reference for StartExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual StartExperimentResponse StartExperiment(StartExperimentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2233,6 +2312,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExperiment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartExperiment">REST API Reference for StartExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginStartExperiment(StartExperimentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2250,6 +2330,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  StartExperimentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartExperiment">REST API Reference for StartExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual StartExperimentResponse EndStartExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<StartExperimentResponse>(asyncResult);
@@ -2284,6 +2365,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartLaunch">REST API Reference for StartLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual StartLaunchResponse StartLaunch(StartLaunchRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2305,6 +2387,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartLaunch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartLaunch">REST API Reference for StartLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginStartLaunch(StartLaunchRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2322,6 +2405,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  StartLaunchResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartLaunch">REST API Reference for StartLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual StartLaunchResponse EndStartLaunch(IAsyncResult asyncResult)
         {
             return EndInvoke<StartLaunchResponse>(asyncResult);
@@ -2357,6 +2441,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopExperiment">REST API Reference for StopExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual StopExperimentResponse StopExperiment(StopExperimentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2378,6 +2463,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopExperiment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopExperiment">REST API Reference for StopExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginStopExperiment(StopExperimentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2395,6 +2481,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  StopExperimentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopExperiment">REST API Reference for StopExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual StopExperimentResponse EndStopExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<StopExperimentResponse>(asyncResult);
@@ -2427,6 +2514,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopLaunch">REST API Reference for StopLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual StopLaunchResponse StopLaunch(StopLaunchRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2448,6 +2536,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopLaunch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopLaunch">REST API Reference for StopLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginStopLaunch(StopLaunchRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2465,6 +2554,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  StopLaunchResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopLaunch">REST API Reference for StopLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual StopLaunchResponse EndStopLaunch(IAsyncResult asyncResult)
         {
             return EndInvoke<StopLaunchResponse>(asyncResult);
@@ -2520,6 +2610,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2541,6 +2632,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2558,6 +2650,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  TagResourceResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
@@ -2584,6 +2677,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual TestSegmentPatternResponse TestSegmentPattern(TestSegmentPatternRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2605,6 +2699,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestSegmentPattern
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginTestSegmentPattern(TestSegmentPatternRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2622,6 +2717,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  TestSegmentPatternResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual TestSegmentPatternResponse EndTestSegmentPattern(IAsyncResult asyncResult)
         {
             return EndInvoke<TestSegmentPatternResponse>(asyncResult);
@@ -2647,6 +2743,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2668,6 +2765,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2685,6 +2783,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  UntagResourceResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
@@ -2719,6 +2818,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateExperimentResponse UpdateExperiment(UpdateExperimentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2740,6 +2840,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateExperiment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginUpdateExperiment(UpdateExperimentRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2757,6 +2858,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  UpdateExperimentResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateExperimentResponse EndUpdateExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateExperimentResponse>(asyncResult);
@@ -2795,6 +2897,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateFeature">REST API Reference for UpdateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateFeatureResponse UpdateFeature(UpdateFeatureRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2816,6 +2919,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFeature
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateFeature">REST API Reference for UpdateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginUpdateFeature(UpdateFeatureRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2833,6 +2937,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  UpdateFeatureResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateFeature">REST API Reference for UpdateFeature Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateFeatureResponse EndUpdateFeature(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFeatureResponse>(asyncResult);
@@ -2868,6 +2973,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateLaunch">REST API Reference for UpdateLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateLaunchResponse UpdateLaunch(UpdateLaunchRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2889,6 +2995,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLaunch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateLaunch">REST API Reference for UpdateLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginUpdateLaunch(UpdateLaunchRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2906,6 +3013,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  UpdateLaunchResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateLaunch">REST API Reference for UpdateLaunch Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateLaunchResponse EndUpdateLaunch(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLaunchResponse>(asyncResult);
@@ -2953,6 +3061,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2974,6 +3083,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2991,6 +3101,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  UpdateProjectResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
@@ -3031,6 +3142,7 @@ namespace Amazon.CloudWatchEvidently
         /// The value of a parameter in the request caused an error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProjectDataDelivery">REST API Reference for UpdateProjectDataDelivery Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateProjectDataDeliveryResponse UpdateProjectDataDelivery(UpdateProjectDataDeliveryRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3052,6 +3164,7 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProjectDataDelivery
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProjectDataDelivery">REST API Reference for UpdateProjectDataDelivery Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual IAsyncResult BeginUpdateProjectDataDelivery(UpdateProjectDataDeliveryRequest request, AsyncCallback callback, object state)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3069,6 +3182,7 @@ namespace Amazon.CloudWatchEvidently
         /// 
         /// <returns>Returns a  UpdateProjectDataDeliveryResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProjectDataDelivery">REST API Reference for UpdateProjectDataDelivery Operation</seealso>
+        [Obsolete("AWS CloudWatch Evidently has been deprecated since 11/17/2025.")]
         public virtual UpdateProjectDataDeliveryResponse EndUpdateProjectDataDelivery(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectDataDeliveryResponse>(asyncResult);
