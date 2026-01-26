@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.NetFramework.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/CloudWatch/AWSSDK.CloudWatch.NetFramework.csproj" />
   </ItemGroup>
