@@ -14,7 +14,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class DeprecatedCodeTest
     {
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Although AsyncRunner isn't used anymore older versions of AWSSDK.DynamoDBv2 still reference it.
         /// This test is to make sure we don't remove the class on accident breakinng older versions of AWSSDK.DynamoDBv2
