@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Container for the parameters to the InitiateMultipartUpload operation.
+    /// Container for the parameters to the PutObject operation.
     /// <important> 
     /// <para>
     /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
@@ -46,36 +46,24 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// This action initiates a multipart upload and returns an upload ID. This upload ID
-    /// is used to associate all of the parts in the specific multipart upload. You specify
-    /// this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
-    /// You also include this upload ID in the final request to either complete or abort the
-    /// multipart upload request. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
-    /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// After you initiate a multipart upload and upload one or more parts, to stop being
-    /// charged for storing the uploaded parts, you must either complete or abort the multipart
-    /// upload. Amazon S3 frees up the space used to store the parts and stops charging you
-    /// for storing them only after you either complete or abort a multipart upload. 
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// If you have configured a lifecycle rule to abort incomplete multipart uploads, the
-    /// created multipart upload must be completed within the number of days specified in
-    /// the bucket lifecycle configuration. Otherwise, the incomplete multipart upload becomes
-    /// eligible for an abort action and Amazon S3 aborts the multipart upload. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-    /// Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.
+    /// Adds an object to a bucket.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    ///  <b>Directory buckets </b> - S3 Lifecycle is not supported by directory buckets.
+    /// Amazon S3 never adds partial objects; if you receive a success response, Amazon S3
+    /// added the entire object to the bucket. You cannot use <c>PutObject</c> to only update
+    /// a single piece of metadata for an existing object. You must put the entire object
+    /// with updated metadata if you want to update some values.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+    /// If your bucket uses the bucket owner enforced setting for Object Ownership, ACLs are
+    /// disabled and no longer affect permissions. All objects written to the bucket by any
+    /// account will be owned by the bucket owner.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
     /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
     /// requests in the format <c>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
     /// </c>. Path-style requests are not supported. For more information about endpoints
@@ -84,30 +72,81 @@ namespace Amazon.S3.Model
     /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
     /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </li> </ul> </note> <dl> <dt>Request signing</dt> <dd> 
+    ///  </li> </ul> </note> 
     /// <para>
-    /// For request signing, multipart upload is just a series of regular requests. You initiate
-    /// a multipart upload, send one or more requests to upload parts, and then complete the
-    /// multipart upload process. You sign each request individually. There is nothing special
-    /// about signing multipart upload requests. For more information about signing, see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-    /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 User Guide</i>.
+    /// Amazon S3 is a distributed system. If it receives multiple write requests for the
+    /// same object simultaneously, it overwrites all but the last object written. However,
+    /// Amazon S3 provides features that can modify this behavior:
     /// </para>
-    ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
+    ///  <ul> <li> 
     /// <para>
-    ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
-    /// using an Key Management Service (KMS) KMS key, the requester must have permission
-    /// to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c> actions on the key. The requester
-    /// must also have permissions for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c>
-    /// API. Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the
-    /// <c>UploadPart</c> and <c>UploadPartCopy</c> APIs. These permissions are required because
-    /// Amazon S3 must decrypt and read data from the encrypted file parts before it completes
-    /// the multipart upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
-    /// upload API and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
-    /// data using server-side encryption with Amazon Web Services KMS</a> in the <i>Amazon
-    /// S3 User Guide</i>.
+    ///  <b>S3 Object Lock</b> - To prevent objects from being deleted or overwritten, you
+    /// can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Amazon
+    /// S3 Object Lock</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// This functionality is not supported for directory buckets.
+    /// </para>
+    ///  </note> </li> <li> 
+    /// <para>
+    ///  <b>If-None-Match</b> - Uploads the object only if the object key name does not already
+    /// exist in the specified bucket. Otherwise, Amazon S3 returns a <c>412 Precondition
+    /// Failed</c> error. If a conflicting operation occurs during the upload, S3 returns
+    /// a <c>409 ConditionalRequestConflict</c> response. On a 409 failure, retry the upload.
+    /// </para>
+    ///  
+    /// <para>
+    /// Expects the * character (asterisk).
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Add
+    /// preconditions to S3 operations with conditional requests</a> in the <i>Amazon S3 User
+    /// Guide</i> or <a href="https://datatracker.ietf.org/doc/rfc7232/">RFC 7232</a>. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// This functionality is not supported for S3 on Outposts.
+    /// </para>
+    ///  </note> </li> <li> 
+    /// <para>
+    ///  <b>S3 Versioning</b> - When you enable versioning for a bucket, if Amazon S3 receives
+    /// multiple write requests for the same object simultaneously, it stores all versions
+    /// of the objects. For each write request that is made to the same object, Amazon S3
+    /// automatically generates a unique version ID of that object being stored in Amazon
+    /// S3. You can retrieve, replace, or delete any version of the object. For more information
+    /// about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
+    /// Objects to Versioning-Enabled Buckets</a> in the <i>Amazon S3 User Guide</i>. For
+    /// information about returning the versioning state of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>.
+    /// 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// This functionality is not supported for directory buckets.
+    /// </para>
+    ///  </note> </li> </ul> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+    /// <para>
+    ///  <b>General purpose bucket permissions</b> - The following permissions are required
+    /// in your policies when your <c>PutObject</c> request includes specific headers.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b> <c>s3:PutObject</c> </b> - To successfully complete the <c>PutObject</c> request,
+    /// you must always have the <c>s3:PutObject</c> permission on a bucket to add an object
+    /// to it.
     /// </para>
     ///  </li> <li> 
+    /// <para>
+    ///  <b> <c>s3:PutObjectAcl</c> </b> - To successfully change the objects ACL of your
+    /// <c>PutObject</c> request, you must have the <c>s3:PutObjectAcl</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b> <c>s3:PutObjectTagging</c> </b> - To successfully set the tag-set with your <c>PutObject</c>
+    /// request, you must have the <c>s3:PutObjectTagging</c>.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
     /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -122,187 +161,60 @@ namespace Amazon.S3.Model
     /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
     /// <c>CreateSession</c> </a>.
     /// </para>
-    ///  </li> </ul> </dd> <dt>Encryption</dt> <dd> <ul> <li> 
-    /// <para>
-    ///  <b>General purpose buckets</b> - Server-side encryption is for data encryption at
-    /// rest. Amazon S3 encrypts your data as it writes it to disks in its data centers and
-    /// decrypts it when you access it. Amazon S3 automatically encrypts all new objects that
-    /// are uploaded to an S3 bucket. When doing a multipart upload, if you don't specify
-    /// encryption information in your request, the encryption setting of the uploaded parts
-    /// is set to the default encryption configuration of the destination bucket. By default,
-    /// all buckets have a base level of encryption configuration that uses server-side encryption
-    /// with Amazon S3 managed keys (SSE-S3). If the destination bucket has a default encryption
-    /// configuration that uses server-side encryption with an Key Management Service (KMS)
-    /// key (SSE-KMS), or a customer-provided encryption key (SSE-C), Amazon S3 uses the corresponding
-    /// KMS key, or a customer-provided key to encrypt the uploaded parts. When you perform
-    /// a CreateMultipartUpload operation, if you want to use a different type of encryption
-    /// setting for the uploaded parts, you can request that Amazon S3 encrypts the object
-    /// with a different encryption key (such as an Amazon S3 managed key, a KMS key, or a
-    /// customer-provided key). When the encryption setting in your request is different from
-    /// the default encryption configuration of the destination bucket, the encryption setting
-    /// in your request takes precedence. If you choose to provide your own encryption key,
-    /// the request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
-    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
-    /// requests must match the headers you used in the <c>CreateMultipartUpload</c> request.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Use KMS keys (SSE-KMS) that include the Amazon Web Services managed key (<c>aws/s3</c>)
-    /// and KMS customer managed keys stored in Key Management Service (KMS) – If you want
-    /// Amazon Web Services to manage the keys used to encrypt data, specify the following
-    /// headers in the request.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>x-amz-server-side-encryption</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>x-amz-server-side-encryption-aws-kms-key-id</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>x-amz-server-side-encryption-context</c> 
-    /// </para>
-    ///  </li> </ul> <note> <ul> <li> 
-    /// <para>
-    /// If you specify <c>x-amz-server-side-encryption:aws:kms</c>, but don't provide <c>x-amz-server-side-encryption-aws-kms-key-id</c>,
-    /// Amazon S3 uses the Amazon Web Services managed key (<c>aws/s3</c> key) in KMS to protect
-    /// the data.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-    /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
-    /// actions on the key. These permissions are required because Amazon S3 must decrypt
-    /// and read data from the encrypted file parts before it completes the multipart upload.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
-    /// upload API and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
-    /// data using server-side encryption with Amazon Web Services KMS</a> in the <i>Amazon
-    /// S3 User Guide</i>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If your Identity and Access Management (IAM) user or role is in the same Amazon Web
-    /// Services account as the KMS key, then you must have these permissions on the key policy.
-    /// If your IAM user or role is in a different account from the key, then you must have
-    /// the permissions on both the key policy and your IAM user or role.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// All <c>GET</c> and <c>PUT</c> requests for an object protected by KMS fail if you
-    /// don't make them by using Secure Sockets Layer (SSL), Transport Layer Security (TLS),
-    /// or Signature Version 4. For information about configuring any of the officially supported
-    /// Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-    /// the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  </li> </ul> </note> 
-    /// <para>
-    /// For more information about server-side encryption with KMS keys (SSE-KMS), see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
-    /// Data Using Server-Side Encryption with KMS keys</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Use customer-provided encryption keys (SSE-C) – If you want to manage your own encryption
-    /// keys, provide all the following headers in the request.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>x-amz-server-side-encryption-customer-algorithm</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>x-amz-server-side-encryption-customer-key</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>x-amz-server-side-encryption-customer-key-MD5</c> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information about server-side encryption with customer-provided encryption
-    /// keys (SSE-C), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">
-    /// Protecting data using server-side encryption with customer-provided encryption keys
-    /// (SSE-C)</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
-    /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
-    /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>).
-    /// We recommend that the bucket's default encryption uses the desired encryption configuration
-    /// and you don't override the bucket default encryption in your <c>CreateSession</c>
-    /// requests or <c>PUT</c> object requests. Then, new objects are automatically encrypted
-    /// with the desired encryption settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
-    /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. For more
-    /// information about the encryption overriding behaviors in directory buckets, see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying
-    /// server-side encryption with KMS for new object uploads</a>.
-    /// </para>
     ///  
     /// <para>
-    /// In the Zonal endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
-    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>)
-    /// using the REST API, the encryption request headers must match the encryption settings
-    /// that are specified in the <c>CreateSession</c> request. You can't override the values
-    /// of the encryption settings (<c>x-amz-server-side-encryption</c>, <c>x-amz-server-side-encryption-aws-kms-key-id</c>,
-    /// <c>x-amz-server-side-encryption-context</c>, and <c>x-amz-server-side-encryption-bucket-key-enabled</c>)
-    /// that are specified in the <c>CreateSession</c> request. You don't need to explicitly
-    /// specify these encryption settings values in Zonal endpoint API calls, and Amazon S3
-    /// will use the encryption settings values from the <c>CreateSession</c> request to protect
-    /// new objects in the directory bucket. 
+    /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+    /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+    /// for the KMS key.
     /// </para>
-    ///  <note> 
+    ///  </li> </ul> </dd> <dt>Data integrity with Content-MD5</dt> <dd> <ul> <li> 
     /// <para>
-    /// When you use the CLI or the Amazon Web Services SDKs, for <c>CreateSession</c>, the
-    /// session token refreshes automatically to avoid service interruptions when a session
-    /// expires. The CLI or the Amazon Web Services SDKs use the bucket's default encryption
-    /// configuration for the <c>CreateSession</c> request. It's not supported to override
-    /// the encryption settings values in the <c>CreateSession</c> request. So in the Zonal
-    /// endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
-    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>),
-    /// the encryption request headers must match the default encryption configuration of
-    /// the directory bucket. 
+    ///  <b>General purpose bucket</b> - To ensure that data is not corrupted traversing the
+    /// network, use the <c>Content-MD5</c> header. When you use this header, Amazon S3 checks
+    /// the object against the provided MD5 value and, if they do not match, Amazon S3 returns
+    /// an error. Alternatively, when the object's ETag is its MD5 digest, you can calculate
+    /// the MD5 while putting the object to Amazon S3 and compare the returned ETag to the
+    /// calculated MD5 value.
     /// </para>
-    ///  </note> <note> 
+    ///  </li> <li> 
     /// <para>
-    /// For directory buckets, when you perform a <c>CreateMultipartUpload</c> operation and
-    /// an <c>UploadPartCopy</c> operation, the request headers you provide in the <c>CreateMultipartUpload</c>
-    /// request must match the default encryption configuration of the destination bucket.
-    /// 
+    ///  <b>Directory bucket</b> - This functionality is not supported for directory buckets.
     /// </para>
-    ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+    ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
     ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
     /// </para>
-    ///  </dd> </dl> 
+    ///  </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
     /// <para>
-    /// The following operations are related to <c>CreateMultipartUpload</c>:
+    /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+    /// the reason for the error, you might receive one of the following messages:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+    /// Cannot specify both a write offset value and user-defined object metadata for existing
+    /// objects.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type:
+    /// crc32c.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Request body cannot be empty when 'write offset' is specified.
+    /// </para>
+    ///  </li> </ul> </li> </ul> </dd> </dl> 
+    /// <para>
+    /// For more information about related Amazon S3 APIs, see the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
     /// 
     /// </para>
     ///  </li> </ul> <important> 
@@ -313,16 +225,25 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </important>
     /// </summary>
-    public partial class InitiateMultipartUploadRequest : PutWithACLRequest
+    public partial class PutObjectRequest : PutWithACLRequest
     {
         private bool? _bucketKeyEnabled;
         private string _bucketName;
         private S3CannedACL _cannedACL;
         private ChecksumAlgorithm _checksumAlgorithm;
-        private ChecksumType _checksumType;
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumCRC64NVME;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
+        
         private string _expectedBucketOwner;
         private string _expires;
+        private string _ifMatch;
+        private string _ifNoneMatch;
+        private Stream _inputStream;
         private string _key;
+        private string _md5Digest;
         private ObjectLockLegalHoldStatus _objectLockLegalHoldStatus;
         private ObjectLockMode _objectLockMode;
         private DateTime? _objectLockRetainUntilDate;
@@ -336,6 +257,7 @@ namespace Amazon.S3.Model
         private S3StorageClass _storageClass;
         private List<Tag> _tagSet = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _websiteRedirectLocation;
+        private long? _writeOffsetBytes;
 
         /// <summary>
         /// Gets and sets the property BucketKeyEnabled. 
@@ -378,8 +300,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the bucket where the multipart upload is initiated and where the object
-        /// is uploaded.
+        /// The bucket name to which the PUT action was initiated. 
         /// </para>
         ///  
         /// <para>
@@ -435,20 +356,29 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property CannedACL. 
         /// <para>
-        /// The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs,
-        /// known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and
-        /// permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, all objects are private. Only the owner has full access control. When
-        /// uploading an object, you can grant access permissions to individual Amazon Web Services
-        /// accounts or to predefined groups defined by Amazon S3. These permissions are then
-        /// added to the access control list (ACL) on the new object. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. One way to grant the permissions using the request headers is to specify
-        /// a canned ACL with the <c>x-amz-acl</c> request header.
+        /// When adding a new object, you can use headers to grant ACL-based permissions to individual
+        /// Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions
+        /// are then added to the ACL on the object. By default, all objects are private. Only
+        /// the owner has full access control. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
+        /// ACLs Using the REST API</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the bucket that you're uploading objects to uses the bucket owner enforced setting
+        /// for S3 Object Ownership, ACLs are disabled and no longer affect permissions. Buckets
+        /// that use this setting only accept PUT requests that don't specify an ACL or PUT requests
+        /// that specify bucket owner full control ACLs, such as the <c>bucket-owner-full-control</c>
+        /// canned ACL or an equivalent form of this ACL expressed in the XML format. PUT requests
+        /// that contain other ACLs (for example, custom grants to certain Amazon Web Services
+        /// accounts) fail and return a <c>400</c> error with the error code <c>AccessControlListNotSupported</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
+        /// Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
@@ -469,15 +399,65 @@ namespace Amazon.S3.Model
         // Check to see if CannedACL property is set
         internal bool IsSetCannedACL()
         {
-            return _cannedACL != null && _cannedACL != S3CannedACL.NoACL;
+            return this._cannedACL != null && this._cannedACL != S3CannedACL.NoACL;
         }
 
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm that you want Amazon S3 to use to create the checksum for
-        /// the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <c>x-amz-checksum-<i>algorithm</i>
+        /// </c> or <c>x-amz-trailer</c> header sent. Otherwise, Amazon S3 fails the request with
+        /// the HTTP status code <c>400 Bad Request</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <c>x-amz-checksum-<i>algorithm</i> </c> header, replace <c> <i>algorithm</i>
+        /// </c> with the supported algorithm from the following list: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CRC32</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CRC32C</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CRC64NVME</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SHA1</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SHA256</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the individual checksum value you provide through <c>x-amz-checksum-<i>algorithm</i>
+        /// </c> doesn't match the checksum algorithm you set through <c>x-amz-sdk-checksum-algorithm</c>,
+        /// Amazon S3 fails the request with a <c>BadDigest</c> error.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>Content-MD5</c> or <c>x-amz-sdk-checksum-algorithm</c> header is required for
+        /// any request to upload an object with a retention period configured using Amazon S3
+        /// Object Lock. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-put-object">Uploading
+        /// objects to an Object Lock enabled bucket </a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For directory buckets, when you use Amazon Web Services SDKs, <c>CRC32</c> is the
+        /// default checksum algorithm that's used for performance.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -493,23 +473,122 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChecksumType. 
+        /// Gets and sets the property ChecksumCRC32. 
         /// <para>
-        /// Indicates the checksum type that you want Amazon S3 to use to calculate the object’s
-        /// checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 32-bit <c>CRC32</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        // Check to see if ChecksumCRC32 property is set
+        internal bool IsSetChecksumCRC32()
+        {
+            return this._checksumCRC32 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 32-bit <c>CRC32C</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        // Check to see if ChecksumCRC32C property is set
+        internal bool IsSetChecksumCRC32C()
+        {
+            return this._checksumCRC32C != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC64NVME. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 64-bit <c>CRC64NVME</c> checksum of the object. The <c>CRC64NVME</c> checksum is always
+        /// a full object checksum. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity in the Amazon S3 User Guide</a>.
         /// </para>
         /// </summary>
-        public ChecksumType ChecksumType
+        public string ChecksumCRC64NVME
         {
-            get { return this._checksumType; }
-            set { this._checksumType = value; }
+            get { return this._checksumCRC64NVME; }
+            set { this._checksumCRC64NVME = value; }
         }
 
-        // Check to see if ChecksumType property is set
-        internal bool IsSetChecksumType()
+        // Check to see if ChecksumCRC64NVME property is set
+        internal bool IsSetChecksumCRC64NVME()
         {
-            return this._checksumType != null;
+            return this._checksumCRC64NVME != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 160-bit <c>SHA1</c> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        // Check to see if ChecksumSHA1 property is set
+        internal bool IsSetChecksumSHA1()
+        {
+            return this._checksumSHA1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 256-bit <c>SHA256</c> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        // Check to see if ChecksumSHA256 property is set
+        internal bool IsSetChecksumSHA256()
+        {
+            return this._checksumSHA256 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// A standard MIME type describing the format of the contents. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type</a>.
+        /// </para>
+        /// </summary>
+        public string ContentType
+        {
+            get { return this.Headers.ContentType; }
+            set { this.Headers.ContentType = value; }
         }
 
         /// <summary>
@@ -529,13 +608,14 @@ namespace Amazon.S3.Model
         // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return this._expectedBucketOwner != null;
+            return !String.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
         /// <summary>
         /// Gets and sets the property Expires. 
         /// <para>
-        /// The date and time at which the object is no longer cacheable.
+        /// The date and time at which the object is no longer cacheable. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
         /// </para>
         /// </summary>
         public string Expires
@@ -551,9 +631,97 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IfMatch. 
+        /// <para>
+        /// Uploads the object only if the ETag (entity tag) value provided during the WRITE operation
+        /// matches the ETag of the object in S3. If the ETag values do not match, the operation
+        /// returns a <c>412 Precondition Failed</c> error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a conflicting operation occurs during the upload S3 returns a <c>409 ConditionalRequestConflict</c>
+        /// response. On a 409 failure you should fetch the object's ETag and retry the upload.
+        /// </para>
+        ///  
+        /// <para>
+        /// Expects the ETag value as a string.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
+        /// 7232</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional
+        /// requests</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string IfMatch
+        {
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
+        }
+
+        // Check to see if IfMatch property is set
+        internal bool IsSetIfMatch()
+        {
+            return !String.IsNullOrEmpty(this._ifMatch);
+        }
+
+        /// <summary>
+        /// Gets and sets the property IfNoneMatch. 
+        /// <para>
+        /// Uploads the object only if the object key name does not already exist in the bucket
+        /// specified. Otherwise, Amazon S3 returns a <c>412 Precondition Failed</c> error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a conflicting operation occurs during the upload S3 returns a <c>409 ConditionalRequestConflict</c>
+        /// response. On a 409 failure you should retry the upload.
+        /// </para>
+        ///  
+        /// <para>
+        /// Expects the '*' (asterisk) character.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
+        /// 7232</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional
+        /// requests</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string IfNoneMatch
+        {
+            get { return this._ifNoneMatch; }
+            set { this._ifNoneMatch = value; }
+        }
+
+        // Check to see if IfNoneMatch property is set
+        internal bool IsSetIfNoneMatch()
+        {
+            return !String.IsNullOrEmpty(this._ifNoneMatch);
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputStream. 
+        /// <para>
+        /// Object data.
+        /// </para>
+        /// </summary>
+        /// <para>Input stream for the request; content for the request will be read from the stream.</para>
+        public Stream InputStream
+        {
+            get { return this._inputStream; }
+            set { this._inputStream = value; }
+        }
+
+        // Check to see if InputStream property is set
+        internal bool IsSetInputStream()
+        {
+            return this._inputStream != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Object key for which the multipart upload is to be initiated.
+        /// Object key for which the PUT action was initiated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -570,9 +738,46 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MD5Digest. 
+        /// <para>
+        /// The Base64 encoded 128-bit <c>MD5</c> digest of the message (without the headers)
+        /// according to RFC 1864. This header can be used as a message integrity check to verify
+        /// that the data is the same data that was originally sent. Although it is optional,
+        /// we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For
+        /// more information about REST request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+        /// Authentication</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>Content-MD5</c> or <c>x-amz-sdk-checksum-algorithm</c> header is required for
+        /// any request to upload an object with a retention period configured using Amazon S3
+        /// Object Lock. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-put-object">Uploading
+        /// objects to an Object Lock enabled bucket </a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string MD5Digest
+        {
+            get { return this._md5Digest; }
+            set { this._md5Digest = value; }
+        }
+
+        // Check to see if MD5Digest property is set
+        internal bool IsSetMD5Digest()
+        {
+            return !String.IsNullOrEmpty(this._md5Digest);
+        }
+
+        /// <summary>
         /// Gets and sets the property ObjectLockLegalHoldStatus. 
         /// <para>
-        /// Specifies whether you want to apply a legal hold to the uploaded object.
+        /// Specifies whether a legal hold will be applied to this object. For more information
+        /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+        /// Lock</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -595,7 +800,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectLockMode. 
         /// <para>
-        /// Specifies the Object Lock mode that you want to apply to the uploaded object.
+        /// The Object Lock mode that you want to apply to this object.
         /// </para>
         ///  <note> 
         /// <para>
@@ -618,7 +823,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectLockRetainUntilDate. 
         /// <para>
-        /// Specifies the date and time when you want the Object Lock to expire.
+        /// The date and time when you want this object's Object Lock to expire. Must be formatted
+        /// as a timestamp parameter.
         /// </para>
         ///  <note> 
         /// <para>
@@ -656,7 +862,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionCustomerMethod. 
         /// <para>
-        /// Specifies the algorithm to use when encrypting the object (for example, AES256).
+        /// Specifies the algorithm to use when encrypting the object (for example, <c>AES256</c>).
         /// </para>
         ///  <note> 
         /// <para>
@@ -673,7 +879,7 @@ namespace Amazon.S3.Model
         // Check to see if ServerSideEncryptionCustomerMethod property is set
         internal bool IsSetServerSideEncryptionCustomerMethod()
         {
-            return this._serverSideEncryptionCustomerMethod != null;
+            return this._serverSideEncryptionCustomerMethod != null && this._serverSideEncryptionCustomerMethod != Amazon.S3.ServerSideEncryptionCustomerMethod.None;
         }
 
         /// <summary>
@@ -700,15 +906,15 @@ namespace Amazon.S3.Model
         // Check to see if ServerSideEncryptionCustomerProvidedKey property is set
         internal bool IsSetServerSideEncryptionCustomerProvidedKey()
         {
-            return this._serverSideEncryptionCustomerProvidedKey != null;
+            return !String.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKey);
         }
 
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionCustomerProvidedKeyMD5. 
         /// <para>
-        /// Specifies the 128-bit MD5 digest of the customer-provided encryption key according
-        /// to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that
-        /// the encryption key was transmitted without error.
+        /// Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon
+        /// S3 uses this header for a message integrity check to ensure that the encryption key
+        /// was transmitted without error.
         /// </para>
         ///  <note> 
         /// <para>
@@ -725,16 +931,25 @@ namespace Amazon.S3.Model
         // Check to see if ServerSideEncryptionCustomerProvidedKeyMD5 property is set
         internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
         {
-            return this._serverSideEncryptionCustomerProvidedKeyMD5 != null;
+            return !String.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKeyMD5);
         }
 
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionKeyManagementServiceEncryptionContext.
         /// 
         /// <para>
-        /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
-        /// The value of this header is a Base64 encoded string of a UTF-8 encoded JSON, which
-        /// contains the encryption context as key-value pairs.
+        /// Specifies the Amazon Web Services KMS Encryption Context as an additional encryption
+        /// context to use for object encryption. The value of this header is a Base64 encoded
+        /// string of a UTF-8 encoded JSON, which contains the encryption context as key-value
+        /// pairs. This value is stored as object metadata and automatically gets passed on to
+        /// Amazon Web Services KMS for future <c>GetObject</c> operations on this object.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>General purpose buckets</b> - This value must be explicitly added during <c>CopyObject</c>
+        /// operations if you want an additional encryption context for your object. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html#encryption-context">Encryption
+        /// context</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -753,7 +968,7 @@ namespace Amazon.S3.Model
         // Check to see if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set
         internal bool IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()
         {
-            return this._serverSideEncryptionKeyManagementServiceEncryptionContext != null;
+            return !String.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceEncryptionContext);
         }
 
         /// <summary>
@@ -795,16 +1010,28 @@ namespace Amazon.S3.Model
         // Check to see if ServerSideEncryptionKeyManagementServiceKeyId property is set
         internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
-            return this._serverSideEncryptionKeyManagementServiceKeyId != null;
+            return !String.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceKeyId);
         }
 
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionMethod. 
         /// <para>
-        /// The server-side encryption algorithm used when you store this object in Amazon S3
-        /// or Amazon FSx.
+        /// The server-side encryption algorithm that was used when you store this object in Amazon
+        /// S3 or Amazon FSx.
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <b>General purpose buckets </b> - You have four mutually exclusive options to protect
+        /// data using server-side encryption in Amazon S3, depending on how you choose to manage
+        /// the encryption keys. Specifically, the encryption key options are Amazon S3 managed
+        /// keys (SSE-S3), Amazon Web Services KMS keys (SSE-KMS or DSSE-KMS), and customer-provided
+        /// keys (SSE-C). Amazon S3 encrypts data with server-side encryption by using Amazon
+        /// S3 managed keys (SSE-S3) by default. You can optionally tell Amazon S3 to encrypt
+        /// data at rest by using server-side encryption with other key options. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -902,7 +1129,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property TagSet. 
         /// <para>
-        /// The tag-set for the object. The tag-set must be encoded as URL Query parameters.
+        /// The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For
+        /// example, "Key1=Value1")
         /// </para>
         ///  <note> 
         /// <para>
@@ -932,7 +1160,31 @@ namespace Amazon.S3.Model
         /// <para>
         /// If the bucket is configured as a website, redirects requests for this object to another
         /// object in the same bucket or to an external URL. Amazon S3 stores the value of this
-        /// header in the object metadata.
+        /// header in the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+        /// Key and Metadata</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the following example, the request header sets the redirect to an object (anotherPage.html)
+        /// in the same bucket:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>x-amz-website-redirect-location: /anotherPage.html</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the following example, the request header sets the object redirect to another website:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>x-amz-website-redirect-location: http://www.example.com/</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+        /// Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+        /// to Configure Website Page Redirects</a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -950,6 +1202,32 @@ namespace Amazon.S3.Model
         internal bool IsSetWebsiteRedirectLocation()
         {
             return this._websiteRedirectLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteOffsetBytes. 
+        /// <para>
+        ///  Specifies the offset for appending data to existing objects in bytes. The offset
+        /// must be equal to the size of the existing object being appended to. If no object exists,
+        /// setting this header to 0 will create a new object. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is only supported for objects in the Amazon S3 Express One Zone
+        /// storage class in directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long? WriteOffsetBytes
+        {
+            get { return this._writeOffsetBytes; }
+            set { this._writeOffsetBytes = value; }
+        }
+
+        // Check to see if WriteOffsetBytes property is set
+        internal bool IsSetWriteOffsetBytes()
+        {
+            return this._writeOffsetBytes.HasValue; 
         }
 
     }

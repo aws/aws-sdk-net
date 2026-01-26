@@ -574,7 +574,6 @@
                 "ContentEncoding",
                 "ContentLanguage",
                 "ContentType",
-                "Expires",
                 "Metadata",
                 "CacheControl"
             ],
@@ -2221,6 +2220,135 @@
             "excludeFromUnmarshalling":[
                 "PartNumber"
             ]
+        },
+        "PutObjectRequest":{
+            "modify":[
+                {
+                    "ACL": {"emitPropertyName":"CannedACL"}
+                },
+                {
+                    "CannedACL":{"injectXmlIsSet":["return this._cannedACL != null && this._cannedACL != S3CannedACL.NoACL;"]}
+                },
+                {
+                    "ContentMD5" :{"emitPropertyName":"MD5Digest"}
+                },
+                {
+                    "MD5Digest":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._md5Digest);"]}
+                },
+                {
+                    "ServerSideEncryption":{"emitPropertyName":"ServerSideEncryptionMethod"}
+                },
+                {
+                    "ServerSideEncryptionMethod":{"injectXmlIsSet":["return this._serverSideEncryptionMethod != null && this._serverSideEncryptionMethod != ServerSideEncryptionMethod.None;"]}
+                },
+                {
+                    "SSECustomerAlgorithm":{"emitPropertyName":"ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "ServerSideEncryptionCustomerMethod":{"injectXmlIsSet":["return this._serverSideEncryptionCustomerMethod != null && this._serverSideEncryptionCustomerMethod != Amazon.S3.ServerSideEncryptionCustomerMethod.None;"]}
+                },
+                {
+                    "SSECustomerKey":{"emitPropertyName": "ServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+                    "ServerSideEncryptionCustomerProvidedKey":{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKey);"],
+                        "injectXmlMarshallCode":["ServerSideEncryptionCustomerProvidedKeyCustomMarshall(request, publicRequest);"]}
+                },
+                {
+                    "SSECustomerKeyMD5":{"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "ServerSideEncryptionCustomerProvidedKeyMD5":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._serverSideEncryptionCustomerProvidedKeyMD5);"]}
+                },
+                {
+                    "SSEKMSKeyId":{"emitPropertyName":"ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "ServerSideEncryptionKeyManagementServiceKeyId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceKeyId);"]}
+                },
+                {
+                    "SSEKMSEncryptionContext":{"emitPropertyName":"ServerSideEncryptionKeyManagementServiceEncryptionContext"}
+                },
+                {
+                    "ServerSideEncryptionKeyManagementServiceEncryptionContext":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceEncryptionContext);"]}
+                },
+                {
+                    "Tagging":{"emitPropertyName":"TagSet"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "IfMatch":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._ifMatch);"]}
+                },
+                {
+                    "IfNoneMatch":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._ifNoneMatch);"]}
+                },
+                {
+                    "TagSet":{"injectXmlMarshallCode":["request.Headers[\"x-amz-tagging\"] = Amazon.S3.Util.AmazonS3Util.TagSetToQueryString(publicRequest.TagSet);"]}
+                },
+                {
+                    "ContentType":{"injectXmlPropertyGetter":["get { return this.Headers.ContentType; }"],
+                    "injectXmlPropertySetter":["set { this.Headers.ContentType = value; }"],
+                    "skipXmlIsSet":true,
+                    "injectXmlPrivateMemberAssignment":[""]
+                    }
+                },
+                {
+                    "Body":{"emitPropertyName":"InputStream"}
+                },
+                {
+                    "InputStream":{"additionalDocumentation":["<para>Input stream for the request; content for the request will be read from the stream.</para>"]}
+                }
+            ],
+            "exclude":[
+                "Metadata",
+                "ContentDisposition",
+                "ContentEncoding",
+                "ContentLength",
+                "CacheControl",
+                "GrantReadACP",
+                "GrantWriteACP",
+                "GrantFullControl",
+                "GrantRead",
+                "ContentLanguage"
+            ],
+            "excludeFromMarshalling":[
+                "ServerSideEncryptionCustomerProvidedKeyMD5",
+                "ContentType",
+                "InputStream"
+            ]
+        },
+        "PutObjectOutput":{
+            "modify":[
+                {
+                    "ServerSideEncryption":{"emitPropertyName":"ServerSideEncryptionMethod"}
+                },
+                {
+                    "SSECustomerAlgorithm":{"emitPropertyName":"ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKey":{"emitPropertyName": "ServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+                    "SSECustomerKeyMD5":{"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "SSEKMSKeyId":{"emitPropertyName":"ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "SSEKMSEncryptionContext":{"emitPropertyName":"ServerSideEncryptionKeyManagementServiceEncryptionContext"}
+                },
+                {
+                    "ServerSideEncryptionKeyManagementServiceKeyId":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceKeyId);"]}
+                },
+                {
+                    "Expiration":{"injectXmlUnmarshallCode":[
+                        "if (context.ResponseData.IsHeaderPresent(\"x-amz-expiration\"))",
+                        "   response.Expiration = new Expiration(context.ResponseData.GetHeaderValue(\"x-amz-expiration\"));"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -2287,6 +2415,9 @@
             "excludePaginators":true
         },
         "UploadPart": {
+            "skipChecksumDuringMarshalling": true
+        },
+        "PutObject":{
             "skipChecksumDuringMarshalling": true
         }
     },
@@ -2777,6 +2908,25 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"
             }
+        },
+        "PutObjectRequest":{
+            "TagSet":{
+                "Type":"List<Tag>"
+            },
+            "InputStream":{
+                "Type":"Stream"
+            },
+            "ServerSideEncryptionCustomerMethod":{
+                "Type":"ServerSideEncryptionCustomerMethod"
+            }
+        },
+        "PutObjectOutput":{
+            "Expiration":{
+                "Type":"Expiration"
+            },
+            "ServerSideEncryptionCustomerMethod":{
+                "Type" : "ServerSideEncryptionCustomerMethod"
+            }
         }
     },
     "excludeMembers":{
@@ -2861,6 +3011,9 @@
         },
         "PartETag":{
             "alternateBaseClass": "IComparable<PartETag>"
+        },
+        "PutObjectRequest":{
+            "alternateBaseClass" : "PutWithACLRequest"
         }
     },
     "flattenShapes" : {
