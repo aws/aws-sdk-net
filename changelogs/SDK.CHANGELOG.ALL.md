@@ -1,3 +1,13 @@
+### 3.7.1209.0 (2026-01-26 19:24 UTC)
+* CloudWatchEvidently (3.7.503.0)
+	* Deprecate all Evidently API for AWS CloudWatch Evidently deprecation
+* ConnectCases (3.7.506.0)
+	* Amazon Connect now enables you to use tag-based access controls to define who can access specific cases. You can associate tags with case templates and configure security profiles to determine which users can access cases with those tags.
+* EC2 (3.7.542.0)
+	* DescribeInstanceTypes API response now includes an additionalFlexibleNetworkInterfaces field, the number of interfaces attachable to an instance when using flexible Elastic Network Adapter (ENA) queues in addition to the base number specified by maximumNetworkInterfaces.
+* GroundStation (3.7.503.0)
+	* Adds support for AWS Ground Station Telemetry.
+
 ### 3.7.1208.0 (2026-01-23 19:16 UTC)
 * Connect (3.7.524.0)
 	* Amazon Connect now offers public APIs to programmatically configure and run automated tests for contact center experiences. Integrate testing into CICD pipelines, run multiple tests at scale, and retrieve results via API to automate validation of voice interactions and workflows.
