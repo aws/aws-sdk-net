@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkCardInfo
     {
+        private int? _additionalFlexibleNetworkInterfaces;
         private double? _baselineBandwidthInGbps;
         private int? _defaultEnaQueueCountPerInterface;
         private int? _maximumEnaQueueCount;
@@ -42,6 +43,26 @@ namespace Amazon.EC2.Model
         private int? _networkCardIndex;
         private string _networkPerformance;
         private double? _peakBandwidthInGbps;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalFlexibleNetworkInterfaces. 
+        /// <para>
+        /// The number of additional network interfaces that can be attached to an instance when
+        /// using flexible Elastic Network Adapter (ENA) queues. This number is in addition to
+        /// the base number specified by <c>maximumNetworkInterfaces</c>.
+        /// </para>
+        /// </summary>
+        public int AdditionalFlexibleNetworkInterfaces
+        {
+            get { return this._additionalFlexibleNetworkInterfaces.GetValueOrDefault(); }
+            set { this._additionalFlexibleNetworkInterfaces = value; }
+        }
+
+        // Check to see if AdditionalFlexibleNetworkInterfaces property is set
+        internal bool IsSetAdditionalFlexibleNetworkInterfaces()
+        {
+            return this._additionalFlexibleNetworkInterfaces.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BaselineBandwidthInGbps. 
