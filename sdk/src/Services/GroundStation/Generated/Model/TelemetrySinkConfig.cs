@@ -30,56 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Information about an uplink echo <c>Config</c>.
-    /// 
-    ///  
-    /// <para>
-    /// Parameters from the <c>AntennaUplinkConfig</c>, corresponding to the specified <c>
-    /// AntennaUplinkConfigArn</c>, are used when this <c>UplinkEchoConfig</c> is used in
-    /// a contact.
-    /// </para>
+    /// Information about a telemetry sink <c>Config</c>.
     /// </summary>
-    public partial class UplinkEchoConfig
+    public partial class TelemetrySinkConfig
     {
-        private string _antennaUplinkConfigArn;
-        private bool? _enabled;
+        private TelemetrySinkData _telemetrySinkData;
+        private TelemetrySinkType _telemetrySinkType;
 
         /// <summary>
-        /// Gets and sets the property AntennaUplinkConfigArn. 
+        /// Gets and sets the property TelemetrySinkData. 
         /// <para>
-        /// ARN of an uplink <c>Config</c>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=82, Max=424)]
-        public string AntennaUplinkConfigArn
-        {
-            get { return this._antennaUplinkConfigArn; }
-            set { this._antennaUplinkConfigArn = value; }
-        }
-
-        // Check to see if AntennaUplinkConfigArn property is set
-        internal bool IsSetAntennaUplinkConfigArn()
-        {
-            return this._antennaUplinkConfigArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Enabled. 
-        /// <para>
-        /// Whether or not an uplink <c>Config</c> is enabled.
+        /// Information about the telemetry sink specified by the <c>telemetrySinkType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool? Enabled
+        public TelemetrySinkData TelemetrySinkData
         {
-            get { return this._enabled; }
-            set { this._enabled = value; }
+            get { return this._telemetrySinkData; }
+            set { this._telemetrySinkData = value; }
         }
 
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
+        // Check to see if TelemetrySinkData property is set
+        internal bool IsSetTelemetrySinkData()
         {
-            return this._enabled.HasValue; 
+            return this._telemetrySinkData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetrySinkType. 
+        /// <para>
+        /// The type of telemetry sink.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public TelemetrySinkType TelemetrySinkType
+        {
+            get { return this._telemetrySinkType; }
+            set { this._telemetrySinkType = value; }
+        }
+
+        // Check to see if TelemetrySinkType property is set
+        internal bool IsSetTelemetrySinkType()
+        {
+            return this._telemetrySinkType != null;
         }
 
     }

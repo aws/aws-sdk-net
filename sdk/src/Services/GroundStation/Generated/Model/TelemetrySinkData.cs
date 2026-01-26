@@ -30,46 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelContact operation.
-    /// Cancels or stops a contact with a specified contact ID based on its position in the
-    /// <a href="https://docs.aws.amazon.com/ground-station/latest/ug/contacts.lifecycle.html">contact
-    /// lifecycle</a>.
-    /// 
-    ///  
-    /// <para>
-    /// For contacts that:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Have yet to start, the contact will be cancelled.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Have started but have yet to finish, the contact will be stopped.
-    /// </para>
-    ///  </li> </ul>
+    /// Information about a telemetry sink.
     /// </summary>
-    public partial class CancelContactRequest : AmazonGroundStationRequest
+    public partial class TelemetrySinkData
     {
-        private string _contactId;
+        private KinesisDataStreamData _kinesisDataStreamData;
 
         /// <summary>
-        /// Gets and sets the property ContactId. 
+        /// Gets and sets the property KinesisDataStreamData. 
         /// <para>
-        /// UUID of a contact.
+        /// Information about a telemetry sink of type <c>KINESIS_DATA_STREAM</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
-        public string ContactId
+        public KinesisDataStreamData KinesisDataStreamData
         {
-            get { return this._contactId; }
-            set { this._contactId = value; }
+            get { return this._kinesisDataStreamData; }
+            set { this._kinesisDataStreamData = value; }
         }
 
-        // Check to see if ContactId property is set
-        internal bool IsSetContactId()
+        // Check to see if KinesisDataStreamData property is set
+        internal bool IsSetKinesisDataStreamData()
         {
-            return this._contactId != null;
+            return this._kinesisDataStreamData != null;
         }
 
     }
