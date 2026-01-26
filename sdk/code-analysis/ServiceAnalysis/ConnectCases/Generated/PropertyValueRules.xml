@@ -1056,6 +1056,18 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.TagValue.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9 _.:/=+\-@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.TagValue.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>([a-zA-Z0-9 _.:/=+\-@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.TemplateRule.CaseRuleId</property>
     <min>1</min>
     <max>500</max>

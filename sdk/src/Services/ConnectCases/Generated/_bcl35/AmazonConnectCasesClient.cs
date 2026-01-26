@@ -516,6 +516,11 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  
         /// <para>
+        /// When creating a case from a template that has tag propagation configurations, the
+        /// specified tags are automatically applied to the case.
+        /// </para>
+        ///  
+        /// <para>
         /// The following fields are required when creating a case:
         /// </para>
         ///  <ul> <li> 

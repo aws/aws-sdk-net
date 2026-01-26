@@ -36,6 +36,7 @@ namespace Amazon.ConnectCases.Model
     {
         private string _name;
         private TemplateStatus _status;
+        private List<TagPropagationConfiguration> _tagPropagationConfigurations = AWSConfigs.InitializeCollections ? new List<TagPropagationConfiguration>() : null;
         private string _templateArn;
         private string _templateId;
 
@@ -75,6 +76,27 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagPropagationConfigurations. 
+        /// <para>
+        /// Defines tag propagation configuration for resources created within a domain. Tags
+        /// specified here will be automatically applied to resources being created for the specified
+        /// resource type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<TagPropagationConfiguration> TagPropagationConfigurations
+        {
+            get { return this._tagPropagationConfigurations; }
+            set { this._tagPropagationConfigurations = value; }
+        }
+
+        // Check to see if TagPropagationConfigurations property is set
+        internal bool IsSetTagPropagationConfigurations()
+        {
+            return this._tagPropagationConfigurations != null && (this._tagPropagationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

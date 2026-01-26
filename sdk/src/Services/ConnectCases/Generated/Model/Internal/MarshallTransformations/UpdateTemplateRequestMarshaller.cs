@@ -134,6 +134,22 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Status);
                 }
 
+                if(publicRequest.IsSetTagPropagationConfigurations())
+                {
+                    context.Writer.WritePropertyName("tagPropagationConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagPropagationConfigurationsListValue in publicRequest.TagPropagationConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagPropagationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagPropagationConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
