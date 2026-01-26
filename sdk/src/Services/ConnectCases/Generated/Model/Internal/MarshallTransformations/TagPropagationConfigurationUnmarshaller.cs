@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TemplateSummary Object
+    /// Response Unmarshaller for TagPropagationConfiguration Object
     /// </summary>  
-    public class TemplateSummaryUnmarshaller : IJsonUnmarshaller<TemplateSummary, JsonUnmarshallerContext>
+    public class TagPropagationConfigurationUnmarshaller : IJsonUnmarshaller<TagPropagationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TemplateSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TagPropagationConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TemplateSummary unmarshalledObject = new TemplateSummary();
+            TagPropagationConfiguration unmarshalledObject = new TagPropagationConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("tagMap", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tagPropagationConfigurations", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<TagPropagationConfiguration, TagPropagationConfigurationUnmarshaller>(TagPropagationConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.TagPropagationConfigurations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("templateArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TemplateArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("templateId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TemplateId = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.TagMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static TemplateSummaryUnmarshaller _instance = new TemplateSummaryUnmarshaller();        
+        private static TagPropagationConfigurationUnmarshaller _instance = new TagPropagationConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TemplateSummaryUnmarshaller Instance
+        public static TagPropagationConfigurationUnmarshaller Instance
         {
             get
             {
