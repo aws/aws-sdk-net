@@ -383,6 +383,10 @@ namespace Amazon.GroundStation
         /// </summary>
         public static readonly ConfigCapabilityType S3Recording = new ConfigCapabilityType("s3-recording");
         /// <summary>
+        /// Constant TelemetrySink for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType TelemetrySink = new ConfigCapabilityType("telemetry-sink");
+        /// <summary>
         /// Constant Tracking for ConfigCapabilityType
         /// </summary>
         public static readonly ConfigCapabilityType Tracking = new ConfigCapabilityType("tracking");
@@ -1214,6 +1218,52 @@ namespace Amazon.GroundStation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Polarization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TelemetrySinkType.
+    /// </summary>
+    public class TelemetrySinkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KINESIS_DATA_STREAM for TelemetrySinkType
+        /// </summary>
+        public static readonly TelemetrySinkType KINESIS_DATA_STREAM = new TelemetrySinkType("KINESIS_DATA_STREAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TelemetrySinkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TelemetrySinkType FindValue(string value)
+        {
+            return FindValue<TelemetrySinkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TelemetrySinkType(string value)
         {
             return FindValue(value);
         }

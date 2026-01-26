@@ -270,7 +270,23 @@ namespace Amazon.GroundStation
         #region  CancelContact
 
         /// <summary>
-        /// Cancels a contact with a specified contact ID.
+        /// Cancels or stops a contact with a specified contact ID based on its position in the
+        /// <a href="https://docs.aws.amazon.com/ground-station/latest/ug/contacts.lifecycle.html">contact
+        /// lifecycle</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For contacts that:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Have yet to start, the contact will be cancelled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have started but have yet to finish, the contact will be stopped.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelContact service method.</param>
         /// 
@@ -404,17 +420,17 @@ namespace Amazon.GroundStation
         #region  CreateDataflowEndpointGroup
 
         /// <summary>
-        /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c>DataflowEndpoint</c>
+        /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c> DataflowEndpoint</c>
         /// objects.
         /// 
         ///  
         /// <para>
-        /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
+        /// The <c>name</c> field in each endpoint is used in your mission profile <c> DataflowEndpointConfig</c>
         /// to specify which endpoints to use during a contact.
         /// </para>
         ///  
         /// <para>
-        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c> Config</c>
         /// must match a <c>DataflowEndpoint</c> in the same group.
         /// </para>
         /// </summary>
@@ -479,17 +495,17 @@ namespace Amazon.GroundStation
         #region  CreateDataflowEndpointGroupV2
 
         /// <summary>
-        /// Creates a <c>DataflowEndpointGroupV2</c> containing the specified list of <c>DataflowEndpoint</c>
-        /// objects.
+        /// Creates a <c>DataflowEndpoint</c> group containing the specified list of Ground Station
+        /// Agent based endpoints.
         /// 
         ///  
         /// <para>
-        /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
+        /// The <c>name</c> field in each endpoint is used in your mission profile <c> DataflowEndpointConfig</c>
         /// to specify which endpoints to use during a contact.
         /// </para>
         ///  
         /// <para>
-        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c> Config</c>
         /// must match a <c>DataflowEndpoint</c> in the same group.
         /// </para>
         /// </summary>
@@ -1602,7 +1618,7 @@ namespace Amazon.GroundStation
         /// 
         ///  
         /// <para>
-        /// If <c>statusList</c> contains AVAILABLE, the request must include <c>groundStation</c>,
+        /// If <c>statusList</c> contains AVAILABLE, the request must include <c> groundStation</c>,
         /// <c>missionprofileArn</c>, and <c>satelliteArn</c>. 
         /// </para>
         /// </summary>

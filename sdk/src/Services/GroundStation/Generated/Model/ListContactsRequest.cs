@@ -35,7 +35,7 @@ namespace Amazon.GroundStation.Model
     /// 
     ///  
     /// <para>
-    /// If <c>statusList</c> contains AVAILABLE, the request must include <c>groundStation</c>,
+    /// If <c>statusList</c> contains AVAILABLE, the request must include <c> groundStation</c>,
     /// <c>missionprofileArn</c>, and <c>satelliteArn</c>. 
     /// </para>
     /// </summary>

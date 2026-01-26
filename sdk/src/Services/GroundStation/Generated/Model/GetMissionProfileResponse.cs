@@ -45,6 +45,7 @@ namespace Amazon.GroundStation.Model
         private KmsKey _streamsKmsKey;
         private string _streamsKmsRole;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _telemetrySinkConfigArn;
         private string _trackingConfigArn;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property DataflowEdges. 
         /// <para>
-        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <c>Config</c>
+        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <c> Config</c>
         /// and a <i>to</i> <c>Config</c>.
         /// </para>
         /// </summary>
@@ -227,6 +228,7 @@ namespace Amazon.GroundStation.Model
         /// Role to use for encrypting streams with KMS key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=30, Max=165)]
         public string StreamsKmsRole
         {
             get { return this._streamsKmsRole; }
@@ -255,6 +257,25 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetrySinkConfigArn. 
+        /// <para>
+        /// ARN of a telemetry sink <c>Config</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=82, Max=424)]
+        public string TelemetrySinkConfigArn
+        {
+            get { return this._telemetrySinkConfigArn; }
+            set { this._telemetrySinkConfigArn = value; }
+        }
+
+        // Check to see if TelemetrySinkConfigArn property is set
+        internal bool IsSetTelemetrySinkConfigArn()
+        {
+            return this._telemetrySinkConfigArn != null;
         }
 
         /// <summary>

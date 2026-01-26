@@ -118,6 +118,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("telemetrySinkConfigArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TelemetrySinkConfigArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trackingConfigArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

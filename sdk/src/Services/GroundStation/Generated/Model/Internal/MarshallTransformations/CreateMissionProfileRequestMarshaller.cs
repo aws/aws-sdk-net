@@ -138,6 +138,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTelemetrySinkConfigArn())
+                {
+                    context.Writer.WritePropertyName("telemetrySinkConfigArn");
+                    context.Writer.Write(publicRequest.TelemetrySinkConfigArn);
+                }
+
                 if(publicRequest.IsSetTrackingConfigArn())
                 {
                     context.Writer.WritePropertyName("trackingConfigArn");

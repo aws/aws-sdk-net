@@ -96,6 +96,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3RecordingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("telemetrySinkConfig", targetDepth))
+                {
+                    var unmarshaller = TelemetrySinkConfigUnmarshaller.Instance;
+                    unmarshalledObject.TelemetrySinkConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trackingConfig", targetDepth))
                 {
                     var unmarshaller = TrackingConfigUnmarshaller.Instance;
