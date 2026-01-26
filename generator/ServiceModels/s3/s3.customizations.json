@@ -2349,6 +2349,17 @@
                         "   response.Expiration = new Expiration(context.ResponseData.GetHeaderValue(\"x-amz-expiration\"));"]}
                 }
             ]
+        },
+        
+        "UpdateBucketMetadataInventoryTableConfigurationRequest": {
+            "modify" :[
+                {
+                    "ContentMD5" : {"injectXmlIsSet":["return !String.IsNullOrEmpty(this._contentMD5);"]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
