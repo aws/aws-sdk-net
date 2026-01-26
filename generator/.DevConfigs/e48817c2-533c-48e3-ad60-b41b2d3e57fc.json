@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "patch",
-    "changeLogMessages": [
-      "Remove \u0060InternalsVisibleTo\u0060 reference to renamed project in \u0060AssemblyInfo\u0060 file"
-    ]
-  }
-}
