@@ -847,11 +847,21 @@ namespace Amazon.DynamoDBv2.DataModel
     public enum UpdateBehavior
     {
         /// <summary>
-        /// Set the value on both create and update.
+        /// Always set the value during persistence.
+        /// Notes:
+        /// - On update, this will overwrite any existing value for the attribute.
         /// </summary>
         Always,
+
         /// <summary>
-        /// Set the value only when the item is created.
+        /// Set the value only if the attribute does not currently exist on the item.
+        /// Applies to:
+        /// - Create: attribute is written when the item is inserted.
+        /// - Update: attribute is written if it is missing on the existing item (i.e., absent or has not been set previously).
+        /// Typical usage: fields that should be initialized once and then left unchanged (e.g., created timestamps, initial version, immutable IDs).
+        /// Notes:
+        /// - If the attribute already exists on the item during update, its value is preserved and not overwritten.
+        /// - This behavior is analogous to using DynamoDB’s if_not_exists in update expressions for the attribute.
         /// </summary>
         IfNotExists
     }

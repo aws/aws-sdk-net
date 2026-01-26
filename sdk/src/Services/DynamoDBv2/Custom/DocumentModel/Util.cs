@@ -384,14 +384,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     if (sets.Length > 0)
                         sets.Append(", ");
-                    switch (createOnly)
+                    if (createOnly)
                     {
-                        case true:
-                            sets.AppendFormat("{0} = if_not_exists({0}, {1})", attributeReference, attributeValueReference);
-                            break;
-                        default:
-                            sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
-                            break;
+                        sets.AppendFormat("{0} = if_not_exists({0}, {1})", attributeReference, attributeValueReference);
+                    }
+                    else
+                    {
+                        sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
                     }
 
                     // Add the attribute value for the variable in the added in the expression
