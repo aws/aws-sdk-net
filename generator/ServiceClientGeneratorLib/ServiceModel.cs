@@ -598,7 +598,8 @@ namespace ServiceClientGenerator
                         new Operation(this, "WriteGetObjectResponse", DocumentRoot[OperationsKey]["WriteGetObjectResponse"]),
                         new Operation(this, "UploadPart", DocumentRoot[OperationsKey]["UploadPart"]),
                         new Operation(this, "PutObject", DocumentRoot[OperationsKey]["PutObject"]),
-                        new Operation(this, "UpdateBucketMetadataInventoryTableConfiguration", DocumentRoot[OperationsKey]["UpdateBucketMetadataInventoryTableConfiguration"])
+                        new Operation(this, "UpdateBucketMetadataInventoryTableConfiguration", DocumentRoot[OperationsKey]["UpdateBucketMetadataInventoryTableConfiguration"]),
+                        new Operation(this, "GetBucketVersioning", DocumentRoot[OperationsKey]["GetBucketVersioning"])
                     };
                 }
                 return _s3AllowListOperations.Where(operation => operation.data != null).ToList();

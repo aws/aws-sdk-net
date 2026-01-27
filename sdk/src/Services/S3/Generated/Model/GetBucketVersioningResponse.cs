@@ -12,39 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  GetBucketVersioning response and response metadata.
+    /// This is the response object from the GetBucketVersioning operation.
     /// </summary>
     public partial class GetBucketVersioningResponse : AmazonWebServiceResponse
     {
-        private S3BucketVersioningConfig config;
 
-        /// <summary>
-        /// Gets and sets the Versioning property.
-        /// Unless Versioning has been explicitly "Enabled" on a bucket,
-        /// Versioning Status is "Off". Once Versioning has been 
-        /// "Enabled", it can be "Suspended" but cannot be switched "Off".
-        /// </summary>
-        public S3BucketVersioningConfig VersioningConfig
-        {
-            get 
-            {
-                if (this.config == null)
-                    this.config = new S3BucketVersioningConfig();
-
-                return this.config; 
-            }
-            set { this.config = value; }
-        }
     }
 }
-    
