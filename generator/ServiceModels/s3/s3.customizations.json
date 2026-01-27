@@ -2350,7 +2350,6 @@
                 }
             ]
         },
-        
         "UpdateBucketMetadataInventoryTableConfigurationRequest": {
             "modify" :[
                 {
@@ -2358,6 +2357,23 @@
                 },
                 {
                     "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketVersioningRequest" :{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketVersioningOutput":{
+            "modify":[
+                {
+                    "MFADelete":{"skipContextTestExpressionUnmarshallingLogic" : true, "injectXmlUnmarshallCode":["response.VersioningConfig.EnableMfaDelete = string.Equals(StringUnmarshaller.GetInstance().Unmarshall(context), \"Enabled\");"]}
+                },
+                {
+                    "Status":{"skipContextTestExpressionUnmarshallingLogic" : true, "injectXmlUnmarshallCode":[" response.VersioningConfig.Status = StringUnmarshaller.GetInstance().Unmarshall(context);"]}
                 }
             ]
         }
@@ -2990,6 +3006,10 @@
             "ContentEncoding",
             "ContentType",
             "ContentLanguage"
+        ],
+        "GetBucketVersioningOutput":[
+            "Status",
+            "MFADelete"
         ]
     },
     "unwrapXmlOutput":{
