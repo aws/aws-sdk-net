@@ -96,6 +96,103 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
+    /// The <see cref="ProjectionExpressionBuilder"/> class is used to construct projection expressions for DynamoDB query operation.
+    /// </summary>
+    public class ProjectionExpressionBuilder : ExpressionBuilder
+    {
+        /// <summary>
+        /// The list of attribute names that will be used in the expression.
+        /// </summary>
+        internal List<NameBuilder> Names { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectionExpressionBuilder"/> class with default settings.
+        /// </summary>
+        public ProjectionExpressionBuilder()
+        {
+            Names = new List<NameBuilder>();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectionExpressionBuilder"/> class with name attributes.
+        /// </summary>
+        ///<param name="namesList">The <see cref="NameBuilder"/> representing the name part of the attribute.</param>
+        public ProjectionExpressionBuilder(List<NameBuilder> namesList)
+        {
+            Names = namesList;
+        }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ProjectionExpressionBuilder"/> class.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="ProjectionExpressionBuilder"/> initialized with empty attribute names.
+        /// </returns>
+        public static ProjectionExpressionBuilder New()
+        {
+            return new ProjectionExpressionBuilder();
+        }
+
+        /// <summary>
+        /// Adds one or more attribute names to the projection expression.
+        /// </summary>
+        /// <param name="namesList">The <see cref="NameBuilder"/> instances representing the attribute names to include in the projection.</param>
+        /// <returns>A <see cref="ProjectionExpressionBuilder"/> that defines a projection expression using the specified attribute names.</returns>
+        public ProjectionExpressionBuilder NamesList(params NameBuilder[] namesList)
+        {
+            Names.AddRange(namesList);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds one or more attribute names to an existing projection expression builder.
+        /// </summary>
+        /// <param name="projectionExpressionBuilder">
+        /// The <see cref="ProjectionExpressionBuilder"/> to which the attribute names are added.
+        /// </param>
+        /// <param name="namesList">
+        /// The <see cref="NameBuilder"/> instances representing the attribute names to include in the projection.
+        /// </param>
+        /// <returns>A <see cref="ProjectionExpressionBuilder"/> that defines a projection expression using the specified attribute names.</returns>
+        public ProjectionExpressionBuilder AddNames(ProjectionExpressionBuilder projectionExpressionBuilder, params NameBuilder[] namesList)
+        {
+            projectionExpressionBuilder.Names.AddRange(namesList);
+            return new ProjectionExpressionBuilder(projectionExpressionBuilder.Names);
+        }
+
+        internal override ExpressionNode BuildExpressionTree(out string s)
+        {
+            s = "P";
+            if (Names.Count == 0)
+                throw new InvalidOperationException("ProjectionExpressionBuilder");
+
+            var childNodes = BuildChildNodes();
+
+            var node = new ExpressionNode
+            {
+                Children = childNodes,
+            };
+
+            node.FormatedExpression = s + string.Concat(Enumerable.Repeat($", {s}", Names.Count - 1));
+            return node;
+        }
+
+        private Queue<ExpressionNode> BuildChildNodes()
+        {
+            var childNodes = new Queue<ExpressionNode>(Names.Count);
+
+            foreach (var name in Names)
+            {
+                var operand = name.Build();
+                childNodes.Enqueue(operand);
+            }
+
+            return childNodes;
+        }
+    }
+
+    /// <summary>
     /// The <see cref="KeyExpressionBuilder"/> class is used to construct key expressions for DynamoDB operations.
     /// </summary>
     public class KeyExpressionBuilder : ExpressionBuilder

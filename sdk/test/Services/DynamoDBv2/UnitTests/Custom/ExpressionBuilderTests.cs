@@ -1,6 +1,7 @@
 ﻿using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -765,7 +766,59 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(42, resultNode.ExpressionAttributeValues[":K0"]);
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_NamesList_Build_Correctly()
+        {
+            var result = ProjectionExpressionBuilder.New();
+            result.NamesList(NameBuilder.New("Attribute1"), NameBuilder.New("Attribute2"));
 
+            var resultNode = result.Build();
+
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("P, P", resultNode.ExpressionStatement);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_AddNames_Build_Correctly()
+        {
+            var projectionBuilder = ProjectionExpressionBuilder.New();
+            projectionBuilder.NamesList(NameBuilder.New("Attribute1"), NameBuilder.New("Attribute2"));
+
+            var result = ProjectionExpressionBuilder.New()
+                .AddNames(projectionBuilder, NameBuilder.New("Attribute3"), NameBuilder.New("Attribute4"));
+
+            var projectionBuilderNode = projectionBuilder.Build();
+            var resultNode = result.Build();
+
+            Assert.IsNotNull(projectionBuilderNode);
+            Assert.AreEqual("P, P, P, P", projectionBuilderNode.ExpressionStatement);
+            Assert.IsNotNull(resultNode);
+            Assert.AreEqual("P, P, P, P", resultNode.ExpressionStatement);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void BuildProjectionExpressionBuilder_WithNoAttributeNames_ShouldThrowException()
+        {
+            var projectionBuilder = ProjectionExpressionBuilder.New();
+            projectionBuilder.Build();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilderConstructor_WhenCalled_CreatesValidInstance()
+        {
+            var nameBuilder = NameBuilder.New("test");
+            var projectionBuilder = new ProjectionExpressionBuilder(new List<NameBuilder>() { nameBuilder });
+            var projectionBuilderNode = projectionBuilder.Build();
+
+            Assert.IsNotNull(projectionBuilder);
+            Assert.IsInstanceOfType(projectionBuilder, typeof(ProjectionExpressionBuilder));
+            Assert.IsNotNull(projectionBuilderNode);
+            Assert.AreEqual("P", projectionBuilderNode.ExpressionStatement);
+        }
     }
 
 }
