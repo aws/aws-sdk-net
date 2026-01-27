@@ -330,7 +330,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     internal static class Common
     {
         private const string AwsVariablePrefix = "awsavar";
-        
+
         public static void ConvertAttributeUpdatesToUpdateExpression(
             Dictionary<string, AttributeValueUpdate> attributesToUpdates, Expression updateExpression,
             Table table,

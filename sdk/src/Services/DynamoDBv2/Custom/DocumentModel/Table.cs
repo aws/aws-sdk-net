@@ -13,20 +13,18 @@
  * permissions and limitations under the License.
  */
 
-using System;
-
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-using Amazon.Util;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Globalization;
 using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry.Tracing;
-using Amazon.Runtime.Internal.UserAgent;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -150,6 +148,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <returns>Resultant Search container.</returns>
         ISearch Scan(ScanOperationConfig config);
+
+        /// <summary>
+        /// Initiates a scan operation on the specified document and returns a search result representing the scan
+        /// outcome.
+        /// </summary>
+        /// <param name="operationRequest">An object containing the parameters and data required to perform the scan operation. Cannot be null.</param>
+        /// <returns>An ISearch instance representing the result of the scan operation. The returned object contains information
+        /// about matches found in the document.</returns>
+        ISearch Scan(ScanDocumentOperationRequest operationRequest);
 
         #endregion
 
@@ -1302,6 +1309,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+        internal async Task<Document> PutItemHelperAsync(PutItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        {
+            var pipeline = new PutItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        internal Document PutItemHelper(PutItemDocumentOperationRequest request)
+        {
+            var pipeline = new PutItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
         #endregion
 
 
@@ -1363,6 +1382,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.FromAttributeMap(attributeMap);
         }
 
+        internal Document GetItemHelper(GetItemDocumentOperationRequest request)
+        {
+            var pipeline = new GetItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
+        internal async Task<Document> GetItemHelperAsync(GetItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        {
+            var pipeline = new GetItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
         #endregion
 
 
@@ -1378,6 +1409,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
             return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
+        }
+
+        internal Document UpdateHelper(UpdateItemDocumentOperationRequest request)
+        {
+            var pipeline = new UpdateItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
+        internal async Task<Document> UpdateHelperAsync(UpdateItemDocumentOperationRequest request,
+            CancellationToken cancellationToken)
+        {
+            var pipeline = new UpdateItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression)
@@ -1660,6 +1704,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+
         internal async Task<Document> DeleteHelperAsync(Key key, DeleteItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new DeleteItemOperationConfig();
@@ -1701,6 +1746,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ret = this.FromAttributeMap(attributes);
             }
             return ret;
+        }
+
+
+        internal Document DeleteHelper(DeleteItemDocumentOperationRequest request)
+        {
+            var pipeline = new DeleteItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
+        internal async Task<Document> DeleteHelperAsync(DeleteItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        {
+            var pipeline = new DeleteItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
         #endregion
@@ -1751,6 +1809,35 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 ret.TotalSegments = currentConfig.TotalSegments;
                 ret.Segment = currentConfig.Segment;
+            }
+
+            return ret;
+        }
+
+        /// <inheritdoc/>
+        public ISearch Scan(ScanDocumentOperationRequest operationRequest)
+        {
+            if (operationRequest == null)
+                throw new ArgumentNullException("operationRequest");
+
+            Search ret = new Search(SearchType.Scan)
+            {
+                SourceTable = this,
+                TableName = TableName,
+                Limit = operationRequest.Limit,
+                FilterExpression = operationRequest.FilterExpression,
+                ProjectionExpression = operationRequest.ProjectionExpression,
+                Select = operationRequest.Select,
+                CollectResults = operationRequest.CollectResults,
+                IndexName = operationRequest.IndexName,
+                IsConsistentRead = operationRequest.ConsistentRead,
+                PaginationToken = operationRequest.PaginationToken
+            };
+
+            if (operationRequest.TotalSegments != 0)
+            {
+                ret.TotalSegments = operationRequest.TotalSegments;
+                ret.Segment = operationRequest.Segment;
             }
 
             return ret;
@@ -1890,7 +1977,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return new DocumentTransactWrite(this);
         }
-
         #endregion
+  
     }
 }
