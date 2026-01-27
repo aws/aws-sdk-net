@@ -91,6 +91,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class StartTaskContactRequest : AmazonConnectRequest
     {
+        private List<TaskAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<TaskAttachment>() : null;
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientToken;
         private string _contactFlowId;
@@ -104,6 +105,31 @@ namespace Amazon.Connect.Model
         private DateTime? _scheduledTime;
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private string _taskTemplateId;
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// List of S3 presigned URLs of task attachments and their file name. You can have a
+        /// maximum of 5 attachments per task.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=5)]
+        public List<TaskAttachment> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
