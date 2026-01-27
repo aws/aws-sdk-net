@@ -198,6 +198,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimecodeBurninSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timecodeInsertion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimecodeInsertion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputLockingSettings Object
+    /// Response Unmarshaller for DisabledLockingSettings Object
     /// </summary>  
-    public class OutputLockingSettingsUnmarshaller : IUnmarshaller<OutputLockingSettings, XmlUnmarshallerContext>, IUnmarshaller<OutputLockingSettings, JsonUnmarshallerContext>
+    public class DisabledLockingSettingsUnmarshaller : IUnmarshaller<DisabledLockingSettings, XmlUnmarshallerContext>, IUnmarshaller<DisabledLockingSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputLockingSettings IUnmarshaller<OutputLockingSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DisabledLockingSettings IUnmarshaller<DisabledLockingSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OutputLockingSettings Unmarshall(JsonUnmarshallerContext context)
+        public DisabledLockingSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            OutputLockingSettings unmarshalledObject = new OutputLockingSettings();
+            DisabledLockingSettings unmarshalledObject = new DisabledLockingSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("disabledLockingSettings", targetDepth))
+                if (context.TestExpression("customEpoch", targetDepth))
                 {
-                    var unmarshaller = DisabledLockingSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DisabledLockingSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("epochLockingSettings", targetDepth))
-                {
-                    var unmarshaller = EpochLockingSettingsUnmarshaller.Instance;
-                    unmarshalledObject.EpochLockingSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineLockingSettings", targetDepth))
-                {
-                    var unmarshaller = PipelineLockingSettingsUnmarshaller.Instance;
-                    unmarshalledObject.PipelineLockingSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomEpoch = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputLockingSettingsUnmarshaller _instance = new OutputLockingSettingsUnmarshaller();        
+        private static DisabledLockingSettingsUnmarshaller _instance = new DisabledLockingSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputLockingSettingsUnmarshaller Instance
+        public static DisabledLockingSettingsUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PipelineLockingSettings Marshaller
+    /// DisabledLockingSettings Marshaller
     /// </summary>
-    public class PipelineLockingSettingsMarshaller : IRequestMarshaller<PipelineLockingSettings, JsonMarshallerContext> 
+    public class DisabledLockingSettingsMarshaller : IRequestMarshaller<DisabledLockingSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PipelineLockingSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(DisabledLockingSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -54,18 +54,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CustomEpoch);
             }
 
-            if(requestObject.IsSetPipelineLockingMethod())
-            {
-                context.Writer.WritePropertyName("pipelineLockingMethod");
-                context.Writer.Write(requestObject.PipelineLockingMethod);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PipelineLockingSettingsMarshaller Instance = new PipelineLockingSettingsMarshaller();
+        public readonly static DisabledLockingSettingsMarshaller Instance = new DisabledLockingSettingsMarshaller();
 
     }
 }

@@ -48,6 +48,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDisabledLockingSettings())
+            {
+                context.Writer.WritePropertyName("disabledLockingSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DisabledLockingSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DisabledLockingSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEpochLockingSettings())
             {
                 context.Writer.WritePropertyName("epochLockingSettings");
