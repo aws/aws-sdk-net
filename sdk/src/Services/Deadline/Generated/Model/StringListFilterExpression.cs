@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// Searches for a match within a list of strings.
+    /// Searches for a particular list of strings.
     /// </summary>
     public partial class StringListFilterExpression
     {
@@ -60,7 +60,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The type of comparison to use for this search. ANY_EQUALS and ALL_NOT_EQUALS are supported.
+        /// The type of comparison to use for this search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

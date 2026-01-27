@@ -48,12 +48,14 @@ namespace Amazon.Deadline.Model
     public partial class UpdateJobRequest : AmazonDeadlineRequest
     {
         private string _clientToken;
+        private string _description;
         private string _farmId;
         private string _jobId;
         private UpdateJobLifecycleStatus _lifecycleStatus;
         private int? _maxFailedTasksCount;
         private int? _maxRetriesPerTask;
         private int? _maxWorkerCount;
+        private string _name;
         private int? _priority;
         private string _queueId;
         private JobTargetTaskRunStatus _targetTaskRunStatus;
@@ -75,6 +77,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The updated job description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -213,9 +234,28 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The updated job name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The job priority to update.
+        /// The updated job priority.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

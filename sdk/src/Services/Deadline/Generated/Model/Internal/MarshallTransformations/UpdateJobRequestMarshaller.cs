@@ -82,6 +82,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
             if(publicRequest.IsSetLifecycleStatus())
             {
                 context.Writer.WritePropertyName("lifecycleStatus");
@@ -104,6 +110,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("maxWorkerCount");
                 context.Writer.WriteNumberValue(publicRequest.MaxWorkerCount.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
             }
 
             if(publicRequest.IsSetPriority())
