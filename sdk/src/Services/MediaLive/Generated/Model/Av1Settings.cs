@@ -56,6 +56,7 @@ namespace Amazon.MediaLive.Model
         private Av1SpatialAq _spatialAq;
         private Av1TemporalAq _temporalAq;
         private TimecodeBurninSettings _timecodeBurninSettings;
+        private Av1TimecodeInsertionBehavior _timecodeInsertion;
 
         /// <summary>
         /// Gets and sets the property AfdSignaling. Configures whether MediaLive will write AFD
@@ -440,6 +441,25 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTimecodeBurninSettings()
         {
             return this._timecodeBurninSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimecodeInsertion. Controls how MediaLive inserts timecodes
+        /// into the video output encode.DISABLED: Do not insert timecodes.METADATA_OBU: Include
+        /// timecodes. MediaLive inserts timecode metadata based on the timecode from the source
+        /// specified in the Timecode Config property. The timecode metadata is a metadata OBU
+        /// (Open Bitstream Unit) of type METADATA_TYPE_TIMECODE, in accordance with https://aomediacodec.github.io/av1-spec/#metadata-timecode-syntax.
+        /// </summary>
+        public Av1TimecodeInsertionBehavior TimecodeInsertion
+        {
+            get { return this._timecodeInsertion; }
+            set { this._timecodeInsertion = value; }
+        }
+
+        // Check to see if TimecodeInsertion property is set
+        internal bool IsSetTimecodeInsertion()
+        {
+            return this._timecodeInsertion != null;
         }
 
     }
