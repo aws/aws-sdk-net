@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private string _name;
         private SchedulerConfig _schedulerConfig;
         private SchedulerResourceStatus _status;
+        private Dictionary<string, string> _statusDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
@@ -285,6 +286,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// Additional details about the status of the cluster policy. This field provides context
+        /// when the policy is in a non-active state, such as during creation, updates, or if
+        /// failures occur.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null && (this._statusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

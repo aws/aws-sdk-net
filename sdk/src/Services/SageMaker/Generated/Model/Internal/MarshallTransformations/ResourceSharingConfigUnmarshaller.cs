@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AbsoluteBorrowLimits", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ComputeQuotaResourceConfig, ComputeQuotaResourceConfigUnmarshaller>(ComputeQuotaResourceConfigUnmarshaller.Instance);
+                    unmarshalledObject.AbsoluteBorrowLimits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BorrowLimit", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

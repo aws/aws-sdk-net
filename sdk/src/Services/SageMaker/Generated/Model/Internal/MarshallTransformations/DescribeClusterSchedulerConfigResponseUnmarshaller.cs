@@ -130,6 +130,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StatusDetails", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.StatusDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
