@@ -91,6 +91,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class StartTaskContactRequest : AmazonConnectRequest
     {
+        private List<TaskAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<TaskAttachment>() : null;
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientToken;
         private string _contactFlowId;
@@ -104,6 +105,26 @@ namespace Amazon.Connect.Model
         private DateTime? _scheduledTime;
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private string _taskTemplateId;
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// List of S3 presigned URLs of task attachments and their file name. You can have a
+        /// maximum of 5 attachments per task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=5)]
+        public List<TaskAttachment> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
