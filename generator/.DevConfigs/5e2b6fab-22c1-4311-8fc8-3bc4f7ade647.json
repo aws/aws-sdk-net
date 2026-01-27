@@ -1,0 +1,11 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.Bedrock.MEAI",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed AOT compilation issue where Dictionary<string, object?> type was not registered in BedrockJsonContext, causing GetTypeInfo lookups to fail at runtime."
+      ]
+    }
+  ]
+}
