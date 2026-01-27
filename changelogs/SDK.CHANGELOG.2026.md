@@ -1,3 +1,18 @@
+### 3.7.1210.0 (2026-01-27 19:25 UTC)
+* Connect (3.7.525.0)
+	* Added support for task attachments. The StartTaskContact API now accepts file attachments, enabling customers to include files (.csv, .doc, .docx, .heic, .jfif, .jpeg, .jpg, .mov, .mp4, .pdf, .png, .ppt, .pptx, .rtf, .txt, etc.) when creating Task contacts. Supports up to 5 attachments per task.
+* Deadline (3.7.505.0)
+	* AWS Deadline Cloud now supports editing job names and descriptions after submission.
+* EC2 (3.7.543.0)
+	* Releasing new EC2 instances. C8gb and M8gb with highest EBS performance, M8gn with 600 Gbps network bandwidth, X8aedz and M8azn with 5GHz AMD processors, X8i with Intel Xeon 6 processors and up to 6TB memory, and Mac-m4max with Apple M4 Max chip for 25 percent faster builds.
+* MediaLive (3.7.512.0)
+	* AWS Elemental MediaLive released two new features that allows customers 1) to set Output Timecode for AV1 encoder, 2) to set a Custom Epoch for CMAF Ingest and MediaPackage V2 output groups when using Pipeline Locking or Disabled Locking modes.
+* SageMaker (3.7.527.0)
+	* Idle resource sharing enables teams to borrow unused compute resources in your SageMaker HyperPod cluster. This capability maximizes resource utilization by allowing teams to borrow idle compute capacity beyond their allocated compute quotas.
+* Core 3.7.500.72
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1209.0 (2026-01-26 19:24 UTC)
 * CloudWatchEvidently (3.7.503.0)
 	* Deprecate all Evidently API for AWS CloudWatch Evidently deprecation
