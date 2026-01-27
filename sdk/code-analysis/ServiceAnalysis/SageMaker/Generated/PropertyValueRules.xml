@@ -14125,7 +14125,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSharingConfig.BorrowLimit</property>
     <min>0</min>
-    <max>500</max>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSpec.LifecycleConfigArn</property>
