@@ -84,6 +84,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDescriptionOverride())
+                {
+                    context.Writer.WritePropertyName("descriptionOverride");
+                    context.Writer.Write(publicRequest.DescriptionOverride);
+                }
+
                 if(publicRequest.IsSetMaxFailedTasksCount())
                 {
                     context.Writer.WritePropertyName("maxFailedTasksCount");
@@ -100,6 +106,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("maxWorkerCount");
                     context.Writer.Write(publicRequest.MaxWorkerCount);
+                }
+
+                if(publicRequest.IsSetNameOverride())
+                {
+                    context.Writer.WritePropertyName("nameOverride");
+                    context.Writer.Write(publicRequest.NameOverride);
                 }
 
                 if(publicRequest.IsSetParameters())

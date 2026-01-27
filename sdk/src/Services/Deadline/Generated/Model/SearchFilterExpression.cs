@@ -134,7 +134,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property StringListFilter. 
         /// <para>
-        /// Filters by a list of string values.
+        /// Filters by a list of strings.
         /// </para>
         /// </summary>
         public StringListFilterExpression StringListFilter
