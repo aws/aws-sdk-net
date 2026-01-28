@@ -1656,5 +1656,15 @@ namespace Amazon.EC2.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchTransitGatewayMulticastGroupsPaginator SearchTransitGatewayMulticastGroups(SearchTransitGatewayMulticastGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchTransitGatewayRoutes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchTransitGatewayRoutesPaginator SearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request);
     }
 }

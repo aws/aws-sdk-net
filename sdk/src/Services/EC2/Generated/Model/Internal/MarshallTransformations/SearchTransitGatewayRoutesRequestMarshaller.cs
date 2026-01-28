@@ -84,6 +84,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
                 if(publicRequest.IsSetTransitGatewayRouteTableId())
                 {
                     request.Parameters.Add("TransitGatewayRouteTableId", StringUtils.FromString(publicRequest.TransitGatewayRouteTableId));
