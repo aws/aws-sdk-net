@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using System.Net;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Too many parts exception
+    /// You have attempted to add more parts than the maximum of 10000 that are allowed for
+    /// this object. You can use the CopyObject operation to copy this object to another and
+    /// then add more data to the newly copied object.
     /// </summary>
-#if !NETSTANDARD
+    #if !NETSTANDARD
     [Serializable]
-#endif
+    #endif
     public partial class TooManyPartsException : AmazonS3Exception
     {
+
+        /// <summary>
+        /// Default constructor for TooManyPartsException
+        /// message.
+        /// </summary>
+        public TooManyPartsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new TooManyPartsException with the specified error
@@ -40,46 +54,23 @@ namespace Amazon.S3.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public TooManyPartsException(string message)
-            : base(message) { }
+        public TooManyPartsException(string message) 
+            : base(message) {}
 
         /// <summary>
         /// Construct instance of TooManyPartsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public TooManyPartsException(string message, Exception innerException)
-            : base(message, innerException) { }
+        public TooManyPartsException(string message, Exception innerException) 
+            : base(message, innerException) {}
 
         /// <summary>
         /// Construct instance of TooManyPartsException
         /// </summary>
         /// <param name="innerException"></param>
-        public TooManyPartsException(Exception innerException)
-            : base(innerException) { }
-
-        /// <summary>
-        /// Construct instance of TooManyPartsException
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public TooManyPartsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, innerException, errorType, errorCode, requestId, statusCode) { }
-
-        /// <summary>
-        /// Construct instance of TooManyPartsException
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public TooManyPartsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, errorType, errorCode, requestId, statusCode) { }
+        public TooManyPartsException(Exception innerException) 
+            : base(innerException) {}
 
         /// <summary>
         /// Construct instance of TooManyPartsException
@@ -90,10 +81,20 @@ namespace Amazon.S3.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        /// <param name="amazonId2"></param>
-        /// <param name="amazonCfId"></param>
-        public TooManyPartsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
-            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
+        public TooManyPartsException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
+
+        /// <summary>
+        /// Construct instance of TooManyPartsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public TooManyPartsException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
+
 
 #if !NETSTANDARD
         /// <summary>
@@ -124,5 +125,18 @@ namespace Amazon.S3.Model
         }
 #endif
 
+        /// <summary>
+        /// Construct instance of TooManyPartsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        /// <param name="amazonId2"></param>
+        /// <param name="amazonCfId"></param>
+        public TooManyPartsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
+            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
     }
 }

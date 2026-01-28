@@ -151,7 +151,18 @@ namespace ServiceClientGenerator.Generators.Marshallers
 	}
     else if (payloadIsStream)
     {
-        if (payload.Shape.IsStreaming)
+        if (this.Config.ServiceId == "S3" && payload.IsStreaming)
+        {
+
+            
+            #line default
+            #line hidden
+            this.Write("            response.ResponseStream = context.Stream;\r\n");
+            
+            #line 64 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+
+        }
+        else if (payload.Shape.IsStreaming)
         {
 
             
@@ -159,14 +170,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            response.");
             
-            #line 63 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 69 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = context.Stream;\r\n");
             
-            #line 64 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 70 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
         }
         else if (payload.ModelShape.IsString)
@@ -178,14 +189,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("        using (var sr = new StreamReader(context.Stream))\r\n        {\r\n           " +
                     " response.");
             
-            #line 71 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 77 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = sr.ReadToEnd();\r\n        }\r\n");
             
-            #line 73 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 79 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
         }
         else if (payload.ModelShape.IsMemoryStream)
@@ -198,14 +209,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "opyStream(context.Stream, ms);\r\n            ms.Seek(0, SeekOrigin.Begin);\r\n     " +
                     "       if (ms.Length > 0)\r\n                response.");
             
-            #line 83 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 89 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = ms;\r\n\r\n");
             
-            #line 85 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 91 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
         }
         else
@@ -226,7 +237,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            \r\n            PostUnmarshallCustomization(context, response);\r\n      " +
                     "      return response;\r\n\t\t}\t\t\r\n");
             
-            #line 102 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 108 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     if ( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
@@ -236,7 +247,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\r\n");
             
-            #line 107 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 113 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     	if (this.Operation.ResponseBodyMembers.Count == 0 && !shouldMarshallPayload)
 	    {
@@ -247,7 +258,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t[System.Diagnostics.CodeAnalysis.SuppressMessage(\"Microsoft.Usage\", \"CA1801:Rev" +
                     "iewUnusedParameters\", MessageId=\"response\")]\r\n");
             
-            #line 112 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 118 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
 	    }
 
@@ -256,7 +267,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\tprivate static void UnmarshallResult(XmlUnmarshallerContext context, ");
             
-            #line 115 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 121 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -264,7 +275,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Response response)\r\n        {\r\n            int originalDepth = context.CurrentDep" +
                     "th;\r\n");
             
-            #line 118 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 124 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     if (this.Config.ServiceModel.Customizations.UnwrapXmlOutput(this.Structure.Name))
     {
@@ -274,7 +285,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            int targetDepth = 1;\r\n");
             
-            #line 123 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 129 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
     else
@@ -285,7 +296,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            int targetDepth = originalDepth + 1;\r\n");
             
-            #line 129 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 135 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
         if (payload == null)
         {
@@ -295,7 +306,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\tif (context.IsStartOfDocument) \r\n\t\t\t\t   targetDepth += 1;\r\n");
             
-            #line 135 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 141 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
         }
         if (payload != null && this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(payload.ModeledName))
@@ -308,7 +319,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "e directly unmarshalled instead of unmarshalled\r\n            // as part of the c" +
                     "ontainer class, so look one level deeper\r\n            targetDepth += 1;\r\n");
             
-            #line 143 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 149 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
         }
     }
@@ -319,7 +330,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            if (context.IsEmptyResponse)\r\n            {\r\n                return;\r" +
                     "\n            }\r\n");
             
-            #line 151 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 157 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
         if (this.Config.ServiceModel.Customizations.TryGetShapeModifier(this.Structure.Name, out var injectUnmarshallResultShapeModifier) && injectUnmarshallResultShapeModifier.InjectXmlUnmarshallResultCode.Count > 0)
         {
@@ -332,7 +343,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            while (context.Read())\r\n            {\r\n\t\t\t\tif (context.IsStartElement" +
                     " || context.IsAttribute)\r\n                {\r\n");
             
-            #line 161 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 167 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
     
         foreach (var member in this.Operation.ResponseBodyMembers)
         {
@@ -351,7 +362,20 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "\r\n                {\r\n                    return;\r\n                }\r\n           " +
                     " }\r\n            return;\r\n        }\r\n");
             
-            #line 180 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 186 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+
+    }
+    if (payload != null && payload.IsStreaming)
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("        /// <summary>\r\n        /// Specifies that the response payload should be " +
+                    "streamed\r\n        /// </summary>\r\n        public override bool HasStreamingPrope" +
+                    "rty => true;\r\n");
+            
+            #line 195 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
 
@@ -371,7 +395,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         {
 ");
             
-            #line 193 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 208 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     if (this.Config.ServiceId == "S3")
     {
@@ -382,7 +406,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance." +
                     "Unmarshall(context);\r\n");
             
-            #line 198 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 213 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
     else
@@ -394,7 +418,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstanc" +
                     "e().Unmarshall(context);\r\n");
             
-            #line 204 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 219 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
 
@@ -411,7 +435,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             {
 ");
             
-            #line 215 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 230 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     foreach (var exception in this.Operation.Exceptions)
     {
@@ -421,14 +445,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("                if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
             
-            #line 219 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 234 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Code));
             
             #line default
             #line hidden
             this.Write("\"))\r\n                {\r\n                    return ");
             
-            #line 221 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 236 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -436,7 +460,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);\r\n                }\r" +
                     "\n");
             
-            #line 223 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 238 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
 
@@ -445,7 +469,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n");
             
-            #line 227 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 242 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     if (this.Config.ServiceId == "S3")
     {
@@ -456,7 +480,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            return base.ConstructS3Exception(context, errorResponse, innerExcepti" +
                     "on, statusCode);\r\n");
             
-            #line 232 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 247 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
     else
@@ -467,7 +491,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            return new ");
             
-            #line 237 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 252 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
@@ -475,7 +499,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, e" +
                     "rrorResponse.RequestId, statusCode);\r\n");
             
-            #line 238 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 253 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
 
@@ -485,14 +509,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("        }\r\n\r\n        partial void PostUnmarshallCustomization(XmlUnmarshallerCont" +
                     "ext context, ");
             
-            #line 243 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 258 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response response);\r\n\r\n");
             
-            #line 245 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 260 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     this.AddResponseSingletonMethod();
 

@@ -57,7 +57,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	}
     else if (payloadIsStream)
     {
-        if (payload.Shape.IsStreaming)
+        if (this.Config.ServiceId == "S3" && payload.IsStreaming)
+        {
+#>
+            response.ResponseStream = context.Stream;
+<#
+        }
+        else if (payload.Shape.IsStreaming)
         {
 #>
             response.<#=payload.PropertyName#> = context.Stream;
@@ -177,6 +183,15 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             }
             return;
         }
+<#
+    }
+    if (payload != null && payload.IsStreaming)
+    {
+#>
+        /// <summary>
+        /// Specifies that the response payload should be streamed
+        /// </summary>
+        public override bool HasStreamingProperty => true;
 <#
     }
 #>  
