@@ -255,14 +255,17 @@ namespace ServiceClientGenerator
                     }
                 }
 
-                foreach(var item in list)
+                foreach (var item in list)
                 {
                     var custom = this.model.Customizations.GetPropertyModifier(this.ModelName, item.MarshallName);
                     if (custom != null)
                         item.CustomPropertyName = custom.EmitName;
                 }
 
-                return list.OrderBy(x => x.PropertyName).ToList();
+                return list
+                    .Where(v => shapeModifier == null || !shapeModifier.IsExcludedProperty(v.MarshallName))
+                    .OrderBy(x => x.PropertyName).
+                    ToList();
             }
         }
 

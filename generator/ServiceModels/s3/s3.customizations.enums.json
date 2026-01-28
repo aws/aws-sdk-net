@@ -446,6 +446,16 @@
                     }
                 }
             ]
+        },
+        "Permission": {
+            "exclude":[
+                "READ",
+                "WRITE",
+                "READ_ACP",
+                "WRITE_ACP",
+                "FULL_CONTROL",
+                "RESTORE"
+            ]
         }
     },
     "shapeSubstitutions": {

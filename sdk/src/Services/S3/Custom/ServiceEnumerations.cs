@@ -135,15 +135,72 @@ namespace Amazon.S3
     /// A list of all ACL permissions. For more information, refer to
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/S3_ACLs.html#S3_ACLs_Permissions"/>.
     /// </summary>
-    public partial class S3Permission
+#pragma warning disable CS0618
+    public partial class S3Permission : ConstantClass
     {
+        /// <summary>
+        /// When applied to a bucket, grants permission to list the bucket.
+        /// When applied to an object, this grants permission to read the
+        /// object data and/or metadata.
+        /// </summary>
+        public static readonly S3Permission READ = new S3Permission("READ", "x-amz-grant-read");
+
+        /// <summary>
+        /// When applied to a bucket, grants permission to create, overwrite,
+        /// and delete any object in the bucket. This permission is not
+        /// supported for objects.
+        /// </summary>
+        public static readonly S3Permission WRITE = new S3Permission("WRITE", "x-amz-grant-write");
+
+        /// <summary>
+        /// Grants permission to read the ACL for the applicable bucket or object.
+        /// The owner of a bucket or object always has this permission implicitly.
+        /// </summary>
+        public static readonly S3Permission READ_ACP = new S3Permission("READ_ACP", "x-amz-grant-read-acp");
+
+        /// <summary>
+        /// Gives permission to overwrite the ACP for the applicable bucket or object.
+        /// The owner of a bucket or object always has this permission implicitly.
+        /// Granting this permission is equivalent to granting FULL_CONTROL because
+        /// the grant recipient can make any changes to the ACP.
+        /// </summary>
+        public static readonly S3Permission WRITE_ACP = new S3Permission("WRITE_ACP", "x-amz-grant-write-acp");
+
+        /// <summary>
+        /// Provides READ, WRITE, READ_ACP, and WRITE_ACP permissions.
+        /// It does not convey additional rights and is provided only for convenience.
+        /// </summary>
+        public static readonly S3Permission FULL_CONTROL = new S3Permission("FULL_CONTROL", "x-amz-grant-full-control");
+
         /// <summary>
         /// Gives permission to restore an object that is currently stored in Amazon Glacier
         /// for archival storage.
         /// </summary>
-        public static readonly S3Permission RESTORE_OBJECT = new S3Permission("RESTORE");
+        public static readonly S3Permission RESTORE_OBJECT = new S3Permission("RESTORE", "x-amz-grant-restore-object");
+
+        /// <summary>
+        /// Construct instance of S3Permission. It is not intended for this constructor to be called. Instead users should call the FindValue.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="headerName"></param>
+        [Obsolete("This constructor is deprecated and will be removed in a future version.")]
+        public S3Permission(string value, string headerName)
+            : base(value)
+        {
+            this.HeaderName = headerName;
+        }
+
+        /// <summary>
+        /// Gets and sets the HeaderName property.
+        /// </summary>
+        [Obsolete("This property is deprecated and will be removed in a future version.")]
+        public string HeaderName
+        {
+            get;
+            private set;
+        }
     }
-    
+
     /// <summary>
     /// A list of all possible S3 Bucket region possibilities. For
     /// more information, refer to 

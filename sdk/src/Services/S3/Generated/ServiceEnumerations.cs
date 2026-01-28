@@ -2958,26 +2958,6 @@ namespace Amazon.S3
     public partial class S3Permission : ConstantClass
     {
 
-        /// <summary>
-        /// Constant FULL_CONTROL for S3Permission
-        /// </summary>
-        public static readonly S3Permission FULL_CONTROL = new S3Permission("FULL_CONTROL");
-        /// <summary>
-        /// Constant READ for S3Permission
-        /// </summary>
-        public static readonly S3Permission READ = new S3Permission("READ");
-        /// <summary>
-        /// Constant READ_ACP for S3Permission
-        /// </summary>
-        public static readonly S3Permission READ_ACP = new S3Permission("READ_ACP");
-        /// <summary>
-        /// Constant WRITE for S3Permission
-        /// </summary>
-        public static readonly S3Permission WRITE = new S3Permission("WRITE");
-        /// <summary>
-        /// Constant WRITE_ACP for S3Permission
-        /// </summary>
-        public static readonly S3Permission WRITE_ACP = new S3Permission("WRITE_ACP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
