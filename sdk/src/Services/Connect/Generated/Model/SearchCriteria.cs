@@ -40,6 +40,7 @@ namespace Amazon.Connect.Model
         private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContactAnalysis _contactAnalysis;
+        private ControlPlaneTagFilter _contactTags;
         private List<string> _initiationMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NameCriteria _name;
         private List<string> _queueIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -169,6 +170,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactAnalysis()
         {
             return this._contactAnalysis != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactTags.
+        /// </summary>
+        public ControlPlaneTagFilter ContactTags
+        {
+            get { return this._contactTags; }
+            set { this._contactTags = value; }
+        }
+
+        // Check to see if ContactTags property is set
+        internal bool IsSetContactTags()
+        {
+            return this._contactTags != null;
         }
 
         /// <summary>
