@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The configuration settings for transit encryption using AWS Secrets Manager, including
+    /// The configuration settings for transit encryption using Secrets Manager, including
     /// the secret ARN and role ARN.
     /// </summary>
     public partial class SecretsManagerEncryptionKeyConfiguration
@@ -41,8 +41,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role assumed by MediaConnect to access the AWS Secrets Manager
-        /// secret.
+        /// The ARN of the IAM role assumed by MediaConnect to access the Secrets Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +60,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The ARN of the AWS Secrets Manager secret used for transit encryption.
+        /// The ARN of the Secrets Manager secret used for transit encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

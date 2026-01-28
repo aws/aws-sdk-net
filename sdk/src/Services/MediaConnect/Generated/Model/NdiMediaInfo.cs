@@ -30,47 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateFlowSource operation.
+    /// Metadata about the audio and video media that is part of the NDI® source content.
+    /// This includes details about the individual media streams.
     /// </summary>
-    public partial class UpdateFlowSourceResponse : AmazonWebServiceResponse
+    public partial class NdiMediaInfo
     {
-        private string _flowArn;
-        private Source _source;
+        private List<NdiMediaStreamInfo> _streams = AWSConfigs.InitializeCollections ? new List<NdiMediaStreamInfo>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. 
+        /// Gets and sets the property Streams. 
         /// <para>
-        /// The ARN of the flow that you updated.
+        ///  A list of the individual media streams that make up the NDI source. This includes
+        /// details about each stream's codec, resolution, frame rate, audio channels, and other
+        /// parameters. 
         /// </para>
         /// </summary>
-        public string FlowArn
+        [AWSProperty(Required=true)]
+        public List<NdiMediaStreamInfo> Streams
         {
-            get { return this._flowArn; }
-            set { this._flowArn = value; }
+            get { return this._streams; }
+            set { this._streams = value; }
         }
 
-        // Check to see if FlowArn property is set
-        internal bool IsSetFlowArn()
+        // Check to see if Streams property is set
+        internal bool IsSetStreams()
         {
-            return this._flowArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Source. 
-        /// <para>
-        /// The details of the sources that are assigned to the flow. 
-        /// </para>
-        /// </summary>
-        public Source Source
-        {
-            get { return this._source; }
-            set { this._source = value; }
-        }
-
-        // Check to see if Source property is set
-        internal bool IsSetSource()
-        {
-            return this._source != null;
+            return this._streams != null && (this._streams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

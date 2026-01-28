@@ -36,6 +36,7 @@ namespace Amazon.MediaConnect.Model
     {
         private string _flowArn;
         private List<MessageDetail> _messages = AWSConfigs.InitializeCollections ? new List<MessageDetail>() : null;
+        private NdiSourceMetadataInfo _ndiInfo;
         private DateTime? _timestamp;
         private TransportMediaInfo _transportMediaInfo;
 
@@ -73,6 +74,26 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMessages()
         {
             return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NdiInfo. 
+        /// <para>
+        ///  The NDI® specific information about the flow's source. This includes the current
+        /// active NDI sender, a list of all discovered NDI senders, the associated media streams
+        /// for the active NDI sender, and any relevant status messages. 
+        /// </para>
+        /// </summary>
+        public NdiSourceMetadataInfo NdiInfo
+        {
+            get { return this._ndiInfo; }
+            set { this._ndiInfo = value; }
+        }
+
+        // Check to see if NdiInfo property is set
+        internal bool IsSetNdiInfo()
+        {
+            return this._ndiInfo != null;
         }
 
         /// <summary>

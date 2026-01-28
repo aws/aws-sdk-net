@@ -183,7 +183,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The AWS Region where the router network interface is located.
+        /// The Amazon Web Services Region where the router network interface is located.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -263,7 +263,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The AWS Region where the router output is located.
+        /// The AAmazon Web Services Region where the router output is located.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

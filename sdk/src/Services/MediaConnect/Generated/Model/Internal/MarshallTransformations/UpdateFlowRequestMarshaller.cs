@@ -70,6 +70,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEncodingConfig())
+                {
+                    context.Writer.WritePropertyName("encodingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncodingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncodingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFlowSize())
                 {
                     context.Writer.WritePropertyName("flowSize");

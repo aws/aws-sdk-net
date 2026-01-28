@@ -30,47 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateFlowSource operation.
+    /// Information about a single NDI® sender, including its name.
     /// </summary>
-    public partial class UpdateFlowSourceResponse : AmazonWebServiceResponse
+    public partial class NdiSourceInfo
     {
-        private string _flowArn;
-        private Source _source;
+        private string _sourceName;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. 
+        /// Gets and sets the property SourceName. 
         /// <para>
-        /// The ARN of the flow that you updated.
+        ///  The name of the upstream NDI sender. 
         /// </para>
         /// </summary>
-        public string FlowArn
+        [AWSProperty(Required=true)]
+        public string SourceName
         {
-            get { return this._flowArn; }
-            set { this._flowArn = value; }
+            get { return this._sourceName; }
+            set { this._sourceName = value; }
         }
 
-        // Check to see if FlowArn property is set
-        internal bool IsSetFlowArn()
+        // Check to see if SourceName property is set
+        internal bool IsSetSourceName()
         {
-            return this._flowArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Source. 
-        /// <para>
-        /// The details of the sources that are assigned to the flow. 
-        /// </para>
-        /// </summary>
-        public Source Source
-        {
-            get { return this._source; }
-            set { this._source = value; }
-        }
-
-        // Check to see if Source property is set
-        internal bool IsSetSource()
-        {
-            return this._source != null;
+            return this._sourceName != null;
         }
 
     }

@@ -45,6 +45,7 @@ namespace Amazon.MediaConnect.Model
         private List<MediaStreamSourceConfigurationRequest> _mediaStreamSourceConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamSourceConfigurationRequest>() : null;
         private int? _minLatency;
         private string _name;
+        private NdiSourceSettings _ndiSourceSettings;
         private Protocol _protocol;
         private State _routerIntegrationState;
         private FlowTransitEncryption _routerIntegrationTransitDecryption;
@@ -263,6 +264,25 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NdiSourceSettings. 
+        /// <para>
+        ///  The settings for the NDI® source. This includes the exact name of the upstream NDI
+        /// sender that you want to connect to your source. 
+        /// </para>
+        /// </summary>
+        public NdiSourceSettings NdiSourceSettings
+        {
+            get { return this._ndiSourceSettings; }
+            set { this._ndiSourceSettings = value; }
+        }
+
+        // Check to see if NdiSourceSettings property is set
+        internal bool IsSetNdiSourceSettings()
+        {
+            return this._ndiSourceSettings != null;
         }
 
         /// <summary>

@@ -32,15 +32,66 @@ namespace Amazon.MediaConnect.Model
     /// <summary>
     /// Container for the parameters to the UpdateFlow operation.
     /// Updates an existing flow.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  Because <c>UpdateFlowSources</c> and <c>UpdateFlow</c> are separate operations, you
+    /// can't change both the source type AND the flow size in a single request. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you have a <c>MEDIUM</c> flow and you want to change the flow source to NDI®:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// First, use the <c>UpdateFlow</c> operation to upgrade the flow size to <c>LARGE</c>.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// After that, you can then use the <c>UpdateFlowSource</c> operation to configure the
+    /// NDI source. 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// If you're switching from an NDI source to a transport stream (TS) source and want
+    /// to downgrade the flow size: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// First, use the <c>UpdateFlowSource</c> operation to change the flow source type. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// After that, you can then use the <c>UpdateFlow</c> operation to downgrade the flow
+    /// size to <c>MEDIUM</c>.
+    /// </para>
+    ///  </li> </ul> </li> </ul> </note>
     /// </summary>
     public partial class UpdateFlowRequest : AmazonMediaConnectRequest
     {
+        private EncodingConfig _encodingConfig;
         private string _flowArn;
         private FlowSize _flowSize;
         private UpdateMaintenance _maintenance;
         private NdiConfig _ndiConfig;
         private UpdateFailoverConfig _sourceFailoverConfig;
         private MonitoringConfig _sourceMonitoringConfig;
+
+        /// <summary>
+        /// Gets and sets the property EncodingConfig.
+        /// </summary>
+        public EncodingConfig EncodingConfig
+        {
+            get { return this._encodingConfig; }
+            set { this._encodingConfig = value; }
+        }
+
+        // Check to see if EncodingConfig property is set
+        internal bool IsSetEncodingConfig()
+        {
+            return this._encodingConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FlowArn. 
@@ -100,8 +151,8 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property NdiConfig. 
         /// <para>
-        ///  Specifies the configuration settings for NDI outputs. Required when the flow includes
-        /// NDI outputs. 
+        ///  Specifies the configuration settings for a flow's NDI source or output. Required
+        /// when the flow includes an NDI source or output. 
         /// </para>
         /// </summary>
         public NdiConfig NdiConfig

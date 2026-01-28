@@ -32,7 +32,7 @@ namespace Amazon.MediaConnect.Model
     /// <summary>
     /// The encryption configuration that defines how content is encrypted during transit
     /// between MediaConnect Router and MediaLive. This configuration determines whether encryption
-    /// keys are automatically managed by the service or manually managed through AWS Secrets
+    /// keys are automatically managed by the service or manually managed through Secrets
     /// Manager.
     /// </summary>
     public partial class MediaLiveTransitEncryption

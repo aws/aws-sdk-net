@@ -165,7 +165,8 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The AWS Region for the router input. Defaults to the current region if not specified.
+        /// The Amazon Web Services Region for the router input. Defaults to the current region
+        /// if not specified.
         /// </para>
         /// </summary>
         public string RegionName

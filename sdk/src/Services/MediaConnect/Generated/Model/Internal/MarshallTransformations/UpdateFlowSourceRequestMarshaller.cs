@@ -153,6 +153,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MinLatency);
                 }
 
+                if(publicRequest.IsSetNdiSourceSettings())
+                {
+                    context.Writer.WritePropertyName("ndiSourceSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NdiSourceSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NdiSourceSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProtocol())
                 {
                     context.Writer.WritePropertyName("protocol");

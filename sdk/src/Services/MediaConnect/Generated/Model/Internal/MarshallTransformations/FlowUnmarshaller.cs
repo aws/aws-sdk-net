@@ -84,6 +84,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.EgressIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encodingConfig", targetDepth))
+                {
+                    var unmarshaller = EncodingConfigUnmarshaller.Instance;
+                    unmarshalledObject.EncodingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entitlements", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Entitlement, EntitlementUnmarshaller>(EntitlementUnmarshaller.Instance);

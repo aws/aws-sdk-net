@@ -333,8 +333,8 @@ namespace Amazon.MediaConnect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Peer IP addresses aren't available for entitlements, managed MediaLive outputs, NDI
-        /// outputs, and CDI/ST2110 outputs. 
+        /// Peer IP addresses aren't available for entitlements, managed MediaLive outputs, NDI®
+        /// sources and outputs, and CDI/ST2110 outputs. 
         /// </para>
         ///  </li> <li> 
         /// <para>
