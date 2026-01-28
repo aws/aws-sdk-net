@@ -1,0 +1,152 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Xml;
+
+namespace Amazon.S3.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateObjectEncryption Request Marshaller
+    /// </summary>       
+    public partial class UpdateObjectEncryptionRequestMarshaller : IMarshaller<IRequest, UpdateObjectEncryptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateObjectEncryptionRequest)input);
+        }
+
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
+        public IRequest Marshall(UpdateObjectEncryptionRequest publicRequest)
+        {
+            var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
+            request.HttpMethod = "PUT";
+            request.AddSubResource("encryption");
+        
+            if (publicRequest.IsSetChecksumAlgorithm()) 
+            {
+                request.Headers["x-amz-sdk-checksum-algorithm"] = publicRequest.ChecksumAlgorithm;
+            }
+        
+            if (publicRequest.IsSetContentMD5()) 
+            {
+                request.Headers["Content-MD5"] = publicRequest.ContentMD5;
+            }
+        
+            if (publicRequest.IsSetExpectedBucketOwner()) 
+            {
+                request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
+            }
+        
+            if (publicRequest.IsSetRequestPayer()) 
+            {
+                request.Headers["x-amz-request-payer"] = publicRequest.RequestPayer;
+            }
+            if (string.IsNullOrEmpty(publicRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "UpdateObjectEncryptionRequest.BucketName");
+            if (string.IsNullOrEmpty(publicRequest.Key))
+                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "UpdateObjectEncryptionRequest.Key");
+            request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
+            
+            if (publicRequest.IsSetVersionId())
+                request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
+            request.ResourcePath = "/{Key+}";
+            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {   
+                if (publicRequest.IsSetObjectEncryption())
+                {
+                    xmlWriter.WriteStartElement("ObjectEncryption", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    if (publicRequest.ObjectEncryption.SSEKMS != null)
+                    {
+                        xmlWriter.WriteStartElement("SSE-KMS");
+                        if(publicRequest.ObjectEncryption.SSEKMS.IsSetBucketKeyEnabled())
+                            xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequest.ObjectEncryption.SSEKMS.BucketKeyEnabled.Value));
+                        if(publicRequest.ObjectEncryption.SSEKMS.IsSetKMSKeyArn())
+                            xmlWriter.WriteElementString("KMSKeyArn", StringUtils.FromString(publicRequest.ObjectEncryption.SSEKMS.KMSKeyArn));
+                        xmlWriter.WriteEndElement();
+                    }
+
+                    xmlWriter.WriteEndElement();
+                }
+            }
+            PostMarshallCustomization(request, publicRequest);
+            try 
+            {
+                string content = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+                request.Headers["Content-Type"] = "application/xml";
+                ChecksumUtils.SetChecksumData(
+                    request,
+                    publicRequest.ChecksumAlgorithm,
+                    fallbackToMD5: false,
+                    isRequestChecksumRequired: true,
+                    headerName: "x-amz-sdk-checksum-algorithm"
+                );
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2006-03-01";            
+            } 
+            catch (EncoderFallbackException e) 
+            {
+                throw new AmazonServiceException("Unable to marshall request to XML", e);
+            }
+            request.UseQueryString = true;
+            return request;
+        }
+        private static UpdateObjectEncryptionRequestMarshaller _instance = new UpdateObjectEncryptionRequestMarshaller();        
+
+        internal static UpdateObjectEncryptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateObjectEncryptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateObjectEncryptionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateObjectEncryptionRequest publicRequest);
+    }    
+}

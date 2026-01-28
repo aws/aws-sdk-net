@@ -28917,8 +28917,7 @@ namespace Amazon.S3
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-        /// <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -28967,7 +28966,7 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dd> <ul> <li> 
+        ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
         /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -29023,7 +29022,7 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </li> </ul> </dd> <dd> 
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -29078,8 +29077,7 @@ namespace Amazon.S3
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-        /// <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -29128,7 +29126,7 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dd> <ul> <li> 
+        ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
         /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -29184,7 +29182,7 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </li> </ul> </dd> <dd> 
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -29239,8 +29237,7 @@ namespace Amazon.S3
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-        /// <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -29289,7 +29286,7 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dd> <ul> <li> 
+        ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
         /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -29345,7 +29342,7 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </li> </ul> </dd> <dd> 
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -29403,8 +29400,7 @@ namespace Amazon.S3
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-        /// <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -29453,7 +29449,7 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dd> <ul> <li> 
+        ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
         /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -29509,7 +29505,7 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </li> </ul> </dd> <dd> 
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -29710,7 +29706,26 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+        /// the reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Cannot specify both a write offset value and user-defined object metadata for existing
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type:
+        /// crc32c.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Request body cannot be empty when 'write offset' is specified.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
         /// For more information about related Amazon S3 APIs, see the following:
         /// </para>
@@ -29900,7 +29915,26 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+        /// the reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Cannot specify both a write offset value and user-defined object metadata for existing
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type:
+        /// crc32c.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Request body cannot be empty when 'write offset' is specified.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
         /// For more information about related Amazon S3 APIs, see the following:
         /// </para>
@@ -33680,6 +33714,379 @@ namespace Amazon.S3
             options.ResponseUnmarshaller = UpdateBucketMetadataJournalTableConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateBucketMetadataJournalTableConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateObjectEncryption
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported for directory buckets or Amazon S3 on Outposts buckets.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Updates the server-side encryption type of an existing encrypted object in a general
+        /// purpose bucket. You can use the <c>UpdateObjectEncryption</c> operation to change
+        /// encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to
+        /// apply S3 Bucket Keys. You can also use the <c>UpdateObjectEncryption</c> operation
+        /// to change the customer-managed KMS key used to encrypt your data so that you can comply
+        /// with custom key-rotation standards. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Using the <c>UpdateObjectEncryption</c> operation, you can atomically update the server-side
+        /// encryption type of an existing object in a general purpose bucket without any data
+        /// movement. The <c>UpdateObjectEncryption</c> operation uses envelope encryption to
+        /// re-encrypt the data key used to encrypt and decrypt your object with your newly specified
+        /// server-side encryption type. In other words, when you use the <c>UpdateObjectEncryption</c>
+        /// operation, your data isn't copied, archived objects in the S3 Glacier Flexible Retrieval
+        /// and S3 Glacier Deep Archive storage classes aren't restored, and objects in the S3
+        /// Intelligent-Tiering storage class aren't moved between tiers. Additionally, the <c>UpdateObjectEncryption</c>
+        /// operation preserves all object metadata properties, including the storage class, creation
+        /// date, last modified date, ETag, and checksum properties. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/update-sse-encryption.html">
+        /// Updating server-side encryption for existing objects</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, all <c>UpdateObjectEncryption</c> requests that specify a customer-managed
+        /// KMS key are restricted to KMS keys that are owned by the bucket owner's Amazon Web
+        /// Services account. If you're using Organizations, you can request the ability to use
+        /// KMS keys owned by other member accounts within your organization by contacting Amazon
+        /// Web Services Support.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Source objects that are unencrypted, or encrypted with either dual-layer server-side
+        /// encryption with KMS keys (DSSE-KMS) or server-side encryption with customer-provided
+        /// keys (SSE-C) aren't supported by this operation. Additionally, you cannot specify
+        /// SSE-S3 encryption as the requested new encryption type <c>UpdateObjectEncryption</c>
+        /// request.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// To use the <c>UpdateObjectEncryption</c> operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:PutObject</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:UpdateObjectEncryption</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:Encrypt</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:Decrypt</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:GenerateDataKey</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:ReEncrypt*</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If you're using Organizations, to use this operation with customer-managed KMS keys
+        /// from other Amazon Web Services accounts within your organization, you must have the
+        /// <c>organizations:DescribeAccount</c> permission.
+        /// </para>
+        ///  </li> </ul> </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+        /// the reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't supported unencrypted source objects.
+        /// Only source objects encrypted with SSE-S3 or SSE-KMS are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't support source objects with the
+        /// encryption type DSSE-KMS or SSE-C. Only source objects encrypted with SSE-S3 or SSE-KMS
+        /// are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't support updating the encryption
+        /// type to DSSE-KMS or SSE-C. Modify the request to specify SSE-KMS for the updated encryption
+        /// type, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object encryption configuration require Amazon Web Services
+        /// Signature Version 4. Modify the request to use Amazon Web Services Signature Version
+        /// 4, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object encryption configuration require a valid new encryption
+        /// type. Valid values are <c>SSEKMS</c>. Modify the request to specify SSE-KMS for the
+        /// updated encryption type, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object's encryption type to SSE-KMS require an Amazon Web
+        /// Services KMS key Amazon Resource Name (ARN). Modify the request to specify a KMS key
+        /// ARN, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object's encryption type to SSE-KMS require a valid Amazon
+        /// Web Services KMS key Amazon Resource Name (ARN). Confirm that you have a correctly
+        /// formatted KMS key ARN in your request, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>BucketKeyEnabled</c> value isn't valid. Valid values are <c>true</c> or <c>false</c>.
+        /// Modify the request to specify a valid value, and then try again.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You might receive an <c>AccessDenied</c> error for several reasons. Depending on the
+        /// reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The Amazon Web Services KMS key in the request must be owned by the same account as
+        /// the bucket. Modify the request to specify a KMS key from the same account, and then
+        /// try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The bucket owner's account was approved to make <c>UpdateObjectEncryption</c> requests
+        /// that use any Amazon Web Services KMS key in their organization, but the bucket owner's
+        /// account isn't part of an organization in Organizations. Make sure that the bucket
+        /// owner's account and the specified KMS key belong to the same organization, and then
+        /// try again. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The specified Amazon Web Services KMS key must be from the same organization in Organizations
+        /// as the bucket. Specify a KMS key that belongs to the same organization as the bucket,
+        /// and then try again. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption type for the specified object can’t be updated because that object
+        /// is protected by S3 Object Lock. If the object has a governance-mode retention period
+        /// or a legal hold, you must first remove the Object Lock status on the object before
+        /// you issue your <c>UpdateObjectEncryption</c> request. You can't use the <c>UpdateObjectEncryption</c>
+        /// operation with objects that have an Object Lock compliance mode retention period applied
+        /// to them.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateObjectEncryption service method.</param>
+        /// 
+        /// <returns>The response from the UpdateObjectEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateObjectEncryption">REST API Reference for UpdateObjectEncryption Operation</seealso>
+        public virtual UpdateObjectEncryptionResponse UpdateObjectEncryption(UpdateObjectEncryptionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateObjectEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateObjectEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateObjectEncryptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported for directory buckets or Amazon S3 on Outposts buckets.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Updates the server-side encryption type of an existing encrypted object in a general
+        /// purpose bucket. You can use the <c>UpdateObjectEncryption</c> operation to change
+        /// encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to
+        /// apply S3 Bucket Keys. You can also use the <c>UpdateObjectEncryption</c> operation
+        /// to change the customer-managed KMS key used to encrypt your data so that you can comply
+        /// with custom key-rotation standards. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Using the <c>UpdateObjectEncryption</c> operation, you can atomically update the server-side
+        /// encryption type of an existing object in a general purpose bucket without any data
+        /// movement. The <c>UpdateObjectEncryption</c> operation uses envelope encryption to
+        /// re-encrypt the data key used to encrypt and decrypt your object with your newly specified
+        /// server-side encryption type. In other words, when you use the <c>UpdateObjectEncryption</c>
+        /// operation, your data isn't copied, archived objects in the S3 Glacier Flexible Retrieval
+        /// and S3 Glacier Deep Archive storage classes aren't restored, and objects in the S3
+        /// Intelligent-Tiering storage class aren't moved between tiers. Additionally, the <c>UpdateObjectEncryption</c>
+        /// operation preserves all object metadata properties, including the storage class, creation
+        /// date, last modified date, ETag, and checksum properties. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/update-sse-encryption.html">
+        /// Updating server-side encryption for existing objects</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, all <c>UpdateObjectEncryption</c> requests that specify a customer-managed
+        /// KMS key are restricted to KMS keys that are owned by the bucket owner's Amazon Web
+        /// Services account. If you're using Organizations, you can request the ability to use
+        /// KMS keys owned by other member accounts within your organization by contacting Amazon
+        /// Web Services Support.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Source objects that are unencrypted, or encrypted with either dual-layer server-side
+        /// encryption with KMS keys (DSSE-KMS) or server-side encryption with customer-provided
+        /// keys (SSE-C) aren't supported by this operation. Additionally, you cannot specify
+        /// SSE-S3 encryption as the requested new encryption type <c>UpdateObjectEncryption</c>
+        /// request.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// To use the <c>UpdateObjectEncryption</c> operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:PutObject</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:UpdateObjectEncryption</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:Encrypt</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:Decrypt</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:GenerateDataKey</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:ReEncrypt*</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If you're using Organizations, to use this operation with customer-managed KMS keys
+        /// from other Amazon Web Services accounts within your organization, you must have the
+        /// <c>organizations:DescribeAccount</c> permission.
+        /// </para>
+        ///  </li> </ul> </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+        /// the reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't supported unencrypted source objects.
+        /// Only source objects encrypted with SSE-S3 or SSE-KMS are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't support source objects with the
+        /// encryption type DSSE-KMS or SSE-C. Only source objects encrypted with SSE-S3 or SSE-KMS
+        /// are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't support updating the encryption
+        /// type to DSSE-KMS or SSE-C. Modify the request to specify SSE-KMS for the updated encryption
+        /// type, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object encryption configuration require Amazon Web Services
+        /// Signature Version 4. Modify the request to use Amazon Web Services Signature Version
+        /// 4, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object encryption configuration require a valid new encryption
+        /// type. Valid values are <c>SSEKMS</c>. Modify the request to specify SSE-KMS for the
+        /// updated encryption type, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object's encryption type to SSE-KMS require an Amazon Web
+        /// Services KMS key Amazon Resource Name (ARN). Modify the request to specify a KMS key
+        /// ARN, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object's encryption type to SSE-KMS require a valid Amazon
+        /// Web Services KMS key Amazon Resource Name (ARN). Confirm that you have a correctly
+        /// formatted KMS key ARN in your request, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>BucketKeyEnabled</c> value isn't valid. Valid values are <c>true</c> or <c>false</c>.
+        /// Modify the request to specify a valid value, and then try again.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You might receive an <c>AccessDenied</c> error for several reasons. Depending on the
+        /// reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The Amazon Web Services KMS key in the request must be owned by the same account as
+        /// the bucket. Modify the request to specify a KMS key from the same account, and then
+        /// try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The bucket owner's account was approved to make <c>UpdateObjectEncryption</c> requests
+        /// that use any Amazon Web Services KMS key in their organization, but the bucket owner's
+        /// account isn't part of an organization in Organizations. Make sure that the bucket
+        /// owner's account and the specified KMS key belong to the same organization, and then
+        /// try again. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The specified Amazon Web Services KMS key must be from the same organization in Organizations
+        /// as the bucket. Specify a KMS key that belongs to the same organization as the bucket,
+        /// and then try again. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption type for the specified object can’t be updated because that object
+        /// is protected by S3 Object Lock. If the object has a governance-mode retention period
+        /// or a legal hold, you must first remove the Object Lock status on the object before
+        /// you issue your <c>UpdateObjectEncryption</c> request. You can't use the <c>UpdateObjectEncryption</c>
+        /// operation with objects that have an Object Lock compliance mode retention period applied
+        /// to them.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateObjectEncryption service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateObjectEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateObjectEncryption">REST API Reference for UpdateObjectEncryption Operation</seealso>
+        public virtual Task<UpdateObjectEncryptionResponse> UpdateObjectEncryptionAsync(UpdateObjectEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateObjectEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateObjectEncryptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateObjectEncryptionResponse>(request, options, cancellationToken);
         }
 
         #endregion

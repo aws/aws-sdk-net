@@ -708,6 +708,11 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.BucketName;
                 return result;
             }
+            if (requestContext.RequestName == "UpdateObjectEncryptionRequest") {
+                var request = (UpdateObjectEncryptionRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
             if (requestContext.RequestName == "UploadPartRequest") {
                 var request = (UploadPartRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;

@@ -30,34 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// A filter that returns objects that are encrypted by dual-layer server-side encryption
-    /// with Amazon Web Services Key Management Service (KMS) keys (DSSE-KMS). You can further
-    /// refine your filtering by optionally providing a KMS Key ARN to filter objects encrypted
-    /// by a specific key.
+    /// The updated server-side encryption type for this object. The <c>UpdateObjectEncryption</c>
+    /// operation supports the SSE-KMS encryption type.
+    /// 
+    ///  
+    /// <para>
+    /// Valid Values: <c>SSEKMS</c> 
+    /// </para>
     /// </summary>
-    public partial class DSSEKMSFilter
+    public partial class ObjectEncryption
     {
-        private string _kmsKeyArn;
+        private S3UpdateObjectEncryptionSSEKMS _ssekms;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
+        /// Gets and sets the property SSEKMS. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter
-        /// to return objects that are encrypted by the specified key. For best performance, use
-        /// keys in the same Region as the S3 Batch Operations job.
+        /// Specifies to update the object encryption type to server-side encryption with Key
+        /// Management Service (KMS) keys (SSE-KMS).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string KmsKeyArn
+        public S3UpdateObjectEncryptionSSEKMS SSEKMS
         {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
+            get { return this._ssekms; }
+            set { this._ssekms = value; }
         }
 
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
+        // Check to see if SSEKMS property is set
+        internal bool IsSetSSEKMS()
         {
-            return this._kmsKeyArn != null;
+            return this._ssekms != null;
         }
 
     }

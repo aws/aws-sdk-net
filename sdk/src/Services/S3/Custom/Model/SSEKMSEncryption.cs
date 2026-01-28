@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the s3control-2018-08-20.normal.json service model.
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -26,36 +26,43 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-#pragma warning disable CS0612,CS0618,CS1570
-namespace Amazon.S3Control.Model
+namespace Amazon.S3.Model
 {
     /// <summary>
-    /// A filter that returns objects that are encrypted by dual-layer server-side encryption
-    /// with Amazon Web Services Key Management Service (KMS) keys (DSSE-KMS). You can further
-    /// refine your filtering by optionally providing a KMS Key ARN to filter objects encrypted
-    /// by a specific key.
+    /// 
     /// </summary>
-    public partial class DSSEKMSFilter
+    public partial class SSEKMSEncryption
     {
+        private bool? _bucketKeyEnabled;
         private string _kmsKeyArn;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter
-        /// to return objects that are encrypted by the specified key. For best performance, use
-        /// keys in the same Region as the S3 Batch Operations job.
-        /// </para>
+        /// Gets and sets the property BucketKeyEnabled.
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string KmsKeyArn
+        public bool? BucketKeyEnabled
+        {
+            get { return this._bucketKeyEnabled; }
+            set { this._bucketKeyEnabled = value; }
+        }
+
+        // Check to see if BucketKeyEnabled property is set
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return this._bucketKeyEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn.
+        /// </summary>
+        [AWSProperty(Required=true, Sensitive=true, Min=20, Max=2048)]
+        public string KMSKeyArn
         {
             get { return this._kmsKeyArn; }
             set { this._kmsKeyArn = value; }
         }
 
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
         {
             return this._kmsKeyArn != null;
         }

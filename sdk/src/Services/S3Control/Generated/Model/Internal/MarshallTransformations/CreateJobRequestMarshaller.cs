@@ -630,6 +630,27 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("S3ReplicateObject");
                         xmlWriter.WriteEndElement();
                     }
+                    if (publicRequest.Operation.S3UpdateObjectEncryption != null)
+                    {
+                        xmlWriter.WriteStartElement("S3UpdateObjectEncryption");
+                        if (publicRequest.Operation.S3UpdateObjectEncryption.ObjectEncryption != null)
+                        {
+                            xmlWriter.WriteStartElement("ObjectEncryption");
+                            if (publicRequest.Operation.S3UpdateObjectEncryption.ObjectEncryption.SSEKMS != null)
+                            {
+                                xmlWriter.WriteStartElement("SSE-KMS");
+                                if(publicRequest.Operation.S3UpdateObjectEncryption.ObjectEncryption.SSEKMS.IsSetBucketKeyEnabled())
+                                    xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequest.Operation.S3UpdateObjectEncryption.ObjectEncryption.SSEKMS.BucketKeyEnabled));                 
+
+                                if(publicRequest.Operation.S3UpdateObjectEncryption.ObjectEncryption.SSEKMS.IsSetKMSKeyArn())
+                                    xmlWriter.WriteElementString("KMSKeyArn", StringUtils.FromString(publicRequest.Operation.S3UpdateObjectEncryption.ObjectEncryption.SSEKMS.KMSKeyArn));                 
+
+                                xmlWriter.WriteEndElement();
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetPriority())
