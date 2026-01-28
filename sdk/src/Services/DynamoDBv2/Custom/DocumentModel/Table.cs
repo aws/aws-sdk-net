@@ -1402,18 +1402,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region UpdateItem
 
-        internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
-        {
-            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelper(doc, key, config, null);
-        }
-
-        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression,
+        internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config,
             HashSet<string> ifNotExistAttributeNames = null)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
+            return UpdateHelper(doc, key, config, null, ifNotExistAttributeNames);
         }
+
 
         internal Document UpdateHelper(UpdateItemDocumentOperationRequest request)
         {
@@ -1428,7 +1423,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression)
+        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
