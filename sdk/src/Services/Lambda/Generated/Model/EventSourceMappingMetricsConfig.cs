@@ -40,13 +40,31 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        ///  The metrics you want your event source mapping to produce. Include <c>EventCount</c>
-        /// to receive event source mapping metrics related to the number of events processed
-        /// by your event source mapping. For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">
+        ///  The metrics you want your event source mapping to produce, including <c>EventCount</c>,
+        /// <c>ErrorCount</c>, <c>KafkaMetrics</c>. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EventCount</c> to receive metrics related to the number of events processed by
+        /// your event source mapping.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ErrorCount</c> (Amazon MSK and self-managed Apache Kafka) to receive metrics related
+        /// to the number of errors in your event source mapping processing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KafkaMetrics</c> (Amazon MSK and self-managed Apache Kafka) to receive metrics
+        /// related to the Kafka consumers from your event source mapping.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">
         /// Event source mapping metrics</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=3)]
         public List<string> Metrics
         {
             get { return this._metrics; }

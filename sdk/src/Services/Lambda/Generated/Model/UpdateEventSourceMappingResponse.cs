@@ -49,6 +49,7 @@ namespace Amazon.Lambda.Model
         private string _kmsKeyArn;
         private DateTime? _lastModified;
         private string _lastProcessingResult;
+        private EventSourceMappingLoggingConfig _loggingConfig;
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
@@ -350,6 +351,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetLastProcessingResult()
         {
             return this._lastProcessingResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfig. 
+        /// <para>
+        /// (Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your
+        /// event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event
+        /// source mapping logging</a>.
+        /// </para>
+        /// </summary>
+        public EventSourceMappingLoggingConfig LoggingConfig
+        {
+            get { return this._loggingConfig; }
+            set { this._loggingConfig = value; }
+        }
+
+        // Check to see if LoggingConfig property is set
+        internal bool IsSetLoggingConfig()
+        {
+            return this._loggingConfig != null;
         }
 
         /// <summary>
