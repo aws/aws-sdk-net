@@ -78,6 +78,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("uncompressedAudioWrapping", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UncompressedAudioWrapping = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("xavcProfileSettings", targetDepth))
                 {
                     var unmarshaller = MxfXavcProfileSettingsUnmarshaller.Instance;

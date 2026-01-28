@@ -58,10 +58,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Channels. Specify the number of channels in this output
-        /// audio track. Choosing Mono gives you 1 output channel; choosing Stereo gives you 2.
-        /// In the API, valid values are 1 and 2.
+        /// audio track. Choosing Follow input will use the number of channels found in the audio
+        /// source; choosing Mono gives you 1 output channel; choosing Stereo gives you 2. In
+        /// the API, valid values are 0, 1, and 2.
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=0, Max=2)]
         public int Channels
         {
             get { return this._channels.GetValueOrDefault(); }

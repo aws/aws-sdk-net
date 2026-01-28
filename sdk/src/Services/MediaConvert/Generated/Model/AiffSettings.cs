@@ -57,10 +57,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Channels. Specify the number of channels in this output
-        /// audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6,
-        /// and so on, up to 64.
+        /// audio track. Valid values are 0, 1, and even numbers up to 64.  Choose 0 to follow
+        /// the number of channels from your input audio. Otherwise,  manually choose from 1,
+        /// 2, 4, 6, and so on, up to 64.
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public int Channels
         {
             get { return this._channels.GetValueOrDefault(); }
