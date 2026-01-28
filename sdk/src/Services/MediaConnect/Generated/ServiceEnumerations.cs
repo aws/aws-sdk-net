@@ -667,6 +667,56 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type EncodingProfile.
+    /// </summary>
+    public class EncodingProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTRIBUTION_H264_DEFAULT for EncodingProfile
+        /// </summary>
+        public static readonly EncodingProfile CONTRIBUTION_H264_DEFAULT = new EncodingProfile("CONTRIBUTION_H264_DEFAULT");
+        /// <summary>
+        /// Constant DISTRIBUTION_H264_DEFAULT for EncodingProfile
+        /// </summary>
+        public static readonly EncodingProfile DISTRIBUTION_H264_DEFAULT = new EncodingProfile("DISTRIBUTION_H264_DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncodingProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncodingProfile FindValue(string value)
+        {
+            return FindValue<EncodingProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncodingProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EntitlementStatus.
     /// </summary>
     public class EntitlementStatus : ConstantClass
@@ -826,6 +876,10 @@ namespace Amazon.MediaConnect
         /// Constant LARGE for FlowSize
         /// </summary>
         public static readonly FlowSize LARGE = new FlowSize("LARGE");
+        /// <summary>
+        /// Constant LARGE_4X for FlowSize
+        /// </summary>
+        public static readonly FlowSize LARGE_4X = new FlowSize("LARGE_4X");
         /// <summary>
         /// Constant MEDIUM for FlowSize
         /// </summary>

@@ -79,6 +79,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AvailabilityZone);
             }
 
+            if(publicRequest.IsSetEncodingConfig())
+            {
+                context.Writer.WritePropertyName("encodingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncodingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncodingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetEntitlements())
             {
                 context.Writer.WritePropertyName("entitlements");
