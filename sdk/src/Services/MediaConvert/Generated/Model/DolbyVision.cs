@@ -34,10 +34,31 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class DolbyVision
     {
+        private DolbyVisionCompatibility _compatibility;
         private DolbyVisionLevel6Metadata _l6Metadata;
         private DolbyVisionLevel6Mode _l6Mode;
         private DolbyVisionMapping _mapping;
         private DolbyVisionProfile _profile;
+
+        /// <summary>
+        /// Gets and sets the property Compatibility. When you set Compatibility mapping to Duplicate
+        /// Stream, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision
+        /// 8.1) will cause a duplicate stream to be signaled in the manifest as a duplicate stream.
+        /// When you set Compatibility mapping to Supplemntal Codecs, DolbyVision streams that
+        /// have a backward compatible base layer (e.g., DolbyVision 8.1) will cause the associate
+        /// stream in the manifest to include a SUPPLEMENTAL_CODECS property.
+        /// </summary>
+        public DolbyVisionCompatibility Compatibility
+        {
+            get { return this._compatibility; }
+            set { this._compatibility = value; }
+        }
+
+        // Check to see if Compatibility property is set
+        internal bool IsSetCompatibility()
+        {
+            return this._compatibility != null;
+        }
 
         /// <summary>
         /// Gets and sets the property L6Metadata. Use these settings when you set DolbyVisionLevel6Mode
