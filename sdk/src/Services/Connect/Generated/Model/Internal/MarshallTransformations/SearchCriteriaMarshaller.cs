@@ -114,6 +114,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetContactTags())
+            {
+                context.Writer.WritePropertyName("ContactTags");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ControlPlaneTagFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContactTags, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInitiationMethods())
             {
                 context.Writer.WritePropertyName("InitiationMethods");
