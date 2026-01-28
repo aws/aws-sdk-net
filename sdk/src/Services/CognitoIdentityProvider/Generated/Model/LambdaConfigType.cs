@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _customMessage;
         private CustomSMSLambdaVersionConfigType _customSMSSender;
         private string _defineAuthChallenge;
+        private InboundFederationLambdaType _inboundFederation;
         private string _kmsKeyID;
         private string _postAuthentication;
         private string _postConfirmation;
@@ -153,6 +154,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetDefineAuthChallenge()
         {
             return this._defineAuthChallenge != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InboundFederation. 
+        /// <para>
+        /// The configuration of an inbound federation Lambda trigger. This trigger can transform
+        /// federated user attributes during the authentication with external identity providers.
+        /// </para>
+        /// </summary>
+        public InboundFederationLambdaType InboundFederation
+        {
+            get { return this._inboundFederation; }
+            set { this._inboundFederation = value; }
+        }
+
+        // Check to see if InboundFederation property is set
+        internal bool IsSetInboundFederation()
+        {
+            return this._inboundFederation != null;
         }
 
         /// <summary>
