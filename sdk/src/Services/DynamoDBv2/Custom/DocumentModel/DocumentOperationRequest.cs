@@ -54,6 +54,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             Limit = Int32.MaxValue;
             Select = SelectValues.AllAttributes;
+            ReturnConsumedCapacity = ReturnConsumedCapacity.NONE;
         }
         /// <summary>
         /// Gets or sets the key condition expression specifying which items should be returned.
@@ -108,6 +109,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// This token should be retrieved from a Search object.
         /// </summary>
         public string PaginationToken { get; set; }
+
+        /// <summary>
+        /// Controls whether DynamoDB returns capacity consumption details for each Scan request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
     }
 
     /// <summary>
@@ -124,8 +131,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public ScanDocumentOperationRequest()
         {
             Limit = Int32.MaxValue;
+            ConsistentRead = false;
             Select = SelectValues.AllAttributes;
-            TotalSegments = 1;
+            ReturnConsumedCapacity = ReturnConsumedCapacity.NONE;
         }
 
         /// <summary>
@@ -182,6 +190,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Total number of segments for a parallel scan. Defaults to 1 (no parallelism).
         /// </summary>
         public int TotalSegments { get; set; }
+
+        /// <summary>
+        /// Controls whether DynamoDB returns capacity consumption details for each Scan request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
     }
 
     /// <summary>
@@ -266,4 +280,5 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public ReturnValues ReturnValues { get; set; }
     }
+   
 }
