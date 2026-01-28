@@ -1,3 +1,23 @@
+### 4.0.179.0 (2026-01-28 19:27 UTC)
+* CognitoIdentityProvider (4.0.5.0)
+	* This release adds support for a new lambda trigger to transform federated user attributes during the authentication with external identity providers on Cognito Managed Login.
+* Connect (4.0.30.0)
+	* Adds support for filtering search results based on tags assigned to contacts.
+* DynamoDBv2 (4.0.12.0)
+	* Add Request Object Pattern and Expression-Based for DynamoDB Document Model.
+* EC2 (4.0.70.0)
+	* SearchTransitGatewayRoutes API response now includes a NextToken field, enabling pagination when retrieving large sets of transit gateway routes. Pass the returned NextToken value in subsequent requests to retrieve the next page of results.
+* Lambda (4.0.13.0)
+	* We are launching ESM Metrics and logging for Kafka ESM to allow customers to monitor Kafka event processing using CloudWatch Metrics and Logs.
+* MediaConnect (4.0.6.0)
+	* This release adds support for NDI flow sources in AWS Elemental MediaConnect. You can now send content to your MediaConnect transport streams directly from your NDI environment using the new NDI source type. Also adds support for LARGE 4X flow size, which can be used when creating CDI JPEG-XS flows.
+* MediaConvert (4.0.13.0)
+	* This release adds a follow source mode for audio output channel count, an AES audio frame wrapping option for MXF outputs, and an option to signal DolbyVision compatibility using the SUPPLEMENTAL-CODECS tag in HLS manifests.
+* S3 (4.0.18.0)
+	* Adds support for the UpdateObjectEncryption API to change the server-side encryption type of objects in general purpose buckets.
+* S3Control (4.0.9.0)
+	* Adds support for the UpdateObjectEncryption API to change the server-side encryption type of objects in general purpose buckets.
+
 ### 4.0.178.0 (2026-01-27 19:24 UTC)
 * Connect (4.0.29.0)
 	* Added support for task attachments. The StartTaskContact API now accepts file attachments, enabling customers to include files (.csv, .doc, .docx, .heic, .jfif, .jpeg, .jpg, .mov, .mp4, .pdf, .png, .ppt, .pptx, .rtf, .txt, etc.) when creating Task contacts. Supports up to 5 attachments per task.
