@@ -397,9 +397,17 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant ErrorCount for EventSourceMappingMetric
+        /// </summary>
+        public static readonly EventSourceMappingMetric ErrorCount = new EventSourceMappingMetric("ErrorCount");
+        /// <summary>
         /// Constant EventCount for EventSourceMappingMetric
         /// </summary>
         public static readonly EventSourceMappingMetric EventCount = new EventSourceMappingMetric("EventCount");
+        /// <summary>
+        /// Constant KafkaMetrics for EventSourceMappingMetric
+        /// </summary>
+        public static readonly EventSourceMappingMetric KafkaMetrics = new EventSourceMappingMetric("KafkaMetrics");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -430,6 +438,60 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventSourceMappingMetric(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventSourceMappingSystemLogLevel.
+    /// </summary>
+    public class EventSourceMappingSystemLogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEBUG for EventSourceMappingSystemLogLevel
+        /// </summary>
+        public static readonly EventSourceMappingSystemLogLevel DEBUG = new EventSourceMappingSystemLogLevel("DEBUG");
+        /// <summary>
+        /// Constant INFO for EventSourceMappingSystemLogLevel
+        /// </summary>
+        public static readonly EventSourceMappingSystemLogLevel INFO = new EventSourceMappingSystemLogLevel("INFO");
+        /// <summary>
+        /// Constant WARN for EventSourceMappingSystemLogLevel
+        /// </summary>
+        public static readonly EventSourceMappingSystemLogLevel WARN = new EventSourceMappingSystemLogLevel("WARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSourceMappingSystemLogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSourceMappingSystemLogLevel FindValue(string value)
+        {
+            return FindValue<EventSourceMappingSystemLogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSourceMappingSystemLogLevel(string value)
         {
             return FindValue(value);
         }
