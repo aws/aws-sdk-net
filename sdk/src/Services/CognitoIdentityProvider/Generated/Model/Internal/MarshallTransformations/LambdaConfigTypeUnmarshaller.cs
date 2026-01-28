@@ -96,6 +96,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefineAuthChallenge = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InboundFederation", targetDepth))
+                {
+                    var unmarshaller = InboundFederationLambdaTypeUnmarshaller.Instance;
+                    unmarshalledObject.InboundFederation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KMSKeyID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

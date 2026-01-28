@@ -4997,7 +4997,7 @@ namespace Amazon.CognitoIdentityProvider
         /// When you delete a user pool, it's no longer visible or operational in your Amazon
         /// Web Services account. Amazon Cognito retains deleted user pools in an inactive state
         /// for 14 days, then begins a cleanup process that fully removes them from Amazon Web
-        /// Services systems. In case of accidental deletion, contact Amazon Web ServicesSupport
+        /// Services systems. In case of accidental deletion, contact Amazon Web Services Support
         /// within 14 days for restoration assistance.
         /// </para>
         ///  
