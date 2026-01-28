@@ -36,6 +36,14 @@ namespace Amazon.NovaAct
         /// <summary>
         /// Construct instance of AmazonNovaActException
         /// </summary>
+        public AmazonNovaActException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNovaActException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNovaActException(string message)
             : base(message)

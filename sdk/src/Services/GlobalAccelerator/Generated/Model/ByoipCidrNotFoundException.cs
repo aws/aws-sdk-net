@@ -39,6 +39,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for ByoipCidrNotFoundException
+        /// message.
+        /// </summary>
+        public ByoipCidrNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ByoipCidrNotFoundException with the specified error
         /// message.
         /// </summary>

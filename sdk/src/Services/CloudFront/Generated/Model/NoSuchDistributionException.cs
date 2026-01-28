@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchDistributionException
+        /// message.
+        /// </summary>
+        public NoSuchDistributionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchDistributionException with the specified error
         /// message.
         /// </summary>

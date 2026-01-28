@@ -36,6 +36,14 @@ namespace Amazon.IoTFleetWise
         /// <summary>
         /// Construct instance of AmazonIoTFleetWiseException
         /// </summary>
+        public AmazonIoTFleetWiseException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTFleetWiseException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTFleetWiseException(string message)
             : base(message)

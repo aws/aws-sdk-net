@@ -36,6 +36,14 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <summary>
         /// Construct instance of AmazonLicenseManagerLinuxSubscriptionsException
         /// </summary>
+        public AmazonLicenseManagerLinuxSubscriptionsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLicenseManagerLinuxSubscriptionsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLicenseManagerLinuxSubscriptionsException(string message)
             : base(message)

@@ -62,7 +62,7 @@ namespace Amazon.QConnect.Model
         /// The value of the filter attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Amazon.Runtime.Documents.Document Value
         {
             get { return this._value; }

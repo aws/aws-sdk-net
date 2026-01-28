@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for InvalidSecurityGroupIDException
+        /// message.
+        /// </summary>
+        public InvalidSecurityGroupIDException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSecurityGroupIDException with the specified error
         /// message.
         /// </summary>

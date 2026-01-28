@@ -40,6 +40,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedOperationException
+        /// message.
+        /// </summary>
+        public UnsupportedOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedOperationException with the specified error
         /// message.
         /// </summary>

@@ -91,7 +91,7 @@ namespace Amazon.SocialMessaging.Model
         /// The ID of the linked WhatsApp Business Account, formatted as <c>waba-01234567890123456789012345678901</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=115)]
         public string Id
         {
             get { return this._id; }

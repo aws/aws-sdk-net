@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for CidrCollectionVersionMismatchException
+        /// message.
+        /// </summary>
+        public CidrCollectionVersionMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CidrCollectionVersionMismatchException with the specified error
         /// message.
         /// </summary>

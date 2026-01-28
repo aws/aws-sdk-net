@@ -281,6 +281,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_ARM_64_NVIDIA = new AMITypes("BOTTLEROCKET_ARM_64_NVIDIA");
         /// <summary>
+        /// Constant BOTTLEROCKET_ARM_64_NVIDIA_FIPS for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_ARM_64_NVIDIA_FIPS = new AMITypes("BOTTLEROCKET_ARM_64_NVIDIA_FIPS");
+        /// <summary>
         /// Constant BOTTLEROCKET_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_x86_64 = new AMITypes("BOTTLEROCKET_x86_64");
@@ -292,6 +296,10 @@ namespace Amazon.EKS
         /// Constant BOTTLEROCKET_x86_64_NVIDIA for AMITypes
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_x86_64_NVIDIA = new AMITypes("BOTTLEROCKET_x86_64_NVIDIA");
+        /// <summary>
+        /// Constant BOTTLEROCKET_x86_64_NVIDIA_FIPS for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_x86_64_NVIDIA_FIPS = new AMITypes("BOTTLEROCKET_x86_64_NVIDIA_FIPS");
         /// <summary>
         /// Constant CUSTOM for AMITypes
         /// </summary>

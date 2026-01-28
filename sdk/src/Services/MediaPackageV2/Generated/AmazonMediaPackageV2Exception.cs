@@ -36,6 +36,14 @@ namespace Amazon.MediaPackageV2
         /// <summary>
         /// Construct instance of AmazonMediaPackageV2Exception
         /// </summary>
+        public AmazonMediaPackageV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMediaPackageV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMediaPackageV2Exception(string message)
             : base(message)

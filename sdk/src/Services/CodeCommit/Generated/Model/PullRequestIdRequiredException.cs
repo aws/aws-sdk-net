@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for PullRequestIdRequiredException
+        /// message.
+        /// </summary>
+        public PullRequestIdRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PullRequestIdRequiredException with the specified error
         /// message.
         /// </summary>

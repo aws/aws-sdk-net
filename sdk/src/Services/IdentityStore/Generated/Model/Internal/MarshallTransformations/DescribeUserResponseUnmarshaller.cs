@@ -148,6 +148,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     response.ProfileUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Roles", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Role, RoleUnmarshaller>(RoleUnmarshaller.Instance);
+                    response.Roles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Timezone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -73,6 +73,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCtaUrlLinkTrackingOptedOut())
+            {
+                context.Writer.WritePropertyName("ctaUrlLinkTrackingOptedOut");
+                context.Writer.WriteBooleanValue(publicRequest.CtaUrlLinkTrackingOptedOut.Value);
+            }
+
             if(publicRequest.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
@@ -83,6 +89,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("metaTemplateId");
                 context.Writer.WriteStringValue(publicRequest.MetaTemplateId);
+            }
+
+            if(publicRequest.IsSetParameterFormat())
+            {
+                context.Writer.WritePropertyName("parameterFormat");
+                context.Writer.WriteStringValue(publicRequest.ParameterFormat);
             }
 
             if(publicRequest.IsSetTemplateCategory())

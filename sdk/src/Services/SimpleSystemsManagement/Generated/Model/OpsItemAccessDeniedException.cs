@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsItemAccessDeniedException
+        /// message.
+        /// </summary>
+        public OpsItemAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsItemAccessDeniedException with the specified error
         /// message.
         /// </summary>

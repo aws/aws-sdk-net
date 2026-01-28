@@ -42,6 +42,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for WorkspacesDefaultRoleNotFoundException
+        /// message.
+        /// </summary>
+        public WorkspacesDefaultRoleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WorkspacesDefaultRoleNotFoundException with the specified error
         /// message.
         /// </summary>

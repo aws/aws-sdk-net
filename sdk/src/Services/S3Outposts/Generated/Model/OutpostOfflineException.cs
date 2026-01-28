@@ -40,6 +40,13 @@ namespace Amazon.S3Outposts.Model
     {
 
         /// <summary>
+        /// Default constructor for OutpostOfflineException
+        /// message.
+        /// </summary>
+        public OutpostOfflineException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OutpostOfflineException with the specified error
         /// message.
         /// </summary>

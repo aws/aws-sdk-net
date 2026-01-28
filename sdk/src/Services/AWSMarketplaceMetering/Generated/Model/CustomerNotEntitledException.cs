@@ -39,6 +39,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomerNotEntitledException
+        /// message.
+        /// </summary>
+        public CustomerNotEntitledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomerNotEntitledException with the specified error
         /// message.
         /// </summary>

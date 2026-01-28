@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model
     /// 
     ///  
     /// <para>
-    ///  AWS Ground Station processes OEM ephemerides according to the <a href="https://ccsds.org/wp-content/uploads/gravity_forms/5-448e85c647331d9cbaf66c096458bdd5/2025/01//502x0b3e1.pdf">CCSDS
+    ///  AWS Ground Station processes OEM ephemerides according to the <a href="https://ccsds.org/Pubs/502x0b3e1.pdf">CCSDS
     /// standard</a> with some extra restrictions. OEM files should be in KVN format. For
     /// more detail about the OEM format that AWS Ground Station supports, see <a href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-oem-ephemeris-data.html#oem-ephemeris-format">OEM
     /// ephemeris format</a> in the AWS Ground Station user guide. 

@@ -39,6 +39,13 @@ namespace Amazon.CodeConnections.Model
     {
 
         /// <summary>
+        /// Default constructor for UpdateOutOfSyncException
+        /// message.
+        /// </summary>
+        public UpdateOutOfSyncException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UpdateOutOfSyncException with the specified error
         /// message.
         /// </summary>

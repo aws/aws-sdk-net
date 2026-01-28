@@ -37,11 +37,56 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class InstanceLaunchTemplate
     {
+        private CapacityOptionType _capacityOptionType;
         private string _ec2InstanceProfileArn;
+        private bool? _fipsEnabled;
         private InstanceRequirementsRequest _instanceRequirements;
         private ManagedInstancesMonitoringOptions _monitoring;
         private ManagedInstancesNetworkConfiguration _networkConfiguration;
         private ManagedInstancesStorageConfiguration _storageConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property CapacityOptionType. 
+        /// <para>
+        /// The capacity option type. This determines whether Amazon ECS launches On-Demand or
+        /// Spot Instances for your managed instance capacity provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ON_DEMAND</c> - Launches standard On-Demand Instances. On-Demand Instances provide
+        /// predictable pricing and availability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SPOT</c> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced
+        /// cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification
+        /// when the capacity is needed back.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The default is On-Demand
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance
+        /// purchasing options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public CapacityOptionType CapacityOptionType
+        {
+            get { return this._capacityOptionType; }
+            set { this._capacityOptionType = value; }
+        }
+
+        // Check to see if CapacityOptionType property is set
+        internal bool IsSetCapacityOptionType()
+        {
+            return this._capacityOptionType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceProfileArn. 
@@ -68,6 +113,32 @@ namespace Amazon.ECS.Model
         internal bool IsSetEc2InstanceProfileArn()
         {
             return this._ec2InstanceProfileArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FipsEnabled. 
+        /// <para>
+        /// Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances
+        /// launched by the capacity provider. If <c>true</c>, instances use FIPS-compliant cryptographic
+        /// algorithms and modules for enhanced security compliance. If <c>false</c>, instances
+        /// use standard cryptographic implementations.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions
+        /// and FIPS disabled in other regions.
+        /// </para>
+        /// </summary>
+        public bool? FipsEnabled
+        {
+            get { return this._fipsEnabled; }
+            set { this._fipsEnabled = value; }
+        }
+
+        // Check to see if FipsEnabled property is set
+        internal bool IsSetFipsEnabled()
+        {
+            return this._fipsEnabled.HasValue; 
         }
 
         /// <summary>

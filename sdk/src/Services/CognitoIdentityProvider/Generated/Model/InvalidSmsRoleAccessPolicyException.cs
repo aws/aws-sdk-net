@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSmsRoleAccessPolicyException
+        /// message.
+        /// </summary>
+        public InvalidSmsRoleAccessPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSmsRoleAccessPolicyException with the specified error
         /// message.
         /// </summary>

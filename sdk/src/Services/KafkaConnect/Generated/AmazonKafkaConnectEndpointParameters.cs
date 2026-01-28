@@ -41,15 +41,6 @@ namespace Amazon.KafkaConnect.Endpoints
         }
 
         /// <summary>
-        /// Region parameter
-        /// </summary>
-        public string Region 
-        { 
-            get { return (string)this["Region"]; }
-            set { this["Region"] = value; } 
-        }
-
-        /// <summary>
         /// UseDualStack parameter
         /// </summary>
         public bool? UseDualStack 
@@ -74,6 +65,15 @@ namespace Amazon.KafkaConnect.Endpoints
         { 
             get { return (string)this["Endpoint"]; }
             set { this["Endpoint"] = value; } 
+        }
+
+        /// <summary>
+        /// Region parameter
+        /// </summary>
+        public string Region 
+        { 
+            get { return (string)this["Region"]; }
+            set { this["Region"] = value; } 
         }
     }
 }

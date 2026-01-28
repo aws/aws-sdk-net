@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for FunctionInUseException
+        /// message.
+        /// </summary>
+        public FunctionInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FunctionInUseException with the specified error
         /// message.
         /// </summary>

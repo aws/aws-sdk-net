@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidExportOnlyException
+        /// message.
+        /// </summary>
+        public InvalidExportOnlyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidExportOnlyException with the specified error
         /// message.
         /// </summary>

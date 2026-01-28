@@ -74,12 +74,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 else                
                     xmlWriter.WriteElementString("ClientToken", Guid.NewGuid().ToString());                
 
-                if (publicRequest.Details != null)
+                if (publicRequest.IsSetDetails())
                 {
                     xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));
-                    if (publicRequest.Details.PublicAccessBlock != null)
+                    if (publicRequest.Details.IsSetPublicAccessBlock())
                     {
                         xmlWriter.WriteStartElement("PublicAccessBlock");
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicAcls())
@@ -93,20 +93,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     var publicRequestDetailsRegions = publicRequest.Details.Regions;
-                    if (publicRequestDetailsRegions != null && (publicRequestDetailsRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Details.IsSetRegions()) 
                     {
                         xmlWriter.WriteStartElement("Regions");
                         foreach (var publicRequestDetailsRegionsValue in publicRequestDetailsRegions) 
                         {
-                        if (publicRequestDetailsRegionsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Region");
-                            if(publicRequestDetailsRegionsValue.IsSetBucket())
-                                xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));
-                            if(publicRequestDetailsRegionsValue.IsSetBucketAccountId())
-                                xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestDetailsRegionsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Region");
+                                if(publicRequestDetailsRegionsValue.IsSetBucket())
+                                    xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));
+                                if(publicRequestDetailsRegionsValue.IsSetBucketAccountId())
+                                    xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }

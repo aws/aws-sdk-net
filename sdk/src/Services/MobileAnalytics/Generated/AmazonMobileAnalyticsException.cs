@@ -36,6 +36,14 @@ namespace Amazon.MobileAnalytics
         /// <summary>
         /// Construct instance of AmazonMobileAnalyticsException
         /// </summary>
+        public AmazonMobileAnalyticsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMobileAnalyticsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMobileAnalyticsException(string message)
             : base(message)

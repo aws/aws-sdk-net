@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationConformancePackTemplateValidationException
+        /// message.
+        /// </summary>
+        public OrganizationConformancePackTemplateValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationConformancePackTemplateValidationException with the specified error
         /// message.
         /// </summary>

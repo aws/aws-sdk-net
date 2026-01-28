@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for HostedZonePartiallyDelegatedException
+        /// message.
+        /// </summary>
+        public HostedZonePartiallyDelegatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HostedZonePartiallyDelegatedException with the specified error
         /// message.
         /// </summary>

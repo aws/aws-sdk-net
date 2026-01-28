@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for SchedulerRunningException
+        /// message.
+        /// </summary>
+        public SchedulerRunningException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SchedulerRunningException with the specified error
         /// message.
         /// </summary>

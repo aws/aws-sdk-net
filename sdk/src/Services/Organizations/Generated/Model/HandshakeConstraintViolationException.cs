@@ -120,6 +120,13 @@ namespace Amazon.Organizations.Model
         private HandshakeConstraintViolationExceptionReason _reason;
 
         /// <summary>
+        /// Default constructor for HandshakeConstraintViolationException
+        /// message.
+        /// </summary>
+        public HandshakeConstraintViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HandshakeConstraintViolationException with the specified error
         /// message.
         /// </summary>

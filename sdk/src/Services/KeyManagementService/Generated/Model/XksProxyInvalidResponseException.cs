@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksProxyInvalidResponseException
+        /// message.
+        /// </summary>
+        public XksProxyInvalidResponseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksProxyInvalidResponseException with the specified error
         /// message.
         /// </summary>

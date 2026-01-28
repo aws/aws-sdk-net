@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthorDoesNotExistException
+        /// message.
+        /// </summary>
+        public AuthorDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthorDoesNotExistException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.Textract.Model
     {
 
         /// <summary>
+        /// Default constructor for DocumentTooLargeException
+        /// message.
+        /// </summary>
+        public DocumentTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DocumentTooLargeException with the specified error
         /// message.
         /// </summary>

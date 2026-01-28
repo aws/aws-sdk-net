@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for TrafficPolicyInUseException
+        /// message.
+        /// </summary>
+        public TrafficPolicyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrafficPolicyInUseException with the specified error
         /// message.
         /// </summary>

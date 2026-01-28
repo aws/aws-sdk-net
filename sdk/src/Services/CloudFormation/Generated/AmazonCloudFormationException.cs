@@ -36,6 +36,14 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Construct instance of AmazonCloudFormationException
         /// </summary>
+        public AmazonCloudFormationException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudFormationException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudFormationException(string message)
             : base(message)

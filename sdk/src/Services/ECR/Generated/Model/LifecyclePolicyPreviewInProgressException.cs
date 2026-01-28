@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for LifecyclePolicyPreviewInProgressException
+        /// message.
+        /// </summary>
+        public LifecyclePolicyPreviewInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LifecyclePolicyPreviewInProgressException with the specified error
         /// message.
         /// </summary>

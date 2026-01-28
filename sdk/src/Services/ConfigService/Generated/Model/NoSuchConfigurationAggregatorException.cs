@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchConfigurationAggregatorException
+        /// message.
+        /// </summary>
+        public NoSuchConfigurationAggregatorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchConfigurationAggregatorException with the specified error
         /// message.
         /// </summary>

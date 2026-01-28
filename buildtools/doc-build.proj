@@ -16,6 +16,11 @@
         
         <!-- default output path to ..\DocDeployment\docs if not specified -->
         <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\..\DocDeployment\docs</DocOutputRoot>
+
+        <!-- default output path to ..\..\example_meta.json if not specified -->
+        <ExampleMetaJson Condition="'$(ExampleMetaJson)'==''">$(DocGeneratorPath)\..\..\example_meta.json</ExampleMetaJson>
+                
+        <ExamplesErrorFile Condition="'$(ExamplesErrorFile)'==''"></ExamplesErrorFile>
         
         <!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
         <DocSamplesFolder>$(MSBuildProjectDirectory)\..\docgenerator</DocSamplesFolder>
@@ -38,7 +43,7 @@
         <MakeDir Directories="$(DocOutputRoot)" />
     
 		<Message Text="Build documentation for all platforms, all assemblies"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(DocBuildAssemblies) -sdkversionfile $(SDKVersionFilePath) -o $(DocOutputRoot) -sf $(DocSamplesFolder) -p $(SDKPlatform)" />
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(DocBuildAssemblies) -sdkversionfile $(SDKVersionFilePath) -emj $(ExampleMetaJson) -eef $(ExamplesErrorFile) -o $(DocOutputRoot) -sf $(DocSamplesFolder) -p $(SDKPlatform)" />
 		
     </Target>
 

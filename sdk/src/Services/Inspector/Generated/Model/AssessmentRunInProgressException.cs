@@ -42,6 +42,13 @@ namespace Amazon.Inspector.Model
         private bool? _canRetry;
 
         /// <summary>
+        /// Default constructor for AssessmentRunInProgressException
+        /// message.
+        /// </summary>
+        public AssessmentRunInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AssessmentRunInProgressException with the specified error
         /// message.
         /// </summary>

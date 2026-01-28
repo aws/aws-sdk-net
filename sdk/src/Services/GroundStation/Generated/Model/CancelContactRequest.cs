@@ -31,7 +31,23 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelContact operation.
-    /// Cancels a contact with a specified contact ID.
+    /// Cancels or stops a contact with a specified contact ID based on its position in the
+    /// <a href="https://docs.aws.amazon.com/ground-station/latest/ug/contacts.lifecycle.html">contact
+    /// lifecycle</a>.
+    /// 
+    ///  
+    /// <para>
+    /// For contacts that:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Have yet to start, the contact will be cancelled.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Have started but have yet to finish, the contact will be stopped.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CancelContactRequest : AmazonGroundStationRequest
     {

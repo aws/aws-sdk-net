@@ -73,7 +73,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     var publicRequestTagKeysItems = publicRequest.TagKeys.Items;
-                    if (publicRequestTagKeysItems != null && (publicRequestTagKeysItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.TagKeys.IsSetItems()) 
                     {
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestTagKeysItemsValue in publicRequestTagKeysItems) 

@@ -40,6 +40,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for PipelineExecutionOutdatedException
+        /// message.
+        /// </summary>
+        public PipelineExecutionOutdatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PipelineExecutionOutdatedException with the specified error
         /// message.
         /// </summary>

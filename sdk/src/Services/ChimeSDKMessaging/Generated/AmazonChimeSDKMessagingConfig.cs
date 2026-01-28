@@ -33,7 +33,7 @@ namespace Amazon.ChimeSDKMessaging
     public partial class AmazonChimeSDKMessagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Chime SDK Messaging", "4.0.2.8");
+            InternalSDKUtils.BuildUserAgentString("Chime SDK Messaging", "4.0.2.13");
 
         private static readonly AmazonChimeSDKMessagingEndpointResolver EndpointResolver =
             new AmazonChimeSDKMessagingEndpointResolver();

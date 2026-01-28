@@ -14086,7 +14086,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.KeepAlivePeriodInSeconds</property>
     <min>0</min>
-    <max>3600</max>
+    <max>21600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.TrainingPlanArn</property>
@@ -14107,7 +14107,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfigForUpdate.KeepAlivePeriodInSeconds</property>
     <min>0</min>
-    <max>3600</max>
+    <max>21600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceLimits.MaxNumberOfTrainingJobs</property>
@@ -14125,7 +14125,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSharingConfig.BorrowLimit</property>
     <min>0</min>
-    <max>500</max>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSpec.LifecycleConfigArn</property>

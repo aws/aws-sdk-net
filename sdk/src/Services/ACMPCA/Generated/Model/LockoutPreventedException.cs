@@ -41,6 +41,13 @@ namespace Amazon.ACMPCA.Model
     {
 
         /// <summary>
+        /// Default constructor for LockoutPreventedException
+        /// message.
+        /// </summary>
+        public LockoutPreventedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LockoutPreventedException with the specified error
         /// message.
         /// </summary>

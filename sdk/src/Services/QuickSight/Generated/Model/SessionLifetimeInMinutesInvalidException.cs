@@ -40,6 +40,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for SessionLifetimeInMinutesInvalidException
+        /// message.
+        /// </summary>
+        public SessionLifetimeInMinutesInvalidException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SessionLifetimeInMinutesInvalidException with the specified error
         /// message.
         /// </summary>

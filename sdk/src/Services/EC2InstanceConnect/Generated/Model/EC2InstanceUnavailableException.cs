@@ -39,6 +39,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for EC2InstanceUnavailableException
+        /// message.
+        /// </summary>
+        public EC2InstanceUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EC2InstanceUnavailableException with the specified error
         /// message.
         /// </summary>

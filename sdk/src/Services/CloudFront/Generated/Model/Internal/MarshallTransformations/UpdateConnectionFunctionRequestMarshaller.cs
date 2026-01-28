@@ -75,27 +75,27 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConnectionFunctionCode())
                     xmlWriter.WriteElementString("ConnectionFunctionCode", StringUtils.FromMemoryStream(publicRequest.ConnectionFunctionCode));
 
-                if (publicRequest.ConnectionFunctionConfig != null)
+                if (publicRequest.IsSetConnectionFunctionConfig())
                 {
                     xmlWriter.WriteStartElement("ConnectionFunctionConfig");
                     if(publicRequest.ConnectionFunctionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.ConnectionFunctionConfig.Comment));
-                    if (publicRequest.ConnectionFunctionConfig.KeyValueStoreAssociations != null)
+                    if (publicRequest.ConnectionFunctionConfig.IsSetKeyValueStoreAssociations())
                     {
                         xmlWriter.WriteStartElement("KeyValueStoreAssociations");
                         var publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItems = publicRequest.ConnectionFunctionConfig.KeyValueStoreAssociations.Items;
-                        if (publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItems != null && (publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.ConnectionFunctionConfig.KeyValueStoreAssociations.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue in publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItems) 
                             {
-                            if (publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("KeyValueStoreAssociation");
-                                if(publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
-                                    xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("KeyValueStoreAssociation");
+                                    if(publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
+                                        xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestConnectionFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }

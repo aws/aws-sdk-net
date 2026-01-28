@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
+                if(publicRequest.IsSetLinkedGroupId())
+                {
+                    request.Parameters.Add("LinkedGroupId", StringUtils.FromString(publicRequest.LinkedGroupId));
+                }
                 if(publicRequest.IsSetPartitionCount())
                 {
                     request.Parameters.Add("PartitionCount", StringUtils.FromInt(publicRequest.PartitionCount));

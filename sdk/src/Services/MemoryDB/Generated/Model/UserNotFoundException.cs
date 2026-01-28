@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for UserNotFoundException
+        /// message.
+        /// </summary>
+        public UserNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserNotFoundException with the specified error
         /// message.
         /// </summary>

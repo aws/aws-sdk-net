@@ -74,6 +74,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColumnHierarchies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("GeocodingPreferences", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<GeocodePreference, GeocodePreferenceUnmarshaller>(GeocodePreferenceUnmarshaller.Instance);
+                    unmarshalledObject.GeocodingPreferences = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Subtitle", targetDepth))
                 {
                     var unmarshaller = VisualSubtitleLabelOptionsUnmarshaller.Instance;

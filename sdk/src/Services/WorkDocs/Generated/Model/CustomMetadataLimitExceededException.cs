@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomMetadataLimitExceededException
+        /// message.
+        /// </summary>
+        public CustomMetadataLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomMetadataLimitExceededException with the specified error
         /// message.
         /// </summary>

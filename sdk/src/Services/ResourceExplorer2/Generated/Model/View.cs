@@ -45,6 +45,7 @@ namespace Amazon.ResourceExplorer2.Model
         private string _owner;
         private string _scope;
         private string _viewArn;
+        private string _viewName;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -169,6 +170,24 @@ namespace Amazon.ResourceExplorer2.Model
         internal bool IsSetViewArn()
         {
             return this._viewArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewName. 
+        /// <para>
+        /// The name of the view.
+        /// </para>
+        /// </summary>
+        public string ViewName
+        {
+            get { return this._viewName; }
+            set { this._viewName = value; }
+        }
+
+        // Check to see if ViewName property is set
+        internal bool IsSetViewName()
+        {
+            return this._viewName != null;
         }
 
     }

@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for RealtimeLogConfigOwnerMismatchException
+        /// message.
+        /// </summary>
+        public RealtimeLogConfigOwnerMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RealtimeLogConfigOwnerMismatchException with the specified error
         /// message.
         /// </summary>

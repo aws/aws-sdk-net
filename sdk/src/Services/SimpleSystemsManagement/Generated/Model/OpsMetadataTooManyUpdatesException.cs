@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsMetadataTooManyUpdatesException
+        /// message.
+        /// </summary>
+        public OpsMetadataTooManyUpdatesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsMetadataTooManyUpdatesException with the specified error
         /// message.
         /// </summary>

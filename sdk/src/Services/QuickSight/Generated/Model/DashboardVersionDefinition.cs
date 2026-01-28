@@ -198,7 +198,7 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Max=400)]
         public List<ParameterDeclaration> ParameterDeclarations
         {
             get { return this._parameterDeclarations; }

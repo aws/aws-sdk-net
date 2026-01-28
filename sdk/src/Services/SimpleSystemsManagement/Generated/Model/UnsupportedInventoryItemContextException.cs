@@ -42,6 +42,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _typeName;
 
         /// <summary>
+        /// Default constructor for UnsupportedInventoryItemContextException
+        /// message.
+        /// </summary>
+        public UnsupportedInventoryItemContextException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedInventoryItemContextException with the specified error
         /// message.
         /// </summary>

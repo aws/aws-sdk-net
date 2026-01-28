@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchFieldLevelEncryptionConfigException
+        /// message.
+        /// </summary>
+        public NoSuchFieldLevelEncryptionConfigException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchFieldLevelEncryptionConfigException with the specified error
         /// message.
         /// </summary>

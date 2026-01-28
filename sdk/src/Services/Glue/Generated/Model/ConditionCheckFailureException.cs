@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for ConditionCheckFailureException
+        /// message.
+        /// </summary>
+        public ConditionCheckFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConditionCheckFailureException with the specified error
         /// message.
         /// </summary>

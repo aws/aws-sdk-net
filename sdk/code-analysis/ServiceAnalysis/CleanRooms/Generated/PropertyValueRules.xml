@@ -1039,6 +1039,18 @@
     <pattern>(?!\s*$)[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\t]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.UpdateCollaborationChangeRequestRequest.ChangeRequestIdentifier</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.UpdateCollaborationChangeRequestRequest.CollaborationIdentifier</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateConfiguredAudienceModelAssociationRequest.ConfiguredAudienceModelAssociationIdentifier</property>
     <min>36</min>
     <max>36</max>
@@ -1257,7 +1269,7 @@
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisParameter.DefaultValue</property>
     <min>0</min>
-    <max>250</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisParameter.Name</property>

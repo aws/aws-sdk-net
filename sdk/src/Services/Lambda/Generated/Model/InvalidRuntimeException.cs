@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for InvalidRuntimeException
+        /// message.
+        /// </summary>
+        public InvalidRuntimeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRuntimeException with the specified error
         /// message.
         /// </summary>

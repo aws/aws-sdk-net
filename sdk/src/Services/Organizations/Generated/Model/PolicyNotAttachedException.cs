@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyNotAttachedException
+        /// message.
+        /// </summary>
+        public PolicyNotAttachedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyNotAttachedException with the specified error
         /// message.
         /// </summary>

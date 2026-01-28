@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for StillContainsLinksException
+        /// message.
+        /// </summary>
+        public StillContainsLinksException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StillContainsLinksException with the specified error
         /// message.
         /// </summary>

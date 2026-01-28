@@ -141,6 +141,17 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetReportConfiguration())
+            {
+                context.Writer.WritePropertyName("reportConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReportConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for CopyToRegionDisabledException
+        /// message.
+        /// </summary>
+        public CopyToRegionDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CopyToRegionDisabledException with the specified error
         /// message.
         /// </summary>

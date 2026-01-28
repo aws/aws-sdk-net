@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for NoScheduleException
+        /// message.
+        /// </summary>
+        public NoScheduleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoScheduleException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFacetUpdateException
+        /// message.
+        /// </summary>
+        public InvalidFacetUpdateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFacetUpdateException with the specified error
         /// message.
         /// </summary>

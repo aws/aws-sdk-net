@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchEntityException
+        /// message.
+        /// </summary>
+        public NoSuchEntityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchEntityException with the specified error
         /// message.
         /// </summary>

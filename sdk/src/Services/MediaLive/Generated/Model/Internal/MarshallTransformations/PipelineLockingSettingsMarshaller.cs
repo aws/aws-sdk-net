@@ -46,6 +46,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCustomEpoch())
+            {
+                context.Writer.WritePropertyName("customEpoch");
+                context.Writer.WriteStringValue(requestObject.CustomEpoch);
+            }
+
+            if(requestObject.IsSetPipelineLockingMethod())
+            {
+                context.Writer.WritePropertyName("pipelineLockingMethod");
+                context.Writer.WriteStringValue(requestObject.PipelineLockingMethod);
+            }
+
         }
 
         /// <summary>

@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for ALPNPolicyNotSupportedException
+        /// message.
+        /// </summary>
+        public ALPNPolicyNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ALPNPolicyNotSupportedException with the specified error
         /// message.
         /// </summary>

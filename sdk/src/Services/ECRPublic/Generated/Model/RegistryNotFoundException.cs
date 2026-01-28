@@ -39,6 +39,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for RegistryNotFoundException
+        /// message.
+        /// </summary>
+        public RegistryNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RegistryNotFoundException with the specified error
         /// message.
         /// </summary>

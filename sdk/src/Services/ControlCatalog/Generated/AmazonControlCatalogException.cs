@@ -36,6 +36,14 @@ namespace Amazon.ControlCatalog
         /// <summary>
         /// Construct instance of AmazonControlCatalogException
         /// </summary>
+        public AmazonControlCatalogException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonControlCatalogException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonControlCatalogException(string message)
             : base(message)

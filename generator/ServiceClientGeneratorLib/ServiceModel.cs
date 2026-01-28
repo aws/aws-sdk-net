@@ -562,7 +562,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
                         new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
                         new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
-						//new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
+                        new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
                         //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"]),
                         new Operation(this, "PutBucketAnalyticsConfiguration" , DocumentRoot[OperationsKey]["PutBucketAnalyticsConfiguration"]),
                         new Operation(this, "PutBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["PutBucketIntelligentTieringConfiguration"]),
@@ -574,8 +574,24 @@ namespace ServiceClientGenerator
                         new Operation(this, "DeleteBucketInventoryConfiguration", DocumentRoot[OperationsKey]["DeleteBucketInventoryConfiguration"]),
                         new Operation(this,"PutBucketRequestPayment", DocumentRoot[OperationsKey]["PutBucketRequestPayment"]),
                         new Operation(this, "CreateBucketMetadataConfiguration",DocumentRoot[OperationsKey]["CreateBucketMetadataConfiguration"]),
-                        new Operation(this, "GetBucketMetadataConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataConfiguration"])
-
+                        new Operation(this, "GetBucketMetadataConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataConfiguration"]),
+                        new Operation(this, "DeleteBucketMetadataConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetadataConfiguration"]),
+                        new Operation(this, "ListObjects", DocumentRoot[OperationsKey]["ListObjects"]),
+                        new Operation(this,"UpdateBucketMetadataJournalTableConfiguration", DocumentRoot[OperationsKey]["UpdateBucketMetadataJournalTableConfiguration"]),
+                        new Operation(this, "ListMultipartUploads", DocumentRoot[OperationsKey]["ListMultipartUploads"]),
+                        new Operation(this, "RenameObject", DocumentRoot[OperationsKey]["RenameObject"]),
+                        new Operation(this, "PutBucketOwnershipControls", DocumentRoot[OperationsKey]["PutBucketOwnershipControls"]),
+                        new Operation(this, "PutBucketTagging", DocumentRoot[OperationsKey]["PutBucketTagging"]),
+                        new Operation(this, "CopyObject", DocumentRoot[OperationsKey]["CopyObject"]),
+                        new Operation(this, "CompleteMultipartUpload", DocumentRoot[OperationsKey]["CompleteMultipartUpload"]),
+                        new Operation(this, "DeleteObject", DocumentRoot[OperationsKey]["DeleteObject"]),
+                        new Operation(this, "DeleteObjects", DocumentRoot[OperationsKey]["DeleteObjects"]),
+                        new Operation(this, "DeleteObjectTagging",  DocumentRoot[OperationsKey]["DeleteObjectTagging"]),
+                        new Operation(this, "GetBucketLogging",  DocumentRoot[OperationsKey]["GetBucketLogging"]),
+                        new Operation(this, "PutBucketLogging", DocumentRoot[OperationsKey]["PutBucketLogging"]),
+                        new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"]),
+                        new Operation(this, "PutBucketWebsite", DocumentRoot[OperationsKey]["PutBucketWebsite"]),
+                        new Operation(this, "DeleteBucketWebsite", DocumentRoot[OperationsKey]["DeleteBucketWebsite"])
                     };
                 }
                 return _s3AllowListOperations.Where(operation => operation.data != null).ToList();
@@ -606,7 +622,8 @@ namespace ServiceClientGenerator
                         "GetObjectAcl",
                         "PutBucketAcl",
                         "CreateBucketMetadataConfiguration",
-                        "GetBucketMetadataConfiguration"
+                        "GetBucketMetadataConfiguration",
+                        "DeleteBucketMetadataConfiguration"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;

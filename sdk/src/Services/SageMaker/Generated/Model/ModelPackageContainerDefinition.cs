@@ -72,7 +72,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BaseModel. 
         /// <para>
-        ///  The base model of the package. 
+        ///  Identifies the foundation model that was used as the starting point for model customization.
+        /// 
         /// </para>
         /// </summary>
         public BaseModel BaseModel
@@ -218,7 +219,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property IsCheckpoint. 
         /// <para>
-        ///  The checkpoint of the model package. 
+        ///  Specifies whether the model data is a training checkpoint. 
         /// </para>
         /// </summary>
         public bool? IsCheckpoint

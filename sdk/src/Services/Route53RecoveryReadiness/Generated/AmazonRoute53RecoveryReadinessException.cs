@@ -36,6 +36,14 @@ namespace Amazon.Route53RecoveryReadiness
         /// <summary>
         /// Construct instance of AmazonRoute53RecoveryReadinessException
         /// </summary>
+        public AmazonRoute53RecoveryReadinessException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRoute53RecoveryReadinessException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRoute53RecoveryReadinessException(string message)
             : base(message)

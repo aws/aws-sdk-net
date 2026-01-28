@@ -39,6 +39,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointGroupNotFoundException
+        /// message.
+        /// </summary>
+        public EndpointGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointGroupNotFoundException with the specified error
         /// message.
         /// </summary>

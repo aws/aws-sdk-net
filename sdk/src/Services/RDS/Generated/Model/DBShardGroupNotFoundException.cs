@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBShardGroupNotFoundException
+        /// message.
+        /// </summary>
+        public DBShardGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBShardGroupNotFoundException with the specified error
         /// message.
         /// </summary>

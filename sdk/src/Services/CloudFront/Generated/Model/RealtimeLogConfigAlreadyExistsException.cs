@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for RealtimeLogConfigAlreadyExistsException
+        /// message.
+        /// </summary>
+        public RealtimeLogConfigAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RealtimeLogConfigAlreadyExistsException with the specified error
         /// message.
         /// </summary>

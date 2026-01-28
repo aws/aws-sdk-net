@@ -36,6 +36,14 @@ namespace Amazon.NetworkFirewall
         /// <summary>
         /// Construct instance of AmazonNetworkFirewallException
         /// </summary>
+        public AmazonNetworkFirewallException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNetworkFirewallException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNetworkFirewallException(string message)
             : base(message)

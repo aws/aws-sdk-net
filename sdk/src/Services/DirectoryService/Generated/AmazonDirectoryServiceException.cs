@@ -36,6 +36,14 @@ namespace Amazon.DirectoryService
         /// <summary>
         /// Construct instance of AmazonDirectoryServiceException
         /// </summary>
+        public AmazonDirectoryServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDirectoryServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDirectoryServiceException(string message)
             : base(message)

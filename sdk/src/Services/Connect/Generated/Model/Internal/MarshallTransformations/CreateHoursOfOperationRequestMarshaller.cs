@@ -104,6 +104,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetParentHoursOfOperationConfigs())
+            {
+                context.Writer.WritePropertyName("ParentHoursOfOperationConfigs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestParentHoursOfOperationConfigsListValue in publicRequest.ParentHoursOfOperationConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ParentHoursOfOperationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParentHoursOfOperationConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

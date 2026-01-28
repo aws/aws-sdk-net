@@ -56,6 +56,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyTrafficPoliciesException
+        /// message.
+        /// </summary>
+        public TooManyTrafficPoliciesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTrafficPoliciesException with the specified error
         /// message.
         /// </summary>

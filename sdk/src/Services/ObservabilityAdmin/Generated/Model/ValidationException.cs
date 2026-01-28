@@ -40,6 +40,13 @@ namespace Amazon.ObservabilityAdmin.Model
         private List<ValidationError> _errors = AWSConfigs.InitializeCollections ? new List<ValidationError>() : null;
 
         /// <summary>
+        /// Default constructor for ValidationException
+        /// message.
+        /// </summary>
+        public ValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ValidationException with the specified error
         /// message.
         /// </summary>

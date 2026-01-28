@@ -36,6 +36,14 @@ namespace Amazon.PinpointSMSVoice
         /// <summary>
         /// Construct instance of AmazonPinpointSMSVoiceException
         /// </summary>
+        public AmazonPinpointSMSVoiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPinpointSMSVoiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPinpointSMSVoiceException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.SecurityHub.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for ServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ServiceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>

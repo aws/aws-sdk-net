@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsThrottledException
+        /// message.
+        /// </summary>
+        public KmsThrottledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsThrottledException with the specified error
         /// message.
         /// </summary>

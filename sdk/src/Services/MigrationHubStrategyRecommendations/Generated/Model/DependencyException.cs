@@ -39,6 +39,13 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     {
 
         /// <summary>
+        /// Default constructor for DependencyException
+        /// message.
+        /// </summary>
+        public DependencyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependencyException with the specified error
         /// message.
         /// </summary>

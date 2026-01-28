@@ -36,6 +36,14 @@ namespace Amazon.ARCRegionswitch
         /// <summary>
         /// Construct instance of AmazonARCRegionswitchException
         /// </summary>
+        public AmazonARCRegionswitchException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonARCRegionswitchException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonARCRegionswitchException(string message)
             : base(message)

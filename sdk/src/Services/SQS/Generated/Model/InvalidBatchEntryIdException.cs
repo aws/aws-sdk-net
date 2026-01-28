@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidBatchEntryIdException
+        /// message.
+        /// </summary>
+        public InvalidBatchEntryIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidBatchEntryIdException with the specified error
         /// message.
         /// </summary>

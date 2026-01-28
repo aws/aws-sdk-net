@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRevisionException
+        /// message.
+        /// </summary>
+        public InvalidRevisionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRevisionException with the specified error
         /// message.
         /// </summary>

@@ -105,7 +105,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListJobsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <c>AccountId</c> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
+        /// <param name="accountId">The <c>AccountId</c> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         public ListJobsRequest(string accountId, string vaultName)
         {
@@ -118,7 +118,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <c>AccountId</c> value is the AWS account ID of the account that owns the vault.
         /// You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen),
-        /// in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
+        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
         /// used to sign the request. If you use an account ID, do not include any hyphens ('-')
         /// in the ID. 
         /// </para>

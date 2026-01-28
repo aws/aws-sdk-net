@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for InvalidNumericDataException
+        /// message.
+        /// </summary>
+        public InvalidNumericDataException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNumericDataException with the specified error
         /// message.
         /// </summary>

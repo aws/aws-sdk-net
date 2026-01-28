@@ -36,6 +36,14 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// Construct instance of AmazonRoute53GlobalResolverException
         /// </summary>
+        public AmazonRoute53GlobalResolverException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRoute53GlobalResolverException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRoute53GlobalResolverException(string message)
             : base(message)

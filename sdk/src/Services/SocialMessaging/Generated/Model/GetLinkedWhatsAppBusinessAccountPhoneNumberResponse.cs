@@ -43,7 +43,7 @@ namespace Amazon.SocialMessaging.Model
         /// The WABA identifier linked to the phone number, formatted as <c>waba-01234567890123456789012345678901</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=115)]
         public string LinkedWhatsAppBusinessAccountId
         {
             get { return this._linkedWhatsAppBusinessAccountId; }

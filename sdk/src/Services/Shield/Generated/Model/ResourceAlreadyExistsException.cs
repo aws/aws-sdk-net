@@ -41,6 +41,13 @@ namespace Amazon.Shield.Model
         private string _resourceType;
 
         /// <summary>
+        /// Default constructor for ResourceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ResourceAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceAlreadyExistsException with the specified error
         /// message.
         /// </summary>

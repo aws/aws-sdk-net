@@ -36,6 +36,14 @@ namespace Amazon.RTBFabric
         /// <summary>
         /// Construct instance of AmazonRTBFabricException
         /// </summary>
+        public AmazonRTBFabricException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRTBFabricException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRTBFabricException(string message)
             : base(message)

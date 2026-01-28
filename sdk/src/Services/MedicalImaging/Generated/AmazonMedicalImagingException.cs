@@ -36,6 +36,14 @@ namespace Amazon.MedicalImaging
         /// <summary>
         /// Construct instance of AmazonMedicalImagingException
         /// </summary>
+        public AmazonMedicalImagingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMedicalImagingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMedicalImagingException(string message)
             : base(message)

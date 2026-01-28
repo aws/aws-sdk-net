@@ -40,6 +40,13 @@ namespace Amazon.IVS.Model
         private string _exceptionMessage;
 
         /// <summary>
+        /// Default constructor for ChannelNotBroadcastingException
+        /// message.
+        /// </summary>
+        public ChannelNotBroadcastingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChannelNotBroadcastingException with the specified error
         /// message.
         /// </summary>

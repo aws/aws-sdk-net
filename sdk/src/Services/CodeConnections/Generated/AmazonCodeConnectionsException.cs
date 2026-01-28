@@ -36,6 +36,14 @@ namespace Amazon.CodeConnections
         /// <summary>
         /// Construct instance of AmazonCodeConnectionsException
         /// </summary>
+        public AmazonCodeConnectionsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeConnectionsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeConnectionsException(string message)
             : base(message)

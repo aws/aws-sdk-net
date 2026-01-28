@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryDoesNotExistException
+        /// message.
+        /// </summary>
+        public DirectoryDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryDoesNotExistException with the specified error
         /// message.
         /// </summary>

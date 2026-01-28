@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBParameterGroupNotFoundException
+        /// message.
+        /// </summary>
+        public DBParameterGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBParameterGroupNotFoundException with the specified error
         /// message.
         /// </summary>

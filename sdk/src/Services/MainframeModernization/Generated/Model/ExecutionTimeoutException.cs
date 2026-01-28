@@ -41,6 +41,13 @@ namespace Amazon.MainframeModernization.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for ExecutionTimeoutException
+        /// message.
+        /// </summary>
+        public ExecutionTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExecutionTimeoutException with the specified error
         /// message.
         /// </summary>

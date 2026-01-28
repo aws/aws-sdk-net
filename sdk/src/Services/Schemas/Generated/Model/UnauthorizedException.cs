@@ -40,6 +40,13 @@ namespace Amazon.Schemas.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for UnauthorizedException
+        /// message.
+        /// </summary>
+        public UnauthorizedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthorizedException with the specified error
         /// message.
         /// </summary>

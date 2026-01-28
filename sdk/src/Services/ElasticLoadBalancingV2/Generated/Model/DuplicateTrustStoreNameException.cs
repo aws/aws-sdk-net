@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateTrustStoreNameException
+        /// message.
+        /// </summary>
+        public DuplicateTrustStoreNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateTrustStoreNameException with the specified error
         /// message.
         /// </summary>

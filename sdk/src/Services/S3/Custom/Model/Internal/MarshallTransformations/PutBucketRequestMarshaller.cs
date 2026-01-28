@@ -34,59 +34,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public partial class PutBucketRequestMarshaller : IMarshaller<IRequest, PutBucketRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
-        protected internal static void ConvertPutWithACLRequest(PutWithACLRequest request, IRequest irequest)
-        {
-            Dictionary<S3Permission, string> protoHeaders = new Dictionary<S3Permission, string>();
-            if (request.Grants != null)
-            {
-                foreach (var grant in request.Grants)
-                {
-                    if (grant == null)
-                        continue;
-                    string grantee = null;
-                    if (grant.Grantee.CanonicalUser != null && !string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
-                        grantee = string.Format(CultureInfo.InvariantCulture, "id=\"{0}\"", grant.Grantee.CanonicalUser);
-                    else if (grant.Grantee.IsSetEmailAddress())
-                        grantee = string.Format(CultureInfo.InvariantCulture, "emailAddress=\"{0}\"", grant.Grantee.EmailAddress);
-                    else if (grant.Grantee.IsSetURI())
-                        grantee = string.Format(CultureInfo.InvariantCulture, "uri=\"{0}\"", grant.Grantee.URI);
-                    else continue;
-
-                    string glist = null;
-                    if (protoHeaders.TryGetValue(grant.Permission, out glist))
-                        protoHeaders[grant.Permission] = string.Format(CultureInfo.InvariantCulture, "{0}, {1}", glist, grantee);
-                    else
-                        protoHeaders.Add(grant.Permission, grantee);
-                }
-            }
-
-            foreach (var permission in protoHeaders.Keys)
-            {
-                if (permission == null)
-                    continue;
-                if (permission == S3Permission.READ)
-                    irequest.Headers[S3Constants.AmzGrantHeaderRead] = protoHeaders[permission];
-                if (permission == S3Permission.WRITE)
-                    irequest.Headers[S3Constants.AmzGrantHeaderWrite] = protoHeaders[permission];
-                if (permission == S3Permission.READ_ACP)
-                    irequest.Headers[S3Constants.AmzGrantHeaderReadAcp] = protoHeaders[permission];
-                if (permission == S3Permission.WRITE_ACP)
-                    irequest.Headers[S3Constants.AmzGrantHeaderWriteAcp] = protoHeaders[permission];
-                if (permission == S3Permission.RESTORE_OBJECT)
-                    irequest.Headers[S3Constants.AmzGrantHeaderRestoreObject] = protoHeaders[permission];
-                if (permission == S3Permission.FULL_CONTROL)
-                    irequest.Headers[S3Constants.AmzGrantHeaderFullControl] = protoHeaders[permission];
-            }
-        }
-
         partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketRequest publicRequest)
         {
             // the NoAcl logic exists because it was originally a part of the IsSetCannedACL()
             // method https://github.com/aws/aws-sdk-net/blob/623dc261499331cb38bfec47789ddc4ef456222c/sdk/src/Services/S3/Custom/Model/PutBucketRequest.cs#L195-L198
             if (publicRequest.IsSetCannedACL())
                 defaultRequest.Headers.Add(HeaderKeys.XAmzAclHeader, publicRequest.CannedACL.Value);
-            else if (publicRequest.Grants != null && publicRequest.Grants.Count > 0)
-                ConvertPutWithACLRequest(publicRequest, defaultRequest);
+            else
+                HeaderACLRequestMarshaller.Marshall(defaultRequest, publicRequest);
         }
 
         // preserving original logic https://github.com/aws/aws-sdk-net/blob/1060dd16f60292a5c2f18b30c0d100b9c202e46b/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/PutBucketRequestMarshaller.cs#L67-L84

@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for Ipv6CidrBlockNotFoundException
+        /// message.
+        /// </summary>
+        public Ipv6CidrBlockNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new Ipv6CidrBlockNotFoundException with the specified error
         /// message.
         /// </summary>

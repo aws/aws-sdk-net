@@ -44,7 +44,7 @@ namespace Amazon.LaunchWizard.Model
         /// is <c>null</c> when there are no more items to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -1,5 +1,4 @@
-﻿using Amazon;
-using Amazon.S3;
+﻿using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.S3Control;
@@ -12,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -21,30 +20,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private const int MAX_SPIN_LOOPS = 100;
         private const string TEST_MRAP_NAME = UtilityMethods.SDK_TEST_PREFIX + "-for-mrap-tests";
 
-        public static string CreateBucket(IAmazonS3 s3Client)
+        public static async Task<string> CreateBucketAsync(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
         {
-            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks;
-
-            s3Client.PutBucket(new PutBucketRequest { BucketName = bucketName });
-            return bucketName;
-        }
-
-        public static string CreateBucket(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
-        {
-            string bucketName = string.IsNullOrEmpty(bucketRequest.BucketName) ?
+            var bucketName = string.IsNullOrEmpty(bucketRequest.BucketName) ?
                 UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks :
                 bucketRequest.BucketName;
 
             bucketRequest.BucketName = bucketName;
-
-            s3Client.PutBucket(bucketRequest);
+            await s3Client.PutBucketAsync(bucketRequest);
             return bucketName;
         }
-        public static string CreateS3ExpressBucketWithWait(IAmazonS3 s3Client, string regionCode, bool setPublicACLs = false)
+
+        public static async Task<string> CreateS3ExpressBucketWithWaitAsync(IAmazonS3 s3Client, string regionCode, bool setPublicACLs = false)
         {
             string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX}-{DateTime.UtcNow.Ticks}--{regionCode}--x-s3";
 
-            s3Client.PutBucket(new PutBucketRequest
+            await s3Client.PutBucketAsync(new PutBucketRequest
             {
                 BucketName = bucketName,
                 PutBucketConfiguration = new PutBucketConfiguration
@@ -53,48 +44,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Location = new LocationInfo { Name = regionCode, Type = LocationType.AvailabilityZone }
                 }
             });
-            WaitForBucket(s3Client, bucketName, true);
 
-
+            await WaitForBucketAsync(s3Client, bucketName, true);
             return bucketName;
         }
-        public static string CreateBucketWithWait(IAmazonS3 s3Client, bool setPublicACLs = false)
+
+        public static Task<string> CreateBucketWithWaitAsync(IAmazonS3 s3Client, bool setPublicACLs = false) 
+            => CreateBucketWithWaitAsync(s3Client, new PutBucketRequest(), setPublicACLs);
+
+        public static async Task<string> CreateBucketWithWaitAsync(IAmazonS3 s3Client, PutBucketRequest bucketRequest, bool setPublicACLs = false)
         {
-            string bucketName = CreateBucket(s3Client);
-            WaitForBucket(s3Client, bucketName);
+            string bucketName = await CreateBucketAsync(s3Client, bucketRequest);
+            await WaitForBucketAsync(s3Client, bucketName);
             if (setPublicACLs)
             {
-                SetPublicBucketACLs(s3Client, bucketName);
+                await SetPublicBucketACLsAsync(s3Client, bucketName);
             }
             return bucketName;
         }
 
-        public static string CreateBucketWithWait(IAmazonS3 s3Client, PutBucketRequest bucketRequest, bool setPublicACLs = false)
+        private static async Task SetPublicBucketACLsAsync(IAmazonS3 client, string bucketName)
         {
-            string bucketName = CreateBucket(s3Client, bucketRequest);
-            WaitForBucket(s3Client, bucketName);
-            if (setPublicACLs)
-            {
-                SetPublicBucketACLs(s3Client, bucketName);
-            }
-            return bucketName;
-        }
-
-        private static void SetPublicBucketACLs(IAmazonS3 client, string bucketName)
-        {
-            client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
+            await client.PutBucketOwnershipControlsAsync(new PutBucketOwnershipControlsRequest
             {
                 BucketName = bucketName,
                 OwnershipControls = new OwnershipControls
                 {
                     Rules = new List<OwnershipControlsRule>
+                    {
+                        new OwnershipControlsRule
                         {
-                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
+                            ObjectOwnership = ObjectOwnership.BucketOwnerPreferred
                         }
+                    }
                 }
             });
 
-            client.PutPublicAccessBlock(new Amazon.S3.Model.PutPublicAccessBlockRequest
+            await client.PutPublicAccessBlockAsync(new Amazon.S3.Model.PutPublicAccessBlockRequest
             {
                 BucketName = bucketName,
                 PublicAccessBlockConfiguration = new Amazon.S3.Model.PublicAccessBlockConfiguration
@@ -104,15 +90,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
-
-        public static void WaitForBucket(IAmazonS3 client, string bucketName, bool skipDoubleCheck = false)
+        public static async Task WaitForBucketAsync(IAmazonS3 client, string bucketName, bool skipDoubleCheck = false)
         {
-            var sleeper = UtilityMethods.ListSleeper.Create();
-            UtilityMethods.WaitUntilSuccess(() => {
-                //Check if a bucket exists by trying to put an object in it
+            await UtilityMethods.WaitUntilSuccessAsync(async () => 
+            {
+                // Check if a bucket exists by trying to put an object in it
                 var key = Guid.NewGuid().ToString() + "_existskey";
 
-                var res = client.PutObject(new PutObjectRequest
+                var res = await client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -121,7 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 try
                 {
-                    client.Delete(bucketName, key, null);
+                    await client.DeleteAsync(bucketName, key, null);
                 }
                 catch
                 {
@@ -131,19 +116,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 return true;
             });
 
-            if (skipDoubleCheck) return;
-
-            //Double check the bucket still exists using the DoesBucketExistV2 method
-            var exists = S3TestUtils.WaitForConsistency(() =>
+            if (skipDoubleCheck)
             {
-                return AmazonS3Util.DoesS3BucketExistV2(client, bucketName) ? (bool?)true : null;
-            });
-        }
+                return;
+            }
 
-        public static void WaitForObject(IAmazonS3 client, string bucketName, string key, int maxSeconds)
-        {
-            var sleeper = UtilityMethods.ListSleeper.Create();
-            UtilityMethods.WaitUntilSuccess(() => { client.GetObject(bucketName, key); }, sleeper, maxSeconds);
+            // Double check the bucket still exists using the DoesBucketExistV2 method
+            await WaitForConsistencyAsync(async () =>
+            {
+                return await AmazonS3Util.DoesS3BucketExistV2Async(client, bucketName) ? (bool?)true : null;
+            });
         }
 
         /// <summary>
@@ -153,12 +135,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <param name="s3ControlClient">S3Control client to create the MRAP with</param>
         /// <param name="s3Client">S3 client to create the backing bucket with</param>
         /// <returns>ARN of the new Multi-Region Access Point</returns>
-        public static string GetOrCreateTestMRAP(IAmazonS3Control s3ControlClient, IAmazonS3 s3Client)
+        public static async Task<string> GetOrCreateTestMRAP(IAmazonS3Control s3ControlClient, IAmazonS3 s3Client)
         {
-            var accountId = new AmazonSecurityTokenServiceClient().GetCallerIdentity(new GetCallerIdentityRequest()).Account;
+            var getCallerIdentityResponse = await new AmazonSecurityTokenServiceClient().GetCallerIdentityAsync(new GetCallerIdentityRequest());
+            var accountId = getCallerIdentityResponse.Account;
 
             // If the MRAP already exists, return it
-            var mrapArn = CheckIfMRAPExists(s3ControlClient, accountId, TEST_MRAP_NAME);
+            var mrapArn = await CheckIfMRAPExists(s3ControlClient, accountId, TEST_MRAP_NAME);
             if (!string.IsNullOrEmpty(mrapArn))
             {
                 return mrapArn;
@@ -166,7 +149,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             // Otherwise the MRAP doesn't exist, so we must create it, starting with the backing bucket.
             var putBucketRequest = new PutBucketRequest { BucketName = $"{accountId}-{TEST_MRAP_NAME}" };
-            var backingBucketName = CreateBucketWithWait(s3Client, putBucketRequest);
+            var backingBucketName = await CreateBucketWithWaitAsync(s3Client, putBucketRequest);
 
             var createMrapRequest = new CreateMultiRegionAccessPointRequest
             {
@@ -185,10 +168,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             // Initiate the MRAP creation
-            var asyncRequestArn = s3ControlClient.CreateMultiRegionAccessPoint(createMrapRequest).RequestTokenARN;
+            var asyncRequestArn = (await s3ControlClient.CreateMultiRegionAccessPointAsync(createMrapRequest)).RequestTokenARN;
 
             // Wait until its status is READY
-            UtilityMethods.WaitUntilSuccess(() =>
+            await UtilityMethods.WaitUntilSuccessAsync(async () =>
             {
                 var request = new GetMultiRegionAccessPointRequest
                 {
@@ -196,13 +179,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Name = TEST_MRAP_NAME
                 };
 
-                var response = s3ControlClient.GetMultiRegionAccessPoint(request);
-
+                var response = await s3ControlClient.GetMultiRegionAccessPointAsync(request);
                 if (response.AccessPoint.Status == MultiRegionAccessPointStatus.READY)
                 {
                     // Wait for SSL provisioning to finish
-                    Thread.Sleep(TimeSpan.FromMinutes(1));
-
+                    await Task.Delay(TimeSpan.FromMinutes(1));
                     return $"arn:aws:s3::{accountId}:accesspoint/{response.AccessPoint.Alias}";
                 }
                 else
@@ -222,26 +203,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <param name="accountId">AWS account ID that is expected to contain the MRAP</param>
         /// <param name="mrapName">Name of the multi-region access point</param>
         /// <returns>The MRAP's ARN if it exists, an empty string otherwise</returns>
-        private static string CheckIfMRAPExists(IAmazonS3Control s3ControlClient, string accountId, string mrapName)
+        private static async Task<string> CheckIfMRAPExists(IAmazonS3Control s3ControlClient, string accountId, string mrapName)
         {
             var request = new ListMultiRegionAccessPointsRequest { AccountId = accountId };
-            var paginatorForAccessPoints = s3ControlClient.Paginators.ListMultiRegionAccessPoints(request);
-            
-            foreach (var response in paginatorForAccessPoints.Responses)
+            do
             {
-                if (response.AccessPoints == null)
+                var response = await s3ControlClient.ListMultiRegionAccessPointsAsync(request);
+                if (response.AccessPoints != null)
                 {
-                    continue;
-                }
-
-                foreach (var accessPoint in response.AccessPoints)
-                {
-                    if (accessPoint.Name == mrapName)
+                    foreach (var accessPoint in response.AccessPoints)
                     {
-                        return $"arn:aws:s3::{accountId}:accesspoint/{accessPoint.Alias}";
+                        if (accessPoint.Name == mrapName)
+                        {
+                            return $"arn:aws:s3::{accountId}:accesspoint/{accessPoint.Alias}";
+                        }
                     }
                 }
-            }
+                request.NextToken = response.NextToken;
+            } while (!string.IsNullOrEmpty(request.NextToken));
 
             return "";
         }
@@ -253,7 +232,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         /// <param name="client">S3 Client</param>
         /// <param name="bucketName">Bucket whose objects to delete</param>
-        public static void DeleteObjects(IAmazonS3 client, string bucketName)
+        public static async Task DeleteObjects(IAmazonS3 client, string bucketName)
         {
             var listVersionsRequest = new ListVersionsRequest
             {
@@ -264,7 +243,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             do
             {
                 // List all the versions of all the objects in the bucket.
-                listVersionsResponse = client.ListVersions(listVersionsRequest);
+                listVersionsResponse = await client.ListVersionsAsync(listVersionsRequest);
 
                 if (listVersionsResponse.Versions == null || listVersionsResponse.Versions.Count == 0)
                 {
@@ -283,7 +262,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
 
                 // Delete the current set of objects.
-                client.DeleteObjects(new DeleteObjectsRequest
+                await client.DeleteObjectsAsync(new DeleteObjectsRequest
                 {
                     BucketName = bucketName,
                     Objects = keyVersionList
@@ -297,30 +276,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             while (listVersionsResponse.IsTruncated.GetValueOrDefault());
         }
 
-        public static T WaitForConsistency<T>(Func<T> loadFunction)
+        public static async Task<T> WaitForConsistencyAsync<T>(Func<Task<T>> loadFunction)
         {
-            //First try waiting up to 60 seconds.    
+            // First try waiting up to 60 seconds.    
             var firstWaitSeconds = 60;
             try
             {
-                return UtilityMethods.WaitUntilSuccess(loadFunction, 10, firstWaitSeconds);
+                return await UtilityMethods.WaitUntilSuccessAsync(loadFunction, 10, firstWaitSeconds);
             }
             catch
             {
                 Console.WriteLine($"Eventual consistency wait: could not resolve eventual consistency after {firstWaitSeconds} seconds. Attempting to resolve...");
             }
 
-            //Spin through request to try to get the expected result. As soon as we get a non null result use it.
+            // Spin through request to try to get the expected result. As soon as we get a non null result use it.
             for (var spinCounter = 0; spinCounter < MAX_SPIN_LOOPS; spinCounter++)
             {
                 try
                 {
-                    T result = loadFunction();
+                    T result = await loadFunction();
                     if (result != null)
                     {
                         if (spinCounter != 0)
                         {
-                            //Only log that a wait happened if it didn't do it on the first time.
+                            // Only log that a wait happened if it didn't do it on the first time.
                             Console.WriteLine($"Eventual consistency wait successful on attempt {spinCounter + 1}.");
                         }
 
@@ -331,13 +310,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                 }
 
-                Thread.Sleep(0);
+                await Task.Delay(0);
             }
 
-            //If we don't have an ok result then spend the normal wait period to wait for eventual consistency.
+            // If we don't have an ok result then spend the normal wait period to wait for eventual consistency.
             Console.WriteLine($"Eventual consistency wait: could not resolve eventual consistency after {MAX_SPIN_LOOPS}. Waiting normally...");
             var lastWaitSeconds = 240; //4 minute wait.
-            return UtilityMethods.WaitUntilSuccess(loadFunction, 5, lastWaitSeconds);
+            return await UtilityMethods.WaitUntilSuccessAsync(loadFunction, 5, lastWaitSeconds);
         }
 
         /// <summary>
@@ -348,11 +327,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <param name="keyName">Object key</param>
         /// <param name="useChunkEncoding">Whether to use chunked encoding for the PutObject request</param>
         /// <param name="disablePayloadSigning">Whether to disable SigV4/V4a payload signing for the PutObject request</param>
-        internal static void PutAndGetObjectTestHelper(IAmazonS3 s3Client, string bucketName, string keyName, bool useChunkEncoding = true, bool disablePayloadSigning = false)
+        internal static async Task PutAndGetObjectTestHelper(IAmazonS3 s3Client, string bucketName, string keyName, bool useChunkEncoding = true, bool disablePayloadSigning = false)
         {
             const string testContent = "Some stuff to write as content";
 
-            s3Client.PutObject(new PutObjectRequest
+            await s3Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = keyName,
@@ -361,7 +340,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DisablePayloadSigning = disablePayloadSigning
             });
 
-            var response = s3Client.GetObject(new GetObjectRequest
+            var response = await s3Client.GetObjectAsync(new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = keyName
@@ -369,11 +348,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var s = new StreamReader(response.ResponseStream))
             {
-                var responseContent = s.ReadToEnd();
+                var responseContent = await s.ReadToEndAsync();
                 Assert.AreEqual(testContent, responseContent);
             }
 
-            var presignedUrl = s3Client.GetPreSignedURL(new GetPreSignedUrlRequest
+            var presignedUrl = await s3Client.GetPreSignedURLAsync(new GetPreSignedUrlRequest
             {
                 BucketName = bucketName,
                 Key = keyName,
@@ -381,11 +360,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Expires = DateTime.UtcNow + TimeSpan.FromDays(5)
             });
 
-            var httpRequest = HttpWebRequest.Create(presignedUrl);
-            using (var httpResponse = httpRequest.GetResponse())
+            var httpRequest = WebRequest.Create(presignedUrl);
+            using (var httpResponse = await httpRequest.GetResponseAsync())
             using (var reader = new StreamReader(httpResponse.GetResponseStream()))
             {
-                var content = reader.ReadToEnd();
+                var content = await reader.ReadToEndAsync();
                 Assert.AreEqual(testContent, content);
             }
         }

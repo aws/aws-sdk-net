@@ -46,7 +46,6 @@ namespace Amazon.CleanRoomsML.Model
         /// during synthetic data generation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ColumnClassificationDetails ColumnClassification
         {
             get { return this._columnClassification; }

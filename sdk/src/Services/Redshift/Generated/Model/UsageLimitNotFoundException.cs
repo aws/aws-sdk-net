@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for UsageLimitNotFoundException
+        /// message.
+        /// </summary>
+        public UsageLimitNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UsageLimitNotFoundException with the specified error
         /// message.
         /// </summary>

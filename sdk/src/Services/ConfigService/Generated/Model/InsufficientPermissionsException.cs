@@ -81,6 +81,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientPermissionsException
+        /// message.
+        /// </summary>
+        public InsufficientPermissionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientPermissionsException with the specified error
         /// message.
         /// </summary>

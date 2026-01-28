@@ -48,6 +48,13 @@ namespace Amazon.IVSRealTime.Model
         private string _xFrameOptions;
 
         /// <summary>
+        /// Default constructor for PendingVerificationException
+        /// message.
+        /// </summary>
+        public PendingVerificationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PendingVerificationException with the specified error
         /// message.
         /// </summary>

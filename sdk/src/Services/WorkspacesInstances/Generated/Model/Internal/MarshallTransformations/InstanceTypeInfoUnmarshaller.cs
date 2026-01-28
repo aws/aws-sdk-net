@@ -62,6 +62,12 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SupportedInstanceConfigurations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SupportedInstanceConfiguration, SupportedInstanceConfigurationUnmarshaller>(SupportedInstanceConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.SupportedInstanceConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

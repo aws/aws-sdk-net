@@ -73,43 +73,39 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new CborUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceFault"))
+                var errorTypeName = errorResponse.Code;
+                var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+                if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
                 {
-                    errorResponse.Code = "InternalServiceError";
-                    return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
-                {
-                    errorResponse.Code = "InvalidParameterValue";
-                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("MissingRequiredParameterException"))
-                {
-                    errorResponse.Code = "MissingParameter";
-                    return MissingRequiredParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-            }
-            var errorCode = errorResponse.Code;
-            var errorType = errorResponse.Type;
-            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
-            {
-                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
-                {
-                    var queryErrorParts = queryError.Split(';');
-                    if (queryErrorParts.Length == 2)
+                    var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                    if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
                     {
-                        errorCode = queryErrorParts[0];
-                        var errorTypeString = queryErrorParts[1];
-                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        var queryErrorParts = queryError.Split(';');
+                        if (queryErrorParts.Length == 2)
                         {
-                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                            errorResponse.Code = queryErrorParts[0];
+                            var errorTypeString = queryErrorParts[1];
+                            if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                            {
+                                errorResponse.Type = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                            }
                         }
                     }
                 }
+                if (errorTypeName != null && errorTypeName.Equals("InternalServiceFault"))
+                {
+                    return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorTypeName != null && errorTypeName.Equals("InvalidParameterValueException"))
+                {
+                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorTypeName != null && errorTypeName.Equals("MissingRequiredParameterException"))
+                {
+                    return MissingRequiredParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
-            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
         private static StartMetricStreamsResponseUnmarshaller _instance = new StartMetricStreamsResponseUnmarshaller();        

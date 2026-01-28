@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for StackSetNotEmptyException
+        /// message.
+        /// </summary>
+        public StackSetNotEmptyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StackSetNotEmptyException with the specified error
         /// message.
         /// </summary>

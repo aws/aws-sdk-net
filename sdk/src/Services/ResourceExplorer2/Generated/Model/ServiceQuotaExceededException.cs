@@ -41,6 +41,13 @@ namespace Amazon.ResourceExplorer2.Model
         private string _value;
 
         /// <summary>
+        /// Default constructor for ServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ServiceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedActionForDeploymentTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedActionForDeploymentTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedActionForDeploymentTypeException with the specified error
         /// message.
         /// </summary>

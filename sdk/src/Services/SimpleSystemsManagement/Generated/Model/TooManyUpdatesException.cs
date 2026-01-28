@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyUpdatesException
+        /// message.
+        /// </summary>
+        public TooManyUpdatesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyUpdatesException with the specified error
         /// message.
         /// </summary>

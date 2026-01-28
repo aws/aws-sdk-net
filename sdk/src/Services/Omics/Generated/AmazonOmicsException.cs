@@ -36,6 +36,14 @@ namespace Amazon.Omics
         /// <summary>
         /// Construct instance of AmazonOmicsException
         /// </summary>
+        public AmazonOmicsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonOmicsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonOmicsException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for FieldLevelEncryptionConfigInUseException
+        /// message.
+        /// </summary>
+        public FieldLevelEncryptionConfigInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FieldLevelEncryptionConfigInUseException with the specified error
         /// message.
         /// </summary>

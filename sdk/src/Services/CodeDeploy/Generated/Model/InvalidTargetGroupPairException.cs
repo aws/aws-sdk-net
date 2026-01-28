@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTargetGroupPairException
+        /// message.
+        /// </summary>
+        public InvalidTargetGroupPairException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTargetGroupPairException with the specified error
         /// message.
         /// </summary>

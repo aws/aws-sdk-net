@@ -68,6 +68,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("tagPropagationConfigurations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TagPropagationConfiguration, TagPropagationConfigurationUnmarshaller>(TagPropagationConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.TagPropagationConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("templateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

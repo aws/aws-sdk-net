@@ -36,6 +36,14 @@ namespace Amazon.AccessAnalyzer
         /// <summary>
         /// Construct instance of AmazonAccessAnalyzerException
         /// </summary>
+        public AmazonAccessAnalyzerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAccessAnalyzerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAccessAnalyzerException(string message)
             : base(message)

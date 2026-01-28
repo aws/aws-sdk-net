@@ -36,6 +36,14 @@ namespace Amazon.ControlTower
         /// <summary>
         /// Construct instance of AmazonControlTowerException
         /// </summary>
+        public AmazonControlTowerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonControlTowerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonControlTowerException(string message)
             : base(message)

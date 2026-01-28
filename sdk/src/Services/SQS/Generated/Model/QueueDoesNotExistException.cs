@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for QueueDoesNotExistException
+        /// message.
+        /// </summary>
+        public QueueDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueueDoesNotExistException with the specified error
         /// message.
         /// </summary>

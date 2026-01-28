@@ -130,6 +130,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Provider);
             }
 
+            if(publicRequest.IsSetSubscriptionGrantCreationMode())
+            {
+                context.Writer.WritePropertyName("subscriptionGrantCreationMode");
+                context.Writer.WriteStringValue(publicRequest.SubscriptionGrantCreationMode);
+            }
+
             if(publicRequest.IsSetSubscriptionTargetConfig())
             {
                 context.Writer.WritePropertyName("subscriptionTargetConfig");

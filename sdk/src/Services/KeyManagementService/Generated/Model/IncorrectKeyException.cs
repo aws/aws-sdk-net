@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for IncorrectKeyException
+        /// message.
+        /// </summary>
+        public IncorrectKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncorrectKeyException with the specified error
         /// message.
         /// </summary>

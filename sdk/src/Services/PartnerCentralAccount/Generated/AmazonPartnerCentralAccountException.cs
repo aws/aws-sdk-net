@@ -36,6 +36,14 @@ namespace Amazon.PartnerCentralAccount
         /// <summary>
         /// Construct instance of AmazonPartnerCentralAccountException
         /// </summary>
+        public AmazonPartnerCentralAccountException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPartnerCentralAccountException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPartnerCentralAccountException(string message)
             : base(message)

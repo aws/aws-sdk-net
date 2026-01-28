@@ -68,7 +68,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("ListTagsForResourcesRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 var publicRequestResourceIds = publicRequest.ResourceIds;
-                if (publicRequestResourceIds != null && (publicRequestResourceIds.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetResourceIds()) 
                 {
                     xmlWriter.WriteStartElement("ResourceIds");
                     foreach (var publicRequestResourceIdsValue in publicRequestResourceIds) 

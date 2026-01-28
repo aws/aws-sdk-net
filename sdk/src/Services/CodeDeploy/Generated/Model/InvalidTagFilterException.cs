@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTagFilterException
+        /// message.
+        /// </summary>
+        public InvalidTagFilterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTagFilterException with the specified error
         /// message.
         /// </summary>

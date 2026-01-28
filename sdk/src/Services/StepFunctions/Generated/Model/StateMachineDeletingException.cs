@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for StateMachineDeletingException
+        /// message.
+        /// </summary>
+        public StateMachineDeletingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StateMachineDeletingException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.BedrockAgentCore.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateIdException
+        /// message.
+        /// </summary>
+        public DuplicateIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateIdException with the specified error
         /// message.
         /// </summary>

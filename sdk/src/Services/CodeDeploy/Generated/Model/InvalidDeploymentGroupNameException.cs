@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeploymentGroupNameException
+        /// message.
+        /// </summary>
+        public InvalidDeploymentGroupNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeploymentGroupNameException with the specified error
         /// message.
         /// </summary>

@@ -156,3 +156,29 @@
 		}
 	});
 })();
+
+function toggleTOC() {
+  var tocList = document.getElementById('tocList');
+  var tocToggle = document.getElementById('tocToggle');
+
+  if (tocList && tocToggle) {
+    if (tocList.style.display === 'none') {
+      tocList.style.display = 'block';
+      tocToggle.innerHTML = '▼';
+    } else {
+      tocList.style.display = 'none';
+      tocToggle.innerHTML = '▶';
+    }
+  }
+}
+window.addEventListener('scroll', function() {
+  var toc = document.getElementById('pageTOC');
+  var tocList = document.getElementById('tocList');
+  var tocToggle = document.getElementById('tocToggle');
+  
+  if (toc && tocList && tocToggle && window.scrollY > 200) {
+    toc.classList.add('collapsed');
+    tocList.style.display = 'none';
+    tocToggle.innerHTML = '▶';
+  }
+});

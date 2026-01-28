@@ -87,6 +87,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetValidationOptions())
+            {
+                context.Writer.WritePropertyName("ValidationOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SuppressionValidationOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ValidationOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

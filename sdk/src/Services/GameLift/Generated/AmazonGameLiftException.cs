@@ -36,6 +36,14 @@ namespace Amazon.GameLift
         /// <summary>
         /// Construct instance of AmazonGameLiftException
         /// </summary>
+        public AmazonGameLiftException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGameLiftException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGameLiftException(string message)
             : base(message)

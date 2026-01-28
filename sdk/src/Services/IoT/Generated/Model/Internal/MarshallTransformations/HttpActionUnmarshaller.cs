@@ -62,10 +62,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Auth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("batchConfig", targetDepth))
+                {
+                    var unmarshaller = BatchConfigUnmarshaller.Instance;
+                    unmarshalledObject.BatchConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("confirmationUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfirmationUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("enableBatching", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableBatching = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("headers", targetDepth))

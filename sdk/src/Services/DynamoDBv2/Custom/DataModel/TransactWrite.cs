@@ -409,7 +409,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (_config.SkipVersionCheck == true)
             {
                 throw new InvalidOperationException(
-                    "Using DynamoDBContextConfig.SkipVersionCheck property with true value is not supported for this operation.");
+                    "Using the SkipVersionCheck property with true value is not supported for this operation.");
             }
 
             if (!_storageConfig.HasVersion)

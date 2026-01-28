@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for ManagedLoginBrandingExistsException
+        /// message.
+        /// </summary>
+        public ManagedLoginBrandingExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ManagedLoginBrandingExistsException with the specified error
         /// message.
         /// </summary>

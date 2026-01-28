@@ -1654,6 +1654,15 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetMaterializedViewRefreshTaskRunRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetMaterializedViewRefreshTaskRunRequest.MaterializedViewRefreshTaskRunId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetMLTaskRunRequest.TaskRunId</property>
     <min>1</min>
     <max>255</max>
@@ -2414,6 +2423,26 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ListMaterializedViewRefreshTaskRunsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListMaterializedViewRefreshTaskRunsRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListMaterializedViewRefreshTaskRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListMaterializedViewRefreshTaskRunsRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ListMLTransformsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -2966,6 +2995,25 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.StartMaterializedViewRefreshTaskRunRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartMaterializedViewRefreshTaskRunRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartMaterializedViewRefreshTaskRunRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartMaterializedViewRefreshTaskRunResponse.MaterializedViewRefreshTaskRunId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StartMLEvaluationTaskRunRequest.TransformId</property>
     <min>1</min>
     <max>255</max>
@@ -3027,6 +3075,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.StopCrawlerScheduleRequest.CrawlerName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopMaterializedViewRefreshTaskRunRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopMaterializedViewRefreshTaskRunRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopMaterializedViewRefreshTaskRunRequest.TableName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -5647,6 +5710,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Mapping.ToType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.CustomerId</property>
+    <min>0</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.DPUSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.ErrorMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.MaterializedViewRefreshTaskRunId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.ProcessedBytes</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Merge.Name</property>

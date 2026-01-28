@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchCloudWatchLogsLogGroupException
+        /// message.
+        /// </summary>
+        public NoSuchCloudWatchLogsLogGroupException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchCloudWatchLogsLogGroupException with the specified error
         /// message.
         /// </summary>

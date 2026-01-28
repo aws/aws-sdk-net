@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxNumberOfDeliveryChannelsExceededException
+        /// message.
+        /// </summary>
+        public MaxNumberOfDeliveryChannelsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxNumberOfDeliveryChannelsExceededException with the specified error
         /// message.
         /// </summary>

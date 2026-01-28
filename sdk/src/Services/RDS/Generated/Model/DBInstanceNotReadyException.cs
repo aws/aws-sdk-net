@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBInstanceNotReadyException
+        /// message.
+        /// </summary>
+        public DBInstanceNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBInstanceNotReadyException with the specified error
         /// message.
         /// </summary>

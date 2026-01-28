@@ -36,6 +36,14 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Construct instance of AmazonElasticMapReduceException
         /// </summary>
+        public AmazonElasticMapReduceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonElasticMapReduceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonElasticMapReduceException(string message)
             : base(message)

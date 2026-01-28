@@ -40,6 +40,13 @@ namespace Amazon.ServiceDiscovery.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomHealthNotFoundException
+        /// message.
+        /// </summary>
+        public CustomHealthNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomHealthNotFoundException with the specified error
         /// message.
         /// </summary>

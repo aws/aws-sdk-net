@@ -36,6 +36,14 @@ namespace Amazon.ImportExport
         /// <summary>
         /// Construct instance of AmazonImportExportException
         /// </summary>
+        public AmazonImportExportException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonImportExportException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonImportExportException(string message)
             : base(message)

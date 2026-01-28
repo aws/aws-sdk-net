@@ -40,6 +40,13 @@ namespace Amazon.AppStream.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestLimitExceededException
+        /// message.
+        /// </summary>
+        public RequestLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestLimitExceededException with the specified error
         /// message.
         /// </summary>

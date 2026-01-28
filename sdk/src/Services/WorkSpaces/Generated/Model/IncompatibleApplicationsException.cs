@@ -39,6 +39,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatibleApplicationsException
+        /// message.
+        /// </summary>
+        public IncompatibleApplicationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleApplicationsException with the specified error
         /// message.
         /// </summary>

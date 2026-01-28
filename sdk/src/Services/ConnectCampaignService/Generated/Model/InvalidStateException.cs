@@ -40,6 +40,13 @@ namespace Amazon.ConnectCampaignService.Model
         private string _xAmzErrorType;
 
         /// <summary>
+        /// Default constructor for InvalidStateException
+        /// message.
+        /// </summary>
+        public InvalidStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidStateException with the specified error
         /// message.
         /// </summary>

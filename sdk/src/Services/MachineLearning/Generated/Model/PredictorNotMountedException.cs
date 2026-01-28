@@ -39,6 +39,13 @@ namespace Amazon.MachineLearning.Model
     {
 
         /// <summary>
+        /// Default constructor for PredictorNotMountedException
+        /// message.
+        /// </summary>
+        public PredictorNotMountedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PredictorNotMountedException with the specified error
         /// message.
         /// </summary>

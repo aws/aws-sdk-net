@@ -36,6 +36,14 @@ namespace Amazon.Artifact
         /// <summary>
         /// Construct instance of AmazonArtifactException
         /// </summary>
+        public AmazonArtifactException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonArtifactException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonArtifactException(string message)
             : base(message)

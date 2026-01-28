@@ -34,8 +34,27 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class LineChartSeriesSettings
     {
+        private DecalSettings _decalSettings;
         private LineChartLineStyleSettings _lineStyleSettings;
         private LineChartMarkerStyleSettings _markerStyleSettings;
+
+        /// <summary>
+        /// Gets and sets the property DecalSettings. 
+        /// <para>
+        /// Decal settings for a line series in <c>LineChartVisual</c>.
+        /// </para>
+        /// </summary>
+        public DecalSettings DecalSettings
+        {
+            get { return this._decalSettings; }
+            set { this._decalSettings = value; }
+        }
+
+        // Check to see if DecalSettings property is set
+        internal bool IsSetDecalSettings()
+        {
+            return this._decalSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LineStyleSettings. 

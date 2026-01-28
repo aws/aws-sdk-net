@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for StateMachineTypeNotSupportedException
+        /// message.
+        /// </summary>
+        public StateMachineTypeNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StateMachineTypeNotSupportedException with the specified error
         /// message.
         /// </summary>

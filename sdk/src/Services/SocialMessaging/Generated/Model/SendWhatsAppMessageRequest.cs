@@ -91,11 +91,11 @@ namespace Amazon.SocialMessaging.Model
         /// The ID of the phone number used to send the WhatsApp message. If you are sending a
         /// media file only the <c>originationPhoneNumberId</c> used to upload the file can be
         /// used. Phone number identifiers are formatted as <c>phone-number-id-01234567890123456789012345678901</c>.
-        /// Use <a href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html">GetLinkedWhatsAppBusinessAccount</a>
+        /// Use <a href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccount.html">GetLinkedWhatsAppBusinessAccount</a>
         /// to find a phone number's id.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=115)]
         public string OriginationPhoneNumberId
         {
             get { return this._originationPhoneNumberId; }

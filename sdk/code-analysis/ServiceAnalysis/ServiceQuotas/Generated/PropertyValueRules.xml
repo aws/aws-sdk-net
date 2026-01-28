@@ -43,6 +43,50 @@
     <pattern>[a-zA-Z][a-zA-Z0-9-]{1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetQuotaUtilizationReportRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetQuotaUtilizationReportRequest.NextToken</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9/+]*={0,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetQuotaUtilizationReportRequest.ReportId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[0-9a-zA-Z][a-zA-Z0-9-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetQuotaUtilizationReportResponse.ErrorCode</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetQuotaUtilizationReportResponse.ErrorMessage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetQuotaUtilizationReportResponse.NextToken</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9/+]*={0,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetQuotaUtilizationReportResponse.ReportId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[0-9a-zA-Z][a-zA-Z0-9-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.GetQuotaUtilizationReportResponse.TotalCount</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.GetRequestedServiceQuotaChangeRequest.RequestId</property>
     <min>1</min>
     <max>128</max>
@@ -269,6 +313,18 @@
     <pattern>arn:aws(-[\w]+)*:*:.+:[0-9]{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.StartQuotaUtilizationReportResponse.Message</property>
+    <min>0</min>
+    <max>350</max>
+    <pattern>^.{0,350}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.StartQuotaUtilizationReportResponse.ReportId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[0-9a-zA-Z][a-zA-Z0-9-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -297,6 +353,28 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z][a-zA-Z0-9-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.QuotaUtilizationInfo.AppliedValue</property>
+    <min>0</min>
+    <max>10000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.QuotaUtilizationInfo.DefaultValue</property>
+    <min>0</min>
+    <max>10000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.QuotaUtilizationInfo.QuotaCode</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.QuotaUtilizationInfo.ServiceCode</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9-]{1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.RequestedServiceQuotaChange.DesiredValue</property>

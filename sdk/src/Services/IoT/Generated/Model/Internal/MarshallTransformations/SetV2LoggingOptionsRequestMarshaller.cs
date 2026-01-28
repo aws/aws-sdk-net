@@ -85,6 +85,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DisableAllLogs.Value);
             }
 
+            if(publicRequest.IsSetEventConfigurations())
+            {
+                context.Writer.WritePropertyName("eventConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEventConfigurationsListValue in publicRequest.EventConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = LogEventConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEventConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

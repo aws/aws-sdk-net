@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRepositoryDescriptionException
+        /// message.
+        /// </summary>
+        public InvalidRepositoryDescriptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRepositoryDescriptionException with the specified error
         /// message.
         /// </summary>

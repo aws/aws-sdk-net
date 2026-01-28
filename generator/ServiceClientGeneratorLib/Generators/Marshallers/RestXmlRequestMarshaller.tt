@@ -151,12 +151,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#+
 		if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(operation.RequestStructure.Name, out var shapeModifier) && shapeModifier.InjectXmlMarshallCodeInPayload.Count > 0)
 		{
-			foreach (var codeSnippet in shapeModifier.InjectXmlMarshallCodeInPayload)
-			{
-#>
-				<#=codeSnippet#>
-<#+
-			}
+            WriteInjectXmlCode(shapeModifier.InjectXmlMarshallCodeInPayload, 4);
 		}
 		if(operation.RequestPayloadMember==null)
 		{
@@ -214,14 +209,7 @@ WriteXmlAttributeString(level, member, variableName, isPayload: false);
 					{
 						if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(operation.RequestPayloadMember.OwningShape.Name, operation.RequestPayloadMember.ModeledName, out var propertyModifier) && propertyModifier.InjectXmlMarshallCode.Count > 0)
 						{
-							foreach (var codeSnippet in propertyModifier.InjectXmlMarshallCode)
-							{
-#>
-					<#=codeSnippet#>
-<#+
-							}
-#>
-<#+
+							WriteInjectXmlCode(propertyModifier.InjectXmlMarshallCode, 5);
 						}
 						else
 						{
@@ -406,12 +394,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 			}
 			else if(this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectPropModifier ) && injectPropModifier.InjectXmlMarshallCode.Count > 0)
 			{
-				foreach (var codeSnippet in injectPropModifier.InjectXmlMarshallCode)
-				{
-#>
-<#=new string(' ', (level) * 4)#>				<#=codeSnippet#>
-<#+
-				}
+				WriteInjectXmlCode(injectPropModifier.InjectXmlMarshallCode, 3);
 				continue;
 			}
 			else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier2) && propModifier2.SkipXmlIsSet)
@@ -490,16 +473,25 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 	void ProcessStructure(int level, string variableName, Member member)
 	{
 			var shape = member.Shape.IsList ?  member.Shape.ListShape : member.Shape ;
-			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
-
 			// Use shape's ListMarshallName if the structure is a list.
 			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName ?? "member" : member.MarshallName;
 			if(member.Shape.IsFlattened || member.IsFlattened)
 				marshallName =  member.LocationName ?? member.ModeledName;
+			if (member.Shape.IsList)
+			{
+				level++;
 #>
 <#=new string(' ', level * 4)#>				if (<#=variableName#> != null)
 <#=new string(' ', level * 4)#>				{
 <#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>				if (<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>				{
+<#+
+			}
 			if (!string.IsNullOrEmpty(member.Shape.XmlNamespace))
 			{
 				if (!string.IsNullOrEmpty(member.Shape.XmlNamespacePrefix))
@@ -521,6 +513,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 <#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>");
 <#+
 			}
+			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
 			ProcessMembers(level + 1, variableName, shape.Members);
 #>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
@@ -533,7 +526,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 				var listItemVariable = (variableName + member.PropertyName).Replace(".",string.Empty) + "Value";
 #>
 <#=new string(' ', level * 4)#>				var <#=listVariable#> = <#=variableName#>.<#=member.PropertyName#>;
-<#=new string(' ', level * 4)#>				if (<#=listVariable#> != null && (<#=listVariable#>.Count > 0 || !AWSConfigs.InitializeCollections)) 
+<#=new string(' ', level * 4)#>				if (<#=variableName#>.IsSet<#=member.PropertyName#>()) 
 <#=new string(' ', level * 4)#>				{
 <#+
 				if (!member.IsFlattened && !member.Shape.IsFlattened)
@@ -944,14 +937,4 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 		}
 	}
 #>
-<#+
-	protected void WriteInjectXmlMarshallCode(int level, HashSet<string> injectXmlMarshallCode)
-	{
-		foreach (var injectCode in injectXmlMarshallCode)
-		{
-#>
-<#=new string(' ', level * 4)#>				<#=injectCode#>
-<#+
-		}
-	}
-#>
+

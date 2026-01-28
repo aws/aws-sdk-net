@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchOriginRequestPolicyException
+        /// message.
+        /// </summary>
+        public NoSuchOriginRequestPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchOriginRequestPolicyException with the specified error
         /// message.
         /// </summary>

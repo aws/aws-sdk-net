@@ -33,7 +33,7 @@ namespace Amazon.Glacier.Model
     /// Container for the parameters to the CreateVault operation.
     /// This operation creates a new vault with the specified name. The name of the vault
     /// must be unique within a region for an AWS account. You can create up to 1,000 vaults
-    /// per account. If you need to create more vaults, contact Amazon S3 Glacier.
+    /// per account. If you need to create more vaults, contact Amazon Glacier.
     /// 
     ///  
     /// <para>

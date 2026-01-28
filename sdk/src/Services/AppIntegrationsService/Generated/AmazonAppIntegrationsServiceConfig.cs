@@ -33,7 +33,7 @@ namespace Amazon.AppIntegrationsService
     public partial class AmazonAppIntegrationsServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppIntegrations", "4.0.4.2");
+            InternalSDKUtils.BuildUserAgentString("AppIntegrations", "4.0.4.7");
 
         private static readonly AmazonAppIntegrationsServiceEndpointResolver EndpointResolver =
             new AmazonAppIntegrationsServiceEndpointResolver();

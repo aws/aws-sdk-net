@@ -161,6 +161,13 @@ namespace Amazon.SocialMessaging
 
         /// <summary>
         /// Creates a new WhatsApp message template from a custom definition.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Web Services End User Messaging Social does not store any WhatsApp message
+        /// template content.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWhatsAppMessageTemplate service method.</param>
         /// 
@@ -193,6 +200,13 @@ namespace Amazon.SocialMessaging
 
         /// <summary>
         /// Creates a new WhatsApp message template from a custom definition.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Web Services End User Messaging Social does not store any WhatsApp message
+        /// template content.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWhatsAppMessageTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -652,7 +666,8 @@ namespace Amazon.SocialMessaging
 
 
         /// <summary>
-        /// Use your WhatsApp phone number id to get the WABA account id and phone number details.
+        /// Retrieve the WABA account id and phone number details of a WhatsApp business account
+        /// phone number.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLinkedWhatsAppBusinessAccountPhoneNumber service method.</param>
         /// 
@@ -684,7 +699,8 @@ namespace Amazon.SocialMessaging
 
 
         /// <summary>
-        /// Use your WhatsApp phone number id to get the WABA account id and phone number details.
+        /// Retrieve the WABA account id and phone number details of a WhatsApp business account
+        /// phone number.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLinkedWhatsAppBusinessAccountPhoneNumber service method.</param>
         /// <param name="cancellationToken">

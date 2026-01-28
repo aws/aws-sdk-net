@@ -40,6 +40,13 @@ namespace Amazon.Textract.Model
     {
 
         /// <summary>
+        /// Default constructor for BadDocumentException
+        /// message.
+        /// </summary>
+        public BadDocumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BadDocumentException with the specified error
         /// message.
         /// </summary>

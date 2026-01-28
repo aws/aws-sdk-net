@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyLabelsException
+        /// message.
+        /// </summary>
+        public TooManyLabelsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyLabelsException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.IoTJobsDataPlane.Model
     {
 
         /// <summary>
+        /// Default constructor for TerminalStateException
+        /// message.
+        /// </summary>
+        public TerminalStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TerminalStateException with the specified error
         /// message.
         /// </summary>

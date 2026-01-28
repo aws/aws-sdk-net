@@ -40,6 +40,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for BlockedException
+        /// message.
+        /// </summary>
+        public BlockedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BlockedException with the specified error
         /// message.
         /// </summary>

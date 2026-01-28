@@ -39,6 +39,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidUserTypeException
+        /// message.
+        /// </summary>
+        public InvalidUserTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidUserTypeException with the specified error
         /// message.
         /// </summary>

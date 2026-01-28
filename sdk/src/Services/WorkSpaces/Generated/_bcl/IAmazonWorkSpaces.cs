@@ -462,7 +462,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-        /// Amazon Web ServicesSupport.
+        /// Amazon Web Services Support.
         /// </para>
         ///  <important> 
         /// <para>
@@ -515,7 +515,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-        /// Amazon Web ServicesSupport.
+        /// Amazon Web Services Support.
         /// </para>
         ///  <important> 
         /// <para>
@@ -5237,7 +5237,7 @@ namespace Amazon.WorkSpaces
         ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact Amazon Web ServicesSupport
+        /// is destroyed. If you need to archive any user data, contact Amazon Web Services Support
         /// before terminating the WorkSpace.
         /// </para>
         ///  </important> 
@@ -5285,7 +5285,7 @@ namespace Amazon.WorkSpaces
         ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact Amazon Web ServicesSupport
+        /// is destroyed. If you need to archive any user data, contact Amazon Web Services Support
         /// before terminating the WorkSpace.
         /// </para>
         ///  </important> 
@@ -5765,7 +5765,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-        /// Amazon Web ServicesSupport.
+        /// Amazon Web Services Support.
         /// </para>
         ///  
         /// <para>
@@ -5781,7 +5781,8 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't
         /// supported at this time in Amazon Web Services GovCloud (US). To share BYOL images
-        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web ServicesSupport.
+        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services
+        /// Support.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -5826,7 +5827,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-        /// Amazon Web ServicesSupport.
+        /// Amazon Web Services Support.
         /// </para>
         ///  
         /// <para>
@@ -5842,7 +5843,8 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't
         /// supported at this time in Amazon Web Services GovCloud (US). To share BYOL images
-        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web ServicesSupport.
+        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services
+        /// Support.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

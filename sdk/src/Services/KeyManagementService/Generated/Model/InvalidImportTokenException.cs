@@ -40,6 +40,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidImportTokenException
+        /// message.
+        /// </summary>
+        public InvalidImportTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidImportTokenException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for TagQuotaPerResourceExceededException
+        /// message.
+        /// </summary>
+        public TagQuotaPerResourceExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagQuotaPerResourceExceededException with the specified error
         /// message.
         /// </summary>

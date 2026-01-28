@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsItemConflictException
+        /// message.
+        /// </summary>
+        public OpsItemConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsItemConflictException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidReactionUserArnException
+        /// message.
+        /// </summary>
+        public InvalidReactionUserArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidReactionUserArnException with the specified error
         /// message.
         /// </summary>

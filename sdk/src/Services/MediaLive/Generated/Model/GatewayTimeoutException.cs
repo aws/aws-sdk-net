@@ -39,6 +39,13 @@ namespace Amazon.MediaLive.Model
     {
 
         /// <summary>
+        /// Default constructor for GatewayTimeoutException
+        /// message.
+        /// </summary>
+        public GatewayTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GatewayTimeoutException with the specified error
         /// message.
         /// </summary>

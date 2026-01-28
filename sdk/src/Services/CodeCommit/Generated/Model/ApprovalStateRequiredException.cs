@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ApprovalStateRequiredException
+        /// message.
+        /// </summary>
+        public ApprovalStateRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApprovalStateRequiredException with the specified error
         /// message.
         /// </summary>

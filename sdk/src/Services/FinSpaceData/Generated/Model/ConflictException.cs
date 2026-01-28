@@ -40,6 +40,13 @@ namespace Amazon.FinSpaceData.Model
         private string _reason;
 
         /// <summary>
+        /// Default constructor for ConflictException
+        /// message.
+        /// </summary>
+        public ConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictException with the specified error
         /// message.
         /// </summary>

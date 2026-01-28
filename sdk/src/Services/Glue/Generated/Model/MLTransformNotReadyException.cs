@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for MLTransformNotReadyException
+        /// message.
+        /// </summary>
+        public MLTransformNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MLTransformNotReadyException with the specified error
         /// message.
         /// </summary>

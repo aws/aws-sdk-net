@@ -40,6 +40,13 @@ namespace Amazon.RedshiftDataAPIService.Model
     {
 
         /// <summary>
+        /// Default constructor for ActiveSessionsExceededException
+        /// message.
+        /// </summary>
+        public ActiveSessionsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActiveSessionsExceededException with the specified error
         /// message.
         /// </summary>

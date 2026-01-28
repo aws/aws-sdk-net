@@ -54,6 +54,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotFeatureNotSupportedException
+        /// message.
+        /// </summary>
+        public SnapshotFeatureNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotFeatureNotSupportedException with the specified error
         /// message.
         /// </summary>

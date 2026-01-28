@@ -128,6 +128,12 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                     unmarshalledObject.Requester = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RequestType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RequestType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ServiceCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

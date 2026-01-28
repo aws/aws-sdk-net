@@ -68,6 +68,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Elements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Groups", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SheetLayoutGroup, SheetLayoutGroupUnmarshaller>(SheetLayoutGroupUnmarshaller.Instance);
+                    unmarshalledObject.Groups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

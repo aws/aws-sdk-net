@@ -36,6 +36,14 @@ namespace Amazon.CloudSearchDomain
         /// <summary>
         /// Construct instance of AmazonCloudSearchDomainException
         /// </summary>
+        public AmazonCloudSearchDomainException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudSearchDomainException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudSearchDomainException(string message)
             : base(message)

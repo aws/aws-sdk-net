@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for EventDataStoreTerminationProtectedException
+        /// message.
+        /// </summary>
+        public EventDataStoreTerminationProtectedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventDataStoreTerminationProtectedException with the specified error
         /// message.
         /// </summary>

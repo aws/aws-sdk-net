@@ -1562,6 +1562,12 @@
     <pattern>[a-zA-Z0-9:_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryRequest.EndDeviceIdentifier</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9:_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryResponse.Id</property>
     <min>1</min>
     <max>200</max>
@@ -2394,5 +2400,10 @@
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.WiFiSimpleSetupConfiguration.TimeoutInMinutes</property>
+    <min>5</min>
+    <max>15</max>
   </property-value-rule>
 </property-value-rules>

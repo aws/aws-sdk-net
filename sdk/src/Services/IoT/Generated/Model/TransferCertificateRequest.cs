@@ -40,12 +40,12 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// You can cancel the transfer until it is acknowledged by the recipient.
+    /// You can cancel the transfer until it is accepted by the recipient.
     /// </para>
     ///  
     /// <para>
-    /// No notification is sent to the transfer destination's account. It's up to the caller
-    /// to notify the transfer target.
+    /// No notification is sent to the transfer destination's account. The caller is responsible
+    /// for notifying the transfer target.
     /// </para>
     ///  
     /// <para>
@@ -59,17 +59,17 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Customer managed key behavior:</b> When you use a customer managed key to secure
-    /// your data and then transfer the key to a customer in a different account using the
-    /// <a>TransferCertificate</a> operation, the certificates will no longer be protected
+    ///  <b>Customer managed key behavior:</b> When you use a customer managed key to encrypt
+    /// your data and then transfer the certificate to a customer in a different account using
+    /// the <c>TransferCertificate</c> operation, the certificates will no longer be encrypted
     /// by their customer managed key configuration. During the transfer process, certificates
-    /// are encrypted using IoT owned keys.
+    /// are encrypted using Amazon Web Services IoT Core owned keys.
     /// </para>
     ///  
     /// <para>
     /// While a certificate is in the <b>PENDING_TRANSFER</b> state, it's always protected
-    /// by IoT owned keys, regardless of the customer managed key configuration of either
-    /// the source or destination account. 
+    /// by Amazon Web Services IoT Core owned keys, regardless of the customer managed key
+    /// configuration of either the source or destination account. 
     /// </para>
     ///  
     /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If the transfer is accepted: The certificate is protected by the destination account's
+    /// If the transfer is accepted: The certificate is encrypted by the target account's
     /// customer managed key configuration.
     /// </para>
     ///  </li> <li> 

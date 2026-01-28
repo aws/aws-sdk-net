@@ -147,6 +147,7 @@ namespace Amazon.Deadline.Model
         /// The type of instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string InstanceType
         {
             get { return this._instanceType; }

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for EncryptionKeyUnavailableException
+        /// message.
+        /// </summary>
+        public EncryptionKeyUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EncryptionKeyUnavailableException with the specified error
         /// message.
         /// </summary>

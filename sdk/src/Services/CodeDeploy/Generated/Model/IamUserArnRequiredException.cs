@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for IamUserArnRequiredException
+        /// message.
+        /// </summary>
+        public IamUserArnRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IamUserArnRequiredException with the specified error
         /// message.
         /// </summary>

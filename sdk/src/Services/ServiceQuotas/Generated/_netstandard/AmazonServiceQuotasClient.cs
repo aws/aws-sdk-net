@@ -680,6 +680,72 @@ namespace Amazon.ServiceQuotas
         }
         #endregion
         
+        #region  GetQuotaUtilizationReport
+
+        internal virtual GetQuotaUtilizationReportResponse GetQuotaUtilizationReport(GetQuotaUtilizationReportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetQuotaUtilizationReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQuotaUtilizationReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetQuotaUtilizationReportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the quota utilization report for your Amazon Web Services account. This
+        /// operation returns paginated results showing your quota usage across all Amazon Web
+        /// Services services, sorted by utilization percentage in descending order (highest utilization
+        /// first).
+        /// 
+        ///  
+        /// <para>
+        /// You must first initiate a report using the <c>StartQuotaUtilizationReport</c> operation.
+        /// The report generation process is asynchronous and may take several seconds to complete.
+        /// Poll this operation periodically to check the status and retrieve results when the
+        /// report is ready.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each report contains up to 1,000 quota records per page. Use the <c>NextToken</c>
+        /// parameter to retrieve additional pages of results. Reports are automatically deleted
+        /// after 15 minutes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuotaUtilizationReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQuotaUtilizationReport service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetQuotaUtilizationReport">REST API Reference for GetQuotaUtilizationReport Operation</seealso>
+        public virtual Task<GetQuotaUtilizationReportResponse> GetQuotaUtilizationReportAsync(GetQuotaUtilizationReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetQuotaUtilizationReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQuotaUtilizationReportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetQuotaUtilizationReportResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetRequestedServiceQuotaChange
 
         internal virtual GetRequestedServiceQuotaChangeResponse GetRequestedServiceQuotaChange(GetRequestedServiceQuotaChangeRequest request)
@@ -1394,6 +1460,68 @@ namespace Amazon.ServiceQuotas
             options.ResponseUnmarshaller = StartAutoManagementResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartAutoManagementResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StartQuotaUtilizationReport
+
+        internal virtual StartQuotaUtilizationReportResponse StartQuotaUtilizationReport(StartQuotaUtilizationReportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartQuotaUtilizationReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartQuotaUtilizationReportResponseUnmarshaller.Instance;
+
+            return Invoke<StartQuotaUtilizationReportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates the generation of a quota utilization report for your Amazon Web Services
+        /// account. This asynchronous operation analyzes your quota usage across all Amazon Web
+        /// Services services and returns a unique report identifier that you can use to retrieve
+        /// the results.
+        /// 
+        ///  
+        /// <para>
+        /// The report generation process may take several seconds to complete, depending on the
+        /// number of quotas in your account. Use the <c>GetQuotaUtilizationReport</c> operation
+        /// to check the status and retrieve the results when the report is ready.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartQuotaUtilizationReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartQuotaUtilizationReport service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.InvalidPaginationTokenException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartQuotaUtilizationReport">REST API Reference for StartQuotaUtilizationReport Operation</seealso>
+        public virtual Task<StartQuotaUtilizationReportResponse> StartQuotaUtilizationReportAsync(StartQuotaUtilizationReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartQuotaUtilizationReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartQuotaUtilizationReportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartQuotaUtilizationReportResponse>(request, options, cancellationToken);
         }
         #endregion
         

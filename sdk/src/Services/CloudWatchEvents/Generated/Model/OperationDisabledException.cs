@@ -39,6 +39,13 @@ namespace Amazon.CloudWatchEvents.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationDisabledException
+        /// message.
+        /// </summary>
+        public OperationDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationDisabledException with the specified error
         /// message.
         /// </summary>

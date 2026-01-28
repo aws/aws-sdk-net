@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TrustedKeyGroupDoesNotExistException
+        /// message.
+        /// </summary>
+        public TrustedKeyGroupDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrustedKeyGroupDoesNotExistException with the specified error
         /// message.
         /// </summary>

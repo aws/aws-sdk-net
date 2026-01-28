@@ -80,7 +80,7 @@ namespace Amazon.DataSync.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=8)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }

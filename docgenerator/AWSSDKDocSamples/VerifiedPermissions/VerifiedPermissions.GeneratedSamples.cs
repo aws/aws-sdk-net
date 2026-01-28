@@ -348,6 +348,31 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
             #endregion
         }
 
+        public void VerifiedPermissionsCreatePolicyStore()
+        {
+            #region example-2
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.CreatePolicyStore(new CreatePolicyStoreRequest 
+            {
+                ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
+                EncryptionSettings = new EncryptionSettings { KmsEncryptionSettings = new KmsEncryptionSettings {
+                    Key = "arn:aws:kms:us-east-1:123456789012:key/abcdefgh-ijkl-mnop-qrst-uvwxyz123456",
+                    EncryptionContext = new Dictionary<string, string> {
+                        { "policy_store_owner", "Tim" }
+                    }
+                } },
+                ValidationSettings = new ValidationSettings { Mode = "STRICT" }
+            });
+
+            string arn = response.Arn;
+            DateTime createdDate = response.CreatedDate;
+            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            string policyStoreId = response.PolicyStoreId;
+
+            #endregion
+        }
+
         public void VerifiedPermissionsCreatePolicyTemplate()
         {
             #region example-1
@@ -491,6 +516,27 @@ when {
 
             string arn = response.Arn;
             DateTime createdDate = response.CreatedDate;
+            EncryptionState encryptionState = response.EncryptionState;
+            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            string policyStoreId = response.PolicyStoreId;
+            ValidationSettings validationSettings = response.ValidationSettings;
+
+            #endregion
+        }
+
+        public void VerifiedPermissionsGetPolicyStore()
+        {
+            #region example-2
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.GetPolicyStore(new GetPolicyStoreRequest 
+            {
+                PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
+            });
+
+            string arn = response.Arn;
+            DateTime createdDate = response.CreatedDate;
+            EncryptionState encryptionState = response.EncryptionState;
             DateTime lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
             ValidationSettings validationSettings = response.ValidationSettings;

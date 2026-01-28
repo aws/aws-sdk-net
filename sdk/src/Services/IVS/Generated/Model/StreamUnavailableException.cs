@@ -40,6 +40,13 @@ namespace Amazon.IVS.Model
         private string _exceptionMessage;
 
         /// <summary>
+        /// Default constructor for StreamUnavailableException
+        /// message.
+        /// </summary>
+        public StreamUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StreamUnavailableException with the specified error
         /// message.
         /// </summary>

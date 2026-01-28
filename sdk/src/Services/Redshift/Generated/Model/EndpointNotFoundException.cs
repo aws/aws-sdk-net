@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointNotFoundException
+        /// message.
+        /// </summary>
+        public EndpointNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointNotFoundException with the specified error
         /// message.
         /// </summary>

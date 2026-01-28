@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for NumberOfNodesPerClusterLimitExceededException
+        /// message.
+        /// </summary>
+        public NumberOfNodesPerClusterLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NumberOfNodesPerClusterLimitExceededException with the specified error
         /// message.
         /// </summary>

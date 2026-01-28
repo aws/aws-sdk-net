@@ -36,6 +36,14 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Construct instance of AmazonTranscribeServiceException
         /// </summary>
+        public AmazonTranscribeServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTranscribeServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTranscribeServiceException(string message)
             : base(message)

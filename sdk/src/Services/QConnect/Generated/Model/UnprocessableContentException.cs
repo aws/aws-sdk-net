@@ -39,6 +39,13 @@ namespace Amazon.QConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for UnprocessableContentException
+        /// message.
+        /// </summary>
+        public UnprocessableContentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnprocessableContentException with the specified error
         /// message.
         /// </summary>

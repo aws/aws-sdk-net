@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for TagRequiredException
+        /// message.
+        /// </summary>
+        public TagRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagRequiredException with the specified error
         /// message.
         /// </summary>

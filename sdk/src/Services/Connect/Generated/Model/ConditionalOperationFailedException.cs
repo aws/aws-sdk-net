@@ -39,6 +39,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for ConditionalOperationFailedException
+        /// message.
+        /// </summary>
+        public ConditionalOperationFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConditionalOperationFailedException with the specified error
         /// message.
         /// </summary>

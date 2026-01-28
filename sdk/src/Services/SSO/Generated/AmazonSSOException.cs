@@ -36,6 +36,14 @@ namespace Amazon.SSO
         /// <summary>
         /// Construct instance of AmazonSSOException
         /// </summary>
+        public AmazonSSOException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSSOException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSSOException(string message)
             : base(message)

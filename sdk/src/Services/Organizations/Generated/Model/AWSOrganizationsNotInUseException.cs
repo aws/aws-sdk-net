@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for AWSOrganizationsNotInUseException
+        /// message.
+        /// </summary>
+        public AWSOrganizationsNotInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AWSOrganizationsNotInUseException with the specified error
         /// message.
         /// </summary>

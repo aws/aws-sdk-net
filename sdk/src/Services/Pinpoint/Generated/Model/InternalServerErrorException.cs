@@ -40,6 +40,13 @@ namespace Amazon.Pinpoint.Model
         private string _requestID;
 
         /// <summary>
+        /// Default constructor for InternalServerErrorException
+        /// message.
+        /// </summary>
+        public InternalServerErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServerErrorException with the specified error
         /// message.
         /// </summary>

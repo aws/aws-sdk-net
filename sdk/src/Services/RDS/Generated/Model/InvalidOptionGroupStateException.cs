@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOptionGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidOptionGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOptionGroupStateException with the specified error
         /// message.
         /// </summary>

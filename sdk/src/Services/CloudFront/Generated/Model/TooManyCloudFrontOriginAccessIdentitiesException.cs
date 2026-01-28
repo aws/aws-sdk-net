@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyCloudFrontOriginAccessIdentitiesException
+        /// message.
+        /// </summary>
+        public TooManyCloudFrontOriginAccessIdentitiesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyCloudFrontOriginAccessIdentitiesException with the specified error
         /// message.
         /// </summary>

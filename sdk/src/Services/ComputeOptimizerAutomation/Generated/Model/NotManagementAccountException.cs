@@ -39,6 +39,13 @@ namespace Amazon.ComputeOptimizerAutomation.Model
     {
 
         /// <summary>
+        /// Default constructor for NotManagementAccountException
+        /// message.
+        /// </summary>
+        public NotManagementAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotManagementAccountException with the specified error
         /// message.
         /// </summary>

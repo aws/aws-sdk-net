@@ -39,6 +39,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for GlueEncryptionException
+        /// message.
+        /// </summary>
+        public GlueEncryptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GlueEncryptionException with the specified error
         /// message.
         /// </summary>

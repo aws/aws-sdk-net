@@ -76,6 +76,13 @@ namespace Amazon.TimestreamWrite.Model
         private List<RejectedRecord> _rejectedRecords = AWSConfigs.InitializeCollections ? new List<RejectedRecord>() : null;
 
         /// <summary>
+        /// Default constructor for RejectedRecordsException
+        /// message.
+        /// </summary>
+        public RejectedRecordsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RejectedRecordsException with the specified error
         /// message.
         /// </summary>

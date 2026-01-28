@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentIsNotInReadyStateException
+        /// message.
+        /// </summary>
+        public DeploymentIsNotInReadyStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentIsNotInReadyStateException with the specified error
         /// message.
         /// </summary>

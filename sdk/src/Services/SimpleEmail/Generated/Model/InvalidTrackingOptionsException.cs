@@ -50,6 +50,13 @@ namespace Amazon.SimpleEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTrackingOptionsException
+        /// message.
+        /// </summary>
+        public InvalidTrackingOptionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTrackingOptionsException with the specified error
         /// message.
         /// </summary>

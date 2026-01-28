@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSourceCommitSpecifierException
+        /// message.
+        /// </summary>
+        public InvalidSourceCommitSpecifierException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSourceCommitSpecifierException with the specified error
         /// message.
         /// </summary>

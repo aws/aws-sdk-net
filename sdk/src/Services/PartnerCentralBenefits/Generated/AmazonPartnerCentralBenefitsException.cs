@@ -36,6 +36,14 @@ namespace Amazon.PartnerCentralBenefits
         /// <summary>
         /// Construct instance of AmazonPartnerCentralBenefitsException
         /// </summary>
+        public AmazonPartnerCentralBenefitsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPartnerCentralBenefitsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPartnerCentralBenefitsException(string message)
             : base(message)

@@ -42,6 +42,13 @@ namespace Amazon.EKS.Model
         private string _subscriptionId;
 
         /// <summary>
+        /// Default constructor for ResourceLimitExceededException
+        /// message.
+        /// </summary>
+        public ResourceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceLimitExceededException with the specified error
         /// message.
         /// </summary>

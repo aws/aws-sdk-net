@@ -41,6 +41,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for VersionMismatchException
+        /// message.
+        /// </summary>
+        public VersionMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VersionMismatchException with the specified error
         /// message.
         /// </summary>

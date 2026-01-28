@@ -40,6 +40,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidStateTransitionException
+        /// message.
+        /// </summary>
+        public InvalidStateTransitionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidStateTransitionException with the specified error
         /// message.
         /// </summary>

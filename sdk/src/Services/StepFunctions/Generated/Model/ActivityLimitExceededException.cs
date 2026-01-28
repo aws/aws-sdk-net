@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for ActivityLimitExceededException
+        /// message.
+        /// </summary>
+        public ActivityLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActivityLimitExceededException with the specified error
         /// message.
         /// </summary>

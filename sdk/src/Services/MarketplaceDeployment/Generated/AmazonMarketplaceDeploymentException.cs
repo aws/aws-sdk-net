@@ -36,6 +36,14 @@ namespace Amazon.MarketplaceDeployment
         /// <summary>
         /// Construct instance of AmazonMarketplaceDeploymentException
         /// </summary>
+        public AmazonMarketplaceDeploymentException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMarketplaceDeploymentException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMarketplaceDeploymentException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _opsItemId;
 
         /// <summary>
+        /// Default constructor for OpsItemAlreadyExistsException
+        /// message.
+        /// </summary>
+        public OpsItemAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsItemAlreadyExistsException with the specified error
         /// message.
         /// </summary>

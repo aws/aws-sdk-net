@@ -40,6 +40,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for OutOfCapacityException
+        /// message.
+        /// </summary>
+        public OutOfCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OutOfCapacityException with the specified error
         /// message.
         /// </summary>

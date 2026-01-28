@@ -46,6 +46,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsAssociatedToResponseHeadersPolicyException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsAssociatedToResponseHeadersPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsAssociatedToResponseHeadersPolicyException with the specified error
         /// message.
         /// </summary>

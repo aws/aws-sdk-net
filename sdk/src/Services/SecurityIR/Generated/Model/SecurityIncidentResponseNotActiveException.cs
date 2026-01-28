@@ -39,6 +39,13 @@ namespace Amazon.SecurityIR.Model
     {
 
         /// <summary>
+        /// Default constructor for SecurityIncidentResponseNotActiveException
+        /// message.
+        /// </summary>
+        public SecurityIncidentResponseNotActiveException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SecurityIncidentResponseNotActiveException with the specified error
         /// message.
         /// </summary>

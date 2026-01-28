@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidNodeStateException
+        /// message.
+        /// </summary>
+        public InvalidNodeStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNodeStateException with the specified error
         /// message.
         /// </summary>

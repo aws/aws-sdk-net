@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientDeliveryPolicyException
+        /// message.
+        /// </summary>
+        public InsufficientDeliveryPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientDeliveryPolicyException with the specified error
         /// message.
         /// </summary>

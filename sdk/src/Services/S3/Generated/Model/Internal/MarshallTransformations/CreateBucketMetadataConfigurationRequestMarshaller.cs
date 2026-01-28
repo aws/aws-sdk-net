@@ -83,12 +83,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetMetadataConfiguration())
                 {
                     xmlWriter.WriteStartElement("MetadataConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.MetadataConfiguration.InventoryTableConfiguration != null)
+                    if (publicRequest.MetadataConfiguration.IsSetInventoryTableConfiguration())
                     {
                         xmlWriter.WriteStartElement("InventoryTableConfiguration");
                         if(publicRequest.MetadataConfiguration.InventoryTableConfiguration.IsSetConfigurationState())
                             xmlWriter.WriteElementString("ConfigurationState", StringUtils.FromString(publicRequest.MetadataConfiguration.InventoryTableConfiguration.ConfigurationState));
-                        if (publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration != null)
+                        if (publicRequest.MetadataConfiguration.InventoryTableConfiguration.IsSetEncryptionConfiguration())
                         {
                             xmlWriter.WriteStartElement("EncryptionConfiguration");
                             if(publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration.IsSetKmsKeyArn())
@@ -99,10 +99,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.MetadataConfiguration.JournalTableConfiguration != null)
+                    if (publicRequest.MetadataConfiguration.IsSetJournalTableConfiguration())
                     {
                         xmlWriter.WriteStartElement("JournalTableConfiguration");
-                        if (publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration != null)
+                        if (publicRequest.MetadataConfiguration.JournalTableConfiguration.IsSetEncryptionConfiguration())
                         {
                             xmlWriter.WriteStartElement("EncryptionConfiguration");
                             if(publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration.IsSetKmsKeyArn())
@@ -111,7 +111,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("SseAlgorithm", StringUtils.FromString(publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration.SseAlgorithm));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration != null)
+                        if (publicRequest.MetadataConfiguration.JournalTableConfiguration.IsSetRecordExpiration())
                         {
                             xmlWriter.WriteStartElement("RecordExpiration");
                             if(publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration.IsSetDays())

@@ -40,6 +40,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryInUseException
+        /// message.
+        /// </summary>
+        public DirectoryInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryInUseException with the specified error
         /// message.
         /// </summary>

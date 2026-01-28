@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for PullThroughCacheRuleNotFoundException
+        /// message.
+        /// </summary>
+        public PullThroughCacheRuleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PullThroughCacheRuleNotFoundException with the specified error
         /// message.
         /// </summary>

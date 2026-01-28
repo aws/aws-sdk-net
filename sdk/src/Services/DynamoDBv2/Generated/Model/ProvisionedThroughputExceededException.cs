@@ -46,6 +46,13 @@ namespace Amazon.DynamoDBv2.Model
         private List<ThrottlingReason> _throttlingReasons = AWSConfigs.InitializeCollections ? new List<ThrottlingReason>() : null;
 
         /// <summary>
+        /// Default constructor for ProvisionedThroughputExceededException
+        /// message.
+        /// </summary>
+        public ProvisionedThroughputExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ProvisionedThroughputExceededException with the specified error
         /// message.
         /// </summary>

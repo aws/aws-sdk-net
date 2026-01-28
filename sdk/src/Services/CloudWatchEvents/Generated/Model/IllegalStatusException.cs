@@ -40,6 +40,13 @@ namespace Amazon.CloudWatchEvents.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalStatusException
+        /// message.
+        /// </summary>
+        public IllegalStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalStatusException with the specified error
         /// message.
         /// </summary>

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon S3 Glacier response to your request.
+    /// Contains the Amazon Glacier response to your request.
     /// </summary>
     public partial class DescribeVaultResponse : AmazonWebServiceResponse
     {
@@ -63,8 +63,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property LastInventoryDate. 
         /// <para>
-        /// The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last
-        /// vault inventory. This value should be a string in the ISO 8601 date format, for example
+        /// The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault
+        /// inventory. This value should be a string in the ISO 8601 date format, for example
         /// <c>2012-03-20T17:03:43.221Z</c>.
         /// </para>
         /// </summary>

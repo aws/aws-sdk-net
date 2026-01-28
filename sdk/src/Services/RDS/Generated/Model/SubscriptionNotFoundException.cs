@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for SubscriptionNotFoundException
+        /// message.
+        /// </summary>
+        public SubscriptionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubscriptionNotFoundException with the specified error
         /// message.
         /// </summary>

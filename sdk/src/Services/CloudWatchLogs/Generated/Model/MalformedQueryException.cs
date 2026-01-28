@@ -47,6 +47,13 @@ namespace Amazon.CloudWatchLogs.Model
         private QueryCompileError _queryCompileError;
 
         /// <summary>
+        /// Default constructor for MalformedQueryException
+        /// message.
+        /// </summary>
+        public MalformedQueryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedQueryException with the specified error
         /// message.
         /// </summary>

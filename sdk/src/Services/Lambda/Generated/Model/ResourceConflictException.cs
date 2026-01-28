@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for ResourceConflictException
+        /// message.
+        /// </summary>
+        public ResourceConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceConflictException with the specified error
         /// message.
         /// </summary>

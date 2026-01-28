@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsMetadataInvalidArgumentException
+        /// message.
+        /// </summary>
+        public OpsMetadataInvalidArgumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsMetadataInvalidArgumentException with the specified error
         /// message.
         /// </summary>

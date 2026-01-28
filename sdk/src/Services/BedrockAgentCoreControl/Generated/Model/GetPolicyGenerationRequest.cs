@@ -64,7 +64,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property PolicyGenerationId. 
         /// <para>
         /// The unique identifier of the policy generation request to be retrieved. This must
-        /// be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a>
+        /// be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a>
         /// call.
         /// </para>
         /// </summary>

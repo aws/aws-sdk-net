@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for DNSSECNotFoundException
+        /// message.
+        /// </summary>
+        public DNSSECNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DNSSECNotFoundException with the specified error
         /// message.
         /// </summary>

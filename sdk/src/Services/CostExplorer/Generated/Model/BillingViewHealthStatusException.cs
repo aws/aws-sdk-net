@@ -40,6 +40,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for BillingViewHealthStatusException
+        /// message.
+        /// </summary>
+        public BillingViewHealthStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BillingViewHealthStatusException with the specified error
         /// message.
         /// </summary>

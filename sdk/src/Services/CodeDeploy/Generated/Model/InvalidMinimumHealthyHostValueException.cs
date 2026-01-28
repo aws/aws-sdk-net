@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMinimumHealthyHostValueException
+        /// message.
+        /// </summary>
+        public InvalidMinimumHealthyHostValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMinimumHealthyHostValueException with the specified error
         /// message.
         /// </summary>

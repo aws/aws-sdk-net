@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TrustedSignerDoesNotExistException
+        /// message.
+        /// </summary>
+        public TrustedSignerDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrustedSignerDoesNotExistException with the specified error
         /// message.
         /// </summary>

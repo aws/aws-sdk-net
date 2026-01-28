@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for FeatureNotAvailableException
+        /// message.
+        /// </summary>
+        public FeatureNotAvailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FeatureNotAvailableException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for FailedDependencyException
+        /// message.
+        /// </summary>
+        public FailedDependencyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FailedDependencyException with the specified error
         /// message.
         /// </summary>

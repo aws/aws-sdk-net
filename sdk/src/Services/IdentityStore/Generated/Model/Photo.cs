@@ -68,7 +68,6 @@ namespace Amazon.IdentityStore.Model
         /// Only one photo can be designated as primary per user.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
         public bool? Primary
         {
             get { return this._primary; }

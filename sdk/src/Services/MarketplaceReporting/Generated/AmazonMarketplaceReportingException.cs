@@ -36,6 +36,14 @@ namespace Amazon.MarketplaceReporting
         /// <summary>
         /// Construct instance of AmazonMarketplaceReportingException
         /// </summary>
+        public AmazonMarketplaceReportingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMarketplaceReportingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMarketplaceReportingException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for NumberDomainsExceededException
+        /// message.
+        /// </summary>
+        public NumberDomainsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NumberDomainsExceededException with the specified error
         /// message.
         /// </summary>

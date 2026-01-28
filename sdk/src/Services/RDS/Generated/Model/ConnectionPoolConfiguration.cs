@@ -102,6 +102,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string InitQuery
         {
             get { return this._initQuery; }

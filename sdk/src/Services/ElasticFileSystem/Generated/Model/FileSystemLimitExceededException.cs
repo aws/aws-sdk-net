@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for FileSystemLimitExceededException
+        /// message.
+        /// </summary>
+        public FileSystemLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileSystemLimitExceededException with the specified error
         /// message.
         /// </summary>

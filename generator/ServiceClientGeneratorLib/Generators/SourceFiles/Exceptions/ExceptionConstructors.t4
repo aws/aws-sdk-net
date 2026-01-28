@@ -1,4 +1,11 @@
 ﻿        /// <summary>
+        /// Default constructor for <#=this.Structure.Name#>
+        /// message.
+        /// </summary>
+        public <#=this.Structure.Name#>() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new <#=this.Structure.Name#> with the specified error
         /// message.
         /// </summary>

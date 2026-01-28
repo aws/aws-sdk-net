@@ -157,6 +157,13 @@ namespace Amazon.Extensions.NETCore.Setup
         public int? MaxErrorRetry { get; set; }
 
         /// <summary>
+        /// Gets and sets the maximum number of times the SDK will retry requests 
+        /// that fail due to stale pooled HTTP connections. These retries are 
+        /// separate from the standard retry count and don't consume the regular retry budget.
+        /// </summary>
+        public int? MaxStaleConnectionRetries { get; set; }
+
+        /// <summary>
         /// <para>
         /// Gets or sets the interval at which progress update events are raised
         /// for upload operations. By default, the progress update events are 

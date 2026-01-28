@@ -4859,6 +4859,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlP6B20048xlarge = new ClusterInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
+        /// Constant MlP6B30048xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlP6B30048xlarge = new ClusterInstanceType("ml.p6-b300.48xlarge");
+        /// <summary>
         /// Constant MlP6eGb20036xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlP6eGb20036xlarge = new ClusterInstanceType("ml.p6e-gb200.36xlarge");
@@ -8560,6 +8564,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HyperParameterTuningJobWarmStartType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdleResourceSharing.
+    /// </summary>
+    public class IdleResourceSharing : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for IdleResourceSharing
+        /// </summary>
+        public static readonly IdleResourceSharing Disabled = new IdleResourceSharing("Disabled");
+        /// <summary>
+        /// Constant Enabled for IdleResourceSharing
+        /// </summary>
+        public static readonly IdleResourceSharing Enabled = new IdleResourceSharing("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdleResourceSharing(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdleResourceSharing FindValue(string value)
+        {
+            return FindValue<IdleResourceSharing>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdleResourceSharing(string value)
         {
             return FindValue(value);
         }
@@ -17681,6 +17735,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP6B20048xlarge = new ReservedCapacityInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
+        /// Constant MlP6B30048xlarge for ReservedCapacityInstanceType
+        /// </summary>
+        public static readonly ReservedCapacityInstanceType MlP6B30048xlarge = new ReservedCapacityInstanceType("ml.p6-b300.48xlarge");
+        /// <summary>
         /// Constant MlP6eGb20036xlarge for ReservedCapacityInstanceType
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP6eGb20036xlarge = new ReservedCapacityInstanceType("ml.p6e-gb200.36xlarge");
@@ -18722,6 +18780,60 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SagemakerServicecatalogStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchedulerConfigComponent.
+    /// </summary>
+    public class SchedulerConfigComponent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FairShare for SchedulerConfigComponent
+        /// </summary>
+        public static readonly SchedulerConfigComponent FairShare = new SchedulerConfigComponent("FairShare");
+        /// <summary>
+        /// Constant IdleResourceSharing for SchedulerConfigComponent
+        /// </summary>
+        public static readonly SchedulerConfigComponent IdleResourceSharing = new SchedulerConfigComponent("IdleResourceSharing");
+        /// <summary>
+        /// Constant PriorityClasses for SchedulerConfigComponent
+        /// </summary>
+        public static readonly SchedulerConfigComponent PriorityClasses = new SchedulerConfigComponent("PriorityClasses");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchedulerConfigComponent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchedulerConfigComponent FindValue(string value)
+        {
+            return FindValue<SchedulerConfigComponent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchedulerConfigComponent(string value)
         {
             return FindValue(value);
         }
@@ -22042,6 +22154,10 @@ namespace Amazon.SageMaker
         /// Constant MlP6B20048xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlP6B20048xlarge = new TrainingInstanceType("ml.p6-b200.48xlarge");
+        /// <summary>
+        /// Constant MlP6B30048xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP6B30048xlarge = new TrainingInstanceType("ml.p6-b300.48xlarge");
         /// <summary>
         /// Constant MlP6eGb20036xlarge for TrainingInstanceType
         /// </summary>

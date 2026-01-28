@@ -36,6 +36,14 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Construct instance of AmazonElastiCacheException
         /// </summary>
+        public AmazonElastiCacheException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonElastiCacheException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonElastiCacheException(string message)
             : base(message)

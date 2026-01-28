@@ -40,6 +40,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheParameterGroupNotFoundException
+        /// message.
+        /// </summary>
+        public CacheParameterGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheParameterGroupNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for ContactFlowNotPublishedException
+        /// message.
+        /// </summary>
+        public ContactFlowNotPublishedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ContactFlowNotPublishedException with the specified error
         /// message.
         /// </summary>

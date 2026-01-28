@@ -2,13 +2,14 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class CopyPartTests : TestBase<AmazonS3Client>
     {
         private const string testContent = "This is the content body!";
@@ -17,11 +18,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private string bucketName;
 
         [TestInitialize]
-        public void Initialize()
+        public async Task Initialize()
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
 
-            Client.PutObject(new PutObjectRequest
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = testKeyWithSlash,
@@ -30,29 +31,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestCleanup]
-        public void TestCleanup()
+        public async Task TestCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestCopyPartWithLeadingSlash()
+        public async Task TestCopyPartWithLeadingSlash()
         {
             var destinationKeyWithSlash = "/destinationTestKey.txt";
             string uploadId = null;
 
             try
             {
-                var multiPartUploadResponse = Client.InitiateMultipartUpload(new InitiateMultipartUploadRequest
+                var multiPartUploadResponse = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = destinationKeyWithSlash,
                 });
 
                 uploadId = multiPartUploadResponse.UploadId;
-                var copyPartResponse = Client.CopyPart(new CopyPartRequest
+                var copyPartResponse = await Client.CopyPartAsync(new CopyPartRequest
                 {
                     DestinationBucket = bucketName,
                     DestinationKey = destinationKeyWithSlash,
@@ -76,10 +76,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 };
                 completeUploadRequest.AddPartETags(copyPartResponse);
 
-                var completeUploadResponse = Client.CompleteMultipartUpload(completeUploadRequest);
+                var completeUploadResponse = await Client.CompleteMultipartUploadAsync(completeUploadRequest);
                 Assert.AreEqual(HttpStatusCode.OK, completeUploadResponse.HttpStatusCode);
 
-                var getObjectResponse = Client.GetObject(new GetObjectRequest
+                var getObjectResponse = await Client.GetObjectAsync(new GetObjectRequest
                 {
                     BucketName = bucketName,
                     Key = destinationKeyWithSlash
@@ -88,7 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 using (getObjectResponse.ResponseStream)
                 using (var reader = new StreamReader(getObjectResponse.ResponseStream))
                 {
-                    var actualText = reader.ReadToEnd();
+                    var actualText = await reader.ReadToEndAsync();
                     Assert.AreEqual(testContent, actualText);
                 }
             }
@@ -96,7 +96,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 if (uploadId != null)
                 {
-                    Client.AbortMultipartUpload(new AbortMultipartUploadRequest
+                    await Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
                     {
                         BucketName = bucketName,
                         Key = destinationKeyWithSlash,

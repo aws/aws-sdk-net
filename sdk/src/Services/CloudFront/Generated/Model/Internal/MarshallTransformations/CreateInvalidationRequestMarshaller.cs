@@ -72,11 +72,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.InvalidationBatch.IsSetCallerReference())
                         xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));
 
-                    if (publicRequest.InvalidationBatch.Paths != null)
+                    if (publicRequest.InvalidationBatch.IsSetPaths())
                     {
                         xmlWriter.WriteStartElement("Paths");
                         var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
-                        if (publicRequestInvalidationBatchPathsItems != null && (publicRequestInvalidationBatchPathsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.InvalidationBatch.Paths.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 

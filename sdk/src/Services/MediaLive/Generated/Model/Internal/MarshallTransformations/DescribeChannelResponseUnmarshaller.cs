@@ -118,6 +118,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.InputSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("linkedChannelSettings", targetDepth))
+                {
+                    var unmarshaller = DescribeLinkedChannelSettingsUnmarshaller.Instance;
+                    response.LinkedChannelSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("logLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

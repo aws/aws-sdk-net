@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvocationDoesNotExistException
+        /// message.
+        /// </summary>
+        public InvocationDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvocationDoesNotExistException with the specified error
         /// message.
         /// </summary>

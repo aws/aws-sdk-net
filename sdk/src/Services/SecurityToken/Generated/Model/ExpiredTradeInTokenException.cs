@@ -40,6 +40,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for ExpiredTradeInTokenException
+        /// message.
+        /// </summary>
+        public ExpiredTradeInTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredTradeInTokenException with the specified error
         /// message.
         /// </summary>

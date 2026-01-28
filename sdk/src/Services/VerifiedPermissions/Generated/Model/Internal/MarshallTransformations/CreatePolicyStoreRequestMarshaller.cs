@@ -98,6 +98,17 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetEncryptionSettings())
+            {
+                context.Writer.WritePropertyName("encryptionSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

@@ -41,6 +41,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceDeploymentNotFoundException
+        /// message.
+        /// </summary>
+        public ServiceDeploymentNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceDeploymentNotFoundException with the specified error
         /// message.
         /// </summary>

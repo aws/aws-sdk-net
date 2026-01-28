@@ -35,6 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class SubscribedPrincipal
     {
         private SubscribedGroup _group;
+        private SubscribedIamPrincipal _iam;
         private SubscribedProject _project;
         private SubscribedUser _user;
 
@@ -54,6 +55,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetGroup()
         {
             return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Iam. 
+        /// <para>
+        /// The subscribed IAM principal.
+        /// </para>
+        /// </summary>
+        public SubscribedIamPrincipal Iam
+        {
+            get { return this._iam; }
+            set { this._iam = value; }
+        }
+
+        // Check to see if Iam property is set
+        internal bool IsSetIam()
+        {
+            return this._iam != null;
         }
 
         /// <summary>

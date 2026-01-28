@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchConformancePackException
+        /// message.
+        /// </summary>
+        public NoSuchConformancePackException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchConformancePackException with the specified error
         /// message.
         /// </summary>

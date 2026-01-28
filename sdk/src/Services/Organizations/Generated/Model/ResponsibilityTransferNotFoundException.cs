@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for ResponsibilityTransferNotFoundException
+        /// message.
+        /// </summary>
+        public ResponsibilityTransferNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResponsibilityTransferNotFoundException with the specified error
         /// message.
         /// </summary>

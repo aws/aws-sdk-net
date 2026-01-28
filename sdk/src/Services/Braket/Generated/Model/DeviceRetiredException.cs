@@ -39,6 +39,13 @@ namespace Amazon.Braket.Model
     {
 
         /// <summary>
+        /// Default constructor for DeviceRetiredException
+        /// message.
+        /// </summary>
+        public DeviceRetiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeviceRetiredException with the specified error
         /// message.
         /// </summary>

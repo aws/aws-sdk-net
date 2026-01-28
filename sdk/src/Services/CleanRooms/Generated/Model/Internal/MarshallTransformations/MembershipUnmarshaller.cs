@@ -116,6 +116,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("isMetricsEnabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IsMetricsEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("jobLogStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFilePositionException
+        /// message.
+        /// </summary>
+        public InvalidFilePositionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFilePositionException with the specified error
         /// message.
         /// </summary>

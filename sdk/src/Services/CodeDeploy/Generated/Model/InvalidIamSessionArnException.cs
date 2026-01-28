@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidIamSessionArnException
+        /// message.
+        /// </summary>
+        public InvalidIamSessionArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidIamSessionArnException with the specified error
         /// message.
         /// </summary>

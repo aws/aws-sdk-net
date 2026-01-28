@@ -61,6 +61,36 @@
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAs2805KekValidationRequest.KeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAs2805KekValidationResponse.KeyArn</property>
+    <min>70</min>
+    <max>150</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:key/[0-9a-zA-Z]{16,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAs2805KekValidationResponse.KeyCheckValue</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAs2805KekValidationResponse.RandomKeyReceive</property>
+    <min>32</min>
+    <max>48</max>
+    <pattern>(?:[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAs2805KekValidationResponse.RandomKeySend</property>
+    <min>32</min>
+    <max>48</max>
+    <pattern>(?:[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.GenerateCardValidationDataRequest.KeyIdentifier</property>
     <min>7</min>
     <max>322</max>
@@ -530,6 +560,18 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.As2805PekDerivationAttributes.SystemTraceAuditNumber</property>
+    <min>6</min>
+    <max>6</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.As2805PekDerivationAttributes.TransactionAmount</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.CardHolderVerificationValue.ApplicationTransactionCounter</property>
     <min>2</min>
     <max>4</max>
@@ -902,6 +944,12 @@
     <pattern>[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.KekValidationResponse.RandomKeySend</property>
+    <min>32</min>
+    <max>48</max>
+    <pattern>(?:[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.MacAlgorithmDukpt.KeySerialNumber</property>
     <min>16</min>
     <max>24</max>
@@ -1058,6 +1106,12 @@
     <pattern>(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{32})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.TranslationPinDataAs2805Format0.PrimaryAccountNumber</property>
+    <min>12</min>
+    <max>19</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.TranslationPinDataIsoFormat034.PrimaryAccountNumber</property>
     <min>12</min>
     <max>19</max>
@@ -1152,7 +1206,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.WrappedWorkingKey.WrappedKeyMaterial</property>
-    <min>48</min>
+    <min>32</min>
     <max>16384</max>
   </property-value-rule>
 </property-value-rules>

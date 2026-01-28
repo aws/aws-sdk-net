@@ -41,6 +41,13 @@ namespace Amazon.SimpleWorkflow.Model
     {
 
         /// <summary>
+        /// Default constructor for TypeAlreadyExistsException
+        /// message.
+        /// </summary>
+        public TypeAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TypeAlreadyExistsException with the specified error
         /// message.
         /// </summary>

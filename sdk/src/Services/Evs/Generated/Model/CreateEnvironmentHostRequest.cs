@@ -31,7 +31,7 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentHost operation.
-    /// Creates an ESXi host and adds it to an Amazon EVS environment. Amazon EVS supports
+    /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
     /// 4-16 hosts per environment.
     /// 
     ///  
@@ -41,7 +41,7 @@ namespace Amazon.Evs.Model
     ///  
     /// <para>
     /// You can use the <c>dedicatedHostId</c> parameter to specify an Amazon EC2 Dedicated
-    /// Host for ESXi host creation.
+    /// Host for ESX host creation.
     /// </para>
     ///  
     /// <para>
@@ -49,6 +49,13 @@ namespace Amazon.Evs.Model
     /// placement group to launch EC2 instances into.
     /// </para>
     ///  <note> 
+    /// <para>
+    /// If you don't specify an ESX version when adding hosts using <c>CreateEnvironmentHost</c>
+    /// action, Amazon EVS automatically uses the default ESX version associated with your
+    /// environment's VCF version. To find the default ESX version for a particular VCF version,
+    /// use the <c>GetVersions</c> action.
+    /// </para>
+    ///  </note> <note> 
     /// <para>
     /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
     /// in the same <c>CreateEnvironmentHost</c> action. This results in a <c>ValidationException</c>
@@ -60,6 +67,7 @@ namespace Amazon.Evs.Model
     {
         private string _clientToken;
         private string _environmentId;
+        private string _esxVersion;
         private HostInfoForCreate _host;
 
         /// <summary>
@@ -109,6 +117,25 @@ namespace Amazon.Evs.Model
         internal bool IsSetEnvironmentId()
         {
             return this._environmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EsxVersion. 
+        /// <para>
+        /// The ESX version to use for the host.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string EsxVersion
+        {
+            get { return this._esxVersion; }
+            set { this._esxVersion = value; }
+        }
+
+        // Check to see if EsxVersion property is set
+        internal bool IsSetEsxVersion()
+        {
+            return this._esxVersion != null;
         }
 
         /// <summary>

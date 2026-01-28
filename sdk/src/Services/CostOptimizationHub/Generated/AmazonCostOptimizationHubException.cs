@@ -36,6 +36,14 @@ namespace Amazon.CostOptimizationHub
         /// <summary>
         /// Construct instance of AmazonCostOptimizationHubException
         /// </summary>
+        public AmazonCostOptimizationHubException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCostOptimizationHubException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCostOptimizationHubException(string message)
             : base(message)

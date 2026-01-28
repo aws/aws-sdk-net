@@ -37,23 +37,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public <#=this.UnmarshallerBaseName #> Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-<#
-            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
-            {
-                GenerateAWSQueryCompatibleBlock();
-#>
-            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
-                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
-<#
-            }
-            else
-            {
-#>
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-<#
-            }
-#>
             var reader = context.Reader;
             context.AddPathSegment("<#=this.UnmarshallerBaseName#>");
             reader.ReadStartMap();

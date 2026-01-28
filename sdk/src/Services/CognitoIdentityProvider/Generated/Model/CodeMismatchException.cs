@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for CodeMismatchException
+        /// message.
+        /// </summary>
+        public CodeMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CodeMismatchException with the specified error
         /// message.
         /// </summary>

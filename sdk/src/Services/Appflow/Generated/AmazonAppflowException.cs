@@ -36,6 +36,14 @@ namespace Amazon.Appflow
         /// <summary>
         /// Construct instance of AmazonAppflowException
         /// </summary>
+        public AmazonAppflowException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAppflowException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAppflowException(string message)
             : base(message)

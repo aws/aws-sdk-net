@@ -39,6 +39,13 @@ namespace Amazon.TimestreamQuery.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEndpointException
+        /// message.
+        /// </summary>
+        public InvalidEndpointException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEndpointException with the specified error
         /// message.
         /// </summary>

@@ -45,6 +45,8 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _controllerIdentifier;
         private Dictionary<string, string> _customProtocolDetail = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DiscoveryType _discoveryType;
+        private string _endDeviceIdentifier;
+        private ProtocolType _protocol;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -213,6 +215,53 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetDiscoveryType()
         {
             return this._discoveryType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndDeviceIdentifier. 
+        /// <para>
+        /// The unique id of the end device for capability rediscovery.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string EndDeviceIdentifier
+        {
+            get { return this._endDeviceIdentifier; }
+            set { this._endDeviceIdentifier = value; }
+        }
+
+        // Check to see if EndDeviceIdentifier property is set
+        internal bool IsSetEndDeviceIdentifier()
+        {
+            return this._endDeviceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ProtocolType Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
         /// <summary>

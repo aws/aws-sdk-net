@@ -36,6 +36,14 @@ namespace Amazon.Pricing
         /// <summary>
         /// Construct instance of AmazonPricingException
         /// </summary>
+        public AmazonPricingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPricingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPricingException(string message)
             : base(message)

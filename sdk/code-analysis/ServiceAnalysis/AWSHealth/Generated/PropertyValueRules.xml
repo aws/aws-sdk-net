@@ -30,7 +30,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesRequest.MaxResults</property>
-    <min>10</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -105,7 +105,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventsRequest.MaxResults</property>
-    <min>10</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>

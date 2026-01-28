@@ -40,6 +40,13 @@ namespace Amazon.Transfer.Model
         private string _retryAfterSeconds;
 
         /// <summary>
+        /// Default constructor for ThrottlingException
+        /// message.
+        /// </summary>
+        public ThrottlingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ThrottlingException with the specified error
         /// message.
         /// </summary>

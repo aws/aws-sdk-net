@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidViewerCertificateException
+        /// message.
+        /// </summary>
+        public InvalidViewerCertificateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidViewerCertificateException with the specified error
         /// message.
         /// </summary>

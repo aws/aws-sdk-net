@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for PoliciesLimitExceededException
+        /// message.
+        /// </summary>
+        public PoliciesLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PoliciesLimitExceededException with the specified error
         /// message.
         /// </summary>

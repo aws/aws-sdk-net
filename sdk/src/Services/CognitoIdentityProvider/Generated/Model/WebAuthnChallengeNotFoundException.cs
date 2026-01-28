@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for WebAuthnChallengeNotFoundException
+        /// message.
+        /// </summary>
+        public WebAuthnChallengeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WebAuthnChallengeNotFoundException with the specified error
         /// message.
         /// </summary>

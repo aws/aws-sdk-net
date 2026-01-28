@@ -54,6 +54,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for ADAssessmentLimitExceededException
+        /// message.
+        /// </summary>
+        public ADAssessmentLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ADAssessmentLimitExceededException with the specified error
         /// message.
         /// </summary>

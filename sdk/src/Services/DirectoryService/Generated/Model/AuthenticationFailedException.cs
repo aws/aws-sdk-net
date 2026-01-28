@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthenticationFailedException
+        /// message.
+        /// </summary>
+        public AuthenticationFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthenticationFailedException with the specified error
         /// message.
         /// </summary>

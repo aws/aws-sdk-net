@@ -62,6 +62,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplyNormalization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("customerProfilesIntegrationConfig", targetDepth))
+                {
+                    var unmarshaller = CustomerProfilesIntegrationConfigUnmarshaller.Instance;
+                    unmarshalledObject.CustomerProfilesIntegrationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("KMSArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

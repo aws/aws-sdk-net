@@ -255,8 +255,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ElasticMapReduce.CodeAnalysis" Path="|AWSSDK.ElasticMapReduce.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Elasticsearch.CodeAnalysis" Path="|AWSSDK.Elasticsearch.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Elasticsearch.CodeAnalysis" Path="|AWSSDK.Elasticsearch.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ElasticTranscoder.CodeAnalysis" Path="|AWSSDK.ElasticTranscoder.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ElasticTranscoder.CodeAnalysis" Path="|AWSSDK.ElasticTranscoder.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.EMRContainers.CodeAnalysis" Path="|AWSSDK.EMRContainers.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.EMRContainers.CodeAnalysis" Path="|AWSSDK.EMRContainers.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.EMRServerless.CodeAnalysis" Path="|AWSSDK.EMRServerless.CodeAnalysis|"/>

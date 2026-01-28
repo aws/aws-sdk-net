@@ -42,6 +42,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for TerminalRoutingStrategyException
+        /// message.
+        /// </summary>
+        public TerminalRoutingStrategyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TerminalRoutingStrategyException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for EmptyBatchRequestException
+        /// message.
+        /// </summary>
+        public EmptyBatchRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EmptyBatchRequestException with the specified error
         /// message.
         /// </summary>

@@ -42,6 +42,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for SamePathRequestException
+        /// message.
+        /// </summary>
+        public SamePathRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SamePathRequestException with the specified error
         /// message.
         /// </summary>

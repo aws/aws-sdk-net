@@ -36,6 +36,14 @@ namespace Amazon.StepFunctions
         /// <summary>
         /// Construct instance of AmazonStepFunctionsException
         /// </summary>
+        public AmazonStepFunctionsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonStepFunctionsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonStepFunctionsException(string message)
             : base(message)

@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyCachePoliciesException
+        /// message.
+        /// </summary>
+        public TooManyCachePoliciesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyCachePoliciesException with the specified error
         /// message.
         /// </summary>

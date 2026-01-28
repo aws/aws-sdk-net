@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The configuration details for a service managed Amazon EC2 fleet.
+    /// The configuration details for a service managed EC2 fleet.
     /// </summary>
     public partial class ServiceManagedEc2FleetConfiguration
     {
@@ -42,7 +42,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property InstanceCapabilities. 
         /// <para>
-        /// The Amazon EC2 instance capabilities.
+        /// The instance capabilities for the service managed EC2 fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property InstanceMarketOptions. 
         /// <para>
-        /// The Amazon EC2 market type.
+        /// The instance market options for the service managed EC2 fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property StorageProfileId. 
         /// <para>
-        /// The storage profile ID.
+        /// The storage profile ID for the service managed EC2 fleet.
         /// </para>
         /// </summary>
         public string StorageProfileId
@@ -98,7 +98,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
-        /// The VPC configuration details for a service managed Amazon EC2 fleet.
+        /// The VPC configuration for the service managed EC2 fleet.
         /// </para>
         /// </summary>
         public VpcConfiguration VpcConfiguration

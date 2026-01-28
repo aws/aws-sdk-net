@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidClusterTrackException
+        /// message.
+        /// </summary>
+        public InvalidClusterTrackException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClusterTrackException with the specified error
         /// message.
         /// </summary>

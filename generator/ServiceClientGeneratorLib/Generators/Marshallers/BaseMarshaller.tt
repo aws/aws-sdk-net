@@ -37,15 +37,27 @@ using Amazon.Runtime.Internal.Util;
 		{
             if (structure != null && this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(structure.Name, out var modifier) && modifier.ExcludedMarshallingProperties.Contains(member.ModeledName))
                 continue;
+            bool skipXmlIsSet = this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier) && propModifier.SkipXmlIsSet;
+			if (!skipXmlIsSet)
+			{
 #>		
             if (<#=variableName#>.IsSet<#=member.PropertyName#>()) 
             {
 <#+
-            if (member.CustomMarshallerTransformation != null)
+            }
+			if(this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectPropModifier ) && injectPropModifier.InjectXmlMarshallCode.Count > 0)
+			{
+                WriteInjectXmlCode(injectPropModifier.InjectXmlMarshallCode, 4);
+			}
+            else if (member.CustomMarshallerTransformation != null)
             {
 #>
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>);
 <#+        
+            }
+            else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var headerPropertyModifier) && headerPropertyModifier.InjectXmlMarshallCode.Count > 0)
+            {
+                WriteInjectXmlMarshallCode(3, headerPropertyModifier.InjectXmlMarshallCode);
             }
             else if (member.IsJsonValue)
             {
@@ -118,9 +130,12 @@ using Amazon.Runtime.Internal.Util;
 <#+
                 }
             }
+            if (!skipXmlIsSet)
+			{
 #>
             }
 <#+
+            }
         }
 	}
     protected void ProcessHeaderMembers(string variableName, IEnumerable<Member> members)
@@ -544,4 +559,15 @@ using Amazon.Runtime.Internal.Util;
             }
         }
     }
+#>
+<#+
+	protected void WriteInjectXmlMarshallCode(int level, HashSet<string> injectXmlMarshallCode)
+	{
+		foreach (var injectCode in injectXmlMarshallCode)
+		{
+#>
+<#=new string(' ', level * 4)#>				<#=injectCode#>
+<#+
+		}
+	}
 #>

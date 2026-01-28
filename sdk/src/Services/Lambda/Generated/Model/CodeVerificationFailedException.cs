@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for CodeVerificationFailedException
+        /// message.
+        /// </summary>
+        public CodeVerificationFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CodeVerificationFailedException with the specified error
         /// message.
         /// </summary>

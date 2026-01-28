@@ -41,6 +41,13 @@ namespace Amazon.MigrationHub.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyErrorException
+        /// message.
+        /// </summary>
+        public PolicyErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyErrorException with the specified error
         /// message.
         /// </summary>

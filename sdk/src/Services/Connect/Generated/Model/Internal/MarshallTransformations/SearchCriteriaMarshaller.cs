@@ -46,6 +46,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActiveRegions())
+            {
+                context.Writer.WritePropertyName("ActiveRegions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectActiveRegionsListValue in requestObject.ActiveRegions)
+                {
+                        context.Writer.WriteStringValue(requestObjectActiveRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetAdditionalTimeRange())
             {
                 context.Writer.WritePropertyName("AdditionalTimeRange");

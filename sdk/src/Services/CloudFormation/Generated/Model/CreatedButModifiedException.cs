@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for CreatedButModifiedException
+        /// message.
+        /// </summary>
+        public CreatedButModifiedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CreatedButModifiedException with the specified error
         /// message.
         /// </summary>

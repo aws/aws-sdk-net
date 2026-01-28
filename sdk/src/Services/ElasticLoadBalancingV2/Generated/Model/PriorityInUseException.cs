@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for PriorityInUseException
+        /// message.
+        /// </summary>
+        public PriorityInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PriorityInUseException with the specified error
         /// message.
         /// </summary>

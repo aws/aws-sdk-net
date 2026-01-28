@@ -109,6 +109,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListChildHoursOfOperations operation
+        ///</summary>
+        public IListChildHoursOfOperationsPaginator ListChildHoursOfOperations(ListChildHoursOfOperationsRequest request) 
+        {
+            return new ListChildHoursOfOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactEvaluations operation
         ///</summary>
         public IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request) 
@@ -202,6 +210,14 @@ namespace Amazon.Connect.Model
         public IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request) 
         {
             return new ListDefaultVocabulariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEntitySecurityProfiles operation
+        ///</summary>
+        public IListEntitySecurityProfilesPaginator ListEntitySecurityProfiles(ListEntitySecurityProfilesRequest request) 
+        {
+            return new ListEntitySecurityProfilesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -405,6 +421,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListSecurityProfileFlowModules operation
+        ///</summary>
+        public IListSecurityProfileFlowModulesPaginator ListSecurityProfileFlowModules(ListSecurityProfileFlowModulesRequest request) 
+        {
+            return new ListSecurityProfileFlowModulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityProfilePermissions operation
         ///</summary>
         public IListSecurityProfilePermissionsPaginator ListSecurityProfilePermissions(ListSecurityProfilePermissionsRequest request) 
@@ -426,6 +450,14 @@ namespace Amazon.Connect.Model
         public IListTaskTemplatesPaginator ListTaskTemplates(ListTaskTemplatesRequest request) 
         {
             return new ListTaskTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestCases operation
+        ///</summary>
+        public IListTestCasesPaginator ListTestCases(ListTestCasesRequest request) 
+        {
+            return new ListTestCasesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -626,6 +658,14 @@ namespace Amazon.Connect.Model
         public ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request) 
         {
             return new SearchSecurityProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchTestCases operation
+        ///</summary>
+        public ISearchTestCasesPaginator SearchTestCases(SearchTestCasesRequest request) 
+        {
+            return new SearchTestCasesPaginator(this.client, request);
         }
 
         /// <summary>

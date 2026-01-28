@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAssociationVersionException
+        /// message.
+        /// </summary>
+        public InvalidAssociationVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAssociationVersionException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.LexModelBuildingService
         /// <summary>
         /// Construct instance of AmazonLexModelBuildingServiceException
         /// </summary>
+        public AmazonLexModelBuildingServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLexModelBuildingServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLexModelBuildingServiceException(string message)
             : base(message)

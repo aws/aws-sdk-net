@@ -46,7 +46,8 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property AccessPoints. 
         /// <para>
-        /// Position of the access point represented by longitude and latitude.
+        /// Position of the access point in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -153,7 +154,7 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The position, in longitude and latitude.
+        /// The position in World Geodetic System (WGS 84) format: [longitude, latitude].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

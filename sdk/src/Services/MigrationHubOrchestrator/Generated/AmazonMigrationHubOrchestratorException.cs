@@ -36,6 +36,14 @@ namespace Amazon.MigrationHubOrchestrator
         /// <summary>
         /// Construct instance of AmazonMigrationHubOrchestratorException
         /// </summary>
+        public AmazonMigrationHubOrchestratorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMigrationHubOrchestratorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMigrationHubOrchestratorException(string message)
             : base(message)

@@ -257,6 +257,63 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Determines if an exception indicates a stale pooled connection.
+        /// These errors occur when an HTTP connection from the pool has been 
+        /// closed by the server but the client hasn't detected this yet.
+        /// </summary>
+        /// <param name="exception">The exception to check.</param>
+        /// <returns>true if the exception indicates a stale connection error, else false.</returns>
+        public virtual bool IsStaleConnectionError(Exception exception)
+        {
+            // Walk the exception chain looking for SocketException with known stale connection error codes
+            var currentException = exception;
+            while (currentException != null)
+            {
+                if (currentException is System.Net.Sockets.SocketException socketException)
+                {
+                    // SocketError.Shutdown (32) = Broken pipe on Unix/Linux
+                    // SocketError.ConnectionReset (10054) = Connection reset by peer
+                    // SocketError.ConnectionAborted (10053) = Connection aborted
+                    if (socketException.SocketErrorCode == System.Net.Sockets.SocketError.Shutdown ||
+                        socketException.SocketErrorCode == System.Net.Sockets.SocketError.ConnectionReset ||
+                        socketException.SocketErrorCode == System.Net.Sockets.SocketError.ConnectionAborted)
+                    {
+                        return true;
+                    }
+                }
+
+#if NETSTANDARD
+                // .NET 8+ fallback: HttpClient may throw HttpIOException when the response
+                // ends prematurely due to stale connections. HttpIOException is .NET 8+ - we check by
+                // type name to avoid compilation issues on older targets that support NetStandard.
+                if (currentException.GetType().Name == "HttpIOException")
+                {
+                    var message = currentException.Message;
+                    if (message != null && message.Contains("The response ended prematurely"))
+                    {
+                        return true;
+                    }
+                }
+#else
+                // .NET Framework fallback: HttpWebRequest wraps stale connection errors as IOException
+                // without exposing the underlying SocketException. Check for known message patterns.
+                if (currentException is IOException ioException)
+                {
+                    var message = ioException.Message;
+                    if (message != null && message.Contains("The connection was closed"))
+                    {
+                        return true;
+                    }
+                }
+#endif
+
+                currentException = currentException.InnerException;
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Determines if an AmazonServiceException is a transient error that
         /// should be retried.
         /// </summary>

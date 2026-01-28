@@ -39,6 +39,13 @@ namespace Amazon.AutoScaling.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceLinkedRoleFailureException
+        /// message.
+        /// </summary>
+        public ServiceLinkedRoleFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceLinkedRoleFailureException with the specified error
         /// message.
         /// </summary>

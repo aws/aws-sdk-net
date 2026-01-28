@@ -39,6 +39,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for ApplicationNotSupportedException
+        /// message.
+        /// </summary>
+        public ApplicationNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApplicationNotSupportedException with the specified error
         /// message.
         /// </summary>

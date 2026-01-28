@@ -40,6 +40,13 @@ namespace Amazon.AWSSupport.Model
     {
 
         /// <summary>
+        /// Default constructor for DescribeAttachmentLimitExceededException
+        /// message.
+        /// </summary>
+        public DescribeAttachmentLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DescribeAttachmentLimitExceededException with the specified error
         /// message.
         /// </summary>

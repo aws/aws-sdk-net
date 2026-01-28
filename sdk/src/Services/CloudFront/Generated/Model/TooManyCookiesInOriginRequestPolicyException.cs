@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyCookiesInOriginRequestPolicyException
+        /// message.
+        /// </summary>
+        public TooManyCookiesInOriginRequestPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyCookiesInOriginRequestPolicyException with the specified error
         /// message.
         /// </summary>

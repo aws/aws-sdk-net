@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidGitHubAccountTokenNameException
+        /// message.
+        /// </summary>
+        public InvalidGitHubAccountTokenNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGitHubAccountTokenNameException with the specified error
         /// message.
         /// </summary>

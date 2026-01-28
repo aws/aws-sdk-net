@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for OptionGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public OptionGroupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OptionGroupQuotaExceededException with the specified error
         /// message.
         /// </summary>

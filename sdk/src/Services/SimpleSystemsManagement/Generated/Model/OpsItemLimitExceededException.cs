@@ -42,6 +42,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
+        /// Default constructor for OpsItemLimitExceededException
+        /// message.
+        /// </summary>
+        public OpsItemLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsItemLimitExceededException with the specified error
         /// message.
         /// </summary>

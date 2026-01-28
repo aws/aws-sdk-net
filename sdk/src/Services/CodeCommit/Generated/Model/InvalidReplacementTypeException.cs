@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidReplacementTypeException
+        /// message.
+        /// </summary>
+        public InvalidReplacementTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidReplacementTypeException with the specified error
         /// message.
         /// </summary>

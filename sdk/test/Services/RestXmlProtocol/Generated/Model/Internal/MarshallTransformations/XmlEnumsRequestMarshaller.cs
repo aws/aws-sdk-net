@@ -74,7 +74,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("fooEnum3", StringUtils.FromString(publicRequest.FooEnum3));
 
                 var publicRequestFooEnumList = publicRequest.FooEnumList;
-                if (publicRequestFooEnumList != null && (publicRequestFooEnumList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFooEnumList()) 
                 {
                     xmlWriter.WriteStartElement("fooEnumList");
                     foreach (var publicRequestFooEnumListValue in publicRequestFooEnumList) 
@@ -99,7 +99,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestFooEnumSet = publicRequest.FooEnumSet;
-                if (publicRequestFooEnumSet != null && (publicRequestFooEnumSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFooEnumSet()) 
                 {
                     xmlWriter.WriteStartElement("fooEnumSet");
                     foreach (var publicRequestFooEnumSetValue in publicRequestFooEnumSet) 

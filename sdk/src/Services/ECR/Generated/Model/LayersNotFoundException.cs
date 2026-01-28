@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for LayersNotFoundException
+        /// message.
+        /// </summary>
+        public LayersNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LayersNotFoundException with the specified error
         /// message.
         /// </summary>

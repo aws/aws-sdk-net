@@ -41,6 +41,13 @@ namespace Amazon.ServiceDiscovery.Model
         private string _namespaceId;
 
         /// <summary>
+        /// Default constructor for NamespaceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public NamespaceAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NamespaceAlreadyExistsException with the specified error
         /// message.
         /// </summary>

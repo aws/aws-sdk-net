@@ -43,23 +43,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 context.Read(ref reader);
             }
 
-<#
-            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
-            {
-                GenerateAWSQueryCompatibleBlock();
-#>
-            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
-                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
-<#
-            }
-            else
-            {
-#>
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-<#
-            }
-#>
         
             int targetDepth = context.CurrentDepth;
             if (context.Stream.Length > 0)

@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ApprovalRuleTemplateNameAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ApprovalRuleTemplateNameAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApprovalRuleTemplateNameAlreadyExistsException with the specified error
         /// message.
         /// </summary>

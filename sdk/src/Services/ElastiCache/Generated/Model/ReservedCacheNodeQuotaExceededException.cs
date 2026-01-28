@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedCacheNodeQuotaExceededException
+        /// message.
+        /// </summary>
+        public ReservedCacheNodeQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedCacheNodeQuotaExceededException with the specified error
         /// message.
         /// </summary>

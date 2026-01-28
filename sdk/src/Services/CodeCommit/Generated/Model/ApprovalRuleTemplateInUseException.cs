@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ApprovalRuleTemplateInUseException
+        /// message.
+        /// </summary>
+        public ApprovalRuleTemplateInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApprovalRuleTemplateInUseException with the specified error
         /// message.
         /// </summary>

@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// You can't use this operation to delete an account-level index policy. Instead, use
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeletAccountPolicy</a>.
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeleteAccountPolicy</a>.
     /// </para>
     ///  
     /// <para>

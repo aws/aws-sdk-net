@@ -39,6 +39,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for OutboundContactNotPermittedException
+        /// message.
+        /// </summary>
+        public OutboundContactNotPermittedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OutboundContactNotPermittedException with the specified error
         /// message.
         /// </summary>

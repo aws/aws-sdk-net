@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalBlueprintStateException
+        /// message.
+        /// </summary>
+        public IllegalBlueprintStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalBlueprintStateException with the specified error
         /// message.
         /// </summary>

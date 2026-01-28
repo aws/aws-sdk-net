@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsAssociatedToOriginRequestPolicyException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsAssociatedToOriginRequestPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsAssociatedToOriginRequestPolicyException with the specified error
         /// message.
         /// </summary>

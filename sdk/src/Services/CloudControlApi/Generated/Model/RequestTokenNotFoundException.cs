@@ -39,6 +39,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestTokenNotFoundException
+        /// message.
+        /// </summary>
+        public RequestTokenNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestTokenNotFoundException with the specified error
         /// message.
         /// </summary>

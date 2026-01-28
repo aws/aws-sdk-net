@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _typeName;
 
         /// <summary>
+        /// Default constructor for ItemSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public ItemSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ItemSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

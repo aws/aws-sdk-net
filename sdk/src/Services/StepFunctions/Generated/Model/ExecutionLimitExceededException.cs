@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for ExecutionLimitExceededException
+        /// message.
+        /// </summary>
+        public ExecutionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExecutionLimitExceededException with the specified error
         /// message.
         /// </summary>

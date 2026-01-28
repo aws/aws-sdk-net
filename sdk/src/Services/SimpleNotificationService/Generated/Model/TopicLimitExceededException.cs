@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for TopicLimitExceededException
+        /// message.
+        /// </summary>
+        public TopicLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TopicLimitExceededException with the specified error
         /// message.
         /// </summary>

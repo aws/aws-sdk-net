@@ -40,6 +40,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for AssociatedEndpointGroupFoundException
+        /// message.
+        /// </summary>
+        public AssociatedEndpointGroupFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AssociatedEndpointGroupFoundException with the specified error
         /// message.
         /// </summary>

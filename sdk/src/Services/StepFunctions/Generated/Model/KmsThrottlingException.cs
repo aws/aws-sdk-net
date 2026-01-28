@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsThrottlingException
+        /// message.
+        /// </summary>
+        public KmsThrottlingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsThrottlingException with the specified error
         /// message.
         /// </summary>

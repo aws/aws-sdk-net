@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for TrailNotFoundException
+        /// message.
+        /// </summary>
+        public TrailNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrailNotFoundException with the specified error
         /// message.
         /// </summary>

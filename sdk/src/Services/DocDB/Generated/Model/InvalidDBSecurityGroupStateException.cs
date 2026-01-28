@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBSecurityGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidDBSecurityGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBSecurityGroupStateException with the specified error
         /// message.
         /// </summary>

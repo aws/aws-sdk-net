@@ -40,6 +40,13 @@ namespace Amazon.DataExchange.Model
         private ExceptionCause _exceptionCause;
 
         /// <summary>
+        /// Default constructor for ValidationException
+        /// message.
+        /// </summary>
+        public ValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ValidationException with the specified error
         /// message.
         /// </summary>

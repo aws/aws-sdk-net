@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSAccessDeniedException
+        /// message.
+        /// </summary>
+        public KMSAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSAccessDeniedException with the specified error
         /// message.
         /// </summary>

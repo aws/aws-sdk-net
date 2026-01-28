@@ -36,6 +36,14 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Construct instance of AmazonIdentityManagementServiceException
         /// </summary>
+        public AmazonIdentityManagementServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIdentityManagementServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIdentityManagementServiceException(string message)
             : base(message)

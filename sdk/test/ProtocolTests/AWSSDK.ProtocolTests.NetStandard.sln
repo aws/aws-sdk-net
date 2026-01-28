@@ -27,10 +27,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.JsonProtocol.Netstan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.Netstandard", "..\..\src\Services\S3\AWSSDK.S3.Netstandard.csproj", "{6C0E771C-5B37-4781-B251-4D7FC14B4A98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest.NetStandard", "..\NetStandard\Common\AWSSDK.CommonTest.NetStandard.csproj", "{34DC76C0-FFC9-42B1-8B44-6D81D9E3B07C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities.Netstandard", "..\UnitTests\Custom\AWSSDK.UnitTestUtilities.Netstandard.csproj", "{A267E3F2-38CC-4659-B9C9-1BBB3058C88B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.QueryCompatibleJSONRPC10.NetStandard", "..\Services\QueryCompatibleJSONRPC10\AWSSDK.QueryCompatibleJSONRPC10.NetStandard.csproj", "{2CB42D7B-1D22-8605-7EC8-207E0DACC076}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.RpcV2Protocol.NetStandard", "..\Services\RpcV2Protocol\AWSSDK.RpcV2Protocol.NetStandard.csproj", "{5416C5A8-2446-0BD3-C670-B15344172326}"
@@ -40,6 +36,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.NonQueryCompatibleRpcV2Protocol.NetStandard", "..\Services\NonQueryCompatibleRpcV2Protocol\AWSSDK.NonQueryCompatibleRpcV2Protocol.NetStandard.csproj", "{B858AB4F-A0D0-D74A-AD90-8929E5047DD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.QueryCompatibleRpcV2Protocol.NetStandard", "..\Services\QueryCompatibleRpcV2Protocol\AWSSDK.QueryCompatibleRpcV2Protocol.NetStandard.csproj", "{404120F1-BF0C-E3FA-D012-B191C6E424F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CommonTest", "..\Common\AWSSDK.CommonTest.csproj", "{DAF4AD46-E8D4-ED5E-7B14-6EF8DF2562EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.UnitTestUtilities", "..\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{2EA6F5D5-D153-9393-BD87-B39E21E2507B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,14 +95,6 @@ Global
 		{6C0E771C-5B37-4781-B251-4D7FC14B4A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C0E771C-5B37-4781-B251-4D7FC14B4A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C0E771C-5B37-4781-B251-4D7FC14B4A98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34DC76C0-FFC9-42B1-8B44-6D81D9E3B07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34DC76C0-FFC9-42B1-8B44-6D81D9E3B07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34DC76C0-FFC9-42B1-8B44-6D81D9E3B07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34DC76C0-FFC9-42B1-8B44-6D81D9E3B07C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A267E3F2-38CC-4659-B9C9-1BBB3058C88B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A267E3F2-38CC-4659-B9C9-1BBB3058C88B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A267E3F2-38CC-4659-B9C9-1BBB3058C88B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A267E3F2-38CC-4659-B9C9-1BBB3058C88B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2CB42D7B-1D22-8605-7EC8-207E0DACC076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2CB42D7B-1D22-8605-7EC8-207E0DACC076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CB42D7B-1D22-8605-7EC8-207E0DACC076}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -123,6 +115,14 @@ Global
 		{404120F1-BF0C-E3FA-D012-B191C6E424F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{404120F1-BF0C-E3FA-D012-B191C6E424F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{404120F1-BF0C-E3FA-D012-B191C6E424F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF4AD46-E8D4-ED5E-7B14-6EF8DF2562EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF4AD46-E8D4-ED5E-7B14-6EF8DF2562EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF4AD46-E8D4-ED5E-7B14-6EF8DF2562EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF4AD46-E8D4-ED5E-7B14-6EF8DF2562EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA6F5D5-D153-9393-BD87-B39E21E2507B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA6F5D5-D153-9393-BD87-B39E21E2507B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA6F5D5-D153-9393-BD87-B39E21E2507B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA6F5D5-D153-9393-BD87-B39E21E2507B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

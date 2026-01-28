@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchChangeException
+        /// message.
+        /// </summary>
+        public NoSuchChangeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchChangeException with the specified error
         /// message.
         /// </summary>

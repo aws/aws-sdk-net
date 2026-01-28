@@ -47,6 +47,13 @@ namespace Amazon.CloudWatchLogs.Model
         private string _expectedSequenceToken;
 
         /// <summary>
+        /// Default constructor for DataAlreadyAcceptedException
+        /// message.
+        /// </summary>
+        public DataAlreadyAcceptedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DataAlreadyAcceptedException with the specified error
         /// message.
         /// </summary>

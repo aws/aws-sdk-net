@@ -41,6 +41,13 @@ namespace Amazon.SimpleEmail.Model
         private string _eventDestinationName;
 
         /// <summary>
+        /// Default constructor for EventDestinationAlreadyExistsException
+        /// message.
+        /// </summary>
+        public EventDestinationAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventDestinationAlreadyExistsException with the specified error
         /// message.
         /// </summary>

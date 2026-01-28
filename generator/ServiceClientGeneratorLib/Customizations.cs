@@ -1035,6 +1035,7 @@ namespace ServiceClientGenerator
             public const string PredicateListUnmarshallersKey = "predicateListUnmarshallers";
             public const string ExcludeFromUnmarshallingKey = "excludeFromUnmarshalling";
             public const string InjectXmlMarshallCodeInPayloadKey = "injectXmlMarshallCodeInPayload";
+            public const string InjectXmlUnmarshallResultCodeKey = "injectXmlUnmarshallResultCode";
 
             private readonly HashSet<string> _excludedProperties;
             private readonly Dictionary<string, JsonData> _modifiedProperties;
@@ -1047,6 +1048,7 @@ namespace ServiceClientGenerator
             private readonly Dictionary<string, JsonData> _predicateListUnmarshallers;
             private readonly HashSet<string> _excludedUnmarshallingProperties;
             private readonly HashSet<string> _injectXmlMarshallCodeInPayload;
+            private readonly HashSet<string> _injectXmlUnmarshallResultCode;
 
             public string DeprecationMessage { get; private set; }
 
@@ -1068,7 +1070,20 @@ namespace ServiceClientGenerator
                 _predicateListUnmarshallers = ParsePredicateListUnmarshallers(data);
                 _excludedUnmarshallingProperties = ParseExcludedUnmarshallingProperties(data);
                 _injectXmlMarshallCodeInPayload = ParseInjectXmlMarshallCodeInPayload(data);
+                _injectXmlUnmarshallResultCode = ParseInjectXmlUnmarshallResultCode(data);
             }
+
+            private HashSet<string> ParseInjectXmlUnmarshallResultCode(JsonData data)
+            {
+                var shapeModifierData = data[InjectXmlUnmarshallResultCodeKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(shapeModifierData ?? new string[0]);
+            }
+            /// <summary>
+            /// Use this customization to inject code into the UnmarshallResult method of restXmlUnmarshallers. 
+            /// </summary>
+            public HashSet<string> InjectXmlUnmarshallResultCode { get { return _injectXmlUnmarshallResultCode; } }
 
             private HashSet<string> ParseInjectXmlMarshallCodeInPayload(JsonData data)
             {
@@ -1746,6 +1761,11 @@ namespace ServiceClientGenerator
             return shapeModifiers.ContainsKey(shapeName) ? shapeModifiers[shapeName] : null;
         }
 
+        public bool TryGetShapeModifier(string shapeName, out ShapeModifier shapeModifier)
+        {
+            shapeModifier = GetShapeModifier(shapeName);
+            return shapeModifier == null ? false : true;
+        }
         /// <summary>
         /// Returns true if the specified property name is excluded at global or
         /// per-shape scope.
@@ -1815,7 +1835,10 @@ namespace ServiceClientGenerator
                     modifiers.AddMarshallNameOverride(shapeName, marshalData);
                 }
             }
-
+            if (operation[OperationModifiers.ExcludeResultKeysKey] != null && operation[OperationModifiers.ExcludeResultKeysKey].IsArray)
+                modifiers.ExcludeResultKeys = new HashSet<string>(operation[OperationModifiers.ExcludeResultKeysKey].Cast<object>().Select(x => x.ToString()));
+            if (operation[OperationModifiers.ExcludePaginatorsKey] != null && operation[OperationModifiers.ExcludePaginatorsKey].IsBoolean)
+                modifiers.ExcludePaginators = (bool)operation[OperationModifiers.ExcludePaginatorsKey];
             return modifiers;
         }
 
@@ -1882,12 +1905,31 @@ namespace ServiceClientGenerator
             public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string DocumentationKey = "documentation";
             public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
+            public const string ExcludeResultKeysKey = "excludeResultKey";
+            public const string ExcludePaginatorsKey = "excludePaginators";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
             public const string MarshallName = "marshallName";
 
             private Dictionary<string, JsonData> _marshallNameOverrides = null;
+
+            /// <summary>
+            /// Excludes Paginators for this operation is set to true
+            /// </summary>
+            public bool ExcludePaginators
+            {
+                get;set;
+            }
+
+            /// <summary>
+            /// Excludes the result keys specified in result_keys in the paginator model
+            /// </summary>
+            public HashSet<string> ExcludeResultKeys
+            {
+                get;
+                set;
+            }
 
             /// <summary>
             /// The name of the operation modified

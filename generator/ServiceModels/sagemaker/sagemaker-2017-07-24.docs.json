@@ -58,7 +58,7 @@
     "CreateModelQualityJobDefinition": "<p>Creates a definition for a job that monitors model quality and drift. For information about model monitor, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html\">Amazon SageMaker AI Model Monitor</a>.</p>",
     "CreateMonitoringSchedule": "<p>Creates a schedule that regularly starts Amazon SageMaker AI Processing Jobs to monitor the data captured for an Amazon SageMaker AI Endpoint.</p>",
     "CreateNotebookInstance": "<p>Creates an SageMaker AI notebook instance. A notebook instance is a machine learning (ML) compute instance running on a Jupyter notebook. </p> <p>In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run. SageMaker AI launches the instance, installs common libraries that you can use to explore datasets for model training, and attaches an ML storage volume to the notebook instance. </p> <p>SageMaker AI also provides a set of example notebooks. Each notebook demonstrates how to use SageMaker AI with a specific algorithm or with a machine learning framework. </p> <p>After receiving the request, SageMaker AI does the following:</p> <ol> <li> <p>Creates a network interface in the SageMaker AI VPC.</p> </li> <li> <p>(Option) If you specified <code>SubnetId</code>, SageMaker AI creates a network interface in your own VPC, which is inferred from the subnet ID that you provide in the input. When creating this network interface, SageMaker AI attaches the security group that you specified in the request to the network interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2 instance of the type specified in the request in the SageMaker AI VPC. If you specified <code>SubnetId</code> of your VPC, SageMaker AI specifies both network interfaces when launching this instance. This enables inbound traffic from your own VPC to the notebook instance, assuming that the security groups allow it.</p> </li> </ol> <p>After creating the notebook instance, SageMaker AI returns its Amazon Resource Name (ARN). You can't change the name of a notebook instance after you create it.</p> <p>After SageMaker AI creates the notebook instance, you can connect to the Jupyter server and work in Jupyter notebooks. For example, you can write code to explore a dataset that you can use for model training, train a model, host models by creating SageMaker AI endpoints, and validate hosted models. </p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html\">How It Works</a>. </p>",
-    "CreateNotebookInstanceLifecycleConfig": "<p>Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.</p> <p>Each lifecycle configuration script has a limit of 16384 characters.</p> <p>The value of the <code>$PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View Amazon CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.</p> <p>For information about notebook instance lifestyle configurations, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html\">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>",
+    "CreateNotebookInstanceLifecycleConfig": "<p>Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.</p> <p>Each lifecycle configuration script has a limit of 16384 characters.</p> <p>The value of the <code>$PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View Amazon CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.</p> <p>For information about notebook instance lifestyle configurations, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html\">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p> <note> <p>Lifecycle configuration scripts execute with root access and the notebook instance's IAM execution role privileges. Grant this permission only to trusted principals. See <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html\">Customize a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.</p> </note>",
     "CreateOptimizationJob": "<p>Creates a job that optimizes a model for inference performance. To create the job, you provide the location of a source model, and you provide the settings for the optimization techniques that you want the job to apply. When the job completes successfully, SageMaker uploads the new optimized model to the output destination that you specify.</p> <p>For more information about how to use this action, and about the supported optimization techniques, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-optimize.html\">Optimize model inference with Amazon SageMaker</a>.</p>",
     "CreatePartnerApp": "<p>Creates an Amazon SageMaker Partner AI App.</p>",
     "CreatePartnerAppPresignedUrl": "<p>Creates a presigned URL to access an Amazon SageMaker Partner AI App.</p>",
@@ -367,8 +367,8 @@
     "UpdateModelPackage": "<p>Updates a versioned model.</p>",
     "UpdateMonitoringAlert": "<p>Update the parameters of a model monitor alert.</p>",
     "UpdateMonitoringSchedule": "<p>Updates a previously created schedule.</p>",
-    "UpdateNotebookInstance": "<p>Updates a notebook instance. NotebookInstance updates include upgrading or downgrading the ML compute instance used for your notebook instance to accommodate changes in your workload requirements.</p>",
-    "UpdateNotebookInstanceLifecycleConfig": "<p>Updates a notebook instance lifecycle configuration created with the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html\">CreateNotebookInstanceLifecycleConfig</a> API.</p>",
+    "UpdateNotebookInstance": "<p>Updates a notebook instance. NotebookInstance updates include upgrading or downgrading the ML compute instance used for your notebook instance to accommodate changes in your workload requirements.</p> <note> <p>This API can attach lifecycle configurations to notebook instances. Lifecycle configuration scripts execute with root access and the notebook instance's IAM execution role privileges. Principals with this permission and access to lifecycle configurations can execute code with the execution role's credentials. See <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html\">Customize a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.</p> </note>",
+    "UpdateNotebookInstanceLifecycleConfig": "<p>Updates a notebook instance lifecycle configuration created with the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html\">CreateNotebookInstanceLifecycleConfig</a> API.</p> <note> <p>Updates to lifecycle configurations affect all notebook instances using that configuration upon their next start. Lifecycle configuration scripts execute with root access and the notebook instance's IAM execution role privileges. Grant this permission only to trusted principals. See <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html\">Customize a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.</p> </note>",
     "UpdatePartnerApp": "<p>Updates all of the SageMaker Partner AI Apps in an account.</p>",
     "UpdatePipeline": "<p>Updates a pipeline.</p>",
     "UpdatePipelineExecution": "<p>Updates a pipeline execution.</p>",
@@ -383,6 +383,12 @@
     "UpdateWorkteam": "<p>Updates an existing work team with new member definitions or description.</p>"
   },
   "shapes": {
+    "AbsoluteBorrowLimitResourceList": {
+      "base": null,
+      "refs": {
+        "ResourceSharingConfig$AbsoluteBorrowLimits": "<p>The absolute limits on compute resources that can be borrowed from idle compute. When specified, these limits define the maximum amount of specific resource types (such as accelerators, vCPU, or memory) that an entity can borrow, regardless of the percentage-based <code>BorrowLimit</code>.</p>"
+      }
+    },
     "AcceleratorPartitionConfig": {
       "base": "<p>Configuration for allocating accelerator partitions.</p>",
       "refs": {
@@ -1033,7 +1039,7 @@
     "AssociationInfoList": {
       "base": null,
       "refs": {
-        "LineageMetadata$Associations": "<p> The lineage metadata associations. </p>"
+        "LineageMetadata$Associations": "<p> The lineage associations. </p>"
       }
     },
     "AssociationSummaries": {
@@ -1661,7 +1667,7 @@
     "BaseModel": {
       "base": "<p>Identifies the foundation model that was used as the starting point for model customization.</p>",
       "refs": {
-        "ModelPackageContainerDefinition$BaseModel": "<p> The base model of the package. </p>"
+        "ModelPackageContainerDefinition$BaseModel": "<p> Identifies the foundation model that was used as the starting point for model customization. </p>"
       }
     },
     "BaseModelName": {
@@ -2003,7 +2009,7 @@
         "ListStageDevicesRequest$ExcludeDevicesDeployedInOtherStage": "<p>Toggle for excluding devices deployed in other stages.</p>",
         "Model$EnableNetworkIsolation": "<p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>",
         "ModelDashboardIndicatorAction$Enabled": "<p>Indicates whether the alert action is turned on.</p>",
-        "ModelPackageContainerDefinition$IsCheckpoint": "<p> The checkpoint of the model package. </p>",
+        "ModelPackageContainerDefinition$IsCheckpoint": "<p> Specifies whether the model data is a training checkpoint. </p>",
         "MonitoringCsvDatasetFormat$Header": "<p>Indicates if the CSV data has a header.</p>",
         "MonitoringJsonDatasetFormat$Line": "<p>Indicates if the file should be read as a JSON object per line. </p>",
         "MonitoringNetworkConfig$EnableInterContainerTrafficEncryption": "<p>Whether to encrypt all communications between the instances used for the monitoring jobs. Choose <code>True</code> to encrypt communications. Encryption provides greater security for distributed jobs, but the processing might take longer.</p>",
@@ -3488,6 +3494,7 @@
     "ComputeQuotaResourceConfig": {
       "base": "<p>Configuration of the resources used for the compute allocation definition.</p>",
       "refs": {
+        "AbsoluteBorrowLimitResourceList$member": null,
         "ComputeQuotaResourceConfigList$member": null
       }
     },
@@ -8505,6 +8512,12 @@
         "CanvasAppSettings$IdentityProviderOAuthSettings": "<p>The settings for connecting to an external data source with OAuth.</p>"
       }
     },
+    "IdleResourceSharing": {
+      "base": null,
+      "refs": {
+        "SchedulerConfig$IdleResourceSharing": "<p>Configuration for sharing idle compute resources across entities in the cluster. When enabled, unallocated resources are automatically calculated and made available for entities to borrow. </p>"
+      }
+    },
     "IdleSettings": {
       "base": "<p>Settings related to idle shutdown of Studio applications.</p>",
       "refs": {
@@ -10703,9 +10716,9 @@
     "MapString2048": {
       "base": null,
       "refs": {
-        "LineageMetadata$ActionArns": "<p> The Amazon Resource Name (ARN) of the lineage metadata action. </p>",
-        "LineageMetadata$ArtifactArns": "<p> The Amazon Resource Name (ARN) of the lineage metadata artifact. </p>",
-        "LineageMetadata$ContextArns": "<p> The Amazon Resource Name (ARN) of the lineage metadata context. </p>"
+        "LineageMetadata$ActionArns": "<p> The Amazon Resource Name (ARN) of the lineage action. </p>",
+        "LineageMetadata$ArtifactArns": "<p> The Amazon Resource Name (ARN) of the lineage artifact. </p>",
+        "LineageMetadata$ContextArns": "<p> The Amazon Resource Name (ARN) of the lineage context. </p>"
       }
     },
     "MaxAutoMLJobRuntimeInSeconds": {
@@ -11170,7 +11183,7 @@
       "base": null,
       "refs": {
         "MLflowConfiguration$MlflowExperimentName": "<p> The name of the MLflow configuration. </p>",
-        "StartPipelineExecutionRequest$MlflowExperimentName": "<p> The MLflow experiment name of the start execution. </p>"
+        "StartPipelineExecutionRequest$MlflowExperimentName": "<p> The MLflow experiment name of the pipeline execution. </p>"
       }
     },
     "MlflowExperimentId": {
@@ -15859,6 +15872,12 @@
         "UpdateClusterSchedulerConfigRequest$SchedulerConfig": "<p>Cluster policy configuration.</p>"
       }
     },
+    "SchedulerConfigComponent": {
+      "base": null,
+      "refs": {
+        "StatusDetailsMap$key": null
+      }
+    },
     "SchedulerResourceStatus": {
       "base": null,
       "refs": {
@@ -15867,7 +15886,8 @@
         "DescribeClusterSchedulerConfigResponse$Status": "<p>Status of the cluster policy.</p>",
         "DescribeComputeQuotaResponse$Status": "<p>Status of the compute allocation definition.</p>",
         "ListClusterSchedulerConfigsRequest$Status": "<p>Filter for status.</p>",
-        "ListComputeQuotasRequest$Status": "<p>Filter for status.</p>"
+        "ListComputeQuotasRequest$Status": "<p>Filter for status.</p>",
+        "StatusDetailsMap$value": null
       }
     },
     "Scope": {
@@ -16607,6 +16627,12 @@
         "ProfilerRuleEvaluationStatus$StatusDetails": "<p>Details from the rule evaluation.</p>"
       }
     },
+    "StatusDetailsMap": {
+      "base": null,
+      "refs": {
+        "DescribeClusterSchedulerConfigResponse$StatusDetails": "<p>Additional details about the status of the cluster policy. This field provides context when the policy is in a non-active state, such as during creation, updates, or if failures occur.</p>"
+      }
+    },
     "StatusMessage": {
       "base": null,
       "refs": {
@@ -16850,6 +16876,7 @@
         "SubscribedWorkteam$SellerName": "<p>The name of the vendor in the Amazon Marketplace.</p>",
         "SubscribedWorkteam$ListingId": "<p>Marketplace product listing ID.</p>",
         "UltraServerInfo$Id": "<p>The unique identifier of the UltraServer.</p>",
+        "UltraServerInfo$Type": "<p>The type of the UltraServer.</p>",
         "UserContext$UserProfileArn": "<p>The Amazon Resource Name (ARN) of the user's profile.</p>",
         "UserContext$UserProfileName": "<p>The name of the user's profile.</p>",
         "UserContext$DomainId": "<p>The domain associated with the user.</p>",
@@ -16860,10 +16887,10 @@
     "String1024": {
       "base": null,
       "refs": {
-        "BedrockCustomModelDeploymentMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the metadata for the Amazon Bedrock custom model deployment. </p>",
-        "BedrockCustomModelMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the Amazon Bedrock custom model metadata. </p>",
-        "BedrockModelImportMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the Amazon Bedrock model import metadata. </p>",
-        "BedrockProvisionedModelThroughputMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput metadata. </p>",
+        "BedrockCustomModelDeploymentMetadata$Arn": "<p> The Amazon Resource Name (ARN) for the Amazon Bedrock custom model deployment. </p>",
+        "BedrockCustomModelMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the Amazon Bedrock custom model. </p>",
+        "BedrockModelImportMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the Amazon Bedrock model import. </p>",
+        "BedrockProvisionedModelThroughputMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput. </p>",
         "ClarifyCheckStepMetadata$BaselineUsedForDriftCheckConstraints": "<p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>",
         "ClarifyCheckStepMetadata$CalculatedBaselineConstraints": "<p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>",
         "ClarifyCheckStepMetadata$ViolationReport": "<p>The Amazon S3 URI of the violation report if violations are detected.</p>",
@@ -16907,7 +16934,7 @@
         "AssociationInfo$DestinationArn": "<p> The Amazon Resource Name (ARN) of the <code>AssociationInfo</code> destination. </p>",
         "CreatePartnerAppPresignedUrlResponse$Url": "<p>The presigned URL that you can use to access the SageMaker Partner AI App.</p>",
         "DescribePartnerAppResponse$BaseUrl": "<p>The URL of the SageMaker Partner AI App that the Application SDK uses to support in-app calls for the user.</p>",
-        "InferenceComponentMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the inference component metadata. </p>",
+        "InferenceComponentMetadata$Arn": "<p> The Amazon Resource Name (ARN) of the inference component. </p>",
         "MapString2048$key": null,
         "MapString2048$value": null
       }

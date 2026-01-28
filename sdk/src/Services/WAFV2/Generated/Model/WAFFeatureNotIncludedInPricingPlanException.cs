@@ -41,6 +41,13 @@ namespace Amazon.WAFV2.Model
         private List<DisallowedFeature> _disallowedFeatures = AWSConfigs.InitializeCollections ? new List<DisallowedFeature>() : null;
 
         /// <summary>
+        /// Default constructor for WAFFeatureNotIncludedInPricingPlanException
+        /// message.
+        /// </summary>
+        public WAFFeatureNotIncludedInPricingPlanException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFFeatureNotIncludedInPricingPlanException with the specified error
         /// message.
         /// </summary>

@@ -25,6 +25,64 @@ namespace Amazon.PaymentCryptography
 {
 
     /// <summary>
+    /// Constants used for properties of type As2805KeyVariant.
+    /// </summary>
+    public class As2805KeyVariant : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATA_ENCRYPTION_KEY_VARIANT_22 for As2805KeyVariant
+        /// </summary>
+        public static readonly As2805KeyVariant DATA_ENCRYPTION_KEY_VARIANT_22 = new As2805KeyVariant("DATA_ENCRYPTION_KEY_VARIANT_22");
+        /// <summary>
+        /// Constant MESSAGE_AUTHENTICATION_KEY_VARIANT_24 for As2805KeyVariant
+        /// </summary>
+        public static readonly As2805KeyVariant MESSAGE_AUTHENTICATION_KEY_VARIANT_24 = new As2805KeyVariant("MESSAGE_AUTHENTICATION_KEY_VARIANT_24");
+        /// <summary>
+        /// Constant PIN_ENCRYPTION_KEY_VARIANT_28 for As2805KeyVariant
+        /// </summary>
+        public static readonly As2805KeyVariant PIN_ENCRYPTION_KEY_VARIANT_28 = new As2805KeyVariant("PIN_ENCRYPTION_KEY_VARIANT_28");
+        /// <summary>
+        /// Constant TERMINAL_MAJOR_KEY_VARIANT_00 for As2805KeyVariant
+        /// </summary>
+        public static readonly As2805KeyVariant TERMINAL_MAJOR_KEY_VARIANT_00 = new As2805KeyVariant("TERMINAL_MAJOR_KEY_VARIANT_00");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public As2805KeyVariant(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static As2805KeyVariant FindValue(string value)
+        {
+            return FindValue<As2805KeyVariant>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator As2805KeyVariant(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeriveKeyUsage.
     /// </summary>
     public class DeriveKeyUsage : ConstantClass
@@ -808,6 +866,10 @@ namespace Amazon.PaymentCryptography
         /// Constant TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT for KeyUsage
         /// </summary>
         public static readonly KeyUsage TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT = new KeyUsage("TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT");
+        /// <summary>
+        /// Constant TR31_M0_ISO_16609_MAC_KEY for KeyUsage
+        /// </summary>
+        public static readonly KeyUsage TR31_M0_ISO_16609_MAC_KEY = new KeyUsage("TR31_M0_ISO_16609_MAC_KEY");
         /// <summary>
         /// Constant TR31_M1_ISO_9797_1_MAC_KEY for KeyUsage
         /// </summary>

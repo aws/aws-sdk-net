@@ -12,83 +12,72 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.IO;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.S3.Transfer;
-using System.Security.Cryptography;
-using System.Net;
-using ThirdParty.MD5;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using Amazon;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Tests for StorageInsightsAnalytics
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class StorageInsightsAnalyticsTests : TestBase<AmazonS3Client>
     {
         public static string bucketName;
         
         [TestInitialize]
-        public void Init()
+        public async Task Init()
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public async Task Cleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
         }
 
-        [TestCategory("S3")]
         [TestMethod]
-        public void BucketAnalyticsConfigurationsTestWithSigV4()
+        public async Task BucketAnalyticsConfigurationsTestWithSigV4()
         {
-            BucketAnalyticsConfigurationsAndFilterTest();
-            BucketAnalyticsConfigurationsPrefixFilterTest();
-            BucketAnalyticsConfigurationsTagFilterTest();
+            await BucketAnalyticsConfigurationsAndFilterTest();
+            await BucketAnalyticsConfigurationsPrefixFilterTest();
+            await BucketAnalyticsConfigurationsTagFilterTest();
         }
 
-        public void BucketAnalyticsConfigurationsAndFilterTest()
+        public async Task BucketAnalyticsConfigurationsAndFilterTest()
         {
-            Tag tag = new Tag()
+            var list = new List<AnalyticsFilterPredicate>
             {
-                Key = "tagK",
-                Value = "tagV"
+                new AnalyticsPrefixPredicate("string"),
+                new AnalyticsTagPredicate(new Tag
+                {
+                    Key = "tagK",
+                    Value = "tagV"
+                })
             };
-            List<AnalyticsFilterPredicate> list = new List<AnalyticsFilterPredicate>();
-            list.Add(new AnalyticsPrefixPredicate("string"));
-            list.Add(new AnalyticsTagPredicate(tag));
-            PutBucketAnalyticsConfigurationRequest putBucketAnalyticsConfigurationRequest = new PutBucketAnalyticsConfigurationRequest()
+
+            var putBucketAnalyticsConfigurationRequest = new PutBucketAnalyticsConfigurationRequest
             {
                 BucketName = bucketName,
                 AnalyticsId = "configId",
-                AnalyticsConfiguration = new AnalyticsConfiguration()
+                AnalyticsConfiguration = new AnalyticsConfiguration
                 {
-                    AnalyticsFilter = new AnalyticsFilter()
+                    AnalyticsFilter = new AnalyticsFilter
                     {
                         AnalyticsFilterPredicate = new AnalyticsAndOperator(list)
                     },
                     AnalyticsId = "configId",
-                    StorageClassAnalysis = new StorageClassAnalysis()
+                    StorageClassAnalysis = new StorageClassAnalysis
                     {
-                        DataExport = new StorageClassAnalysisDataExport()
+                        DataExport = new StorageClassAnalysisDataExport
                         {
                             OutputSchemaVersion = StorageClassAnalysisSchemaVersion.V_1,
-                            Destination = new AnalyticsExportDestination()
+                            Destination = new AnalyticsExportDestination
                             {
-                                S3BucketDestination = new AnalyticsS3BucketDestination()
+                                S3BucketDestination = new AnalyticsS3BucketDestination
                                 {
                                     Format = AnalyticsS3ExportFileFormat.CSV,
                                     BucketAccountId = "599169622985",
@@ -100,17 +89,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                 }
             };
-            var putBucketAnalyticsConfigurationResponse = Client.PutBucketAnalyticsConfiguration(putBucketAnalyticsConfigurationRequest);
 
-            GetBucketAnalyticsConfigurationRequest getBucketAnalyticsConfigurationRequest = new GetBucketAnalyticsConfigurationRequest()
+            var putBucketAnalyticsConfigurationResponse = await Client.PutBucketAnalyticsConfigurationAsync(putBucketAnalyticsConfigurationRequest);
+
+            var getBucketAnalyticsConfigurationRequest = new GetBucketAnalyticsConfigurationRequest
             {
                 BucketName = bucketName,
                 AnalyticsId = "configId"
             };
 
-            var getBucketAnalyticsConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            var getBucketAnalyticsConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
+                var res = await Client.GetBucketAnalyticsConfigurationAsync(getBucketAnalyticsConfigurationRequest);
                 return res.AnalyticsConfiguration?.AnalyticsId == putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration.AnalyticsId ? res : null;
             });
             
@@ -119,9 +109,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             foreach (var predicate in ((AnalyticsNAryOperator)getAnalyticsConfiguration.AnalyticsFilter.AnalyticsFilterPredicate).Operands)
             {
-                if (predicate is AnalyticsPrefixPredicate)
+                if (predicate is AnalyticsPrefixPredicate prefixPredicate)
                 {
-                    Assert.AreEqual(((AnalyticsPrefixPredicate)predicate).Prefix, "string");
+                    Assert.AreEqual(prefixPredicate.Prefix, "string");
                 }
                 else
                 {
@@ -131,35 +121,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
 
             GetBucketAnalyticsValidation(getAnalyticsConfiguration, putAnalyticsConfiguration);
-
-            ListBucketAnalytics();
-
-            DeleteAnalyticsBucketAndValidate();
-
-
+            await DeleteAnalyticsBucketAndValidate();
         }
 
-        public void BucketAnalyticsConfigurationsPrefixFilterTest()
+        public async Task BucketAnalyticsConfigurationsPrefixFilterTest()
         {
-            PutBucketAnalyticsConfigurationRequest putBucketAnalyticsConfigurationRequest = new PutBucketAnalyticsConfigurationRequest()
+            var putBucketAnalyticsConfigurationRequest = new PutBucketAnalyticsConfigurationRequest
             {
                 BucketName = bucketName,
                 AnalyticsId = "configId",
-                AnalyticsConfiguration = new AnalyticsConfiguration()
+                AnalyticsConfiguration = new AnalyticsConfiguration
                 {
-                    AnalyticsFilter = new AnalyticsFilter()
+                    AnalyticsFilter = new AnalyticsFilter
                     {
                         AnalyticsFilterPredicate = new AnalyticsPrefixPredicate("string")
                     },
                     AnalyticsId = "configId",
-                    StorageClassAnalysis = new StorageClassAnalysis()
+                    StorageClassAnalysis = new StorageClassAnalysis
                     {
-                        DataExport = new StorageClassAnalysisDataExport()
+                        DataExport = new StorageClassAnalysisDataExport
                         {
                             OutputSchemaVersion = StorageClassAnalysisSchemaVersion.V_1,
-                            Destination = new AnalyticsExportDestination()
+                            Destination = new AnalyticsExportDestination
                             {
-                                S3BucketDestination = new AnalyticsS3BucketDestination()
+                                S3BucketDestination = new AnalyticsS3BucketDestination
                                 {
                                     Format = AnalyticsS3ExportFileFormat.CSV,
                                     BucketAccountId = "599169622985",
@@ -171,59 +156,54 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                 }
             };
-            var putBucketAnalyticsConfigurationResponse = Client.PutBucketAnalyticsConfiguration(putBucketAnalyticsConfigurationRequest);
 
-            GetBucketAnalyticsConfigurationRequest getBucketAnalyticsConfigurationRequest = new GetBucketAnalyticsConfigurationRequest()
+            var putBucketAnalyticsConfigurationResponse = await Client.PutBucketAnalyticsConfigurationAsync(putBucketAnalyticsConfigurationRequest);
+
+            var getBucketAnalyticsConfigurationRequest = new GetBucketAnalyticsConfigurationRequest
             {
                 BucketName = bucketName,
                 AnalyticsId = "configId"
             };
                         
-            var getBucketAnalyticsConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            var getBucketAnalyticsConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
+                var res = await Client.GetBucketAnalyticsConfigurationAsync(getBucketAnalyticsConfigurationRequest);
                 return res.AnalyticsConfiguration?.AnalyticsId == putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration.AnalyticsId ? res : null;
             });
 
             var getAnalyticsConfiguration = getBucketAnalyticsConfigurationResponse.AnalyticsConfiguration;
             var putAnalyticsConfiguration = putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration;
-
             Assert.AreEqual(((AnalyticsPrefixPredicate)getAnalyticsConfiguration.AnalyticsFilter.AnalyticsFilterPredicate).Prefix, "string");
 
             GetBucketAnalyticsValidation(getAnalyticsConfiguration, putAnalyticsConfiguration);
-
-
-            ListBucketAnalytics();
-            
-            DeleteAnalyticsBucketAndValidate();
+            await DeleteAnalyticsBucketAndValidate();
         }
 
-        public void BucketAnalyticsConfigurationsTagFilterTest()
+        public async Task BucketAnalyticsConfigurationsTagFilterTest()
         {
-            Tag tag = new Tag()
-            {
-                Key = "tagK",
-                Value = "tagV"
-            };
-            PutBucketAnalyticsConfigurationRequest putBucketAnalyticsConfigurationRequest = new PutBucketAnalyticsConfigurationRequest()
+            var putBucketAnalyticsConfigurationRequest = new PutBucketAnalyticsConfigurationRequest
             {
                 BucketName = bucketName,
                 AnalyticsId = "configId",
-                AnalyticsConfiguration = new AnalyticsConfiguration()
+                AnalyticsConfiguration = new AnalyticsConfiguration
                 {
-                    AnalyticsFilter = new AnalyticsFilter()
+                    AnalyticsFilter = new AnalyticsFilter
                     {
-                        AnalyticsFilterPredicate = new AnalyticsTagPredicate(tag)
+                        AnalyticsFilterPredicate = new AnalyticsTagPredicate(new Tag
+                        {
+                            Key = "tagK",
+                            Value = "tagV"
+                        })
                     },
                     AnalyticsId = "configId",
-                    StorageClassAnalysis = new StorageClassAnalysis()
+                    StorageClassAnalysis = new StorageClassAnalysis
                     {
-                        DataExport = new StorageClassAnalysisDataExport()
+                        DataExport = new StorageClassAnalysisDataExport
                         {
                             OutputSchemaVersion = StorageClassAnalysisSchemaVersion.V_1,
-                            Destination = new AnalyticsExportDestination()
+                            Destination = new AnalyticsExportDestination
                             {
-                                S3BucketDestination = new AnalyticsS3BucketDestination()
+                                S3BucketDestination = new AnalyticsS3BucketDestination
                                 {
                                     Format = AnalyticsS3ExportFileFormat.CSV,
                                     BucketAccountId = "599169622985",
@@ -235,17 +215,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                 }
             };
-            var putBucketAnalyticsConfigurationResponse = Client.PutBucketAnalyticsConfiguration(putBucketAnalyticsConfigurationRequest);
 
-            GetBucketAnalyticsConfigurationRequest getBucketAnalyticsConfigurationRequest = new GetBucketAnalyticsConfigurationRequest()
+            var putBucketAnalyticsConfigurationResponse = await Client.PutBucketAnalyticsConfigurationAsync(putBucketAnalyticsConfigurationRequest);
+            var getBucketAnalyticsConfigurationRequest = new GetBucketAnalyticsConfigurationRequest
             {
                 BucketName = bucketName,
                 AnalyticsId = "configId"
             };
                         
-            var getBucketAnalyticsConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            var getBucketAnalyticsConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
+                var res = await Client.GetBucketAnalyticsConfigurationAsync(getBucketAnalyticsConfigurationRequest);
                 return res.AnalyticsConfiguration?.AnalyticsId == putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration.AnalyticsId ? res : null;
             });
 
@@ -255,33 +235,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(((AnalyticsTagPredicate)getAnalyticsConfiguration.AnalyticsFilter.AnalyticsFilterPredicate).Tag.Value, "tagV");
 
             GetBucketAnalyticsValidation(getAnalyticsConfiguration, putAnalyticsConfiguration);
-
-            ListBucketAnalytics();
-
-            DeleteAnalyticsBucketAndValidate();
+            await DeleteAnalyticsBucketAndValidate();
         }
 
-        private static void ListBucketAnalytics()
+        private static async Task DeleteAnalyticsBucketAndValidate()
         {
-            ListBucketAnalyticsConfigurationsRequest listBucketAnalyticsConfigurationsRequest = new ListBucketAnalyticsConfigurationsRequest()
-            {
-                BucketName = bucketName
-            };
-
-            var response = Client.ListBucketAnalyticsConfigurations(listBucketAnalyticsConfigurationsRequest);
-        }
-
-        private static void DeleteAnalyticsBucketAndValidate()
-        {
-            DeleteBucketAnalyticsConfigurationRequest deleteBucketAnalyticsConfigurationRequest = new DeleteBucketAnalyticsConfigurationRequest()
+            await Client.DeleteBucketAnalyticsConfigurationAsync(new DeleteBucketAnalyticsConfigurationRequest
             {
                 BucketName = bucketName,
                 AnalyticsId = "configId"
-            };
+            });
 
-            var deleteBucketAnalyticsConfigurationResponse = Client.DeleteBucketAnalyticsConfiguration(deleteBucketAnalyticsConfigurationRequest);
-
-            var response = Client.ListObjects(new ListObjectsRequest()
+            var response = await Client.ListObjectsAsync(new ListObjectsRequest()
             {
                 BucketName = bucketName
             });
@@ -313,5 +278,4 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(getS3BucketDestination.Prefix, putS3BucketDestination.Prefix);
         }
     }
-
 }

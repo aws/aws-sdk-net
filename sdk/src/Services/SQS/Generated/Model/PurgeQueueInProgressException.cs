@@ -40,6 +40,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for PurgeQueueInProgressException
+        /// message.
+        /// </summary>
+        public PurgeQueueInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PurgeQueueInProgressException with the specified error
         /// message.
         /// </summary>

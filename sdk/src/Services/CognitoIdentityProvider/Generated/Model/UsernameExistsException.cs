@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UsernameExistsException
+        /// message.
+        /// </summary>
+        public UsernameExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UsernameExistsException with the specified error
         /// message.
         /// </summary>

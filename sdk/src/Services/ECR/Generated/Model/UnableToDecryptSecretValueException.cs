@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for UnableToDecryptSecretValueException
+        /// message.
+        /// </summary>
+        public UnableToDecryptSecretValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnableToDecryptSecretValueException with the specified error
         /// message.
         /// </summary>

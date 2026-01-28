@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRepositoryTriggerCustomDataException
+        /// message.
+        /// </summary>
+        public InvalidRepositoryTriggerCustomDataException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRepositoryTriggerCustomDataException with the specified error
         /// message.
         /// </summary>

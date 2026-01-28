@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAutomationExecutionParametersException
+        /// message.
+        /// </summary>
+        public InvalidAutomationExecutionParametersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAutomationExecutionParametersException with the specified error
         /// message.
         /// </summary>

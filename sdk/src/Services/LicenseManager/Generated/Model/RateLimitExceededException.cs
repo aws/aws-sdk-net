@@ -39,6 +39,13 @@ namespace Amazon.LicenseManager.Model
     {
 
         /// <summary>
+        /// Default constructor for RateLimitExceededException
+        /// message.
+        /// </summary>
+        public RateLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RateLimitExceededException with the specified error
         /// message.
         /// </summary>

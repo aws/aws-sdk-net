@@ -41,6 +41,13 @@ namespace Amazon.AccessAnalyzer.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for UnprocessableEntityException
+        /// message.
+        /// </summary>
+        public UnprocessableEntityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnprocessableEntityException with the specified error
         /// message.
         /// </summary>

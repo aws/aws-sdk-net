@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksProxyVpcEndpointServiceInUseException
+        /// message.
+        /// </summary>
+        public XksProxyVpcEndpointServiceInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksProxyVpcEndpointServiceInUseException with the specified error
         /// message.
         /// </summary>

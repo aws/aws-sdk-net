@@ -39,6 +39,13 @@ namespace Amazon.Omics.Model
     {
 
         /// <summary>
+        /// Default constructor for NotSupportedOperationException
+        /// message.
+        /// </summary>
+        public NotSupportedOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotSupportedOperationException with the specified error
         /// message.
         /// </summary>

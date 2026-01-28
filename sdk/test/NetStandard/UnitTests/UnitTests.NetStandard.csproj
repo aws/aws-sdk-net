@@ -32,18 +32,19 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
-	<Choose>
-		<When Condition=" '$(AWSKeyFile)' == '' ">
-			<PropertyGroup>
-				<AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
-			</PropertyGroup>
-		</When>
-		<Otherwise>
-			<PropertyGroup>
-				<AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
-			</PropertyGroup>
-		</Otherwise>
-	</Choose>
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
   <ItemGroup>
     <EmbeddedResource Include="sample.rsa.private.key.txt" />
     <EmbeddedResource Include="endpoint.customization.json" />
@@ -52,7 +53,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\src\Services\*\*.NetStandard.csproj" />
-    <ProjectReference Include="..\Common\AWSSDK.CommonTest.NetStandard.csproj" />
+    <ProjectReference Include="..\..\Common\AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,7 +71,6 @@
     <Compile Remove="bin\**" />
     <None Remove="bin\**" />
     <EmbeddedResource Remove="bin\**" />
-
     <Compile Remove="obj\**" />
     <None Remove="obj\**" />
   </ItemGroup>

@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for DBInstanceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBInstanceAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBInstanceAlreadyExistsException with the specified error
         /// message.
         /// </summary>

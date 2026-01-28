@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class MediaPackageV2GroupSettings
     {
+        private List<MediaPackageAdditionalDestinations> _additionalDestinations = AWSConfigs.InitializeCollections ? new List<MediaPackageAdditionalDestinations>() : null;
         private List<CaptionLanguageMapping> _captionLanguageMappings = AWSConfigs.InitializeCollections ? new List<CaptionLanguageMapping>() : null;
         private CmafId3Behavior _id3Behavior;
         private CmafKLVBehavior _klvBehavior;
@@ -44,6 +45,27 @@ namespace Amazon.MediaLive.Model
         private CmafTimedMetadataId3Frame _timedMetadataId3Frame;
         private int? _timedMetadataId3Period;
         private CmafTimedMetadataPassthrough _timedMetadataPassthrough;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDestinations. Optional an array of additional
+        /// destinational HTTP destinations for the OutputGroup outputs
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<MediaPackageAdditionalDestinations> AdditionalDestinations
+        {
+            get { return this._additionalDestinations; }
+            set { this._additionalDestinations = value; }
+        }
+
+        // Check to see if AdditionalDestinations property is set
+        internal bool IsSetAdditionalDestinations()
+        {
+            return this._additionalDestinations != null && (this._additionalDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CaptionLanguageMappings. Mapping of up to 4 caption channels

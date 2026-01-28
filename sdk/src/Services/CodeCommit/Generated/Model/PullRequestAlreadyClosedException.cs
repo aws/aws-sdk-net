@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for PullRequestAlreadyClosedException
+        /// message.
+        /// </summary>
+        public PullRequestAlreadyClosedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PullRequestAlreadyClosedException with the specified error
         /// message.
         /// </summary>

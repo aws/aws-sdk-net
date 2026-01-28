@@ -36,6 +36,14 @@ namespace Amazon.ForecastQueryService
         /// <summary>
         /// Construct instance of AmazonForecastQueryServiceException
         /// </summary>
+        public AmazonForecastQueryServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonForecastQueryServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonForecastQueryServiceException(string message)
             : base(message)

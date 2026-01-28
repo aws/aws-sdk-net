@@ -40,6 +40,13 @@ namespace Amazon.RedshiftServerless.Model
     {
 
         /// <summary>
+        /// Default constructor for DryRunException
+        /// message.
+        /// </summary>
+        public DryRunException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DryRunException with the specified error
         /// message.
         /// </summary>

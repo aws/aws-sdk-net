@@ -975,6 +975,60 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type EmailAddressInsightsConfidenceVerdict.
+    /// </summary>
+    public class EmailAddressInsightsConfidenceVerdict : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for EmailAddressInsightsConfidenceVerdict
+        /// </summary>
+        public static readonly EmailAddressInsightsConfidenceVerdict HIGH = new EmailAddressInsightsConfidenceVerdict("HIGH");
+        /// <summary>
+        /// Constant LOW for EmailAddressInsightsConfidenceVerdict
+        /// </summary>
+        public static readonly EmailAddressInsightsConfidenceVerdict LOW = new EmailAddressInsightsConfidenceVerdict("LOW");
+        /// <summary>
+        /// Constant MEDIUM for EmailAddressInsightsConfidenceVerdict
+        /// </summary>
+        public static readonly EmailAddressInsightsConfidenceVerdict MEDIUM = new EmailAddressInsightsConfidenceVerdict("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmailAddressInsightsConfidenceVerdict(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmailAddressInsightsConfidenceVerdict FindValue(string value)
+        {
+            return FindValue<EmailAddressInsightsConfidenceVerdict>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmailAddressInsightsConfidenceVerdict(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EngagementEventType.
     /// </summary>
     public class EngagementEventType : ConstantClass
@@ -2516,6 +2570,60 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SuppressionConfidenceVerdictThreshold.
+    /// </summary>
+    public class SuppressionConfidenceVerdictThreshold : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for SuppressionConfidenceVerdictThreshold
+        /// </summary>
+        public static readonly SuppressionConfidenceVerdictThreshold HIGH = new SuppressionConfidenceVerdictThreshold("HIGH");
+        /// <summary>
+        /// Constant MANAGED for SuppressionConfidenceVerdictThreshold
+        /// </summary>
+        public static readonly SuppressionConfidenceVerdictThreshold MANAGED = new SuppressionConfidenceVerdictThreshold("MANAGED");
+        /// <summary>
+        /// Constant MEDIUM for SuppressionConfidenceVerdictThreshold
+        /// </summary>
+        public static readonly SuppressionConfidenceVerdictThreshold MEDIUM = new SuppressionConfidenceVerdictThreshold("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SuppressionConfidenceVerdictThreshold(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuppressionConfidenceVerdictThreshold FindValue(string value)
+        {
+            return FindValue<SuppressionConfidenceVerdictThreshold>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SuppressionConfidenceVerdictThreshold(string value)
         {
             return FindValue(value);
         }

@@ -914,6 +914,66 @@ namespace Amazon.ARCRegionswitch
         }
         #endregion
         
+        #region  ListRoute53HealthChecksInRegion
+
+        internal virtual ListRoute53HealthChecksInRegionResponse ListRoute53HealthChecksInRegion(ListRoute53HealthChecksInRegionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRoute53HealthChecksInRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoute53HealthChecksInRegionResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoute53HealthChecksInRegionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the Amazon Route 53 health checks in a specific Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoute53HealthChecksInRegion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRoute53HealthChecksInRegion service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecksInRegion">REST API Reference for ListRoute53HealthChecksInRegion Operation</seealso>
+        public virtual Task<ListRoute53HealthChecksInRegionResponse> ListRoute53HealthChecksInRegionAsync(ListRoute53HealthChecksInRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRoute53HealthChecksInRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoute53HealthChecksInRegionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRoute53HealthChecksInRegionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)

@@ -25479,7 +25479,7 @@ namespace Amazon.S3
         ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
-        /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="tagSet">A collection for a set of tags</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
@@ -25667,7 +25667,7 @@ namespace Amazon.S3
         ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
-        /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="tagSet">A collection for a set of tags</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -29580,7 +29580,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
@@ -30031,7 +30031,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
@@ -30707,7 +30707,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -31164,7 +31164,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

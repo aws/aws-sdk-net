@@ -36,6 +36,14 @@ namespace Amazon.MemoryDB
         /// <summary>
         /// Construct instance of AmazonMemoryDBException
         /// </summary>
+        public AmazonMemoryDBException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMemoryDBException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMemoryDBException(string message)
             : base(message)

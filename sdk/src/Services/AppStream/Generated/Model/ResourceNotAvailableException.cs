@@ -39,6 +39,13 @@ namespace Amazon.AppStream.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceNotAvailableException
+        /// message.
+        /// </summary>
+        public ResourceNotAvailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotAvailableException with the specified error
         /// message.
         /// </summary>

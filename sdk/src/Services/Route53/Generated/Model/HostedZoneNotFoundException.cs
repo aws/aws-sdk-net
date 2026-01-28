@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for HostedZoneNotFoundException
+        /// message.
+        /// </summary>
+        public HostedZoneNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HostedZoneNotFoundException with the specified error
         /// message.
         /// </summary>

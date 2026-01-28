@@ -100,6 +100,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetGeocodingPreferences())
+            {
+                context.Writer.WritePropertyName("GeocodingPreferences");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectGeocodingPreferencesListValue in requestObject.GeocodingPreferences)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GeocodePreferenceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectGeocodingPreferencesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetSubtitle())
             {
                 context.Writer.WritePropertyName("Subtitle");

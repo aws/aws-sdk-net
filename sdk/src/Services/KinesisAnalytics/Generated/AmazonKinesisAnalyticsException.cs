@@ -36,6 +36,14 @@ namespace Amazon.KinesisAnalytics
         /// <summary>
         /// Construct instance of AmazonKinesisAnalyticsException
         /// </summary>
+        public AmazonKinesisAnalyticsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKinesisAnalyticsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKinesisAnalyticsException(string message)
             : base(message)

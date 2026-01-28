@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBProxyTargetAlreadyRegisteredException
+        /// message.
+        /// </summary>
+        public DBProxyTargetAlreadyRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBProxyTargetAlreadyRegisteredException with the specified error
         /// message.
         /// </summary>

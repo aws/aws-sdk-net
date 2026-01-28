@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for UpdateAccountPreferencesException
+        /// message.
+        /// </summary>
+        public UpdateAccountPreferencesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UpdateAccountPreferencesException with the specified error
         /// message.
         /// </summary>

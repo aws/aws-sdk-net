@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UserPoolAddOnNotEnabledException
+        /// message.
+        /// </summary>
+        public UserPoolAddOnNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserPoolAddOnNotEnabledException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.Proton
         /// <summary>
         /// Construct instance of AmazonProtonException
         /// </summary>
+        public AmazonProtonException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonProtonException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonProtonException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ScheduledActionNotFoundException
+        /// message.
+        /// </summary>
+        public ScheduledActionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ScheduledActionNotFoundException with the specified error
         /// message.
         /// </summary>

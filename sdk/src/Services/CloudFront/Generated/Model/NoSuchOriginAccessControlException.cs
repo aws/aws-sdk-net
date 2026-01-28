@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchOriginAccessControlException
+        /// message.
+        /// </summary>
+        public NoSuchOriginAccessControlException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchOriginAccessControlException with the specified error
         /// message.
         /// </summary>

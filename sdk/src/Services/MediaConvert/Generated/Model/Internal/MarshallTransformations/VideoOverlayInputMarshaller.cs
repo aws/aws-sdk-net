@@ -46,6 +46,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioSelectors())
+            {
+                context.Writer.WritePropertyName("audioSelectors");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectAudioSelectorsKvp in requestObject.AudioSelectors)
+                {
+                    context.Writer.WritePropertyName(requestObjectAudioSelectorsKvp.Key);
+                    var requestObjectAudioSelectorsValue = requestObjectAudioSelectorsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AudioSelectorMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAudioSelectorsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetFileInput())
             {
                 context.Writer.WritePropertyName("fileInput");

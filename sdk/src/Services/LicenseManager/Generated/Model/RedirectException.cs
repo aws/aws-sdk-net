@@ -40,6 +40,13 @@ namespace Amazon.LicenseManager.Model
         private string _location;
 
         /// <summary>
+        /// Default constructor for RedirectException
+        /// message.
+        /// </summary>
+        public RedirectException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RedirectException with the specified error
         /// message.
         /// </summary>

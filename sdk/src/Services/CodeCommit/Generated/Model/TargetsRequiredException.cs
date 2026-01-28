@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for TargetsRequiredException
+        /// message.
+        /// </summary>
+        public TargetsRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TargetsRequiredException with the specified error
         /// message.
         /// </summary>

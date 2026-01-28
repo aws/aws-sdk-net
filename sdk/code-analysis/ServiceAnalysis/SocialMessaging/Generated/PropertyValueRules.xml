@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -25,7 +25,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateFromLibraryRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -42,7 +42,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateMediaRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -54,13 +54,13 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.DeleteWhatsAppMessageMediaRequest.OriginationPhoneNumberId</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.DeleteWhatsAppMessageTemplateRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -77,25 +77,25 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.DisassociateWhatsAppBusinessAccountRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.GetLinkedWhatsAppBusinessAccountRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.GetLinkedWhatsAppBusinessAccountPhoneNumberRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.GetLinkedWhatsAppBusinessAccountPhoneNumberResponse.LinkedWhatsAppBusinessAccountId</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -107,13 +107,13 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.GetWhatsAppMessageMediaRequest.OriginationPhoneNumberId</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.GetWhatsAppMessageTemplateRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -151,7 +151,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.ListWhatsAppMessageTemplatesRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -172,7 +172,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.ListWhatsAppTemplateLibraryRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -193,7 +193,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.PostWhatsAppMessageMediaRequest.OriginationPhoneNumberId</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -205,7 +205,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.PutWhatsAppBusinessAccountEventDestinationsRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -216,7 +216,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.SendWhatsAppMessageRequest.OriginationPhoneNumberId</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -234,7 +234,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -242,6 +242,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.ParameterFormat</property>
+    <min>1</min>
+    <max>15</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.TemplateCategory</property>
@@ -302,7 +307,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccount.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -323,7 +328,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountIdMetaData.WabaId</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -335,7 +340,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountSummary.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -494,7 +499,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppBusinessAccountEventDestination.RoleArn</property>
-    <pattern>arn:aws:iam::\d{12}:role\/[a-zA-Z0-9+=,.@\-_]+</pattern>
+    <pattern>arn:.*:iam::\d{12}:role\/[a-zA-Z0-9+=,.@\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberDetail.Arn</property>
@@ -529,7 +534,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberDetail.PhoneNumberId</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -570,7 +575,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberSummary.PhoneNumberId</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -586,7 +591,7 @@
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppSetupFinalization.PhoneNumberParent</property>
     <min>1</min>
-    <max>100</max>
+    <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>

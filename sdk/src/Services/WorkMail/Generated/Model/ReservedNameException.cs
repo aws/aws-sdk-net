@@ -39,6 +39,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedNameException
+        /// message.
+        /// </summary>
+        public ReservedNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedNameException with the specified error
         /// message.
         /// </summary>

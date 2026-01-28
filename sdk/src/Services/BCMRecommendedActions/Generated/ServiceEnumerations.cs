@@ -79,6 +79,14 @@ namespace Amazon.BCMRecommendedActions
         /// </summary>
         public static readonly ActionType REVIEW_EXPIRING_SP = new ActionType("REVIEW_EXPIRING_SP");
         /// <summary>
+        /// Constant REVIEW_FREETIER_CREDITS_REMAINING for ActionType
+        /// </summary>
+        public static readonly ActionType REVIEW_FREETIER_CREDITS_REMAINING = new ActionType("REVIEW_FREETIER_CREDITS_REMAINING");
+        /// <summary>
+        /// Constant REVIEW_FREETIER_DAYS_REMAINING for ActionType
+        /// </summary>
+        public static readonly ActionType REVIEW_FREETIER_DAYS_REMAINING = new ActionType("REVIEW_FREETIER_DAYS_REMAINING");
+        /// <summary>
         /// Constant REVIEW_FREETIER_USAGE_ALERTS for ActionType
         /// </summary>
         public static readonly ActionType REVIEW_FREETIER_USAGE_ALERTS = new ActionType("REVIEW_FREETIER_USAGE_ALERTS");

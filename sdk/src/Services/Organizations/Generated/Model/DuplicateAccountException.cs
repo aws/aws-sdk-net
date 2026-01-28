@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateAccountException
+        /// message.
+        /// </summary>
+        public DuplicateAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateAccountException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.BCMRecommendedActions
         /// <summary>
         /// Construct instance of AmazonBCMRecommendedActionsException
         /// </summary>
+        public AmazonBCMRecommendedActionsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBCMRecommendedActionsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBCMRecommendedActionsException(string message)
             : base(message)

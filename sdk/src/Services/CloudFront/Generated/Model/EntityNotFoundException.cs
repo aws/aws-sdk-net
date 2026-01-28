@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for EntityNotFoundException
+        /// message.
+        /// </summary>
+        public EntityNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntityNotFoundException with the specified error
         /// message.
         /// </summary>

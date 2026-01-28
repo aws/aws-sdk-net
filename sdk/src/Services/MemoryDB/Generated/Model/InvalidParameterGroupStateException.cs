@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidParameterGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidParameterGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParameterGroupStateException with the specified error
         /// message.
         /// </summary>

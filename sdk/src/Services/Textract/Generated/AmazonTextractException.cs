@@ -36,6 +36,14 @@ namespace Amazon.Textract
         /// <summary>
         /// Construct instance of AmazonTextractException
         /// </summary>
+        public AmazonTextractException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTextractException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTextractException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedOperatingSystemException
+        /// message.
+        /// </summary>
+        public UnsupportedOperatingSystemException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedOperatingSystemException with the specified error
         /// message.
         /// </summary>

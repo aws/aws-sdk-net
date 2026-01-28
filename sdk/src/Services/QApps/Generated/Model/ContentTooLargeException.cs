@@ -42,6 +42,13 @@ namespace Amazon.QApps.Model
         private string _resourceType;
 
         /// <summary>
+        /// Default constructor for ContentTooLargeException
+        /// message.
+        /// </summary>
+        public ContentTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ContentTooLargeException with the specified error
         /// message.
         /// </summary>

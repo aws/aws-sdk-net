@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Parameters that are required for ISO9564 PIN format 1 tranlation.
+    /// Parameters that are required for ISO9564 PIN format 1 translation.
     /// </summary>
     public partial class TranslationPinDataIsoFormat1
     {

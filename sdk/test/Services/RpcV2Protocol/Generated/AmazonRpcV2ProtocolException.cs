@@ -36,6 +36,14 @@ namespace Amazon.RpcV2Protocol
         /// <summary>
         /// Construct instance of AmazonRpcV2ProtocolException
         /// </summary>
+        public AmazonRpcV2ProtocolException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRpcV2ProtocolException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRpcV2ProtocolException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for WebAuthnOriginNotAllowedException
+        /// message.
+        /// </summary>
+        public WebAuthnOriginNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WebAuthnOriginNotAllowedException with the specified error
         /// message.
         /// </summary>

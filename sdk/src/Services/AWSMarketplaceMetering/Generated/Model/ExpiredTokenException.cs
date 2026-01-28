@@ -43,6 +43,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for ExpiredTokenException
+        /// message.
+        /// </summary>
+        public ExpiredTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredTokenException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMaxResultsException
+        /// message.
+        /// </summary>
+        public InvalidMaxResultsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMaxResultsException with the specified error
         /// message.
         /// </summary>

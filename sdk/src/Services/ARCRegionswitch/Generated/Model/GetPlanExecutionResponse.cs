@@ -41,6 +41,7 @@ namespace Amazon.ARCRegionswitch.Model
         private string _executionId;
         private string _executionRegion;
         private ExecutionState _executionState;
+        private List<GeneratedReport> _generatedReportDetails = AWSConfigs.InitializeCollections ? new List<GeneratedReport>() : null;
         private ExecutionMode _mode;
         private string _nextToken;
         private Plan _plan;
@@ -182,6 +183,30 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetExecutionState()
         {
             return this._executionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeneratedReportDetails. 
+        /// <para>
+        /// Information about the location of a generated report, or the cause of its failure.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<GeneratedReport> GeneratedReportDetails
+        {
+            get { return this._generatedReportDetails; }
+            set { this._generatedReportDetails = value; }
+        }
+
+        // Check to see if GeneratedReportDetails property is set
+        internal bool IsSetGeneratedReportDetails()
+        {
+            return this._generatedReportDetails != null && (this._generatedReportDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -47,6 +47,13 @@ namespace Amazon.IoTSiteWise.Model
     {
 
         /// <summary>
+        /// Default constructor for LimitExceededException
+        /// message.
+        /// </summary>
+        public LimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LimitExceededException with the specified error
         /// message.
         /// </summary>

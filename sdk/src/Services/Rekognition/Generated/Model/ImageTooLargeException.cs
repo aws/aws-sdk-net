@@ -41,6 +41,13 @@ namespace Amazon.Rekognition.Model
     {
 
         /// <summary>
+        /// Default constructor for ImageTooLargeException
+        /// message.
+        /// </summary>
+        public ImageTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImageTooLargeException with the specified error
         /// message.
         /// </summary>

@@ -20,6 +20,7 @@
  *
  */
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -33,25 +34,69 @@ using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class DownloadDirectoryCommand : BaseCommand
+    internal partial class DownloadDirectoryCommand : BaseCommand<TransferUtilityDownloadDirectoryResponse>
     {
+        private IFailurePolicy _failurePolicy;
+        private ConcurrentBag<Exception> _errors = new ConcurrentBag<Exception>();
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityDownloadDirectoryRequest _request;
         private readonly bool _skipEncryptionInstructionFiles;
+        private readonly bool _useMultipartDownload;
         int _totalNumberOfFilesToDownload;
         int _numberOfFilesDownloaded;
         long _totalBytes;
         long _transferredBytes;        
         string _currentFile;
 
-        internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request)
+        #region Event Firing Methods
+
+        private void FireTransferInitiatedEvent()
+        {
+            var transferInitiatedEventArgs = new DownloadDirectoryInitiatedEventArgs(_request);
+            _request.OnRaiseDownloadDirectoryInitiatedEvent(transferInitiatedEventArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityDownloadDirectoryResponse response)
+        {
+            var transferCompletedEventArgs = new DownloadDirectoryCompletedEventArgs(
+                _request, 
+                response, 
+                Interlocked.Read(ref _transferredBytes), 
+                _totalBytes, 
+                _numberOfFilesDownloaded, 
+                _totalNumberOfFilesToDownload);
+            _request.OnRaiseDownloadDirectoryCompletedEvent(transferCompletedEventArgs);
+        }
+
+        private void FireTransferFailedEvent()
+        {
+            var eventArgs = new DownloadDirectoryFailedEventArgs(
+                _request, 
+                Interlocked.Read(ref _transferredBytes), 
+                _totalBytes, 
+                _numberOfFilesDownloaded, 
+                _totalNumberOfFilesToDownload);
+            _request.OnRaiseDownloadDirectoryFailedEvent(eventArgs);
+        }
+
+        #endregion
+
+        internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request, TransferUtilityConfig config, bool useMultipartDownload)
         {
             if (s3Client == null)
-                throw new ArgumentNullException("s3Client");
+                throw new ArgumentNullException(nameof(s3Client));
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
 
             this._s3Client = s3Client;
             this._request = request;
+            this._config = config;
             this._skipEncryptionInstructionFiles = s3Client is Amazon.S3.Internal.IAmazonS3Encryption;
+            _failurePolicy =
+                request.FailurePolicy == FailurePolicy.AbortOnFailure
+                    ? new AbortOnFailurePolicy()
+                    : new ContinueOnFailurePolicy(_errors);
+            this._useMultipartDownload = useMultipartDownload;
         }
 
         private void downloadedProgressEventCallback(object sender, WriteObjectProgressArgs e)
@@ -106,12 +151,6 @@ namespace Amazon.S3.Transfer.Internal
             downloadRequest.IfMatch = this._request.IfMatch;
             downloadRequest.IfNoneMatch = this._request.IfNoneMatch;
             downloadRequest.ResponseHeaderOverrides = this._request.ResponseHeaderOverrides;
-
-            //Ensure the target file is a rooted within LocalDirectory. Otherwise error.
-            if(!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(downloadRequest.FilePath, _request.LocalDirectory))
-            {
-                throw new AmazonClientException($"The file {downloadRequest.FilePath} is not allowed outside of the target directory {_request.LocalDirectory}.");
-            }
 
             downloadRequest.WriteObjectProgressEvent += downloadedProgressEventCallback;
 

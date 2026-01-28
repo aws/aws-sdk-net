@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyEnvironmentsException
+        /// message.
+        /// </summary>
+        public TooManyEnvironmentsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyEnvironmentsException with the specified error
         /// message.
         /// </summary>

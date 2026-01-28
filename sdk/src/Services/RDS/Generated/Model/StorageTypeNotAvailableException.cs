@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for StorageTypeNotAvailableException
+        /// message.
+        /// </summary>
+        public StorageTypeNotAvailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StorageTypeNotAvailableException with the specified error
         /// message.
         /// </summary>

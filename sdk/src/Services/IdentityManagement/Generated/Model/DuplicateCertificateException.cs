@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateCertificateException
+        /// message.
+        /// </summary>
+        public DuplicateCertificateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateCertificateException with the specified error
         /// message.
         /// </summary>

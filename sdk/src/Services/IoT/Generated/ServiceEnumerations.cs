@@ -1569,6 +1569,158 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type CommandParameterType.
+    /// </summary>
+    public class CommandParameterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BINARY for CommandParameterType
+        /// </summary>
+        public static readonly CommandParameterType BINARY = new CommandParameterType("BINARY");
+        /// <summary>
+        /// Constant BOOLEAN for CommandParameterType
+        /// </summary>
+        public static readonly CommandParameterType BOOLEAN = new CommandParameterType("BOOLEAN");
+        /// <summary>
+        /// Constant DOUBLE for CommandParameterType
+        /// </summary>
+        public static readonly CommandParameterType DOUBLE = new CommandParameterType("DOUBLE");
+        /// <summary>
+        /// Constant INTEGER for CommandParameterType
+        /// </summary>
+        public static readonly CommandParameterType INTEGER = new CommandParameterType("INTEGER");
+        /// <summary>
+        /// Constant LONG for CommandParameterType
+        /// </summary>
+        public static readonly CommandParameterType LONG = new CommandParameterType("LONG");
+        /// <summary>
+        /// Constant STRING for CommandParameterType
+        /// </summary>
+        public static readonly CommandParameterType STRING = new CommandParameterType("STRING");
+        /// <summary>
+        /// Constant UNSIGNEDLONG for CommandParameterType
+        /// </summary>
+        public static readonly CommandParameterType UNSIGNEDLONG = new CommandParameterType("UNSIGNEDLONG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandParameterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandParameterType FindValue(string value)
+        {
+            return FindValue<CommandParameterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CommandParameterValueComparisonOperator.
+    /// </summary>
+    public class CommandParameterValueComparisonOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator EQUALS = new CommandParameterValueComparisonOperator("EQUALS");
+        /// <summary>
+        /// Constant GREATER_THAN for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator GREATER_THAN = new CommandParameterValueComparisonOperator("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_EQUALS for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator GREATER_THAN_EQUALS = new CommandParameterValueComparisonOperator("GREATER_THAN_EQUALS");
+        /// <summary>
+        /// Constant IN_RANGE for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator IN_RANGE = new CommandParameterValueComparisonOperator("IN_RANGE");
+        /// <summary>
+        /// Constant IN_SET for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator IN_SET = new CommandParameterValueComparisonOperator("IN_SET");
+        /// <summary>
+        /// Constant LESS_THAN for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator LESS_THAN = new CommandParameterValueComparisonOperator("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_EQUALS for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator LESS_THAN_EQUALS = new CommandParameterValueComparisonOperator("LESS_THAN_EQUALS");
+        /// <summary>
+        /// Constant NOT_EQUALS for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator NOT_EQUALS = new CommandParameterValueComparisonOperator("NOT_EQUALS");
+        /// <summary>
+        /// Constant NOT_IN_RANGE for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator NOT_IN_RANGE = new CommandParameterValueComparisonOperator("NOT_IN_RANGE");
+        /// <summary>
+        /// Constant NOT_IN_SET for CommandParameterValueComparisonOperator
+        /// </summary>
+        public static readonly CommandParameterValueComparisonOperator NOT_IN_SET = new CommandParameterValueComparisonOperator("NOT_IN_SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandParameterValueComparisonOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandParameterValueComparisonOperator FindValue(string value)
+        {
+            return FindValue<CommandParameterValueComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandParameterValueComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperator.
     /// </summary>
     public class ComparisonOperator : ConstantClass
@@ -3592,6 +3744,56 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OTAUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutputFormat.
+    /// </summary>
+    public class OutputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CBOR for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat CBOR = new OutputFormat("CBOR");
+        /// <summary>
+        /// Constant JSON for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat JSON = new OutputFormat("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputFormat FindValue(string value)
+        {
+            return FindValue<OutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputFormat(string value)
         {
             return FindValue(value);
         }

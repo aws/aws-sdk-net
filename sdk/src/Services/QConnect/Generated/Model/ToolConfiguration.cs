@@ -53,6 +53,7 @@ namespace Amazon.QConnect.Model
         /// Annotations for the tool configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Annotation Annotations
         {
             get { return this._annotations; }
@@ -71,6 +72,7 @@ namespace Amazon.QConnect.Model
         /// The description of the tool configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string Description
         {
             get { return this._description; }
@@ -89,6 +91,7 @@ namespace Amazon.QConnect.Model
         /// The input schema for the tool configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Amazon.Runtime.Documents.Document InputSchema
         {
             get { return this._inputSchema; }
@@ -107,6 +110,7 @@ namespace Amazon.QConnect.Model
         /// Instructions for using the tool.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ToolInstruction Instruction
         {
             get { return this._instruction; }
@@ -130,6 +134,7 @@ namespace Amazon.QConnect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<ToolOutputFilter> OutputFilters
         {
             get { return this._outputFilters; }
@@ -148,6 +153,7 @@ namespace Amazon.QConnect.Model
         /// The output schema for the tool configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Amazon.Runtime.Documents.Document OutputSchema
         {
             get { return this._outputSchema; }
@@ -171,6 +177,7 @@ namespace Amazon.QConnect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<ToolOverrideInputValue> OverrideInputValues
         {
             get { return this._overrideInputValues; }
@@ -189,7 +196,7 @@ namespace Amazon.QConnect.Model
         /// The title of the tool configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string Title
         {
             get { return this._title; }

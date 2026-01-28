@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEC2TagCombinationException
+        /// message.
+        /// </summary>
+        public InvalidEC2TagCombinationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEC2TagCombinationException with the specified error
         /// message.
         /// </summary>

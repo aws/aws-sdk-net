@@ -39,6 +39,13 @@ namespace Amazon.AppStream.Model
     {
 
         /// <summary>
+        /// Default constructor for EntitlementNotFoundException
+        /// message.
+        /// </summary>
+        public EntitlementNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntitlementNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -73,7 +73,8 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
             {
                 AppliedFor = new List<string> {
                     "REPLICATION",
-                    "PULL_THROUGH_CACHE"
+                    "PULL_THROUGH_CACHE",
+                    "CREATE_ON_PUSH"
                 },
                 Description = "Repos for testing images",
                 EncryptionConfiguration = new EncryptionConfigurationForRepositoryCreationTemplate { EncryptionType = "AES256" },

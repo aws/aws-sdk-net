@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for DeleteMicrosoftTeamsUserIdentityException
+        /// message.
+        /// </summary>
+        public DeleteMicrosoftTeamsUserIdentityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeleteMicrosoftTeamsUserIdentityException with the specified error
         /// message.
         /// </summary>

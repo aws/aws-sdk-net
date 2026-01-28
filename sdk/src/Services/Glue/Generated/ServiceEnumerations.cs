@@ -4981,6 +4981,118 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type MaterializedViewRefreshState.
+    /// </summary>
+    public class MaterializedViewRefreshState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState FAILED = new MaterializedViewRefreshState("FAILED");
+        /// <summary>
+        /// Constant RUNNING for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState RUNNING = new MaterializedViewRefreshState("RUNNING");
+        /// <summary>
+        /// Constant STARTING for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState STARTING = new MaterializedViewRefreshState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState STOPPED = new MaterializedViewRefreshState("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState SUCCEEDED = new MaterializedViewRefreshState("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaterializedViewRefreshState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaterializedViewRefreshState FindValue(string value)
+        {
+            return FindValue<MaterializedViewRefreshState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaterializedViewRefreshState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaterializedViewRefreshType.
+    /// </summary>
+    public class MaterializedViewRefreshType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for MaterializedViewRefreshType
+        /// </summary>
+        public static readonly MaterializedViewRefreshType FULL = new MaterializedViewRefreshType("FULL");
+        /// <summary>
+        /// Constant INCREMENTAL for MaterializedViewRefreshType
+        /// </summary>
+        public static readonly MaterializedViewRefreshType INCREMENTAL = new MaterializedViewRefreshType("INCREMENTAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaterializedViewRefreshType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaterializedViewRefreshType FindValue(string value)
+        {
+            return FindValue<MaterializedViewRefreshType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaterializedViewRefreshType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetadataOperation.
     /// </summary>
     public class MetadataOperation : ConstantClass

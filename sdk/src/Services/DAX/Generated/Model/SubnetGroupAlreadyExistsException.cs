@@ -39,6 +39,13 @@ namespace Amazon.DAX.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public SubnetGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

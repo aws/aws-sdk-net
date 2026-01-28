@@ -42,6 +42,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyTypeNotAvailableForOrganizationException
+        /// message.
+        /// </summary>
+        public PolicyTypeNotAvailableForOrganizationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyTypeNotAvailableForOrganizationException with the specified error
         /// message.
         /// </summary>

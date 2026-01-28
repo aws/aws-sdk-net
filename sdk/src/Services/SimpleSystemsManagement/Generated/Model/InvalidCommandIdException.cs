@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCommandIdException
+        /// message.
+        /// </summary>
+        public InvalidCommandIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCommandIdException with the specified error
         /// message.
         /// </summary>

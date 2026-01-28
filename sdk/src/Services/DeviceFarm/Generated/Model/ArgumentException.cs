@@ -39,6 +39,13 @@ namespace Amazon.DeviceFarm.Model
     {
 
         /// <summary>
+        /// Default constructor for ArgumentException
+        /// message.
+        /// </summary>
+        public ArgumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ArgumentException with the specified error
         /// message.
         /// </summary>

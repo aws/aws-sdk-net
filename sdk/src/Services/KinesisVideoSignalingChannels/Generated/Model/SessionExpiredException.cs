@@ -41,6 +41,13 @@ namespace Amazon.KinesisVideoSignalingChannels.Model
     {
 
         /// <summary>
+        /// Default constructor for SessionExpiredException
+        /// message.
+        /// </summary>
+        public SessionExpiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SessionExpiredException with the specified error
         /// message.
         /// </summary>

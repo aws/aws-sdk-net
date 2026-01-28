@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidChangeSetStatusException
+        /// message.
+        /// </summary>
+        public InvalidChangeSetStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidChangeSetStatusException with the specified error
         /// message.
         /// </summary>

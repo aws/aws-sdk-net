@@ -39,6 +39,13 @@ namespace Amazon.CloudWatchRUM.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicySizeLimitExceededException
+        /// message.
+        /// </summary>
+        public PolicySizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicySizeLimitExceededException with the specified error
         /// message.
         /// </summary>

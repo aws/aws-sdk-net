@@ -98,7 +98,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("HealthThreshold", StringUtils.FromInt(publicRequest.HealthThreshold.Value));
 
                 var publicRequestChildHealthChecks = publicRequest.ChildHealthChecks;
-                if (publicRequestChildHealthChecks != null && (publicRequestChildHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetChildHealthChecks()) 
                 {
                     xmlWriter.WriteStartElement("ChildHealthChecks");
                     foreach (var publicRequestChildHealthChecksValue in publicRequestChildHealthChecks) 
@@ -113,7 +113,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("EnableSNI", StringUtils.FromBool(publicRequest.EnableSNI.Value));
 
                 var publicRequestRegions = publicRequest.Regions;
-                if (publicRequestRegions != null && (publicRequestRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetRegions()) 
                 {
                     xmlWriter.WriteStartElement("Regions");
                     foreach (var publicRequestRegionsValue in publicRequestRegions) 
@@ -124,7 +124,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }            
                     xmlWriter.WriteEndElement();            
                 }
-                if (publicRequest.AlarmIdentifier != null)
+                if (publicRequest.IsSetAlarmIdentifier())
                 {
                     xmlWriter.WriteStartElement("AlarmIdentifier");
                     if(publicRequest.AlarmIdentifier.IsSetRegion())
@@ -137,7 +137,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("InsufficientDataHealthStatus", StringUtils.FromString(publicRequest.InsufficientDataHealthStatus));
 
                 var publicRequestResetElements = publicRequest.ResetElements;
-                if (publicRequestResetElements != null && (publicRequestResetElements.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetResetElements()) 
                 {
                     xmlWriter.WriteStartElement("ResetElements");
                     foreach (var publicRequestResetElementsValue in publicRequestResetElements) 

@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentConfigNameRequiredException
+        /// message.
+        /// </summary>
+        public DeploymentConfigNameRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentConfigNameRequiredException with the specified error
         /// message.
         /// </summary>

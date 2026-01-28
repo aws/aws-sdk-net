@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidClientAuthStatusException
+        /// message.
+        /// </summary>
+        public InvalidClientAuthStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClientAuthStatusException with the specified error
         /// message.
         /// </summary>

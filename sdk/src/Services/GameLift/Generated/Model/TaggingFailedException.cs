@@ -40,6 +40,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for TaggingFailedException
+        /// message.
+        /// </summary>
+        public TaggingFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TaggingFailedException with the specified error
         /// message.
         /// </summary>

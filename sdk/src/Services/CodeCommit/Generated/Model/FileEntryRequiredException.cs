@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FileEntryRequiredException
+        /// message.
+        /// </summary>
+        public FileEntryRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileEntryRequiredException with the specified error
         /// message.
         /// </summary>

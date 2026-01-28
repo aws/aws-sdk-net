@@ -46,7 +46,6 @@ namespace Amazon.S3.Model
         private ChecksumType _checksumType;
         private string _contentDisposition;
         private string _contentEncoding;
-        private string _contentLanguage;
         private string _contentRange;
         private string _contentType;
         private string _eTag;
@@ -318,24 +317,6 @@ namespace Amazon.S3.Model
         internal bool IsSetContentEncoding()
         {
             return this._contentEncoding != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContentLanguage. 
-        /// <para>
-        /// The language the content is in.
-        /// </para>
-        /// </summary>
-        public string ContentLanguage
-        {
-            get { return this._contentLanguage; }
-            set { this._contentLanguage = value; }
-        }
-
-        // Check to see if ContentLanguage property is set
-        internal bool IsSetContentLanguage()
-        {
-            return this._contentLanguage != null;
         }
 
         /// <summary>

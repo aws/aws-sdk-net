@@ -49,6 +49,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksKeyNotFoundException
+        /// message.
+        /// </summary>
+        public XksKeyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksKeyNotFoundException with the specified error
         /// message.
         /// </summary>

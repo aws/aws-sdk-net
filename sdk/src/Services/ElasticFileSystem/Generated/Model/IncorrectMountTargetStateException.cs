@@ -39,6 +39,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for IncorrectMountTargetStateException
+        /// message.
+        /// </summary>
+        public IncorrectMountTargetStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncorrectMountTargetStateException with the specified error
         /// message.
         /// </summary>

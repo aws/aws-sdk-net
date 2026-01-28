@@ -41,6 +41,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxActiveResourcesExceededException
+        /// message.
+        /// </summary>
+        public MaxActiveResourcesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxActiveResourcesExceededException with the specified error
         /// message.
         /// </summary>

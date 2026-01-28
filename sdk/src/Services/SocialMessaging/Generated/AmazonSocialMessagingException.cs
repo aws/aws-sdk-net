@@ -36,6 +36,14 @@ namespace Amazon.SocialMessaging
         /// <summary>
         /// Construct instance of AmazonSocialMessagingException
         /// </summary>
+        public AmazonSocialMessagingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSocialMessagingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSocialMessagingException(string message)
             : base(message)

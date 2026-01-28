@@ -41,6 +41,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for PrivateTypeException
+        /// message.
+        /// </summary>
+        public PrivateTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PrivateTypeException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CognitoSync.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLambdaFunctionOutputException
+        /// message.
+        /// </summary>
+        public InvalidLambdaFunctionOutputException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLambdaFunctionOutputException with the specified error
         /// message.
         /// </summary>

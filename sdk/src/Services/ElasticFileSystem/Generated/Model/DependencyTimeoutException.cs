@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for DependencyTimeoutException
+        /// message.
+        /// </summary>
+        public DependencyTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependencyTimeoutException with the specified error
         /// message.
         /// </summary>

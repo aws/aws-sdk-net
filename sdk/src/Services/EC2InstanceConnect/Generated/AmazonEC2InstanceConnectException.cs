@@ -36,6 +36,14 @@ namespace Amazon.EC2InstanceConnect
         /// <summary>
         /// Construct instance of AmazonEC2InstanceConnectException
         /// </summary>
+        public AmazonEC2InstanceConnectException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEC2InstanceConnectException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEC2InstanceConnectException(string message)
             : base(message)

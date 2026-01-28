@@ -36,6 +36,14 @@ namespace Amazon.XRay
         /// <summary>
         /// Construct instance of AmazonXRayException
         /// </summary>
+        public AmazonXRayException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonXRayException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonXRayException(string message)
             : base(message)

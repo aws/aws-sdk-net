@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAuthenticationCodeException
+        /// message.
+        /// </summary>
+        public InvalidAuthenticationCodeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAuthenticationCodeException with the specified error
         /// message.
         /// </summary>

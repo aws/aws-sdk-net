@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomKeyStoreNameInUseException
+        /// message.
+        /// </summary>
+        public CustomKeyStoreNameInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomKeyStoreNameInUseException with the specified error
         /// message.
         /// </summary>

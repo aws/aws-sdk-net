@@ -36,6 +36,14 @@ namespace Amazon.RedshiftDataAPIService
         /// <summary>
         /// Construct instance of AmazonRedshiftDataAPIServiceException
         /// </summary>
+        public AmazonRedshiftDataAPIServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRedshiftDataAPIServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRedshiftDataAPIServiceException(string message)
             : base(message)

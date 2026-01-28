@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for PointInTimeRecoveryUnavailableException
+        /// message.
+        /// </summary>
+        public PointInTimeRecoveryUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PointInTimeRecoveryUnavailableException with the specified error
         /// message.
         /// </summary>

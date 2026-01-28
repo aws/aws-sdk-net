@@ -42,6 +42,13 @@ namespace Amazon.SimpleEmail.Model
         private string _eventDestinationName;
 
         /// <summary>
+        /// Default constructor for InvalidSNSDestinationException
+        /// message.
+        /// </summary>
+        public InvalidSNSDestinationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSNSDestinationException with the specified error
         /// message.
         /// </summary>

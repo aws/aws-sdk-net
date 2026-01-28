@@ -34,24 +34,85 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class AIPromptInferenceConfiguration
     {
-        private TextAIPromptInferenceConfiguration _textaiPromptInferenceConfiguration;
+        private int? _maxTokensToSample;
+        private float? _temperature;
+        private int? _topk;
+        private float? _topp;
 
         /// <summary>
-        /// Gets and sets the property TextAIPromptInferenceConfiguration. 
+        /// Gets and sets the property MaxTokensToSample. 
         /// <para>
-        /// The inference configuration for text-based AI Prompts.
+        /// The maximum number of tokens to generate in the response.
         /// </para>
         /// </summary>
-        public TextAIPromptInferenceConfiguration TextAIPromptInferenceConfiguration
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
+        public int? MaxTokensToSample
         {
-            get { return this._textaiPromptInferenceConfiguration; }
-            set { this._textaiPromptInferenceConfiguration = value; }
+            get { return this._maxTokensToSample; }
+            set { this._maxTokensToSample = value; }
         }
 
-        // Check to see if TextAIPromptInferenceConfiguration property is set
-        internal bool IsSetTextAIPromptInferenceConfiguration()
+        // Check to see if MaxTokensToSample property is set
+        internal bool IsSetMaxTokensToSample()
         {
-            return this._textaiPromptInferenceConfiguration != null;
+            return this._maxTokensToSample.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Temperature. 
+        /// <para>
+        /// The temperature setting for controlling randomness in the generated response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1)]
+        public float? Temperature
+        {
+            get { return this._temperature; }
+            set { this._temperature = value; }
+        }
+
+        // Check to see if Temperature property is set
+        internal bool IsSetTemperature()
+        {
+            return this._temperature.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopK. 
+        /// <para>
+        /// The top-K sampling parameter for token selection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
+        public int? TopK
+        {
+            get { return this._topk; }
+            set { this._topk = value; }
+        }
+
+        // Check to see if TopK property is set
+        internal bool IsSetTopK()
+        {
+            return this._topk.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopP. 
+        /// <para>
+        /// The top-P sampling parameter for nucleus sampling.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1)]
+        public float? TopP
+        {
+            get { return this._topp; }
+            set { this._topp = value; }
+        }
+
+        // Check to see if TopP property is set
+        internal bool IsSetTopP()
+        {
+            return this._topp.HasValue; 
         }
 
     }

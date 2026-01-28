@@ -4310,6 +4310,12 @@
     }
   },
   "shapes":{
+    "AbsoluteBorrowLimitResourceList":{
+      "type":"list",
+      "member":{"shape":"ComputeQuotaResourceConfig"},
+      "max":15,
+      "min":0
+    },
     "AcceleratorPartitionConfig":{
       "type":"structure",
       "required":[
@@ -6416,7 +6422,7 @@
     "BorrowLimit":{
       "type":"integer",
       "box":true,
-      "max":500,
+      "max":10000,
       "min":0
     },
     "Branch":{
@@ -7559,7 +7565,8 @@
         "ml.r7i.12xlarge",
         "ml.r7i.16xlarge",
         "ml.r7i.24xlarge",
-        "ml.r7i.48xlarge"
+        "ml.r7i.48xlarge",
+        "ml.p6-b300.48xlarge"
       ]
     },
     "ClusterKubernetesConfig":{
@@ -7777,7 +7784,6 @@
     },
     "ClusterOrchestrator":{
       "type":"structure",
-      "required":["Eks"],
       "members":{
         "Eks":{"shape":"ClusterOrchestratorEksConfig"}
       }
@@ -11577,6 +11583,7 @@
         },
         "Status":{"shape":"SchedulerResourceStatus"},
         "FailureReason":{"shape":"FailureReason"},
+        "StatusDetails":{"shape":"StatusDetailsMap"},
         "ClusterArn":{"shape":"ClusterArn"},
         "SchedulerConfig":{"shape":"SchedulerConfig"},
         "Description":{"shape":"EntityDescription"},
@@ -16364,6 +16371,13 @@
       "max":20,
       "min":0
     },
+    "IdleResourceSharing":{
+      "type":"string",
+      "enum":[
+        "Enabled",
+        "Disabled"
+      ]
+    },
     "IdleSettings":{
       "type":"structure",
       "members":{
@@ -17527,7 +17541,7 @@
     "KeepAlivePeriodInSeconds":{
       "type":"integer",
       "box":true,
-      "max":3600,
+      "max":21600,
       "min":0
     },
     "KendraSettings":{
@@ -24928,7 +24942,8 @@
         "ml.p6-b200.48xlarge",
         "ml.p4de.24xlarge",
         "ml.p6e-gb200.36xlarge",
-        "ml.p5.4xlarge"
+        "ml.p5.4xlarge",
+        "ml.p6-b300.48xlarge"
       ]
     },
     "ReservedCapacityOffering":{
@@ -25157,7 +25172,8 @@
       "required":["Strategy"],
       "members":{
         "Strategy":{"shape":"ResourceSharingStrategy"},
-        "BorrowLimit":{"shape":"BorrowLimit"}
+        "BorrowLimit":{"shape":"BorrowLimit"},
+        "AbsoluteBorrowLimits":{"shape":"AbsoluteBorrowLimitResourceList"}
       }
     },
     "ResourceSharingStrategy":{
@@ -25572,8 +25588,17 @@
       "type":"structure",
       "members":{
         "PriorityClasses":{"shape":"PriorityClassList"},
-        "FairShare":{"shape":"FairShare"}
+        "FairShare":{"shape":"FairShare"},
+        "IdleResourceSharing":{"shape":"IdleResourceSharing"}
       }
+    },
+    "SchedulerConfigComponent":{
+      "type":"string",
+      "enum":[
+        "PriorityClasses",
+        "FairShare",
+        "IdleResourceSharing"
+      ]
     },
     "SchedulerResourceStatus":{
       "type":"string",
@@ -25669,10 +25694,6 @@
     },
     "SearchTrainingPlanOfferingsRequest":{
       "type":"structure",
-      "required":[
-        "DurationHours",
-        "TargetResources"
-      ],
       "members":{
         "InstanceType":{"shape":"ReservedCapacityInstanceType"},
         "InstanceCount":{
@@ -26445,6 +26466,11 @@
       "max":1024,
       "min":0,
       "pattern":".*"
+    },
+    "StatusDetailsMap":{
+      "type":"map",
+      "key":{"shape":"SchedulerConfigComponent"},
+      "value":{"shape":"SchedulerResourceStatus"}
     },
     "StatusMessage":{"type":"string"},
     "StepDescription":{
@@ -27571,7 +27597,8 @@
         "ml.r7i.24xlarge",
         "ml.r7i.48xlarge",
         "ml.p6e-gb200.36xlarge",
-        "ml.p5.4xlarge"
+        "ml.p5.4xlarge",
+        "ml.p6-b300.48xlarge"
       ]
     },
     "TrainingInstanceTypes":{
@@ -28616,7 +28643,8 @@
     "UltraServerInfo":{
       "type":"structure",
       "members":{
-        "Id":{"shape":"String"}
+        "Id":{"shape":"String"},
+        "Type":{"shape":"String"}
       }
     },
     "UltraServerSummary":{

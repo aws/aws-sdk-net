@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointAuthorizationNotFoundException
+        /// message.
+        /// </summary>
+        public EndpointAuthorizationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointAuthorizationNotFoundException with the specified error
         /// message.
         /// </summary>

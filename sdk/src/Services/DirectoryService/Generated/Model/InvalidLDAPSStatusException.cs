@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLDAPSStatusException
+        /// message.
+        /// </summary>
+        public InvalidLDAPSStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLDAPSStatusException with the specified error
         /// message.
         /// </summary>

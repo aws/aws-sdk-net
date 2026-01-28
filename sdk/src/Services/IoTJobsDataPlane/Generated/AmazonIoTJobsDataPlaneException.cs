@@ -36,6 +36,14 @@ namespace Amazon.IoTJobsDataPlane
         /// <summary>
         /// Construct instance of AmazonIoTJobsDataPlaneException
         /// </summary>
+        public AmazonIoTJobsDataPlaneException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTJobsDataPlaneException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTJobsDataPlaneException(string message)
             : base(message)

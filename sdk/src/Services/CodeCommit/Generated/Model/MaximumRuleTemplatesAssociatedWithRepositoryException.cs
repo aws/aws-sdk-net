@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumRuleTemplatesAssociatedWithRepositoryException
+        /// message.
+        /// </summary>
+        public MaximumRuleTemplatesAssociatedWithRepositoryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumRuleTemplatesAssociatedWithRepositoryException with the specified error
         /// message.
         /// </summary>

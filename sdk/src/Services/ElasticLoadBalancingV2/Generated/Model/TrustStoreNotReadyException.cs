@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TrustStoreNotReadyException
+        /// message.
+        /// </summary>
+        public TrustStoreNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrustStoreNotReadyException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for OutboundWebIdentityFederationDisabledException
+        /// message.
+        /// </summary>
+        public OutboundWebIdentityFederationDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OutboundWebIdentityFederationDisabledException with the specified error
         /// message.
         /// </summary>

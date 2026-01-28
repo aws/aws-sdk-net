@@ -1201,6 +1201,9 @@ namespace Amazon.WorkSpacesWeb
         /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
         /// There is an internal server error.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
         /// The service quota has been exceeded.
         /// </exception>
@@ -1234,6 +1237,9 @@ namespace Amazon.WorkSpacesWeb
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
         /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
         /// The service quota has been exceeded.

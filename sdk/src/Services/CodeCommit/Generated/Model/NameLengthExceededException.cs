@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for NameLengthExceededException
+        /// message.
+        /// </summary>
+        public NameLengthExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NameLengthExceededException with the specified error
         /// message.
         /// </summary>

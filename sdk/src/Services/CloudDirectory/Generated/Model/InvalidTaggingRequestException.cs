@@ -41,6 +41,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTaggingRequestException
+        /// message.
+        /// </summary>
+        public InvalidTaggingRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTaggingRequestException with the specified error
         /// message.
         /// </summary>

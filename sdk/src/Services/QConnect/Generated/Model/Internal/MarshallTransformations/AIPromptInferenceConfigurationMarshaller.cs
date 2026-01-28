@@ -46,15 +46,42 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetTextAIPromptInferenceConfiguration())
+            if(requestObject.IsSetMaxTokensToSample())
             {
-                context.Writer.WritePropertyName("textAIPromptInferenceConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("maxTokensToSample");
+                context.Writer.WriteNumberValue(requestObject.MaxTokensToSample.Value);
+            }
 
-                var marshaller = TextAIPromptInferenceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TextAIPromptInferenceConfiguration, context);
+            if(requestObject.IsSetTemperature())
+            {
+                context.Writer.WritePropertyName("temperature");
+                if(StringUtils.IsSpecialFloatValue(requestObject.Temperature.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Temperature.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.Temperature.Value);
+                }
+            }
 
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetTopK())
+            {
+                context.Writer.WritePropertyName("topK");
+                context.Writer.WriteNumberValue(requestObject.TopK.Value);
+            }
+
+            if(requestObject.IsSetTopP())
+            {
+                context.Writer.WritePropertyName("topP");
+                if(StringUtils.IsSpecialFloatValue(requestObject.TopP.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.TopP.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.TopP.Value);
+                }
             }
 
         }

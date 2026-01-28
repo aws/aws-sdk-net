@@ -102,6 +102,22 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
             #endregion
         }
 
+        public void ArtifactListReportVersions()
+        {
+            #region example-1
+
+            var client = new AmazonArtifactClient();
+            var response = client.ListReportVersions(new ListReportVersionsRequest 
+            {
+                ReportId = "report-abcdef0123456789"
+            });
+
+            string nextToken = response.NextToken;
+            List<ReportSummary> reports = response.Reports;
+
+            #endregion
+        }
+
         public void ArtifactPutAccountSettings()
         {
             #region example-1

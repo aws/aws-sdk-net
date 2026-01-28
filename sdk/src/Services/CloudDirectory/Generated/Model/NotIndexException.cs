@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for NotIndexException
+        /// message.
+        /// </summary>
+        public NotIndexException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotIndexException with the specified error
         /// message.
         /// </summary>

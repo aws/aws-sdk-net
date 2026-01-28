@@ -43,6 +43,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for ENILimitReachedException
+        /// message.
+        /// </summary>
+        public ENILimitReachedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ENILimitReachedException with the specified error
         /// message.
         /// </summary>

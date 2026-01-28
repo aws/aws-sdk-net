@@ -50,14 +50,14 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AsgInstanceLaunchFailures</b>: Your Amazon EC2 Auto Scaling group is experiencing
-        /// failures while attempting to launch instances.
+        ///  <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures
+        /// while attempting to launch instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AutoScalingGroupNotFound</b>: We couldn't find the Amazon EC2 Auto Scaling group
-        /// associated with the managed node group. You may be able to recreate an Amazon EC2
-        /// Auto Scaling group with the same settings to recover.
+        ///  <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated
+        /// with the managed node group. You may be able to recreate an Auto Scaling group with
+        /// the same settings to recover.
         /// </para>
         ///  </li> <li> 
         /// <para>

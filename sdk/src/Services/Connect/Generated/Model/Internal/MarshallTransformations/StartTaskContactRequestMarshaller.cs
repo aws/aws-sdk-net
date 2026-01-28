@@ -73,6 +73,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttachments())
+            {
+                context.Writer.WritePropertyName("Attachments");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TaskAttachmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttachmentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");

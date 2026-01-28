@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for CannotChangeImmutablePublicKeyFieldsException
+        /// message.
+        /// </summary>
+        public CannotChangeImmutablePublicKeyFieldsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotChangeImmutablePublicKeyFieldsException with the specified error
         /// message.
         /// </summary>

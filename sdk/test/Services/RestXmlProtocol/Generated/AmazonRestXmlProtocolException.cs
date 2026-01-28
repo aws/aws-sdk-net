@@ -36,6 +36,14 @@ namespace Amazon.RestXmlProtocol
         /// <summary>
         /// Construct instance of AmazonRestXmlProtocolException
         /// </summary>
+        public AmazonRestXmlProtocolException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRestXmlProtocolException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRestXmlProtocolException(string message)
             : base(message)

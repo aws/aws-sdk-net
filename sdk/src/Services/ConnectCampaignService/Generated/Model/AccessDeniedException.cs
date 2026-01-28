@@ -40,6 +40,13 @@ namespace Amazon.ConnectCampaignService.Model
         private string _xAmzErrorType;
 
         /// <summary>
+        /// Default constructor for AccessDeniedException
+        /// message.
+        /// </summary>
+        public AccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessDeniedException with the specified error
         /// message.
         /// </summary>

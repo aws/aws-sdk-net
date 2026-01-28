@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for ImageArchivedException
+        /// message.
+        /// </summary>
+        public ImageArchivedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImageArchivedException with the specified error
         /// message.
         /// </summary>

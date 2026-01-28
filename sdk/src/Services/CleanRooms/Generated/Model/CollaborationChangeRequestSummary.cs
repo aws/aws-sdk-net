@@ -34,6 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class CollaborationChangeRequestSummary
     {
+        private Dictionary<string, ApprovalStatusDetails> _approvals = AWSConfigs.InitializeCollections ? new Dictionary<string, ApprovalStatusDetails>() : null;
         private List<Change> _changes = AWSConfigs.InitializeCollections ? new List<Change>() : null;
         private string _collaborationId;
         private DateTime? _createTime;
@@ -41,6 +42,30 @@ namespace Amazon.CleanRooms.Model
         private bool? _isAutoApproved;
         private ChangeRequestStatus _status;
         private DateTime? _updateTime;
+
+        /// <summary>
+        /// Gets and sets the property Approvals. 
+        /// <para>
+        /// Summary of approval statuses from all collaboration members for this change request.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, ApprovalStatusDetails> Approvals
+        {
+            get { return this._approvals; }
+            set { this._approvals = value; }
+        }
+
+        // Check to see if Approvals property is set
+        internal bool IsSetApprovals()
+        {
+            return this._approvals != null && (this._approvals.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Changes. 

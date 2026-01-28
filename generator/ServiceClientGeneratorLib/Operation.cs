@@ -352,35 +352,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        private IList<Member> _requestPayloadFlattenMembers;
-
-        /// <summary>
-        /// Contains the list of members of the flattened RequestPayloadMember if the RequestPayloadMember
-        /// has been flattened
-        /// </summary>
-        public IList<Member> RequestPayloadFlattenMembers
-        {
-            get
-            {
-                if (_requestPayloadFlattenMembers == null)
-                {
-                    IList<Member> map = new List<Member>();
-                    if (this.model.Customizations.FlattenShapes(this.RequestStructure.Name).Contains(this.RequestPayloadMember.ModeledName))
-                    {
-                        JsonData flattenMemberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][this.data[Shape.MembersKey][this.RequestPayloadMember.ModeledName][ServiceModel.ShapeKey].ToString()];
-                        foreach (KeyValuePair<string, JsonData> kvp in flattenMemberShape[Shape.MembersKey])
-                        {
-                            if (this.model.Customizations.IsExcludedProperty(kvp.Key, this.Name))
-                                continue;
-                            map.Add(new Member(this.model, this.RequestPayloadMember.Shape, kvp.Key, kvp.Key, kvp.Value, null));
-                        }
-                        _requestPayloadFlattenMembers = map;
-                    }
-                }
-                return _requestPayloadFlattenMembers;
-            }
-        }
-
         /// <summary>
         /// The response payload member, null if one does not exist.
         /// </summary>
@@ -598,9 +569,12 @@ namespace ServiceClientGenerator
                 if (this.RequestStructure == null)
                     return new List<Member>();
 
+                this.model.Customizations.ShapeModifiers.TryGetValue(this.RequestStructure.Name, out var modifiers);
+
                 var payloadName = this.RequestStructure.PayloadMemberName;
                 return this.RequestStructure.Members.Where(
                     m =>
+                        !(modifiers != null && modifiers.ExcludedMarshallingProperties.Contains(m.ModeledName)) &&
                         m.MarshallLocation == MarshallLocation.Body &&
                         !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
             }

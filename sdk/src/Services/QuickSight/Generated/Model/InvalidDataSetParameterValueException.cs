@@ -39,6 +39,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDataSetParameterValueException
+        /// message.
+        /// </summary>
+        public InvalidDataSetParameterValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDataSetParameterValueException with the specified error
         /// message.
         /// </summary>

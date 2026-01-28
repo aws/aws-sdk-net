@@ -112,6 +112,7 @@ namespace Amazon.PaymentCryptographyData.Model
     public partial class TranslatePinDataRequest : AmazonPaymentCryptographyDataRequest
     {
         private string _encryptedPinBlock;
+        private As2805PekDerivationAttributes _incomingAs2805Attributes;
         private DukptDerivationAttributes _incomingDukptAttributes;
         private string _incomingKeyIdentifier;
         private TranslationIsoFormats _incomingTranslationAttributes;
@@ -138,6 +139,25 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetEncryptedPinBlock()
         {
             return this._encryptedPinBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncomingAs2805Attributes. 
+        /// <para>
+        /// The attributes and values to use for incoming AS2805 encryption key for PIN block
+        /// translation.
+        /// </para>
+        /// </summary>
+        public As2805PekDerivationAttributes IncomingAs2805Attributes
+        {
+            get { return this._incomingAs2805Attributes; }
+            set { this._incomingAs2805Attributes = value; }
+        }
+
+        // Check to see if IncomingAs2805Attributes property is set
+        internal bool IsSetIncomingAs2805Attributes()
+        {
+            return this._incomingAs2805Attributes != null;
         }
 
         /// <summary>

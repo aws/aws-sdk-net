@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyCertificatesException
+        /// message.
+        /// </summary>
+        public TooManyCertificatesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyCertificatesException with the specified error
         /// message.
         /// </summary>

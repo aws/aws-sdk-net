@@ -36,6 +36,14 @@ namespace Amazon.CodeStarconnections
         /// <summary>
         /// Construct instance of AmazonCodeStarconnectionsException
         /// </summary>
+        public AmazonCodeStarconnectionsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeStarconnectionsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeStarconnectionsException(string message)
             : base(message)

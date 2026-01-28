@@ -40,6 +40,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for IncorrectCidrStateException
+        /// message.
+        /// </summary>
+        public IncorrectCidrStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncorrectCidrStateException with the specified error
         /// message.
         /// </summary>

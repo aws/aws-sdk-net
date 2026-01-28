@@ -36,6 +36,14 @@ namespace Amazon.NonQueryCompatibleRpcV2Protocol
         /// <summary>
         /// Construct instance of AmazonNonQueryCompatibleRpcV2ProtocolException
         /// </summary>
+        public AmazonNonQueryCompatibleRpcV2ProtocolException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNonQueryCompatibleRpcV2ProtocolException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNonQueryCompatibleRpcV2ProtocolException(string message)
             : base(message)

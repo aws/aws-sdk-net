@@ -39,6 +39,13 @@ namespace Amazon.ServiceQuotas.Model
     {
 
         /// <summary>
+        /// Default constructor for TemplatesNotAvailableInRegionException
+        /// message.
+        /// </summary>
+        public TemplatesNotAvailableInRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TemplatesNotAvailableInRegionException with the specified error
         /// message.
         /// </summary>

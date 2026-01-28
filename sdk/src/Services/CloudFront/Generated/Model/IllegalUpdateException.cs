@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalUpdateException
+        /// message.
+        /// </summary>
+        public IllegalUpdateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalUpdateException with the specified error
         /// message.
         /// </summary>

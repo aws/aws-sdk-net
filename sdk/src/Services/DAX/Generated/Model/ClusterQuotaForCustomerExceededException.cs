@@ -40,6 +40,13 @@ namespace Amazon.DAX.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterQuotaForCustomerExceededException
+        /// message.
+        /// </summary>
+        public ClusterQuotaForCustomerExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterQuotaForCustomerExceededException with the specified error
         /// message.
         /// </summary>

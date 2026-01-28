@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for CodeBuildNotInServiceRegionException
+        /// message.
+        /// </summary>
+        public CodeBuildNotInServiceRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CodeBuildNotInServiceRegionException with the specified error
         /// message.
         /// </summary>

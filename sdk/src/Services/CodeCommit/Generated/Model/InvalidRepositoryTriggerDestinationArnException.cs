@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRepositoryTriggerDestinationArnException
+        /// message.
+        /// </summary>
+        public InvalidRepositoryTriggerDestinationArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRepositoryTriggerDestinationArnException with the specified error
         /// message.
         /// </summary>

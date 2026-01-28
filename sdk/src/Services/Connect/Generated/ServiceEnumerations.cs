@@ -2295,6 +2295,52 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type DisconnectOnCustomerExitParticipantType.
+    /// </summary>
+    public class DisconnectOnCustomerExitParticipantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for DisconnectOnCustomerExitParticipantType
+        /// </summary>
+        public static readonly DisconnectOnCustomerExitParticipantType AGENT = new DisconnectOnCustomerExitParticipantType("AGENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DisconnectOnCustomerExitParticipantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DisconnectOnCustomerExitParticipantType FindValue(string value)
+        {
+            return FindValue<DisconnectOnCustomerExitParticipantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DisconnectOnCustomerExitParticipantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EmailHeaderType.
     /// </summary>
     public class EmailHeaderType : ConstantClass
@@ -3243,6 +3289,52 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type EvaluationReviewNotificationRecipientType.
+    /// </summary>
+    public class EvaluationReviewNotificationRecipientType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USER_ID for EvaluationReviewNotificationRecipientType
+        /// </summary>
+        public static readonly EvaluationReviewNotificationRecipientType USER_ID = new EvaluationReviewNotificationRecipientType("USER_ID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationReviewNotificationRecipientType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationReviewNotificationRecipientType FindValue(string value)
+        {
+            return FindValue<EvaluationReviewNotificationRecipientType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationReviewNotificationRecipientType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationStatus.
     /// </summary>
     public class EvaluationStatus : ConstantClass
@@ -3253,9 +3345,17 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EvaluationStatus DRAFT = new EvaluationStatus("DRAFT");
         /// <summary>
+        /// Constant REVIEW_REQUESTED for EvaluationStatus
+        /// </summary>
+        public static readonly EvaluationStatus REVIEW_REQUESTED = new EvaluationStatus("REVIEW_REQUESTED");
+        /// <summary>
         /// Constant SUBMITTED for EvaluationStatus
         /// </summary>
         public static readonly EvaluationStatus SUBMITTED = new EvaluationStatus("SUBMITTED");
+        /// <summary>
+        /// Constant UNDER_REVIEW for EvaluationStatus
+        /// </summary>
+        public static readonly EvaluationStatus UNDER_REVIEW = new EvaluationStatus("UNDER_REVIEW");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3530,6 +3630,64 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventSourceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionRecordStatus.
+    /// </summary>
+    public class ExecutionRecordStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ExecutionRecordStatus
+        /// </summary>
+        public static readonly ExecutionRecordStatus FAILED = new ExecutionRecordStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ExecutionRecordStatus
+        /// </summary>
+        public static readonly ExecutionRecordStatus IN_PROGRESS = new ExecutionRecordStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PASSED for ExecutionRecordStatus
+        /// </summary>
+        public static readonly ExecutionRecordStatus PASSED = new ExecutionRecordStatus("PASSED");
+        /// <summary>
+        /// Constant STOPPED for ExecutionRecordStatus
+        /// </summary>
+        public static readonly ExecutionRecordStatus STOPPED = new ExecutionRecordStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionRecordStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionRecordStatus FindValue(string value)
+        {
+            return FindValue<ExecutionRecordStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionRecordStatus(string value)
         {
             return FindValue(value);
         }
@@ -3910,6 +4068,14 @@ namespace Amazon.Connect
         /// Constant ROUTING_STEP_EXPRESSION for Grouping
         /// </summary>
         public static readonly Grouping ROUTING_STEP_EXPRESSION = new Grouping("ROUTING_STEP_EXPRESSION");
+        /// <summary>
+        /// Constant SUBTYPE for Grouping
+        /// </summary>
+        public static readonly Grouping SUBTYPE = new Grouping("SUBTYPE");
+        /// <summary>
+        /// Constant VALIDATION_TEST_TYPE for Grouping
+        /// </summary>
+        public static readonly Grouping VALIDATION_TEST_TYPE = new Grouping("VALIDATION_TEST_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5499,6 +5665,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type OperationalStatus.
+    /// </summary>
+    public class OperationalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSED for OperationalStatus
+        /// </summary>
+        public static readonly OperationalStatus CLOSED = new OperationalStatus("CLOSED");
+        /// <summary>
+        /// Constant OPEN for OperationalStatus
+        /// </summary>
+        public static readonly OperationalStatus OPEN = new OperationalStatus("OPEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationalStatus FindValue(string value)
+        {
+            return FindValue<OperationalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OutboundMessageSourceType.
     /// </summary>
     public class OutboundMessageSourceType : ConstantClass
@@ -5658,6 +5874,60 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OverrideDays(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OverrideType.
+    /// </summary>
+    public class OverrideType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSED for OverrideType
+        /// </summary>
+        public static readonly OverrideType CLOSED = new OverrideType("CLOSED");
+        /// <summary>
+        /// Constant OPEN for OverrideType
+        /// </summary>
+        public static readonly OverrideType OPEN = new OverrideType("OPEN");
+        /// <summary>
+        /// Constant STANDARD for OverrideType
+        /// </summary>
+        public static readonly OverrideType STANDARD = new OverrideType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverrideType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideType FindValue(string value)
+        {
+            return FindValue<OverrideType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideType(string value)
         {
             return FindValue(value);
         }
@@ -7817,6 +8087,60 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type RecurrenceFrequency.
+    /// </summary>
+    public class RecurrenceFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MONTHLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency MONTHLY = new RecurrenceFrequency("MONTHLY");
+        /// <summary>
+        /// Constant WEEKLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency WEEKLY = new RecurrenceFrequency("WEEKLY");
+        /// <summary>
+        /// Constant YEARLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency YEARLY = new RecurrenceFrequency("YEARLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecurrenceFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecurrenceFrequency FindValue(string value)
+        {
+            return FindValue<RecurrenceFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecurrenceFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReferenceStatus.
     /// </summary>
     public class ReferenceStatus : ConstantClass
@@ -9224,6 +9548,164 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskTemplateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestCaseEntryPointType.
+    /// </summary>
+    public class TestCaseEntryPointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VOICE_CALL for TestCaseEntryPointType
+        /// </summary>
+        public static readonly TestCaseEntryPointType VOICE_CALL = new TestCaseEntryPointType("VOICE_CALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestCaseEntryPointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestCaseEntryPointType FindValue(string value)
+        {
+            return FindValue<TestCaseEntryPointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestCaseEntryPointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestCaseExecutionStatus.
+    /// </summary>
+    public class TestCaseExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus FAILED = new TestCaseExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus IN_PROGRESS = new TestCaseExecutionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant INITIATED for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus INITIATED = new TestCaseExecutionStatus("INITIATED");
+        /// <summary>
+        /// Constant PASSED for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus PASSED = new TestCaseExecutionStatus("PASSED");
+        /// <summary>
+        /// Constant STOPPED for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus STOPPED = new TestCaseExecutionStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestCaseExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestCaseExecutionStatus FindValue(string value)
+        {
+            return FindValue<TestCaseExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestCaseExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestCaseStatus.
+    /// </summary>
+    public class TestCaseStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLISHED for TestCaseStatus
+        /// </summary>
+        public static readonly TestCaseStatus PUBLISHED = new TestCaseStatus("PUBLISHED");
+        /// <summary>
+        /// Constant SAVED for TestCaseStatus
+        /// </summary>
+        public static readonly TestCaseStatus SAVED = new TestCaseStatus("SAVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestCaseStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestCaseStatus FindValue(string value)
+        {
+            return FindValue<TestCaseStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestCaseStatus(string value)
         {
             return FindValue(value);
         }

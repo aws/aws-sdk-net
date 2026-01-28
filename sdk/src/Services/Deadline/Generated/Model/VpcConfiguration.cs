@@ -47,6 +47,7 @@ namespace Amazon.Deadline.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> ResourceConfigurationArns
         {
             get { return this._resourceConfigurationArns; }

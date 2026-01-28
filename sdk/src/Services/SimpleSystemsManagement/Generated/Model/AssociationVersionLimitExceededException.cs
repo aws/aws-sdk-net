@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AssociationVersionLimitExceededException
+        /// message.
+        /// </summary>
+        public AssociationVersionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AssociationVersionLimitExceededException with the specified error
         /// message.
         /// </summary>

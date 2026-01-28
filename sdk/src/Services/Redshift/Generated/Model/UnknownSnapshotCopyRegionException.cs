@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for UnknownSnapshotCopyRegionException
+        /// message.
+        /// </summary>
+        public UnknownSnapshotCopyRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnknownSnapshotCopyRegionException with the specified error
         /// message.
         /// </summary>

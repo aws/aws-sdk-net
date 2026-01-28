@@ -40,6 +40,13 @@ namespace Amazon.JSONRPC10.Model
     {
 
         /// <summary>
+        /// Default constructor for FooErrorException
+        /// message.
+        /// </summary>
+        public FooErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FooErrorException with the specified error
         /// message.
         /// </summary>

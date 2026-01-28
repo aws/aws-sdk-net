@@ -36,6 +36,14 @@ namespace Amazon.OAM
         /// <summary>
         /// Construct instance of AmazonOAMException
         /// </summary>
+        public AmazonOAMException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonOAMException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonOAMException(string message)
             : base(message)

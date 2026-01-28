@@ -36,6 +36,14 @@ namespace Amazon.IoTDeviceAdvisor
         /// <summary>
         /// Construct instance of AmazonIoTDeviceAdvisorException
         /// </summary>
+        public AmazonIoTDeviceAdvisorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTDeviceAdvisorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTDeviceAdvisorException(string message)
             : base(message)

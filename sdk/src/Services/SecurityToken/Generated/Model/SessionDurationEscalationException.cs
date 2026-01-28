@@ -41,6 +41,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for SessionDurationEscalationException
+        /// message.
+        /// </summary>
+        public SessionDurationEscalationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SessionDurationEscalationException with the specified error
         /// message.
         /// </summary>

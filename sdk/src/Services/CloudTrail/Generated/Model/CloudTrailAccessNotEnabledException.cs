@@ -43,6 +43,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudTrailAccessNotEnabledException
+        /// message.
+        /// </summary>
+        public CloudTrailAccessNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudTrailAccessNotEnabledException with the specified error
         /// message.
         /// </summary>

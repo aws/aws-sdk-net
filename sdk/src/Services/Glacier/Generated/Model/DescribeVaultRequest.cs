@@ -37,9 +37,9 @@ namespace Amazon.Glacier.Model
     /// total size are as of the last inventory generation. This means that if you add or
     /// remove an archive from a vault, and then immediately use Describe Vault, the change
     /// in contents will not be immediately reflected. If you want to retrieve the latest
-    /// inventory of the vault, use <a>InitiateJob</a>. Amazon S3 Glacier generates vault
-    /// inventories approximately daily. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
-    /// a Vault Inventory in Amazon S3 Glacier</a>. 
+    /// inventory of the vault, use <a>InitiateJob</a>. Amazon Glacier generates vault inventories
+    /// approximately daily. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
+    /// a Vault Inventory in Amazon Glacier</a>. 
     /// 
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
-    /// Vault Metadata in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
+    /// Vault Metadata in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
     /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
@@ -78,7 +78,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates DescribeVaultRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <c>AccountId</c> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
+        /// <param name="accountId">The <c>AccountId</c> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         public DescribeVaultRequest(string accountId, string vaultName)
         {
@@ -91,7 +91,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <c>AccountId</c> value is the AWS account ID of the account that owns the vault.
         /// You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen),
-        /// in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
+        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
         /// used to sign the request. If you use an account ID, do not include any hyphens ('-')
         /// in the ID. 
         /// </para>

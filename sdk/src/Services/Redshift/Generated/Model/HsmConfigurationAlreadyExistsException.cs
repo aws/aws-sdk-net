@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for HsmConfigurationAlreadyExistsException
+        /// message.
+        /// </summary>
+        public HsmConfigurationAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HsmConfigurationAlreadyExistsException with the specified error
         /// message.
         /// </summary>

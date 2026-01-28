@@ -39,6 +39,13 @@ namespace Amazon.SimpleEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidConfigurationSetException
+        /// message.
+        /// </summary>
+        public InvalidConfigurationSetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidConfigurationSetException with the specified error
         /// message.
         /// </summary>

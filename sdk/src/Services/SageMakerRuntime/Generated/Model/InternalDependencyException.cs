@@ -39,6 +39,13 @@ namespace Amazon.SageMakerRuntime.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalDependencyException
+        /// message.
+        /// </summary>
+        public InternalDependencyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalDependencyException with the specified error
         /// message.
         /// </summary>

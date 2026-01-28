@@ -64,7 +64,6 @@ This project file should not be used as part of a release pipeline.
         <ProjectReference Include="..\..\src\Services\DynamoDBv2\*.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\EC2\*.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\ElasticMapReduce\*.NetFramework.csproj" />
-        <ProjectReference Include="..\..\src\Services\ElasticTranscoder\*.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\Redshift\*.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\S3\*.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\SecurityToken\*.NetFramework.csproj" />

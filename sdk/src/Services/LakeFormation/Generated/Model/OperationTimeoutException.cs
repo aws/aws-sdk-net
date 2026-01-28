@@ -39,6 +39,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationTimeoutException
+        /// message.
+        /// </summary>
+        public OperationTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationTimeoutException with the specified error
         /// message.
         /// </summary>

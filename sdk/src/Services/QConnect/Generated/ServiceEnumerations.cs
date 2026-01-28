@@ -3507,6 +3507,10 @@ namespace Amazon.QConnect
     {
 
         /// <summary>
+        /// Constant MESSAGE for TargetType
+        /// </summary>
+        public static readonly TargetType MESSAGE = new TargetType("MESSAGE");
+        /// <summary>
         /// Constant RECOMMENDATION for TargetType
         /// </summary>
         public static readonly TargetType RECOMMENDATION = new TargetType("RECOMMENDATION");

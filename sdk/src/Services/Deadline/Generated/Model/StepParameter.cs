@@ -34,8 +34,27 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class StepParameter
     {
+        private StepParameterChunks _chunks;
         private string _name;
         private StepParameterType _type;
+
+        /// <summary>
+        /// Gets and sets the property Chunks. 
+        /// <para>
+        /// The configuration for task chunking.
+        /// </para>
+        /// </summary>
+        public StepParameterChunks Chunks
+        {
+            get { return this._chunks; }
+            set { this._chunks = value; }
+        }
+
+        // Check to see if Chunks property is set
+        internal bool IsSetChunks()
+        {
+            return this._chunks != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

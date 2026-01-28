@@ -40,6 +40,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for ReplayLimitExceededException
+        /// message.
+        /// </summary>
+        public ReplayLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplayLimitExceededException with the specified error
         /// message.
         /// </summary>

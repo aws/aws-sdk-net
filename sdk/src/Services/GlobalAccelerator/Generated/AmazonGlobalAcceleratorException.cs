@@ -36,6 +36,14 @@ namespace Amazon.GlobalAccelerator
         /// <summary>
         /// Construct instance of AmazonGlobalAcceleratorException
         /// </summary>
+        public AmazonGlobalAcceleratorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGlobalAcceleratorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGlobalAcceleratorException(string message)
             : base(message)

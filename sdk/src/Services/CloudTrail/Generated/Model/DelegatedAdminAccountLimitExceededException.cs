@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for DelegatedAdminAccountLimitExceededException
+        /// message.
+        /// </summary>
+        public DelegatedAdminAccountLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DelegatedAdminAccountLimitExceededException with the specified error
         /// message.
         /// </summary>

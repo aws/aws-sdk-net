@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSecurityGroupException
+        /// message.
+        /// </summary>
+        public InvalidSecurityGroupException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSecurityGroupException with the specified error
         /// message.
         /// </summary>

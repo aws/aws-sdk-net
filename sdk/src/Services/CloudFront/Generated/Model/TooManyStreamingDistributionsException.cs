@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyStreamingDistributionsException
+        /// message.
+        /// </summary>
+        public TooManyStreamingDistributionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyStreamingDistributionsException with the specified error
         /// message.
         /// </summary>

@@ -30,6 +30,7 @@ namespace UnitTests
             "LogResponse",
             "AWSTokenProvider",
             "BufferSize",
+            "MaxStaleConnectionRetries",
             "ProgressUpdateInterval",
             "ResignRetries",
             "AllowAutoRedirect",

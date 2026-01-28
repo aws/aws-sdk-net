@@ -101,6 +101,18 @@
     <pattern>[ a-zA-Z0-9_:-]{1,256}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateMissionProfileRequest.StreamsKmsRole</property>
+    <min>30</min>
+    <max>165</max>
+    <pattern>arn:[a-z0-9-.]{1,63}:iam::[0-9]{12}:role/[\w+=,.@-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateMissionProfileRequest.TelemetrySinkConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateMissionProfileRequest.TrackingConfigArn</property>
     <min>82</min>
     <max>424</max>
@@ -343,6 +355,18 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetMissionProfileResponse.StreamsKmsRole</property>
+    <min>30</min>
+    <max>165</max>
+    <pattern>arn:[a-z0-9-.]{1,63}:iam::[0-9]{12}:role/[\w+=,.@-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetMissionProfileResponse.TelemetrySinkConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetMissionProfileResponse.TrackingConfigArn</property>
@@ -657,6 +681,18 @@
     <pattern>[ a-zA-Z0-9_:-]{1,256}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.UpdateMissionProfileRequest.StreamsKmsRole</property>
+    <min>30</min>
+    <max>165</max>
+    <pattern>arn:[a-z0-9-.]{1,63}:iam::[0-9]{12}:role/[\w+=,.@-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.UpdateMissionProfileRequest.TelemetrySinkConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateMissionProfileRequest.TrackingConfigArn</property>
     <min>82</min>
     <max>424</max>
@@ -865,6 +901,18 @@
     <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.KinesisDataStreamData.KinesisDataStreamArn</property>
+    <min>37</min>
+    <max>275</max>
+    <pattern>arn:[a-z0-9-.]{1,63}:kinesis:[-a-z0-9]{1,50}:[0-9]{12}:stream/[a-zA-Z0-9_.-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.KinesisDataStreamData.KinesisRoleArn</property>
+    <min>30</min>
+    <max>165</max>
+    <pattern>arn:[a-z0-9-.]{1,63}:iam::[0-9]{12}:role/[\w+=,.@-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.KmsKey.KmsAliasArn</property>
     <min>1</min>
     <max>512</max>
@@ -941,6 +989,12 @@
     <pattern>([a-zA-Z0-9_\-=/]|\{satellite_id\}|\{config\-name}|\{s3\-config-id}|\{year\}|\{month\}|\{day\}){1,900}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.S3RecordingConfig.RoleArn</property>
+    <min>30</min>
+    <max>165</max>
+    <pattern>arn:[a-z0-9-.]{1,63}:iam::[0-9]{12}:role/[\w+=,.@-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.SatelliteListItem.NoradSatelliteID</property>
     <min>0</min>
     <max>99999</max>
@@ -956,6 +1010,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.SecurityDetails.RoleArn</property>
+    <min>30</min>
+    <max>165</max>
+    <pattern>arn:[a-z0-9-.]{1,63}:iam::[0-9]{12}:role/[\w+=,.@-]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.TLEData.TleLine1</property>

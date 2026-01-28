@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for TenantDatabaseQuotaExceededException
+        /// message.
+        /// </summary>
+        public TenantDatabaseQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TenantDatabaseQuotaExceededException with the specified error
         /// message.
         /// </summary>

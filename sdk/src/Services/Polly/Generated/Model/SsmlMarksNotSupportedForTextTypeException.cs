@@ -39,6 +39,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for SsmlMarksNotSupportedForTextTypeException
+        /// message.
+        /// </summary>
+        public SsmlMarksNotSupportedForTextTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SsmlMarksNotSupportedForTextTypeException with the specified error
         /// message.
         /// </summary>

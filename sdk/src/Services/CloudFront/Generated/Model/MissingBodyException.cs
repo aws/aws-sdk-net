@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingBodyException
+        /// message.
+        /// </summary>
+        public MissingBodyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingBodyException with the specified error
         /// message.
         /// </summary>

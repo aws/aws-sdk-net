@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         private int? _framerateDenominator;
         private int? _framerateNumerator;
         private int? _height;
+        private string _imageInput;
         private int? _sampleRate;
         private int? _width;
 
@@ -136,6 +137,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHeight()
         {
             return this._height.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageInput. Specify the HTTP, HTTPS, or Amazon S3 location
+        /// of the image that you want to overlay on the video. Use a PNG or TGA file.
+        /// </summary>
+        [AWSProperty(Min=14)]
+        public string ImageInput
+        {
+            get { return this._imageInput; }
+            set { this._imageInput = value; }
+        }
+
+        // Check to see if ImageInput property is set
+        internal bool IsSetImageInput()
+        {
+            return this._imageInput != null;
         }
 
         /// <summary>

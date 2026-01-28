@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FolderDoesNotExistException
+        /// message.
+        /// </summary>
+        public FolderDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FolderDoesNotExistException with the specified error
         /// message.
         /// </summary>

@@ -1,4 +1,6 @@
 name: PR workflow
+permissions:
+  contents: read
 on:
   pull_request:
     types: [synchronize, opened, reopened, edited]
@@ -10,8 +12,8 @@ jobs:
       - uses: actions/github-script@v7.0.1
 
         # "base_ref" is the target branch of the pull request (https://docs.github.com/en/actions/learn-github-actions/contexts#github-context)
-        if: ${{ github.base_ref == 'main' }}
+        if: ${{ github.base_ref == 'main' || github.base_ref == 'aws-sdk-net-v3.7' }}
         
         with:
           script: |
-            core.setFailed('PRs must target either main-staging or a feature branch')
+            core.setFailed("PRs must not target 'main' or 'aws-sdk-net-v3.7'. Please target 'development', 'aws-sdk-net-v3.7-development', or a feature branch instead.")

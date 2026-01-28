@@ -121,6 +121,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetPayloadTemplate())
+            {
+                context.Writer.WritePropertyName("payloadTemplate");
+                context.Writer.WriteStringValue(publicRequest.PayloadTemplate);
+            }
+
+            if(publicRequest.IsSetPreprocessor())
+            {
+                context.Writer.WritePropertyName("preprocessor");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CommandPreprocessorMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Preprocessor, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

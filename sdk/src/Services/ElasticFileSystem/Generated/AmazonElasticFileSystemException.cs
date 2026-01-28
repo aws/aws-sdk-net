@@ -36,6 +36,14 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// Construct instance of AmazonElasticFileSystemException
         /// </summary>
+        public AmazonElasticFileSystemException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonElasticFileSystemException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonElasticFileSystemException(string message)
             : base(message)

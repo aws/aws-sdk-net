@@ -73,20 +73,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("IdentityCenterArn", StringUtils.FromString(publicRequest.IdentityCenterArn));
 
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetTags()) 
                 {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                    if (publicRequestTagsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("Tag");
-                        if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
-                        if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestTagsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Tag");
+                            if(publicRequestTagsValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
+                            if(publicRequestTagsValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }

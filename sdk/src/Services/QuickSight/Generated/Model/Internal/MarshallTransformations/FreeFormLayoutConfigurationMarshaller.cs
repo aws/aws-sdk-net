@@ -73,6 +73,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetGroups())
+            {
+                context.Writer.WritePropertyName("Groups");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectGroupsListValue in requestObject.Groups)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SheetLayoutGroupMarshaller.Instance;
+                    marshaller.Marshall(requestObjectGroupsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

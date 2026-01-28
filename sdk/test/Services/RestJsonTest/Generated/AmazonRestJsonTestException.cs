@@ -36,6 +36,14 @@ namespace Amazon.RestJsonTest
         /// <summary>
         /// Construct instance of AmazonRestJsonTestException
         /// </summary>
+        public AmazonRestJsonTestException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRestJsonTestException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRestJsonTestException(string message)
             : base(message)

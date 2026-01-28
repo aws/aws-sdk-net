@@ -50,6 +50,13 @@ namespace Amazon.Signin.Model
         private OAuth2ErrorCode _error;
 
         /// <summary>
+        /// Default constructor for ValidationException
+        /// message.
+        /// </summary>
+        public ValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ValidationException with the specified error
         /// message.
         /// </summary>

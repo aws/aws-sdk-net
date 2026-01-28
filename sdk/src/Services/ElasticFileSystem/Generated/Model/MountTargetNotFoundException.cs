@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for MountTargetNotFoundException
+        /// message.
+        /// </summary>
+        public MountTargetNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MountTargetNotFoundException with the specified error
         /// message.
         /// </summary>

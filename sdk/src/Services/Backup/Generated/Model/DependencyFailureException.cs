@@ -43,6 +43,13 @@ namespace Amazon.Backup.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for DependencyFailureException
+        /// message.
+        /// </summary>
+        public DependencyFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependencyFailureException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for UnknownSubscriptionException
+        /// message.
+        /// </summary>
+        public UnknownSubscriptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnknownSubscriptionException with the specified error
         /// message.
         /// </summary>

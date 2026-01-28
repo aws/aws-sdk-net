@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="9.9.1" />
+    <PackageReference Include="Moq" Version="4.8.3" />
     <PackageReference Include="xunit" Version="2.9.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
   </ItemGroup>
@@ -26,7 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../src/AWSSDK.Extensions.Bedrock.MEAI/AWSSDK.Extensions.Bedrock.MEAI.NetFramework.csproj" />
-    <ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj" />
+    <ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

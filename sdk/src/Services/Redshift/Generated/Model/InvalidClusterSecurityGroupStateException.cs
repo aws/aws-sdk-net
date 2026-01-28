@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidClusterSecurityGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidClusterSecurityGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClusterSecurityGroupStateException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.AutoScaling.Model
     {
 
         /// <summary>
+        /// Default constructor for ActiveInstanceRefreshNotFoundException
+        /// message.
+        /// </summary>
+        public ActiveInstanceRefreshNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActiveInstanceRefreshNotFoundException with the specified error
         /// message.
         /// </summary>

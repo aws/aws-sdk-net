@@ -36,6 +36,14 @@ namespace Amazon.IoTSecureTunneling
         /// <summary>
         /// Construct instance of AmazonIoTSecureTunnelingException
         /// </summary>
+        public AmazonIoTSecureTunnelingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTSecureTunnelingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTSecureTunnelingException(string message)
             : base(message)

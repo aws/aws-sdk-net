@@ -36,6 +36,14 @@ namespace Amazon.SQS
         /// <summary>
         /// Construct instance of AmazonSQSException
         /// </summary>
+        public AmazonSQSException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSQSException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSQSException(string message)
             : base(message)

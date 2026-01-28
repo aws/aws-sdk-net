@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedIndexTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedIndexTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedIndexTypeException with the specified error
         /// message.
         /// </summary>

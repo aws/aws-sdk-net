@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for ExportTaskNotFoundException
+        /// message.
+        /// </summary>
+        public ExportTaskNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExportTaskNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyTypeAlreadyEnabledException
+        /// message.
+        /// </summary>
+        public PolicyTypeAlreadyEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyTypeAlreadyEnabledException with the specified error
         /// message.
         /// </summary>

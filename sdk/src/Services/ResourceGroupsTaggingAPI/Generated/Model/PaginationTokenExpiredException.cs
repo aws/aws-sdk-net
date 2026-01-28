@@ -40,6 +40,13 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     {
 
         /// <summary>
+        /// Default constructor for PaginationTokenExpiredException
+        /// message.
+        /// </summary>
+        public PaginationTokenExpiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PaginationTokenExpiredException with the specified error
         /// message.
         /// </summary>

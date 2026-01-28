@@ -54,6 +54,7 @@ namespace Amazon.AutoScaling.Model
     {
         private List<string> _activityIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _autoScalingGroupName;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private bool? _includeDeletedGroups;
         private int? _maxRecords;
         private string _nextToken;
@@ -61,10 +62,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ActivityIds. 
         /// <para>
-        /// The activity IDs of the desired scaling activities. If you omit this property, all
-        /// activities for the past six weeks are described. If unknown activities are requested,
-        /// they are ignored with no error. If you specify an Auto Scaling group, the results
-        /// are limited to that group.
+        ///  The activity IDs of the desired scaling activities. If unknown activity IDs are requested,
+        /// they are ignored with no error. Only activities started within the last six weeks
+        /// can be returned regardless of the activity IDs specified. If other filters are specified
+        /// with the request, only results matching all filter criteria can be returned. 
         /// </para>
         ///  
         /// <para>
@@ -93,6 +94,12 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the Auto Scaling group.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  Omitting this property performs an account-wide operation, which can result in slower
+        /// or timed-out requests. 
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string AutoScalingGroupName
@@ -105,6 +112,52 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        ///  One or more filters to limit the results based on specific criteria. The following
+        /// filters are supported: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>StartTimeLowerBound</c> - The earliest scaling activities to return based on the
+        /// activity start time. Scaling activities with a start time earlier than this value
+        /// are not included in the results. Only activities started within the last six weeks
+        /// can be returned regardless of the value specified. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StartTimeUpperBound</c> - The latest scaling activities to return based on the
+        /// activity start time. Scaling activities with a start time later than this value are
+        /// not included in the results. Only activities started within the last six weeks can
+        /// be returned regardless of the value specified. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Status</c> - The <c>StatusCode</c> value of the scaling activity. This filter
+        /// can only be used in combination with the <c>AutoScalingGroupName</c> parameter. For
+        /// valid <c>StatusCode</c> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>. 
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -40,6 +40,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for GameSessionFullException
+        /// message.
+        /// </summary>
+        public GameSessionFullException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GameSessionFullException with the specified error
         /// message.
         /// </summary>

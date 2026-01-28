@@ -36,6 +36,14 @@ namespace Amazon.PI
         /// <summary>
         /// Construct instance of AmazonPIException
         /// </summary>
+        public AmazonPIException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPIException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPIException(string message)
             : base(message)

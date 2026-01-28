@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ActionArns. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the lineage metadata action. 
+        ///  The Amazon Resource Name (ARN) of the lineage action. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ArtifactArns. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the lineage metadata artifact. 
+        ///  The Amazon Resource Name (ARN) of the lineage artifact. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Associations. 
         /// <para>
-        ///  The lineage metadata associations. 
+        ///  The lineage associations. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -114,7 +114,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContextArns. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the lineage metadata context. 
+        ///  The Amazon Resource Name (ARN) of the lineage context. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

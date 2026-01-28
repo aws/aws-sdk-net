@@ -40,6 +40,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSInternalException
+        /// message.
+        /// </summary>
+        public KMSInternalException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSInternalException with the specified error
         /// message.
         /// </summary>

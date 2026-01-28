@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for ActivityDoesNotExistException
+        /// message.
+        /// </summary>
+        public ActivityDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActivityDoesNotExistException with the specified error
         /// message.
         /// </summary>

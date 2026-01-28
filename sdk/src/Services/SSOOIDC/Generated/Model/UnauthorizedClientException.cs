@@ -42,6 +42,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for UnauthorizedClientException
+        /// message.
+        /// </summary>
+        public UnauthorizedClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthorizedClientException with the specified error
         /// message.
         /// </summary>

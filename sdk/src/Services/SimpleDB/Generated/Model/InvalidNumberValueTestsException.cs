@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for InvalidNumberValueTestsException
+        /// message.
+        /// </summary>
+        public InvalidNumberValueTestsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNumberValueTestsException with the specified error
         /// message.
         /// </summary>

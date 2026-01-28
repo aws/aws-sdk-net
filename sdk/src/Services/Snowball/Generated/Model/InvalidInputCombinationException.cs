@@ -41,6 +41,13 @@ namespace Amazon.Snowball.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInputCombinationException
+        /// message.
+        /// </summary>
+        public InvalidInputCombinationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInputCombinationException with the specified error
         /// message.
         /// </summary>

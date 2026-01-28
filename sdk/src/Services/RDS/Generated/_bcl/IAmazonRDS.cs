@@ -39,7 +39,7 @@ namespace Amazon.RDS
     /// resizeable capacity for an industry-standard relational database and manages common
     /// database administration tasks, freeing up developers to focus on what makes their
     /// applications and businesses unique.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Amazon RDS gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL, Microsoft
@@ -100,6 +100,7 @@ namespace Amazon.RDS
     /// the Query API</a>.
     /// </para>
     ///  </li> </ul>
+    /// </para>
     /// </summary>
     public partial interface IAmazonRDS : IAmazonService, IDisposable
     {
@@ -1919,7 +1920,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -2034,7 +2035,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -8691,7 +8692,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -8786,7 +8787,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -11418,7 +11419,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -11557,7 +11558,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -11670,7 +11671,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -11769,7 +11770,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -11877,7 +11878,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -12003,7 +12004,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// <zonbook></zonbook><xhtml></xhtml>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.

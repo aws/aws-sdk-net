@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for OriginRequestPolicyAlreadyExistsException
+        /// message.
+        /// </summary>
+        public OriginRequestPolicyAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OriginRequestPolicyAlreadyExistsException with the specified error
         /// message.
         /// </summary>

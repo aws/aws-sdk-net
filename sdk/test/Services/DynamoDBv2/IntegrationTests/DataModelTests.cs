@@ -262,6 +262,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, gsi4PriorityResults.Count);
         }
 
+        /// <summary>
+        /// Tests regression reported in https://github.com/aws/aws-sdk-net/issues/4243 is resolved.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestTransactWrite_SkipVersionCheck()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+
+            var vp = new VersionedProduct
+            {
+                Id = 1000,
+                Name = "TestProduct",
+                Price = 100
+            };
+            await Context.SaveAsync(vp);
+
+            // Load to get initial version
+            vp = await Context.LoadAsync<VersionedProduct>(vp.Id);
+            Assert.AreEqual(0, vp.Version);
+
+            // Set wrong version - normally would fail with a ConditionalCheck error
+            vp.Version = 9999;
+            vp.Price = 200;
+
+            // With SkipVersionCheck = true, should succeed
+            var transactWrite = Context.CreateTransactWrite<VersionedProduct>(new TransactWriteConfig 
+            { 
+                SkipVersionCheck = true 
+            });
+            transactWrite.AddSaveItem(vp);
+            await transactWrite.ExecuteAsync();
+
+            // Verify update succeeded
+            var updated = await Context.LoadAsync<VersionedProduct>(vp.Id);
+            Assert.AreEqual(200, updated.Price);
+            Assert.AreEqual(9999, updated.Version);
+        }
+
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public async Task TestContextWithEmptyStringDisabled()
@@ -1115,6 +1158,57 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual("Sam", upcomingEnumResult[0].Name);
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestContext_SaveItem_WithTTL()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            // Create context and table if needed
+            CreateContext(DynamoDBEntryConversion.V2, true);
+
+            // Define TTL to be 2 minutes in the future
+            var ttlEpoch = DateTimeOffset.UtcNow.AddMinutes(2).ToUnixTimeSeconds();
+
+            var item = new TtlTestItem  
+            {
+                Id = 1,
+                Data = "Test with TTL",
+                Ttl = ttlEpoch
+            };
+
+            Context.Save(item);
+
+            // Load immediately, should exist
+            var loaded = Context.Load<TtlTestItem>(item.Id);
+            Assert.IsNotNull(loaded);
+            Assert.AreEqual(item.Id, loaded.Id);
+            Assert.AreEqual(item.Data, loaded.Data);
+            Assert.AreEqual(item.Ttl, loaded.Ttl);
+
+            item.Ttl = DateTimeOffset.UtcNow.AddMinutes(3).ToUnixTimeSeconds();
+            Context.Save(item);
+            var loaded2 = Context.Load<TtlTestItem>(item.Id);
+            Assert.IsNotNull(loaded2);
+            Assert.AreEqual(item.Id, loaded2.Id);
+            Assert.AreEqual(item.Data, loaded2.Data);
+            Assert.AreEqual(item.Ttl, loaded2.Ttl);
+        }
+
+        // Example model for TTL
+        [DynamoDBTable("HashTable")]
+        public class TtlTestItem
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            public string Data { get; set; }
+
+            [DynamoDBProperty("TTL")]
+            public long Ttl { get; set; }
+        }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]

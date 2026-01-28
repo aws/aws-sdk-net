@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyEvaluationException
+        /// message.
+        /// </summary>
+        public PolicyEvaluationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyEvaluationException with the specified error
         /// message.
         /// </summary>

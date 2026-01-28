@@ -41,6 +41,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedPlsLanguageException
+        /// message.
+        /// </summary>
+        public UnsupportedPlsLanguageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedPlsLanguageException with the specified error
         /// message.
         /// </summary>

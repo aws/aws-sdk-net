@@ -40,6 +40,13 @@ namespace Amazon.RDSDataService.Model
         private long? _dbConnectionId;
 
         /// <summary>
+        /// Default constructor for StatementTimeoutException
+        /// message.
+        /// </summary>
+        public StatementTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StatementTimeoutException with the specified error
         /// message.
         /// </summary>

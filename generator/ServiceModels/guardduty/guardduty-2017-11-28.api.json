@@ -5134,7 +5134,10 @@
     },
     "GetRemainingFreeTrialDaysRequest":{
       "type":"structure",
-      "required":["DetectorId"],
+      "required":[
+        "AccountIds",
+        "DetectorId"
+      ],
       "members":{
         "DetectorId":{
           "shape":"DetectorId",
@@ -8033,6 +8036,10 @@
           "shape":"String",
           "locationName":"dbInstanceArn"
         },
+        "DbiResourceId":{
+          "shape":"String",
+          "locationName":"dbiResourceId"
+        },
         "Tags":{
           "shape":"Tags",
           "locationName":"tags"
@@ -9025,7 +9032,8 @@
         "UNSUPPORTED_FOR_INCREMENTAL",
         "UNSUPPORTED_AMI",
         "UNSUPPORTED_SNAPSHOT",
-        "UNSUPPORTED_COMPOSITE_RECOVERY_POINT"
+        "UNSUPPORTED_COMPOSITE_RECOVERY_POINT",
+        "ALL_FILES_SKIPPED_OR_FAILED"
       ]
     },
     "ScanThreatName":{

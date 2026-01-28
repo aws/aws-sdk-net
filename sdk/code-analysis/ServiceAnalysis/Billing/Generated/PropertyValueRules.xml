@@ -189,6 +189,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.CostCategoryValues.Key</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.ResourceNotFoundException.ResourceId</property>
     <min>1</min>
     <max>1024</max>

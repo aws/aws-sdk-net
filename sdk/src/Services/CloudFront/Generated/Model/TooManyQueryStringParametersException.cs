@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyQueryStringParametersException
+        /// message.
+        /// </summary>
+        public TooManyQueryStringParametersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyQueryStringParametersException with the specified error
         /// message.
         /// </summary>

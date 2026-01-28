@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceUpdateNotFoundException
+        /// message.
+        /// </summary>
+        public ServiceUpdateNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceUpdateNotFoundException with the specified error
         /// message.
         /// </summary>

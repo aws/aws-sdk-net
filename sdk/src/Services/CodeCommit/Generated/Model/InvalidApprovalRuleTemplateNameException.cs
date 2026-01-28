@@ -42,6 +42,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidApprovalRuleTemplateNameException
+        /// message.
+        /// </summary>
+        public InvalidApprovalRuleTemplateNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidApprovalRuleTemplateNameException with the specified error
         /// message.
         /// </summary>

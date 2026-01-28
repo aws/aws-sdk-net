@@ -40,6 +40,13 @@ namespace Amazon.Inspector.Model
     {
 
         /// <summary>
+        /// Default constructor for PreviewGenerationInProgressException
+        /// message.
+        /// </summary>
+        public PreviewGenerationInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PreviewGenerationInProgressException with the specified error
         /// message.
         /// </summary>

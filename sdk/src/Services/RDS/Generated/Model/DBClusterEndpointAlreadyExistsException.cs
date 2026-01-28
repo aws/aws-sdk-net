@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterEndpointAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBClusterEndpointAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterEndpointAlreadyExistsException with the specified error
         /// message.
         /// </summary>

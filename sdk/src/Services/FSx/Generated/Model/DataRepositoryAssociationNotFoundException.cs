@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for DataRepositoryAssociationNotFoundException
+        /// message.
+        /// </summary>
+        public DataRepositoryAssociationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DataRepositoryAssociationNotFoundException with the specified error
         /// message.
         /// </summary>

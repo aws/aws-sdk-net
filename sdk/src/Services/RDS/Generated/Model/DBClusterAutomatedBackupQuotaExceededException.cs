@@ -41,6 +41,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterAutomatedBackupQuotaExceededException
+        /// message.
+        /// </summary>
+        public DBClusterAutomatedBackupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterAutomatedBackupQuotaExceededException with the specified error
         /// message.
         /// </summary>

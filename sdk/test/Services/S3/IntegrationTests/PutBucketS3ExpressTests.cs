@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Amazon;
+﻿using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -17,36 +15,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// using S3Express specifications
     /// </summary>
     [TestClass]
-    public class PutBucketS3ExpressTests :TestBase<AmazonS3Client>
+    [TestCategory("S3")]
+    public class PutBucketS3ExpressTests : TestBase<AmazonS3Client>
     {
-        private static List<string> bucketNames = new List<string>();
-        [TestMethod]
-        [TestCategory("S3")]
-        [Ignore] 
-        //Ignore this method because regular s3 bucket with s3express configuration isn't working
-        //at the moment
-        public void PutRegularBucketUsingS3ExpressConfiguration()
+        private static readonly List<string> bucketNames = new List<string>();
+        private static readonly AmazonS3Client _usEast1Client = new AmazonS3Client(RegionEndpoint.USEast1);
+
+        [ClassCleanup]
+        public static async Task ClassCleanup()
         {
-            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks;
-            var response = Client.PutBucket(new PutBucketRequest
+            foreach (var bucketName in bucketNames)
             {
-                BucketName = bucketName,
-                PutBucketConfiguration = new PutBucketConfiguration
-                {
-                    BucketInfo = new BucketInfo { DataRedundancy = DataRedundancy.SingleAvailabilityZone, Type = BucketType.Directory },
-                    Location = new LocationInfo { Name = "use1-az2", Type = LocationType.AvailabilityZone }
-                }
-            });
-            Assert.IsNotNull(response);
-            Assert.IsTrue(response.HttpStatusCode == HttpStatusCode.OK);
-            bucketNames.Add(bucketName);
+                await _usEast1Client.DeleteBucketAsync(bucketName);
+            }
         }
+
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutS3ExpressBucketUsingS3ExpressConfiguration()
+        public async Task PutS3ExpressBucketUsingS3ExpressConfiguration()
         {
             string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--use1-az5--x-s3";
-            var response = Client.PutBucket(new PutBucketRequest
+            var response = await _usEast1Client.PutBucketAsync(new PutBucketRequest
             {
                 BucketName = bucketName,
                 PutBucketConfiguration = new PutBucketConfiguration
@@ -56,31 +44,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
             Assert.IsNotNull(response);
-            Assert.IsTrue(response.HttpStatusCode == HttpStatusCode.OK);
+            Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
             bucketNames.Add(bucketName);
         }
+
         [TestMethod]
-        [TestCategory("S3")]
-        public void PutRegularBucketUsingNoConfiguration()
+        public async Task PutRegularBucketUsingNoConfiguration()
         {
             string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks;
-            var response = Client.PutBucket(new PutBucketRequest
+            var response = await _usEast1Client.PutBucketAsync(new PutBucketRequest
             {
                 BucketName = bucketName,
             });
             Assert.IsNotNull(response);
-            Assert.IsTrue(response.HttpStatusCode == System.Net.HttpStatusCode.OK);
+            Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
             bucketNames.Add(bucketName);
         }
-
-        [ClassCleanup]
-        public static void ClassCleanup()
-        {
-            foreach (var bucketName in bucketNames)
-            {
-                Client.DeleteBucket(bucketName);
-            }
-        }
-        
     }
 }

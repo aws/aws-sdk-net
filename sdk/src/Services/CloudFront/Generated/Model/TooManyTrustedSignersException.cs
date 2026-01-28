@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyTrustedSignersException
+        /// message.
+        /// </summary>
+        public TooManyTrustedSignersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTrustedSignersException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for CreateAccountStatusNotFoundException
+        /// message.
+        /// </summary>
+        public CreateAccountStatusNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CreateAccountStatusNotFoundException with the specified error
         /// message.
         /// </summary>

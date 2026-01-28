@@ -55,6 +55,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInsightSelectorsException
+        /// message.
+        /// </summary>
+        public InvalidInsightSelectorsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInsightSelectorsException with the specified error
         /// message.
         /// </summary>

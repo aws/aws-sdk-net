@@ -39,6 +39,13 @@ namespace Amazon.ServiceQuotas.Model
     {
 
         /// <summary>
+        /// Default constructor for NoAvailableOrganizationException
+        /// message.
+        /// </summary>
+        public NoAvailableOrganizationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoAvailableOrganizationException with the specified error
         /// message.
         /// </summary>

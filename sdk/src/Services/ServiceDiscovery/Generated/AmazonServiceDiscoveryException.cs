@@ -36,6 +36,14 @@ namespace Amazon.ServiceDiscovery
         /// <summary>
         /// Construct instance of AmazonServiceDiscoveryException
         /// </summary>
+        public AmazonServiceDiscoveryException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonServiceDiscoveryException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonServiceDiscoveryException(string message)
             : base(message)

@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowType. 
         /// <para>
-        ///  Contact flow type of the contact flow type condition. 
+        ///  Contact flow type of the contact flow type condition.
         /// </para>
         /// </summary>
         public ContactFlowType ContactFlowType

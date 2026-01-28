@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
     /// When a value is accessed, the accessor's identity and the time of access are saved
     /// alongside the value to help identify values that are actively in use. The term "Batch"
     /// is not included in the operation name since it does not meet all the criteria for
-    /// a batch operation as specified in Batch Operations: AWS API Standards.
+    /// a batch operation as specified in Batch Operations: Amazon Web Services API Standards.
     /// </summary>
     public partial class EvaluateDataTableValuesRequest : AmazonConnectRequest
     {

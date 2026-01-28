@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for DescribeSlackWorkspacesException
+        /// message.
+        /// </summary>
+        public DescribeSlackWorkspacesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DescribeSlackWorkspacesException with the specified error
         /// message.
         /// </summary>

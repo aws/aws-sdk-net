@@ -43,6 +43,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for SecurityGroupLimitExceededException
+        /// message.
+        /// </summary>
+        public SecurityGroupLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SecurityGroupLimitExceededException with the specified error
         /// message.
         /// </summary>

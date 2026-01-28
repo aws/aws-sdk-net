@@ -36,6 +36,14 @@ namespace Amazon.Signin
         /// <summary>
         /// Construct instance of AmazonSigninException
         /// </summary>
+        public AmazonSigninException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSigninException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSigninException(string message)
             : base(message)

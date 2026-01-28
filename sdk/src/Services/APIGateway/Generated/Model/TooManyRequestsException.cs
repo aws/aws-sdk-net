@@ -40,6 +40,13 @@ namespace Amazon.APIGateway.Model
         private string _retryAfterSeconds;
 
         /// <summary>
+        /// Default constructor for TooManyRequestsException
+        /// message.
+        /// </summary>
+        public TooManyRequestsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRequestsException with the specified error
         /// message.
         /// </summary>

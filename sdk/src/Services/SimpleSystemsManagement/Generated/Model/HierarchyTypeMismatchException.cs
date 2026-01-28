@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for HierarchyTypeMismatchException
+        /// message.
+        /// </summary>
+        public HierarchyTypeMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HierarchyTypeMismatchException with the specified error
         /// message.
         /// </summary>

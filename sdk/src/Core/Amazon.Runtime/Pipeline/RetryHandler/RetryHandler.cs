@@ -80,6 +80,9 @@ namespace Amazon.Runtime.Internal
             }
 
             bool shouldRetry = false;
+            int staleConnectionRetries = 0;
+            int maxStaleConnectionRetries = requestContext.ClientConfig.MaxStaleConnectionRetries;
+            
             this.RetryPolicy.ObtainSendToken(executionContext, null);
             do
             {
@@ -92,6 +95,23 @@ namespace Amazon.Runtime.Internal
                 }
                 catch (Exception exception)
                 {
+                    // Check for stale connection retry first
+                    if (ShouldRetryForStaleConnection(exception, executionContext, 
+                        staleConnectionRetries, maxStaleConnectionRetries))
+                    {
+                        staleConnectionRetries++;
+                        PrepareForRetry(requestContext);
+                        shouldRetry = true;
+                        // No backoff delay for stale connections - immediate retry.
+                        // We assume these socket errors (ConnectionReset, Shutdown, ConnectionAborted) indicate
+                        // client-side idle connection pool issues, not server overload. The retry uses a fresh
+                        // connection and doesn't contribute to server load since the original request never
+                        // reached the server.
+                        // Don't increment requestContext.Retries - this is a "free" retry
+                        continue;
+                    }
+                    
+                    // Standard retry logic
                     shouldRetry = this.RetryPolicy.Retry(executionContext, exception);
                     if (!shouldRetry)
                     {
@@ -140,6 +160,9 @@ namespace Amazon.Runtime.Internal
             }
 
             bool shouldRetry = false;
+            int staleConnectionRetries = 0;
+            int maxStaleConnectionRetries = requestContext.ClientConfig.MaxStaleConnectionRetries;
+            
             await this.RetryPolicy.ObtainSendTokenAsync(executionContext, null).ConfigureAwait(false);
 
             do
@@ -160,6 +183,23 @@ namespace Amazon.Runtime.Internal
 
                 if (capturedException != null)
                 {
+                    // Check for stale connection retry first
+                    if (ShouldRetryForStaleConnection(capturedException.SourceException, executionContext, 
+                        staleConnectionRetries, maxStaleConnectionRetries))
+                    {
+                        staleConnectionRetries++;
+                        PrepareForRetry(requestContext);
+                        shouldRetry = true;
+                        // No backoff delay for stale connections - immediate retry.
+                        // We assume these socket errors (ConnectionReset, Shutdown, ConnectionAborted) indicate
+                        // client-side idle connection pool issues, not server overload. The retry uses a fresh
+                        // connection and doesn't contribute to server load since the original request never
+                        // reached the server.
+                        // Don't increment requestContext.Retries - this is a "free" retry
+                        continue;
+                    }
+                    
+                    // Standard retry logic
                     shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);
                     if (!shouldRetry)
                     {
@@ -252,6 +292,49 @@ namespace Amazon.Runtime.Internal
                           requestContext.RequestName,
                           requestContext.Request.Endpoint.ToString(),
                           requestContext.Retries + 1);
+        }
+
+        /// <summary>
+        /// Checks if exception is a stale connection error that should be retried.
+        /// Logs the decision and returns true if it qualifies for a stale connection retry.
+        /// </summary>
+        /// <param name="exception">The exception to evaluate</param>
+        /// <param name="executionContext">The execution context</param>
+        /// <param name="staleConnectionRetries">Current count of stale connection retries</param>
+        /// <param name="maxStaleConnectionRetries">Maximum allowed stale connection retries</param>
+        /// <returns>True if this should be retried as a stale connection error</returns>
+        private bool ShouldRetryForStaleConnection(
+            Exception exception,
+            IExecutionContext executionContext,
+            int staleConnectionRetries,
+            int maxStaleConnectionRetries)
+        {
+            var requestContext = executionContext.RequestContext;
+            var isStaleConnectionError = this.RetryPolicy.IsStaleConnectionError(exception);
+            var canRetry = this.RetryPolicy.CanRetry(executionContext);
+            
+            Logger.DebugFormat(
+                "Retry check: IsStaleConnectionError={0}, CanRetry={1}, staleConnectionRetries={2}, maxStaleConnectionRetries={3}, IsRequestStreamRewindable={4}",
+                isStaleConnectionError,
+                canRetry,
+                staleConnectionRetries,
+                maxStaleConnectionRetries,
+                requestContext.Request.IsRequestStreamRewindable());
+            
+            if (isStaleConnectionError && 
+                staleConnectionRetries < maxStaleConnectionRetries &&
+                canRetry)
+            {
+                Logger.DebugFormat(
+                    "Detected stale pooled connection error ({0}). Automatic retry {1} of {2} for request {3}",
+                    exception.GetType().Name,
+                    staleConnectionRetries + 1,
+                    requestContext.ClientConfig.MaxStaleConnectionRetries,
+                    requestContext.RequestName);
+                return true;
+            }
+            
+            return false;
         }
 
         private void SetRetryHeaders(IRequestContext requestContext)

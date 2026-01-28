@@ -42,6 +42,13 @@ namespace Amazon.ServiceDiscovery.Model
         private string _serviceId;
 
         /// <summary>
+        /// Default constructor for ServiceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ServiceAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceAlreadyExistsException with the specified error
         /// message.
         /// </summary>

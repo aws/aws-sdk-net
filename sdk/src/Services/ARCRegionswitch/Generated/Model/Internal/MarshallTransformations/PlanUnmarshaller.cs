@@ -116,6 +116,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Regions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("reportConfiguration", targetDepth))
+                {
+                    var unmarshaller = ReportConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ReportConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("triggers", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Trigger, TriggerUnmarshaller>(TriggerUnmarshaller.Instance);

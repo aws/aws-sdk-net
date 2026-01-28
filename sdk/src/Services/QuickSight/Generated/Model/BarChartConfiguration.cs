@@ -40,11 +40,13 @@ namespace Amazon.QuickSight.Model
         private ChartAxisLabelOptions _colorLabelOptions;
         private List<ContributionAnalysisDefault> _contributionAnalysisDefaults = AWSConfigs.InitializeCollections ? new List<ContributionAnalysisDefault>() : null;
         private DataLabelOptions _dataLabels;
+        private BarChartDefaultSeriesSettings _defaultSeriesSettings;
         private BarChartFieldWells _fieldWells;
         private VisualInteractionOptions _interactions;
         private LegendOptions _legend;
         private BarChartOrientation _orientation;
         private List<ReferenceLine> _referenceLines = AWSConfigs.InitializeCollections ? new List<ReferenceLine>() : null;
+        private List<BarSeriesItem> _series = AWSConfigs.InitializeCollections ? new List<BarSeriesItem>() : null;
         private SmallMultiplesOptions _smallMultiplesOptions;
         private BarChartSortConfiguration _sortConfiguration;
         private TooltipOptions _tooltip;
@@ -170,6 +172,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultSeriesSettings. 
+        /// <para>
+        /// The options that determine the default presentation of all bar series in <c>BarChartVisual</c>.
+        /// </para>
+        /// </summary>
+        public BarChartDefaultSeriesSettings DefaultSeriesSettings
+        {
+            get { return this._defaultSeriesSettings; }
+            set { this._defaultSeriesSettings = value; }
+        }
+
+        // Check to see if DefaultSeriesSettings property is set
+        internal bool IsSetDefaultSeriesSettings()
+        {
+            return this._defaultSeriesSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FieldWells. 
         /// <para>
         /// The field wells of the visual.
@@ -277,6 +297,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetReferenceLines()
         {
             return this._referenceLines != null && (this._referenceLines.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Series. 
+        /// <para>
+        /// The series item configuration of a <c>BarChartVisual</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=2000)]
+        public List<BarSeriesItem> Series
+        {
+            get { return this._series; }
+            set { this._series = value; }
+        }
+
+        // Check to see if Series property is set
+        internal bool IsSetSeries()
+        {
+            return this._series != null && (this._series.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

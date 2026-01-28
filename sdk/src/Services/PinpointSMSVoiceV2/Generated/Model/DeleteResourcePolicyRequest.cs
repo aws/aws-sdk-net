@@ -31,8 +31,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResourcePolicy operation.
-    /// Deletes the resource-based policy document attached to the End User MessagingSMS resource.
-    /// A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.
+    /// Deletes the resource-based policy document attached to the End User Messaging SMS
+    /// resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -41,7 +41,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the End User MessagingSMS resource you're deleting
+        /// The Amazon Resource Name (ARN) of the End User Messaging SMS resource you're deleting
         /// the resource-based policy from.
         /// </para>
         /// </summary>

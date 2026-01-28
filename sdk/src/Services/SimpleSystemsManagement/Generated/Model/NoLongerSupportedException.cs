@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for NoLongerSupportedException
+        /// message.
+        /// </summary>
+        public NoLongerSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoLongerSupportedException with the specified error
         /// message.
         /// </summary>

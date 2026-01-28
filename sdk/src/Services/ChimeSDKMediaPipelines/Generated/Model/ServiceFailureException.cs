@@ -40,6 +40,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private ErrorCode _code;
 
         /// <summary>
+        /// Default constructor for ServiceFailureException
+        /// message.
+        /// </summary>
+        public ServiceFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceFailureException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for QueryLoggingConfigAlreadyExistsException
+        /// message.
+        /// </summary>
+        public QueryLoggingConfigAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueryLoggingConfigAlreadyExistsException with the specified error
         /// message.
         /// </summary>

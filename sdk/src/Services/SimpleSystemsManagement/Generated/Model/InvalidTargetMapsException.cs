@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTargetMapsException
+        /// message.
+        /// </summary>
+        public InvalidTargetMapsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTargetMapsException with the specified error
         /// message.
         /// </summary>

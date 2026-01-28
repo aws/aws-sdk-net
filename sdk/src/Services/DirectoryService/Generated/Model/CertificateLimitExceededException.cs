@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateLimitExceededException
+        /// message.
+        /// </summary>
+        public CertificateLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateLimitExceededException with the specified error
         /// message.
         /// </summary>

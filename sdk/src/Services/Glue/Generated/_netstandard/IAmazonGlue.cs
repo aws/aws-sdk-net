@@ -4631,6 +4631,36 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  GetMaterializedViewRefreshTaskRun
+
+
+
+        /// <summary>
+        /// Get the associated metadata/information for a task run, given a task run ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMaterializedViewRefreshTaskRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMaterializedViewRefreshTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMaterializedViewRefreshTaskRun">REST API Reference for GetMaterializedViewRefreshTaskRun Operation</seealso>
+        Task<GetMaterializedViewRefreshTaskRunResponse> GetMaterializedViewRefreshTaskRunAsync(GetMaterializedViewRefreshTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetMLTaskRun
 
 
@@ -6435,6 +6465,33 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  ListMaterializedViewRefreshTaskRuns
+
+
+
+        /// <summary>
+        /// List all task runs for a particular account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMaterializedViewRefreshTaskRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMaterializedViewRefreshTaskRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMaterializedViewRefreshTaskRuns">REST API Reference for ListMaterializedViewRefreshTaskRuns Operation</seealso>
+        Task<ListMaterializedViewRefreshTaskRunsResponse> ListMaterializedViewRefreshTaskRunsAsync(ListMaterializedViewRefreshTaskRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListMLTransforms
 
 
@@ -7634,6 +7691,42 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  StartMaterializedViewRefreshTaskRun
+
+
+
+        /// <summary>
+        /// Starts a materialized view refresh task run, for a specified table and columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMaterializedViewRefreshTaskRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMaterializedViewRefreshTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.MaterializedViewRefreshTaskRunningException">
+        /// Exception thrown when a task is already in running state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMaterializedViewRefreshTaskRun">REST API Reference for StartMaterializedViewRefreshTaskRun Operation</seealso>
+        Task<StartMaterializedViewRefreshTaskRunResponse> StartMaterializedViewRefreshTaskRunAsync(StartMaterializedViewRefreshTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartMLEvaluationTaskRun
 
 
@@ -7929,6 +8022,39 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawlerSchedule">REST API Reference for StopCrawlerSchedule Operation</seealso>
         Task<StopCrawlerScheduleResponse> StopCrawlerScheduleAsync(StopCrawlerScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopMaterializedViewRefreshTaskRun
+
+
+
+        /// <summary>
+        /// Stops a materialized view refresh task run, for a specified table and columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMaterializedViewRefreshTaskRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopMaterializedViewRefreshTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.MaterializedViewRefreshTaskNotRunningException">
+        /// Exception thrown when stopping a task that is not in running state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.MaterializedViewRefreshTaskStoppingException">
+        /// Exception thrown when a task is already in stopping state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopMaterializedViewRefreshTaskRun">REST API Reference for StopMaterializedViewRefreshTaskRun Operation</seealso>
+        Task<StopMaterializedViewRefreshTaskRunResponse> StopMaterializedViewRefreshTaskRunAsync(StopMaterializedViewRefreshTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

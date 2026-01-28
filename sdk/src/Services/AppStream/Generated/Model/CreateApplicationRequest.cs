@@ -223,8 +223,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Platforms. 
         /// <para>
-        /// The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are
-        /// supported for Elastic fleets.
+        /// The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404
+        /// are supported for Elastic fleets.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

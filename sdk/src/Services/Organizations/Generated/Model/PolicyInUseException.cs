@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyInUseException
+        /// message.
+        /// </summary>
+        public PolicyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyInUseException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.EMRContainers.Model
     {
 
         /// <summary>
+        /// Default constructor for EKSRequestThrottledException
+        /// message.
+        /// </summary>
+        public EKSRequestThrottledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EKSRequestThrottledException with the specified error
         /// message.
         /// </summary>

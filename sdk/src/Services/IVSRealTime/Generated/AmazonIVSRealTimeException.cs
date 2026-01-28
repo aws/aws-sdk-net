@@ -36,6 +36,14 @@ namespace Amazon.IVSRealTime
         /// <summary>
         /// Construct instance of AmazonIVSRealTimeException
         /// </summary>
+        public AmazonIVSRealTimeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIVSRealTimeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIVSRealTimeException(string message)
             : base(message)

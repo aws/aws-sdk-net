@@ -40,6 +40,13 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _statementId;
 
         /// <summary>
+        /// Default constructor for BatchExecuteStatementException
+        /// message.
+        /// </summary>
+        public BatchExecuteStatementException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchExecuteStatementException with the specified error
         /// message.
         /// </summary>

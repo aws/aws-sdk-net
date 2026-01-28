@@ -44,6 +44,13 @@ namespace Amazon.EKS.Model
         private string _subscriptionId;
 
         /// <summary>
+        /// Default constructor for InvalidParameterException
+        /// message.
+        /// </summary>
+        public InvalidParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParameterException with the specified error
         /// message.
         /// </summary>

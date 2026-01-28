@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for ChangeSetNotFoundException
+        /// message.
+        /// </summary>
+        public ChangeSetNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChangeSetNotFoundException with the specified error
         /// message.
         /// </summary>

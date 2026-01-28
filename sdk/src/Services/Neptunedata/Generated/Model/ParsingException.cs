@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for ParsingException
+        /// message.
+        /// </summary>
+        public ParsingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParsingException with the specified error
         /// message.
         /// </summary>

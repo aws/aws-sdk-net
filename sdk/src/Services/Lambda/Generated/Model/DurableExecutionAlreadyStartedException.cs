@@ -42,6 +42,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for DurableExecutionAlreadyStartedException
+        /// message.
+        /// </summary>
+        public DurableExecutionAlreadyStartedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DurableExecutionAlreadyStartedException with the specified error
         /// message.
         /// </summary>

@@ -44,6 +44,7 @@ namespace Amazon.MediaLive.Model
         private EncoderSettings _encoderSettings;
         private List<InputAttachment> _inputAttachments = AWSConfigs.InitializeCollections ? new List<InputAttachment>() : null;
         private InputSpecification _inputSpecification;
+        private LinkedChannelSettings _linkedChannelSettings;
         private LogLevel _logLevel;
         private MaintenanceCreateSettings _maintenance;
         private string _name;
@@ -201,6 +202,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputSpecification()
         {
             return this._inputSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedChannelSettings. The linked channel settings for
+        /// the channel.
+        /// </summary>
+        public LinkedChannelSettings LinkedChannelSettings
+        {
+            get { return this._linkedChannelSettings; }
+            set { this._linkedChannelSettings = value; }
+        }
+
+        // Check to see if LinkedChannelSettings property is set
+        internal bool IsSetLinkedChannelSettings()
+        {
+            return this._linkedChannelSettings != null;
         }
 
         /// <summary>

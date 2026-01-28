@@ -46,6 +46,17 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCostCategories())
+            {
+                context.Writer.WritePropertyName("costCategories");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CostCategoryValuesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CostCategories, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("dimensions");

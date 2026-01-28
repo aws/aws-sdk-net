@@ -42,6 +42,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for RegionDisabledException
+        /// message.
+        /// </summary>
+        public RegionDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RegionDisabledException with the specified error
         /// message.
         /// </summary>

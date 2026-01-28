@@ -36,6 +36,14 @@ namespace Amazon.AppStream
         /// <summary>
         /// Construct instance of AmazonAppStreamException
         /// </summary>
+        public AmazonAppStreamException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAppStreamException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAppStreamException(string message)
             : base(message)

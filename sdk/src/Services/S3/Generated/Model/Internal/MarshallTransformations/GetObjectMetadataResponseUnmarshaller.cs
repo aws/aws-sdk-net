@@ -70,8 +70,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ContentDisposition = context.ResponseData.GetHeaderValue("Content-Disposition");
             if (context.ResponseData.IsHeaderPresent("Content-Encoding"))
                 response.ContentEncoding = context.ResponseData.GetHeaderValue("Content-Encoding");
-            if (context.ResponseData.IsHeaderPresent("Content-Language"))
-                response.ContentLanguage = context.ResponseData.GetHeaderValue("Content-Language");
             if (context.ResponseData.IsHeaderPresent("Content-Length"))
                 response.ContentLength = long.Parse(context.ResponseData.GetHeaderValue("Content-Length"), CultureInfo.InvariantCulture);
             if (context.ResponseData.IsHeaderPresent("Content-Range"))

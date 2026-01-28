@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for OversizedConfigurationItemException
+        /// message.
+        /// </summary>
+        public OversizedConfigurationItemException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OversizedConfigurationItemException with the specified error
         /// message.
         /// </summary>

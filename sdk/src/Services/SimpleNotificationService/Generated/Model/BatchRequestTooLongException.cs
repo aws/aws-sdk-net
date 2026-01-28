@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for BatchRequestTooLongException
+        /// message.
+        /// </summary>
+        public BatchRequestTooLongException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchRequestTooLongException with the specified error
         /// message.
         /// </summary>

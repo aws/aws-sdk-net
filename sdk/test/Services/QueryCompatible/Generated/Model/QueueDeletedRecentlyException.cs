@@ -39,6 +39,13 @@ namespace Amazon.QueryCompatible.Model
     {
 
         /// <summary>
+        /// Default constructor for QueueDeletedRecentlyException
+        /// message.
+        /// </summary>
+        public QueueDeletedRecentlyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueueDeletedRecentlyException with the specified error
         /// message.
         /// </summary>

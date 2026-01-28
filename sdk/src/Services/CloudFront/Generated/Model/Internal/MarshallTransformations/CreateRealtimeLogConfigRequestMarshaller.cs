@@ -65,32 +65,32 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 var publicRequestEndPoints = publicRequest.EndPoints;
-                if (publicRequestEndPoints != null && (publicRequestEndPoints.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetEndPoints()) 
                 {
                     xmlWriter.WriteStartElement("EndPoints");
                     foreach (var publicRequestEndPointsValue in publicRequestEndPoints) 
                     {
-                    if (publicRequestEndPointsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if (publicRequestEndPointsValue.KinesisStreamConfig != null)
+                        if (publicRequestEndPointsValue != null)
                         {
-                            xmlWriter.WriteStartElement("KinesisStreamConfig");
-                            if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
-                                xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));
-                            if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
-                                xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));
+                            xmlWriter.WriteStartElement("member");
+                            if (publicRequestEndPointsValue.IsSetKinesisStreamConfig())
+                            {
+                                xmlWriter.WriteStartElement("KinesisStreamConfig");
+                                if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
+                                    xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));
+                                if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
+                                    xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));
+                                xmlWriter.WriteEndElement();
+                            }
+                            if(publicRequestEndPointsValue.IsSetStreamType())
+                                xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));
                             xmlWriter.WriteEndElement();
                         }
-                        if(publicRequestEndPointsValue.IsSetStreamType())
-                            xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));
-                        xmlWriter.WriteEndElement();
-                    }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestFields = publicRequest.Fields;
-                if (publicRequestFields != null && (publicRequestFields.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFields()) 
                 {
                     xmlWriter.WriteStartElement("Fields");
                     foreach (var publicRequestFieldsValue in publicRequestFields) 

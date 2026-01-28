@@ -36,6 +36,14 @@ namespace Amazon.CloudWatchRUM
         /// <summary>
         /// Construct instance of AmazonCloudWatchRUMException
         /// </summary>
+        public AmazonCloudWatchRUMException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchRUMException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudWatchRUMException(string message)
             : base(message)

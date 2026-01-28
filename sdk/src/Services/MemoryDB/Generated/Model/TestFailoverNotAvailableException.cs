@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for TestFailoverNotAvailableException
+        /// message.
+        /// </summary>
+        public TestFailoverNotAvailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TestFailoverNotAvailableException with the specified error
         /// message.
         /// </summary>

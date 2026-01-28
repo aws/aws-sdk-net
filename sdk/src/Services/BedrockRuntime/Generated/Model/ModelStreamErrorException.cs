@@ -41,6 +41,13 @@ namespace Amazon.BedrockRuntime.Model
         private int? _originalStatusCode;
 
         /// <summary>
+        /// Default constructor for ModelStreamErrorException
+        /// message.
+        /// </summary>
+        public ModelStreamErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ModelStreamErrorException with the specified error
         /// message.
         /// </summary>

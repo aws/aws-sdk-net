@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SubscriptionEventIdNotFoundException
+        /// message.
+        /// </summary>
+        public SubscriptionEventIdNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubscriptionEventIdNotFoundException with the specified error
         /// message.
         /// </summary>

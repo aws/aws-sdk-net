@@ -40,6 +40,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for TaskAlreadyExistsException
+        /// message.
+        /// </summary>
+        public TaskAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TaskAlreadyExistsException with the specified error
         /// message.
         /// </summary>

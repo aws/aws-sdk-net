@@ -36,6 +36,14 @@ namespace Amazon.VerifiedPermissions
         /// <summary>
         /// Construct instance of AmazonVerifiedPermissionsException
         /// </summary>
+        public AmazonVerifiedPermissionsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonVerifiedPermissionsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonVerifiedPermissionsException(string message)
             : base(message)

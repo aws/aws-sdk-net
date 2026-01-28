@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyOriginsException
+        /// message.
+        /// </summary>
+        public TooManyOriginsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyOriginsException with the specified error
         /// message.
         /// </summary>

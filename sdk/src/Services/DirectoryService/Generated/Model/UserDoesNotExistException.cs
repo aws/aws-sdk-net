@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for UserDoesNotExistException
+        /// message.
+        /// </summary>
+        public UserDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserDoesNotExistException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAutomationSignalException
+        /// message.
+        /// </summary>
+        public InvalidAutomationSignalException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAutomationSignalException with the specified error
         /// message.
         /// </summary>

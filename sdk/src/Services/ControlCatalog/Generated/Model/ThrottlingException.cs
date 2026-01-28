@@ -41,6 +41,13 @@ namespace Amazon.ControlCatalog.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(true);
 
         /// <summary>
+        /// Default constructor for ThrottlingException
+        /// message.
+        /// </summary>
+        public ThrottlingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ThrottlingException with the specified error
         /// message.
         /// </summary>

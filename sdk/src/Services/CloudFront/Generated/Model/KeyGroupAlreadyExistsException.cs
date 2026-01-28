@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for KeyGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public KeyGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KeyGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

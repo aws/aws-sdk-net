@@ -41,6 +41,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFUnsupportedAggregateKeyTypeException
+        /// message.
+        /// </summary>
+        public WAFUnsupportedAggregateKeyTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFUnsupportedAggregateKeyTypeException with the specified error
         /// message.
         /// </summary>

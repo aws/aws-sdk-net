@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MlflowExperimentName. 
         /// <para>
-        ///  The MLflow experiment name of the start execution. 
+        ///  The MLflow experiment name of the pipeline execution. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

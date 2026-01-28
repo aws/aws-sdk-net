@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for GlobalClusterNotFoundException
+        /// message.
+        /// </summary>
+        public GlobalClusterNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GlobalClusterNotFoundException with the specified error
         /// message.
         /// </summary>

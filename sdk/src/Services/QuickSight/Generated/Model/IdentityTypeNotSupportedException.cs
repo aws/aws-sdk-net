@@ -40,6 +40,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for IdentityTypeNotSupportedException
+        /// message.
+        /// </summary>
+        public IdentityTypeNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IdentityTypeNotSupportedException with the specified error
         /// message.
         /// </summary>

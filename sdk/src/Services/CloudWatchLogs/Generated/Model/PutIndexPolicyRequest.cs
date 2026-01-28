@@ -159,11 +159,19 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property PolicyDocument. 
         /// <para>
         /// The index policy document, in JSON format. The following is an example of an index
-        /// policy document that creates two indexes, <c>RequestId</c> and <c>TransactionId</c>.
+        /// policy document that creates indexes with different types.
         /// </para>
         ///  
         /// <para>
-        ///  <c>"policyDocument": "{ "Fields": [ "RequestId", "TransactionId" ] }"</c> 
+        ///  <c>"policyDocument": "{"Fields": [ "TransactionId" ], "FieldsV2": {"RequestId": {"type":
+        /// "FIELD_INDEX"}, "APIName": {"type": "FACET"}, "StatusCode": {"type": "FACET"}}}"</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <c>FieldsV2</c> to specify the type for each field. Supported types are
+        /// <c>FIELD_INDEX</c> and <c>FACET</c>. Field names within <c>Fields</c> and <c>FieldsV2</c>
+        /// must be mutually exclusive.
         /// </para>
         ///  
         /// <para>

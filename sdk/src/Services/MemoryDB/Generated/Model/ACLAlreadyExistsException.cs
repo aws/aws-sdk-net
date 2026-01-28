@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for ACLAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ACLAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ACLAlreadyExistsException with the specified error
         /// message.
         /// </summary>

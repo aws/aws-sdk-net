@@ -36,6 +36,14 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// <summary>
         /// Construct instance of AmazonKinesisVideoWebRTCStorageException
         /// </summary>
+        public AmazonKinesisVideoWebRTCStorageException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKinesisVideoWebRTCStorageException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKinesisVideoWebRTCStorageException(string message)
             : base(message)

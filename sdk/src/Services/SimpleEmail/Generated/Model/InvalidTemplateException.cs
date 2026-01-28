@@ -41,6 +41,13 @@ namespace Amazon.SimpleEmail.Model
         private string _templateName;
 
         /// <summary>
+        /// Default constructor for InvalidTemplateException
+        /// message.
+        /// </summary>
+        public InvalidTemplateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTemplateException with the specified error
         /// message.
         /// </summary>

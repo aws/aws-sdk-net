@@ -39,6 +39,13 @@ namespace Amazon.Budgets.Model
     {
 
         /// <summary>
+        /// Default constructor for CreationLimitExceededException
+        /// message.
+        /// </summary>
+        public CreationLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CreationLimitExceededException with the specified error
         /// message.
         /// </summary>

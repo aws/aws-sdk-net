@@ -39,6 +39,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for UnknownResourceException
+        /// message.
+        /// </summary>
+        public UnknownResourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnknownResourceException with the specified error
         /// message.
         /// </summary>

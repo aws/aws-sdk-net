@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidClientRequestTokenException
+        /// message.
+        /// </summary>
+        public InvalidClientRequestTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClientRequestTokenException with the specified error
         /// message.
         /// </summary>

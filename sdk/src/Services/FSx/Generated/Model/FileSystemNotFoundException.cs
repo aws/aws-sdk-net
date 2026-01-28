@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for FileSystemNotFoundException
+        /// message.
+        /// </summary>
+        public FileSystemNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileSystemNotFoundException with the specified error
         /// message.
         /// </summary>

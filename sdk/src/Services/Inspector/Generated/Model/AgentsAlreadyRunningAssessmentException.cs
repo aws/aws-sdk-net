@@ -43,6 +43,13 @@ namespace Amazon.Inspector.Model
         private bool? _canRetry;
 
         /// <summary>
+        /// Default constructor for AgentsAlreadyRunningAssessmentException
+        /// message.
+        /// </summary>
+        public AgentsAlreadyRunningAssessmentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AgentsAlreadyRunningAssessmentException with the specified error
         /// message.
         /// </summary>

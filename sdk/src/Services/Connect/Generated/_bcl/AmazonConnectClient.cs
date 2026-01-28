@@ -1256,6 +1256,93 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateHoursOfOperations
+
+
+        /// <summary>
+        /// Associates a set of hours of operations with another hours of operation. Refer to
+        /// Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the AssociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">REST API Reference for AssociateHoursOfOperations Operation</seealso>
+        public virtual AssociateHoursOfOperationsResponse AssociateHoursOfOperations(AssociateHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateHoursOfOperationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a set of hours of operations with another hours of operation. Refer to
+        /// Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">REST API Reference for AssociateHoursOfOperations Operation</seealso>
+        public virtual Task<AssociateHoursOfOperationsResponse> AssociateHoursOfOperationsAsync(AssociateHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHoursOfOperationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateInstanceStorageConfig
 
 
@@ -3912,7 +3999,8 @@ namespace Amazon.Connect
         /// Creates a new data table with the specified properties. Supports the creation of all
         /// table properties except for attributes and values. A table with no attributes and
         /// values is a valid state for a table. The number of tables per instance is limited
-        /// to 100 per instance. Customers can request an increase by using AWS Service Quotas.
+        /// to 100 per instance. Customers can request an increase by using Amazon Web Services
+        /// Service Quotas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataTable service method.</param>
         /// 
@@ -3960,7 +4048,8 @@ namespace Amazon.Connect
         /// Creates a new data table with the specified properties. Supports the creation of all
         /// table properties except for attributes and values. A table with no attributes and
         /// values is a valid state for a table. The number of tables per instance is limited
-        /// to 100 per instance. Customers can request an increase by using AWS Service Quotas.
+        /// to 100 per instance. Customers can request an increase by using Amazon Web Services
+        /// Service Quotas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataTable service method.</param>
         /// <param name="cancellationToken">
@@ -4328,6 +4417,9 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
@@ -4368,6 +4460,9 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
@@ -5700,6 +5795,115 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = CreateTaskTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTestCase
+
+
+        /// <summary>
+        /// Creates a test case with its content and metadata for the specified Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTestCase service method.</param>
+        /// 
+        /// <returns>The response from the CreateTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidTestCaseException">
+        /// The test is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTestCase">REST API Reference for CreateTestCase Operation</seealso>
+        public virtual CreateTestCaseResponse CreateTestCase(CreateTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTestCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a test case with its content and metadata for the specified Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidTestCaseException">
+        /// The test is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTestCase">REST API Reference for CreateTestCase Operation</seealso>
+        public virtual Task<CreateTestCaseResponse> CreateTestCaseAsync(CreateTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTestCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTestCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8624,6 +8828,85 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteTaskTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTestCase
+
+
+        /// <summary>
+        /// Deletes the test case that has already been created for the specified Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTestCase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTestCase">REST API Reference for DeleteTestCase Operation</seealso>
+        public virtual DeleteTestCaseResponse DeleteTestCase(DeleteTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTestCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the test case that has already been created for the specified Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTestCase">REST API Reference for DeleteTestCase Operation</seealso>
+        public virtual Task<DeleteTestCaseResponse> DeleteTestCaseAsync(DeleteTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTestCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTestCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11556,6 +11839,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeTestCase
+
+
+        /// <summary>
+        /// Describes the specified test case and allows you to get the content and metadata of
+        /// the test case for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTestCase service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTestCase">REST API Reference for DescribeTestCase Operation</seealso>
+        public virtual DescribeTestCaseResponse DescribeTestCase(DescribeTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTestCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the specified test case and allows you to get the content and metadata of
+        /// the test case for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTestCase">REST API Reference for DescribeTestCase Operation</seealso>
+        public virtual Task<DescribeTestCaseResponse> DescribeTestCaseAsync(DescribeTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTestCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTestCaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTrafficDistributionGroup
 
 
@@ -12712,6 +13074,87 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateHoursOfOperations
+
+
+        /// <summary>
+        /// Disassociates a set of hours of operations with another hours of operation. Refer
+        /// to Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">REST API Reference for DisassociateHoursOfOperations Operation</seealso>
+        public virtual DisassociateHoursOfOperationsResponse DisassociateHoursOfOperations(DisassociateHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateHoursOfOperationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates a set of hours of operations with another hours of operation. Refer
+        /// to Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">REST API Reference for DisassociateHoursOfOperations Operation</seealso>
+        public virtual Task<DisassociateHoursOfOperationsResponse> DisassociateHoursOfOperationsAsync(DisassociateHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHoursOfOperationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateInstanceStorageConfig
 
 
@@ -13699,7 +14142,7 @@ namespace Amazon.Connect
         /// When a value is accessed, the accessor's identity and the time of access are saved
         /// alongside the value to help identify values that are actively in use. The term "Batch"
         /// is not included in the operation name since it does not meet all the criteria for
-        /// a batch operation as specified in Batch Operations: AWS API Standards.
+        /// a batch operation as specified in Batch Operations: Amazon Web Services API Standards.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EvaluateDataTableValues service method.</param>
         /// 
@@ -13739,7 +14182,7 @@ namespace Amazon.Connect
         /// When a value is accessed, the accessor's identity and the time of access are saved
         /// alongside the value to help identify values that are actively in use. The term "Batch"
         /// is not included in the operation name since it does not meet all the criteria for
-        /// a batch operation as specified in Batch Operations: AWS API Standards.
+        /// a batch operation as specified in Batch Operations: Amazon Web Services API Standards.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EvaluateDataTableValues service method.</param>
         /// <param name="cancellationToken">
@@ -15011,6 +15454,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetTestCaseExecutionSummary
+
+
+        /// <summary>
+        /// Retrieves an overview of a test execution that includes the status of the execution,
+        /// start and end time, and observation summary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTestCaseExecutionSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetTestCaseExecutionSummary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTestCaseExecutionSummary">REST API Reference for GetTestCaseExecutionSummary Operation</seealso>
+        public virtual GetTestCaseExecutionSummaryResponse GetTestCaseExecutionSummary(GetTestCaseExecutionSummaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTestCaseExecutionSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTestCaseExecutionSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetTestCaseExecutionSummaryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves an overview of a test execution that includes the status of the execution,
+        /// start and end time, and observation summary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTestCaseExecutionSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTestCaseExecutionSummary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTestCaseExecutionSummary">REST API Reference for GetTestCaseExecutionSummary Operation</seealso>
+        public virtual Task<GetTestCaseExecutionSummaryResponse> GetTestCaseExecutionSummaryAsync(GetTestCaseExecutionSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTestCaseExecutionSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTestCaseExecutionSummaryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTestCaseExecutionSummaryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTrafficDistribution
 
 
@@ -15825,6 +16347,91 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListChildHoursOfOperations
+
+
+        /// <summary>
+        /// Provides information about the child hours of operations for the specified parent
+        /// hours of operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link
+        /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChildHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListChildHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">REST API Reference for ListChildHoursOfOperations Operation</seealso>
+        public virtual ListChildHoursOfOperationsResponse ListChildHoursOfOperations(ListChildHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListChildHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChildHoursOfOperationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides information about the child hours of operations for the specified parent
+        /// hours of operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link
+        /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChildHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChildHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">REST API Reference for ListChildHoursOfOperations Operation</seealso>
+        public virtual Task<ListChildHoursOfOperationsResponse> ListChildHoursOfOperationsAsync(ListChildHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListChildHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildHoursOfOperationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListChildHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListContactEvaluations
 
 
@@ -16385,8 +16992,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Returns all attributes for a specified data table. A maximum of 100 attributes per
-        /// data table is allowed. Customers can request an increase by using AWS Service Quotas.
-        /// The response can be filtered by specific attribute IDs for CloudFormation integration.
+        /// data table is allowed. Customers can request an increase by using Amazon Web Services
+        /// Service Quotas. The response can be filtered by specific attribute IDs for CloudFormation
+        /// integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataTableAttributes service method.</param>
         /// 
@@ -16422,8 +17030,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Returns all attributes for a specified data table. A maximum of 100 attributes per
-        /// data table is allowed. Customers can request an increase by using AWS Service Quotas.
-        /// The response can be filtered by specific attribute IDs for CloudFormation integration.
+        /// data table is allowed. Customers can request an increase by using Amazon Web Services
+        /// Service Quotas. The response can be filtered by specific attribute IDs for CloudFormation
+        /// integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataTableAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -19360,6 +19969,241 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListTestCaseExecutionRecords
+
+
+        /// <summary>
+        /// Lists detailed steps of test case execution that includes all observations along with
+        /// actions taken and data associated in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutionRecords service method.</param>
+        /// 
+        /// <returns>The response from the ListTestCaseExecutionRecords service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutionRecords">REST API Reference for ListTestCaseExecutionRecords Operation</seealso>
+        public virtual ListTestCaseExecutionRecordsResponse ListTestCaseExecutionRecords(ListTestCaseExecutionRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCaseExecutionRecordsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists detailed steps of test case execution that includes all observations along with
+        /// actions taken and data associated in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutionRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestCaseExecutionRecords service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutionRecords">REST API Reference for ListTestCaseExecutionRecords Operation</seealso>
+        public virtual Task<ListTestCaseExecutionRecordsResponse> ListTestCaseExecutionRecordsAsync(ListTestCaseExecutionRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionRecordsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTestCaseExecutionRecordsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTestCaseExecutions
+
+
+        /// <summary>
+        /// Lists all test case executions and allows filtering by test case id, test case name,
+        /// start time, end time or status of the execution for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListTestCaseExecutions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutions">REST API Reference for ListTestCaseExecutions Operation</seealso>
+        public virtual ListTestCaseExecutionsResponse ListTestCaseExecutions(ListTestCaseExecutionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCaseExecutionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all test case executions and allows filtering by test case id, test case name,
+        /// start time, end time or status of the execution for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestCaseExecutions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutions">REST API Reference for ListTestCaseExecutions Operation</seealso>
+        public virtual Task<ListTestCaseExecutionsResponse> ListTestCaseExecutionsAsync(ListTestCaseExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTestCaseExecutionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTestCases
+
+
+        /// <summary>
+        /// Lists the test cases present in the specific Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCases service method.</param>
+        /// 
+        /// <returns>The response from the ListTestCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
+        public virtual ListTestCasesResponse ListTestCases(ListTestCasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the test cases present in the specific Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
+        public virtual Task<ListTestCasesResponse> ListTestCasesAsync(ListTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTestCasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTrafficDistributionGroups
 
 
@@ -20837,6 +21681,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -20873,6 +21723,12 @@ namespace Amazon.Connect
         /// <returns>The response from the ResumeContactRecording service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -22414,6 +23270,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchTestCases
+
+
+        /// <summary>
+        /// Searches for test cases in the specified Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTestCases service method.</param>
+        /// 
+        /// <returns>The response from the SearchTestCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchTestCases">REST API Reference for SearchTestCases Operation</seealso>
+        public virtual SearchTestCasesResponse SearchTestCases(SearchTestCasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTestCasesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTestCasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches for test cases in the specified Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTestCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchTestCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchTestCases">REST API Reference for SearchTestCases Operation</seealso>
+        public virtual Task<SearchTestCasesResponse> SearchTestCasesAsync(SearchTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTestCasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchTestCasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchUserHierarchyGroups
 
 
@@ -23576,6 +24509,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -23635,6 +24574,12 @@ namespace Amazon.Connect
         /// <returns>The response from the StartContactRecording service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -23861,25 +24806,26 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Initiates a new outbound SMS contact to a customer. Response of this API provides
-        /// the <c>ContactId</c> of the outbound SMS contact created.
+        /// Initiates a new outbound SMS or WhatsApp contact to a customer. Response of this API
+        /// provides the <c>ContactId</c> of the outbound SMS or WhatsApp contact created.
         /// 
         ///  
         /// <para>
         ///  <b>SourceEndpoint</b> only supports Endpoints with <c>CONNECT_PHONENUMBER_ARN</c>
         /// as Type and <b>DestinationEndpoint</b> only supports Endpoints with <c>TELEPHONE_NUMBER</c>
-        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.
+        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new contact created.
         /// </para>
         ///  
         /// <para>
-        /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
-        /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+        /// This API can be used to initiate outbound SMS or WhatsApp contacts for an agent, or
+        /// it can also deflect an ongoing contact to an outbound SMS or WhatsApp contact by using
+        /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
         /// Flow Action.
         /// </para>
         ///  
         /// <para>
-        /// For more information about using SMS in Amazon Connect, see the following topics in
-        /// the <i>Amazon Connect Administrator Guide</i>:
+        /// For more information about using SMS or WhatsApp in Amazon Connect, see the following
+        /// topics in the <i>Amazon Connect Administrator Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -23889,7 +24835,13 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
-        /// an SMS-enabled phone number through AWS End User Messaging SMS</a> 
+        /// an SMS-enabled phone number through Amazon Web Services End User Messaging SMS</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html">Set
+        /// up WhatsApp Business messaging</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -23930,25 +24882,26 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Initiates a new outbound SMS contact to a customer. Response of this API provides
-        /// the <c>ContactId</c> of the outbound SMS contact created.
+        /// Initiates a new outbound SMS or WhatsApp contact to a customer. Response of this API
+        /// provides the <c>ContactId</c> of the outbound SMS or WhatsApp contact created.
         /// 
         ///  
         /// <para>
         ///  <b>SourceEndpoint</b> only supports Endpoints with <c>CONNECT_PHONENUMBER_ARN</c>
         /// as Type and <b>DestinationEndpoint</b> only supports Endpoints with <c>TELEPHONE_NUMBER</c>
-        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.
+        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new contact created.
         /// </para>
         ///  
         /// <para>
-        /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
-        /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+        /// This API can be used to initiate outbound SMS or WhatsApp contacts for an agent, or
+        /// it can also deflect an ongoing contact to an outbound SMS or WhatsApp contact by using
+        /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
         /// Flow Action.
         /// </para>
         ///  
         /// <para>
-        /// For more information about using SMS in Amazon Connect, see the following topics in
-        /// the <i>Amazon Connect Administrator Guide</i>:
+        /// For more information about using SMS or WhatsApp in Amazon Connect, see the following
+        /// topics in the <i>Amazon Connect Administrator Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -23958,7 +24911,13 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
-        /// an SMS-enabled phone number through AWS End User Messaging SMS</a> 
+        /// an SMS-enabled phone number through Amazon Web Services End User Messaging SMS</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html">Set
+        /// up WhatsApp Business messaging</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -24512,6 +25471,89 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartTestCaseExecution
+
+
+        /// <summary>
+        /// Starts executing a published test case.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTestCaseExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartTestCaseExecution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTestCaseExecution">REST API Reference for StartTestCaseExecution Operation</seealso>
+        public virtual StartTestCaseExecutionResponse StartTestCaseExecution(StartTestCaseExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartTestCaseExecutionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts executing a published test case.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTestCaseExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartTestCaseExecution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTestCaseExecution">REST API Reference for StartTestCaseExecution Operation</seealso>
+        public virtual Task<StartTestCaseExecutionResponse> StartTestCaseExecutionAsync(StartTestCaseExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTestCaseExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartTestCaseExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartWebRTCContact
 
 
@@ -24628,6 +25670,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -24688,6 +25736,12 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -24809,6 +25863,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -24847,6 +25907,12 @@ namespace Amazon.Connect
         /// <returns>The response from the StopContactRecording service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -24931,6 +25997,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = StopContactStreamingResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopContactStreamingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopTestCaseExecution
+
+
+        /// <summary>
+        /// Stops a running test execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTestCaseExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopTestCaseExecution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopTestCaseExecution">REST API Reference for StopTestCaseExecution Operation</seealso>
+        public virtual StopTestCaseExecutionResponse StopTestCaseExecution(StopTestCaseExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopTestCaseExecutionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running test execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTestCaseExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopTestCaseExecution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopTestCaseExecution">REST API Reference for StopTestCaseExecution Operation</seealso>
+        public virtual Task<StopTestCaseExecutionResponse> StopTestCaseExecutionAsync(StopTestCaseExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTestCaseExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopTestCaseExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -25053,6 +26196,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -25097,6 +26246,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -25128,6 +26283,12 @@ namespace Amazon.Connect
         /// <returns>The response from the TagContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -25165,6 +26326,12 @@ namespace Amazon.Connect
         /// <returns>The response from the TagContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -25448,6 +26615,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -25484,6 +26657,12 @@ namespace Amazon.Connect
         /// <returns>The response from the UntagContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -25777,6 +26956,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -25830,6 +27015,12 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -25885,6 +27076,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -25934,6 +27131,12 @@ namespace Amazon.Connect
         /// <returns>The response from the UpdateContactAttributes service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -26600,6 +27803,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -26653,6 +27862,12 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -29500,6 +30715,99 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateTaskTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTestCase
+
+
+        /// <summary>
+        /// Updates any of the metadata for a test case, such as the name, description, and status
+        /// or content of an existing test case. This API doesn't allow customers to update the
+        /// tags of the test case resource for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTestCase service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidTestCaseException">
+        /// The test is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTestCase">REST API Reference for UpdateTestCase Operation</seealso>
+        public virtual UpdateTestCaseResponse UpdateTestCase(UpdateTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTestCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates any of the metadata for a test case, such as the name, description, and status
+        /// or content of an existing test case. This API doesn't allow customers to update the
+        /// tags of the test case resource for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidTestCaseException">
+        /// The test is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTestCase">REST API Reference for UpdateTestCase Operation</seealso>
+        public virtual Task<UpdateTestCaseResponse> UpdateTestCaseAsync(UpdateTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTestCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTestCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion

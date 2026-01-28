@@ -127,7 +127,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
         /// <para>
-        /// The AWS region where this attribute was last modified, used for region replication.
+        /// The Amazon Web Services Region where this attribute was last modified, used for region
+        /// replication.
         /// </para>
         /// </summary>
         public string LastModifiedRegion

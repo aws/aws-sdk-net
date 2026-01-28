@@ -36,6 +36,14 @@ namespace Amazon.ObservabilityAdmin
         /// <summary>
         /// Construct instance of AmazonObservabilityAdminException
         /// </summary>
+        public AmazonObservabilityAdminException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonObservabilityAdminException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonObservabilityAdminException(string message)
             : base(message)

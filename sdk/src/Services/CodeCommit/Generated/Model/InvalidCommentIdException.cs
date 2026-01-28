@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCommentIdException
+        /// message.
+        /// </summary>
+        public InvalidCommentIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCommentIdException with the specified error
         /// message.
         /// </summary>

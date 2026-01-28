@@ -26,96 +26,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetBucketWebsite operation
     /// </summary>
-    public class GetBucketWebsiteResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class GetBucketWebsiteResponseUnmarshaller : S3ReponseUnmarshaller
     {
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            GetBucketWebsiteResponse response = new GetBucketWebsiteResponse();
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {                    
-                    UnmarshallResult(context,response);                        
-                    continue;
-                }
-            }
-                 
-                        
-            return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetBucketWebsiteResponse response)
+        static void RoutingRuleCustomUnmarshall(GetBucketWebsiteResponse response)
         {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-
-            response.WebsiteConfiguration = new WebsiteConfiguration();
-            while (context.Read())
+            if (response.WebsiteConfiguration.RoutingRules == null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("RedirectAllRequestsTo", targetDepth))
-                    {
-                        response.WebsiteConfiguration.RedirectAllRequestsTo = RoutingRuleRedirectUnmarshaller.Instance.Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("IndexDocument/Suffix", targetDepth))
-                    {
-                        response.WebsiteConfiguration.IndexDocumentSuffix = StringUnmarshaller.Instance.Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ErrorDocument/Key", targetDepth))
-                    {
-                        response.WebsiteConfiguration.ErrorDocument = StringUnmarshaller.Instance.Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("RoutingRule", targetDepth + 1))
-                    {
-                        if (response.WebsiteConfiguration.RoutingRules == null)
-                        {
-                            response.WebsiteConfiguration.RoutingRules = new List<RoutingRule>();
-                        }
-
-                        response.WebsiteConfiguration.RoutingRules.Add(RoutingRuleUnmarshaller.Instance.Unmarshall(context));
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-
-            return;
-        }
-
-        private static GetBucketWebsiteResponseUnmarshaller _instance;
-
-        /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static GetBucketWebsiteResponseUnmarshaller Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new GetBucketWebsiteResponseUnmarshaller();
-                }
-                return _instance;
+                response.WebsiteConfiguration.RoutingRules = new List<RoutingRule>();
             }
         }
     

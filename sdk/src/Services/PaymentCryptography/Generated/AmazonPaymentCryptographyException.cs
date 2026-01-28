@@ -36,6 +36,14 @@ namespace Amazon.PaymentCryptography
         /// <summary>
         /// Construct instance of AmazonPaymentCryptographyException
         /// </summary>
+        public AmazonPaymentCryptographyException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPaymentCryptographyException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPaymentCryptographyException(string message)
             : base(message)

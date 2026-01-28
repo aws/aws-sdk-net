@@ -44,6 +44,13 @@ namespace Amazon.EKS.Model
         private List<string> _validZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
+        /// Default constructor for UnsupportedAvailabilityZoneException
+        /// message.
+        /// </summary>
+        public UnsupportedAvailabilityZoneException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedAvailabilityZoneException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedOptionException
+        /// message.
+        /// </summary>
+        public UnsupportedOptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedOptionException with the specified error
         /// message.
         /// </summary>

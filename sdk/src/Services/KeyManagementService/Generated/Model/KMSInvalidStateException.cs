@@ -62,6 +62,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSInvalidStateException
+        /// message.
+        /// </summary>
+        public KMSInvalidStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSInvalidStateException with the specified error
         /// message.
         /// </summary>

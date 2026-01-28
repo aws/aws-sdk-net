@@ -55,7 +55,7 @@
   <ItemGroup>
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
     <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj"/>
-    <ProjectReference Include="../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj"/>
+    <ProjectReference Include="../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj"/>
     <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj"/>
     <ProjectReference Include="../../../../src/Services/DocDB/AWSSDK.DocDB.NetFramework.csproj"/>
   </ItemGroup>

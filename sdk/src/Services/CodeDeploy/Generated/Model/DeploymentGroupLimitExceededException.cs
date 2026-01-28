@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentGroupLimitExceededException
+        /// message.
+        /// </summary>
+        public DeploymentGroupLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentGroupLimitExceededException with the specified error
         /// message.
         /// </summary>

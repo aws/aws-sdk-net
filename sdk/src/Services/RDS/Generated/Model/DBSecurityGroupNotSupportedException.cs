@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSecurityGroupNotSupportedException
+        /// message.
+        /// </summary>
+        public DBSecurityGroupNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSecurityGroupNotSupportedException with the specified error
         /// message.
         /// </summary>

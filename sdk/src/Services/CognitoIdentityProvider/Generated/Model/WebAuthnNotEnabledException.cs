@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for WebAuthnNotEnabledException
+        /// message.
+        /// </summary>
+        public WebAuthnNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WebAuthnNotEnabledException with the specified error
         /// message.
         /// </summary>
