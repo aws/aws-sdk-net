@@ -49,12 +49,18 @@
     <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
     </ItemGroup>
     <ItemGroup>
-          <PackageReference Include="Moq" Version="4.8.3" />
-          <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-          <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-          <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-          <PackageReference Include="AutoFixture" Version="3.51.0" />
-          <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0" />
-          <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="Moq" Version="4.8.3" />
+      <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+      <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+      <PackageReference Include="AutoFixture" Version="3.51.0" />
+      <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+
+      <!--
+        Add explicit reference to "Microsoft.Bcl.AsyncInterfaces" to avoid "warning MSB3277: Found conflicts between different 
+        versions of "Microsoft.Bcl.AsyncInterfaces" that could not be resolved".
+      -->
+      <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
     </ItemGroup>
   </Project>

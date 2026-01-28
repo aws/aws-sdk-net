@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;LOCAL_FILE</DefineConstants>
+    <TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
-    <AssemblyName>AWSSDK.IntegrationTestUtilities.NetFramework</AssemblyName>
-    <PackageId>AWSSDK.IntegrationTestUtilities.NetFramework</PackageId>
+    <AssemblyName>AWSSDK.IntegrationTestUtilities</AssemblyName>
+    <PackageId>AWSSDK.IntegrationTestUtilities</PackageId>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -16,8 +16,8 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <NoWarn>CS1591,CS0612,CS0618</NoWarn>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
+    <NoWarn>CS1591,CS0612,CS0618,NU1701</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
   </PropertyGroup>
   
   <ItemGroup>
@@ -39,26 +39,31 @@
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
-
     <PackageReference Include="System.Data.SQLite" Version="1.0.97" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.97" />
     <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97" />
+
+    <!--
+      Add explicit reference to "Microsoft.Bcl.AsyncInterfaces" to avoid "warning MSB3277: Found conflicts between different 
+      versions of "Microsoft.Bcl.AsyncInterfaces" that could not be resolved".
+    -->
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <ProjectReference Include="../../src/Core/AWSSDK.Core.NetFramework.csproj" />
-    <ProjectReference Include="../../src/Services/IdentityManagement/AWSSDK.IdentityManagement.NetFramework.csproj" />
     <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
     <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj" />
     <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
-    <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Web" />
+  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />
   </ItemGroup>
 
   <ItemGroup>

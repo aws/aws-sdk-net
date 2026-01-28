@@ -36,7 +36,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../../../../src/Services/IdentityManagement/AWSSDK.IdentityManagement.NetFramework.csproj" />
-    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.NetFramework.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/EC2/AWSSDK.EC2.NetFramework.csproj" />
   </ItemGroup>
