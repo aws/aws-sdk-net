@@ -39,13 +39,13 @@ namespace Amazon.Runtime
         /// </para>
         ///
         /// <para>
-        /// By default, the value is set to <code>3600</code> seconds.
+        /// By default, the value is set to <c>3600</c> seconds.
         /// </para>
         ///  <note>
         /// <para>
-        /// The <code>DurationSeconds</code> parameter is separate from the duration of a console
+        /// The <c>DurationSeconds</c> parameter is separate from the duration of a console
         /// session that you might request using the returned credentials. The request to the
-        /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
+        /// federation endpoint for a console sign-in token takes a <c>SessionDuration</c>
         /// parameter that specifies the maximum length of the console session. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
         /// a URL that Enables Federated Users to Access the AWS Management Console</a> in the
@@ -62,8 +62,8 @@ namespace Amazon.Runtime
         /// </para>
         ///
         /// <para>
-        /// Specify this value only for OAuth 2.0 access tokens. Currently <code>www.amazon.com</code>
-        /// and <code>graph.facebook.com</code> are the only supported identity providers for
+        /// Specify this value only for OAuth 2.0 access tokens. Currently <c>www.amazon.com</c>
+        /// and <c>graph.facebook.com</c> are the only supported identity providers for
         /// OAuth 2.0 access tokens. Do not include URL schemes and port numbers.
         /// </para>
         ///
@@ -101,7 +101,7 @@ namespace Amazon.Runtime
         /// <para>
         /// The characters in this parameter count towards the 2048 character session policy guideline.
         /// However, an AWS conversion compresses the session policies into a packed binary format
-        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
+        /// that has a separate limit. This is the enforced limit. The <c>PackedPolicySize</c>
         /// response element indicates by percentage how close the policy is to the upper size
         /// limit.
         /// </para>
@@ -126,7 +126,7 @@ namespace Amazon.Runtime
         /// <para>
         /// The characters in this parameter count towards the 2048 character session policy guideline.
         /// However, an AWS conversion compresses the session policies into a packed binary format
-        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
+        /// that has a separate limit. This is the enforced limit. The <c>PackedPolicySize</c>
         /// response element indicates by percentage how close the policy is to the upper size
         /// limit.
         /// </para>
