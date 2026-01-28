@@ -116,6 +116,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3ReplicateObject = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("S3UpdateObjectEncryption", targetDepth))
+                    {
+                        var unmarshaller = S3UpdateObjectEncryptionOperationUnmarshaller.Instance;
+                        unmarshalledObject.S3UpdateObjectEncryption = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
 
                     XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }

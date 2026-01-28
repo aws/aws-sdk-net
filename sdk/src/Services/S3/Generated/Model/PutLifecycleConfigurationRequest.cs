@@ -45,8 +45,7 @@ namespace Amazon.S3.Model
     /// supported filtering based only on an object key name prefix, which is supported for
     /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
     /// </para>
-    ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-    /// <dd> 
+    ///  </note> <dl> <dt>Rules</dt> <dd> 
     /// <para>
     /// You specify the lifecycle configuration in your request body. The lifecycle configuration
     /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -95,7 +94,7 @@ namespace Amazon.S3.Model
     /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
     /// Configuration Elements</a>.
     /// </para>
-    ///  </dd> <dd> <ul> <li> 
+    ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
     ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
     /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -151,7 +150,7 @@ namespace Amazon.S3.Model
     /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
     /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </note> </li> </ul> </dd> <dd> 
+    ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
     ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
     /// </para>

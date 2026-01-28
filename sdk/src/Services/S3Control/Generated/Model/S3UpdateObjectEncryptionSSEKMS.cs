@@ -30,10 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// A filter that returns objects that are encrypted by server-side encryption with Amazon
-    /// Web Services KMS (SSE-KMS).
+    /// If <c>SSEKMS</c> is specified for <c>UpdateObjectEncryption</c>, this data type specifies
+    /// the Amazon Web Services KMS key Amazon Resource Name (ARN) to use and whether to use
+    /// an S3 Bucket Key for server-side encryption using Key Management Service (KMS) keys
+    /// (SSE-KMS).
     /// </summary>
-    public partial class SSEKMSFilter
+    public partial class S3UpdateObjectEncryptionSSEKMS
     {
         private bool? _bucketKeyEnabled;
         private string _kmsKeyArn;
@@ -42,9 +44,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
         /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
-        /// server-side encryption using Amazon Web Services Key Management Service (Amazon Web
-        /// Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects
-        /// by S3 Bucket Key status.
+        /// server-side encryption using Key Management Service (KMS) keys (SSE-KMS). If this
+        /// value isn't specified, it defaults to <c>false</c>. Setting this value to <c>true</c>
+        /// causes Amazon S3 to use an S3 Bucket Key for update object encryption with SSE-KMS.
         /// </para>
         /// </summary>
         public bool? BucketKeyEnabled
@@ -60,22 +62,22 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
+        /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter
-        /// to return objects that are encrypted by the specified key. For best performance, use
-        /// keys in the same Region as the S3 Batch Operations job.
+        /// Specifies the Amazon Web Services KMS key Amazon Resource Name (ARN) to use for the
+        /// updated server-side encryption type. Required if <c>UpdateObjectEncryption</c> specifies
+        /// <c>SSEKMS</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string KmsKeyArn
+        [AWSProperty(Required=true, Min=20, Max=2048)]
+        public string KMSKeyArn
         {
             get { return this._kmsKeyArn; }
             set { this._kmsKeyArn = value; }
         }
 
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
         {
             return this._kmsKeyArn != null;
         }

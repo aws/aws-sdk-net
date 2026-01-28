@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,11 +13,24 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
+using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Util;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -50,9 +63,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 id2 = s3ErrorResponse.Id2;
                 amzCfId = s3ErrorResponse.AmzCfId;
             }
-
             InvalidRequestException response = new InvalidRequestException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
+
 
             while (context.Read())
             {
@@ -63,7 +76,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static InvalidRequestExceptionUnmarshaller _instance = new InvalidRequestExceptionUnmarshaller();
+        private static InvalidRequestExceptionUnmarshaller _instance = new InvalidRequestExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
@@ -75,6 +88,5 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 return _instance;
             }
         }
-
     }
 }

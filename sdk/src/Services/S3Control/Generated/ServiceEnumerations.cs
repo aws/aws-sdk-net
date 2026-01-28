@@ -1464,6 +1464,10 @@ namespace Amazon.S3Control
         /// Constant S3ReplicateObject for OperationName
         /// </summary>
         public static readonly OperationName S3ReplicateObject = new OperationName("S3ReplicateObject");
+        /// <summary>
+        /// Constant S3UpdateObjectEncryption for OperationName
+        /// </summary>
+        public static readonly OperationName S3UpdateObjectEncryption = new OperationName("S3UpdateObjectEncryption");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
