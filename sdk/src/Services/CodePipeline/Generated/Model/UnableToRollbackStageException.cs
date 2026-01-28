@@ -41,6 +41,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for UnableToRollbackStageException
+        /// message.
+        /// </summary>
+        public UnableToRollbackStageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnableToRollbackStageException with the specified error
         /// message.
         /// </summary>

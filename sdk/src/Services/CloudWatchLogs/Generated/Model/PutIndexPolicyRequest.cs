@@ -50,6 +50,15 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
+    /// You can configure indexed fields as <i>facets</i> to enable interactive exploration
+    /// and filtering of your logs in the CloudWatch Logs Insights console. Facets allow you
+    /// to view value distributions and counts for indexed fields without running queries.
+    /// When you create a field index, you can optionally set it as a facet to enable this
+    /// interactive analysis capability. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
+    /// facets to group and explore logs</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// To find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
     /// operation.
     /// </para>
@@ -112,10 +121,12 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// Log group-level field index policies created with <c>PutIndexPolicy</c> override account-level
-    /// field index policies created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
-    /// If you use <c>PutIndexPolicy</c> to create a field index policy for a log group, that
-    /// log group uses only that policy. The log group ignores any account-wide field index
-    /// policy that you might have created.
+    /// field index policies created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+    /// that apply to log groups. If you use <c>PutIndexPolicy</c> to create a field index
+    /// policy for a log group, that log group uses only that policy for log group-level indexing,
+    /// including any facet configurations. The log group ignores any account-wide field index
+    /// policy that applies to log groups, but data source-based account policies may still
+    /// apply.
     /// </para>
     /// </summary>
     public partial class PutIndexPolicyRequest : AmazonCloudWatchLogsRequest
@@ -148,11 +159,19 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property PolicyDocument. 
         /// <para>
         /// The index policy document, in JSON format. The following is an example of an index
-        /// policy document that creates two indexes, <c>RequestId</c> and <c>TransactionId</c>.
+        /// policy document that creates indexes with different types.
         /// </para>
         ///  
         /// <para>
-        ///  <c>"policyDocument": "{ "Fields": [ "RequestId", "TransactionId" ] }"</c> 
+        ///  <c>"policyDocument": "{"Fields": [ "TransactionId" ], "FieldsV2": {"RequestId": {"type":
+        /// "FIELD_INDEX"}, "APIName": {"type": "FACET"}, "StatusCode": {"type": "FACET"}}}"</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <c>FieldsV2</c> to specify the type for each field. Supported types are
+        /// <c>FIELD_INDEX</c> and <c>FACET</c>. Field names within <c>Fields</c> and <c>FieldsV2</c>
+        /// must be mutually exclusive.
         /// </para>
         ///  
         /// <para>

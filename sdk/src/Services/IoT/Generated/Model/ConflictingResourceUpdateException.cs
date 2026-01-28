@@ -40,6 +40,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for ConflictingResourceUpdateException
+        /// message.
+        /// </summary>
+        public ConflictingResourceUpdateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictingResourceUpdateException with the specified error
         /// message.
         /// </summary>

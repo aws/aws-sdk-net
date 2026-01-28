@@ -39,6 +39,13 @@ namespace Amazon.SimpleEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomVerificationEmailInvalidContentException
+        /// message.
+        /// </summary>
+        public CustomVerificationEmailInvalidContentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomVerificationEmailInvalidContentException with the specified error
         /// message.
         /// </summary>

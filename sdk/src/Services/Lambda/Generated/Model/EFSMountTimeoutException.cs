@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for EFSMountTimeoutException
+        /// message.
+        /// </summary>
+        public EFSMountTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EFSMountTimeoutException with the specified error
         /// message.
         /// </summary>

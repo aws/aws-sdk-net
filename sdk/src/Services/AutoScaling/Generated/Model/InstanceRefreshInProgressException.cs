@@ -40,6 +40,13 @@ namespace Amazon.AutoScaling.Model
     {
 
         /// <summary>
+        /// Default constructor for InstanceRefreshInProgressException
+        /// message.
+        /// </summary>
+        public InstanceRefreshInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InstanceRefreshInProgressException with the specified error
         /// message.
         /// </summary>

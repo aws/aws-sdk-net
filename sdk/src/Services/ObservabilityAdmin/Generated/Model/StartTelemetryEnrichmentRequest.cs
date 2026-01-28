@@ -32,8 +32,8 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// Container for the parameters to the StartTelemetryEnrichment operation.
     /// Enables the resource tags for telemetry feature for your account, which enhances
-    /// telemetry data with additional resource metadata from Amazon Web Services Resource
-    /// Explorer to provide richer context for monitoring and observability.
+    /// telemetry data with additional resource metadata from Resource Explorer to provide
+    /// richer context for monitoring and observability.
     /// </summary>
     public partial class StartTelemetryEnrichmentRequest : AmazonObservabilityAdminRequest
     {

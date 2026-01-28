@@ -40,6 +40,13 @@ namespace Amazon.AutoScalingPlans.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentUpdateException
+        /// message.
+        /// </summary>
+        public ConcurrentUpdateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentUpdateException with the specified error
         /// message.
         /// </summary>

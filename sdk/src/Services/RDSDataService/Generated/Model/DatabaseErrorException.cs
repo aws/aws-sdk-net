@@ -39,6 +39,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for DatabaseErrorException
+        /// message.
+        /// </summary>
+        public DatabaseErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DatabaseErrorException with the specified error
         /// message.
         /// </summary>

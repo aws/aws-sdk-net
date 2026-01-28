@@ -41,6 +41,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationsNotInUseException
+        /// message.
+        /// </summary>
+        public OrganizationsNotInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationsNotInUseException with the specified error
         /// message.
         /// </summary>

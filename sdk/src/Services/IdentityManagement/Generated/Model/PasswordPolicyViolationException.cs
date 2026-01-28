@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for PasswordPolicyViolationException
+        /// message.
+        /// </summary>
+        public PasswordPolicyViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PasswordPolicyViolationException with the specified error
         /// message.
         /// </summary>

@@ -30,10 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// An optional filter for the <c>S3JobManifestGenerator</c> that identifies the subset
-    /// of objects by encryption type. This filter is used to create an object list for S3
-    /// Batch Operations jobs. If provided, this filter will generate an object list that
-    /// only includes objects with the specified encryption type.
+    /// An optional filter for the S3JobManifestGenerator that identifies the subset of objects
+    /// by encryption type.
     /// </summary>
     public partial class ObjectEncryptionFilter
     {
@@ -65,7 +63,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property NOTSSE. 
         /// <para>
-        /// Filters for objects that are not encrypted by server-side encryption. 
+        /// Filters for objects that are not encrypted by server-side encryption.
         /// </para>
         /// </summary>
         public NotSSEFilter NOTSSE

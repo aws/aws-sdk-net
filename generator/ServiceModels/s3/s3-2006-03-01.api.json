@@ -5662,7 +5662,8 @@
         "BucketKeyStatus",
         "ChecksumAlgorithm",
         "ObjectAccessControlList",
-        "ObjectOwner"
+        "ObjectOwner",
+        "LifecycleExpirationDate"
       ]
     },
     "InventoryOptionalFields":{
@@ -6975,7 +6976,8 @@
         "GLACIER_IR",
         "SNOW",
         "EXPRESS_ONEZONE",
-        "FSX_OPENZFS"
+        "FSX_OPENZFS",
+        "FSX_ONTAP"
       ]
     },
     "ObjectVersion":{
@@ -9437,7 +9439,8 @@
         "GLACIER_IR",
         "SNOW",
         "EXPRESS_ONEZONE",
-        "FSX_OPENZFS"
+        "FSX_OPENZFS",
+        "FSX_ONTAP"
       ]
     },
     "StorageClassAnalysis":{

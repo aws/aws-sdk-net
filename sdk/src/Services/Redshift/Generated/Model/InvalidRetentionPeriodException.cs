@@ -44,6 +44,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRetentionPeriodException
+        /// message.
+        /// </summary>
+        public InvalidRetentionPeriodException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRetentionPeriodException with the specified error
         /// message.
         /// </summary>

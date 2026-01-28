@@ -69,9 +69,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property MappingVersion. 
         /// <para>
-        /// Identifies the specific release of the Open Cybersecurity Schema Framework (OCSF)
-        /// transformer being used to parse OCSF data. Defaults to the latest version if not specified.
-        /// Does not automatically update.
+        /// The version of the OCSF mapping to use for parsing log data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

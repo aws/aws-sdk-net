@@ -39,6 +39,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAliasNameException
+        /// message.
+        /// </summary>
+        public InvalidAliasNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAliasNameException with the specified error
         /// message.
         /// </summary>

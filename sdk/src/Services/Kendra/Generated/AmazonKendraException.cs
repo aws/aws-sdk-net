@@ -36,6 +36,14 @@ namespace Amazon.Kendra
         /// <summary>
         /// Construct instance of AmazonKendraException
         /// </summary>
+        public AmazonKendraException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKendraException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKendraException(string message)
             : base(message)

@@ -96,5 +96,15 @@ namespace Amazon.ARCRegionswitch.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListRoute53HealthChecksPaginator ListRoute53HealthChecks(ListRoute53HealthChecksRequest request);
+
+        /// <summary>
+        /// Paginator for ListRoute53HealthChecksInRegion operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRoute53HealthChecksInRegionPaginator ListRoute53HealthChecksInRegion(ListRoute53HealthChecksInRegionRequest request);
     }
 }

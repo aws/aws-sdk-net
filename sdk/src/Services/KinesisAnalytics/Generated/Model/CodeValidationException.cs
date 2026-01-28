@@ -39,6 +39,13 @@ namespace Amazon.KinesisAnalytics.Model
     {
 
         /// <summary>
+        /// Default constructor for CodeValidationException
+        /// message.
+        /// </summary>
+        public CodeValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CodeValidationException with the specified error
         /// message.
         /// </summary>

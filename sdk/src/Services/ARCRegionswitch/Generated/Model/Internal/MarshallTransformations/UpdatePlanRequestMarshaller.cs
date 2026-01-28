@@ -118,6 +118,17 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.RecoveryTimeObjectiveMinutes.Value);
             }
 
+            if(publicRequest.IsSetReportConfiguration())
+            {
+                context.Writer.WritePropertyName("reportConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReportConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTriggers())
             {
                 context.Writer.WritePropertyName("triggers");

@@ -41,6 +41,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for InvalidClientMetadataException
+        /// message.
+        /// </summary>
+        public InvalidClientMetadataException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClientMetadataException with the specified error
         /// message.
         /// </summary>

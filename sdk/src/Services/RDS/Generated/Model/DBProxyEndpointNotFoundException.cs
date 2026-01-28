@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBProxyEndpointNotFoundException
+        /// message.
+        /// </summary>
+        public DBProxyEndpointNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBProxyEndpointNotFoundException with the specified error
         /// message.
         /// </summary>

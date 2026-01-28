@@ -1131,10 +1131,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker
-        /// for creating and managing persistent clusters for developing large machine learning
-        /// models, such as large language models (LLMs) and diffusion models. To learn more,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
+        /// Creates an Amazon SageMaker HyperPod cluster. SageMaker HyperPod is a capability of
+        /// SageMaker for creating and managing persistent clusters for developing large machine
+        /// learning models, such as large language models (LLMs) and diffusion models. To learn
+        /// more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
         /// SageMaker HyperPod</a> in the <i>Amazon SageMaker Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
@@ -2654,6 +2654,44 @@ namespace Amazon.SageMaker
         }
         #endregion
         
+        #region  CreateMlflowApp
+
+        internal virtual CreateMlflowAppResponse CreateMlflowApp(CreateMlflowAppRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateMlflowAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMlflowAppResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMlflowAppResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as the
+        /// artifact store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowApp">REST API Reference for CreateMlflowApp Operation</seealso>
+        public virtual Task<CreateMlflowAppResponse> CreateMlflowAppAsync(CreateMlflowAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateMlflowAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMlflowAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMlflowAppResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateMlflowTrackingServer
 
         internal virtual CreateMlflowTrackingServerResponse CreateMlflowTrackingServer(CreateMlflowTrackingServerRequest request)
@@ -3250,6 +3288,14 @@ namespace Amazon.SageMaker
         /// For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecycle configuration scripts execute with root access and the notebook instance's
+        /// IAM execution role privileges. Grant this permission only to trusted principals. See
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig service method.</param>
         /// <param name="cancellationToken">
@@ -3507,6 +3553,44 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreatePresignedDomainUrlResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePresignedDomainUrlResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreatePresignedMlflowAppUrl
+
+        internal virtual CreatePresignedMlflowAppUrlResponse CreatePresignedMlflowAppUrl(CreatePresignedMlflowAppUrlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePresignedMlflowAppUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedMlflowAppUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePresignedMlflowAppUrlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a presigned URL that you can use to connect to the MLflow UI attached to your
+        /// MLflow App. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+        /// the MLflow UI using a presigned URL</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowAppUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePresignedMlflowAppUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowAppUrl">REST API Reference for CreatePresignedMlflowAppUrl Operation</seealso>
+        public virtual Task<CreatePresignedMlflowAppUrlResponse> CreatePresignedMlflowAppUrlAsync(CreatePresignedMlflowAppUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePresignedMlflowAppUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedMlflowAppUrlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePresignedMlflowAppUrlResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -5572,6 +5656,42 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteInferenceExperimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInferenceExperimentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteMlflowApp
+
+        internal virtual DeleteMlflowAppResponse DeleteMlflowApp(DeleteMlflowAppRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteMlflowAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMlflowAppResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMlflowAppResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowApp">REST API Reference for DeleteMlflowApp Operation</seealso>
+        public virtual Task<DeleteMlflowAppResponse> DeleteMlflowAppAsync(DeleteMlflowAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteMlflowAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMlflowAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMlflowAppResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -8010,6 +8130,42 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeLineageGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLineageGroupResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeMlflowApp
+
+        internal virtual DescribeMlflowAppResponse DescribeMlflowApp(DescribeMlflowAppRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMlflowAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMlflowAppResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMlflowAppResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowApp">REST API Reference for DescribeMlflowApp Operation</seealso>
+        public virtual Task<DescribeMlflowAppResponse> DescribeMlflowAppAsync(DescribeMlflowAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMlflowAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMlflowAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMlflowAppResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -11007,6 +11163,39 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListLineageGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListLineageGroupsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListMlflowApps
+
+        internal virtual ListMlflowAppsResponse ListMlflowApps(ListMlflowAppsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMlflowAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMlflowAppsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMlflowAppsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all MLflow Apps
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowApps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMlflowApps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowApps">REST API Reference for ListMlflowApps Operation</seealso>
+        public virtual Task<ListMlflowAppsResponse> ListMlflowAppsAsync(ListMlflowAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMlflowAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMlflowAppsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMlflowAppsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -14925,6 +15114,46 @@ namespace Amazon.SageMaker
         }
         #endregion
         
+        #region  UpdateMlflowApp
+
+        internal virtual UpdateMlflowAppResponse UpdateMlflowApp(UpdateMlflowAppRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMlflowAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMlflowAppResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMlflowAppResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowApp">REST API Reference for UpdateMlflowApp Operation</seealso>
+        public virtual Task<UpdateMlflowAppResponse> UpdateMlflowAppAsync(UpdateMlflowAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMlflowAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMlflowAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMlflowAppResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateMlflowTrackingServer
 
         internal virtual UpdateMlflowTrackingServerResponse UpdateMlflowTrackingServer(UpdateMlflowTrackingServerRequest request)
@@ -15153,6 +15382,16 @@ namespace Amazon.SageMaker
         /// Updates a notebook instance. NotebookInstance updates include upgrading or downgrading
         /// the ML compute instance used for your notebook instance to accommodate changes in
         /// your workload requirements.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API can attach lifecycle configurations to notebook instances. Lifecycle configuration
+        /// scripts execute with root access and the notebook instance's IAM execution role privileges.
+        /// Principals with this permission and access to lifecycle configurations can execute
+        /// code with the execution role's credentials. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstance service method.</param>
         /// <param name="cancellationToken">
@@ -15191,6 +15430,16 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Updates a notebook instance lifecycle configuration created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
         /// API.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Updates to lifecycle configurations affect all notebook instances using that configuration
+        /// upon their next start. Lifecycle configuration scripts execute with root access and
+        /// the notebook instance's IAM execution role privileges. Grant this permission only
+        /// to trusted principals. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
         /// <param name="cancellationToken">

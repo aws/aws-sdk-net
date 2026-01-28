@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for ACLNotFoundException
+        /// message.
+        /// </summary>
+        public ACLNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ACLNotFoundException with the specified error
         /// message.
         /// </summary>

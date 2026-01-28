@@ -30,18 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
-    /// The encryption configuration for a vector bucket. By default, if you don't specify,
-    /// all new vectors in Amazon S3 vector buckets use server-side encryption with Amazon
-    /// S3 managed keys (SSE-S3), specifically <c>AES256</c>.
-    /// </para>
-    /// 
-    /// </para>
+    /// The encryption configuration for a vector bucket or index. By default, if you don't
+    /// specify, all new vectors in Amazon S3 vector buckets use server-side encryption with
+    /// Amazon S3 managed keys (SSE-S3), specifically <c>AES256</c>. You can optionally override
+    /// bucket level encryption settings, and set a specific encryption configuration for
+    /// a vector index at the time of index creation.
     /// </summary>
     public partial class EncryptionConfiguration
     {

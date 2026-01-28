@@ -40,6 +40,13 @@ namespace Amazon.Greengrass.Model
         private List<ErrorDetail> _errorDetails = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
 
         /// <summary>
+        /// Default constructor for InternalServerErrorException
+        /// message.
+        /// </summary>
+        public InternalServerErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServerErrorException with the specified error
         /// message.
         /// </summary>

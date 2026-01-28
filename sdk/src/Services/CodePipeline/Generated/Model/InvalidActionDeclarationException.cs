@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidActionDeclarationException
+        /// message.
+        /// </summary>
+        public InvalidActionDeclarationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidActionDeclarationException with the specified error
         /// message.
         /// </summary>

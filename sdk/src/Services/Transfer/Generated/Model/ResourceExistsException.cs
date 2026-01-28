@@ -42,6 +42,13 @@ namespace Amazon.Transfer.Model
         private string _resourceType;
 
         /// <summary>
+        /// Default constructor for ResourceExistsException
+        /// message.
+        /// </summary>
+        public ResourceExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceExistsException with the specified error
         /// message.
         /// </summary>

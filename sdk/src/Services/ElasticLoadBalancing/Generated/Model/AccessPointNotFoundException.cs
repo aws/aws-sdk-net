@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessPointNotFoundException
+        /// message.
+        /// </summary>
+        public AccessPointNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessPointNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyQueryStringsInOriginRequestPolicyException
+        /// message.
+        /// </summary>
+        public TooManyQueryStringsInOriginRequestPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyQueryStringsInOriginRequestPolicyException with the specified error
         /// message.
         /// </summary>

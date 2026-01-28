@@ -206,17 +206,17 @@ namespace ServiceClientGenerator
 
             // Any enumerations for the service
             // skip s3 until we're at the end of s3 client generation
-            if (this.Configuration.ServiceId != "S3")
+            if (this.Configuration.ServiceModel.ServiceId != "S3")
             {
                 this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
             }
-
             // Any paginators for the service
-            // skip paginators for s3 until we're at the end of s3 client generation
-            if (Configuration.ServiceModel.HasPaginators && Configuration.ServiceId != "S3")
+            if (Configuration.ServiceModel.HasPaginators)
             {
                 foreach (var operation in Configuration.ServiceModel.Operations)
                 {
+                    if (operation.OperationModifiers != null && operation.OperationModifiers.ExcludePaginators)
+                        continue;
                     GeneratePaginator(operation);
                 }
                 ExecuteGenerator(new ServicePaginatorFactoryInterface(), $"I{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);
@@ -936,38 +936,6 @@ namespace ServiceClientGenerator
         {
             var updater = new CoreAssemblyInfoUpdater(options, manifest);
             updater.Execute();
-        }
-
-        public static void UpdateNuGetPackagesInReadme(GenerationManifest manifest, GeneratorOptions options)
-        {
-            var nugetPackages = new Dictionary<string, string>();
-            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ClassName))
-            {
-                if (service.ParentConfig != null || service.IsTestService)
-                    continue;
-
-                if (string.IsNullOrEmpty(service.Synopsis))
-                    throw new Exception(string.Format("{0} is missing a synopsis in the manifest.", service.ClassName));
-                var assemblyName = service.Namespace.Replace("Amazon.", "AWSSDK.");
-                nugetPackages[assemblyName] = service.Synopsis;
-            }
-
-            NuGetPackageReadmeSection generator = new NuGetPackageReadmeSection();
-            var session = new Dictionary<string, object> { { "NugetPackages", nugetPackages } };
-            generator.Session = session;
-            var nugetPackagesText = generator.TransformText();
-
-            var readmePath = Utils.PathCombineAlt(options.SdkRootFolder, "..", "README.md");
-            var originalContent = File.ReadAllText(readmePath);
-
-            int startPos = originalContent.IndexOf('\n', originalContent.IndexOf("### NuGet Packages")) + 1;
-            int endPos = originalContent.IndexOf("### Code Generator");
-
-            var newContent = originalContent.Substring(0, startPos);
-            newContent += nugetPackagesText + "\r\n";
-            newContent += originalContent.Substring(endPos);
-
-            File.WriteAllText(readmePath, newContent);
         }
 
         /// <summary>
@@ -1725,7 +1693,11 @@ namespace ServiceClientGenerator
                 { "IntelligentTieringFilter", 3 },
                 { "MetricsAndOperator", 3 },
                 { "AnalyticsAndOperator", 2 },
-                { "IntelligentTieringAndOperator", 2}
+                { "IntelligentTieringAndOperator", 2},
+                { "GlacierJobParameters", 1 },
+                // these two shapes have been changed from a structure to a string. 
+                { "IndexDocument", 1 },
+                { "ErrorDocument", 1 }
             };
             if (customUpdateShapes.TryGetValue(shape.Name, out int membersCount))
             {

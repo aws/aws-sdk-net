@@ -39,6 +39,13 @@ namespace Amazon.CodeStarconnections.Model
     {
 
         /// <summary>
+        /// Default constructor for SyncConfigurationStillExistsException
+        /// message.
+        /// </summary>
+        public SyncConfigurationStillExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SyncConfigurationStillExistsException with the specified error
         /// message.
         /// </summary>

@@ -379,6 +379,24 @@
         {"shape":"ValidationException"}
       ]
     },
+    "GetIdentityCenterAuthToken":{
+      "name":"GetIdentityCenterAuthToken",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetIdentityCenterAuthTokenRequest"},
+      "output":{"shape":"GetIdentityCenterAuthTokenResponse"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"DryRunException"},
+        {"shape":"ThrottlingException"}
+      ]
+    },
     "GetNamespace":{
       "name":"GetNamespace",
       "http":{
@@ -507,6 +525,7 @@
         {"shape":"ValidationException"},
         {"shape":"ConflictException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"DryRunException"},
         {"shape":"ThrottlingException"}
       ]
     },
@@ -1293,6 +1312,7 @@
         "baseCapacity":{"shape":"Integer"},
         "configParameters":{"shape":"ConfigParameterList"},
         "enhancedVpcRouting":{"shape":"Boolean"},
+        "extraComputeForAutomaticOptimization":{"shape":"Boolean"},
         "ipAddressType":{"shape":"IpAddressType"},
         "maxCapacity":{"shape":"Integer"},
         "namespaceName":{"shape":"NamespaceName"},
@@ -1546,6 +1566,21 @@
       "members":{
         "endpoint":{"shape":"EndpointAccess"}
       }
+    },
+    "GetIdentityCenterAuthTokenRequest":{
+      "type":"structure",
+      "required":["workgroupNames"],
+      "members":{
+        "workgroupNames":{"shape":"WorkgroupNameList"}
+      }
+    },
+    "GetIdentityCenterAuthTokenResponse":{
+      "type":"structure",
+      "members":{
+        "expirationTime":{"shape":"SyntheticTimestamp_date_time"},
+        "token":{"shape":"String"}
+      },
+      "sensitive":true
     },
     "GetNamespaceRequest":{
       "type":"structure",
@@ -2870,6 +2905,7 @@
         "baseCapacity":{"shape":"Integer"},
         "configParameters":{"shape":"ConfigParameterList"},
         "enhancedVpcRouting":{"shape":"Boolean"},
+        "extraComputeForAutomaticOptimization":{"shape":"Boolean"},
         "ipAddressType":{"shape":"IpAddressType"},
         "maxCapacity":{"shape":"Integer"},
         "port":{"shape":"Integer"},
@@ -2981,6 +3017,7 @@
         "customDomainName":{"shape":"CustomDomainName"},
         "endpoint":{"shape":"Endpoint"},
         "enhancedVpcRouting":{"shape":"Boolean"},
+        "extraComputeForAutomaticOptimization":{"shape":"Boolean"},
         "ipAddressType":{"shape":"IpAddressType"},
         "maxCapacity":{"shape":"Integer"},
         "namespaceName":{"shape":"String"},
@@ -3008,6 +3045,12 @@
       "max":64,
       "min":3,
       "pattern":"^[a-z0-9-]+$"
+    },
+    "WorkgroupNameList":{
+      "type":"list",
+      "member":{"shape":"WorkgroupName"},
+      "max":20,
+      "min":1
     },
     "WorkgroupStatus":{
       "type":"string",

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for UsageLimitAlreadyExistsException
+        /// message.
+        /// </summary>
+        public UsageLimitAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UsageLimitAlreadyExistsException with the specified error
         /// message.
         /// </summary>

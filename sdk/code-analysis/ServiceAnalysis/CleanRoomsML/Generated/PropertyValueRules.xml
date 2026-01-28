@@ -2071,6 +2071,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.MembershipInferenceAttackScore.Score</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.MetricDefinition.Name</property>
     <min>1</min>
     <max>255</max>
@@ -2123,6 +2128,14 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws[-a-z]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.MLSyntheticDataParameters.Epsilon</property>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.MLSyntheticDataParameters.MaxMembershipInferenceAttackScore</property>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.ModelInferenceDataSource.MlInputChannelArn</property>
@@ -2183,6 +2196,12 @@
     <property>Amazon.CleanRoomsML.Model.StoppingCondition.MaxRuntimeInSeconds</property>
     <min>1</min>
     <max>2419200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.SyntheticDataColumnProperties.ColumnName</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[a-z0-9_](([a-z0-9_]+-)*([a-z0-9_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.TrainedModelArtifactMaxSize.Value</property>

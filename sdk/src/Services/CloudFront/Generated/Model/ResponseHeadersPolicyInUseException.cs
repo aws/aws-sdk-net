@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for ResponseHeadersPolicyInUseException
+        /// message.
+        /// </summary>
+        public ResponseHeadersPolicyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResponseHeadersPolicyInUseException with the specified error
         /// message.
         /// </summary>

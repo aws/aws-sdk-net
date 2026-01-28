@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CertificateAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateAlreadyExistsException with the specified error
         /// message.
         /// </summary>

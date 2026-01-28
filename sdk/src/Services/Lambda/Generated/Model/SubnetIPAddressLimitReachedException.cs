@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for SubnetIPAddressLimitReachedException
+        /// message.
+        /// </summary>
+        public SubnetIPAddressLimitReachedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetIPAddressLimitReachedException with the specified error
         /// message.
         /// </summary>

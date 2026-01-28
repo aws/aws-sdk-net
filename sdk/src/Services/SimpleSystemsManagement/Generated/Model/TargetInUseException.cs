@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for TargetInUseException
+        /// message.
+        /// </summary>
+        public TargetInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TargetInUseException with the specified error
         /// message.
         /// </summary>

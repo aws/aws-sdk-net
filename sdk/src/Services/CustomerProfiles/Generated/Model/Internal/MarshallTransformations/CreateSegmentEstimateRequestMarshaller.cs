@@ -87,6 +87,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetSegmentSqlQuery())
+            {
+                context.Writer.WritePropertyName("SegmentSqlQuery");
+                context.Writer.WriteStringValue(publicRequest.SegmentSqlQuery);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

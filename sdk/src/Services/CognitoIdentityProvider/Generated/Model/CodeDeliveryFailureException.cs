@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for CodeDeliveryFailureException
+        /// message.
+        /// </summary>
+        public CodeDeliveryFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CodeDeliveryFailureException with the specified error
         /// message.
         /// </summary>

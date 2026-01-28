@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSnapshotNotFoundException
+        /// message.
+        /// </summary>
+        public DBSnapshotNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSnapshotNotFoundException with the specified error
         /// message.
         /// </summary>

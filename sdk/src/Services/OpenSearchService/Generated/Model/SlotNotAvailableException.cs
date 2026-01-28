@@ -41,6 +41,13 @@ namespace Amazon.OpenSearchService.Model
         private List<long> _slotSuggestions = AWSConfigs.InitializeCollections ? new List<long>() : null;
 
         /// <summary>
+        /// Default constructor for SlotNotAvailableException
+        /// message.
+        /// </summary>
+        public SlotNotAvailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SlotNotAvailableException with the specified error
         /// message.
         /// </summary>

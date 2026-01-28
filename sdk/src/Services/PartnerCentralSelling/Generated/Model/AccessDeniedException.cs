@@ -43,6 +43,14 @@ namespace Amazon.PartnerCentralSelling.Model
     #endif
     public partial class AccessDeniedException : AmazonPartnerCentralSellingException
     {
+        private AccessDeniedExceptionErrorCode _reason;
+
+        /// <summary>
+        /// Default constructor for AccessDeniedException
+        /// message.
+        /// </summary>
+        public AccessDeniedException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new AccessDeniedException with the specified error
@@ -104,6 +112,7 @@ namespace Amazon.PartnerCentralSelling.Model
         protected AccessDeniedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (AccessDeniedExceptionErrorCode)info.GetValue("Reason", typeof(AccessDeniedExceptionErrorCode));
         }
 
         /// <summary>
@@ -119,8 +128,27 @@ namespace Amazon.PartnerCentralSelling.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason why access was denied for the requested operation.
+        /// </para>
+        /// </summary>
+        public AccessDeniedExceptionErrorCode Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

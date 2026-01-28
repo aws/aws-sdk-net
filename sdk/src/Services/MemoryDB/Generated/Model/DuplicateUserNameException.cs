@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateUserNameException
+        /// message.
+        /// </summary>
+        public DuplicateUserNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateUserNameException with the specified error
         /// message.
         /// </summary>

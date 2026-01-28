@@ -60,6 +60,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInstanceIdException
+        /// message.
+        /// </summary>
+        public InvalidInstanceIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInstanceIdException with the specified error
         /// message.
         /// </summary>

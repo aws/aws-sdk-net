@@ -948,6 +948,16 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.H265Settings.TileHeight</property>
+    <min>64</min>
+    <max>2160</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.H265Settings.TileWidth</property>
+    <min>256</min>
+    <max>3840</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.Hdr10Metadata.BluePrimaryX</property>
     <min>0</min>
     <max>50000</max>
@@ -1215,6 +1225,11 @@
     <property>Amazon.MediaConvert.Model.InputVideoGenerator.Height</property>
     <min>32</min>
     <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputVideoGenerator.ImageInput</property>
+    <min>14</min>
+    <pattern>^((s3://(.*?)\.(bmp|BMP|png|PNG|tga|TGA))|(https?://(.*?)\.(bmp|BMP|png|PNG|tga|TGA)(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.InputVideoGenerator.SampleRate</property>

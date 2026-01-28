@@ -46,6 +46,7 @@ namespace Amazon.GameLift.Model
     {
         private DateTime? _creationTime;
         private string _name;
+        private string _nodeJsVersion;
         private string _scriptArn;
         private string _scriptId;
         private long? _sizeOnDisk;
@@ -89,6 +90,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeJsVersion. 
+        /// <para>
+        /// The Node.js version used for execution of your Realtime script. The valid values are
+        /// <c>10.x | 24.x</c>. By default, <c>NodeJsVersion</c> is <c>10.x</c>. This value cannot
+        /// be updated later. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=16)]
+        public string NodeJsVersion
+        {
+            get { return this._nodeJsVersion; }
+            set { this._nodeJsVersion = value; }
+        }
+
+        // Check to see if NodeJsVersion property is set
+        internal bool IsSetNodeJsVersion()
+        {
+            return this._nodeJsVersion != null;
         }
 
         /// <summary>

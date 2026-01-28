@@ -40,6 +40,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterParameterGroupNotFoundException
+        /// message.
+        /// </summary>
+        public DBClusterParameterGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterParameterGroupNotFoundException with the specified error
         /// message.
         /// </summary>

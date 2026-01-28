@@ -1,18 +1,15 @@
-﻿using System;
-using System.Text;
+﻿using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.DataModel;
+using System.Text;
 using System.Threading.Tasks;
-
-
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -20,7 +17,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     {
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContextWithEmptyStringEnabled()
+        public async Task TestContextWithEmptyStringEnabled()
         {
             // It is a known bug that this test currently fails due to an AOT-compilation
             // issue, on iOS using mono2x.
@@ -30,36 +27,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TableCache.Clear();
 
                 // Cleanup existing data
-                CleanupTables();
+                await CleanupTables();
 
-                TestCompositeHashRangeTable();
+                await TestCompositeHashRangeTable();
+                
                 // Recreate context
                 bool isEmptyStringEnabled = true;
                 CreateContext(conversion, isEmptyStringEnabled);
 
-                TestEmptyStringsWithFeatureEnabled();
+                await TestEmptyStringsWithFeatureEnabled();
 
-                TestEnumHashKeyObjects();
+                await TestEnumHashKeyObjects();
 
-                TestEmptyCollections(conversion);
+                await TestEmptyCollections(conversion);
 
-                TestContextConversions();
-                TestUnsupportedTypes();
+                await TestContextConversions();
+                await TestUnsupportedTypes();
                 TestEnums(conversion);
 
-                TestHashObjects();
-                TestHashRangeObjects<Employee>();
-                TestOtherContextOperations();
-                TestBatchOperations();
-                TestTransactionOperations();
-                TestMultiTableTransactionOperations();
+                await TestHashObjects();
+                await TestHashRangeObjects<Employee>();
+                await TestOtherContextOperations();
+                await TestBatchOperations();
+                await TestTransactionOperations();
+                await TestMultiTableTransactionOperations();
 
-                TestStoreAsEpoch();
-
+                await TestStoreAsEpoch();
             }
         }
 
-        private void TestCompositeHashRangeTable()
+        private async Task TestCompositeHashRangeTable()
         {
             var entity1 = new CompositeHashRangeEntity
             {
@@ -158,53 +155,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Priority = 4
             };
 
-            Context.Save(entity1);
-            Context.Save(entity11);
-            Context.Save(entity21);
-            Context.Save(entity22);
-            Context.Save(entity31);
-            Context.Save(entity32);
-            Context.Save(entity41);
-            Context.Save(entity42);
+            await Context.SaveAsync(entity1);
+            await Context.SaveAsync(entity11);
+            await Context.SaveAsync(entity21);
+            await Context.SaveAsync(entity22);
+            await Context.SaveAsync(entity31);
+            await Context.SaveAsync(entity32);
+            await Context.SaveAsync(entity41);
+            await Context.SaveAsync(entity42);
 
             // Query GSI1 with single hash key
             var queryConditional1 = QueryConditional.HashKeyEqualTo("UserName", "bob");
-            var results1 = Context.Query<CompositeHashRangeEntity>(queryConditional1, new QueryConfig
+            var results1 = await Context.QueryAsync<CompositeHashRangeEntity>(queryConditional1, new QueryConfig
             {
                 IndexName = "GSI1",
                 QueryFilter = new List<ScanCondition>
                 {
                     new ScanCondition("OrderId", ScanOperator.Equal, "order-2")
                 }
-            }).ToList();
+            }).GetNextSetAsync();
             Assert.AreEqual(2, results1.Count);
             Assert.IsTrue(results1.All(r => r.UserName == "bob"));
 
             // Query GSI1: composite-range behavior — Timestamp > 1000 (should return 1001,1002,1003)
             var queryGsi1Range = QueryConditional.HashKeyEqualTo("UserName", "alice")
                 .AndRangeKeyGreaterThan("Timestamp", 1000);
-            var gsi1RangeResults = Context.Query<CompositeHashRangeEntity>(queryGsi1Range, new QueryConfig { IndexName = "GSI1" }).ToList();
+            var gsi1RangeResults = await Context.QueryAsync<CompositeHashRangeEntity>(queryGsi1Range, new QueryConfig { IndexName = "GSI1" }).GetNextSetAsync();
             Assert.AreEqual(3, gsi1RangeResults.Count);
             CollectionAssert.AreEqual(new[] { 1001, 1002, 1003 }, gsi1RangeResults.Select(r => r.Timestamp).ToArray());
 
             // Query GSI1 with descending order
-            var gsi1DescResults = Context.Query<CompositeHashRangeEntity>(queryGsi1Range, new QueryConfig { IndexName = "GSI1" , BackwardQuery = true}).ToList();
+            var gsi1DescResults = await Context.QueryAsync<CompositeHashRangeEntity>(queryGsi1Range, new QueryConfig { IndexName = "GSI1", BackwardQuery = true }).GetNextSetAsync();
             Assert.AreEqual(3, gsi1DescResults.Count);
             Assert.AreEqual(1003, gsi1DescResults.First().Timestamp);
 
-
             // Query GSI2 with all hash keys (UserName + OrderId)
             var queryConditional2 = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("OrderId", "order-2");
-            var results2 = Context.Query<CompositeHashRangeEntity>(queryConditional2,
+            var results2 = await Context.QueryAsync<CompositeHashRangeEntity>(queryConditional2,
                 new QueryConfig
                 {
                     IndexName = "GSI2"
-                }).ToList();
+                })
+                .GetNextSetAsync();
             Assert.AreEqual(2, results2.Count);
             Assert.IsTrue(results2.All(r => r.UserName == "bob" && r.OrderId == "order-2"));
 
             // Query GSI2 with all hash keys (UserName + OrderId) and QueryFilter
-            var results21 = Context.Query<CompositeHashRangeEntity>(queryConditional2,
+            var results21 = await Context.QueryAsync<CompositeHashRangeEntity>(queryConditional2,
                 new QueryConfig
                 {
                     IndexName = "GSI2",
@@ -212,45 +209,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     {
                         new ScanCondition("Timestamp", ScanOperator.GreaterThan, 1004)
                     }
-                }).ToList();
+                }).GetNextSetAsync();
             Assert.AreEqual(1, results21.Count);
             Assert.IsTrue(results21.All(r => r.UserName == "bob" && r.OrderId == "order-2"));
 
-
             // Query GSI2 with all hash keys and first range key
             var queryConditional2Range = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("OrderId", "order-2").AndRangeKeyGreaterThan("Timestamp", 1004);
-            var results2Range = Context.Query<CompositeHashRangeEntity>(queryConditional2Range, new QueryConfig { IndexName = "GSI2" }).ToList();
+            var results2Range = await Context.QueryAsync<CompositeHashRangeEntity>(queryConditional2Range, new QueryConfig { IndexName = "GSI2" }).GetNextSetAsync();
             Assert.AreEqual(1, results2Range.Count);
             Assert.IsTrue(results2Range.All(r => r.UserName == "bob" && r.OrderId == "order-2" && r.Timestamp > 1004));
 
             // Query GSI2 with hash keys and Timestamp < 1003 (for alice/order-1 -> should return 1000,1001,1002)
             var queryGsi2Alice = QueryConditional.HashKeyEqualTo("UserName", "alice").AndHashKeyEqualTo("OrderId", "order-1").AndRangeKeyLessThan("Timestamp", 1003);
-            var gsi2AliceResults = Context.Query<CompositeHashRangeEntity>(queryGsi2Alice, new QueryConfig { IndexName = "GSI2" }).ToList();
+            var gsi2AliceResults = await Context.QueryAsync<CompositeHashRangeEntity>(queryGsi2Alice, new QueryConfig { IndexName = "GSI2" }).GetNextSetAsync();
             Assert.AreEqual(3, gsi2AliceResults.Count);
             CollectionAssert.AreEqual(new[] { 1000, 1001, 1002 }, gsi2AliceResults.Select(r => r.Timestamp).ToArray());
 
             // Query GSI3 with all hash keys
             var queryConditional3 = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("Region", "us-east-1");
-            var results3 = Context.Query<CompositeHashRangeEntity>(queryConditional3, new QueryConfig { IndexName = "GSI3" }).ToList();
+            var results3 = await Context.QueryAsync<CompositeHashRangeEntity>(queryConditional3, new QueryConfig { IndexName = "GSI3" }).GetNextSetAsync();
             Assert.AreEqual(2, results3.Count);
             Assert.IsTrue(results3.All(r => r.UserName == "bob" && r.Region == "us-east-1"));
 
             // Query GSI3 with all hash keys and first range key (Status equal)
             var queryConditional3Range = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("Region", "us-east-1").AndRangeKeyEqualTo("Status", "shipped");
-            var results3Range = Context.Query<CompositeHashRangeEntity>(queryConditional3Range, new QueryConfig { IndexName = "GSI3" }).ToList();
+            var results3Range = await Context.QueryAsync<CompositeHashRangeEntity>(queryConditional3Range, new QueryConfig { IndexName = "GSI3" }).GetNextSetAsync();
             Assert.AreEqual(1, results3Range.Count);
             Assert.IsTrue(results3Range.All(r => r.UserName == "bob" && r.Region == "us-east-1" && r.Status == "shipped"));
 
             // Query GSI4 with all hash keys
             var queryConditional4 = QueryConditional.HashKeyEqualTo("Id", 41).AndHashKeyEqualTo("UserName", "charlie").AndHashKeyEqualTo("OrderId", "order-3").AndHashKeyEqualTo("Region", "us-central");
-            var results4 = Context.Query<CompositeHashRangeEntity>(queryConditional4, new QueryConfig { IndexName = "GSI4" }).ToList();
+            var results4 = await Context.QueryAsync<CompositeHashRangeEntity>(queryConditional4, new QueryConfig { IndexName = "GSI4" }).GetNextSetAsync();
             Assert.AreEqual(2, results4.Count);
             Assert.IsTrue(results4.All(r => r.Id == 41 && r.UserName == "charlie" && r.OrderId == "order-3" && r.Region == "us-central"));
 
             // Query GSI4 with all hash keys and first range key (Status equal)
             var queryConditional4Range = QueryConditional.HashKeyEqualTo("Id", 41).AndHashKeyEqualTo("UserName", "charlie").AndHashKeyEqualTo("OrderId", "order-3")
                 .AndHashKeyEqualTo("Region", "us-central").AndRangeKeyEqualTo("Status", "active");
-            var results4Range = Context.Query<CompositeHashRangeEntity>(queryConditional4Range, new QueryConfig { IndexName = "GSI4" }).ToList();
+            var results4Range = await Context.QueryAsync<CompositeHashRangeEntity>(queryConditional4Range, new QueryConfig { IndexName = "GSI4" }).GetNextSetAsync();
             Assert.AreEqual(1, results4Range.Count);
             Assert.IsTrue(results4Range.All(r => r.Id == 41 && r.UserName == "charlie" && r.OrderId == "order-3" && r.Region == "us-central" && r.Status == "active"));
 
@@ -262,27 +258,67 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 .AndRangeKeyEqualTo("Status", "active")
                 .AndRangeKeyEqualTo("Category", "clothing")
                 .AndRangeKeyGreaterThan("Amount", 200);
-            var gsi4PriorityResults = Context.Query<CompositeHashRangeEntity>(queryGsi4Priority, new QueryConfig { IndexName = "GSI4" }).ToList();
+            var gsi4PriorityResults = await Context.QueryAsync<CompositeHashRangeEntity>(queryGsi4Priority, new QueryConfig { IndexName = "GSI4" }).GetNextSetAsync();
             Assert.AreEqual(0, gsi4PriorityResults.Count);
+        }
+
+        /// <summary>
+        /// Tests regression reported in https://github.com/aws/aws-sdk-net/issues/4243 is resolved.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestTransactWrite_SkipVersionCheck()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+
+            var vp = new VersionedProduct
+            {
+                Id = 1000,
+                Name = "TestProduct",
+                Price = 100
+            };
+            await Context.SaveAsync(vp);
+
+            // Load to get initial version
+            vp = await Context.LoadAsync<VersionedProduct>(vp.Id);
+            Assert.AreEqual(0, vp.Version);
+
+            // Set wrong version - normally would fail with a ConditionalCheck error
+            vp.Version = 9999;
+            vp.Price = 200;
+
+            // With SkipVersionCheck = true, should succeed
+            var transactWrite = Context.CreateTransactWrite<VersionedProduct>(new TransactWriteConfig 
+            { 
+                SkipVersionCheck = true 
+            });
+            transactWrite.AddSaveItem(vp);
+            await transactWrite.ExecuteAsync();
+
+            // Verify update succeeded
+            var updated = await Context.LoadAsync<VersionedProduct>(vp.Id);
+            Assert.AreEqual(200, updated.Price);
+            Assert.AreEqual(9999, updated.Version);
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContextWithEmptyStringDisabled()
+        public async Task TestContextWithEmptyStringDisabled()
         {
-            // It is a known bug that this test currently fails due to an AOT-compilation
-            // issue, on iOS using mono2x.
-
             TableCache.Clear();
 
             // Cleanup existing data
-            CleanupTables();
+            await CleanupTables();
 
             // Recreate context
             bool isEmptyStringEnabled = false;
             CreateContext(DynamoDBEntryConversion.V2, isEmptyStringEnabled);
 
-            TestEmptyStringsWithFeatureDisabled();
+            await TestEmptyStringsWithFeatureDisabled();
         }
 
         /// <summary>
@@ -291,15 +327,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_DisableFetchingTableMetadata_WithFullAttributes()
+        public async Task TestContext_DisableFetchingTableMetadata_WithFullAttributes()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             CreateContext(DynamoDBEntryConversion.V2, true, true);
 
-            TestHashRangeObjects<AnnotatedEmployee>();
+            await TestHashRangeObjects<AnnotatedEmployee>();
         }
 
         /// <summary>
@@ -308,15 +344,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_DisableFetchingTableMetadata_WithPartialAttributes()
+        public async Task TestContext_DisableFetchingTableMetadata_WithPartialAttributes()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             CreateContext(DynamoDBEntryConversion.V2, true, true);
 
-            TestHashRangeObjects<PartiallyAnnotatedEmployee>();
+            await TestHashRangeObjects<PartiallyAnnotatedEmployee>();
         }
 
         /// <summary>
@@ -325,15 +361,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_DisableFetchingTableMetadata_WithNonAnnotatedChildClass()
+        public async Task TestContext_DisableFetchingTableMetadata_WithNonAnnotatedChildClass()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             CreateContext(DynamoDBEntryConversion.V2, true, true);
 
-            TestHashRangeObjects<EmployeeChild>();
+            await TestHashRangeObjects<EmployeeChild>();
         }
 
         /// <summary>
@@ -341,10 +377,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_DisableFetchingTableMetadata_DateTimeAsHashKey()
+        public async Task TestContext_DisableFetchingTableMetadata_DateTimeAsHashKey()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             CreateContext(DynamoDBEntryConversion.V2, true, true);
@@ -365,8 +401,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 NullableLongEpochDate2 = LongEpochDate.AddDays(50)
             };
 
-            Context.Save(employee);
-            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
+            await Context.SaveAsync(employee);
+            var storedEmployee = await Context.LoadAsync<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
             ApproximatelyEqual(EpochDate, storedEmployee.EpochDate2);
@@ -387,10 +423,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_DisableFetchingTableMetadata_KeyWithPropertyConverter()
+        public async Task TestContext_DisableFetchingTableMetadata_KeyWithPropertyConverter()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             CreateContext(DynamoDBEntryConversion.V2, true, true);
@@ -401,8 +437,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreationTime = EpochDate,
             };
 
-            Context.Save(employee);
-            var storedEmployee = Context.Load<PropertyConverterEmployee>(employee.CreationTime, employee.Name);
+            await Context.SaveAsync(employee);
+            var storedEmployee = await Context.LoadAsync<PropertyConverterEmployee>(employee.CreationTime, employee.Name);
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
@@ -414,16 +450,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestTransactWrite_AddSaveItem_DocumentTransaction()
+        public async Task TestTransactWrite_AddSaveItem_DocumentTransaction()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             CreateContext(DynamoDBEntryConversion.V2, true, true);
 
             {
-
                 var hashRangeOnly = new AnnotatedRangeTable
                 {
                     Name = "Bob",
@@ -432,9 +467,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 var transactWrite = Context.CreateTransactWrite<AnnotatedRangeTable>();
                 transactWrite.AddSaveItem(hashRangeOnly);
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
 
-                var storedHashOnly = Context.Load<AnnotatedRangeTable>(hashRangeOnly.Name, hashRangeOnly.Age);
+                var storedHashOnly = await Context.LoadAsync<AnnotatedRangeTable>(hashRangeOnly.Name, hashRangeOnly.Age);
                 Assert.IsNotNull(storedHashOnly);
                 Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
             }
@@ -449,9 +484,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 var transactWrite = Context.CreateTransactWrite<IgnoreAnnotatedRangeTable>();
                 transactWrite.AddSaveItem(hashRangeOnly);
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
 
-                var storedHashOnly = Context.Load<IgnoreAnnotatedRangeTable>(hashRangeOnly.Name, hashRangeOnly.Age);
+                var storedHashOnly = await Context.LoadAsync<IgnoreAnnotatedRangeTable>(hashRangeOnly.Name, hashRangeOnly.Age);
                 Assert.IsNotNull(storedHashOnly);
                 Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
                 Assert.AreEqual(hashRangeOnly.Age, storedHashOnly.Age);
@@ -467,9 +502,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 var transactWrite = Context.CreateTransactWrite<AnnotatedRangeTable2>();
                 transactWrite.AddSaveItem(hashRangeOnly);
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
 
-                var storedHashOnly = Context.Load<AnnotatedRangeTable2>(hashRangeOnly.Name, hashRangeOnly.Age);
+                var storedHashOnly = await Context.LoadAsync<AnnotatedRangeTable2>(hashRangeOnly.Name, hashRangeOnly.Age);
                 Assert.IsNotNull(storedHashOnly);
                 Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
                 Assert.AreEqual(hashRangeOnly.Age, storedHashOnly.Age);
@@ -485,10 +520,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         [DataRow(true)]
         [DataRow(false)]
-        public void TestContext_RetrieveDateTimeInUtc(bool retrieveDateTimeInUtc)
+        public async Task TestContext_RetrieveDateTimeInUtc(bool retrieveDateTimeInUtc)
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var config = new DynamoDBContextConfig
@@ -496,10 +531,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Conversion = DynamoDBEntryConversion.V2,
                 RetrieveDateTimeInUtc = retrieveDateTimeInUtc
             };
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             Context = new DynamoDBContext(Client, config);
-#pragma warning restore CS0618 // Re-enable the warning
-
             var currTime = DateTime.UtcNow;
             var longEpochTime = new DateTime(2039, 2, 5, 17, 49, 55, DateTimeKind.Utc);
             var longEpochTimeBefore1970 = new DateTime(1969, 12, 30, 23, 59, 59, DateTimeKind.Utc);
@@ -520,7 +552,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 NullableLongEpochDate2 = null
             };
 
-            Context.Save(employee);
+            await Context.SaveAsync(employee);
 
             //This is a valid use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
@@ -549,8 +581,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query
             QueryFilter filter = new QueryFilter();
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
-            storedEmployee = Context
-                .FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
+            storedEmployee = (await Context.FromQueryAsync<AnnotatedNumericEpochEmployee>(
+                new QueryOperationConfig { Filter = filter }
+            ).GetNextSetAsync()).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -566,7 +599,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
             // Scan
-            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>().First();
+            storedEmployee = (await Context.ScanAsync<AnnotatedNumericEpochEmployee>(new List<ScanCondition>()).GetRemainingAsync()).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -590,10 +623,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         [DataRow(true)]
         [DataRow(false)]
-        public void TestContext_CustomDateTimeConverter(bool retrieveDateTimeInUtc)
+        public async Task TestContext_CustomDateTimeConverter(bool retrieveDateTimeInUtc)
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var config = new DynamoDBContextConfig
@@ -601,9 +634,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Conversion = DynamoDBEntryConversion.V2,
                 RetrieveDateTimeInUtc = retrieveDateTimeInUtc
             };
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             Context = new DynamoDBContext(Client, config);
-#pragma warning restore CS0618 // Re-enable the warning
 
             // Add a custom DateTime converter
             Context.ConverterCache.Add(typeof(DateTime), new DateTimeUtcConverter());
@@ -628,7 +659,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 NullableLongEpochDate1 = longEpochTime,
             };
 
-            Context.Save(employee);
+            await Context.SaveAsync(employee);
 
             // Since we are adding a custom DateTimeUtcConverter, the expected time will always be in the UTC time zone.
             // regardless of RetrieveDateTimeInUtc value.
@@ -655,8 +686,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query
             QueryFilter filter = new QueryFilter();
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
-            storedEmployee = Context
-                .FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
+            storedEmployee = (await Context.FromQueryAsync<AnnotatedNumericEpochEmployee>(
+                new QueryOperationConfig { Filter = filter }
+            ).GetNextSetAsync()).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -672,7 +704,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
             // Scan
-            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>().First();
+            storedEmployee = (await Context.ScanAsync<AnnotatedNumericEpochEmployee>(new List<ScanCondition>()).GetRemainingAsync()).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -695,16 +727,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         [DataRow(true)]
         [DataRow(false)]
-        public void TestContext_RetrieveDateTimeInUtc_OperationConfig(bool retrieveDateTimeInUtc)
+        public async Task TestContext_RetrieveDateTimeInUtc_OperationConfig(bool retrieveDateTimeInUtc)
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
-
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             Context = new DynamoDBContext(Client,
                 new DynamoDBContextConfig { Conversion = DynamoDBEntryConversion.V2 });
-#pragma warning restore CS0618 // Re-enable the warning
             var operationConfig = new DynamoDBOperationConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc };
 
             var currTime = DateTime.UtcNow;
@@ -723,7 +752,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 LongEpochDate2 = longEpochTimeBefore1970
             };
 
-            Context.Save(employee);
+            await Context.SaveAsync(employee);
 
             //This is a valid use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
@@ -749,9 +778,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query
             QueryFilter filter = new QueryFilter();
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
-            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(
+            storedEmployee = (await Context.FromQueryAsync<AnnotatedNumericEpochEmployee>(
                 new QueryOperationConfig { Filter = filter },
-                new FromQueryConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc }).First();
+                new FromQueryConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc }
+                )
+                .GetNextSetAsync())
+                .First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -763,9 +795,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
             // Scan
-            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>(
+            storedEmployee = (await Context.ScanAsync<AnnotatedNumericEpochEmployee>(
                 new List<ScanCondition>(),
-                new ScanConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc }).First();
+                new ScanConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc })
+                .GetRemainingAsync())
+                .First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -779,10 +813,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_ScanWithExpression_NestedPaths()
+        public async Task TestContext_ScanWithExpression_NestedPaths()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var product1 = new Product
@@ -856,51 +890,51 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Price = 200
             };
 
-            Context.Save(product1);
-            Context.Save(product2);
-            Context.Save(product3);
+            await Context.SaveAsync(product1);
+            await Context.SaveAsync(product2);
+            await Context.SaveAsync(product3);
 
             // 1. Filter on a nested property (CompanyInfo.Name)
             var expr1 = new ContextExpression();
             expr1.SetFilter<Product>(p => p.CompanyInfo.Name == "Acme");
-            var byCompanyName = Context.Scan<Product>(expr1).ToList();
+            var byCompanyName = await Context.ScanAsync<Product>(expr1).GetRemainingAsync();
             Assert.AreEqual(1, byCompanyName.Count);
             Assert.AreEqual("Widget", byCompanyName[0].Name);
 
             // 2. Filter on a nested array property (FeaturedBrands contains "Acme")
             var expr2 = new ContextExpression();
             expr2.SetFilter<Product>(p => p.CompanyInfo.FeaturedBrands.Contains("Acme"));
-            var byFeaturedBrand = Context.Scan<Product>(expr2).ToList();
+            var byFeaturedBrand = await Context.ScanAsync<Product>(expr2).GetRemainingAsync();
             Assert.AreEqual(1, byFeaturedBrand.Count);
             Assert.AreEqual("Widget", byFeaturedBrand[0].Name);
 
             // 3. Filter on a double-nested property 
             var expr3 = new ContextExpression();
             expr3.SetFilter<Product>(p => p.CompanyInfo.AllProducts.First().Name == "Device");
-            var byDoubleNested = Context.Scan<Product>(expr3).ToList();
+            var byDoubleNested = await Context.ScanAsync<Product>(expr3).GetRemainingAsync();
             Assert.AreEqual(1, byDoubleNested.Count);
             Assert.AreEqual("Thing", byDoubleNested[0].Name);
 
             var expr4 = new ContextExpression();
             expr4.SetFilter<Product>(p => p.CompanyInfo.AllProducts[0].Name == "Device");
-            var byDoubleNested1 = Context.Scan<Product>(expr4).ToList();
+            var byDoubleNested1 = await Context.ScanAsync<Product>(expr4).GetRemainingAsync();
             Assert.AreEqual(1, byDoubleNested1.Count);
             Assert.AreEqual("Thing", byDoubleNested1[0].Name);
 
             // 4. Filter on a value inside a dictionary of lists
             var expr5 = new ContextExpression();
             expr5.SetFilter<Product>(p => p.CompanyInfo.CompetitorProducts["CloudsAreOK"][0].Name == "CloudSpotter RipOff");
-            var byDictionaryNested = Context.Scan<Product>(expr5).ToList();
+            var byDictionaryNested = await Context.ScanAsync<Product>(expr5).GetRemainingAsync();
             Assert.AreEqual(1, byDictionaryNested.Count);
             Assert.AreEqual("CloudSpotter", byDictionaryNested[0].Name);
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_ScanConfigFilter()
+        public async Task TestContext_ScanConfigFilter()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var employee = new Employee()
@@ -919,40 +953,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CompanyName = "test1",
             };
 
+            await Context.SaveAsync(employee);
+            await Context.SaveAsync(employee3);
 
-            Context.Save(employee);
-            Context.Save(employee3);
-
-            var ageEqResultScan = Context.Scan<Employee>(new List<ScanCondition>(), new ScanConfig()
+            var ageEqResultScan = await Context.ScanAsync<Employee>(new List<ScanCondition>(), new ScanConfig()
             {
                 QueryFilter = new List<ScanCondition>()
                 {
                     new ScanCondition("Age", ScanOperator.GreaterThan,50)
                 },
                 ConditionalOperator = ConditionalOperatorValues.And
-            }).ToList();
+            }).GetRemainingAsync();
             Assert.AreEqual(0, ageEqResultScan.Count);
 
-            var ageAndCompanyResultScan = Context.Scan<Employee>(new List<ScanCondition>()
-            {
-                new ScanCondition("Age", ScanOperator.Equal,45)
-            }, new ScanConfig()
-            {
-                QueryFilter = new List<ScanCondition>()
+            var ageAndCompanyResultScan = await Context.ScanAsync<Employee>(
+                new List<ScanCondition>()
                 {
-                    new ScanCondition("CompanyName", ScanOperator.Equal, "test")
-                },
-                ConditionalOperator = ConditionalOperatorValues.And
-            }).ToList();
+                    new ScanCondition("Age", ScanOperator.Equal,45)
+                }, 
+                new ScanConfig()
+                {
+                    QueryFilter = new List<ScanCondition>()
+                    {
+                        new ScanCondition("CompanyName", ScanOperator.Equal, "test")
+                    },
+                    ConditionalOperator = ConditionalOperatorValues.And
+                })
+            .GetRemainingAsync();
             Assert.AreEqual(1, ageAndCompanyResultScan.Count);
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_Scan_WithExpressionFilter()
+        public async Task TestContext_Scan_WithExpressionFilter()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var employee = new Employee()
@@ -987,33 +1023,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CompanyName = "test2",
             };
 
-            Context.Save(employee);
-            Context.Save(employee2);
-            Context.Save(employee3);
-            Context.Save(employee4);
+            await Context.SaveAsync(employee);
+            await Context.SaveAsync(employee2);
+            await Context.SaveAsync(employee3);
+            await Context.SaveAsync(employee4);
 
             // Numeric equality
             int age = 45;
             var exprAgeEq = new ContextExpression();
             exprAgeEq.SetFilter<Employee>(e => e.Age == age);
-            var ageEqResult = Context.Scan<Employee>(exprAgeEq).ToList();
+            var ageEqResult = await Context.ScanAsync<Employee>(exprAgeEq).GetRemainingAsync();
             Assert.AreEqual(2, ageEqResult.Count);
 
             var exprAgeEqM = new ContextExpression();
             exprAgeEqM.SetFilter<Employee>(e => Equals(e.Age, 45));
-            var ageEqMResult = Context.Scan<Employee>(exprAgeEqM).ToList();
+            var ageEqMResult = await Context.ScanAsync<Employee>(exprAgeEqM).GetRemainingAsync();
             Assert.AreEqual(2, ageEqMResult.Count);
 
             // AND expression with BinaryComparisons 
             var exprAnd = new ContextExpression();
             exprAnd.SetFilter<Employee>(e => e.Age > 40 && e.CompanyName == "test");
-            var andResults = Context.Scan<Employee>(exprAnd).ToList();
+            var andResults = await Context.ScanAsync<Employee>(exprAnd).GetRemainingAsync();
 
-            var s1 = Context.Scan<Employee>(new List<ScanCondition>()
+            var s1 = await Context.ScanAsync<Employee>(new List<ScanCondition>()
             {
                 new ScanCondition("Age", ScanOperator.GreaterThan, 40),
                 new ScanCondition("CompanyName", ScanOperator.Equal, "test")
-            }, new ScanConfig { RetrieveDateTimeInUtc = true }).ToList();
+            }, new ScanConfig { RetrieveDateTimeInUtc = true }).GetRemainingAsync();
 
             Assert.IsNotNull(s1);
             Assert.AreEqual(s1.Count, 1);
@@ -1026,14 +1062,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // NOT expression
             var exprNot = new ContextExpression();
             exprNot.SetFilter<Employee>(e => !(e.CompanyName == "test1"));
-            var notResult = Context.Scan<Employee>(exprNot).ToList();
+            var notResult = await Context.ScanAsync<Employee>(exprNot).GetRemainingAsync();
             Assert.AreEqual(3, notResult.Count);
             Assert.IsTrue(notResult.All(e => e.CompanyName != "test1"));
 
             // OR expression
             var exprOr = new ContextExpression();
             exprOr.SetFilter<Employee>(e => e.Name == "Bob" || e.Name == "Rob");
-            var orResult = Context.Scan<Employee>(exprOr).ToList();
+            var orResult = await Context.ScanAsync<Employee>(exprOr).GetRemainingAsync();
             Assert.AreEqual(2, orResult.Count);
             Assert.IsTrue(orResult.Any(e => e.Name == "Bob"));
             Assert.IsTrue(orResult.Any(e => e.Name == "Rob"));
@@ -1048,45 +1084,45 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CompanyName = "test",
                 Aliases = new List<string> { "Al", "A", "B" }
             };
-            Context.Save(empWithAliases);
+            await Context.SaveAsync(empWithAliases);
 
             var exprContains = new ContextExpression();
             exprContains.SetFilter<Employee>(e => e.Aliases.Contains("Al"));
-            var containsResult = Context.Scan<Employee>(exprContains).ToList();
+            var containsResult = await Context.ScanAsync<Employee>(exprContains).GetRemainingAsync();
             Assert.IsTrue(containsResult.Any(e => e.Name == "Ali"));
 
             var exprContainsEnumerable = new ContextExpression();
             exprContainsEnumerable.SetFilter<Employee>(e => Enumerable.Contains(e.Aliases, "Al"));
-            var containsEnumerableResult = Context.Scan<Employee>(exprContainsEnumerable).ToList();
+            var containsEnumerableResult = await Context.ScanAsync<Employee>(exprContainsEnumerable).GetRemainingAsync();
             Assert.IsTrue(containsEnumerableResult.Any(e => e.Name == "Ali"));
 
             // String.StartsWith
             var exprStartsWith = new ContextExpression();
             exprStartsWith.SetFilter<Employee>(e => e.Name.StartsWith("B"));
-            var startsWithResult = Context.Scan<Employee>(exprStartsWith).ToList();
+            var startsWithResult = await Context.ScanAsync<Employee>(exprStartsWith).GetRemainingAsync();
             Assert.IsTrue(startsWithResult.Any(e => e.Name == "Bob"));
 
             // Between
             var exprBetween = new ContextExpression();
             exprBetween.SetFilter<Employee>(e => ContextExpression.Between(e.Age, 40, 50));
-            var betweenResult = Context.Scan<Employee>(exprBetween).ToList();
+            var betweenResult = await Context.ScanAsync<Employee>(exprBetween).GetRemainingAsync();
             Assert.AreEqual(3, betweenResult.Count);
             Assert.IsTrue(betweenResult.All(e => e.Age >= 40 && e.Age <= 50));
 
             // String.Contains
             var exprStringContains = new ContextExpression();
             exprStringContains.SetFilter<Employee>(e => e.Name.Contains("o"));
-            var stringContainsResult = Context.Scan<Employee>(exprStringContains).ToList();
+            var stringContainsResult = await Context.ScanAsync<Employee>(exprStringContains).GetRemainingAsync();
             Assert.IsTrue(stringContainsResult.Any(e => e.Name == "Bob" || e.Name == "Rob" || e.Name == "Cob"));
 
             var exprNullCheck = new ContextExpression();
             exprNullCheck.SetFilter<Employee>(e => ContextExpression.AttributeExists(e.MiddleName));
-            var nullCheckResult = Context.Scan<Employee>(exprNullCheck).ToList();
+            var nullCheckResult = await Context.ScanAsync<Employee>(exprNullCheck).GetRemainingAsync();
             Assert.IsTrue(nullCheckResult.Count == 1);
 
             var exprNull = new ContextExpression();
             exprNull.SetFilter<Employee>(e => ContextExpression.AttributeNotExists(e.MiddleName));
-            var nullResult = Context.Scan<Employee>(exprNull).ToList();
+            var nullResult = await Context.ScanAsync<Employee>(exprNull).GetRemainingAsync();
             Assert.IsTrue(nullResult.Count == 4);
 
             //AttributeType scenario: filter for employees where MiddleName is a DynamoDB String
@@ -1098,36 +1134,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 MiddleName = "StringType",
                 CompanyName = "test"
             };
-            Context.Save(empWithStringMiddleName);
+            await Context.SaveAsync(empWithStringMiddleName);
 
             var attributeType = DynamoDBAttributeType.S.Value;
             var exprAttributeType = new ContextExpression();
             exprAttributeType.SetFilter<Employee>(e => ContextExpression.AttributeType(e.MiddleName, attributeType));
-            var attributeTypeResult = Context.Scan<Employee>(exprAttributeType).ToList();
+            var attributeTypeResult = await Context.ScanAsync<Employee>(exprAttributeType).GetRemainingAsync();
             Assert.IsTrue(attributeTypeResult.Any(e => e.Name == "TypeTest"));
 
             // --- Enum scenario ---
             // Scan for employees with CurrentStatus == Status.Active
             var exprActiveEnum = new ContextExpression();
             exprActiveEnum.SetFilter<Employee>(e => e.CurrentStatus == Status.Active);
-            var activeEnumResult = Context.Scan<Employee>(exprActiveEnum).ToList();
+            var activeEnumResult = await Context.ScanAsync<Employee>(exprActiveEnum).GetRemainingAsync();
             Assert.AreEqual(3, activeEnumResult.Count);
             Assert.IsTrue(activeEnumResult.All(e => e.CurrentStatus == Status.Active));
 
             // Scan for employees with CurrentStatus == Status.Upcoming
             var exprUpcomingEnum = new ContextExpression();
             exprUpcomingEnum.SetFilter<Employee>(e => e.CurrentStatus == Status.Upcoming);
-            var upcomingEnumResult = Context.Scan<Employee>(exprUpcomingEnum).ToList();
+            var upcomingEnumResult = await Context.ScanAsync<Employee>(exprUpcomingEnum).GetRemainingAsync();
             Assert.AreEqual(1, upcomingEnumResult.Count);
             Assert.AreEqual("Sam", upcomingEnumResult[0].Name);
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_SaveItem_WithTTL()
+        public async Task TestContext_SaveItem_WithTTL()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             // Create context and table if needed
@@ -1136,7 +1172,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Define TTL to be 2 minutes in the future
             var ttlEpoch = DateTimeOffset.UtcNow.AddMinutes(2).ToUnixTimeSeconds();
 
-            var item = new TtlTestItem
+            var item = new TtlTestItem  
             {
                 Id = 1,
                 Data = "Test with TTL",
@@ -1176,10 +1212,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_Query_WithExpressionFilter()
+        public async Task TestContext_Query_WithExpressionFilter()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             // Seed data
@@ -1212,49 +1248,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CurrentStatus = Status.Active
             };
 
-            Context.Save(employee1);
-            Context.Save(employee2);
-            Context.Save(employee3);
+            await Context.SaveAsync(employee1);
+            await Context.SaveAsync(employee2);
+            await Context.SaveAsync(employee3);
 
             var contextExpression = new ContextExpression();
             contextExpression.SetFilter<Employee>(e => e.CompanyName == "Contoso");
+            var queryConfig = new QueryConfig
+            {
+                Expression = contextExpression
+            };
 
-            var employees = Context.Query<Employee>(
-                "Alice", 
-                new QueryConfig
-                {
-                    Expression = contextExpression
-                }).ToList();
-
+            var employees = await Context.QueryAsync<Employee>("Alice", queryConfig).GetNextSetAsync();
             Assert.AreEqual(1, employees.Count);
             Assert.AreEqual("Alice", employees[0].Name);
 
-            employees = Context.Query<Employee>(
-                "Charlie",
-                new QueryConfig
-                {
-                    Expression = contextExpression
-                }).ToList();
-
+            employees = await Context.QueryAsync<Employee>("Charlie", queryConfig).GetNextSetAsync();
             Assert.AreEqual(1, employees.Count);
             Assert.AreEqual("Charlie", employees[0].Name);
 
-            employees = Context.Query<Employee>(
-                "Bob",
-                new QueryConfig
-                {
-                    Expression = contextExpression
-                }).ToList();
-
+            employees = await Context.QueryAsync<Employee>("Bob", queryConfig).GetNextSetAsync();
             Assert.AreEqual(0, employees.Count);
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext_Query_QueryFilter_vs_ExpressionFilter()
+        public async Task TestContext_Query_QueryFilter_vs_ExpressionFilter()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             // Seed data
@@ -1285,27 +1307,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Score = 120,
                 ManagerName = "Barbara"
             };
-            Context.Save(employee1);
-            Context.Save(employee2);
-            Context.Save(employee3);
+            await Context.SaveAsync(employee1);
+            await Context.SaveAsync(employee2);
+            await Context.SaveAsync(employee3);
 
             // 1. QueryFilter only: filter by ManagerName == "Eva"
             var queryFilter = new List<ScanCondition>
             {
                 new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
             };
-            var resultQueryFilter = Context.Query<Employee>("Diane", new QueryConfig
+            var resultQueryFilter = await Context.QueryAsync<Employee>("Diane", new QueryConfig
             {
                 QueryFilter = queryFilter
-            }).ToList();
+            }).GetNextSetAsync();
 
             // 2. ExpressionFilter only: filter by ManagerName == "Eva"
             var contextExpression = new ContextExpression();
             contextExpression.SetFilter<Employee>(e => e.ManagerName == "Eva");
-            var resultExpressionFilter = Context.Query<Employee>("Diane", new QueryConfig
+            var resultExpressionFilter = await Context.QueryAsync<Employee>("Diane", new QueryConfig
             {
                 Expression = contextExpression
-            }).ToList();
+            }).GetNextSetAsync();
 
             // Assert both results are equivalent
             Assert.AreEqual(resultQueryFilter.Count, resultExpressionFilter.Count, "Result counts should match between QueryFilter and ExpressionFilter.");
@@ -1325,15 +1347,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             contextExpressionBarbara.SetFilter<Employee>(e => e.ManagerName == "Barbara" && e.CurrentStatus == Status.Active);
 
             // Run each filter separately and take intersection
-            var resultActive = Context.Query<Employee>("Diane", new QueryConfig
+            var resultActive = await Context.QueryAsync<Employee>("Diane", new QueryConfig
             {
                 QueryFilter = inactiveFilter,
                 ConditionalOperator = ConditionalOperatorValues.And
-            }).ToList();
-            var resultBarbara = Context.Query<Employee>("Diane", new QueryConfig
+            }).GetNextSetAsync();
+
+            var resultBarbara = await Context.QueryAsync<Employee>("Diane", new QueryConfig
             {
                 Expression = contextExpressionBarbara
-            }).ToList();
+            }).GetNextSetAsync();
 
             Assert.AreEqual(resultActive.Count, resultBarbara.Count, "Result counts should match between QueryFilter and ExpressionFilter.");
             CollectionAssert.AreEquivalent(
@@ -1347,19 +1370,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active),
                 new ScanCondition("Score", ScanOperator.Equal, 101)
             };
-            var resultOrQueryFilter = Context.Query<Employee>("Diane", new QueryConfig
+            var resultOrQueryFilter = await Context.QueryAsync<Employee>("Diane", new QueryConfig
             {
                 QueryFilter = orFilter,
                 ConditionalOperator = ConditionalOperatorValues.Or
-            }).ToList();
+            }).GetNextSetAsync();
 
             var contextExpressionOr = new ContextExpression();
             contextExpressionOr.SetFilter<Employee>(e => e.CurrentStatus == Status.Active || e.Score == 101);
 
-            var resultOrExpressionFilter = Context.Query<Employee>("Diane", new QueryConfig
+            var resultOrExpressionFilter = await Context.QueryAsync<Employee>("Diane", new QueryConfig
             {
                 Expression = contextExpressionOr
-            }).ToList();
+            }).GetNextSetAsync();
 
             // Assert both results are equivalent
             Assert.AreEqual(resultOrQueryFilter.Count, resultOrExpressionFilter.Count, "Result counts should match between QueryFilter (OR) and ExpressionFilter (OR).");
@@ -1370,11 +1393,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             );
 
             // 5. ExpressionFilter with index
-            var resultIndex = Context.Query<Employee>("Big River", new QueryConfig
+            var resultIndex = await Context.QueryAsync<Employee>("Big River", new QueryConfig
             {
                 IndexName = "GlobalIndex",
                 Expression = contextExpression
-            }).ToList();
+            }).GetNextSetAsync();
             Assert.AreEqual(2, resultIndex.Count);
             Assert.IsTrue(resultIndex.All(e => e.ManagerName == "Eva"));
         }
@@ -1387,7 +1410,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task TestContext_SaveAndLoad_WithDerivedTypeItems()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var model = CreateNestedTypeItem(out var id);
@@ -1427,7 +1450,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task TestContext_TransactWriteAndLoad_WithDerivedTypeItems()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var model1 = CreateNestedTypeItem(out var id);
@@ -1475,7 +1498,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public async Task TestContext_AtomicCounterAnnotation()
         {
             TableCache.Clear();
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             // Initial save
@@ -1610,7 +1633,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task TestContext_TransactWriteAndLoad_WithLocalSecondaryIndexRangeKey()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var model = new ModelA2
@@ -1646,7 +1669,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task TestContext_SaveAndScan_WithGlobalSecondaryIndexRangeKey()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var model1 = new ModelA1
@@ -1684,7 +1707,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 new ScanCondition("CompanyName", ScanOperator.Equal, "TestCompany")
             };
 
-            var results = Context.Scan<ModelA>(scanConditions).ToList();
+            var results = await Context.ScanAsync<ModelA>(scanConditions).GetRemainingAsync();
             Assert.AreEqual(2, results.Count);
 
             var storedModel1 = results.FirstOrDefault(m => m.Id == model1.Id) as ModelA1;
@@ -1712,7 +1735,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task TestContext_SaveAndScan_WithLocalSecondaryIndexRangeKey()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var model1 = new ModelA2
@@ -1748,7 +1771,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 new ScanCondition("ManagerName", ScanOperator.Equal, "Manager1")
             };
 
-            var results = Context.Scan<ModelA>(scanConditions).ToList();
+            var results = await Context.ScanAsync<ModelA>(scanConditions).GetRemainingAsync();
             Assert.AreEqual(1, results.Count);
 
             var storedModel = results.FirstOrDefault(m => m.Id == model1.Id) as ModelA2;
@@ -1770,26 +1793,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestWithBuilderTables()
+        public async Task TestWithBuilderTables()
         {
             foreach (var conversion in new DynamoDBEntryConversion[]
                          { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
             {
                 // Cleanup existing data in the tables
-                CleanupTables();
+                await CleanupTables();
 
                 // Clear existing SDK-wide cache
                 TableCache.Clear();
 
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 // Redeclare Context, which will start with empty caches
                 Context = new DynamoDBContext(Client, new DynamoDBContextConfig
                 {
                     IsEmptyStringValueEnabled = true,
                     Conversion = conversion
                 });
-#pragma warning restore CS0618 // Re-enable the warning
-
                 Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashRangeTable")
                     .AddHashKey("Name", DynamoDBEntryType.String)
                     .AddRangeKey("Age", DynamoDBEntryType.Numeric)
@@ -1835,23 +1855,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                             new KeyValuePair<string, DynamoDBEntryType>(  "Priority", DynamoDBEntryType.Numeric )})
                     .Build());
 
-                TestEmptyStringsWithFeatureEnabled();
+                await TestEmptyStringsWithFeatureEnabled();
 
-                TestEnumHashKeyObjects();
+                await TestEnumHashKeyObjects();
 
-                TestEmptyCollections(conversion);
+                await TestEmptyCollections(conversion);
 
-                TestUnsupportedTypes();
+                await TestUnsupportedTypes();
                 TestEnums(conversion);
 
-                TestHashObjects();
-                TestHashRangeObjects<Employee>();
-                TestOtherContextOperations();
-                TestBatchOperations();
-                TestTransactionOperations();
-                TestMultiTableTransactionOperations();
+                await TestHashObjects();
+                await TestHashRangeObjects<Employee>();
+                await TestOtherContextOperations();
+                await TestBatchOperations();
+                await TestTransactionOperations();
+                await TestMultiTableTransactionOperations();
 
-                TestStoreAsEpoch();
+                await TestStoreAsEpoch();
             }
         }
 
@@ -1861,13 +1881,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestWithBuilderContext()
+        public async Task TestWithBuilderContext()
         {
             foreach (var conversion in new DynamoDBEntryConversion[]
                          { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
             {
                 // Cleanup existing data in the tables
-                CleanupTables();
+                await CleanupTables();
 
                 // Clear existing SDK-wide cache
                 TableCache.Clear();
@@ -1880,25 +1900,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     })
                     .Build();
 
-                TestEmptyStringsWithFeatureEnabled();
+                await TestEmptyStringsWithFeatureEnabled();
 
-                TestEnumHashKeyObjects();
+                await TestEnumHashKeyObjects();
 
-                TestEmptyCollections(conversion);
+                await TestEmptyCollections(conversion);
 
-                TestAnnotatedUnsupportedTypes();
+                await TestAnnotatedUnsupportedTypes();
                 TestEnums(conversion);
 
-                TestHashObjects();
-                TestHashRangeObjects<AnnotatedEmployee>();
-                TestOtherContextOperations();
-                TestBatchOperations();
-                TestAnnotatedTransactionOperations();
-                TestAnnotatedMultiTableTransactionOperations();
+                await TestHashObjects();
+                await TestHashRangeObjects<AnnotatedEmployee>();
+                await TestOtherContextOperations();
+                await TestBatchOperations();
+                await TestAnnotatedTransactionOperations();
+                await TestAnnotatedMultiTableTransactionOperations();
 
-                TestStoreAsAnnotatedEpoch();
+                await TestStoreAsAnnotatedEpoch();
             }
         }
+        
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public async Task Test_IndexOrder()
@@ -1916,15 +1937,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             await Context.SaveAsync(order);
-            var savedOrders = Context.Query<OrderIndex>(
+            
+            var savedOrders = await Context.QueryAsync<OrderIndex>(
                 order.CompanyName,
                 QueryOperator.Equal,
                 new object[] { 1000 },
                 new QueryConfig 
-            {
-                IndexName = "GlobalIndex",
-            });
+                {
+                    IndexName = "GlobalIndex",
+                })
+                .GetNextSetAsync();
             Assert.IsNotNull(savedOrders);
+
             var savedOrder = savedOrders.FirstOrDefault();
             Assert.IsNotNull(savedOrder);
         }
@@ -1949,7 +1973,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task Test_IndexStructure()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashTable")
@@ -1969,14 +1993,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             await Context.SaveAsync(order);
-            var savedOrders = Context.Query<Order>(
+            var savedOrders = await Context.QueryAsync<Order>(
                 order.Payment.CompanyName, // Hash-key for the index is Company
                 QueryOperator.Equal, // Range-key for the index is Price, so the
                 new object[] { 1000 }, // condition is against a numerical value
                 new QueryConfig // Configure the index to use
                 {
                     IndexName = "GlobalIndex",
-                });
+                })
+                .GetNextSetAsync();
             Assert.IsNotNull(savedOrders);
             var savedOrder = savedOrders.FirstOrDefault();
             Assert.IsNotNull(savedOrder);
@@ -1990,7 +2015,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task Test_FlattenAttribute_With_Annotations()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             // flatten with version
@@ -2065,14 +2090,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             await Context.SaveAsync(order);
-            var savedOrders = Context.Query<Order>(
+            var savedOrders = await Context.QueryAsync<Order>(
                 order.Payment.CompanyName, // Hash-key for the index is Company
                 QueryOperator.Equal, // Range-key for the index is Price, so the
                 new object[] { 1000 }, // condition is against a numerical value
                 new QueryConfig // Configure the index to use
                 {
                     IndexName = "GlobalIndex",
-                });
+                })
+                .GetNextSetAsync();
             Assert.IsNotNull(savedOrders);
             var savedOrder = savedOrders.FirstOrDefault();
             Assert.IsNotNull(savedOrder);
@@ -2080,14 +2106,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(savedOrder.Payment);
             Assert.AreEqual(order.Payment.Price, savedOrder.Payment.Price);
             Assert.AreEqual(order.Payment.CompanyName, savedOrder.Payment.CompanyName);
-
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public async Task Test_AutoGeneratedTimestampAttribute_CreateMode_Simple()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var product = new ProductWithCreateTimestamp
@@ -2164,7 +2189,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task Test_AutoGeneratedTimestampAttribute_TransactWrite_Simple()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var product = new ProductWithCreateTimestamp
@@ -2218,7 +2243,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task Test_AutoGeneratedTimestampAttribute_With_Annotations()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             // 1. Test: AutoGeneratedTimestamp combined with Version and Flatten
@@ -2280,7 +2305,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public async Task Test_AutoGeneratedTimestampAttribute_With_Annotations_BatchWrite()
         {
-            CleanupTables();
+            await CleanupTables();
             TableCache.Clear();
 
             var entity = new EmployeeWithTimestampAndCounter
@@ -2302,7 +2327,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsTrue((DateTime.UtcNow - loaded.LastUpdated.Value).TotalMinutes < 1, "LastUpdated should be recent");
         }
 
-        private static void TestEmptyStringsWithFeatureEnabled()
+        private static async Task TestEmptyStringsWithFeatureEnabled()
         {
             var product = new Product
             {
@@ -2328,8 +2353,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             };
 
-            Context.Save(product);
-            var savedProduct = Context.Load<Product>(1);
+            await Context.SaveAsync(product);
+            var savedProduct = await Context.LoadAsync<Product>(1);
 
             Assert.AreEqual(1, savedProduct.Id);
             Assert.AreEqual(string.Empty, savedProduct.Map["Position"]);
@@ -2337,7 +2362,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(string.Empty, savedProduct.CompanyInfo.AllProducts[0].Name);
         }
 
-        private static void TestEmptyStringsWithFeatureDisabled()
+        private static async Task TestEmptyStringsWithFeatureDisabled()
         {
             var product1 = new Product
             {
@@ -2349,13 +2374,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             };
 
-            Context.Save(product1);
-            var savedProduct1 = Context.Load<Product>(1);
-
+            await Context.SaveAsync(product1);
+            var savedProduct1 = await Context.LoadAsync<Product>(1);
             Assert.AreEqual(1, savedProduct1.Id);
             Assert.AreEqual(0, savedProduct1.Components.Count());
             Assert.AreEqual(null, savedProduct1.Name);
-
 
             var product2 = new Product
             {
@@ -2366,13 +2389,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             };
 
-            Context.Save(product2);
-            var savedProduct2 = Context.Load<Product>(2);
-
+            await Context.SaveAsync(product2);
+            var savedProduct2 = await Context.LoadAsync<Product>(2);
             Assert.AreEqual(2, savedProduct2.Id);
             Assert.AreEqual(1, savedProduct2.Components.Count());
             Assert.AreEqual("test2", savedProduct2.Components[0]);
-
 
             var product3 = new Product
             {
@@ -2383,15 +2404,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             };
 
-            Context.Save(product3);
-            var savedProduct3 = Context.Load<Product>(3);
+            await Context.SaveAsync(product3);
+            var savedProduct3 = await Context.LoadAsync<Product>(3);
 
             Assert.AreEqual(3, savedProduct3.Id);
             Assert.AreEqual(1, savedProduct3.Components.Count());
             Assert.AreEqual("test3", savedProduct3.Components[0]);
         }
 
-        private static void TestUnsupportedTypes()
+        private async Task TestUnsupportedTypes()
         {
             // Verify that saving objects with invalid properties result in exceptions
             var employee2 = new Employee2
@@ -2400,29 +2421,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Age = 31,
                 TimeWithCompany = TimeSpan.FromDays(300)
             };
-            AssertExtensions.ExpectException(() => Context.Save(employee2),
-                typeof(InvalidOperationException),
-                "Type System.TimeSpan is unsupported, it cannot be instantiated");
+            await Assert.ThrowsExceptionAsync<InvalidOperationException>(() =>
+                Context.SaveAsync(employee2),
+                "Type System.TimeSpan is unsupported, it cannot be instantiated"
+            );
+
             var employee3 = new Employee3
             {
                 Name = "Alan",
                 Age = 31,
                 EmptyProperty = new EmptyType()
             };
-            AssertExtensions.ExpectException(() => Context.Save(employee3),
-                typeof(InvalidOperationException),
-                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
-
-            // Verify that objects that are invalid result in exceptions
-            AssertExtensions.ExpectException(() => Context.Scan<TimeSpan>(),
-                typeof(InvalidOperationException),
-                "Type System.TimeSpan is unsupported, it cannot be instantiated");
-            AssertExtensions.ExpectException(() => Context.Scan<EmptyType>(),
-                typeof(InvalidOperationException),
-                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
+            await Assert.ThrowsExceptionAsync<InvalidOperationException>(() =>
+                Context.SaveAsync(employee3),
+                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members"
+            );
         }
 
-        private static void TestAnnotatedUnsupportedTypes()
+        private static async Task TestAnnotatedUnsupportedTypes()
         {
             // Verify that saving objects with invalid properties result in exceptions
             var employee4 = new Employee4
@@ -2431,29 +2447,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Age = 31,
                 TimeWithCompany = TimeSpan.FromDays(300)
             };
-            AssertExtensions.ExpectException(() => Context.Save(employee4),
-                typeof(InvalidOperationException),
-                "Type System.TimeSpan is unsupported, it cannot be instantiated");
+            await Assert.ThrowsExceptionAsync<InvalidOperationException>(() => 
+                Context.SaveAsync(employee4),
+                "Type System.TimeSpan is unsupported, it cannot be instantiated"
+            );
+
             var employee5 = new Employee5
             {
                 Name = "Alan",
                 Age = 31,
                 EmptyProperty = new EmptyType()
             };
-            AssertExtensions.ExpectException(() => Context.Save(employee5),
-                typeof(InvalidOperationException),
-                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
+            await Assert.ThrowsExceptionAsync<InvalidOperationException>(() =>
+                Context.SaveAsync(employee5),
+                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members"
+            );
 
             // Verify that objects that are invalid result in exceptions
-            AssertExtensions.ExpectException(() => Context.Scan<TimeSpan>(),
-                typeof(InvalidOperationException),
-                "Type System.TimeSpan is unsupported, it cannot be instantiated");
-            AssertExtensions.ExpectException(() => Context.Scan<EmptyType>(),
-                typeof(InvalidOperationException),
-                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
+            await Assert.ThrowsExceptionAsync<InvalidOperationException>(() => 
+                Context.ScanAsync<TimeSpan>(new List<ScanCondition>()).GetNextSetAsync(),
+                "Type System.TimeSpan is unsupported, it cannot be instantiated"
+            );
+
+            await Assert.ThrowsExceptionAsync<InvalidOperationException>(() =>
+                Context.ScanAsync<EmptyType>(new List<ScanCondition>()).GetNextSetAsync(),
+                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members"
+            );
         }
 
-        private void TestContextConversions()
+        private async Task TestContextConversions()
         {
             var conversionV1 = DynamoDBEntryConversion.V1;
             var conversionV2 = DynamoDBEntryConversion.V2;
@@ -2490,7 +2512,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
 
             {
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 using (var contextV1 =
                        new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
                 using (var contextV2 =
@@ -2500,23 +2521,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     var docV2 = contextV2.ToDocument(product);
                     VerifyConversions(docV1, docV2);
                 }
-#pragma warning restore CS0618 // Re-enable the warning
             }
 
             {
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 using (var contextV1 =
                        new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
                 {
-                    contextV1.Save(product);
-                    contextV1.Save(product, new SaveConfig { Conversion = conversionV2 });
+                    await contextV1.SaveAsync(product);
+                    await contextV1.SaveAsync(product, new SaveConfig { Conversion = conversionV2 });
                 }
-#pragma warning restore CS0618 // Re-enable the warning
             }
 
             {
-
-#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 ProductV2 productV2 = new ProductV2
                 {
                     Id = 1,
@@ -2549,9 +2565,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     var docV2 = contextV1.ToDocument(productV2, new ToDocumentConfig { });
                     VerifyConversions(docV1, docV2);
                 }
-
-#pragma warning restore CS0618 // Re-enable the warning
-
             }
 
             // Introduce a circular reference and try to serialize
@@ -2664,7 +2677,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(docV2["KeySizes"].AsPrimitiveList());
         }
 
-        private void TestEmptyCollections(DynamoDBEntryConversion conversion)
+        private async Task TestEmptyCollections(DynamoDBEntryConversion conversion)
         {
             // Check if the conversion being used is V1
             // In V1 conversion, lists are stored as sets, which cannot
@@ -2680,10 +2693,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             if (!isV1)
                 product.Components = new List<string>();
 
-            Context.Save(product);
+            await Context.SaveAsync(product);
 
             // Load and test the item
-            var retrieved = Context.Load(product);
+            var retrieved = await Context.LoadAsync(product);
             if (!isV1)
             {
                 Assert.IsNotNull(retrieved.Components);
@@ -2694,7 +2707,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, retrieved.Map.Count);
         }
 
-        private void TestEnumHashKeyObjects()
+        private async Task TestEnumHashKeyObjects()
         {
             // Create and save item
             EnumProduct1 product1 = new EnumProduct1
@@ -2702,31 +2715,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Id = Status.Upcoming,
                 Name = "CloudSpotter"
             };
-            Context.Save(product1);
+            await Context.SaveAsync(product1);
 
             EnumProduct2 product2 = new EnumProduct2
             {
                 Id = Status.Removed,
                 Name = "CloudSpotter"
             };
-            Context.Save(product2);
+            await Context.SaveAsync(product2);
 
-            var rt1 = Context.Load(product1);
+            var rt1 = await Context.LoadAsync(product1);
             Assert.AreEqual(product1.Id, rt1.Id);
             Assert.AreEqual(product1.IdAsInt, rt1.IdAsInt);
 
-            var rt2 = Context.Load(product2);
+            var rt2 = await Context.LoadAsync(product2);
             Assert.AreEqual(product2.Id, rt2.Id);
 
-            Context.Delete(product1);
-            Context.Delete(product2);
+            await Context.DeleteAsync(product1);
+            await Context.DeleteAsync(product2);
         }
 
-        private void TestHashObjects()
+        private async Task TestHashObjects()
         {
             string bucketName = "aws-sdk-net-s3link-" + DateTime.UtcNow.Ticks;
             var s3Client = new Amazon.S3.AmazonS3Client();
-            s3Client.PutBucket(bucketName);
+            await s3Client.PutBucketAsync(bucketName);
             try
             {
                 // Create and save item
@@ -2795,15 +2808,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 product.FullProductDescription.UploadStream(
                     new MemoryStream(UTF8Encoding.UTF8.GetBytes("Lots of data")));
 
-                Context.Save(product);
+                await Context.SaveAsync(product);
 
                 // Test conversion
                 var doc = Context.ToDocument(product);
                 Assert.IsNotNull(doc["Tags"].AsPrimitiveList());
-                //if (DynamoDBEntryConversion.Schema == DynamoDBEntryConversion.ConversionSchema.V1)
-                //    Assert.IsNotNull(doc["Components"].AsPrimitiveList());
-                //else
-                //    Assert.IsNotNull(doc["Components"].AsDynamoDBList());
                 Assert.IsTrue(
                     doc["Components"].AsPrimitiveList() != null ||
                     doc["Components"].AsDynamoDBList() != null);
@@ -2811,7 +2820,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.IsNotNull(doc["Supports"]);
 
                 // Load item
-                Product retrieved = Context.Load<Product>(1);
+                Product retrieved = await Context.LoadAsync<Product>(1);
                 Assert.AreEqual(product.Id, retrieved.Id);
                 Assert.AreEqual(product.TagSet.Count, retrieved.TagSet.Count);
                 Assert.AreEqual(product.Components.Count, retrieved.Components.Count);
@@ -2862,10 +2871,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     Assert.AreEqual("Lots of data", reader.ReadToEnd());
                 }
 
-
                 // Try saving circularly-referencing object
                 product.CompanyInfo.AllProducts.Add(product);
-                AssertExtensions.ExpectException(() => Context.Save(product));
+                await Assert.ThrowsExceptionAsync<InvalidOperationException>(() => Context.SaveAsync(product));
                 product.CompanyInfo.AllProducts.RemoveAt(2);
 
                 // Create and save new item
@@ -2878,10 +2886,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 product.AlwaysN = false;
                 product.Rating = null;
                 product.KeySizes = null;
-                Context.Save(product);
+                await Context.SaveAsync(product);
 
                 // Load new item
-                retrieved = Context.Load<Product>(product);
+                retrieved = await Context.LoadAsync(product);
                 Assert.AreEqual(product.Id, retrieved.Id);
                 Assert.IsNull(retrieved.TagSet);
                 Assert.IsNull(retrieved.Components);
@@ -2894,33 +2902,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Enumerate all products and save their Ids
                 List<int> productIds = new List<int>();
-                IEnumerable<Product> products = Context.Scan<Product>();
+                IEnumerable<Product> products = await Context.ScanAsync<Product>(new List<ScanCondition>()).GetRemainingAsync();
                 foreach (var p in products)
                 {
                     productIds.Add(p.Id);
                 }
-
                 Assert.AreEqual(2, productIds.Count);
 
                 // Load first product
                 var firstId = productIds[0];
-                product = Context.Load<Product>(firstId);
+                product = await Context.LoadAsync<Product>(firstId);
                 Assert.IsNotNull(product);
                 Assert.AreEqual(firstId, product.Id);
 
                 // Query GlobalIndex
-                products = Context.Query<Product>(
+                products = await Context.QueryAsync<Product>(
                     product.CompanyName, // Hash-key for the index is Company
                     QueryOperator.GreaterThan, // Range-key for the index is Price, so the
                     new object[] { 90 }, // condition is against a numerical value
                     new QueryConfig // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
-                    });
+                    })
+                    .GetNextSetAsync();
                 Assert.AreEqual(2, products.Count());
 
                 // Query GlobalIndex with an additional non-key condition
-                products = Context.Query<Product>(
+                products = await Context.QueryAsync<Product>(
                     product.CompanyName, // Hash-key for the index is Company
                     QueryOperator.GreaterThan, // Range-key for the index is Price, so the
                     new object[] { 90 }, // condition is against a numerical value
@@ -2931,22 +2939,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         {
                             new ScanCondition("TagSet", ScanOperator.Contains, "1.0")
                         }
-                    });
+                    })
+                    .GetNextSetAsync();
                 Assert.AreEqual(1, products.Count());
 
                 // Delete first product
-                Context.Delete<Product>(firstId);
-                product = Context.Load<Product>(product.Id);
+                await Context.DeleteAsync<Product>(firstId);
+                product = await Context.LoadAsync<Product>(product.Id);
                 Assert.IsNull(product);
 
                 // Scan the table
-                products = Context.Scan<Product>();
+                products = await Context.ScanAsync<Product>(new List<ScanCondition>()).GetRemainingAsync();
                 Assert.AreEqual(1, products.Count());
 
                 // Scan the table with consistent read
-                products = Context.Scan<Product>(
+                products = await Context.ScanAsync<Product>(
                     new ScanCondition[] { },
-                    new ScanConfig { ConsistentRead = true });
+                    new ScanConfig { ConsistentRead = true }
+                ).GetRemainingAsync();
                 Assert.AreEqual(1, products.Count());
 
                 // Test a versioned product
@@ -2958,27 +2968,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     Price = 9000,
                     TagSet = new HashSet<string> { "Test" },
                 };
-                Context.Save(vp);
+                await Context.SaveAsync(vp);
 
                 // Update and save
                 vp.Price++;
-                Context.Save(vp);
+                await Context.SaveAsync(vp);
 
                 // Alter the version and try to save
                 vp.Version = 0;
-                AssertExtensions.ExpectException(() => Context.Save(vp));
+                await Assert.ThrowsExceptionAsync<ConditionalCheckFailedException>(() => Context.SaveAsync(vp));
 
                 // Load and save
-                vp = Context.Load(vp);
-                Context.Save(vp);
+                vp = await Context.LoadAsync(vp);
+                await Context.SaveAsync(vp);
             }
             finally
             {
-                Amazon.S3.Util.AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
+                await Amazon.S3.Util.AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucketName);
             }
         }
 
-        private void TestHashRangeObjects<T>() where T : Employee, new()
+        private async Task TestHashRangeObjects<T>() where T : Employee, new()
         {
             // Create and save item
             T employee = new T
@@ -2993,10 +3003,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Aliases = new List<string> { "Al", "Steve" },
                 Data = Encoding.UTF8.GetBytes("Some binary data"),
             };
-            Context.Save(employee);
+            await Context.SaveAsync(employee);
 
             // Load item
-            T retrieved = Context.Load(employee);
+            T retrieved = await Context.LoadAsync(employee);
             Assert.AreEqual(employee.Name, retrieved.Name);
             Assert.AreEqual(employee.Age, retrieved.Age);
             Assert.AreEqual(employee.CompanyName, retrieved.CompanyName);
@@ -3009,10 +3019,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             employee.Aliases = new List<string> { "Charles" };
             employee.Data = Encoding.UTF8.GetBytes("Binary data");
             employee.Score = 94;
-            Context.Save(employee);
+            await Context.SaveAsync(employee);
 
             // Load item
-            retrieved = Context.Load(employee);
+            retrieved = await Context.LoadAsync(employee);
             Assert.AreEqual(employee.Name, retrieved.Name);
             Assert.AreEqual(employee.Age, retrieved.Age);
             Assert.AreEqual(employee.CompanyName, retrieved.CompanyName);
@@ -3031,49 +3041,51 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CurrentStatus = Status.Upcoming,
                 InternalId = "Diane@Madeira",
             };
-            Context.Save(employee2);
+            await Context.SaveAsync(employee2);
             employee2.Age = 24;
             employee2.Score = 101;
-            Context.Save(employee2);
+            await Context.SaveAsync(employee2);
 
-            retrieved = Context.Load<T>("Alan", 31);
+            retrieved = await Context.LoadAsync<T>("Alan", 31);
             Assert.AreEqual(retrieved.Name, "Alan");
-            retrieved = Context.Load(employee);
+            retrieved = await Context.LoadAsync(employee);
             Assert.AreEqual(retrieved.Name, "Chuck");
-            retrieved = Context.Load(employee2, new LoadConfig { ConsistentRead = true });
+            retrieved = await Context.LoadAsync(employee2, new LoadConfig { ConsistentRead = true });
             Assert.AreEqual(retrieved.Name, "Diane");
             Assert.AreEqual(retrieved.Age, 24);
 
             // Scan for all items
-            var employees = Context.Scan<T>().ToList();
+            var employees = await Context.ScanAsync<T>(new List<ScanCondition>()).GetRemainingAsync();
             Assert.AreEqual(4, employees.Count);
 
             // Query for items with Hash-Key = "Diane"
-            employees = Context.Query<T>("Diane").ToList();
+            employees = await Context.QueryAsync<T>("Diane").GetNextSetAsync();
             Assert.AreEqual(2, employees.Count);
 
             // Query for items with Hash-Key = "Diane" and Range-Key > 30
-            employees = Context.Query<T>("Diane", QueryOperator.GreaterThan, 30).ToList();
+            employees = await Context.QueryAsync<T>("Diane", QueryOperator.GreaterThan, new object[] { 30 }).GetNextSetAsync();
             Assert.AreEqual(1, employees.Count);
 
-
             // Index Query
-
             // Query local index for items with Hash-Key = "Diane"
-            employees = Context.Query<T>("Diane", new QueryConfig { IndexName = "LocalIndex" }).ToList();
+            employees = await Context.QueryAsync<T>("Diane", new QueryConfig { IndexName = "LocalIndex" }).GetNextSetAsync();
             Assert.AreEqual(2, employees.Count);
 
             // Query local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
-            employees = Context.Query<T>("Diane", QueryOperator.Equal, new object[] { "Eva" },
-                new QueryConfig { IndexName = "LocalIndex" }).ToList();
+            employees = await Context.QueryAsync<T>(
+                "Diane",
+                QueryOperator.Equal,
+                new object[] { "Eva" },
+                new QueryConfig { IndexName = "LocalIndex" }
+            ).GetNextSetAsync();
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River"
-            employees = Context.Query<T>("Big River", new QueryConfig { IndexName = "GlobalIndex" }).ToList();
+            employees = await Context.QueryAsync<T>("Big River", new QueryConfig { IndexName = "GlobalIndex" }).GetNextSetAsync();
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
-            employees = Context.Query<T>("Big River",
+            employees = await Context.QueryAsync<T>("Big River",
                 new QueryConfig
                 {
                     IndexName = "GlobalIndex",
@@ -3081,36 +3093,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     {
                         new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active)
                     }
-                }).ToList();
+                }).GetNextSetAsync();
             Assert.AreEqual(1, employees.Count);
 
-
             // Index Scan
-
             // Scan local index for items with Hash-Key = "Diane"
-            employees = Context.Scan<T>(
+            employees = await Context.ScanAsync<T>(
                 new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, "Diane") },
-                new ScanConfig { IndexName = "LocalIndex" }).ToList();
+                new ScanConfig { IndexName = "LocalIndex" }).GetRemainingAsync();
             Assert.AreEqual(2, employees.Count);
 
             // Scan local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
-            employees = Context.Scan<T>(
+            employees = await Context.ScanAsync<T>(
                 new List<ScanCondition>
                 {
                     new ScanCondition("Name", ScanOperator.Equal, "Diane"),
                     new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
                 },
-                new ScanConfig { IndexName = "LocalIndex" }).ToList();
+                new ScanConfig { IndexName = "LocalIndex" }).GetRemainingAsync();
             Assert.AreEqual(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River"
-            employees = Context.Scan<T>(
+            employees = await Context.ScanAsync<T>(
                 new List<ScanCondition> { new ScanCondition("CompanyName", ScanOperator.Equal, "Big River") },
-                new ScanConfig { IndexName = "GlobalIndex" }).ToList();
+                new ScanConfig { IndexName = "GlobalIndex" }).GetRemainingAsync();
             Assert.AreEqual(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
-            employees = Context.Scan<T>(
+            employees = await Context.ScanAsync<T>(
                 new List<ScanCondition>
                 {
                     new ScanCondition("CompanyName", ScanOperator.Equal, "Big River"),
@@ -3119,12 +3129,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 new ScanConfig
                 {
                     IndexName = "GlobalIndex"
-                }).ToList();
+                }).GetRemainingAsync();
             Assert.AreEqual(1, employees.Count);
-
         }
 
-        private void TestBatchOperations()
+        private async Task TestBatchOperations()
         {
             int itemCount = 10;
             string employeePrefix = "Employee-";
@@ -3160,7 +3169,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Write both batches at once
             var multiTableWrite = Context.CreateMultiTableBatchWrite(batchWrite1, batchWrite2);
-            multiTableWrite.Execute();
+            await multiTableWrite.ExecuteAsync();
 
             // Create BatchGets
             var batchGet1 = Context.CreateBatchGet<Product>();
@@ -3171,14 +3180,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 batchGet2.AddKey(employee);
 
             // Execute BatchGets together
-            Context.ExecuteBatchGet(batchGet1, batchGet2);
+            await Context.ExecuteBatchGetAsync(batchGet1, batchGet2);
 
             // Verify items are loaded
             Assert.AreEqual(itemCount, batchGet1.Results.Count);
             Assert.AreEqual(itemCount, batchGet2.Results.Count);
         }
 
-        private void TestTransactionOperations()
+        private async Task TestTransactionOperations()
         {
             var employee1 = new VersionedEmployee
             {
@@ -3215,7 +3224,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedEmployee>();
                 transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
                 transactGet.AddKey(employee3.Name, employee3.Age);
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(3, transactGet.Results.Count);
@@ -3236,7 +3245,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 transactWrite.AddSaveItem(employee1);
                 transactWrite.AddVersionCheckKey(employee2.Name, employee2.Age, employee2.Version);
                 transactWrite.AddDeleteItem(employee3);
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => transactWrite.ExecuteAsync());
 
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
@@ -3252,7 +3261,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedEmployee>();
                 transactGet.AddKey(employee1);
                 transactGet.AddKeys(new List<VersionedEmployee> { employee2, employee3 });
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(3, transactGet.Results.Count);
@@ -3270,7 +3279,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 transactWrite.AddSaveItem(employee1);
                 transactWrite.AddVersionCheckItem(employee2);
                 transactWrite.AddDeleteItem(employee3);
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => transactWrite.ExecuteAsync());
 
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
@@ -3286,7 +3295,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedEmployee>();
                 transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
                 transactGet.AddKey(employee3.Name, employee3.Age);
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(3, transactGet.Results.Count);
@@ -3304,8 +3313,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 transactWrite.AddSaveItem(employee1);
                 transactWrite.AddVersionCheckKey(employee2.Name, employee2.Age, employee2.Version);
                 transactWrite.AddDeleteItem(employee3);
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
-
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => transactWrite.ExecuteAsync());
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
                 Assert.AreEqual("None", ex.CancellationReasons[0].Code);
@@ -3320,7 +3328,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedEmployee>();
                 transactGet.AddKey(employee1);
                 transactGet.AddKeys(new List<VersionedEmployee> { employee2, employee3 });
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(3, transactGet.Results.Count);
@@ -3341,7 +3349,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 transactWrite.AddSaveItem(employee1);
                 transactWrite.AddVersionCheckItem(employee2);
                 transactWrite.AddDeleteItem(employee3);
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
 
                 Assert.AreEqual(originalVersion1 + 1, employee1.Version);
                 Assert.AreEqual(originalVersion2, employee2.Version);
@@ -3352,7 +3360,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedEmployee>();
                 transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
                 transactGet.AddKey(employee3.Name, employee3.Age);
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(2, transactGet.Results.Count);
@@ -3387,8 +3395,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         ExpressionAttributeValues = { [":version"] = employee2.Version - 1 }
                     });
 
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
-
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => transactWrite.ExecuteAsync());
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(2, ex.CancellationReasons.Count);
                 Assert.AreEqual("None", ex.CancellationReasons[0].Code);
@@ -3398,7 +3405,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 var transactGet = Context.CreateTransactGet<VersionedEmployee>();
                 transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(2, transactGet.Results.Count);
@@ -3438,13 +3445,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         ExpressionAttributeValues = { [":version"] = employee2.Version }
                     });
 
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
             }
 
             {
                 var transactGet = Context.CreateTransactGet<VersionedEmployee>();
                 transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(2, transactGet.Results.Count);
@@ -3463,20 +3470,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
                 transactWrite.AddDeleteItem(employee1);
                 transactWrite.AddDeleteKey(employee2.Name, employee2.Age);
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
             }
 
             {
                 var transactGet = Context.CreateTransactGet<VersionedEmployee>();
                 transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2, employee3 });
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(0, transactGet.Results.Count);
             }
         }
 
-        private void TestAnnotatedTransactionOperations()
+        private async Task TestAnnotatedTransactionOperations()
         {
             var employee1 = new VersionedAnnotatedEmployee
             {
@@ -3502,7 +3509,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
                 transactWrite.AddSaveItems(new List<VersionedAnnotatedEmployee> { employee1, employee2 });
                 transactWrite.AddSaveItem(employee3);
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
 
                 Assert.IsNotNull(employee1.Version);
                 Assert.IsNotNull(employee2.Version);
@@ -3513,7 +3520,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
                 transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee1, employee2 });
                 transactGet.AddKey(employee3.Name, employee3.Age);
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(3, transactGet.Results.Count);
@@ -3534,7 +3541,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 transactWrite.AddSaveItem(employee1);
                 transactWrite.AddVersionCheckKey(employee2.Name, employee2.Age, employee2.Version);
                 transactWrite.AddDeleteItem(employee3);
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => transactWrite.ExecuteAsync());
 
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
@@ -3550,7 +3557,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
                 transactGet.AddKey(employee1);
                 transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee2, employee3 });
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(3, transactGet.Results.Count);
@@ -3568,7 +3575,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 transactWrite.AddSaveItem(employee1);
                 transactWrite.AddVersionCheckItem(employee2);
                 transactWrite.AddDeleteItem(employee3);
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => transactWrite.ExecuteAsync());
 
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
@@ -3584,7 +3591,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
                 transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee1, employee2 });
                 transactGet.AddKey(employee3.Name, employee3.Age);
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(3, transactGet.Results.Count);
@@ -3602,7 +3609,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 transactWrite.AddSaveItem(employee1);
                 transactWrite.AddVersionCheckKey(employee2.Name, employee2.Age, employee2.Version);
                 transactWrite.AddDeleteItem(employee3);
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => transactWrite.ExecuteAsync());
 
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
@@ -3618,7 +3625,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
                 transactGet.AddKey(employee1);
                 transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee2, employee3 });
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(3, transactGet.Results.Count);
@@ -3639,7 +3646,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 transactWrite.AddSaveItem(employee1);
                 transactWrite.AddVersionCheckItem(employee2);
                 transactWrite.AddDeleteItem(employee3);
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
 
                 Assert.AreEqual(originalVersion1 + 1, employee1.Version);
                 Assert.AreEqual(originalVersion2, employee2.Version);
@@ -3650,7 +3657,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
                 transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee1, employee2 });
                 transactGet.AddKey(employee3.Name, employee3.Age);
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(2, transactGet.Results.Count);
@@ -3666,20 +3673,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
                 transactWrite.AddDeleteItem(employee1);
                 transactWrite.AddDeleteKey(employee2.Name, employee2.Age);
-                transactWrite.Execute();
+                await transactWrite.ExecuteAsync();
             }
 
             {
                 var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
                 transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee1, employee2, employee3 });
-                transactGet.Execute();
+                await transactGet.ExecuteAsync();
 
                 Assert.IsNotNull(transactGet.Results);
                 Assert.AreEqual(0, transactGet.Results.Count);
             }
         }
 
-        private void TestMultiTableTransactionOperations()
+        private async Task TestMultiTableTransactionOperations()
         {
             var employee1 = new VersionedEmployee
             {
@@ -3707,7 +3714,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactWrite<VersionedProduct>();
                 productTran.AddSaveItem(product);
                 var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employee1.Version);
                 Assert.IsNotNull(employee2.Version);
@@ -3720,7 +3727,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product.Id);
                 var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employeeTran.Results);
                 Assert.AreEqual(2, employeeTran.Results.Count);
@@ -3743,7 +3750,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactWrite<VersionedProduct>();
                 productTran.AddVersionCheckKey(product.Id, product.Version.Value + 1);
                 var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => tran.Execute());
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => tran.ExecuteAsync());
 
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
@@ -3760,7 +3767,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product);
                 var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employeeTran.Results);
                 Assert.AreEqual(2, employeeTran.Results.Count);
@@ -3785,7 +3792,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactWrite<VersionedProduct>();
                 productTran.AddVersionCheckItem(product);
                 var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.AreEqual(originalEmployeeVersion1 + 1, employee1.Version);
                 Assert.AreEqual(originalEmployeeVersion2, employee2.Version);
@@ -3798,7 +3805,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product.Id);
                 var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employeeTran.Results);
                 Assert.AreEqual(1, employeeTran.Results.Count);
@@ -3818,7 +3825,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactWrite<VersionedProduct>();
                 productTran.AddDeleteKey(product.Id);
                 var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
             }
 
             {
@@ -3827,7 +3834,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product);
                 var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employeeTran.Results);
                 Assert.AreEqual(0, employeeTran.Results.Count);
@@ -3836,7 +3843,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private void TestAnnotatedMultiTableTransactionOperations()
+        private async Task TestAnnotatedMultiTableTransactionOperations()
         {
             var employee1 = new VersionedAnnotatedEmployee
             {
@@ -3864,7 +3871,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactWrite<VersionedProduct>();
                 productTran.AddSaveItem(product);
                 var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employee1.Version);
                 Assert.IsNotNull(employee2.Version);
@@ -3877,7 +3884,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product.Id);
                 var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employeeTran.Results);
                 Assert.AreEqual(2, employeeTran.Results.Count);
@@ -3900,7 +3907,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactWrite<VersionedProduct>();
                 productTran.AddVersionCheckKey(product.Id, product.Version.Value + 1);
                 var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
-                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => tran.Execute());
+                var ex = await Assert.ThrowsExceptionAsync<TransactionCanceledException>(() => tran.ExecuteAsync());
 
                 Assert.IsNotNull(ex.CancellationReasons);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
@@ -3917,7 +3924,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product);
                 var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employeeTran.Results);
                 Assert.AreEqual(2, employeeTran.Results.Count);
@@ -3942,7 +3949,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactWrite<VersionedProduct>();
                 productTran.AddVersionCheckItem(product);
                 var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.AreEqual(originalEmployeeVersion1 + 1, employee1.Version);
                 Assert.AreEqual(originalEmployeeVersion2, employee2.Version);
@@ -3955,7 +3962,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product.Id);
                 var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employeeTran.Results);
                 Assert.AreEqual(1, employeeTran.Results.Count);
@@ -3975,7 +3982,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactWrite<VersionedProduct>();
                 productTran.AddDeleteKey(product.Id);
                 var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
             }
 
             {
@@ -3984,7 +3991,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product);
                 var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
-                tran.Execute();
+                await tran.ExecuteAsync();
 
                 Assert.IsNotNull(employeeTran.Results);
                 Assert.AreEqual(0, employeeTran.Results.Count);
@@ -3993,7 +4000,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private void TestOtherContextOperations()
+        private async Task TestOtherContextOperations()
         {
             Employee employee1 = new Employee
             {
@@ -4020,12 +4027,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNull(roundtrip.InternalId);
 
             // Recreate the record
-            Context.Delete(employee1);
-            Context.Save(employee1);
+            await Context.DeleteAsync(employee1);
+            await Context.SaveAsync(employee1);
 
             // Get record using Table instead of Context
             var table = Context.GetTargetTable<Employee>();
-            Document retrieved = table.GetItem(doc);
+            Document retrieved = await table.GetItemAsync(doc);
             Assert.AreEqual(employee1.Name, doc["Name"].AsString());
             Assert.AreEqual(employee1.Data.Length, doc["Data"].AsByteArray().Length);
         }
@@ -4101,11 +4108,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             public string Name { get; set; }
 
-#pragma warning disable CS0618
             [DynamoDBAutoGeneratedTimestamp]
             [DynamoDBProperty(StoreAsEpoch = true)]
             public DateTime? CreatedAt { get; set; }
-#pragma warning restore CS0618
         }
 
         [DynamoDBTable("HashTable")]
@@ -4255,8 +4260,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBProperty("DetailsName")] 
             public string Name { get; set; }
         }
-
-
 
         /// <summary>
         /// Class representing items in the table [TableNamePrefix]HashTable,
@@ -4423,7 +4426,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public int? CountAtomic { get; set; }
         }
 
-
         /// <summary>
         /// Class representing items in the table [TableNamePrefix]HashTable
         /// This class uses optimistic locking via the Version field
@@ -4439,7 +4441,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         public class EpochEmployee : Employee
         {
-#pragma warning disable CS0618
             [DynamoDBProperty(StoreAsEpoch = true)]
             public virtual DateTime CreationTime { get; set; }
 
@@ -4468,7 +4469,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBProperty(StoreAsEpochLong = true)]
             public DateTime? NullableLongEpochDate2 { get; set; }
-#pragma warning restore CS0618
         }
 
         /// <summary>
@@ -4482,7 +4482,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             public int Age { get; set; }
 
-#pragma warning disable CS0618
             // Hash key
             [DynamoDBHashKey(StoreAsEpoch = true)] public virtual DateTime CreationTime { get; set; }
 
@@ -4493,7 +4492,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public DateTime NonEpochDate1 { get; set; }
 
             public DateTime NonEpochDate2 { get; set; }
-#pragma warning restore CS0618
         }
 
         /// <summary>
@@ -4520,10 +4518,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("BadEmployeeHashRangeTable")]
         public class BadNumericEpochEmployee : NumericEpochEmployee
         {
-#pragma warning disable CS0618
             [DynamoDBProperty(StoreAsEpoch = true, StoreAsEpochLong = true)]
             public DateTime BadLongEpochDate { get; set; }
-#pragma warning restore CS0618
         }
 
         /// <summary>
@@ -4532,9 +4528,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class AnnotatedNumericEpochEmployee : EpochEmployee
         {
-#pragma warning disable CS0618
             [DynamoDBHashKey(StoreAsEpoch = true)] public override DateTime CreationTime { get; set; }
-#pragma warning restore CS0618
 
             [DynamoDBRangeKey] public override string Name { get; set; }
         }
@@ -4545,9 +4539,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class PropertyConverterEmployee
         {
-#pragma warning disable CS0618
             [DynamoDBHashKey(StoreAsEpoch = true)] public DateTime CreationTime { get; set; }
-#pragma warning restore CS0618
 
             [DynamoDBRangeKey]
             [DynamoDBProperty(Converter = typeof(EnumAsStringConverter<Status>))]

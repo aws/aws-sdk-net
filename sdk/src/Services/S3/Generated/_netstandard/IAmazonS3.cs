@@ -484,7 +484,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -718,7 +718,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -954,7 +954,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -4476,9 +4476,11 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. To use
-        /// this operation, you must have the <c>s3:PutBucketPublicAccessBlock</c> permission.
-        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. This operation
+        /// removes the bucket-level configuration only. The effective public access behavior
+        /// will still be governed by account-level settings (which may inherit from organization-level
+        /// policies). To use this operation, you must have the <c>s3:PutBucketPublicAccessBlock</c>
+        /// permission. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
@@ -4531,11 +4533,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Returns the attribute-based access control (ABAC) property of the general purpose
-        /// bucket. If the bucket ABAC is enabled, you can use tags for bucket access control.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
-        /// ABAC in general purpose buckets</a>. Whether ABAC is enabled or disabled, you can
-        /// use tags for cost tracking. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">Using
-        /// tags with S3 general purpose buckets</a>.
+        /// bucket. If ABAC is enabled on your bucket, you can use tags on the bucket for access
+        /// control. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+        /// ABAC in general purpose buckets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAbac service method.</param>
         /// <param name="cancellationToken">
@@ -4685,22 +4685,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -4835,8 +4820,8 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
         /// all buckets have a default encryption configuration that uses server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BucketKeyEnabled.html">BucketKeyEnabled</a>
-        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">BlockedEncryptionTypes</a>
+        /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BucketKeyEnabled">BucketKeyEnabled</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BlockedEncryptionTypes">BlockedEncryptionTypes</a>
         /// statuses. 
         /// 
         ///  <note> <ul> <li> 
@@ -5201,22 +5186,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -5258,22 +5228,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -7426,22 +7381,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -8627,18 +8567,22 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. To use
-        /// this operation, you must have the <c>s3:GetBucketPublicAccessBlock</c> permission.
-        /// For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+        /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. This
+        /// operation returns the bucket-level configuration only. To understand the effective
+        /// public access behavior, you must also consider account-level settings (which may inherit
+        /// from organization-level policies). To use this operation, you must have the <c>s3:GetBucketPublicAccessBlock</c>
+        /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a>.
         /// </para>
         ///  <important> 
         /// <para>
         /// When Amazon S3 evaluates the <c>PublicAccessBlock</c> configuration for a bucket or
         /// an object, it checks the <c>PublicAccessBlock</c> configuration for both the bucket
-        /// (or the bucket that contains the object) and the bucket owner's account. If the <c>PublicAccessBlock</c>
-        /// settings are different between the bucket and the account, Amazon S3 uses the most
-        /// restrictive combination of the bucket-level and account-level settings.
+        /// (or the bucket that contains the object) and the bucket owner's account. Account-level
+        /// settings automatically inherit from organization-level policies when present. If the
+        /// <c>PublicAccessBlock</c> settings are different between the bucket and the account,
+        /// Amazon S3 uses the most restrictive combination of the bucket-level and account-level
+        /// settings.
         /// </para>
         ///  </important> 
         /// <para>
@@ -9677,22 +9621,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -9736,22 +9665,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -9857,27 +9771,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -10018,27 +9915,10 @@ namespace Amazon.S3
         Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -10181,27 +10061,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -10347,22 +10210,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -10426,22 +10274,7 @@ namespace Amazon.S3
         Task<ListObjectsResponse> ListObjectsAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -10507,22 +10340,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -10592,23 +10410,6 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns some or all (up to 1,000) of the objects in a bucket with each request. You
         /// can use the request parameters as selection criteria to return a subset of the objects
         /// in a bucket. A <c>200 OK</c> response can contain valid or invalid XML. Make sure
@@ -10616,7 +10417,7 @@ namespace Amazon.S3
         /// For more information about listing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing
         /// object keys programmatically</a> in the <i>Amazon S3 User Guide</i>. To get a list
         /// of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.
-        /// </para>
+        /// 
         ///  <note> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket</b> - For general purpose buckets, <c>ListObjectsV2</c>
@@ -10724,25 +10525,8 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Lists the parts that have been uploaded for a specific multipart upload.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// To use this operation, you must provide the <c>upload ID</c> in the request. You obtain
@@ -10862,25 +10646,8 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Lists the parts that have been uploaded for a specific multipart upload.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// To use this operation, you must provide the <c>upload ID</c> in the request. You obtain
@@ -11002,22 +10769,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -11083,22 +10835,7 @@ namespace Amazon.S3
         Task<ListVersionsResponse> ListVersionsAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -11166,22 +10903,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning
-        /// <c>DisplayName</c>. Update your applications to use canonical IDs (unique identifier
-        /// for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier)
-        /// or IAM ARNs (full resource naming) as a direct replacement of <c>DisplayName</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -11252,20 +10974,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
-        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
-        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
-        /// (Method Not Allowed) error.
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
-        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
-        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
@@ -11423,20 +11132,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
-        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
-        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
-        /// (Method Not Allowed) error.
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
-        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
-        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
@@ -11600,14 +11296,13 @@ namespace Amazon.S3
 
         /// <summary>
         /// Sets the attribute-based access control (ABAC) property of the general purpose bucket.
-        /// When you enable ABAC, you can use tags for bucket access control. Additionally, when
-        /// ABAC is enabled, you must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>,
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>,
-        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
-        /// actions to manage bucket tags, and you can nolonger use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// You must have <c>s3:PutBucketABAC</c> permission to perform this action. When you
+        /// enable ABAC, you can use tags for access control on your buckets. Additionally, when
+        /// ABAC is enabled, you must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// actions to manage tags on your buckets. You can nolonger use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
-        /// actions to tag the bucket. You must also have the correct permissions for these actions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+        /// actions to tag your bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
         /// ABAC in general purpose buckets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAbac service method.</param>
@@ -13449,13 +13144,6 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
-        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
-        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
-        /// instead.
-        /// </para>
-        ///  
-        /// <para>
         /// Use tags to organize your Amazon Web Services bill to reflect your own cost structure.
         /// To do this, sign up to get your Amazon Web Services account bill with tag key values
         /// included. Then, to see the cost of combined resources, organize your billing information
@@ -13528,7 +13216,7 @@ namespace Amazon.S3
         ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
-        /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="tagSet">A collection for a set of tags</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -13551,13 +13239,6 @@ namespace Amazon.S3
         /// bucket and must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
         /// operations instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
-        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
-        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
-        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -15247,9 +14928,11 @@ namespace Amazon.S3
         /// <para>
         /// When Amazon S3 evaluates the <c>PublicAccessBlock</c> configuration for a bucket or
         /// an object, it checks the <c>PublicAccessBlock</c> configuration for both the bucket
-        /// (or the bucket that contains the object) and the bucket owner's account. If the <c>PublicAccessBlock</c>
-        /// configurations are different between the bucket and the account, Amazon S3 uses the
-        /// most restrictive combination of the bucket-level and account-level settings.
+        /// (or the bucket that contains the object) and the bucket owner's account. Account-level
+        /// settings automatically inherit from organization-level policies when present. If the
+        /// <c>PublicAccessBlock</c> configurations are different between the bucket and the account,
+        /// Amazon S3 uses the most restrictive combination of the bucket-level and account-level
+        /// settings.
         /// </para>
         ///  </important> 
         /// <para>
@@ -15822,7 +15505,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -16279,7 +15962,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

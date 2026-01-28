@@ -36,6 +36,14 @@ namespace Amazon.SSMGuiConnect
         /// <summary>
         /// Construct instance of AmazonSSMGuiConnectException
         /// </summary>
+        public AmazonSSMGuiConnectException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSSMGuiConnectException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSSMGuiConnectException(string message)
             : base(message)

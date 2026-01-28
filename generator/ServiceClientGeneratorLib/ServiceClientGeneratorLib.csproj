@@ -119,11 +119,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreNuspec.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators/NuGet/NuGetPackageReadmeSection.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NuGetPackageReadmeSection.tt</DependentUpon>
-    </Compile>
     <Compile Update="Generators/CodeAnalysis/CodeAnalysisProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -760,10 +755,6 @@
     <None Update="Generators/Examples/ExampleMetadata.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ExampleMetadata.cs</LastGenOutput>
-    </None>
-    <None Update="Generators/NuGet/NuGetPackageReadmeSection.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>NuGetPackageReadmeSection.cs</LastGenOutput>
     </None>
     <None Update="Generators/CodeAnalysis/CodeAnalysisProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

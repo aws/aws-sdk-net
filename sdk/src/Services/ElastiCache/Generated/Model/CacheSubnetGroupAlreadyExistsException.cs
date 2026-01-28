@@ -40,6 +40,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheSubnetGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CacheSubnetGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheSubnetGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

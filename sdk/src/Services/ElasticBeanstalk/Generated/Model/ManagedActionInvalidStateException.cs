@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for ManagedActionInvalidStateException
+        /// message.
+        /// </summary>
+        public ManagedActionInvalidStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ManagedActionInvalidStateException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for RedshiftIdcApplicationNotExistsException
+        /// message.
+        /// </summary>
+        public RedshiftIdcApplicationNotExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RedshiftIdcApplicationNotExistsException with the specified error
         /// message.
         /// </summary>

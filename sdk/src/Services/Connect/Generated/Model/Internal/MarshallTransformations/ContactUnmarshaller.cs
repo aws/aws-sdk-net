@@ -176,6 +176,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisconnectTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("GlobalResiliencyMetadata", targetDepth))
+                {
+                    var unmarshaller = GlobalResiliencyMetadataUnmarshaller.Instance;
+                    unmarshalledObject.GlobalResiliencyMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -222,6 +228,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("NextContacts", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<NextContactEntry, NextContactEntryUnmarshaller>(NextContactEntryUnmarshaller.Instance);
+                    unmarshalledObject.NextContacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutboundStrategy", targetDepth))

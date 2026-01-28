@@ -114,37 +114,37 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("AccessControlPolicy", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestAccessControlPolicyGrants = publicRequest.AccessControlPolicy.Grants;
-                    if (publicRequestAccessControlPolicyGrants != null && (publicRequestAccessControlPolicyGrants.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.AccessControlPolicy.IsSetGrants()) 
                     {
                         xmlWriter.WriteStartElement("AccessControlList");
                         foreach (var publicRequestAccessControlPolicyGrantsValue in publicRequestAccessControlPolicyGrants) 
                         {
-                        if (publicRequestAccessControlPolicyGrantsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Grant");
-                            if (publicRequestAccessControlPolicyGrantsValue.Grantee != null)
+                            if (publicRequestAccessControlPolicyGrantsValue != null)
                             {
-                                xmlWriter.WriteStartElement("xsi","Grantee","http://www.w3.org/2001/XMLSchema-instance");
-                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetType())
-                                    xmlWriter.WriteAttributeString("xsi","type", "http://www.w3.org/2001/XMLSchema-instance",StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.Type));
-                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetCanonicalUser())
-                                    xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.CanonicalUser));
-                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetDisplayName())
-                                    xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.DisplayName));
-                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetEmailAddress())
-                                    xmlWriter.WriteElementString("EmailAddress", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.EmailAddress));
-                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetURI())
-                                    xmlWriter.WriteElementString("URI", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.URI));
+                                xmlWriter.WriteStartElement("Grant");
+                                if (publicRequestAccessControlPolicyGrantsValue.IsSetGrantee())
+                                {
+                                    xmlWriter.WriteStartElement("xsi","Grantee","http://www.w3.org/2001/XMLSchema-instance");
+                                    if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetType())
+                                        xmlWriter.WriteAttributeString("xsi","type", "http://www.w3.org/2001/XMLSchema-instance",StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.Type));
+                                    if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetCanonicalUser())
+                                        xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.CanonicalUser));
+                                    if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetDisplayName())
+                                        xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.DisplayName));
+                                    if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetEmailAddress())
+                                        xmlWriter.WriteElementString("EmailAddress", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.EmailAddress));
+                                    if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetURI())
+                                        xmlWriter.WriteElementString("URI", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.URI));
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if(publicRequestAccessControlPolicyGrantsValue.IsSetPermission())
+                                    xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Permission));
                                 xmlWriter.WriteEndElement();
                             }
-                            if(publicRequestAccessControlPolicyGrantsValue.IsSetPermission())
-                                xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Permission));
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-                    if (publicRequest.AccessControlPolicy.Owner != null)
+                    if (publicRequest.AccessControlPolicy.IsSetOwner())
                     {
                         xmlWriter.WriteStartElement("Owner");
                         if(publicRequest.AccessControlPolicy.Owner.IsSetDisplayName())

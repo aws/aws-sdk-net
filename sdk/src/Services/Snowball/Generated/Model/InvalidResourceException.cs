@@ -41,6 +41,13 @@ namespace Amazon.Snowball.Model
         private string _resourceType;
 
         /// <summary>
+        /// Default constructor for InvalidResourceException
+        /// message.
+        /// </summary>
+        public InvalidResourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResourceException with the specified error
         /// message.
         /// </summary>

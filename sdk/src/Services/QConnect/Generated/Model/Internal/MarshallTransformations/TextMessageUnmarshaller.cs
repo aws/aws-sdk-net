@@ -56,6 +56,18 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("aiGuardrailAssessment", targetDepth))
+                {
+                    var unmarshaller = AIGuardrailAssessmentUnmarshaller.Instance;
+                    unmarshalledObject.AiGuardrailAssessment = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("citations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Citation, CitationUnmarshaller>(CitationUnmarshaller.Instance);
+                    unmarshalledObject.Citations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

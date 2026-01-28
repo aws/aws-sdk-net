@@ -40,6 +40,13 @@ namespace Amazon.Elasticsearch.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPaginationTokenException
+        /// message.
+        /// </summary>
+        public InvalidPaginationTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPaginationTokenException with the specified error
         /// message.
         /// </summary>

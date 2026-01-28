@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateDBInstanceRequest : AmazonRDSRequest
     {
+        private List<AdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
@@ -114,6 +115,7 @@ namespace Amazon.RDS.Model
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
         private string _timezone;
@@ -130,7 +132,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier">The identifier for this DB instance. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <c>mydbinstance</c> </param>
         /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume. <dl> <dt>Amazon RDS Custom</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> </ul> </dd> <dt>RDS for Db2</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1, io2): <ul> <li> Enterprise and Standard editions: Must be an integer from 100 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul> </dd> </dl></param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example <c>db.m5.large</c>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</param>
-        /// <param name="engine">The database engine to use for this DB instance. Not every database engine is available in every Amazon Web Services Region. Valid Values: <ul> <li>  <c>aurora-mysql</c> (for Aurora MySQL DB instances) </li> <li>  <c>aurora-postgresql</c> (for Aurora PostgreSQL DB instances) </li> <li>  <c>custom-oracle-ee</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-ee-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-se2</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-se2-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-sqlserver-ee</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-se</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-web</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-dev</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mariadb</c>  </li> <li>  <c>mysql</c>  </li> <li>  <c>oracle-ee</c>  </li> <li>  <c>oracle-ee-cdb</c>  </li> <li>  <c>oracle-se2</c>  </li> <li>  <c>oracle-se2-cdb</c>  </li> <li>  <c>postgres</c>  </li> <li>  <c>sqlserver-ee</c>  </li> <li>  <c>sqlserver-se</c>  </li> <li>  <c>sqlserver-ex</c>  </li> <li>  <c>sqlserver-web</c>  </li> </ul></param>
+        /// <param name="engine">The database engine to use for this DB instance. Not every database engine is available in every Amazon Web Services Region. Valid Values: <ul> <li>  <c>aurora-mysql</c> (for Aurora MySQL DB instances) </li> <li>  <c>aurora-postgresql</c> (for Aurora PostgreSQL DB instances) </li> <li>  <c>custom-oracle-ee</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-ee-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-se2</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-se2-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-sqlserver-ee</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-se</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-web</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-dev</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mariadb</c>  </li> <li>  <c>mysql</c>  </li> <li>  <c>oracle-ee</c>  </li> <li>  <c>oracle-ee-cdb</c>  </li> <li>  <c>oracle-se2</c>  </li> <li>  <c>oracle-se2-cdb</c>  </li> <li>  <c>postgres</c>  </li> <li>  <c>sqlserver-dev-ee</c>  </li> <li>  <c>sqlserver-ee</c>  </li> <li>  <c>sqlserver-se</c>  </li> <li>  <c>sqlserver-ex</c>  </li> <li>  <c>sqlserver-web</c>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user. This setting doesn't apply to Amazon Aurora DB instances. The name for the master user is managed by the DB cluster. This setting is required for RDS DB instances. Constraints: <ul> <li> Must be 1 to 16 letters, numbers, or underscores. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
         /// <param name="masterUserPassword">The password for the master user. This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster. Constraints: <ul> <li> Can't be specified if <c>ManageMasterUserPassword</c> is turned on. </li> <li> Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character. </li> </ul> Length Constraints: <ul> <li> RDS for Db2 - Must contain from 8 to 255 characters. </li> <li> RDS for MariaDB - Must contain from 8 to 41 characters. </li> <li> RDS for Microsoft SQL Server - Must contain from 8 to 128 characters. </li> <li> RDS for MySQL - Must contain from 8 to 41 characters. </li> <li> RDS for Oracle - Must contain from 8 to 30 characters. </li> <li> RDS for PostgreSQL - Must contain from 8 to 128 characters. </li> </ul></param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int? allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
@@ -141,6 +143,32 @@ namespace Amazon.RDS.Model
             _engine = engine;
             _masterUsername = masterUsername;
             _masterUserPassword = masterUserPassword;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// A list of additional storage volumes to create for the DB instance. You can create
+        /// up to three additional storage volumes using the names <c>rdsdbdata2</c>, <c>rdsdbdata3</c>,
+        /// and <c>rdsdbdata4</c>. Additional storage volumes are supported for RDS for Oracle
+        /// and RDS for SQL Server DB instances only.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1532,6 +1560,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>sqlserver-dev-ee</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>sqlserver-ee</c> 
         /// </para>
         ///  </li> <li> 
@@ -2773,6 +2805,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// Tags to assign to resources associated with the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>auto-backup</c> - The DB instance's automated backup.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

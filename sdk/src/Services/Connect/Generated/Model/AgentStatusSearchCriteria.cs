@@ -45,8 +45,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The currently supported values for <c>FieldName</c> are <c>name</c>,&#x2028;&#x2028;
-        /// <c>description</c>, <c>state</c>, <c>type</c>, <c>displayOrder</c>,&#x2028; and <c>resourceID</c>.
+        /// The currently supported values for <c>FieldName</c> are <c>name</c>, <c>description</c>,
+        /// <c>state</c>, <c>type</c>, <c>displayOrder</c>, and <c>resourceID</c>.
         /// </para>
         ///  </note>
         /// <para />
@@ -97,8 +97,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The currently supported values for <c>FieldName</c> are <c>name</c>,&#x2028;&#x2028;
-        /// <c>description</c>, <c>state</c>, <c>type</c>, <c>displayOrder</c>,&#x2028; and <c>resourceID</c>.
+        /// The currently supported values for <c>FieldName</c> are <c>name</c>, <c>description</c>,
+        /// <c>state</c>, <c>type</c>, <c>displayOrder</c>, and <c>resourceID</c>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -47,6 +47,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterNotFoundException
+        /// message.
+        /// </summary>
+        public ParameterNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterNotFoundException with the specified error
         /// message.
         /// </summary>

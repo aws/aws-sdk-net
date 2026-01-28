@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLifecycleEventHookExecutionStatusException
+        /// message.
+        /// </summary>
+        public InvalidLifecycleEventHookExecutionStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLifecycleEventHookExecutionStatusException with the specified error
         /// message.
         /// </summary>

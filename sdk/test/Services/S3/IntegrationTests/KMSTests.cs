@@ -1,186 +1,134 @@
-﻿using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
+﻿using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
 using Amazon.S3.Transfer;
-using System.Security.Cryptography;
-using System.Net;
-using Amazon.Runtime;
-using Amazon;
-using System.Collections.Generic;
+using Amazon.S3.Util;
 using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     public class KMSTests : TestBase<AmazonS3Client>
     {
         private const string key = "foo.txt";
         private const string testContents = "Test contents";
         private static string largeTestContents = new string('@', (int)(TransferUtilityTests.MEG_SIZE * 19));
         private static string fileContents = "Test file contents";
-        private const string profile = "trent";
-        private static string basePath = @"c:\temp\test\transferutility\";
+        private static string bucketName;
+        private static string tempDirectory;
+
+        [ClassInitialize]
+        public static async Task ClassInitialize(TestContext testContext)
+        {
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            tempDirectory = Path.Combine(Path.GetTempPath(), "S3KMSTests-" + Guid.NewGuid().ToString());
+            Directory.CreateDirectory(tempDirectory);
+        }
 
         [ClassCleanup]
-        public static void Cleanup()
+        public static async Task ClassCleanup()
         {
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
+            if (Directory.Exists(tempDirectory))
+            {
+                Directory.Delete(tempDirectory, recursive: true);
+            }
+
             BaseClean();
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void GetObjectFromNonDefaultEndpoint()
+        public async Task GetObjectFromDefaultEndpointBeforeDNSResolution()
         {
-            var client = new AmazonS3Client(RegionEndpoint.USWest2);
-            var bucketName = S3TestUtils.CreateBucketWithWait(client);
-            try
-            {
-                var putObjectRequest = new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ContentBody = testContents,
-                    ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS
-                };
-                client.PutObject(putObjectRequest);
-
-                using (var response = client.GetObject(bucketName, key))
-                using (var reader = new StreamReader(response.ResponseStream))
-                {
-                    var data = reader.ReadToEnd();
-                    Assert.AreEqual(testContents, data);
-                }
-            }
-            finally
-            {
-                AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
-                client.Dispose();
-            }
-        }
-        [TestMethod]
-        [TestCategory("S3")]
-        public void GetObjectFromNonDefaultEndpointWithDoubleEncryption()
-        {
-            var client = new AmazonS3Client(RegionEndpoint.USEast2);
-            var bucketName = S3TestUtils.CreateBucketWithWait(client);
-            try
-            {
-                var putObjectRequest = new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ContentBody = testContents,
-                    ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMSDSSE
-                };
-                client.PutObject(putObjectRequest);
-                using (var response = client.GetObject(bucketName, key))
-                using (var reader = new StreamReader(response.ResponseStream))
-                {
-                    var data = reader.ReadToEnd();
-                    Assert.AreEqual(testContents, data);
-                }
-
-            }
-            finally
-            {
-                AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
-                client.Dispose();
-            }
-        }
-        [TestMethod]
-        [TestCategory("S3")]
-        public void GetObjectFromDefaultEndpointBeforeDNSResolution()
-        {
-            var client = new AmazonS3Client(RegionEndpoint.USWest2);
+            var usWest2Client = new AmazonS3Client(RegionEndpoint.USWest2);
             var defaultEndpointClient = new AmazonS3Client(new AmazonS3Config
             {
                 RegionEndpoint = RegionEndpoint.USEast1,
                 USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
             });
             
-            var bucketName = S3TestUtils.CreateBucketWithWait(client);
+            var bucketName = await S3TestUtils.CreateBucketWithWaitAsync(usWest2Client);
             try
             {
-                var putObjectRequest = new PutObjectRequest
+                await usWest2Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     ContentBody = testContents,
                     ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS
-                };
-                client.PutObject(putObjectRequest);
+                });
 
-                using (var response = defaultEndpointClient.GetObject(bucketName, key))
+                using (var response = await defaultEndpointClient.GetObjectAsync(bucketName, key))
                 using (var reader = new StreamReader(response.ResponseStream))
                 {
-                    var data = reader.ReadToEnd();
+                    var data = await reader.ReadToEndAsync();
                     Assert.AreEqual(testContents, data);
                 }
             }
             finally
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
-                client.Dispose();
+                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(usWest2Client, bucketName);
+                usWest2Client.Dispose();
                 defaultEndpointClient.Dispose();
             }
         }
+
         [TestMethod]
-        [TestCategory("S3")]
-        public void GetObjectFromDefaultEndpointBeforeDNSResolutionWithDoubleEncryption()
+        public async Task GetObjectFromDefaultEndpointBeforeDNSResolutionWithDoubleEncryption()
         {
-            var client = new AmazonS3Client(RegionEndpoint.USEast2);
+            var usEast2Client = new AmazonS3Client(RegionEndpoint.USEast2);
             var defaultEndpointClient = new AmazonS3Client(new AmazonS3Config
             {
                 RegionEndpoint = RegionEndpoint.USEast1,
                 USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
             });
 
-            var bucketName = S3TestUtils.CreateBucketWithWait(client);
+            var bucketName = await S3TestUtils.CreateBucketWithWaitAsync(usEast2Client);
             try
             {
-                var putObjectRequest = new PutObjectRequest
+                await usEast2Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
                     ContentBody = testContents,
                     ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMSDSSE
-                };
-                client.PutObject(putObjectRequest);
+                });
 
-                using (var response = defaultEndpointClient.GetObject(bucketName, key))
+                using (var response = await defaultEndpointClient.GetObjectAsync(bucketName, key))
                 using (var reader = new StreamReader(response.ResponseStream))
                 {
-                    var data = reader.ReadToEnd();
+                    var data = await reader.ReadToEndAsync();
                     Assert.AreEqual(testContents, data);
                 }
             }
             finally
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
-                client.Dispose();
+                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(usEast2Client, bucketName);
+                usEast2Client.Dispose();
                 defaultEndpointClient.Dispose();
             }
         }
 
-        // To run this test set bucketName to a valid bucket name.
-        //[TestMethod]
-        //[TestCategory("S3")]
-        public void GetObjectFromDefaultEndpointAfterDNSResolution()
+        [TestMethod]
+        public async Task TestKmsOverHttp()
         {
-            var client = new AmazonS3Client(RegionEndpoint.USWest2);
-            var defaultEndpointClient = new AmazonS3Client(RegionEndpoint.USEast1);
+            var config = new AmazonS3Config
+            {
+                RegionEndpoint = Client.Config.RegionEndpoint,
+                UseHttp = true
+            };
 
-            // Set to a valid bucket name.
-            string bucketName = null;
-            try
+            using (var client = new AmazonS3Client(config))
             {
                 var putObjectRequest = new PutObjectRequest
                 {
@@ -189,235 +137,110 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     ContentBody = testContents,
                     ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS
                 };
-                client.PutObject(putObjectRequest);
-
-                using (var response = defaultEndpointClient.GetObject(bucketName, key))
-                using (var reader = new StreamReader(response.ResponseStream))
-                {
-                    var data = reader.ReadToEnd();
-                    Assert.AreEqual(testContents, data);
-                }
-            }
-            finally
-            {
-                client.Dispose();
-                defaultEndpointClient.Dispose();
+                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => client.PutObjectAsync(putObjectRequest));
             }
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestKmsOverHttp()
+        public async Task DefaultKeyTests()
         {
-            var config = new AmazonS3Config
-            {
-                RegionEndpoint = AWSConfigs.RegionEndpoint,
-                UseHttp = true
-            };
-            using(var client = new AmazonS3Client(config))
-            {
-                var bucketName = S3TestUtils.CreateBucketWithWait(client);
-                try
-                {
-                    var putObjectRequest = new PutObjectRequest
-                    {
-                        BucketName = bucketName,
-                        Key = key,
-                        ContentBody = testContents,
-                        ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS
-                    };
-                    Action action = () =>
-                    {
-                        client.PutObject(putObjectRequest);
-                    };
-
-                    AssertExtensions.ExpectException(action, typeof(AmazonS3Exception));
-                }
-                finally
-                {
-                    AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
-                }
-            }
+            await TestSseKms(keyId: null, ServerSideEncryptionMethod.AWSKMS);
+            await TestPresignedUrls(keyId: null, ServerSideEncryptionMethod.AWSKMS);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void DefaultKeyTests()
+        public async Task KmsDsseTest()
         {
-            TestSseKms(keyId: null, ServerSideEncryptionMethod.AWSKMS);
-            TestPresignedUrls(keyId: null, ServerSideEncryptionMethod.AWSKMS);
-
+            await TestSseKms(null, ServerSideEncryptionMethod.AWSKMSDSSE);
         }
+
         [TestMethod]
-        [TestCategory("S3")]
-        public void KmsDsseTest()
+        public async Task TestKmsDssePresignedUrls()
         {
-            TestSseKms(null, ServerSideEncryptionMethod.AWSKMSDSSE);
-
-        }
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestKmsDssePresignedUrls()
-        {
-            TestPresignedUrls(null, ServerSideEncryptionMethod.AWSKMSDSSE);
+            await TestPresignedUrls(null, ServerSideEncryptionMethod.AWSKMSDSSE);
         }
 
-
-        // This test is disabled because it creates resources that cannot be removed, KMS keys.
-        //[TestMethod]
-        [TestCategory("S3")]
-        public void SpecificKeyTests()
+        public async Task TestPresignedUrls(string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
         {
-            var keyId = KeyManagementService.Client.CreateKey(new Amazon.KeyManagementService.Model.CreateKeyRequest
-            {
-                KeyUsage = Amazon.KeyManagementService.KeyUsageType.ENCRYPT_DECRYPT,
-                Description = ".NET SDK S3 Test Key"
-            }).KeyMetadata.KeyId;
+            await VerifyPresignedPut(key, keyId, serverSideEncryptionMethod);
+            await VerifyObjectWithTransferUtility();
+            await TestPresignedGet(key, keyId);
 
-            TestSseKms(keyId, ServerSideEncryptionMethod.AWSKMS);
-            TestPresignedUrls(keyId, ServerSideEncryptionMethod.AWSKMS);
+            var key2 = key + "Copy2";
+            var copyResponse = await Client.CopyObjectAsync(new CopyObjectRequest
+            {
+                SourceBucket = bucketName,
+                SourceKey = key,
+                DestinationBucket = bucketName,
+                DestinationKey = key2
+            });
+            Assert.IsNotNull(copyResponse);
+
+            var usedKeyId = copyResponse.ServerSideEncryptionKeyManagementServiceKeyId;
+            Assert.IsNull(usedKeyId);
         }
 
-        // https://github.com/aws/aws-sdk-net/issues/200 (and 197), 3rd-party
-        // storage providers compatible with S3 should not be included
-        // in the test to use Signature V4
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestNonS3EndpointDetection()
+        private async Task TestSseKms(string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
         {
-            string[] thirdPartyProviderUriExamples =
+            var putObjectResponse = await Client.PutObjectAsync(new PutObjectRequest
             {
-                "http://storage.googleapis.com",
-                "http://bucket.storage.googleapis.com",
-                "http://s3.mycompany.com",
-                "http://storage.s3.company.com"
-            };
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = testContents,
+                ServerSideEncryptionMethod = serverSideEncryptionMethod,
+                ServerSideEncryptionKeyManagementServiceKeyId = keyId
+            });
+            Assert.IsNotNull(putObjectResponse.ServerSideEncryptionKeyManagementServiceKeyId);
 
-            string[] s3UriExamples =
-            {
-                "http://s3.amazonaws.com",
-                "http://s3-external-1.amazonaws.com",
-                "http://s3-us-west-2.amazonaws.com",
-                "http://bucketname.s3-us-west-2.amazonaws.com",
-                "http://s3.eu-central-1.amazonaws.com",
-                "http://bucketname.s3.eu-central-1.amazonaws.com",
-                "http://s3.cn-north-1.amazonaws.com.cn",
-            };
+            var usedKeyId = putObjectResponse.ServerSideEncryptionKeyManagementServiceKeyId;
+            VerifyKeyId(keyId, usedKeyId);
+            await VerifyObject(key, usedKeyId, serverSideEncryptionMethod);
+            await VerifyObjectWithTransferUtility();
+            await TestCopyPart(key, keyId, serverSideEncryptionMethod);
 
-            foreach (var uri in thirdPartyProviderUriExamples)
+            var key2 = key + "Copy";
+            var copyResponse = await Client.CopyObjectAsync(new CopyObjectRequest
             {
-                Assert.IsFalse(AmazonS3Uri.IsAmazonS3Endpoint(uri));    
-            }
+                SourceBucket = bucketName,
+                SourceKey = key,
+                DestinationBucket = bucketName,
+                DestinationKey = key2,
+                ServerSideEncryptionMethod = serverSideEncryptionMethod,
+                ServerSideEncryptionKeyManagementServiceKeyId = keyId
+            });
+            Assert.IsNotNull(copyResponse);
 
-            foreach (var uri in s3UriExamples)
+            usedKeyId = copyResponse.ServerSideEncryptionKeyManagementServiceKeyId;
+            VerifyKeyId(keyId, usedKeyId);
+            await VerifyObject(key2, usedKeyId, serverSideEncryptionMethod);
+
+            var utility = new TransferUtility(Client);
+            await utility.UploadAsync(new TransferUtilityUploadRequest
             {
-                Assert.IsTrue(AmazonS3Uri.IsAmazonS3Endpoint(uri));
-            }
+                BucketName = bucketName,
+                Key = key,
+                ServerSideEncryptionMethod = serverSideEncryptionMethod,
+                ServerSideEncryptionKeyManagementServiceKeyId = keyId,
+                InputStream = new MemoryStream(Encoding.UTF8.GetBytes(testContents))
+            });
+            await VerifyObject(key, keyId, serverSideEncryptionMethod);
+
+            await utility.UploadAsync(new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                ServerSideEncryptionMethod = serverSideEncryptionMethod,
+                ServerSideEncryptionKeyManagementServiceKeyId = keyId,
+                InputStream = new MemoryStream(Encoding.UTF8.GetBytes(largeTestContents))
+            });
+            await VerifyObject(key, keyId, serverSideEncryptionMethod);
+            await TestUploadDirectory(keyId, serverSideEncryptionMethod);
         }
 
-        public void TestPresignedUrls(string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
-        {
-            using (var newClient = new AmazonS3Client())
-            {
-                var bucketName = S3TestUtils.CreateBucketWithWait(newClient);
-                try
-                {
-                    VerifyPresignedPut(bucketName, key, keyId, serverSideEncryptionMethod);
-                    VerifyObjectWithTransferUtility(bucketName);
-                    TestPresignedGet(bucketName, key, keyId);
-
-                    var key2 = key + "Copy2";
-                    var copyResponse = newClient.CopyObject(new CopyObjectRequest
-                    {
-                        SourceBucket = bucketName,
-                        SourceKey = key,
-                        DestinationBucket = bucketName,
-                        DestinationKey = key2
-                    });
-                    Assert.IsNotNull(copyResponse);
-                    var usedKeyId = copyResponse.ServerSideEncryptionKeyManagementServiceKeyId;
-                    Assert.IsNull(usedKeyId);
-                }
-                finally
-                {
-                    AmazonS3Util.DeleteS3BucketWithObjects(newClient, bucketName);
-                }
-            }
-        }
-
-        private void TestSseKms(string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
-        {
-            var bucketName = S3TestUtils.CreateBucketWithWait(Client);
-            try
-            {
-                var putObjectRequest = new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ContentBody = testContents,
-                    ServerSideEncryptionMethod = serverSideEncryptionMethod
-                };
-                putObjectRequest.ServerSideEncryptionKeyManagementServiceKeyId = keyId;
-                var putObjectResponse = Client.PutObject(putObjectRequest);
-                Assert.IsNotNull(putObjectResponse.ServerSideEncryptionKeyManagementServiceKeyId);
-                var usedKeyId = putObjectResponse.ServerSideEncryptionKeyManagementServiceKeyId;
-                VerifyKeyId(keyId, usedKeyId);
-                VerifyObject(bucketName, key, usedKeyId, serverSideEncryptionMethod);
-                VerifyObjectWithTransferUtility(bucketName);
-
-                TestCopyPart(bucketName, key, keyId, serverSideEncryptionMethod);
-
-                var key2 = key + "Copy";
-                var copyResponse = Client.CopyObject(new CopyObjectRequest
-                {
-                    SourceBucket = bucketName,
-                    SourceKey = key,
-                    DestinationBucket = bucketName,
-                    DestinationKey = key2,
-                    ServerSideEncryptionMethod = serverSideEncryptionMethod,
-                    ServerSideEncryptionKeyManagementServiceKeyId = keyId
-                });
-                Assert.IsNotNull(copyResponse);
-                usedKeyId = copyResponse.ServerSideEncryptionKeyManagementServiceKeyId;
-                VerifyKeyId(keyId, usedKeyId);
-                VerifyObject(bucketName, key2, usedKeyId, serverSideEncryptionMethod);
-
-                TransferUtility utility = new TransferUtility(Client);
-                var smallUploadRequest = new TransferUtilityUploadRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ServerSideEncryptionMethod = serverSideEncryptionMethod,
-                    ServerSideEncryptionKeyManagementServiceKeyId = keyId,
-                    InputStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(testContents))
-                };
-                utility.Upload(smallUploadRequest);
-                VerifyObject(bucketName, key, keyId, serverSideEncryptionMethod);
-
-                var largeUploadRequest = new TransferUtilityUploadRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ServerSideEncryptionMethod = serverSideEncryptionMethod,
-                    ServerSideEncryptionKeyManagementServiceKeyId = keyId,
-                    InputStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(largeTestContents))
-                };
-                utility.Upload(largeUploadRequest);
-                VerifyObject(bucketName, key, keyId, serverSideEncryptionMethod);
-
-                TestUploadDirectory(bucketName, keyId, serverSideEncryptionMethod);
-            }
-            finally
-            {
-                AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
-            }
-        }
-
-        private void TestUploadDirectory(string bucketName, string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
+        private async Task TestUploadDirectory(string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
         {
             var directoryName = UtilityMethods.GenerateName("UploadDirectoryTest");
-
-            var directoryPath = Path.Combine(basePath, directoryName);
+            var directoryPath = Path.Combine(tempDirectory, directoryName);
             for (int i = 0; i < 5; i++)
             {
                 var filePath = Path.Combine(Path.Combine(directoryPath, i.ToString()), "file.txt");
@@ -445,24 +268,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 keys.Add(e.UploadRequest.Key);
             };
-            transferUtility.UploadDirectory(request);
+            await transferUtility.UploadDirectoryAsync(request);
             Assert.AreEqual(5, keys.Count);
 
             foreach (var key in keys)
-                VerifyObject(bucketName, key, keyId, serverSideEncryptionMethod);
+            {
+                await VerifyObject(key, keyId, serverSideEncryptionMethod);
+            }
         }
-        private void TestPresignedGet(string bucketName, string key, string keyId)
+
+        private async Task TestPresignedGet(string key, string keyId)
         {
-            GetPreSignedUrlRequest getPresignedUrlRequest = new GetPreSignedUrlRequest
+            var url = Client.GetPreSignedURL(new GetPreSignedUrlRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 Expires = DateTime.UtcNow.AddMinutes(5)
-            };
-            var url = Client.GetPreSignedURL(getPresignedUrlRequest);
-            var webRequest = HttpWebRequest.Create(url);
+            });
 
-            using (var response = webRequest.GetResponse())
+            var webRequest = WebRequest.Create(url);
+            using (var response = await webRequest.GetResponseAsync())
             {
                 var usedKeyId = response.Headers[HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader];
                 VerifyKeyId(keyId, usedKeyId);
@@ -470,14 +295,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 using (var stream = response.GetResponseStream())
                 using (var reader = new StreamReader(stream))
                 {
-                    var data = reader.ReadToEnd();
+                    var data = await reader.ReadToEndAsync();
                     VerifyContents(data);
                 }
             }
         }
-        private void VerifyPresignedPut(string bucketName, string key, string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
+
+        private async Task VerifyPresignedPut(string key, string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
         {
-            GetPreSignedUrlRequest getPresignedUrlRequest = new GetPreSignedUrlRequest
+            var url = Client.GetPreSignedURL(new GetPreSignedUrlRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -485,26 +311,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ServerSideEncryptionMethod = serverSideEncryptionMethod,
                 ServerSideEncryptionKeyManagementServiceKeyId = keyId,
                 Expires = DateTime.UtcNow.AddMinutes(5)
-            };
-            var url = Client.GetPreSignedURL(getPresignedUrlRequest);
+            });
 
             string usedKeyId = null;
             for (int i = 0; i < 5; i++)
             {
                 try
                 {
-                    usedKeyId = VerifyPresignedPut(keyId, url, serverSideEncryptionMethod);
+                    usedKeyId = await RetrieveUsedKeyId(keyId, url, serverSideEncryptionMethod);
                     break;
                 }
-                catch
-                {}
+                catch { }
             }
 
             Assert.IsNotNull(usedKeyId);
             VerifyKeyId(keyId, usedKeyId);
-            VerifyObject(bucketName, key, usedKeyId, serverSideEncryptionMethod);
+            await VerifyObject(key, usedKeyId, serverSideEncryptionMethod);
         }
-        private void TestCopyPart(string bucketName, string key, string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
+
+        private async Task TestCopyPart(string key, string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
         {
             string dstKey = "dstObject";
             string srcKey = key;
@@ -515,8 +340,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                //Get the srcObjectTimestamp
-                GetObjectMetadataResponse gomr = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                // Get the srcObjectTimestamp
+                var gomr = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                 {
                     BucketName = bucketName,
                     Key = srcKey
@@ -525,8 +350,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 srcVersionID = gomr.VersionId;
                 srcETag = gomr.ETag;
 
-                //Start the multipart upload
-                InitiateMultipartUploadResponse imur = Client.InitiateMultipartUpload(new InitiateMultipartUploadRequest
+                var imur = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = dstKey,
@@ -538,7 +362,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 VerifyKeyId(keyId, usedKeyId);
                 uploadID = imur.UploadId;
 
-                CopyPartRequest request = new CopyPartRequest
+                var response = await Client.CopyPartAsync(new CopyPartRequest
                 {
                     DestinationBucket = bucketName,
                     DestinationKey = dstKey,
@@ -546,21 +370,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     SourceKey = srcKey,
                     UploadId = uploadID,
                     PartNumber = 1,
-                };
-                CopyPartResponse response = Client.CopyPart(request);
+                });
                 Assert.AreEqual(serverSideEncryptionMethod, response.ServerSideEncryptionMethod);
                 usedKeyId = response.ServerSideEncryptionKeyManagementServiceKeyId;
                 VerifyKeyId(keyId, usedKeyId);
 
-                //ETag
                 Assert.IsNotNull(response.ETag);
                 Assert.IsTrue((response.ETag != null) && (response.ETag.Length > 0));
-
-                //LastModified
                 Assert.IsNotNull(response.LastModified);
                 Assert.AreNotEqual(DateTime.MinValue, response.LastModified);
-
-                //PartNumber
                 Assert.IsTrue(response.PartNumber == 1);
 
                 var completeRequest = new CompleteMultipartUploadRequest
@@ -571,17 +389,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 };
                 completeRequest.AddPartETags(response);
 
-                var completeResponse = Client.CompleteMultipartUpload(completeRequest);
+                var completeResponse = await Client.CompleteMultipartUploadAsync(completeRequest);
                 Assert.AreEqual(serverSideEncryptionMethod, completeResponse.ServerSideEncryptionMethod);
                 usedKeyId = completeResponse.ServerSideEncryptionKeyManagementServiceKeyId;
                 VerifyKeyId(keyId, usedKeyId);
             }
             finally
             {
-                //abort the multipart upload
                 if (uploadID != null)
                 {
-                    Client.AbortMultipartUpload(new AbortMultipartUploadRequest
+                    await Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
                     {
                         BucketName = bucketName,
                         Key = dstKey,
@@ -591,58 +408,67 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private string VerifyPresignedPut(string keyId, string url, ServerSideEncryptionMethod serverSideEncryptionMethod)
+        private async Task<string> RetrieveUsedKeyId(string keyId, string url, ServerSideEncryptionMethod serverSideEncryptionMethod)
         {
-            var webRequest = HttpWebRequest.Create(url);
+            var webRequest = WebRequest.Create(url);
             webRequest.Method = "PUT";
 
             if (keyId != null)
+            {
                 webRequest.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, keyId);
+            }
             webRequest.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, serverSideEncryptionMethod.Value);
 
-            using (var stream = webRequest.GetRequestStream())
+            using (var stream = await webRequest.GetRequestStreamAsync())
             using (var writer = new StreamWriter(stream))
             {
-                writer.Write(testContents);
+                await writer.WriteAsync(testContents);
             }
 
             string usedKeyId;
-            using (var response = webRequest.GetResponse())
+            using (var response = await webRequest.GetResponseAsync())
             {
                 usedKeyId = response.Headers[HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader];
             }
             return usedKeyId;
         }
-        private void VerifyObject(string bucketName, string key, string usedKeyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
-        {
-            var metadata = Client.GetObjectMetadata(bucketName, key);
-            if (usedKeyId != null)
-                Assert.IsTrue(metadata.ServerSideEncryptionKeyManagementServiceKeyId.IndexOf(usedKeyId, StringComparison.OrdinalIgnoreCase) >= 0);
 
-            using (var response = Client.GetObject(bucketName, key))
+        private async Task VerifyObject(string key, string usedKeyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
+        {
+            var metadata = await Client.GetObjectMetadataAsync(bucketName, key);
+            if (usedKeyId != null)
+            {
+                Assert.IsTrue(metadata.ServerSideEncryptionKeyManagementServiceKeyId.IndexOf(usedKeyId, StringComparison.OrdinalIgnoreCase) >= 0);
+            }
+
+            using (var response = await Client.GetObjectAsync(bucketName, key))
             {
                 Assert.AreEqual(serverSideEncryptionMethod, response.ServerSideEncryptionMethod);
                 Assert.IsNotNull(response.ServerSideEncryptionKeyManagementServiceKeyId);
                 if (usedKeyId != null)
+                {
                     Assert.IsTrue(response.ServerSideEncryptionKeyManagementServiceKeyId.IndexOf(usedKeyId, StringComparison.OrdinalIgnoreCase) >= 0);
+                }
 
                 using (var reader = new StreamReader(response.ResponseStream))
                 {
-                    var data = reader.ReadToEnd();
+                    var data = await reader.ReadToEndAsync();
                     VerifyContents(data);
                 }
             }
         }
-        private void VerifyObjectWithTransferUtility(string bucketName)
+
+        private async Task VerifyObjectWithTransferUtility()
         {
             var transferUtility = new TransferUtility(Client);
             var filePath = Path.GetFullPath("downloadedFile.txt");
-            transferUtility.Download(new TransferUtilityDownloadRequest
+            await transferUtility.DownloadAsync(new TransferUtilityDownloadRequest
             {
                 BucketName = bucketName,
                 Key = key,
                 FilePath = filePath
             });
+
             var fileContents = File.ReadAllText(filePath);
             VerifyContents(fileContents);
         }
@@ -656,6 +482,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             else
                 Assert.IsTrue(string.Equals(fileContents, contents, StringComparison.Ordinal));
         }
+
         private static void VerifyKeyId(string suppliedKeyId, string returnedKeyId)
         {
             if (suppliedKeyId != null)

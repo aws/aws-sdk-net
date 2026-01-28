@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCommentOperationException
+        /// message.
+        /// </summary>
+        public InvalidCommentOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCommentOperationException with the specified error
         /// message.
         /// </summary>

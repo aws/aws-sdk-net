@@ -42,6 +42,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for AvailabilityZonesMismatchException
+        /// message.
+        /// </summary>
+        public AvailabilityZonesMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AvailabilityZonesMismatchException with the specified error
         /// message.
         /// </summary>

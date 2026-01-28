@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for StateMachineDoesNotExistException
+        /// message.
+        /// </summary>
+        public StateMachineDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StateMachineDoesNotExistException with the specified error
         /// message.
         /// </summary>

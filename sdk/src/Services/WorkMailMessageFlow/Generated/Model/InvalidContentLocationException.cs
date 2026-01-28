@@ -56,6 +56,13 @@ namespace Amazon.WorkMailMessageFlow.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidContentLocationException
+        /// message.
+        /// </summary>
+        public InvalidContentLocationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidContentLocationException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDestinationCommitSpecifierException
+        /// message.
+        /// </summary>
+        public InvalidDestinationCommitSpecifierException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDestinationCommitSpecifierException with the specified error
         /// message.
         /// </summary>

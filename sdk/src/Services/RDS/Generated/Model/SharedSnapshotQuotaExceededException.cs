@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for SharedSnapshotQuotaExceededException
+        /// message.
+        /// </summary>
+        public SharedSnapshotQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SharedSnapshotQuotaExceededException with the specified error
         /// message.
         /// </summary>

@@ -64,13 +64,13 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("XmlNamespacesRequest", "http://foo.com");
-                if (publicRequest.Nested != null)
+                if (publicRequest.IsSetNested())
                 {
                     xmlWriter.WriteStartElement("nested","http://foo.com");
                     if(publicRequest.Nested.IsSetFoo())
                         xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Nested.Foo));
                     var publicRequestNestedValues = publicRequest.Nested.Values;
-                    if (publicRequestNestedValues != null && (publicRequestNestedValues.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Nested.IsSetValues()) 
                     {
                         xmlWriter.WriteStartElement("values", "http://qux.com");
                         foreach (var publicRequestNestedValuesValue in publicRequestNestedValues) 

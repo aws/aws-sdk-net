@@ -42,6 +42,8 @@ namespace Amazon.BedrockDataAutomation.Model
         private Dictionary<string, string> _kmsEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
+        private List<BlueprintOptimizationSample> _optimizationSamples = AWSConfigs.InitializeCollections ? new List<BlueprintOptimizationSample>() : null;
+        private DateTime? _optimizationTime;
         private string _schema;
         private Type _type;
 
@@ -175,6 +177,41 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizationSamples.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<BlueprintOptimizationSample> OptimizationSamples
+        {
+            get { return this._optimizationSamples; }
+            set { this._optimizationSamples = value; }
+        }
+
+        // Check to see if OptimizationSamples property is set
+        internal bool IsSetOptimizationSamples()
+        {
+            return this._optimizationSamples != null && (this._optimizationSamples.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizationTime.
+        /// </summary>
+        public DateTime? OptimizationTime
+        {
+            get { return this._optimizationTime; }
+            set { this._optimizationTime = value; }
+        }
+
+        // Check to see if OptimizationTime property is set
+        internal bool IsSetOptimizationTime()
+        {
+            return this._optimizationTime.HasValue; 
         }
 
         /// <summary>

@@ -40,6 +40,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateInUseException
+        /// message.
+        /// </summary>
+        public CertificateInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateInUseException with the specified error
         /// message.
         /// </summary>

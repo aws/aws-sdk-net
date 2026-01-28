@@ -31,11 +31,11 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCostCategories operation.
-    /// Retrieves an array of Cost Category names and values incurred cost.
+    /// Retrieves an array of cost category names and values incurred cost.
     /// 
     ///  <note> 
     /// <para>
-    /// If some Cost Category names and values are not associated with any cost, they will
+    /// If some cost category names and values are not associated with any cost, they will
     /// not be returned by this API.
     /// </para>
     ///  </note>
@@ -164,8 +164,8 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// If you don't specify a <c>CostCategoryName</c>, <c>SearchString</c> is used to filter
-        /// Cost Category names that match the <c>SearchString</c> pattern. If you specify a <c>CostCategoryName</c>,
-        /// <c>SearchString</c> is used to filter Cost Category values that match the <c>SearchString</c>
+        /// cost category names that match the <c>SearchString</c> pattern. If you specify a <c>CostCategoryName</c>,
+        /// <c>SearchString</c> is used to filter cost category values that match the <c>SearchString</c>
         /// pattern.
         /// </para>
         /// </summary>

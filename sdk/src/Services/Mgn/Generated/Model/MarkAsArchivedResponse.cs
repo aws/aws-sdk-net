@@ -281,7 +281,7 @@ namespace Amazon.Mgn.Model
         /// Source server user provided ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string UserProvidedID
         {
             get { return this._userProvidedID; }

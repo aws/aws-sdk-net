@@ -43,6 +43,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for UpdateInProgressException
+        /// message.
+        /// </summary>
+        public UpdateInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UpdateInProgressException with the specified error
         /// message.
         /// </summary>

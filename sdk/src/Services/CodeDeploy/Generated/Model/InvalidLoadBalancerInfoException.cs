@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLoadBalancerInfoException
+        /// message.
+        /// </summary>
+        public InvalidLoadBalancerInfoException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLoadBalancerInfoException with the specified error
         /// message.
         /// </summary>

@@ -112,6 +112,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetDiskEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("diskEncryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DiskEncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DiskEncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetIdentityCenterConfiguration())
             {
                 context.Writer.WritePropertyName("identityCenterConfiguration");
@@ -160,6 +171,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 
                 var marshaller = InteractiveConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.InteractiveConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobLevelCostAllocationConfiguration())
+            {
+                context.Writer.WritePropertyName("jobLevelCostAllocationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobLevelCostAllocationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobLevelCostAllocationConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

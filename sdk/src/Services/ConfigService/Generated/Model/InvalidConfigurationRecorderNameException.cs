@@ -40,6 +40,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidConfigurationRecorderNameException
+        /// message.
+        /// </summary>
+        public InvalidConfigurationRecorderNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidConfigurationRecorderNameException with the specified error
         /// message.
         /// </summary>

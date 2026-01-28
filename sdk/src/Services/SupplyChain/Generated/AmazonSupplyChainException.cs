@@ -36,6 +36,14 @@ namespace Amazon.SupplyChain
         /// <summary>
         /// Construct instance of AmazonSupplyChainException
         /// </summary>
+        public AmazonSupplyChainException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSupplyChainException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSupplyChainException(string message)
             : base(message)

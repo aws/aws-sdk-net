@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving
-    /// the upload.
+    /// Returned if, when uploading an archive, Amazon Glacier times out while receiving the
+    /// upload.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -40,6 +40,13 @@ namespace Amazon.Glacier.Model
     {
         private string _code;
         private string _type;
+
+        /// <summary>
+        /// Default constructor for RequestTimeoutException
+        /// message.
+        /// </summary>
+        public RequestTimeoutException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new RequestTimeoutException with the specified error

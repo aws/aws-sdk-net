@@ -61,6 +61,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AttachmentLimitType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ebsCardSet/item", targetDepth))
+                    {
+                        var unmarshaller = EbsCardInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.EbsCards == null)
+                        {
+                            unmarshalledObject.EbsCards = new List<EbsCardInfo>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EbsCards.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ebsOptimizedInfo", targetDepth))
                     {
                         var unmarshaller = EbsOptimizedInfoUnmarshaller.Instance;
@@ -83,6 +94,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaximumEbsAttachments = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("maximumEbsCards", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.MaximumEbsCards = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("nvmeSupport", targetDepth))

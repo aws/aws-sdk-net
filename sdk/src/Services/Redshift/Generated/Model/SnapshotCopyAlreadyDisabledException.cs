@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotCopyAlreadyDisabledException
+        /// message.
+        /// </summary>
+        public SnapshotCopyAlreadyDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotCopyAlreadyDisabledException with the specified error
         /// message.
         /// </summary>

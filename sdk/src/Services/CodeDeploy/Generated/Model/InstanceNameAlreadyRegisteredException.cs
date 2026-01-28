@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InstanceNameAlreadyRegisteredException
+        /// message.
+        /// </summary>
+        public InstanceNameAlreadyRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InstanceNameAlreadyRegisteredException with the specified error
         /// message.
         /// </summary>

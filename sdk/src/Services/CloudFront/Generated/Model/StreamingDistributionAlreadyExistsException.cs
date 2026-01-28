@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for StreamingDistributionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public StreamingDistributionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StreamingDistributionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

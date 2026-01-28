@@ -61,6 +61,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAlarmConfigException
+        /// message.
+        /// </summary>
+        public InvalidAlarmConfigException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAlarmConfigException with the specified error
         /// message.
         /// </summary>

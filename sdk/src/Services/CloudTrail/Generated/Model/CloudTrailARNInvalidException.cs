@@ -60,6 +60,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudTrailARNInvalidException
+        /// message.
+        /// </summary>
+        public CloudTrailARNInvalidException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudTrailARNInvalidException with the specified error
         /// message.
         /// </summary>

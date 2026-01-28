@@ -78,7 +78,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBucketAccountId())
                     xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequest.BucketAccountId));
 
-                if (publicRequest.PublicAccessBlockConfiguration != null)
+                if (publicRequest.IsSetPublicAccessBlockConfiguration())
                 {
                     xmlWriter.WriteStartElement("PublicAccessBlockConfiguration");
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
@@ -91,11 +91,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));
                     xmlWriter.WriteEndElement();
                 }
-                if (publicRequest.Scope != null)
+                if (publicRequest.IsSetScope())
                 {
                     xmlWriter.WriteStartElement("Scope");
                     var publicRequestScopePermissions = publicRequest.Scope.Permissions;
-                    if (publicRequestScopePermissions != null && (publicRequestScopePermissions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Scope.IsSetPermissions()) 
                     {
                         xmlWriter.WriteStartElement("Permissions");
                         foreach (var publicRequestScopePermissionsValue in publicRequestScopePermissions) 
@@ -107,7 +107,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     var publicRequestScopePrefixes = publicRequest.Scope.Prefixes;
-                    if (publicRequestScopePrefixes != null && (publicRequestScopePrefixes.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Scope.IsSetPrefixes()) 
                     {
                         xmlWriter.WriteStartElement("Prefixes");
                         foreach (var publicRequestScopePrefixesValue in publicRequestScopePrefixes) 
@@ -121,24 +121,24 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetTags()) 
                 {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                    if (publicRequestTagsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("Tag");
-                        if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
-                        if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestTagsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Tag");
+                            if(publicRequestTagsValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
+                            if(publicRequestTagsValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
-                if (publicRequest.VpcConfiguration != null)
+                if (publicRequest.IsSetVpcConfiguration())
                 {
                     xmlWriter.WriteStartElement("VpcConfiguration");
                     if(publicRequest.VpcConfiguration.IsSetVpcId())

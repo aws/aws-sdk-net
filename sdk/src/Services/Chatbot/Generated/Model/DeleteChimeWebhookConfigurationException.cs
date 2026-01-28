@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for DeleteChimeWebhookConfigurationException
+        /// message.
+        /// </summary>
+        public DeleteChimeWebhookConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeleteChimeWebhookConfigurationException with the specified error
         /// message.
         /// </summary>

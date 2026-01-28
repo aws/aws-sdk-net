@@ -36,6 +36,14 @@ namespace Amazon.ResourceExplorer2
         /// <summary>
         /// Construct instance of AmazonResourceExplorer2Exception
         /// </summary>
+        public AmazonResourceExplorer2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonResourceExplorer2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonResourceExplorer2Exception(string message)
             : base(message)

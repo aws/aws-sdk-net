@@ -40,6 +40,13 @@ namespace Amazon.Pinpoint.Model
         private string _requestID;
 
         /// <summary>
+        /// Default constructor for ForbiddenException
+        /// message.
+        /// </summary>
+        public ForbiddenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ForbiddenException with the specified error
         /// message.
         /// </summary>

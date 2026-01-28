@@ -39,6 +39,13 @@ namespace Amazon.Comprehend.Model
     {
 
         /// <summary>
+        /// Default constructor for JobNotFoundException
+        /// message.
+        /// </summary>
+        public JobNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new JobNotFoundException with the specified error
         /// message.
         /// </summary>

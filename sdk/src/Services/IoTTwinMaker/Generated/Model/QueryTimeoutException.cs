@@ -41,6 +41,13 @@ namespace Amazon.IoTTwinMaker.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for QueryTimeoutException
+        /// message.
+        /// </summary>
+        public QueryTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueryTimeoutException with the specified error
         /// message.
         /// </summary>

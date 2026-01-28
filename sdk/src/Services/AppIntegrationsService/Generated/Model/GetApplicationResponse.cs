@@ -36,6 +36,7 @@ namespace Amazon.AppIntegrationsService.Model
     {
         private ApplicationConfig _applicationConfig;
         private ApplicationSourceConfig _applicationSourceConfig;
+        private ApplicationType _applicationType;
         private string _arn;
         private DateTime? _createdTime;
         private string _description;
@@ -85,6 +86,24 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetApplicationSourceConfig()
         {
             return this._applicationSourceConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// The type of application.
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
         }
 
         /// <summary>
@@ -204,6 +223,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// Indicates whether the application is a service.
         /// </para>
         /// </summary>
+        [Obsolete("IsService has been deprecated in favor of ApplicationType")]
         public bool? IsService
         {
             get { return this._isService; }
@@ -259,7 +279,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// The namespace of the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=211)]
         public string Namespace
         {
             get { return this._awsNamespace; }

@@ -36,6 +36,14 @@ namespace Amazon.FSx
         /// <summary>
         /// Construct instance of AmazonFSxException
         /// </summary>
+        public AmazonFSxException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonFSxException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonFSxException(string message)
             : base(message)

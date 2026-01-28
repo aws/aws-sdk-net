@@ -69,11 +69,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.ContinuousDeploymentPolicyConfig.IsSetEnabled())
                         xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.ContinuousDeploymentPolicyConfig.Enabled.Value));
 
-                    if (publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames != null)
+                    if (publicRequest.ContinuousDeploymentPolicyConfig.IsSetStagingDistributionDnsNames())
                     {
                         xmlWriter.WriteStartElement("StagingDistributionDnsNames");
                         var publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems = publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.Items;
-                        if (publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems != null && (publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItemsValue in publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems) 
@@ -88,10 +88,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.Quantity.Value));
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig != null)
+                    if (publicRequest.ContinuousDeploymentPolicyConfig.IsSetTrafficConfig())
                     {
                         xmlWriter.WriteStartElement("TrafficConfig");
-                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig != null)
+                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.IsSetSingleHeaderConfig())
                         {
                             xmlWriter.WriteStartElement("SingleHeaderConfig");
                             if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.IsSetHeader())
@@ -100,10 +100,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig != null)
+                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.IsSetSingleWeightConfig())
                         {
                             xmlWriter.WriteStartElement("SingleWeightConfig");
-                            if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig != null)
+                            if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.IsSetSessionStickinessConfig())
                             {
                                 xmlWriter.WriteStartElement("SessionStickinessConfig");
                                 if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig.IsSetIdleTTL())

@@ -32,8 +32,8 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DescribeEncryptionConfiguration operation.
     /// Retrieves the encryption configuration for resources and data of your Amazon Web Services
-    /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/key-management.html">Key
-    /// management in IoT</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.
+    /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
+    /// encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
     /// </summary>
     public partial class DescribeEncryptionConfigurationRequest : AmazonIoTRequest
     {

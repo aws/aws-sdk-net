@@ -82,16 +82,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if(publicRequest.AnalyticsConfiguration.IsSetAnalyticsId())
                         xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequest.AnalyticsConfiguration.AnalyticsId));
 
-                    if (publicRequest.AnalyticsConfiguration.StorageClassAnalysis != null)
+                    if (publicRequest.AnalyticsConfiguration.IsSetStorageClassAnalysis())
                     {
                         xmlWriter.WriteStartElement("StorageClassAnalysis");
-                        if (publicRequest.AnalyticsConfiguration.StorageClassAnalysis.DataExport != null)
+                        if (publicRequest.AnalyticsConfiguration.StorageClassAnalysis.IsSetDataExport())
                         {
                             xmlWriter.WriteStartElement("DataExport");
-                            if (publicRequest.AnalyticsConfiguration.StorageClassAnalysis.DataExport.Destination != null)
+                            if (publicRequest.AnalyticsConfiguration.StorageClassAnalysis.DataExport.IsSetDestination())
                             {
                                 xmlWriter.WriteStartElement("Destination");
-                                if (publicRequest.AnalyticsConfiguration.StorageClassAnalysis.DataExport.Destination.S3BucketDestination != null)
+                                if (publicRequest.AnalyticsConfiguration.StorageClassAnalysis.DataExport.Destination.IsSetS3BucketDestination())
                                 {
                                     xmlWriter.WriteStartElement("S3BucketDestination");
                                     if(publicRequest.AnalyticsConfiguration.StorageClassAnalysis.DataExport.Destination.S3BucketDestination.IsSetBucketAccountId())

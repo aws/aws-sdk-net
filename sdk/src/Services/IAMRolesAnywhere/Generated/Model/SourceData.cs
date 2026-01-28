@@ -64,7 +64,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <c>CERTIFICATE_BUNDLE</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8000)]
+        [AWSProperty(Min=1, Max=16000)]
         public string X509CertificateData
         {
             get { return this._x509CertificateData; }

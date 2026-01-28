@@ -39,6 +39,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for NoDataRetentionException
+        /// message.
+        /// </summary>
+        public NoDataRetentionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoDataRetentionException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchDelegationSetException
+        /// message.
+        /// </summary>
+        public NoSuchDelegationSetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchDelegationSetException with the specified error
         /// message.
         /// </summary>

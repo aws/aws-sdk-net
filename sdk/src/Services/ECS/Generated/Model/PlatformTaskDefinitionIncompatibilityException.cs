@@ -40,6 +40,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for PlatformTaskDefinitionIncompatibilityException
+        /// message.
+        /// </summary>
+        public PlatformTaskDefinitionIncompatibilityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PlatformTaskDefinitionIncompatibilityException with the specified error
         /// message.
         /// </summary>

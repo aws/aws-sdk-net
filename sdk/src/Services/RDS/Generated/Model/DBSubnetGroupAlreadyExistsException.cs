@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSubnetGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBSubnetGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSubnetGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

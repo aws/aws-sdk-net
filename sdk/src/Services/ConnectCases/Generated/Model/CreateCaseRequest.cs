@@ -43,6 +43,11 @@ namespace Amazon.ConnectCases.Model
     /// </para>
     ///  
     /// <para>
+    /// When creating a case from a template that has tag propagation configurations, the
+    /// specified tags are automatically applied to the case.
+    /// </para>
+    ///  
+    /// <para>
     /// The following fields are required when creating a case:
     /// </para>
     ///  <ul> <li> 
@@ -64,6 +69,7 @@ namespace Amazon.ConnectCases.Model
         private string _domainId;
         private List<FieldValue> _fields = AWSConfigs.InitializeCollections ? new List<FieldValue>() : null;
         private UserUnion _performedBy;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateId;
 
         /// <summary>
@@ -145,6 +151,31 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetPerformedBy()
         {
             return this._performedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of of key-value pairs that represent tags on a resource. Tags are used to organize,
+        /// track, or control access for this resource.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

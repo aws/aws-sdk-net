@@ -36,6 +36,14 @@ namespace Amazon.EntityResolution
         /// <summary>
         /// Construct instance of AmazonEntityResolutionException
         /// </summary>
+        public AmazonEntityResolutionException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEntityResolutionException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEntityResolutionException(string message)
             : base(message)

@@ -36,6 +36,14 @@ namespace Amazon.EBS
         /// <summary>
         /// Construct instance of AmazonEBSException
         /// </summary>
+        public AmazonEBSException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEBSException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEBSException(string message)
             : base(message)

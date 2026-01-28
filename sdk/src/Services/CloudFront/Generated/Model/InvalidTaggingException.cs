@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTaggingException
+        /// message.
+        /// </summary>
+        public InvalidTaggingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTaggingException with the specified error
         /// message.
         /// </summary>

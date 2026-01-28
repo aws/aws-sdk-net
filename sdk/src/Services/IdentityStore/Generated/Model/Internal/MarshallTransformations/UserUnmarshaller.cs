@@ -92,6 +92,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     unmarshalledObject.Emails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Extensions", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
+                    unmarshalledObject.Extensions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ExternalIds", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExternalId, ExternalIdUnmarshaller>(ExternalIdUnmarshaller.Instance);
@@ -144,6 +150,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfileUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Roles", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Role, RoleUnmarshaller>(RoleUnmarshaller.Instance);
+                    unmarshalledObject.Roles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Timezone", targetDepth))

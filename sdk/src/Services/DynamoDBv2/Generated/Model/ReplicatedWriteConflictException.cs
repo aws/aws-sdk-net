@@ -42,6 +42,13 @@ namespace Amazon.DynamoDBv2.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for ReplicatedWriteConflictException
+        /// message.
+        /// </summary>
+        public ReplicatedWriteConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplicatedWriteConflictException with the specified error
         /// message.
         /// </summary>

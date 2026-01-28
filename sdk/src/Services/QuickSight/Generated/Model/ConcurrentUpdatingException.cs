@@ -40,6 +40,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentUpdatingException
+        /// message.
+        /// </summary>
+        public ConcurrentUpdatingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentUpdatingException with the specified error
         /// message.
         /// </summary>

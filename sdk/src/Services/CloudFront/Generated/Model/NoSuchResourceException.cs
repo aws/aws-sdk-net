@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchResourceException
+        /// message.
+        /// </summary>
+        public NoSuchResourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchResourceException with the specified error
         /// message.
         /// </summary>

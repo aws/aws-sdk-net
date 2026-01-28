@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSnsTopicNameException
+        /// message.
+        /// </summary>
+        public InvalidSnsTopicNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSnsTopicNameException with the specified error
         /// message.
         /// </summary>

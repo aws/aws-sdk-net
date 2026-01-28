@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidBlockerDeclarationException
+        /// message.
+        /// </summary>
+        public InvalidBlockerDeclarationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidBlockerDeclarationException with the specified error
         /// message.
         /// </summary>

@@ -58,6 +58,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.EffectiveHoursOfOperationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EffectiveOverrideHoursList", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<EffectiveOverrideHours, EffectiveOverrideHoursUnmarshaller>(EffectiveOverrideHoursUnmarshaller.Instance);
+                    response.EffectiveOverrideHoursList = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TimeZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -39,6 +39,13 @@ namespace Amazon.TaxSettings.Model
     {
 
         /// <summary>
+        /// Default constructor for AttachmentUploadException
+        /// message.
+        /// </summary>
+        public AttachmentUploadException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AttachmentUploadException with the specified error
         /// message.
         /// </summary>

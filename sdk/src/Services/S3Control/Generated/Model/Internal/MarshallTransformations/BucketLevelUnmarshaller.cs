@@ -74,6 +74,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.AdvancedDataProtectionMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AdvancedPerformanceMetrics", targetDepth))
+                    {
+                        var unmarshaller = AdvancedPerformanceMetricsUnmarshaller.Instance;
+                        unmarshalledObject.AdvancedPerformanceMetrics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DetailedStatusCodesMetrics", targetDepth))
                     {
                         var unmarshaller = DetailedStatusCodesMetricsUnmarshaller.Instance;

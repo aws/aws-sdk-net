@@ -33,7 +33,7 @@ namespace Amazon.GameLiftStreams
     public partial class AmazonGameLiftStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("GameLiftStreams", "4.0.4.5");
+            InternalSDKUtils.BuildUserAgentString("GameLiftStreams", "4.0.5.4");
 
         private static readonly AmazonGameLiftStreamsEndpointResolver EndpointResolver =
             new AmazonGameLiftStreamsEndpointResolver();

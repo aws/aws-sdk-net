@@ -30,9 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
-    /// asynchronous invocations. While the event payload may be under 1 MB, the size after
-    /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
+    /// The request payload exceeded the maximum allowed size for serialized request entities.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -40,6 +38,13 @@ namespace Amazon.Lambda.Model
     public partial class SerializedRequestEntityTooLargeException : AmazonLambdaException
     {
         private string _type;
+
+        /// <summary>
+        /// Default constructor for SerializedRequestEntityTooLargeException
+        /// message.
+        /// </summary>
+        public SerializedRequestEntityTooLargeException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SerializedRequestEntityTooLargeException with the specified error

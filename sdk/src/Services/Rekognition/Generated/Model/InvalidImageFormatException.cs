@@ -39,6 +39,13 @@ namespace Amazon.Rekognition.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidImageFormatException
+        /// message.
+        /// </summary>
+        public InvalidImageFormatException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidImageFormatException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Glue.Model
         private string _associatedGlueResource;
 
         /// <summary>
+        /// Default constructor for FederatedResourceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public FederatedResourceAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FederatedResourceAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceShareInvitationExpiredException
+        /// message.
+        /// </summary>
+        public ResourceShareInvitationExpiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceShareInvitationExpiredException with the specified error
         /// message.
         /// </summary>

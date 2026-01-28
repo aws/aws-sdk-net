@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InstanceNameRequiredException
+        /// message.
+        /// </summary>
+        public InstanceNameRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InstanceNameRequiredException with the specified error
         /// message.
         /// </summary>

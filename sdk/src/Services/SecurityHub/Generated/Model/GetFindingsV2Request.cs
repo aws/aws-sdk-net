@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// Return a list of findings that match the specified criteria. <c>GetFindings</c> and
     /// <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c> in the <c>Action</c>
     /// element of an IAM policy statement. You must have permission to perform the <c>securityhub:GetFindings</c>
-    /// action. This API is in public preview and subject to change.
+    /// action.
     /// </summary>
     public partial class GetFindingsV2Request : AmazonSecurityHubRequest
     {

@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessPointLimitExceededException
+        /// message.
+        /// </summary>
+        public AccessPointLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessPointLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -42,6 +42,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyTypeNotEnabledException
+        /// message.
+        /// </summary>
+        public PolicyTypeNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyTypeNotEnabledException with the specified error
         /// message.
         /// </summary>

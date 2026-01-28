@@ -42,6 +42,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalServiceException
+        /// message.
+        /// </summary>
+        public InternalServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServiceException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomDomainAssociationNotFoundException
+        /// message.
+        /// </summary>
+        public CustomDomainAssociationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomDomainAssociationNotFoundException with the specified error
         /// message.
         /// </summary>

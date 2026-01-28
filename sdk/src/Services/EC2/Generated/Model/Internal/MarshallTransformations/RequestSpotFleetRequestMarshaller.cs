@@ -137,6 +137,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                                 {
                                                     request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.DeleteOnTermination));
                                                 }
+                                                if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetEbsCardIndex())
+                                                {
+                                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "EbsCardIndex", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.EbsCardIndex));
+                                                }
                                                 if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetEncrypted())
                                                 {
                                                     request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.Encrypted));
@@ -695,6 +699,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.Placement.AvailabilityZone));
                                     }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.Placement.IsSetAvailabilityZoneId())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Placement" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.Placement.AvailabilityZoneId));
+                                    }
                                     if(publicRequestSpotFleetRequestConfiglistValue.Placement.IsSetGroupName())
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.Placement.GroupName));
@@ -823,6 +831,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetAvailabilityZone())
                                             {
                                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.AvailabilityZone));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetAvailabilityZoneId())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.AvailabilityZoneId));
                                             }
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetInstanceRequirements())
                                             {

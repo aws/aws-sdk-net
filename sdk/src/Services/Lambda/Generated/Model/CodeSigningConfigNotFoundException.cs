@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for CodeSigningConfigNotFoundException
+        /// message.
+        /// </summary>
+        public CodeSigningConfigNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CodeSigningConfigNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.SocialMessaging.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for InternalServiceException
+        /// message.
+        /// </summary>
+        public InternalServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServiceException with the specified error
         /// message.
         /// </summary>

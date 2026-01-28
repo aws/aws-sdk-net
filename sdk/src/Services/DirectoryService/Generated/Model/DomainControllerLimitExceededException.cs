@@ -40,6 +40,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for DomainControllerLimitExceededException
+        /// message.
+        /// </summary>
+        public DomainControllerLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DomainControllerLimitExceededException with the specified error
         /// message.
         /// </summary>

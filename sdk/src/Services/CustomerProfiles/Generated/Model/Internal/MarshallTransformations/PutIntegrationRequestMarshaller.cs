@@ -124,6 +124,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
             }
 
+            if(publicRequest.IsSetScope())
+            {
+                context.Writer.WritePropertyName("Scope");
+                context.Writer.WriteStringValue(publicRequest.Scope);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

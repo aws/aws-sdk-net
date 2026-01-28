@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyContinuousDeploymentPoliciesException
+        /// message.
+        /// </summary>
+        public TooManyContinuousDeploymentPoliciesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyContinuousDeploymentPoliciesException with the specified error
         /// message.
         /// </summary>

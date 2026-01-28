@@ -1324,6 +1324,13 @@
         }
       }
     },
+    "CapacityOptionType":{
+      "type":"string",
+      "enum":[
+        "ON_DEMAND",
+        "SPOT"
+      ]
+    },
     "CapacityProvider":{
       "type":"structure",
       "members":{
@@ -2901,7 +2908,9 @@
         "networkConfiguration":{"shape":"ManagedInstancesNetworkConfiguration"},
         "storageConfiguration":{"shape":"ManagedInstancesStorageConfiguration"},
         "monitoring":{"shape":"ManagedInstancesMonitoringOptions"},
-        "instanceRequirements":{"shape":"InstanceRequirementsRequest"}
+        "capacityOptionType":{"shape":"CapacityOptionType"},
+        "instanceRequirements":{"shape":"InstanceRequirementsRequest"},
+        "fipsEnabled":{"shape":"BoxedBoolean"}
       }
     },
     "InstanceLaunchTemplateUpdate":{
@@ -4582,7 +4591,8 @@
         "tagResourceAuthorization",
         "fargateTaskRetirementWaitPeriod",
         "guardDutyActivate",
-        "defaultLogDriverMode"
+        "defaultLogDriverMode",
+        "fargateEventWindows"
       ]
     },
     "SettingType":{

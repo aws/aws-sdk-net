@@ -36,6 +36,14 @@ namespace Amazon.RAM
         /// <summary>
         /// Construct instance of AmazonRAMException
         /// </summary>
+        public AmazonRAMException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRAMException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRAMException(string message)
             : base(message)

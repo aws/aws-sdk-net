@@ -42,6 +42,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidReferenceNameException
+        /// message.
+        /// </summary>
+        public InvalidReferenceNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidReferenceNameException with the specified error
         /// message.
         /// </summary>

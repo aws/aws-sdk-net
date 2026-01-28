@@ -86,19 +86,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.IntelligentTieringConfiguration.Status));
 
                     var publicRequestIntelligentTieringConfigurationTierings = publicRequest.IntelligentTieringConfiguration.Tierings;
-                    if (publicRequestIntelligentTieringConfigurationTierings != null && (publicRequestIntelligentTieringConfigurationTierings.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IntelligentTieringConfiguration.IsSetTierings()) 
                     {
                         foreach (var publicRequestIntelligentTieringConfigurationTieringsValue in publicRequestIntelligentTieringConfigurationTierings) 
                         {
-                        if (publicRequestIntelligentTieringConfigurationTieringsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tiering");
-                            if(publicRequestIntelligentTieringConfigurationTieringsValue.IsSetAccessTier())
-                                xmlWriter.WriteElementString("AccessTier", StringUtils.FromString(publicRequestIntelligentTieringConfigurationTieringsValue.AccessTier));
-                            if(publicRequestIntelligentTieringConfigurationTieringsValue.IsSetDays())
-                                xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestIntelligentTieringConfigurationTieringsValue.Days.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestIntelligentTieringConfigurationTieringsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tiering");
+                                if(publicRequestIntelligentTieringConfigurationTieringsValue.IsSetAccessTier())
+                                    xmlWriter.WriteElementString("AccessTier", StringUtils.FromString(publicRequestIntelligentTieringConfigurationTieringsValue.AccessTier));
+                                if(publicRequestIntelligentTieringConfigurationTieringsValue.IsSetDays())
+                                    xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestIntelligentTieringConfigurationTieringsValue.Days.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                     }
 

@@ -39,6 +39,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for ImageNotFoundException
+        /// message.
+        /// </summary>
+        public ImageNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImageNotFoundException with the specified error
         /// message.
         /// </summary>

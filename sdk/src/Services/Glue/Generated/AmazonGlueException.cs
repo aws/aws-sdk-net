@@ -36,6 +36,14 @@ namespace Amazon.Glue
         /// <summary>
         /// Construct instance of AmazonGlueException
         /// </summary>
+        public AmazonGlueException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGlueException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGlueException(string message)
             : base(message)

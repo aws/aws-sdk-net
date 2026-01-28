@@ -44,6 +44,7 @@ namespace Amazon.QuickSight.Model
         private FilledMapConfiguration _chartConfiguration;
         private List<ColumnHierarchy> _columnHierarchies = AWSConfigs.InitializeCollections ? new List<ColumnHierarchy>() : null;
         private FilledMapConditionalFormatting _conditionalFormatting;
+        private List<GeocodePreference> _geocodingPreferences = AWSConfigs.InitializeCollections ? new List<GeocodePreference>() : null;
         private VisualSubtitleLabelOptions _subtitle;
         private VisualTitleLabelOptions _title;
         private string _visualContentAltText;
@@ -131,6 +132,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetConditionalFormatting()
         {
             return this._conditionalFormatting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeocodingPreferences. 
+        /// <para>
+        /// The geocoding prefences for filled map visual.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<GeocodePreference> GeocodingPreferences
+        {
+            get { return this._geocodingPreferences; }
+            set { this._geocodingPreferences = value; }
+        }
+
+        // Check to see if GeocodingPreferences property is set
+        internal bool IsSetGeocodingPreferences()
+        {
+            return this._geocodingPreferences != null && (this._geocodingPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

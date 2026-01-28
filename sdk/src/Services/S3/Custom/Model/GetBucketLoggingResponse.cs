@@ -24,24 +24,15 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Returns information about the  GetBucketLogging response and response metadata.
     /// </summary>
-    public class GetBucketLoggingResponse : AmazonWebServiceResponse
+    public partial class GetBucketLoggingResponse : AmazonWebServiceResponse
     {
-        private S3BucketLoggingConfig bucketLoggingConfig;
-
-        /// <summary>
-        /// Gets and sets the LoggingConfig property.
-        /// </summary>
-        public S3BucketLoggingConfig BucketLoggingConfig
+        S3BucketLoggingConfig BucketLoggingConfigCustomGetter()
         {
-            get
+            if (this._bucketLoggingConfig == null)
             {
-                if (this.bucketLoggingConfig == null)
-                {
-                    this.bucketLoggingConfig = new S3BucketLoggingConfig();
-                }
-                return this.bucketLoggingConfig;
+                this._bucketLoggingConfig = new S3BucketLoggingConfig();
             }
-            set { this.bucketLoggingConfig = value; }
+            return this._bucketLoggingConfig;
         }
     }
 }

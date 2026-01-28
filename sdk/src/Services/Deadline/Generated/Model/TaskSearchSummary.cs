@@ -37,6 +37,7 @@ namespace Amazon.Deadline.Model
         private DateTime? _endedAt;
         private int? _failureRetryCount;
         private string _jobId;
+        private string _latestSessionActionId;
         private Dictionary<string, TaskParameterValue> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, TaskParameterValue>() : null;
         private string _queueId;
         private TaskRunStatus _runStatus;
@@ -100,6 +101,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestSessionActionId. 
+        /// <para>
+        /// The latest session action ID for the task.
+        /// </para>
+        /// </summary>
+        public string LatestSessionActionId
+        {
+            get { return this._latestSessionActionId; }
+            set { this._latestSessionActionId = value; }
+        }
+
+        // Check to see if LatestSessionActionId property is set
+        internal bool IsSetLatestSessionActionId()
+        {
+            return this._latestSessionActionId != null;
         }
 
         /// <summary>

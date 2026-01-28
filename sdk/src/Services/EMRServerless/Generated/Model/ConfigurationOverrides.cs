@@ -35,6 +35,7 @@ namespace Amazon.EMRServerless.Model
     public partial class ConfigurationOverrides
     {
         private List<Configuration> _applicationConfiguration = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
+        private DiskEncryptionConfiguration _diskEncryptionConfiguration;
         private MonitoringConfiguration _monitoringConfiguration;
 
         /// <summary>
@@ -59,6 +60,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetApplicationConfiguration()
         {
             return this._applicationConfiguration != null && (this._applicationConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiskEncryptionConfiguration. 
+        /// <para>
+        /// The override configuration to encrypt local disks.
+        /// </para>
+        /// </summary>
+        public DiskEncryptionConfiguration DiskEncryptionConfiguration
+        {
+            get { return this._diskEncryptionConfiguration; }
+            set { this._diskEncryptionConfiguration = value; }
+        }
+
+        // Check to see if DiskEncryptionConfiguration property is set
+        internal bool IsSetDiskEncryptionConfiguration()
+        {
+            return this._diskEncryptionConfiguration != null;
         }
 
         /// <summary>

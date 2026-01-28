@@ -41,6 +41,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientDependencyServiceAccessPermissionException
+        /// message.
+        /// </summary>
+        public InsufficientDependencyServiceAccessPermissionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientDependencyServiceAccessPermissionException with the specified error
         /// message.
         /// </summary>

@@ -161,8 +161,13 @@ namespace Amazon.S3Tables
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTable</c>
-        /// permission to create a table with tags.
+        /// If you use this operation with the <c>storageClassConfiguration</c> request parameter,
+        /// you must have the <c>s3tables:PutTableStorageClass</c> permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a table with tags, you must have the <c>s3tables:TagResource</c> permission
+        /// in addition to <c>s3tables:CreateTable</c> permission.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -220,8 +225,13 @@ namespace Amazon.S3Tables
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTable</c>
-        /// permission to create a table with tags.
+        /// If you use this operation with the <c>storageClassConfiguration</c> request parameter,
+        /// you must have the <c>s3tables:PutTableStorageClass</c> permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a table with tags, you must have the <c>s3tables:TagResource</c> permission
+        /// in addition to <c>s3tables:CreateTable</c> permission.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -280,8 +290,13 @@ namespace Amazon.S3Tables
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTableBucket</c>
-        /// permission to create a table bucket with tags.
+        /// If you use this operation with the <c>storageClassConfiguration</c> request parameter,
+        /// you must have the <c>s3tables:PutTableBucketStorageClass</c> permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a table bucket with tags, you must have the <c>s3tables:TagResource</c>
+        /// permission in addition to <c>s3tables:CreateTableBucket</c> permission.
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>
@@ -328,8 +343,13 @@ namespace Amazon.S3Tables
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTableBucket</c>
-        /// permission to create a table bucket with tags.
+        /// If you use this operation with the <c>storageClassConfiguration</c> request parameter,
+        /// you must have the <c>s3tables:PutTableBucketStorageClass</c> permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a table bucket with tags, you must have the <c>s3tables:TagResource</c>
+        /// permission in addition to <c>s3tables:CreateTableBucket</c> permission.
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>
@@ -849,6 +869,96 @@ namespace Amazon.S3Tables
 
         #endregion
         
+        #region  DeleteTableBucketReplication
+
+
+        /// <summary>
+        /// Deletes the replication configuration for a table bucket. After deletion, new table
+        /// updates will no longer be replicated to destination buckets, though existing replicated
+        /// tables will remain in destination buckets.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableBucketReplication</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketReplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTableBucketReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketReplication">REST API Reference for DeleteTableBucketReplication Operation</seealso>
+        DeleteTableBucketReplicationResponse DeleteTableBucketReplication(DeleteTableBucketReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the replication configuration for a table bucket. After deletion, new table
+        /// updates will no longer be replicated to destination buckets, though existing replicated
+        /// tables will remain in destination buckets.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableBucketReplication</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTableBucketReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketReplication">REST API Reference for DeleteTableBucketReplication Operation</seealso>
+        Task<DeleteTableBucketReplicationResponse> DeleteTableBucketReplicationAsync(DeleteTableBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteTablePolicy
 
 
@@ -928,6 +1038,94 @@ namespace Amazon.S3Tables
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTablePolicy">REST API Reference for DeleteTablePolicy Operation</seealso>
         Task<DeleteTablePolicyResponse> DeleteTablePolicyAsync(DeleteTablePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTableReplication
+
+
+        /// <summary>
+        /// Deletes the replication configuration for a specific table. After deletion, new updates
+        /// to this table will no longer be replicated to destination tables, though existing
+        /// replicated copies will remain in destination buckets.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableReplication</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableReplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTableReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableReplication">REST API Reference for DeleteTableReplication Operation</seealso>
+        DeleteTableReplicationResponse DeleteTableReplication(DeleteTableReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the replication configuration for a specific table. After deletion, new updates
+        /// to this table will no longer be replicated to destination tables, though existing
+        /// replicated copies will remain in destination buckets.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableReplication</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTableReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableReplication">REST API Reference for DeleteTableReplication Operation</seealso>
+        Task<DeleteTableReplicationResponse> DeleteTableReplicationAsync(DeleteTableReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1517,6 +1715,178 @@ namespace Amazon.S3Tables
 
         #endregion
         
+        #region  GetTableBucketReplication
+
+
+        /// <summary>
+        /// Retrieves the replication configuration for a table bucket.This operation returns
+        /// the IAM role, <c>versionToken</c>, and replication rules that define how tables in
+        /// this bucket are replicated to other buckets.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketReplication</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketReplication service method.</param>
+        /// 
+        /// <returns>The response from the GetTableBucketReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketReplication">REST API Reference for GetTableBucketReplication Operation</seealso>
+        GetTableBucketReplicationResponse GetTableBucketReplication(GetTableBucketReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the replication configuration for a table bucket.This operation returns
+        /// the IAM role, <c>versionToken</c>, and replication rules that define how tables in
+        /// this bucket are replicated to other buckets.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketReplication</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableBucketReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketReplication">REST API Reference for GetTableBucketReplication Operation</seealso>
+        Task<GetTableBucketReplicationResponse> GetTableBucketReplicationAsync(GetTableBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTableBucketStorageClass
+
+
+        /// <summary>
+        /// Retrieves the storage class configuration for a specific table. This allows you to
+        /// view the storage class settings that apply to an individual table, which may differ
+        /// from the table bucket's default configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketStorageClass</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketStorageClass service method.</param>
+        /// 
+        /// <returns>The response from the GetTableBucketStorageClass service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketStorageClass">REST API Reference for GetTableBucketStorageClass Operation</seealso>
+        GetTableBucketStorageClassResponse GetTableBucketStorageClass(GetTableBucketStorageClassRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the storage class configuration for a specific table. This allows you to
+        /// view the storage class settings that apply to an individual table, which may differ
+        /// from the table bucket's default configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketStorageClass</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketStorageClass service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableBucketStorageClass service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketStorageClass">REST API Reference for GetTableBucketStorageClass Operation</seealso>
+        Task<GetTableBucketStorageClassResponse> GetTableBucketStorageClassAsync(GetTableBucketStorageClassRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTableEncryption
 
 
@@ -1928,6 +2298,428 @@ namespace Amazon.S3Tables
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTablePolicy">REST API Reference for GetTablePolicy Operation</seealso>
         Task<GetTablePolicyResponse> GetTablePolicyAsync(GetTablePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTableRecordExpirationConfiguration
+
+
+        /// <summary>
+        /// Retrieves the expiration configuration settings for records in a table, and the status
+        /// of the configuration. If the status of the configuration is <c>enabled</c>, records
+        /// expire and are automatically removed from the table after the specified number of
+        /// days.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableRecordExpirationConfiguration</c> permission
+        /// to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableRecordExpirationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetTableRecordExpirationConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.MethodNotAllowedException">
+        /// The requested operation is not allowed on this resource. This may occur when attempting
+        /// to modify a resource that is managed by a service or has restrictions that prevent
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableRecordExpirationConfiguration">REST API Reference for GetTableRecordExpirationConfiguration Operation</seealso>
+        GetTableRecordExpirationConfigurationResponse GetTableRecordExpirationConfiguration(GetTableRecordExpirationConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the expiration configuration settings for records in a table, and the status
+        /// of the configuration. If the status of the configuration is <c>enabled</c>, records
+        /// expire and are automatically removed from the table after the specified number of
+        /// days.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableRecordExpirationConfiguration</c> permission
+        /// to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableRecordExpirationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableRecordExpirationConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.MethodNotAllowedException">
+        /// The requested operation is not allowed on this resource. This may occur when attempting
+        /// to modify a resource that is managed by a service or has restrictions that prevent
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableRecordExpirationConfiguration">REST API Reference for GetTableRecordExpirationConfiguration Operation</seealso>
+        Task<GetTableRecordExpirationConfigurationResponse> GetTableRecordExpirationConfigurationAsync(GetTableRecordExpirationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTableRecordExpirationJobStatus
+
+
+        /// <summary>
+        /// Retrieves the status, metrics, and details of the latest record expiration job for
+        /// a table. This includes when the job ran, and whether it succeeded or failed. If the
+        /// job ran successfully, this also includes statistics about the records that were removed.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableRecordExpirationJobStatus</c> permission to
+        /// use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableRecordExpirationJobStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetTableRecordExpirationJobStatus service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.MethodNotAllowedException">
+        /// The requested operation is not allowed on this resource. This may occur when attempting
+        /// to modify a resource that is managed by a service or has restrictions that prevent
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableRecordExpirationJobStatus">REST API Reference for GetTableRecordExpirationJobStatus Operation</seealso>
+        GetTableRecordExpirationJobStatusResponse GetTableRecordExpirationJobStatus(GetTableRecordExpirationJobStatusRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the status, metrics, and details of the latest record expiration job for
+        /// a table. This includes when the job ran, and whether it succeeded or failed. If the
+        /// job ran successfully, this also includes statistics about the records that were removed.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableRecordExpirationJobStatus</c> permission to
+        /// use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableRecordExpirationJobStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableRecordExpirationJobStatus service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.MethodNotAllowedException">
+        /// The requested operation is not allowed on this resource. This may occur when attempting
+        /// to modify a resource that is managed by a service or has restrictions that prevent
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableRecordExpirationJobStatus">REST API Reference for GetTableRecordExpirationJobStatus Operation</seealso>
+        Task<GetTableRecordExpirationJobStatusResponse> GetTableRecordExpirationJobStatusAsync(GetTableRecordExpirationJobStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTableReplication
+
+
+        /// <summary>
+        /// Retrieves the replication configuration for a specific table.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableReplication</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableReplication service method.</param>
+        /// 
+        /// <returns>The response from the GetTableReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableReplication">REST API Reference for GetTableReplication Operation</seealso>
+        GetTableReplicationResponse GetTableReplication(GetTableReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the replication configuration for a specific table.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableReplication</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableReplication">REST API Reference for GetTableReplication Operation</seealso>
+        Task<GetTableReplicationResponse> GetTableReplicationAsync(GetTableReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTableReplicationStatus
+
+
+        /// <summary>
+        /// Retrieves the replication status for a table, including the status of replication
+        /// to each destination. This operation provides visibility into replication health and
+        /// progress.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableReplicationStatus</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableReplicationStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetTableReplicationStatus service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableReplicationStatus">REST API Reference for GetTableReplicationStatus Operation</seealso>
+        GetTableReplicationStatusResponse GetTableReplicationStatus(GetTableReplicationStatusRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the replication status for a table, including the status of replication
+        /// to each destination. This operation provides visibility into replication health and
+        /// progress.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableReplicationStatus</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableReplicationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableReplicationStatus service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableReplicationStatus">REST API Reference for GetTableReplicationStatus Operation</seealso>
+        Task<GetTableReplicationStatusResponse> GetTableReplicationStatusAsync(GetTableReplicationStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTableStorageClass
+
+
+        /// <summary>
+        /// Retrieves the storage class configuration for a specific table. This allows you to
+        /// view the storage class settings that apply to an individual table, which may differ
+        /// from the table bucket's default configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableStorageClass</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableStorageClass service method.</param>
+        /// 
+        /// <returns>The response from the GetTableStorageClass service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableStorageClass">REST API Reference for GetTableStorageClass Operation</seealso>
+        GetTableStorageClassResponse GetTableStorageClass(GetTableStorageClassRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the storage class configuration for a specific table. This allows you to
+        /// view the storage class settings that apply to an individual table, which may differ
+        /// from the table bucket's default configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableStorageClass</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableStorageClass service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableStorageClass service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableStorageClass">REST API Reference for GetTableStorageClass Operation</seealso>
+        Task<GetTableStorageClassResponse> GetTableStorageClassAsync(GetTableStorageClassRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2623,6 +3415,248 @@ namespace Amazon.S3Tables
 
         #endregion
         
+        #region  PutTableBucketReplication
+
+
+        /// <summary>
+        /// Creates or updates the replication configuration for a table bucket. This operation
+        /// defines how tables in the source bucket are replicated to destination buckets. Replication
+        /// helps ensure data availability and disaster recovery across regions or accounts.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketReplication</c> permission to use this
+        /// operation. The IAM role specified in the configuration must have permissions to read
+        /// from the source bucket and write permissions to all destination buckets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must also have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> permission on the source table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:ListTables</c> permission on the bucket containing the table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> permission for the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> permission for the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTableMaintenanceConfig</c> permission for the source bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTableMaintenanceConfig</c> permission for the destination bucket.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You must have <c>iam:PassRole</c> permission with condition allowing roles to be passed
+        /// to <c>replication.s3tables.amazonaws.com</c>.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketReplication service method.</param>
+        /// 
+        /// <returns>The response from the PutTableBucketReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketReplication">REST API Reference for PutTableBucketReplication Operation</seealso>
+        PutTableBucketReplicationResponse PutTableBucketReplication(PutTableBucketReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the replication configuration for a table bucket. This operation
+        /// defines how tables in the source bucket are replicated to destination buckets. Replication
+        /// helps ensure data availability and disaster recovery across regions or accounts.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketReplication</c> permission to use this
+        /// operation. The IAM role specified in the configuration must have permissions to read
+        /// from the source bucket and write permissions to all destination buckets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must also have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> permission on the source table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:ListTables</c> permission on the bucket containing the table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> permission for the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> permission for the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTableMaintenanceConfig</c> permission for the source bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTableMaintenanceConfig</c> permission for the destination bucket.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You must have <c>iam:PassRole</c> permission with condition allowing roles to be passed
+        /// to <c>replication.s3tables.amazonaws.com</c>.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTableBucketReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketReplication">REST API Reference for PutTableBucketReplication Operation</seealso>
+        Task<PutTableBucketReplicationResponse> PutTableBucketReplicationAsync(PutTableBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutTableBucketStorageClass
+
+
+        /// <summary>
+        /// Sets or updates the storage class configuration for a table bucket. This configuration
+        /// serves as the default storage class for all new tables created in the bucket, allowing
+        /// you to optimize storage costs at the bucket level.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketStorageClass</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketStorageClass service method.</param>
+        /// 
+        /// <returns>The response from the PutTableBucketStorageClass service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketStorageClass">REST API Reference for PutTableBucketStorageClass Operation</seealso>
+        PutTableBucketStorageClassResponse PutTableBucketStorageClass(PutTableBucketStorageClassRequest request);
+
+
+
+        /// <summary>
+        /// Sets or updates the storage class configuration for a table bucket. This configuration
+        /// serves as the default storage class for all new tables created in the bucket, allowing
+        /// you to optimize storage costs at the bucket level.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketStorageClass</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketStorageClass service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTableBucketStorageClass service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketStorageClass">REST API Reference for PutTableBucketStorageClass Operation</seealso>
+        Task<PutTableBucketStorageClassResponse> PutTableBucketStorageClassAsync(PutTableBucketStorageClassRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutTableMaintenanceConfiguration
 
 
@@ -2788,6 +3822,244 @@ namespace Amazon.S3Tables
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTablePolicy">REST API Reference for PutTablePolicy Operation</seealso>
         Task<PutTablePolicyResponse> PutTablePolicyAsync(PutTablePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutTableRecordExpirationConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the expiration configuration settings for records in a table, including
+        /// the status of the configuration. If you enable record expiration for a table, records
+        /// expire and are automatically removed from the table after the number of days that
+        /// you specify.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableRecordExpirationConfiguration</c> permission
+        /// to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableRecordExpirationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutTableRecordExpirationConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.MethodNotAllowedException">
+        /// The requested operation is not allowed on this resource. This may occur when attempting
+        /// to modify a resource that is managed by a service or has restrictions that prevent
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableRecordExpirationConfiguration">REST API Reference for PutTableRecordExpirationConfiguration Operation</seealso>
+        PutTableRecordExpirationConfigurationResponse PutTableRecordExpirationConfiguration(PutTableRecordExpirationConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the expiration configuration settings for records in a table, including
+        /// the status of the configuration. If you enable record expiration for a table, records
+        /// expire and are automatically removed from the table after the number of days that
+        /// you specify.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableRecordExpirationConfiguration</c> permission
+        /// to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableRecordExpirationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTableRecordExpirationConfiguration service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.MethodNotAllowedException">
+        /// The requested operation is not allowed on this resource. This may occur when attempting
+        /// to modify a resource that is managed by a service or has restrictions that prevent
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableRecordExpirationConfiguration">REST API Reference for PutTableRecordExpirationConfiguration Operation</seealso>
+        Task<PutTableRecordExpirationConfigurationResponse> PutTableRecordExpirationConfigurationAsync(PutTableRecordExpirationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutTableReplication
+
+
+        /// <summary>
+        /// Creates or updates the replication configuration for a specific table. This operation
+        /// allows you to define table-level replication independently of bucket-level replication,
+        /// providing granular control over which tables are replicated and where.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableReplication</c> permission to use this operation.
+        /// The IAM role specified in the configuration must have permissions to read from the
+        /// source table and write to all destination tables.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must also have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> permission on the source table being replicated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> permission for the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> permission for the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTableMaintenanceConfig</c> permission for the source table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTableMaintenanceConfig</c> permission for the destination table.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You must have <c>iam:PassRole</c> permission with condition allowing roles to be passed
+        /// to <c>replication.s3tables.amazonaws.com</c>.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableReplication service method.</param>
+        /// 
+        /// <returns>The response from the PutTableReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableReplication">REST API Reference for PutTableReplication Operation</seealso>
+        PutTableReplicationResponse PutTableReplication(PutTableReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the replication configuration for a specific table. This operation
+        /// allows you to define table-level replication independently of bucket-level replication,
+        /// providing granular control over which tables are replicated and where.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableReplication</c> permission to use this operation.
+        /// The IAM role specified in the configuration must have permissions to read from the
+        /// source table and write to all destination tables.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must also have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> permission on the source table being replicated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> permission for the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> permission for the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTableMaintenanceConfig</c> permission for the source table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTableMaintenanceConfig</c> permission for the destination table.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You must have <c>iam:PassRole</c> permission with condition allowing roles to be passed
+        /// to <c>replication.s3tables.amazonaws.com</c>.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTableReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableReplication">REST API Reference for PutTableReplication Operation</seealso>
+        Task<PutTableReplicationResponse> PutTableReplicationAsync(PutTableReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

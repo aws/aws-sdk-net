@@ -789,6 +789,10 @@ namespace Amazon.SsmSap
         /// </summary>
         public static readonly DatabaseStatus STOPPED = new DatabaseStatus("STOPPED");
         /// <summary>
+        /// Constant STOPPING for DatabaseStatus
+        /// </summary>
+        public static readonly DatabaseStatus STOPPING = new DatabaseStatus("STOPPING");
+        /// <summary>
         /// Constant UNKNOWN for DatabaseStatus
         /// </summary>
         public static readonly DatabaseStatus UNKNOWN = new DatabaseStatus("UNKNOWN");

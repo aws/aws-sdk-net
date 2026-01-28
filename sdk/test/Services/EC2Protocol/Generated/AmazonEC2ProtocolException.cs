@@ -36,6 +36,14 @@ namespace Amazon.EC2Protocol
         /// <summary>
         /// Construct instance of AmazonEC2ProtocolException
         /// </summary>
+        public AmazonEC2ProtocolException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEC2ProtocolException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEC2ProtocolException(string message)
             : base(message)

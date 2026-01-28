@@ -40,6 +40,13 @@ namespace Amazon.Pinpoint.Model
         private string _requestID;
 
         /// <summary>
+        /// Default constructor for ConflictException
+        /// message.
+        /// </summary>
+        public ConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictException with the specified error
         /// message.
         /// </summary>

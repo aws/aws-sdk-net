@@ -36,6 +36,14 @@ namespace Amazon.Deadline
         /// <summary>
         /// Construct instance of AmazonDeadlineException
         /// </summary>
+        public AmazonDeadlineException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDeadlineException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDeadlineException(string message)
             : base(message)

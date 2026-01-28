@@ -35,6 +35,7 @@ namespace Amazon.LaunchWizard.Model
     public partial class WorkloadDeploymentPatternDataSummary
     {
         private string _deploymentPatternName;
+        private string _deploymentPatternVersionName;
         private string _description;
         private string _displayName;
         private WorkloadDeploymentPatternStatus _status;
@@ -59,6 +60,25 @@ namespace Amazon.LaunchWizard.Model
         internal bool IsSetDeploymentPatternName()
         {
             return this._deploymentPatternName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentPatternVersionName. 
+        /// <para>
+        /// The version name of a workload deployment pattern.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=30)]
+        public string DeploymentPatternVersionName
+        {
+            get { return this._deploymentPatternVersionName; }
+            set { this._deploymentPatternVersionName = value; }
+        }
+
+        // Check to see if DeploymentPatternVersionName property is set
+        internal bool IsSetDeploymentPatternVersionName()
+        {
+            return this._deploymentPatternVersionName != null;
         }
 
         /// <summary>

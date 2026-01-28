@@ -3867,6 +3867,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly CaptionSourceType TELETEXT = new CaptionSourceType("TELETEXT");
         /// <summary>
+        /// Constant TT_3GPP for CaptionSourceType
+        /// </summary>
+        public static readonly CaptionSourceType TT_3GPP = new CaptionSourceType("TT_3GPP");
+        /// <summary>
         /// Constant TTML for CaptionSourceType
         /// </summary>
         public static readonly CaptionSourceType TTML = new CaptionSourceType("TTML");
@@ -12327,6 +12331,106 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type H265MvOverPictureBoundaries.
+    /// </summary>
+    public class H265MvOverPictureBoundaries : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H265MvOverPictureBoundaries
+        /// </summary>
+        public static readonly H265MvOverPictureBoundaries DISABLED = new H265MvOverPictureBoundaries("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for H265MvOverPictureBoundaries
+        /// </summary>
+        public static readonly H265MvOverPictureBoundaries ENABLED = new H265MvOverPictureBoundaries("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265MvOverPictureBoundaries(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265MvOverPictureBoundaries FindValue(string value)
+        {
+            return FindValue<H265MvOverPictureBoundaries>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265MvOverPictureBoundaries(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265MvTemporalPredictor.
+    /// </summary>
+    public class H265MvTemporalPredictor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H265MvTemporalPredictor
+        /// </summary>
+        public static readonly H265MvTemporalPredictor DISABLED = new H265MvTemporalPredictor("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for H265MvTemporalPredictor
+        /// </summary>
+        public static readonly H265MvTemporalPredictor ENABLED = new H265MvTemporalPredictor("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265MvTemporalPredictor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265MvTemporalPredictor FindValue(string value)
+        {
+            return FindValue<H265MvTemporalPredictor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265MvTemporalPredictor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H265ParControl.
     /// </summary>
     public class H265ParControl : ConstantClass
@@ -12897,6 +13001,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type H265TilePadding.
+    /// </summary>
+    public class H265TilePadding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for H265TilePadding
+        /// </summary>
+        public static readonly H265TilePadding NONE = new H265TilePadding("NONE");
+        /// <summary>
+        /// Constant PADDED for H265TilePadding
+        /// </summary>
+        public static readonly H265TilePadding PADDED = new H265TilePadding("PADDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265TilePadding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265TilePadding FindValue(string value)
+        {
+            return FindValue<H265TilePadding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265TilePadding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H265Tiles.
     /// </summary>
     public class H265Tiles : ConstantClass
@@ -12940,6 +13094,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H265Tiles(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265TreeBlockSize.
+    /// </summary>
+    public class H265TreeBlockSize : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for H265TreeBlockSize
+        /// </summary>
+        public static readonly H265TreeBlockSize AUTO = new H265TreeBlockSize("AUTO");
+        /// <summary>
+        /// Constant TREE_SIZE_32X32 for H265TreeBlockSize
+        /// </summary>
+        public static readonly H265TreeBlockSize TREE_SIZE_32X32 = new H265TreeBlockSize("TREE_SIZE_32X32");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265TreeBlockSize(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265TreeBlockSize FindValue(string value)
+        {
+            return FindValue<H265TreeBlockSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265TreeBlockSize(string value)
         {
             return FindValue(value);
         }

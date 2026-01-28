@@ -38,6 +38,7 @@ namespace Amazon.OpenSearchServerless.Model
     {
         private string _arn;
         private string _collectionEndpoint;
+        private string _collectionGroupName;
         private long? _createdDate;
         private string _dashboardEndpoint;
         private string _description;
@@ -51,6 +52,7 @@ namespace Amazon.OpenSearchServerless.Model
         private StandbyReplicas _standbyReplicas;
         private CollectionStatus _status;
         private CollectionType _type;
+        private VectorOptions _vectorOptions;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -87,6 +89,25 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetCollectionEndpoint()
         {
             return this._collectionEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollectionGroupName. 
+        /// <para>
+        /// The name of the collection group that contains this collection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=32)]
+        public string CollectionGroupName
+        {
+            get { return this._collectionGroupName; }
+            set { this._collectionGroupName = value; }
+        }
+
+        // Check to see if CollectionGroupName property is set
+        internal bool IsSetCollectionGroupName()
+        {
+            return this._collectionGroupName != null;
         }
 
         /// <summary>
@@ -325,6 +346,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorOptions. 
+        /// <para>
+        /// Configuration options for vector search capabilities in the collection.
+        /// </para>
+        /// </summary>
+        public VectorOptions VectorOptions
+        {
+            get { return this._vectorOptions; }
+            set { this._vectorOptions = value; }
+        }
+
+        // Check to see if VectorOptions property is set
+        internal bool IsSetVectorOptions()
+        {
+            return this._vectorOptions != null;
         }
 
     }

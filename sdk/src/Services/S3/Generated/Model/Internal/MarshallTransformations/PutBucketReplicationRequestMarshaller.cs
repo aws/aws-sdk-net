@@ -92,148 +92,148 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Role", StringUtils.FromString(publicRequest.Configuration.Role));
 
                     var publicRequestConfigurationRules = publicRequest.Configuration.Rules;
-                    if (publicRequestConfigurationRules != null && (publicRequestConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Configuration.IsSetRules()) 
                     {
                         foreach (var publicRequestConfigurationRulesValue in publicRequestConfigurationRules) 
                         {
-                        if (publicRequestConfigurationRulesValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Rule");
-                            if (publicRequestConfigurationRulesValue.DeleteMarkerReplication != null)
+                            if (publicRequestConfigurationRulesValue != null)
                             {
-                                xmlWriter.WriteStartElement("DeleteMarkerReplication");
-                                if(publicRequestConfigurationRulesValue.DeleteMarkerReplication.IsSetStatus())
-                                    xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.DeleteMarkerReplication.Status));
-                                xmlWriter.WriteEndElement();
-                            }
-                            if (publicRequestConfigurationRulesValue.Destination != null)
-                            {
-                                xmlWriter.WriteStartElement("Destination");
-                                if (publicRequestConfigurationRulesValue.Destination.AccessControlTranslation != null)
+                                xmlWriter.WriteStartElement("Rule");
+                                if (publicRequestConfigurationRulesValue.IsSetDeleteMarkerReplication())
                                 {
-                                    xmlWriter.WriteStartElement("AccessControlTranslation");
-                                    if(publicRequestConfigurationRulesValue.Destination.AccessControlTranslation.IsSetOwner())
-                                        xmlWriter.WriteElementString("Owner", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.AccessControlTranslation.Owner));
+                                    xmlWriter.WriteStartElement("DeleteMarkerReplication");
+                                    if(publicRequestConfigurationRulesValue.DeleteMarkerReplication.IsSetStatus())
+                                        xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.DeleteMarkerReplication.Status));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if(publicRequestConfigurationRulesValue.Destination.IsSetAccountId())
-                                    xmlWriter.WriteElementString("Account", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.AccountId));
-                                if(publicRequestConfigurationRulesValue.Destination.IsSetBucketArn())
-                                    xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.BucketArn));
-                                if (publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration != null)
+                                if (publicRequestConfigurationRulesValue.IsSetDestination())
                                 {
-                                    xmlWriter.WriteStartElement("EncryptionConfiguration");
-                                    if(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.IsSetReplicaKmsKeyID())
-                                        xmlWriter.WriteElementString("ReplicaKmsKeyID", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
-                                    xmlWriter.WriteEndElement();
-                                }
-                                if (publicRequestConfigurationRulesValue.Destination.Metrics != null)
-                                {
-                                    xmlWriter.WriteStartElement("Metrics");
-                                    if (publicRequestConfigurationRulesValue.Destination.Metrics.EventThreshold != null)
+                                    xmlWriter.WriteStartElement("Destination");
+                                    if (publicRequestConfigurationRulesValue.Destination.IsSetAccessControlTranslation())
                                     {
-                                        xmlWriter.WriteStartElement("EventThreshold");
-                                        if(publicRequestConfigurationRulesValue.Destination.Metrics.EventThreshold.IsSetMinutes())
-                                            xmlWriter.WriteElementString("Minutes", StringUtils.FromInt(publicRequestConfigurationRulesValue.Destination.Metrics.EventThreshold.Minutes.Value));
+                                        xmlWriter.WriteStartElement("AccessControlTranslation");
+                                        if(publicRequestConfigurationRulesValue.Destination.AccessControlTranslation.IsSetOwner())
+                                            xmlWriter.WriteElementString("Owner", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.AccessControlTranslation.Owner));
                                         xmlWriter.WriteEndElement();
                                     }
-                                    if(publicRequestConfigurationRulesValue.Destination.Metrics.IsSetStatus())
-                                        xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.Metrics.Status));
-                                    xmlWriter.WriteEndElement();
-                                }
-                                if (publicRequestConfigurationRulesValue.Destination.ReplicationTime != null)
-                                {
-                                    xmlWriter.WriteStartElement("ReplicationTime");
-                                    if(publicRequestConfigurationRulesValue.Destination.ReplicationTime.IsSetStatus())
-                                        xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.ReplicationTime.Status));
-                                    if (publicRequestConfigurationRulesValue.Destination.ReplicationTime.Time != null)
+                                    if(publicRequestConfigurationRulesValue.Destination.IsSetAccountId())
+                                        xmlWriter.WriteElementString("Account", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.AccountId));
+                                    if(publicRequestConfigurationRulesValue.Destination.IsSetBucketArn())
+                                        xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.BucketArn));
+                                    if (publicRequestConfigurationRulesValue.Destination.IsSetEncryptionConfiguration())
                                     {
-                                        xmlWriter.WriteStartElement("Time");
-                                        if(publicRequestConfigurationRulesValue.Destination.ReplicationTime.Time.IsSetMinutes())
-                                            xmlWriter.WriteElementString("Minutes", StringUtils.FromInt(publicRequestConfigurationRulesValue.Destination.ReplicationTime.Time.Minutes.Value));
+                                        xmlWriter.WriteStartElement("EncryptionConfiguration");
+                                        if(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.IsSetReplicaKmsKeyID())
+                                            xmlWriter.WriteElementString("ReplicaKmsKeyID", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
                                         xmlWriter.WriteEndElement();
                                     }
-                                    xmlWriter.WriteEndElement();
-                                }
-                                if(publicRequestConfigurationRulesValue.Destination.IsSetStorageClass())
-                                    xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.StorageClass));
-                                xmlWriter.WriteEndElement();
-                            }
-                            if (publicRequestConfigurationRulesValue.ExistingObjectReplication != null)
-                            {
-                                xmlWriter.WriteStartElement("ExistingObjectReplication");
-                                if(publicRequestConfigurationRulesValue.ExistingObjectReplication.IsSetStatus())
-                                    xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.ExistingObjectReplication.Status));
-                                xmlWriter.WriteEndElement();
-                            }
-                            if (publicRequestConfigurationRulesValue.Filter != null)
-                            {
-                                xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestConfigurationRulesValue.Filter.And != null)
-                                {
-                                    xmlWriter.WriteStartElement("And");
-                                    if(publicRequestConfigurationRulesValue.Filter.And.IsSetPrefix())
-                                        xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Prefix));
-                                    var publicRequestConfigurationRulesValueFilterAndTags = publicRequestConfigurationRulesValue.Filter.And.Tags;
-                                    if (publicRequestConfigurationRulesValueFilterAndTags != null && (publicRequestConfigurationRulesValueFilterAndTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    if (publicRequestConfigurationRulesValue.Destination.IsSetMetrics())
                                     {
-                                        foreach (var publicRequestConfigurationRulesValueFilterAndTagsValue in publicRequestConfigurationRulesValueFilterAndTags) 
+                                        xmlWriter.WriteStartElement("Metrics");
+                                        if (publicRequestConfigurationRulesValue.Destination.Metrics.IsSetEventThreshold())
                                         {
-                                        if (publicRequestConfigurationRulesValueFilterAndTagsValue != null)
-                                        {
-                                            xmlWriter.WriteStartElement("Tag");
-                                            if(publicRequestConfigurationRulesValueFilterAndTagsValue.IsSetKey())
-                                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndTagsValue.Key));
-                                            if(publicRequestConfigurationRulesValueFilterAndTagsValue.IsSetValue())
-                                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndTagsValue.Value));
+                                            xmlWriter.WriteStartElement("EventThreshold");
+                                            if(publicRequestConfigurationRulesValue.Destination.Metrics.EventThreshold.IsSetMinutes())
+                                                xmlWriter.WriteElementString("Minutes", StringUtils.FromInt(publicRequestConfigurationRulesValue.Destination.Metrics.EventThreshold.Minutes.Value));
                                             xmlWriter.WriteEndElement();
                                         }
-                                        }            
+                                        if(publicRequestConfigurationRulesValue.Destination.Metrics.IsSetStatus())
+                                            xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.Metrics.Status));
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestConfigurationRulesValue.Destination.IsSetReplicationTime())
+                                    {
+                                        xmlWriter.WriteStartElement("ReplicationTime");
+                                        if(publicRequestConfigurationRulesValue.Destination.ReplicationTime.IsSetStatus())
+                                            xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.ReplicationTime.Status));
+                                        if (publicRequestConfigurationRulesValue.Destination.ReplicationTime.IsSetTime())
+                                        {
+                                            xmlWriter.WriteStartElement("Time");
+                                            if(publicRequestConfigurationRulesValue.Destination.ReplicationTime.Time.IsSetMinutes())
+                                                xmlWriter.WriteElementString("Minutes", StringUtils.FromInt(publicRequestConfigurationRulesValue.Destination.ReplicationTime.Time.Minutes.Value));
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if(publicRequestConfigurationRulesValue.Destination.IsSetStorageClass())
+                                        xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.StorageClass));
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if (publicRequestConfigurationRulesValue.IsSetExistingObjectReplication())
+                                {
+                                    xmlWriter.WriteStartElement("ExistingObjectReplication");
+                                    if(publicRequestConfigurationRulesValue.ExistingObjectReplication.IsSetStatus())
+                                        xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.ExistingObjectReplication.Status));
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if (publicRequestConfigurationRulesValue.IsSetFilter())
+                                {
+                                    xmlWriter.WriteStartElement("Filter");
+                                    if (publicRequestConfigurationRulesValue.Filter.IsSetAnd())
+                                    {
+                                        xmlWriter.WriteStartElement("And");
+                                        if(publicRequestConfigurationRulesValue.Filter.And.IsSetPrefix())
+                                            xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Prefix));
+                                        var publicRequestConfigurationRulesValueFilterAndTags = publicRequestConfigurationRulesValue.Filter.And.Tags;
+                                        if (publicRequestConfigurationRulesValue.Filter.And.IsSetTags()) 
+                                        {
+                                            foreach (var publicRequestConfigurationRulesValueFilterAndTagsValue in publicRequestConfigurationRulesValueFilterAndTags) 
+                                            {
+                                                if (publicRequestConfigurationRulesValueFilterAndTagsValue != null)
+                                                {
+                                                    xmlWriter.WriteStartElement("Tag");
+                                                    if(publicRequestConfigurationRulesValueFilterAndTagsValue.IsSetKey())
+                                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndTagsValue.Key));
+                                                    if(publicRequestConfigurationRulesValueFilterAndTagsValue.IsSetValue())
+                                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndTagsValue.Value));
+                                                    xmlWriter.WriteEndElement();
+                                                }
+                                            }            
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if(publicRequestConfigurationRulesValue.Filter.IsSetPrefix())
+                                        xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Prefix));
+                                    if (publicRequestConfigurationRulesValue.Filter.IsSetTag())
+                                    {
+                                        xmlWriter.WriteStartElement("Tag");
+                                        if(publicRequestConfigurationRulesValue.Filter.Tag.IsSetKey())
+                                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Tag.Key));
+                                        if(publicRequestConfigurationRulesValue.Filter.Tag.IsSetValue())
+                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Tag.Value));
+                                        xmlWriter.WriteEndElement();
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
-                                if(publicRequestConfigurationRulesValue.Filter.IsSetPrefix())
-                                    xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Prefix));
-                                if (publicRequestConfigurationRulesValue.Filter.Tag != null)
+                                if(publicRequestConfigurationRulesValue.IsSetId())
+                                    xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
+                                if(publicRequestConfigurationRulesValue.IsSetPrefix())
+                                    xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Prefix));
+                                if(publicRequestConfigurationRulesValue.IsSetPriority())
+                                    xmlWriter.WriteElementString("Priority", StringUtils.FromInt(publicRequestConfigurationRulesValue.Priority.Value));
+                                if (publicRequestConfigurationRulesValue.IsSetSourceSelectionCriteria())
                                 {
-                                    xmlWriter.WriteStartElement("Tag");
-                                    if(publicRequestConfigurationRulesValue.Filter.Tag.IsSetKey())
-                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Tag.Key));
-                                    if(publicRequestConfigurationRulesValue.Filter.Tag.IsSetValue())
-                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Tag.Value));
+                                    xmlWriter.WriteStartElement("SourceSelectionCriteria");
+                                    if (publicRequestConfigurationRulesValue.SourceSelectionCriteria.IsSetReplicaModifications())
+                                    {
+                                        xmlWriter.WriteStartElement("ReplicaModifications");
+                                        if(publicRequestConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications.IsSetStatus())
+                                            xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications.Status));
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestConfigurationRulesValue.SourceSelectionCriteria.IsSetSseKmsEncryptedObjects())
+                                    {
+                                        xmlWriter.WriteStartElement("SseKmsEncryptedObjects");
+                                        if(publicRequestConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects.IsSetSseKmsEncryptedObjectsStatus())
+                                            xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects.SseKmsEncryptedObjectsStatus));
+                                        xmlWriter.WriteEndElement();
+                                    }
                                     xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestConfigurationRulesValue.IsSetStatus())
+                                    xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Status));
                                 xmlWriter.WriteEndElement();
                             }
-                            if(publicRequestConfigurationRulesValue.IsSetId())
-                                xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
-                            if(publicRequestConfigurationRulesValue.IsSetPrefix())
-                                xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Prefix));
-                            if(publicRequestConfigurationRulesValue.IsSetPriority())
-                                xmlWriter.WriteElementString("Priority", StringUtils.FromInt(publicRequestConfigurationRulesValue.Priority.Value));
-                            if (publicRequestConfigurationRulesValue.SourceSelectionCriteria != null)
-                            {
-                                xmlWriter.WriteStartElement("SourceSelectionCriteria");
-                                if (publicRequestConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications != null)
-                                {
-                                    xmlWriter.WriteStartElement("ReplicaModifications");
-                                    if(publicRequestConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications.IsSetStatus())
-                                        xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications.Status));
-                                    xmlWriter.WriteEndElement();
-                                }
-                                if (publicRequestConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects != null)
-                                {
-                                    xmlWriter.WriteStartElement("SseKmsEncryptedObjects");
-                                    if(publicRequestConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects.IsSetSseKmsEncryptedObjectsStatus())
-                                        xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects.SseKmsEncryptedObjectsStatus));
-                                    xmlWriter.WriteEndElement();
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                            if(publicRequestConfigurationRulesValue.IsSetStatus())
-                                xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Status));
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                     }
 

@@ -39,6 +39,13 @@ namespace Amazon.QueryCompatibleJSONRPC10.Model
     {
 
         /// <summary>
+        /// Default constructor for NoCustomCodeErrorException
+        /// message.
+        /// </summary>
+        public NoCustomCodeErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoCustomCodeErrorException with the specified error
         /// message.
         /// </summary>

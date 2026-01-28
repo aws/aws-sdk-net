@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBClusterStateException
+        /// message.
+        /// </summary>
+        public InvalidDBClusterStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBClusterStateException with the specified error
         /// message.
         /// </summary>

@@ -45,6 +45,7 @@ namespace Amazon.GameLiftStreams.Model
         private DateTime? _lastUpdatedAt;
         private string _location;
         private string _logFileLocationUri;
+        private PerformanceStatsConfiguration _performanceStatsConfiguration;
         private Protocol _protocol;
         private int? _sessionLengthSeconds;
         private string _signalRequest;
@@ -317,6 +318,24 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetLogFileLocationUri()
         {
             return this._logFileLocationUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceStatsConfiguration. 
+        /// <para>
+        /// The performance stats configuration for the stream session
+        /// </para>
+        /// </summary>
+        public PerformanceStatsConfiguration PerformanceStatsConfiguration
+        {
+            get { return this._performanceStatsConfiguration; }
+            set { this._performanceStatsConfiguration = value; }
+        }
+
+        // Check to see if PerformanceStatsConfiguration property is set
+        internal bool IsSetPerformanceStatsConfiguration()
+        {
+            return this._performanceStatsConfiguration != null;
         }
 
         /// <summary>

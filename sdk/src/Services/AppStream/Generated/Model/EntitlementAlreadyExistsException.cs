@@ -39,6 +39,13 @@ namespace Amazon.AppStream.Model
     {
 
         /// <summary>
+        /// Default constructor for EntitlementAlreadyExistsException
+        /// message.
+        /// </summary>
+        public EntitlementAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntitlementAlreadyExistsException with the specified error
         /// message.
         /// </summary>

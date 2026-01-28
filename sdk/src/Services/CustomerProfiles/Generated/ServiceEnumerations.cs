@@ -477,6 +477,56 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type ContentType.
+    /// </summary>
+    public class ContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NUMBER for ContentType
+        /// </summary>
+        public static readonly ContentType NUMBER = new ContentType("NUMBER");
+        /// <summary>
+        /// Constant STRING for ContentType
+        /// </summary>
+        public static readonly ContentType STRING = new ContentType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentType FindValue(string value)
+        {
+            return FindValue<ContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataFormat.
     /// </summary>
     public class DataFormat : ConstantClass
@@ -844,6 +894,56 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventTriggerLogicalOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeatureType.
+    /// </summary>
+    public class FeatureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CATEGORICAL for FeatureType
+        /// </summary>
+        public static readonly FeatureType CATEGORICAL = new FeatureType("CATEGORICAL");
+        /// <summary>
+        /// Constant TEXTUAL for FeatureType
+        /// </summary>
+        public static readonly FeatureType TEXTUAL = new FeatureType("TEXTUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureType FindValue(string value)
+        {
+            return FindValue<FeatureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureType(string value)
         {
             return FindValue(value);
         }
@@ -2091,6 +2191,142 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type RecommenderRecipeName.
+    /// </summary>
+    public class RecommenderRecipeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FrequentlyPairedItems for RecommenderRecipeName
+        /// </summary>
+        public static readonly RecommenderRecipeName FrequentlyPairedItems = new RecommenderRecipeName("frequently-paired-items");
+        /// <summary>
+        /// Constant PopularItems for RecommenderRecipeName
+        /// </summary>
+        public static readonly RecommenderRecipeName PopularItems = new RecommenderRecipeName("popular-items");
+        /// <summary>
+        /// Constant RecommendedForYou for RecommenderRecipeName
+        /// </summary>
+        public static readonly RecommenderRecipeName RecommendedForYou = new RecommenderRecipeName("recommended-for-you");
+        /// <summary>
+        /// Constant SimilarItems for RecommenderRecipeName
+        /// </summary>
+        public static readonly RecommenderRecipeName SimilarItems = new RecommenderRecipeName("similar-items");
+        /// <summary>
+        /// Constant TrendingNow for RecommenderRecipeName
+        /// </summary>
+        public static readonly RecommenderRecipeName TrendingNow = new RecommenderRecipeName("trending-now");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommenderRecipeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommenderRecipeName FindValue(string value)
+        {
+            return FindValue<RecommenderRecipeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommenderRecipeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommenderStatus.
+    /// </summary>
+    public class RecommenderStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RecommenderStatus
+        /// </summary>
+        public static readonly RecommenderStatus ACTIVE = new RecommenderStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETING for RecommenderStatus
+        /// </summary>
+        public static readonly RecommenderStatus DELETING = new RecommenderStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for RecommenderStatus
+        /// </summary>
+        public static readonly RecommenderStatus FAILED = new RecommenderStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RecommenderStatus
+        /// </summary>
+        public static readonly RecommenderStatus IN_PROGRESS = new RecommenderStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant INACTIVE for RecommenderStatus
+        /// </summary>
+        public static readonly RecommenderStatus INACTIVE = new RecommenderStatus("INACTIVE");
+        /// <summary>
+        /// Constant PENDING for RecommenderStatus
+        /// </summary>
+        public static readonly RecommenderStatus PENDING = new RecommenderStatus("PENDING");
+        /// <summary>
+        /// Constant STARTING for RecommenderStatus
+        /// </summary>
+        public static readonly RecommenderStatus STARTING = new RecommenderStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPING for RecommenderStatus
+        /// </summary>
+        public static readonly RecommenderStatus STOPPING = new RecommenderStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommenderStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommenderStatus FindValue(string value)
+        {
+            return FindValue<RecommenderStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommenderStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RuleBasedMatchingStatus.
     /// </summary>
     public class RuleBasedMatchingStatus : ConstantClass
@@ -2393,6 +2629,56 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type Scope.
+    /// </summary>
+    public class Scope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN for Scope
+        /// </summary>
+        public static readonly Scope DOMAIN = new Scope("DOMAIN");
+        /// <summary>
+        /// Constant PROFILE for Scope
+        /// </summary>
+        public static readonly Scope PROFILE = new Scope("PROFILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scope FindValue(string value)
+        {
+            return FindValue<Scope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SegmentSnapshotStatus.
     /// </summary>
     public class SegmentSnapshotStatus : ConstantClass
@@ -2440,6 +2726,56 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SegmentSnapshotStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SegmentType.
+    /// </summary>
+    public class SegmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASSIC for SegmentType
+        /// </summary>
+        public static readonly SegmentType CLASSIC = new SegmentType("CLASSIC");
+        /// <summary>
+        /// Constant ENHANCED for SegmentType
+        /// </summary>
+        public static readonly SegmentType ENHANCED = new SegmentType("ENHANCED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SegmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SegmentType FindValue(string value)
+        {
+            return FindValue<SegmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SegmentType(string value)
         {
             return FindValue(value);
         }
@@ -3068,6 +3404,72 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrainingMetricName.
+    /// </summary>
+    public class TrainingMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Coverage for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Coverage = new TrainingMetricName("coverage");
+        /// <summary>
+        /// Constant Freshness for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Freshness = new TrainingMetricName("freshness");
+        /// <summary>
+        /// Constant Hit for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Hit = new TrainingMetricName("hit");
+        /// <summary>
+        /// Constant Popularity for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Popularity = new TrainingMetricName("popularity");
+        /// <summary>
+        /// Constant Recall for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Recall = new TrainingMetricName("recall");
+        /// <summary>
+        /// Constant Similarity for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Similarity = new TrainingMetricName("similarity");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrainingMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrainingMetricName FindValue(string value)
+        {
+            return FindValue<TrainingMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrainingMetricName(string value)
         {
             return FindValue(value);
         }

@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyFieldLevelEncryptionProfilesException
+        /// message.
+        /// </summary>
+        public TooManyFieldLevelEncryptionProfilesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyFieldLevelEncryptionProfilesException with the specified error
         /// message.
         /// </summary>

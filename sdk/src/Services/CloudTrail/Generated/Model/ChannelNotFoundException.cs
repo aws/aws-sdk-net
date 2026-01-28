@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for ChannelNotFoundException
+        /// message.
+        /// </summary>
+        public ChannelNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChannelNotFoundException with the specified error
         /// message.
         /// </summary>

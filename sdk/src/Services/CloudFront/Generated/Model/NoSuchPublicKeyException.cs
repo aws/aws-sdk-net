@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchPublicKeyException
+        /// message.
+        /// </summary>
+        public NoSuchPublicKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchPublicKeyException with the specified error
         /// message.
         /// </summary>

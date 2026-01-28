@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Rules are processed in order. If there are multiple rules that match the line item,
-    /// then the first rule to match is used to determine that Cost Category value.
+    /// then the first rule to match is used to determine that cost category value.
     /// </summary>
     public partial class CostCategoryRule
     {
@@ -69,7 +69,7 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         ///  <c>RECORD_TYPE</c> is a dimension used for Cost Explorer APIs, and is also supported
-        /// for Cost Category expressions. This dimension uses different terms, depending on whether
+        /// for cost category expressions. This dimension uses different terms, depending on whether
         /// you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
         /// Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>

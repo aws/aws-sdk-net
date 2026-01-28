@@ -36,6 +36,14 @@ namespace Amazon.B2bi
         /// <summary>
         /// Construct instance of AmazonB2biException
         /// </summary>
+        public AmazonB2biException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonB2biException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonB2biException(string message)
             : base(message)

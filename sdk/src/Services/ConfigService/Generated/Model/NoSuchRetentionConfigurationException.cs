@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchRetentionConfigurationException
+        /// message.
+        /// </summary>
+        public NoSuchRetentionConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchRetentionConfigurationException with the specified error
         /// message.
         /// </summary>

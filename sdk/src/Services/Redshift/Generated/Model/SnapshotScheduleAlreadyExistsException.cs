@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotScheduleAlreadyExistsException
+        /// message.
+        /// </summary>
+        public SnapshotScheduleAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotScheduleAlreadyExistsException with the specified error
         /// message.
         /// </summary>

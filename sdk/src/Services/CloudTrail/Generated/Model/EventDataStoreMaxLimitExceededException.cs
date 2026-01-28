@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for EventDataStoreMaxLimitExceededException
+        /// message.
+        /// </summary>
+        public EventDataStoreMaxLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventDataStoreMaxLimitExceededException with the specified error
         /// message.
         /// </summary>

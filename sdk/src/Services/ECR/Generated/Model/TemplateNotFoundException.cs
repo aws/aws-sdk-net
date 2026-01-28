@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for TemplateNotFoundException
+        /// message.
+        /// </summary>
+        public TemplateNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TemplateNotFoundException with the specified error
         /// message.
         /// </summary>

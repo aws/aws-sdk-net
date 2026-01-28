@@ -259,6 +259,13 @@ namespace Amazon.GameLift.Model
         /// new <c>GameSession</c> object that is created for a successful match. This parameter
         /// is not used when <c>FlexMatchMode</c> is set to <c>STANDALONE</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Avoid using periods (".") in property keys if you plan to search for game sessions
+        /// by properties. Property keys containing periods cannot be searched and will be filtered
+        /// out from search results due to search index limitations.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

@@ -46,8 +46,13 @@ namespace Amazon.S3Tables.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTableBucket</c>
-    /// permission to create a table bucket with tags.
+    /// If you use this operation with the <c>storageClassConfiguration</c> request parameter,
+    /// you must have the <c>s3tables:PutTableBucketStorageClass</c> permission.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To create a table bucket with tags, you must have the <c>s3tables:TagResource</c>
+    /// permission in addition to <c>s3tables:CreateTableBucket</c> permission.
     /// </para>
     ///  </li> </ul> </dd> </dl>
     /// </summary>
@@ -55,6 +60,7 @@ namespace Amazon.S3Tables.Model
     {
         private EncryptionConfiguration _encryptionConfiguration;
         private string _name;
+        private StorageClassConfiguration _storageClassConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -95,6 +101,26 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageClassConfiguration. 
+        /// <para>
+        /// The default storage class configuration for the table bucket. This configuration will
+        /// be applied to all new tables created in this bucket unless overridden at the table
+        /// level. If not specified, the service default storage class will be used.
+        /// </para>
+        /// </summary>
+        public StorageClassConfiguration StorageClassConfiguration
+        {
+            get { return this._storageClassConfiguration; }
+            set { this._storageClassConfiguration = value; }
+        }
+
+        // Check to see if StorageClassConfiguration property is set
+        internal bool IsSetStorageClassConfiguration()
+        {
+            return this._storageClassConfiguration != null;
         }
 
         /// <summary>

@@ -139,8 +139,8 @@ namespace Amazon.SocialMessaging.Model
         /// <para>
         /// The unique identifier of the originating phone number associated with the media. Phone
         /// number identifiers are formatted as <c>phone-number-id-01234567890123456789012345678901</c>.
-        /// Use <a href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html">GetLinkedWhatsAppBusinessAccount</a>
-        /// to find a phone number's id.
+        /// Use the <a href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccount.html">GetLinkedWhatsAppBusinessAccount</a>
+        /// API action to find a phone number's id.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

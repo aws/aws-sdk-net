@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for BackupNotFoundException
+        /// message.
+        /// </summary>
+        public BackupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BackupNotFoundException with the specified error
         /// message.
         /// </summary>

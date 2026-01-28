@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidQueryStringParametersException
+        /// message.
+        /// </summary>
+        public InvalidQueryStringParametersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidQueryStringParametersException with the specified error
         /// message.
         /// </summary>

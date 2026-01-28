@@ -40,6 +40,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for ShardsPerClusterQuotaExceededException
+        /// message.
+        /// </summary>
+        public ShardsPerClusterQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ShardsPerClusterQuotaExceededException with the specified error
         /// message.
         /// </summary>

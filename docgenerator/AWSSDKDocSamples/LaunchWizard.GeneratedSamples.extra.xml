@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.CreateDeployment(Amazon.LaunchWizard.Model.CreateDeploymentRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.CreateDeployment(Amazon.LaunchWizard.Model.CreateDeploymentRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.CreateDeploymentRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.CreateDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Deploy a given workload with given settings."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.CreateDeployment(Amazon.LaunchWizard.Model.CreateDeploymentRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.CreateDeployment(Amazon.LaunchWizard.Model.CreateDeploymentRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.CreateDeploymentRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.CreateDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Deploy a given workload with given settings and passing tags for Launch Wizard deployment resource."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.DeleteDeployment(Amazon.LaunchWizard.Model.DeleteDeploymentRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.DeleteDeployment(Amazon.LaunchWizard.Model.DeleteDeploymentRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.DeleteDeploymentRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.DeleteDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete a deployment."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.GetDeployment(Amazon.LaunchWizard.Model.GetDeploymentRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.GetDeployment(Amazon.LaunchWizard.Model.GetDeploymentRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.GetDeploymentRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.GetDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get details about a given deployment."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.GetWorkload(Amazon.LaunchWizard.Model.GetWorkloadRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.GetWorkload(Amazon.LaunchWizard.Model.GetWorkloadRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.GetWorkloadRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.GetWorkloadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get details about a specific workload."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.GetWorkloadDeploymentPattern(Amazon.LaunchWizard.Model.GetWorkloadDeploymentPatternRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.GetWorkloadDeploymentPattern(Amazon.LaunchWizard.Model.GetWorkloadDeploymentPatternRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.GetWorkloadDeploymentPatternRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.GetWorkloadDeploymentPatternResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get details about a specific Workload deployment pattern"
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.ListDeploymentEvents(Amazon.LaunchWizard.Model.ListDeploymentEventsRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.ListDeploymentEvents(Amazon.LaunchWizard.Model.ListDeploymentEventsRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.ListDeploymentEventsRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.ListDeploymentEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all actions taken during a deployment."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.ListDeploymentPatternVersions(Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.ListDeploymentPatternVersions(Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all visible versions for the given workload and deployment pattern."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.ListDeploymentPatternVersions(Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.ListDeploymentPatternVersions(Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.ListDeploymentPatternVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List filtered versions for the given workload and deployment pattern."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.ListDeployments(Amazon.LaunchWizard.Model.ListDeploymentsRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.ListDeployments(Amazon.LaunchWizard.Model.ListDeploymentsRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.ListDeploymentsRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.ListDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List deployments in the account with filters."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.ListTagsForResource(Amazon.LaunchWizard.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.ListTagsForResource(Amazon.LaunchWizard.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Listing tags on a Launch Wizard deployment resource."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.ListWorkloadDeploymentPatterns(Amazon.LaunchWizard.Model.ListWorkloadDeploymentPatternsRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.ListWorkloadDeploymentPatterns(Amazon.LaunchWizard.Model.ListWorkloadDeploymentPatternsRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.ListWorkloadDeploymentPatternsRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.ListWorkloadDeploymentPatternsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all available workloads supported by AWS Launch Wizard."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.ListWorkloads(Amazon.LaunchWizard.Model.ListWorkloadsRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.ListWorkloads(Amazon.LaunchWizard.Model.ListWorkloadsRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.ListWorkloadsRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.ListWorkloadsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all available workloads supported by AWS Launch Wizard."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.TagResource(Amazon.LaunchWizard.Model.TagResourceRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.TagResource(Amazon.LaunchWizard.Model.TagResourceRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.TagResourceRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Adding tags to a Launch Wizard deployment resource."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.UntagResource(Amazon.LaunchWizard.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.UntagResource(Amazon.LaunchWizard.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.UntagResourceRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Removing tags on a Launch Wizard deployment resource."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.UpdateDeployment(Amazon.LaunchWizard.Model.UpdateDeploymentRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.UpdateDeployment(Amazon.LaunchWizard.Model.UpdateDeploymentRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.UpdateDeploymentRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.UpdateDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Edit deployment specifications."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LaunchWizard.IAmazonLaunchWizard.UpdateDeployment(Amazon.LaunchWizard.Model.UpdateDeploymentRequest)" />
+            <member name="M:Amazon.LaunchWizard.AmazonLaunchWizardClient.UpdateDeployment(Amazon.LaunchWizard.Model.UpdateDeploymentRequest)" />
+            <member name="T:Amazon.LaunchWizard.Model.UpdateDeploymentRequest" />
+            <member name="T:Amazon.LaunchWizard.Model.UpdateDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update deployment version."
+                    source=".\AWSSDKDocSamples\LaunchWizard\LaunchWizard.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+</docs>

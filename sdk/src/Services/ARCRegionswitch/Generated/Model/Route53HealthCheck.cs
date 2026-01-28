@@ -38,6 +38,7 @@ namespace Amazon.ARCRegionswitch.Model
         private string _hostedZoneId;
         private string _recordName;
         private string _region;
+        private Route53HealthCheckStatus _status;
 
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
@@ -113,6 +114,24 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The Amazon Route 53 health check status.
+        /// </para>
+        /// </summary>
+        public Route53HealthCheckStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

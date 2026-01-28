@@ -40,6 +40,13 @@ namespace Amazon.SecretsManager.Model
     {
 
         /// <summary>
+        /// Default constructor for PublicPolicyException
+        /// message.
+        /// </summary>
+        public PublicPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PublicPolicyException with the specified error
         /// message.
         /// </summary>

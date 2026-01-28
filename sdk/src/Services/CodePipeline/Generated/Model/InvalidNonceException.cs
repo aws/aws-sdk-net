@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidNonceException
+        /// message.
+        /// </summary>
+        public InvalidNonceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNonceException with the specified error
         /// message.
         /// </summary>

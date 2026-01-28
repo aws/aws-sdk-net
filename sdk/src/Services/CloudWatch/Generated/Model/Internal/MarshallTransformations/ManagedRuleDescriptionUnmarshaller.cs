@@ -29,59 +29,72 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ManagedRuleDescription Object
     /// </summary>  
-    public class ManagedRuleDescriptionUnmarshaller : IXmlUnmarshaller<ManagedRuleDescription, XmlUnmarshallerContext>
+    public class ManagedRuleDescriptionUnmarshaller : ICborUnmarshaller<ManagedRuleDescription, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public ManagedRuleDescription Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public ManagedRuleDescription Unmarshall(CborUnmarshallerContext context)
         {
             ManagedRuleDescription unmarshalledObject = new ManagedRuleDescription();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("ResourceARN", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("RuleState", targetDepth))
-                    {
-                        var unmarshaller = ManagedRuleStateUnmarshaller.Instance;
-                        unmarshalledObject.RuleState = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TemplateName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "ResourceARN":
+                        {
+                            context.AddPathSegment("ResourceARN");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RuleState":
+                        {
+                            context.AddPathSegment("RuleState");
+                            var unmarshaller = ManagedRuleStateUnmarshaller.Instance;
+                            unmarshalledObject.RuleState = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TemplateName":
+                        {
+                            context.AddPathSegment("TemplateName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static ManagedRuleDescriptionUnmarshaller _instance = new ManagedRuleDescriptionUnmarshaller();        
 

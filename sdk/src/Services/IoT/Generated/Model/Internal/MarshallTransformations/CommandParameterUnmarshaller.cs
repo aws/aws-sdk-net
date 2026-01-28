@@ -74,10 +74,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = CommandParameterValueUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("valueConditions", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CommandParameterValueCondition, CommandParameterValueConditionUnmarshaller>(CommandParameterValueConditionUnmarshaller.Instance);
+                    unmarshalledObject.ValueConditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

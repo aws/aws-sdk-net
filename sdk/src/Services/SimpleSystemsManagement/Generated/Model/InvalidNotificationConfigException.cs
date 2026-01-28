@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidNotificationConfigException
+        /// message.
+        /// </summary>
+        public InvalidNotificationConfigException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNotificationConfigException with the specified error
         /// message.
         /// </summary>

@@ -75,27 +75,27 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFunctionCode())
                     xmlWriter.WriteElementString("FunctionCode", StringUtils.FromMemoryStream(publicRequest.FunctionCode));
 
-                if (publicRequest.FunctionConfig != null)
+                if (publicRequest.IsSetFunctionConfig())
                 {
                     xmlWriter.WriteStartElement("FunctionConfig");
                     if(publicRequest.FunctionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FunctionConfig.Comment));
-                    if (publicRequest.FunctionConfig.KeyValueStoreAssociations != null)
+                    if (publicRequest.FunctionConfig.IsSetKeyValueStoreAssociations())
                     {
                         xmlWriter.WriteStartElement("KeyValueStoreAssociations");
                         var publicRequestFunctionConfigKeyValueStoreAssociationsItems = publicRequest.FunctionConfig.KeyValueStoreAssociations.Items;
-                        if (publicRequestFunctionConfigKeyValueStoreAssociationsItems != null && (publicRequestFunctionConfigKeyValueStoreAssociationsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.FunctionConfig.KeyValueStoreAssociations.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue in publicRequestFunctionConfigKeyValueStoreAssociationsItems) 
                             {
-                            if (publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("KeyValueStoreAssociation");
-                                if(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
-                                    xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("KeyValueStoreAssociation");
+                                    if(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
+                                        xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }

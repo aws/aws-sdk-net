@@ -1654,6 +1654,15 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetMaterializedViewRefreshTaskRunRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetMaterializedViewRefreshTaskRunRequest.MaterializedViewRefreshTaskRunId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetMLTaskRunRequest.TaskRunId</property>
     <min>1</min>
     <max>255</max>
@@ -2414,6 +2423,26 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ListMaterializedViewRefreshTaskRunsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListMaterializedViewRefreshTaskRunsRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListMaterializedViewRefreshTaskRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListMaterializedViewRefreshTaskRunsRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ListMLTransformsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -2966,6 +2995,25 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.StartMaterializedViewRefreshTaskRunRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartMaterializedViewRefreshTaskRunRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartMaterializedViewRefreshTaskRunRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartMaterializedViewRefreshTaskRunResponse.MaterializedViewRefreshTaskRunId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StartMLEvaluationTaskRunRequest.TransformId</property>
     <min>1</min>
     <max>255</max>
@@ -3027,6 +3075,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.StopCrawlerScheduleRequest.CrawlerName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopMaterializedViewRefreshTaskRunRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopMaterializedViewRefreshTaskRunRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopMaterializedViewRefreshTaskRunRequest.TableName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -3653,7 +3716,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AuthenticationConfiguration.KmsKeyArn</property>
-    <pattern>arn:aws:kms:.*</pattern>
+    <pattern>^$|arn:aws[a-z0-9-]*:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AuthenticationConfiguration.SecretArn</property>
@@ -3661,7 +3724,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AuthenticationConfigurationInput.KmsKeyArn</property>
-    <pattern>arn:aws:kms:.*</pattern>
+    <pattern>^$|arn:aws[a-z0-9-]*:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AuthenticationConfigurationInput.SecretArn</property>
@@ -3952,7 +4015,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CloudWatchEncryption.KmsKeyArn</property>
-    <pattern>arn:aws:kms:.*</pattern>
+    <pattern>^$|arn:aws[a-z0-9-]*:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CodeGenEdge.Source</property>
@@ -4517,7 +4580,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityEncryption.KmsKeyArn</property>
-    <pattern>arn:aws:kms:.*</pattern>
+    <pattern>^$|arn:aws[a-z0-9-]*:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityGlueTable.CatalogId</property>
@@ -5111,6 +5174,18 @@
     <pattern>[A-Za-z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergEncryptedKey.EncryptedById</property>
+    <max>2056</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergEncryptedKey.EncryptedKeyMetadata</property>
+    <max>2056</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergEncryptedKey.KeyId</property>
+    <max>2056</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.IcebergInput.Version</property>
     <min>1</min>
     <max>255</max>
@@ -5137,6 +5212,10 @@
     <property>Amazon.Glue.Model.IcebergStructField.Name</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergTableUpdate.KeyId</property>
+    <max>2056</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.IcebergTableUpdate.Location</property>
@@ -5338,7 +5417,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobBookmarksEncryption.KmsKeyArn</property>
-    <pattern>arn:aws:kms:.*</pattern>
+    <pattern>^$|arn:aws[a-z0-9-]*:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobCommand.PythonVersion</property>
@@ -5631,6 +5710,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Mapping.ToType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.CustomerId</property>
+    <min>0</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.DPUSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.ErrorMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.MaterializedViewRefreshTaskRunId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.MaterializedViewRefreshTaskRun.ProcessedBytes</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Merge.Name</property>
@@ -6202,7 +6308,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3Encryption.KmsKeyArn</property>
-    <pattern>arn:aws:kms:.*</pattern>
+    <pattern>^$|arn:aws[a-z0-9-]*:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3ExcelSource.GroupFiles</property>
@@ -7042,9 +7148,27 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ViewDefinition.ViewVersionId</property>
+    <min>-1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ViewDefinition.ViewVersionToken</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ViewDefinitionInput.Definer</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ViewDefinitionInput.ViewVersionId</property>
+    <min>-1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ViewDefinitionInput.ViewVersionToken</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ViewRepresentation.DialectVersion</property>

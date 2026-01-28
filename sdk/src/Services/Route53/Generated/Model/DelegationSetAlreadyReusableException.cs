@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for DelegationSetAlreadyReusableException
+        /// message.
+        /// </summary>
+        public DelegationSetAlreadyReusableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DelegationSetAlreadyReusableException with the specified error
         /// message.
         /// </summary>

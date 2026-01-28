@@ -46,6 +46,7 @@ namespace Amazon.CostOptimizationHub.Model
         private ElastiCacheReservedInstances _elastiCacheReservedInstances;
         private LambdaFunction _lambdaFunction;
         private MemoryDbReservedInstances _memoryDbReservedInstances;
+        private NatGateway _natGateway;
         private OpenSearchReservedInstances _openSearchReservedInstances;
         private RdsDbInstance _rdsDbInstance;
         private RdsDbInstanceStorage _rdsDbInstanceStorage;
@@ -267,6 +268,24 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetMemoryDbReservedInstances()
         {
             return this._memoryDbReservedInstances != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NatGateway. 
+        /// <para>
+        /// The NAT Gateway recommendation details.
+        /// </para>
+        /// </summary>
+        public NatGateway NatGateway
+        {
+            get { return this._natGateway; }
+            set { this._natGateway = value; }
+        }
+
+        // Check to see if NatGateway property is set
+        internal bool IsSetNatGateway()
+        {
+            return this._natGateway != null;
         }
 
         /// <summary>

@@ -49,6 +49,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmClusterInUseException
+        /// message.
+        /// </summary>
+        public CloudHsmClusterInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmClusterInUseException with the specified error
         /// message.
         /// </summary>

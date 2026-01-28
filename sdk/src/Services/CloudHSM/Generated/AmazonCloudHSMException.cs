@@ -36,6 +36,14 @@ namespace Amazon.CloudHSM
         /// <summary>
         /// Construct instance of AmazonCloudHSMException
         /// </summary>
+        public AmazonCloudHSMException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudHSMException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudHSMException(string message)
             : base(message)

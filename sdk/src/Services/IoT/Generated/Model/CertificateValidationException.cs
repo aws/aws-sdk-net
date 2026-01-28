@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateValidationException
+        /// message.
+        /// </summary>
+        public CertificateValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateValidationException with the specified error
         /// message.
         /// </summary>

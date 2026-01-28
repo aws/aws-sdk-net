@@ -14559,12 +14559,6 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
-        /// service, status includes SQL license exemption monitoring health and processing status
-        /// to provide operational visibility into license exemption functionality.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The Amazon EC2 API follows an eventual consistency model. This means that the result
@@ -14621,12 +14615,6 @@ namespace Amazon.EC2
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
-        /// service, status includes SQL license exemption monitoring health and processing status
-        /// to provide operational visibility into license exemption functionality.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -28748,9 +28736,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// After modifying a volume, you must wait at least six hours and ensure that the volume
-        /// is in the <c>in-use</c> or <c>available</c> state before you can modify the same volume.
-        /// This is sometimes referred to as a cooldown period.
+        /// After you initiate a volume modification, you must wait for that modification to reach
+        /// the <c>completed</c> state before you can initiate another modification for the same
+        /// volume. You can modify a volume up to four times within a rolling 24-hour period,
+        /// as long as the volume is in the <c>in-use</c> or <c>available</c> state, and all previous
+        /// modifications for that volume are <c>completed</c>. If you exceed this limit, you
+        /// get an error message that indicates when you can perform your next modification.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVolume service method.</param>

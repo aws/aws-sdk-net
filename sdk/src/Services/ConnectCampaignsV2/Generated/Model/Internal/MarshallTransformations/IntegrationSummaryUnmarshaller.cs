@@ -62,6 +62,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerProfiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("lambda", targetDepth))
+                {
+                    var unmarshaller = LambdaIntegrationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("qConnect", targetDepth))
                 {
                     var unmarshaller = QConnectIntegrationSummaryUnmarshaller.Instance;

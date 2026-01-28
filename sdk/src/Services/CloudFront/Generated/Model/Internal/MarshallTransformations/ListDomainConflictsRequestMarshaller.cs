@@ -67,7 +67,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDomain())
                     xmlWriter.WriteElementString("Domain", StringUtils.FromString(publicRequest.Domain));
 
-                if (publicRequest.DomainControlValidationResource != null)
+                if (publicRequest.IsSetDomainControlValidationResource())
                 {
                     xmlWriter.WriteStartElement("DomainControlValidationResource");
                     if(publicRequest.DomainControlValidationResource.IsSetDistributionId())

@@ -36,6 +36,14 @@ namespace Amazon.CleanRoomsML
         /// <summary>
         /// Construct instance of AmazonCleanRoomsMLException
         /// </summary>
+        public AmazonCleanRoomsMLException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCleanRoomsMLException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCleanRoomsMLException(string message)
             : base(message)

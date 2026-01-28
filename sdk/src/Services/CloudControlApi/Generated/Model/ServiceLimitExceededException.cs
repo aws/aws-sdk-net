@@ -40,6 +40,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceLimitExceededException
+        /// message.
+        /// </summary>
+        public ServiceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceLimitExceededException with the specified error
         /// message.
         /// </summary>

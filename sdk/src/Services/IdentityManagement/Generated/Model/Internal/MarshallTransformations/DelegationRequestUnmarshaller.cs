@@ -79,6 +79,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExpirationTime", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ExpirationTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Notes", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

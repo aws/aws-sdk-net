@@ -40,6 +40,13 @@ namespace Amazon.Inspector.Model
         private bool? _canRetry;
 
         /// <summary>
+        /// Default constructor for ServiceTemporarilyUnavailableException
+        /// message.
+        /// </summary>
+        public ServiceTemporarilyUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceTemporarilyUnavailableException with the specified error
         /// message.
         /// </summary>

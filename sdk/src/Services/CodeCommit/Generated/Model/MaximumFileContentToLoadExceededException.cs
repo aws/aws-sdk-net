@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumFileContentToLoadExceededException
+        /// message.
+        /// </summary>
+        public MaximumFileContentToLoadExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumFileContentToLoadExceededException with the specified error
         /// message.
         /// </summary>

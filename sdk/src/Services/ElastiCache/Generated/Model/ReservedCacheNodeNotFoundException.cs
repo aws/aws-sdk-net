@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedCacheNodeNotFoundException
+        /// message.
+        /// </summary>
+        public ReservedCacheNodeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedCacheNodeNotFoundException with the specified error
         /// message.
         /// </summary>

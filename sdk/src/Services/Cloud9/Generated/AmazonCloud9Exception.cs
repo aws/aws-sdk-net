@@ -36,6 +36,14 @@ namespace Amazon.Cloud9
         /// <summary>
         /// Construct instance of AmazonCloud9Exception
         /// </summary>
+        public AmazonCloud9Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloud9Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloud9Exception(string message)
             : base(message)

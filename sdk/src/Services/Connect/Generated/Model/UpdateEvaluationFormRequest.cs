@@ -43,6 +43,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UpdateEvaluationFormRequest : AmazonConnectRequest
     {
+        private bool? _asDraft;
         private EvaluationFormAutoEvaluationConfiguration _autoEvaluationConfiguration;
         private string _clientToken;
         private bool? _createNewVersion;
@@ -51,8 +52,29 @@ namespace Amazon.Connect.Model
         private int? _evaluationFormVersion;
         private string _instanceId;
         private List<EvaluationFormItem> _items = AWSConfigs.InitializeCollections ? new List<EvaluationFormItem>() : null;
+        private EvaluationFormLanguageConfiguration _languageConfiguration;
+        private EvaluationReviewConfiguration _reviewConfiguration;
         private EvaluationFormScoringStrategy _scoringStrategy;
+        private EvaluationFormTargetConfiguration _targetConfiguration;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AsDraft. 
+        /// <para>
+        /// A boolean flag indicating whether to update evaluation form to draft state.
+        /// </para>
+        /// </summary>
+        public bool? AsDraft
+        {
+            get { return this._asDraft; }
+            set { this._asDraft = value; }
+        }
+
+        // Check to see if AsDraft property is set
+        internal bool IsSetAsDraft()
+        {
+            return this._asDraft.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutoEvaluationConfiguration. 
@@ -118,7 +140,6 @@ namespace Amazon.Connect.Model
         /// The description of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -156,7 +177,7 @@ namespace Amazon.Connect.Model
         /// A version of the evaluation form to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int? EvaluationFormVersion
         {
             get { return this._evaluationFormVersion; }
@@ -201,7 +222,7 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true)]
         public List<EvaluationFormItem> Items
         {
             get { return this._items; }
@@ -212,6 +233,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetItems()
         {
             return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageConfiguration. 
+        /// <para>
+        /// Configuration for language settings of the evaluation form.
+        /// </para>
+        /// </summary>
+        public EvaluationFormLanguageConfiguration LanguageConfiguration
+        {
+            get { return this._languageConfiguration; }
+            set { this._languageConfiguration = value; }
+        }
+
+        // Check to see if LanguageConfiguration property is set
+        internal bool IsSetLanguageConfiguration()
+        {
+            return this._languageConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewConfiguration. 
+        /// <para>
+        /// Configuration for evaluation review settings of the evaluation form.
+        /// </para>
+        /// </summary>
+        public EvaluationReviewConfiguration ReviewConfiguration
+        {
+            get { return this._reviewConfiguration; }
+            set { this._reviewConfiguration = value; }
+        }
+
+        // Check to see if ReviewConfiguration property is set
+        internal bool IsSetReviewConfiguration()
+        {
+            return this._reviewConfiguration != null;
         }
 
         /// <summary>
@@ -233,12 +290,30 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetConfiguration. 
+        /// <para>
+        /// Configuration that specifies the target for the evaluation form.
+        /// </para>
+        /// </summary>
+        public EvaluationFormTargetConfiguration TargetConfiguration
+        {
+            get { return this._targetConfiguration; }
+            set { this._targetConfiguration = value; }
+        }
+
+        // Check to see if TargetConfiguration property is set
+        internal bool IsSetTargetConfiguration()
+        {
+            return this._targetConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
         /// A title of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

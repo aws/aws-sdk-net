@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingVolumeConfigurationException
+        /// message.
+        /// </summary>
+        public MissingVolumeConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingVolumeConfigurationException with the specified error
         /// message.
         /// </summary>

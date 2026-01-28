@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Configuration details for delivering scheduled query results to an Amazon S3 bucket.
+    /// Configuration for Amazon S3 destination where scheduled query results are delivered.
     /// </summary>
     public partial class S3Configuration
     {
@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationIdentifier. 
         /// <para>
-        /// The S3 URI where query results will be stored (e.g., s3://bucket-name/prefix/).
+        /// The Amazon S3 URI where query results are delivered. Must be a valid S3 URI format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -59,8 +59,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that CloudWatch Logs will assume to write results to the S3
-        /// bucket.
+        /// The ARN of the IAM role that grants permissions to write query results to the specified
+        /// Amazon S3 destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

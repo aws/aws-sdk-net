@@ -141,6 +141,160 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityProviderPredefinedMetricType.
+    /// </summary>
+    public class CapacityProviderPredefinedMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LambdaCapacityProviderAverageCPUUtilization for CapacityProviderPredefinedMetricType
+        /// </summary>
+        public static readonly CapacityProviderPredefinedMetricType LambdaCapacityProviderAverageCPUUtilization = new CapacityProviderPredefinedMetricType("LambdaCapacityProviderAverageCPUUtilization");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityProviderPredefinedMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityProviderPredefinedMetricType FindValue(string value)
+        {
+            return FindValue<CapacityProviderPredefinedMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityProviderPredefinedMetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityProviderScalingMode.
+    /// </summary>
+    public class CapacityProviderScalingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Auto for CapacityProviderScalingMode
+        /// </summary>
+        public static readonly CapacityProviderScalingMode Auto = new CapacityProviderScalingMode("Auto");
+        /// <summary>
+        /// Constant Manual for CapacityProviderScalingMode
+        /// </summary>
+        public static readonly CapacityProviderScalingMode Manual = new CapacityProviderScalingMode("Manual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityProviderScalingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityProviderScalingMode FindValue(string value)
+        {
+            return FindValue<CapacityProviderScalingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityProviderScalingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityProviderState.
+    /// </summary>
+    public class CapacityProviderState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for CapacityProviderState
+        /// </summary>
+        public static readonly CapacityProviderState Active = new CapacityProviderState("Active");
+        /// <summary>
+        /// Constant Deleting for CapacityProviderState
+        /// </summary>
+        public static readonly CapacityProviderState Deleting = new CapacityProviderState("Deleting");
+        /// <summary>
+        /// Constant Failed for CapacityProviderState
+        /// </summary>
+        public static readonly CapacityProviderState Failed = new CapacityProviderState("Failed");
+        /// <summary>
+        /// Constant Pending for CapacityProviderState
+        /// </summary>
+        public static readonly CapacityProviderState Pending = new CapacityProviderState("Pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityProviderState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityProviderState FindValue(string value)
+        {
+            return FindValue<CapacityProviderState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityProviderState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CodeSigningPolicy.
     /// </summary>
     public class CodeSigningPolicy : ConstantClass
@@ -337,6 +491,206 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type EventType.
+    /// </summary>
+    public class EventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CallbackFailed for EventType
+        /// </summary>
+        public static readonly EventType CallbackFailed = new EventType("CallbackFailed");
+        /// <summary>
+        /// Constant CallbackStarted for EventType
+        /// </summary>
+        public static readonly EventType CallbackStarted = new EventType("CallbackStarted");
+        /// <summary>
+        /// Constant CallbackSucceeded for EventType
+        /// </summary>
+        public static readonly EventType CallbackSucceeded = new EventType("CallbackSucceeded");
+        /// <summary>
+        /// Constant CallbackTimedOut for EventType
+        /// </summary>
+        public static readonly EventType CallbackTimedOut = new EventType("CallbackTimedOut");
+        /// <summary>
+        /// Constant ChainedInvokeFailed for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeFailed = new EventType("ChainedInvokeFailed");
+        /// <summary>
+        /// Constant ChainedInvokeStarted for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeStarted = new EventType("ChainedInvokeStarted");
+        /// <summary>
+        /// Constant ChainedInvokeStopped for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeStopped = new EventType("ChainedInvokeStopped");
+        /// <summary>
+        /// Constant ChainedInvokeSucceeded for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeSucceeded = new EventType("ChainedInvokeSucceeded");
+        /// <summary>
+        /// Constant ChainedInvokeTimedOut for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeTimedOut = new EventType("ChainedInvokeTimedOut");
+        /// <summary>
+        /// Constant ContextFailed for EventType
+        /// </summary>
+        public static readonly EventType ContextFailed = new EventType("ContextFailed");
+        /// <summary>
+        /// Constant ContextStarted for EventType
+        /// </summary>
+        public static readonly EventType ContextStarted = new EventType("ContextStarted");
+        /// <summary>
+        /// Constant ContextSucceeded for EventType
+        /// </summary>
+        public static readonly EventType ContextSucceeded = new EventType("ContextSucceeded");
+        /// <summary>
+        /// Constant ExecutionFailed for EventType
+        /// </summary>
+        public static readonly EventType ExecutionFailed = new EventType("ExecutionFailed");
+        /// <summary>
+        /// Constant ExecutionStarted for EventType
+        /// </summary>
+        public static readonly EventType ExecutionStarted = new EventType("ExecutionStarted");
+        /// <summary>
+        /// Constant ExecutionStopped for EventType
+        /// </summary>
+        public static readonly EventType ExecutionStopped = new EventType("ExecutionStopped");
+        /// <summary>
+        /// Constant ExecutionSucceeded for EventType
+        /// </summary>
+        public static readonly EventType ExecutionSucceeded = new EventType("ExecutionSucceeded");
+        /// <summary>
+        /// Constant ExecutionTimedOut for EventType
+        /// </summary>
+        public static readonly EventType ExecutionTimedOut = new EventType("ExecutionTimedOut");
+        /// <summary>
+        /// Constant InvocationCompleted for EventType
+        /// </summary>
+        public static readonly EventType InvocationCompleted = new EventType("InvocationCompleted");
+        /// <summary>
+        /// Constant StepFailed for EventType
+        /// </summary>
+        public static readonly EventType StepFailed = new EventType("StepFailed");
+        /// <summary>
+        /// Constant StepStarted for EventType
+        /// </summary>
+        public static readonly EventType StepStarted = new EventType("StepStarted");
+        /// <summary>
+        /// Constant StepSucceeded for EventType
+        /// </summary>
+        public static readonly EventType StepSucceeded = new EventType("StepSucceeded");
+        /// <summary>
+        /// Constant WaitCancelled for EventType
+        /// </summary>
+        public static readonly EventType WaitCancelled = new EventType("WaitCancelled");
+        /// <summary>
+        /// Constant WaitStarted for EventType
+        /// </summary>
+        public static readonly EventType WaitStarted = new EventType("WaitStarted");
+        /// <summary>
+        /// Constant WaitSucceeded for EventType
+        /// </summary>
+        public static readonly EventType WaitSucceeded = new EventType("WaitSucceeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionStatus.
+    /// </summary>
+    public class ExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus FAILED = new ExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus RUNNING = new ExecutionStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus STOPPED = new ExecutionStatus("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus SUCCEEDED = new ExecutionStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus TIMED_OUT = new ExecutionStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionStatus FindValue(string value)
+        {
+            return FindValue<ExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FullDocument.
     /// </summary>
     public class FullDocument : ConstantClass
@@ -522,6 +876,52 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FunctionVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FunctionVersionLatestPublished.
+    /// </summary>
+    public class FunctionVersionLatestPublished : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LATEST_PUBLISHED for FunctionVersionLatestPublished
+        /// </summary>
+        public static readonly FunctionVersionLatestPublished LATEST_PUBLISHED = new FunctionVersionLatestPublished("LATEST_PUBLISHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FunctionVersionLatestPublished(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FunctionVersionLatestPublished FindValue(string value)
+        {
+            return FindValue<FunctionVersionLatestPublished>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FunctionVersionLatestPublished(string value)
         {
             return FindValue(value);
         }
@@ -797,9 +1197,21 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant CapacityProviderScalingLimitExceeded for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode CapacityProviderScalingLimitExceeded = new LastUpdateStatusReasonCode("CapacityProviderScalingLimitExceeded");
+        /// <summary>
         /// Constant DisabledKMSKey for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode DisabledKMSKey = new LastUpdateStatusReasonCode("DisabledKMSKey");
+        /// <summary>
+        /// Constant DisallowedByVpcEncryptionControl for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode DisallowedByVpcEncryptionControl = new LastUpdateStatusReasonCode("DisallowedByVpcEncryptionControl");
+        /// <summary>
+        /// Constant EC2RequestLimitExceeded for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode EC2RequestLimitExceeded = new LastUpdateStatusReasonCode("EC2RequestLimitExceeded");
         /// <summary>
         /// Constant EFSIOError for LastUpdateStatusReasonCode
         /// </summary>
@@ -825,6 +1237,38 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode FunctionError = new LastUpdateStatusReasonCode("FunctionError");
         /// <summary>
+        /// Constant FunctionErrorExtensionInitError for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionErrorExtensionInitError = new LastUpdateStatusReasonCode("FunctionError.ExtensionInitError");
+        /// <summary>
+        /// Constant FunctionErrorInitResourceExhausted for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionErrorInitResourceExhausted = new LastUpdateStatusReasonCode("FunctionError.InitResourceExhausted");
+        /// <summary>
+        /// Constant FunctionErrorInitTimeout for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionErrorInitTimeout = new LastUpdateStatusReasonCode("FunctionError.InitTimeout");
+        /// <summary>
+        /// Constant FunctionErrorInvalidEntryPoint for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionErrorInvalidEntryPoint = new LastUpdateStatusReasonCode("FunctionError.InvalidEntryPoint");
+        /// <summary>
+        /// Constant FunctionErrorInvalidWorkingDirectory for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionErrorInvalidWorkingDirectory = new LastUpdateStatusReasonCode("FunctionError.InvalidWorkingDirectory");
+        /// <summary>
+        /// Constant FunctionErrorPermissionDenied for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionErrorPermissionDenied = new LastUpdateStatusReasonCode("FunctionError.PermissionDenied");
+        /// <summary>
+        /// Constant FunctionErrorRuntimeInitError for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionErrorRuntimeInitError = new LastUpdateStatusReasonCode("FunctionError.RuntimeInitError");
+        /// <summary>
+        /// Constant FunctionErrorTooManyExtensions for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionErrorTooManyExtensions = new LastUpdateStatusReasonCode("FunctionError.TooManyExtensions");
+        /// <summary>
         /// Constant ImageAccessDenied for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode ImageAccessDenied = new LastUpdateStatusReasonCode("ImageAccessDenied");
@@ -832,6 +1276,10 @@ namespace Amazon.Lambda
         /// Constant ImageDeleted for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode ImageDeleted = new LastUpdateStatusReasonCode("ImageDeleted");
+        /// <summary>
+        /// Constant InsufficientCapacity for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InsufficientCapacity = new LastUpdateStatusReasonCode("InsufficientCapacity");
         /// <summary>
         /// Constant InsufficientRolePermissions for LastUpdateStatusReasonCode
         /// </summary>
@@ -880,6 +1328,10 @@ namespace Amazon.Lambda
         /// Constant SubnetOutOfIPAddresses for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode SubnetOutOfIPAddresses = new LastUpdateStatusReasonCode("SubnetOutOfIPAddresses");
+        /// <summary>
+        /// Constant VcpuLimitExceeded for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode VcpuLimitExceeded = new LastUpdateStatusReasonCode("VcpuLimitExceeded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1010,6 +1462,208 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperationAction.
+    /// </summary>
+    public class OperationAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCEL for OperationAction
+        /// </summary>
+        public static readonly OperationAction CANCEL = new OperationAction("CANCEL");
+        /// <summary>
+        /// Constant FAIL for OperationAction
+        /// </summary>
+        public static readonly OperationAction FAIL = new OperationAction("FAIL");
+        /// <summary>
+        /// Constant RETRY for OperationAction
+        /// </summary>
+        public static readonly OperationAction RETRY = new OperationAction("RETRY");
+        /// <summary>
+        /// Constant START for OperationAction
+        /// </summary>
+        public static readonly OperationAction START = new OperationAction("START");
+        /// <summary>
+        /// Constant SUCCEED for OperationAction
+        /// </summary>
+        public static readonly OperationAction SUCCEED = new OperationAction("SUCCEED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationAction FindValue(string value)
+        {
+            return FindValue<OperationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperationStatus.
+    /// </summary>
+    public class OperationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus CANCELLED = new OperationStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus FAILED = new OperationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus PENDING = new OperationStatus("PENDING");
+        /// <summary>
+        /// Constant READY for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus READY = new OperationStatus("READY");
+        /// <summary>
+        /// Constant STARTED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus STARTED = new OperationStatus("STARTED");
+        /// <summary>
+        /// Constant STOPPED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus STOPPED = new OperationStatus("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus SUCCEEDED = new OperationStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus TIMED_OUT = new OperationStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationStatus FindValue(string value)
+        {
+            return FindValue<OperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperationType.
+    /// </summary>
+    public class OperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CALLBACK for OperationType
+        /// </summary>
+        public static readonly OperationType CALLBACK = new OperationType("CALLBACK");
+        /// <summary>
+        /// Constant CHAINED_INVOKE for OperationType
+        /// </summary>
+        public static readonly OperationType CHAINED_INVOKE = new OperationType("CHAINED_INVOKE");
+        /// <summary>
+        /// Constant CONTEXT for OperationType
+        /// </summary>
+        public static readonly OperationType CONTEXT = new OperationType("CONTEXT");
+        /// <summary>
+        /// Constant EXECUTION for OperationType
+        /// </summary>
+        public static readonly OperationType EXECUTION = new OperationType("EXECUTION");
+        /// <summary>
+        /// Constant STEP for OperationType
+        /// </summary>
+        public static readonly OperationType STEP = new OperationType("STEP");
+        /// <summary>
+        /// Constant WAIT for OperationType
+        /// </summary>
+        public static readonly OperationType WAIT = new OperationType("WAIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationType FindValue(string value)
+        {
+            return FindValue<OperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationType(string value)
         {
             return FindValue(value);
         }
@@ -1226,6 +1880,10 @@ namespace Amazon.Lambda
     public class Runtime : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Dotnet10 for Runtime
+        /// </summary>
+        public static readonly Runtime Dotnet10 = new Runtime("dotnet10");
         /// <summary>
         /// Constant Dotnet6 for Runtime
         /// </summary>
@@ -1673,6 +2331,22 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly State Active = new State("Active");
         /// <summary>
+        /// Constant ActiveNonInvocable for State
+        /// </summary>
+        public static readonly State ActiveNonInvocable = new State("ActiveNonInvocable");
+        /// <summary>
+        /// Constant Deactivated for State
+        /// </summary>
+        public static readonly State Deactivated = new State("Deactivated");
+        /// <summary>
+        /// Constant Deactivating for State
+        /// </summary>
+        public static readonly State Deactivating = new State("Deactivating");
+        /// <summary>
+        /// Constant Deleting for State
+        /// </summary>
+        public static readonly State Deleting = new State("Deleting");
+        /// <summary>
         /// Constant Failed for State
         /// </summary>
         public static readonly State Failed = new State("Failed");
@@ -1727,6 +2401,10 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant CapacityProviderScalingLimitExceeded for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode CapacityProviderScalingLimitExceeded = new StateReasonCode("CapacityProviderScalingLimitExceeded");
+        /// <summary>
         /// Constant Creating for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode Creating = new StateReasonCode("Creating");
@@ -1734,6 +2412,18 @@ namespace Amazon.Lambda
         /// Constant DisabledKMSKey for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode DisabledKMSKey = new StateReasonCode("DisabledKMSKey");
+        /// <summary>
+        /// Constant DisallowedByVpcEncryptionControl for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode DisallowedByVpcEncryptionControl = new StateReasonCode("DisallowedByVpcEncryptionControl");
+        /// <summary>
+        /// Constant DrainingDurableExecutions for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode DrainingDurableExecutions = new StateReasonCode("DrainingDurableExecutions");
+        /// <summary>
+        /// Constant EC2RequestLimitExceeded for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode EC2RequestLimitExceeded = new StateReasonCode("EC2RequestLimitExceeded");
         /// <summary>
         /// Constant EFSIOError for StateReasonCode
         /// </summary>
@@ -1759,6 +2449,38 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly StateReasonCode FunctionError = new StateReasonCode("FunctionError");
         /// <summary>
+        /// Constant FunctionErrorExtensionInitError for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionErrorExtensionInitError = new StateReasonCode("FunctionError.ExtensionInitError");
+        /// <summary>
+        /// Constant FunctionErrorInitResourceExhausted for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionErrorInitResourceExhausted = new StateReasonCode("FunctionError.InitResourceExhausted");
+        /// <summary>
+        /// Constant FunctionErrorInitTimeout for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionErrorInitTimeout = new StateReasonCode("FunctionError.InitTimeout");
+        /// <summary>
+        /// Constant FunctionErrorInvalidEntryPoint for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionErrorInvalidEntryPoint = new StateReasonCode("FunctionError.InvalidEntryPoint");
+        /// <summary>
+        /// Constant FunctionErrorInvalidWorkingDirectory for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionErrorInvalidWorkingDirectory = new StateReasonCode("FunctionError.InvalidWorkingDirectory");
+        /// <summary>
+        /// Constant FunctionErrorPermissionDenied for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionErrorPermissionDenied = new StateReasonCode("FunctionError.PermissionDenied");
+        /// <summary>
+        /// Constant FunctionErrorRuntimeInitError for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionErrorRuntimeInitError = new StateReasonCode("FunctionError.RuntimeInitError");
+        /// <summary>
+        /// Constant FunctionErrorTooManyExtensions for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionErrorTooManyExtensions = new StateReasonCode("FunctionError.TooManyExtensions");
+        /// <summary>
         /// Constant Idle for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode Idle = new StateReasonCode("Idle");
@@ -1770,6 +2492,10 @@ namespace Amazon.Lambda
         /// Constant ImageDeleted for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode ImageDeleted = new StateReasonCode("ImageDeleted");
+        /// <summary>
+        /// Constant InsufficientCapacity for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InsufficientCapacity = new StateReasonCode("InsufficientCapacity");
         /// <summary>
         /// Constant InsufficientRolePermissions for StateReasonCode
         /// </summary>
@@ -1822,6 +2548,10 @@ namespace Amazon.Lambda
         /// Constant SubnetOutOfIPAddresses for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode SubnetOutOfIPAddresses = new StateReasonCode("SubnetOutOfIPAddresses");
+        /// <summary>
+        /// Constant VcpuLimitExceeded for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode VcpuLimitExceeded = new StateReasonCode("VcpuLimitExceeded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

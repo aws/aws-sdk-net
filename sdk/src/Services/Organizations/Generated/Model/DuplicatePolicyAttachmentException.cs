@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicatePolicyAttachmentException
+        /// message.
+        /// </summary>
+        public DuplicatePolicyAttachmentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicatePolicyAttachmentException with the specified error
         /// message.
         /// </summary>

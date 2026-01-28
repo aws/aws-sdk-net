@@ -36,6 +36,14 @@ namespace Amazon.BillingConductor
         /// <summary>
         /// Construct instance of AmazonBillingConductorException
         /// </summary>
+        public AmazonBillingConductorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBillingConductorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBillingConductorException(string message)
             : base(message)

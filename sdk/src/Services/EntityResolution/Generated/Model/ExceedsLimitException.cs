@@ -42,6 +42,13 @@ namespace Amazon.EntityResolution.Model
         private int? _quotaValue;
 
         /// <summary>
+        /// Default constructor for ExceedsLimitException
+        /// message.
+        /// </summary>
+        public ExceedsLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExceedsLimitException with the specified error
         /// message.
         /// </summary>

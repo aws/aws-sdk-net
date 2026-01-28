@@ -36,6 +36,14 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// <summary>
         /// Construct instance of AmazonSageMakerFeatureStoreRuntimeException
         /// </summary>
+        public AmazonSageMakerFeatureStoreRuntimeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSageMakerFeatureStoreRuntimeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSageMakerFeatureStoreRuntimeException(string message)
             : base(message)

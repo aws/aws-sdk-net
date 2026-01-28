@@ -39,6 +39,7 @@ namespace Amazon.Connect.Model
         private DateReference _date;
         private EmailReference _email;
         private EmailMessageReference _emailMessage;
+        private EmailMessageReference _emailMessagePlainText;
         private NumberReference _number;
         private StringReference _string;
         private UrlReference _url;
@@ -117,6 +118,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetEmailMessage()
         {
             return this._emailMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailMessagePlainText.
+        /// </summary>
+        public EmailMessageReference EmailMessagePlainText
+        {
+            get { return this._emailMessagePlainText; }
+            set { this._emailMessagePlainText = value; }
+        }
+
+        // Check to see if EmailMessagePlainText property is set
+        internal bool IsSetEmailMessagePlainText()
+        {
+            return this._emailMessagePlainText != null;
         }
 
         /// <summary>

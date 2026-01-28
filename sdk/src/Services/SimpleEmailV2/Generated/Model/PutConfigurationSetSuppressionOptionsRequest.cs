@@ -37,6 +37,7 @@ namespace Amazon.SimpleEmailV2.Model
     {
         private string _configurationSetName;
         private List<string> _suppressedReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SuppressionValidationOptions _validationOptions;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
@@ -90,6 +91,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSuppressedReasons()
         {
             return this._suppressedReasons != null && (this._suppressedReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationOptions. 
+        /// <para>
+        /// An object that contains information about the email address suppression preferences
+        /// for the configuration set in the current Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public SuppressionValidationOptions ValidationOptions
+        {
+            get { return this._validationOptions; }
+            set { this._validationOptions = value; }
+        }
+
+        // Check to see if ValidationOptions property is set
+        internal bool IsSetValidationOptions()
+        {
+            return this._validationOptions != null;
         }
 
     }

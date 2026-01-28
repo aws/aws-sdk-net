@@ -41,6 +41,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRegionException
+        /// message.
+        /// </summary>
+        public InvalidRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRegionException with the specified error
         /// message.
         /// </summary>

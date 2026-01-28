@@ -753,6 +753,18 @@
     <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.Role.Type</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.Role.Value</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.ServiceQuotaExceededException.RequestId</property>
     <min>1</min>
     <max>36</max>

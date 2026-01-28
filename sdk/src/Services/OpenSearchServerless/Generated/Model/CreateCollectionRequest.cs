@@ -37,11 +37,14 @@ namespace Amazon.OpenSearchServerless.Model
     public partial class CreateCollectionRequest : AmazonOpenSearchServerlessRequest
     {
         private string _clientToken;
+        private string _collectionGroupName;
         private string _description;
+        private EncryptionConfig _encryptionConfig;
         private string _name;
         private StandbyReplicas _standbyReplicas;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private CollectionType _type;
+        private VectorOptions _vectorOptions;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -63,6 +66,25 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CollectionGroupName. 
+        /// <para>
+        /// The name of the collection group to associate with the collection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=32)]
+        public string CollectionGroupName
+        {
+            get { return this._collectionGroupName; }
+            set { this._collectionGroupName = value; }
+        }
+
+        // Check to see if CollectionGroupName property is set
+        internal bool IsSetCollectionGroupName()
+        {
+            return this._collectionGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// Description of the collection.
@@ -79,6 +101,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfig. 
+        /// <para>
+        /// Encryption settings for the collection.
+        /// </para>
+        /// </summary>
+        public EncryptionConfig EncryptionConfig
+        {
+            get { return this._encryptionConfig; }
+            set { this._encryptionConfig = value; }
+        }
+
+        // Check to see if EncryptionConfig property is set
+        internal bool IsSetEncryptionConfig()
+        {
+            return this._encryptionConfig != null;
         }
 
         /// <summary>
@@ -159,6 +199,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorOptions. 
+        /// <para>
+        /// Configuration options for vector search capabilities in the collection.
+        /// </para>
+        /// </summary>
+        public VectorOptions VectorOptions
+        {
+            get { return this._vectorOptions; }
+            set { this._vectorOptions = value; }
+        }
+
+        // Check to see if VectorOptions property is set
+        internal bool IsSetVectorOptions()
+        {
+            return this._vectorOptions != null;
         }
 
     }

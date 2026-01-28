@@ -86,10 +86,27 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetCollectionGroupName())
+            {
+                context.Writer.WritePropertyName("collectionGroupName");
+                context.Writer.WriteStringValue(publicRequest.CollectionGroupName);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEncryptionConfig())
+            {
+                context.Writer.WritePropertyName("encryptionConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetName())
@@ -124,6 +141,17 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("type");
                 context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            if(publicRequest.IsSetVectorOptions())
+            {
+                context.Writer.WritePropertyName("vectorOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VectorOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VectorOptions, context);
+
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

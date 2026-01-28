@@ -40,6 +40,13 @@ namespace Amazon.Glue.Model
         private bool? _fromFederationSource;
 
         /// <summary>
+        /// Default constructor for EntityNotFoundException
+        /// message.
+        /// </summary>
+        public EntityNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntityNotFoundException with the specified error
         /// message.
         /// </summary>

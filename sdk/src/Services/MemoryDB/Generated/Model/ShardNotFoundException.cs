@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for ShardNotFoundException
+        /// message.
+        /// </summary>
+        public ShardNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ShardNotFoundException with the specified error
         /// message.
         /// </summary>

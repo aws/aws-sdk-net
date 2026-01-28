@@ -96,7 +96,6 @@ namespace ServiceClientGenerator
                     GeneratorDriver.UpdateUnitTestProjects(generationManifest, options);
                     GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
                     GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
-                    GeneratorDriver.UpdateNuGetPackagesInReadme(generationManifest, options);
                     GeneratorDriver.UpdateCodeAnalysisSolution(generationManifest, options);
                     GeneratorDriver.GenerateDefaultConfigurationModeEnum(generationManifest, options);
                     GeneratorDriver.GenerateEndpoints(options);

@@ -329,6 +329,13 @@ namespace Amazon.Organizations.Model
         private ConstraintViolationExceptionReason _reason;
 
         /// <summary>
+        /// Default constructor for ConstraintViolationException
+        /// message.
+        /// </summary>
+        public ConstraintViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConstraintViolationException with the specified error
         /// message.
         /// </summary>

@@ -44,6 +44,13 @@ namespace Amazon.Neptunedata.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for ConcurrentModificationException
+        /// message.
+        /// </summary>
+        public ConcurrentModificationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentModificationException with the specified error
         /// message.
         /// </summary>

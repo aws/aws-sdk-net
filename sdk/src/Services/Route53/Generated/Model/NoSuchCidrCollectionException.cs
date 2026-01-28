@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchCidrCollectionException
+        /// message.
+        /// </summary>
+        public NoSuchCidrCollectionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchCidrCollectionException with the specified error
         /// message.
         /// </summary>

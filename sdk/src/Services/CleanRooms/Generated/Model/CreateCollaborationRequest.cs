@@ -44,6 +44,7 @@ namespace Amazon.CleanRooms.Model
         private PaymentConfiguration _creatorPaymentConfiguration;
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
+        private bool? _isMetricsEnabled;
         private CollaborationJobLogStatus _jobLogStatus;
         private List<MemberSpecification> _members = AWSConfigs.InitializeCollections ? new List<MemberSpecification>() : null;
         private string _name;
@@ -246,6 +247,29 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsMetricsEnabled. 
+        /// <para>
+        /// An indicator as to whether metrics have been enabled or disabled for the collaboration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>true</c>, collaboration members can opt in to Amazon CloudWatch metrics for
+        /// their membership queries. The default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? IsMetricsEnabled
+        {
+            get { return this._isMetricsEnabled; }
+            set { this._isMetricsEnabled = value; }
+        }
+
+        // Check to see if IsMetricsEnabled property is set
+        internal bool IsSetIsMetricsEnabled()
+        {
+            return this._isMetricsEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobLogStatus. 
         /// <para>
         /// Specifies whether job logs are enabled for this collaboration. 
@@ -279,7 +303,7 @@ namespace Amazon.CleanRooms.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=9)]
+        [AWSProperty(Required=true, Min=0)]
         public List<MemberSpecification> Members
         {
             get { return this._members; }

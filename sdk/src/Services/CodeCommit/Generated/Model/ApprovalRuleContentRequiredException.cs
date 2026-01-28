@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ApprovalRuleContentRequiredException
+        /// message.
+        /// </summary>
+        public ApprovalRuleContentRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApprovalRuleContentRequiredException with the specified error
         /// message.
         /// </summary>

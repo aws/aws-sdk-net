@@ -80,6 +80,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmClusterInvalidConfigurationException
+        /// message.
+        /// </summary>
+        public CloudHsmClusterInvalidConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmClusterInvalidConfigurationException with the specified error
         /// message.
         /// </summary>

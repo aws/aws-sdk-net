@@ -40,6 +40,13 @@ namespace Amazon.Snowball.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidJobStateException
+        /// message.
+        /// </summary>
+        public InvalidJobStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidJobStateException with the specified error
         /// message.
         /// </summary>

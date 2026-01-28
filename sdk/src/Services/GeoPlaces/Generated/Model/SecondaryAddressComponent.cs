@@ -35,7 +35,31 @@ namespace Amazon.GeoPlaces.Model
     /// </summary>
     public partial class SecondaryAddressComponent
     {
+        private string _designator;
         private string _number;
+
+        /// <summary>
+        /// Gets and sets the property Designator. 
+        /// <para>
+        /// The designator of the secondary address component.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>Apt</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=20)]
+        public string Designator
+        {
+            get { return this._designator; }
+            set { this._designator = value; }
+        }
+
+        // Check to see if Designator property is set
+        internal bool IsSetDesignator()
+        {
+            return this._designator != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Number. 

@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for UserGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public UserGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

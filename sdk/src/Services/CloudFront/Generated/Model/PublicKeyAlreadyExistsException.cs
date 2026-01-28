@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for PublicKeyAlreadyExistsException
+        /// message.
+        /// </summary>
+        public PublicKeyAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PublicKeyAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for HealthUnavailableException
+        /// message.
+        /// </summary>
+        public HealthUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HealthUnavailableException with the specified error
         /// message.
         /// </summary>

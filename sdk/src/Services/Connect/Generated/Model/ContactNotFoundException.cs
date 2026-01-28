@@ -39,6 +39,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for ContactNotFoundException
+        /// message.
+        /// </summary>
+        public ContactNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ContactNotFoundException with the specified error
         /// message.
         /// </summary>

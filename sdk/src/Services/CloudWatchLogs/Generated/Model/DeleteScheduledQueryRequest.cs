@@ -31,8 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteScheduledQuery operation.
-    /// Deletes an existing scheduled query and all its associated configurations. This operation
-    /// permanently removes the scheduled query and cannot be undone.
+    /// Deletes a scheduled query and stops all future executions. This operation also removes
+    /// any configured actions and associated resources.
     /// </summary>
     public partial class DeleteScheduledQueryRequest : AmazonCloudWatchLogsRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name or ARN of the scheduled query to delete.
+        /// The ARN or name of the scheduled query to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,6 +39,13 @@ namespace Amazon.ApplicationInsights.Model
     {
 
         /// <summary>
+        /// Default constructor for TagsAlreadyExistException
+        /// message.
+        /// </summary>
+        public TagsAlreadyExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagsAlreadyExistException with the specified error
         /// message.
         /// </summary>

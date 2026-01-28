@@ -32,7 +32,12 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// A container element for the account-level Amazon S3 Storage Lens configuration.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You must enable Storage Lens metrics consistently at both the account level and bucket
+    /// level, or your request will fail.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing
     /// your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User
@@ -45,6 +50,7 @@ namespace Amazon.S3Control.Model
         private ActivityMetrics _activityMetrics;
         private AdvancedCostOptimizationMetrics _advancedCostOptimizationMetrics;
         private AdvancedDataProtectionMetrics _advancedDataProtectionMetrics;
+        private AdvancedPerformanceMetrics _advancedPerformanceMetrics;
         private BucketLevel _bucketLevel;
         private DetailedStatusCodesMetrics _detailedStatusCodesMetrics;
         private StorageLensGroupLevel _storageLensGroupLevel;
@@ -101,6 +107,24 @@ namespace Amazon.S3Control.Model
         internal bool IsSetAdvancedDataProtectionMetrics()
         {
             return this._advancedDataProtectionMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdvancedPerformanceMetrics. 
+        /// <para>
+        /// A container element for S3 Storage Lens advanced performance metrics.
+        /// </para>
+        /// </summary>
+        public AdvancedPerformanceMetrics AdvancedPerformanceMetrics
+        {
+            get { return this._advancedPerformanceMetrics; }
+            set { this._advancedPerformanceMetrics = value; }
+        }
+
+        // Check to see if AdvancedPerformanceMetrics property is set
+        internal bool IsSetAdvancedPerformanceMetrics()
+        {
+            return this._advancedPerformanceMetrics != null;
         }
 
         /// <summary>

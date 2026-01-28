@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ScheduledActionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ScheduledActionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ScheduledActionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

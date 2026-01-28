@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidHomeRegionException
+        /// message.
+        /// </summary>
+        public InvalidHomeRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidHomeRegionException with the specified error
         /// message.
         /// </summary>

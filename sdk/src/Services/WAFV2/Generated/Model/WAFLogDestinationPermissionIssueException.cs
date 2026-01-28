@@ -41,6 +41,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFLogDestinationPermissionIssueException
+        /// message.
+        /// </summary>
+        public WAFLogDestinationPermissionIssueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFLogDestinationPermissionIssueException with the specified error
         /// message.
         /// </summary>

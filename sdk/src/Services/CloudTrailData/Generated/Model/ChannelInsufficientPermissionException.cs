@@ -39,6 +39,13 @@ namespace Amazon.CloudTrailData.Model
     {
 
         /// <summary>
+        /// Default constructor for ChannelInsufficientPermissionException
+        /// message.
+        /// </summary>
+        public ChannelInsufficientPermissionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChannelInsufficientPermissionException with the specified error
         /// message.
         /// </summary>

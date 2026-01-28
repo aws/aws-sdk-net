@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for FederationSourceRetryableException
+        /// message.
+        /// </summary>
+        public FederationSourceRetryableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FederationSourceRetryableException with the specified error
         /// message.
         /// </summary>

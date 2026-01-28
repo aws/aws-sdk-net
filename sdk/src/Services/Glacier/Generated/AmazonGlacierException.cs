@@ -36,6 +36,14 @@ namespace Amazon.Glacier
         /// <summary>
         /// Construct instance of AmazonGlacierException
         /// </summary>
+        public AmazonGlacierException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGlacierException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGlacierException(string message)
             : base(message)

@@ -39,7 +39,7 @@ namespace Amazon.Glacier.Model
     /// For information about setting a notification configuration on a vault, see <a>SetVaultNotifications</a>.
     /// If a notification configuration for a vault is not set, the operation returns a <c>404
     /// Not Found</c> error. For more information about vault notifications, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-    /// Vault Notifications in Amazon S3 Glacier</a>. 
+    /// Vault Notifications in Amazon Glacier</a>. 
     /// </para>
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-    /// Vault Notifications in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
+    /// Vault Notifications in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
     /// Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
     /// 
     /// </para>
@@ -79,7 +79,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates GetVaultNotificationsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <c>AccountId</c> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
+        /// <param name="accountId">The <c>AccountId</c> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="vaultName">The name of the vault.</param>
         public GetVaultNotificationsRequest(string accountId, string vaultName)
         {
@@ -92,7 +92,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <c>AccountId</c> value is the AWS account ID of the account that owns the vault.
         /// You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen),
-        /// in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
+        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
         /// used to sign the request. If you use an account ID, do not include any hyphens ('-')
         /// in the ID.
         /// </para>

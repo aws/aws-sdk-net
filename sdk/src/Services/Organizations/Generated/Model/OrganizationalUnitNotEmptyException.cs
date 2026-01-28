@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationalUnitNotEmptyException
+        /// message.
+        /// </summary>
+        public OrganizationalUnitNotEmptyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationalUnitNotEmptyException with the specified error
         /// message.
         /// </summary>

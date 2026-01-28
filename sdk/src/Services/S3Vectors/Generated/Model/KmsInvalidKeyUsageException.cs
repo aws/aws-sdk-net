@@ -54,6 +54,13 @@ namespace Amazon.S3Vectors.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsInvalidKeyUsageException
+        /// message.
+        /// </summary>
+        public KmsInvalidKeyUsageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsInvalidKeyUsageException with the specified error
         /// message.
         /// </summary>

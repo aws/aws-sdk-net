@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsAssociatedToCachePolicyException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsAssociatedToCachePolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsAssociatedToCachePolicyException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UserImportInProgressException
+        /// message.
+        /// </summary>
+        public UserImportInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserImportInProgressException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsKeyDisabledException
+        /// message.
+        /// </summary>
+        public KmsKeyDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsKeyDisabledException with the specified error
         /// message.
         /// </summary>

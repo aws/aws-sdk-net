@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ComplianceTypeCountLimitExceededException
+        /// message.
+        /// </summary>
+        public ComplianceTypeCountLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ComplianceTypeCountLimitExceededException with the specified error
         /// message.
         /// </summary>

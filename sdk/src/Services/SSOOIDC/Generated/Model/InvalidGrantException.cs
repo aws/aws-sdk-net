@@ -42,6 +42,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for InvalidGrantException
+        /// message.
+        /// </summary>
+        public InvalidGrantException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGrantException with the specified error
         /// message.
         /// </summary>

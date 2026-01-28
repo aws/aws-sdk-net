@@ -39,6 +39,13 @@ namespace Amazon.RedshiftDataAPIService.Model
     {
 
         /// <summary>
+        /// Default constructor for QueryTimeoutException
+        /// message.
+        /// </summary>
+        public QueryTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueryTimeoutException with the specified error
         /// message.
         /// </summary>

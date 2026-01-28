@@ -43,6 +43,13 @@ namespace Amazon.EKS.Model
         private string _clusterName;
 
         /// <summary>
+        /// Default constructor for InvalidStateException
+        /// message.
+        /// </summary>
+        public InvalidStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidStateException with the specified error
         /// message.
         /// </summary>

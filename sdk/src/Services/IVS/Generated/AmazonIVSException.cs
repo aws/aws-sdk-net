@@ -36,6 +36,14 @@ namespace Amazon.IVS
         /// <summary>
         /// Construct instance of AmazonIVSException
         /// </summary>
+        public AmazonIVSException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIVSException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIVSException(string message)
             : base(message)

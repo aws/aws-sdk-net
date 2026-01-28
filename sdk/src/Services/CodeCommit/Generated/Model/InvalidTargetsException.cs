@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTargetsException
+        /// message.
+        /// </summary>
+        public InvalidTargetsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTargetsException with the specified error
         /// message.
         /// </summary>

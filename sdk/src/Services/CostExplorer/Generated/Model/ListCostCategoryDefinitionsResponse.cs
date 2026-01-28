@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryReferences. 
         /// <para>
-        /// A reference to a Cost Category that contains enough information to identify the Cost
+        /// A reference to a cost category that contains enough information to identify the Cost
         /// Category. 
         /// </para>
         /// <para />

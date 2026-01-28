@@ -64,7 +64,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("ListDistributionTenantsRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                if (publicRequest.AssociationFilter != null)
+                if (publicRequest.IsSetAssociationFilter())
                 {
                     xmlWriter.WriteStartElement("AssociationFilter");
                     if(publicRequest.AssociationFilter.IsSetConnectionGroupId())

@@ -36,6 +36,14 @@ namespace Amazon.LexModelsV2
         /// <summary>
         /// Construct instance of AmazonLexModelsV2Exception
         /// </summary>
+        public AmazonLexModelsV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLexModelsV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLexModelsV2Exception(string message)
             : base(message)

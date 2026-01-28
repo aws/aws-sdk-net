@@ -29,57 +29,62 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DashboardInvalidInputErrorException operation
+    /// Response Unmarshaller for DashboardInvalidInputErrorException Object
     /// </summary>  
-    public class DashboardInvalidInputErrorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DashboardInvalidInputErrorException, XmlUnmarshallerContext>
+    public class DashboardInvalidInputErrorExceptionUnmarshaller : ICborErrorResponseUnmarshaller<DashboardInvalidInputErrorException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DashboardInvalidInputErrorException Unmarshall(XmlUnmarshallerContext context)
+        public DashboardInvalidInputErrorException Unmarshall(CborUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public DashboardInvalidInputErrorException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public DashboardInvalidInputErrorException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            DashboardInvalidInputErrorException response = new DashboardInvalidInputErrorException(errorResponse.Message, errorResponse.InnerException, 
+            DashboardInvalidInputErrorException unmarshalledObject = new DashboardInvalidInputErrorException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            var reader = context.Reader;
+            context.AddPathSegment("DashboardInvalidInputErrorException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.IsStartElement || context.IsAttribute)
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    if (context.TestExpression("dashboardValidationMessages/member", targetDepth))
-                    {
-                        if (response.DashboardValidationMessages == null)
+                    case "dashboardValidationMessages":
                         {
-                            response.DashboardValidationMessages = new List<DashboardValidationMessage>();
+                            context.AddPathSegment("DashboardValidationMessages");
+                            var unmarshaller = new CborListUnmarshaller<DashboardValidationMessage, DashboardValidationMessageUnmarshaller>(DashboardValidationMessageUnmarshaller.Instance);
+                            unmarshalledObject.DashboardValidationMessages = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
                         }
-                        var item = DashboardValidationMessageUnmarshaller.Instance.Unmarshall(context);
-                        response.DashboardValidationMessages.Add(item);
-                    }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
-            return response;
+            reader.ReadEndMap();
+            context.PopPathSegment();
+          
+            return unmarshalledObject;
         }
 
         private static DashboardInvalidInputErrorExceptionUnmarshaller _instance = new DashboardInvalidInputErrorExceptionUnmarshaller();        

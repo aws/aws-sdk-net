@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for ScopeDoesNotExistException
+        /// message.
+        /// </summary>
+        public ScopeDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ScopeDoesNotExistException with the specified error
         /// message.
         /// </summary>

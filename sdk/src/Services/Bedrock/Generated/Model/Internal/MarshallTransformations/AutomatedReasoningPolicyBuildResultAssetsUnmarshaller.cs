@@ -74,6 +74,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.PolicyDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("policyScenarios", targetDepth))
+                {
+                    var unmarshaller = AutomatedReasoningPolicyScenariosUnmarshaller.Instance;
+                    unmarshalledObject.PolicyScenarios = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("qualityReport", targetDepth))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDefinitionQualityReportUnmarshaller.Instance;

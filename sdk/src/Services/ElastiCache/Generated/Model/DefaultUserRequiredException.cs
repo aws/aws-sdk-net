@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for DefaultUserRequiredException
+        /// message.
+        /// </summary>
+        public DefaultUserRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DefaultUserRequiredException with the specified error
         /// message.
         /// </summary>

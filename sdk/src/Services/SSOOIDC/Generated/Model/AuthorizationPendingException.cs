@@ -42,6 +42,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for AuthorizationPendingException
+        /// message.
+        /// </summary>
+        public AuthorizationPendingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthorizationPendingException with the specified error
         /// message.
         /// </summary>

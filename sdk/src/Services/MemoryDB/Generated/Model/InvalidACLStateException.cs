@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidACLStateException
+        /// message.
+        /// </summary>
+        public InvalidACLStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidACLStateException with the specified error
         /// message.
         /// </summary>

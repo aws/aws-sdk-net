@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthorizationNotFoundException
+        /// message.
+        /// </summary>
+        public AuthorizationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthorizationNotFoundException with the specified error
         /// message.
         /// </summary>

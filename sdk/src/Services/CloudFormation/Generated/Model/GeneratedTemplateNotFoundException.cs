@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for GeneratedTemplateNotFoundException
+        /// message.
+        /// </summary>
+        public GeneratedTemplateNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GeneratedTemplateNotFoundException with the specified error
         /// message.
         /// </summary>

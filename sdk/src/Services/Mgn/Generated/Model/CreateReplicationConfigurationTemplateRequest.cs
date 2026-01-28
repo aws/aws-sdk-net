@@ -42,6 +42,7 @@ namespace Amazon.Mgn.Model
         private ReplicationConfigurationDefaultLargeStagingDiskType _defaultLargeStagingDiskType;
         private ReplicationConfigurationEbsEncryption _ebsEncryption;
         private string _ebsEncryptionKeyArn;
+        private InternetProtocol _internetProtocol;
         private string _replicationServerInstanceType;
         private List<string> _replicationServersSecurityGroupsIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stagingAreaSubnetId;
@@ -183,6 +184,24 @@ namespace Amazon.Mgn.Model
         internal bool IsSetEbsEncryptionKeyArn()
         {
             return this._ebsEncryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InternetProtocol. 
+        /// <para>
+        /// Request to configure the internet protocol to IPv4 or IPv6.
+        /// </para>
+        /// </summary>
+        public InternetProtocol InternetProtocol
+        {
+            get { return this._internetProtocol; }
+            set { this._internetProtocol = value; }
+        }
+
+        // Check to see if InternetProtocol property is set
+        internal bool IsSetInternetProtocol()
+        {
+            return this._internetProtocol != null;
         }
 
         /// <summary>

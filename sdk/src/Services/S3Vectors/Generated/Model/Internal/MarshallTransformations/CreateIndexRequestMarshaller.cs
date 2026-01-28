@@ -91,6 +91,17 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DistanceMetric);
             }
 
+            if(publicRequest.IsSetEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("encryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("indexName");
@@ -105,6 +116,20 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                 var marshaller = MetadataConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.MetadataConfiguration, context);
 
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
                 context.Writer.WriteEndObject();
             }
 

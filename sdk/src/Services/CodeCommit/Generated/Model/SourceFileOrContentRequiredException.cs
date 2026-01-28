@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for SourceFileOrContentRequiredException
+        /// message.
+        /// </summary>
+        public SourceFileOrContentRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SourceFileOrContentRequiredException with the specified error
         /// message.
         /// </summary>

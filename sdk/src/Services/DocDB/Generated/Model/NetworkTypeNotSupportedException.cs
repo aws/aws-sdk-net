@@ -40,6 +40,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for NetworkTypeNotSupportedException
+        /// message.
+        /// </summary>
+        public NetworkTypeNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NetworkTypeNotSupportedException with the specified error
         /// message.
         /// </summary>

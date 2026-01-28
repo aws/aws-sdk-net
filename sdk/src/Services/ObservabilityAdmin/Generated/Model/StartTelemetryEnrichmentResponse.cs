@@ -40,8 +40,8 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property AwsResourceExplorerManagedViewArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer managed
-        /// view created for resource tags for telemetry. 
+        ///  The Amazon Resource Name (ARN) of the Resource Explorer managed view created for
+        /// resource tags for telemetry. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

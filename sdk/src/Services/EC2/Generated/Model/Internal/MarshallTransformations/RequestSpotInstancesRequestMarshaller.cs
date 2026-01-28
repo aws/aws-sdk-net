@@ -120,6 +120,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.Ebs.DeleteOnTermination));
                                     }
+                                    if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetEbsCardIndex())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "EbsCardIndex", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ebs.EbsCardIndex));
+                                    }
                                     if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetEncrypted())
                                     {
                                         request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.Ebs.Encrypted));
@@ -405,6 +409,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequest.LaunchSpecification.Placement.IsSetAvailabilityZone())
                         {
                             request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.AvailabilityZone));
+                        }
+                        if(publicRequest.LaunchSpecification.Placement.IsSetAvailabilityZoneId())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.AvailabilityZoneId));
                         }
                         if(publicRequest.LaunchSpecification.Placement.IsSetGroupName())
                         {

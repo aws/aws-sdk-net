@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyOriginGroupsPerDistributionException
+        /// message.
+        /// </summary>
+        public TooManyOriginGroupsPerDistributionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyOriginGroupsPerDistributionException with the specified error
         /// message.
         /// </summary>

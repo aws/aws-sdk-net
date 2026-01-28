@@ -43,7 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryNames. 
         /// <para>
-        /// The names of the Cost Categories.
+        /// The names of the cost categories.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,7 +66,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryValues. 
         /// <para>
-        /// The Cost Category values.
+        /// The cost category values.
         /// </para>
         ///  
         /// <para>

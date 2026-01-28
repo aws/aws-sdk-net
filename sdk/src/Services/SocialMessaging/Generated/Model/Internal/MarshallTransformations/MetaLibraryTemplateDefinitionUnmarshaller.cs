@@ -62,6 +62,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.TemplateBody = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("templateBodyExampleParams", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TemplateBodyExampleParams = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("templateButtons", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LibraryTemplateButtonList, LibraryTemplateButtonListUnmarshaller>(LibraryTemplateButtonListUnmarshaller.Instance);

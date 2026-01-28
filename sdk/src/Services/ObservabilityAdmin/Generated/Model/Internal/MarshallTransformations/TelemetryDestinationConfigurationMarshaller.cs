@@ -46,6 +46,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCloudtrailParameters())
+            {
+                context.Writer.WritePropertyName("CloudtrailParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CloudtrailParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudtrailParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDestinationPattern())
             {
                 context.Writer.WritePropertyName("DestinationPattern");
@@ -56,6 +67,28 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("DestinationType");
                 context.Writer.WriteStringValue(requestObject.DestinationType);
+            }
+
+            if(requestObject.IsSetELBLoadBalancerLoggingParameters())
+            {
+                context.Writer.WritePropertyName("ELBLoadBalancerLoggingParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ELBLoadBalancerLoggingParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ELBLoadBalancerLoggingParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetLogDeliveryParameters())
+            {
+                context.Writer.WritePropertyName("LogDeliveryParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogDeliveryParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogDeliveryParameters, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetentionInDays())
@@ -71,6 +104,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 
                 var marshaller = VPCFlowLogParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.VPCFlowLogParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetWAFLoggingParameters())
+            {
+                context.Writer.WritePropertyName("WAFLoggingParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WAFLoggingParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.WAFLoggingParameters, context);
 
                 context.Writer.WriteEndObject();
             }

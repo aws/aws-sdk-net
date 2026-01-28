@@ -36,6 +36,14 @@ namespace Amazon.SimpleEmailV2
         /// <summary>
         /// Construct instance of AmazonSimpleEmailServiceV2Exception
         /// </summary>
+        public AmazonSimpleEmailServiceV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSimpleEmailServiceV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSimpleEmailServiceV2Exception(string message)
             : base(message)

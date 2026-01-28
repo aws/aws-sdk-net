@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for NotOrganizationManagementAccountException
+        /// message.
+        /// </summary>
+        public NotOrganizationManagementAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotOrganizationManagementAccountException with the specified error
         /// message.
         /// </summary>

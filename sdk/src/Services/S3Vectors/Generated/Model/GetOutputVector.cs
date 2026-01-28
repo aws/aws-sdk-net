@@ -30,16 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// The attributes of a vector returned by the <c>GetVectors</c> operation.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class GetOutputVector
     {

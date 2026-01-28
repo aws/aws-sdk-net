@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for StreamRecordsNotFoundException
+        /// message.
+        /// </summary>
+        public StreamRecordsNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StreamRecordsNotFoundException with the specified error
         /// message.
         /// </summary>

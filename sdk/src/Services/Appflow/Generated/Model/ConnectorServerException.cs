@@ -39,6 +39,13 @@ namespace Amazon.Appflow.Model
     {
 
         /// <summary>
+        /// Default constructor for ConnectorServerException
+        /// message.
+        /// </summary>
+        public ConnectorServerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConnectorServerException with the specified error
         /// message.
         /// </summary>

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Summary information about a scheduled query, used in list operations.
+    /// Summary information about a scheduled query, including basic configuration and execution
+    /// status.
     /// </summary>
     public partial class ScheduledQuerySummary
     {
@@ -48,7 +49,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time when the scheduled query was created.
+        /// The timestamp when the scheduled query was created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -67,7 +68,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationConfiguration. 
         /// <para>
-        /// Configuration for destinations where the query results are delivered.
+        /// Configuration for where query results are delivered.
         /// </para>
         /// </summary>
         public DestinationConfiguration DestinationConfiguration
@@ -85,7 +86,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastExecutionStatus. 
         /// <para>
-        /// The status of the last execution (Running, Complete, Failed, Timeout, or InvalidQuery).
+        /// The status of the most recent execution.
         /// </para>
         /// </summary>
         public ExecutionStatus LastExecutionStatus
@@ -103,7 +104,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastTriggeredTime. 
         /// <para>
-        /// The time when the scheduled query was last executed.
+        /// The timestamp when the scheduled query was last executed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -122,7 +123,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The time when the scheduled query was last updated.
+        /// The timestamp when the scheduled query was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -197,7 +198,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the scheduled query (ENABLED or DISABLED).
+        /// The current state of the scheduled query.
         /// </para>
         /// </summary>
         public ScheduledQueryState State
@@ -215,7 +216,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The timezone in which the schedule expression is evaluated.
+        /// The timezone used for evaluating the schedule expression.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

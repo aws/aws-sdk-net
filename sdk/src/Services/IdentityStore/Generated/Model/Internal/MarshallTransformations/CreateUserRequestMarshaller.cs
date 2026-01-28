@@ -119,6 +119,20 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetExtensions())
+            {
+                context.Writer.WritePropertyName("Extensions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestExtensionsKvp in publicRequest.Extensions)
+                {
+                    context.Writer.WritePropertyName(publicRequestExtensionsKvp.Key);
+                    var publicRequestExtensionsValue = publicRequestExtensionsKvp.Value;
+
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestExtensionsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetIdentityStoreId())
             {
                 context.Writer.WritePropertyName("IdentityStoreId");
@@ -190,6 +204,22 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ProfileUrl");
                 context.Writer.WriteStringValue(publicRequest.ProfileUrl);
+            }
+
+            if(publicRequest.IsSetRoles())
+            {
+                context.Writer.WritePropertyName("Roles");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRolesListValue in publicRequest.Roles)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RoleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRolesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetTimezone())

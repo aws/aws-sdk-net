@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for NotAuthorizedException
+        /// message.
+        /// </summary>
+        public NotAuthorizedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotAuthorizedException with the specified error
         /// message.
         /// </summary>

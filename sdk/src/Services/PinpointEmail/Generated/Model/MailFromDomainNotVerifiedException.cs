@@ -39,6 +39,13 @@ namespace Amazon.PinpointEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for MailFromDomainNotVerifiedException
+        /// message.
+        /// </summary>
+        public MailFromDomainNotVerifiedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MailFromDomainNotVerifiedException with the specified error
         /// message.
         /// </summary>

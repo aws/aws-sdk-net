@@ -40,6 +40,13 @@ namespace Amazon.CloudWatchLogs.Model
     {
 
         /// <summary>
+        /// Default constructor for SessionTimeoutException
+        /// message.
+        /// </summary>
+        public SessionTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SessionTimeoutException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientPrivilegesException
+        /// message.
+        /// </summary>
+        public InsufficientPrivilegesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientPrivilegesException with the specified error
         /// message.
         /// </summary>

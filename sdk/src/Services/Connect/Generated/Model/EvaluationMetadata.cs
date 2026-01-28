@@ -39,7 +39,10 @@ namespace Amazon.Connect.Model
         private string _calibrationSessionId;
         private string _contactAgentId;
         private string _contactId;
+        private EvaluationContactParticipant _contactParticipant;
         private string _evaluatorArn;
+        private EvaluationReviewMetadata _review;
+        private string _samplingJobId;
         private EvaluationScore _score;
 
         /// <summary>
@@ -136,6 +139,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContactParticipant. 
+        /// <para>
+        /// Information about a contact participant in this evaluation.
+        /// </para>
+        /// </summary>
+        public EvaluationContactParticipant ContactParticipant
+        {
+            get { return this._contactParticipant; }
+            set { this._contactParticipant = value; }
+        }
+
+        // Check to see if ContactParticipant property is set
+        internal bool IsSetContactParticipant()
+        {
+            return this._contactParticipant != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EvaluatorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the user who last updated the evaluation.
@@ -152,6 +173,43 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvaluatorArn()
         {
             return this._evaluatorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Review. 
+        /// <para>
+        /// Information about reviews of this evaluation.
+        /// </para>
+        /// </summary>
+        public EvaluationReviewMetadata Review
+        {
+            get { return this._review; }
+            set { this._review = value; }
+        }
+
+        // Check to see if Review property is set
+        internal bool IsSetReview()
+        {
+            return this._review != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamplingJobId. 
+        /// <para>
+        /// Identifier of the sampling job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string SamplingJobId
+        {
+            get { return this._samplingJobId; }
+            set { this._samplingJobId = value; }
+        }
+
+        // Check to see if SamplingJobId property is set
+        internal bool IsSetSamplingJobId()
+        {
+            return this._samplingJobId != null;
         }
 
         /// <summary>

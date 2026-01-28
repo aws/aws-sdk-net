@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for ImportNotFoundException
+        /// message.
+        /// </summary>
+        public ImportNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImportNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceTypeNotSupportedException
+        /// message.
+        /// </summary>
+        public ResourceTypeNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceTypeNotSupportedException with the specified error
         /// message.
         /// </summary>

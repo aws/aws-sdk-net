@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidJobException
+        /// message.
+        /// </summary>
+        public InvalidJobException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidJobException with the specified error
         /// message.
         /// </summary>

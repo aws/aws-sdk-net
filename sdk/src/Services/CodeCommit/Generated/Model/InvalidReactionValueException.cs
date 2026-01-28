@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidReactionValueException
+        /// message.
+        /// </summary>
+        public InvalidReactionValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidReactionValueException with the specified error
         /// message.
         /// </summary>

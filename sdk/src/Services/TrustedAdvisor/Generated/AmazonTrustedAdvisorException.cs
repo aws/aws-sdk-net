@@ -36,6 +36,14 @@ namespace Amazon.TrustedAdvisor
         /// <summary>
         /// Construct instance of AmazonTrustedAdvisorException
         /// </summary>
+        public AmazonTrustedAdvisorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTrustedAdvisorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTrustedAdvisorException(string message)
             : base(message)

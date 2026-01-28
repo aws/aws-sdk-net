@@ -39,6 +39,13 @@ namespace Amazon.Imagebuilder.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceException
+        /// message.
+        /// </summary>
+        public ServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceException with the specified error
         /// message.
         /// </summary>

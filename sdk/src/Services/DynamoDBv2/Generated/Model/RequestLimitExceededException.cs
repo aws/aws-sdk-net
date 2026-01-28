@@ -44,6 +44,13 @@ namespace Amazon.DynamoDBv2.Model
         private List<ThrottlingReason> _throttlingReasons = AWSConfigs.InitializeCollections ? new List<ThrottlingReason>() : null;
 
         /// <summary>
+        /// Default constructor for RequestLimitExceededException
+        /// message.
+        /// </summary>
+        public RequestLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestLimitExceededException with the specified error
         /// message.
         /// </summary>

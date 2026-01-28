@@ -40,6 +40,13 @@ namespace Amazon.NetworkFirewall.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientCapacityException with the specified error
         /// message.
         /// </summary>

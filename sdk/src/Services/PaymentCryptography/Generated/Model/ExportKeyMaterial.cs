@@ -35,10 +35,29 @@ namespace Amazon.PaymentCryptography.Model
     /// </summary>
     public partial class ExportKeyMaterial
     {
+        private ExportAs2805KeyCryptogram _as2805KeyCryptogram;
         private ExportDiffieHellmanTr31KeyBlock _diffieHellmanTr31KeyBlock;
         private ExportKeyCryptogram _keyCryptogram;
         private ExportTr31KeyBlock _tr31KeyBlock;
         private ExportTr34KeyBlock _tr34KeyBlock;
+
+        /// <summary>
+        /// Gets and sets the property As2805KeyCryptogram. 
+        /// <para>
+        /// Parameter information for key material export using AS2805 key cryptogram format.
+        /// </para>
+        /// </summary>
+        public ExportAs2805KeyCryptogram As2805KeyCryptogram
+        {
+            get { return this._as2805KeyCryptogram; }
+            set { this._as2805KeyCryptogram = value; }
+        }
+
+        // Check to see if As2805KeyCryptogram property is set
+        internal bool IsSetAs2805KeyCryptogram()
+        {
+            return this._as2805KeyCryptogram != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DiffieHellmanTr31KeyBlock. 

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CommentContentSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public CommentContentSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CommentContentSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

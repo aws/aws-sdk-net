@@ -48,6 +48,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedPricingPlanException
+        /// message.
+        /// </summary>
+        public UnsupportedPricingPlanException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedPricingPlanException with the specified error
         /// message.
         /// </summary>

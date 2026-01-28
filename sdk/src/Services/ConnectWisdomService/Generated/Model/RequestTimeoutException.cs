@@ -43,6 +43,13 @@ namespace Amazon.ConnectWisdomService.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for RequestTimeoutException
+        /// message.
+        /// </summary>
+        public RequestTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestTimeoutException with the specified error
         /// message.
         /// </summary>

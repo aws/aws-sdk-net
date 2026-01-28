@@ -36,6 +36,14 @@ namespace Amazon.ConnectContactLens
         /// <summary>
         /// Construct instance of AmazonConnectContactLensException
         /// </summary>
+        public AmazonConnectContactLensException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonConnectContactLensException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonConnectContactLensException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxLexiconsNumberExceededException
+        /// message.
+        /// </summary>
+        public MaxLexiconsNumberExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxLexiconsNumberExceededException with the specified error
         /// message.
         /// </summary>

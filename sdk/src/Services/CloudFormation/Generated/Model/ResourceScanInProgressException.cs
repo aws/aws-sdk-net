@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceScanInProgressException
+        /// message.
+        /// </summary>
+        public ResourceScanInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceScanInProgressException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.AIOps
         /// <summary>
         /// Construct instance of AmazonAIOpsException
         /// </summary>
+        public AmazonAIOpsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAIOpsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAIOpsException(string message)
             : base(message)

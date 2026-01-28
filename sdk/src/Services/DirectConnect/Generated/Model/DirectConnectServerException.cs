@@ -39,6 +39,13 @@ namespace Amazon.DirectConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectConnectServerException
+        /// message.
+        /// </summary>
+        public DirectConnectServerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectConnectServerException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for DisabledException
+        /// message.
+        /// </summary>
+        public DisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DisabledException with the specified error
         /// message.
         /// </summary>

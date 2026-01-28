@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidImportPathException
+        /// message.
+        /// </summary>
+        public InvalidImportPathException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidImportPathException with the specified error
         /// message.
         /// </summary>

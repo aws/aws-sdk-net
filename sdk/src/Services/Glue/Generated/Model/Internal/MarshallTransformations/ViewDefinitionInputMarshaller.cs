@@ -58,6 +58,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.IsProtected.Value);
             }
 
+            if(requestObject.IsSetLastRefreshType())
+            {
+                context.Writer.WritePropertyName("LastRefreshType");
+                context.Writer.WriteStringValue(requestObject.LastRefreshType);
+            }
+
+            if(requestObject.IsSetRefreshSeconds())
+            {
+                context.Writer.WritePropertyName("RefreshSeconds");
+                context.Writer.WriteNumberValue(requestObject.RefreshSeconds.Value);
+            }
+
             if(requestObject.IsSetRepresentations())
             {
                 context.Writer.WritePropertyName("Representations");
@@ -83,6 +95,29 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectSubObjectsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetSubObjectVersionIds())
+            {
+                context.Writer.WritePropertyName("SubObjectVersionIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSubObjectVersionIdsListValue in requestObject.SubObjectVersionIds)
+                {
+                        context.Writer.WriteNumberValue(requestObjectSubObjectVersionIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetViewVersionId())
+            {
+                context.Writer.WritePropertyName("ViewVersionId");
+                context.Writer.WriteNumberValue(requestObject.ViewVersionId.Value);
+            }
+
+            if(requestObject.IsSetViewVersionToken())
+            {
+                context.Writer.WritePropertyName("ViewVersionToken");
+                context.Writer.WriteStringValue(requestObject.ViewVersionToken);
             }
 
         }

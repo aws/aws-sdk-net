@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for UserAlreadyExistsException
+        /// message.
+        /// </summary>
+        public UserAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserAlreadyExistsException with the specified error
         /// message.
         /// </summary>

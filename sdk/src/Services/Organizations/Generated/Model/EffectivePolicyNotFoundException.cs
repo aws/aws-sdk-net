@@ -42,6 +42,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for EffectivePolicyNotFoundException
+        /// message.
+        /// </summary>
+        public EffectivePolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EffectivePolicyNotFoundException with the specified error
         /// message.
         /// </summary>

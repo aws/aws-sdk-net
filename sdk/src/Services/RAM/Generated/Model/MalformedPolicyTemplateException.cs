@@ -39,6 +39,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for MalformedPolicyTemplateException
+        /// message.
+        /// </summary>
+        public MalformedPolicyTemplateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedPolicyTemplateException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyKeySigningKeysException
+        /// message.
+        /// </summary>
+        public TooManyKeySigningKeysException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyKeySigningKeysException with the specified error
         /// message.
         /// </summary>

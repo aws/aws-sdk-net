@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for ApplicationDoesNotExistException
+        /// message.
+        /// </summary>
+        public ApplicationDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApplicationDoesNotExistException with the specified error
         /// message.
         /// </summary>

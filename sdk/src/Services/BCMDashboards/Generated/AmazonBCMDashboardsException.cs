@@ -36,6 +36,14 @@ namespace Amazon.BCMDashboards
         /// <summary>
         /// Construct instance of AmazonBCMDashboardsException
         /// </summary>
+        public AmazonBCMDashboardsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBCMDashboardsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBCMDashboardsException(string message)
             : base(message)

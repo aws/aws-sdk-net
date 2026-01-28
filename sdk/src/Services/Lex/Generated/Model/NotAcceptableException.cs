@@ -39,6 +39,13 @@ namespace Amazon.Lex.Model
     {
 
         /// <summary>
+        /// Default constructor for NotAcceptableException
+        /// message.
+        /// </summary>
+        public NotAcceptableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotAcceptableException with the specified error
         /// message.
         /// </summary>

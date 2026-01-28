@@ -24,10 +24,10 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class AbortMultipartUploadsCommand : BaseCommand
+    internal partial class AbortMultipartUploadsCommand : BaseCommand<TransferUtilityAbortMultipartUploadsResponse>
     {
 
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task<TransferUtilityAbortMultipartUploadsResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(this._request.BucketName))
             {
@@ -82,8 +82,10 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 while (listResponse.IsTruncated.GetValueOrDefault());
 
-                await WhenAllOrFirstExceptionAsync(pendingTasks,cancellationToken)
+                await TaskHelpers.WhenAllOrFirstExceptionAsync(pendingTasks,cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
+
+                return new TransferUtilityAbortMultipartUploadsResponse();
             }
             finally
             {

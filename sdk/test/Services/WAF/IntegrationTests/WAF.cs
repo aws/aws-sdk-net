@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
-using Amazon.WAF;
+﻿using Amazon.WAF;
 using Amazon.WAF.Model;
-using Amazon;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
+    [TestCategory("WAF")]
     public class WAF : TestBase<AmazonWAFClient>
     {
-
         [ClassCleanup]
         public static void Cleanup()
         {
@@ -22,15 +20,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("WAF")]
-        public void TestByteMatchSet()
+        public async Task TestByteMatchSet()
         {
-            var token1 = Client.GetChangeToken().ChangeToken;
-            var token2 = Client.GetChangeToken().ChangeToken;
+            var token1 = (await Client.GetChangeTokenAsync()).ChangeToken;
+            var token2 = (await Client.GetChangeTokenAsync()).ChangeToken;
             Assert.AreEqual(token1, token2);
 
-            var tokenStatus = Client.GetChangeTokenStatus(token1).ChangeTokenStatus;
-
+            var tokenStatus = (await Client.GetChangeTokenStatusAsync(token1)).ChangeTokenStatus;
             var setName = "BMS-net-test-" + DateTime.UtcNow.ToFileTime();
             var tupleTargetString = "aws";
             var tuple = new ByteMatchTuple
@@ -47,21 +43,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsNotNull(tuple.TargetStream);
             Assert.AreEqual(tupleTargetString, Encoding.UTF8.GetString(tuple.TargetStream.ToArray()));
 
-            var createResponse = Client.CreateByteMatchSet(setName, Client.GetChangeToken().ChangeToken);
+            var createResponse = await Client.CreateByteMatchSetAsync(setName, (await Client.GetChangeTokenAsync()).ChangeToken);
             var createdSet = createResponse.ByteMatchSet;
             var changeToken = createResponse.ChangeToken;
 
-            var sets = GetAllbyteMatchSets().ToList();
+            var sets = (await GetAllbyteMatchSets()).ToList();
             var foundSet = sets.SingleOrDefault(s => string.Equals(s.ByteMatchSetId, createdSet.ByteMatchSetId, StringComparison.Ordinal));
             Assert.IsNotNull(foundSet);
 
-            var retrievedSet = Client.GetByteMatchSet(createdSet.ByteMatchSetId).ByteMatchSet;
+            var retrievedSet = (await Client.GetByteMatchSetAsync(createdSet.ByteMatchSetId)).ByteMatchSet;
             Assert.IsNotNull(retrievedSet);
             Assert.AreEqual(createdSet.ByteMatchSetId, retrievedSet.ByteMatchSetId);
             Assert.AreEqual(createdSet.Name, retrievedSet.Name);
             Assert.AreEqual(createdSet.ByteMatchTuples.Count, retrievedSet.ByteMatchTuples.Count);
 
-            Client.UpdateByteMatchSet(
+            await Client.UpdateByteMatchSetAsync(
                 createdSet.ByteMatchSetId,
                 new List<ByteMatchSetUpdate>
                 {
@@ -71,16 +67,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         ByteMatchTuple = tuple
                     }
                 },
-                Client.GetChangeToken().ChangeToken);
+                (await Client.GetChangeTokenAsync()).ChangeToken
+            );
 
-            retrievedSet = Client.GetByteMatchSet(createdSet.ByteMatchSetId).ByteMatchSet;
+            retrievedSet = (await Client.GetByteMatchSetAsync(createdSet.ByteMatchSetId)).ByteMatchSet;
             Assert.IsNotNull(retrievedSet);
             Assert.AreEqual(createdSet.ByteMatchSetId, retrievedSet.ByteMatchSetId);
             Assert.AreEqual(createdSet.Name, retrievedSet.Name);
             Assert.AreEqual(1, retrievedSet.ByteMatchTuples.Count);
             Assert.AreEqual(tuple.TargetString, retrievedSet.ByteMatchTuples[0].TargetString);
 
-            Client.UpdateByteMatchSet(
+            await Client.UpdateByteMatchSetAsync(
                 createdSet.ByteMatchSetId,
                 new List<ByteMatchSetUpdate>
                 {
@@ -90,25 +87,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         ByteMatchTuple = tuple
                     }
                 },
-                Client.GetChangeToken().ChangeToken);
+                (await Client.GetChangeTokenAsync()).ChangeToken
+            );
 
-            Client.DeleteByteMatchSet(createdSet.ByteMatchSetId, Client.GetChangeToken().ChangeToken);
+            await Client.DeleteByteMatchSetAsync(createdSet.ByteMatchSetId, (await Client.GetChangeTokenAsync()).ChangeToken);
 
-            sets = GetAllbyteMatchSets().ToList();
+            sets = (await GetAllbyteMatchSets()).ToList();
             foundSet = sets.SingleOrDefault(s => string.Equals(s.ByteMatchSetId, createdSet.ByteMatchSetId, StringComparison.Ordinal));
             Assert.IsNull(foundSet);
         }
 
-        private static IEnumerable<ByteMatchSetSummary> GetAllbyteMatchSets()
+        private static async Task<IEnumerable<ByteMatchSetSummary>> GetAllbyteMatchSets()
         {
+            var summaries = new List<ByteMatchSetSummary>();
             var request = new ListByteMatchSetsRequest { Limit = 1 };
             do
             {
-                var response = Client.ListByteMatchSets(request);
+                var response = await Client.ListByteMatchSetsAsync(request);
                 request.NextMarker = response.NextMarker;
-                foreach (var set in response.ByteMatchSets)
-                    yield return set;
+                
+                if (response.ByteMatchSets != null)
+                {
+                    summaries.AddRange(response.ByteMatchSets);
+                }
             } while (!string.IsNullOrEmpty(request.NextMarker));
+            return summaries;
         }
     }
 }

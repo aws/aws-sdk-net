@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidStructureException
+        /// message.
+        /// </summary>
+        public InvalidStructureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidStructureException with the specified error
         /// message.
         /// </summary>

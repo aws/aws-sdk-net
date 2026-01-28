@@ -36,6 +36,14 @@ namespace Amazon.QueryCompatibleRpcV2Protocol
         /// <summary>
         /// Construct instance of AmazonQueryCompatibleRpcV2ProtocolException
         /// </summary>
+        public AmazonQueryCompatibleRpcV2ProtocolException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonQueryCompatibleRpcV2ProtocolException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonQueryCompatibleRpcV2ProtocolException(string message)
             : base(message)

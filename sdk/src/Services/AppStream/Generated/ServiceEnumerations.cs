@@ -1719,6 +1719,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly PlatformType ROCKY_LINUX8 = new PlatformType("ROCKY_LINUX8");
         /// <summary>
+        /// Constant UBUNTU_PRO_2404 for PlatformType
+        /// </summary>
+        public static readonly PlatformType UBUNTU_PRO_2404 = new PlatformType("UBUNTU_PRO_2404");
+        /// <summary>
         /// Constant WINDOWS for PlatformType
         /// </summary>
         public static readonly PlatformType WINDOWS = new PlatformType("WINDOWS");
@@ -1734,6 +1738,10 @@ namespace Amazon.AppStream
         /// Constant WINDOWS_SERVER_2022 for PlatformType
         /// </summary>
         public static readonly PlatformType WINDOWS_SERVER_2022 = new PlatformType("WINDOWS_SERVER_2022");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2025 for PlatformType
+        /// </summary>
+        public static readonly PlatformType WINDOWS_SERVER_2025 = new PlatformType("WINDOWS_SERVER_2025");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

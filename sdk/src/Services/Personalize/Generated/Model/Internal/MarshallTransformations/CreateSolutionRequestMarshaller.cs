@@ -111,6 +111,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.PerformHPO.Value);
             }
 
+            if(publicRequest.IsSetPerformIncrementalUpdate())
+            {
+                context.Writer.WritePropertyName("performIncrementalUpdate");
+                context.Writer.WriteBooleanValue(publicRequest.PerformIncrementalUpdate.Value);
+            }
+
             if(publicRequest.IsSetRecipeArn())
             {
                 context.Writer.WritePropertyName("recipeArn");

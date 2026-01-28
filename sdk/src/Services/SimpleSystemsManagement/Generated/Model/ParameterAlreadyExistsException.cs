@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ParameterAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterAlreadyExistsException with the specified error
         /// message.
         /// </summary>

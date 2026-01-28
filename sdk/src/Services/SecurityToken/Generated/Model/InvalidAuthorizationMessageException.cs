@@ -41,6 +41,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAuthorizationMessageException
+        /// message.
+        /// </summary>
+        public InvalidAuthorizationMessageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAuthorizationMessageException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.Route53Domains
         /// <summary>
         /// Construct instance of AmazonRoute53DomainsException
         /// </summary>
+        public AmazonRoute53DomainsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRoute53DomainsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRoute53DomainsException(string message)
             : base(message)

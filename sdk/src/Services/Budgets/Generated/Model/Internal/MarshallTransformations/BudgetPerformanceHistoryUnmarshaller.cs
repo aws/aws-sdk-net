@@ -92,6 +92,18 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                     unmarshalledObject.CostTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("FilterExpression", targetDepth))
+                {
+                    var unmarshaller = ExpressionUnmarshaller.Instance;
+                    unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Metrics", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TimeUnit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

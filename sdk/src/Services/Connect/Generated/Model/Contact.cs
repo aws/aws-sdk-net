@@ -54,6 +54,7 @@ namespace Amazon.Connect.Model
         private DisconnectDetails _disconnectDetails;
         private string _disconnectReason;
         private DateTime? _disconnectTimestamp;
+        private GlobalResiliencyMetadata _globalResiliencyMetadata;
         private string _id;
         private string _initialContactId;
         private ContactInitiationMethod _initiationMethod;
@@ -62,6 +63,7 @@ namespace Amazon.Connect.Model
         private DateTime? _lastResumedTimestamp;
         private DateTime? _lastUpdateTimestamp;
         private string _name;
+        private List<NextContactEntry> _nextContacts = AWSConfigs.InitializeCollections ? new List<NextContactEntry>() : null;
         private OutboundStrategy _outboundStrategy;
         private string _previousContactId;
         private QualityMetrics _qualityMetrics;
@@ -464,6 +466,25 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GlobalResiliencyMetadata. 
+        /// <para>
+        /// Information about the global resiliency configuration for the contact, including traffic
+        /// distribution details.
+        /// </para>
+        /// </summary>
+        public GlobalResiliencyMetadata GlobalResiliencyMetadata
+        {
+            get { return this._globalResiliencyMetadata; }
+            set { this._globalResiliencyMetadata = value; }
+        }
+
+        // Check to see if GlobalResiliencyMetadata property is set
+        internal bool IsSetGlobalResiliencyMetadata()
+        {
+            return this._globalResiliencyMetadata != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier for the contact.
@@ -614,6 +635,30 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextContacts. 
+        /// <para>
+        ///  List of next contact entries for the contact. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=24)]
+        public List<NextContactEntry> NextContacts
+        {
+            get { return this._nextContacts; }
+            set { this._nextContacts = value; }
+        }
+
+        // Check to see if NextContacts property is set
+        internal bool IsSetNextContacts()
+        {
+            return this._nextContacts != null && (this._nextContacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -41,6 +41,13 @@ namespace Amazon.DataExchange.Model
         private double? _limitValue;
 
         /// <summary>
+        /// Default constructor for ServiceLimitExceededException
+        /// message.
+        /// </summary>
+        public ServiceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceLimitExceededException with the specified error
         /// message.
         /// </summary>

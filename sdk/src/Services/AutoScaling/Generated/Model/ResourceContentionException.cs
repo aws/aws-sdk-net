@@ -40,6 +40,13 @@ namespace Amazon.AutoScaling.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceContentionException
+        /// message.
+        /// </summary>
+        public ResourceContentionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceContentionException with the specified error
         /// message.
         /// </summary>

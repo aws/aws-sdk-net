@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for DeleteConflictException
+        /// message.
+        /// </summary>
+        public DeleteConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeleteConflictException with the specified error
         /// message.
         /// </summary>

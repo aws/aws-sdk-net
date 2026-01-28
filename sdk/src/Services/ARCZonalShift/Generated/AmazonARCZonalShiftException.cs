@@ -36,6 +36,14 @@ namespace Amazon.ARCZonalShift
         /// <summary>
         /// Construct instance of AmazonARCZonalShiftException
         /// </summary>
+        public AmazonARCZonalShiftException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonARCZonalShiftException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonARCZonalShiftException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for ImageStorageClassUpdateNotSupportedException
+        /// message.
+        /// </summary>
+        public ImageStorageClassUpdateNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImageStorageClassUpdateNotSupportedException with the specified error
         /// message.
         /// </summary>

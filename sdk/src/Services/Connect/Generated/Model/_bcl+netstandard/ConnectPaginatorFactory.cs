@@ -37,6 +37,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for EvaluateDataTableValues operation
+        ///</summary>
+        public IEvaluateDataTableValuesPaginator EvaluateDataTableValues(EvaluateDataTableValuesRequest request) 
+        {
+            return new EvaluateDataTableValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetCurrentMetricData operation
         ///</summary>
         public IGetCurrentMetricDataPaginator GetCurrentMetricData(GetCurrentMetricDataRequest request) 
@@ -101,6 +109,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListChildHoursOfOperations operation
+        ///</summary>
+        public IListChildHoursOfOperationsPaginator ListChildHoursOfOperations(ListChildHoursOfOperationsRequest request) 
+        {
+            return new ListChildHoursOfOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactEvaluations operation
         ///</summary>
         public IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request) 
@@ -157,11 +173,51 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataTableAttributes operation
+        ///</summary>
+        public IListDataTableAttributesPaginator ListDataTableAttributes(ListDataTableAttributesRequest request) 
+        {
+            return new ListDataTableAttributesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTablePrimaryValues operation
+        ///</summary>
+        public IListDataTablePrimaryValuesPaginator ListDataTablePrimaryValues(ListDataTablePrimaryValuesRequest request) 
+        {
+            return new ListDataTablePrimaryValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTables operation
+        ///</summary>
+        public IListDataTablesPaginator ListDataTables(ListDataTablesRequest request) 
+        {
+            return new ListDataTablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTableValues operation
+        ///</summary>
+        public IListDataTableValuesPaginator ListDataTableValues(ListDataTableValuesRequest request) 
+        {
+            return new ListDataTableValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDefaultVocabularies operation
         ///</summary>
         public IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request) 
         {
             return new ListDefaultVocabulariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEntitySecurityProfiles operation
+        ///</summary>
+        public IListEntitySecurityProfilesPaginator ListEntitySecurityProfiles(ListEntitySecurityProfilesRequest request) 
+        {
+            return new ListEntitySecurityProfilesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -365,6 +421,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListSecurityProfileFlowModules operation
+        ///</summary>
+        public IListSecurityProfileFlowModulesPaginator ListSecurityProfileFlowModules(ListSecurityProfileFlowModulesRequest request) 
+        {
+            return new ListSecurityProfileFlowModulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityProfilePermissions operation
         ///</summary>
         public IListSecurityProfilePermissionsPaginator ListSecurityProfilePermissions(ListSecurityProfilePermissionsRequest request) 
@@ -386,6 +450,14 @@ namespace Amazon.Connect.Model
         public IListTaskTemplatesPaginator ListTaskTemplates(ListTaskTemplatesRequest request) 
         {
             return new ListTaskTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestCases operation
+        ///</summary>
+        public IListTestCasesPaginator ListTestCases(ListTestCasesRequest request) 
+        {
+            return new ListTestCasesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -453,6 +525,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListWorkspacePages operation
+        ///</summary>
+        public IListWorkspacePagesPaginator ListWorkspacePages(ListWorkspacePagesRequest request) 
+        {
+            return new ListWorkspacePagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkspaces operation
+        ///</summary>
+        public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 
+        {
+            return new ListWorkspacesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAgentStatuses operation
         ///</summary>
         public ISearchAgentStatusesPaginator SearchAgentStatuses(SearchAgentStatusesRequest request) 
@@ -490,6 +578,14 @@ namespace Amazon.Connect.Model
         public ISearchContactsPaginator SearchContacts(SearchContactsRequest request) 
         {
             return new SearchContactsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchDataTables operation
+        ///</summary>
+        public ISearchDataTablesPaginator SearchDataTables(SearchDataTablesRequest request) 
+        {
+            return new SearchDataTablesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -565,6 +661,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchTestCases operation
+        ///</summary>
+        public ISearchTestCasesPaginator SearchTestCases(SearchTestCasesRequest request) 
+        {
+            return new SearchTestCasesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchUserHierarchyGroups operation
         ///</summary>
         public ISearchUserHierarchyGroupsPaginator SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request) 
@@ -581,11 +685,35 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchViews operation
+        ///</summary>
+        public ISearchViewsPaginator SearchViews(SearchViewsRequest request) 
+        {
+            return new SearchViewsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchVocabularies operation
         ///</summary>
         public ISearchVocabulariesPaginator SearchVocabularies(SearchVocabulariesRequest request) 
         {
             return new SearchVocabulariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchWorkspaceAssociations operation
+        ///</summary>
+        public ISearchWorkspaceAssociationsPaginator SearchWorkspaceAssociations(SearchWorkspaceAssociationsRequest request) 
+        {
+            return new SearchWorkspaceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchWorkspaces operation
+        ///</summary>
+        public ISearchWorkspacesPaginator SearchWorkspaces(SearchWorkspacesRequest request) 
+        {
+            return new SearchWorkspacesPaginator(this.client, request);
         }
     }
 }

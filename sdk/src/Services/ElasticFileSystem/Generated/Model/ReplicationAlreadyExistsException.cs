@@ -39,6 +39,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for ReplicationAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ReplicationAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplicationAlreadyExistsException with the specified error
         /// message.
         /// </summary>

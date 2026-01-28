@@ -42,6 +42,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for EntityTemporarilyUnmodifiableException
+        /// message.
+        /// </summary>
+        public EntityTemporarilyUnmodifiableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntityTemporarilyUnmodifiableException with the specified error
         /// message.
         /// </summary>

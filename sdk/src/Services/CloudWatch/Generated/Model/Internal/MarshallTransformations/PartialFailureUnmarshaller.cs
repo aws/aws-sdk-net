@@ -29,65 +29,80 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PartialFailure Object
     /// </summary>  
-    public class PartialFailureUnmarshaller : IXmlUnmarshaller<PartialFailure, XmlUnmarshallerContext>
+    public class PartialFailureUnmarshaller : ICborUnmarshaller<PartialFailure, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public PartialFailure Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public PartialFailure Unmarshall(CborUnmarshallerContext context)
         {
             PartialFailure unmarshalledObject = new PartialFailure();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("ExceptionType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ExceptionType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("FailureCode", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("FailureDescription", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.FailureDescription = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("FailureResource", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.FailureResource = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "ExceptionType":
+                        {
+                            context.AddPathSegment("ExceptionType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ExceptionType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FailureCode":
+                        {
+                            context.AddPathSegment("FailureCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FailureDescription":
+                        {
+                            context.AddPathSegment("FailureDescription");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FailureDescription = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FailureResource":
+                        {
+                            context.AddPathSegment("FailureResource");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FailureResource = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static PartialFailureUnmarshaller _instance = new PartialFailureUnmarshaller();        
 

@@ -42,6 +42,13 @@ namespace Amazon.DynamoDBv2.Model
         private List<ThrottlingReason> _throttlingReasons = AWSConfigs.InitializeCollections ? new List<ThrottlingReason>() : null;
 
         /// <summary>
+        /// Default constructor for ThrottlingException
+        /// message.
+        /// </summary>
+        public ThrottlingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ThrottlingException with the specified error
         /// message.
         /// </summary>

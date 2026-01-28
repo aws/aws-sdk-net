@@ -86,10 +86,22 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("newToken", targetDepth))
+                {
+                    var unmarshaller = ExchangedParticipantTokenUnmarshaller.Instance;
+                    unmarshalledObject.NewToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("participantId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParticipantId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("previousToken", targetDepth))
+                {
+                    var unmarshaller = ExchangedParticipantTokenUnmarshaller.Instance;
+                    unmarshalledObject.PreviousToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("remoteParticipantId", targetDepth))

@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InstanceLimitExceededException
+        /// message.
+        /// </summary>
+        public InstanceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InstanceLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.MarketplaceCatalog
         /// <summary>
         /// Construct instance of AmazonMarketplaceCatalogException
         /// </summary>
+        public AmazonMarketplaceCatalogException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMarketplaceCatalogException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMarketplaceCatalogException(string message)
             : base(message)

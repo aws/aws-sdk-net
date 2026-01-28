@@ -36,6 +36,14 @@ namespace Amazon.PaginatorsTest
         /// <summary>
         /// Construct instance of AmazonPaginatorsTestException
         /// </summary>
+        public AmazonPaginatorsTestException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPaginatorsTestException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPaginatorsTestException(string message)
             : base(message)

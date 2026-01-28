@@ -39,6 +39,13 @@ namespace Amazon.S3Control.Model
     {
 
         /// <summary>
+        /// Default constructor for JobStatusException
+        /// message.
+        /// </summary>
+        public JobStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new JobStatusException with the specified error
         /// message.
         /// </summary>

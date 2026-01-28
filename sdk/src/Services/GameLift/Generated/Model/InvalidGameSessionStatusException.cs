@@ -41,6 +41,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidGameSessionStatusException
+        /// message.
+        /// </summary>
+        public InvalidGameSessionStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGameSessionStatusException with the specified error
         /// message.
         /// </summary>

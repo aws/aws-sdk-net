@@ -49,6 +49,7 @@ namespace Amazon.Keyspaces.Model
         private List<ReplicaSpecification> _replicaSpecifications = AWSConfigs.InitializeCollections ? new List<ReplicaSpecification>() : null;
         private string _tableName;
         private TimeToLive _ttl;
+        private WarmThroughputSpecification _warmThroughputSpecification;
 
         /// <summary>
         /// Gets and sets the property AddColumns. 
@@ -392,6 +393,25 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetTtl()
         {
             return this._ttl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughputSpecification. 
+        /// <para>
+        /// Modifies the warm throughput settings for the table. You can update the read and write
+        /// capacity units to adjust the pre-provisioned throughput.
+        /// </para>
+        /// </summary>
+        public WarmThroughputSpecification WarmThroughputSpecification
+        {
+            get { return this._warmThroughputSpecification; }
+            set { this._warmThroughputSpecification = value; }
+        }
+
+        // Check to see if WarmThroughputSpecification property is set
+        internal bool IsSetWarmThroughputSpecification()
+        {
+            return this._warmThroughputSpecification != null;
         }
 
     }

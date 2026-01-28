@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for ReplicaAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ReplicaAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplicaAlreadyExistsException with the specified error
         /// message.
         /// </summary>

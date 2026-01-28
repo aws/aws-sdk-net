@@ -34,8 +34,36 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ResourceSharingConfig
     {
+        private List<ComputeQuotaResourceConfig> _absoluteBorrowLimits = AWSConfigs.InitializeCollections ? new List<ComputeQuotaResourceConfig>() : null;
         private int? _borrowLimit;
         private ResourceSharingStrategy _strategy;
+
+        /// <summary>
+        /// Gets and sets the property AbsoluteBorrowLimits. 
+        /// <para>
+        /// The absolute limits on compute resources that can be borrowed from idle compute. When
+        /// specified, these limits define the maximum amount of specific resource types (such
+        /// as accelerators, vCPU, or memory) that an entity can borrow, regardless of the percentage-based
+        /// <c>BorrowLimit</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public List<ComputeQuotaResourceConfig> AbsoluteBorrowLimits
+        {
+            get { return this._absoluteBorrowLimits; }
+            set { this._absoluteBorrowLimits = value; }
+        }
+
+        // Check to see if AbsoluteBorrowLimits property is set
+        internal bool IsSetAbsoluteBorrowLimits()
+        {
+            return this._absoluteBorrowLimits != null && (this._absoluteBorrowLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property BorrowLimit. 
@@ -48,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// Default is <c>50</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=10000)]
         public int? BorrowLimit
         {
             get { return this._borrowLimit; }

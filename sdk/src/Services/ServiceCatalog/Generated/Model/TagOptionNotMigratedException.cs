@@ -41,6 +41,13 @@ namespace Amazon.ServiceCatalog.Model
     {
 
         /// <summary>
+        /// Default constructor for TagOptionNotMigratedException
+        /// message.
+        /// </summary>
+        public TagOptionNotMigratedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagOptionNotMigratedException with the specified error
         /// message.
         /// </summary>

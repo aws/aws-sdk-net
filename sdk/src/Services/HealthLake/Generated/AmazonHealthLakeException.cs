@@ -36,6 +36,14 @@ namespace Amazon.HealthLake
         /// <summary>
         /// Construct instance of AmazonHealthLakeException
         /// </summary>
+        public AmazonHealthLakeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonHealthLakeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonHealthLakeException(string message)
             : base(message)

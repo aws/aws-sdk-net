@@ -36,6 +36,14 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Construct instance of AmazonCodeCommitException
         /// </summary>
+        public AmazonCodeCommitException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeCommitException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeCommitException(string message)
             : base(message)

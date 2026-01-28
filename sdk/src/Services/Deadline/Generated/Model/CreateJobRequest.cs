@@ -39,10 +39,12 @@ namespace Amazon.Deadline.Model
     {
         private Attachments _attachments;
         private string _clientToken;
+        private string _descriptionOverride;
         private string _farmId;
         private int? _maxFailedTasksCount;
         private int? _maxRetriesPerTask;
         private int? _maxWorkerCount;
+        private string _nameOverride;
         private Dictionary<string, JobParameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, JobParameter>() : null;
         private int? _priority;
         private string _queueId;
@@ -88,6 +90,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DescriptionOverride. 
+        /// <para>
+        /// A custom description to override the job description derived from the job template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
+        public string DescriptionOverride
+        {
+            get { return this._descriptionOverride; }
+            set { this._descriptionOverride = value; }
+        }
+
+        // Check to see if DescriptionOverride property is set
+        internal bool IsSetDescriptionOverride()
+        {
+            return this._descriptionOverride != null;
         }
 
         /// <summary>
@@ -176,6 +197,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxWorkerCount()
         {
             return this._maxWorkerCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NameOverride. 
+        /// <para>
+        /// A custom name to override the job name derived from the job template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string NameOverride
+        {
+            get { return this._nameOverride; }
+            set { this._nameOverride = value; }
+        }
+
+        // Check to see if NameOverride property is set
+        internal bool IsSetNameOverride()
+        {
+            return this._nameOverride != null;
         }
 
         /// <summary>

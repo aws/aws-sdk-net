@@ -40,6 +40,8 @@ namespace Amazon.Budgets.Model
         private BudgetType _budgetType;
         private Dictionary<string, List<string>> _costFilters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private CostTypes _costTypes;
+        private Expression _filterExpression;
+        private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TimeUnit _timeUnit;
 
         /// <summary>
@@ -159,6 +161,48 @@ namespace Amazon.Budgets.Model
         internal bool IsSetCostTypes()
         {
             return this._costTypes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterExpression. 
+        /// <para>
+        /// The filtering dimensions for the budget and their corresponding values.
+        /// </para>
+        /// </summary>
+        public Expression FilterExpression
+        {
+            get { return this._filterExpression; }
+            set { this._filterExpression = value; }
+        }
+
+        // Check to see if FilterExpression property is set
+        internal bool IsSetFilterExpression()
+        {
+            return this._filterExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// The definition for how the budget data is aggregated.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

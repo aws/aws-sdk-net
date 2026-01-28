@@ -25,6 +25,60 @@ namespace Amazon.AppIntegrationsService
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationType.
+    /// </summary>
+    public class ApplicationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MCP_SERVER for ApplicationType
+        /// </summary>
+        public static readonly ApplicationType MCP_SERVER = new ApplicationType("MCP_SERVER");
+        /// <summary>
+        /// Constant SERVICE for ApplicationType
+        /// </summary>
+        public static readonly ApplicationType SERVICE = new ApplicationType("SERVICE");
+        /// <summary>
+        /// Constant STANDARD for ApplicationType
+        /// </summary>
+        public static readonly ApplicationType STANDARD = new ApplicationType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationType FindValue(string value)
+        {
+            return FindValue<ApplicationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContactHandlingScope.
     /// </summary>
     public class ContactHandlingScope : ConstantClass

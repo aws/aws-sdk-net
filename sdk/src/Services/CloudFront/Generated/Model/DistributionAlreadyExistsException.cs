@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for DistributionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DistributionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DistributionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

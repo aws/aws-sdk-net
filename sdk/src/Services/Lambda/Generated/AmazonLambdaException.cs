@@ -36,6 +36,14 @@ namespace Amazon.Lambda
         /// <summary>
         /// Construct instance of AmazonLambdaException
         /// </summary>
+        public AmazonLambdaException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLambdaException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLambdaException(string message)
             : base(message)

@@ -33,6 +33,12 @@ namespace Amazon.GeoPlaces.Model
     /// Container for the parameters to the SearchText operation.
     /// <c>SearchText</c> searches for geocode and place information. You can then complete
     /// a follow-up query suggested from the <c>Suggest</c> API via a query id.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/search-text.html">Search
+    /// Text</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class SearchTextRequest : AmazonGeoPlacesRequest
     {
@@ -78,12 +84,12 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// The position, in longitude and latitude, that the results should be close to. Typically,
         /// place results returned are ranked higher the closer they are to this position. Stored
-        /// in <c>[lng, lat]</c> and in the WSG84 format.
+        /// in <c>[lng, lat]</c> and in the WGS 84 format.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The fields <c>BiasPosition</c>, <c>FilterBoundingBox</c>, and <c>FilterCircle</c>
-        /// are mutually exclusive.
+        /// Exactly one of the following fields must be set: <c>BiasPosition</c>, <c>Filter.BoundingBox</c>,
+        /// or <c>Filter.Circle</c>.
         /// </para>
         ///  </note>
         /// <para />
@@ -196,6 +202,10 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// An optional limit for the number of results returned in a single call.
         /// </para>
+        ///  
+        /// <para>
+        /// Default value: 20
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int? MaxResults
@@ -260,7 +270,7 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// Exactly one of the following fields must be set: <c>QueryText</c> or <c>QueryId</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -285,7 +295,7 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// Exactly one of the following fields must be set: <c>QueryText</c> or <c>QueryId</c>.
         /// </para>
         ///  </note>
         /// </summary>

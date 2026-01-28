@@ -40,6 +40,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for VersionConflictException
+        /// message.
+        /// </summary>
+        public VersionConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VersionConflictException with the specified error
         /// message.
         /// </summary>

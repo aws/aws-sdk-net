@@ -103,6 +103,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.EnhancedVpcRouting.Value);
             }
 
+            if(publicRequest.IsSetExtraComputeForAutomaticOptimization())
+            {
+                context.Writer.WritePropertyName("extraComputeForAutomaticOptimization");
+                context.Writer.WriteBooleanValue(publicRequest.ExtraComputeForAutomaticOptimization.Value);
+            }
+
             if(publicRequest.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("ipAddressType");

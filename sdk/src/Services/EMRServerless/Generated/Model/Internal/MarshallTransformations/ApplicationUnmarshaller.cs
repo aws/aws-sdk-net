@@ -92,6 +92,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("diskEncryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = DiskEncryptionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DiskEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("identityCenterConfiguration", targetDepth))
                 {
                     var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
@@ -114,6 +120,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = InteractiveConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InteractiveConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("jobLevelCostAllocationConfiguration", targetDepth))
+                {
+                    var unmarshaller = JobLevelCostAllocationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.JobLevelCostAllocationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maximumCapacity", targetDepth))

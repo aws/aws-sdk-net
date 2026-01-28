@@ -46,6 +46,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetChannelEndpointId())
+            {
+                context.Writer.WritePropertyName("channelEndpointId");
+                context.Writer.WriteStringValue(requestObject.ChannelEndpointId);
+            }
+
             if(requestObject.IsSetChannelGroup())
             {
                 context.Writer.WritePropertyName("channelGroup");
@@ -62,6 +68,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("channelName");
                 context.Writer.WriteStringValue(requestObject.ChannelName);
+            }
+
+            if(requestObject.IsSetMediaPackageRegionName())
+            {
+                context.Writer.WritePropertyName("mediaPackageRegionName");
+                context.Writer.WriteStringValue(requestObject.MediaPackageRegionName);
             }
 
         }

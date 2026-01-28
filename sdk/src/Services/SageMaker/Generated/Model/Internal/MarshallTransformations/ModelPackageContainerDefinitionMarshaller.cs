@@ -57,6 +57,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetBaseModel())
+            {
+                context.Writer.WritePropertyName("BaseModel");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BaseModelMarshaller.Instance;
+                marshaller.Marshall(requestObject.BaseModel, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetContainerHostname())
             {
                 context.Writer.WritePropertyName("ContainerHostname");
@@ -99,6 +110,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ImageDigest");
                 context.Writer.WriteStringValue(requestObject.ImageDigest);
+            }
+
+            if(requestObject.IsSetIsCheckpoint())
+            {
+                context.Writer.WritePropertyName("IsCheckpoint");
+                context.Writer.WriteBooleanValue(requestObject.IsCheckpoint.Value);
             }
 
             if(requestObject.IsSetModelDataETag())

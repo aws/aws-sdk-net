@@ -48,17 +48,17 @@ namespace Amazon.BedrockAgentCore.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_StopBrowserSession.html">StopBrowserSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
     /// 
     /// </para>
     ///  </li> </ul>
@@ -67,6 +67,7 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private string _browserIdentifier;
         private string _clientToken;
+        private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private string _name;
         private int? _sessionTimeoutSeconds;
         private string _traceId;
@@ -113,6 +114,30 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// A list of browser extensions to load into the browser session.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<BrowserExtension> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

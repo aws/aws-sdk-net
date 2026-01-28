@@ -31,7 +31,7 @@ namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSavingsPlansOfferingRates operation.
-    /// Describes the offering rates for the specified Savings Plans.
+    /// Describes the offering rates for Savings Plans you might want to purchase.
     /// </summary>
     public partial class DescribeSavingsPlansOfferingRatesRequest : AmazonSavingsPlansRequest
     {

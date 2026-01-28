@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for IntegrationQuotaExceededException
+        /// message.
+        /// </summary>
+        public IntegrationQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IntegrationQuotaExceededException with the specified error
         /// message.
         /// </summary>

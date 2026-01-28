@@ -424,6 +424,16 @@
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws):infrastructure-configuration/[a-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeCustomWorkspaceImageImportResponse.ProgressPercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeCustomWorkspaceImageImportResponse.StateMessage</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeImageAssociationsRequest.ImageId</property>
     <pattern>wsi-[0-9a-z]{9,63}$</pattern>
   </property-value-rule>

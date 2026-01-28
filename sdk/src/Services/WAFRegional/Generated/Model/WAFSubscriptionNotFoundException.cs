@@ -39,6 +39,13 @@ namespace Amazon.WAFRegional.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFSubscriptionNotFoundException
+        /// message.
+        /// </summary>
+        public WAFSubscriptionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFSubscriptionNotFoundException with the specified error
         /// message.
         /// </summary>

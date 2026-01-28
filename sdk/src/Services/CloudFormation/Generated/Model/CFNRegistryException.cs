@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for CFNRegistryException
+        /// message.
+        /// </summary>
+        public CFNRegistryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CFNRegistryException with the specified error
         /// message.
         /// </summary>

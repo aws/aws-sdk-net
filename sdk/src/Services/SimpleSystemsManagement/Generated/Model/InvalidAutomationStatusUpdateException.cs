@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAutomationStatusUpdateException
+        /// message.
+        /// </summary>
+        public InvalidAutomationStatusUpdateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAutomationStatusUpdateException with the specified error
         /// message.
         /// </summary>

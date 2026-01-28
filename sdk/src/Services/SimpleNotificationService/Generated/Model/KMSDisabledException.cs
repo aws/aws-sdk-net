@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSDisabledException
+        /// message.
+        /// </summary>
+        public KMSDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSDisabledException with the specified error
         /// message.
         /// </summary>

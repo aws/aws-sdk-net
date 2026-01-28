@@ -43,6 +43,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for IDPCommunicationErrorException
+        /// message.
+        /// </summary>
+        public IDPCommunicationErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IDPCommunicationErrorException with the specified error
         /// message.
         /// </summary>

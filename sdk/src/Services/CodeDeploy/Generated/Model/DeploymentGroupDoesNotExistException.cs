@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentGroupDoesNotExistException
+        /// message.
+        /// </summary>
+        public DeploymentGroupDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentGroupDoesNotExistException with the specified error
         /// message.
         /// </summary>

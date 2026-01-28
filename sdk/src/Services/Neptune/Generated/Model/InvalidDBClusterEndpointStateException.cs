@@ -40,6 +40,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBClusterEndpointStateException
+        /// message.
+        /// </summary>
+        public InvalidDBClusterEndpointStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBClusterEndpointStateException with the specified error
         /// message.
         /// </summary>

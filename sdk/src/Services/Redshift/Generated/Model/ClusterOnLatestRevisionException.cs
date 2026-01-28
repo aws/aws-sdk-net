@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterOnLatestRevisionException
+        /// message.
+        /// </summary>
+        public ClusterOnLatestRevisionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterOnLatestRevisionException with the specified error
         /// message.
         /// </summary>

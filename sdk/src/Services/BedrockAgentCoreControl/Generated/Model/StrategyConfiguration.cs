@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private ConsolidationConfiguration _consolidation;
         private ExtractionConfiguration _extraction;
+        private ReflectionConfiguration _reflection;
         private SelfManagedConfiguration _selfManagedConfiguration;
         private OverrideType _type;
 
@@ -73,6 +74,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExtraction()
         {
             return this._extraction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reflection. 
+        /// <para>
+        /// The reflection configuration for the memory strategy.
+        /// </para>
+        /// </summary>
+        public ReflectionConfiguration Reflection
+        {
+            get { return this._reflection; }
+            set { this._reflection = value; }
+        }
+
+        // Check to see if Reflection property is set
+        internal bool IsSetReflection()
+        {
+            return this._reflection != null;
         }
 
         /// <summary>

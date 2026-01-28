@@ -39,6 +39,13 @@ namespace Amazon.Budgets.Model
     {
 
         /// <summary>
+        /// Default constructor for ExpiredNextTokenException
+        /// message.
+        /// </summary>
+        public ExpiredNextTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredNextTokenException with the specified error
         /// message.
         /// </summary>

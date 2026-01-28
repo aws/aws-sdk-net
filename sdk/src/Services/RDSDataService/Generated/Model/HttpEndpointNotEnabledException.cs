@@ -39,6 +39,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for HttpEndpointNotEnabledException
+        /// message.
+        /// </summary>
+        public HttpEndpointNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HttpEndpointNotEnabledException with the specified error
         /// message.
         /// </summary>

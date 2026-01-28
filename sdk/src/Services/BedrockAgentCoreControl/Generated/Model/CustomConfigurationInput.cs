@@ -34,10 +34,29 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomConfigurationInput
     {
+        private EpisodicOverrideConfigurationInput _episodicOverride;
         private SelfManagedConfigurationInput _selfManagedConfiguration;
         private SemanticOverrideConfigurationInput _semanticOverride;
         private SummaryOverrideConfigurationInput _summaryOverride;
         private UserPreferenceOverrideConfigurationInput _userPreferenceOverride;
+
+        /// <summary>
+        /// Gets and sets the property EpisodicOverride. 
+        /// <para>
+        /// The episodic memory strategy override configuration for a custom memory strategy.
+        /// </para>
+        /// </summary>
+        public EpisodicOverrideConfigurationInput EpisodicOverride
+        {
+            get { return this._episodicOverride; }
+            set { this._episodicOverride = value; }
+        }
+
+        // Check to see if EpisodicOverride property is set
+        internal bool IsSetEpisodicOverride()
+        {
+            return this._episodicOverride != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SelfManagedConfiguration. 

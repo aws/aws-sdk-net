@@ -84,6 +84,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 request.Headers["X-Amz-Client-Context"] = publicRequest.ClientContextBase64;
             }
         
+            if (publicRequest.IsSetDurableExecutionName()) 
+            {
+                request.Headers["X-Amz-Durable-Execution-Name"] = publicRequest.DurableExecutionName;
+            }
+        
             if (publicRequest.IsSetInvocationType()) 
             {
                 request.Headers["X-Amz-Invocation-Type"] = publicRequest.InvocationType;

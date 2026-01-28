@@ -69,7 +69,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// the correct identifier helps to ensure that the intended invitation is rejected.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Identifier
         {
             get { return this._identifier; }

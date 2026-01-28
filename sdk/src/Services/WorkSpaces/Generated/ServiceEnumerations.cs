@@ -559,6 +559,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly AssociationErrorCode DeploymentErrorWorkspaceUnreachable = new AssociationErrorCode("DeploymentError.WorkspaceUnreachable");
         /// <summary>
+        /// Constant ValidationErrorApplicationOldVersionExists for AssociationErrorCode
+        /// </summary>
+        public static readonly AssociationErrorCode ValidationErrorApplicationOldVersionExists = new AssociationErrorCode("ValidationError.ApplicationOldVersionExists");
+        /// <summary>
         /// Constant ValidationErrorInsufficientDiskSpace for AssociationErrorCode
         /// </summary>
         public static readonly AssociationErrorCode ValidationErrorInsufficientDiskSpace = new AssociationErrorCode("ValidationError.InsufficientDiskSpace");
@@ -1263,17 +1267,57 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly CustomWorkspaceImageImportState COMPLETED = new CustomWorkspaceImageImportState("COMPLETED");
         /// <summary>
+        /// Constant CREATING_TEST_INSTANCE for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState CREATING_TEST_INSTANCE = new CustomWorkspaceImageImportState("CREATING_TEST_INSTANCE");
+        /// <summary>
         /// Constant ERROR for CustomWorkspaceImageImportState
         /// </summary>
         public static readonly CustomWorkspaceImageImportState ERROR = new CustomWorkspaceImageImportState("ERROR");
+        /// <summary>
+        /// Constant GENERALIZING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState GENERALIZING = new CustomWorkspaceImageImportState("GENERALIZING");
+        /// <summary>
+        /// Constant IMAGE_COMPATIBILITY_CHECKING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState IMAGE_COMPATIBILITY_CHECKING = new CustomWorkspaceImageImportState("IMAGE_COMPATIBILITY_CHECKING");
+        /// <summary>
+        /// Constant IMAGE_TESTING_GENERALIZATION for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState IMAGE_TESTING_GENERALIZATION = new CustomWorkspaceImageImportState("IMAGE_TESTING_GENERALIZATION");
+        /// <summary>
+        /// Constant IMAGE_TESTING_START for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState IMAGE_TESTING_START = new CustomWorkspaceImageImportState("IMAGE_TESTING_START");
         /// <summary>
         /// Constant IN_PROGRESS for CustomWorkspaceImageImportState
         /// </summary>
         public static readonly CustomWorkspaceImageImportState IN_PROGRESS = new CustomWorkspaceImageImportState("IN_PROGRESS");
         /// <summary>
+        /// Constant INSTALLING_COMPONENTS for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState INSTALLING_COMPONENTS = new CustomWorkspaceImageImportState("INSTALLING_COMPONENTS");
+        /// <summary>
         /// Constant PENDING for CustomWorkspaceImageImportState
         /// </summary>
         public static readonly CustomWorkspaceImageImportState PENDING = new CustomWorkspaceImageImportState("PENDING");
+        /// <summary>
+        /// Constant PROCESSING_SOURCE_IMAGE for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState PROCESSING_SOURCE_IMAGE = new CustomWorkspaceImageImportState("PROCESSING_SOURCE_IMAGE");
+        /// <summary>
+        /// Constant PUBLISHING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState PUBLISHING = new CustomWorkspaceImageImportState("PUBLISHING");
+        /// <summary>
+        /// Constant UPDATING_OPERATING_SYSTEM for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState UPDATING_OPERATING_SYSTEM = new CustomWorkspaceImageImportState("UPDATING_OPERATING_SYSTEM");
+        /// <summary>
+        /// Constant VALIDATING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState VALIDATING = new CustomWorkspaceImageImportState("VALIDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

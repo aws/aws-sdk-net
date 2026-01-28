@@ -36,6 +36,14 @@ namespace Amazon.AppRunner
         /// <summary>
         /// Construct instance of AmazonAppRunnerException
         /// </summary>
+        public AmazonAppRunnerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAppRunnerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAppRunnerException(string message)
             : base(message)

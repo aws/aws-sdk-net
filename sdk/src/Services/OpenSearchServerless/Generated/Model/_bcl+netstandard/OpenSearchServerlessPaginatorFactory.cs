@@ -45,6 +45,14 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Paginator for ListCollectionGroups operation
+        ///</summary>
+        public IListCollectionGroupsPaginator ListCollectionGroups(ListCollectionGroupsRequest request) 
+        {
+            return new ListCollectionGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCollections operation
         ///</summary>
         public IListCollectionsPaginator ListCollections(ListCollectionsRequest request) 

@@ -84,59 +84,59 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CORSConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestConfigurationRules = publicRequest.Configuration.Rules;
-                    if (publicRequestConfigurationRules != null && (publicRequestConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Configuration.IsSetRules()) 
                     {
                         foreach (var publicRequestConfigurationRulesValue in publicRequestConfigurationRules) 
                         {
-                        if (publicRequestConfigurationRulesValue != null)
-                        {
-                            xmlWriter.WriteStartElement("CORSRule");
-                            var publicRequestConfigurationRulesValueAllowedHeaders = publicRequestConfigurationRulesValue.AllowedHeaders;
-                            if (publicRequestConfigurationRulesValueAllowedHeaders != null && (publicRequestConfigurationRulesValueAllowedHeaders.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestConfigurationRulesValue != null)
                             {
-                                foreach (var publicRequestConfigurationRulesValueAllowedHeadersValue in publicRequestConfigurationRulesValueAllowedHeaders) 
+                                xmlWriter.WriteStartElement("CORSRule");
+                                var publicRequestConfigurationRulesValueAllowedHeaders = publicRequestConfigurationRulesValue.AllowedHeaders;
+                                if (publicRequestConfigurationRulesValue.IsSetAllowedHeaders()) 
                                 {
-                                    xmlWriter.WriteStartElement("AllowedHeader");
-                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedHeadersValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            var publicRequestConfigurationRulesValueAllowedMethods = publicRequestConfigurationRulesValue.AllowedMethods;
-                            if (publicRequestConfigurationRulesValueAllowedMethods != null && (publicRequestConfigurationRulesValueAllowedMethods.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {
-                                foreach (var publicRequestConfigurationRulesValueAllowedMethodsValue in publicRequestConfigurationRulesValueAllowedMethods) 
+                                    foreach (var publicRequestConfigurationRulesValueAllowedHeadersValue in publicRequestConfigurationRulesValueAllowedHeaders) 
+                                    {
+                                        xmlWriter.WriteStartElement("AllowedHeader");
+                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedHeadersValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                var publicRequestConfigurationRulesValueAllowedMethods = publicRequestConfigurationRulesValue.AllowedMethods;
+                                if (publicRequestConfigurationRulesValue.IsSetAllowedMethods()) 
                                 {
-                                    xmlWriter.WriteStartElement("AllowedMethod");
-                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedMethodsValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            var publicRequestConfigurationRulesValueAllowedOrigins = publicRequestConfigurationRulesValue.AllowedOrigins;
-                            if (publicRequestConfigurationRulesValueAllowedOrigins != null && (publicRequestConfigurationRulesValueAllowedOrigins.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {
-                                foreach (var publicRequestConfigurationRulesValueAllowedOriginsValue in publicRequestConfigurationRulesValueAllowedOrigins) 
+                                    foreach (var publicRequestConfigurationRulesValueAllowedMethodsValue in publicRequestConfigurationRulesValueAllowedMethods) 
+                                    {
+                                        xmlWriter.WriteStartElement("AllowedMethod");
+                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedMethodsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                var publicRequestConfigurationRulesValueAllowedOrigins = publicRequestConfigurationRulesValue.AllowedOrigins;
+                                if (publicRequestConfigurationRulesValue.IsSetAllowedOrigins()) 
                                 {
-                                    xmlWriter.WriteStartElement("AllowedOrigin");
-                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedOriginsValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            var publicRequestConfigurationRulesValueExposeHeaders = publicRequestConfigurationRulesValue.ExposeHeaders;
-                            if (publicRequestConfigurationRulesValueExposeHeaders != null && (publicRequestConfigurationRulesValueExposeHeaders.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {
-                                foreach (var publicRequestConfigurationRulesValueExposeHeadersValue in publicRequestConfigurationRulesValueExposeHeaders) 
+                                    foreach (var publicRequestConfigurationRulesValueAllowedOriginsValue in publicRequestConfigurationRulesValueAllowedOrigins) 
+                                    {
+                                        xmlWriter.WriteStartElement("AllowedOrigin");
+                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueAllowedOriginsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                var publicRequestConfigurationRulesValueExposeHeaders = publicRequestConfigurationRulesValue.ExposeHeaders;
+                                if (publicRequestConfigurationRulesValue.IsSetExposeHeaders()) 
                                 {
-                                    xmlWriter.WriteStartElement("ExposeHeader");
-                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueExposeHeadersValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
+                                    foreach (var publicRequestConfigurationRulesValueExposeHeadersValue in publicRequestConfigurationRulesValueExposeHeaders) 
+                                    {
+                                        xmlWriter.WriteStartElement("ExposeHeader");
+                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueExposeHeadersValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                if(publicRequestConfigurationRulesValue.IsSetId())
+                                    xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
+                                if(publicRequestConfigurationRulesValue.IsSetMaxAgeSeconds())
+                                    xmlWriter.WriteElementString("MaxAgeSeconds", StringUtils.FromInt(publicRequestConfigurationRulesValue.MaxAgeSeconds.Value));
+                                xmlWriter.WriteEndElement();
                             }
-                            if(publicRequestConfigurationRulesValue.IsSetId())
-                                xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
-                            if(publicRequestConfigurationRulesValue.IsSetMaxAgeSeconds())
-                                xmlWriter.WriteElementString("MaxAgeSeconds", StringUtils.FromInt(publicRequestConfigurationRulesValue.MaxAgeSeconds.Value));
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                     }
 

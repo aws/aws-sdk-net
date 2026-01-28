@@ -41,6 +41,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidNextTokenException
+        /// message.
+        /// </summary>
+        public InvalidNextTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNextTokenException with the specified error
         /// message.
         /// </summary>

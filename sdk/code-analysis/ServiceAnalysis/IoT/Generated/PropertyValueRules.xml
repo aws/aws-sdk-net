@@ -294,6 +294,10 @@
     <pattern>[^\p{C}]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCommandRequest.PayloadTemplate</property>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateCommandRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
@@ -1745,6 +1749,10 @@
     <property>Amazon.IoT.Model.GetCommandResponse.DisplayName</property>
     <max>64</max>
     <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandResponse.PayloadTemplate</property>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetCommandResponse.RoleArn</property>
@@ -3545,6 +3553,21 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.BatchConfig.MaxBatchOpenMs</property>
+    <min>5</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.BatchConfig.MaxBatchSize</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.BatchConfig.MaxBatchSizeBytes</property>
+    <min>100</min>
+    <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.Behavior.Name</property>
     <min>1</min>
     <max>128</max>
@@ -3706,6 +3729,22 @@
     <min>1</min>
     <max>20</max>
     <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameterValueComparisonOperand.Number</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameterValueComparisonOperand.String</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameterValueNumberRange.Max</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameterValueNumberRange.Min</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CommandPayload.ContentType</property>
@@ -3983,6 +4022,17 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.KeyPair.PublicKey</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.LogEventConfiguration.EventType</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.LogEventConfiguration.LogDestination</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[.\-_/#A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.MaintenanceWindow.DurationInMinutes</property>

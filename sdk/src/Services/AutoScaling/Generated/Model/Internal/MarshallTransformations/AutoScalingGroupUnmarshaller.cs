@@ -126,6 +126,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.DefaultInstanceWarmup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DeletionProtection", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DesiredCapacity", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

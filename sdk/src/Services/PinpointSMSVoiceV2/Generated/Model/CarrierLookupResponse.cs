@@ -66,7 +66,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// The name of the country where the phone number was originally registered.
+        /// The name of the country or region for the phone number.
         /// </para>
         /// </summary>
         public string Country
@@ -84,8 +84,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property DialingCountryCode. 
         /// <para>
-        /// The numeric dialing code for the country or region where the phone number was originally
-        /// registered.
+        /// The country or region numeric dialing code for the phone number.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
@@ -124,8 +123,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property IsoCountryCode. 
         /// <para>
-        /// The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where
-        /// the phone number was originally registered.
+        /// The two-character country or region code, in ISO 3166-1 alpha-2 format, for the phone
+        /// number.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]

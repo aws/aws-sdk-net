@@ -36,6 +36,14 @@ namespace Amazon.IotData
         /// <summary>
         /// Construct instance of AmazonIotDataException
         /// </summary>
+        public AmazonIotDataException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIotDataException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIotDataException(string message)
             : base(message)

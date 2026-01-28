@@ -40,6 +40,13 @@ namespace Amazon.ComputeOptimizer.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingAuthenticationTokenException
+        /// message.
+        /// </summary>
+        public MissingAuthenticationTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingAuthenticationTokenException with the specified error
         /// message.
         /// </summary>

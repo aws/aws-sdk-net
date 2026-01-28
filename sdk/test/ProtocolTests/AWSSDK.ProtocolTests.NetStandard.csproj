@@ -30,21 +30,21 @@
   
     <ItemGroup>
       <ProjectReference Include="../../src/Core/AWSSDK.Core.Netstandard.csproj" />
-	  <ProjectReference Include="../Netstandard//Common/AWSSDK.CommonTest.Netstandard.csproj" />
+	  <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
       <ProjectReference Include="../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
       <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/RestJsonProtocol/AWSSDK.RestJsonProtocol.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/JSONRPC10/AWSSDK.JSONRPC10.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/JsonProtocol/AWSSDK.JsonProtocol.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/QueryProtocol/AWSSDK.QueryProtocol.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/EC2Protocol/AWSSDK.EC2Protocol.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/RestXmlProtocol/AWSSDK.RestXmlProtocol.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/RpcV2Protocol/AWSSDK.RpcV2Protocol.NetStandard.csproj" />
-	  <ProjectReference Include="../UnitTests/Custom/AWSSDK.UnitTestUtilities.Netstandard.csproj" />
-	  <ProjectReference Include="../Services/NonQueryCompatibleRpcV2Protocol/AWSSDK.NonQueryCompatibleRpcV2Protocol.NetStandard.csproj" />
-	  <ProjectReference Include="../Services/QueryCompatibleJSONRPC10/AWSSDK.QueryCompatibleJSONRPC10.NetStandard.csproj" />
-	  <ProjectReference Include="../Services/QueryCompatibleRpcV2Protocol/AWSSDK.QueryCompatibleRpcV2Protocol.NetStandard.csproj" />
+      <ProjectReference Include="../Services/RestJsonProtocol/AWSSDK.RestJsonProtocol.Netstandard.csproj" />
+      <ProjectReference Include="../Services/JSONRPC10/AWSSDK.JSONRPC10.Netstandard.csproj" />
+      <ProjectReference Include="../Services/JsonProtocol/AWSSDK.JsonProtocol.Netstandard.csproj" />
+      <ProjectReference Include="../Services/QueryProtocol/AWSSDK.QueryProtocol.Netstandard.csproj" />
+      <ProjectReference Include="../Services/EC2Protocol/AWSSDK.EC2Protocol.Netstandard.csproj" />
+      <ProjectReference Include="../Services/RestXmlProtocol/AWSSDK.RestXmlProtocol.Netstandard.csproj" />
+      <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.Netstandard.csproj" />
+      <ProjectReference Include="../Services/RpcV2Protocol/AWSSDK.RpcV2Protocol.NetStandard.csproj" />
+      <ProjectReference Include="../UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />
+      <ProjectReference Include="../Services/NonQueryCompatibleRpcV2Protocol/AWSSDK.NonQueryCompatibleRpcV2Protocol.NetStandard.csproj" />
+      <ProjectReference Include="../Services/QueryCompatibleJSONRPC10/AWSSDK.QueryCompatibleJSONRPC10.NetStandard.csproj" />
+      <ProjectReference Include="../Services/QueryCompatibleRpcV2Protocol/AWSSDK.QueryCompatibleRpcV2Protocol.NetStandard.csproj" />
     </ItemGroup>
     <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
     </ItemGroup>

@@ -46,6 +46,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCollaboration())
+            {
+                context.Writer.WritePropertyName("collaboration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CollaborationChangeSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Collaboration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMember())
             {
                 context.Writer.WritePropertyName("member");

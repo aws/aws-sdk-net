@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeploymentConfigNameException
+        /// message.
+        /// </summary>
+        public InvalidDeploymentConfigNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeploymentConfigNameException with the specified error
         /// message.
         /// </summary>

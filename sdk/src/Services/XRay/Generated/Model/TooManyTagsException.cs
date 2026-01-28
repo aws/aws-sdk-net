@@ -40,6 +40,13 @@ namespace Amazon.XRay.Model
         private string _resourceName;
 
         /// <summary>
+        /// Default constructor for TooManyTagsException
+        /// message.
+        /// </summary>
+        public TooManyTagsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTagsException with the specified error
         /// message.
         /// </summary>

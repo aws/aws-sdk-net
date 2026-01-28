@@ -72,6 +72,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEventSelectorsException
+        /// message.
+        /// </summary>
+        public InvalidEventSelectorsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEventSelectorsException with the specified error
         /// message.
         /// </summary>

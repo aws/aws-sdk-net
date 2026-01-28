@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for HostedZoneNotEmptyException
+        /// message.
+        /// </summary>
+        public HostedZoneNotEmptyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HostedZoneNotEmptyException with the specified error
         /// message.
         /// </summary>

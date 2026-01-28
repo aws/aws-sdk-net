@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for ChannelARNInvalidException
+        /// message.
+        /// </summary>
+        public ChannelARNInvalidException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChannelARNInvalidException with the specified error
         /// message.
         /// </summary>

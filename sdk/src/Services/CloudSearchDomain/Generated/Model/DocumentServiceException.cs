@@ -40,6 +40,13 @@ namespace Amazon.CloudSearchDomain.Model
         private string _status;
 
         /// <summary>
+        /// Default constructor for DocumentServiceException
+        /// message.
+        /// </summary>
+        public DocumentServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DocumentServiceException with the specified error
         /// message.
         /// </summary>

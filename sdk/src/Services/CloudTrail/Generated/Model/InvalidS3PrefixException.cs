@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidS3PrefixException
+        /// message.
+        /// </summary>
+        public InvalidS3PrefixException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidS3PrefixException with the specified error
         /// message.
         /// </summary>

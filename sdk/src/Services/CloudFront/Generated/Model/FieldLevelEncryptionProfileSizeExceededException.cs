@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for FieldLevelEncryptionProfileSizeExceededException
+        /// message.
+        /// </summary>
+        public FieldLevelEncryptionProfileSizeExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FieldLevelEncryptionProfileSizeExceededException with the specified error
         /// message.
         /// </summary>

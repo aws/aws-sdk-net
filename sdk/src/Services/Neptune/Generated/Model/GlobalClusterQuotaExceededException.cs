@@ -40,6 +40,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for GlobalClusterQuotaExceededException
+        /// message.
+        /// </summary>
+        public GlobalClusterQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GlobalClusterQuotaExceededException with the specified error
         /// message.
         /// </summary>

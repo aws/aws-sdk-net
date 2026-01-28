@@ -32,7 +32,12 @@ namespace Amazon.Mgn.Model
     /// <summary>
     /// Container for the parameters to the UpdateSourceServerReplicationType operation.
     /// Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING
-    /// replication type.
+    /// replication type. 
+    /// 
+    ///  
+    /// <para>
+    /// SNAPSHOT_SHIPPING should be used for agentless replication.
+    /// </para>
     /// </summary>
     public partial class UpdateSourceServerReplicationTypeRequest : AmazonMgnRequest
     {

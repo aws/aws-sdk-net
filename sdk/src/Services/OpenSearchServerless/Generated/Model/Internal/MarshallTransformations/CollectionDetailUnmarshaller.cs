@@ -68,6 +68,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.CollectionEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("collectionGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CollectionGroupName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
@@ -144,6 +150,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("vectorOptions", targetDepth))
+                {
+                    var unmarshaller = VectorOptionsUnmarshaller.Instance;
+                    unmarshalledObject.VectorOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -98,6 +98,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ParentHoursOfOperations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<HoursOfOperationsIdentifier, HoursOfOperationsIdentifierUnmarshaller>(HoursOfOperationsIdentifierUnmarshaller.Instance);
+                    unmarshalledObject.ParentHoursOfOperations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

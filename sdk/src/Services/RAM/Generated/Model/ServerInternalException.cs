@@ -40,6 +40,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for ServerInternalException
+        /// message.
+        /// </summary>
+        public ServerInternalException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServerInternalException with the specified error
         /// message.
         /// </summary>

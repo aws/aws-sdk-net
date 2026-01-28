@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidNamespaceException
+        /// message.
+        /// </summary>
+        public InvalidNamespaceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNamespaceException with the specified error
         /// message.
         /// </summary>

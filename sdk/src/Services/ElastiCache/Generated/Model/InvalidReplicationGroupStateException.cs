@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidReplicationGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidReplicationGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidReplicationGroupStateException with the specified error
         /// message.
         /// </summary>

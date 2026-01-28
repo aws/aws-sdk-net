@@ -52,6 +52,7 @@ namespace Amazon.ARCRegionswitch.Model
         private RecoveryApproach _recoveryApproach;
         private int? _recoveryTimeObjectiveMinutes;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ReportConfiguration _reportConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<Trigger> _triggers = AWSConfigs.InitializeCollections ? new List<Trigger>() : null;
         private List<Workflow> _workflows = AWSConfigs.InitializeCollections ? new List<Workflow>() : null;
@@ -217,6 +218,21 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetRegions()
         {
             return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportConfiguration.
+        /// </summary>
+        public ReportConfiguration ReportConfiguration
+        {
+            get { return this._reportConfiguration; }
+            set { this._reportConfiguration = value; }
+        }
+
+        // Check to see if ReportConfiguration property is set
+        internal bool IsSetReportConfiguration()
+        {
+            return this._reportConfiguration != null;
         }
 
         /// <summary>

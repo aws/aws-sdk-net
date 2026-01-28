@@ -29,48 +29,54 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InternalServiceException operation
+    /// Response Unmarshaller for InternalServiceException Object
     /// </summary>  
-    public class InternalServiceExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InternalServiceException, XmlUnmarshallerContext>
+    public class InternalServiceExceptionUnmarshaller : ICborErrorResponseUnmarshaller<InternalServiceException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InternalServiceException Unmarshall(XmlUnmarshallerContext context)
+        public InternalServiceException Unmarshall(CborUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InternalServiceException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public InternalServiceException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            InternalServiceException response = new InternalServiceException(errorResponse.Message, errorResponse.InnerException, 
+            InternalServiceException unmarshalledObject = new InternalServiceException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            var reader = context.Reader;
+            context.AddPathSegment("InternalServiceException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.IsStartElement || context.IsAttribute)
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
-            return response;
+            reader.ReadEndMap();
+            context.PopPathSegment();
+          
+            return unmarshalledObject;
         }
 
         private static InternalServiceExceptionUnmarshaller _instance = new InternalServiceExceptionUnmarshaller();        

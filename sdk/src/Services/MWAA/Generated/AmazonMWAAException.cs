@@ -36,6 +36,14 @@ namespace Amazon.MWAA
         /// <summary>
         /// Construct instance of AmazonMWAAException
         /// </summary>
+        public AmazonMWAAException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMWAAException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMWAAException(string message)
             : base(message)

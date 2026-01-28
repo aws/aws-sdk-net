@@ -36,6 +36,14 @@ namespace Amazon.Billing
         /// <summary>
         /// Construct instance of AmazonBillingException
         /// </summary>
+        public AmazonBillingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBillingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBillingException(string message)
             : base(message)

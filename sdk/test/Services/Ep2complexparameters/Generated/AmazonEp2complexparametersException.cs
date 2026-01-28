@@ -36,6 +36,14 @@ namespace Amazon.Ep2complexparameters
         /// <summary>
         /// Construct instance of AmazonEp2complexparametersException
         /// </summary>
+        public AmazonEp2complexparametersException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEp2complexparametersException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEp2complexparametersException(string message)
             : base(message)

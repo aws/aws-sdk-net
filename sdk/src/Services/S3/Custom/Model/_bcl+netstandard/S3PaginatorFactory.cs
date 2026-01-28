@@ -22,25 +22,8 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Paginators for the S3 service
     ///</summary>
-    public class S3PaginatorFactory : IS3PaginatorFactory
+    public partial class S3PaginatorFactory : IS3PaginatorFactory
     {
-        private readonly IAmazonS3 _client;
-
-        internal S3PaginatorFactory(IAmazonS3 client)
-        {
-            this._client = client;
-        }
-
-        /// <summary>
-        /// Paginator for ListMultipartUploads operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public IListMultipartUploadsPaginator ListMultipartUploads(ListMultipartUploadsRequest request)
-        {
-            return new ListMultipartUploadsPaginator(this._client, request);
-        }
-
         /// <summary>
         /// Paginator for ListObjects operation
         /// </summary>
@@ -48,47 +31,7 @@ namespace Amazon.S3.Model
         /// <returns></returns>
         public IListObjectsPaginator ListObjects(ListObjectsRequest request)
         {
-            return new ListObjectsPaginator(this._client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListObjectsV2 operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public IListObjectsV2Paginator ListObjectsV2(ListObjectsV2Request request)
-        {
-            return new ListObjectsV2Paginator(this._client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListParts operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public IListPartsPaginator ListParts(ListPartsRequest request)
-        {
-            return new ListPartsPaginator(this._client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListVersions operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public IListVersionsPaginator ListVersions(ListVersionsRequest request)
-        {
-            return new ListVersionsPaginator(this._client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListBuckets operation
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public IListBucketsPaginator ListBuckets(ListBucketsRequest request)
-        {
-            return new ListBucketsPaginator(this._client, request);
+            return new ListObjectsPaginator(this.client, request);
         }
     }
 }

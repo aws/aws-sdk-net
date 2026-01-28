@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for LifecycleHookLimitExceededException
+        /// message.
+        /// </summary>
+        public LifecycleHookLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LifecycleHookLimitExceededException with the specified error
         /// message.
         /// </summary>

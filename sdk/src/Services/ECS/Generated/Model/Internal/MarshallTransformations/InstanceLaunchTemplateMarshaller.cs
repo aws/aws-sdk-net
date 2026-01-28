@@ -46,10 +46,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCapacityOptionType())
+            {
+                context.Writer.WritePropertyName("capacityOptionType");
+                context.Writer.WriteStringValue(requestObject.CapacityOptionType);
+            }
+
             if(requestObject.IsSetEc2InstanceProfileArn())
             {
                 context.Writer.WritePropertyName("ec2InstanceProfileArn");
                 context.Writer.WriteStringValue(requestObject.Ec2InstanceProfileArn);
+            }
+
+            if(requestObject.IsSetFipsEnabled())
+            {
+                context.Writer.WritePropertyName("fipsEnabled");
+                context.Writer.WriteBooleanValue(requestObject.FipsEnabled.Value);
             }
 
             if(requestObject.IsSetInstanceRequirements())

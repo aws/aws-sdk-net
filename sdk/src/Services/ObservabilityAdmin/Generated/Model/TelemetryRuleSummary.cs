@@ -39,6 +39,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private ResourceType _resourceType;
         private string _ruleArn;
         private string _ruleName;
+        private List<string> _telemetrySourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TelemetryType _telemetryType;
 
         /// <summary>
@@ -131,6 +132,31 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetRuleName()
         {
             return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetrySourceTypes. 
+        /// <para>
+        ///  The types of telemetry sources configured for this rule, such as VPC Flow Logs or
+        /// EKS audit logs. TelemetrySourceTypes must be correlated with the specific resource
+        /// type. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> TelemetrySourceTypes
+        {
+            get { return this._telemetrySourceTypes; }
+            set { this._telemetrySourceTypes = value; }
+        }
+
+        // Check to see if TelemetrySourceTypes property is set
+        internal bool IsSetTelemetrySourceTypes()
+        {
+            return this._telemetrySourceTypes != null && (this._telemetrySourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

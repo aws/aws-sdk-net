@@ -65,9 +65,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             return CreateStreamFromString(s, new MemoryStream());
         }
-        
+
         public static Stream CreateStreamFromString(string s, Stream stream)
-        {        
+        {
             StreamWriter writer = new StreamWriter(stream);
             writer.Write(s);
             writer.Flush();
@@ -150,27 +150,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return fileMD5;
         }
 
+        #region WaitUntil methods syncronous
+
         public static T WaitUntilSuccess<T>(Func<T> loadFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
-            T result = default(T);            
+            T result = default(T);
             WaitUntil(() =>
-            {            
+            {
                 try
                 {
                     result = loadFunction();
                     return result != null;
                 }
                 catch
-                {                
+                {
                     return false;
                 }
             }, sleepSeconds, maxWaitSeconds);
-            
+
             return result;
         }
 
         public static void WaitUntilException(Action action, int sleepSeconds = 5, int maxWaitSeconds = 300)
-        {        
+        {
             WaitUntil(() =>
             {
                 try
@@ -220,11 +222,96 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
             var endTime = DateTime.UtcNow + maxTime;
 
-            while(DateTime.UtcNow < endTime)
+            while (DateTime.UtcNow < endTime)
             {
                 if (matchFunction())
+                {
                     return;
+                }
+
                 sleeper.Sleep();
+            }
+
+            throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
+        }
+
+        #endregion
+
+        #region WaitUntil methods asyncronous
+
+        public static async Task<T> WaitUntilSuccessAsync<T>(Func<Task<T>> loadFunctionAsync, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            T result = default;
+            await WaitUntilAsync(async () =>
+            {
+                try
+                {
+                    result = await loadFunctionAsync().ConfigureAwait(false);
+                    return result != null;
+                }
+                catch
+                {
+                    return false;
+                }
+            }, sleepSeconds, maxWaitSeconds).ConfigureAwait(false);
+
+            return result;
+        }
+
+        public static async Task WaitUntilSuccessAsync(Func<Task> asyncAction, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            if (sleepSeconds < 0) throw new ArgumentOutOfRangeException(nameof(sleepSeconds));
+            await WaitUntilSuccessAsync(asyncAction, new ListSleeper(sleepSeconds * 1000), maxWaitSeconds).ConfigureAwait(false);
+        }
+
+        public static async Task WaitUntilSuccessAsync(Func<Task> asyncAction, ListSleeper sleeper, int maxWaitSeconds = 300)
+        {
+            await WaitUntilAsync(async () =>
+            {
+                try
+                {
+                    await asyncAction().ConfigureAwait(false);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }, sleeper, maxWaitSeconds).ConfigureAwait(false);
+        }
+
+        public static async Task WaitUntilAsync(Func<Task<bool>> matchFunctionAsync, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            if (sleepSeconds < 0) throw new ArgumentOutOfRangeException(nameof(sleepSeconds));
+            await WaitUntilAsync(matchFunctionAsync, new ListSleeper(sleepSeconds * 1000), maxWaitSeconds).ConfigureAwait(false);
+        }
+
+        public static async Task WaitUntilAsync(Func<Task<bool>> matchFunctionAsync, ListSleeper sleeper, int maxWaitSeconds = 300)
+        {
+            if (maxWaitSeconds < 0) throw new ArgumentOutOfRangeException(nameof(maxWaitSeconds));
+
+            var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
+            var endTime = DateTime.UtcNow + maxTime;
+
+            while (DateTime.UtcNow < endTime)
+            {
+                bool matched;
+                try
+                {
+                    matched = await matchFunctionAsync().ConfigureAwait(false);
+                }
+                catch
+                {
+                    // Mirror the sync WaitUntil behavior: treat exceptions as non-match and keep retrying.
+                    matched = false;
+                }
+
+                if (matched)
+                {
+                    return;
+                }
+
+                await sleeper.SleepAsync().ConfigureAwait(false);
             }
 
             throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
@@ -237,7 +324,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         /// <param name="asyncFunc"> Async function  </param>
         /// <param name="timeout"> Timeout </param>
         /// <exception cref="TimeoutException"> Thrown when the <paramref name="asyncFunc"/> runs out of <paramref name="timeout"/></exception>
-        public static async Task WaitUntilAsync(Func<Task> asyncFunc, TimeSpan timeout)
+        public static async Task WaitForCompletionOrTimeoutAsync(Func<Task> asyncFunc, TimeSpan timeout)
         {
             // Create a CancellationTokenSource with the specified timeout duration
             using (var cts = new CancellationTokenSource(timeout))
@@ -260,6 +347,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 throw new TimeoutException("The operation has timed out.");
             }
         }
+
+        #endregion
 
         public static void WriteFile(string path, string contents)
         {
@@ -314,6 +403,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 var index = Math.Min(attempt, millisecondsList.Length - 1);
                 Thread.Sleep(millisecondsList[index]);
                 attempt++;
+            }
+
+            public Task SleepAsync()
+            {
+                var index = Math.Min(attempt, millisecondsList.Length - 1);
+                attempt++;
+                return Task.Delay(millisecondsList[index]);
             }
 
             /// <summary>

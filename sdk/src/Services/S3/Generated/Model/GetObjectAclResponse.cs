@@ -64,7 +64,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        ///  Container for the bucket owner's display name and ID.
+        ///  Container for the bucket owner's ID.
         /// </para>
         /// </summary>
         public Owner Owner

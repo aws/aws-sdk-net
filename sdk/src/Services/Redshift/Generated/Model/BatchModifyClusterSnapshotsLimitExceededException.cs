@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for BatchModifyClusterSnapshotsLimitExceededException
+        /// message.
+        /// </summary>
+        public BatchModifyClusterSnapshotsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchModifyClusterSnapshotsLimitExceededException with the specified error
         /// message.
         /// </summary>

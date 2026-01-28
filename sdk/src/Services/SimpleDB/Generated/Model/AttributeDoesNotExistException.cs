@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for AttributeDoesNotExistException
+        /// message.
+        /// </summary>
+        public AttributeDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AttributeDoesNotExistException with the specified error
         /// message.
         /// </summary>

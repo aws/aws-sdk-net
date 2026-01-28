@@ -40,6 +40,13 @@ namespace Amazon.MediaPackageV2.Model
         private ValidationExceptionType _validationExceptionType;
 
         /// <summary>
+        /// Default constructor for ValidationException
+        /// message.
+        /// </summary>
+        public ValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ValidationException with the specified error
         /// message.
         /// </summary>

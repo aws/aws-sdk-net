@@ -85,8 +85,10 @@ namespace Amazon.Connect.Model
         private string _clientToken;
         private string _contactFlowId;
         private string _customerId;
+        private List<string> _disconnectOnCustomerExit = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ChatMessage _initialMessage;
         private string _instanceId;
+        private ParticipantConfiguration _participantConfiguration;
         private ParticipantDetails _participantDetails;
         private PersistentChat _persistentChat;
         private string _relatedContactId;
@@ -215,6 +217,32 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DisconnectOnCustomerExit. 
+        /// <para>
+        /// A list of participant types to automatically disconnect when the end customer ends
+        /// the chat session, allowing them to continue through disconnect flows such as surveys
+        /// or feedback forms.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> DisconnectOnCustomerExit
+        {
+            get { return this._disconnectOnCustomerExit; }
+            set { this._disconnectOnCustomerExit = value; }
+        }
+
+        // Check to see if DisconnectOnCustomerExit property is set
+        internal bool IsSetDisconnectOnCustomerExit()
+        {
+            return this._disconnectOnCustomerExit != null && (this._disconnectOnCustomerExit.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property InitialMessage. 
         /// <para>
         /// The initial message to be sent to the newly created chat.
@@ -250,6 +278,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParticipantConfiguration. 
+        /// <para>
+        ///  The configuration of the participant. 
+        /// </para>
+        /// </summary>
+        public ParticipantConfiguration ParticipantConfiguration
+        {
+            get { return this._participantConfiguration; }
+            set { this._participantConfiguration = value; }
+        }
+
+        // Check to see if ParticipantConfiguration property is set
+        internal bool IsSetParticipantConfiguration()
+        {
+            return this._participantConfiguration != null;
         }
 
         /// <summary>

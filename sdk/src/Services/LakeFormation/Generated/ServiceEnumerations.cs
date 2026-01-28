@@ -161,6 +161,56 @@ namespace Amazon.LakeFormation
 
 
     /// <summary>
+    /// Constants used for properties of type CredentialsScope.
+    /// </summary>
+    public class CredentialsScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ for CredentialsScope
+        /// </summary>
+        public static readonly CredentialsScope READ = new CredentialsScope("READ");
+        /// <summary>
+        /// Constant READWRITE for CredentialsScope
+        /// </summary>
+        public static readonly CredentialsScope READWRITE = new CredentialsScope("READWRITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CredentialsScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CredentialsScope FindValue(string value)
+        {
+            return FindValue<CredentialsScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CredentialsScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataLakeResourceType.
     /// </summary>
     public class DataLakeResourceType : ConstantClass
@@ -936,6 +986,60 @@ namespace Amazon.LakeFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransactionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerificationStatus.
+    /// </summary>
+    public class VerificationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_VERIFIED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus NOT_VERIFIED = new VerificationStatus("NOT_VERIFIED");
+        /// <summary>
+        /// Constant VERIFICATION_FAILED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus VERIFICATION_FAILED = new VerificationStatus("VERIFICATION_FAILED");
+        /// <summary>
+        /// Constant VERIFIED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus VERIFIED = new VerificationStatus("VERIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationStatus FindValue(string value)
+        {
+            return FindValue<VerificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationStatus(string value)
         {
             return FindValue(value);
         }

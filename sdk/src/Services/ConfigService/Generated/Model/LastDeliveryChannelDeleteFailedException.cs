@@ -40,6 +40,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for LastDeliveryChannelDeleteFailedException
+        /// message.
+        /// </summary>
+        public LastDeliveryChannelDeleteFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LastDeliveryChannelDeleteFailedException with the specified error
         /// message.
         /// </summary>

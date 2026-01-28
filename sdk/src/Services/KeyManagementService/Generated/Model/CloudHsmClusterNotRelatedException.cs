@@ -54,6 +54,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmClusterNotRelatedException
+        /// message.
+        /// </summary>
+        public CloudHsmClusterNotRelatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmClusterNotRelatedException with the specified error
         /// message.
         /// </summary>

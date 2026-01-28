@@ -39,6 +39,7 @@ namespace Amazon.IdentityStore.Model
         private string _birthdate;
         private string _displayName;
         private List<Email> _emails = AWSConfigs.InitializeCollections ? new List<Email>() : null;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _extensions = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private string _identityStoreId;
         private string _locale;
         private Name _name;
@@ -47,6 +48,7 @@ namespace Amazon.IdentityStore.Model
         private List<Photo> _photos = AWSConfigs.InitializeCollections ? new List<Photo>() : null;
         private string _preferredLanguage;
         private string _profileUrl;
+        private List<Role> _roles = AWSConfigs.InitializeCollections ? new List<Role>() : null;
         private string _timezone;
         private string _title;
         private string _userName;
@@ -140,6 +142,33 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetEmails()
         {
             return this._emails != null && (this._emails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// A map with additional attribute extensions for the user. Each map key corresponds
+        /// to an extension name, while map values represent extension data in <c>Document</c>
+        /// type (not supported by Java V1, Go V1 and older versions of the CLI). <c>aws:identitystore:enterprise</c>
+        /// is the only supported extension name.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public Dictionary<string, Amazon.Runtime.Documents.Document> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,6 +334,30 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetProfileUrl()
         {
             return this._profileUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Roles. 
+        /// <para>
+        /// A list of <c>Role</c> objects containing roles associated with the user.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Role> Roles
+        {
+            get { return this._roles; }
+            set { this._roles = value; }
+        }
+
+        // Check to see if Roles property is set
+        internal bool IsSetRoles()
+        {
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

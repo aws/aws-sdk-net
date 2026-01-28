@@ -32,7 +32,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Describes the current monthly spend limits for sending voice and text messages. For
     /// more information on increasing your monthly spend limit, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/awssupport-spend-threshold.html">
-    /// Requesting a spending quota increase </a> in the <i>End User MessagingSMS User Guide</i>.
+    /// Requesting a spending quota increase </a> in the <i>End User Messaging SMS User Guide</i>.
     /// </summary>
     public partial class SpendLimit
     {

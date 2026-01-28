@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ScheduledActionQuotaExceededException
+        /// message.
+        /// </summary>
+        public ScheduledActionQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ScheduledActionQuotaExceededException with the specified error
         /// message.
         /// </summary>

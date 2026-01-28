@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationStatusCheckFailedException
+        /// message.
+        /// </summary>
+        public OperationStatusCheckFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationStatusCheckFailedException with the specified error
         /// message.
         /// </summary>

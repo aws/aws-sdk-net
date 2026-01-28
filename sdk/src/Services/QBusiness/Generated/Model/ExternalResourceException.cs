@@ -40,6 +40,13 @@ namespace Amazon.QBusiness.Model
     {
 
         /// <summary>
+        /// Default constructor for ExternalResourceException
+        /// message.
+        /// </summary>
+        public ExternalResourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExternalResourceException with the specified error
         /// message.
         /// </summary>

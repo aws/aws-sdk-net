@@ -39,6 +39,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSecretException
+        /// message.
+        /// </summary>
+        public InvalidSecretException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSecretException with the specified error
         /// message.
         /// </summary>

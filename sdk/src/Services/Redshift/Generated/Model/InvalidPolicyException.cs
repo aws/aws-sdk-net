@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPolicyException
+        /// message.
+        /// </summary>
+        public InvalidPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPolicyException with the specified error
         /// message.
         /// </summary>

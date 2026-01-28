@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRevisionIdException
+        /// message.
+        /// </summary>
+        public InvalidRevisionIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRevisionIdException with the specified error
         /// message.
         /// </summary>

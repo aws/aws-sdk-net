@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TrustStoreAssociationNotFoundException
+        /// message.
+        /// </summary>
+        public TrustStoreAssociationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrustStoreAssociationNotFoundException with the specified error
         /// message.
         /// </summary>

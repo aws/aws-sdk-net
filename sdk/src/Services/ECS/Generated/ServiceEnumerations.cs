@@ -609,6 +609,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityOptionType.
+    /// </summary>
+    public class CapacityOptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEMAND for CapacityOptionType
+        /// </summary>
+        public static readonly CapacityOptionType ON_DEMAND = new CapacityOptionType("ON_DEMAND");
+        /// <summary>
+        /// Constant SPOT for CapacityOptionType
+        /// </summary>
+        public static readonly CapacityOptionType SPOT = new CapacityOptionType("SPOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityOptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityOptionType FindValue(string value)
+        {
+            return FindValue<CapacityOptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityOptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityProviderField.
     /// </summary>
     public class CapacityProviderField : ConstantClass
@@ -4060,6 +4110,10 @@ namespace Amazon.ECS
         /// Constant DefaultLogDriverMode for SettingName
         /// </summary>
         public static readonly SettingName DefaultLogDriverMode = new SettingName("defaultLogDriverMode");
+        /// <summary>
+        /// Constant FargateEventWindows for SettingName
+        /// </summary>
+        public static readonly SettingName FargateEventWindows = new SettingName("fargateEventWindows");
         /// <summary>
         /// Constant FargateFIPSMode for SettingName
         /// </summary>

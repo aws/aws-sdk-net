@@ -39,6 +39,7 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private string _clientToken;
         private string _description;
+        private AIPromptInferenceConfiguration _inferenceConfiguration;
         private string _modelId;
         private string _name;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -135,6 +136,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// The inference configuration for the AI Prompt being created.
+        /// </para>
+        /// </summary>
+        public AIPromptInferenceConfiguration InferenceConfiguration
+        {
+            get { return this._inferenceConfiguration; }
+            set { this._inferenceConfiguration = value; }
+        }
+
+        // Check to see if InferenceConfiguration property is set
+        internal bool IsSetInferenceConfiguration()
+        {
+            return this._inferenceConfiguration != null;
         }
 
         /// <summary>

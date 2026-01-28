@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for DBUpgradeDependencyFailureException
+        /// message.
+        /// </summary>
+        public DBUpgradeDependencyFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBUpgradeDependencyFailureException with the specified error
         /// message.
         /// </summary>

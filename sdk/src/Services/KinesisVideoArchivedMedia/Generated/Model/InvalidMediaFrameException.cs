@@ -40,6 +40,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMediaFrameException
+        /// message.
+        /// </summary>
+        public InvalidMediaFrameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMediaFrameException with the specified error
         /// message.
         /// </summary>

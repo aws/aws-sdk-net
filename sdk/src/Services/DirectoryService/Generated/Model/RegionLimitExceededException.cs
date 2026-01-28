@@ -40,6 +40,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for RegionLimitExceededException
+        /// message.
+        /// </summary>
+        public RegionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RegionLimitExceededException with the specified error
         /// message.
         /// </summary>

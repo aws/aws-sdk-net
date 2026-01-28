@@ -43,6 +43,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _limitType;
 
         /// <summary>
+        /// Default constructor for ResourcePolicyLimitExceededException
+        /// message.
+        /// </summary>
+        public ResourcePolicyLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourcePolicyLimitExceededException with the specified error
         /// message.
         /// </summary>

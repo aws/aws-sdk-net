@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOrderException
+        /// message.
+        /// </summary>
+        public InvalidOrderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOrderException with the specified error
         /// message.
         /// </summary>

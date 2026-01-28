@@ -54,6 +54,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RestoreDBInstanceToPointInTimeRequest : AmazonRDSRequest
     {
+        private List<AdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
@@ -96,6 +97,7 @@ namespace Amazon.RDS.Model
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _targetDBInstanceIdentifier;
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
@@ -117,6 +119,32 @@ namespace Amazon.RDS.Model
         {
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
             _targetDBInstanceIdentifier = targetDBInstanceIdentifier;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// A list of additional storage volumes to restore to the DB instance. You can restore
+        /// up to three additional storage volumes using the names <c>rdsdbdata2</c>, <c>rdsdbdata3</c>,
+        /// and <c>rdsdbdata4</c>. Additional storage volumes are supported for RDS for Oracle
+        /// and RDS for SQL Server DB instances only.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1529,6 +1557,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// Tags to assign to resources associated with the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>auto-backup</c> - The DB instance's automated backup.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

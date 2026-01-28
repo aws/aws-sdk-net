@@ -36,6 +36,14 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Construct instance of AmazonCognitoIdentityException
         /// </summary>
+        public AmazonCognitoIdentityException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCognitoIdentityException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCognitoIdentityException(string message)
             : base(message)

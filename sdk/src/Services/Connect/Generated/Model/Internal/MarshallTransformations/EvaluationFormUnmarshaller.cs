@@ -104,6 +104,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Items = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LanguageConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationFormLanguageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LanguageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Locked = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ReviewConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationReviewConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ReviewConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ScoringStrategy", targetDepth))
                 {
                     var unmarshaller = EvaluationFormScoringStrategyUnmarshaller.Instance;
@@ -138,6 +150,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TargetConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationFormTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TargetConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Title", targetDepth))

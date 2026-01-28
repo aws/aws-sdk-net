@@ -36,6 +36,14 @@ namespace Amazon.Echo
         /// <summary>
         /// Construct instance of AmazonEchoException
         /// </summary>
+        public AmazonEchoException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEchoException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEchoException(string message)
             : base(message)

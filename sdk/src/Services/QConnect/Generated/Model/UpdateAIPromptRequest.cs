@@ -39,6 +39,7 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private string _clientToken;
         private string _description;
+        private AIPromptInferenceConfiguration _inferenceConfiguration;
         private string _modelId;
         private AIPromptTemplateConfiguration _templateConfiguration;
         private VisibilityStatus _visibilityStatus;
@@ -121,6 +122,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// The updated inference configuration for the AI Prompt.
+        /// </para>
+        /// </summary>
+        public AIPromptInferenceConfiguration InferenceConfiguration
+        {
+            get { return this._inferenceConfiguration; }
+            set { this._inferenceConfiguration = value; }
+        }
+
+        // Check to see if InferenceConfiguration property is set
+        internal bool IsSetInferenceConfiguration()
+        {
+            return this._inferenceConfiguration != null;
         }
 
         /// <summary>

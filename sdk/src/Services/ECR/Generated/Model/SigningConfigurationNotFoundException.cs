@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for SigningConfigurationNotFoundException
+        /// message.
+        /// </summary>
+        public SigningConfigurationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SigningConfigurationNotFoundException with the specified error
         /// message.
         /// </summary>

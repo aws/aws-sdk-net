@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Information about a destination where scheduled query results are processed and delivered.
+    /// Information about a destination where scheduled query results are processed, including
+    /// processing status and any error messages.
     /// </summary>
     public partial class ScheduledQueryDestination
     {
@@ -43,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationIdentifier. 
         /// <para>
-        /// The destination identifier (S3 URI).
+        /// The identifier for the destination where results are delivered.
         /// </para>
         /// </summary>
         public string DestinationIdentifier
@@ -61,7 +62,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationType. 
         /// <para>
-        /// The type of destination (S3).
+        /// The type of destination for query results.
         /// </para>
         /// </summary>
         public ScheduledQueryDestinationType DestinationType
@@ -79,7 +80,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Error message if the destination processing failed.
+        /// Error message if destination processing failed.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -97,7 +98,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ProcessedIdentifier. 
         /// <para>
-        /// The processed identifier returned for the destination (S3 key).
+        /// The identifier of the processed result at the destination.
         /// </para>
         /// </summary>
         public string ProcessedIdentifier
@@ -115,7 +116,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The processing status for this destination (IN_PROGRESS, ERROR, FAILED, or COMPLETE).
+        /// The processing status of the destination delivery.
         /// </para>
         /// </summary>
         public ActionStatus Status

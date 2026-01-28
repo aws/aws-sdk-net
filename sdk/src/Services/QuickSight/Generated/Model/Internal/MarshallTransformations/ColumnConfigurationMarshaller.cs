@@ -68,6 +68,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDecalSettingsConfiguration())
+            {
+                context.Writer.WritePropertyName("DecalSettingsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DecalSettingsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DecalSettingsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetFormatConfiguration())
             {
                 context.Writer.WritePropertyName("FormatConfiguration");

@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetGroupInUseException
+        /// message.
+        /// </summary>
+        public SubnetGroupInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetGroupInUseException with the specified error
         /// message.
         /// </summary>

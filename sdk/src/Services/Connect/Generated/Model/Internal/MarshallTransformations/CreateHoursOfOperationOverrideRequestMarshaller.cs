@@ -119,6 +119,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetOverrideType())
+            {
+                context.Writer.WritePropertyName("OverrideType");
+                context.Writer.WriteStringValue(publicRequest.OverrideType);
+            }
+
+            if(publicRequest.IsSetRecurrenceConfig())
+            {
+                context.Writer.WritePropertyName("RecurrenceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecurrenceConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RecurrenceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

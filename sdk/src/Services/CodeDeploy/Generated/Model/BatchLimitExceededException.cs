@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for BatchLimitExceededException
+        /// message.
+        /// </summary>
+        public BatchLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchLimitExceededException with the specified error
         /// message.
         /// </summary>

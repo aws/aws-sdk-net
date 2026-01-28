@@ -34,8 +34,34 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class BedrockEmbeddingModelConfiguration
     {
+        private List<AudioConfiguration> _audio = AWSConfigs.InitializeCollections ? new List<AudioConfiguration>() : null;
         private int? _dimensions;
         private EmbeddingDataType _embeddingDataType;
+        private List<VideoConfiguration> _video = AWSConfigs.InitializeCollections ? new List<VideoConfiguration>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Audio. 
+        /// <para>
+        /// Configuration settings for processing audio content in multimodal knowledge bases.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AudioConfiguration> Audio
+        {
+            get { return this._audio; }
+            set { this._audio = value; }
+        }
+
+        // Check to see if Audio property is set
+        internal bool IsSetAudio()
+        {
+            return this._audio != null && (this._audio.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -78,6 +104,30 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetEmbeddingDataType()
         {
             return this._embeddingDataType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Video. 
+        /// <para>
+        /// Configuration settings for processing video content in multimodal knowledge bases.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<VideoConfiguration> Video
+        {
+            get { return this._video; }
+            set { this._video = value; }
+        }
+
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
+        {
+            return this._video != null && (this._video.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

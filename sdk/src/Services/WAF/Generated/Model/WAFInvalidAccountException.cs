@@ -40,6 +40,13 @@ namespace Amazon.WAF.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFInvalidAccountException
+        /// message.
+        /// </summary>
+        public WAFInvalidAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFInvalidAccountException with the specified error
         /// message.
         /// </summary>

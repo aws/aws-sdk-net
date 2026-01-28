@@ -1,24 +1,8 @@
-﻿// /*******************************************************************************
-//  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-//  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
-//  *  this file except in compliance with the License. A copy of the License is located at
-//  *
-//  *  http://aws.amazon.com/apache2.0
-//  *
-//  *  or in the "license" file accompanying this file.
-//  *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-//  *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
-//  *  specific language governing permissions and limitations under the License.
-//  * *****************************************************************************
-//  *    __  _    _  ___
-//  *   (  )( \/\/ )/ __)
-//  *   /__\ \    / \__ \
-//  *  (_)(_) \/\/  (___/
-//  *
-//  *  AWS SDK for .NET
-//  *
-//  */
-
+﻿using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -26,15 +10,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using Amazon.S3;
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
+    [TestCategory("S3")]
     [TestCategory("S3SelectObjectContent")]
     public class SelectObjectContentTests : TestBase<AmazonS3Client>
     {
@@ -56,20 +37,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string _csvKeyName;
 
         [ClassInitialize]
-        public static void Initialize(TestContext testContext)
+        public static async Task Initialize(TestContext testContext)
         {
-            _bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            _bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
             _keyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests) + "_json");
             _csvKeyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests) + "_csv");
 
-            Client.PutObject(new PutObjectRequest()
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = _keyName,
                 ContentBody = TestContent
             });
 
-            Client.PutObject(new PutObjectRequest()
+            await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = _csvKeyName,
@@ -77,15 +58,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
+        [ClassCleanup]
+        public static async Task ClassCleanup()
+        {
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, _bucketName);
+            BaseClean();
+        }
+
         /// <summary>
         /// Tests the Enumerable method for iterating through an EventStream returned from SelectObjectContent.
         /// </summary>
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestCallEnumerable()
+        public async Task TestCallEnumerable()
         {
-            var eventStream = GetSelectObjectContentEventStream();
-
+            var eventStream = await GetSelectObjectContentEventStream();
             var testContent = "";
             var eventTypes = new List<Type>();
 
@@ -95,14 +81,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     using (var reader = new StreamReader(records.Payload, Encoding.UTF8))
                     {
-                        testContent = reader.ReadToEnd();
+                        testContent = await reader.ReadToEndAsync();
                     }
                 }
                 eventTypes.Add(ev.GetType());
             }
 
             AssertRecordsEqualsExpected(testContent);
-
             Assert.IsTrue(new List<Type>()
             {
                 typeof(RecordsEvent),
@@ -116,38 +101,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// but it may be useful to have a itegration test for each interaction pattern.
         /// </summary>
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestCallEvents()
+        public async Task TestCallEventsAsync()
         {
-            var eventStream = GetSelectObjectContentEventStream();
-
-            var testContent = "";
-            var recordsEvents = new List<RecordsEvent>();
-
-            eventStream.RecordsEventReceived += (sender, args) => recordsEvents.Add(args.EventStreamEvent);
-            eventStream.StartProcessing();
-            SpinWait.SpinUntil(() => recordsEvents.Count > 0, TimeSpan.FromSeconds(5));
-
-            using (var streamReader = new StreamReader(recordsEvents[0].Payload))
-            {
-                testContent = streamReader.ReadToEnd();
-            }
-            eventStream.Dispose();
-
-            AssertRecordsEqualsExpected(testContent);
-        }
-
-#if ASYNC_AWAIT
-        /// <summary>
-        /// Tests the Event-Driven method for iterating through an EventStream returned from SelectObjectContent. Technically, the enumerable test should suffice,
-        /// but it may be useful to have a itegration test for each interaction pattern.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("S3")]
-        public async System.Threading.Tasks.Task TestCallEventsAsync()
-        {
-            var eventStream = GetSelectObjectContentEventStream();
-
+            var eventStream = await GetSelectObjectContentEventStream();
             var testContent = "";
             var recordsEvents = new List<RecordsEvent>();
 
@@ -156,23 +112,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var streamReader = new StreamReader(recordsEvents[0].Payload))
             {
-                testContent = streamReader.ReadToEnd();
+                testContent = await streamReader.ReadToEndAsync();
             }
             eventStream.Dispose();
 
             AssertRecordsEqualsExpected(testContent);
         }
-#endif
 
         /// <summary>
         /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on RecordDelimiter settings for CSV InputSerialization and OutputSerialization.
         /// </summary>
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestCallCSVInputOutputDelimiterEvents()
+        public async Task TestCallCSVInputOutputDelimiterEvents()
         {
             string selectQuery = "select * from s3object";
-            InputSerialization inputSerialization = new InputSerialization()
+            var inputSerialization = new InputSerialization
             {
                 CSV = new CSVInput()
                 {
@@ -180,16 +134,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     RecordDelimiter = "\r\n"
                 }
             };
-            OutputSerialization outputSerialization = new OutputSerialization()
+            var outputSerialization = new OutputSerialization
             {
-                CSV = new CSVOutput()
+                CSV = new CSVOutput
                 {
                     RecordDelimiter = "\n"
                 }
             };
 
-            var eventStream = GetSelectObjectContentEventStream(_bucketName, _csvKeyName, selectQuery, inputSerialization, outputSerialization);
-
+            var eventStream = await GetSelectObjectContentEventStream(_bucketName, _csvKeyName, selectQuery, inputSerialization, outputSerialization);
             var testContent = "";
             var recordsEvents = new List<RecordsEvent>();
 
@@ -199,7 +152,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var streamReader = new StreamReader(recordsEvents[0].Payload, Encoding.UTF8))
             {
-                testContent = streamReader.ReadToEnd();
+                testContent = await streamReader.ReadToEndAsync();
             }
             eventStream.Dispose();
 
@@ -210,28 +163,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on ScanRange setting for CSV InputSerialization and OutputSerialization.
         /// </summary>
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestCallScanRangeEvents()
+        public async Task TestCallScanRangeEvents()
         {
             string selectQuery = "select * from s3object";
-            InputSerialization inputSerialization = new InputSerialization()
+            var inputSerialization = new InputSerialization
             {
-                CSV = new CSVInput()
+                CSV = new CSVInput
                 {
                     FileHeaderInfo = FileHeaderInfo.Use,
                     RecordDelimiter = "\r\n"
                 }
             };
-            OutputSerialization outputSerialization = new OutputSerialization()
+            var outputSerialization = new OutputSerialization
             {
-                CSV = new CSVOutput()
+                CSV = new CSVOutput
                 {
                     RecordDelimiter = "\n"
                 }
             };
 
-            var eventStream = GetSelectObjectContentEventStream(_bucketName, _csvKeyName, selectQuery, inputSerialization, outputSerialization, new ScanRange() { Start = 10, End = 20 });
-
+            var eventStream = await GetSelectObjectContentEventStream(_bucketName, _csvKeyName, selectQuery, inputSerialization, outputSerialization, new ScanRange() { Start = 10, End = 20 });
             var testContent = string.Empty;
             var recordsEvents = new List<RecordsEvent>();
 
@@ -241,14 +192,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var streamReader = new StreamReader(recordsEvents[0].Payload, Encoding.UTF8))
             {
-                testContent = streamReader.ReadToEnd();
+                testContent = await streamReader.ReadToEndAsync();
             }
             eventStream.Dispose();
 
             Assert.IsTrue(string.Equals(CSVScanRangeVerificationContent, testContent));
         }
 
-        private ISelectObjectContentEventStream GetSelectObjectContentEventStream(
+        private async Task<ISelectObjectContentEventStream> GetSelectObjectContentEventStream(
             string bucketName, 
             string key, 
             string selectQuery, 
@@ -262,7 +213,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             if (inputSerialization == null) throw new ArgumentNullException("inputSerialization");
             if (outputSerialization == null) throw new ArgumentNullException("outputSerialization");
 
-            SelectObjectContentRequest selectObjectContentRequest = new SelectObjectContentRequest()
+            var selectObjectContentRequest = new SelectObjectContentRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -272,36 +223,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 OutputSerialization = outputSerialization
             };
 
-            if (scanRange != null) selectObjectContentRequest.ScanRange = scanRange;
+            if (scanRange != null)
+            {
+                selectObjectContentRequest.ScanRange = scanRange;
+            }
 
-            return Client.SelectObjectContent(selectObjectContentRequest).Payload;
+            return (await Client.SelectObjectContentAsync(selectObjectContentRequest)).Payload;
         }
 
-        private ISelectObjectContentEventStream GetSelectObjectContentEventStream()
+        private async Task<ISelectObjectContentEventStream> GetSelectObjectContentEventStream()
         {
-            return Client.SelectObjectContent(new SelectObjectContentRequest()
+            return (await Client.SelectObjectContentAsync(new SelectObjectContentRequest
             {
                 BucketName = _bucketName,
                 Key = _keyName,
                 ExpressionType = ExpressionType.SQL,
                 Expression = SelectQuery,
-                InputSerialization = new InputSerialization()
+                InputSerialization = new InputSerialization
                 {
-                    JSON = new JSONInput()
+                    JSON = new JSONInput
                     {
                         JsonType = JsonType.Lines
                     }
                 },
-                OutputSerialization = new OutputSerialization()
+                OutputSerialization = new OutputSerialization
                 {
                     JSON = new JSONOutput()
                 }
-            }).Payload;
+            })).Payload;
         }
 
         private void AssertRecordsEqualsExpected(string records)
         {
-            Assert.IsTrue(String.Compare(VerificationContent, records, CultureInfo.CurrentCulture,
+            Assert.IsTrue(string.Compare(VerificationContent, records, CultureInfo.CurrentCulture,
                               CompareOptions.IgnoreSymbols) == 0);
         }
 
@@ -315,13 +269,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 return reader.ReadToEnd();
             }
-        }
-
-        [ClassCleanup]
-        public static void ClassCleanup()
-        {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, _bucketName);
-            BaseClean();
         }
     }
 }

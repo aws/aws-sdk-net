@@ -41,6 +41,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFExpiredManagedRuleGroupVersionException
+        /// message.
+        /// </summary>
+        public WAFExpiredManagedRuleGroupVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFExpiredManagedRuleGroupVersionException with the specified error
         /// message.
         /// </summary>

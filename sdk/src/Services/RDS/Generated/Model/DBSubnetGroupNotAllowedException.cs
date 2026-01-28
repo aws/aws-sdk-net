@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSubnetGroupNotAllowedException
+        /// message.
+        /// </summary>
+        public DBSubnetGroupNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSubnetGroupNotAllowedException with the specified error
         /// message.
         /// </summary>

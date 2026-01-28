@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidExportTimeException
+        /// message.
+        /// </summary>
+        public InvalidExportTimeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidExportTimeException with the specified error
         /// message.
         /// </summary>

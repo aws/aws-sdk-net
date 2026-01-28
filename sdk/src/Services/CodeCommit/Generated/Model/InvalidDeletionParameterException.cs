@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeletionParameterException
+        /// message.
+        /// </summary>
+        public InvalidDeletionParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeletionParameterException with the specified error
         /// message.
         /// </summary>

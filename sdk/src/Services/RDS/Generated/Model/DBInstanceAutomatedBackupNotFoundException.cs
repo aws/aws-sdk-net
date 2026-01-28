@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBInstanceAutomatedBackupNotFoundException
+        /// message.
+        /// </summary>
+        public DBInstanceAutomatedBackupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBInstanceAutomatedBackupNotFoundException with the specified error
         /// message.
         /// </summary>

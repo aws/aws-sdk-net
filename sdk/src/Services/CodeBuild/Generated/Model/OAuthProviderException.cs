@@ -39,6 +39,13 @@ namespace Amazon.CodeBuild.Model
     {
 
         /// <summary>
+        /// Default constructor for OAuthProviderException
+        /// message.
+        /// </summary>
+        public OAuthProviderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OAuthProviderException with the specified error
         /// message.
         /// </summary>

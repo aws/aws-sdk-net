@@ -76,159 +76,159 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                     xmlWriter.WriteStartElement("NotificationConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.EventBridgeConfiguration != null)
+                    if (publicRequest.IsSetEventBridgeConfiguration())
                     {
                         xmlWriter.WriteStartElement("EventBridgeConfiguration");
                         xmlWriter.WriteEndElement();
                     }
                     var publicRequestLambdaFunctionConfigurations = publicRequest.LambdaFunctionConfigurations;
-                    if (publicRequestLambdaFunctionConfigurations != null && (publicRequestLambdaFunctionConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IsSetLambdaFunctionConfigurations()) 
                     {
                         foreach (var publicRequestLambdaFunctionConfigurationsValue in publicRequestLambdaFunctionConfigurations) 
                         {
-                        if (publicRequestLambdaFunctionConfigurationsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("CloudFunctionConfiguration");
-                            var publicRequestLambdaFunctionConfigurationsValueEvents = publicRequestLambdaFunctionConfigurationsValue.Events;
-                            if (publicRequestLambdaFunctionConfigurationsValueEvents != null && (publicRequestLambdaFunctionConfigurationsValueEvents.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestLambdaFunctionConfigurationsValue != null)
                             {
-                                foreach (var publicRequestLambdaFunctionConfigurationsValueEventsValue in publicRequestLambdaFunctionConfigurationsValueEvents) 
+                                xmlWriter.WriteStartElement("CloudFunctionConfiguration");
+                                var publicRequestLambdaFunctionConfigurationsValueEvents = publicRequestLambdaFunctionConfigurationsValue.Events;
+                                if (publicRequestLambdaFunctionConfigurationsValue.IsSetEvents()) 
                                 {
-                                    xmlWriter.WriteStartElement("Event");
-                                    xmlWriter.WriteValue(publicRequestLambdaFunctionConfigurationsValueEventsValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            if (publicRequestLambdaFunctionConfigurationsValue.Filter != null)
-                            {
-                                xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestLambdaFunctionConfigurationsValue.Filter.S3KeyFilter != null)
-                                {
-                                    xmlWriter.WriteStartElement("S3Key");
-                                    var publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestLambdaFunctionConfigurationsValue.Filter.S3KeyFilter.FilterRules;
-                                    if (publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules != null && (publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    foreach (var publicRequestLambdaFunctionConfigurationsValueEventsValue in publicRequestLambdaFunctionConfigurationsValueEvents) 
                                     {
-                                        foreach (var publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules) 
+                                        xmlWriter.WriteStartElement("Event");
+                                        xmlWriter.WriteValue(publicRequestLambdaFunctionConfigurationsValueEventsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                if (publicRequestLambdaFunctionConfigurationsValue.IsSetFilter())
+                                {
+                                    xmlWriter.WriteStartElement("Filter");
+                                    if (publicRequestLambdaFunctionConfigurationsValue.Filter.IsSetS3KeyFilter())
+                                    {
+                                        xmlWriter.WriteStartElement("S3Key");
+                                        var publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestLambdaFunctionConfigurationsValue.Filter.S3KeyFilter.FilterRules;
+                                        if (publicRequestLambdaFunctionConfigurationsValue.Filter.S3KeyFilter.IsSetFilterRules()) 
                                         {
-                                        if (publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
-                                        {
-                                            xmlWriter.WriteStartElement("FilterRule");
-                                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
-                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
-                                            xmlWriter.WriteEndElement();
+                                            foreach (var publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRules) 
+                                            {
+                                                if (publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
+                                                {
+                                                    xmlWriter.WriteStartElement("FilterRule");
+                                                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
+                                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
+                                                    xmlWriter.WriteEndElement();
+                                                }
+                                            }            
                                         }
-                                        }            
+                                        xmlWriter.WriteEndElement();
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestLambdaFunctionConfigurationsValue.IsSetFunctionArn())
+                                    xmlWriter.WriteElementString("CloudFunction", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValue.FunctionArn));
+                                if(publicRequestLambdaFunctionConfigurationsValue.IsSetId())
+                                    xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValue.Id));
                                 xmlWriter.WriteEndElement();
                             }
-                            if(publicRequestLambdaFunctionConfigurationsValue.IsSetFunctionArn())
-                                xmlWriter.WriteElementString("CloudFunction", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValue.FunctionArn));
-                            if(publicRequestLambdaFunctionConfigurationsValue.IsSetId())
-                                xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValue.Id));
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                     }
                     var publicRequestQueueConfigurations = publicRequest.QueueConfigurations;
-                    if (publicRequestQueueConfigurations != null && (publicRequestQueueConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IsSetQueueConfigurations()) 
                     {
                         foreach (var publicRequestQueueConfigurationsValue in publicRequestQueueConfigurations) 
                         {
-                        if (publicRequestQueueConfigurationsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("QueueConfiguration");
-                            var publicRequestQueueConfigurationsValueEvents = publicRequestQueueConfigurationsValue.Events;
-                            if (publicRequestQueueConfigurationsValueEvents != null && (publicRequestQueueConfigurationsValueEvents.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestQueueConfigurationsValue != null)
                             {
-                                foreach (var publicRequestQueueConfigurationsValueEventsValue in publicRequestQueueConfigurationsValueEvents) 
+                                xmlWriter.WriteStartElement("QueueConfiguration");
+                                var publicRequestQueueConfigurationsValueEvents = publicRequestQueueConfigurationsValue.Events;
+                                if (publicRequestQueueConfigurationsValue.IsSetEvents()) 
                                 {
-                                    xmlWriter.WriteStartElement("Event");
-                                    xmlWriter.WriteValue(publicRequestQueueConfigurationsValueEventsValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            if (publicRequestQueueConfigurationsValue.Filter != null)
-                            {
-                                xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestQueueConfigurationsValue.Filter.S3KeyFilter != null)
-                                {
-                                    xmlWriter.WriteStartElement("S3Key");
-                                    var publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestQueueConfigurationsValue.Filter.S3KeyFilter.FilterRules;
-                                    if (publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules != null && (publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    foreach (var publicRequestQueueConfigurationsValueEventsValue in publicRequestQueueConfigurationsValueEvents) 
                                     {
-                                        foreach (var publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules) 
+                                        xmlWriter.WriteStartElement("Event");
+                                        xmlWriter.WriteValue(publicRequestQueueConfigurationsValueEventsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                if (publicRequestQueueConfigurationsValue.IsSetFilter())
+                                {
+                                    xmlWriter.WriteStartElement("Filter");
+                                    if (publicRequestQueueConfigurationsValue.Filter.IsSetS3KeyFilter())
+                                    {
+                                        xmlWriter.WriteStartElement("S3Key");
+                                        var publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestQueueConfigurationsValue.Filter.S3KeyFilter.FilterRules;
+                                        if (publicRequestQueueConfigurationsValue.Filter.S3KeyFilter.IsSetFilterRules()) 
                                         {
-                                        if (publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
-                                        {
-                                            xmlWriter.WriteStartElement("FilterRule");
-                                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
-                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
-                                            xmlWriter.WriteEndElement();
+                                            foreach (var publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRules) 
+                                            {
+                                                if (publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
+                                                {
+                                                    xmlWriter.WriteStartElement("FilterRule");
+                                                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
+                                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
+                                                    xmlWriter.WriteEndElement();
+                                                }
+                                            }            
                                         }
-                                        }            
+                                        xmlWriter.WriteEndElement();
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestQueueConfigurationsValue.IsSetId())
+                                    xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestQueueConfigurationsValue.Id));
+                                if(publicRequestQueueConfigurationsValue.IsSetQueue())
+                                    xmlWriter.WriteElementString("Queue", StringUtils.FromString(publicRequestQueueConfigurationsValue.Queue));
                                 xmlWriter.WriteEndElement();
                             }
-                            if(publicRequestQueueConfigurationsValue.IsSetId())
-                                xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestQueueConfigurationsValue.Id));
-                            if(publicRequestQueueConfigurationsValue.IsSetQueue())
-                                xmlWriter.WriteElementString("Queue", StringUtils.FromString(publicRequestQueueConfigurationsValue.Queue));
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                     }
                     var publicRequestTopicConfigurations = publicRequest.TopicConfigurations;
-                    if (publicRequestTopicConfigurations != null && (publicRequestTopicConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.IsSetTopicConfigurations()) 
                     {
                         foreach (var publicRequestTopicConfigurationsValue in publicRequestTopicConfigurations) 
                         {
-                        if (publicRequestTopicConfigurationsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("TopicConfiguration");
-                            var publicRequestTopicConfigurationsValueEvents = publicRequestTopicConfigurationsValue.Events;
-                            if (publicRequestTopicConfigurationsValueEvents != null && (publicRequestTopicConfigurationsValueEvents.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequestTopicConfigurationsValue != null)
                             {
-                                foreach (var publicRequestTopicConfigurationsValueEventsValue in publicRequestTopicConfigurationsValueEvents) 
+                                xmlWriter.WriteStartElement("TopicConfiguration");
+                                var publicRequestTopicConfigurationsValueEvents = publicRequestTopicConfigurationsValue.Events;
+                                if (publicRequestTopicConfigurationsValue.IsSetEvents()) 
                                 {
-                                    xmlWriter.WriteStartElement("Event");
-                                    xmlWriter.WriteValue(publicRequestTopicConfigurationsValueEventsValue);
-                                    xmlWriter.WriteEndElement();
-                                }            
-                            }
-                            if (publicRequestTopicConfigurationsValue.Filter != null)
-                            {
-                                xmlWriter.WriteStartElement("Filter");
-                                if (publicRequestTopicConfigurationsValue.Filter.S3KeyFilter != null)
-                                {
-                                    xmlWriter.WriteStartElement("S3Key");
-                                    var publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestTopicConfigurationsValue.Filter.S3KeyFilter.FilterRules;
-                                    if (publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules != null && (publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    foreach (var publicRequestTopicConfigurationsValueEventsValue in publicRequestTopicConfigurationsValueEvents) 
                                     {
-                                        foreach (var publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules) 
+                                        xmlWriter.WriteStartElement("Event");
+                                        xmlWriter.WriteValue(publicRequestTopicConfigurationsValueEventsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                if (publicRequestTopicConfigurationsValue.IsSetFilter())
+                                {
+                                    xmlWriter.WriteStartElement("Filter");
+                                    if (publicRequestTopicConfigurationsValue.Filter.IsSetS3KeyFilter())
+                                    {
+                                        xmlWriter.WriteStartElement("S3Key");
+                                        var publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules = publicRequestTopicConfigurationsValue.Filter.S3KeyFilter.FilterRules;
+                                        if (publicRequestTopicConfigurationsValue.Filter.S3KeyFilter.IsSetFilterRules()) 
                                         {
-                                        if (publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
-                                        {
-                                            xmlWriter.WriteStartElement("FilterRule");
-                                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
-                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
-                                            xmlWriter.WriteEndElement();
+                                            foreach (var publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue in publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRules) 
+                                            {
+                                                if (publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
+                                                {
+                                                    xmlWriter.WriteStartElement("FilterRule");
+                                                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
+                                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
+                                                    xmlWriter.WriteEndElement();
+                                                }
+                                            }            
                                         }
-                                        }            
+                                        xmlWriter.WriteEndElement();
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestTopicConfigurationsValue.IsSetId())
+                                    xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestTopicConfigurationsValue.Id));
+                                if(publicRequestTopicConfigurationsValue.IsSetTopic())
+                                    xmlWriter.WriteElementString("Topic", StringUtils.FromString(publicRequestTopicConfigurationsValue.Topic));
                                 xmlWriter.WriteEndElement();
                             }
-                            if(publicRequestTopicConfigurationsValue.IsSetId())
-                                xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestTopicConfigurationsValue.Id));
-                            if(publicRequestTopicConfigurationsValue.IsSetTopic())
-                                xmlWriter.WriteElementString("Topic", StringUtils.FromString(publicRequestTopicConfigurationsValue.Topic));
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                     }
 

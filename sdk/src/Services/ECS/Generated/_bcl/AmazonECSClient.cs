@@ -6064,11 +6064,12 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// When you call <c>StopTask</c> on a task, the equivalent of <c>docker stop</c> is issued
-        /// to the containers running in the task. This results in a <c>SIGTERM</c> value and
-        /// a default 30-second timeout, after which the <c>SIGKILL</c> value is sent and the
-        /// containers are forcibly stopped. If the container handles the <c>SIGTERM</c> value
-        /// gracefully and exits within 30 seconds from receiving it, no <c>SIGKILL</c> value
-        /// is sent.
+        /// to the containers running in the task. This results in a stop signal value and a default
+        /// 30-second timeout, after which the <c>SIGKILL</c> value is sent and the containers
+        /// are forcibly stopped. This signal can be defined in your container image with the
+        /// <c>STOPSIGNAL</c> instruction and will default to <c>SIGTERM</c>. If the container
+        /// handles the <c>SIGTERM</c> value gracefully and exits within 30 seconds from receiving
+        /// it, no <c>SIGKILL</c> value is sent.
         /// </para>
         ///  
         /// <para>
@@ -6127,11 +6128,12 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// When you call <c>StopTask</c> on a task, the equivalent of <c>docker stop</c> is issued
-        /// to the containers running in the task. This results in a <c>SIGTERM</c> value and
-        /// a default 30-second timeout, after which the <c>SIGKILL</c> value is sent and the
-        /// containers are forcibly stopped. If the container handles the <c>SIGTERM</c> value
-        /// gracefully and exits within 30 seconds from receiving it, no <c>SIGKILL</c> value
-        /// is sent.
+        /// to the containers running in the task. This results in a stop signal value and a default
+        /// 30-second timeout, after which the <c>SIGKILL</c> value is sent and the containers
+        /// are forcibly stopped. This signal can be defined in your container image with the
+        /// <c>STOPSIGNAL</c> instruction and will default to <c>SIGTERM</c>. If the container
+        /// handles the <c>SIGTERM</c> value gracefully and exits within 30 seconds from receiving
+        /// it, no <c>SIGKILL</c> value is sent.
         /// </para>
         ///  
         /// <para>

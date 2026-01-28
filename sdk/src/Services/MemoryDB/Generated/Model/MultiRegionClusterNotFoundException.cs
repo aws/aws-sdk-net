@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for MultiRegionClusterNotFoundException
+        /// message.
+        /// </summary>
+        public MultiRegionClusterNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MultiRegionClusterNotFoundException with the specified error
         /// message.
         /// </summary>

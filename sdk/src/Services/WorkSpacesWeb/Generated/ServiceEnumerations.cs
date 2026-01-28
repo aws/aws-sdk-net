@@ -271,6 +271,56 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type ColorTheme.
+    /// </summary>
+    public class ColorTheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dark for ColorTheme
+        /// </summary>
+        public static readonly ColorTheme Dark = new ColorTheme("Dark");
+        /// <summary>
+        /// Constant Light for ColorTheme
+        /// </summary>
+        public static readonly ColorTheme Light = new ColorTheme("Light");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColorTheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColorTheme FindValue(string value)
+        {
+            return FindValue<ColorTheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColorTheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnabledType.
     /// </summary>
     public class EnabledType : ConstantClass
@@ -601,6 +651,92 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type Locale.
+    /// </summary>
+    public class Locale : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeDE for Locale
+        /// </summary>
+        public static readonly Locale DeDE = new Locale("de-DE");
+        /// <summary>
+        /// Constant EnUS for Locale
+        /// </summary>
+        public static readonly Locale EnUS = new Locale("en-US");
+        /// <summary>
+        /// Constant EsES for Locale
+        /// </summary>
+        public static readonly Locale EsES = new Locale("es-ES");
+        /// <summary>
+        /// Constant FrFR for Locale
+        /// </summary>
+        public static readonly Locale FrFR = new Locale("fr-FR");
+        /// <summary>
+        /// Constant IdID for Locale
+        /// </summary>
+        public static readonly Locale IdID = new Locale("id-ID");
+        /// <summary>
+        /// Constant ItIT for Locale
+        /// </summary>
+        public static readonly Locale ItIT = new Locale("it-IT");
+        /// <summary>
+        /// Constant JaJP for Locale
+        /// </summary>
+        public static readonly Locale JaJP = new Locale("ja-JP");
+        /// <summary>
+        /// Constant KoKR for Locale
+        /// </summary>
+        public static readonly Locale KoKR = new Locale("ko-KR");
+        /// <summary>
+        /// Constant PtBR for Locale
+        /// </summary>
+        public static readonly Locale PtBR = new Locale("pt-BR");
+        /// <summary>
+        /// Constant ZhCN for Locale
+        /// </summary>
+        public static readonly Locale ZhCN = new Locale("zh-CN");
+        /// <summary>
+        /// Constant ZhTW for Locale
+        /// </summary>
+        public static readonly Locale ZhTW = new Locale("zh-TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Locale(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Locale FindValue(string value)
+        {
+            return FindValue<Locale>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Locale(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogFileFormat.
     /// </summary>
     public class LogFileFormat : ConstantClass
@@ -718,6 +854,60 @@ namespace Amazon.WorkSpacesWeb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MaxDisplayResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MimeType.
+    /// </summary>
+    public class MimeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ImageJpeg for MimeType
+        /// </summary>
+        public static readonly MimeType ImageJpeg = new MimeType("image/jpeg");
+        /// <summary>
+        /// Constant ImagePng for MimeType
+        /// </summary>
+        public static readonly MimeType ImagePng = new MimeType("image/png");
+        /// <summary>
+        /// Constant ImageXIcon for MimeType
+        /// </summary>
+        public static readonly MimeType ImageXIcon = new MimeType("image/x-icon");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MimeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MimeType FindValue(string value)
+        {
+            return FindValue<MimeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MimeType(string value)
         {
             return FindValue(value);
         }

@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTagsToAddException
+        /// message.
+        /// </summary>
+        public InvalidTagsToAddException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTagsToAddException with the specified error
         /// message.
         /// </summary>

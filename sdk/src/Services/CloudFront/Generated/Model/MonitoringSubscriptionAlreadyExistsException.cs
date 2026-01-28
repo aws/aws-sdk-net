@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for MonitoringSubscriptionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public MonitoringSubscriptionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MonitoringSubscriptionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.Inspector2
         /// <summary>
         /// Construct instance of AmazonInspector2Exception
         /// </summary>
+        public AmazonInspector2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonInspector2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonInspector2Exception(string message)
             : base(message)

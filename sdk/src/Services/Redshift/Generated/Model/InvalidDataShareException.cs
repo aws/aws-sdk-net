@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDataShareException
+        /// message.
+        /// </summary>
+        public InvalidDataShareException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDataShareException with the specified error
         /// message.
         /// </summary>

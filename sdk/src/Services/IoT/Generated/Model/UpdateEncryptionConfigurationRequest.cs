@@ -31,12 +31,18 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEncryptionConfiguration operation.
-    /// Updates the encryption configuration. By default, all Amazon Web Services IoT Core
-    /// data at rest is encrypted using Amazon Web Services owned keys. Amazon Web Services
-    /// IoT Core also supports symmetric customer managed keys from Amazon Web Services Key
-    /// Management Service (KMS). With customer managed keys, you create, own, and manage
-    /// the KMS keys in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/data-encryption.html">Data
-    /// encryption</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+    /// Updates the encryption configuration. By default, Amazon Web Services IoT Core encrypts
+    /// your data at rest using Amazon Web Services owned keys. Amazon Web Services IoT Core
+    /// also supports symmetric customer managed keys from Key Management Service (KMS). With
+    /// customer managed keys, you create, own, and manage the KMS keys in your Amazon Web
+    /// Services account. 
+    /// 
+    ///  
+    /// <para>
+    /// Before using this API, you must set up permissions for Amazon Web Services IoT Core
+    /// to access KMS. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
+    /// encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class UpdateEncryptionConfigurationRequest : AmazonIoTRequest
     {
@@ -47,7 +53,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property EncryptionType. 
         /// <para>
-        /// The type of the Amazon Web Services Key Management Service (KMS) key.
+        /// The type of the KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +92,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The ARN of the customer-managed KMS key.
+        /// The ARN of the customer managedKMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

@@ -52,6 +52,14 @@ namespace Amazon.AWSHealth.Internal
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
             };
+            if (!IsSet(refs["Endpoint"]) && Equals(refs["UseDualStack"], false) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-e") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-f"))
+            {
+                if (Equals(refs["UseFIPS"], true))
+                {
+                    return new Endpoint(Interpolate(@"https://health-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+                return new Endpoint(Interpolate(@"https://health.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
             if (IsSet(refs["Endpoint"]))
             {
                 if (Equals(refs["UseFIPS"], true))

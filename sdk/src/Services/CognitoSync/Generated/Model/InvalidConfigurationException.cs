@@ -39,6 +39,13 @@ namespace Amazon.CognitoSync.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidConfigurationException with the specified error
         /// message.
         /// </summary>

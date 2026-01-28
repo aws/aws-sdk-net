@@ -31,7 +31,7 @@ namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
     /// A summary of the agreement, including top-level attributes (for example, the agreement
-    /// ID, version, proposer, and acceptor).
+    /// ID, proposer, and acceptor).
     /// </summary>
     public partial class AgreementViewSummary
     {
@@ -104,7 +104,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property AgreementType. 
         /// <para>
-        /// The type of agreement. Values are <c>PurchaseAgreement</c> or <c>VendorInsightsAgreement</c>.
+        /// The type of agreement. Value is <c>PurchaseAgreement</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

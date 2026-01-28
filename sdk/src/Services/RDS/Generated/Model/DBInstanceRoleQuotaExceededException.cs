@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBInstanceRoleQuotaExceededException
+        /// message.
+        /// </summary>
+        public DBInstanceRoleQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBInstanceRoleQuotaExceededException with the specified error
         /// message.
         /// </summary>

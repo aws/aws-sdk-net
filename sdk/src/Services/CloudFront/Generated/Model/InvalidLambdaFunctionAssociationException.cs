@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLambdaFunctionAssociationException
+        /// message.
+        /// </summary>
+        public InvalidLambdaFunctionAssociationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLambdaFunctionAssociationException with the specified error
         /// message.
         /// </summary>

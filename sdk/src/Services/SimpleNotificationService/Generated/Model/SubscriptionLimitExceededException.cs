@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for SubscriptionLimitExceededException
+        /// message.
+        /// </summary>
+        public SubscriptionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubscriptionLimitExceededException with the specified error
         /// message.
         /// </summary>

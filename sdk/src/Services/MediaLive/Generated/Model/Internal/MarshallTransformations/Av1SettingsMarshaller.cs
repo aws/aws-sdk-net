@@ -195,6 +195,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetTimecodeInsertion())
+            {
+                context.Writer.WritePropertyName("timecodeInsertion");
+                context.Writer.WriteStringValue(requestObject.TimecodeInsertion);
+            }
+
         }
 
         /// <summary>

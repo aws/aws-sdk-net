@@ -39,6 +39,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxLexemeLengthExceededException
+        /// message.
+        /// </summary>
+        public MaxLexemeLengthExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxLexemeLengthExceededException with the specified error
         /// message.
         /// </summary>

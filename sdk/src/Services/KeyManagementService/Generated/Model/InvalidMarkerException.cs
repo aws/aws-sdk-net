@@ -40,6 +40,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMarkerException
+        /// message.
+        /// </summary>
+        public InvalidMarkerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMarkerException with the specified error
         /// message.
         /// </summary>

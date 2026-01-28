@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidIfMatchVersionException
+        /// message.
+        /// </summary>
+        public InvalidIfMatchVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidIfMatchVersionException with the specified error
         /// message.
         /// </summary>

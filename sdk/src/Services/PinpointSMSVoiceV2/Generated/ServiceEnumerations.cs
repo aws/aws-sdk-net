@@ -2301,6 +2301,10 @@ namespace Amazon.PinpointSMSVoiceV2
     {
 
         /// <summary>
+        /// Constant AWS_REVIEWING for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus AWS_REVIEWING = new RegistrationStatus("AWS_REVIEWING");
+        /// <summary>
         /// Constant CLOSED for RegistrationStatus
         /// </summary>
         public static readonly RegistrationStatus CLOSED = new RegistrationStatus("CLOSED");
@@ -2482,6 +2486,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant ARCHIVED for RegistrationVersionStatus
         /// </summary>
         public static readonly RegistrationVersionStatus ARCHIVED = new RegistrationVersionStatus("ARCHIVED");
+        /// <summary>
+        /// Constant AWS_REVIEWING for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus AWS_REVIEWING = new RegistrationVersionStatus("AWS_REVIEWING");
         /// <summary>
         /// Constant DENIED for RegistrationVersionStatus
         /// </summary>

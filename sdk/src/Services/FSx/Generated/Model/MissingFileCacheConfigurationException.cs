@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingFileCacheConfigurationException
+        /// message.
+        /// </summary>
+        public MissingFileCacheConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingFileCacheConfigurationException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for ExportConflictException
+        /// message.
+        /// </summary>
+        public ExportConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExportConflictException with the specified error
         /// message.
         /// </summary>

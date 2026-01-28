@@ -40,6 +40,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatibleRegionForMultiAZException
+        /// message.
+        /// </summary>
+        public IncompatibleRegionForMultiAZException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleRegionForMultiAZException with the specified error
         /// message.
         /// </summary>

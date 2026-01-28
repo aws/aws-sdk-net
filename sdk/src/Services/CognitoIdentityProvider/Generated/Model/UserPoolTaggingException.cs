@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UserPoolTaggingException
+        /// message.
+        /// </summary>
+        public UserPoolTaggingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserPoolTaggingException with the specified error
         /// message.
         /// </summary>

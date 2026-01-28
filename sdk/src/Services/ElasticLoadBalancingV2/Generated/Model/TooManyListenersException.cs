@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyListenersException
+        /// message.
+        /// </summary>
+        public TooManyListenersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyListenersException with the specified error
         /// message.
         /// </summary>

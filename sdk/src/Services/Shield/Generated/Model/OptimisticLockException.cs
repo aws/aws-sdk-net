@@ -40,6 +40,13 @@ namespace Amazon.Shield.Model
     {
 
         /// <summary>
+        /// Default constructor for OptimisticLockException
+        /// message.
+        /// </summary>
+        public OptimisticLockException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OptimisticLockException with the specified error
         /// message.
         /// </summary>

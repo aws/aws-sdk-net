@@ -132,7 +132,7 @@ namespace Amazon.SageMaker.Model
         /// subsequent training jobs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3600)]
+        [AWSProperty(Min=0, Max=21600)]
         public int? KeepAlivePeriodInSeconds
         {
             get { return this._keepAlivePeriodInSeconds; }
@@ -226,6 +226,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property VolumeSizeInGB. 
         /// <para>
         /// The size of the ML storage volume that you want to provision. 
+        /// </para>
+        ///  
+        /// <para>
+        /// SageMaker automatically selects the volume size for serverless training jobs. You
+        /// cannot customize this setting.
         /// </para>
         ///  
         /// <para>

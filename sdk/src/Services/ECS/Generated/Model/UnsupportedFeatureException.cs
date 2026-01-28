@@ -39,6 +39,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedFeatureException
+        /// message.
+        /// </summary>
+        public UnsupportedFeatureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedFeatureException with the specified error
         /// message.
         /// </summary>

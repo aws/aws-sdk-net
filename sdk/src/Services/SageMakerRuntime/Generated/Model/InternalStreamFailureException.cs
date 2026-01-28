@@ -40,6 +40,13 @@ namespace Amazon.SageMakerRuntime.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalStreamFailureException
+        /// message.
+        /// </summary>
+        public InternalStreamFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalStreamFailureException with the specified error
         /// message.
         /// </summary>

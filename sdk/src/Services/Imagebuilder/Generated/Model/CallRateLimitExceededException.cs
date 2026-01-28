@@ -39,6 +39,13 @@ namespace Amazon.Imagebuilder.Model
     {
 
         /// <summary>
+        /// Default constructor for CallRateLimitExceededException
+        /// message.
+        /// </summary>
+        public CallRateLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CallRateLimitExceededException with the specified error
         /// message.
         /// </summary>

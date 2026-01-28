@@ -31,11 +31,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
-    /// Attaches a resource-based policy to a End User MessagingSMS resource(phone number,
+    /// Attaches a resource-based policy to a End User Messaging SMS resource(phone number,
     /// sender Id, phone poll, or opt-out list) that is used for sharing the resource. A shared
     /// resource can be a Pool, Opt-out list, Sender Id, or Phone number. For more information
     /// about resource-based policies, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/shared-resources.html">Working
-    /// with shared resources</a> in the <i>End User MessagingSMS User Guide</i>.
+    /// with shared resources</a> in the <i>End User Messaging SMS User Guide</i>.
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -64,7 +64,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the End User MessagingSMS resource to attach the
+        /// The Amazon Resource Name (ARN) of the End User Messaging SMS resource to attach the
         /// resource-based policy to.
         /// </para>
         /// </summary>

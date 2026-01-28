@@ -40,7 +40,8 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property PricingBucket. 
         /// <para>
-        /// The pricing bucket for which the query is charged at.
+        /// The pricing bucket for which the query is charged at, or the maximum pricing bucket
+        /// when the query is charged per item within the query.
         /// </para>
         ///  
         /// <para>

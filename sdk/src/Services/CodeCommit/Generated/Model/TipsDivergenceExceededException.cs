@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for TipsDivergenceExceededException
+        /// message.
+        /// </summary>
+        public TipsDivergenceExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TipsDivergenceExceededException with the specified error
         /// message.
         /// </summary>

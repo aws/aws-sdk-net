@@ -148,6 +148,16 @@ namespace Amazon.CloudWatchLogs.Model
         IGetScheduledQueryHistoryPaginator GetScheduledQueryHistory(GetScheduledQueryHistoryRequest request);
 
         /// <summary>
+        /// Paginator for ListAggregateLogGroupSummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAggregateLogGroupSummariesPaginator ListAggregateLogGroupSummaries(ListAggregateLogGroupSummariesRequest request);
+
+        /// <summary>
         /// Paginator for ListAnomalies operation
         ///</summary>
         [AWSPaginator(
@@ -186,5 +196,15 @@ namespace Amazon.CloudWatchLogs.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListScheduledQueriesPaginator ListScheduledQueries(ListScheduledQueriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSourcesForS3TableIntegration operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSourcesForS3TableIntegrationPaginator ListSourcesForS3TableIntegration(ListSourcesForS3TableIntegrationRequest request);
     }
 }

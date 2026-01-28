@@ -42,6 +42,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedUserEditionException
+        /// message.
+        /// </summary>
+        public UnsupportedUserEditionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedUserEditionException with the specified error
         /// message.
         /// </summary>

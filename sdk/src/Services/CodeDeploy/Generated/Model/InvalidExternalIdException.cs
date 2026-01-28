@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidExternalIdException
+        /// message.
+        /// </summary>
+        public InvalidExternalIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidExternalIdException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.WorkMail
         /// <summary>
         /// Construct instance of AmazonWorkMailException
         /// </summary>
+        public AmazonWorkMailException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWorkMailException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWorkMailException(string message)
             : base(message)

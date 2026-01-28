@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInstancePropertyFilterValueException
+        /// message.
+        /// </summary>
+        public InvalidInstancePropertyFilterValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInstancePropertyFilterValueException with the specified error
         /// message.
         /// </summary>

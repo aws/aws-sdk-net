@@ -779,7 +779,7 @@
       "type":"string",
       "max":2048,
       "min":20,
-      "pattern":"arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\\d{12}:cloud-vm-cluster/[a-z0-9-_]+"
+      "pattern":"arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster)/[a-z0-9-_]+"
     },
     "AssociateIamRoleToResourceOutput":{
       "type":"structure",
@@ -818,12 +818,14 @@
         "cloudAutonomousVmClusterId":{"shape":"ResourceId"},
         "cloudAutonomousVmClusterArn":{"shape":"String"},
         "odbNetworkId":{"shape":"ResourceIdOrArn"},
+        "odbNetworkArn":{"shape":"ResourceArn"},
         "ociResourceAnchorName":{"shape":"String"},
         "percentProgress":{"shape":"Float"},
         "displayName":{"shape":"ResourceDisplayName"},
         "status":{"shape":"ResourceStatus"},
         "statusReason":{"shape":"String"},
         "cloudExadataInfrastructureId":{"shape":"ResourceIdOrArn"},
+        "cloudExadataInfrastructureArn":{"shape":"ResourceArn"},
         "autonomousDataStoragePercentage":{"shape":"Float"},
         "autonomousDataStorageSizeInTBs":{"shape":"Double"},
         "availableAutonomousDataStorageSizeInTBs":{"shape":"Double"},
@@ -863,7 +865,8 @@
         "timeDatabaseSslCertificateExpires":{"shape":"SyntheticTimestamp_date_time"},
         "timeOrdsCertificateExpires":{"shape":"SyntheticTimestamp_date_time"},
         "timeZone":{"shape":"String"},
-        "totalContainerDatabases":{"shape":"Integer"}
+        "totalContainerDatabases":{"shape":"Integer"},
+        "iamRoles":{"shape":"IamRoleList"}
       }
     },
     "CloudAutonomousVmClusterList":{
@@ -888,12 +891,14 @@
         "cloudAutonomousVmClusterId":{"shape":"ResourceId"},
         "cloudAutonomousVmClusterArn":{"shape":"String"},
         "odbNetworkId":{"shape":"ResourceIdOrArn"},
+        "odbNetworkArn":{"shape":"ResourceArn"},
         "ociResourceAnchorName":{"shape":"String"},
         "percentProgress":{"shape":"Float"},
         "displayName":{"shape":"ResourceDisplayName"},
         "status":{"shape":"ResourceStatus"},
         "statusReason":{"shape":"String"},
         "cloudExadataInfrastructureId":{"shape":"ResourceIdOrArn"},
+        "cloudExadataInfrastructureArn":{"shape":"ResourceArn"},
         "autonomousDataStoragePercentage":{"shape":"Float"},
         "autonomousDataStorageSizeInTBs":{"shape":"Double"},
         "availableAutonomousDataStorageSizeInTBs":{"shape":"Double"},
@@ -933,7 +938,8 @@
         "timeDatabaseSslCertificateExpires":{"shape":"SyntheticTimestamp_date_time"},
         "timeOrdsCertificateExpires":{"shape":"SyntheticTimestamp_date_time"},
         "timeZone":{"shape":"String"},
-        "totalContainerDatabases":{"shape":"Integer"}
+        "totalContainerDatabases":{"shape":"Integer"},
+        "iamRoles":{"shape":"IamRoleList"}
       }
     },
     "CloudExadataInfrastructure":{
@@ -1050,6 +1056,7 @@
         "statusReason":{"shape":"String"},
         "cloudVmClusterArn":{"shape":"String"},
         "cloudExadataInfrastructureId":{"shape":"String"},
+        "cloudExadataInfrastructureArn":{"shape":"ResourceArn"},
         "clusterName":{"shape":"String"},
         "cpuCoreCount":{"shape":"Integer"},
         "dataCollectionOptions":{"shape":"DataCollectionOptions"},
@@ -1082,6 +1089,7 @@
         "timeZone":{"shape":"String"},
         "vipIds":{"shape":"StringList"},
         "odbNetworkId":{"shape":"ResourceIdOrArn"},
+        "odbNetworkArn":{"shape":"ResourceArn"},
         "percentProgress":{"shape":"Float"},
         "computeModel":{"shape":"ComputeModel"},
         "iamRoles":{"shape":"IamRoleList"}
@@ -1101,6 +1109,7 @@
         "statusReason":{"shape":"String"},
         "cloudVmClusterArn":{"shape":"String"},
         "cloudExadataInfrastructureId":{"shape":"String"},
+        "cloudExadataInfrastructureArn":{"shape":"ResourceArn"},
         "clusterName":{"shape":"String"},
         "cpuCoreCount":{"shape":"Integer"},
         "dataCollectionOptions":{"shape":"DataCollectionOptions"},
@@ -1133,6 +1142,7 @@
         "timeZone":{"shape":"String"},
         "vipIds":{"shape":"StringList"},
         "odbNetworkId":{"shape":"ResourceIdOrArn"},
+        "odbNetworkArn":{"shape":"ResourceArn"},
         "percentProgress":{"shape":"Float"},
         "computeModel":{"shape":"ComputeModel"},
         "iamRoles":{"shape":"IamRoleList"}
@@ -1861,7 +1871,7 @@
       "type":"string",
       "max":2048,
       "min":20,
-      "pattern":"arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\\d{12}:cloud-vm-cluster/[a-z0-9-_]+"
+      "pattern":"arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster)/[a-z0-9-_]+"
     },
     "DisassociateIamRoleFromResourceOutput":{
       "type":"structure",

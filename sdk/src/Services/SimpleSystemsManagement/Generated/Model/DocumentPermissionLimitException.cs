@@ -51,6 +51,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DocumentPermissionLimitException
+        /// message.
+        /// </summary>
+        public DocumentPermissionLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DocumentPermissionLimitException with the specified error
         /// message.
         /// </summary>

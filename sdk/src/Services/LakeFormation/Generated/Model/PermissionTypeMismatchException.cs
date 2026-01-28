@@ -42,6 +42,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for PermissionTypeMismatchException
+        /// message.
+        /// </summary>
+        public PermissionTypeMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PermissionTypeMismatchException with the specified error
         /// message.
         /// </summary>

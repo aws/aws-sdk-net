@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for ExecutionDoesNotExistException
+        /// message.
+        /// </summary>
+        public ExecutionDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExecutionDoesNotExistException with the specified error
         /// message.
         /// </summary>

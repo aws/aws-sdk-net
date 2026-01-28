@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRepositoryTriggerRegionException
+        /// message.
+        /// </summary>
+        public InvalidRepositoryTriggerRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRepositoryTriggerRegionException with the specified error
         /// message.
         /// </summary>

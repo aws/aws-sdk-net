@@ -41,6 +41,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for TaskSetNotFoundException
+        /// message.
+        /// </summary>
+        public TaskSetNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TaskSetNotFoundException with the specified error
         /// message.
         /// </summary>

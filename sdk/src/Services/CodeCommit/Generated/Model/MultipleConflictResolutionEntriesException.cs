@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MultipleConflictResolutionEntriesException
+        /// message.
+        /// </summary>
+        public MultipleConflictResolutionEntriesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MultipleConflictResolutionEntriesException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumResultReturnedException
+        /// message.
+        /// </summary>
+        public MaximumResultReturnedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumResultReturnedException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for DomainNotFoundException
+        /// message.
+        /// </summary>
+        public DomainNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DomainNotFoundException with the specified error
         /// message.
         /// </summary>

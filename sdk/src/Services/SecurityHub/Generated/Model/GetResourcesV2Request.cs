@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourcesV2 operation.
-    /// Returns a list of resources. This API is in public preview and subject to change.
+    /// Returns a list of resources.
     /// </summary>
     public partial class GetResourcesV2Request : AmazonSecurityHubRequest
     {

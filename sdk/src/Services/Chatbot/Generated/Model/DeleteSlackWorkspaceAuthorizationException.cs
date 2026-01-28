@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for DeleteSlackWorkspaceAuthorizationException
+        /// message.
+        /// </summary>
+        public DeleteSlackWorkspaceAuthorizationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeleteSlackWorkspaceAuthorizationException with the specified error
         /// message.
         /// </summary>

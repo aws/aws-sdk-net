@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((PutManagedInsightRulesRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,57 +58,45 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutManagedInsightRulesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "PutManagedInsightRules");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/PutManagedInsightRules";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetManagedRules())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetManagedRules())
                 {
-                    if (publicRequest.ManagedRules.Count == 0)
-                        request.Parameters.Add("ManagedRules", "");
-                    else
+                    context.Writer.WriteTextString("ManagedRules");
+                    context.Writer.WriteStartArray(publicRequest.ManagedRules.Count);
+                    foreach(var publicRequestManagedRulesListValue in publicRequest.ManagedRules)
                     {
-                         int publicRequestlistValueIndex = 1;
-                         foreach(var publicRequestlistValue in publicRequest.ManagedRules)
-                         {
-                            if(publicRequestlistValue.IsSetResourceARN())
-                            {
-                                request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceARN", StringUtils.FromString(publicRequestlistValue.ResourceARN));
-                            }
-                            if(publicRequestlistValue.IsSetTags())
-                            {
-                                if (publicRequestlistValue.Tags.Count == 0)
-                                    request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags", "");
-                                else
-                                {
-                                     int publicRequestlistValuelistValueIndex = 1;
-                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
-                                     {
-                                        if(publicRequestlistValuelistValue.IsSetKey())
-                                        {
-                                            request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                        }
-                                        if(publicRequestlistValuelistValue.IsSetValue())
-                                        {
-                                            request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                        }
-                                         publicRequestlistValuelistValueIndex++;
-                                     }
-                                }
-                            }
-                            if(publicRequestlistValue.IsSetTemplateName())
-                            {
-                                request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TemplateName", StringUtils.FromString(publicRequestlistValue.TemplateName));
-                            }
-                             publicRequestlistValueIndex++;
-                         }
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ManagedRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestManagedRulesListValue, context);
+
+                        context.Writer.WriteEndMap();
                     }
+                    context.Writer.WriteEndArray();
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static PutManagedInsightRulesRequestMarshaller _instance = new PutManagedInsightRulesRequestMarshaller();        
+        private static PutManagedInsightRulesRequestMarshaller _instance = new PutManagedInsightRulesRequestMarshaller();        
 
         internal static PutManagedInsightRulesRequestMarshaller GetInstance()
         {

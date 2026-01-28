@@ -39,6 +39,13 @@ namespace Amazon.MediaStore.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyNotFoundException
+        /// message.
+        /// </summary>
+        public PolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyNotFoundException with the specified error
         /// message.
         /// </summary>

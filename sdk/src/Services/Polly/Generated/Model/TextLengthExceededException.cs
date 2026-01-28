@@ -43,6 +43,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for TextLengthExceededException
+        /// message.
+        /// </summary>
+        public TextLengthExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TextLengthExceededException with the specified error
         /// message.
         /// </summary>

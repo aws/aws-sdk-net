@@ -43,6 +43,13 @@ namespace Amazon.Lightsail.Model
         private string _tip;
 
         /// <summary>
+        /// Default constructor for RegionSetupInProgressException
+        /// message.
+        /// </summary>
+        public RegionSetupInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RegionSetupInProgressException with the specified error
         /// message.
         /// </summary>

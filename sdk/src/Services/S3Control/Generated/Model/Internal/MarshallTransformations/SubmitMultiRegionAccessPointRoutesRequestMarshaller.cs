@@ -73,22 +73,22 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("SubmitMultiRegionAccessPointRoutesRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 var publicRequestRouteUpdates = publicRequest.RouteUpdates;
-                if (publicRequestRouteUpdates != null && (publicRequestRouteUpdates.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetRouteUpdates()) 
                 {
                     xmlWriter.WriteStartElement("RouteUpdates");
                     foreach (var publicRequestRouteUpdatesValue in publicRequestRouteUpdates) 
                     {
-                    if (publicRequestRouteUpdatesValue != null)
-                    {
-                        xmlWriter.WriteStartElement("Route");
-                        if(publicRequestRouteUpdatesValue.IsSetBucket())
-                            xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));
-                        if(publicRequestRouteUpdatesValue.IsSetRegion())
-                            xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));
-                        if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
-                            xmlWriter.WriteElementString("TrafficDialPercentage", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestRouteUpdatesValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Route");
+                            if(publicRequestRouteUpdatesValue.IsSetBucket())
+                                xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));
+                            if(publicRequestRouteUpdatesValue.IsSetRegion())
+                                xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));
+                            if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
+                                xmlWriter.WriteElementString("TrafficDialPercentage", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }

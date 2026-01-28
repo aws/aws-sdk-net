@@ -36,6 +36,14 @@ namespace Amazon.PartnerCentralChannel
         /// <summary>
         /// Construct instance of AmazonPartnerCentralChannelException
         /// </summary>
+        public AmazonPartnerCentralChannelException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPartnerCentralChannelException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPartnerCentralChannelException(string message)
             : base(message)

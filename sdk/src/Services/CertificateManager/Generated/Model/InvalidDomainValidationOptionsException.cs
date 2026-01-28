@@ -39,6 +39,13 @@ namespace Amazon.CertificateManager.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDomainValidationOptionsException
+        /// message.
+        /// </summary>
+        public InvalidDomainValidationOptionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDomainValidationOptionsException with the specified error
         /// message.
         /// </summary>

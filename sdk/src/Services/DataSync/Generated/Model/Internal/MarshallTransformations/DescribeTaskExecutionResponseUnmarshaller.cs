@@ -94,6 +94,18 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.EstimatedFilesToTransfer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EstimatedFoldersToDelete", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.EstimatedFoldersToDelete = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("EstimatedFoldersToTransfer", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.EstimatedFoldersToTransfer = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Excludes", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
@@ -140,6 +152,48 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesVerified = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FoldersDeleted", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.FoldersDeleted = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FoldersFailed", targetDepth))
+                {
+                    var unmarshaller = TaskExecutionFoldersFailedDetailUnmarshaller.Instance;
+                    response.FoldersFailed = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FoldersListed", targetDepth))
+                {
+                    var unmarshaller = TaskExecutionFoldersListedDetailUnmarshaller.Instance;
+                    response.FoldersListed = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FoldersPrepared", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.FoldersPrepared = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FoldersSkipped", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.FoldersSkipped = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FoldersTransferred", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.FoldersTransferred = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FoldersVerified", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.FoldersVerified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Includes", targetDepth))

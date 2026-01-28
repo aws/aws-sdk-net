@@ -36,6 +36,14 @@ namespace Amazon.Invoicing
         /// <summary>
         /// Construct instance of AmazonInvoicingException
         /// </summary>
+        public AmazonInvoicingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonInvoicingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonInvoicingException(string message)
             : base(message)

@@ -3012,6 +3012,73 @@ namespace Amazon.DataZone
         }
         #endregion
         
+        #region  DeleteDataExportConfiguration
+
+        internal virtual DeleteDataExportConfigurationResponse DeleteDataExportConfiguration(DeleteDataExportConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataExportConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes data export configuration for a domain.
+        /// 
+        ///  
+        /// <para>
+        /// This operation does not delete the S3 table created by the PutDataExportConfiguration
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To temporarily disable export without deleting the configuration, use the PutDataExportConfiguration
+        /// operation with the <c>--no-enable-export</c> flag instead. This allows you to re-enable
+        /// export for the same domain using the <c>--enable-export</c> flag without deleting
+        /// S3 table.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataExportConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataExportConfiguration">REST API Reference for DeleteDataExportConfiguration Operation</seealso>
+        public virtual Task<DeleteDataExportConfigurationResponse> DeleteDataExportConfigurationAsync(DeleteDataExportConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataExportConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteDataProduct
 
         internal virtual DeleteDataProductResponse DeleteDataProduct(DeleteDataProductRequest request)
@@ -4665,6 +4732,57 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetDataExportConfiguration
+
+        internal virtual GetDataExportConfigurationResponse GetDataExportConfiguration(GetDataExportConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataExportConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets data export configuration details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataExportConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataExportConfiguration">REST API Reference for GetDataExportConfiguration Operation</seealso>
+        public virtual Task<GetDataExportConfigurationResponse> GetDataExportConfigurationAsync(GetDataExportConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataExportConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -8209,6 +8327,91 @@ namespace Amazon.DataZone
         }
         #endregion
         
+        #region  PutDataExportConfiguration
+
+        internal virtual PutDataExportConfigurationResponse PutDataExportConfiguration(PutDataExportConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutDataExportConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates data export configuration details.
+        /// 
+        ///  
+        /// <para>
+        /// If you want to temporarily disable export and later re-enable it for the same domain,
+        /// use the <c>--no-enable-export</c> flag to disable and the <c>--enable-export</c> flag
+        /// to re-enable. This preserves the configuration and allows you to re-enable export
+        /// without deleting S3 table.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can enable asset metadata export for only one domain per account per Region. To
+        /// enable export for a different domain, complete the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Delete the export configuration for the currently enabled domain using the DeleteDataExportConfiguration
+        /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete the asset S3 table under the aws-sagemaker-catalog S3 table bucket. We recommend
+        /// backing up the S3 table before deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call the PutDataExportConfiguration API to enable export for the new domain.
+        /// </para>
+        ///  </li> </ol> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataExportConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDataExportConfiguration service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutDataExportConfiguration">REST API Reference for PutDataExportConfiguration Operation</seealso>
+        public virtual Task<PutDataExportConfigurationResponse> PutDataExportConfigurationAsync(PutDataExportConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDataExportConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataExportConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDataExportConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  PutEnvironmentBlueprintConfiguration
 
         internal virtual PutEnvironmentBlueprintConfigurationResponse PutEnvironmentBlueprintConfiguration(PutEnvironmentBlueprintConfigurationRequest request)
@@ -8584,7 +8787,35 @@ namespace Amazon.DataZone
         /// <para>
         /// For paginated results, be prepared to use --next-token to fetch additional pages.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To run a standard free-text search, the <c>searchText</c> parameter must be supplied.
+        /// By default, all searchable fields are indexed for semantic search and will return
+        /// semantic matches for SearchListings queries. To prevent semantic search indexing for
+        /// a custom form attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+        /// API documentation</a>. To run a lexical search query, enclose the query with double
+        /// quotes (""). This will disable semantic search even for fields that have semantic
+        /// search enabled and will only return results that contain the keywords wrapped by double
+        /// quotes (order of tokens in the query is not enforced). Free-text search is supported
+        /// for all attributes annotated with @amazon.datazone#searchable.
+        /// </para>
+        ///  
+        /// <para>
+        /// To run a filtered search, provide filter clause using the <c>filters</c> parameter.
+        /// To filter on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To filter on an indexed numeric attribute (i.e., a numeric attribute annotated with
+        /// <c>@amazon.datazone#sortable</c>), provide a filter using the <c>intValue</c> parameter.
+        /// The filters parameter can also be used to run more advanced free-text searches that
+        /// target specific attributes (attributes must be annotated with <c>@amazon.datazone#searchable</c>
+        /// for free-text search). Create/update timestamp filtering is supported using the special
+        /// <c>creationTime</c>/<c>lastUpdatedTime</c> attributes. Filter types can be mixed and
+        /// matched to power complex queries.
+        /// </para>
+        ///  
+        /// <para>
+        ///  To find out whether an attribute has been annotated and indexed for a given search
+        /// type, use the GetFormType API to retrieve the form containing the attribute.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
         /// <param name="cancellationToken">
@@ -8708,10 +8939,10 @@ namespace Amazon.DataZone
         /// </para>
         ///  
         /// <para>
-        /// To run a free-text search, the <c>searchText</c> parameter must be supplied. By default,
-        /// all searchable fields are indexed for semantic search and will return semantic matches
-        /// for SearchListings queries. To prevent semantic search indexing for a custom form
-        /// attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+        /// To run a standard free-text search, the <c>searchText</c> parameter must be supplied.
+        /// By default, all searchable fields are indexed for semantic search and will return
+        /// semantic matches for SearchListings queries. To prevent semantic search indexing for
+        /// a custom form attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
         /// API documentation</a>. To run a lexical search query, enclose the query with double
         /// quotes (""). This will disable semantic search even for fields that have semantic
         /// search enabled and will only return results that contain the keywords wrapped by double
@@ -8720,8 +8951,15 @@ namespace Amazon.DataZone
         /// </para>
         ///  
         /// <para>
-        /// To run a filtered search, provide filter clause using the filters parameter. To filter
-        /// on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To run a filtered search, provide filter clause using the <c>filters</c> parameter.
+        /// To filter on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// To filter on an indexed numeric attribute (i.e., a numeric attribute annotated with
+        /// <c>@amazon.datazone#sortable</c>), provide a filter using the <c>intValue</c> parameter.
+        /// The filters parameter can also be used to run more advanced free-text searches that
+        /// target specific attributes (attributes must be annotated with <c>@amazon.datazone#searchable</c>
+        /// for free-text search). Create/update timestamp filtering is supported using the special
+        /// <c>creationTime</c>/<c>lastUpdatedTime</c> attributes. Filter types can be mixed and
+        /// matched to power complex queries.
         /// </para>
         ///  
         /// <para>
@@ -8983,7 +9221,7 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.
+        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS.
         /// </para>
         ///  </li> <li> 
         /// <para>

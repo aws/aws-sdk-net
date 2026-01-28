@@ -98,6 +98,19 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetHeading())
+            {
+                context.Writer.WritePropertyName("Heading");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.Heading.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.Heading.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.Heading.Value);
+                }
+            }
+
             if(publicRequest.IsSetIntendedUse())
             {
                 context.Writer.WritePropertyName("IntendedUse");

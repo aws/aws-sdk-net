@@ -39,6 +39,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for MailDomainNotFoundException
+        /// message.
+        /// </summary>
+        public MailDomainNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MailDomainNotFoundException with the specified error
         /// message.
         /// </summary>

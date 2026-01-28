@@ -80,6 +80,12 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                     unmarshalledObject.DistanceMetric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("encryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("indexArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

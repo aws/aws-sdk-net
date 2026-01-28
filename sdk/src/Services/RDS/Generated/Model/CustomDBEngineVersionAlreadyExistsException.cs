@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomDBEngineVersionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CustomDBEngineVersionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomDBEngineVersionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

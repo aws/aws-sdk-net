@@ -62,7 +62,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetVerbose())
+                request.Parameters.Add("verbose", StringUtils.FromBool(publicRequest.Verbose));
             request.ResourcePath = "/v2LoggingOptions";
+            request.UseQueryString = true;
 
             return request;
         }

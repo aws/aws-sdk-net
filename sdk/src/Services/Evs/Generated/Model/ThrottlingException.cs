@@ -30,9 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// The operation couldn't be performed because the service is throttling requests. This
-    /// exception is thrown when there are too many requests accepted concurrently from the
-    /// service endpoint.
+    /// The operation could not be performed because the service is throttling requests. This
+    /// exception is thrown when the service endpoint receives too many concurrent requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -42,6 +41,13 @@ namespace Amazon.Evs.Model
         private int? _retryAfterSeconds;
 
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
+
+        /// <summary>
+        /// Default constructor for ThrottlingException
+        /// message.
+        /// </summary>
+        public ThrottlingException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error

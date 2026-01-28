@@ -35,6 +35,10 @@ namespace Amazon.SageMaker.Model
     public partial class PipelineExecutionStepMetadata
     {
         private AutoMLJobStepMetadata _autoMLJob;
+        private BedrockCustomModelMetadata _bedrockCustomModel;
+        private BedrockCustomModelDeploymentMetadata _bedrockCustomModelDeployment;
+        private BedrockModelImportMetadata _bedrockModelImport;
+        private BedrockProvisionedModelThroughputMetadata _bedrockProvisionedModelThroughput;
         private CallbackStepMetadata _callback;
         private ClarifyCheckStepMetadata _clarifyCheck;
         private ConditionStepMetadata _condition;
@@ -42,7 +46,9 @@ namespace Amazon.SageMaker.Model
         private EndpointStepMetadata _endpoint;
         private EndpointConfigStepMetadata _endpointConfig;
         private FailStepMetadata _fail;
+        private InferenceComponentMetadata _inferenceComponent;
         private LambdaStepMetadata _lambda;
+        private LineageMetadata _lineage;
         private ModelStepMetadata _model;
         private ProcessingJobStepMetadata _processingJob;
         private QualityCheckStepMetadata _qualityCheck;
@@ -67,6 +73,81 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAutoMLJob()
         {
             return this._autoMLJob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockCustomModel. 
+        /// <para>
+        ///  The metadata of the Amazon Bedrock custom model used in the pipeline execution step.
+        /// 
+        /// </para>
+        /// </summary>
+        public BedrockCustomModelMetadata BedrockCustomModel
+        {
+            get { return this._bedrockCustomModel; }
+            set { this._bedrockCustomModel = value; }
+        }
+
+        // Check to see if BedrockCustomModel property is set
+        internal bool IsSetBedrockCustomModel()
+        {
+            return this._bedrockCustomModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockCustomModelDeployment. 
+        /// <para>
+        ///  The metadata of the Amazon Bedrock custom model deployment used in pipeline execution
+        /// step. 
+        /// </para>
+        /// </summary>
+        public BedrockCustomModelDeploymentMetadata BedrockCustomModelDeployment
+        {
+            get { return this._bedrockCustomModelDeployment; }
+            set { this._bedrockCustomModelDeployment = value; }
+        }
+
+        // Check to see if BedrockCustomModelDeployment property is set
+        internal bool IsSetBedrockCustomModelDeployment()
+        {
+            return this._bedrockCustomModelDeployment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockModelImport. 
+        /// <para>
+        ///  The metadata of Amazon Bedrock model import used in pipeline execution step. 
+        /// </para>
+        /// </summary>
+        public BedrockModelImportMetadata BedrockModelImport
+        {
+            get { return this._bedrockModelImport; }
+            set { this._bedrockModelImport = value; }
+        }
+
+        // Check to see if BedrockModelImport property is set
+        internal bool IsSetBedrockModelImport()
+        {
+            return this._bedrockModelImport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockProvisionedModelThroughput. 
+        /// <para>
+        ///  The metadata of the Amazon Bedrock provisioned model throughput used in the pipeline
+        /// execution step. 
+        /// </para>
+        /// </summary>
+        public BedrockProvisionedModelThroughputMetadata BedrockProvisionedModelThroughput
+        {
+            get { return this._bedrockProvisionedModelThroughput; }
+            set { this._bedrockProvisionedModelThroughput = value; }
+        }
+
+        // Check to see if BedrockProvisionedModelThroughput property is set
+        internal bool IsSetBedrockProvisionedModelThroughput()
+        {
+            return this._bedrockProvisionedModelThroughput != null;
         }
 
         /// <summary>
@@ -232,6 +313,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InferenceComponent. 
+        /// <para>
+        ///  The metadata of the inference component used in pipeline execution step. 
+        /// </para>
+        /// </summary>
+        public InferenceComponentMetadata InferenceComponent
+        {
+            get { return this._inferenceComponent; }
+            set { this._inferenceComponent = value; }
+        }
+
+        // Check to see if InferenceComponent property is set
+        internal bool IsSetInferenceComponent()
+        {
+            return this._inferenceComponent != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Lambda. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution
@@ -248,6 +347,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLambda()
         {
             return this._lambda != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lineage. 
+        /// <para>
+        ///  The metadata of the lineage used in pipeline execution step. 
+        /// </para>
+        /// </summary>
+        public LineageMetadata Lineage
+        {
+            get { return this._lineage; }
+            set { this._lineage = value; }
+        }
+
+        // Check to see if Lineage property is set
+        internal bool IsSetLineage()
+        {
+            return this._lineage != null;
         }
 
         /// <summary>

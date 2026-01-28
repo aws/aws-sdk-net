@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumNumberOfApprovalsExceededException
+        /// message.
+        /// </summary>
+        public MaximumNumberOfApprovalsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumNumberOfApprovalsExceededException with the specified error
         /// message.
         /// </summary>

@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The text content of the memory item.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=9000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100000)]
         public string Text
         {
             get { return this._text; }

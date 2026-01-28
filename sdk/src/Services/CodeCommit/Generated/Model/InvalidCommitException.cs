@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCommitException
+        /// message.
+        /// </summary>
+        public InvalidCommitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCommitException with the specified error
         /// message.
         /// </summary>

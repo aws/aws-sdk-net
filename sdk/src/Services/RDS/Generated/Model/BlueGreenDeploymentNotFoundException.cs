@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for BlueGreenDeploymentNotFoundException
+        /// message.
+        /// </summary>
+        public BlueGreenDeploymentNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BlueGreenDeploymentNotFoundException with the specified error
         /// message.
         /// </summary>

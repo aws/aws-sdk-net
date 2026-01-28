@@ -36,6 +36,14 @@ namespace Amazon.Ivschat
         /// <summary>
         /// Construct instance of AmazonIvschatException
         /// </summary>
+        public AmazonIvschatException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIvschatException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIvschatException(string message)
             : base(message)

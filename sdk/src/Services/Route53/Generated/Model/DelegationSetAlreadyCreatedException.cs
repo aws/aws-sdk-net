@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for DelegationSetAlreadyCreatedException
+        /// message.
+        /// </summary>
+        public DelegationSetAlreadyCreatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DelegationSetAlreadyCreatedException with the specified error
         /// message.
         /// </summary>

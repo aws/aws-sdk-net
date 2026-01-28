@@ -36,6 +36,14 @@ namespace Amazon.DocDBElastic
         /// <summary>
         /// Construct instance of AmazonDocDBElasticException
         /// </summary>
+        public AmazonDocDBElasticException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDocDBElasticException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDocDBElasticException(string message)
             : base(message)

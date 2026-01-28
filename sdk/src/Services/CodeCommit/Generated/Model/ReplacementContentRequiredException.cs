@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ReplacementContentRequiredException
+        /// message.
+        /// </summary>
+        public ReplacementContentRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplacementContentRequiredException with the specified error
         /// message.
         /// </summary>

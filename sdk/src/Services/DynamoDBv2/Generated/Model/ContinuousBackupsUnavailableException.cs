@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for ContinuousBackupsUnavailableException
+        /// message.
+        /// </summary>
+        public ContinuousBackupsUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ContinuousBackupsUnavailableException with the specified error
         /// message.
         /// </summary>

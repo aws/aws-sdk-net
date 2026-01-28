@@ -67,7 +67,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetComment())
                     xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
 
-                if (publicRequest.ImportSource != null)
+                if (publicRequest.IsSetImportSource())
                 {
                     xmlWriter.WriteStartElement("ImportSource");
                     if(publicRequest.ImportSource.IsSetSourceARN())

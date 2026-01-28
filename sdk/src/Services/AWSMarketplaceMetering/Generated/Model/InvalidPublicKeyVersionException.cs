@@ -39,6 +39,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPublicKeyVersionException
+        /// message.
+        /// </summary>
+        public InvalidPublicKeyVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPublicKeyVersionException with the specified error
         /// message.
         /// </summary>

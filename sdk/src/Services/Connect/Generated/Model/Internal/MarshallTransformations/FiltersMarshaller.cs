@@ -101,6 +101,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetSubtypes())
+            {
+                context.Writer.WritePropertyName("Subtypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSubtypesListValue in requestObject.Subtypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectSubtypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetValidationTestTypes())
+            {
+                context.Writer.WritePropertyName("ValidationTestTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectValidationTestTypesListValue in requestObject.ValidationTestTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectValidationTestTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

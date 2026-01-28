@@ -42,6 +42,13 @@ namespace Amazon.Organizations.Model
         private AccessDeniedForDependencyExceptionReason _reason;
 
         /// <summary>
+        /// Default constructor for AccessDeniedForDependencyException
+        /// message.
+        /// </summary>
+        public AccessDeniedForDependencyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessDeniedForDependencyException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for FacetInUseException
+        /// message.
+        /// </summary>
+        public FacetInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FacetInUseException with the specified error
         /// message.
         /// </summary>

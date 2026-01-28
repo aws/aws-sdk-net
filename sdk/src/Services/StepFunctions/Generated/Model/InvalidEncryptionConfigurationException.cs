@@ -42,6 +42,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEncryptionConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidEncryptionConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEncryptionConfigurationException with the specified error
         /// message.
         /// </summary>

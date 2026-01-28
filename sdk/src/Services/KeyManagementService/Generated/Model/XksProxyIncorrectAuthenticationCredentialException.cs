@@ -42,6 +42,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksProxyIncorrectAuthenticationCredentialException
+        /// message.
+        /// </summary>
+        public XksProxyIncorrectAuthenticationCredentialException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksProxyIncorrectAuthenticationCredentialException with the specified error
         /// message.
         /// </summary>

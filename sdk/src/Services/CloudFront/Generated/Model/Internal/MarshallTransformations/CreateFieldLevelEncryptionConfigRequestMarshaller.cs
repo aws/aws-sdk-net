@@ -72,29 +72,29 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.FieldLevelEncryptionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FieldLevelEncryptionConfig.Comment));
 
-                    if (publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig != null)
+                    if (publicRequest.FieldLevelEncryptionConfig.IsSetContentTypeProfileConfig())
                     {
                         xmlWriter.WriteStartElement("ContentTypeProfileConfig");
-                        if (publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ContentTypeProfiles != null)
+                        if (publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.IsSetContentTypeProfiles())
                         {
                             xmlWriter.WriteStartElement("ContentTypeProfiles");
                             var publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems = publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ContentTypeProfiles.Items;
-                            if (publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems != null && (publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ContentTypeProfiles.IsSetItems()) 
                             {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue in publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems) 
                                 {
-                                if (publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("ContentTypeProfile");
-                                    if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetContentType())
-                                        xmlWriter.WriteElementString("ContentType", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.ContentType));
-                                    if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetFormat())
-                                        xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.Format));
-                                    if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetProfileId())
-                                        xmlWriter.WriteElementString("ProfileId", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.ProfileId));
-                                    xmlWriter.WriteEndElement();
-                                }
+                                    if (publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue != null)
+                                    {
+                                        xmlWriter.WriteStartElement("ContentTypeProfile");
+                                        if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetContentType())
+                                            xmlWriter.WriteElementString("ContentType", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.ContentType));
+                                        if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetFormat())
+                                            xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.Format));
+                                        if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetProfileId())
+                                            xmlWriter.WriteElementString("ProfileId", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.ProfileId));
+                                        xmlWriter.WriteEndElement();
+                                    }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
@@ -106,29 +106,29 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("ForwardWhenContentTypeIsUnknown", StringUtils.FromBool(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ForwardWhenContentTypeIsUnknown.Value));
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig != null)
+                    if (publicRequest.FieldLevelEncryptionConfig.IsSetQueryArgProfileConfig())
                     {
                         xmlWriter.WriteStartElement("QueryArgProfileConfig");
                         if(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.IsSetForwardWhenQueryArgProfileIsUnknown())
                             xmlWriter.WriteElementString("ForwardWhenQueryArgProfileIsUnknown", StringUtils.FromBool(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.ForwardWhenQueryArgProfileIsUnknown.Value));
-                        if (publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles != null)
+                        if (publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.IsSetQueryArgProfiles())
                         {
                             xmlWriter.WriteStartElement("QueryArgProfiles");
                             var publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems = publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles.Items;
-                            if (publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems != null && (publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles.IsSetItems()) 
                             {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue in publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems) 
                                 {
-                                if (publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue != null)
-                                {
-                                    xmlWriter.WriteStartElement("QueryArgProfile");
-                                    if(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.IsSetProfileId())
-                                        xmlWriter.WriteElementString("ProfileId", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.ProfileId));
-                                    if(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.IsSetQueryArg())
-                                        xmlWriter.WriteElementString("QueryArg", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.QueryArg));
-                                    xmlWriter.WriteEndElement();
-                                }
+                                    if (publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue != null)
+                                    {
+                                        xmlWriter.WriteStartElement("QueryArgProfile");
+                                        if(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.IsSetProfileId())
+                                            xmlWriter.WriteElementString("ProfileId", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.ProfileId));
+                                        if(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.IsSetQueryArg())
+                                            xmlWriter.WriteElementString("QueryArg", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.QueryArg));
+                                        xmlWriter.WriteEndElement();
+                                    }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }

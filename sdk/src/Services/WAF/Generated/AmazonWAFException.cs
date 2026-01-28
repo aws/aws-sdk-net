@@ -36,6 +36,14 @@ namespace Amazon.WAF
         /// <summary>
         /// Construct instance of AmazonWAFException
         /// </summary>
+        public AmazonWAFException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWAFException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWAFException(string message)
             : base(message)

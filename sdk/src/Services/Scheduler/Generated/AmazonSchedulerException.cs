@@ -36,6 +36,14 @@ namespace Amazon.Scheduler
         /// <summary>
         /// Construct instance of AmazonSchedulerException
         /// </summary>
+        public AmazonSchedulerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSchedulerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSchedulerException(string message)
             : base(message)

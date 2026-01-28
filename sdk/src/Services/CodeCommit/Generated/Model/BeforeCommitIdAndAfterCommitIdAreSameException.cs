@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for BeforeCommitIdAndAfterCommitIdAreSameException
+        /// message.
+        /// </summary>
+        public BeforeCommitIdAndAfterCommitIdAreSameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BeforeCommitIdAndAfterCommitIdAreSameException with the specified error
         /// message.
         /// </summary>

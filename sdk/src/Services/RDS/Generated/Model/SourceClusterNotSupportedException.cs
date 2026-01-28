@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for SourceClusterNotSupportedException
+        /// message.
+        /// </summary>
+        public SourceClusterNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SourceClusterNotSupportedException with the specified error
         /// message.
         /// </summary>

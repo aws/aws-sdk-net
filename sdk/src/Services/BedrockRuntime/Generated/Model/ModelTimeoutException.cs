@@ -39,6 +39,13 @@ namespace Amazon.BedrockRuntime.Model
     {
 
         /// <summary>
+        /// Default constructor for ModelTimeoutException
+        /// message.
+        /// </summary>
+        public ModelTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ModelTimeoutException with the specified error
         /// message.
         /// </summary>

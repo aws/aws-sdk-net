@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingParameterException
+        /// message.
+        /// </summary>
+        public MissingParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingParameterException with the specified error
         /// message.
         /// </summary>

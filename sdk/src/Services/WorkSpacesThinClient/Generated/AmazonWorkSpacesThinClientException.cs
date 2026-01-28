@@ -36,6 +36,14 @@ namespace Amazon.WorkSpacesThinClient
         /// <summary>
         /// Construct instance of AmazonWorkSpacesThinClientException
         /// </summary>
+        public AmazonWorkSpacesThinClientException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWorkSpacesThinClientException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWorkSpacesThinClientException(string message)
             : base(message)

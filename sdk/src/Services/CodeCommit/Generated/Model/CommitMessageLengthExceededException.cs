@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CommitMessageLengthExceededException
+        /// message.
+        /// </summary>
+        public CommitMessageLengthExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CommitMessageLengthExceededException with the specified error
         /// message.
         /// </summary>

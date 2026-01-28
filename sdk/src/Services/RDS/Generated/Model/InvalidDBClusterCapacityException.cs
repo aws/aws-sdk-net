@@ -41,6 +41,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBClusterCapacityException
+        /// message.
+        /// </summary>
+        public InvalidDBClusterCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBClusterCapacityException with the specified error
         /// message.
         /// </summary>

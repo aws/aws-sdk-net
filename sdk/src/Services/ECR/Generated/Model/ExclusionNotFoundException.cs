@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for ExclusionNotFoundException
+        /// message.
+        /// </summary>
+        public ExclusionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExclusionNotFoundException with the specified error
         /// message.
         /// </summary>

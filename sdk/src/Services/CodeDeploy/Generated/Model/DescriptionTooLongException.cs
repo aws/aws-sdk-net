@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DescriptionTooLongException
+        /// message.
+        /// </summary>
+        public DescriptionTooLongException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DescriptionTooLongException with the specified error
         /// message.
         /// </summary>

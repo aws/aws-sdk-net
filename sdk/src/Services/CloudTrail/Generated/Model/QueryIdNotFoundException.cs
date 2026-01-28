@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for QueryIdNotFoundException
+        /// message.
+        /// </summary>
+        public QueryIdNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueryIdNotFoundException with the specified error
         /// message.
         /// </summary>

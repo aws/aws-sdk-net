@@ -71,8 +71,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property KmsAccess. 
         /// <para>
-        /// The Amazon Web Services Key Management Service (KMS) access configuration for managed
-        /// services.
+        /// The Amazon Web Services Key Management Service (KMS) access configuration.
         /// </para>
         /// </summary>
         public KmsAccess KmsAccess
@@ -206,8 +205,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property StsAccess. 
         /// <para>
-        /// The Amazon Web Services Security Token Service (STS) access configuration for managed
-        /// services.
+        /// The Amazon Web Services Security Token Service (STS) access configuration.
         /// </para>
         /// </summary>
         public StsAccess StsAccess

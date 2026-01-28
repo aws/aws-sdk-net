@@ -52,6 +52,17 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.ApplyNormalization.Value);
             }
 
+            if(requestObject.IsSetCustomerProfilesIntegrationConfig())
+            {
+                context.Writer.WritePropertyName("customerProfilesIntegrationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomerProfilesIntegrationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomerProfilesIntegrationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetKMSArn())
             {
                 context.Writer.WritePropertyName("KMSArn");

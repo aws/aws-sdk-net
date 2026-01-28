@@ -39,6 +39,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for EC2InstanceNotFoundException
+        /// message.
+        /// </summary>
+        public EC2InstanceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EC2InstanceNotFoundException with the specified error
         /// message.
         /// </summary>

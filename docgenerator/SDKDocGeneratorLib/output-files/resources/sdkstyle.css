@@ -216,3 +216,62 @@ span.parameter {
     height:16px;
 }
 
+/* 
+ * Collapsible TOC
+ */
+#pageTOC {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+    #pageTOC h2 {
+        margin: 5px 0 5px 0;
+        font-size: 1.1em;
+        cursor: pointer;
+        user-select: none;
+        color: #495057;
+    }
+
+        #pageTOC h2:hover {
+            color: #007bff;
+        }
+
+    #pageTOC ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #pageTOC li {
+        margin: 5px 0;
+    }
+
+    #pageTOC a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 0.9em;
+    }
+
+        #pageTOC a:hover {
+            text-decoration: underline;
+        }
+
+    #pageTOC.collapsed {
+        position: fixed;
+        top: 0px;
+        right: 6px;
+        width: 150px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+#tocToggle {
+    float: right;
+    font-size: 0.8em;
+    padding-top: 2px;
+}
+

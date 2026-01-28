@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRelativeFileVersionEnumException
+        /// message.
+        /// </summary>
+        public InvalidRelativeFileVersionEnumException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRelativeFileVersionEnumException with the specified error
         /// message.
         /// </summary>

@@ -628,37 +628,41 @@ namespace Amazon.S3.Internal
                 {
                     if (IsValidHostLabel((string)refs["outpostId"], false))
                     {
-                        if (Equals(refs["hardwareType"], "e"))
+                        if (IsVirtualHostableS3Bucket((string)refs["Bucket"], false))
                         {
-                            if (Equals(refs["regionPrefix"], "beta"))
+                            if (Equals(refs["hardwareType"], "e"))
                             {
-                                if (!IsSet(refs["Endpoint"]))
+                                if (Equals(refs["regionPrefix"], "beta"))
                                 {
-                                    throw new AmazonClientException("Expected a endpoint to be specified but no endpoint was found");
+                                    if (!IsSet(refs["Endpoint"]))
+                                    {
+                                        throw new AmazonClientException("Expected a endpoint to be specified but no endpoint was found");
+                                    }
+                                    if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.ec2.{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4a"",""signingName"":""s3-outposts"",""signingRegionSet"":[""*""]},{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
-                                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
-                                {
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.ec2.{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4a"",""signingName"":""s3-outposts"",""signingRegionSet"":[""*""]},{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
-                                }
+                                return new Endpoint(Interpolate(@"https://{Bucket}.ec2.s3-outposts.{Region}.{regionPartition#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4a"",""signingName"":""s3-outposts"",""signingRegionSet"":[""*""]},{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                             }
-                            return new Endpoint(Interpolate(@"https://{Bucket}.ec2.s3-outposts.{Region}.{regionPartition#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4a"",""signingName"":""s3-outposts"",""signingRegionSet"":[""*""]},{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals(refs["hardwareType"], "o"))
-                        {
-                            if (Equals(refs["regionPrefix"], "beta"))
+                            if (Equals(refs["hardwareType"], "o"))
                             {
-                                if (!IsSet(refs["Endpoint"]))
+                                if (Equals(refs["regionPrefix"], "beta"))
                                 {
-                                    throw new AmazonClientException("Expected a endpoint to be specified but no endpoint was found");
+                                    if (!IsSet(refs["Endpoint"]))
+                                    {
+                                        throw new AmazonClientException("Expected a endpoint to be specified but no endpoint was found");
+                                    }
+                                    if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                                    {
+                                        return new Endpoint(Interpolate(@"https://{Bucket}.op-{outpostId}.{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4a"",""signingName"":""s3-outposts"",""signingRegionSet"":[""*""]},{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                    }
                                 }
-                                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
-                                {
-                                    return new Endpoint(Interpolate(@"https://{Bucket}.op-{outpostId}.{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4a"",""signingName"":""s3-outposts"",""signingRegionSet"":[""*""]},{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
-                                }
+                                return new Endpoint(Interpolate(@"https://{Bucket}.op-{outpostId}.s3-outposts.{Region}.{regionPartition#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4a"",""signingName"":""s3-outposts"",""signingRegionSet"":[""*""]},{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                             }
-                            return new Endpoint(Interpolate(@"https://{Bucket}.op-{outpostId}.s3-outposts.{Region}.{regionPartition#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4a"",""signingName"":""s3-outposts"",""signingRegionSet"":[""*""]},{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            throw new AmazonClientException(Interpolate(@"Unrecognized hardware type: ""Expected hardware type o or e but got {hardwareType}""", refs));
                         }
-                        throw new AmazonClientException(Interpolate(@"Unrecognized hardware type: ""Expected hardware type o or e but got {hardwareType}""", refs));
+                        throw new AmazonClientException("Invalid Outposts Bucket alias - it must be a valid bucket name.");
                     }
                     throw new AmazonClientException("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`.");
                 }

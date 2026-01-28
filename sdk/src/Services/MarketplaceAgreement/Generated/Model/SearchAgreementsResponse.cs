@@ -41,7 +41,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property AgreementViewSummaries. 
         /// <para>
         /// A summary of the agreement, including top-level attributes (for example, the agreement
-        /// ID, version, proposer, and acceptor).
+        /// ID, proposer, and acceptor).
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

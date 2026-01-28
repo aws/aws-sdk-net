@@ -36,6 +36,14 @@ namespace Amazon.AppSync
         /// <summary>
         /// Construct instance of AmazonAppSyncException
         /// </summary>
+        public AmazonAppSyncException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAppSyncException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAppSyncException(string message)
             : base(message)

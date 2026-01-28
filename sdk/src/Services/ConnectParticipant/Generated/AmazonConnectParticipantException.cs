@@ -36,6 +36,14 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Construct instance of AmazonConnectParticipantException
         /// </summary>
+        public AmazonConnectParticipantException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonConnectParticipantException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonConnectParticipantException(string message)
             : base(message)

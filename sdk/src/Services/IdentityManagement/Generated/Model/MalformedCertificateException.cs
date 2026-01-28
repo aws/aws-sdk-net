@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for MalformedCertificateException
+        /// message.
+        /// </summary>
+        public MalformedCertificateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedCertificateException with the specified error
         /// message.
         /// </summary>

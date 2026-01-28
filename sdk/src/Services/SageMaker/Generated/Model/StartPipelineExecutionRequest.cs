@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class StartPipelineExecutionRequest : AmazonSageMakerRequest
     {
         private string _clientRequestToken;
+        private string _mlflowExperimentName;
         private ParallelismConfiguration _parallelismConfiguration;
         private string _pipelineExecutionDescription;
         private string _pipelineExecutionDisplayName;
@@ -62,6 +63,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlflowExperimentName. 
+        /// <para>
+        ///  The MLflow experiment name of the pipeline execution. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string MlflowExperimentName
+        {
+            get { return this._mlflowExperimentName; }
+            set { this._mlflowExperimentName = value; }
+        }
+
+        // Check to see if MlflowExperimentName property is set
+        internal bool IsSetMlflowExperimentName()
+        {
+            return this._mlflowExperimentName != null;
         }
 
         /// <summary>

@@ -40,6 +40,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceNotActiveException
+        /// message.
+        /// </summary>
+        public ServiceNotActiveException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceNotActiveException with the specified error
         /// message.
         /// </summary>

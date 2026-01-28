@@ -42,6 +42,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for RequestTooLargeException
+        /// message.
+        /// </summary>
+        public RequestTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestTooLargeException with the specified error
         /// message.
         /// </summary>

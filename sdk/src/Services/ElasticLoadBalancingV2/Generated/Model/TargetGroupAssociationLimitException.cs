@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TargetGroupAssociationLimitException
+        /// message.
+        /// </summary>
+        public TargetGroupAssociationLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TargetGroupAssociationLimitException with the specified error
         /// message.
         /// </summary>

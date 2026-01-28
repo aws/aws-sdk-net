@@ -62,6 +62,13 @@ namespace Amazon.WAFRegional.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFNonexistentContainerException
+        /// message.
+        /// </summary>
+        public WAFNonexistentContainerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFNonexistentContainerException with the specified error
         /// message.
         /// </summary>

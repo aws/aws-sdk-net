@@ -36,6 +36,14 @@ namespace Amazon.AmplifyUIBuilder
         /// <summary>
         /// Construct instance of AmazonAmplifyUIBuilderException
         /// </summary>
+        public AmazonAmplifyUIBuilderException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAmplifyUIBuilderException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAmplifyUIBuilderException(string message)
             : base(message)

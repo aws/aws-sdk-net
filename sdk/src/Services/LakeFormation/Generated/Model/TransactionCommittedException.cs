@@ -40,6 +40,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for TransactionCommittedException
+        /// message.
+        /// </summary>
+        public TransactionCommittedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TransactionCommittedException with the specified error
         /// message.
         /// </summary>

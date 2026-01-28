@@ -106,7 +106,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property IamIdentityCenterOptions. 
         /// <para>
         /// Describes IAM Identity Center options in the form of a key-value map. This field is
-        /// required if you specify iamidentitycenter for the type parameter.
+        /// required if you specify <c>iamidentitycenter</c> for the <c>type</c> parameter.
         /// </para>
         /// </summary>
         public CreateIamIdentityCenterConfigOptions IamIdentityCenterOptions
@@ -143,8 +143,8 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property SamlOptions. 
         /// <para>
-        /// Describes SAML options in in the form of a key-value map. This field is required if
-        /// you specify <c>SAML</c> for the <c>type</c> parameter.
+        /// Describes SAML options in the form of a key-value map. This field is required if you
+        /// specify <c>SAML</c> for the <c>type</c> parameter.
         /// </para>
         /// </summary>
         public SamlConfigOptions SamlOptions

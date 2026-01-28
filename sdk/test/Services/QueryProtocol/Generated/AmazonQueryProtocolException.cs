@@ -36,6 +36,14 @@ namespace Amazon.QueryProtocol
         /// <summary>
         /// Construct instance of AmazonQueryProtocolException
         /// </summary>
+        public AmazonQueryProtocolException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonQueryProtocolException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonQueryProtocolException(string message)
             : base(message)

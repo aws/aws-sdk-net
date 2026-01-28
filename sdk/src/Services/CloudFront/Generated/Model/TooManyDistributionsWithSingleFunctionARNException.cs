@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsWithSingleFunctionARNException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsWithSingleFunctionARNException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsWithSingleFunctionARNException with the specified error
         /// message.
         /// </summary>

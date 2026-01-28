@@ -48,6 +48,7 @@ namespace Amazon.CleanRooms.Model
         private AnalysisSchema _schema;
         private AnalysisSource _source;
         private AnalysisSourceMetadata _sourceMetadata;
+        private SyntheticDataParameters _syntheticDataParameters;
         private DateTime? _updateTime;
         private List<AnalysisTemplateValidationStatusDetail> _validations = AWSConfigs.InitializeCollections ? new List<AnalysisTemplateValidationStatusDetail>() : null;
 
@@ -323,6 +324,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetSourceMetadata()
         {
             return this._sourceMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyntheticDataParameters. 
+        /// <para>
+        /// The synthetic data generation parameters configured for this collaboration analysis
+        /// template.
+        /// </para>
+        /// </summary>
+        public SyntheticDataParameters SyntheticDataParameters
+        {
+            get { return this._syntheticDataParameters; }
+            set { this._syntheticDataParameters = value; }
+        }
+
+        // Check to see if SyntheticDataParameters property is set
+        internal bool IsSetSyntheticDataParameters()
+        {
+            return this._syntheticDataParameters != null;
         }
 
         /// <summary>

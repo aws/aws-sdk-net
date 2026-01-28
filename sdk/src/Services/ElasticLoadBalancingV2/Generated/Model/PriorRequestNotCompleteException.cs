@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for PriorRequestNotCompleteException
+        /// message.
+        /// </summary>
+        public PriorRequestNotCompleteException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PriorRequestNotCompleteException with the specified error
         /// message.
         /// </summary>

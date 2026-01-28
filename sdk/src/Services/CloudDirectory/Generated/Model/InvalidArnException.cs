@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidArnException
+        /// message.
+        /// </summary>
+        public InvalidArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidArnException with the specified error
         /// message.
         /// </summary>

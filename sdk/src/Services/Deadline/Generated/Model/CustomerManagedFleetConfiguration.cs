@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The details of a customer managed fleet configuration.
+    /// The configuration details for a customer managed fleet.
     /// </summary>
     public partial class CustomerManagedFleetConfiguration
     {
@@ -42,7 +42,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The Auto Scaling mode for the customer managed fleet configuration.
+        /// The Auto Scaling mode for the customer managed fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property StorageProfileId. 
         /// <para>
-        /// The storage profile ID.
+        /// The storage profile ID for the customer managed fleet.
         /// </para>
         /// </summary>
         public string StorageProfileId
@@ -79,18 +79,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property TagPropagationMode. 
         /// <para>
-        /// Specifies whether tags associated with a fleet are attached to workers when the worker
-        /// is launched. 
-        /// </para>
-        ///  
-        /// <para>
-        /// When the <c>tagPropagationMode</c> is set to <c>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</c>
-        /// any tag associated with a fleet is attached to workers when they launch. If the tags
-        /// for a fleet change, the tags associated with running workers <b>do not</b> change.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't specify <c>tagPropagationMode</c>, the default is <c>NO_PROPAGATION</c>.
+        /// The tag propagation mode for the customer managed fleet.
         /// </para>
         /// </summary>
         public TagPropagationMode TagPropagationMode
@@ -108,7 +97,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property WorkerCapabilities. 
         /// <para>
-        /// The worker capabilities for a customer managed fleet configuration.
+        /// The worker capabilities for the customer managed fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

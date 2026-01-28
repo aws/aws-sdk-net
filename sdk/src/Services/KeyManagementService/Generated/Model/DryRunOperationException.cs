@@ -39,6 +39,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for DryRunOperationException
+        /// message.
+        /// </summary>
+        public DryRunOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DryRunOperationException with the specified error
         /// message.
         /// </summary>

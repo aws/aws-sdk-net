@@ -40,6 +40,13 @@ namespace Amazon.FSx.Model
         private string _backupId;
 
         /// <summary>
+        /// Default constructor for BackupBeingCopiedException
+        /// message.
+        /// </summary>
+        public BackupBeingCopiedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BackupBeingCopiedException with the specified error
         /// message.
         /// </summary>

@@ -171,6 +171,35 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest.Arn</property>
+    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest.HostedZoneId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest.RecordName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListTagsForResourceRequest.Arn</property>
     <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
   </property-value-rule>
@@ -267,7 +296,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Asg.Arn</property>
-    <pattern>arn:aws:autoscaling:[a-z0-9-]+:\d{12}:autoScalingGroup:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}:autoScalingGroupName/[\S\s]{1,255}</pattern>
+    <pattern>arn:aws[a-zA-Z-]*:autoscaling:[a-z0-9-]+:\d{12}:autoScalingGroup:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}:autoScalingGroupName/[\S\s]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Asg.CrossAccountRole</property>
@@ -279,6 +308,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.CustomActionLambdaConfiguration.TimeoutMinutes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.CrossAccountRole</property>
+    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.GlobalClusterIdentifier</property>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.TimeoutMinutes</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -422,8 +463,18 @@
     <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.S3ReportOutputConfiguration.BucketOwner</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.S3ReportOutputConfiguration.BucketPath</property>
+    <min>3</min>
+    <max>512</max>
+    <pattern>(?:s3://)?[a-z0-9][a-z0-9-]{1,61}[a-z0-9](?:/[^/ ][^/]*)*/?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Service.ClusterArn</property>
-    <pattern>arn:aws:ecs:[a-z0-9-]+:\d{12}:cluster/[a-zA-Z0-9_-]{1,255}</pattern>
+    <pattern>arn:aws[a-zA-Z-]*:ecs:[a-z0-9-]+:\d{12}:cluster/[a-zA-Z0-9_-]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Service.CrossAccountRole</property>
@@ -431,7 +482,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Service.ServiceArn</property>
-    <pattern>arn:aws:ecs:[a-z0-9-]+:\d{12}:service/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]{1,255}</pattern>
+    <pattern>arn:aws[a-zA-Z-]*:ecs:[a-z0-9-]+:\d{12}:service/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Trigger.TargetRegion</property>

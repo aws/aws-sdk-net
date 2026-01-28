@@ -46,6 +46,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for IDPRejectedClaimException
+        /// message.
+        /// </summary>
+        public IDPRejectedClaimException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IDPRejectedClaimException with the specified error
         /// message.
         /// </summary>

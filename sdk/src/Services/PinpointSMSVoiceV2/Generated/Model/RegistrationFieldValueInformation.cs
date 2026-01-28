@@ -35,6 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class RegistrationFieldValueInformation
     {
         private string _deniedReason;
+        private string _feedback;
         private string _fieldPath;
         private string _registrationAttachmentId;
         private List<string> _selectChoices = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -56,6 +57,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetDeniedReason()
         {
             return this._deniedReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Feedback. 
+        /// <para>
+        /// Feedback provided for this specific field during the registration review process.
+        /// This may include validation errors, suggestions for improvement, or additional requirements.
+        /// </para>
+        /// </summary>
+        public string Feedback
+        {
+            get { return this._feedback; }
+            set { this._feedback = value; }
+        }
+
+        // Check to see if Feedback property is set
+        internal bool IsSetFeedback()
+        {
+            return this._feedback != null;
         }
 
         /// <summary>

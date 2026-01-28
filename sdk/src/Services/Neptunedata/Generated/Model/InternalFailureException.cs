@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for InternalFailureException
+        /// message.
+        /// </summary>
+        public InternalFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalFailureException with the specified error
         /// message.
         /// </summary>

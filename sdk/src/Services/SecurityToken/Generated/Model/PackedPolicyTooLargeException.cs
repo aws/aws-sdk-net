@@ -51,6 +51,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for PackedPolicyTooLargeException
+        /// message.
+        /// </summary>
+        public PackedPolicyTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PackedPolicyTooLargeException with the specified error
         /// message.
         /// </summary>

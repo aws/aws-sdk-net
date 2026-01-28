@@ -30,13 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The filter expression, <c>AND</c> or <c>OR</c>, to use when searching among a group
-    /// of search strings in a resource. 
-    /// <para>
-    /// You can use two groupings per search each within parenthesis <c>()</c>.
-    /// 
-    /// 
-    /// </para>
+    /// The search terms for a resource.
     /// </summary>
     public partial class SearchGroupedFilterExpressions
     {

@@ -62,6 +62,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetDiskEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("diskEncryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DiskEncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DiskEncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMonitoringConfiguration())
             {
                 context.Writer.WritePropertyName("monitoringConfiguration");

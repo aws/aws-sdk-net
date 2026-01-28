@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidJobIdException
+        /// message.
+        /// </summary>
+        public InvalidJobIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidJobIdException with the specified error
         /// message.
         /// </summary>

@@ -329,22 +329,6 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-design.large
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.2xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.4xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// stream.graphics.g4dn.xlarge
         /// </para>
         ///  </li> <li> 

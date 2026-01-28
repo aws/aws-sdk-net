@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for S3AccessPointAttachmentNotFoundException
+        /// message.
+        /// </summary>
+        public S3AccessPointAttachmentNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new S3AccessPointAttachmentNotFoundException with the specified error
         /// message.
         /// </summary>

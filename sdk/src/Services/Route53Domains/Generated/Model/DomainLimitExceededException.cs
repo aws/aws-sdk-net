@@ -39,6 +39,13 @@ namespace Amazon.Route53Domains.Model
     {
 
         /// <summary>
+        /// Default constructor for DomainLimitExceededException
+        /// message.
+        /// </summary>
+        public DomainLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DomainLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -33,11 +33,37 @@ namespace Amazon.Connect.Model
     /// Contains information about a real-time metric. For a description of each metric, see
     /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
     /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Only one of either the Name or MetricId is required.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CurrentMetric
     {
+        private string _metricId;
         private CurrentMetricName _name;
         private Unit _unit;
+
+        /// <summary>
+        /// Gets and sets the property MetricId. 
+        /// <para>
+        /// Out of the box current metrics or custom metrics can be referenced via this field.
+        /// This field is a valid AWS Connect Arn or a UUID.
+        /// </para>
+        /// </summary>
+        public string MetricId
+        {
+            get { return this._metricId; }
+            set { this._metricId = value; }
+        }
+
+        // Check to see if MetricId property is set
+        internal bool IsSetMetricId()
+        {
+            return this._metricId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -58,7 +84,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Unit. 
+        /// Gets and sets the property Unit. <note> 
+        /// <para>
+        /// The Unit parameter is not supported for custom metrics.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The unit for the metric.
         /// </para>

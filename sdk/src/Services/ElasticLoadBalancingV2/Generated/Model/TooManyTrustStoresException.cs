@@ -40,6 +40,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyTrustStoresException
+        /// message.
+        /// </summary>
+        public TooManyTrustStoresException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTrustStoresException with the specified error
         /// message.
         /// </summary>

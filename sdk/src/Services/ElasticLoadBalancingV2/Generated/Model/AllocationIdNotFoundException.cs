@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for AllocationIdNotFoundException
+        /// message.
+        /// </summary>
+        public AllocationIdNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AllocationIdNotFoundException with the specified error
         /// message.
         /// </summary>

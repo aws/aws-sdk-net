@@ -65,7 +65,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("XmlListsRequest", "");
                 var publicRequestBooleanList = publicRequest.BooleanList;
-                if (publicRequestBooleanList != null && (publicRequestBooleanList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetBooleanList()) 
                 {
                     xmlWriter.WriteStartElement("booleanList");
                     foreach (var publicRequestBooleanListValue in publicRequestBooleanList) 
@@ -77,7 +77,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestEnumList = publicRequest.EnumList;
-                if (publicRequestEnumList != null && (publicRequestEnumList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetEnumList()) 
                 {
                     xmlWriter.WriteStartElement("enumList");
                     foreach (var publicRequestEnumListValue in publicRequestEnumList) 
@@ -89,7 +89,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestFlattenedList = publicRequest.FlattenedList;
-                if (publicRequestFlattenedList != null && (publicRequestFlattenedList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFlattenedList()) 
                 {
                     foreach (var publicRequestFlattenedListValue in publicRequestFlattenedList) 
                     {
@@ -99,7 +99,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }            
                 }
                 var publicRequestFlattenedList2 = publicRequest.FlattenedList2;
-                if (publicRequestFlattenedList2 != null && (publicRequestFlattenedList2.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFlattenedList2()) 
                 {
                     foreach (var publicRequestFlattenedList2Value in publicRequestFlattenedList2) 
                     {
@@ -109,7 +109,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }            
                 }
                 var publicRequestFlattenedListWithMemberNamespace = publicRequest.FlattenedListWithMemberNamespace;
-                if (publicRequestFlattenedListWithMemberNamespace != null && (publicRequestFlattenedListWithMemberNamespace.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFlattenedListWithMemberNamespace()) 
                 {
                     foreach (var publicRequestFlattenedListWithMemberNamespaceValue in publicRequestFlattenedListWithMemberNamespace) 
                     {
@@ -120,7 +120,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }            
                 }
                 var publicRequestFlattenedListWithNamespace = publicRequest.FlattenedListWithNamespace;
-                if (publicRequestFlattenedListWithNamespace != null && (publicRequestFlattenedListWithNamespace.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFlattenedListWithNamespace()) 
                 {
                     foreach (var publicRequestFlattenedListWithNamespaceValue in publicRequestFlattenedListWithNamespace) 
                     {
@@ -130,23 +130,23 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }            
                 }
                 var publicRequestFlattenedStructureList = publicRequest.FlattenedStructureList;
-                if (publicRequestFlattenedStructureList != null && (publicRequestFlattenedStructureList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFlattenedStructureList()) 
                 {
                     foreach (var publicRequestFlattenedStructureListValue in publicRequestFlattenedStructureList) 
                     {
-                    if (publicRequestFlattenedStructureListValue != null)
-                    {
-                        xmlWriter.WriteStartElement("flattenedStructureList");
-                        if(publicRequestFlattenedStructureListValue.IsSetA())
-                            xmlWriter.WriteElementString("value", StringUtils.FromString(publicRequestFlattenedStructureListValue.A));
-                        if(publicRequestFlattenedStructureListValue.IsSetB())
-                            xmlWriter.WriteElementString("other", StringUtils.FromString(publicRequestFlattenedStructureListValue.B));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestFlattenedStructureListValue != null)
+                        {
+                            xmlWriter.WriteStartElement("flattenedStructureList");
+                            if(publicRequestFlattenedStructureListValue.IsSetA())
+                                xmlWriter.WriteElementString("value", StringUtils.FromString(publicRequestFlattenedStructureListValue.A));
+                            if(publicRequestFlattenedStructureListValue.IsSetB())
+                                xmlWriter.WriteElementString("other", StringUtils.FromString(publicRequestFlattenedStructureListValue.B));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                 }
                 var publicRequestIntegerList = publicRequest.IntegerList;
-                if (publicRequestIntegerList != null && (publicRequestIntegerList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetIntegerList()) 
                 {
                     xmlWriter.WriteStartElement("integerList");
                     foreach (var publicRequestIntegerListValue in publicRequestIntegerList) 
@@ -158,7 +158,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestIntEnumList = publicRequest.IntEnumList;
-                if (publicRequestIntEnumList != null && (publicRequestIntEnumList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetIntEnumList()) 
                 {
                     xmlWriter.WriteStartElement("intEnumList");
                     foreach (var publicRequestIntEnumListValue in publicRequestIntEnumList) 
@@ -170,7 +170,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestNestedStringList = publicRequest.NestedStringList;
-                if (publicRequestNestedStringList != null && (publicRequestNestedStringList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetNestedStringList()) 
                 {
                     xmlWriter.WriteStartElement("nestedStringList");
                     foreach (var publicRequestNestedStringListValue in publicRequestNestedStringList) 
@@ -187,7 +187,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestRenamedListMembers = publicRequest.RenamedListMembers;
-                if (publicRequestRenamedListMembers != null && (publicRequestRenamedListMembers.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetRenamedListMembers()) 
                 {
                     xmlWriter.WriteStartElement("renamed");
                     foreach (var publicRequestRenamedListMembersValue in publicRequestRenamedListMembers) 
@@ -199,7 +199,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestStringList = publicRequest.StringList;
-                if (publicRequestStringList != null && (publicRequestStringList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetStringList()) 
                 {
                     xmlWriter.WriteStartElement("stringList");
                     foreach (var publicRequestStringListValue in publicRequestStringList) 
@@ -211,7 +211,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestStringSet = publicRequest.StringSet;
-                if (publicRequestStringSet != null && (publicRequestStringSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetStringSet()) 
                 {
                     xmlWriter.WriteStartElement("stringSet");
                     foreach (var publicRequestStringSetValue in publicRequestStringSet) 
@@ -223,25 +223,25 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestStructureList = publicRequest.StructureList;
-                if (publicRequestStructureList != null && (publicRequestStructureList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetStructureList()) 
                 {
                     xmlWriter.WriteStartElement("myStructureList");
                     foreach (var publicRequestStructureListValue in publicRequestStructureList) 
                     {
-                    if (publicRequestStructureListValue != null)
-                    {
-                        xmlWriter.WriteStartElement("item");
-                        if(publicRequestStructureListValue.IsSetA())
-                            xmlWriter.WriteElementString("value", StringUtils.FromString(publicRequestStructureListValue.A));
-                        if(publicRequestStructureListValue.IsSetB())
-                            xmlWriter.WriteElementString("other", StringUtils.FromString(publicRequestStructureListValue.B));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestStructureListValue != null)
+                        {
+                            xmlWriter.WriteStartElement("item");
+                            if(publicRequestStructureListValue.IsSetA())
+                                xmlWriter.WriteElementString("value", StringUtils.FromString(publicRequestStructureListValue.A));
+                            if(publicRequestStructureListValue.IsSetB())
+                                xmlWriter.WriteElementString("other", StringUtils.FromString(publicRequestStructureListValue.B));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestTimestampList = publicRequest.TimestampList;
-                if (publicRequestTimestampList != null && (publicRequestTimestampList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetTimestampList()) 
                 {
                     xmlWriter.WriteStartElement("timestampList");
                     foreach (var publicRequestTimestampListValue in publicRequestTimestampList) 

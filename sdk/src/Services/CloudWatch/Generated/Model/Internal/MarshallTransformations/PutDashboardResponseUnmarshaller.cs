@@ -29,76 +29,52 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PutDashboard operation
     /// </summary>  
-    public class PutDashboardResponseUnmarshaller : XmlResponseUnmarshaller
+    public class PutDashboardResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             PutDashboardResponse response = new PutDashboardResponse();
-
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            var reader = context.Reader;
+            context.AddPathSegment("PutDashboard");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.IsStartElement)
-                {                    
-                    if(context.TestExpression("PutDashboardResult", 2))
-                    {
-                        UnmarshallResult(context, response);                        
-                        continue;
-                    }
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
-                    }
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "DashboardValidationMessages":
+                        {
+                            context.AddPathSegment("DashboardValidationMessages");
+                            var unmarshaller = new CborListUnmarshaller<DashboardValidationMessage, DashboardValidationMessageUnmarshaller>(DashboardValidationMessageUnmarshaller.Instance);
+                            response.DashboardValidationMessages = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return response;
         }
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, PutDashboardResponse response)
-        {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-
-                    if (context.TestExpression("DashboardValidationMessages/member", targetDepth))
-                    {
-                        var unmarshaller = DashboardValidationMessageUnmarshaller.Instance;
-                        if (response.DashboardValidationMessages == null)
-                        {
-                            response.DashboardValidationMessages = new List<DashboardValidationMessage>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.DashboardValidationMessages.Add(item);
-                        continue;
-                    }
-                } 
-           }
-
-            return;
-        }
-
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -107,32 +83,52 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                var errorTypeName = errorResponse.Code;
+                var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+                if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+                {
+                    var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                    if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                    {
+                        var queryErrorParts = queryError.Split(';');
+                        if (queryErrorParts.Length == 2)
+                        {
+                            errorResponse.Code = queryErrorParts[0];
+                            var errorTypeString = queryErrorParts[1];
+                            if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                            {
+                                errorResponse.Type = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                            }
+                        }
+                    }
+                }
+                if (errorTypeName != null && errorTypeName.Equals("ConflictException"))
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterInput"))
+                if (errorTypeName != null && errorTypeName.Equals("DashboardInvalidInputError"))
                 {
                     return DashboardInvalidInputErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceError"))
+                if (errorTypeName != null && errorTypeName.Equals("InternalServiceFault"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
+
         private static PutDashboardResponseUnmarshaller _instance = new PutDashboardResponseUnmarshaller();        
 
         internal static PutDashboardResponseUnmarshaller GetInstance()

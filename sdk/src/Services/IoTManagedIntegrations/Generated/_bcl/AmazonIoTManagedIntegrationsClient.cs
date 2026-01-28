@@ -2109,6 +2109,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
         /// User is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
@@ -2144,6 +2147,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <returns>The response from the DeregisterAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
         /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
@@ -5432,8 +5438,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Set the runtime log configuration for a specific managed thing or for all managed
-        /// things as a group.
+        /// Set the runtime log configuration for a specific managed thing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRuntimeLogConfiguration service method.</param>
         /// 
@@ -5466,8 +5471,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Set the runtime log configuration for a specific managed thing or for all managed
-        /// things as a group.
+        /// Set the runtime log configuration for a specific managed thing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRuntimeLogConfiguration service method.</param>
         /// <param name="cancellationToken">

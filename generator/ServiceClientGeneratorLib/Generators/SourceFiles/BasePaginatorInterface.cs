@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+    #line 1 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class BasePaginatorInterface : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 6 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
 
     AddLicenseHeader();
 
@@ -38,37 +38,73 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("using Amazon.Runtime;\r\n\r\n#pragma warning disable CS0612,CS0618\r\nnamespace ");
             
-            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 12 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    /// <summary>\r\n    /// Paginator for the ");
             
-            #line 15 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 15 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
-            this.Write(" operation\r\n    ///</summary>\r\n    public interface I");
+            this.Write(" operation\r\n    ///</summary>\r\n");
             
-            #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 17 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+
+if (this.Config.ServiceId == "S3")
+{
+
+            
+            #line default
+            #line hidden
+            this.Write("    public partial interface I");
+            
+            #line 21 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
-            this.Write("Paginator\r\n    {\r\n        /// <summary>\r\n        /// Enumerable containing all fu" +
-                    "ll responses for the operation\r\n        /// </summary>\r\n        IPaginatedEnumer" +
-                    "able<");
+            this.Write("Paginator\r\n");
             
-            #line 22 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 22 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+
+}
+else
+{
+
+            
+            #line default
+            #line hidden
+            this.Write("    public interface I");
+            
+            #line 27 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Paginator\r\n");
+            
+            #line 28 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+
+}
+
+            
+            #line default
+            #line hidden
+            this.Write("    {\r\n        /// <summary>\r\n        /// Enumerable containing all full response" +
+                    "s for the operation\r\n        /// </summary>\r\n        IPaginatedEnumerable<");
+            
+            #line 35 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> Responses { get; }\r\n");
             
-            #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 36 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
 
 foreach(var resultKey in this.Operation.Paginators.ResultKeys)
 {
@@ -80,28 +116,28 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys)
             #line hidden
             this.Write("\r\n        /// <summary>\r\n        /// Enumerable containing all of the ");
             
-            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 44 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.Member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        IPaginatedEnumerable<");
             
-            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 46 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.ListItemType));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 46 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.Member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" { get; }\r\n");
             
-            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+            #line 47 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
 
     }
 }
@@ -113,7 +149,7 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys)
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
+        #line 55 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginatorInterface.tt"
 
     // The operation the marshaller will be used on
 	public Operation Operation { get; set; }	

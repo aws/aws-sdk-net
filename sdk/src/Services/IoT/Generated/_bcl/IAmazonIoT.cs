@@ -9549,8 +9549,8 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Retrieves the encryption configuration for resources and data of your Amazon Web Services
-        /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/key-management.html">Key
-        /// management in IoT</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
+        /// encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEncryptionConfiguration service method.</param>
         /// 
@@ -9577,8 +9577,8 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Retrieves the encryption configuration for resources and data of your Amazon Web Services
-        /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/key-management.html">Key
-        /// management in IoT</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
+        /// encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEncryptionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -20562,12 +20562,12 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can cancel the transfer until it is acknowledged by the recipient.
+        /// You can cancel the transfer until it is accepted by the recipient.
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account. It's up to the caller
-        /// to notify the transfer target.
+        /// No notification is sent to the transfer destination's account. The caller is responsible
+        /// for notifying the transfer target.
         /// </para>
         ///  
         /// <para>
@@ -20581,17 +20581,17 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to secure
-        /// your data and then transfer the key to a customer in a different account using the
-        /// <a>TransferCertificate</a> operation, the certificates will no longer be protected
+        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to encrypt
+        /// your data and then transfer the certificate to a customer in a different account using
+        /// the <c>TransferCertificate</c> operation, the certificates will no longer be encrypted
         /// by their customer managed key configuration. During the transfer process, certificates
-        /// are encrypted using IoT owned keys.
+        /// are encrypted using Amazon Web Services IoT Core owned keys.
         /// </para>
         ///  
         /// <para>
         /// While a certificate is in the <b>PENDING_TRANSFER</b> state, it's always protected
-        /// by IoT owned keys, regardless of the customer managed key configuration of either
-        /// the source or destination account. 
+        /// by Amazon Web Services IoT Core owned keys, regardless of the customer managed key
+        /// configuration of either the source or destination account. 
         /// </para>
         ///  
         /// <para>
@@ -20602,7 +20602,7 @@ namespace Amazon.IoT
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the transfer is accepted: The certificate is protected by the destination account's
+        /// If the transfer is accepted: The certificate is encrypted by the target account's
         /// customer managed key configuration.
         /// </para>
         ///  </li> <li> 
@@ -20653,12 +20653,12 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can cancel the transfer until it is acknowledged by the recipient.
+        /// You can cancel the transfer until it is accepted by the recipient.
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account. It's up to the caller
-        /// to notify the transfer target.
+        /// No notification is sent to the transfer destination's account. The caller is responsible
+        /// for notifying the transfer target.
         /// </para>
         ///  
         /// <para>
@@ -20672,17 +20672,17 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to secure
-        /// your data and then transfer the key to a customer in a different account using the
-        /// <a>TransferCertificate</a> operation, the certificates will no longer be protected
+        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to encrypt
+        /// your data and then transfer the certificate to a customer in a different account using
+        /// the <c>TransferCertificate</c> operation, the certificates will no longer be encrypted
         /// by their customer managed key configuration. During the transfer process, certificates
-        /// are encrypted using IoT owned keys.
+        /// are encrypted using Amazon Web Services IoT Core owned keys.
         /// </para>
         ///  
         /// <para>
         /// While a certificate is in the <b>PENDING_TRANSFER</b> state, it's always protected
-        /// by IoT owned keys, regardless of the customer managed key configuration of either
-        /// the source or destination account. 
+        /// by Amazon Web Services IoT Core owned keys, regardless of the customer managed key
+        /// configuration of either the source or destination account. 
         /// </para>
         ///  
         /// <para>
@@ -20693,7 +20693,7 @@ namespace Amazon.IoT
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the transfer is accepted: The certificate is protected by the destination account's
+        /// If the transfer is accepted: The certificate is encrypted by the target account's
         /// customer managed key configuration.
         /// </para>
         ///  </li> <li> 
@@ -20744,12 +20744,12 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can cancel the transfer until it is acknowledged by the recipient.
+        /// You can cancel the transfer until it is accepted by the recipient.
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account. It's up to the caller
-        /// to notify the transfer target.
+        /// No notification is sent to the transfer destination's account. The caller is responsible
+        /// for notifying the transfer target.
         /// </para>
         ///  
         /// <para>
@@ -20763,17 +20763,17 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to secure
-        /// your data and then transfer the key to a customer in a different account using the
-        /// <a>TransferCertificate</a> operation, the certificates will no longer be protected
+        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to encrypt
+        /// your data and then transfer the certificate to a customer in a different account using
+        /// the <c>TransferCertificate</c> operation, the certificates will no longer be encrypted
         /// by their customer managed key configuration. During the transfer process, certificates
-        /// are encrypted using IoT owned keys.
+        /// are encrypted using Amazon Web Services IoT Core owned keys.
         /// </para>
         ///  
         /// <para>
         /// While a certificate is in the <b>PENDING_TRANSFER</b> state, it's always protected
-        /// by IoT owned keys, regardless of the customer managed key configuration of either
-        /// the source or destination account. 
+        /// by Amazon Web Services IoT Core owned keys, regardless of the customer managed key
+        /// configuration of either the source or destination account. 
         /// </para>
         ///  
         /// <para>
@@ -20784,7 +20784,7 @@ namespace Amazon.IoT
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the transfer is accepted: The certificate is protected by the destination account's
+        /// If the transfer is accepted: The certificate is encrypted by the target account's
         /// customer managed key configuration.
         /// </para>
         ///  </li> <li> 
@@ -20839,12 +20839,12 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can cancel the transfer until it is acknowledged by the recipient.
+        /// You can cancel the transfer until it is accepted by the recipient.
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account. It's up to the caller
-        /// to notify the transfer target.
+        /// No notification is sent to the transfer destination's account. The caller is responsible
+        /// for notifying the transfer target.
         /// </para>
         ///  
         /// <para>
@@ -20858,17 +20858,17 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to secure
-        /// your data and then transfer the key to a customer in a different account using the
-        /// <a>TransferCertificate</a> operation, the certificates will no longer be protected
+        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to encrypt
+        /// your data and then transfer the certificate to a customer in a different account using
+        /// the <c>TransferCertificate</c> operation, the certificates will no longer be encrypted
         /// by their customer managed key configuration. During the transfer process, certificates
-        /// are encrypted using IoT owned keys.
+        /// are encrypted using Amazon Web Services IoT Core owned keys.
         /// </para>
         ///  
         /// <para>
         /// While a certificate is in the <b>PENDING_TRANSFER</b> state, it's always protected
-        /// by IoT owned keys, regardless of the customer managed key configuration of either
-        /// the source or destination account. 
+        /// by Amazon Web Services IoT Core owned keys, regardless of the customer managed key
+        /// configuration of either the source or destination account. 
         /// </para>
         ///  
         /// <para>
@@ -20879,7 +20879,7 @@ namespace Amazon.IoT
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the transfer is accepted: The certificate is protected by the destination account's
+        /// If the transfer is accepted: The certificate is encrypted by the target account's
         /// customer managed key configuration.
         /// </para>
         ///  </li> <li> 
@@ -21965,12 +21965,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Updates the encryption configuration. By default, all Amazon Web Services IoT Core
-        /// data at rest is encrypted using Amazon Web Services owned keys. Amazon Web Services
-        /// IoT Core also supports symmetric customer managed keys from Amazon Web Services Key
-        /// Management Service (KMS). With customer managed keys, you create, own, and manage
-        /// the KMS keys in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/data-encryption.html">Data
-        /// encryption</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// Updates the encryption configuration. By default, Amazon Web Services IoT Core encrypts
+        /// your data at rest using Amazon Web Services owned keys. Amazon Web Services IoT Core
+        /// also supports symmetric customer managed keys from Key Management Service (KMS). With
+        /// customer managed keys, you create, own, and manage the KMS keys in your Amazon Web
+        /// Services account. 
+        /// 
+        ///  
+        /// <para>
+        /// Before using this API, you must set up permissions for Amazon Web Services IoT Core
+        /// to access KMS. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
+        /// encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionConfiguration service method.</param>
         /// 
@@ -21996,12 +22002,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Updates the encryption configuration. By default, all Amazon Web Services IoT Core
-        /// data at rest is encrypted using Amazon Web Services owned keys. Amazon Web Services
-        /// IoT Core also supports symmetric customer managed keys from Amazon Web Services Key
-        /// Management Service (KMS). With customer managed keys, you create, own, and manage
-        /// the KMS keys in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/data-encryption.html">Data
-        /// encryption</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// Updates the encryption configuration. By default, Amazon Web Services IoT Core encrypts
+        /// your data at rest using Amazon Web Services owned keys. Amazon Web Services IoT Core
+        /// also supports symmetric customer managed keys from Key Management Service (KMS). With
+        /// customer managed keys, you create, own, and manage the KMS keys in your Amazon Web
+        /// Services account. 
+        /// 
+        ///  
+        /// <para>
+        /// Before using this API, you must set up permissions for Amazon Web Services IoT Core
+        /// to access KMS. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
+        /// encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionConfiguration service method.</param>
         /// <param name="cancellationToken">

@@ -40,6 +40,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationAllFeaturesNotEnabledException
+        /// message.
+        /// </summary>
+        public OrganizationAllFeaturesNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationAllFeaturesNotEnabledException with the specified error
         /// message.
         /// </summary>

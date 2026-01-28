@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsMetadataAlreadyExistsException
+        /// message.
+        /// </summary>
+        public OpsMetadataAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsMetadataAlreadyExistsException with the specified error
         /// message.
         /// </summary>

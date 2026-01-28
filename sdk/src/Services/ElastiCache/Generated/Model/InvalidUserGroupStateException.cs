@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidUserGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidUserGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidUserGroupStateException with the specified error
         /// message.
         /// </summary>

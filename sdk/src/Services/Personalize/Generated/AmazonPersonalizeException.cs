@@ -36,6 +36,14 @@ namespace Amazon.Personalize
         /// <summary>
         /// Construct instance of AmazonPersonalizeException
         /// </summary>
+        public AmazonPersonalizeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPersonalizeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPersonalizeException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidConflictResolutionStrategyException
+        /// message.
+        /// </summary>
+        public InvalidConflictResolutionStrategyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidConflictResolutionStrategyException with the specified error
         /// message.
         /// </summary>

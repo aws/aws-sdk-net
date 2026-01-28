@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for AlreadyInOrganizationException
+        /// message.
+        /// </summary>
+        public AlreadyInOrganizationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AlreadyInOrganizationException with the specified error
         /// message.
         /// </summary>

@@ -39,10 +39,12 @@ namespace Amazon.EMRServerless.Model
         private AutoStartConfig _autoStartConfiguration;
         private AutoStopConfig _autoStopConfiguration;
         private string _clientToken;
+        private DiskEncryptionConfiguration _diskEncryptionConfiguration;
         private IdentityCenterConfigurationInput _identityCenterConfiguration;
         private ImageConfigurationInput _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = AWSConfigs.InitializeCollections ? new Dictionary<string, InitialCapacityConfig>() : null;
         private InteractiveConfiguration _interactiveConfiguration;
+        private JobLevelCostAllocationConfiguration _jobLevelCostAllocationConfiguration;
         private MaximumAllowedResources _maximumCapacity;
         private MonitoringConfiguration _monitoringConfiguration;
         private string _name;
@@ -130,6 +132,24 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DiskEncryptionConfiguration. 
+        /// <para>
+        /// The configuration object that allows encrypting local disks.
+        /// </para>
+        /// </summary>
+        public DiskEncryptionConfiguration DiskEncryptionConfiguration
+        {
+            get { return this._diskEncryptionConfiguration; }
+            set { this._diskEncryptionConfiguration = value; }
+        }
+
+        // Check to see if DiskEncryptionConfiguration property is set
+        internal bool IsSetDiskEncryptionConfiguration()
+        {
+            return this._diskEncryptionConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdentityCenterConfiguration. 
         /// <para>
         /// The IAM Identity Center Configuration accepts the Identity Center instance parameter
@@ -209,6 +229,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetInteractiveConfiguration()
         {
             return this._interactiveConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobLevelCostAllocationConfiguration. 
+        /// <para>
+        /// The configuration object that enables job level cost allocation.
+        /// </para>
+        /// </summary>
+        public JobLevelCostAllocationConfiguration JobLevelCostAllocationConfiguration
+        {
+            get { return this._jobLevelCostAllocationConfiguration; }
+            set { this._jobLevelCostAllocationConfiguration = value; }
+        }
+
+        // Check to see if JobLevelCostAllocationConfiguration property is set
+        internal bool IsSetJobLevelCostAllocationConfiguration()
+        {
+            return this._jobLevelCostAllocationConfiguration != null;
         }
 
         /// <summary>

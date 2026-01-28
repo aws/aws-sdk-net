@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomDBEngineVersionNotFoundException
+        /// message.
+        /// </summary>
+        public CustomDBEngineVersionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomDBEngineVersionNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -6080,6 +6080,10 @@
         "ChannelEngineVersion": {
           "shape": "ChannelEngineVersionResponse",
           "locationName": "channelEngineVersion"
+        },
+        "LinkedChannelSettings": {
+          "shape": "DescribeLinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -6206,6 +6210,10 @@
         "UsedChannelEngineVersions": {
           "shape": "__listOfChannelEngineVersionResponse",
           "locationName": "usedChannelEngineVersions"
+        },
+        "LinkedChannelSettings": {
+          "shape": "DescribeLinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -6354,6 +6362,10 @@
         "DryRun": {
           "shape": "__boolean",
           "locationName": "dryRun"
+        },
+        "LinkedChannelSettings": {
+          "shape": "LinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -6429,6 +6441,10 @@
         "DryRun": {
           "shape": "__boolean",
           "locationName": "dryRun"
+        },
+        "LinkedChannelSettings": {
+          "shape": "LinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -6965,6 +6981,10 @@
         "ChannelEngineVersion": {
           "shape": "ChannelEngineVersionResponse",
           "locationName": "channelEngineVersion"
+        },
+        "LinkedChannelSettings": {
+          "shape": "DescribeLinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -7351,6 +7371,10 @@
         "ChannelEngineVersion": {
           "shape": "ChannelEngineVersionResponse",
           "locationName": "channelEngineVersion"
+        },
+        "LinkedChannelSettings": {
+          "shape": "DescribeLinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -12577,6 +12601,14 @@
         "ChannelName": {
           "shape": "__stringMin1",
           "locationName": "channelName"
+        },
+        "ChannelEndpointId": {
+          "shape": "__stringMin1",
+          "locationName": "channelEndpointId"
+        },
+        "MediaPackageRegionName": {
+          "shape": "__stringMin1",
+          "locationName": "mediaPackageRegionName"
         }
       }
     },
@@ -13682,6 +13714,10 @@
         "PipelineLockingSettings": {
           "shape": "PipelineLockingSettings",
           "locationName": "pipelineLockingSettings"
+        },
+        "DisabledLockingSettings": {
+          "shape": "DisabledLockingSettings",
+          "locationName": "disabledLockingSettings"
         }
       }
     },
@@ -13781,7 +13817,16 @@
     },
     "PipelineLockingSettings": {
       "type": "structure",
-      "members": {}
+      "members": {
+        "PipelineLockingMethod": {
+          "shape": "PipelineLockingMethod",
+          "locationName": "pipelineLockingMethod"
+        },
+        "CustomEpoch": {
+          "shape": "__string",
+          "locationName": "customEpoch"
+        }
+      }
     },
     "PipelinePauseStateSettings": {
       "type": "structure",
@@ -14938,6 +14983,10 @@
         "ChannelEngineVersion": {
           "shape": "ChannelEngineVersionResponse",
           "locationName": "channelEngineVersion"
+        },
+        "LinkedChannelSettings": {
+          "shape": "DescribeLinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -15287,6 +15336,10 @@
         "ChannelEngineVersion": {
           "shape": "ChannelEngineVersionResponse",
           "locationName": "channelEngineVersion"
+        },
+        "LinkedChannelSettings": {
+          "shape": "DescribeLinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -15855,6 +15908,10 @@
         "AnywhereSettings": {
           "shape": "AnywhereSettings",
           "locationName": "anywhereSettings"
+        },
+        "LinkedChannelSettings": {
+          "shape": "LinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -15960,6 +16017,10 @@
         "AnywhereSettings": {
           "shape": "AnywhereSettings",
           "locationName": "anywhereSettings"
+        },
+        "LinkedChannelSettings": {
+          "shape": "LinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       },
       "required": [
@@ -17480,6 +17541,10 @@
         "ChannelEngineVersion": {
           "shape": "ChannelEngineVersionResponse",
           "locationName": "channelEngineVersion"
+        },
+        "LinkedChannelSettings": {
+          "shape": "DescribeLinkedChannelSettings",
+          "locationName": "linkedChannelSettings"
         }
       }
     },
@@ -21766,6 +21831,10 @@
         "TemporalAq": {
           "shape": "Av1TemporalAq",
           "locationName": "temporalAq"
+        },
+        "TimecodeInsertion": {
+          "shape": "Av1TimecodeInsertionBehavior",
+          "locationName": "timecodeInsertion"
         }
       },
       "required": [
@@ -24720,6 +24789,10 @@
         "TimedMetadataPassthrough": {
           "shape": "CmafTimedMetadataPassthrough",
           "locationName": "timedMetadataPassthrough"
+        },
+        "AdditionalDestinations": {
+          "shape": "__listOfMediaPackageAdditionalDestinations",
+          "locationName": "additionalDestinations"
         }
       }
     },
@@ -25153,6 +25226,128 @@
       "type": "list",
       "member": {
         "shape": "RouterDestinationSettings"
+      }
+    },
+    "DescribeFollowerChannelSettings": {
+      "type": "structure",
+      "members": {
+        "LinkedChannelType": {
+          "shape": "LinkedChannelType",
+          "locationName": "linkedChannelType"
+        },
+        "PrimaryChannelArn": {
+          "shape": "__string",
+          "locationName": "primaryChannelArn"
+        }
+      }
+    },
+    "DescribeLinkedChannelSettings": {
+      "type": "structure",
+      "members": {
+        "FollowerChannelSettings": {
+          "shape": "DescribeFollowerChannelSettings",
+          "locationName": "followerChannelSettings"
+        },
+        "PrimaryChannelSettings": {
+          "shape": "DescribePrimaryChannelSettings",
+          "locationName": "primaryChannelSettings"
+        }
+      }
+    },
+    "DescribePrimaryChannelSettings": {
+      "type": "structure",
+      "members": {
+        "FollowingChannelArns": {
+          "shape": "__listOf__string",
+          "locationName": "followingChannelArns"
+        },
+        "LinkedChannelType": {
+          "shape": "LinkedChannelType",
+          "locationName": "linkedChannelType"
+        }
+      }
+    },
+    "FollowerChannelSettings": {
+      "type": "structure",
+      "members": {
+        "LinkedChannelType": {
+          "shape": "LinkedChannelType",
+          "locationName": "linkedChannelType"
+        },
+        "PrimaryChannelArn": {
+          "shape": "__string",
+          "locationName": "primaryChannelArn"
+        }
+      }
+    },
+    "LinkedChannelSettings": {
+      "type": "structure",
+      "members": {
+        "FollowerChannelSettings": {
+          "shape": "FollowerChannelSettings",
+          "locationName": "followerChannelSettings"
+        },
+        "PrimaryChannelSettings": {
+          "shape": "PrimaryChannelSettings",
+          "locationName": "primaryChannelSettings"
+        }
+      }
+    },
+    "LinkedChannelType": {
+      "type": "string",
+      "enum": [
+        "FOLLOWING_CHANNEL",
+        "PRIMARY_CHANNEL"
+      ]
+    },
+    "PipelineLockingMethod": {
+      "type": "string",
+      "enum": [
+        "SOURCE_TIMECODE",
+        "VIDEO_ALIGNMENT"
+      ]
+    },
+    "PrimaryChannelSettings": {
+      "type": "structure",
+      "members": {
+        "LinkedChannelType": {
+          "shape": "LinkedChannelType",
+          "locationName": "linkedChannelType"
+        }
+      }
+    },
+    "MediaPackageAdditionalDestinations": {
+      "type": "structure",
+      "members": {
+        "Destination": {
+          "shape": "OutputLocationRef",
+          "locationName": "destination"
+        }
+      },
+      "required": [
+        "Destination"
+      ]
+    },
+    "__listOfMediaPackageAdditionalDestinations": {
+      "type": "list",
+      "member": {
+        "shape": "MediaPackageAdditionalDestinations"
+      }
+    },
+    "Av1TimecodeInsertionBehavior": {
+      "type": "string",
+      "enum": [
+        "DISABLED",
+        "METADATA_OBU"
+      ]
+    },
+    "DisabledLockingSettings": {
+      "type": "structure",
+      "members": {
+        "CustomEpoch": {
+          "shape": "__string",
+          "locationName": "customEpoch"
+        }
       }
     }
   }

@@ -36,6 +36,14 @@ namespace Amazon.QApps
         /// <summary>
         /// Construct instance of AmazonQAppsException
         /// </summary>
+        public AmazonQAppsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonQAppsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonQAppsException(string message)
             : base(message)

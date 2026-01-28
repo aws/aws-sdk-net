@@ -41,6 +41,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientStorageClusterCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientStorageClusterCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientStorageClusterCapacityException with the specified error
         /// message.
         /// </summary>

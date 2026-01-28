@@ -40,6 +40,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for SerialConsoleSessionUnsupportedException
+        /// message.
+        /// </summary>
+        public SerialConsoleSessionUnsupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SerialConsoleSessionUnsupportedException with the specified error
         /// message.
         /// </summary>

@@ -143,6 +143,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetSyntheticDataParameters())
+            {
+                context.Writer.WritePropertyName("syntheticDataParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SyntheticDataParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SyntheticDataParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

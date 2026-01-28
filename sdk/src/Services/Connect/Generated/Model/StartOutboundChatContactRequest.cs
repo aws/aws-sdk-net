@@ -31,25 +31,26 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartOutboundChatContact operation.
-    /// Initiates a new outbound SMS contact to a customer. Response of this API provides
-    /// the <c>ContactId</c> of the outbound SMS contact created.
+    /// Initiates a new outbound SMS or WhatsApp contact to a customer. Response of this API
+    /// provides the <c>ContactId</c> of the outbound SMS or WhatsApp contact created.
     /// 
     ///  
     /// <para>
     ///  <b>SourceEndpoint</b> only supports Endpoints with <c>CONNECT_PHONENUMBER_ARN</c>
     /// as Type and <b>DestinationEndpoint</b> only supports Endpoints with <c>TELEPHONE_NUMBER</c>
-    /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.
+    /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new contact created.
     /// </para>
     ///  
     /// <para>
-    /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
-    /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+    /// This API can be used to initiate outbound SMS or WhatsApp contacts for an agent, or
+    /// it can also deflect an ongoing contact to an outbound SMS or WhatsApp contact by using
+    /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
     /// Flow Action.
     /// </para>
     ///  
     /// <para>
-    /// For more information about using SMS in Amazon Connect, see the following topics in
-    /// the <i>Amazon Connect Administrator Guide</i>:
+    /// For more information about using SMS or WhatsApp in Amazon Connect, see the following
+    /// topics in the <i>Amazon Connect Administrator Guide</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -59,7 +60,13 @@ namespace Amazon.Connect.Model
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
-    /// an SMS-enabled phone number through AWS End User Messaging SMS</a> 
+    /// an SMS-enabled phone number through Amazon Web Services End User Messaging SMS</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html">Set
+    /// up WhatsApp Business messaging</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -71,6 +78,7 @@ namespace Amazon.Connect.Model
         private string _contactFlowId;
         private Endpoint _destinationEndpoint;
         private ChatMessage _initialSystemMessage;
+        private TemplatedMessageConfig _initialTemplatedSystemMessage;
         private string _instanceId;
         private ParticipantDetails _participantDetails;
         private string _relatedContactId;
@@ -127,8 +135,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request. If not provided, the AWS SDK populates this field. For more information
-        /// about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
         /// retries safe with idempotent APIs</a>. The token is valid for 7 days after creation.
         /// If a contact is already started, the contact ID is returned.
         /// </para>
@@ -207,6 +215,21 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InitialTemplatedSystemMessage.
+        /// </summary>
+        public TemplatedMessageConfig InitialTemplatedSystemMessage
+        {
+            get { return this._initialTemplatedSystemMessage; }
+            set { this._initialTemplatedSystemMessage = value; }
+        }
+
+        // Check to see if InitialTemplatedSystemMessage property is set
+        internal bool IsSetInitialTemplatedSystemMessage()
+        {
+            return this._initialTemplatedSystemMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The identifier of the Amazon Connect instance. You can find the instance ID in the
@@ -274,7 +297,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This field can be used to show channel subtype, such as <c>connect:Guide</c> and <c>connect:SMS</c>.
+        /// This field can be used to show channel subtype, such as <c>connect:SMS</c> and <c>connect:WhatsApp</c>.
         /// </para>
         ///  </li> </ul>
         /// <para />

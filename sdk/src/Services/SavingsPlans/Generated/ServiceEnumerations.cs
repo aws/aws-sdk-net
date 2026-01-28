@@ -35,6 +35,10 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly CurrencyCode CNY = new CurrencyCode("CNY");
         /// <summary>
+        /// Constant EUR for CurrencyCode
+        /// </summary>
+        public static readonly CurrencyCode EUR = new CurrencyCode("EUR");
+        /// <summary>
         /// Constant USD for CurrencyCode
         /// </summary>
         public static readonly CurrencyCode USD = new CurrencyCode("USD");
@@ -235,21 +239,57 @@ namespace Amazon.SavingsPlans
     {
 
         /// <summary>
+        /// Constant DMS for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType DMS = new SavingsPlanProductType("DMS");
+        /// <summary>
+        /// Constant DocDB for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType DocDB = new SavingsPlanProductType("DocDB");
+        /// <summary>
+        /// Constant DSQL for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType DSQL = new SavingsPlanProductType("DSQL");
+        /// <summary>
+        /// Constant DynamoDB for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType DynamoDB = new SavingsPlanProductType("DynamoDB");
+        /// <summary>
         /// Constant EC2 for SavingsPlanProductType
         /// </summary>
         public static readonly SavingsPlanProductType EC2 = new SavingsPlanProductType("EC2");
+        /// <summary>
+        /// Constant ElastiCache for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType ElastiCache = new SavingsPlanProductType("ElastiCache");
         /// <summary>
         /// Constant Fargate for SavingsPlanProductType
         /// </summary>
         public static readonly SavingsPlanProductType Fargate = new SavingsPlanProductType("Fargate");
         /// <summary>
+        /// Constant Keyspaces for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType Keyspaces = new SavingsPlanProductType("Keyspaces");
+        /// <summary>
         /// Constant Lambda for SavingsPlanProductType
         /// </summary>
         public static readonly SavingsPlanProductType Lambda = new SavingsPlanProductType("Lambda");
         /// <summary>
+        /// Constant Neptune for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType Neptune = new SavingsPlanProductType("Neptune");
+        /// <summary>
+        /// Constant RDS for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType RDS = new SavingsPlanProductType("RDS");
+        /// <summary>
         /// Constant SageMaker for SavingsPlanProductType
         /// </summary>
         public static readonly SavingsPlanProductType SageMaker = new SavingsPlanProductType("SageMaker");
+        /// <summary>
+        /// Constant Timestream for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType Timestream = new SavingsPlanProductType("Timestream");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -495,6 +535,14 @@ namespace Amazon.SavingsPlans
     {
 
         /// <summary>
+        /// Constant AmazonDocDB for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonDocDB = new SavingsPlanRateServiceCode("AmazonDocDB");
+        /// <summary>
+        /// Constant AmazonDynamoDB for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonDynamoDB = new SavingsPlanRateServiceCode("AmazonDynamoDB");
+        /// <summary>
         /// Constant AmazonEC2 for SavingsPlanRateServiceCode
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonEC2 = new SavingsPlanRateServiceCode("AmazonEC2");
@@ -507,9 +555,37 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonEKS = new SavingsPlanRateServiceCode("AmazonEKS");
         /// <summary>
+        /// Constant AmazonElastiCache for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonElastiCache = new SavingsPlanRateServiceCode("AmazonElastiCache");
+        /// <summary>
+        /// Constant AmazonMCS for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonMCS = new SavingsPlanRateServiceCode("AmazonMCS");
+        /// <summary>
+        /// Constant AmazonNeptune for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonNeptune = new SavingsPlanRateServiceCode("AmazonNeptune");
+        /// <summary>
+        /// Constant AmazonRDS for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonRDS = new SavingsPlanRateServiceCode("AmazonRDS");
+        /// <summary>
         /// Constant AmazonSageMaker for SavingsPlanRateServiceCode
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonSageMaker = new SavingsPlanRateServiceCode("AmazonSageMaker");
+        /// <summary>
+        /// Constant AmazonTimestream for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonTimestream = new SavingsPlanRateServiceCode("AmazonTimestream");
+        /// <summary>
+        /// Constant AuroraDSQL for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AuroraDSQL = new SavingsPlanRateServiceCode("AuroraDSQL");
+        /// <summary>
+        /// Constant AWSDatabaseMigrationSvc for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AWSDatabaseMigrationSvc = new SavingsPlanRateServiceCode("AWSDatabaseMigrationSvc");
         /// <summary>
         /// Constant AWSLambda for SavingsPlanRateServiceCode
         /// </summary>
@@ -557,6 +633,26 @@ namespace Amazon.SavingsPlans
     {
 
         /// <summary>
+        /// Constant ACUHr for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit ACUHr = new SavingsPlanRateUnit("ACU-Hr");
+        /// <summary>
+        /// Constant DCUHr for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit DCUHr = new SavingsPlanRateUnit("DCU-Hr");
+        /// <summary>
+        /// Constant DPU for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit DPU = new SavingsPlanRateUnit("DPU");
+        /// <summary>
+        /// Constant ElastiCacheProcessingUnit for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit ElastiCacheProcessingUnit = new SavingsPlanRateUnit("ElastiCacheProcessingUnit");
+        /// <summary>
+        /// Constant GBHours for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit GBHours = new SavingsPlanRateUnit("GB-Hours");
+        /// <summary>
         /// Constant Hrs for SavingsPlanRateUnit
         /// </summary>
         public static readonly SavingsPlanRateUnit Hrs = new SavingsPlanRateUnit("Hrs");
@@ -565,9 +661,37 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanRateUnit LambdaGBSecond = new SavingsPlanRateUnit("Lambda-GB-Second");
         /// <summary>
+        /// Constant NCUHr for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit NCUHr = new SavingsPlanRateUnit("NCU-hr");
+        /// <summary>
+        /// Constant ReadCapacityUnitHrs for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit ReadCapacityUnitHrs = new SavingsPlanRateUnit("ReadCapacityUnit-Hrs");
+        /// <summary>
+        /// Constant ReadRequestUnits for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit ReadRequestUnits = new SavingsPlanRateUnit("ReadRequestUnits");
+        /// <summary>
+        /// Constant ReplicatedWriteCapacityUnitHrs for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit ReplicatedWriteCapacityUnitHrs = new SavingsPlanRateUnit("ReplicatedWriteCapacityUnit-Hrs");
+        /// <summary>
+        /// Constant ReplicatedWriteRequestUnits for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit ReplicatedWriteRequestUnits = new SavingsPlanRateUnit("ReplicatedWriteRequestUnits");
+        /// <summary>
         /// Constant Request for SavingsPlanRateUnit
         /// </summary>
         public static readonly SavingsPlanRateUnit Request = new SavingsPlanRateUnit("Request");
+        /// <summary>
+        /// Constant WriteCapacityUnitHrs for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit WriteCapacityUnitHrs = new SavingsPlanRateUnit("WriteCapacityUnit-Hrs");
+        /// <summary>
+        /// Constant WriteRequestUnits for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit WriteRequestUnits = new SavingsPlanRateUnit("WriteRequestUnits");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -622,6 +746,10 @@ namespace Amazon.SavingsPlans
         /// Constant End for SavingsPlansFilterName
         /// </summary>
         public static readonly SavingsPlansFilterName End = new SavingsPlansFilterName("end");
+        /// <summary>
+        /// Constant InstanceFamily for SavingsPlansFilterName
+        /// </summary>
+        public static readonly SavingsPlansFilterName InstanceFamily = new SavingsPlansFilterName("instance-family");
         /// <summary>
         /// Constant PaymentOption for SavingsPlansFilterName
         /// </summary>
@@ -766,6 +894,10 @@ namespace Amazon.SavingsPlans
         /// Constant Compute for SavingsPlanType
         /// </summary>
         public static readonly SavingsPlanType Compute = new SavingsPlanType("Compute");
+        /// <summary>
+        /// Constant Database for SavingsPlanType
+        /// </summary>
+        public static readonly SavingsPlanType Database = new SavingsPlanType("Database");
         /// <summary>
         /// Constant EC2Instance for SavingsPlanType
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for QueryLimitException
+        /// message.
+        /// </summary>
+        public QueryLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueryLimitException with the specified error
         /// message.
         /// </summary>

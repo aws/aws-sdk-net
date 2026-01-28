@@ -40,6 +40,13 @@ namespace Amazon.NetworkManager.Model
         private List<CoreNetworkPolicyError> _errors = AWSConfigs.InitializeCollections ? new List<CoreNetworkPolicyError>() : null;
 
         /// <summary>
+        /// Default constructor for CoreNetworkPolicyException
+        /// message.
+        /// </summary>
+        public CoreNetworkPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CoreNetworkPolicyException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CognitoSync.Model
     {
 
         /// <summary>
+        /// Default constructor for AlreadyStreamedException
+        /// message.
+        /// </summary>
+        public AlreadyStreamedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AlreadyStreamedException with the specified error
         /// message.
         /// </summary>

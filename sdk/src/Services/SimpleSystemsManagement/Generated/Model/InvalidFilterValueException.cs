@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFilterValueException
+        /// message.
+        /// </summary>
+        public InvalidFilterValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFilterValueException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for UnauthorizedResourceAccessException
+        /// message.
+        /// </summary>
+        public UnauthorizedResourceAccessException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthorizedResourceAccessException with the specified error
         /// message.
         /// </summary>

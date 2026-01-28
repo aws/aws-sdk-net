@@ -41,6 +41,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAutoRollbackConfigException
+        /// message.
+        /// </summary>
+        public InvalidAutoRollbackConfigException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAutoRollbackConfigException with the specified error
         /// message.
         /// </summary>

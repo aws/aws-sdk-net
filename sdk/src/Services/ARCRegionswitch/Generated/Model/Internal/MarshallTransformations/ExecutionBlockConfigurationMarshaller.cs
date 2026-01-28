@@ -68,6 +68,17 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDocumentDbConfig())
+            {
+                context.Writer.WritePropertyName("documentDbConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DocumentDbConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DocumentDbConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEc2AsgCapacityIncreaseConfig())
             {
                 context.Writer.WritePropertyName("ec2AsgCapacityIncreaseConfig");

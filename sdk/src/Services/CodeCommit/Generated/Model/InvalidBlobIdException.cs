@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidBlobIdException
+        /// message.
+        /// </summary>
+        public InvalidBlobIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidBlobIdException with the specified error
         /// message.
         /// </summary>

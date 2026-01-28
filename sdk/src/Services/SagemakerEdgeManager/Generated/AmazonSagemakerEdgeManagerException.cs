@@ -36,6 +36,14 @@ namespace Amazon.SagemakerEdgeManager
         /// <summary>
         /// Construct instance of AmazonSagemakerEdgeManagerException
         /// </summary>
+        public AmazonSagemakerEdgeManagerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSagemakerEdgeManagerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSagemakerEdgeManagerException(string message)
             : base(message)

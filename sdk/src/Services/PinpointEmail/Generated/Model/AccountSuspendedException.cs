@@ -40,6 +40,13 @@ namespace Amazon.PinpointEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountSuspendedException
+        /// message.
+        /// </summary>
+        public AccountSuspendedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountSuspendedException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidActivationIdException
+        /// message.
+        /// </summary>
+        public InvalidActivationIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidActivationIdException with the specified error
         /// message.
         /// </summary>

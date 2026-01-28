@@ -40,8 +40,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  <note> <ul> <li> 
     /// <para>
-    /// This preference is only available for the Amazon EC2 instance and Auto Scaling group
-    /// resource types.
+    /// This preference is only available for the Amazon EC2 instance and Amazon EC2 Auto
+    /// Scaling group resource types.
     /// </para>
     ///  </li> <li> 
     /// <para>

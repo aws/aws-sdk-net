@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CommentDeletedException
+        /// message.
+        /// </summary>
+        public CommentDeletedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CommentDeletedException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceUnavailableErrorException
+        /// message.
+        /// </summary>
+        public ServiceUnavailableErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceUnavailableErrorException with the specified error
         /// message.
         /// </summary>

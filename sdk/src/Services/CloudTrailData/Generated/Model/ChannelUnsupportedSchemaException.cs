@@ -39,6 +39,13 @@ namespace Amazon.CloudTrailData.Model
     {
 
         /// <summary>
+        /// Default constructor for ChannelUnsupportedSchemaException
+        /// message.
+        /// </summary>
+        public ChannelUnsupportedSchemaException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChannelUnsupportedSchemaException with the specified error
         /// message.
         /// </summary>

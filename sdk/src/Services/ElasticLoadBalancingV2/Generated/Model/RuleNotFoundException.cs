@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for RuleNotFoundException
+        /// message.
+        /// </summary>
+        public RuleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RuleNotFoundException with the specified error
         /// message.
         /// </summary>

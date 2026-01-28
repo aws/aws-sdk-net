@@ -36,6 +36,14 @@ namespace Amazon.IoTTwinMaker
         /// <summary>
         /// Construct instance of AmazonIoTTwinMakerException
         /// </summary>
+        public AmazonIoTTwinMakerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTTwinMakerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTTwinMakerException(string message)
             : base(message)

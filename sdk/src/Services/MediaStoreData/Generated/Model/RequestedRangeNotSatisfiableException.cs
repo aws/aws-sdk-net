@@ -39,6 +39,13 @@ namespace Amazon.MediaStoreData.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestedRangeNotSatisfiableException
+        /// message.
+        /// </summary>
+        public RequestedRangeNotSatisfiableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestedRangeNotSatisfiableException with the specified error
         /// message.
         /// </summary>

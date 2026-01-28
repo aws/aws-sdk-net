@@ -40,6 +40,13 @@ namespace Amazon.ApplicationDiscoveryService.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthorizationErrorException
+        /// message.
+        /// </summary>
+        public AuthorizationErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthorizationErrorException with the specified error
         /// message.
         /// </summary>

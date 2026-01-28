@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for ApplicationLimitExceededException
+        /// message.
+        /// </summary>
+        public ApplicationLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApplicationLimitExceededException with the specified error
         /// message.
         /// </summary>

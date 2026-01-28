@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for EventDataStoreARNInvalidException
+        /// message.
+        /// </summary>
+        public EventDataStoreARNInvalidException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventDataStoreARNInvalidException with the specified error
         /// message.
         /// </summary>

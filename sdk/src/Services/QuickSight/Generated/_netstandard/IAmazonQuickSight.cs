@@ -3752,6 +3752,37 @@ namespace Amazon.QuickSight
         /// Poll job descriptions after a job starts to know the status of the job. For information
         /// on available status codes, see <c>JobStatus</c>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Registered user support</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API can be called as before to get status of a job started by the same Quick
+        /// Sight user.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Possible error scenarios</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Request will fail with an Access Denied error in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The credentials have expired.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Job has been started by a different user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Impersonated Quick Sight user doesn't have access to the specified dashboard in the
+        /// job.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJob service method.</param>
         /// <param name="cancellationToken">
@@ -3802,6 +3833,74 @@ namespace Amazon.QuickSight
         /// If the job has not finished running, this operation returns a message that says <c>Dashboard
         /// Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</c>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Registered user support</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API can be called as before to get the result of a job started by the same Quick
+        /// Sight user. The result for the user will be returned in <c>RegisteredUsers</c> response
+        /// attribute. The attribute will contain a list with at most one object in it.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Possible error scenarios</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The request fails with an Access Denied error in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The credentials have expired.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The job was started by a different user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The registered user doesn't have access to the specified dashboard.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request succeeds but the job fails in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DASHBOARD_ACCESS_DENIED</c> - The registered user lost access to the dashboard.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CAPABILITY_RESTRICTED</c> - The registered user is restricted from exporting data
+        /// in <b>all</b> selected formats.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request succeeds but the response contains an error code in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CAPABILITY_RESTRICTED</c> - The registered user is restricted from exporting data
+        /// in <b>some</b> selected formats.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RLS_CHANGED</c> - Row-level security settings have changed. Re-run the job with
+        /// current settings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CLS_CHANGED</c> - Column-level security settings have changed. Re-run the job
+        /// with current settings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DATASET_DELETED</c> - The dataset has been deleted. Verify the dataset exists
+        /// before re-running the job.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJobResult service method.</param>
         /// <param name="cancellationToken">
@@ -4669,6 +4768,51 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission">REST API Reference for DescribeRoleCustomPermission Operation</seealso>
         Task<DescribeRoleCustomPermissionResponse> DescribeRoleCustomPermissionAsync(DescribeRoleCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeSelfUpgradeConfiguration
+
+
+
+        /// <summary>
+        /// Describes the self-upgrade configuration for a Quick Suite account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSelfUpgradeConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSelfUpgradeConfiguration service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeSelfUpgradeConfiguration">REST API Reference for DescribeSelfUpgradeConfiguration Operation</seealso>
+        Task<DescribeSelfUpgradeConfigurationResponse> DescribeSelfUpgradeConfigurationAsync(DescribeSelfUpgradeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5665,6 +5809,113 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetFlowPermissions">REST API Reference for GetFlowPermissions Operation</seealso>
         Task<GetFlowPermissionsResponse> GetFlowPermissionsAsync(GetFlowPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIdentityContext
+
+
+
+        /// <summary>
+        /// Retrieves the identity context for a Quick Sight user in a specified namespace, allowing
+        /// you to obtain identity tokens that can be used with identity-enhanced IAM role sessions
+        /// to call identity-aware APIs.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, you can call the following APIs with identity-enhanced Credentials
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartDashboardSnapshotJob.html">StartDashboardSnapshotJob</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJob.html">DescribeDashboardSnapshotJob</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJobResult.html">DescribeDashboardSnapshotJobResult</a>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Supported Authentication Methods</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API supports Quick Sight native users, IAM federated users, and Active Directory
+        /// users. For Quick Sight users authenticated by Amazon Web Services Identity Center,
+        /// see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-identity-enhanced-iam-role-sessions.html">Identity
+        /// Center documentation on identity-enhanced IAM role sessions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Getting Identity-Enhanced Credentials</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To obtain identity-enhanced credentials, follow these steps:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Call the GetIdentityContext API to retrieve an identity token for the specified user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the identity token with the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS
+        /// AssumeRole API</a> to obtain identity-enhanced IAM role session credentials.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Usage with STS AssumeRole</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The identity token returned by this API should be used with the STS AssumeRole API
+        /// to obtain credentials for an identity-enhanced IAM role session. When calling AssumeRole,
+        /// include the identity token in the <c>ProvidedContexts</c> parameter with <c>ProviderArn</c>
+        /// set to <c>arn:aws:iam::aws:contextProvider/QuickSight</c> and <c>ContextAssertion</c>
+        /// set to the identity token received from this API.
+        /// </para>
+        ///  
+        /// <para>
+        /// The assumed role must allow the <c>sts:SetContext</c> action in addition to <c>sts:AssumeRole</c>
+        /// in its trust relationship policy. The trust policy should include both actions for
+        /// the principal that will be assuming the role.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIdentityContext service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetIdentityContext">REST API Reference for GetIdentityContext Operation</seealso>
+        Task<GetIdentityContextResponse> GetIdentityContextAsync(GetIdentityContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6683,6 +6934,54 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships">REST API Reference for ListRoleMemberships Operation</seealso>
         Task<ListRoleMembershipsResponse> ListRoleMembershipsAsync(ListRoleMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSelfUpgrades
+
+
+
+        /// <summary>
+        /// Lists all self-upgrade requests for a Quick Suite account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSelfUpgrades service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSelfUpgrades service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListSelfUpgrades">REST API Reference for ListSelfUpgrades Operation</seealso>
+        Task<ListSelfUpgradesResponse> ListSelfUpgradesAsync(ListSelfUpgradesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7915,7 +8214,7 @@ namespace Amazon.QuickSight
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// 1 Paginated PDF
+        /// 1 PDF
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7925,7 +8224,11 @@ namespace Amazon.QuickSight
         /// <para>
         /// 5 CSVs from table or pivot table visuals
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Exporting CSV, Excel, or Pixel Perfect PDF reports requires Pixel Perfect Report Add-on.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The status of a submitted job can be polled with the <c>DescribeDashboardSnapshotJob</c>
         /// API. When you call the <c>DescribeDashboardSnapshotJob</c> API, check the <c>JobStatus</c>
@@ -8024,6 +8327,120 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         /// The size of the generated snapshots.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Registered user support</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can generate snapshots for registered Quick Sight users by using the Snapshot
+        /// Job APIs with <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-identity-enhanced-iam-role-sessions.html">identity-enhanced
+        /// IAM role session credentials</a>. This approach allows you to create snapshots on
+        /// behalf of specific Quick Sight users while respecting their row-level security (RLS),
+        /// column-level security (CLS), dynamic default parameters and dashboard parameter/filter
+        /// settings.
+        /// </para>
+        ///  
+        /// <para>
+        /// To generate snapshots for registered Quick Sight users, you need to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Obtain identity-enhanced IAM role session credentials from Amazon Web Services Security
+        /// Token Service (STS).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use these credentials to call the Snapshot Job APIs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Identity-enhanced credentials are credentials that contain information about the end
+        /// user (e.g., registered Quick Sight user).
+        /// </para>
+        ///  
+        /// <para>
+        /// If your Quick Sight users are backed by <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
+        /// Web Services Identity Center</a>, then you need to set up a <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/setuptrustedtokenissuer.html">trusted
+        /// token issuer</a>. Then, getting identity-enhanced IAM credentials for a Quick Sight
+        /// user will look like the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Authenticate user with your OIDC compliant Identity Provider. You should get auth
+        /// tokens back.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the OIDC API, <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateTokenWithIAM.html">CreateTokenWithIAM</a>,
+        /// to exchange auth tokens to IAM tokens. One of the resulted tokens will be identity
+        /// token.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call STS AssumeRole API as you normally would, but provide an extra <c>ProvidedContexts</c>
+        /// parameter in the API request. The list of contexts must have a single trusted context
+        /// assertion. The <c>ProviderArn</c> should be <c>arn:aws:iam::aws:contextProvider/IdentityCenter</c>
+        /// while <c>ContextAssertion</c> will be the identity token you received in response
+        /// from CreateTokenWithIAM
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more details, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-identity-enhanced-iam-role-sessions.html">IdC
+        /// documentation on Identity-enhanced IAM role sessions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To obtain Identity-enhanced credentials for Quick Sight native users, IAM federated
+        /// users, or Active Directory users, follow the steps below:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Call Quick Sight <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetIdentityContext.html">GetIdentityContext
+        /// API</a> to get identity token.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call STS AssumeRole API as you normally would, but provide extra <c>ProvidedContexts</c>
+        /// parameter in the API request. The list of contexts must have a single trusted context
+        /// assertion. The <c>ProviderArn</c> should be <c>arn:aws:iam::aws:contextProvider/QuickSight</c>
+        /// while <c>ContextAssertion</c> will be the identity token you received in response
+        /// from GetIdentityContext
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After obtaining the identity-enhanced IAM role session credentials, you can use them
+        /// to start a job, describe the job and describe job result. You can use the same credentials
+        /// as long as they haven't expired. All API requests made with these credentials are
+        /// considered to be made by the impersonated Quick Sight user.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When using identity-enhanced session credentials, set the UserConfiguration request
+        /// attribute to null. Otherwise, the request will be invalid.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  <b>Possible error scenarios</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The request fails with an Access Denied error in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The credentials have expired.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The impersonated Quick Sight user doesn't have access to the specified dashboard.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The impersonated Quick Sight user is restricted from exporting data in the selected
+        /// formats. For more information about export restrictions, see <a href="https://docs.aws.amazon.com/quicksuite/latest/userguide/create-custom-permisions-profile.html">Customizing
+        /// access to Amazon Quick Sight capabilities</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9766,6 +10183,100 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission">REST API Reference for UpdateRoleCustomPermission Operation</seealso>
         Task<UpdateRoleCustomPermissionResponse> UpdateRoleCustomPermissionAsync(UpdateRoleCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSelfUpgrade
+
+
+
+        /// <summary>
+        /// Updates a self-upgrade request for a Quick Suite user by approving, denying, or verifying
+        /// the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSelfUpgrade service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSelfUpgrade service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSelfUpgrade">REST API Reference for UpdateSelfUpgrade Operation</seealso>
+        Task<UpdateSelfUpgradeResponse> UpdateSelfUpgradeAsync(UpdateSelfUpgradeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSelfUpgradeConfiguration
+
+
+
+        /// <summary>
+        /// Updates the self-upgrade configuration for a Quick Suite account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSelfUpgradeConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSelfUpgradeConfiguration service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSelfUpgradeConfiguration">REST API Reference for UpdateSelfUpgradeConfiguration Operation</seealso>
+        Task<UpdateSelfUpgradeConfigurationResponse> UpdateSelfUpgradeConfigurationAsync(UpdateSelfUpgradeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

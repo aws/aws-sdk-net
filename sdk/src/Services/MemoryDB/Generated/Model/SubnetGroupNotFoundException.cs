@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetGroupNotFoundException
+        /// message.
+        /// </summary>
+        public SubnetGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetGroupNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <summary>
         /// Construct instance of AmazonMigrationHubStrategyRecommendationsException
         /// </summary>
+        public AmazonMigrationHubStrategyRecommendationsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMigrationHubStrategyRecommendationsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMigrationHubStrategyRecommendationsException(string message)
             : base(message)

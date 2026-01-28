@@ -36,6 +36,14 @@ namespace Amazon.DAX
         /// <summary>
         /// Construct instance of AmazonDAXException
         /// </summary>
+        public AmazonDAXException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDAXException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDAXException(string message)
             : base(message)

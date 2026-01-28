@@ -36,6 +36,14 @@ namespace Amazon.ApplicationCostProfiler
         /// <summary>
         /// Construct instance of AmazonApplicationCostProfilerException
         /// </summary>
+        public AmazonApplicationCostProfilerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonApplicationCostProfilerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonApplicationCostProfilerException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatiblePolicyException
+        /// message.
+        /// </summary>
+        public IncompatiblePolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatiblePolicyException with the specified error
         /// message.
         /// </summary>

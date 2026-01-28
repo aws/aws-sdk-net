@@ -383,6 +383,56 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationStatus.
+    /// </summary>
+    public class ConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus COMPLETED = new ConfigurationStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus FAILED = new ConfigurationStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionScope.
     /// </summary>
     public class ConnectionScope : ConstantClass
@@ -1731,6 +1781,72 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type FilterOperator.
+    /// </summary>
+    public class FilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQ for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator EQ = new FilterOperator("EQ");
+        /// <summary>
+        /// Constant GE for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator GE = new FilterOperator("GE");
+        /// <summary>
+        /// Constant GT for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator GT = new FilterOperator("GT");
+        /// <summary>
+        /// Constant LE for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator LE = new FilterOperator("LE");
+        /// <summary>
+        /// Constant LT for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator LT = new FilterOperator("LT");
+        /// <summary>
+        /// Constant TEXT_SEARCH for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator TEXT_SEARCH = new FilterOperator("TEXT_SEARCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterOperator FindValue(string value)
+        {
+            return FindValue<FilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterStatus.
     /// </summary>
     public class FilterStatus : ConstantClass
@@ -2831,6 +2947,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly MetadataGenerationRunStatus IN_PROGRESS = new MetadataGenerationRunStatus("IN_PROGRESS");
         /// <summary>
+        /// Constant PARTIALLY_SUCCEEDED for MetadataGenerationRunStatus
+        /// </summary>
+        public static readonly MetadataGenerationRunStatus PARTIALLY_SUCCEEDED = new MetadataGenerationRunStatus("PARTIALLY_SUCCEEDED");
+        /// <summary>
         /// Constant SUBMITTED for MetadataGenerationRunStatus
         /// </summary>
         public static readonly MetadataGenerationRunStatus SUBMITTED = new MetadataGenerationRunStatus("SUBMITTED");
@@ -2884,6 +3004,14 @@ namespace Amazon.DataZone
         /// Constant BUSINESS_DESCRIPTIONS for MetadataGenerationRunType
         /// </summary>
         public static readonly MetadataGenerationRunType BUSINESS_DESCRIPTIONS = new MetadataGenerationRunType("BUSINESS_DESCRIPTIONS");
+        /// <summary>
+        /// Constant BUSINESS_GLOSSARY_ASSOCIATIONS for MetadataGenerationRunType
+        /// </summary>
+        public static readonly MetadataGenerationRunType BUSINESS_GLOSSARY_ASSOCIATIONS = new MetadataGenerationRunType("BUSINESS_GLOSSARY_ASSOCIATIONS");
+        /// <summary>
+        /// Constant BUSINESS_NAMES for MetadataGenerationRunType
+        /// </summary>
+        public static readonly MetadataGenerationRunType BUSINESS_NAMES = new MetadataGenerationRunType("BUSINESS_NAMES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4294,6 +4422,56 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionGrantCreationMode.
+    /// </summary>
+    public class SubscriptionGrantCreationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for SubscriptionGrantCreationMode
+        /// </summary>
+        public static readonly SubscriptionGrantCreationMode AUTOMATIC = new SubscriptionGrantCreationMode("AUTOMATIC");
+        /// <summary>
+        /// Constant MANUAL for SubscriptionGrantCreationMode
+        /// </summary>
+        public static readonly SubscriptionGrantCreationMode MANUAL = new SubscriptionGrantCreationMode("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubscriptionGrantCreationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionGrantCreationMode FindValue(string value)
+        {
+            return FindValue<SubscriptionGrantCreationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionGrantCreationMode(string value)
         {
             return FindValue(value);
         }

@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for ListTeamsChannelConfigurationsException
+        /// message.
+        /// </summary>
+        public ListTeamsChannelConfigurationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ListTeamsChannelConfigurationsException with the specified error
         /// message.
         /// </summary>

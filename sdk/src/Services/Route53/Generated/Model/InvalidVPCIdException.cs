@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidVPCIdException
+        /// message.
+        /// </summary>
+        public InvalidVPCIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidVPCIdException with the specified error
         /// message.
         /// </summary>

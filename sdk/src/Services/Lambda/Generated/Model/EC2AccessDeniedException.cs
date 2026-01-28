@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for EC2AccessDeniedException
+        /// message.
+        /// </summary>
+        public EC2AccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EC2AccessDeniedException with the specified error
         /// message.
         /// </summary>

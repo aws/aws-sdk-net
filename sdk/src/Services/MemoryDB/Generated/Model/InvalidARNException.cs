@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidARNException
+        /// message.
+        /// </summary>
+        public InvalidARNException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidARNException with the specified error
         /// message.
         /// </summary>

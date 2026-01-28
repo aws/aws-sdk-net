@@ -43,6 +43,13 @@ namespace Amazon.Neptunedata.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for S3Exception
+        /// message.
+        /// </summary>
+        public S3Exception() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new S3Exception with the specified error
         /// message.
         /// </summary>

@@ -53,6 +53,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _objectTypeName;
         private Dictionary<string, string> _objectTypeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _roleArn;
+        private Scope _scope;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uri;
 
@@ -182,6 +183,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// Specifies whether the integration applies to profile level data (associated with profiles)
+        /// or domain level data (not associated with any specific profile). The default value
+        /// is PROFILE.
+        /// </para>
+        /// </summary>
+        public Scope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
         /// <summary>

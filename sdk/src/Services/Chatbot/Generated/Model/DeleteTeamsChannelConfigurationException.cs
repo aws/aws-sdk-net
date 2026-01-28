@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for DeleteTeamsChannelConfigurationException
+        /// message.
+        /// </summary>
+        public DeleteTeamsChannelConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeleteTeamsChannelConfigurationException with the specified error
         /// message.
         /// </summary>

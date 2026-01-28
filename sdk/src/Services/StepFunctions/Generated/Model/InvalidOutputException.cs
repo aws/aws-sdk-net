@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOutputException
+        /// message.
+        /// </summary>
+        public InvalidOutputException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOutputException with the specified error
         /// message.
         /// </summary>

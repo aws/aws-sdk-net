@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for FacetNotFoundException
+        /// message.
+        /// </summary>
+        public FacetNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FacetNotFoundException with the specified error
         /// message.
         /// </summary>

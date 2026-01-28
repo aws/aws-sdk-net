@@ -41,6 +41,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudTrailInvalidClientTokenIdException
+        /// message.
+        /// </summary>
+        public CloudTrailInvalidClientTokenIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudTrailInvalidClientTokenIdException with the specified error
         /// message.
         /// </summary>

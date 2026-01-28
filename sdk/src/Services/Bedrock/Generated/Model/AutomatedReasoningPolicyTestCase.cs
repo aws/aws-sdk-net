@@ -107,7 +107,7 @@ namespace Amazon.Bedrock.Model
         /// model response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=2048)]
         public string GuardContent
         {
             get { return this._guardContent; }

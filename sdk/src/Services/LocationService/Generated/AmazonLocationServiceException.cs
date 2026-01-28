@@ -36,6 +36,14 @@ namespace Amazon.LocationService
         /// <summary>
         /// Construct instance of AmazonLocationServiceException
         /// </summary>
+        public AmazonLocationServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLocationServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLocationServiceException(string message)
             : base(message)

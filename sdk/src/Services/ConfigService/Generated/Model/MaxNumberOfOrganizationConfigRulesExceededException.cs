@@ -41,6 +41,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxNumberOfOrganizationConfigRulesExceededException
+        /// message.
+        /// </summary>
+        public MaxNumberOfOrganizationConfigRulesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxNumberOfOrganizationConfigRulesExceededException with the specified error
         /// message.
         /// </summary>

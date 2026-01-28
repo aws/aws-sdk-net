@@ -653,6 +653,60 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type ApprovalStatus.
+    /// </summary>
+    public class ApprovalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus APPROVED = new ApprovalStatus("APPROVED");
+        /// <summary>
+        /// Constant DENIED for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus DENIED = new ApprovalStatus("DENIED");
+        /// <summary>
+        /// Constant PENDING for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus PENDING = new ApprovalStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApprovalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApprovalStatus FindValue(string value)
+        {
+            return FindValue<ApprovalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApprovalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoApprovedChangeType.
     /// </summary>
     public class AutoApprovedChangeType : ConstantClass
@@ -662,6 +716,14 @@ namespace Amazon.CleanRooms
         /// Constant ADD_MEMBER for AutoApprovedChangeType
         /// </summary>
         public static readonly AutoApprovedChangeType ADD_MEMBER = new AutoApprovedChangeType("ADD_MEMBER");
+        /// <summary>
+        /// Constant GRANT_RECEIVE_RESULTS_ABILITY for AutoApprovedChangeType
+        /// </summary>
+        public static readonly AutoApprovedChangeType GRANT_RECEIVE_RESULTS_ABILITY = new AutoApprovedChangeType("GRANT_RECEIVE_RESULTS_ABILITY");
+        /// <summary>
+        /// Constant REVOKE_RECEIVE_RESULTS_ABILITY for AutoApprovedChangeType
+        /// </summary>
+        public static readonly AutoApprovedChangeType REVOKE_RECEIVE_RESULTS_ABILITY = new AutoApprovedChangeType("REVOKE_RECEIVE_RESULTS_ABILITY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -749,6 +811,64 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type ChangeRequestAction.
+    /// </summary>
+    public class ChangeRequestAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVE for ChangeRequestAction
+        /// </summary>
+        public static readonly ChangeRequestAction APPROVE = new ChangeRequestAction("APPROVE");
+        /// <summary>
+        /// Constant CANCEL for ChangeRequestAction
+        /// </summary>
+        public static readonly ChangeRequestAction CANCEL = new ChangeRequestAction("CANCEL");
+        /// <summary>
+        /// Constant COMMIT for ChangeRequestAction
+        /// </summary>
+        public static readonly ChangeRequestAction COMMIT = new ChangeRequestAction("COMMIT");
+        /// <summary>
+        /// Constant DENY for ChangeRequestAction
+        /// </summary>
+        public static readonly ChangeRequestAction DENY = new ChangeRequestAction("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeRequestAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeRequestAction FindValue(string value)
+        {
+            return FindValue<ChangeRequestAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeRequestAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeRequestStatus.
     /// </summary>
     public class ChangeRequestStatus : ConstantClass
@@ -817,6 +937,10 @@ namespace Amazon.CleanRooms
     {
 
         /// <summary>
+        /// Constant COLLABORATION for ChangeSpecificationType
+        /// </summary>
+        public static readonly ChangeSpecificationType COLLABORATION = new ChangeSpecificationType("COLLABORATION");
+        /// <summary>
         /// Constant MEMBER for ChangeSpecificationType
         /// </summary>
         public static readonly ChangeSpecificationType MEMBER = new ChangeSpecificationType("MEMBER");
@@ -866,6 +990,18 @@ namespace Amazon.CleanRooms
         /// Constant ADD_MEMBER for ChangeType
         /// </summary>
         public static readonly ChangeType ADD_MEMBER = new ChangeType("ADD_MEMBER");
+        /// <summary>
+        /// Constant EDIT_AUTO_APPROVED_CHANGE_TYPES for ChangeType
+        /// </summary>
+        public static readonly ChangeType EDIT_AUTO_APPROVED_CHANGE_TYPES = new ChangeType("EDIT_AUTO_APPROVED_CHANGE_TYPES");
+        /// <summary>
+        /// Constant GRANT_RECEIVE_RESULTS_ABILITY for ChangeType
+        /// </summary>
+        public static readonly ChangeType GRANT_RECEIVE_RESULTS_ABILITY = new ChangeType("GRANT_RECEIVE_RESULTS_ABILITY");
+        /// <summary>
+        /// Constant REVOKE_RECEIVE_RESULTS_ABILITY for ChangeType
+        /// </summary>
+        public static readonly ChangeType REVOKE_RECEIVE_RESULTS_ABILITY = new ChangeType("REVOKE_RECEIVE_RESULTS_ABILITY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3286,6 +3422,56 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SupportedS3Region(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyntheticDataColumnType.
+    /// </summary>
+    public class SyntheticDataColumnType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CATEGORICAL for SyntheticDataColumnType
+        /// </summary>
+        public static readonly SyntheticDataColumnType CATEGORICAL = new SyntheticDataColumnType("CATEGORICAL");
+        /// <summary>
+        /// Constant NUMERICAL for SyntheticDataColumnType
+        /// </summary>
+        public static readonly SyntheticDataColumnType NUMERICAL = new SyntheticDataColumnType("NUMERICAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyntheticDataColumnType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyntheticDataColumnType FindValue(string value)
+        {
+            return FindValue<SyntheticDataColumnType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyntheticDataColumnType(string value)
         {
             return FindValue(value);
         }

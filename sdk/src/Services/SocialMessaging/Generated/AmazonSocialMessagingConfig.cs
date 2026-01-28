@@ -33,7 +33,7 @@ namespace Amazon.SocialMessaging
     public partial class AmazonSocialMessagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SocialMessaging", "4.0.3.5");
+            InternalSDKUtils.BuildUserAgentString("SocialMessaging", "4.0.4.2");
 
         private static readonly AmazonSocialMessagingEndpointResolver EndpointResolver =
             new AmazonSocialMessagingEndpointResolver();

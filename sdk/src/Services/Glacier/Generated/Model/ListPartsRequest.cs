@@ -58,7 +58,7 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// For conceptual information and the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-    /// with Archives in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
+    /// with Archives in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
     /// Parts</a> in the <i>Amazon Glacier Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -89,7 +89,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListPartsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <c>AccountId</c> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
+        /// <param name="accountId">The <c>AccountId</c> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
         public ListPartsRequest(string accountId, string vaultName, string uploadId)
@@ -104,7 +104,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <c>AccountId</c> value is the AWS account ID of the account that owns the vault.
         /// You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen),
-        /// in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
+        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
         /// used to sign the request. If you use an account ID, do not include any hyphens ('-')
         /// in the ID. 
         /// </para>

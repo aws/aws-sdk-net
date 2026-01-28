@@ -63,6 +63,9 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetApplicationType())
+                request.Parameters.Add("applicationType", StringUtils.FromString(publicRequest.ApplicationType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

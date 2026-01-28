@@ -40,6 +40,13 @@ namespace Amazon.AppSync.Model
     {
 
         /// <summary>
+        /// Default constructor for ApiKeyValidityOutOfBoundsException
+        /// message.
+        /// </summary>
+        public ApiKeyValidityOutOfBoundsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApiKeyValidityOutOfBoundsException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.Imagebuilder.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceDependencyException
+        /// message.
+        /// </summary>
+        public ResourceDependencyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceDependencyException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.PartnerCentralSelling
         /// <summary>
         /// Construct instance of AmazonPartnerCentralSellingException
         /// </summary>
+        public AmazonPartnerCentralSellingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPartnerCentralSellingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPartnerCentralSellingException(string message)
             : base(message)

@@ -74,7 +74,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 else                
                     xmlWriter.WriteElementString("ClientToken", Guid.NewGuid().ToString());                
 
-                if (publicRequest.Details != null)
+                if (publicRequest.IsSetDetails())
                 {
                     xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())

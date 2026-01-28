@@ -75,21 +75,21 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConnectionGroupId())
                     xmlWriter.WriteElementString("ConnectionGroupId", StringUtils.FromString(publicRequest.ConnectionGroupId));
 
-                if (publicRequest.Customizations != null)
+                if (publicRequest.IsSetCustomizations())
                 {
                     xmlWriter.WriteStartElement("Customizations");
-                    if (publicRequest.Customizations.Certificate != null)
+                    if (publicRequest.Customizations.IsSetCertificate())
                     {
                         xmlWriter.WriteStartElement("Certificate");
                         if(publicRequest.Customizations.Certificate.IsSetArn())
                             xmlWriter.WriteElementString("Arn", StringUtils.FromString(publicRequest.Customizations.Certificate.Arn));
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.Customizations.GeoRestrictions != null)
+                    if (publicRequest.Customizations.IsSetGeoRestrictions())
                     {
                         xmlWriter.WriteStartElement("GeoRestrictions");
                         var publicRequestCustomizationsGeoRestrictionsLocations = publicRequest.Customizations.GeoRestrictions.Locations;
-                        if (publicRequestCustomizationsGeoRestrictionsLocations != null && (publicRequestCustomizationsGeoRestrictionsLocations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.Customizations.GeoRestrictions.IsSetLocations()) 
                         {
                             xmlWriter.WriteStartElement("Locations");
                             foreach (var publicRequestCustomizationsGeoRestrictionsLocationsValue in publicRequestCustomizationsGeoRestrictionsLocations) 
@@ -104,7 +104,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("RestrictionType", StringUtils.FromString(publicRequest.Customizations.GeoRestrictions.RestrictionType));
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.Customizations.WebAcl != null)
+                    if (publicRequest.Customizations.IsSetWebAcl())
                     {
                         xmlWriter.WriteStartElement("WebAcl");
                         if(publicRequest.Customizations.WebAcl.IsSetAction())
@@ -119,25 +119,25 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("DistributionId", StringUtils.FromString(publicRequest.DistributionId));
 
                 var publicRequestDomains = publicRequest.Domains;
-                if (publicRequestDomains != null && (publicRequestDomains.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetDomains()) 
                 {
                     xmlWriter.WriteStartElement("Domains");
                     foreach (var publicRequestDomainsValue in publicRequestDomains) 
                     {
-                    if (publicRequestDomainsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if(publicRequestDomainsValue.IsSetDomain())
-                            xmlWriter.WriteElementString("Domain", StringUtils.FromString(publicRequestDomainsValue.Domain));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestDomainsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("member");
+                            if(publicRequestDomainsValue.IsSetDomain())
+                                xmlWriter.WriteElementString("Domain", StringUtils.FromString(publicRequestDomainsValue.Domain));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
                 if(publicRequest.IsSetEnabled())
                     xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.Enabled.Value));
 
-                if (publicRequest.ManagedCertificateRequest != null)
+                if (publicRequest.IsSetManagedCertificateRequest())
                 {
                     xmlWriter.WriteStartElement("ManagedCertificateRequest");
                     if(publicRequest.ManagedCertificateRequest.IsSetCertificateTransparencyLoggingPreference())
@@ -149,20 +149,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestParameters = publicRequest.Parameters;
-                if (publicRequestParameters != null && (publicRequestParameters.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetParameters()) 
                 {
                     xmlWriter.WriteStartElement("Parameters");
                     foreach (var publicRequestParametersValue in publicRequestParameters) 
                     {
-                    if (publicRequestParametersValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if(publicRequestParametersValue.IsSetName())
-                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestParametersValue.Name));
-                        if(publicRequestParametersValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestParametersValue.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestParametersValue != null)
+                        {
+                            xmlWriter.WriteStartElement("member");
+                            if(publicRequestParametersValue.IsSetName())
+                                xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestParametersValue.Name));
+                            if(publicRequestParametersValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestParametersValue.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }

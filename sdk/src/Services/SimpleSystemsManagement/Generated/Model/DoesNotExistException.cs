@@ -47,6 +47,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DoesNotExistException
+        /// message.
+        /// </summary>
+        public DoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DoesNotExistException with the specified error
         /// message.
         /// </summary>

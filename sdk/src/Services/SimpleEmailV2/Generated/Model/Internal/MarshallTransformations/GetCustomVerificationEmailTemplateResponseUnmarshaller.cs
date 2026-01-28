@@ -70,6 +70,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     response.SuccessRedirectionURL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TemplateContent", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

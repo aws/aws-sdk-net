@@ -36,6 +36,14 @@ namespace Amazon.Panorama
         /// <summary>
         /// Construct instance of AmazonPanoramaException
         /// </summary>
+        public AmazonPanoramaException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPanoramaException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPanoramaException(string message)
             : base(message)

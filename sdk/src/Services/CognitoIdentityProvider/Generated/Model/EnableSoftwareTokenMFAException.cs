@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for EnableSoftwareTokenMFAException
+        /// message.
+        /// </summary>
+        public EnableSoftwareTokenMFAException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EnableSoftwareTokenMFAException with the specified error
         /// message.
         /// </summary>

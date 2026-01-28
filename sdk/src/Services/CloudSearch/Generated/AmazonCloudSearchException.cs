@@ -36,6 +36,14 @@ namespace Amazon.CloudSearch
         /// <summary>
         /// Construct instance of AmazonCloudSearchException
         /// </summary>
+        public AmazonCloudSearchException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudSearchException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudSearchException(string message)
             : base(message)

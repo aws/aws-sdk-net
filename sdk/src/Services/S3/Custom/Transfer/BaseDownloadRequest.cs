@@ -29,6 +29,22 @@ using Amazon.S3.Model;
 namespace Amazon.S3.Transfer
 {
     /// <summary>
+    /// Specifies the strategy for multipart downloads
+    /// </summary>
+    public enum MultipartDownloadType
+    {
+        /// <summary>
+        /// Use part-based downloads with original upload part boundaries
+        /// </summary>
+        PART,
+        
+        /// <summary>
+        /// Use range-based downloads with configurable part sizes
+        /// </summary>
+        RANGE
+    }
+
+    /// <summary>
     /// The base class for requests that return Amazon S3 objects.
     /// </summary>
     public abstract class BaseDownloadRequest
@@ -50,6 +66,8 @@ namespace Amazon.S3.Transfer
         private string ifMatch;
         private string ifNoneMatch;
         private ResponseHeaderOverrides responseHeaders;
+        private long? partSize;
+        private MultipartDownloadType multipartDownloadType = MultipartDownloadType.PART;
         
         /// <summary>
         /// 	Gets or sets the name of the bucket.
@@ -329,6 +347,46 @@ namespace Amazon.S3.Transfer
             {
                 this.responseHeaders = value;
             }
+        }
+
+        /// <summary>
+        /// Gets or sets the part size of the download in bytes.
+        /// The downloaded file will be divided into 
+        /// parts the size specified and
+        /// downloaded from Amazon S3 individually.
+        /// This is used when MultipartDownloadType is set to RANGE.
+        /// </summary>
+        /// <value>
+        /// The part size of the download.
+        /// </value>
+        public long PartSize
+        {
+            get { return this.partSize.GetValueOrDefault(); }
+            set { this.partSize = value; }
+        }
+
+        /// <summary>
+        /// Checks if PartSize property is set.
+        /// </summary>
+        /// <returns>true if PartSize property is set.</returns>
+        internal bool IsSetPartSize()
+        {
+            return this.partSize.HasValue;
+        }
+
+        /// <summary>
+        /// Gets or sets the type of multipart download to use.
+        /// PART: Uses part GET with original part sizes from upload (ignores PartSize)
+        /// RANGE: Uses ranged GET with PartSize to determine ranges
+        /// Default is PART
+        /// </summary>
+        /// <value>
+        /// The multipart download type.
+        /// </value>
+        public MultipartDownloadType MultipartDownloadType
+        {
+            get { return this.multipartDownloadType; }
+            set { this.multipartDownloadType = value; }
         }
     }
 }

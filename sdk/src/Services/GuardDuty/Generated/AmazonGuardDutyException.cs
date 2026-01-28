@@ -36,6 +36,14 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Construct instance of AmazonGuardDutyException
         /// </summary>
+        public AmazonGuardDutyException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGuardDutyException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGuardDutyException(string message)
             : base(message)

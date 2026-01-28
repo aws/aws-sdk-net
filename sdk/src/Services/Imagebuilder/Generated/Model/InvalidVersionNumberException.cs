@@ -39,6 +39,13 @@ namespace Amazon.Imagebuilder.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidVersionNumberException
+        /// message.
+        /// </summary>
+        public InvalidVersionNumberException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidVersionNumberException with the specified error
         /// message.
         /// </summary>

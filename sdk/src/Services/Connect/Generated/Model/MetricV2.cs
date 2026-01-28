@@ -31,10 +31,17 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Contains information about the metric.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Only one of either the Name or MetricId is required.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class MetricV2
     {
         private List<MetricFilterV2> _metricFilters = AWSConfigs.InitializeCollections ? new List<MetricFilterV2>() : null;
+        private string _metricId;
         private string _name;
         private List<ThresholdV2> _threshold = AWSConfigs.InitializeCollections ? new List<ThresholdV2>() : null;
 
@@ -63,15 +70,30 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetricId. 
+        /// <para>
+        /// Historical metrics or custom metrics can be referenced via this field. This field
+        /// is a valid Amazon Connect Arn or a UUID
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=150)]
+        public string MetricId
+        {
+            get { return this._metricId; }
+            set { this._metricId = value; }
+        }
+
+        // Check to see if MetricId property is set
+        internal bool IsSetMetricId()
+        {
+            return this._metricId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the metric.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// This parameter is required. The following Required = No is incorrect.
-        /// </para>
-        ///  </important>
         /// </summary>
         public string Name
         {

@@ -39,6 +39,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for GenerationExistsException
+        /// message.
+        /// </summary>
+        public GenerationExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GenerationExistsException with the specified error
         /// message.
         /// </summary>

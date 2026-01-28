@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumBranchesExceededException
+        /// message.
+        /// </summary>
+        public MaximumBranchesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumBranchesExceededException with the specified error
         /// message.
         /// </summary>

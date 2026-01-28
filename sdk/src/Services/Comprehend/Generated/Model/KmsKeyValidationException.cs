@@ -40,6 +40,13 @@ namespace Amazon.Comprehend.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsKeyValidationException
+        /// message.
+        /// </summary>
+        public KmsKeyValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsKeyValidationException with the specified error
         /// message.
         /// </summary>

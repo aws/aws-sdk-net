@@ -42,6 +42,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for NotReadyException
+        /// message.
+        /// </summary>
+        public NotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotReadyException with the specified error
         /// message.
         /// </summary>

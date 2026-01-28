@@ -45,6 +45,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for ExecutionAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ExecutionAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExecutionAlreadyExistsException with the specified error
         /// message.
         /// </summary>

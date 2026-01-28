@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentPipelineExecutionsLimitExceededException
+        /// message.
+        /// </summary>
+        public ConcurrentPipelineExecutionsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentPipelineExecutionsLimitExceededException with the specified error
         /// message.
         /// </summary>

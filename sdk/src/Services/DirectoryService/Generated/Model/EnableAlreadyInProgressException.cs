@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for EnableAlreadyInProgressException
+        /// message.
+        /// </summary>
+        public EnableAlreadyInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EnableAlreadyInProgressException with the specified error
         /// message.
         /// </summary>

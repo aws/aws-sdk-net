@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEndPointException
+        /// message.
+        /// </summary>
+        public InvalidEndPointException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEndPointException with the specified error
         /// message.
         /// </summary>

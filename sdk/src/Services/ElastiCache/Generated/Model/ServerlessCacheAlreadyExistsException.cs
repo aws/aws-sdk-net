@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for ServerlessCacheAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ServerlessCacheAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServerlessCacheAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for UnresolvableUsageUnitException
+        /// message.
+        /// </summary>
+        public UnresolvableUsageUnitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnresolvableUsageUnitException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheParameterGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public CacheParameterGroupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheParameterGroupQuotaExceededException with the specified error
         /// message.
         /// </summary>

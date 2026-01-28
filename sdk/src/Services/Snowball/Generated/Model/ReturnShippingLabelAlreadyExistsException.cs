@@ -41,6 +41,13 @@ namespace Amazon.Snowball.Model
     {
 
         /// <summary>
+        /// Default constructor for ReturnShippingLabelAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ReturnShippingLabelAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReturnShippingLabelAlreadyExistsException with the specified error
         /// message.
         /// </summary>

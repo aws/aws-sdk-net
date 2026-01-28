@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ComparisonType. 
         /// <para>
-        /// The type of comparison to be made when evaluating the decimal condition. 
+        /// The type of comparison to be made when evaluating the decimal condition.
         /// </para>
         /// </summary>
         public DecimalComparisonType ComparisonType

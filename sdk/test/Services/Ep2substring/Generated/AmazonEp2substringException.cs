@@ -36,6 +36,14 @@ namespace Amazon.Ep2substring
         /// <summary>
         /// Construct instance of AmazonEp2substringException
         /// </summary>
+        public AmazonEp2substringException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEp2substringException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEp2substringException(string message)
             : base(message)

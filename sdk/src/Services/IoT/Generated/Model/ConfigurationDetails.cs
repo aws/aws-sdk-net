@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The encryption configuration details that include the status information of the Amazon
-    /// Web Services Key Management Service (KMS) key and the KMS access role.
+    /// The encryption configuration details that include the status information of the Key
+    /// Management Service (KMS) key and the KMS access role.
     /// </summary>
     public partial class ConfigurationDetails
     {
@@ -43,8 +43,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ConfigurationStatus. 
         /// <para>
         /// The health status of KMS key and KMS access role. If either KMS key or KMS access
-        /// role is <c>UNHEALTHY</c>, the return value will be <c>UNHEALTHY</c>. To use a customer-managed
-        /// KMS key, the value of <c>configurationStatus</c> must be <c>HEALTHY</c>. 
+        /// role is <c>UNHEALTHY</c>, the return value will be <c>UNHEALTHY</c>. To use a customer
+        /// managed KMS key, the value of <c>configurationStatus</c> must be <c>HEALTHY</c>. 
         /// </para>
         /// </summary>
         public ConfigurationStatus ConfigurationStatus
