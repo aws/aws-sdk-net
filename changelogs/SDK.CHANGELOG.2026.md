@@ -1,3 +1,21 @@
+### 3.7.1211.0 (2026-01-28 19:28 UTC)
+* CognitoIdentityProvider (3.7.504.0)
+	* This release adds support for a new lambda trigger to transform federated user attributes during the authentication with external identity providers on Cognito Managed Login.
+* Connect (3.7.526.0)
+	* Adds support for filtering search results based on tags assigned to contacts.
+* EC2 (3.7.544.0)
+	* SearchTransitGatewayRoutes API response now includes a NextToken field, enabling pagination when retrieving large sets of transit gateway routes. Pass the returned NextToken value in subsequent requests to retrieve the next page of results.
+* Lambda (3.7.511.0)
+	* We are launching ESM Metrics and logging for Kafka ESM to allow customers to monitor Kafka event processing using CloudWatch Metrics and Logs.
+* MediaConnect (3.7.505.0)
+	* This release adds support for NDI flow sources in AWS Elemental MediaConnect. You can now send content to your MediaConnect transport streams directly from your NDI environment using the new NDI source type. Also adds support for LARGE 4X flow size, which can be used when creating CDI JPEG-XS flows.
+* MediaConvert (3.7.507.0)
+	* This release adds a follow source mode for audio output channel count, an AES audio frame wrapping option for MXF outputs, and an option to signal DolbyVision compatibility using the SUPPLEMENTAL-CODECS tag in HLS manifests.
+* S3 (3.7.510.0)
+	* Adds support for the UpdateObjectEncryption API to change the server-side encryption type of objects in general purpose buckets.
+* S3Control (3.7.505.0)
+	* Adds support for the UpdateObjectEncryption API to change the server-side encryption type of objects in general purpose buckets.
+
 ### 3.7.1210.0 (2026-01-27 19:25 UTC)
 * Connect (3.7.525.0)
 	* Added support for task attachments. The StartTaskContact API now accepts file attachments, enabling customers to include files (.csv, .doc, .docx, .heic, .jfif, .jpeg, .jpg, .mov, .mp4, .pdf, .png, .ppt, .pptx, .rtf, .txt, etc.) when creating Task contacts. Supports up to 5 attachments per task.
