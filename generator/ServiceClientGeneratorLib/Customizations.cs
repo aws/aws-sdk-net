@@ -433,6 +433,7 @@ namespace ServiceClientGenerator
         public const string FlattenShapeKey = "flattenShapes";
         public const string ExcludeShapesKey = "excludeShapes";
         public const string AlternateLocationNameKey = "alternateLocationName";
+        public const string MergedEnumsKey = "mergedEnums";
 
         JsonData _documentRoot;
 
@@ -1009,6 +1010,51 @@ namespace ServiceClientGenerator
                 .Select(entry => entry.ToString());
 
             return new HashSet<string>(excludeShapes ?? new string[0]);
+        }
+
+        /// <summary>
+        /// Gets the configuration for enums that should be merged into existing custom enums instead of being generated separately.
+        /// This is used primarily for S3 where certain service model enums need to be merged into existing custom enum types
+        /// to maintain backward compatibility.
+        /// 
+        /// Example usage:
+        /// "mergedEnums": {
+        ///   "BucketLogsPermission": {
+        ///     "mergeInto": "Permission"
+        ///   }
+        /// }
+        /// </summary>
+        /// <returns>Dictionary mapping source enum name to target enum name</returns>
+        public Dictionary<string, string> MergedEnums
+        {
+            get
+            {
+                var mergedEnums = new Dictionary<string, string>();
+                
+                var data = _documentRoot[MergedEnumsKey];
+                if (data == null) return mergedEnums;
+
+                foreach (var enumName in data.PropertyNames)
+                {
+                    var enumData = data[enumName];
+                    if (enumData != null && enumData["mergeInto"] != null)
+                    {
+                        mergedEnums[enumName] = enumData["mergeInto"].ToString();
+                    }
+                }
+
+                return mergedEnums;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the specified enum should be merged into another existing enum.
+        /// </summary>
+        /// <param name="enumName">The name of the enum to check</param>
+        /// <returns>True if the enum should be merged, false otherwise</returns>
+        public bool IsEnumMerged(string enumName)
+        {
+            return MergedEnums.ContainsKey(enumName);
         }
 
         #region ShapeModifier
