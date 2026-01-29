@@ -204,12 +204,8 @@ namespace ServiceClientGenerator
             var enumFileName = this.Configuration.IsChildConfig ?
                 string.Format("ServiceEnumerations.{0}.cs", Configuration.ClassName) : "ServiceEnumerations.cs";
 
-            // Any enumerations for the service
-            // skip s3 until we're at the end of s3 client generation
-            if (this.Configuration.ServiceModel.ServiceId != "S3")
-            {
-                this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
-            }
+            this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
+
             // Any paginators for the service
             if (Configuration.ServiceModel.HasPaginators)
             {

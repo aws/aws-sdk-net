@@ -232,14 +232,40 @@ namespace ServiceClientGenerator
                 var list = (from object value in enumValues
                             select new EnumEntry(value.ToString())).ToList();
 
-                foreach(var item in list)
+                this.model.Customizations.ShapeModifiers.TryGetValue(this.ModelName, out var shapeModifier);
+                if (shapeModifier != null)
+                {
+                    list.AddRange(shapeModifier.InjectedPropertyNames.Select(i => new EnumEntry(i)));
+                }
+
+                // Add values from enums that are configured to be merged into this enum
+                var mergedEnums = this.model.Customizations.MergedEnums;
+                foreach (var mergedEnum in mergedEnums.Where(kvp => kvp.Value == this.ModelName))
+                {
+                    // Find the source enum in the service model
+                    var sourceEnumData = this.model.DocumentRoot[ServiceModel.ShapesKey][mergedEnum.Key];
+                    if (sourceEnumData != null && sourceEnumData[EnumKey] != null)
+                    {
+                        // Add all values from the source enum
+                        foreach (object value in sourceEnumData[EnumKey])
+                        {
+                            if (list.Count(e => e.MarshallName == value.ToString()) == 0)
+                                list.Add(new EnumEntry(value.ToString()));
+                        }
+                    }
+                }
+
+                foreach (var item in list)
                 {
                     var custom = this.model.Customizations.GetPropertyModifier(this.ModelName, item.MarshallName);
                     if (custom != null)
                         item.CustomPropertyName = custom.EmitName;
                 }
 
-                return list.OrderBy(x => x.PropertyName).ToList();
+                return list
+                    .Where(v => shapeModifier == null || !shapeModifier.IsExcludedProperty(v.MarshallName))
+                    .OrderBy(x => x.PropertyName)
+                    .ToList();
             }
         }
 
