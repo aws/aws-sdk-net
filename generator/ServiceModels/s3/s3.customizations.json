@@ -2494,26 +2494,17 @@
         "ServerSideEncryption":{
             "renameShape":"ServerSideEncryptionMethod"
         },
-        "BucketLocationConstraint":{
-            "renameShape": "S3Region"
-        },
         "Destination" :{
             "renameShape" : "ReplicationDestination"
         },
         "StorageClass":{
             "renameShape": "S3StorageClass"
         },
-        "Payer":{
-            "renameShape": "string"
-        },
         "Part":{
             "renameShape": "PartDetail"
         },
         "CreateBucketConfiguration":{
             "renameShape":"PutBucketConfiguration"
-        },
-        "BucketCannedACL":{
-            "renameShape":"S3CannedACL"
         },
         "Grantee": {
             "renameShape": "S3Grantee"
@@ -2545,9 +2536,6 @@
         "Transition" : {
             "renameShape" : "LifecycleTransition"
         },
-        "TransitionStorageClass" : {
-            "renameShape" : "S3StorageClass"
-        },
         "Rule" :{
             "renameShape" : "LifecycleRule"
         },
@@ -2562,9 +2550,6 @@
         },
         "Object":{
             "renameShape": "S3Object"
-        },
-        "ObjectStorageClass": {
-             "renameShape": "S3StorageClass"
         },
         "ExpirationStatus": {
             "renameShape": "LifecycleRuleStatus"
@@ -2882,6 +2867,62 @@
                 "Type":"string",
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "GetBucketLocationOutput": {
+            "Location":{
+                "Type": "S3Region",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "LifecycleRuleNoncurrentVersionTransition":{
+            "StorageClass":{
+                "Type": "S3StorageClass",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "GetBucketRequestPaymentOutput":{
+            "Payer":{
+                "Type": "String",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "RequestPaymentConfiguration":{
+            "Payer":{
+                "Type": "String",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "LifecycleTransition":{
+            "StorageClass":{
+                "Type": "S3StorageClass",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "S3Object":{
+            "StorageClass":{
+                "Type": "S3StorageClass",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "PutBucketAclRequest":{
+            "ACL":{
+                "Type": "S3CannedACL",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "CreateBucketRequest":{
+            "CannedACL":{
+                "Type": "S3CannedACL",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
             }
         },
         "DeleteObjectRequest":{
