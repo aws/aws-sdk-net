@@ -149,7 +149,7 @@ namespace Amazon.Runtime
         /// This parameter is optional.
         /// </para>
         /// </summary>
-#if BCL
+#if NETFRAMEWORK
         public WebProxy ProxySettings { get; set; }
 #elif NETSTANDARD
         public IWebProxy ProxySettings { get; set; }
