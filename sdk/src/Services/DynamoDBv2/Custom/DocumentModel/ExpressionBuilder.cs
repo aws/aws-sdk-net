@@ -158,27 +158,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A new <see cref="ProjectionExpressionBuilder"/> that defines a projection expression using the specified attribute names.</returns>
         public ProjectionExpressionBuilder NamesList(NameBuilder first, params NameBuilder[] others)
         {
-            var ops = new List<OperandBuilder>{ first };
+            Operands.Add(first);
             if (others is { Length: > 0 })
             {
-                ops.AddRange(others);
+                Operands.AddRange(others);
             }
-            return new ProjectionExpressionBuilder(ops);
+            return this;
         }
 
         internal override ExpressionNode BuildExpressionTree(out string s)
         {
-            s = "P";
-
             if (Operands == null || Operands.Count == 0)
             {
                 throw new InvalidOperationException("Cannot build projection expression tree: operand list is empty.");
             }
 
+            s = "P";
+
             var node = new ExpressionNode
             {
                 Children = new Queue<ExpressionNode>()
             };
+
+            var parts = new List<string>(Operands.Count);
 
             foreach (var operand in Operands)
             {
@@ -193,14 +195,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
 
                 node.Children.Enqueue(child);
-
-                node.FormatedExpression += "#c, ";
+                parts.Add("#c");
             }
 
-            if (node.FormatedExpression.EndsWith(", "))
-            {
-                node.FormatedExpression = node.FormatedExpression.Substring(0, node.FormatedExpression.Length - 2);
-            }
+            node.FormatedExpression = string.Join(", ", parts);
 
             return node;
         }
