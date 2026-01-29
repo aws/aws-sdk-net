@@ -97,29 +97,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
     /// <summary>
     /// The <see cref="ProjectionExpressionBuilder"/> class is used to construct projection expressions for DynamoDB query operation.
+    /// A projection expression is a comma-separated list of attribute names (and nested paths) to retrieve.
     /// </summary>
     public class ProjectionExpressionBuilder : ExpressionBuilder
     {
         /// <summary>
-        /// The list of attribute names that will be used in the expression.
+        /// The list of operands that will be used in the projection expression.
         /// </summary>
-        internal List<NameBuilder> Names { get; set; }
+        internal List<OperandBuilder> Operands { get; set; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectionExpressionBuilder"/> class with default settings.
-        /// </summary>
-        public ProjectionExpressionBuilder()
+        private ProjectionExpressionBuilder()
         {
-            Names = new List<NameBuilder>();
+            Operands = new List<OperandBuilder>();
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectionExpressionBuilder"/> class with name attributes.
-        /// </summary>
-        ///<param name="namesList">The <see cref="NameBuilder"/> representing the name part of the attribute.</param>
-        public ProjectionExpressionBuilder(List<NameBuilder> namesList)
+        private ProjectionExpressionBuilder(List<OperandBuilder> operands)
+            : this()
         {
-            Names = namesList;
+            Operands = operands ?? new List<OperandBuilder>();
         }
 
         /// <summary>
@@ -134,61 +129,80 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
-        /// Adds one or more attribute names to the projection expression.
+        /// Adds an attribute name (or path) to the projection expression.
         /// </summary>
-        /// <param name="namesList">The <see cref="NameBuilder"/> instances representing the attribute names to include in the projection.</param>
-        /// <returns>A <see cref="ProjectionExpressionBuilder"/> that defines a projection expression using the specified attribute names.</returns>
-        public ProjectionExpressionBuilder NamesList(params NameBuilder[] namesList)
+        /// <param name="path">The attribute name or path (e.g., "Parent.Child[0].Grandchild").</param>
+        /// <returns>The current <see cref="ProjectionExpressionBuilder"/> for chaining.</returns>
+        public ProjectionExpressionBuilder WithName(string path)
         {
-            Names.AddRange(namesList);
-
+            Operands.Add(new NameBuilder(path));
             return this;
         }
 
         /// <summary>
-        /// Adds one or more attribute names to an existing projection expression builder.
+        /// Adds an already constructed name operand to the projection expression.
         /// </summary>
-        /// <param name="projectionExpressionBuilder">
-        /// The <see cref="ProjectionExpressionBuilder"/> to which the attribute names are added.
-        /// </param>
-        /// <param name="namesList">
-        /// The <see cref="NameBuilder"/> instances representing the attribute names to include in the projection.
-        /// </param>
-        /// <returns>A <see cref="ProjectionExpressionBuilder"/> that defines a projection expression using the specified attribute names.</returns>
-        public ProjectionExpressionBuilder AddNames(ProjectionExpressionBuilder projectionExpressionBuilder, params NameBuilder[] namesList)
+        /// <param name="nameBuilder">The <see cref="NameBuilder"/> representing the attribute name or path.</param>
+        /// <returns>The current <see cref="ProjectionExpressionBuilder"/> for chaining.</returns>
+        public ProjectionExpressionBuilder AddName(NameBuilder nameBuilder)
         {
-            projectionExpressionBuilder.Names.AddRange(namesList);
-            return new ProjectionExpressionBuilder(projectionExpressionBuilder.Names);
+            Operands.Add(nameBuilder ?? throw new ArgumentNullException(nameof(nameBuilder)));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds one or more attribute names to a projection expression.
+        /// </summary>
+        /// <param name="first">First <see cref="NameBuilder"/> to include.</param>
+        /// <param name="others">Optional additional <see cref="NameBuilder"/> operands.</param>
+        /// <returns>A new <see cref="ProjectionExpressionBuilder"/> that defines a projection expression using the specified attribute names.</returns>
+        public ProjectionExpressionBuilder NamesList(NameBuilder first, params NameBuilder[] others)
+        {
+            var ops = new List<OperandBuilder>{ first };
+            if (others is { Length: > 0 })
+            {
+                ops.AddRange(others);
+            }
+            return new ProjectionExpressionBuilder(ops);
         }
 
         internal override ExpressionNode BuildExpressionTree(out string s)
         {
             s = "P";
-            if (Names.Count == 0)
-                throw new InvalidOperationException("ProjectionExpressionBuilder");
 
-            var childNodes = BuildChildNodes();
+            if (Operands == null || Operands.Count == 0)
+            {
+                throw new InvalidOperationException("Cannot build projection expression tree: operand list is empty.");
+            }
 
             var node = new ExpressionNode
             {
-                Children = childNodes,
+                Children = new Queue<ExpressionNode>()
             };
 
-            node.FormatedExpression = s + string.Concat(Enumerable.Repeat($", {s}", Names.Count - 1));
-            return node;
-        }
-
-        private Queue<ExpressionNode> BuildChildNodes()
-        {
-            var childNodes = new Queue<ExpressionNode>(Names.Count);
-
-            foreach (var name in Names)
+            foreach (var operand in Operands)
             {
-                var operand = name.Build();
-                childNodes.Enqueue(operand);
+                ExpressionNode child;
+                try
+                {
+                    child = operand.Build();
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException("Failed to build projection operand", ex);
+                }
+
+                node.Children.Enqueue(child);
+
+                node.FormatedExpression += "#c, ";
             }
 
-            return childNodes;
+            if (node.FormatedExpression.EndsWith(", "))
+            {
+                node.FormatedExpression = node.FormatedExpression.Substring(0, node.FormatedExpression.Length - 2);
+            }
+
+            return node;
         }
     }
 

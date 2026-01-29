@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Extend Expression Builder for Projection expressions."
+      ]
+    }
+  ]
+}
