@@ -44,7 +44,7 @@ namespace ServiceClientGenerator
         private const string UnitTestUtilityProjectFileName = "AWSSDK.UnitTestUtilities";
         private const string UtilityProjectFileGuid = "{002B183F-E568-49CD-9D06-CBCFF2C2921F}";
 
-        private const string IntegrationTestUtilityName = "AWSSDK.IntegrationTestUtilities.NetFramework";
+        private const string IntegrationTestUtilityName = "AWSSDK.IntegrationTestUtilities";
         private const string IntegrationTestUtilityGuid = "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}";
 
         private static Regex ProjectReferenceRegex = new Regex("\"([^\"]*)\"");
@@ -112,7 +112,7 @@ namespace ServiceClientGenerator
             RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "UnitTests", "Custom", $"{UnitTestUtilityProjectFileName}.csproj")
         };
 
-        private static readonly Project IntegrationTestUtility45Project = new Project
+        private static readonly Project IntegrationTestUtilityProject = new Project
         {
             Name = IntegrationTestUtilityName,
             ProjectGuid = IntegrationTestUtilityGuid,
@@ -625,14 +625,17 @@ namespace ServiceClientGenerator
                     new List<string>()
                 ));
 
+                testProjects.Add(IntegrationTestUtilityProject);
+                dependentProjects.AddRange(AddProjectDependencies(
+                    IntegrationTestUtilityProject.ProjectPath, 
+                    serviceDirectory.Name, 
+                    new List<string>())
+                );
+
                 if (configuration.Name.Equals(ProjectTypes.NetFramework, StringComparison.Ordinal))
                 {
                     testProjects.Add(ServiceSlnGeneratorLibProject);
                     SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-                    
-                    testProjects.Add(IntegrationTestUtility45Project);
-                    dependentProjects.AddRange(AddProjectDependencies
-                        (IntegrationTestUtility45Project.ProjectPath, serviceDirectory.Name, new List<string>()));
                 }
             }
         }
