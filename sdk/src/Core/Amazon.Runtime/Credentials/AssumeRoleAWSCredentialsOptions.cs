@@ -82,7 +82,7 @@ namespace Amazon.Runtime
         public Func<string> MfaTokenCodeCallback { get; set; }
 
         /// <summary>
-        /// The source identity specified by the principal that is calling the <code>AssumeRole</code>
+        /// The source identity specified by the principal that is calling the <c>AssumeRole</c>
         /// operation.
         /// </summary>
         public string SourceIdentity { get; set; }
