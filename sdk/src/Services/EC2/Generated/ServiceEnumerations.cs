@@ -11187,6 +11187,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType G6Xlarge = new InstanceType("g6.xlarge");
         /// <summary>
+        /// Constant G7e12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e12xlarge = new InstanceType("g7e.12xlarge");
+        /// <summary>
+        /// Constant G7e24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e24xlarge = new InstanceType("g7e.24xlarge");
+        /// <summary>
+        /// Constant G7e2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e2xlarge = new InstanceType("g7e.2xlarge");
+        /// <summary>
+        /// Constant G7e48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e48xlarge = new InstanceType("g7e.48xlarge");
+        /// <summary>
+        /// Constant G7e4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e4xlarge = new InstanceType("g7e.4xlarge");
+        /// <summary>
+        /// Constant G7e8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e8xlarge = new InstanceType("g7e.8xlarge");
+        /// <summary>
         /// Constant Gr64xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Gr64xlarge = new InstanceType("gr6.4xlarge");
