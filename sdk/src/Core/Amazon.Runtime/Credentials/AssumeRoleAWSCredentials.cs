@@ -87,9 +87,22 @@ namespace Amazon.Runtime
             Options = options;
             FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE);
 
-            // Make sure to fetch new credentials well before the current credentials expire to avoid
-            // any request being made with expired credentials.
-            PreemptExpiryTime = TimeSpan.FromMinutes(15);
+            // The minimum duration for AssumeRole is 15 minutes (900 seconds), and if that value
+            // is requested a 15-minute preempt expiry time may cause the SDK to generate credentials
+            // more frequently than needed (https://github.com/aws/aws-sdk-net/issues/4313).
+            //
+            // If customers request a duration of 20 minutes (1200 seconds) or less, use a smaller
+            // preempt expiry time of 5 minutes.
+            if (Options.DurationSeconds.HasValue && Options.DurationSeconds.Value <= 1200)
+            {
+                PreemptExpiryTime = TimeSpan.FromMinutes(5);
+            }
+            else
+            {
+                // Otherwise, use the default of 15 minutes to make sure to fetch new credentials well before
+                // the current credentials expire to avoid any request being made with expired credentials.
+                PreemptExpiryTime = TimeSpan.FromMinutes(15);
+            }
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()
