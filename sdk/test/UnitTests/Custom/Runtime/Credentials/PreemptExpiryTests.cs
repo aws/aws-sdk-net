@@ -10,6 +10,7 @@ namespace AWSSDK.UnitTests
         [DataTestMethod]
         [DataRow(900, 5)]
         [DataRow(1199, 5)]
+        [DataRow(1200, 5)]
         [DataRow(1201, 15)]
         [DataRow(3600, 15)]
         public void Test_CorrectPreemptTime_IsUsedForDuration(int durationInSeconds, int expectedExpiryInMinutes)

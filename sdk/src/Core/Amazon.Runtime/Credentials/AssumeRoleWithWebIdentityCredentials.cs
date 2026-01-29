@@ -128,7 +128,7 @@ namespace Amazon.Runtime
             // is requested a 15-minute preempt expiry time may cause the SDK to generate credentials
             // more frequently than needed (https://github.com/aws/aws-sdk-net/issues/4313).
             //
-            // If customers request a duration shorter than 20 minutes (1200 seconds), use a smaller
+            // If customers request a duration of 20 minutes (1200 seconds) or less, use a smaller
             // preempt expiry time of 5 minutes.
             if (_options != null && _options.DurationSeconds.HasValue && _options.DurationSeconds.Value <= 1200)
             {
