@@ -52,7 +52,14 @@ namespace ServiceClientGenerator
                     var customJson = JsonMapper.ToObject(new StreamReader(entry));
                     foreach (var property in customJson.PropertyNames)
                     {
-                        outputJson[property] = customJson[property];
+                        if (outputJson.PropertyNames.Contains(property))
+                        {
+                            outputJson[property] = MergeJsonData(outputJson[property], customJson[property]);
+                        }
+                        else
+                        {
+                            outputJson[property] = customJson[property];
+                        }
                     }
                 }
 
@@ -86,6 +93,52 @@ namespace ServiceClientGenerator
 
                 File.WriteAllText(compiledFilePath, output);
                 Console.WriteLine("...updated {0}", Path.GetFullPath(compiledFilePath));
+            }
+        }
+
+        /// <summary>
+        /// Recursively merges two JsonData objects
+        /// </summary>
+        private static JsonData MergeJsonData(JsonData target, JsonData source)
+        {
+            // If both are objects, merge their properties
+            if (target.IsObject && source.IsObject)
+            {
+                foreach (var property in source.PropertyNames)
+                {
+                    if (target.PropertyNames.Contains(property))
+                    {
+                        target[property] = MergeJsonData(target[property], source[property]);
+                    }
+                    else
+                    {
+                        target[property] = source[property];
+                    }
+                }
+                return target;
+            }
+            // If both are arrays, concatenate them
+            else if (target.IsArray && source.IsArray)
+            {
+                JsonData mergedArray = new JsonData();
+                mergedArray.SetJsonType(JsonType.Array);
+
+                for (int i = 0; i < target.Count; i++)
+                {
+                    mergedArray.Add(target[i]);
+                }
+
+                for (int i = 0; i < source.Count; i++)
+                {
+                    mergedArray.Add(source[i]);
+                }
+
+                return mergedArray;
+            }
+            // Otherwise, source overwrites target
+            else
+            {
+                return source;
             }
         }
     }
