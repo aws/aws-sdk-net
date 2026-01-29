@@ -87,6 +87,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Location);
                 }
 
+                if(publicRequest.IsSetManagedCapacityConfiguration())
+                {
+                    context.Writer.WritePropertyName("ManagedCapacityConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ManagedCapacityConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ManagedCapacityConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxSize())
                 {
                     context.Writer.WritePropertyName("MaxSize");

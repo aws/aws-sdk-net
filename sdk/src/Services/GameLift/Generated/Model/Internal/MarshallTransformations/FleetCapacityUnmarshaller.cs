@@ -102,6 +102,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedCapacityConfiguration", targetDepth))
+                {
+                    var unmarshaller = ManagedCapacityConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedCapacityConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
