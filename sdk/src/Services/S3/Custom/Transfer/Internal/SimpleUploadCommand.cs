@@ -90,6 +90,7 @@ namespace Amazon.S3.Transfer.Internal
                 Grants = this._fileTransporterRequest.Grants,
                 ServerSideEncryptionKeyManagementServiceEncryptionContext = this._fileTransporterRequest.SSEKMSEncryptionContext,
                 WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
+                Expires = this._fileTransporterRequest.Expires
             };
             
             // We are iterating over the Headers to avoid setting the Header from the Transfer utility upload request 

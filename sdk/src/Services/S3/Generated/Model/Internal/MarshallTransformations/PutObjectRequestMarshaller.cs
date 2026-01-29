@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InitiateMultipartUpload Request Marshaller
+    /// PutObject Request Marshaller
     /// </summary>       
-    public partial class InitiateMultipartUploadRequestMarshaller : IMarshaller<IRequest, InitiateMultipartUploadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class PutObjectRequestMarshaller : IMarshaller<IRequest, PutObjectRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((InitiateMultipartUploadRequest)input);
+            return this.Marshall((PutObjectRequest)input);
         }
 
         /// <summary>
@@ -53,12 +53,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(InitiateMultipartUploadRequest publicRequest)
+        public IRequest Marshall(PutObjectRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             PreMarshallCustomization(request, publicRequest);
-            request.HttpMethod = "POST";
-            request.AddSubResource("uploads");
+            request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetBucketKeyEnabled()) 
             {
@@ -67,17 +66,37 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetCannedACL()) 
             {
-                request.Headers["x-amz-acl"] = StringUtils.FromString(publicRequest.CannedACL);
+                request.Headers["x-amz-acl"] = publicRequest.CannedACL;
             }
         
             if (publicRequest.IsSetChecksumAlgorithm()) 
             {
-                request.Headers["x-amz-checksum-algorithm"] = publicRequest.ChecksumAlgorithm;
+                request.Headers["x-amz-sdk-checksum-algorithm"] = publicRequest.ChecksumAlgorithm;
             }
         
-            if (publicRequest.IsSetChecksumType()) 
+            if (publicRequest.IsSetChecksumCRC32()) 
             {
-                request.Headers["x-amz-checksum-type"] = publicRequest.ChecksumType;
+                request.Headers["x-amz-checksum-crc32"] = publicRequest.ChecksumCRC32;
+            }
+        
+            if (publicRequest.IsSetChecksumCRC32C()) 
+            {
+                request.Headers["x-amz-checksum-crc32c"] = publicRequest.ChecksumCRC32C;
+            }
+        
+            if (publicRequest.IsSetChecksumCRC64NVME()) 
+            {
+                request.Headers["x-amz-checksum-crc64nvme"] = publicRequest.ChecksumCRC64NVME;
+            }
+        
+            if (publicRequest.IsSetChecksumSHA1()) 
+            {
+                request.Headers["x-amz-checksum-sha1"] = publicRequest.ChecksumSHA1;
+            }
+        
+            if (publicRequest.IsSetChecksumSHA256()) 
+            {
+                request.Headers["x-amz-checksum-sha256"] = publicRequest.ChecksumSHA256;
             }
         
             if (publicRequest.IsSetExpectedBucketOwner()) 
@@ -88,6 +107,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetExpires()) 
             {
                 request.Headers["Expires"] = publicRequest.Expires;
+            }
+        
+            if (publicRequest.IsSetIfMatch()) 
+            {
+                request.Headers["If-Match"] = publicRequest.IfMatch;
+            }
+        
+            if (publicRequest.IsSetIfNoneMatch()) 
+            {
+                request.Headers["If-None-Match"] = publicRequest.IfNoneMatch;
+            }
+        
+            if (publicRequest.IsSetMD5Digest()) 
+            {
+                request.Headers["Content-MD5"] = publicRequest.MD5Digest;
             }
         
             if (publicRequest.IsSetObjectLockLegalHoldStatus()) 
@@ -112,7 +146,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetServerSideEncryptionCustomerMethod()) 
             {
-                request.Headers["x-amz-server-side-encryption-customer-algorithm"] = StringUtils.FromString(publicRequest.ServerSideEncryptionCustomerMethod);
+                request.Headers["x-amz-server-side-encryption-customer-algorithm"] = publicRequest.ServerSideEncryptionCustomerMethod;
+            }
+        
+            if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKey()) 
+            {
+                ServerSideEncryptionCustomerProvidedKeyCustomMarshall(request, publicRequest);
             }
         
             if (publicRequest.IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()) 
@@ -144,19 +183,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-website-redirect-location"] = publicRequest.WebsiteRedirectLocation;
             }
+        
+            if (publicRequest.IsSetWriteOffsetBytes()) 
+            {
+                request.Headers["x-amz-write-offset-bytes"] = StringUtils.FromLong(publicRequest.WriteOffsetBytes);
+            }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "InitiateMultipartUploadRequest.BucketName");
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutObjectRequest.BucketName");
             if (string.IsNullOrEmpty(publicRequest.Key))
-                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "InitiateMultipartUploadRequest.Key");
+                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "PutObjectRequest.Key");
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/{Key+}";
-
             PostMarshallCustomization(request, publicRequest);
             return request;
         }
-        private static InitiateMultipartUploadRequestMarshaller _instance = new InitiateMultipartUploadRequestMarshaller();        
+        private static PutObjectRequestMarshaller _instance = new PutObjectRequestMarshaller();        
 
-        internal static InitiateMultipartUploadRequestMarshaller GetInstance()
+        internal static PutObjectRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -164,7 +207,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InitiateMultipartUploadRequestMarshaller Instance
+        public static PutObjectRequestMarshaller Instance
         {
             get
             {
@@ -172,7 +215,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void PostMarshallCustomization(DefaultRequest defaultRequest, InitiateMultipartUploadRequest publicRequest);
-        partial void PreMarshallCustomization(DefaultRequest defaultRequest, InitiateMultipartUploadRequest publicRequest);
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutObjectRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutObjectRequest publicRequest);
     }    
 }

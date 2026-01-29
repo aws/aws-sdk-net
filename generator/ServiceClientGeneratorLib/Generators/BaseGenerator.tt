@@ -149,7 +149,6 @@
             documentationPreface = "<p>" + documentationPreface  + "</p> ";
         }
         var documentation = CleanupDocumentation(string.Format("Gets and sets the property {0}. {1}{2}", member.PropertyName, documentationPreface, member.Documentation));
-
 #>
         /// <summary>
 <#+
@@ -171,6 +170,9 @@
 #>
         /// </summary>
 <#+
+        if (!String.IsNullOrEmpty(member.GetCustomDocumentationForMember()))
+            WriteCommentBlock("        ",member.GetCustomDocumentationForMember());
+
     }
 
     public void FormatOperationDocumentationSync(Operation operation, bool includeRequest)

@@ -1464,6 +1464,7 @@ namespace ServiceClientGenerator
             public const string SkipSetterKey = "skipSetter";
             public const string InjectXmlMarshallCodeKey = "injectXmlMarshallCode";
             public const string SkipXmlIsSetKey = "skipXmlIsSet";
+            public const string AdditionalDocumentationKey = "additionalDocumentation";
 
             private readonly string _modelPropertyName;
             private readonly JsonData _modifierData;
@@ -1475,6 +1476,7 @@ namespace ServiceClientGenerator
             private readonly HashSet<string> _injectXmlMarshallCode;
             private readonly bool _skipSetter;
             private readonly bool _skipXmlIsSet;
+            private readonly HashSet<string> _additionalDocumentation;
 
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
             {
@@ -1488,7 +1490,18 @@ namespace ServiceClientGenerator
                 _skipSetter = ParseXmlSkipSetter();
                 _skipXmlIsSet = ParseSkipXmlIsSet();
                 _injectXmlMarshallCode = ParseInjectXmlMarshallCode();
+                _additionalDocumentation = ParseAdditionalDocumentation();
             }
+
+            private HashSet<string> ParseAdditionalDocumentation()
+            {
+                var data = _modifierData[AdditionalDocumentationKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            public HashSet<string> AdditionalDocumentation { get { return _additionalDocumentation; } }
 
             private bool ParseSkipXmlIsSet()
             {
@@ -1825,6 +1838,8 @@ namespace ServiceClientGenerator
                 modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
             if (operation[OperationModifiers.StopPaginationOnSameTokenKey] != null && operation[OperationModifiers.StopPaginationOnSameTokenKey].IsBoolean)
                 modifiers.StopPaginationOnSameToken = (bool)operation[OperationModifiers.StopPaginationOnSameTokenKey];
+            if (operation[OperationModifiers.SkipChecksumDuringMarshallingKey] != null && operation[OperationModifiers.SkipChecksumDuringMarshallingKey].IsBoolean)
+                modifiers.SkipChecksumDuringMarshalling = (bool)operation[OperationModifiers.SkipChecksumDuringMarshallingKey];
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
             {
@@ -1893,6 +1908,7 @@ namespace ServiceClientGenerator
         public class OperationModifiers
         {
             public const string OperationModifiersKey = "operationModifiers";
+            public const string SkipChecksumDuringMarshallingKey = "skipChecksumDuringMarshalling";
             public const string NameKey = "name";
             public const string ExcludeKey = "exclude";
             public const string InternalKey = "internal";
@@ -2007,6 +2023,12 @@ namespace ServiceClientGenerator
             }
 
             public bool StopPaginationOnSameToken
+            {
+                get;
+                set;
+            }
+
+            public bool SkipChecksumDuringMarshalling
             {
                 get;
                 set;

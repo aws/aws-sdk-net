@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,24 +13,37 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
+using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Util;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EncryptionTypeMismatchException operation
+    /// Response Unmarshaller for InvalidObjectStateException operation
     /// </summary>  
-    public class EncryptionTypeMismatchExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<EncryptionTypeMismatchException, XmlUnmarshallerContext>
+    public class InvalidObjectStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidObjectStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EncryptionTypeMismatchException Unmarshall(XmlUnmarshallerContext context)
+        public InvalidObjectStateException Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -41,7 +54,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public EncryptionTypeMismatchException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public InvalidObjectStateException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             string id2 = null, amzCfId = null;
             var s3ErrorResponse = errorResponse as S3ErrorResponse;
@@ -50,31 +63,40 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 id2 = s3ErrorResponse.Id2;
                 amzCfId = s3ErrorResponse.AmzCfId;
             }
-
-            EncryptionTypeMismatchException response = new EncryptionTypeMismatchException(errorResponse.Message, errorResponse.InnerException,
+            InvalidObjectStateException response = new InvalidObjectStateException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
+
 
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AccessTier"))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.AccessTier = unmarshaller.Unmarshall(context);
+                    }
+                    if (context.TestExpression("StorageClass"))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.StorageClass = unmarshaller.Unmarshall(context);
+                    }
                 }
             }
             return response;
         }
 
-        private static EncryptionTypeMismatchExceptionUnmarshaller _instance = new EncryptionTypeMismatchExceptionUnmarshaller();
+        private static InvalidObjectStateExceptionUnmarshaller _instance = new InvalidObjectStateExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EncryptionTypeMismatchExceptionUnmarshaller Instance
+        public static InvalidObjectStateExceptionUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

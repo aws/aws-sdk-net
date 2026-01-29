@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using System.Net;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Encryption type mismatch exception.
+    /// The existing object was created with a different encryption type. Subsequent write
+    /// requests must include the appropriate encryption parameters in the request or while
+    /// creating the session.
     /// </summary>
-#if !NETSTANDARD
+    #if !NETSTANDARD
     [Serializable]
-#endif
+    #endif
     public partial class EncryptionTypeMismatchException : AmazonS3Exception
     {
+
+        /// <summary>
+        /// Default constructor for EncryptionTypeMismatchException
+        /// message.
+        /// </summary>
+        public EncryptionTypeMismatchException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new EncryptionTypeMismatchException with the specified error
@@ -40,46 +54,23 @@ namespace Amazon.S3.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public EncryptionTypeMismatchException(string message)
-            : base(message) { }
+        public EncryptionTypeMismatchException(string message) 
+            : base(message) {}
 
         /// <summary>
         /// Construct instance of EncryptionTypeMismatchException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public EncryptionTypeMismatchException(string message, Exception innerException)
-            : base(message, innerException) { }
+        public EncryptionTypeMismatchException(string message, Exception innerException) 
+            : base(message, innerException) {}
 
         /// <summary>
         /// Construct instance of EncryptionTypeMismatchException
         /// </summary>
         /// <param name="innerException"></param>
-        public EncryptionTypeMismatchException(Exception innerException)
-            : base(innerException) { }
-
-        /// <summary>
-        /// Construct instance of EncryptionTypeMismatchException
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public EncryptionTypeMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, innerException, errorType, errorCode, requestId, statusCode) { }
-
-        /// <summary>
-        /// Construct instance of EncryptionTypeMismatchException
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public EncryptionTypeMismatchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, errorType, errorCode, requestId, statusCode) { }
+        public EncryptionTypeMismatchException(Exception innerException) 
+            : base(innerException) {}
 
         /// <summary>
         /// Construct instance of EncryptionTypeMismatchException
@@ -90,11 +81,20 @@ namespace Amazon.S3.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        /// <param name="amazonId2"></param>
-        /// <param name="amazonCfId"></param>
-        public EncryptionTypeMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
-            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
-        
+        public EncryptionTypeMismatchException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
+
+        /// <summary>
+        /// Construct instance of EncryptionTypeMismatchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public EncryptionTypeMismatchException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
+
 
 #if !NETSTANDARD
         /// <summary>
@@ -125,5 +125,18 @@ namespace Amazon.S3.Model
         }
 #endif
 
+        /// <summary>
+        /// Construct instance of EncryptionTypeMismatchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        /// <param name="amazonId2"></param>
+        /// <param name="amazonCfId"></param>
+        public EncryptionTypeMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
+            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
     }
 }

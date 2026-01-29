@@ -12,40 +12,44 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  GetObjectTorrent response and response metadata.
+    /// This is the response object from the GetObjectTorrent operation.
     /// </summary>
-    public class GetObjectTorrentResponse : StreamResponse
+    public partial class GetObjectTorrentResponse : StreamResponse
     {
-        private RequestCharged requestCharged;
+        private RequestCharged _requestCharged;
 
         /// <summary>
-        /// If present, indicates that the requester was successfully charged for the request.
+        /// Gets and sets the property RequestCharged.
         /// </summary>
         public RequestCharged RequestCharged
         {
-            get { return this.requestCharged; }
-            set { this.requestCharged = value; }
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
         }
 
-        /// <summary>
-        /// Checks to see if RequestCharged is set.
-        /// </summary>
-        /// <returns>true, if RequestCharged property is set.</returns>
+        // Check to see if RequestCharged property is set
         internal bool IsSetRequestCharged()
         {
-            return requestCharged != null;
+            return this._requestCharged != null;
         }
+
     }
 }
-    
