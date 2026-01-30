@@ -1499,6 +1499,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant ESTIMATED_WAIT_TIME for ContactMetricName
+        /// </summary>
+        public static readonly ContactMetricName ESTIMATED_WAIT_TIME = new ContactMetricName("ESTIMATED_WAIT_TIME");
+        /// <summary>
         /// Constant POSITION_IN_QUEUE for ContactMetricName
         /// </summary>
         public static readonly ContactMetricName POSITION_IN_QUEUE = new ContactMetricName("POSITION_IN_QUEUE");
@@ -1770,6 +1774,10 @@ namespace Amazon.Connect
         /// Constant CONTACTS_SCHEDULED for CurrentMetricName
         /// </summary>
         public static readonly CurrentMetricName CONTACTS_SCHEDULED = new CurrentMetricName("CONTACTS_SCHEDULED");
+        /// <summary>
+        /// Constant ESTIMATED_WAIT_TIME for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName ESTIMATED_WAIT_TIME = new CurrentMetricName("ESTIMATED_WAIT_TIME");
         /// <summary>
         /// Constant OLDEST_CONTACT_AGE for CurrentMetricName
         /// </summary>

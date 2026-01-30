@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Object which contains the number.
+    /// Contains the numeric value of a contact metric result.
     /// </summary>
     public partial class ContactMetricValue
     {
@@ -39,7 +39,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Number. 
         /// <para>
-        /// The number of type Double. This number is the contact's position in queue.
+        /// The numeric value of the metric result. For POSITION_IN_QUEUE, this represents the
+        /// contact's current position in the queue (e.g., 3.00 means third in line). For ESTIMATED_WAIT_TIME,
+        /// this represents the predicted wait time in seconds (e.g., 120.00 means approximately
+        /// 2 minutes).
         /// </para>
         /// </summary>
         public double Number

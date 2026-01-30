@@ -59,7 +59,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the contact for which metrics were retrieved.
+        /// The unique identifier of the contact for which metrics were retrieved. This matches
+        /// the ContactId provided in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -79,7 +80,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property MetricResults. 
         /// <para>
         /// A list of metric results containing the calculated values for each requested metric.
-        /// Each result includes the metric name and its corresponding calculated value.
+        /// Each result includes the metric name and its corresponding value. For example, POSITION_IN_QUEUE
+        /// returns a numeric value representing the contact's position in queue, and ESTIMATED_WAIT_TIME
+        /// returns the predicted wait time in seconds.
         /// </para>
         /// </summary>
         public List<ContactMetricResult> MetricResults
