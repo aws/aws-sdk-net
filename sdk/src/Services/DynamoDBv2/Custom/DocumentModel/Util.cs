@@ -1,17 +1,17 @@
 ﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using System;
 using System.Collections.Generic;
@@ -165,7 +165,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         public static string Convert(ReturnConsumedCapacityValues value)
         {
-            switch(value)
+            switch (value)
             {
                 case ReturnConsumedCapacityValues.None:
                     return "NONE";
@@ -292,7 +292,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         public static string Convert(QueryOperator value)
         {
-            switch(value)
+            switch (value)
             {
                 case QueryOperator.Equal:
                     return "EQ";
@@ -332,7 +332,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private const string AwsVariablePrefix = "awsavar";
 
         public static void ConvertAttributeUpdatesToUpdateExpression(
-            Dictionary<string, AttributeValueUpdate> attributesToUpdates, Expression updateExpression,
+            Dictionary<string, AttributeValueUpdate> attributesToUpdates, HashSet<string> ifNotExistAttributeNames,
+            Expression updateExpression,
             Table table,
             out string statement,
             out Dictionary<string, AttributeValue> expressionAttributeValues,
@@ -343,8 +344,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             if (updateExpression != null)
             {
-                expressionAttributeValues = Expression.ConvertToAttributeValues(updateExpression.ExpressionAttributeValues,table);
-                expressionAttributes=updateExpression.ExpressionAttributeNames;
+                var convertedAttributeValues = Expression.ConvertToAttributeValues(updateExpression.ExpressionAttributeValues, table);
+                if (convertedAttributeValues != null)
+                    expressionAttributeValues = convertedAttributeValues;
+                expressionAttributes = updateExpression.ExpressionAttributeNames;
             }
 
             var attributeNames = expressionAttributes.Select(pair => pair.Value).ToList();
@@ -360,6 +363,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (attributeNames.Contains(attribute)) continue;
 
                 var update = kvp.Value;
+              
+                var createOnly = ifNotExistAttributeNames?.Contains(attribute) ?? false;
 
                 string variableName = GetVariableName(ref attributeCount);
                 var attributeReference = GetAttributeReference(variableName);
@@ -367,30 +372,54 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                 if (update.Action == AttributeAction.DELETE)
                 {
-                    if (removes.Length > 0)
-                        removes.Append(", ");
-                    removes.Append(attributeReference);
+                    if (!createOnly)
+                    {
+                        if (removes.Length > 0)
+                            removes.Append(", ");
+                        removes.Append(attributeReference);
+                        expressionAttributes.Add(attributeReference, attribute);
+                    }
                 }
                 else
                 {
                     if (sets.Length > 0)
                         sets.Append(", ");
-                    sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
+                    if (createOnly)
+                    {
+                        sets.AppendFormat("{0} = if_not_exists({0}, {1})", attributeReference, attributeValueReference);
+                    }
+                    else
+                    {
+                        sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
+                    }
 
                     // Add the attribute value for the variable in the added in the expression
                     expressionAttributeValues.Add(attributeValueReference, update.Value);
+                    expressionAttributes.Add(attributeReference, attribute);
                 }
 
-                // Add the attribute name for the variable in the added in the expression
-                expressionAttributes.Add(attributeReference, attribute);
             }
 
             // Combine the SET and REMOVE clause
             StringBuilder statementBuilder = new StringBuilder();
             if (sets.Length > 0)
             {
-                var setStatement= updateExpression!=null ? updateExpression.ExpressionStatement + "," : "SET";
-                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} {1}", setStatement, sets.ToString());
+                // Use existing expression statement only if it is not null/whitespace; otherwise default to "SET"
+                string setStatement;
+                if (updateExpression != null && !string.IsNullOrWhiteSpace(updateExpression.ExpressionStatement))
+                    setStatement = updateExpression.ExpressionStatement + ",";
+                else
+                    setStatement = "SET";
+
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} {1} ", setStatement, sets.ToString());
+            }
+            else
+            {
+                // Only append existing expression statement when it contains non-whitespace content
+                if (updateExpression != null && !string.IsNullOrWhiteSpace(updateExpression.ExpressionStatement))
+                {
+                    statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} ", updateExpression.ExpressionStatement);
+                }
             }
             if (removes.Length > 0)
             {
@@ -583,5 +612,4 @@ namespace Amazon.DynamoDBv2.DocumentModel
             context.Writer.WriteEndObject();
         }
     }
- }
-    
+}
