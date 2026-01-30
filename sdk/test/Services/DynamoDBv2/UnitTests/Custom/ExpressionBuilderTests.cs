@@ -1,6 +1,7 @@
 ﻿using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -765,7 +766,137 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(42, resultNode.ExpressionAttributeValues[":K0"]);
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_WithSingleName_Builds_Correctly()
+        {
+            var projection = ProjectionExpressionBuilder.New()
+                .WithName("Attribute1")
+                .Build();
 
+            Assert.IsNotNull(projection);
+            Assert.AreEqual("#P0", projection.ExpressionStatement);
+            Assert.AreEqual(1, projection.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", projection.ExpressionAttributeNames["#P0"]);
+            Assert.AreEqual(0, projection.ExpressionAttributeValues.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_WithComplexAttributePath_Builds_Correctly()
+        {
+            var projection = ProjectionExpressionBuilder.New()
+                .WithName("parent.child[0].attribute")
+                .Build();
+
+            Assert.IsNotNull(projection);
+            Assert.AreEqual("#P0.#P1[0].#P2", projection.ExpressionStatement);
+            Assert.AreEqual(3, projection.ExpressionAttributeNames.Count);
+            Assert.AreEqual("parent", projection.ExpressionAttributeNames["#P0"]);
+            Assert.AreEqual("child", projection.ExpressionAttributeNames["#P1"]);
+            Assert.AreEqual("attribute", projection.ExpressionAttributeNames["#P2"]);
+            Assert.AreEqual(0, projection.ExpressionAttributeValues.Count);
+        }
+        
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_WithSpecialCharacters_Builds_Correctly()
+        {
+            var projection = ProjectionExpressionBuilder.New()
+                .WithName("Test#Attribute-Name.123")
+                .Build();
+
+            Assert.IsNotNull(projection);
+            Assert.AreEqual("#P0.#P1", projection.ExpressionStatement);
+            Assert.AreEqual(2, projection.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Test#Attribute-Name", projection.ExpressionAttributeNames["#P0"]);
+            Assert.AreEqual("123", projection.ExpressionAttributeNames["#P1"]);
+            Assert.AreEqual(0, projection.ExpressionAttributeValues.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_AddNames_WithSingleName_Build_Correctly()
+        {
+            var projection = ProjectionExpressionBuilder.New()
+                .WithName("Attribute1")
+                .AddName(NameBuilder.New("Attribute2"))
+                .Build();
+
+            Assert.IsNotNull(projection);
+            Assert.AreEqual("#P0, #P1", projection.ExpressionStatement);
+            Assert.AreEqual(2, projection.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", projection.ExpressionAttributeNames["#P0"]);
+            Assert.AreEqual("Attribute2", projection.ExpressionAttributeNames["#P1"]);
+            Assert.AreEqual(0, projection.ExpressionAttributeValues.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_AddNames_WithComplexAttributePath_Build_Correctly()
+        {
+            var projection = ProjectionExpressionBuilder.New()
+                .WithName("parent.child[0].attribute1")
+                .AddName(NameBuilder.New("test.attribute2"))
+                .Build();
+
+            Assert.IsNotNull(projection);
+            Assert.AreEqual("#P0.#P1[0].#P2, #P3.#P4", projection.ExpressionStatement);
+            Assert.AreEqual(5, projection.ExpressionAttributeNames.Count);
+            Assert.AreEqual("parent", projection.ExpressionAttributeNames["#P0"]);
+            Assert.AreEqual("child", projection.ExpressionAttributeNames["#P1"]);
+            Assert.AreEqual("attribute1", projection.ExpressionAttributeNames["#P2"]);
+            Assert.AreEqual("test", projection.ExpressionAttributeNames["#P3"]);
+            Assert.AreEqual("attribute2", projection.ExpressionAttributeNames["#P4"]);
+            Assert.AreEqual(0, projection.ExpressionAttributeValues.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_NamesList_WithSingleName_Build_Correctly()
+        {
+            var projection = ProjectionExpressionBuilder.New()
+                .NamesList(NameBuilder.New("Attribute1"), NameBuilder.New("Attribute2"))
+                .AddName(NameBuilder.New("Attribute3"))
+                .Build();
+
+            Assert.IsNotNull(projection);
+            Assert.AreEqual("#P0, #P1, #P2", projection.ExpressionStatement);
+            Assert.AreEqual(3, projection.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", projection.ExpressionAttributeNames["#P0"]);
+            Assert.AreEqual("Attribute2", projection.ExpressionAttributeNames["#P1"]);
+            Assert.AreEqual("Attribute3", projection.ExpressionAttributeNames["#P2"]);
+            Assert.AreEqual(0, projection.ExpressionAttributeValues.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_NamesList_WithComplexAttributePath_Build_Correctly()
+        {
+            var projection = ProjectionExpressionBuilder.New()
+                .NamesList(NameBuilder.New("parent.child[0].attribute1"), NameBuilder.New("Attribute2"))
+                .WithName("parent.child[1].attribute3")
+                .Build();
+
+            Assert.IsNotNull(projection);
+            Assert.AreEqual("#P0.#P1[0].#P2, #P3, #P4.#P5[1].#P6", projection.ExpressionStatement);
+            Assert.AreEqual(7, projection.ExpressionAttributeNames.Count);
+            Assert.AreEqual("parent", projection.ExpressionAttributeNames["#P0"]);
+            Assert.AreEqual("child", projection.ExpressionAttributeNames["#P1"]);
+            Assert.AreEqual("attribute1", projection.ExpressionAttributeNames["#P2"]);
+            Assert.AreEqual("Attribute2", projection.ExpressionAttributeNames["#P3"]);
+            Assert.AreEqual("parent", projection.ExpressionAttributeNames["#P4"]);
+            Assert.AreEqual("child", projection.ExpressionAttributeNames["#P5"]);
+            Assert.AreEqual("attribute3", projection.ExpressionAttributeNames["#P6"]);
+            Assert.AreEqual(0, projection.ExpressionAttributeValues.Count);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void BuildProjectionExpressionBuilder_WithNoAttributeNames_ShouldThrowException()
+        {
+            var projectionBuilder = ProjectionExpressionBuilder.New();
+            projectionBuilder.Build();
+        }
     }
-
 }
