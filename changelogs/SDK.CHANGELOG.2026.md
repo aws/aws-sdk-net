@@ -1,3 +1,12 @@
+### 3.7.1213.0 (2026-01-30 19:26 UTC)
+* Connect (3.7.527.0)
+	* This release adds Estimated Wait Time support to the GetContactMetrics API for Amazon Connect.
+* QuickSight (3.7.511.0)
+	* Improve SessionTag usage guidelines in the GenerateEmbedURLForAnonymousUser API documentation. Update the GetIdentityContext document with the region support context.
+* Core 3.7.500.74
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1212.0 (2026-01-29 19:41 UTC)
 * EC2 (3.7.545.0)
 	* G7e instances feature up to 8 NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs with 768 GB of memory and 5th generation Intel Xeon Scalable processors. Supporting up to 192 vCPUs, 1600 Gbps networking bandwidth with EFA, up to 2 TiB of system memory, and up to 15.2 TB of local NVMe SSD storage.

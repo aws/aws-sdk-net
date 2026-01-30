@@ -32,7 +32,7 @@ namespace Amazon.PcaConnectorAd
     public partial class AmazonPcaConnectorAdConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pca Connector Ad", "3.7.501.36");
+            InternalSDKUtils.BuildUserAgentString("Pca Connector Ad", "3.7.501.37");
 
         private string _userAgent = UserAgentString;
         ///<summary>
