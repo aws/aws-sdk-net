@@ -21,7 +21,20 @@ foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
     /// <summary>
     /// Constants used for properties of type <#=enumeration.Name#>.
     /// </summary>
+<#
+if (this.Config.ServiceId == "S3")
+{
+#>
+    public partial class <#=enumeration.Name#> : ConstantClass
+<#
+}
+else
+{
+#>
     public class <#=enumeration.Name#> : ConstantClass
+<#
+}
+#>
     {
 
 <#

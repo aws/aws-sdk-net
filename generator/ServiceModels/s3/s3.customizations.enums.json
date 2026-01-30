@@ -1,0 +1,499 @@
+{
+    "shapeModifiers": {
+        "CompressionType": {
+            "modify": [
+                {
+                    "BZIP2": {
+                        "emitPropertyName": "Bzip2"
+                    }
+                },
+                {
+                    "GZIP": {
+                        "emitPropertyName": "Gzip"
+                    }
+                },
+                {
+                    "NONE": {
+                        "emitPropertyName": "None"
+                    }
+                }
+            ]
+        },
+        "ExpirationState": {
+            "modify": [
+                {
+                    "DISABLED": {
+                        "emitPropertyName": "Disabled"
+                    }
+                },
+                {
+                    "ENABLED": {
+                        "emitPropertyName": "Enabled"
+                    }
+                }
+            ]
+        },
+        "ReplicationStatus": {
+            "modify": [
+                {
+                    "PENDING": {
+                        "emitPropertyName": "Pending"
+                    }
+                },
+                {
+                    "COMPLETED": {
+                        "emitPropertyName": "Completed"
+                    }
+                },
+                {
+                    "FAILED": {
+                        "emitPropertyName": "Failed"
+                    }
+                },
+                {
+                    "REPLICA": {
+                        "emitPropertyName": "Replica"
+                    }
+                }
+            ]
+        },
+        "InventoryConfigurationState": {
+            "modify": [
+                {
+                    "DISABLED": {
+                        "emitPropertyName": "Disabled"
+                    }
+                },
+                {
+                    "ENABLED": {
+                        "emitPropertyName": "Enabled"
+                    }
+                }
+            ]
+        },
+        "Event": {
+            "renameClass": "EventType",
+            "modify": [
+                {
+                    "s3:ObjectCreated:*": {
+                        "emitPropertyName": "ObjectCreatedAll"
+                    }
+                },
+                {
+                    "s3:ObjectCreated:Put": {
+                        "emitPropertyName": "ObjectCreatedPut"
+                    }
+                },
+                {
+                    "s3:ObjectCreated:Post": {
+                        "emitPropertyName": "ObjectCreatedPost"
+                    }
+                },
+                {
+                    "s3:ObjectCreated:Copy": {
+                        "emitPropertyName": "ObjectCreatedCopy"
+                    }
+                },
+                {
+                    "s3:ObjectCreated:CompleteMultipartUpload": {
+                        "emitPropertyName": "ObjectCreatedCompleteMultipartUpload"
+                    }
+                },
+                {
+                    "s3:ObjectRemoved:*": {
+                        "emitPropertyName": "ObjectRemovedAll"
+                    }
+                },
+                {
+                    "s3:ObjectRemoved:Delete": {
+                        "emitPropertyName": "ObjectRemovedDelete"
+                    }
+                },
+                {
+                    "s3:ObjectRemoved:DeleteMarkerCreated": {
+                        "emitPropertyName": "ObjectRemovedDeleteMarkerCreated"
+                    }
+                },
+                {
+                    "s3:ReducedRedundancyLostObject": {
+                        "emitPropertyName": "ReducedRedundancyLostObject"
+                    }
+                },
+                {
+                    "s3:ObjectRestore:*": {
+                        "emitPropertyName": "ObjectRestoreAll"
+                    }
+                },
+                {
+                    "s3:ObjectRestore:Post": {
+                        "emitPropertyName": "ObjectRestorePost"
+                    }
+                },
+                {
+                    "s3:ObjectRestore:Completed": {
+                        "emitPropertyName": "ObjectRestoreCompleted"
+                    }
+                },
+                {
+                    "s3:ObjectRestore:Delete": {
+                        "emitPropertyName": "S3ObjectRestoreDelete"
+                    }
+                },
+                {
+                    "s3:Replication:*": {
+                        "emitPropertyName": "ReplicationAll"
+                    }
+                },
+                {
+                    "s3:Replication:OperationFailedReplication": {
+                        "emitPropertyName": "ReplicationOperationFailedReplication"
+                    }
+                },
+                {
+                    "s3:Replication:OperationNotTracked": {
+                        "emitPropertyName": "ReplicationOperationNotTracked"
+                    }
+                },
+                {
+                    "s3:Replication:OperationMissedThreshold": {
+                        "emitPropertyName": "ReplicationOperationMissedThreshold"
+                    }
+                },
+                {
+                    "s3:Replication:OperationReplicatedAfterThreshold": {
+                        "emitPropertyName": "ReplicationOperationReplicatedAfterThreshold"
+                    }
+                },
+                {
+                    "s3:IntelligentTiering": {
+                        "emitPropertyName": "S3IntelligentTiering"
+                    }
+                },
+                {
+                    "s3:LifecycleExpiration:*": {
+                        "emitPropertyName": "S3LifecycleExpirationAll"
+                    }
+                },
+                {
+                    "s3:LifecycleExpiration:Delete": {
+                        "emitPropertyName": "S3LifecycleExpirationDelete"
+                    }
+                },
+                {
+                    "s3:LifecycleExpiration:DeleteMarkerCreated": {
+                        "emitPropertyName": "S3LifecycleExpirationDeleteMarkerCreated"
+                    }
+                },
+                {
+                    "s3:LifecycleTransition": {
+                        "emitPropertyName": "S3LifecycleTransition"
+                    }
+                },
+                {
+                    "s3:ObjectAcl:Put": {
+                        "emitPropertyName": "S3ObjectAclPut"
+                    }
+                },
+                {
+                    "s3:ObjectTagging:*": {
+                        "emitPropertyName": "S3ObjectTaggingAll"
+                    }
+                },
+                {
+                    "s3:ObjectTagging:Delete": {
+                        "emitPropertyName": "S3ObjectTaggingDelete"
+                    }
+                },
+                {
+                    "s3:ObjectTagging:Put": {
+                        "emitPropertyName": "S3ObjectTaggingPut"
+                    }
+                }
+            ]
+        },
+        "StorageClass": {
+            "modify": [
+                {
+                    "DEEP_ARCHIVE": {
+                        "emitPropertyName": "DeepArchive"
+                    }
+                },
+                {
+                    "EXPRESS_ONEZONE": {
+                        "emitPropertyName": "ExpressOnezone"
+                    }
+                },
+                {
+                    "GLACIER": {
+                        "emitPropertyName": "Glacier"
+                    }
+                },
+                {
+                    "GLACIER_IR": {
+                        "emitPropertyName": "GlacierInstantRetrieval"
+                    }
+                },
+                {
+                    "INTELLIGENT_TIERING": {
+                        "emitPropertyName": "IntelligentTiering"
+                    }
+                },
+                {
+                    "ONEZONE_IA": {
+                        "emitPropertyName": "OneZoneInfrequentAccess"
+                    }
+                },
+                {
+                    "OUTPOSTS": {
+                        "emitPropertyName": "Outposts"
+                    }
+                },
+                {
+                    "REDUCED_REDUNDANCY": {
+                        "emitPropertyName": "ReducedRedundancy"
+                    }
+                },
+                {
+                    "STANDARD": {
+                        "emitPropertyName": "Standard"
+                    }
+                },
+                {
+                    "STANDARD_IA": {
+                        "emitPropertyName": "StandardInfrequentAccess"
+                    }
+                },
+                {
+                    "SNOW": {
+                        "emitPropertyName": "Snow"
+                    }
+                }
+            ]
+        },
+        "ServerSideEncryption": {
+            "modify": [
+                {
+                    "aws:fsx": {
+                        "emitPropertyName": "AWSFSX"
+                    }
+                },
+                {
+                    "aws:kms": {
+                        "emitPropertyName": "AWSKMS"
+                    }
+                },
+                {
+                    "aws:kms:dsse": {
+                        "emitPropertyName": "AWSKMSDSSE"
+                    }
+                },
+                {
+                    "": {
+                        "emitPropertyName": "None"
+                    }
+                }
+            ],
+            "inject": [
+                {
+                    "": { }
+                }
+            ]
+        },
+        "ObjectCannedACL": {
+            "modify": [
+                {
+                    "aws-exec-read": {
+                        "emitPropertyName": "AWSExecRead"
+                    }
+                },
+                {
+                    "": {
+                        "emitPropertyName": "NoACL"
+                    }
+                }
+            ],
+            "inject": [
+                {
+                    "log-delivery-write": {}
+                },
+                {
+                    "": { }
+                }
+            ]
+        },
+        "BucketVersioningStatus": {
+            "inject": [
+                {
+                    "Off": { }
+                }
+            ]
+        },
+        "BucketLocationConstraint": {
+            "inject": [
+                {
+                    "ca-west-1": {}
+                }
+            ]
+        },
+        "Type": {
+            "modify": [
+                {
+                    "AmazonCustomerByEmail": {
+                        "emitPropertyName": "Email"
+                    }
+                }
+            ]
+        },
+        "QuoteFields": {
+            "modify": [
+                {
+                    "ASNEEDED": {
+                        "emitPropertyName": "AsNeeded"
+                    }
+                },
+                {
+                    "ALWAYS": {
+                        "emitPropertyName": "Always"
+                    }
+                }
+            ]
+        },
+        "TransitionDefaultMinimumObjectSize": {
+            "modify": [
+                {
+                    "all_storage_classes_128K": {
+                        "emitPropertyName": "AllStorageClasses128K"
+                    }
+                },
+                {
+                    "varies_by_storage_class": {
+                        "emitPropertyName": "VariesByStorageClass"
+                    }
+                }
+            ]
+        },
+        "FileHeaderInfo": {
+            "modify": [
+                {
+                    "USE": {
+                        "emitPropertyName": "Use"
+                    }
+                },
+                {
+                    "IGNORE": {
+                        "emitPropertyName": "Ignore"
+                    }
+                },
+                {
+                    "NONE": {
+                        "emitPropertyName": "None"
+                    }
+                }
+            ]
+        },
+        "JSONType": {
+            "modify": [
+                {
+                    "DOCUMENT": {
+                        "emitPropertyName": "Document"
+                    }
+                },
+                {
+                    "LINES": {
+                        "emitPropertyName": "Lines"
+                    }
+                }
+            ]
+        },
+        "ObjectLockLegalHoldStatus": {
+            "modify": [
+                {
+                    "ON": {
+                        "emitPropertyName": "On"
+                    }
+                },
+                {
+                    "OFF": {
+                        "emitPropertyName": "Off"
+                    }
+                }
+            ]
+        },
+        "ObjectLockRetentionMode": {
+            "modify": [
+                {
+                    "GOVERNANCE": {
+                        "emitPropertyName": "Governance"
+                    }
+                },
+                {
+                    "COMPLIANCE": {
+                        "emitPropertyName": "Compliance"
+                    }
+                }
+            ]
+        },
+        "ObjectLockMode": {
+            "modify": [
+                {
+                    "GOVERNANCE": {
+                        "emitPropertyName": "Governance"
+                    }
+                },
+                {
+                    "COMPLIANCE": {
+                        "emitPropertyName": "Compliance"
+                    }
+                }
+            ]
+        },
+        "Permission": {
+            "exclude":[
+                "READ",
+                "WRITE",
+                "READ_ACP",
+                "WRITE_ACP",
+                "FULL_CONTROL",
+                "RESTORE"
+            ]
+        }
+    },
+    "shapeSubstitutions": {
+        "Event": {
+            "renameShape": "EventType"
+        },
+        "BucketVersioningStatus": {
+            "renameShape": "VersionStatus"
+        },
+        "Permission": {
+            "renameShape": "S3Permission"
+        }
+    },
+    "excludeShapes":[
+        "Protocol",
+        "MetadataDirective"
+    ],
+    "mergedEnums": {
+        "MFADeleteStatus": {
+            "mergeInto": "VersionStatus"
+        },
+        "MFADelete": {
+            "mergeInto": "VersionStatus"
+        },
+        "ObjectStorageClass": {
+            "mergeInto": "StorageClass"
+        },
+        "TransitionStorageClass": {
+            "mergeInto": "StorageClass"
+        },
+        "ObjectVersionStorageClass": {
+            "mergeInto": "StorageClass"
+        },
+        "BucketCannedACL": {
+            "mergeInto": "ObjectCannedACL"
+        },
+        "BucketLogsPermission": {
+            "mergeInto": "Permission"
+        }
+    }
+}
