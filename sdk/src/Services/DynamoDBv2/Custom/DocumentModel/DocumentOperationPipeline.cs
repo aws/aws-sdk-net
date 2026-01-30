@@ -309,7 +309,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     attrUpdates.Remove(k);
 
                 Common.ConvertAttributeUpdatesToUpdateExpression(
-                    attrUpdates,
+                    attrUpdates,null,
                     request.UpdateExpression,
                     Table,
                     out var statement,

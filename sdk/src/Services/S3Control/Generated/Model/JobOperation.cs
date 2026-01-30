@@ -46,6 +46,7 @@ namespace Amazon.S3Control.Model
         private S3SetObjectRetentionOperation _s3PutObjectRetention;
         private S3SetObjectTaggingOperation _s3PutObjectTagging;
         private S3ReplicateObjectOperation _s3ReplicateObject;
+        private S3UpdateObjectEncryptionOperation _s3UpdateObjectEncryption;
 
         /// <summary>
         /// Gets and sets the property LambdaInvoke. 
@@ -249,6 +250,30 @@ namespace Amazon.S3Control.Model
         internal bool IsSetS3ReplicateObject()
         {
             return this._s3ReplicateObject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3UpdateObjectEncryption. 
+        /// <para>
+        /// Updates the server-side encryption type of an existing encrypted object in a general
+        /// purpose bucket. You can use the <c>UpdateObjectEncryption</c> operation to change
+        /// encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to
+        /// apply S3 Bucket Keys. You can also use the <c>UpdateObjectEncryption</c> operation
+        /// to change the customer-managed KMS key used to encrypt your data so that you can comply
+        /// with custom key-rotation standards.
+        /// </para>
+        /// </summary>
+        public S3UpdateObjectEncryptionOperation S3UpdateObjectEncryption
+        {
+            get { return this._s3UpdateObjectEncryption; }
+            set { this._s3UpdateObjectEncryption = value; }
+        }
+
+        // Check to see if S3UpdateObjectEncryption property is set
+        internal bool IsSetS3UpdateObjectEncryption()
+        {
+            return this._s3UpdateObjectEncryption != null;
         }
 
     }

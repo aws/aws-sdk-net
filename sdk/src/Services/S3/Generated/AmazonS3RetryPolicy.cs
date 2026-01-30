@@ -138,6 +138,7 @@ namespace Amazon.S3.Internal
             typeof(SelectObjectContentRequest),
             typeof(UpdateBucketMetadataInventoryTableConfigurationRequest),
             typeof(UpdateBucketMetadataJournalTableConfigurationRequest),
+            typeof(UpdateObjectEncryptionRequest),
             typeof(UploadPartRequest),
             typeof(WriteGetObjectResponseRequest),
         };

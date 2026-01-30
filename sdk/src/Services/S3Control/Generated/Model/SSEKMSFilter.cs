@@ -67,7 +67,7 @@ namespace Amazon.S3Control.Model
         /// keys in the same Region as the S3 Batch Operations job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
+        [AWSProperty(Min=20, Max=2048)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }

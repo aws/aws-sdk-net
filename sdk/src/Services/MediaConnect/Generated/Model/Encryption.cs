@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Information about the encryption of the flow.
+    /// Encryption information.
     /// </summary>
     public partial class Encryption
     {

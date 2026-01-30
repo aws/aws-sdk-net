@@ -40,6 +40,7 @@ namespace Amazon.MediaConnect.Model
         private int? _maxSyncBuffer;
         private int? _minLatency;
         private string _ndiProgramName;
+        private NdiSourceSettings _ndiSourceSettings;
         private int? _ndiSpeedHqQuality;
         private Protocol _protocol;
         private string _remoteId;
@@ -155,8 +156,8 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property NdiProgramName. 
         /// <para>
-        /// A suffix for the names of the NDI sources that the flow creates. If a custom name
-        /// isn't specified, MediaConnect uses the output name. 
+        /// A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't
+        /// specified, MediaConnect uses the output name. 
         /// </para>
         /// </summary>
         public string NdiProgramName
@@ -169,6 +170,25 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetNdiProgramName()
         {
             return this._ndiProgramName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NdiSourceSettings. 
+        /// <para>
+        ///  The settings for the NDI source. This includes the exact name of the upstream NDI
+        /// sender that you want to connect to your source. 
+        /// </para>
+        /// </summary>
+        public NdiSourceSettings NdiSourceSettings
+        {
+            get { return this._ndiSourceSettings; }
+            set { this._ndiSourceSettings = value; }
+        }
+
+        // Check to see if NdiSourceSettings property is set
+        internal bool IsSetNdiSourceSettings()
+        {
+            return this._ndiSourceSettings != null;
         }
 
         /// <summary>

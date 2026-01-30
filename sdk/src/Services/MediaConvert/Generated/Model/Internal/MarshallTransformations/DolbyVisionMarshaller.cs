@@ -46,6 +46,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCompatibility())
+            {
+                context.Writer.WritePropertyName("compatibility");
+                context.Writer.WriteStringValue(requestObject.Compatibility);
+            }
+
             if(requestObject.IsSetL6Metadata())
             {
                 context.Writer.WritePropertyName("l6Metadata");

@@ -158,6 +158,10 @@ namespace Amazon.MediaConvert
         /// Constant CODING_MODE_5_1 for AacCodingMode
         /// </summary>
         public static readonly AacCodingMode CODING_MODE_5_1 = new AacCodingMode("CODING_MODE_5_1");
+        /// <summary>
+        /// Constant CODING_MODE_AUTO for AacCodingMode
+        /// </summary>
+        public static readonly AacCodingMode CODING_MODE_AUTO = new AacCodingMode("CODING_MODE_AUTO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -548,6 +552,10 @@ namespace Amazon.MediaConvert
         /// Constant CODING_MODE_3_2_LFE for Ac3CodingMode
         /// </summary>
         public static readonly Ac3CodingMode CODING_MODE_3_2_LFE = new Ac3CodingMode("CODING_MODE_3_2_LFE");
+        /// <summary>
+        /// Constant CODING_MODE_AUTO for Ac3CodingMode
+        /// </summary>
+        public static readonly Ac3CodingMode CODING_MODE_AUTO = new Ac3CodingMode("CODING_MODE_AUTO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -7223,6 +7231,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DolbyVisionCompatibility.
+    /// </summary>
+    public class DolbyVisionCompatibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE_STREAM for DolbyVisionCompatibility
+        /// </summary>
+        public static readonly DolbyVisionCompatibility DUPLICATE_STREAM = new DolbyVisionCompatibility("DUPLICATE_STREAM");
+        /// <summary>
+        /// Constant SUPPLEMENTAL_CODECS for DolbyVisionCompatibility
+        /// </summary>
+        public static readonly DolbyVisionCompatibility SUPPLEMENTAL_CODECS = new DolbyVisionCompatibility("SUPPLEMENTAL_CODECS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DolbyVisionCompatibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DolbyVisionCompatibility FindValue(string value)
+        {
+            return FindValue<DolbyVisionCompatibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DolbyVisionCompatibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DolbyVisionLevel6Mode.
     /// </summary>
     public class DolbyVisionLevel6Mode : ConstantClass
@@ -8804,6 +8862,10 @@ namespace Amazon.MediaConvert
         /// Constant CODING_MODE_3_2 for Eac3CodingMode
         /// </summary>
         public static readonly Eac3CodingMode CODING_MODE_3_2 = new Eac3CodingMode("CODING_MODE_3_2");
+        /// <summary>
+        /// Constant CODING_MODE_AUTO for Eac3CodingMode
+        /// </summary>
+        public static readonly Eac3CodingMode CODING_MODE_AUTO = new Eac3CodingMode("CODING_MODE_AUTO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -9814,6 +9876,10 @@ namespace Amazon.MediaConvert
         /// Constant Quicktime for Format
         /// </summary>
         public static readonly Format Quicktime = new Format("quicktime");
+        /// <summary>
+        /// Constant Wave for Format
+        /// </summary>
+        public static readonly Format Wave = new Format("wave");
         /// <summary>
         /// Constant Webm for Format
         /// </summary>
@@ -19956,6 +20022,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MxfProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MxfUncompressedAudioWrapping.
+    /// </summary>
+    public class MxfUncompressedAudioWrapping : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES3 for MxfUncompressedAudioWrapping
+        /// </summary>
+        public static readonly MxfUncompressedAudioWrapping AES3 = new MxfUncompressedAudioWrapping("AES3");
+        /// <summary>
+        /// Constant AUTO for MxfUncompressedAudioWrapping
+        /// </summary>
+        public static readonly MxfUncompressedAudioWrapping AUTO = new MxfUncompressedAudioWrapping("AUTO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MxfUncompressedAudioWrapping(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MxfUncompressedAudioWrapping FindValue(string value)
+        {
+            return FindValue<MxfUncompressedAudioWrapping>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MxfUncompressedAudioWrapping(string value)
         {
             return FindValue(value);
         }

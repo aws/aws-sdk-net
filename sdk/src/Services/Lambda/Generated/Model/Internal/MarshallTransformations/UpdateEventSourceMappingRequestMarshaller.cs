@@ -161,6 +161,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KMSKeyArn);
             }
 
+            if(publicRequest.IsSetLoggingConfig())
+            {
+                context.Writer.WritePropertyName("LoggingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EventSourceMappingLoggingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LoggingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");

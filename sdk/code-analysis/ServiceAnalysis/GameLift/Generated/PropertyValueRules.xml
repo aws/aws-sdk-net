@@ -2902,6 +2902,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.ManagedCapacityConfiguration.ScaleInAfterInactivityMinutes</property>
+    <min>5</min>
+    <max>1440</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.MatchedPlayerSession.PlayerId</property>
     <min>1</min>
     <max>1024</max>

@@ -223,7 +223,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property NdiProgramName. 
         /// <para>
-        ///  A suffix for the names of the NDI sources that the flow creates. If a custom name
+        ///  A suffix for the name of the NDI® sender that the flow creates. If a custom name
         /// isn't specified, MediaConnect uses the output name. 
         /// </para>
         /// </summary>

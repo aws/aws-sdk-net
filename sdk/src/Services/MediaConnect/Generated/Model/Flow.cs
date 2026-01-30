@@ -37,6 +37,7 @@ namespace Amazon.MediaConnect.Model
         private string _availabilityZone;
         private string _description;
         private string _egressIp;
+        private EncodingConfig _encodingConfig;
         private List<Entitlement> _entitlements = AWSConfigs.InitializeCollections ? new List<Entitlement>() : null;
         private string _flowArn;
         private FlowSize _flowSize;
@@ -110,6 +111,25 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncodingConfig. 
+        /// <para>
+        ///  The encoding configuration to apply to the NDI® source when transcoding it to a transport
+        /// stream for downstream distribution. 
+        /// </para>
+        /// </summary>
+        public EncodingConfig EncodingConfig
+        {
+            get { return this._encodingConfig; }
+            set { this._encodingConfig = value; }
+        }
+
+        // Check to see if EncodingConfig property is set
+        internal bool IsSetEncodingConfig()
+        {
+            return this._encodingConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Entitlements. 
         /// <para>
         ///  The entitlements in this flow.
@@ -155,8 +175,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property FlowSize. 
         /// <para>
-        ///  Determines the processing capacity and feature set of the flow. Set this optional
-        /// parameter to LARGE if you want to enable NDI outputs on the flow. 
+        ///  Determines the processing capacity and feature set of the flow. 
         /// </para>
         /// </summary>
         public FlowSize FlowSize
@@ -235,8 +254,8 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property NdiConfig. 
         /// <para>
-        /// Specifies the configuration settings for NDI outputs. Required when the flow includes
-        /// NDI outputs. 
+        /// Specifies the configuration settings for a flow's NDI source or output. Required when
+        /// the flow includes an NDI source or output.
         /// </para>
         /// </summary>
         public NdiConfig NdiConfig

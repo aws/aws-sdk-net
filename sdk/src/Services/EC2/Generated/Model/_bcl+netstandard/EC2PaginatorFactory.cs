@@ -1339,5 +1339,13 @@ namespace Amazon.EC2.Model
         {
             return new SearchTransitGatewayMulticastGroupsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchTransitGatewayRoutes operation
+        ///</summary>
+        public ISearchTransitGatewayRoutesPaginator SearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request) 
+        {
+            return new SearchTransitGatewayRoutesPaginator(this.client, request);
+        }
     }
 }

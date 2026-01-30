@@ -92,7 +92,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.AiffSettings.Channels</property>
-    <min>1</min>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -734,7 +734,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FlacSettings.Channels</property>
-    <min>1</min>
+    <min>0</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
@@ -1603,7 +1603,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Mp2Settings.Channels</property>
-    <min>1</min>
+    <min>0</min>
     <max>2</max>
   </property-value-rule>
   <property-value-rule>
@@ -1618,7 +1618,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Mp3Settings.Channels</property>
-    <min>1</min>
+    <min>0</min>
     <max>2</max>
   </property-value-rule>
   <property-value-rule>
@@ -1847,7 +1847,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.OpusSettings.Channels</property>
-    <min>1</min>
+    <min>0</min>
     <max>2</max>
   </property-value-rule>
   <property-value-rule>
@@ -2151,7 +2151,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.VorbisSettings.Channels</property>
-    <min>1</min>
+    <min>0</min>
     <max>2</max>
   </property-value-rule>
   <property-value-rule>
@@ -2241,7 +2241,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.WavSettings.Channels</property>
-    <min>1</min>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>

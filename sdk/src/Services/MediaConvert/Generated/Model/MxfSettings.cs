@@ -36,6 +36,7 @@ namespace Amazon.MediaConvert.Model
     {
         private MxfAfdSignaling _afdSignaling;
         private MxfProfile _profile;
+        private MxfUncompressedAudioWrapping _uncompressedAudioWrapping;
         private MxfXavcProfileSettings _xavcProfileSettings;
 
         /// <summary>
@@ -77,6 +78,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProfile()
         {
             return this._profile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UncompressedAudioWrapping. Choose the audio frame wrapping
+        /// mode for PCM tracks in MXF outputs. AUTO (default): Uses codec-appropriate defaults
+        /// - BWF for H.264/AVC, AES3 for MPEG2/XDCAM. AES3: Use AES3 frame wrapping with SMPTE-compliant
+        /// descriptors. This setting only takes effect when the MXF profile is OP1a.
+        /// </summary>
+        public MxfUncompressedAudioWrapping UncompressedAudioWrapping
+        {
+            get { return this._uncompressedAudioWrapping; }
+            set { this._uncompressedAudioWrapping = value; }
+        }
+
+        // Check to see if UncompressedAudioWrapping property is set
+        internal bool IsSetUncompressedAudioWrapping()
+        {
+            return this._uncompressedAudioWrapping != null;
         }
 
         /// <summary>

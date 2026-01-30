@@ -64,6 +64,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     response.Messages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ndiInfo", targetDepth))
+                {
+                    var unmarshaller = NdiSourceMetadataInfoUnmarshaller.Instance;
+                    response.NdiInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("timestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

@@ -164,6 +164,7 @@ namespace Amazon.Lambda.Model
         private string _functionName;
         private List<string> _functionResponseTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _kmsKeyArn;
+        private EventSourceMappingLoggingConfig _loggingConfig;
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
@@ -430,6 +431,21 @@ namespace Amazon.Lambda.Model
         internal bool IsSetKMSKeyArn()
         {
             return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfig.
+        /// </summary>
+        public EventSourceMappingLoggingConfig LoggingConfig
+        {
+            get { return this._loggingConfig; }
+            set { this._loggingConfig = value; }
+        }
+
+        // Check to see if LoggingConfig property is set
+        internal bool IsSetLoggingConfig()
+        {
+            return this._loggingConfig != null;
         }
 
         /// <summary>

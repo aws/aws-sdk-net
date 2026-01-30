@@ -58,6 +58,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Profile);
             }
 
+            if(requestObject.IsSetUncompressedAudioWrapping())
+            {
+                context.Writer.WritePropertyName("uncompressedAudioWrapping");
+                context.Writer.WriteStringValue(requestObject.UncompressedAudioWrapping);
+            }
+
             if(requestObject.IsSetXavcProfileSettings())
             {
                 context.Writer.WritePropertyName("xavcProfileSettings");
