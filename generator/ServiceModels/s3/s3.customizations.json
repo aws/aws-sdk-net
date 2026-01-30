@@ -495,13 +495,6 @@
                 }
             ]
         },
-        "PutBucketVersioningRequest": {
-            "modify": [
-                {
-                    "VersioningConfiguration": { "emitPropertyName": "VersioningConfig" }
-                }
-            ]
-        },
         "PutBucketCorsRequest": {
             "modify": [
                 {
@@ -2350,7 +2343,6 @@
                 }
             ]
         },
-        
         "UpdateBucketMetadataInventoryTableConfigurationRequest": {
             "modify" :[
                 {
@@ -2358,6 +2350,69 @@
                 },
                 {
                     "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketVersioningRequest" :{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketVersioningOutput":{
+            "modify":[
+                {
+                    "MFADelete":{"skipContextTestExpressionUnmarshallingLogic" : true, "injectXmlUnmarshallCode":["response.VersioningConfig.EnableMfaDelete = string.Equals(StringUnmarshaller.GetInstance().Unmarshall(context), \"Enabled\");"]}
+                },
+                {
+                    "Status":{"skipContextTestExpressionUnmarshallingLogic" : true, "injectXmlUnmarshallCode":[" response.VersioningConfig.Status = StringUnmarshaller.GetInstance().Unmarshall(context);"]}
+                }
+            ]
+        },
+        "PutBucketVersioningRequest": {
+            "modify": [
+                {
+                    "VersioningConfiguration": { "emitPropertyName": "VersioningConfig" }
+                },
+                {
+                    "VersioningConfig":{"injectXmlPropertyGetter":["get { return this._versioningConfig ?? new S3BucketVersioningConfig(); }"]}
+                },
+                {
+                    "ExpectedBucketOwner": {"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "MFA":{"emitPropertyName":"MfaCodes"}
+                },
+                {
+                    "MfaCodes":{
+                        "injectXmlIsSet":["return this._mfaCodes != null && !System.String.IsNullOrEmpty(_mfaCodes.SerialNumber) && !System.String.IsNullOrEmpty(_mfaCodes.AuthenticationValue);"],
+                        "injectXmlMarshallCode":["request.Headers[\"x-amz-mfa\"] = publicRequest.MfaCodes.FormattedMfaCodes;"]
+                    }
+                }
+            ],
+            "exclude":[
+                "ContentMD5"
+            ]
+        },
+        "S3BucketVersioningConfig":{
+            "modify":[
+                {
+                    "MFADelete": {"emitPropertyName" : "EnableMfaDelete"}
+                },
+                {
+                    "EnableMfaDelete":{
+                        "injectXmlIsSet":["return this._enableMfaDelete.HasValue;"],
+                        "injectXmlMarshallCode":[
+                            "if (publicRequest.VersioningConfig.IsSetEnableMfaDelete())",
+                            "   xmlWriter.WriteElementString(\"MfaDelete\", publicRequest.VersioningConfig.EnableMfaDelete.Value ? \"Enabled\" : \"Disabled\");"]
+                    }
+                },
+                {
+                    "Status" : {
+                        "injectXmlIsSet":[" return this._status != null && this._status != VersionStatus.Off;"],
+                        "injectXmlPrivateMemberAssignment":["private VersionStatus _status = \"Off\";"]
+                    }
                 }
             ]
         }
@@ -2552,6 +2607,9 @@
         },
         "Condition":{
             "renameShape":"RoutingRuleCondition"
+        },
+        "VersioningConfiguration":{
+            "renameShape": "S3BucketVersioningConfig"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -2938,6 +2996,19 @@
             "ServerSideEncryptionCustomerMethod":{
                 "Type" : "ServerSideEncryptionCustomerMethod"
             }
+        },
+        "PutBucketVersioningRequest":{
+            "MfaCodes":{
+                "Type":"MfaCodes"
+            }
+        },
+        "S3BucketVersioningConfig":{
+            "EnableMfaDelete":{
+                "Type":"bool?"
+            },
+            "Status" :{
+                "Type": "VersionStatus"
+            }
         }
     },
     "excludeMembers":{
@@ -2990,6 +3061,10 @@
             "ContentEncoding",
             "ContentType",
             "ContentLanguage"
+        ],
+        "GetBucketVersioningOutput":[
+            "Status",
+            "MFADelete"
         ]
     },
     "unwrapXmlOutput":{
