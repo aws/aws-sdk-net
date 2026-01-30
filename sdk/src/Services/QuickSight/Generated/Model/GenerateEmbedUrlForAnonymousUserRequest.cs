@@ -221,15 +221,25 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SessionTags. 
         /// <para>
-        /// The session tags used for row-level security. Before you use this parameter, make
-        /// sure that you have configured the relevant datasets using the <c>DataSet$RowLevelPermissionTagConfiguration</c>
-        /// parameter so that session tags can be used to provide row-level security.
+        /// Session tags are user-specified strings that identify a session in your application.
+        /// You can use these tags to implement row-level security (RLS) controls. Before you
+        /// use the <c>SessionTags</c> parameter, make sure that you have configured the relevant
+        /// datasets using the <c>DataSet$RowLevelPermissionTagConfiguration</c> parameter so
+        /// that session tags can be used to provide row-level security.
         /// </para>
         ///  
         /// <para>
-        /// These are not the tags used for the Amazon Web Services resource tagging feature.
-        /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-        /// Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.
+        /// When using session tags, you must call <c>GenerateEmbedUrlForAnonymousUser</c> from
+        /// a secure, trusted environment. The API call passes session tags that enable server-side
+        /// data redaction by using the row-level security (RLS) rules configured in your datasets.
+        /// A secure, trusted environment has access controls that you implement. These controls
+        /// ensure that only your server or authorized users can add or modify session tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// Besides, these are not the tags used for the Amazon Web Services resource tagging
+        /// feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
+        /// Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
