@@ -1837,7 +1837,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 CollectResults = operationRequest.CollectResults,
                 IndexName = operationRequest.IndexName,
                 IsConsistentRead = operationRequest.ConsistentRead,
-                PaginationToken = operationRequest.PaginationToken
+                PaginationToken = operationRequest.PaginationToken,
+                ReturnConsumedCapacity = operationRequest.ReturnConsumedCapacity
             };
 
             if (operationRequest.TotalSegments != 0)
@@ -1934,7 +1935,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 IndexName = operationRequest.IndexName,
                 Select = operationRequest.Select,
                 CollectResults = operationRequest.CollectResults,
-                PaginationToken = operationRequest.PaginationToken
+                PaginationToken = operationRequest.PaginationToken,
+                ReturnConsumedCapacity = operationRequest.ReturnConsumedCapacity 
             };
 
             return ret;
