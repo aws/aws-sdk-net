@@ -41,6 +41,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var stream = publicRequest.Body ?? new MemoryStream();
             defaultRequest.ContentStream = stream;
 
+            // Content-Length determination: for seekable streams, use actual length; otherwise use chunked encoding.
+            // This preserves S3's streaming behavior from the original custom implementation.
+            // https://github.com/aws/aws-sdk-net/blob/9ee87d97cfa1150403e84432d79e41d23abbadb7/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/WriteGetObjectResponseRequestMarshaller.cs#L166
             if (!publicRequest.IsSetContentLength())
             {
                 if (defaultRequest.ContentStream.CanSeek)
@@ -53,6 +56,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }
 
+            // Perserve the default content type header and RequestRoute logic that was added in the original custom implementation.
+            // https://github.com/aws/aws-sdk-net/blob/9ee87d97cfa1150403e84432d79e41d23abbadb7/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/WriteGetObjectResponseRequestMarshaller.cs#L182
             if (!publicRequest.IsSetContentType())
                 defaultRequest.Headers["x-amz-fwd-header-Content-Type"] = "binary/octet-stream";
 

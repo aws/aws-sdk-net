@@ -47,6 +47,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 			ChecksumUtils.SetChecksumData(defaultRequest);
         }
 
+        // Preserve original custom logic validation in the client side for a better user experience 
+        // https://github.com/aws/aws-sdk-net/blob/9ee87d97cfa1150403e84432d79e41d23abbadb7/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/PutBucketIntelligentTieringConfigurationRequestMarshaller.cs#L54-L70
         partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketIntelligentTieringConfigurationRequest publicRequest)
         {
 			var intelligentTieringConfiguration = publicRequest.IntelligentTieringConfiguration;
