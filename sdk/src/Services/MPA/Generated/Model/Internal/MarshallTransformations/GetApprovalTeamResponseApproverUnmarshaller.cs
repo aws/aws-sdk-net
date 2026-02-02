@@ -62,6 +62,12 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApproverId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MfaMethods", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MfaMethod, MfaMethodUnmarshaller>(MfaMethodUnmarshaller.Instance);
+                    unmarshalledObject.MfaMethods = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PrimaryIdentityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

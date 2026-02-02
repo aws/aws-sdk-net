@@ -35,6 +35,7 @@ namespace Amazon.MPA.Model
     public partial class GetApprovalTeamResponseApprover
     {
         private string _approverId;
+        private List<MfaMethod> _mfaMethods = AWSConfigs.InitializeCollections ? new List<MfaMethod>() : null;
         private string _primaryIdentityId;
         private string _primaryIdentitySourceArn;
         private IdentityStatus _primaryIdentityStatus;
@@ -57,6 +58,30 @@ namespace Amazon.MPA.Model
         internal bool IsSetApproverId()
         {
             return this._approverId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MfaMethods. 
+        /// <para>
+        /// Multi-factor authentication configuration for the approver
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<MfaMethod> MfaMethods
+        {
+            get { return this._mfaMethods; }
+            set { this._mfaMethods = value; }
+        }
+
+        // Check to see if MfaMethods property is set
+        internal bool IsSetMfaMethods()
+        {
+            return this._mfaMethods != null && (this._mfaMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -71,6 +71,52 @@ namespace Amazon.MPA
 
 
     /// <summary>
+    /// Constants used for properties of type AdditionalSecurityRequirement.
+    /// </summary>
+    public class AdditionalSecurityRequirement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVER_VERIFICATION_REQUIRED for AdditionalSecurityRequirement
+        /// </summary>
+        public static readonly AdditionalSecurityRequirement APPROVER_VERIFICATION_REQUIRED = new AdditionalSecurityRequirement("APPROVER_VERIFICATION_REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdditionalSecurityRequirement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdditionalSecurityRequirement FindValue(string value)
+        {
+            return FindValue<AdditionalSecurityRequirement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdditionalSecurityRequirement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApprovalTeamStatus.
     /// </summary>
     public class ApprovalTeamStatus : ConstantClass
@@ -505,6 +551,102 @@ namespace Amazon.MPA
 
 
     /// <summary>
+    /// Constants used for properties of type MfaSyncStatus.
+    /// </summary>
+    public class MfaSyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN_SYNC for MfaSyncStatus
+        /// </summary>
+        public static readonly MfaSyncStatus IN_SYNC = new MfaSyncStatus("IN_SYNC");
+        /// <summary>
+        /// Constant OUT_OF_SYNC for MfaSyncStatus
+        /// </summary>
+        public static readonly MfaSyncStatus OUT_OF_SYNC = new MfaSyncStatus("OUT_OF_SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MfaSyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MfaSyncStatus FindValue(string value)
+        {
+            return FindValue<MfaSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MfaSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MfaType.
+    /// </summary>
+    public class MfaType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMAIL_OTP for MfaType
+        /// </summary>
+        public static readonly MfaType EMAIL_OTP = new MfaType("EMAIL_OTP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MfaType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MfaType FindValue(string value)
+        {
+            return FindValue<MfaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MfaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Operator.
     /// </summary>
     public class Operator : ConstantClass
@@ -900,6 +1042,52 @@ namespace Amazon.MPA
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SessionStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateAction.
+    /// </summary>
+    public class UpdateAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SYNCHRONIZE_MFA_DEVICES for UpdateAction
+        /// </summary>
+        public static readonly UpdateAction SYNCHRONIZE_MFA_DEVICES = new UpdateAction("SYNCHRONIZE_MFA_DEVICES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateAction FindValue(string value)
+        {
+            return FindValue<UpdateAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateAction(string value)
         {
             return FindValue(value);
         }
