@@ -1,3 +1,11 @@
+### 4.0.182.0 (2026-02-02 19:17 UTC)
+* BedrockAgentCoreControl (4.0.15.0)
+	* Adds tagging support for AgentCore Evaluations (evaluator and online evaluation config)
+* CloudFront (4.0.12.0)
+	* Add OriginMTLS support to CloudFront Distribution APIs
+* MPA (4.0.3.0)
+	* Updates to multi-party approval (MPA) service to add support for multi-factor authentication (MFA) for voting operations.
+
 ### 4.0.181.0 (2026-01-30 19:23 UTC)
 * Connect (4.0.31.0)
 	* This release adds Estimated Wait Time support to the GetContactMetrics API for Amazon Connect.
