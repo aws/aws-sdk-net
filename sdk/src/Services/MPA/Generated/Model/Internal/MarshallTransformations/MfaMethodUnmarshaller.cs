@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MPA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetApprovalTeamResponseApprover Object
+    /// Response Unmarshaller for MfaMethod Object
     /// </summary>  
-    public class GetApprovalTeamResponseApproverUnmarshaller : IUnmarshaller<GetApprovalTeamResponseApprover, XmlUnmarshallerContext>, IUnmarshaller<GetApprovalTeamResponseApprover, JsonUnmarshallerContext>
+    public class MfaMethodUnmarshaller : IUnmarshaller<MfaMethod, XmlUnmarshallerContext>, IUnmarshaller<MfaMethod, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GetApprovalTeamResponseApprover IUnmarshaller<GetApprovalTeamResponseApprover, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MfaMethod IUnmarshaller<MfaMethod, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GetApprovalTeamResponseApprover Unmarshall(JsonUnmarshallerContext context)
+        public MfaMethod Unmarshall(JsonUnmarshallerContext context)
         {
-            GetApprovalTeamResponseApprover unmarshalledObject = new GetApprovalTeamResponseApprover();
+            MfaMethod unmarshalledObject = new MfaMethod();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApproverId", targetDepth))
+                if (context.TestExpression("SyncStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApproverId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SyncStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MfaMethods", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MfaMethod, MfaMethodUnmarshaller>(MfaMethodUnmarshaller.Instance);
-                    unmarshalledObject.MfaMethods = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PrimaryIdentityId", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryIdentityId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PrimaryIdentitySourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryIdentitySourceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PrimaryIdentityStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryIdentityStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResponseTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ResponseTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
         }
 
 
-        private static GetApprovalTeamResponseApproverUnmarshaller _instance = new GetApprovalTeamResponseApproverUnmarshaller();        
+        private static MfaMethodUnmarshaller _instance = new MfaMethodUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetApprovalTeamResponseApproverUnmarshaller Instance
+        public static MfaMethodUnmarshaller Instance
         {
             get
             {

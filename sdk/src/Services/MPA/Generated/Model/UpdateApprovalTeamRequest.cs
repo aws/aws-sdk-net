@@ -50,6 +50,7 @@ namespace Amazon.MPA.Model
         private List<ApprovalTeamRequestApprover> _approvers = AWSConfigs.InitializeCollections ? new List<ApprovalTeamRequestApprover>() : null;
         private string _arn;
         private string _description;
+        private List<string> _updateActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApprovalStrategy. 
@@ -125,6 +126,25 @@ namespace Amazon.MPA.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateActions. 
+        /// <para>
+        /// A list of <c>UpdateAction</c> to perform when updating the team.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> UpdateActions
+        {
+            get { return this._updateActions; }
+            set { this._updateActions = value; }
+        }
+
+        // Check to see if UpdateActions property is set
+        internal bool IsSetUpdateActions()
+        {
+            return this._updateActions != null && (this._updateActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

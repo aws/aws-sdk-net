@@ -103,6 +103,17 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetUpdateActions())
+                {
+                    context.Writer.WritePropertyName("UpdateActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUpdateActionsListValue in publicRequest.UpdateActions)
+                    {
+                            context.Writer.Write(publicRequestUpdateActionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

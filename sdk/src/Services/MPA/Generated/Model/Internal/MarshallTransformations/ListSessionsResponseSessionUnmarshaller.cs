@@ -78,6 +78,12 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AdditionalSecurityRequirements", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalSecurityRequirements = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ApprovalTeamArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

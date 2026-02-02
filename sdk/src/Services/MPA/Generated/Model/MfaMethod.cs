@@ -30,30 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MPA.Model
 {
     /// <summary>
-    /// This is the response object from the GetPolicyVersion operation.
+    /// MFA configuration and sycnronization status for an approver
     /// </summary>
-    public partial class GetPolicyVersionResponse : AmazonWebServiceResponse
+    public partial class MfaMethod
     {
-        private PolicyVersion _policyVersion;
+        private MfaSyncStatus _syncStatus;
+        private MfaType _type;
 
         /// <summary>
-        /// Gets and sets the property PolicyVersion. 
+        /// Gets and sets the property SyncStatus. 
         /// <para>
-        /// A <c>PolicyVersion</c> object. Contains details for the version of the policy. Policies
-        /// define the permissions for team resources.
+        /// Indicates if the approver's MFA device is in-sync with the Identity Source
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public PolicyVersion PolicyVersion
+        public MfaSyncStatus SyncStatus
         {
-            get { return this._policyVersion; }
-            set { this._policyVersion = value; }
+            get { return this._syncStatus; }
+            set { this._syncStatus = value; }
         }
 
-        // Check to see if PolicyVersion property is set
-        internal bool IsSetPolicyVersion()
+        // Check to see if SyncStatus property is set
+        internal bool IsSetSyncStatus()
         {
-            return this._policyVersion != null;
+            return this._syncStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of MFA configuration used by the approver
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public MfaType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
