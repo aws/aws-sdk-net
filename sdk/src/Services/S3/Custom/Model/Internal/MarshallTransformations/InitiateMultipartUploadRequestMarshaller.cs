@@ -40,6 +40,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             HeaderACLRequestMarshaller.Marshall(defaultRequest, publicRequest);
             AmazonS3Util.SetMetadataHeaders(defaultRequest, publicRequest.Metadata);
+
+            // Server-side encryption with customer-provided keys (SSE-C) handling for backward compatibility.
+            // When SSE-C key is provided: uses the MD5 digest if supplied, otherwise automatically computes it.
+            // https://github.com/aws/aws-sdk-net/blob/ba5eca31bd2d734dfeb7512a02cb9caecdf730c2/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/InitiateMultipartUploadRequestMarshaller.cs#L58-L65
             if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
                 defaultRequest.Headers[HeaderKeys.XAmzSSECustomerKeyHeader] =  publicRequest.ServerSideEncryptionCustomerProvidedKey;
