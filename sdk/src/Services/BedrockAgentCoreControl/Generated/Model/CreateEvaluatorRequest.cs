@@ -42,6 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private EvaluatorConfig _evaluatorConfig;
         private string _evaluatorName;
         private EvaluatorLevel _level;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -144,6 +145,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLevel()
         {
             return this._level != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you
+        /// to categorize your resources in different ways, for example, by purpose, owner, or
+        /// environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
