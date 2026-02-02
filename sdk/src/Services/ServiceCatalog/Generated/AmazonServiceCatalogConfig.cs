@@ -32,7 +32,7 @@ namespace Amazon.ServiceCatalog
     public partial class AmazonServiceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Service Catalog", "3.7.501.34");
+            InternalSDKUtils.BuildUserAgentString("Service Catalog", "3.7.501.35");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -32,7 +32,7 @@ namespace Amazon.ControlTower
     public partial class AmazonControlTowerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ControlTower", "3.7.503.26");
+            InternalSDKUtils.BuildUserAgentString("ControlTower", "3.7.503.27");
 
         private string _userAgent = UserAgentString;
         ///<summary>
