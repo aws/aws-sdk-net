@@ -789,6 +789,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IpAddressType));
                                         if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginKeepaliveTimeout())
                                             xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginKeepaliveTimeout.Value));
+                                        if (publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginMtlsConfig())
+                                        {
+                                            xmlWriter.WriteStartElement("OriginMtlsConfig");
+                                            if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginMtlsConfig.IsSetClientCertificateArn())
+                                                xmlWriter.WriteElementString("ClientCertificateArn", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginMtlsConfig.ClientCertificateArn));
+                                            xmlWriter.WriteEndElement();
+                                        }
                                         if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginProtocolPolicy())
                                             xmlWriter.WriteElementString("OriginProtocolPolicy", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginProtocolPolicy));
                                         if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginReadTimeout())
