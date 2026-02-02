@@ -874,6 +874,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginKeepaliveTimeout())
                                             xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginKeepaliveTimeout));                 
 
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginMtlsConfig != null)
+                                        {
+                                            xmlWriter.WriteStartElement("OriginMtlsConfig");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginMtlsConfig.IsSetClientCertificateArn())
+                                                xmlWriter.WriteElementString("ClientCertificateArn", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginMtlsConfig.ClientCertificateArn));                 
+
+                                            xmlWriter.WriteEndElement();
+                                        }
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginProtocolPolicy())
                                             xmlWriter.WriteElementString("OriginProtocolPolicy", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginProtocolPolicy));                 
 

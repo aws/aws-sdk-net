@@ -40,6 +40,7 @@ namespace Amazon.CloudFront.Model
         private int? _httpsPort;
         private IpAddressType _ipAddressType;
         private int? _originKeepaliveTimeout;
+        private OriginMtlsConfig _originMtlsConfig;
         private OriginProtocolPolicy _originProtocolPolicy;
         private int? _originReadTimeout;
         private OriginSslProtocols _originSslProtocols;
@@ -127,6 +128,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetOriginKeepaliveTimeout()
         {
             return this._originKeepaliveTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginMtlsConfig. 
+        /// <para>
+        /// Configures mutual TLS authentication between CloudFront and your origin server.
+        /// </para>
+        /// </summary>
+        public OriginMtlsConfig OriginMtlsConfig
+        {
+            get { return this._originMtlsConfig; }
+            set { this._originMtlsConfig = value; }
+        }
+
+        // Check to see if OriginMtlsConfig property is set
+        internal bool IsSetOriginMtlsConfig()
+        {
+            return this._originMtlsConfig != null;
         }
 
         /// <summary>

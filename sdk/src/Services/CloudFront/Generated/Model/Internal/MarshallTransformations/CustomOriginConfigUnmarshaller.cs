@@ -80,6 +80,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginKeepaliveTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OriginMtlsConfig", targetDepth))
+                    {
+                        var unmarshaller = OriginMtlsConfigUnmarshaller.Instance;
+                        unmarshalledObject.OriginMtlsConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OriginProtocolPolicy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
