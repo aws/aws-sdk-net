@@ -18,6 +18,11 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.CreateTableRequest.GlobalTableSourceArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.CreateTableRequest.TableName</property>
     <min>1</min>
     <max>1024</max>

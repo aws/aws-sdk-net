@@ -5902,10 +5902,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6284,10 +6283,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10835,10 +10833,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11156,10 +11153,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11528,10 +11524,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11976,10 +11971,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
