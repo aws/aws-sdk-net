@@ -116,6 +116,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StreamCreationTimestamp.Value)));
             }
 
+            if(publicRequest.IsSetStreamId())
+            {
+                context.Writer.WritePropertyName("StreamId");
+                context.Writer.WriteStringValue(publicRequest.StreamId);
+            }
+
             if(publicRequest.IsSetStreamName())
             {
                 context.Writer.WritePropertyName("StreamName");

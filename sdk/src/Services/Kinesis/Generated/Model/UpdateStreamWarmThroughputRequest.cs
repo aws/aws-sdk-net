@@ -82,6 +82,7 @@ namespace Amazon.Kinesis.Model
     public partial class UpdateStreamWarmThroughputRequest : AmazonKinesisRequest
     {
         private string _streamARN;
+        private string _streamId;
         private string _streamName;
         private int? _warmThroughputMiBps;
 
@@ -102,6 +103,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamARN()
         {
             return this._streamARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Not Implemented. Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public string StreamId
+        {
+            get { return this._streamId; }
+            set { this._streamId = value; }
+        }
+
+        // Check to see if StreamId property is set
+        internal bool IsSetStreamId()
+        {
+            return this._streamId != null;
         }
 
         /// <summary>
