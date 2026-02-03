@@ -171,6 +171,13 @@ namespace Amazon.Batch.Model
         /// is specified, the <c>jobStatus</c> parameter is ignored and jobs with any status are
         /// returned. If you don't specify a status, only <c>RUNNING</c> jobs are returned.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Array job parents are updated to <c>PENDING</c> when any child job is updated to <c>RUNNABLE</c>
+        /// and remain in <c>PENDING</c> status while child jobs are running. To view these jobs,
+        /// filter by <c>PENDING</c> status until all child jobs reach a terminal state.
+        /// </para>
+        ///  </note>
         /// </summary>
         public JobStatus JobStatus
         {

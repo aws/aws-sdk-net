@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private int? _index;
         private int? _size;
         private Dictionary<string, int> _statusSummary = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private long? _statusSummaryLastUpdatedAt;
 
         /// <summary>
         /// Gets and sets the property Index. 
@@ -97,6 +98,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetStatusSummary()
         {
             return this._statusSummary != null && (this._statusSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusSummaryLastUpdatedAt. 
+        /// <para>
+        /// The Unix timestamp (in milliseconds) for when the <c>statusSummary</c> was last updated.
+        /// </para>
+        /// </summary>
+        public long? StatusSummaryLastUpdatedAt
+        {
+            get { return this._statusSummaryLastUpdatedAt; }
+            set { this._statusSummaryLastUpdatedAt = value; }
+        }
+
+        // Check to see if StatusSummaryLastUpdatedAt property is set
+        internal bool IsSetStatusSummaryLastUpdatedAt()
+        {
+            return this._statusSummaryLastUpdatedAt.HasValue; 
         }
 
     }
