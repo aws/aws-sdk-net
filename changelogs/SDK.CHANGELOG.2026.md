@@ -1,3 +1,21 @@
+### 4.0.183.0 (2026-02-03 19:25 UTC)
+* Batch (4.0.4.0)
+	* AWS Batch Array Job Visibility feature support. Includes new statusSummaryLastUpdatedAt for array job parent DescribeJobs responses for the last time the statusSummary was updated. Includes both statusSummary and statusSummaryLastUpdatedAt in ListJobs responses for array job parents.
+* DynamoDBv2 (4.0.14.0)
+	* This change supports the creation of multi-account global tables. It adds two new arguments to CreateTable, GlobalTableSourceArn and GlobalTableSettingsReplicationMode. DescribeTable is also updated to include information about GlobalTableSettingsReplicationMode.
+* GeoMaps (4.0.4.0)
+	* Added support for optional style parameters in maps, including 3D terrain and 3D Buildings
+* Kinesis (4.0.8.0)
+	* Adds StreamId parameter to AWS Kinesis Data Streams APIs that is reserved for future use.
+* MarketplaceCatalog (4.0.5.0)
+	* Adds support for Catalog API us-east-1 dualstack endpoint catalog-marketplace.us-east-1.api.aws
+* Organizations (4.0.10.7)
+	* Updated the CloseAccount description.
+* S3 (4.0.18.2)
+	* Generate PutBucketVersioning, GetBucketVersioning, and UpdateBucketMetadataInventoryTableConfiguration
+* SSOAdmin (4.0.5.0)
+	* Added new Region management APIs to support multi-Region replication in IAM Identity Center.
+
 ### 4.0.182.0 (2026-02-02 19:17 UTC)
 * BedrockAgentCoreControl (4.0.15.0)
 	* Adds tagging support for AgentCore Evaluations (evaluator and online evaluation config)

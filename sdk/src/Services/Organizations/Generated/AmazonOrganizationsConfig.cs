@@ -33,7 +33,7 @@ namespace Amazon.Organizations
     public partial class AmazonOrganizationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Organizations", "4.0.10.6");
+            InternalSDKUtils.BuildUserAgentString("Organizations", "4.0.10.7");
 
         private static readonly AmazonOrganizationsEndpointResolver EndpointResolver =
             new AmazonOrganizationsEndpointResolver();
