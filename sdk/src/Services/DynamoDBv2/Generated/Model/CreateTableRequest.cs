@@ -60,6 +60,8 @@ namespace Amazon.DynamoDBv2.Model
         private BillingMode _billingMode;
         private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndex> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndex>() : null;
+        private GlobalTableSettingsReplicationMode _globalTableSettingsReplicationMode;
+        private string _globalTableSourceArn;
         private List<KeySchemaElement> _keySchema = AWSConfigs.InitializeCollections ? new List<KeySchemaElement>() : null;
         private List<LocalSecondaryIndex> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<LocalSecondaryIndex>() : null;
         private OnDemandThroughput _onDemandThroughput;
@@ -109,7 +111,6 @@ namespace Amazon.DynamoDBv2.Model
         /// An array of attributes that describe the key schema for the table and indexes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<AttributeDefinition> AttributeDefinitions
         {
             get { return this._attributeDefinitions; }
@@ -187,7 +188,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <c>KeySchema</c> - Specifies the key schema for the global secondary index.
+        ///  <c>KeySchema</c> - Specifies the key schema for the global secondary index. Each
+        /// global secondary index supports up to 4 partition keys and up to 4 sort keys.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -240,6 +242,46 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetGlobalSecondaryIndexes()
         {
             return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalTableSettingsReplicationMode. 
+        /// <para>
+        /// Controls the settings synchronization mode for the global table. For multi-account
+        /// global tables, this parameter is required and the only supported value is ENABLED.
+        /// For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES. 
+        /// </para>
+        /// </summary>
+        public GlobalTableSettingsReplicationMode GlobalTableSettingsReplicationMode
+        {
+            get { return this._globalTableSettingsReplicationMode; }
+            set { this._globalTableSettingsReplicationMode = value; }
+        }
+
+        // Check to see if GlobalTableSettingsReplicationMode property is set
+        internal bool IsSetGlobalTableSettingsReplicationMode()
+        {
+            return this._globalTableSettingsReplicationMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalTableSourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account
+        /// global table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string GlobalTableSourceArn
+        {
+            get { return this._globalTableSourceArn; }
+            set { this._globalTableSourceArn = value; }
+        }
+
+        // Check to see if GlobalTableSourceArn property is set
+        internal bool IsSetGlobalTableSourceArn()
+        {
+            return this._globalTableSourceArn != null;
         }
 
         /// <summary>
@@ -299,7 +341,7 @@ namespace Amazon.DynamoDBv2.Model
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }

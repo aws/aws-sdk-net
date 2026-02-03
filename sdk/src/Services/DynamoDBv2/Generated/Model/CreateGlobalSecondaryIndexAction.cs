@@ -63,7 +63,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KeySchema. 
         /// <para>
-        /// The key schema for the global secondary index.
+        /// The key schema for the global secondary index. Global secondary index supports up
+        /// to 4 partition and up to 4 sort keys.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

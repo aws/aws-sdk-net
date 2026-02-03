@@ -98,7 +98,7 @@ namespace Amazon.DynamoDBv2.Internal
                         {
                             throw new AmazonClientException("Invalid Configuration: Dualstack and local endpoint are not supported");
                         }
-                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""dynamodb""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""dynamodb"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {

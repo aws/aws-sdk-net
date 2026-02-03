@@ -35,6 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ReplicaDescription
     {
         private List<ReplicaGlobalSecondaryIndexDescription> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<ReplicaGlobalSecondaryIndexDescription>() : null;
+        private GlobalTableSettingsReplicationMode _globalTableSettingsReplicationMode;
         private string _kmsMasterKeyId;
         private OnDemandThroughputOverride _onDemandThroughputOverride;
         private ProvisionedThroughputOverride _provisionedThroughputOverride;
@@ -62,6 +63,40 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetGlobalSecondaryIndexes()
         {
             return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalTableSettingsReplicationMode. 
+        /// <para>
+        /// Indicates one of the settings synchronization modes for the global table replica:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: Indicates that the settings synchronization mode for the global table
+        /// replica is enabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c>: Indicates that the settings synchronization mode for the global
+        /// table replica is disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENABLED_WITH_OVERRIDES</c>: This mode is set by default for a same account global
+        /// table. Indicates that certain global table settings can be overridden.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GlobalTableSettingsReplicationMode GlobalTableSettingsReplicationMode
+        {
+            get { return this._globalTableSettingsReplicationMode; }
+            set { this._globalTableSettingsReplicationMode = value; }
+        }
+
+        // Check to see if GlobalTableSettingsReplicationMode property is set
+        internal bool IsSetGlobalTableSettingsReplicationMode()
+        {
+            return this._globalTableSettingsReplicationMode != null;
         }
 
         /// <summary>

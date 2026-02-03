@@ -102,6 +102,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GlobalTableSettingsReplicationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GlobalTableSettingsReplicationMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GlobalTableVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
