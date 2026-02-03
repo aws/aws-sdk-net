@@ -78,6 +78,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statusSummary", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusSummaryLastUpdatedAt", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StatusSummaryLastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

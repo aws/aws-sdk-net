@@ -84,6 +84,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statusSummaryLastUpdatedAt", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StatusSummaryLastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
