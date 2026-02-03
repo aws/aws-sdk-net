@@ -44,8 +44,8 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
         /// Specifies the encryption configuration for your IAM Identity Center instance. You
-        /// can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned
-        /// KMS keys for encrypting your instance data.
+        /// can use this to configure customer managed KMS keys or Amazon Web Services owned KMS
+        /// keys for encrypting your instance data.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration

@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeApplication operation
+    /// Response Unmarshaller for DescribeRegion operation
     /// </summary>  
-    public class DescribeApplicationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeRegionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,64 +46,28 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeApplicationResponse response = new DescribeApplicationResponse();
+            DescribeRegionResponse response = new DescribeRegionResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationAccount", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationAccount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ApplicationArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ApplicationProviderArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationProviderArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreatedDate", targetDepth))
+                if (context.TestExpression("AddedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
+                    response.AddedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedFrom", targetDepth))
+                if (context.TestExpression("IsPrimaryRegion", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.IsPrimaryRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RegionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedFrom = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.InstanceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PortalOptions", targetDepth))
-                {
-                    var unmarshaller = PortalOptionsUnmarshaller.Instance;
-                    response.PortalOptions = unmarshaller.Unmarshall(context, ref reader);
+                    response.RegionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
@@ -161,9 +125,9 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             return new AmazonSSOAdminException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeApplicationResponseUnmarshaller _instance = new DescribeApplicationResponseUnmarshaller();        
+        private static DescribeRegionResponseUnmarshaller _instance = new DescribeRegionResponseUnmarshaller();        
 
-        internal static DescribeApplicationResponseUnmarshaller GetInstance()
+        internal static DescribeRegionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -171,7 +135,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeApplicationResponseUnmarshaller Instance
+        public static DescribeRegionResponseUnmarshaller Instance
         {
             get
             {
