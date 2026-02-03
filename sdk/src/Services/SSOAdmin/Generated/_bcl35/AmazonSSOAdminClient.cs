@@ -305,6 +305,112 @@ namespace Amazon.SSOAdmin
         #endregion
 
 
+        #region  AddRegion
+
+        /// <summary>
+        /// Adds a Region to an IAM Identity Center instance. This operation initiates an asynchronous
+        /// workflow to replicate the IAM Identity Center instance to the target Region. The Region
+        /// status is set to ADDING at first and changes to ACTIVE when the workflow completes.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, your IAM Identity Center instance and the target Region must
+        /// meet the requirements described in the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/multi-region-iam-identity-center.html#multi-region-prerequisites">IAM
+        /// Identity Center User Guide</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to <c>AddRegion</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html">RemoveRegion</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html">DescribeRegion</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html">ListRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRegion service method.</param>
+        /// 
+        /// <returns>The response from the AddRegion service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AddRegion">REST API Reference for AddRegion Operation</seealso>
+        public virtual AddRegionResponse AddRegion(AddRegionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AddRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddRegionResponseUnmarshaller.Instance;
+
+            return Invoke<AddRegionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRegion operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddRegion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AddRegion">REST API Reference for AddRegion Operation</seealso>
+        public virtual IAsyncResult BeginAddRegion(AddRegionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AddRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddRegionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddRegion.</param>
+        /// 
+        /// <returns>Returns a  AddRegionResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AddRegion">REST API Reference for AddRegion Operation</seealso>
+        public virtual AddRegionResponse EndAddRegion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddRegionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AttachCustomerManagedPolicyReferenceToPermissionSet
 
         /// <summary>
@@ -2690,6 +2796,100 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  DescribeRegion
+
+        /// <summary>
+        /// Retrieves details about a specific Region enabled in an IAM Identity Center instance.
+        /// Details include the Region name, current status (ACTIVE, ADDING, or REMOVING), the
+        /// date when the Region was added, and whether it is the primary Region. The request
+        /// must be made from one of the enabled Regions of the IAM Identity Center instance.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <c>DescribeRegion</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html">
+        /// AddRegion</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html">RemoveRegion</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html">ListRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegion service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRegion service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeRegion">REST API Reference for DescribeRegion Operation</seealso>
+        public virtual DescribeRegionResponse DescribeRegion(DescribeRegionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRegionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRegionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegion operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRegion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeRegion">REST API Reference for DescribeRegion Operation</seealso>
+        public virtual IAsyncResult BeginDescribeRegion(DescribeRegionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRegionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRegion.</param>
+        /// 
+        /// <returns>Returns a  DescribeRegionResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeRegion">REST API Reference for DescribeRegion Operation</seealso>
+        public virtual DescribeRegionResponse EndDescribeRegion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRegionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeTrustedTokenIssuer
 
         /// <summary>
@@ -4683,6 +4883,96 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  ListRegions
+
+        /// <summary>
+        /// Lists all enabled Regions of an IAM Identity Center instance, including those that
+        /// are being added or removed. This operation returns Regions with ACTIVE, ADDING, or
+        /// REMOVING status.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <c>ListRegions</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html">
+        /// AddRegion</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html">RemoveRegion</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html">DescribeRegion</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegions service method.</param>
+        /// 
+        /// <returns>The response from the ListRegions service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListRegions">REST API Reference for ListRegions Operation</seealso>
+        public virtual ListRegionsResponse ListRegions(ListRegionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRegions operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRegions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListRegions">REST API Reference for ListRegions Operation</seealso>
+        public virtual IAsyncResult BeginListRegions(ListRegionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRegions.</param>
+        /// 
+        /// <returns>Returns a  ListRegionsResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListRegions">REST API Reference for ListRegions Operation</seealso>
+        public virtual ListRegionsResponse EndListRegions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRegionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -5527,6 +5817,108 @@ namespace Amazon.SSOAdmin
         public virtual PutPermissionsBoundaryToPermissionSetResponse EndPutPermissionsBoundaryToPermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<PutPermissionsBoundaryToPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveRegion
+
+        /// <summary>
+        /// Removes an additional Region from an IAM Identity Center instance. This operation
+        /// initiates an asynchronous workflow to clean up IAM Identity Center resources in the
+        /// specified additional Region. The Region status is set to REMOVING and the Region record
+        /// is deleted when the workflow completes. The request must be made from the primary
+        /// Region. The target Region cannot be the primary Region, and no other add or remove
+        /// Region workflows can be in progress.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <c>RemoveRegion</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html">
+        /// AddRegion</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html">DescribeRegion</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html">ListRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRegion service method.</param>
+        /// 
+        /// <returns>The response from the RemoveRegion service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
+        public virtual RemoveRegionResponse RemoveRegion(RemoveRegionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveRegionResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveRegionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRegion operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveRegion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
+        public virtual IAsyncResult BeginRemoveRegion(RemoveRegionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveRegionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveRegion.</param>
+        /// 
+        /// <returns>Returns a  RemoveRegionResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
+        public virtual RemoveRegionResponse EndRemoveRegion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveRegionResponse>(asyncResult);
         }
 
         #endregion

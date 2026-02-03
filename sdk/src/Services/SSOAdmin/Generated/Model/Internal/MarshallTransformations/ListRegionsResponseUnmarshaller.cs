@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeApplication operation
+    /// Response Unmarshaller for ListRegions operation
     /// </summary>  
-    public class DescribeApplicationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListRegionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,70 +46,22 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeApplicationResponse response = new DescribeApplicationResponse();
+            ListRegionsResponse response = new ListRegionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationAccount", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationAccount = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ApplicationArn", targetDepth))
+                if (context.TestExpression("Regions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ApplicationProviderArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationProviderArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreatedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreatedFrom", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedFrom = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.InstanceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PortalOptions", targetDepth))
-                {
-                    var unmarshaller = PortalOptionsUnmarshaller.Instance;
-                    response.PortalOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<RegionMetadata, RegionMetadataUnmarshaller>(RegionMetadataUnmarshaller.Instance);
+                    response.Regions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -143,10 +95,6 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -159,9 +107,9 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             return new AmazonSSOAdminException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeApplicationResponseUnmarshaller _instance = new DescribeApplicationResponseUnmarshaller();        
+        private static ListRegionsResponseUnmarshaller _instance = new ListRegionsResponseUnmarshaller();        
 
-        internal static DescribeApplicationResponseUnmarshaller GetInstance()
+        internal static ListRegionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +117,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeApplicationResponseUnmarshaller Instance
+        public static ListRegionsResponseUnmarshaller Instance
         {
             get
             {
