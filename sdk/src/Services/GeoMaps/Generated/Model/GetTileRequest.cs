@@ -102,7 +102,8 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>raster.satellite | vector.basemap</c> 
+        /// Valid Values: <c>raster.satellite | vector.basemap | vector.traffic | raster.dem</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
