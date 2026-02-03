@@ -96,7 +96,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: 97.170451,78.039098,99.045536,27.176178
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=2000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5000)]
         public string BoundedPositions
         {
             get { return this._boundedPositions; }
@@ -213,7 +213,7 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=7000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=5000)]
         public string CompactOverlay
         {
             get { return this._compactOverlay; }
@@ -282,7 +282,7 @@ namespace Amazon.GeoMaps.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=7000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4200)]
         public string GeoJsonOverlay
         {
             get { return this._geoJsonOverlay; }

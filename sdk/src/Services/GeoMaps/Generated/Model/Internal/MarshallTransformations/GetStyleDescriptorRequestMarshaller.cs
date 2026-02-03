@@ -63,6 +63,9 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
                 throw new AmazonGeoMapsException("Request object does not have required field Style set");
             request.AddPathResource("{Style}", StringUtils.FromString(publicRequest.Style));
             
+            if (publicRequest.IsSetBuildings())
+                request.Parameters.Add("buildings", StringUtils.FromString(publicRequest.Buildings));
+            
             if (publicRequest.IsSetColorScheme())
                 request.Parameters.Add("color-scheme", StringUtils.FromString(publicRequest.ColorScheme));
             
