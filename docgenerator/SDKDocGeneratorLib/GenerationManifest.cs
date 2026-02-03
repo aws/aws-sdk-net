@@ -158,6 +158,31 @@ namespace SDKDocGenerator
         public GeneratorOptions Options { get; }
 
         /// <summary>
+        /// Platform availability map for this service.
+        /// Built once during initialization, used for both page generation decisions
+        /// and badge rendering throughout documentation generation.
+        /// </summary>
+        public PlatformMap.PlatformAvailabilityMap PlatformMap { get; private set; }
+
+        /// <summary>
+        /// Attaches a platform availability map to this manifest.
+        /// Should only be called once during initialization.
+        /// </summary>
+        public void AttachPlatformMap(PlatformMap.PlatformAvailabilityMap map)
+        {
+            if (map == null)
+                throw new ArgumentNullException(nameof(map));
+
+            if (PlatformMap != null)
+                throw new InvalidOperationException("PlatformMap has already been attached");
+
+            if (!map.ServiceName.Equals(ServiceName, StringComparison.OrdinalIgnoreCase))
+                throw new ArgumentException($"Map service name '{map.ServiceName}' doesn't match manifest service name '{ServiceName}'");
+
+            PlatformMap = map;
+        }
+
+        /// <summary>
         /// Returns the discovered NDoc table for a given platform, if it existed. If platform
         /// is not specified, we attempt to return the NDoc for the primary platform specified
         /// in the generator options.
@@ -471,6 +496,248 @@ namespace SDKDocGenerator
 
             ManifestAssemblyContext.Dispose();
             ManifestAssemblyContext = null;
+        }
+
+        /// <summary>
+        /// Generates documentation for platform-exclusive methods using the platform map.
+        /// This replaces the old IdentifySupplementalMethods + GenerateSupplementalOnly flow
+        /// with a unified approach that uses the platform map as the source of truth.
+        /// </summary>
+        /// <param name="tocWriter">TOC generation handler</param>
+        /// <param name="supplementalPlatform">Platform to check for supplemental methods (e.g., "net8.0")</param>
+        /// <param name="supplementalAssemblyPath">Path to the supplemental platform assembly</param>
+        public void GenerateSupplementalPagesFromMap(TOCWriter tocWriter, string supplementalPlatform, string supplementalAssemblyPath)
+        {
+            if (PlatformMap == null)
+            {
+                if (Options.Verbose)
+                    Trace.WriteLine($"\tNo platform map available for {ServiceName}, skipping supplemental page generation");
+                return;
+            }
+
+            // Query the platform map for members that exist only in the supplemental platform
+            var supplementalSignatures = PlatformMap.FindSupplementalMembers(supplementalPlatform, Options.Platform)
+                .Where(sig => SDKDocGenerator.PlatformMap.MemberSignature.GetMemberType(sig) == "M") // Methods only
+                .ToList();
+
+            if (!supplementalSignatures.Any())
+            {
+                if (Options.Verbose)
+                    Trace.WriteLine($"\tNo supplemental methods found for {ServiceName} on {supplementalPlatform}");
+                return;
+            }
+
+            Trace.WriteLine($"\tgenerating supplemental content from map for {ServiceName} ({supplementalSignatures.Count} methods on {supplementalPlatform})");
+
+            // Group signatures by declaring type
+            var signaturesByType = supplementalSignatures
+                .GroupBy(sig => SDKDocGenerator.PlatformMap.MemberSignature.GetDeclaringTypeName(sig))
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            // Load NDoc documentation for all platforms
+            foreach (var platform in AllPlatforms)
+            {
+                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
+            }
+
+            // Load the supplemental platform assembly in an isolated context
+            var supplementalDocId = NDocUtilities.GenerateDocId(ServiceName, supplementalPlatform);
+            var supplementalAssembly = new AssemblyWrapper(supplementalDocId);
+            supplementalAssembly.LoadAssembly(supplementalAssemblyPath, useIsolatedContext: true);
+
+            var frameworkVersion = FrameworkVersion.FromPlatformFolder(Options.Platform);
+
+            try
+            {
+                Trace.WriteLine($"\t\tProcessing {supplementalSignatures.Count} supplemental methods across {signaturesByType.Count} types");
+
+                foreach (var kvp in signaturesByType)
+                {
+                    var typeFullName = kvp.Key;
+                    var methodSignatures = kvp.Value;
+
+                    // Get the supplemental type that contains these methods
+                    var supplementalType = supplementalAssembly.GetType(typeFullName);
+                    if (supplementalType == null)
+                    {
+                        Trace.WriteLine($"\t\tWarning: Could not find type {typeFullName} in supplemental assembly");
+                        continue;
+                    }
+
+                    // Find the actual method wrappers from the supplemental assembly
+                    var supplementalMethods = new List<MethodInfoWrapper>();
+                    foreach (var methodSig in methodSignatures)
+                    {
+                        // Find the method by matching its signature
+                        var method = FindMethodBySignature(supplementalType, methodSig);
+                        if (method != null)
+                        {
+                            supplementalMethods.Add(method);
+                        }
+                        else if (Options.Verbose)
+                        {
+                            Trace.WriteLine($"\t\t\tWarning: Could not find method for signature {methodSig}");
+                        }
+                    }
+
+                    if (!supplementalMethods.Any())
+                        continue;
+
+                    // Generate individual method pages for each supplemental method
+                    foreach (var method in supplementalMethods)
+                    {
+                        // Only write if the method is declared in this type's namespace
+                        if (method.DeclaringType.Namespace == supplementalType.Namespace)
+                        {
+                            var methodWriter = new MethodWriter(this, frameworkVersion, method);
+                            methodWriter.Write();
+                            Trace.WriteLine($"\t\t\tGenerated method page: {supplementalType.Name}.{method.Name}");
+                        }
+                    }
+
+                    // Regenerate the class page to include supplemental methods
+                    // IMPORTANT: Use the PRIMARY type from net472 as the base - it has ALL methods including sync methods.
+                    var primaryType = ManifestAssemblyContext.SdkAssembly.GetType(typeFullName);
+                    if (primaryType == null)
+                    {
+                        Trace.WriteLine($"\t\tWarning: Could not find primary type {typeFullName} for class page regeneration");
+                        continue;
+                    }
+
+                    // Write the class page with supplemental methods merged in
+                    var classWriter = new ClassWriter(this, frameworkVersion, primaryType, supplementalMethods);
+                    classWriter.Write();
+                    Trace.WriteLine($"\t\t\tRegenerated class page: {primaryType.Name} with {supplementalMethods.Count} supplemental methods");
+                }
+            }
+            finally
+            {
+                // Cleanup
+                foreach (var platform in AllPlatforms)
+                {
+                    NDocUtilities.UnloadDocumentation(ServiceName, platform);
+                }
+
+                supplementalAssembly.Unload();
+            }
+        }
+
+        /// <summary>
+        /// Finds a method in a type by matching its NDoc signature.
+        /// </summary>
+        private MethodInfoWrapper FindMethodBySignature(TypeWrapper type, string targetSignature)
+        {
+            foreach (var method in type.GetMethodsToDocument())
+            {
+                var methodSignature = SDKDocGenerator.PlatformMap.MemberSignature.ForMethod(method);
+                if (methodSignature == targetSignature)
+                {
+                    return method;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Generates documentation for platform-exclusive methods using the unified platform map.
+        /// This is the new approach that uses wrappers already stored in the map during
+        /// the initial scan, eliminating the need to reload supplemental assemblies.
+        ///
+        /// The platform map already contains:
+        /// - Signature → Platforms mapping (for badge rendering)
+        /// - MethodInfoWrapper for exclusive methods (for page generation)
+        ///
+        /// This replaces the old GenerateSupplementalPagesFromMap approach with a truly
+        /// unified flow where no assembly is scanned twice.
+        /// </summary>
+        /// <param name="tocWriter">TOC generation handler</param>
+        public void GenerateExclusivePagesFromMap(TOCWriter tocWriter)
+        {
+            if (PlatformMap == null)
+            {
+                if (Options.Verbose)
+                    Trace.WriteLine($"\tNo platform map available for {ServiceName}, skipping exclusive page generation");
+                return;
+            }
+
+            // Get types that have exclusive members
+            var typesWithExclusive = PlatformMap.GetTypesWithExclusiveMembers().ToList();
+            if (!typesWithExclusive.Any())
+            {
+                if (Options.Verbose)
+                    Trace.WriteLine($"\tNo exclusive members found for {ServiceName}");
+                return;
+            }
+
+            var exclusiveCount = PlatformMap.ExclusiveMemberCount;
+            Trace.WriteLine($"\tgenerating exclusive content from unified map for {ServiceName} ({exclusiveCount} methods across {typesWithExclusive.Count} types)");
+
+            // Load NDoc documentation for all platforms
+            foreach (var platform in AllPlatforms)
+            {
+                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
+            }
+
+            var frameworkVersion = FrameworkVersion.FromPlatformFolder(Options.Platform);
+
+            try
+            {
+                foreach (var typeFullName in typesWithExclusive)
+                {
+                    // Get all exclusive methods for this type from the map
+                    var exclusiveMethods = PlatformMap.GetExclusiveMethodsForType(typeFullName).ToList();
+
+                    if (!exclusiveMethods.Any())
+                        continue;
+
+                    // Get the primary type for class page regeneration
+                    var primaryType = ManifestAssemblyContext.SdkAssembly.GetType(typeFullName);
+                    if (primaryType == null)
+                    {
+                        if (Options.Verbose)
+                            Trace.WriteLine($"\t\tWarning: Could not find primary type {typeFullName} for exclusive methods");
+                        continue;
+                    }
+
+                    // Generate individual method pages for each exclusive method
+                    // The wrappers are already valid because assemblies are kept loaded in the map
+                    foreach (var method in exclusiveMethods)
+                    {
+                        // Only write if the method is declared in this type's namespace
+                        if (method.DeclaringType.Namespace == primaryType.Namespace)
+                        {
+                            var methodWriter = new MethodWriter(this, frameworkVersion, method);
+                            methodWriter.Write();
+                            if (Options.Verbose)
+                                Trace.WriteLine($"\t\t\tGenerated exclusive method page: {primaryType.Name}.{method.Name}");
+                        }
+                    }
+
+                    // Regenerate the class page to include exclusive methods
+                    // IMPORTANT: Use the PRIMARY type from net472 as the base - it has ALL methods including sync methods.
+                    var classWriter = new ClassWriter(this, frameworkVersion, primaryType, exclusiveMethods);
+                    classWriter.Write();
+                    Trace.WriteLine($"\t\t\tRegenerated class page: {primaryType.Name} with {exclusiveMethods.Count} exclusive methods");
+                }
+            }
+            finally
+            {
+                // Note: We don't unload NDoc here because other manifests may still need it.
+                // NDoc will be cleaned up at the end of generation.
+            }
+        }
+
+        /// <summary>
+        /// Disposes the platform map, releasing all loaded assembly contexts.
+        /// Should be called at the end of generation to free resources.
+        /// </summary>
+        public void DisposePlatformMap()
+        {
+            if (PlatformMap != null)
+            {
+                PlatformMap.Dispose();
+                PlatformMap = null;
+            }
         }
 
         void WriteNamespace(FrameworkVersion version, string namespaceName)

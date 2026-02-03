@@ -130,6 +130,43 @@ namespace SDKDocGenerator
                 coreManifest.PreloadDocumentation();
             }
 
+            // Build platform availability maps for all services
+            // This scans ALL platforms upfront and creates { memberSignature → Set<platforms> } maps
+            // that are used for both page generation decisions AND badge rendering.
+            var platformSubfolders = Directory.GetDirectories(Options.SDKAssembliesRoot, "*", SearchOption.TopDirectoryOnly);
+            var availablePlatforms = platformSubfolders.Select(Path.GetFileName).ToList();
+
+            Info("Building platform availability maps for all services...");
+            var mapBuilder = new PlatformMap.PlatformMapBuilder(Options);
+
+            foreach (var manifest in manifests)
+            {
+                try
+                {
+                    var map = mapBuilder.BuildMap(
+                        manifest.ServiceName,
+                        manifest.AssemblyName,
+                        availablePlatforms);
+
+                    manifest.AttachPlatformMap(map);
+
+                    if (Options.Verbose)
+                    {
+                        Info("  Built platform map for {0}: {1} members across {2} platforms ({3} restricted)",
+                            manifest.ServiceName,
+                            map.MemberCount,
+                            map.AllPlatforms.Count,
+                            map.PlatformRestrictedMemberCount);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log but don't fail entire generation if one service fails
+                    Info("  WARNING: Failed to build platform map for {0}: {1}",
+                        manifest.ServiceName, ex.Message);
+                }
+            }
+
             foreach (var m in manifests)
             {
                 if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
@@ -145,23 +182,33 @@ namespace SDKDocGenerator
             coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
             coreManifest.Generate(null, TOCWriter);
 
-            // Process supplemental platforms for H2-only APIs
-            var platformSubfolders = Directory.GetDirectories(Options.SDKAssembliesRoot, "*", SearchOption.TopDirectoryOnly);
-            var availablePlatforms = platformSubfolders.Select(Path.GetFileName).ToList();
-            var supplementalManifests = ConstructSupplementalManifests(manifests, availablePlatforms);
-
-            // Re-load Core documentation before supplemental processing.
-            // Supplemental processing regenerates class pages which may contain properties
-            // inherited from Core (e.g., ReadWriteTimeout). Without Core docs loaded,
-            // platform availability badges won't be correctly generated.
-            if (coreManifest != null)
+            // Generate pages for platform-exclusive APIs (e.g., H2 methods only in net8.0)
+            // The unified platform map already contains wrappers for exclusive members
+            if (Options.UseLegacySupplemental)
             {
-                coreManifest.PreloadDocumentation();
+                // Legacy path: Use old supplemental manifest approach (for rollback safety)
+                Info("Using legacy supplemental manifest approach...");
+                ProcessLegacySupplementalPlatforms(manifests, coreManifest);
             }
-
-            foreach (var supManifest in supplementalManifests)
+            else
             {
-                supManifest.GenerateSupplementalOnly(TOCWriter);
+                // New unified path: Use wrappers already stored in the platform map
+                Info("Generating exclusive member pages from unified platform map...");
+
+                // Re-load Core documentation before exclusive page generation.
+                // Class pages may contain properties inherited from Core (e.g., ReadWriteTimeout).
+                if (coreManifest != null)
+                {
+                    coreManifest.PreloadDocumentation();
+                }
+
+                foreach (var manifest in manifests)
+                {
+                    if (manifest.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    manifest.GenerateExclusivePagesFromMap(TOCWriter);
+                }
             }
 
             Info("Generating table of contents entries...");
@@ -190,7 +237,42 @@ namespace SDKDocGenerator
             // Remove example fragments
             ExampleMetadataParser.CleanupExampleFragments();
 
+            // Dispose all platform maps to release assembly contexts
+            Info("Releasing platform map resources...");
+            foreach (var manifest in manifests)
+            {
+                manifest.DisposePlatformMap();
+            }
+
             return 0;
+        }
+
+        /// <summary>
+        /// Legacy supplemental processing using old manifest-based approach.
+        /// Kept for rollback safety; will be removed in a future release.
+        ///
+        /// This uses the TRUE legacy approach:
+        /// 1. Creates supplemental manifests using the 5-parameter constructor
+        /// 2. Calls GenerateSupplementalOnly() which compares methods between platforms
+        /// </summary>
+        private void ProcessLegacySupplementalPlatforms(IList<GenerationManifest> manifests, GenerationManifest coreManifest)
+        {
+            // Re-load Core documentation before supplemental processing.
+            if (coreManifest != null)
+            {
+                coreManifest.PreloadDocumentation();
+            }
+
+            var platformSubfolders = Directory.GetDirectories(Options.SDKAssembliesRoot, "*", SearchOption.TopDirectoryOnly);
+            var availablePlatforms = platformSubfolders.Select(Path.GetFileName).ToList();
+
+            // Use the true legacy approach: ConstructSupplementalManifests + GenerateSupplementalOnly
+            var supplementalManifests = ConstructSupplementalManifests(manifests, availablePlatforms);
+
+            foreach (var supManifest in supplementalManifests)
+            {
+                supManifest.GenerateSupplementalOnly(TOCWriter);
+            }
         }
 
         /// <summary>

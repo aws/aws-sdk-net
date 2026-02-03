@@ -564,47 +564,23 @@ namespace SDKDocGenerator.Writers
         }
 
         /// <summary>
-        /// Adds platform availability badges when a member is NOT available on all platforms.
-        /// Only shows badges for platform-restricted APIs (e.g., net472-only or net8.0-only).
-        /// This addresses GitHub Issue #3938 where customers see APIs documented that don't
-        /// exist on their target platform.
+        /// Maps platform folder names to short display names suitable for inline badges.
         /// </summary>
-        protected void AddPlatformAvailabilityBadges(TextWriter writer, AbstractWrapper wrapper)
+        protected string GetPlatformShortDisplayName(string platform)
         {
-            var docs472 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net472"), wrapper, TypeProvider);
-            var docsNet80 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net8.0"), wrapper, TypeProvider);
-
-            // If no docs at all, assume available everywhere (don't show badge)
-            if (docs472 == null && docsNet80 == null)
-                return;
-
-            bool availableNet472 = docs472 != null;
-            bool availableNet8 = docsNet80 != null;
-
-            // If available on both platforms, no badge needed
-            if (availableNet472 && availableNet8)
-                return;
-
-            writer.WriteLine("<div class=\"platform-availability\">");
-
-            if (availableNet472 && !availableNet8)
+            switch (platform.ToLowerInvariant())
             {
-                // net472-only (like ReadWriteTimeout)
-                writer.WriteLine("<span class=\"platform-badge net472-only\">");
-                writer.WriteLine("<strong>.NET Framework Only</strong>");
-                writer.WriteLine("</span>");
-                writer.WriteLine("<p class=\"availability-note\">This member is only available when targeting .NET Framework 4.7.2.</p>");
+                case "net472":
+                    return ".NET 4.7.2";
+                case "net8.0":
+                case "net80":
+                    return ".NET 8";
+                case "netstandard2.0":
+                case "netstandard20":
+                    return ".NET Standard 2.0";
+                default:
+                    return platform;
             }
-            else if (!availableNet472 && availableNet8)
-            {
-                // net8.0-only (like H2 streaming APIs)
-                writer.WriteLine("<span class=\"platform-badge net8-only\">");
-                writer.WriteLine("<strong>.NET 8.0+ Only</strong>");
-                writer.WriteLine("</span>");
-                writer.WriteLine("<p class=\"availability-note\">This member is only available when targeting .NET 8.0 or later.</p>");
-            }
-
-            writer.WriteLine("</div>");
         }
 
         protected void AddSyntax(TextWriter writer, string csharpSyntax)

@@ -20,7 +20,6 @@ namespace SDKDocGenerator.Writers
         protected override void WriteContent(TextWriter writer)
         {
             AddSummaryDocumentation(writer);
-            AddPlatformAvailabilityBadges(writer, this._info);
             AddNamespace(writer, this._info.DeclaringType.Namespace, this._info.DeclaringType.ManifestModuleName);
 
             base.AddSyntax(writer, GetSyntax());
