@@ -50,10 +50,10 @@ namespace Amazon.MarketplaceCatalog.Internal
         {
             var config = (AmazonMarketplaceCatalogConfig)requestContext.ClientConfig;
             var result = new MarketplaceCatalogEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = config.RegionEndpoint?.SystemName;
 
 
             // The region needs to be determined from the ServiceURL if not set.
