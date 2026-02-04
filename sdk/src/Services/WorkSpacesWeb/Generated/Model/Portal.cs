@@ -47,6 +47,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private int? _maxConcurrentSessions;
         private string _networkSettingsArn;
         private string _portalArn;
+        private string _portalCustomDomain;
         private string _portalEndpoint;
         private PortalStatus _portalStatus;
         private RendererType _rendererType;
@@ -310,6 +311,26 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetPortalArn()
         {
             return this._portalArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortalCustomDomain. 
+        /// <para>
+        /// The custom domain of the web portal that users access in order to start streaming
+        /// sessions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string PortalCustomDomain
+        {
+            get { return this._portalCustomDomain; }
+            set { this._portalCustomDomain = value; }
+        }
+
+        // Check to see if PortalCustomDomain property is set
+        internal bool IsSetPortalCustomDomain()
+        {
+            return this._portalCustomDomain != null;
         }
 
         /// <summary>

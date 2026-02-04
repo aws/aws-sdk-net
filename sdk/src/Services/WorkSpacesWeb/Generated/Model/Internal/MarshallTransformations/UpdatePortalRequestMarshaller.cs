@@ -94,6 +94,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxConcurrentSessions);
                 }
 
+                if(publicRequest.IsSetPortalCustomDomain())
+                {
+                    context.Writer.WritePropertyName("portalCustomDomain");
+                    context.Writer.Write(publicRequest.PortalCustomDomain);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -42,6 +42,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private string _displayName;
         private InstanceType _instanceType;
         private int? _maxConcurrentSessions;
+        private string _portalCustomDomain;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -195,6 +196,26 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetMaxConcurrentSessions()
         {
             return this._maxConcurrentSessions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortalCustomDomain. 
+        /// <para>
+        /// The custom domain of the web portal that users access in order to start streaming
+        /// sessions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string PortalCustomDomain
+        {
+            get { return this._portalCustomDomain; }
+            set { this._portalCustomDomain = value; }
+        }
+
+        // Check to see if PortalCustomDomain property is set
+        internal bool IsSetPortalCustomDomain()
+        {
+            return this._portalCustomDomain != null;
         }
 
         /// <summary>
