@@ -44,10 +44,10 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// The cluster control plane is provisioned across multiple Availability Zones and fronted
-    /// by an ELB Network Load Balancer. Amazon EKS also provisions elastic network interfaces
-    /// in your VPC subnets to provide connectivity from the control plane instances to the
-    /// nodes (for example, to support <c>kubectl exec</c>, <c>logs</c>, and <c>proxy</c>
-    /// data flows).
+    /// by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic
+    /// network interfaces in your VPC subnets to provide connectivity from the control plane
+    /// instances to the nodes (for example, to support <c>kubectl exec</c>, <c>logs</c>,
+    /// and <c>proxy</c> data flows).
     /// </para>
     ///  
     /// <para>
