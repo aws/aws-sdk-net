@@ -1,3 +1,17 @@
+### 4.0.184.0 (2026-02-04 19:16 UTC)
+* BedrockRuntime (4.0.16.0)
+	* Added support for structured outputs to Converse and ConverseStream APIs.
+* ConnectCases (4.0.9.0)
+	* Amazon Connect Cases now supports larger, multi-line text fields with up to 4,100 characters. Administrators can use the Admin UI to select the appropriate configuration (single-line or multi-line) on a per-field basis, improving case documentation capabilities.
+* EKS (4.0.10.4)
+	* Update delete cluster description
+* MediaLive (4.0.15.0)
+	* AWS Elemental MediaLive now supports SRT listener mode for inputs and outputs, in addition to the existing SRT caller mode.
+* Redshift (4.0.6.4)
+	* We have increased the maximum duration for a deferred maintenance window from 45 days to 60 days for Amazon Redshift provisioned clusters. This enhancement provides customers with greater flexibility in scheduling patching and maintenance activities while also maintaining security compliance.
+* WorkSpacesWeb (4.0.7.0)
+	* Support for configuring and managing custom domain names for WorkSpaces Secure Browser portals.
+
 ### 4.0.183.0 (2026-02-03 19:25 UTC)
 * Batch (4.0.4.0)
 	* AWS Batch Array Job Visibility feature support. Includes new statusSummaryLastUpdatedAt for array job parent DescribeJobs responses for the last time the statusSummary was updated. Includes both statusSummary and statusSummaryLastUpdatedAt in ListJobs responses for array job parents.
