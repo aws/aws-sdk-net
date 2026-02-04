@@ -62,6 +62,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetSrtListenerSettings())
+            {
+                context.Writer.WritePropertyName("srtListenerSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SrtListenerSettingsRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.SrtListenerSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

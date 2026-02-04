@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SrtOutputDestinationSettings Object
+    /// Response Unmarshaller for SrtListenerSettings Object
     /// </summary>  
-    public class SrtOutputDestinationSettingsUnmarshaller : IJsonUnmarshaller<SrtOutputDestinationSettings, JsonUnmarshallerContext>
+    public class SrtListenerSettingsUnmarshaller : IJsonUnmarshaller<SrtListenerSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SrtOutputDestinationSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SrtListenerSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SrtOutputDestinationSettings unmarshalledObject = new SrtOutputDestinationSettings();
+            SrtListenerSettings unmarshalledObject = new SrtListenerSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectionMode", targetDepth))
+                if (context.TestExpression("decryption", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionMode = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = SrtListenerDecryptionUnmarshaller.Instance;
+                    unmarshalledObject.Decryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionPassphraseSecretArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionPassphraseSecretArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("listenerPort", targetDepth))
+                if (context.TestExpression("minimumLatency", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ListenerPort = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MinimumLatency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("streamId", targetDepth))
@@ -80,23 +74,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.StreamId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static SrtOutputDestinationSettingsUnmarshaller _instance = new SrtOutputDestinationSettingsUnmarshaller();        
+        private static SrtListenerSettingsUnmarshaller _instance = new SrtListenerSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SrtOutputDestinationSettingsUnmarshaller Instance
+        public static SrtListenerSettingsUnmarshaller Instance
         {
             get
             {

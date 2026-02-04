@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NodeInterfaceMapping Marshaller
+    /// SrtListenerDecryptionRequest Marshaller
     /// </summary>
-    public class NodeInterfaceMappingMarshaller : IRequestMarshaller<NodeInterfaceMapping, JsonMarshallerContext> 
+    public class SrtListenerDecryptionRequestMarshaller : IRequestMarshaller<SrtListenerDecryptionRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,20 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NodeInterfaceMapping requestObject, JsonMarshallerContext context)
+        public void Marshall(SrtListenerDecryptionRequest requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetLogicalInterfaceName())
+            if(requestObject.IsSetAlgorithm())
             {
-                context.Writer.WritePropertyName("logicalInterfaceName");
-                context.Writer.WriteStringValue(requestObject.LogicalInterfaceName);
+                context.Writer.WritePropertyName("algorithm");
+                context.Writer.WriteStringValue(requestObject.Algorithm);
             }
 
-            if(requestObject.IsSetNetworkInterfaceMode())
+            if(requestObject.IsSetPassphraseSecretArn())
             {
-                context.Writer.WritePropertyName("networkInterfaceMode");
-                context.Writer.WriteStringValue(requestObject.NetworkInterfaceMode);
-            }
-
-            if(requestObject.IsSetPhysicalInterfaceIpAddresses())
-            {
-                context.Writer.WritePropertyName("physicalInterfaceIpAddresses");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectPhysicalInterfaceIpAddressesListValue in requestObject.PhysicalInterfaceIpAddresses)
-                {
-                        context.Writer.WriteStringValue(requestObjectPhysicalInterfaceIpAddressesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetPhysicalInterfaceName())
-            {
-                context.Writer.WritePropertyName("physicalInterfaceName");
-                context.Writer.WriteStringValue(requestObject.PhysicalInterfaceName);
+                context.Writer.WritePropertyName("passphraseSecretArn");
+                context.Writer.WriteStringValue(requestObject.PassphraseSecretArn);
             }
 
         }
@@ -80,7 +63,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static NodeInterfaceMappingMarshaller Instance = new NodeInterfaceMappingMarshaller();
+        public readonly static SrtListenerDecryptionRequestMarshaller Instance = new SrtListenerDecryptionRequestMarshaller();
 
     }
 }

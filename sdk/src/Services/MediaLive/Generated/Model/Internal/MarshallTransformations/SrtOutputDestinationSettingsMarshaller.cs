@@ -46,10 +46,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConnectionMode())
+            {
+                context.Writer.WritePropertyName("connectionMode");
+                context.Writer.WriteStringValue(requestObject.ConnectionMode);
+            }
+
             if(requestObject.IsSetEncryptionPassphraseSecretArn())
             {
                 context.Writer.WritePropertyName("encryptionPassphraseSecretArn");
                 context.Writer.WriteStringValue(requestObject.EncryptionPassphraseSecretArn);
+            }
+
+            if(requestObject.IsSetListenerPort())
+            {
+                context.Writer.WritePropertyName("listenerPort");
+                context.Writer.WriteNumberValue(requestObject.ListenerPort.Value);
             }
 
             if(requestObject.IsSetStreamId())

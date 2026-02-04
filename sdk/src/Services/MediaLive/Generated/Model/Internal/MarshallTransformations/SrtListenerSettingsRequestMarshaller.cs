@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NodeInterfaceMapping Marshaller
+    /// SrtListenerSettingsRequest Marshaller
     /// </summary>
-    public class NodeInterfaceMappingMarshaller : IRequestMarshaller<NodeInterfaceMapping, JsonMarshallerContext> 
+    public class SrtListenerSettingsRequestMarshaller : IRequestMarshaller<SrtListenerSettingsRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NodeInterfaceMapping requestObject, JsonMarshallerContext context)
+        public void Marshall(SrtListenerSettingsRequest requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetLogicalInterfaceName())
+            if(requestObject.IsSetDecryption())
             {
-                context.Writer.WritePropertyName("logicalInterfaceName");
-                context.Writer.WriteStringValue(requestObject.LogicalInterfaceName);
+                context.Writer.WritePropertyName("decryption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SrtListenerDecryptionRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.Decryption, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetNetworkInterfaceMode())
+            if(requestObject.IsSetMinimumLatency())
             {
-                context.Writer.WritePropertyName("networkInterfaceMode");
-                context.Writer.WriteStringValue(requestObject.NetworkInterfaceMode);
+                context.Writer.WritePropertyName("minimumLatency");
+                context.Writer.WriteNumberValue(requestObject.MinimumLatency.Value);
             }
 
-            if(requestObject.IsSetPhysicalInterfaceIpAddresses())
+            if(requestObject.IsSetStreamId())
             {
-                context.Writer.WritePropertyName("physicalInterfaceIpAddresses");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectPhysicalInterfaceIpAddressesListValue in requestObject.PhysicalInterfaceIpAddresses)
-                {
-                        context.Writer.WriteStringValue(requestObjectPhysicalInterfaceIpAddressesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetPhysicalInterfaceName())
-            {
-                context.Writer.WritePropertyName("physicalInterfaceName");
-                context.Writer.WriteStringValue(requestObject.PhysicalInterfaceName);
+                context.Writer.WritePropertyName("streamId");
+                context.Writer.WriteStringValue(requestObject.StreamId);
             }
 
         }
@@ -80,7 +74,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static NodeInterfaceMappingMarshaller Instance = new NodeInterfaceMappingMarshaller();
+        public readonly static SrtListenerSettingsRequestMarshaller Instance = new SrtListenerSettingsRequestMarshaller();
 
     }
 }
