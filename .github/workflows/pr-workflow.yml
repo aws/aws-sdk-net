@@ -1,6 +1,7 @@
 name: PR workflow
 permissions:
   contents: read
+  pull-requests: write
 on:
   pull_request:
     types: [synchronize, opened, reopened, edited]
@@ -16,4 +17,6 @@ jobs:
         
         with:
           script: |
-            core.setFailed("PRs must not target 'main' or 'aws-sdk-net-v3.7'. Please target 'development', 'aws-sdk-net-v3.7-development', or a feature branch instead.")
+            console.log("Hello");
+            core.setFailed("PRs must not target 'main' or 'aws-sdk-net-v3.7'. Please target 'development', 'aws-sdk-net-v3.7-development', or a feature branch instead.");
+
