@@ -336,6 +336,12 @@
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CreatePortalRequest.PortalCustomDomain</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>(|[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.CreatePortalResponse.PortalArn</property>
     <min>20</min>
     <max>2048</max>
@@ -1019,6 +1025,12 @@
     <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UpdatePortalRequest.PortalCustomDomain</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>(|[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerRequest.DisplayName</property>
     <min>1</min>
     <max>64</max>
@@ -1473,6 +1485,12 @@
     <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.Portal.PortalCustomDomain</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>(|[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.Portal.PortalEndpoint</property>
     <min>1</min>
     <max>253</max>
@@ -1548,6 +1566,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.PortalSummary.PortalCustomDomain</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>(|[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.PortalSummary.PortalEndpoint</property>
