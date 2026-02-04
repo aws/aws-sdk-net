@@ -35,10 +35,29 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class UpdateFieldRequest : AmazonConnectCasesRequest
     {
+        private FieldAttributes _attributes;
         private string _description;
         private string _domainId;
         private string _fieldId;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// Union of field attributes.
+        /// </para>
+        /// </summary>
+        public FieldAttributes Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
