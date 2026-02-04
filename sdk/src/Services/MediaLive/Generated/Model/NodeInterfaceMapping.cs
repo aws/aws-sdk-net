@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
     {
         private string _logicalInterfaceName;
         private NetworkInterfaceMode _networkInterfaceMode;
+        private List<string> _physicalInterfaceIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _physicalInterfaceName;
 
         /// <summary>
@@ -68,6 +69,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetNetworkInterfaceMode()
         {
             return this._networkInterfaceMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhysicalInterfaceIpAddresses. The IP addresses associated
+        /// with the physical interface on the node hardware.
+        /// </summary>
+        public List<string> PhysicalInterfaceIpAddresses
+        {
+            get { return this._physicalInterfaceIpAddresses; }
+            set { this._physicalInterfaceIpAddresses = value; }
+        }
+
+        // Check to see if PhysicalInterfaceIpAddresses property is set
+        internal bool IsSetPhysicalInterfaceIpAddresses()
+        {
+            return this._physicalInterfaceIpAddresses != null && (this._physicalInterfaceIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

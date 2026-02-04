@@ -78,6 +78,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkInterfaceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("physicalInterfaceIpAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PhysicalInterfaceIpAddresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("physicalInterfaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

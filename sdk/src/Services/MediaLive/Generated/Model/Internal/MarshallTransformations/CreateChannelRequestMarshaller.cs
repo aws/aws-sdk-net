@@ -106,6 +106,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetChannelSecurityGroups())
+                {
+                    context.Writer.WritePropertyName("channelSecurityGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestChannelSecurityGroupsListValue in publicRequest.ChannelSecurityGroups)
+                    {
+                            context.Writer.Write(publicRequestChannelSecurityGroupsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDestinations())
                 {
                     context.Writer.WritePropertyName("destinations");

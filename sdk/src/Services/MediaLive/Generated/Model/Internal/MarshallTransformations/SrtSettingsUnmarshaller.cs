@@ -72,6 +72,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.SrtCallerSources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("srtListenerSettings", targetDepth))
+                {
+                    var unmarshaller = SrtListenerSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SrtListenerSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

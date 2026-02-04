@@ -30,41 +30,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// The configured settings for SRT inputs (caller and listener).
+    /// Decryption settings for SRT listener. If present, both algorithm and passphraseSecretArn
+    /// are required.
     /// </summary>
-    public partial class SrtSettings
+    public partial class SrtListenerDecryption
     {
-        private List<SrtCallerSource> _srtCallerSources = AWSConfigs.InitializeCollections ? new List<SrtCallerSource>() : null;
-        private SrtListenerSettings _srtListenerSettings;
+        private Algorithm _algorithm;
+        private string _passphraseSecretArn;
 
         /// <summary>
-        /// Gets and sets the property SrtCallerSources.
+        /// Gets and sets the property Algorithm. The algorithm used to decrypt content.
         /// </summary>
-        public List<SrtCallerSource> SrtCallerSources
+        [AWSProperty(Required=true)]
+        public Algorithm Algorithm
         {
-            get { return this._srtCallerSources; }
-            set { this._srtCallerSources = value; }
+            get { return this._algorithm; }
+            set { this._algorithm = value; }
         }
 
-        // Check to see if SrtCallerSources property is set
-        internal bool IsSetSrtCallerSources()
+        // Check to see if Algorithm property is set
+        internal bool IsSetAlgorithm()
         {
-            return this._srtCallerSources != null && (this._srtCallerSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._algorithm != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SrtListenerSettings.
+        /// Gets and sets the property PassphraseSecretArn. The ARN for the secret in Secrets
+        /// Manager that holds the passphrase for decryption.
         /// </summary>
-        public SrtListenerSettings SrtListenerSettings
+        [AWSProperty(Required=true)]
+        public string PassphraseSecretArn
         {
-            get { return this._srtListenerSettings; }
-            set { this._srtListenerSettings = value; }
+            get { return this._passphraseSecretArn; }
+            set { this._passphraseSecretArn = value; }
         }
 
-        // Check to see if SrtListenerSettings property is set
-        internal bool IsSetSrtListenerSettings()
+        // Check to see if PassphraseSecretArn property is set
+        internal bool IsSetPassphraseSecretArn()
         {
-            return this._srtListenerSettings != null;
+            return this._passphraseSecretArn != null;
         }
 
     }

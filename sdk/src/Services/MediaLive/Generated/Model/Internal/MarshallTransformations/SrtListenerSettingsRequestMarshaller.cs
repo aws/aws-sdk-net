@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SrtOutputDestinationSettings Marshaller
+    /// SrtListenerSettingsRequest Marshaller
     /// </summary>
-    public class SrtOutputDestinationSettingsMarshaller : IRequestMarshaller<SrtOutputDestinationSettings, JsonMarshallerContext> 
+    public class SrtListenerSettingsRequestMarshaller : IRequestMarshaller<SrtListenerSettingsRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,26 +44,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SrtOutputDestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(SrtListenerSettingsRequest requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConnectionMode())
+            if(requestObject.IsSetDecryption())
             {
-                context.Writer.WritePropertyName("connectionMode");
-                context.Writer.Write(requestObject.ConnectionMode);
+                context.Writer.WritePropertyName("decryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SrtListenerDecryptionRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.Decryption, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetEncryptionPassphraseSecretArn())
+            if(requestObject.IsSetMinimumLatency())
             {
-                context.Writer.WritePropertyName("encryptionPassphraseSecretArn");
-                context.Writer.Write(requestObject.EncryptionPassphraseSecretArn);
-            }
-
-            if(requestObject.IsSetListenerPort())
-            {
-                context.Writer.WritePropertyName("listenerPort");
-                context.Writer.Write(requestObject.ListenerPort);
+                context.Writer.WritePropertyName("minimumLatency");
+                context.Writer.Write(requestObject.MinimumLatency);
             }
 
             if(requestObject.IsSetStreamId())
@@ -72,18 +71,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StreamId);
             }
 
-            if(requestObject.IsSetUrl())
-            {
-                context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SrtOutputDestinationSettingsMarshaller Instance = new SrtOutputDestinationSettingsMarshaller();
+        public readonly static SrtListenerSettingsRequestMarshaller Instance = new SrtListenerSettingsRequestMarshaller();
 
     }
 }

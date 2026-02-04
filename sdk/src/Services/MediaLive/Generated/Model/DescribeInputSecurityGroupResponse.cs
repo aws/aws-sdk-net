@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class DescribeInputSecurityGroupResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InputSecurityGroupState _state;
@@ -54,6 +55,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Channels. The list of channels currently using this Input
+        /// Security Group as their channel security group.
+        /// </summary>
+        public List<string> Channels
+        {
+            get { return this._channels; }
+            set { this._channels = value; }
+        }
+
+        // Check to see if Channels property is set
+        internal bool IsSetChannels()
+        {
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
