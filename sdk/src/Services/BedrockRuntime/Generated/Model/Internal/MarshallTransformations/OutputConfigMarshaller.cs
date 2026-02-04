@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ToolSpecification Marshaller
+    /// OutputConfig Marshaller
     /// </summary>
-    public class ToolSpecificationMarshaller : IRequestMarshaller<ToolSpecification, JsonMarshallerContext> 
+    public class OutputConfigMarshaller : IRequestMarshaller<OutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,37 +44,19 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ToolSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(OutputConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDescription())
+            if(requestObject.IsSetTextFormat())
             {
-                context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
-            }
-
-            if(requestObject.IsSetInputSchema())
-            {
-                context.Writer.WritePropertyName("inputSchema");
+                context.Writer.WritePropertyName("textFormat");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ToolInputSchemaMarshaller.Instance;
-                marshaller.Marshall(requestObject.InputSchema, context);
+                var marshaller = OutputFormatMarshaller.Instance;
+                marshaller.Marshall(requestObject.TextFormat, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
-            }
-
-            if(requestObject.IsSetStrict())
-            {
-                context.Writer.WritePropertyName("strict");
-                context.Writer.Write(requestObject.Strict);
             }
 
         }
@@ -82,7 +64,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ToolSpecificationMarshaller Instance = new ToolSpecificationMarshaller();
+        public readonly static OutputConfigMarshaller Instance = new OutputConfigMarshaller();
 
     }
 }

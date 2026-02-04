@@ -30,23 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The specification for the tool. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
-    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
+    /// JSON schema structured output format options.
     /// </summary>
-    public partial class ToolSpecification
+    public partial class JsonSchemaDefinition
     {
         private string _description;
-        private ToolInputSchema _inputSchema;
         private string _name;
-        private bool? _strict;
+        private string _schema;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the tool.
+        ///  A description of the JSON schema. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -60,31 +57,11 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputSchema. 
-        /// <para>
-        /// The input schema for the tool in JSON format.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ToolInputSchema InputSchema
-        {
-            get { return this._inputSchema; }
-            set { this._inputSchema = value; }
-        }
-
-        // Check to see if InputSchema property is set
-        internal bool IsSetInputSchema()
-        {
-            return this._inputSchema != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the tool.
+        ///  The name of the JSON schema. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -98,21 +75,23 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Strict. 
+        /// Gets and sets the property Schema. 
         /// <para>
-        /// Flag to enable structured output enforcement on a tool usage response.
+        ///  The JSON schema to constrain the model's output. For more information, see <a href="https://json-schema.org/understanding-json-schema/reference">JSON
+        /// Schema Reference</a>. 
         /// </para>
         /// </summary>
-        public bool Strict
+        [AWSProperty(Required=true)]
+        public string Schema
         {
-            get { return this._strict.GetValueOrDefault(); }
-            set { this._strict = value; }
+            get { return this._schema; }
+            set { this._schema = value; }
         }
 
-        // Check to see if Strict property is set
-        internal bool IsSetStrict()
+        // Check to see if Schema property is set
+        internal bool IsSetSchema()
         {
-            return this._strict.HasValue; 
+            return this._schema != null;
         }
 
     }

@@ -125,6 +125,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetOutputConfig())
+                {
+                    context.Writer.WritePropertyName("outputConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutputConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPerformanceConfig())
                 {
                     context.Writer.WritePropertyName("performanceConfig");
