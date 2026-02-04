@@ -2345,30 +2345,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// <param name="retrieveDateTimeInUtc"></param>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        [DataRow("SmItH")]
-        [DataRow("sMIth")]
-        [DataRow("SMITH")]
-        [DataRow("smith")]
-        public async Task TestContext_GlobalConverter_And_PropertyConvector(string middleName)
+        public async Task TestContext_GlobalConverter_And_PropertyConvector()
         {
             TableCache.Clear();
             await CleanupTables();
             TableCache.Clear();
 
-            var config = new DynamoDBContextConfig
-            {
-                Conversion = DynamoDBEntryConversion.V2,
-            };
-            Context = new DynamoDBContext(Client, config);
-
             // Add a global converter
-            Context.ConverterCache.Add(typeof(string), new StringToUpperConverter());
+            Context.ConverterCache.Add(typeof(NameType), new NameTypeUpperCaseConverter<NameType>());
 
+            var nameType = new NameType
+            {
+                FirstName = "John",
+                MiddleName = "Bob",
+                LastName = "Smith"
+            };
             var employee = new PropertyConvertorTable
             {
                 Id = 1,
-                PropertyWithGlobalConvertor = "Bob",
-                PropertyWithPropertyConvertor = middleName,
+                PropertyWithGlobalConvertor = nameType,
+                PropertyWithPropertyConvertor = nameType,
                 
             };
             await Context.SaveAsync(employee);
@@ -2377,8 +2373,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var storedEmployee = Context.Load<PropertyConvertorTable>(employee.Id);
             Assert.IsNotNull(storedEmployee);
             Assert.AreEqual(storedEmployee.Id, employee.Id);
-            Assert.AreEqual(storedEmployee.PropertyWithGlobalConvertor, "BOB");
-            Assert.AreEqual(storedEmployee.PropertyWithPropertyConvertor, "smith");
+            Assert.AreEqual(storedEmployee.PropertyWithGlobalConvertor.FirstName, "JOHN");
+            Assert.AreEqual(storedEmployee.PropertyWithGlobalConvertor.MiddleName, "BOB");
+            Assert.AreEqual(storedEmployee.PropertyWithGlobalConvertor.LastName, "SMITH");
+            Assert.AreEqual(storedEmployee.PropertyWithPropertyConvertor.FirstName, "john");
+            Assert.AreEqual(storedEmployee.PropertyWithPropertyConvertor.MiddleName, "bob");
+            Assert.AreEqual(storedEmployee.PropertyWithPropertyConvertor.LastName, "smith");
         }
 
         private static async Task TestEmptyStringsWithFeatureEnabled()
@@ -4632,10 +4632,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBHashKey] 
             public int Id { get; set; }
 
-            public string PropertyWithGlobalConvertor { get; set; }
+            public NameType PropertyWithGlobalConvertor { get; set; }
 
-            [DynamoDBProperty(Converter = typeof(StringToLowerConverter))]
-            public string PropertyWithPropertyConvertor { get; set; }
+            [DynamoDBProperty(Converter = typeof(NameTypeLowerCaseConverter<NameType>))]
+            public NameType PropertyWithPropertyConvertor { get; set; }
+        }
+
+        public class NameType 
+        {
+            public string FirstName { get; set; } 
+            public string MiddleName { get; set; } 
+            public string LastName { get; set; } 
         }
 
         public class DateTimeUtcConverter : IPropertyConverter
@@ -4662,33 +4669,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        public class StringToLowerConverter : IPropertyConverter
+        public class NameTypeLowerCaseConverter<T> : IPropertyConverter where T : NameType
         {
             public DynamoDBEntry ToEntry(object value)
             {
-                return new Primitive(value.ToString().ToLower());
+                var nameType = (NameType)value;
+                return new Document(new Dictionary<string, DynamoDBEntry>()
+                {   
+                    {"FirstName",nameType.FirstName.ToLower()},
+                    {"MiddleName",nameType.MiddleName.ToLower()},
+                    {"LastName",nameType.LastName.ToLower()}
+                });
             }
 
             public object FromEntry(DynamoDBEntry entry)
             {
-                Primitive primitive = entry.AsPrimitive();
-                string text = primitive.AsString();
-                return text.ToLower();
+                var document = entry as Document;
+                return new NameType
+                {
+                    FirstName = document["FirstName"].AsString().ToLower(),
+                    MiddleName = document["MiddleName"].AsString().ToLower(),
+                    LastName = document["LastName"].AsString().ToLower(),
+                };
             }
         }
 
-        public class StringToUpperConverter : IPropertyConverter
+        public class NameTypeUpperCaseConverter<T> : IPropertyConverter where T : NameType
         {
             public DynamoDBEntry ToEntry(object value)
             {
-                return new Primitive(value.ToString().ToUpper());
+                var nameType = (NameType)value;
+                return new Document(new Dictionary<string, DynamoDBEntry>()
+                {
+                    {"FirstName",nameType.FirstName.ToUpper()},
+                    {"MiddleName",nameType.MiddleName.ToUpper()},
+                    {"LastName",nameType.LastName.ToUpper()}
+                });
             }
 
             public object FromEntry(DynamoDBEntry entry)
             {
-                Primitive primitive = entry.AsPrimitive();
-                string text = primitive.AsString();
-                return text.ToUpper();
+                var document = entry as Document;
+                return new NameType
+                {
+                    FirstName = document["FirstName"].AsString().ToUpper(),
+                    MiddleName = document["MiddleName"].AsString().ToUpper(),
+                    LastName = document["LastName"].AsString().ToUpper(),
+                };
             }
         }
 
