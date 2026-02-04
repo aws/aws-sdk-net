@@ -84,7 +84,7 @@ namespace Amazon.ConnectCases.Model
         /// A list of unique field identifiers. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=220)]
         public List<FieldIdentifier> Fields
         {
             get { return this._fields; }

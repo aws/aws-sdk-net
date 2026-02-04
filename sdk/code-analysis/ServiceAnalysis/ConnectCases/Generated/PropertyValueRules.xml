@@ -584,6 +584,10 @@
     <max>9000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SearchCasesResponse.TotalCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.SearchRelatedItemsRequest.CaseId</property>
     <min>1</min>
     <max>500</max>
@@ -720,7 +724,7 @@
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.AuditEventFieldValueUnion.StringValue</property>
     <min>0</min>
-    <max>500</max>
+    <max>4100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.AuditEventPerformedBy.IamPrincipalArn</property>
@@ -896,7 +900,7 @@
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.FieldValueUnion.StringValue</property>
     <min>0</min>
-    <max>3000</max>
+    <max>4100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.FileContent.FileArn</property>

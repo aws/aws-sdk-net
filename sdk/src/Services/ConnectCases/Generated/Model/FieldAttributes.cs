@@ -30,29 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Details of what case data is published through the case event stream.
+    /// Union of field attributes.
     /// </summary>
-    public partial class CaseEventIncludedData
+    public partial class FieldAttributes
     {
-        private List<FieldIdentifier> _fields = AWSConfigs.InitializeCollections ? new List<FieldIdentifier>() : null;
+        private TextAttributes _text;
 
         /// <summary>
-        /// Gets and sets the property Fields. 
+        /// Gets and sets the property Text. 
         /// <para>
-        /// List of field identifiers.
+        /// Field attributes for Text field type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=400)]
-        public List<FieldIdentifier> Fields
+        public TextAttributes Text
         {
-            get { return this._fields; }
-            set { this._fields = value; }
+            get { return this._text; }
+            set { this._text = value; }
         }
 
-        // Check to see if Fields property is set
-        internal bool IsSetFields()
+        // Check to see if Text property is set
+        internal bool IsSetText()
         {
-            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._text != null;
         }
 
     }

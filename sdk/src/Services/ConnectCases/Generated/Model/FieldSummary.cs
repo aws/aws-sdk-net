@@ -34,11 +34,30 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class FieldSummary
     {
+        private FieldAttributes _attributes;
         private string _fieldArn;
         private string _fieldId;
         private string _name;
         private FieldNamespace _awsNamespace;
         private FieldType _type;
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// Union of field attributes.
+        /// </para>
+        /// </summary>
+        public FieldAttributes Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FieldArn. 

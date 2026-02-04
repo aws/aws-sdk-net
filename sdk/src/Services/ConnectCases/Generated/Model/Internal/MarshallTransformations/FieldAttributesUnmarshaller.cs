@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FieldSummary Object
+    /// Response Unmarshaller for FieldAttributes Object
     /// </summary>  
-    public class FieldSummaryUnmarshaller : IUnmarshaller<FieldSummary, XmlUnmarshallerContext>, IUnmarshaller<FieldSummary, JsonUnmarshallerContext>
+    public class FieldAttributesUnmarshaller : IUnmarshaller<FieldAttributes, XmlUnmarshallerContext>, IUnmarshaller<FieldAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FieldSummary IUnmarshaller<FieldSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FieldAttributes IUnmarshaller<FieldAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FieldSummary Unmarshall(JsonUnmarshallerContext context)
+        public FieldAttributes Unmarshall(JsonUnmarshallerContext context)
         {
-            FieldSummary unmarshalledObject = new FieldSummary();
+            FieldAttributes unmarshalledObject = new FieldAttributes();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,10 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("attributes", targetDepth))
+                if (context.TestExpression("text", targetDepth))
                 {
-                    var unmarshaller = FieldAttributesUnmarshaller.Instance;
-                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fieldArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FieldArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fieldId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FieldId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("namespace", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TextAttributesUnmarshaller.Instance;
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +77,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static FieldSummaryUnmarshaller _instance = new FieldSummaryUnmarshaller();        
+        private static FieldAttributesUnmarshaller _instance = new FieldAttributesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FieldSummaryUnmarshaller Instance
+        public static FieldAttributesUnmarshaller Instance
         {
             get
             {

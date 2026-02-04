@@ -97,7 +97,7 @@ namespace Amazon.ConnectCases.Model
         /// Can be either null, or have a String value type. Only one value can be provided.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=4100)]
         public string StringValue
         {
             get { return this._stringValue; }

@@ -64,6 +64,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("totalCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.TotalCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

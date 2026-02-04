@@ -101,7 +101,7 @@ namespace Amazon.ConnectCases.Model
         /// union data, structured identical to <c>CreateCase</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
+        [AWSProperty(Required=true, Min=0, Max=220)]
         public List<FieldValue> Fields
         {
             get { return this._fields; }

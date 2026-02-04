@@ -30,29 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Details of what case data is published through the case event stream.
+    /// Field attributes for Text field type.
     /// </summary>
-    public partial class CaseEventIncludedData
+    public partial class TextAttributes
     {
-        private List<FieldIdentifier> _fields = AWSConfigs.InitializeCollections ? new List<FieldIdentifier>() : null;
+        private bool? _isMultiline;
 
         /// <summary>
-        /// Gets and sets the property Fields. 
+        /// Gets and sets the property IsMultiline. 
         /// <para>
-        /// List of field identifiers.
+        /// Attribute that defines rendering component and validation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=400)]
-        public List<FieldIdentifier> Fields
+        [AWSProperty(Required=true)]
+        public bool IsMultiline
         {
-            get { return this._fields; }
-            set { this._fields = value; }
+            get { return this._isMultiline.GetValueOrDefault(); }
+            set { this._isMultiline = value; }
         }
 
-        // Check to see if Fields property is set
-        internal bool IsSetFields()
+        // Check to see if IsMultiline property is set
+        internal bool IsSetIsMultiline()
         {
-            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._isMultiline.HasValue; 
         }
 
     }

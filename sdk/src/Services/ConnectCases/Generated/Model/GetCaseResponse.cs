@@ -45,7 +45,7 @@ namespace Amazon.ConnectCases.Model
         /// A list of detailed field information. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
+        [AWSProperty(Required=true, Min=0, Max=220)]
         public List<FieldValue> Fields
         {
             get { return this._fields; }

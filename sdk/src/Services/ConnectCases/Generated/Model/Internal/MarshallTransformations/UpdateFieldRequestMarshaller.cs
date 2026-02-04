@@ -73,6 +73,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributes())
+                {
+                    context.Writer.WritePropertyName("attributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FieldAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Attributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

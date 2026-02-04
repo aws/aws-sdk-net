@@ -66,6 +66,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("attributes", targetDepth))
+                {
+                    var unmarshaller = FieldAttributesUnmarshaller.Instance;
+                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
