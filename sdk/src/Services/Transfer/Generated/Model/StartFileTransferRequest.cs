@@ -62,6 +62,7 @@ namespace Amazon.Transfer.Model
     public partial class StartFileTransferRequest : AmazonTransferRequest
     {
         private string _connectorId;
+        private List<CustomHttpHeader> _customHttpHeaders = AWSConfigs.InitializeCollections ? new List<CustomHttpHeader>() : null;
         private string _localDirectoryPath;
         private string _remoteDirectoryPath;
         private List<string> _retrieveFilePaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -84,6 +85,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetConnectorId()
         {
             return this._connectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomHttpHeaders. 
+        /// <para>
+        /// An array of key-value pairs that represent custom HTTP headers to include in AS2 messages.
+        /// These headers are added to the AS2 message when sending files to your trading partner.
+        /// </para>
+        /// </summary>
+        public List<CustomHttpHeader> CustomHttpHeaders
+        {
+            get { return this._customHttpHeaders; }
+            set { this._customHttpHeaders = value; }
+        }
+
+        // Check to see if CustomHttpHeaders property is set
+        internal bool IsSetCustomHttpHeaders()
+        {
+            return this._customHttpHeaders != null && (this._customHttpHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

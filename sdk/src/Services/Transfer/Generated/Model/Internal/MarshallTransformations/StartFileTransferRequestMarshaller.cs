@@ -75,6 +75,22 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectorId);
                 }
 
+                if(publicRequest.IsSetCustomHttpHeaders())
+                {
+                    context.Writer.WritePropertyName("CustomHttpHeaders");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCustomHttpHeadersListValue in publicRequest.CustomHttpHeaders)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomHttpHeaderMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCustomHttpHeadersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLocalDirectoryPath())
                 {
                     context.Writer.WritePropertyName("LocalDirectoryPath");
