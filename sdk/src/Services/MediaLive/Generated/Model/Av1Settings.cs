@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class Av1Settings
     {
         private AfdSignaling _afdSignaling;
+        private Av1BitDepth _bitDepth;
         private int? _bitrate;
         private int? _bufSize;
         private Av1ColorSpaceSettings _colorSpaceSettings;
@@ -74,6 +75,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAfdSignaling()
         {
             return this._afdSignaling != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BitDepth. Specifies the bit depth for the output encode.
+        /// Choose a value. Or leave the field empty to use the default, which is 8 bit.
+        /// </summary>
+        public Av1BitDepth BitDepth
+        {
+            get { return this._bitDepth; }
+            set { this._bitDepth = value; }
+        }
+
+        // Check to see if BitDepth property is set
+        internal bool IsSetBitDepth()
+        {
+            return this._bitDepth != null;
         }
 
         /// <summary>
