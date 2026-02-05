@@ -68,6 +68,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListApiKeyCredentialProvidersPaginator ListApiKeyCredentialProviders(ListApiKeyCredentialProvidersRequest request);
 
         /// <summary>
+        /// Paginator for ListBrowserProfiles operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBrowserProfilesPaginator ListBrowserProfiles(ListBrowserProfilesRequest request);
+
+        /// <summary>
         /// Paginator for ListBrowsers operation
         ///</summary>
         [AWSPaginator(

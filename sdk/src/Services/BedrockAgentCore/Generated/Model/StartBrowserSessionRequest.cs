@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the StartBrowserSession operation.
-    /// Creates and initializes a browser session in Amazon Bedrock. The session enables agents
-    /// to navigate and interact with web content, extract information from websites, and
-    /// perform web-based tasks as part of their response generation.
+    /// Creates and initializes a browser session in Amazon Bedrock AgentCore. The session
+    /// enables agents to navigate and interact with web content, extract information from
+    /// websites, and perform web-based tasks as part of their response generation.
     /// 
     ///  
     /// <para>
@@ -58,6 +58,11 @@ namespace Amazon.BedrockAgentCore.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html">SaveBrowserSessionProfile</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
     /// 
     /// </para>
@@ -69,6 +74,7 @@ namespace Amazon.BedrockAgentCore.Model
         private string _clientToken;
         private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private string _name;
+        private BrowserProfileConfiguration _profileConfiguration;
         private int? _sessionTimeoutSeconds;
         private string _traceId;
         private string _traceParent;
@@ -98,9 +104,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier to ensure that the API request completes no more
-        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
-        /// request, but does not return an error. This parameter helps prevent the creation of
-        /// duplicate sessions if there are temporary network issues.
+        /// than one time. If this token matches a previous request, Amazon Bedrock AgentCore
+        /// ignores the request, but does not return an error. This parameter helps prevent the
+        /// creation of duplicate sessions if there are temporary network issues.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -153,6 +159,27 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileConfiguration. 
+        /// <para>
+        /// The browser profile configuration to use for this session. A browser profile contains
+        /// persistent data such as cookies and local storage that can be reused across multiple
+        /// browser sessions. If specified, the session initializes with the profile's stored
+        /// data, enabling continuity for tasks that require authentication or personalized settings.
+        /// </para>
+        /// </summary>
+        public BrowserProfileConfiguration ProfileConfiguration
+        {
+            get { return this._profileConfiguration; }
+            set { this._profileConfiguration = value; }
+        }
+
+        // Check to see if ProfileConfiguration property is set
+        internal bool IsSetProfileConfiguration()
+        {
+            return this._profileConfiguration != null;
         }
 
         /// <summary>
@@ -219,7 +246,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <para>
         /// The dimensions of the browser viewport for this session. This determines the visible
         /// area of the web content and affects how web pages are rendered. If not specified,
-        /// Amazon Bedrock uses a default viewport size.
+        /// Amazon Bedrock AgentCore uses a default viewport size.
         /// </para>
         /// </summary>
         public ViewPort ViewPort

@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// The collection of arguments that specify the operation to perform and its parameters
-    /// when invoking a tool in Amazon Bedrock. Different tools require different arguments,
-    /// and this structure provides a flexible way to pass the appropriate arguments to each
-    /// tool type.
+    /// when invoking a tool in Amazon Bedrock AgentCore. Different tools require different
+    /// arguments, and this structure provides a flexible way to pass the appropriate arguments
+    /// to each tool type.
     /// </summary>
     public partial class ToolArguments
     {

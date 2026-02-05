@@ -1067,9 +1067,9 @@ namespace Amazon.BedrockAgentCore
         #region  GetBrowserSession
 
         /// <summary>
-        /// Retrieves detailed information about a specific browser session in Amazon Bedrock.
-        /// This operation returns the session's configuration, current status, associated streams,
-        /// and metadata.
+        /// Retrieves detailed information about a specific browser session in Amazon Bedrock
+        /// AgentCore. This operation returns the session's configuration, current status, associated
+        /// streams, and metadata.
         /// 
         ///  
         /// <para>
@@ -1176,7 +1176,8 @@ namespace Amazon.BedrockAgentCore
 
         /// <summary>
         /// Retrieves detailed information about a specific code interpreter session in Amazon
-        /// Bedrock. This operation returns the session's configuration, current status, and metadata.
+        /// Bedrock AgentCore. This operation returns the session's configuration, current status,
+        /// and metadata.
         /// 
         ///  
         /// <para>
@@ -2003,9 +2004,9 @@ namespace Amazon.BedrockAgentCore
         #region  InvokeCodeInterpreter
 
         /// <summary>
-        /// Executes code within an active code interpreter session in Amazon Bedrock. This operation
-        /// processes the provided code, runs it in a secure environment, and returns the execution
-        /// results including output, errors, and generated visualizations.
+        /// Executes code within an active code interpreter session in Amazon Bedrock AgentCore.
+        /// This operation processes the provided code, runs it in a secure environment, and returns
+        /// the execution results including output, errors, and generated visualizations.
         /// 
         ///  
         /// <para>
@@ -2212,9 +2213,9 @@ namespace Amazon.BedrockAgentCore
         #region  ListBrowserSessions
 
         /// <summary>
-        /// Retrieves a list of browser sessions in Amazon Bedrock that match the specified criteria.
-        /// This operation returns summary information about each session, including identifiers,
-        /// status, and timestamps.
+        /// Retrieves a list of browser sessions in Amazon Bedrock AgentCore that match the specified
+        /// criteria. This operation returns summary information about each session, including
+        /// identifiers, status, and timestamps.
         /// 
         ///  
         /// <para>
@@ -2319,9 +2320,9 @@ namespace Amazon.BedrockAgentCore
         #region  ListCodeInterpreterSessions
 
         /// <summary>
-        /// Retrieves a list of code interpreter sessions in Amazon Bedrock that match the specified
-        /// criteria. This operation returns summary information about each session, including
-        /// identifiers, status, and timestamps.
+        /// Retrieves a list of code interpreter sessions in Amazon Bedrock AgentCore that match
+        /// the specified criteria. This operation returns summary information about each session,
+        /// including identifiers, status, and timestamps.
         /// 
         ///  
         /// <para>
@@ -2878,12 +2879,128 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  SaveBrowserSessionProfile
+
+        /// <summary>
+        /// Saves the current state of a browser session as a reusable profile in Amazon Bedrock
+        /// AgentCore. A browser profile captures persistent browser data such as cookies and
+        /// local storage from an active session, enabling you to reuse this data in future browser
+        /// sessions.
+        /// 
+        ///  
+        /// <para>
+        /// To save a browser session profile, you must specify the profile identifier, browser
+        /// identifier, and session ID. The session must be active when saving the profile. Once
+        /// saved, the profile can be used with the <c>StartBrowserSession</c> operation to initialize
+        /// new sessions with the stored browser state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Browser profiles are useful for scenarios that require persistent authentication,
+        /// maintaining user preferences across sessions, or continuing tasks that depend on previously
+        /// stored browser data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following operations are related to <c>SaveBrowserSessionProfile</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SaveBrowserSessionProfile service method.</param>
+        /// 
+        /// <returns>The response from the SaveBrowserSessionProfile service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/SaveBrowserSessionProfile">REST API Reference for SaveBrowserSessionProfile Operation</seealso>
+        public virtual SaveBrowserSessionProfileResponse SaveBrowserSessionProfile(SaveBrowserSessionProfileRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SaveBrowserSessionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SaveBrowserSessionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<SaveBrowserSessionProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SaveBrowserSessionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SaveBrowserSessionProfile operation on AmazonBedrockAgentCoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSaveBrowserSessionProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/SaveBrowserSessionProfile">REST API Reference for SaveBrowserSessionProfile Operation</seealso>
+        public virtual IAsyncResult BeginSaveBrowserSessionProfile(SaveBrowserSessionProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SaveBrowserSessionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SaveBrowserSessionProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SaveBrowserSessionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSaveBrowserSessionProfile.</param>
+        /// 
+        /// <returns>Returns a  SaveBrowserSessionProfileResult from BedrockAgentCore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/SaveBrowserSessionProfile">REST API Reference for SaveBrowserSessionProfile Operation</seealso>
+        public virtual SaveBrowserSessionProfileResponse EndSaveBrowserSessionProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SaveBrowserSessionProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartBrowserSession
 
         /// <summary>
-        /// Creates and initializes a browser session in Amazon Bedrock. The session enables agents
-        /// to navigate and interact with web content, extract information from websites, and
-        /// perform web-based tasks as part of their response generation.
+        /// Creates and initializes a browser session in Amazon Bedrock AgentCore. The session
+        /// enables agents to navigate and interact with web content, extract information from
+        /// websites, and perform web-based tasks as part of their response generation.
         /// 
         ///  
         /// <para>
@@ -2904,6 +3021,11 @@ namespace Amazon.BedrockAgentCore
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html">SaveBrowserSessionProfile</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -3000,9 +3122,10 @@ namespace Amazon.BedrockAgentCore
         #region  StartCodeInterpreterSession
 
         /// <summary>
-        /// Creates and initializes a code interpreter session in Amazon Bedrock. The session
-        /// enables agents to execute code as part of their response generation, supporting programming
-        /// languages such as Python for data analysis, visualization, and computation tasks.
+        /// Creates and initializes a code interpreter session in Amazon Bedrock AgentCore. The
+        /// session enables agents to execute code as part of their response generation, supporting
+        /// programming languages such as Python for data analysis, visualization, and computation
+        /// tasks.
         /// 
         ///  
         /// <para>
@@ -3208,8 +3331,9 @@ namespace Amazon.BedrockAgentCore
         #region  StopBrowserSession
 
         /// <summary>
-        /// Terminates an active browser session in Amazon Bedrock. This operation stops the session,
-        /// releases associated resources, and makes the session unavailable for further use.
+        /// Terminates an active browser session in Amazon Bedrock AgentCore. This operation stops
+        /// the session, releases associated resources, and makes the session unavailable for
+        /// further use.
         /// 
         ///  
         /// <para>
@@ -3320,9 +3444,9 @@ namespace Amazon.BedrockAgentCore
         #region  StopCodeInterpreterSession
 
         /// <summary>
-        /// Terminates an active code interpreter session in Amazon Bedrock. This operation stops
-        /// the session, releases associated resources, and makes the session unavailable for
-        /// further use.
+        /// Terminates an active code interpreter session in Amazon Bedrock AgentCore. This operation
+        /// stops the session, releases associated resources, and makes the session unavailable
+        /// for further use.
         /// 
         ///  
         /// <para>

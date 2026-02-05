@@ -31,9 +31,10 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the StartCodeInterpreterSession operation.
-    /// Creates and initializes a code interpreter session in Amazon Bedrock. The session
-    /// enables agents to execute code as part of their response generation, supporting programming
-    /// languages such as Python for data analysis, visualization, and computation tasks.
+    /// Creates and initializes a code interpreter session in Amazon Bedrock AgentCore. The
+    /// session enables agents to execute code as part of their response generation, supporting
+    /// programming languages such as Python for data analysis, visualization, and computation
+    /// tasks.
     /// 
     ///  
     /// <para>
@@ -75,9 +76,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier to ensure that the API request completes no more
-        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
-        /// request, but does not return an error. This parameter helps prevent the creation of
-        /// duplicate sessions if there are temporary network issues.
+        /// than one time. If this token matches a previous request, Amazon Bedrock AgentCore
+        /// ignores the request, but does not return an error. This parameter helps prevent the
+        /// creation of duplicate sessions if there are temporary network issues.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]

@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// The collection of streams associated with a browser session in Amazon Bedrock. These
-    /// streams provide different ways to interact with and observe the browser session, including
-    /// programmatic control and visual representation of the browser content.
+    /// The collection of streams associated with a browser session in Amazon Bedrock AgentCore.
+    /// These streams provide different ways to interact with and observe the browser session,
+    /// including programmatic control and visual representation of the browser content.
     /// </summary>
     public partial class BrowserSessionStream
     {

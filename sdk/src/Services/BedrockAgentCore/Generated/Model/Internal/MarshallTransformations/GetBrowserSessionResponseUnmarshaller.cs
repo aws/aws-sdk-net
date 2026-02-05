@@ -82,6 +82,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("profileConfiguration", targetDepth))
+                {
+                    var unmarshaller = BrowserProfileConfigurationUnmarshaller.Instance;
+                    response.ProfileConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

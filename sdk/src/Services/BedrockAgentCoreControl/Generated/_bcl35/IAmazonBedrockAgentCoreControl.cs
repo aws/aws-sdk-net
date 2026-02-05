@@ -297,6 +297,66 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  CreateBrowserProfile
+
+
+        /// <summary>
+        /// Creates a browser profile in Amazon Bedrock AgentCore. A browser profile stores persistent
+        /// browser data such as cookies, local storage, session storage, and browsing history
+        /// that can be saved from browser sessions and reused in subsequent sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBrowserProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateBrowserProfile service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateBrowserProfile">REST API Reference for CreateBrowserProfile Operation</seealso>
+        CreateBrowserProfileResponse CreateBrowserProfile(CreateBrowserProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBrowserProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBrowserProfile operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBrowserProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateBrowserProfile">REST API Reference for CreateBrowserProfile Operation</seealso>
+        IAsyncResult BeginCreateBrowserProfile(CreateBrowserProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBrowserProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBrowserProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateBrowserProfileResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateBrowserProfile">REST API Reference for CreateBrowserProfile Operation</seealso>
+        CreateBrowserProfileResponse EndCreateBrowserProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCodeInterpreter
 
 
@@ -1156,6 +1216,64 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>Returns a  DeleteBrowserResult from BedrockAgentCoreControl.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteBrowser">REST API Reference for DeleteBrowser Operation</seealso>
         DeleteBrowserResponse EndDeleteBrowser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBrowserProfile
+
+
+        /// <summary>
+        /// Deletes a browser profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBrowserProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBrowserProfile service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteBrowserProfile">REST API Reference for DeleteBrowserProfile Operation</seealso>
+        DeleteBrowserProfileResponse DeleteBrowserProfile(DeleteBrowserProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBrowserProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBrowserProfile operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBrowserProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteBrowserProfile">REST API Reference for DeleteBrowserProfile Operation</seealso>
+        IAsyncResult BeginDeleteBrowserProfile(DeleteBrowserProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBrowserProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBrowserProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteBrowserProfileResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteBrowserProfile">REST API Reference for DeleteBrowserProfile Operation</seealso>
+        DeleteBrowserProfileResponse EndDeleteBrowserProfile(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2038,6 +2156,61 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>Returns a  GetBrowserResult from BedrockAgentCoreControl.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetBrowser">REST API Reference for GetBrowser Operation</seealso>
         GetBrowserResponse EndGetBrowser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBrowserProfile
+
+
+        /// <summary>
+        /// Gets information about a browser profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBrowserProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetBrowserProfile service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetBrowserProfile">REST API Reference for GetBrowserProfile Operation</seealso>
+        GetBrowserProfileResponse GetBrowserProfile(GetBrowserProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBrowserProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBrowserProfile operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBrowserProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetBrowserProfile">REST API Reference for GetBrowserProfile Operation</seealso>
+        IAsyncResult BeginGetBrowserProfile(GetBrowserProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBrowserProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBrowserProfile.</param>
+        /// 
+        /// <returns>Returns a  GetBrowserProfileResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetBrowserProfile">REST API Reference for GetBrowserProfile Operation</seealso>
+        GetBrowserProfileResponse EndGetBrowserProfile(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3003,6 +3176,58 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  ListBrowserProfiles
+
+
+        /// <summary>
+        /// Lists all browser profiles in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBrowserProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListBrowserProfiles service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListBrowserProfiles">REST API Reference for ListBrowserProfiles Operation</seealso>
+        ListBrowserProfilesResponse ListBrowserProfiles(ListBrowserProfilesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBrowserProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBrowserProfiles operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBrowserProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListBrowserProfiles">REST API Reference for ListBrowserProfiles Operation</seealso>
+        IAsyncResult BeginListBrowserProfiles(ListBrowserProfilesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBrowserProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBrowserProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListBrowserProfilesResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListBrowserProfiles">REST API Reference for ListBrowserProfiles Operation</seealso>
+        ListBrowserProfilesResponse EndListBrowserProfiles(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListBrowsers
 
 
@@ -3666,8 +3891,8 @@ namespace Amazon.BedrockAgentCoreControl
         /// 
         ///  <note> 
         /// <para>
-        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
-        /// tool, and Gateway.
+        /// This feature is currently available only for AgentCore Runtime, Browser, Browser Profile,
+        /// Code Interpreter tool, and Gateway.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4045,8 +4270,8 @@ namespace Amazon.BedrockAgentCoreControl
         /// 
         ///  <note> 
         /// <para>
-        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
-        /// tool, and Gateway.
+        /// This feature is currently available only for AgentCore Runtime, Browser, Browser Profile,
+        /// Code Interpreter tool, and Gateway.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4110,8 +4335,8 @@ namespace Amazon.BedrockAgentCoreControl
         /// 
         ///  <note> 
         /// <para>
-        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
-        /// tool, and Gateway.
+        /// This feature is currently available only for AgentCore Runtime, Browser, Browser Profile,
+        /// Code Interpreter tool, and Gateway.
         /// </para>
         ///  </note>
         /// </summary>

@@ -127,7 +127,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property AgentRuntimeArn. 
         /// <para>
         /// The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN
-        /// uniquely identifies the agent runtime resource in Amazon Bedrock.
+        /// uniquely identifies the agent runtime resource in Amazon Bedrock AgentCore.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -245,8 +245,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property Qualifier. 
         /// <para>
         /// The qualifier to use for the agent runtime. This can be a version number or an endpoint
-        /// name that points to a specific version. If not specified, Amazon Bedrock uses the
-        /// default version of the agent runtime.
+        /// name that points to a specific version. If not specified, Amazon Bedrock AgentCore
+        /// uses the default version of the agent runtime.
         /// </para>
         /// </summary>
         public string Qualifier

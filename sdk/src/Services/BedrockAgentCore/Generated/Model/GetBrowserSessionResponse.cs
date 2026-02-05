@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private DateTime? _lastUpdatedAt;
         private string _name;
+        private BrowserProfileConfiguration _profileConfiguration;
         private string _sessionId;
         private string _sessionReplayArtifact;
         private int? _sessionTimeoutSeconds;
@@ -138,6 +139,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileConfiguration. 
+        /// <para>
+        /// The browser profile configuration associated with this session. Contains the profile
+        /// identifier that links to persistent browser data such as cookies and local storage.
+        /// </para>
+        /// </summary>
+        public BrowserProfileConfiguration ProfileConfiguration
+        {
+            get { return this._profileConfiguration; }
+            set { this._profileConfiguration = value; }
+        }
+
+        // Check to see if ProfileConfiguration property is set
+        internal bool IsSetProfileConfiguration()
+        {
+            return this._profileConfiguration != null;
         }
 
         /// <summary>

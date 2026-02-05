@@ -103,6 +103,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetProfileConfiguration())
+                {
+                    context.Writer.WritePropertyName("profileConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BrowserProfileConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProfileConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSessionTimeoutSeconds())
                 {
                     context.Writer.WritePropertyName("sessionTimeoutSeconds");
