@@ -393,8 +393,8 @@ namespace Amazon.NeptuneGraph
 
 
         /// <summary>
-        /// Create a private graph endpoint to allow private access from to the graph from within
-        /// a VPC. You can attach security groups to the private graph endpoint.
+        /// Create a private graph endpoint to allow private access to the graph from within a
+        /// VPC. You can attach security groups to the private graph endpoint.
         /// 
         ///  <note> 
         /// <para>
@@ -513,7 +513,7 @@ namespace Amazon.NeptuneGraph
 
 
         /// <summary>
-        /// Deletes the specifed graph snapshot.
+        /// Deletes the specified graph snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGraphSnapshot service method.</param>
         /// 

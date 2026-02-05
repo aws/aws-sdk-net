@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
-    /// Specifies whihc properties of that label should be included in the export.
+    /// Specifies which properties of that label should be included in the export.
     /// </summary>
     public partial class ExportFilterElement
     {
