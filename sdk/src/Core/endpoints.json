@@ -28244,6 +28244,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -28335,6 +28336,7 @@
               ]
             },
             "ap-southeast-5": {},
+            "ap-southeast-6": {},
             "ap-southeast-7": {},
             "ca-central-1": {
               "variants": [
@@ -32850,6 +32852,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -32940,6 +32943,7 @@
                 }
               ]
             },
+            "ap-southeast-6": {},
             "ca-central-1": {
               "variants": [
                 {
@@ -37468,6 +37472,8 @@
                 }
               ]
             },
+            "ap-southeast-5": {},
+            "ap-southeast-7": {},
             "ca-central-1": {
               "variants": [
                 {
