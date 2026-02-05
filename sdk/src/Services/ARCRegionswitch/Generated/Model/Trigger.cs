@@ -44,7 +44,8 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action to perform when the trigger fires. Valid values include ACTIVATE and DEACTIVATE.
+        /// The action to perform when the trigger fires. Valid values include <c>activate</c>
+        /// and <c>deactivate</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
