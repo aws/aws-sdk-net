@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteResourceShare operation
+    /// Response Unmarshaller for ListSourceAssociations operation
     /// </summary>  
-    public class DeleteResourceShareResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListSourceAssociationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,22 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteResourceShareResponse response = new DeleteResourceShareResponse();
+            ListSourceAssociationsResponse response = new ListSourceAssociationsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClientToken = unmarshaller.Unmarshall(context, ref reader);
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("returnValue", targetDepth))
+                if (context.TestExpression("sourceAssociations", targetDepth))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.ReturnValue = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<AssociatedSource, AssociatedSourceUnmarshaller>(AssociatedSourceUnmarshaller.Instance);
+                    response.SourceAssociations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -89,29 +89,17 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotentParameterMismatchException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
                 {
-                    return IdempotentParameterMismatchExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClientTokenException"))
-                {
-                    return InvalidClientTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidStateTransitionException"))
-                {
-                    return InvalidStateTransitionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedArnException"))
                 {
                     return MalformedArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-                {
-                    return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalException"))
                 {
@@ -121,10 +109,6 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 {
                     return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
-                {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException"))
                 {
                     return UnknownResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -133,9 +117,9 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             return new AmazonRAMException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteResourceShareResponseUnmarshaller _instance = new DeleteResourceShareResponseUnmarshaller();        
+        private static ListSourceAssociationsResponseUnmarshaller _instance = new ListSourceAssociationsResponseUnmarshaller();        
 
-        internal static DeleteResourceShareResponseUnmarshaller GetInstance()
+        internal static ListSourceAssociationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +127,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteResourceShareResponseUnmarshaller Instance
+        public static ListSourceAssociationsResponseUnmarshaller Instance
         {
             get
             {

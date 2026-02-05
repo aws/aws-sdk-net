@@ -30,43 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// A tag key and optional list of possible values that you can use to filter results
-    /// for tagged resources.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Multiple tag filters are evaluated as an OR condition.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the ListSourceAssociations operation.
     /// </summary>
-    public partial class TagFilter
+    public partial class ListSourceAssociationsResponse : AmazonWebServiceResponse
     {
-        private string _tagKey;
-        private List<string> _tagValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _nextToken;
+        private List<AssociatedSource> _sourceAssociations = AWSConfigs.InitializeCollections ? new List<AssociatedSource>() : null;
 
         /// <summary>
-        /// Gets and sets the property TagKey. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The tag key. This must have a valid string value and can't be empty.
+        /// The pagination token to use to retrieve the next page of results. This value is <c>null</c>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
-        public string TagKey
+        public string NextToken
         {
-            get { return this._tagKey; }
-            set { this._tagKey = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if TagKey property is set
-        internal bool IsSetTagKey()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._tagKey != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagValues. 
+        /// Gets and sets the property SourceAssociations. 
         /// <para>
-        /// A list of zero or more tag values. If no values are provided, then the filter matches
-        /// any tag with the specified key, regardless of its value.
+        /// Information about the source associations.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -74,16 +67,16 @@ namespace Amazon.RAM.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<string> TagValues
+        public List<AssociatedSource> SourceAssociations
         {
-            get { return this._tagValues; }
-            set { this._tagValues = value; }
+            get { return this._sourceAssociations; }
+            set { this._sourceAssociations = value; }
         }
 
-        // Check to see if TagValues property is set
-        internal bool IsSetTagValues()
+        // Check to see if SourceAssociations property is set
+        internal bool IsSetSourceAssociations()
         {
-            return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._sourceAssociations != null && (this._sourceAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

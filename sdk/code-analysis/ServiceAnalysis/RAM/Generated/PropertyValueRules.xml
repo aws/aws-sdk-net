@@ -71,4 +71,9 @@
     <min>1</min>
     <max>500</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RAM.Model.ListSourceAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
 </property-value-rules>
