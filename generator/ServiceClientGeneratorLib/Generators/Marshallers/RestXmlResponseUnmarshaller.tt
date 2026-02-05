@@ -194,6 +194,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         public override bool HasStreamingProperty => true;
 <#
     }
+    if (this.Config.ServiceId != "S3" || this.Operation.Exceptions.Count > 0)
+    {
 #>  
 
         /// <summary>
@@ -254,6 +256,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
         }
+<#
+    }
+#>
 
         partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, <#=this.Operation.Name #>Response response);
 
