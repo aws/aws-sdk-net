@@ -37,8 +37,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
-    /// tool, and Gateway.
+    /// This feature is currently available only for AgentCore Runtime, Browser, Browser Profile,
+    /// Code Interpreter tool, and Gateway.
     /// </para>
     ///  </note>
     /// </summary>

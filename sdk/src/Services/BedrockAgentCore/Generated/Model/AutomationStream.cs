@@ -31,8 +31,8 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// The configuration for a stream that enables programmatic control of a browser session
-    /// in Amazon Bedrock. This stream provides a bidirectional communication channel for
-    /// sending commands to the browser and receiving responses, allowing agents to automate
+    /// in Amazon Bedrock AgentCore. This stream provides a bidirectional communication channel
+    /// for sending commands to the browser and receiving responses, allowing agents to automate
     /// web interactions such as navigation, form filling, and element clicking.
     /// </summary>
     public partial class AutomationStream
