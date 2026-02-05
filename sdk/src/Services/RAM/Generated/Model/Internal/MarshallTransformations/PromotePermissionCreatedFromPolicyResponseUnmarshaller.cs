@@ -91,6 +91,10 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPolicyException"))
+                {
+                    return InvalidPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedArnException"))
                 {
                     return MalformedArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -32,7 +32,16 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Container for the parameters to the ListPermissions operation.
     /// Retrieves a list of available RAM permissions that you can use for the supported resource
-    /// types.
+    /// types. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+    /// calling a paginated operation. These operations can occasionally return an empty set
+    /// of results even when there are more results available. The <c>NextToken</c> response
+    /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListPermissionsRequest : AmazonRAMRequest
     {

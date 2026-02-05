@@ -33,6 +33,15 @@ namespace Amazon.RAM.Model
     /// Container for the parameters to the ListPrincipals operation.
     /// Lists the principals that you are sharing resources with or that are sharing resources
     /// with you.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+    /// calling a paginated operation. These operations can occasionally return an empty set
+    /// of results even when there are more results available. The <c>NextToken</c> response
+    /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListPrincipalsRequest : AmazonRAMRequest
     {
@@ -122,6 +131,10 @@ namespace Amazon.RAM.Model
         ///  </li> <li> 
         /// <para>
         /// An ARN of an IAM user, for example: <c>iam::123456789012user/username</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A service principal name, for example: <c>service-id.amazonaws.com</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

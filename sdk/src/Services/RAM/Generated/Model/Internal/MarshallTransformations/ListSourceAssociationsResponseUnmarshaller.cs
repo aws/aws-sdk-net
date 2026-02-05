@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateResourceShare operation
+    /// Response Unmarshaller for ListSourceAssociations operation
     /// </summary>  
-    public class CreateResourceShareResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListSourceAssociationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,22 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateResourceShareResponse response = new CreateResourceShareResponse();
+            ListSourceAssociationsResponse response = new ListSourceAssociationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("clientToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClientToken = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceShare", targetDepth))
+                if (context.TestExpression("sourceAssociations", targetDepth))
                 {
-                    var unmarshaller = ResourceShareUnmarshaller.Instance;
-                    response.ResourceShare = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AssociatedSource, AssociatedSourceUnmarshaller>(AssociatedSourceUnmarshaller.Instance);
+                    response.SourceAssociations = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,33 +87,17 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotentParameterMismatchException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
                 {
-                    return IdempotentParameterMismatchExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClientTokenException"))
-                {
-                    return InvalidClientTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidStateTransitionException"))
-                {
-                    return InvalidStateTransitionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedArnException"))
                 {
                     return MalformedArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-                {
-                    return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceShareLimitExceededException"))
-                {
-                    return ResourceShareLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalException"))
                 {
@@ -123,18 +107,6 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 {
                     return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TagLimitExceededException"))
-                {
-                    return TagLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TagPolicyViolationException"))
-                {
-                    return TagPolicyViolationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
-                {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException"))
                 {
                     return UnknownResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -143,9 +115,9 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             return new AmazonRAMException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateResourceShareResponseUnmarshaller _instance = new CreateResourceShareResponseUnmarshaller();        
+        private static ListSourceAssociationsResponseUnmarshaller _instance = new ListSourceAssociationsResponseUnmarshaller();        
 
-        internal static CreateResourceShareResponseUnmarshaller GetInstance()
+        internal static ListSourceAssociationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -153,7 +125,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateResourceShareResponseUnmarshaller Instance
+        public static ListSourceAssociationsResponseUnmarshaller Instance
         {
             get
             {

@@ -32,6 +32,12 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// A tag key and optional list of possible values that you can use to filter results
     /// for tagged resources.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Multiple tag filters are evaluated as an OR condition.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TagFilter
     {
