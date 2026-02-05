@@ -1031,6 +1031,54 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly Compute GRAPHICS_G4DN = new Compute("GRAPHICS_G4DN");
         /// <summary>
+        /// Constant GRAPHICS_G6_16XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_16XLARGE = new Compute("GRAPHICS_G6_16XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6_2XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_2XLARGE = new Compute("GRAPHICS_G6_2XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_4XLARGE = new Compute("GRAPHICS_G6_4XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6_8XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_8XLARGE = new Compute("GRAPHICS_G6_8XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6_XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_XLARGE = new Compute("GRAPHICS_G6_XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6F_2XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6F_2XLARGE = new Compute("GRAPHICS_G6F_2XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6F_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6F_4XLARGE = new Compute("GRAPHICS_G6F_4XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6F_LARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6F_LARGE = new Compute("GRAPHICS_G6F_LARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6F_XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6F_XLARGE = new Compute("GRAPHICS_G6F_XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_GR6_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_GR6_4XLARGE = new Compute("GRAPHICS_GR6_4XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_GR6_8XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_GR6_8XLARGE = new Compute("GRAPHICS_GR6_8XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_GR6F_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_GR6F_4XLARGE = new Compute("GRAPHICS_GR6F_4XLARGE");
+        /// <summary>
         /// Constant GRAPHICSPRO for Compute
         /// </summary>
         public static readonly Compute GRAPHICSPRO = new Compute("GRAPHICSPRO");
@@ -1964,6 +2012,10 @@ namespace Amazon.WorkSpaces
         /// Constant GRAPHICS_G4DN for ImageComputeType
         /// </summary>
         public static readonly ImageComputeType GRAPHICS_G4DN = new ImageComputeType("GRAPHICS_G4DN");
+        /// <summary>
+        /// Constant GRAPHICS_G6 for ImageComputeType
+        /// </summary>
+        public static readonly ImageComputeType GRAPHICS_G6 = new ImageComputeType("GRAPHICS_G6");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
