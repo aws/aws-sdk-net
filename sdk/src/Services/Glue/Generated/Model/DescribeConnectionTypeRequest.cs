@@ -32,7 +32,15 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the DescribeConnectionType operation.
     /// The <c>DescribeConnectionType</c> API provides full details of the supported options
-    /// for a given connection type in Glue.
+    /// for a given connection type in Glue. The response includes authentication configuration
+    /// details that show supported authentication types and properties, and RestConfiguration
+    /// for custom REST-based connection types registered via <c>RegisterConnectionType</c>.
+    /// 
+    ///  
+    /// <para>
+    /// See also: <c>ListConnectionTypes</c>, <c>RegisterConnectionType</c>, <c>DeleteConnectionType</c>
+    /// 
+    /// </para>
     /// </summary>
     public partial class DescribeConnectionTypeRequest : AmazonGlueRequest
     {

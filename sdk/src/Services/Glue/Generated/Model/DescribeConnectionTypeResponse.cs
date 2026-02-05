@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         private string _description;
         private Dictionary<string, Property> _physicalConnectionRequirements = AWSConfigs.InitializeCollections ? new Dictionary<string, Property>() : null;
         private Dictionary<string, Property> _pythonConnectionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, Property>() : null;
+        private RestConfiguration _restConfiguration;
         private Dictionary<string, Property> _sparkConnectionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, Property>() : null;
 
         /// <summary>
@@ -229,6 +230,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetPythonConnectionProperties()
         {
             return this._pythonConnectionProperties != null && (this._pythonConnectionProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestConfiguration. 
+        /// <para>
+        /// HTTP request and response configuration, validation endpoint, and entity configurations
+        /// for REST based data source.
+        /// </para>
+        /// </summary>
+        public RestConfiguration RestConfiguration
+        {
+            get { return this._restConfiguration; }
+            set { this._restConfiguration = value; }
+        }
+
+        // Check to see if RestConfiguration property is set
+        internal bool IsSetRestConfiguration()
+        {
+            return this._restConfiguration != null;
         }
 
         /// <summary>

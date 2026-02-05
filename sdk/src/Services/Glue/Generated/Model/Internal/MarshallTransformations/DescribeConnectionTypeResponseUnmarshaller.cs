@@ -112,6 +112,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.PythonConnectionProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RestConfiguration", targetDepth))
+                {
+                    var unmarshaller = RestConfigurationUnmarshaller.Instance;
+                    response.RestConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SparkConnectionProperties", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, Property, StringUnmarshaller, PropertyUnmarshaller>(StringUnmarshaller.Instance, PropertyUnmarshaller.Instance);

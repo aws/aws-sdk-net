@@ -38,7 +38,9 @@ namespace Amazon.Glue.Model
         private List<string> _dataOperationScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _defaultValue;
         private string _description;
+        private string _keyOverride;
         private string _name;
+        private PropertyLocation _propertyLocation;
         private List<string> _propertyTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _required;
 
@@ -116,6 +118,25 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeyOverride. 
+        /// <para>
+        /// A key name to use when sending this property in API requests, if different from the
+        /// display name.
+        /// </para>
+        /// </summary>
+        public string KeyOverride
+        {
+            get { return this._keyOverride; }
+            set { this._keyOverride = value; }
+        }
+
+        // Check to see if KeyOverride property is set
+        internal bool IsSetKeyOverride()
+        {
+            return this._keyOverride != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the property.
@@ -132,6 +153,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropertyLocation. 
+        /// <para>
+        /// Specifies where this property should be included in REST requests, such as in headers,
+        /// query parameters, or request body.
+        /// </para>
+        /// </summary>
+        public PropertyLocation PropertyLocation
+        {
+            get { return this._propertyLocation; }
+            set { this._propertyLocation = value; }
+        }
+
+        // Check to see if PropertyLocation property is set
+        internal bool IsSetPropertyLocation()
+        {
+            return this._propertyLocation != null;
         }
 
         /// <summary>
