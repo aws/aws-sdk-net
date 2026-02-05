@@ -1,3 +1,28 @@
+### 3.7.1217.0 (2026-02-05 19:18 UTC)
+* ARCRegionswitch (3.7.504.0)
+	* Updates documentation for ARC Region switch and provides stronger validation for Amazon Aurora Global Database execution block parameters.
+* Athena (3.7.503.0)
+	* Reduces the minimum TargetDpus to create or update capacity reservations from 24 to 4.
+* BedrockAgentCore (3.7.510.0)
+	* Support Browser profile persistence (cookies and local storage) across sessions for AgentCore Browser.
+* BedrockAgentCoreControl (3.7.516.0)
+	* Support Browser profile persistence (cookies and local storage) across sessions for AgentCore Browser.
+* Glue (3.7.514.0)
+	* This release adds the capability to easily create custom AWS Glue connections to data sources with REST APIs.
+* MediaLive (3.7.514.0)
+	* Outputs using the AV1 codec in CMAF Ingest output groups in MediaLive now have the ability to specify a target bit depth of 8 or 10.
+* NeptuneGraph (3.7.502.38)
+	* Minor neptune-graph documentation changes
+* RAM (3.7.503.0)
+	* Added ListSourceAssociations API. Allows RAM resource share owners to list source associations that determine which sources can access resources through service principal associations. Supports filtering by resource share ARN, source ID, source type, or status, with pagination.
+* Transfer (3.7.505.0)
+	* Adds support for the customer to send custom HTTP headers and configure an AS2 Connector to receive Asynchronous MDNs from their trading partner
+* WorkSpaces (3.7.506.0)
+	* Added support for 12 new graphics-optimized compute types - Graphics.g6 (xlarge, 2xlarge, 4xlarge, 8xlarge, 16xlarge), Graphics.gr6 (4xlarge, 8xlarge), Graphics.g6f (large, xlarge, 2xlarge, 4xlarge), and Graphics.gr6f (4xlarge).
+* Core 3.7.500.76
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1216.0 (2026-02-04 19:18 UTC)
 * BedrockRuntime (3.7.514.0)
 	* Added support for structured outputs to Converse and ConverseStream APIs.

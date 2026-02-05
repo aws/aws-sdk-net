@@ -32,7 +32,7 @@ namespace Amazon.Kafka
     public partial class AmazonKafkaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kafka", "3.7.504.30");
+            InternalSDKUtils.BuildUserAgentString("Kafka", "3.7.504.31");
 
         private string _userAgent = UserAgentString;
         ///<summary>
