@@ -30,26 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeConnectionType operation.
-    /// The <c>DescribeConnectionType</c> API provides full details of the supported options
-    /// for a given connection type in Glue. The response includes authentication configuration
-    /// details that show supported authentication types and properties, and RestConfiguration
-    /// for custom REST-based connection types registered via <c>RegisterConnectionType</c>.
+    /// Container for the parameters to the DeleteConnectionType operation.
+    /// Deletes a custom connection type in Glue.
     /// 
     ///  
     /// <para>
-    /// See also: <c>ListConnectionTypes</c>, <c>RegisterConnectionType</c>, <c>DeleteConnectionType</c>
-    /// 
+    /// The connection type must exist and be registered before it can be deleted. This operation
+    /// supports cleanup of connection type resources and helps maintain proper lifecycle
+    /// management of custom connection types.
     /// </para>
     /// </summary>
-    public partial class DescribeConnectionTypeRequest : AmazonGlueRequest
+    public partial class DeleteConnectionTypeRequest : AmazonGlueRequest
     {
         private string _connectionType;
 
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The name of the connection type to be described.
+        /// The name of the connection type to delete. Must reference an existing registered connection
+        /// type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

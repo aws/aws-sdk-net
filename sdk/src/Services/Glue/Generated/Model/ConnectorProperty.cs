@@ -30,18 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// An object that defines a connection type for a compute environment.
+    /// Defines a property configuration for connection types, default values, and where the
+    /// property should be used in requests.
     /// </summary>
-    public partial class Property
+    public partial class ConnectorProperty
     {
-        private List<AllowedValue> _allowedValues = AWSConfigs.InitializeCollections ? new List<AllowedValue>() : null;
-        private List<string> _dataOperationScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _defaultValue;
-        private string _description;
         private string _keyOverride;
         private string _name;
         private PropertyLocation _propertyLocation;
-        private List<string> _propertyTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private PropertyType _propertyType;
         private bool? _required;
 
         /// <summary>
@@ -55,7 +54,7 @@ namespace Amazon.Glue.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<AllowedValue> AllowedValues
+        public List<string> AllowedValues
         {
             get { return this._allowedValues; }
             set { this._allowedValues = value; }
@@ -65,29 +64,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetAllowedValues()
         {
             return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DataOperationScopes. 
-        /// <para>
-        /// Indicates which data operations are applicable to the property.
-        /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        public List<string> DataOperationScopes
-        {
-            get { return this._dataOperationScopes; }
-            set { this._dataOperationScopes = value; }
-        }
-
-        // Check to see if DataOperationScopes property is set
-        internal bool IsSetDataOperationScopes()
-        {
-            return this._dataOperationScopes != null && (this._dataOperationScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,31 +85,13 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// A description of the property.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1024)]
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property KeyOverride. 
         /// <para>
         /// A key name to use when sending this property in API requests, if different from the
         /// display name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string KeyOverride
         {
             get { return this._keyOverride; }
@@ -185,27 +143,22 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PropertyTypes. 
+        /// Gets and sets the property PropertyType. 
         /// <para>
-        /// Describes the type of property.
+        /// The data type of this property
         /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> PropertyTypes
+        public PropertyType PropertyType
         {
-            get { return this._propertyTypes; }
-            set { this._propertyTypes = value; }
+            get { return this._propertyType; }
+            set { this._propertyType = value; }
         }
 
-        // Check to see if PropertyTypes property is set
-        internal bool IsSetPropertyTypes()
+        // Check to see if PropertyType property is set
+        internal bool IsSetPropertyType()
         {
-            return this._propertyTypes != null && (this._propertyTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._propertyType != null;
         }
 
         /// <summary>

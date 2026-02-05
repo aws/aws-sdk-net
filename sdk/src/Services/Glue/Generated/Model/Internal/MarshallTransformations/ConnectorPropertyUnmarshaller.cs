@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Property Object
+    /// Response Unmarshaller for ConnectorProperty Object
     /// </summary>  
-    public class PropertyUnmarshaller : IJsonUnmarshaller<Property, JsonUnmarshallerContext>
+    public class ConnectorPropertyUnmarshaller : IJsonUnmarshaller<ConnectorProperty, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Property Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ConnectorProperty Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Property unmarshalledObject = new Property();
+            ConnectorProperty unmarshalledObject = new ConnectorProperty();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -58,26 +58,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowedValues", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AllowedValue, AllowedValueUnmarshaller>(AllowedValueUnmarshaller.Instance);
-                    unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DataOperationScopes", targetDepth))
-                {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DataOperationScopes = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyOverride", targetDepth))
@@ -98,10 +86,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.PropertyLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PropertyTypes", targetDepth))
+                if (context.TestExpression("PropertyType", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.PropertyTypes = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PropertyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Required", targetDepth))
@@ -115,12 +103,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static PropertyUnmarshaller _instance = new PropertyUnmarshaller();        
+        private static ConnectorPropertyUnmarshaller _instance = new ConnectorPropertyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PropertyUnmarshaller Instance
+        public static ConnectorPropertyUnmarshaller Instance
         {
             get
             {
