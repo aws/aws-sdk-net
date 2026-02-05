@@ -159,7 +159,7 @@ namespace Amazon.Athena.Model
         /// The number of data processing units requested.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=24)]
+        [AWSProperty(Required=true, Min=4)]
         public int TargetDpus
         {
             get { return this._targetDpus.GetValueOrDefault(); }
