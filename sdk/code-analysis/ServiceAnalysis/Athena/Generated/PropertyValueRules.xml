@@ -18,7 +18,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.CreateCapacityReservationRequest.TargetDpus</property>
-    <min>24</min>
+    <min>4</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.CreateDataCatalogRequest.Description</property>
@@ -834,7 +834,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.UpdateCapacityReservationRequest.TargetDpus</property>
-    <min>24</min>
+    <min>4</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.UpdateDataCatalogRequest.Description</property>
@@ -1013,7 +1013,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.CapacityReservation.TargetDpus</property>
-    <min>24</min>
+    <min>4</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.Classification.Name</property>
