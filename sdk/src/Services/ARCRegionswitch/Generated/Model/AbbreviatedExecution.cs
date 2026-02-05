@@ -107,8 +107,8 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property ExecutionAction. 
         /// <para>
-        /// The plan execution action. Valid values are <c>Activate</c>, to activate an Amazon
-        /// Web Services Region, or <c>Deactivate</c>, to deactivate a Region.
+        /// The plan execution action. Valid values are <c>activate</c>, to activate an Amazon
+        /// Web Services Region, or <c>deactivate</c>, to deactivate a Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,8 +185,8 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The plan execution mode. Valid values are <c>Practice</c>, for testing without making
-        /// actual changes, or <c>Recovery</c>, for actual traffic shifting and application recovery.
+        /// The plan execution mode. Valid values are <c>graceful</c>, for graceful executions,
+        /// or <c>ungraceful</c>, for ungraceful executions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
