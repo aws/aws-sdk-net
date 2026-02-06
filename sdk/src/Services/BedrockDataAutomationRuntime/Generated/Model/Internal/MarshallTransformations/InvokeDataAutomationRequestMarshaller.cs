@@ -124,6 +124,17 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOutputConfiguration())
+                {
+                    context.Writer.WritePropertyName("outputConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutputConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

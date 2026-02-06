@@ -34,8 +34,27 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
     /// </summary>
     public partial class InvokeDataAutomationResponse : AmazonWebServiceResponse
     {
+        private OutputConfiguration _outputConfiguration;
         private List<OutputSegment> _outputSegments = AWSConfigs.InitializeCollections ? new List<OutputSegment>() : null;
         private SemanticModality _semanticModality;
+
+        /// <summary>
+        /// Gets and sets the property OutputConfiguration. 
+        /// <para>
+        /// Output configuration
+        /// </para>
+        /// </summary>
+        public OutputConfiguration OutputConfiguration
+        {
+            get { return this._outputConfiguration; }
+            set { this._outputConfiguration = value; }
+        }
+
+        // Check to see if OutputConfiguration property is set
+        internal bool IsSetOutputConfiguration()
+        {
+            return this._outputConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OutputSegments. 
@@ -43,7 +62,6 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         /// List of outputs for each logical sub-doc
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<OutputSegment> OutputSegments
         {
             get { return this._outputSegments; }
