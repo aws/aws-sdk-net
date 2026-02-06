@@ -50,6 +50,7 @@ namespace Amazon.Deadline.Model
         private string _queueId;
         private string _sourceJobId;
         private string _storageProfileId;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private CreateJobTargetTaskRunStatus _targetTaskRunStatus;
         private string _template;
         private JobTemplateType _templateType;
@@ -310,6 +311,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStorageProfileId()
         {
             return this._storageProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys
+        /// and values are both required, but tag values can be empty strings.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
