@@ -287,9 +287,12 @@ namespace Amazon.DynamoDBv2.DataModel
                 Utils.ValidateTimestampType(MemberType);
 
             IPropertyConverter converter;
-            if (context.ConverterCache.TryGetValue(MemberType, out converter) && converter != null)
+            if (ConverterType == null)
             {
-                this.Converter = converter;
+                if (context.ConverterCache.TryGetValue(MemberType, out converter) && converter != null)
+                {
+                    this.Converter = converter;
+                }
             }
 
             foreach (var index in Indexes)
