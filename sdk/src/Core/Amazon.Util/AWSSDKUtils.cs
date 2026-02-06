@@ -321,7 +321,7 @@ namespace Amazon.Util
         internal static string GetParametersAsString(ParameterCollection parameterCollection)
         {
             var parameterBuilder = new ValueStringBuilder(512);
-            foreach (var kvp in parameterCollection.GetParametersEnumerable())
+            foreach (var kvp in parameterCollection.GetSortedParametersList())
             {
                 var value = kvp.Value;
                 if (value == null)
