@@ -140,6 +140,114 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(2, count);
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void GetNextSetHelper_ShouldUpdateMetricsAfterPage()
+        {
+            // Arrange
+            var consumed = new ConsumedCapacity
+            {
+                CapacityUnits = 3.5,
+                ReadCapacityUnits = 2.0,
+                WriteCapacityUnits = 1.5
+            };
+
+            var mockScanResponse = new ScanResponse
+            {
+                Items = new List<Dictionary<string, AttributeValue>>
+                {
+                    new Dictionary<string, AttributeValue>(),
+                    new Dictionary<string, AttributeValue>()
+                },
+                // No more pages -> IsDone = true
+                LastEvaluatedKey = null,
+                ScannedCount = 10,
+                ConsumedCapacity = consumed
+            };
+
+            _mockDynamoDBClient
+                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
+                .Returns(mockScanResponse);
+
+            _search.Reset();
+            _search.ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL;
+
+            // Act
+            var result = _search.GetNextSetHelper();
+
+            // Assert item count to ensure we exercised the path
+            Assert.AreEqual(2, result.Count);
+            Assert.IsTrue(_search.IsDone);
+
+            // Assert metrics aggregation populated by UpdateMetricsAfterPage
+            Assert.AreEqual(10, _search.Metrics.ScannedCountLast);
+            Assert.AreEqual(10, _search.Metrics.ScannedCountAccumulated);
+            Assert.AreEqual(2, _search.Metrics.ItemsReturnedLast);
+            Assert.AreEqual(2, _search.Metrics.TotalItemsReturned);
+            Assert.AreSame(consumed, _search.Metrics.LastConsumedCapacity);
+            Assert.AreEqual(1, _search.Metrics.ConsumedCapacityHistory.Count);
+            Assert.AreEqual(3.5, _search.Metrics.TotalCapacityUnits);
+            Assert.AreEqual(2.0, _search.Metrics.TotalReadCapacityUnits);
+            Assert.AreEqual(1.5, _search.Metrics.TotalWriteCapacityUnits);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void GetNextSetHelper_SetsReturnConsumedCapacity_WhenNotNone()
+        {
+            // Arrange - capture the outgoing ScanRequest
+            ScanRequest captured = null;
+
+            var mockScanResponse = new ScanResponse
+            {
+                Items = new List<Dictionary<string, AttributeValue>>(),
+                LastEvaluatedKey = null,
+            };
+
+            _mockDynamoDBClient
+                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
+                .Callback<ScanRequest>(req => captured = req)
+                .Returns(mockScanResponse);
+
+            _search.Reset();
+            _search.ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES;
+
+            // Act
+            _ = _search.GetNextSetHelper();
+
+            // Assert: ReturnConsumedCapacity is forwarded to the request
+            Assert.IsNotNull(captured, "Expected ScanRequest to be captured.");
+            Assert.AreEqual(ReturnConsumedCapacity.INDEXES, captured.ReturnConsumedCapacity);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void GetNextSetHelper_DoesNotSetReturnConsumedCapacity_WhenNone()
+        {
+            // Arrange - capture the outgoing ScanRequest
+            ScanRequest captured = null;
+
+            var mockScanResponse = new ScanResponse
+            {
+                Items = new List<Dictionary<string, AttributeValue>>(),
+                LastEvaluatedKey = null,
+            };
+
+            _mockDynamoDBClient
+                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
+                .Callback<ScanRequest>(req => captured = req)
+                .Returns(mockScanResponse);
+
+            _search.Reset();
+            _search.ReturnConsumedCapacity = ReturnConsumedCapacity.NONE;
+
+            // Act
+            _ = _search.GetNextSetHelper();
+
+            // Assert: when NONE, the property should remain null (not set)
+            Assert.IsNotNull(captured, "Expected ScanRequest to be captured.");
+            Assert.IsNull(captured.ReturnConsumedCapacity);
+        }
 
     }
 }
