@@ -174,6 +174,8 @@ namespace SDKDocGenerator.PlatformMap
         /// <param name="memberSignature">The member signature (e.g., "M:Type.Method(Params)")</param>
         public IReadOnlyCollection<string> GetPlatformsForMember(string memberSignature)
         {
+            ThrowIfDisposed();
+
             if (string.IsNullOrEmpty(memberSignature))
                 return Array.Empty<string>();
 
@@ -188,6 +190,8 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public bool IsMemberAvailableOnPlatform(string memberSignature, string platform)
         {
+            ThrowIfDisposed();
+
             if (string.IsNullOrEmpty(memberSignature) || string.IsNullOrEmpty(platform))
                 return false;
 
@@ -200,6 +204,8 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public bool IsMemberAvailableOnAllPlatforms(string memberSignature)
         {
+            ThrowIfDisposed();
+
             if (string.IsNullOrEmpty(memberSignature))
                 return false;
 
@@ -215,6 +221,8 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public bool IsMemberPlatformRestricted(string memberSignature)
         {
+            ThrowIfDisposed();
+
             if (string.IsNullOrEmpty(memberSignature))
                 return false;
 
@@ -230,6 +238,8 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public IReadOnlyCollection<string> GetMembersForPlatform(string platform)
         {
+            ThrowIfDisposed();
+
             if (string.IsNullOrEmpty(platform))
                 return Array.Empty<string>();
 
@@ -249,6 +259,8 @@ namespace SDKDocGenerator.PlatformMap
             string targetPlatform,
             params string[] excludePlatforms)
         {
+            ThrowIfDisposed();
+
             if (string.IsNullOrEmpty(targetPlatform))
                 yield break;
 
@@ -278,8 +290,7 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public MethodInfoWrapper GetMethodWrapper(string signature)
         {
-            if (_disposed)
-                throw new ObjectDisposedException(nameof(PlatformAvailabilityMap));
+            ThrowIfDisposed();
 
             if (string.IsNullOrEmpty(signature))
                 return null;
@@ -297,8 +308,7 @@ namespace SDKDocGenerator.PlatformMap
         /// <param name="typeFullName">Full name of the declaring type</param>
         public IEnumerable<MethodInfoWrapper> GetExclusiveMethodsForType(string typeFullName)
         {
-            if (_disposed)
-                throw new ObjectDisposedException(nameof(PlatformAvailabilityMap));
+            ThrowIfDisposed();
 
             if (string.IsNullOrEmpty(typeFullName))
                 yield break;
@@ -319,8 +329,7 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public IEnumerable<string> GetTypesWithExclusiveMembers()
         {
-            if (_disposed)
-                throw new ObjectDisposedException(nameof(PlatformAvailabilityMap));
+            ThrowIfDisposed();
 
             return _memberIndex.Values
                 .Where(e => e.ExclusiveMethodWrapper != null && !string.IsNullOrEmpty(e.DeclaringTypeFullName))
@@ -333,8 +342,7 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public IEnumerable<PlatformMemberEntry> GetExclusiveMethodEntries()
         {
-            if (_disposed)
-                throw new ObjectDisposedException(nameof(PlatformAvailabilityMap));
+            ThrowIfDisposed();
 
             return _memberIndex.Values.Where(e => e.ExclusiveMethodWrapper != null);
         }
@@ -344,8 +352,7 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public PlatformAssemblyContext GetAssemblyContext(string platform)
         {
-            if (_disposed)
-                throw new ObjectDisposedException(nameof(PlatformAvailabilityMap));
+            ThrowIfDisposed();
 
             return _loadedContexts.FirstOrDefault(c =>
                 c.Platform.Equals(platform, StringComparison.OrdinalIgnoreCase));
@@ -426,6 +433,12 @@ namespace SDKDocGenerator.PlatformMap
         #endregion
 
         #region Private Helpers
+
+        private void ThrowIfDisposed()
+        {
+            if (_disposed)
+                throw new ObjectDisposedException(nameof(PlatformAvailabilityMap));
+        }
 
         /// <summary>
         /// Extracts the declaring type from an NDoc-style signature.

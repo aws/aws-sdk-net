@@ -592,10 +592,6 @@ namespace SDKDocGenerator
 
         /// <summary>
         /// Disposes the platform map, releasing all loaded assembly contexts.
-        /// Should be called at the end of generation to free resources.
-        /// </summary>
-        /// <summary>
-        /// Disposes the platform map, releasing all loaded assembly contexts.
         /// The reference is kept so that post-disposal calls receive
         /// <see cref="ObjectDisposedException"/> rather than a null reference.
         /// </summary>
