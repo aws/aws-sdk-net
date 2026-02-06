@@ -96,6 +96,115 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
+    /// The <see cref="ProjectionExpressionBuilder"/> class is used to construct projection expressions for DynamoDB query operation.
+    /// A projection expression is a comma-separated list of attribute names (and nested paths) to retrieve.
+    /// </summary>
+    public class ProjectionExpressionBuilder : ExpressionBuilder
+    {
+        /// <summary>
+        /// The list of operands that will be used in the projection expression.
+        /// </summary>
+        internal List<OperandBuilder> Operands { get; set; }
+
+        private ProjectionExpressionBuilder()
+        {
+            Operands = new List<OperandBuilder>();
+        }
+
+        private ProjectionExpressionBuilder(List<OperandBuilder> operands)
+            : this()
+        {
+            Operands = operands ?? new List<OperandBuilder>();
+        }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ProjectionExpressionBuilder"/> class.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="ProjectionExpressionBuilder"/> initialized with empty attribute names.
+        /// </returns>
+        public static ProjectionExpressionBuilder New()
+        {
+            return new ProjectionExpressionBuilder();
+        }
+
+        /// <summary>
+        /// Adds an attribute name (or path) to the projection expression.
+        /// </summary>
+        /// <param name="path">The attribute name or path (e.g., "Parent.Child[0].Grandchild").</param>
+        /// <returns>The current <see cref="ProjectionExpressionBuilder"/> for chaining.</returns>
+        public ProjectionExpressionBuilder WithName(string path)
+        {
+            Operands.Add(new NameBuilder(path));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds an already constructed name operand to the projection expression.
+        /// </summary>
+        /// <param name="nameBuilder">The <see cref="NameBuilder"/> representing the attribute name or path.</param>
+        /// <returns>The current <see cref="ProjectionExpressionBuilder"/> for chaining.</returns>
+        public ProjectionExpressionBuilder AddName(NameBuilder nameBuilder)
+        {
+            Operands.Add(nameBuilder ?? throw new ArgumentNullException(nameof(nameBuilder)));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds one or more attribute names to a projection expression.
+        /// </summary>
+        /// <param name="first">First <see cref="NameBuilder"/> to include.</param>
+        /// <param name="others">Optional additional <see cref="NameBuilder"/> operands.</param>
+        /// <returns>A new <see cref="ProjectionExpressionBuilder"/> that defines a projection expression using the specified attribute names.</returns>
+        public ProjectionExpressionBuilder NamesList(NameBuilder first, params NameBuilder[] others)
+        {
+            Operands.Add(first);
+            if (others is { Length: > 0 })
+            {
+                Operands.AddRange(others);
+            }
+            return this;
+        }
+
+        internal override ExpressionNode BuildExpressionTree(out string s)
+        {
+            if (Operands == null || Operands.Count == 0)
+            {
+                throw new InvalidOperationException("Cannot build projection expression tree: operand list is empty.");
+            }
+
+            s = "P";
+
+            var node = new ExpressionNode
+            {
+                Children = new Queue<ExpressionNode>()
+            };
+
+            var parts = new List<string>(Operands.Count);
+
+            foreach (var operand in Operands)
+            {
+                ExpressionNode child;
+                try
+                {
+                    child = operand.Build();
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException("Failed to build projection operand", ex);
+                }
+
+                node.Children.Enqueue(child);
+                parts.Add("#c");
+            }
+
+            node.FormatedExpression = string.Join(", ", parts);
+
+            return node;
+        }
+    }
+
+    /// <summary>
     /// The <see cref="KeyExpressionBuilder"/> class is used to construct key expressions for DynamoDB operations.
     /// </summary>
     public class KeyExpressionBuilder : ExpressionBuilder
