@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// Details for a specific optimization recommendation
+    /// Specific optimization strategies partners can implement to reduce costs.
     /// </summary>
     public partial class AwsProductOptimization
     {
@@ -40,7 +40,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Human-readable explanation of the optimization strategy
+        /// Human-readable explanation of the optimization strategy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SavingsAmount. 
         /// <para>
-        /// Quantified cost savings achievable by implementing this optimization
+        /// Quantified cost savings achievable by implementing this optimization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

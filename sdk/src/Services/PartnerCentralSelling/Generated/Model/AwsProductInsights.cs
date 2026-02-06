@@ -47,7 +47,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property AwsProducts. 
         /// <para>
-        /// Product-level details including costs and optimization recommendations
+        /// Product-level details including costs and optimization recommendations.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -71,8 +71,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// ISO 4217 currency code (e.g., &quot;USD&quot;) ensuring consistent representation
-        /// across calculations
+        /// ISO 4217 currency code.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -91,7 +90,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// Time period for spend amounts: &quot;Monthly&quot; or &quot;Annually&quot;
+        /// Time period for spend amounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -110,7 +109,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TotalAmount. 
         /// <para>
-        /// Total estimated spend for this source before optimizations
+        /// Total estimated spend for this source before optimizations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -129,7 +128,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TotalAmountByCategory. 
         /// <para>
-        /// Spend amounts mapped to AWS programs and modernization pathways
+        /// Spend amounts mapped to AWS programs and modernization pathways.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -153,7 +152,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TotalOptimizedAmount. 
         /// <para>
-        /// Total estimated spend after applying recommended optimizations
+        /// Total estimated spend after applying recommended optimizations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -172,7 +171,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TotalPotentialSavingsAmount. 
         /// <para>
-        /// Quantified savings achievable through implementing optimizations
+        /// Quantified savings achievable through implementing optimizations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

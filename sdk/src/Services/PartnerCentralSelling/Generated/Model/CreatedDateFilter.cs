@@ -30,48 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// Source-separated spend insights that provide independent analysis for AWS recommendations
-    /// and partner estimates.
+    /// Filter for opportunities based on creation date range.
     /// </summary>
-    public partial class AwsProductsSpendInsightsBySource
+    public partial class CreatedDateFilter
     {
-        private AwsProductInsights _aws;
-        private AwsProductInsights _partner;
+        private DateTime? _afterCreatedDate;
+        private DateTime? _beforeCreatedDate;
 
         /// <summary>
-        /// Gets and sets the property AWS. 
+        /// Gets and sets the property AfterCreatedDate. 
         /// <para>
-        /// AI-generated insights including recommended products from AWS.
+        /// Filter opportunities created after this date.
         /// </para>
         /// </summary>
-        public AwsProductInsights AWS
+        public DateTime? AfterCreatedDate
         {
-            get { return this._aws; }
-            set { this._aws = value; }
+            get { return this._afterCreatedDate; }
+            set { this._afterCreatedDate = value; }
         }
 
-        // Check to see if AWS property is set
-        internal bool IsSetAWS()
+        // Check to see if AfterCreatedDate property is set
+        internal bool IsSetAfterCreatedDate()
         {
-            return this._aws != null;
+            return this._afterCreatedDate.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Partner. 
+        /// Gets and sets the property BeforeCreatedDate. 
         /// <para>
-        /// Partner-sourced insights derived from Pricing Calculator URLs.
+        /// Filter opportunities created before this date.
         /// </para>
         /// </summary>
-        public AwsProductInsights Partner
+        public DateTime? BeforeCreatedDate
         {
-            get { return this._partner; }
-            set { this._partner = value; }
+            get { return this._beforeCreatedDate; }
+            set { this._beforeCreatedDate = value; }
         }
 
-        // Check to see if Partner property is set
-        internal bool IsSetPartner()
+        // Check to see if BeforeCreatedDate property is set
+        internal bool IsSetBeforeCreatedDate()
         {
-            return this._partner != null;
+            return this._beforeCreatedDate.HasValue; 
         }
 
     }
