@@ -88,6 +88,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                     response.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GeneralAuthorization", targetDepth))
+                {
+                    var unmarshaller = GeneralAuthorizationNameUnmarshaller.Instance;
+                    response.GeneralAuthorization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

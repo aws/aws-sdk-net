@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Add tags for the specified resource.
+    /// Adds tags to a specified resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonIoTManagedIntegrationsRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource to which to add tags.
+        /// The Amazon Resource Name (ARN) of the resource to which to add tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -60,7 +60,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A set of key/value pairs that are used to manage the resource
+        /// A set of key/value pairs that are used to manage the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]

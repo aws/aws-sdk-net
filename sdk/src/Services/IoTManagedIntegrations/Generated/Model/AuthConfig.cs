@@ -35,7 +35,27 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// </summary>
     public partial class AuthConfig
     {
+        private List<AuthMaterial> _generalAuthorization = AWSConfigs.InitializeCollections ? new List<AuthMaterial>() : null;
         private OAuthConfig _oAuth;
+
+        /// <summary>
+        /// Gets and sets the property GeneralAuthorization. 
+        /// <para>
+        /// The authorization materials for General Authorization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<AuthMaterial> GeneralAuthorization
+        {
+            get { return this._generalAuthorization; }
+            set { this._generalAuthorization = value; }
+        }
+
+        // Check to see if GeneralAuthorization property is set
+        internal bool IsSetGeneralAuthorization()
+        {
+            return this._generalAuthorization != null && (this._generalAuthorization.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property OAuth. 

@@ -4818,7 +4818,7 @@ namespace Amazon.IoTManagedIntegrations
         #region  ListTagsForResource
 
         /// <summary>
-        /// List tags for the specified resource.
+        /// Lists the tags for a specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -5485,6 +5485,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
         /// User is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
@@ -5631,7 +5634,7 @@ namespace Amazon.IoTManagedIntegrations
         #region  TagResource
 
         /// <summary>
-        /// Add tags for the specified resource.
+        /// Adds tags to a specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -5700,7 +5703,7 @@ namespace Amazon.IoTManagedIntegrations
         #region  UntagResource
 
         /// <summary>
-        /// Remove tags for the specified resource.
+        /// Removes tags from a specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

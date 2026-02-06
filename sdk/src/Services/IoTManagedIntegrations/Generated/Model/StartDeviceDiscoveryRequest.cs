@@ -42,6 +42,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private DiscoveryAuthMaterialType _authenticationMaterialType;
         private string _clientToken;
         private string _connectorAssociationIdentifier;
+        private List<string> _connectorDeviceIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _controllerIdentifier;
         private Dictionary<string, string> _customProtocolDetail = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DiscoveryType _discoveryType;
@@ -145,6 +146,25 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetConnectorAssociationIdentifier()
         {
             return this._connectorAssociationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorDeviceIdList. 
+        /// <para>
+        /// Used as a filter for PLA discoveries.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> ConnectorDeviceIdList
+        {
+            get { return this._connectorDeviceIdList; }
+            set { this._connectorDeviceIdList = value; }
+        }
+
+        // Check to see if ConnectorDeviceIdList property is set
+        internal bool IsSetConnectorDeviceIdList()
+        {
+            return this._connectorDeviceIdList != null && (this._connectorDeviceIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

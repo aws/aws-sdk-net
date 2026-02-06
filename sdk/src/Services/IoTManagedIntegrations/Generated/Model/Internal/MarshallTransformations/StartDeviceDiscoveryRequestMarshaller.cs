@@ -97,6 +97,17 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectorAssociationIdentifier);
                 }
 
+                if(publicRequest.IsSetConnectorDeviceIdList())
+                {
+                    context.Writer.WritePropertyName("ConnectorDeviceIdList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestConnectorDeviceIdListListValue in publicRequest.ConnectorDeviceIdList)
+                    {
+                            context.Writer.Write(publicRequestConnectorDeviceIdListListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetControllerIdentifier())
                 {
                     context.Writer.WritePropertyName("ControllerIdentifier");

@@ -34,7 +34,27 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// </summary>
     public partial class AuthConfigUpdate
     {
+        private GeneralAuthorizationUpdate _generalAuthorizationUpdate;
         private OAuthUpdate _oAuthUpdate;
+
+        /// <summary>
+        /// Gets and sets the property GeneralAuthorizationUpdate. 
+        /// <para>
+        /// The General Authorization update information containing authorization materials to
+        /// add or update in Kinesis Data Streams.
+        /// </para>
+        /// </summary>
+        public GeneralAuthorizationUpdate GeneralAuthorizationUpdate
+        {
+            get { return this._generalAuthorizationUpdate; }
+            set { this._generalAuthorizationUpdate = value; }
+        }
+
+        // Check to see if GeneralAuthorizationUpdate property is set
+        internal bool IsSetGeneralAuthorizationUpdate()
+        {
+            return this._generalAuthorizationUpdate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OAuthUpdate. 

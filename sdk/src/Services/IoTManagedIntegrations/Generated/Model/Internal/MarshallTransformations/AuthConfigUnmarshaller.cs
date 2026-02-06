@@ -66,6 +66,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("GeneralAuthorization", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AuthMaterial, AuthMaterialUnmarshaller>(AuthMaterialUnmarshaller.Instance);
+                    unmarshalledObject.GeneralAuthorization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("oAuth", targetDepth))
                 {
                     var unmarshaller = OAuthConfigUnmarshaller.Instance;

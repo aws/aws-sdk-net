@@ -218,7 +218,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Security Specification</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=6)]
+        [AWSProperty(Min=1, Max=6)]
         public string OperationVersion
         {
             get { return this._operationVersion; }
@@ -238,7 +238,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// on the managed thing.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=100, Max=550)]
+        [AWSProperty(Min=100, Max=550)]
         public int StatusCode
         {
             get { return this._statusCode.GetValueOrDefault(); }

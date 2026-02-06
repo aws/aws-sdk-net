@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AuthConfig Marshaller
+    /// GeneralAuthorizationUpdate Marshaller
     /// </summary>
-    public class AuthConfigMarshaller : IRequestMarshaller<AuthConfig, JsonMarshallerContext> 
+    public class GeneralAuthorizationUpdateMarshaller : IRequestMarshaller<GeneralAuthorizationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,35 +44,40 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AuthConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(GeneralAuthorizationUpdate requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetGeneralAuthorization())
+            if(requestObject.IsSetAuthMaterialsToAdd())
             {
-                context.Writer.WritePropertyName("GeneralAuthorization");
+                context.Writer.WritePropertyName("AuthMaterialsToAdd");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectGeneralAuthorizationListValue in requestObject.GeneralAuthorization)
+                foreach(var requestObjectAuthMaterialsToAddListValue in requestObject.AuthMaterialsToAdd)
                 {
                     context.Writer.WriteObjectStart();
 
                     var marshaller = AuthMaterialMarshaller.Instance;
-                    marshaller.Marshall(requestObjectGeneralAuthorizationListValue, context);
+                    marshaller.Marshall(requestObjectAuthMaterialsToAddListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetOAuth())
+            if(requestObject.IsSetAuthMaterialsToUpdate())
             {
-                context.Writer.WritePropertyName("oAuth");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AuthMaterialsToUpdate");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAuthMaterialsToUpdateListValue in requestObject.AuthMaterialsToUpdate)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = OAuthConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.OAuth, context);
+                    var marshaller = AuthMaterialMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAuthMaterialsToUpdateListValue, context);
 
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -80,7 +85,7 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AuthConfigMarshaller Instance = new AuthConfigMarshaller();
+        public readonly static GeneralAuthorizationUpdateMarshaller Instance = new GeneralAuthorizationUpdateMarshaller();
 
     }
 }

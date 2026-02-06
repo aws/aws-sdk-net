@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedThingAssociation Object
+    /// Response Unmarshaller for AuthMaterial Object
     /// </summary>  
-    public class ManagedThingAssociationUnmarshaller : IUnmarshaller<ManagedThingAssociation, XmlUnmarshallerContext>, IUnmarshaller<ManagedThingAssociation, JsonUnmarshallerContext>
+    public class AuthMaterialUnmarshaller : IUnmarshaller<AuthMaterial, XmlUnmarshallerContext>, IUnmarshaller<AuthMaterial, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManagedThingAssociation IUnmarshaller<ManagedThingAssociation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AuthMaterial IUnmarshaller<AuthMaterial, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ManagedThingAssociation Unmarshall(JsonUnmarshallerContext context)
+        public AuthMaterial Unmarshall(JsonUnmarshallerContext context)
         {
-            ManagedThingAssociation unmarshalledObject = new ManagedThingAssociation();
+            AuthMaterial unmarshalledObject = new AuthMaterial();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AccountAssociationId", targetDepth))
+                if (context.TestExpression("AuthMaterialName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountAssociationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthMaterialName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ManagedThingAssociationStatus", targetDepth))
+                if (context.TestExpression("SecretsManager", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManagedThingAssociationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ManagedThingId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManagedThingId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SecretsManagerUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManager = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedThingAssociationUnmarshaller _instance = new ManagedThingAssociationUnmarshaller();        
+        private static AuthMaterialUnmarshaller _instance = new AuthMaterialUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedThingAssociationUnmarshaller Instance
+        public static AuthMaterialUnmarshaller Instance
         {
             get
             {

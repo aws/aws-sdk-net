@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AuthConfig Marshaller
+    /// AuthMaterial Marshaller
     /// </summary>
-    public class AuthConfigMarshaller : IRequestMarshaller<AuthConfig, JsonMarshallerContext> 
+    public class AuthMaterialMarshaller : IRequestMarshaller<AuthMaterial, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,33 +44,23 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AuthConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AuthMaterial requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetGeneralAuthorization())
+            if(requestObject.IsSetAuthMaterialName())
             {
-                context.Writer.WritePropertyName("GeneralAuthorization");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectGeneralAuthorizationListValue in requestObject.GeneralAuthorization)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AuthMaterialMarshaller.Instance;
-                    marshaller.Marshall(requestObjectGeneralAuthorizationListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("AuthMaterialName");
+                context.Writer.Write(requestObject.AuthMaterialName);
             }
 
-            if(requestObject.IsSetOAuth())
+            if(requestObject.IsSetSecretsManager())
             {
-                context.Writer.WritePropertyName("oAuth");
+                context.Writer.WritePropertyName("SecretsManager");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OAuthConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.OAuth, context);
+                var marshaller = SecretsManagerMarshaller.Instance;
+                marshaller.Marshall(requestObject.SecretsManager, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -80,7 +70,7 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AuthConfigMarshaller Instance = new AuthConfigMarshaller();
+        public readonly static AuthMaterialMarshaller Instance = new AuthMaterialMarshaller();
 
     }
 }
