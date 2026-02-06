@@ -104,6 +104,7 @@ namespace Amazon.Deadline.Model
         /// The token for the next set of results, or <c>null</c> to start from the beginning.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

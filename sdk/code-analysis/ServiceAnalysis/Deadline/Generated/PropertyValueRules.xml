@@ -1060,6 +1060,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.GetSessionsStatisticsAggregationRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.GetSessionsStatisticsAggregationResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepRequest.FarmId</property>
     <pattern>farm-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -1195,6 +1205,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListAvailableMeteredProductsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListAvailableMeteredProductsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListBudgetsRequest.FarmId</property>
     <pattern>farm-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -1202,6 +1222,16 @@
     <property>Amazon.Deadline.Model.ListBudgetsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListBudgetsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListBudgetsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmMembersRequest.FarmId</property>
@@ -1213,15 +1243,35 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListFarmMembersRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListFarmMembersResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListFarmsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFarmsRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
     <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListFarmsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetMembersRequest.FarmId</property>
@@ -1235,6 +1285,16 @@
     <property>Amazon.Deadline.Model.ListFleetMembersRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListFleetMembersRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListFleetMembersResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetsRequest.DisplayName</property>
@@ -1251,10 +1311,20 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListFleetsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListFleetsRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
     <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListFleetsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersRequest.FarmId</property>
@@ -1270,8 +1340,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobMembersRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobMembersResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.FarmId</property>
@@ -1287,8 +1367,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobParameterDefinitionsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobsRequest.FarmId</property>
@@ -1298,6 +1388,11 @@
     <property>Amazon.Deadline.Model.ListJobsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobsRequest.PrincipalId</property>
@@ -1310,9 +1405,24 @@
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListLicenseEndpointsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListLicenseEndpointsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListLicenseEndpointsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListLimitsRequest.FarmId</property>
@@ -1324,6 +1434,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListLimitsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListLimitsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListMeteredProductsRequest.LicenseEndpointId</property>
     <pattern>le-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -1333,9 +1453,29 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMeteredProductsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMeteredProductsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListMonitorsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMonitorsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMonitorsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueEnvironmentsRequest.FarmId</property>
@@ -1347,8 +1487,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueueEnvironmentsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueEnvironmentsRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueueEnvironmentsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueFleetAssociationsRequest.FarmId</property>
@@ -1364,8 +1514,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueueFleetAssociationsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueFleetAssociationsRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueueFleetAssociationsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueLimitAssociationsRequest.FarmId</property>
@@ -1381,8 +1541,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueueLimitAssociationsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueLimitAssociationsRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueueLimitAssociationsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueMembersRequest.FarmId</property>
@@ -1394,8 +1564,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueueMembersRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueueMembersRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueueMembersResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueuesRequest.FarmId</property>
@@ -1407,10 +1587,20 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueuesRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListQueuesRequest.PrincipalId</property>
     <min>1</min>
     <max>47</max>
     <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListQueuesResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.FarmId</property>
@@ -1426,6 +1616,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListSessionActionsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -1436,6 +1631,11 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionActionsRequest.TaskId</property>
     <pattern>task-[0-9a-f]{32}-(0|([1-9][0-9]{0,9}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListSessionActionsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsRequest.FarmId</property>
@@ -1451,8 +1651,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListSessionsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListSessionsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsForWorkerRequest.FarmId</property>
@@ -1468,8 +1678,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListSessionsForWorkerRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListSessionsForWorkerRequest.WorkerId</property>
     <pattern>worker-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListSessionsForWorkerResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.FarmId</property>
@@ -1485,12 +1705,22 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStepConsumersRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepConsumersRequest.StepId</property>
     <pattern>step-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStepConsumersResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.FarmId</property>
@@ -1506,12 +1736,22 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStepDependenciesRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepDependenciesRequest.StepId</property>
     <pattern>step-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStepDependenciesResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepsRequest.FarmId</property>
@@ -1527,8 +1767,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStepsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListStepsRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStepsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesRequest.FarmId</property>
@@ -1540,6 +1790,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStorageProfilesRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStorageProfilesResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesForQueueRequest.FarmId</property>
     <pattern>farm-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -1549,8 +1809,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStorageProfilesForQueueRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListStorageProfilesForQueueRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListStorageProfilesForQueueResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.FarmId</property>
@@ -1566,12 +1836,22 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListTasksRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListTasksRequest.StepId</property>
     <pattern>step-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListTasksResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListWorkersRequest.FarmId</property>
@@ -1585,6 +1865,16 @@
     <property>Amazon.Deadline.Model.ListWorkersRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListWorkersRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListWorkersResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.PutMeteredProductRequest.LicenseEndpointId</property>

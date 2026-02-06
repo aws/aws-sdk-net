@@ -157,6 +157,20 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.StorageProfileId);
             }
 
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTargetTaskRunStatus())
             {
                 context.Writer.WritePropertyName("targetTaskRunStatus");
