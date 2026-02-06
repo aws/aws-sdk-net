@@ -563,6 +563,26 @@ namespace SDKDocGenerator.Writers
             AddSectionClosing(writer);
         }
 
+        /// <summary>
+        /// Maps platform folder names to short display names suitable for inline badges.
+        /// </summary>
+        protected string GetPlatformShortDisplayName(string platform)
+        {
+            switch (platform.ToLowerInvariant())
+            {
+                case "net472":
+                    return ".NET 4.7.2";
+                case "net8.0":
+                case "net80":
+                    return ".NET 8";
+                case "netstandard2.0":
+                case "netstandard20":
+                    return ".NET Standard 2.0";
+                default:
+                    return platform;
+            }
+        }
+
         protected void AddSyntax(TextWriter writer, string csharpSyntax)
         {
             if (string.IsNullOrEmpty(csharpSyntax))

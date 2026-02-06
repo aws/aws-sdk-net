@@ -24,6 +24,12 @@ namespace SDKDocGenerator
             "AWSSDK.Extensions.Bedrock.MEAI"
         };
 
+        /// <summary>
+        /// Platforms to scan for APIs not present in the primary platform.
+        /// This enables documentation of H2-only APIs that exist in modern frameworks.
+        /// </summary>
+        private static readonly string[] SupplementalPlatforms = { "net8.0" };
+
         public GeneratorOptions Options { get; private set; }
         
         /// <summary>
@@ -103,53 +109,176 @@ namespace SDKDocGenerator
             GenerationManifest coreManifest = null;
             DeferredTypesProvider deferredTypes = new DeferredTypesProvider(null);
 
-            // Generate the Code Examples fragments for all services            
+            // Generate the Code Examples fragments for all services
             ExampleMetadataParser.GenerateExampleFragments(options.ExampleMetaJson, options.ExamplesErrorFile);
 
-            // Process the service manifests
+            // Find Core manifest first - we need to pre-load its documentation
+            // because service types may inherit from Core types and need to look up
+            // documentation for inherited members (e.g., ReadWriteTimeout on ClientConfig)
             foreach (var m in manifests)
             {
                 if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
                 {
                     coreManifest = m;
-                    continue;
+                    break;
+                }
+            }
+
+            // Pre-load Core documentation for all platforms before generating service docs
+            if (coreManifest != null)
+            {
+                coreManifest.PreloadDocumentation();
+            }
+
+            // Build platform availability maps for all services
+            // This scans ALL platforms upfront and creates { memberSignature → Set<platforms> } maps
+            // that are used for both page generation decisions AND badge rendering.
+            var availablePlatforms = GetAvailablePlatforms();
+
+            Info("Building platform availability maps for all services...");
+            var mapBuilder = new PlatformMap.PlatformMapBuilder(Options);
+
+            foreach (var manifest in manifests)
+            {
+                PlatformMap.PlatformAvailabilityMap map = null;
+                try
+                {
+                    map = mapBuilder.BuildMap(
+                        manifest.ServiceName,
+                        manifest.AssemblyName,
+                        availablePlatforms);
+
+                    manifest.AttachPlatformMap(map);
+
+                    if (Options.Verbose)
+                    {
+                        Info("  Built platform map for {0}: {1} members across {2} platforms ({3} restricted)",
+                            manifest.ServiceName,
+                            map.MemberCount,
+                            map.AllPlatforms.Count,
+                            map.PlatformRestrictedMemberCount);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Dispose the map if it was built but attachment failed (C2)
+                    map?.Dispose();
+                    // Log but don't fail entire generation if one service fails
+                    Info("  WARNING: Failed to build platform map for {0}: {1}",
+                        manifest.ServiceName, ex.Message);
+                }
+            }
+
+            try
+            {
+                foreach (var m in manifests)
+                {
+                    if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        continue;
+                    }
+
+                    m.Generate(deferredTypes, TOCWriter);
                 }
 
-                m.Generate(deferredTypes, TOCWriter);
+                // now all service assemblies are processed, handle core plus any types in those assemblies that
+                // we elected to defer until we processed core.
+                coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
+                coreManifest.Generate(null, TOCWriter);
+
+                // Generate pages for platform-exclusive APIs (e.g., H2 methods only in net8.0)
+                // The unified platform map already contains wrappers for exclusive members
+                if (Options.UseLegacySupplemental)
+                {
+                    // Legacy path: Use old supplemental manifest approach (for rollback safety)
+                    Info("Using legacy supplemental manifest approach...");
+                    ProcessLegacySupplementalPlatforms(manifests, coreManifest);
+                }
+                else
+                {
+                    // New unified path: Use wrappers already stored in the platform map
+                    Info("Generating exclusive member pages from unified platform map...");
+
+                    // Re-load Core documentation before exclusive page generation.
+                    // Class pages may contain properties inherited from Core (e.g., ReadWriteTimeout).
+                    if (coreManifest != null)
+                    {
+                        coreManifest.PreloadDocumentation();
+                    }
+
+                    foreach (var manifest in manifests)
+                    {
+                        if (manifest.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase))
+                            continue;
+
+                        manifest.GenerateExclusivePagesFromMap(TOCWriter);
+                    }
+                }
+
+                Info("Generating table of contents entries...");
+                TOCWriter.Write();
+
+                CopyVersionInfoManifest();
+
+                if (options.WriteStaticContent)
+                {
+                    Info("Generating/copying static content:");
+                    Info("...creating landing page");
+                    var lpWriter = new LandingPageWriter(options);
+                    lpWriter.Write();
+
+                    Info("...copying static resources");
+                    var sourceLocation = Directory.GetParent(typeof(SdkDocGenerator).Assembly.Location).FullName;
+                    FileUtilties.FolderCopy(Path.Combine(sourceLocation, "output-files"), options.OutputFolder, true);
+                }
+
+                // Write out all the redirect rules for doc cross-linking.
+                using (Stream stream = File.Open(Path.Combine(options.OutputFolder, SDKDocRedirectWriter.RedirectFileName), FileMode.Create))
+                {
+                    SDKDocRedirectWriter.Write(stream);
+                }
+
+                // Remove example fragments
+                ExampleMetadataParser.CleanupExampleFragments();
             }
-
-            // now all service assemblies are processed, handle core plus any types in those assemblies that 
-            // we elected to defer until we processed core.
-            coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
-            coreManifest.Generate(null, TOCWriter);
-
-            Info("Generating table of contents entries...");
-            TOCWriter.Write();
-
-            CopyVersionInfoManifest();
-
-            if (options.WriteStaticContent)
+            finally
             {
-                Info("Generating/copying static content:");
-                Info("...creating landing page");
-                var lpWriter = new LandingPageWriter(options);
-                lpWriter.Write();
-
-                Info("...copying static resources");
-                var sourceLocation = Directory.GetParent(typeof(SdkDocGenerator).Assembly.Location).FullName;
-                FileUtilties.FolderCopy(Path.Combine(sourceLocation, "output-files"), options.OutputFolder, true);
+                // Dispose all platform maps to release assembly contexts (C1: ensures cleanup on exception)
+                Info("Releasing platform map resources...");
+                foreach (var manifest in manifests)
+                {
+                    manifest.DisposePlatformMap();
+                }
             }
-
-            // Write out all the redirect rules for doc cross-linking.
-            using (Stream stream = File.Open(Path.Combine(options.OutputFolder, SDKDocRedirectWriter.RedirectFileName), FileMode.Create))
-            {
-                SDKDocRedirectWriter.Write(stream);
-            }
-
-            // Remove example fragments
-            ExampleMetadataParser.CleanupExampleFragments();
 
             return 0;
+        }
+
+        /// <summary>
+        /// Legacy supplemental processing using old manifest-based approach.
+        /// Kept for rollback safety; will be removed in a future release.
+        ///
+        /// This uses the TRUE legacy approach:
+        /// 1. Creates supplemental manifests using the 5-parameter constructor
+        /// 2. Calls GenerateSupplementalOnly() which compares methods between platforms
+        /// </summary>
+        private void ProcessLegacySupplementalPlatforms(IList<GenerationManifest> manifests, GenerationManifest coreManifest)
+        {
+            // Re-load Core documentation before supplemental processing.
+            if (coreManifest != null)
+            {
+                coreManifest.PreloadDocumentation();
+            }
+
+            var availablePlatforms = GetAvailablePlatforms();
+
+            // Use the true legacy approach: ConstructSupplementalManifests + GenerateSupplementalOnly
+            var supplementalManifests = ConstructSupplementalManifests(manifests, availablePlatforms);
+
+            foreach (var supManifest in supplementalManifests)
+            {
+                supManifest.GenerateSupplementalOnly(TOCWriter);
+            }
         }
 
         /// <summary>
@@ -251,6 +380,72 @@ namespace SDKDocGenerator
             }
 
             return manifests;
+        }
+
+        /// <summary>
+        /// Constructs supplemental manifests for platforms that may contain APIs
+        /// not present in the primary platform (e.g., H2 eventstream APIs in net8.0).
+        /// </summary>
+        private IList<GenerationManifest> ConstructSupplementalManifests(
+            IList<GenerationManifest> primaryManifests,
+            IEnumerable<string> availablePlatforms)
+        {
+            var supplementalManifests = new List<GenerationManifest>();
+
+            Info("Discovering supplemental platforms for additional APIs...");
+
+            foreach (var supPlatform in SupplementalPlatforms)
+            {
+                if (supPlatform.Equals(Options.Platform, StringComparison.OrdinalIgnoreCase))
+                    continue; // Skip if supplemental is same as primary
+
+                var supAssemblyPath = Path.Combine(Options.SDKAssembliesRoot, supPlatform);
+                if (!Directory.Exists(supAssemblyPath))
+                {
+                    InfoVerbose("Supplemental platform folder not found: {0}", supAssemblyPath);
+                    continue;
+                }
+
+                Info("Discovering supplemental assemblies in {0}", supAssemblyPath);
+
+                foreach (var primary in primaryManifests)
+                {
+                    if (primary.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    var supAssemblyFile = Path.Combine(supAssemblyPath, Path.GetFileName(primary.AssemblyPath));
+                    if (!File.Exists(supAssemblyFile))
+                        continue;
+
+                    var supManifest = new GenerationManifest(
+                        supAssemblyFile,
+                        Options.ComputedContentFolder,
+                        availablePlatforms,
+                        Options,
+                        primary);
+
+                    if (supManifest.HasSupplementalMethods)
+                    {
+                        supplementalManifests.Add(supManifest);
+                        Info("Found {0} supplemental method(s) in {1}/{2}",
+                            supManifest.SupplementalMethodCount,
+                            supPlatform,
+                            Path.GetFileName(supAssemblyFile));
+                    }
+                }
+            }
+
+            Info("Found {0} assemblies with supplemental content", supplementalManifests.Count);
+            return supplementalManifests;
+        }
+
+        /// <summary>
+        /// Returns the list of available platform folder names under the SDK assemblies root.
+        /// </summary>
+        private List<string> GetAvailablePlatforms()
+        {
+            var platformSubfolders = Directory.GetDirectories(Options.SDKAssembliesRoot, "*", SearchOption.TopDirectoryOnly);
+            return platformSubfolders.Select(Path.GetFileName).ToList();
         }
 
         private void Info(string message)
