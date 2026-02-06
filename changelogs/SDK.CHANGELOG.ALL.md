@@ -1,3 +1,15 @@
+### 3.7.1218.0 (2026-02-06 19:19 UTC)
+* BedrockDataAutomationRuntime (3.7.504.0)
+	* Add OutputConfiguration to InvokeDataAutomation input and output to support S3 output
+* Deadline (3.7.506.0)
+	* Adds support for tagging jobs during job creation
+* IoTManagedIntegrations (3.7.505.0)
+	* Adding support for Custom(General) Authorization in managed integrations for AWS IoT Device Management cloud connectors.
+* PartnerCentralSelling (3.7.507.0)
+	* Releasing AWS Opportunity Snapshots for SDK release.
+* SageMaker (3.7.528.0)
+	* Adding g7e instance support in Sagemaker Training
+
 ### 3.7.1217.0 (2026-02-05 19:18 UTC)
 * ARCRegionswitch (3.7.504.0)
 	* Updates documentation for ARC Region switch and provides stronger validation for Amazon Aurora Global Database execution block parameters.
