@@ -68,85 +68,105 @@ namespace SDKDocGenerator.PlatformMap
             // Primary platform is what the Options specify (usually net472)
             var primaryPlatform = _options.Platform;
 
-            // First pass: Scan primary platform to establish baseline signatures
-            var primaryAssemblyPath = Path.GetFullPath(Path.Combine(_options.SDKAssembliesRoot, primaryPlatform, assemblyName + ".dll"));
-            if (File.Exists(primaryAssemblyPath))
+            try
             {
-                var context = LoadAndScanPlatform(
-                    primaryAssemblyPath,
-                    primaryPlatform,
-                    serviceName,
-                    memberIndex,
-                    isPrimary: true);
-
-                if (context != null)
-                {
-                    loadedContexts.Add(context);
-                    scannedPlatforms.Add(primaryPlatform);
-                    if (_options.Verbose)
-                        Trace.WriteLine($"  Scanned primary platform {primaryPlatform}: {memberIndex.Count} signatures");
-                }
-            }
-
-            // Second pass: Scan supplemental platforms and capture wrappers for exclusive members
-            foreach (var platform in platforms)
-            {
-                if (platform.Equals(primaryPlatform, StringComparison.OrdinalIgnoreCase))
-                    continue; // Already scanned
-
-                var assemblyPath = Path.GetFullPath(Path.Combine(_options.SDKAssembliesRoot, platform, assemblyName + ".dll"));
-                if (!File.Exists(assemblyPath))
-                {
-                    if (_options.Verbose)
-                        Trace.WriteLine($"  Skipping {platform}: assembly not found");
-                    continue;
-                }
-
-                try
+                // First pass: Scan primary platform to establish baseline signatures
+                var primaryAssemblyPath = Path.GetFullPath(Path.Combine(_options.SDKAssembliesRoot, primaryPlatform, assemblyName + ".dll"));
+                if (File.Exists(primaryAssemblyPath))
                 {
                     var context = LoadAndScanPlatform(
-                        assemblyPath,
-                        platform,
+                        primaryAssemblyPath,
+                        primaryPlatform,
                         serviceName,
                         memberIndex,
-                        isPrimary: false);
+                        isPrimary: true);
 
                     if (context != null)
                     {
                         loadedContexts.Add(context);
-                        scannedPlatforms.Add(platform);
+                        scannedPlatforms.Add(primaryPlatform);
                         if (_options.Verbose)
-                            Trace.WriteLine($"  Scanned {platform}: {memberIndex.Count} unique signatures total");
+                            Trace.WriteLine($"  Scanned primary platform {primaryPlatform}: {memberIndex.Count} signatures");
                     }
                 }
-                catch (Exception ex)
+
+                // Second pass: Scan supplemental platforms and capture wrappers for exclusive members
+                foreach (var platform in platforms)
                 {
-                    Trace.WriteLine($"  WARNING: Failed to scan {platform}: {ex.Message}");
-                    // Continue with other platforms even if one fails
+                    if (platform.Equals(primaryPlatform, StringComparison.OrdinalIgnoreCase))
+                        continue; // Already scanned
+
+                    var assemblyPath = Path.GetFullPath(Path.Combine(_options.SDKAssembliesRoot, platform, assemblyName + ".dll"));
+                    if (!File.Exists(assemblyPath))
+                    {
+                        if (_options.Verbose)
+                            Trace.WriteLine($"  Skipping {platform}: assembly not found");
+                        continue;
+                    }
+
+                    try
+                    {
+                        var context = LoadAndScanPlatform(
+                            assemblyPath,
+                            platform,
+                            serviceName,
+                            memberIndex,
+                            isPrimary: false);
+
+                        if (context != null)
+                        {
+                            loadedContexts.Add(context);
+                            scannedPlatforms.Add(platform);
+                            if (_options.Verbose)
+                                Trace.WriteLine($"  Scanned {platform}: {memberIndex.Count} unique signatures total");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Trace.WriteLine($"  WARNING: Failed to scan {platform}: {ex.Message}");
+                        // Continue with other platforms even if one fails
+                    }
                 }
-            }
 
-            if (!scannedPlatforms.Any())
+                if (!scannedPlatforms.Any())
+                {
+                    throw new InvalidOperationException(
+                        $"Failed to scan any platforms for {serviceName}. " +
+                        $"Checked platforms: {string.Join(", ", platforms)}");
+                }
+
+                // After all platforms scanned, identify and store wrappers for exclusive methods
+                IdentifyAndStoreExclusiveWrappers(memberIndex, primaryPlatform, loadedContexts);
+
+                var map = new PlatformAvailabilityMap(
+                    serviceName,
+                    primaryPlatform,
+                    memberIndex,
+                    scannedPlatforms,
+                    loadedContexts);
+
+                if (_options.Verbose)
+                    map.WriteToTrace();
+
+                return map;
+            }
+            catch
             {
-                throw new InvalidOperationException(
-                    $"Failed to scan any platforms for {serviceName}. " +
-                    $"Checked platforms: {string.Join(", ", platforms)}");
+                // Dispose all loaded contexts on partial failure to prevent resource leaks (C3)
+                foreach (var context in loadedContexts)
+                {
+                    try
+                    {
+                        context.Dispose();
+                    }
+                    catch (Exception disposeEx)
+                    {
+                        Trace.WriteLine($"  WARNING: Failed to dispose context during cleanup: {disposeEx.Message}");
+                    }
+                }
+
+                throw;
             }
-
-            // After all platforms scanned, identify and store wrappers for exclusive methods
-            IdentifyAndStoreExclusiveWrappers(memberIndex, primaryPlatform, loadedContexts);
-
-            var map = new PlatformAvailabilityMap(
-                serviceName,
-                primaryPlatform,
-                memberIndex,
-                scannedPlatforms,
-                loadedContexts);
-
-            if (_options.Verbose)
-                map.WriteToTrace();
-
-            return map;
         }
 
         #endregion

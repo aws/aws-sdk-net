@@ -76,7 +76,7 @@ namespace SDKDocGenerator.PlatformMap
             if (_disposed)
                 return;
 
-            Assembly?.Unload();
+            Assembly.Unload();
             _disposed = true;
         }
 

@@ -19,6 +19,10 @@ namespace SDKDocGenerator.PlatformMap
     /// </summary>
     public static class MemberSignature
     {
+        /// <summary>
+        /// Length of the NDoc member-type prefix (e.g., "T:", "M:", "P:").
+        /// </summary>
+        private const int MemberTypePrefixLength = 2;
         #region Type Signatures
 
         /// <summary>
@@ -139,7 +143,7 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public static string GetMemberType(string signature)
         {
-            if (string.IsNullOrEmpty(signature) || signature.Length < 2 || signature[1] != ':')
+            if (string.IsNullOrEmpty(signature) || signature.Length < MemberTypePrefixLength || signature[1] != ':')
                 throw new ArgumentException("Invalid signature format", nameof(signature));
 
             return signature.Substring(0, 1);
@@ -151,10 +155,10 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public static string GetMemberName(string signature)
         {
-            if (string.IsNullOrEmpty(signature) || signature.Length < 2 || signature[1] != ':')
+            if (string.IsNullOrEmpty(signature) || signature.Length < MemberTypePrefixLength || signature[1] != ':')
                 throw new ArgumentException("Invalid signature format", nameof(signature));
 
-            var nameStart = 2; // Skip "T:", "M:", etc.
+            var nameStart = MemberTypePrefixLength; // Skip "T:", "M:", etc.
             var nameEnd = signature.IndexOfAny(new[] { '(', '<' }, nameStart);
 
             return nameEnd == -1

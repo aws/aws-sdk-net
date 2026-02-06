@@ -333,6 +333,9 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public IEnumerable<PlatformMemberEntry> GetExclusiveMethodEntries()
         {
+            if (_disposed)
+                throw new ObjectDisposedException(nameof(PlatformAvailabilityMap));
+
             return _memberIndex.Values.Where(e => e.ExclusiveMethodWrapper != null);
         }
 
@@ -341,6 +344,9 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public PlatformAssemblyContext GetAssemblyContext(string platform)
         {
+            if (_disposed)
+                throw new ObjectDisposedException(nameof(PlatformAvailabilityMap));
+
             return _loadedContexts.FirstOrDefault(c =>
                 c.Platform.Equals(platform, StringComparison.OrdinalIgnoreCase));
         }
@@ -348,6 +354,10 @@ namespace SDKDocGenerator.PlatformMap
         #endregion
 
         #region Statistics
+
+        // Note: Statistics properties below recompute on each access via LINQ.
+        // This is acceptable for current usage (diagnostics/logging). If called
+        // in tight loops, consider caching the results.
 
         /// <summary>
         /// Number of members available on all platforms.
