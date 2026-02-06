@@ -279,9 +279,7 @@
                         "injectXmlPropertySetter":[
                             "set { this.Headers.ContentType = value; }"
                         ],
-                        "injectXmlPrivateMemberAssignment" :[
-                            ""
-                        ],
+                        "skipPrivateMember" : true,
                         "skipXmlIsSet" : true
                     }
                 },
@@ -802,9 +800,7 @@
                         "injectXmlIsSet":[
                             "return Type != null;"
                         ],
-                        "injectXmlPrivateMemberAssignment":[
-                            ""
-                        ]
+                        "skipPrivateMember" : true
                     }
                 }
             ],
@@ -2282,10 +2278,11 @@
                     "TagSet":{"injectXmlMarshallCode":["request.Headers[\"x-amz-tagging\"] = Amazon.S3.Util.AmazonS3Util.TagSetToQueryString(publicRequest.TagSet);"]}
                 },
                 {
-                    "ContentType":{"injectXmlPropertyGetter":["get { return this.Headers.ContentType; }"],
-                    "injectXmlPropertySetter":["set { this.Headers.ContentType = value; }"],
-                    "skipXmlIsSet":true,
-                    "injectXmlPrivateMemberAssignment":[""]
+                    "ContentType": {
+                        "injectXmlPropertyGetter":["get { return this.Headers.ContentType; }"],
+                        "injectXmlPropertySetter":["set { this.Headers.ContentType = value; }"],
+                        "skipXmlIsSet" : true,
+                        "skipPrivateMember" : true
                     }
                 },
                 {

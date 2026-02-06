@@ -177,7 +177,9 @@ namespace <#=this.Config.Namespace#>.Model
             {
                 foreach(var member in this.Structure.Members)
                 {
-                    if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream))
+                    this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier);
+                    if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream)
+                    ||  (injectModifier != null && injectModifier.SkipPrivateMember))
                         continue;
 
                     if (this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(member.ModeledName))
@@ -202,7 +204,7 @@ namespace <#=this.Config.Namespace#>.Model
                     {
                         continue;   
                     }
-                    if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPrivateMemberAssignment.Count > 0)
+                    if (injectModifier != null && injectModifier.InjectXmlPrivateMemberAssignment.Count > 0)
                     {
 
 #>

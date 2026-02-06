@@ -712,16 +712,19 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Overrides the base class that structures inherit from.
-        /// Here is an example of the usage
+        /// Gets the alternate base class that a shape should inherit from instead of the default base class.
+        /// This customization allows generated shapes to inherit from custom base classes that provide
+        /// shared functionality or properties across multiple shapes.
+        /// Example usage:
         ///     "inheritAlternateBaseClass":{
         ///        "CreateBucketRequest": {
         ///          "alternateBaseClass" : "PutWithAclRequest"
         ///        }
         ///    }
+        /// This makes CreateBucketRequest inherit from PutWithAclRequest instead of AmazonWebServiceRequest.
         /// </summary>
-        /// <param name="shapeName"></param>
-        /// <returns></returns>
+        /// <param name="shapeName">The name of the shape to check for alternate base class customization</param>
+        /// <returns>The alternate base class name if configured, null if using default inheritance</returns>
         public string InheritAlternateBaseClass(string shapeName)
         {
             var data = _documentRoot[InheritAlternateBaseClassKey];
@@ -1510,6 +1513,7 @@ namespace ServiceClientGenerator
             public const string SkipSetterKey = "skipSetter";
             public const string InjectXmlMarshallCodeKey = "injectXmlMarshallCode";
             public const string SkipXmlIsSetKey = "skipXmlIsSet";
+            public const string SkipPrivateMemberKey = "skipPrivateMember";
             public const string AdditionalDocumentationKey = "additionalDocumentation";
 
             private readonly string _modelPropertyName;
@@ -1521,6 +1525,7 @@ namespace ServiceClientGenerator
             private readonly HashSet<string> _injectedXmlPropertySetter;
             private readonly HashSet<string> _injectXmlMarshallCode;
             private readonly bool _skipSetter;
+            private readonly bool _skipPrivateMember;
             private readonly bool _skipXmlIsSet;
             private readonly HashSet<string> _additionalDocumentation;
 
@@ -1535,6 +1540,7 @@ namespace ServiceClientGenerator
                 _injectedXmlPropertySetter = ParseInjectXmlPropertySetter();
                 _skipSetter = ParseXmlSkipSetter();
                 _skipXmlIsSet = ParseSkipXmlIsSet();
+                _skipPrivateMember = ParseSkipPrivateMember();
                 _injectXmlMarshallCode = ParseInjectXmlMarshallCode();
                 _additionalDocumentation = ParseAdditionalDocumentation();
             }
@@ -1568,10 +1574,32 @@ namespace ServiceClientGenerator
             ///   </FilterRule>
             /// Use this customization when you want to skip the IsSet() checks for rest-xml marshalling
             ///        "Name": {
-            ///            "skipXmlIsSet" : true
+            ///            "skipPrivateMember" : true
             ///        }
             /// </summary>
             public bool SkipXmlIsSet { get { return _skipXmlIsSet; } }
+
+            private bool ParseSkipPrivateMember()
+            {
+                var data = _modifierData[SkipPrivateMemberKey];
+                return data != null && data.IsBoolean ? (bool)data : false;
+            }
+
+            /// <summary>
+            /// Use this customization when you want to skip generating the private backing field for a property.
+            /// This is useful when the property gets its value from another property or custom logic rather than
+            /// storing its own value in a private field.
+            /// 
+            /// Example: ContentType property that gets its value from Headers.ContentType
+            /// "ContentType":{
+            ///    "skipPrivateMember": true,
+            ///    "injectXmlPropertyGetter": ["get { return this.Headers.ContentType; }"],
+            ///    "injectXmlPropertySetter": ["set { this.Headers.ContentType = value; }"]
+            /// }
+            /// 
+            /// This prevents generating: private string _contentType;
+            /// </summary>
+            public bool SkipPrivateMember { get { return _skipPrivateMember; } }
 
             private HashSet<string> ParseInjectXmlMarshallCode()
             {
@@ -2148,6 +2176,14 @@ namespace ServiceClientGenerator
             {
             }
 
+            /// <summary>
+            /// Creates an override class that specifies overrides for a member
+            /// </summary>
+            /// <param name="dataType">The new custom type for a member</param>
+            /// <param name="marshaller">The custom marshaller for a member</param>
+            /// <param name="unmarshaller">The custom unmarshaller for a member</param>
+            /// <param name="isFlattened">Whether the data type should be treated as flattened</param>
+            /// <param name="alternateLocationName">Alternate location name for marshalling</param>
             public DataTypeOverride(string dataType, string marshaller ,string unmarshaller, bool isFlattened, string alternateLocationName)
             {
                 this.DataType = dataType;
@@ -2158,7 +2194,12 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// The new datatype for the property
+            /// Gets the custom .NET data type to use instead of the generated type.
+            /// This replaces the type that would be automatically generated from the service model.
+            /// Example usage:
+            ///     "CannedACL":{
+            ///        "Type" : "S3CannedACL"
+            ///    }
             /// </summary>
             public string DataType
             {
@@ -2167,7 +2208,12 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// The new marshaller for the property
+            /// Gets the custom marshaller method to use for serializing this property.
+            /// This specifies how to convert the .NET object to the wire format when sending requests.
+            /// Example usage:
+            ///     "CannedACL":{
+            ///        "Marshaller" : "StringUtils.FromString"
+            ///    }
             /// </summary>
             public string Marshaller
             {
@@ -2176,7 +2222,12 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// The new unmarshaller for the property
+            /// Gets the custom unmarshaller class to use for deserializing this property.
+            /// This specifies how to convert the wire format back to the .NET object when processing responses.
+            /// Example usage:
+            ///     "ListPartsOutput":{
+            ///        "Unmarshaller" : "StringUnmarshaller"
+            ///    }
             /// </summary>
             public string Unmarshaller
             {
@@ -2185,7 +2236,13 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// Indicates whether the new data type is flattened (only matters for lists and maps)
+            /// Gets whether the data type should be treated as flattened. This only applies to lists and maps.
+            /// - true: Items are placed directly in the parent element without wrapper elements
+            /// - false: Items are wrapped in container elements (default behavior)
+            /// Example usage:
+            ///     "Events":{
+            ///        "isFlattened" : true
+            ///    }
             /// </summary>
             public bool IsFlattened
             {
@@ -2194,7 +2251,12 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// Specifies an alternate location name for the data type override.
+            /// Gets an alternate location name to use during marshalling instead of the property name.
+            /// This allows the property to be marshalled using a different name than its .NET property name.
+            /// Example usage:
+            ///     "ErrorDocument":{
+            ///        "alternateLocationName" : "ErrorDocument/Key"
+            ///    }
             /// </summary>
             public string AlternateLocationName
             {
