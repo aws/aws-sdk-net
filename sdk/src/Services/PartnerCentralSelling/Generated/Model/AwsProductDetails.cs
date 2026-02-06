@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// AWS services with program eligibility indicators (MAP, modernization pathways), cost
-    /// estimates, and optimization recommendations.
+    /// List of AWS services with program eligibility indicators (MAP, modernization pathways),
+    /// cost estimates, and optimization recommendations.
     /// </summary>
     public partial class AwsProductDetails
     {
@@ -46,7 +46,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Amount. 
         /// <para>
-        /// Baseline service cost before optimizations (may be null for AWS-sourced predictions)
+        /// Baseline service cost before optimizations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -65,7 +65,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Categories. 
         /// <para>
-        /// List of program and pathway categories this product is eligible for
+        /// List of program and pathway categories this product is eligible for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]
@@ -84,7 +84,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Optimizations. 
         /// <para>
-        /// List of specific optimization recommendations for this product
+        /// List of specific optimization recommendations for this product.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
@@ -103,7 +103,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OptimizedAmount. 
         /// <para>
-        /// Service cost after applying optimizations (may be null for AWS-sourced predictions)
+        /// Service cost after applying optimizations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -122,8 +122,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property PotentialSavingsAmount. 
         /// <para>
-        /// Service-specific cost reduction through optimizations (may be null for AWS-sourced
-        /// predictions)
+        /// Service-specific cost reduction through optimizations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -142,7 +141,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ProductCode. 
         /// <para>
-        /// AWS Partner Central product identifier used for opportunity association
+        /// AWS Partner Central product identifier used for opportunity association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,7 +160,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Pricing Calculator service code (links to original calculator URL)
+        /// Pricing Calculator service code.
         /// </para>
         /// </summary>
         public string ServiceCode

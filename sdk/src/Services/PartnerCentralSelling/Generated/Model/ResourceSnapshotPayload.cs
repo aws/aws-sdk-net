@@ -35,7 +35,26 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class ResourceSnapshotPayload
     {
+        private AwsOpportunitySummaryFullView _awsOpportunitySummaryFullView;
         private OpportunitySummaryView _opportunitySummary;
+
+        /// <summary>
+        /// Gets and sets the property AwsOpportunitySummaryFullView. 
+        /// <para>
+        /// Provides a comprehensive view of AwsOpportunitySummaryFullView template.
+        /// </para>
+        /// </summary>
+        public AwsOpportunitySummaryFullView AwsOpportunitySummaryFullView
+        {
+            get { return this._awsOpportunitySummaryFullView; }
+            set { this._awsOpportunitySummaryFullView = value; }
+        }
+
+        // Check to see if AwsOpportunitySummaryFullView property is set
+        internal bool IsSetAwsOpportunitySummaryFullView()
+        {
+            return this._awsOpportunitySummaryFullView != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OpportunitySummary. 

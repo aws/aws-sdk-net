@@ -44,6 +44,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private string _resourceSnapshotTemplateName;
         private ResourceType _resourceType;
         private int? _revision;
+        private List<string> _targetMemberAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -230,6 +231,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetRevision()
         {
             return this._revision.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetMemberAccounts. 
+        /// <para>
+        /// Target member accounts associated with the resource snapshot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> TargetMemberAccounts
+        {
+            get { return this._targetMemberAccounts; }
+            set { this._targetMemberAccounts = value; }
+        }
+
+        // Check to see if TargetMemberAccounts property is set
+        internal bool IsSetTargetMemberAccounts()
+        {
+            return this._targetMemberAccounts != null && (this._targetMemberAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

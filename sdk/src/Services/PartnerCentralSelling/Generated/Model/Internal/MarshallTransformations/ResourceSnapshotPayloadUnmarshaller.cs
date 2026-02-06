@@ -66,6 +66,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AwsOpportunitySummaryFullView", targetDepth))
+                {
+                    var unmarshaller = AwsOpportunitySummaryFullViewUnmarshaller.Instance;
+                    unmarshalledObject.AwsOpportunitySummaryFullView = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OpportunitySummary", targetDepth))
                 {
                     var unmarshaller = OpportunitySummaryViewUnmarshaller.Instance;

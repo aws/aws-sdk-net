@@ -75,6 +75,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Catalog);
                 }
 
+                if(publicRequest.IsSetCreatedDate())
+                {
+                    context.Writer.WritePropertyName("CreatedDate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreatedDateFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CreatedDate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCustomerCompanyName())
                 {
                     context.Writer.WritePropertyName("CustomerCompanyName");

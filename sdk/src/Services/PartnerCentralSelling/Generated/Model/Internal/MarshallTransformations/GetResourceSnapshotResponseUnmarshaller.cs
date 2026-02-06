@@ -112,6 +112,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     response.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetMemberAccounts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.TargetMemberAccounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
