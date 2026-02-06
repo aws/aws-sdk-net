@@ -40,10 +40,11 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Gets and sets the property OAuthAuthorizationUrl. 
         /// <para>
         /// Third-party IoT platform OAuth authorization server URL with all required parameters
-        /// to perform end-user authentication during the refresh process.
+        /// to perform end-user authentication during the refresh process. This field will be
+        /// empty when using General Authorization flows that do not require OAuth.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
         public string OAuthAuthorizationUrl
         {
             get { return this._oAuthAuthorizationUrl; }

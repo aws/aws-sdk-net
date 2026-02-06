@@ -79,6 +79,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CaCertificate);
             }
 
+            if(publicRequest.IsSetClaimCertificate())
+            {
+                context.Writer.WritePropertyName("ClaimCertificate");
+                context.Writer.WriteStringValue(publicRequest.ClaimCertificate);
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");

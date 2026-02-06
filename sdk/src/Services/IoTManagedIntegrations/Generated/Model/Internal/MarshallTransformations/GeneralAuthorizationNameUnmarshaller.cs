@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AuthConfig Object
+    /// Response Unmarshaller for GeneralAuthorizationName Object
     /// </summary>  
-    public class AuthConfigUnmarshaller : IJsonUnmarshaller<AuthConfig, JsonUnmarshallerContext>
+    public class GeneralAuthorizationNameUnmarshaller : IJsonUnmarshaller<GeneralAuthorizationName, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AuthConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GeneralAuthorizationName Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AuthConfig unmarshalledObject = new AuthConfig();
+            GeneralAuthorizationName unmarshalledObject = new GeneralAuthorizationName();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GeneralAuthorization", targetDepth))
+                if (context.TestExpression("AuthMaterialName", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AuthMaterial, AuthMaterialUnmarshaller>(AuthMaterialUnmarshaller.Instance);
-                    unmarshalledObject.GeneralAuthorization = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("oAuth", targetDepth))
-                {
-                    var unmarshaller = OAuthConfigUnmarshaller.Instance;
-                    unmarshalledObject.OAuth = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthMaterialName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         }
 
 
-        private static AuthConfigUnmarshaller _instance = new AuthConfigUnmarshaller();        
+        private static GeneralAuthorizationNameUnmarshaller _instance = new GeneralAuthorizationNameUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AuthConfigUnmarshaller Instance
+        public static GeneralAuthorizationNameUnmarshaller Instance
         {
             get
             {

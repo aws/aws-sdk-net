@@ -30,30 +30,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags for a specified resource.
+    /// The authorization material containing the Secrets Manager arn and version.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonIoTManagedIntegrationsRequest
+    public partial class AuthMaterial
     {
-        private string _resourceArn;
+        private string _authMaterialName;
+        private SecretsManager _secretsManager;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property AuthMaterialName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource for which to list tags.
+        /// The name of the authorization material.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
-        public string ResourceArn
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string AuthMaterialName
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._authMaterialName; }
+            set { this._authMaterialName = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if AuthMaterialName property is set
+        internal bool IsSetAuthMaterialName()
         {
-            return this._resourceArn != null;
+            return this._authMaterialName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManager.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public SecretsManager SecretsManager
+        {
+            get { return this._secretsManager; }
+            set { this._secretsManager = value; }
+        }
+
+        // Check to see if SecretsManager property is set
+        internal bool IsSetSecretsManager()
+        {
+            return this._secretsManager != null;
         }
 
     }
