@@ -69,6 +69,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplatePlacementRequest _placement;
         private LaunchTemplatePrivateDnsNameOptionsRequest _privateDnsNameOptions;
         private string _ramDiskId;
+        private List<LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest> _secondaryInterfaces = AWSConfigs.InitializeCollections ? new List<LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<LaunchTemplateTagSpecificationRequest> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<LaunchTemplateTagSpecificationRequest>() : null;
@@ -800,6 +801,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetRamDiskId()
         {
             return this._ramDiskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryInterfaces. 
+        /// <para>
+        /// The secondary interfaces to associate with instances launched from the template.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest> SecondaryInterfaces
+        {
+            get { return this._secondaryInterfaces; }
+            set { this._secondaryInterfaces = value; }
+        }
+
+        // Check to see if SecondaryInterfaces property is set
+        internal bool IsSetSecondaryInterfaces()
+        {
+            return this._secondaryInterfaces != null && (this._secondaryInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

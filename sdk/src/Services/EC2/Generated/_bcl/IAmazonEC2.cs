@@ -6734,6 +6734,100 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateSecondaryNetwork
+
+
+        /// <summary>
+        /// Creates an Amazon secondary network.
+        /// 
+        ///  
+        /// <para>
+        /// The allowed size for a secondary network CIDR block is between /28 netmask (16 IP
+        /// addresses) and /12 netmask (1,048,576 IP addresses).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecondaryNetwork service method.</param>
+        /// 
+        /// <returns>The response from the CreateSecondaryNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondaryNetwork">REST API Reference for CreateSecondaryNetwork Operation</seealso>
+        CreateSecondaryNetworkResponse CreateSecondaryNetwork(CreateSecondaryNetworkRequest request);
+
+
+
+        /// <summary>
+        /// Creates an Amazon secondary network.
+        /// 
+        ///  
+        /// <para>
+        /// The allowed size for a secondary network CIDR block is between /28 netmask (16 IP
+        /// addresses) and /12 netmask (1,048,576 IP addresses).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecondaryNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSecondaryNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondaryNetwork">REST API Reference for CreateSecondaryNetwork Operation</seealso>
+        Task<CreateSecondaryNetworkResponse> CreateSecondaryNetworkAsync(CreateSecondaryNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateSecondarySubnet
+
+
+        /// <summary>
+        /// Creates a secondary subnet in a secondary network.
+        /// 
+        ///  
+        /// <para>
+        /// A secondary subnet CIDR block must not overlap with the CIDR block of an existing
+        /// secondary subnet in the secondary network. After you create a secondary subnet, you
+        /// can't change its CIDR block.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed size for a secondary subnet CIDR block is between /28 netmask (16 IP addresses)
+        /// and /12 netmask (1,048,576 IP addresses). Amazon reserves the first four IP addresses
+        /// and the last IP address in each secondary subnet for internal use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecondarySubnet service method.</param>
+        /// 
+        /// <returns>The response from the CreateSecondarySubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondarySubnet">REST API Reference for CreateSecondarySubnet Operation</seealso>
+        CreateSecondarySubnetResponse CreateSecondarySubnet(CreateSecondarySubnetRequest request);
+
+
+
+        /// <summary>
+        /// Creates a secondary subnet in a secondary network.
+        /// 
+        ///  
+        /// <para>
+        /// A secondary subnet CIDR block must not overlap with the CIDR block of an existing
+        /// secondary subnet in the secondary network. After you create a secondary subnet, you
+        /// can't change its CIDR block.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed size for a secondary subnet CIDR block is between /28 netmask (16 IP addresses)
+        /// and /12 netmask (1,048,576 IP addresses). Amazon reserves the first four IP addresses
+        /// and the last IP address in each secondary subnet for internal use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecondarySubnet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSecondarySubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondarySubnet">REST API Reference for CreateSecondarySubnet Operation</seealso>
+        Task<CreateSecondarySubnetResponse> CreateSecondarySubnetAsync(CreateSecondarySubnetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateSecurityGroup
 
 
@@ -10761,6 +10855,66 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteRouteTable service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         Task<DeleteRouteTableResponse> DeleteRouteTableAsync(DeleteRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSecondaryNetwork
+
+
+        /// <summary>
+        /// Deletes a secondary network. You must delete all secondary subnets in the secondary
+        /// network before you can delete the secondary network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecondaryNetwork service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSecondaryNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondaryNetwork">REST API Reference for DeleteSecondaryNetwork Operation</seealso>
+        DeleteSecondaryNetworkResponse DeleteSecondaryNetwork(DeleteSecondaryNetworkRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a secondary network. You must delete all secondary subnets in the secondary
+        /// network before you can delete the secondary network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecondaryNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSecondaryNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondaryNetwork">REST API Reference for DeleteSecondaryNetwork Operation</seealso>
+        Task<DeleteSecondaryNetworkResponse> DeleteSecondaryNetworkAsync(DeleteSecondaryNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSecondarySubnet
+
+
+        /// <summary>
+        /// Deletes a secondary subnet. A secondary subnet must not contain any secondary interfaces
+        /// prior to deletion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecondarySubnet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSecondarySubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondarySubnet">REST API Reference for DeleteSecondarySubnet Operation</seealso>
+        DeleteSecondarySubnetResponse DeleteSecondarySubnet(DeleteSecondarySubnetRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a secondary subnet. A secondary subnet must not contain any secondary interfaces
+        /// prior to deletion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecondarySubnet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSecondarySubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondarySubnet">REST API Reference for DeleteSecondarySubnet Operation</seealso>
+        Task<DeleteSecondarySubnetResponse> DeleteSecondarySubnetAsync(DeleteSecondarySubnetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -18892,6 +19046,90 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeScheduledInstances service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         Task<DescribeScheduledInstancesResponse> DescribeScheduledInstancesAsync(DescribeScheduledInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeSecondaryInterfaces
+
+
+        /// <summary>
+        /// Describes one or more of your secondary interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondaryInterfaces service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecondaryInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryInterfaces">REST API Reference for DescribeSecondaryInterfaces Operation</seealso>
+        DescribeSecondaryInterfacesResponse DescribeSecondaryInterfaces(DescribeSecondaryInterfacesRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more of your secondary interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondaryInterfaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSecondaryInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryInterfaces">REST API Reference for DescribeSecondaryInterfaces Operation</seealso>
+        Task<DescribeSecondaryInterfacesResponse> DescribeSecondaryInterfacesAsync(DescribeSecondaryInterfacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeSecondaryNetworks
+
+
+        /// <summary>
+        /// Describes one or more secondary networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondaryNetworks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecondaryNetworks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryNetworks">REST API Reference for DescribeSecondaryNetworks Operation</seealso>
+        DescribeSecondaryNetworksResponse DescribeSecondaryNetworks(DescribeSecondaryNetworksRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more secondary networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondaryNetworks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSecondaryNetworks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryNetworks">REST API Reference for DescribeSecondaryNetworks Operation</seealso>
+        Task<DescribeSecondaryNetworksResponse> DescribeSecondaryNetworksAsync(DescribeSecondaryNetworksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeSecondarySubnets
+
+
+        /// <summary>
+        /// Describes one or more of your secondary subnets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondarySubnets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecondarySubnets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondarySubnets">REST API Reference for DescribeSecondarySubnets Operation</seealso>
+        DescribeSecondarySubnetsResponse DescribeSecondarySubnets(DescribeSecondarySubnetsRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more of your secondary subnets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondarySubnets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSecondarySubnets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondarySubnets">REST API Reference for DescribeSecondarySubnets Operation</seealso>
+        Task<DescribeSecondarySubnetsResponse> DescribeSecondarySubnetsAsync(DescribeSecondarySubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
