@@ -111,7 +111,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public string PaginationToken { get; set; }
 
         /// <summary>
-        /// Controls whether DynamoDB returns capacity consumption details for each Scan request.
+        /// Controls whether DynamoDB returns capacity consumption details for each Query request.
         /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
         /// </summary>
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
