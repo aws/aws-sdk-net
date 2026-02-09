@@ -101,6 +101,10 @@ namespace Amazon.PCS
         /// </summary>
         public static readonly ClusterStatus DELETING = new ClusterStatus("DELETING");
         /// <summary>
+        /// Constant RESUMING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus RESUMING = new ClusterStatus("RESUMING");
+        /// <summary>
         /// Constant SUSPENDED for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus SUSPENDED = new ClusterStatus("SUSPENDED");
@@ -182,6 +186,10 @@ namespace Amazon.PCS
         /// Constant DELETING for ComputeNodeGroupStatus
         /// </summary>
         public static readonly ComputeNodeGroupStatus DELETING = new ComputeNodeGroupStatus("DELETING");
+        /// <summary>
+        /// Constant RESUMING for ComputeNodeGroupStatus
+        /// </summary>
+        public static readonly ComputeNodeGroupStatus RESUMING = new ComputeNodeGroupStatus("RESUMING");
         /// <summary>
         /// Constant SUSPENDED for ComputeNodeGroupStatus
         /// </summary>
@@ -418,6 +426,10 @@ namespace Amazon.PCS
         /// Constant DELETING for QueueStatus
         /// </summary>
         public static readonly QueueStatus DELETING = new QueueStatus("DELETING");
+        /// <summary>
+        /// Constant RESUMING for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus RESUMING = new QueueStatus("RESUMING");
         /// <summary>
         /// Constant SUSPENDED for QueueStatus
         /// </summary>
