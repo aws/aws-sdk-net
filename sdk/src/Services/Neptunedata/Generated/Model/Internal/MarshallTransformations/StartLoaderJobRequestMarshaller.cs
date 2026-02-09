@@ -78,6 +78,12 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEdgeOnlyLoad())
+                {
+                    context.Writer.WritePropertyName("edgeOnlyLoad");
+                    context.Writer.Write(publicRequest.EdgeOnlyLoad);
+                }
+
                 if(publicRequest.IsSetFailOnError())
                 {
                     context.Writer.WritePropertyName("failOnError");

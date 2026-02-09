@@ -46,6 +46,7 @@ namespace Amazon.Neptunedata.Model
     public partial class StartLoaderJobRequest : AmazonNeptunedataRequest
     {
         private List<string> _dependencies = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _edgeOnlyLoad;
         private bool? _failOnError;
         private Format _format;
         private string _iamRoleArn;
@@ -110,6 +111,41 @@ namespace Amazon.Neptunedata.Model
         internal bool IsSetDependencies()
         {
             return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EdgeOnlyLoad. 
+        /// <para>
+        ///  <b> <c>edgeOnlyLoad</c> </b>   –   A flag that controls file processing order during
+        /// bulk loading.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Allowed values</i>: <c>"TRUE"</c>, <c>"FALSE"</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Default value</i>: <c>"FALSE"</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this parameter is set to "FALSE", the loader automatically loads vertex files
+        /// first, then edge files afterwards. It does this by first scanning all files to determine
+        /// their contents (vertices or edges). When this parameter is set to "TRUE", the loader
+        /// skips the initial scanning phase and immediately loads all files in the order they
+        /// appear.
+        /// </para>
+        /// </summary>
+        public bool EdgeOnlyLoad
+        {
+            get { return this._edgeOnlyLoad.GetValueOrDefault(); }
+            set { this._edgeOnlyLoad = value; }
+        }
+
+        // Check to see if EdgeOnlyLoad property is set
+        internal bool IsSetEdgeOnlyLoad()
+        {
+            return this._edgeOnlyLoad.HasValue; 
         }
 
         /// <summary>
