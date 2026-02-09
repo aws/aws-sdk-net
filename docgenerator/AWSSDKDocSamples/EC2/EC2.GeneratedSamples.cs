@@ -706,6 +706,69 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2CreateSecondaryNetwork()
+        {
+            #region ec2-create-secondary-network-1
+
+            var client = new AmazonEC2Client();
+            var response = client.CreateSecondaryNetwork(new CreateSecondaryNetworkRequest 
+            {
+                ClientToken = "550e8400-e29b-41d4-a716-446655440000",
+                Ipv4CidrBlock = "10.0.0.0/16",
+                NetworkType = "rdma",
+                TagSpecifications = new List<TagSpecification> {
+                    new TagSpecification {
+                        ResourceType = "secondary-network",
+                        Tags = new List<Tag> {
+                            new Tag {
+                                Key = "Name",
+                                Value = "Prod Secondary Network"
+                            }
+                        }
+                    }
+                }
+            });
+
+            string clientToken = response.ClientToken;
+            SecondaryNetwork secondaryNetwork = response.SecondaryNetwork;
+
+            #endregion
+        }
+
+        public void EC2CreateSecondarySubnet()
+        {
+            #region ec2-create-secondary-subnet-1
+
+            var client = new AmazonEC2Client();
+            var response = client.CreateSecondarySubnet(new CreateSecondarySubnetRequest 
+            {
+                AvailabilityZoneId = "use2-az1",
+                ClientToken = "550e8400-e29b-41d4-a716-446655440000",
+                Ipv4CidrBlock = "10.0.0.0/24",
+                SecondaryNetworkId = "sn-0123456789abcdef0",
+                TagSpecifications = new List<TagSpecification> {
+                    new TagSpecification {
+                        ResourceType = "secondary-subnet",
+                        Tags = new List<Tag> {
+                            new Tag {
+                                Key = "Name",
+                                Value = "Prod Secondary Subnet"
+                            },
+                            new Tag {
+                                Key = "Environment",
+                                Value = "Production"
+                            }
+                        }
+                    }
+                }
+            });
+
+            string clientToken = response.ClientToken;
+            SecondarySubnet secondarySubnet = response.SecondarySubnet;
+
+            #endregion
+        }
+
         public void EC2CreateSecurityGroup()
         {
             #region to-create-a-security-group-for-a-vpc-1529024532716
@@ -1055,6 +1118,40 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                 RouteTableId = "rtb-22574640"
             });
 
+
+            #endregion
+        }
+
+        public void EC2DeleteSecondaryNetwork()
+        {
+            #region ec2-delete-secondary-network-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DeleteSecondaryNetwork(new DeleteSecondaryNetworkRequest 
+            {
+                ClientToken = "550e8400-e29b-41d4-a716-446655440000",
+                SecondaryNetworkId = "sn-0123456789abcdef0"
+            });
+
+            string clientToken = response.ClientToken;
+            SecondaryNetwork secondaryNetwork = response.SecondaryNetwork;
+
+            #endregion
+        }
+
+        public void EC2DeleteSecondarySubnet()
+        {
+            #region ec2-delete-secondary-subnet-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DeleteSecondarySubnet(new DeleteSecondarySubnetRequest 
+            {
+                ClientToken = "550e8400-e29b-41d4-a716-446655440000",
+                SecondarySubnetId = "ss-0123456789abcdef0"
+            });
+
+            string clientToken = response.ClientToken;
+            SecondarySubnet secondarySubnet = response.SecondarySubnet;
 
             #endregion
         }
@@ -1670,6 +1767,110 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             List<RouteTable> routeTables = response.RouteTables;
+
+            #endregion
+        }
+
+        public void EC2DescribeSecondaryInterfaces()
+        {
+            #region ec2-describe-secondary-interfaces-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeSecondaryInterfaces(new DescribeSecondaryInterfacesRequest 
+            {
+            });
+
+            List<SecondaryInterface> secondaryInterfaces = response.SecondaryInterfaces;
+
+            #endregion
+        }
+
+        public void EC2DescribeSecondaryInterfaces()
+        {
+            #region ec2-describe-secondary-interfaces-2
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeSecondaryInterfaces(new DescribeSecondaryInterfacesRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "attachment.instance-id",
+                        Values = new List<string> {
+                            "i-1234567890abcdef0"
+                        }
+                    }
+                },
+                MaxResults = 5
+            });
+
+            string nextToken = response.NextToken;
+            List<SecondaryInterface> secondaryInterfaces = response.SecondaryInterfaces;
+
+            #endregion
+        }
+
+        public void EC2DescribeSecondaryNetworks()
+        {
+            #region ec2-describe-secondary-networks-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeSecondaryNetworks(new DescribeSecondaryNetworksRequest 
+            {
+                SecondaryNetworkIds = new List<string> {
+                    "sn-0123456789abcdef0",
+                    "sn-0987654321fedcba0"
+                }
+            });
+
+            List<SecondaryNetwork> secondaryNetworks = response.SecondaryNetworks;
+
+            #endregion
+        }
+
+        public void EC2DescribeSecondaryNetworks()
+        {
+            #region ec2-describe-secondary-networks-2
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeSecondaryNetworks(new DescribeSecondaryNetworksRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "tag:Environment",
+                        Values = new List<string> {
+                            "Production"
+                        }
+                    },
+                    new Filter {
+                        Name = "state",
+                        Values = new List<string> {
+                            "create-complete"
+                        }
+                    }
+                },
+                MaxResults = 5
+            });
+
+            string nextToken = response.NextToken;
+            List<SecondaryNetwork> secondaryNetworks = response.SecondaryNetworks;
+
+            #endregion
+        }
+
+        public void EC2DescribeSecondarySubnets()
+        {
+            #region ec2-describe-secondary-subnets-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeSecondarySubnets(new DescribeSecondarySubnetsRequest 
+            {
+                SecondarySubnetIds = new List<string> {
+                    "ss-0123456789abcdef0",
+                    "ss-0987654321fedcba0"
+                }
+            });
+
+            List<SecondarySubnet> secondarySubnets = response.SecondarySubnets;
 
             #endregion
         }
