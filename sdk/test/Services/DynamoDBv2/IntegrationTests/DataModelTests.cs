@@ -1218,12 +1218,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await CleanupTables();
             TableCache.Clear();
 
-            var config = new DynamoDBContextConfig
-            {
-                Conversion = DynamoDBEntryConversion.V2,
-            };
-            Context = new DynamoDBContext(Client, config);
-
             // Seed data
             var employee1 = new Employee
             {
@@ -1284,12 +1278,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             TableCache.Clear();
             await CleanupTables();
             TableCache.Clear();
-
-            var config = new DynamoDBContextConfig
-            {
-                Conversion = DynamoDBEntryConversion.V2,
-            };
-            Context = new DynamoDBContext(Client, config);
 
             // Seed data
             var employee1 = new Employee
