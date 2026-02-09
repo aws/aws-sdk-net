@@ -212,6 +212,11 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>ASYNC</c>: The system expects an asynchronous MDN response, confirming that the
+        /// file was transferred successfully (or not).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>SYNC</c>: The system expects a synchronous MDN response, confirming that the file
         /// was transferred successfully (or not).
         /// </para>
