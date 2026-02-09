@@ -29,9 +29,6 @@ using Amazon.S3.Transfer;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>
-    /// Returns information about the  GetObject response and response metadata.
-    /// </summary>
     public partial class GetObjectResponse : StreamResponse
     {
         private bool? restoreInProgress;
