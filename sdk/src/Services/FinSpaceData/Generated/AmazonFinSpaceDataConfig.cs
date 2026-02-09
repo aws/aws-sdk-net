@@ -32,7 +32,7 @@ namespace Amazon.FinSpaceData
     public partial class AmazonFinSpaceDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("finspace data", "3.7.501.42");
+            InternalSDKUtils.BuildUserAgentString("finspace data", "3.7.501.43");
 
         private string _userAgent = UserAgentString;
         ///<summary>

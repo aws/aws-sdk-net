@@ -1,3 +1,24 @@
+### 3.7.1219.0 (2026-02-09 20:22 UTC)
+* ConnectCampaignsV2 (3.7.505.0)
+	* Add the missing event type for WhatsApp
+* EC2 (3.7.546.0)
+	* Amazon Secondary Networks is a networking feature that provides high-performance, low-latency connectivity for specialized workloads.
+* EKS (3.7.509.0)
+	* Amazon EKS adds a new DescribeUpdate update type, VendedLogsUpdate, to support an integration between EKS Auto Mode and Amazon CloudWatch Vended Logs.
+* Imagebuilder (3.7.507.0)
+	* EC2 Image Builder now supports wildcard patterns in lifecycle policies with recipes and enhances the experience of tag-scoped policies.
+* LakeFormation (3.7.504.10)
+	* Allow cross account v5 in put data lake settings
+* Neptunedata (3.7.503.0)
+	* Added edgeOnlyLoad boolean parameter to Neptune bulk load request. When TRUE, files are loaded in order without scanning. When FALSE (default), the loader scans files first, then loads vertex files before edge files automatically.
+* PCS (3.7.508.0)
+	* Introduces RESUMING state for clusters, compute node groups, and queues.
+* Transfer (3.7.505.1)
+	* This release adds a documentation update for MdnResponse of type "ASYNC"
+* Core 3.7.500.77
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1218.0 (2026-02-06 19:19 UTC)
 * BedrockDataAutomationRuntime (3.7.504.0)
 	* Add OutputConfiguration to InvokeDataAutomation input and output to support S3 output
