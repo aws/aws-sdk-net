@@ -43,12 +43,15 @@ namespace Amazon.EC2.Model
         private bool? _encryptionInTransitSupported;
         private FlexibleEnaQueuesSupport _flexibleEnaQueuesSupport;
         private int? _ipv4AddressesPerInterface;
+        private int? _ipv4AddressesPerSecondaryInterface;
         private int? _ipv6AddressesPerInterface;
         private bool? _ipv6Supported;
         private int? _maximumNetworkCards;
         private int? _maximumNetworkInterfaces;
+        private int? _maximumSecondaryNetworkInterfaces;
         private List<NetworkCardInfo> _networkCards = AWSConfigs.InitializeCollections ? new List<NetworkCardInfo>() : null;
         private string _networkPerformance;
+        private bool? _secondaryNetworkSupported;
 
         /// <summary>
         /// Gets and sets the property BandwidthWeightings. 
@@ -217,6 +220,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv4AddressesPerSecondaryInterface. 
+        /// <para>
+        /// The maximum number of IPv4 addresses per secondary interface.
+        /// </para>
+        /// </summary>
+        public int Ipv4AddressesPerSecondaryInterface
+        {
+            get { return this._ipv4AddressesPerSecondaryInterface.GetValueOrDefault(); }
+            set { this._ipv4AddressesPerSecondaryInterface = value; }
+        }
+
+        // Check to see if Ipv4AddressesPerSecondaryInterface property is set
+        internal bool IsSetIpv4AddressesPerSecondaryInterface()
+        {
+            return this._ipv4AddressesPerSecondaryInterface.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Ipv6AddressesPerInterface. 
         /// <para>
         /// The maximum number of IPv6 addresses per network interface.
@@ -289,6 +310,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaximumSecondaryNetworkInterfaces. 
+        /// <para>
+        /// The maximum number of secondary interfaces for the instance type.
+        /// </para>
+        /// </summary>
+        public int MaximumSecondaryNetworkInterfaces
+        {
+            get { return this._maximumSecondaryNetworkInterfaces.GetValueOrDefault(); }
+            set { this._maximumSecondaryNetworkInterfaces = value; }
+        }
+
+        // Check to see if MaximumSecondaryNetworkInterfaces property is set
+        internal bool IsSetMaximumSecondaryNetworkInterfaces()
+        {
+            return this._maximumSecondaryNetworkInterfaces.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkCards. 
         /// <para>
         /// Describes the network cards for the instance type.
@@ -322,6 +361,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkPerformance()
         {
             return this._networkPerformance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryNetworkSupported. 
+        /// <para>
+        /// Indicates whether secondary interface attachments from secondary network are supported.
+        /// </para>
+        /// </summary>
+        public bool SecondaryNetworkSupported
+        {
+            get { return this._secondaryNetworkSupported.GetValueOrDefault(); }
+            set { this._secondaryNetworkSupported = value; }
+        }
+
+        // Check to see if SecondaryNetworkSupported property is set
+        internal bool IsSetSecondaryNetworkSupported()
+        {
+            return this._secondaryNetworkSupported.HasValue; 
         }
 
     }

@@ -171,7 +171,7 @@ namespace Amazon.EC2.Model
         ///  The granularity, in seconds, of the returned data points. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3600, Max=86400)]
+        [AWSProperty(Required=true, Min=3600)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }

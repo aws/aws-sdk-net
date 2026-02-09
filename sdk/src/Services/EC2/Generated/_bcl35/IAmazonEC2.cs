@@ -6560,6 +6560,105 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateSecondaryNetwork
+
+
+        /// <summary>
+        /// Creates an Amazon secondary network.
+        /// 
+        ///  
+        /// <para>
+        /// The allowed size for a secondary network CIDR block is between /28 netmask (16 IP
+        /// addresses) and /12 netmask (1,048,576 IP addresses).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecondaryNetwork service method.</param>
+        /// 
+        /// <returns>The response from the CreateSecondaryNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondaryNetwork">REST API Reference for CreateSecondaryNetwork Operation</seealso>
+        CreateSecondaryNetworkResponse CreateSecondaryNetwork(CreateSecondaryNetworkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecondaryNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecondaryNetwork operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSecondaryNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondaryNetwork">REST API Reference for CreateSecondaryNetwork Operation</seealso>
+        IAsyncResult BeginCreateSecondaryNetwork(CreateSecondaryNetworkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSecondaryNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSecondaryNetwork.</param>
+        /// 
+        /// <returns>Returns a  CreateSecondaryNetworkResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondaryNetwork">REST API Reference for CreateSecondaryNetwork Operation</seealso>
+        CreateSecondaryNetworkResponse EndCreateSecondaryNetwork(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateSecondarySubnet
+
+
+        /// <summary>
+        /// Creates a secondary subnet in a secondary network.
+        /// 
+        ///  
+        /// <para>
+        /// A secondary subnet CIDR block must not overlap with the CIDR block of an existing
+        /// secondary subnet in the secondary network. After you create a secondary subnet, you
+        /// can't change its CIDR block.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed size for a secondary subnet CIDR block is between /28 netmask (16 IP addresses)
+        /// and /12 netmask (1,048,576 IP addresses). Amazon reserves the first four IP addresses
+        /// and the last IP address in each secondary subnet for internal use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecondarySubnet service method.</param>
+        /// 
+        /// <returns>The response from the CreateSecondarySubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondarySubnet">REST API Reference for CreateSecondarySubnet Operation</seealso>
+        CreateSecondarySubnetResponse CreateSecondarySubnet(CreateSecondarySubnetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecondarySubnet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecondarySubnet operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSecondarySubnet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondarySubnet">REST API Reference for CreateSecondarySubnet Operation</seealso>
+        IAsyncResult BeginCreateSecondarySubnet(CreateSecondarySubnetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSecondarySubnet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSecondarySubnet.</param>
+        /// 
+        /// <returns>Returns a  CreateSecondarySubnetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondarySubnet">REST API Reference for CreateSecondarySubnet Operation</seealso>
+        CreateSecondarySubnetResponse EndCreateSecondarySubnet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateSecurityGroup
 
 
@@ -10964,6 +11063,88 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteRouteTableResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         DeleteRouteTableResponse EndDeleteRouteTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteSecondaryNetwork
+
+
+        /// <summary>
+        /// Deletes a secondary network. You must delete all secondary subnets in the secondary
+        /// network before you can delete the secondary network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecondaryNetwork service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSecondaryNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondaryNetwork">REST API Reference for DeleteSecondaryNetwork Operation</seealso>
+        DeleteSecondaryNetworkResponse DeleteSecondaryNetwork(DeleteSecondaryNetworkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecondaryNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecondaryNetwork operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSecondaryNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondaryNetwork">REST API Reference for DeleteSecondaryNetwork Operation</seealso>
+        IAsyncResult BeginDeleteSecondaryNetwork(DeleteSecondaryNetworkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSecondaryNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSecondaryNetwork.</param>
+        /// 
+        /// <returns>Returns a  DeleteSecondaryNetworkResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondaryNetwork">REST API Reference for DeleteSecondaryNetwork Operation</seealso>
+        DeleteSecondaryNetworkResponse EndDeleteSecondaryNetwork(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteSecondarySubnet
+
+
+        /// <summary>
+        /// Deletes a secondary subnet. A secondary subnet must not contain any secondary interfaces
+        /// prior to deletion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecondarySubnet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSecondarySubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondarySubnet">REST API Reference for DeleteSecondarySubnet Operation</seealso>
+        DeleteSecondarySubnetResponse DeleteSecondarySubnet(DeleteSecondarySubnetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecondarySubnet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecondarySubnet operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSecondarySubnet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondarySubnet">REST API Reference for DeleteSecondarySubnet Operation</seealso>
+        IAsyncResult BeginDeleteSecondarySubnet(DeleteSecondarySubnetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSecondarySubnet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSecondarySubnet.</param>
+        /// 
+        /// <returns>Returns a  DeleteSecondarySubnetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondarySubnet">REST API Reference for DeleteSecondarySubnet Operation</seealso>
+        DeleteSecondarySubnetResponse EndDeleteSecondarySubnet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -19340,6 +19521,126 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeScheduledInstancesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         DescribeScheduledInstancesResponse EndDescribeScheduledInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSecondaryInterfaces
+
+
+        /// <summary>
+        /// Describes one or more of your secondary interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondaryInterfaces service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecondaryInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryInterfaces">REST API Reference for DescribeSecondaryInterfaces Operation</seealso>
+        DescribeSecondaryInterfacesResponse DescribeSecondaryInterfaces(DescribeSecondaryInterfacesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecondaryInterfaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondaryInterfaces operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecondaryInterfaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryInterfaces">REST API Reference for DescribeSecondaryInterfaces Operation</seealso>
+        IAsyncResult BeginDescribeSecondaryInterfaces(DescribeSecondaryInterfacesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecondaryInterfaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecondaryInterfaces.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecondaryInterfacesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryInterfaces">REST API Reference for DescribeSecondaryInterfaces Operation</seealso>
+        DescribeSecondaryInterfacesResponse EndDescribeSecondaryInterfaces(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSecondaryNetworks
+
+
+        /// <summary>
+        /// Describes one or more secondary networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondaryNetworks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecondaryNetworks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryNetworks">REST API Reference for DescribeSecondaryNetworks Operation</seealso>
+        DescribeSecondaryNetworksResponse DescribeSecondaryNetworks(DescribeSecondaryNetworksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecondaryNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondaryNetworks operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecondaryNetworks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryNetworks">REST API Reference for DescribeSecondaryNetworks Operation</seealso>
+        IAsyncResult BeginDescribeSecondaryNetworks(DescribeSecondaryNetworksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecondaryNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecondaryNetworks.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecondaryNetworksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryNetworks">REST API Reference for DescribeSecondaryNetworks Operation</seealso>
+        DescribeSecondaryNetworksResponse EndDescribeSecondaryNetworks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSecondarySubnets
+
+
+        /// <summary>
+        /// Describes one or more of your secondary subnets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondarySubnets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecondarySubnets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondarySubnets">REST API Reference for DescribeSecondarySubnets Operation</seealso>
+        DescribeSecondarySubnetsResponse DescribeSecondarySubnets(DescribeSecondarySubnetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecondarySubnets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecondarySubnets operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecondarySubnets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondarySubnets">REST API Reference for DescribeSecondarySubnets Operation</seealso>
+        IAsyncResult BeginDescribeSecondarySubnets(DescribeSecondarySubnetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecondarySubnets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecondarySubnets.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecondarySubnetsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondarySubnets">REST API Reference for DescribeSecondarySubnets Operation</seealso>
+        DescribeSecondarySubnetsResponse EndDescribeSecondarySubnets(IAsyncResult asyncResult);
 
         #endregion
         

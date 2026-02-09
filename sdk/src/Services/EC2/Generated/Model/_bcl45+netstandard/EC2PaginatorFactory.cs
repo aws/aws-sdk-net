@@ -749,6 +749,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeSecondaryInterfaces operation
+        ///</summary>
+        public IDescribeSecondaryInterfacesPaginator DescribeSecondaryInterfaces(DescribeSecondaryInterfacesRequest request) 
+        {
+            return new DescribeSecondaryInterfacesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSecondaryNetworks operation
+        ///</summary>
+        public IDescribeSecondaryNetworksPaginator DescribeSecondaryNetworks(DescribeSecondaryNetworksRequest request) 
+        {
+            return new DescribeSecondaryNetworksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSecondarySubnets operation
+        ///</summary>
+        public IDescribeSecondarySubnetsPaginator DescribeSecondarySubnets(DescribeSecondarySubnetsRequest request) 
+        {
+            return new DescribeSecondarySubnetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSecurityGroupRules operation
         ///</summary>
         public IDescribeSecurityGroupRulesPaginator DescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest request) 

@@ -144,6 +144,7 @@ namespace Amazon.EC2.Model
         private PrivateDnsNameOptionsRequest _privateDnsNameOptions;
         private string _privateIpAddress;
         private string _ramdiskId;
+        private List<InstanceSecondaryInterfaceSpecificationRequest> _secondaryInterfaces = AWSConfigs.InitializeCollections ? new List<InstanceSecondaryInterfaceSpecificationRequest>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
@@ -992,6 +993,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetRamdiskId()
         {
             return this._ramdiskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryInterfaces. 
+        /// <para>
+        /// The secondary interfaces to associate with the instance.
+        /// </para>
+        /// </summary>
+        public List<InstanceSecondaryInterfaceSpecificationRequest> SecondaryInterfaces
+        {
+            get { return this._secondaryInterfaces; }
+            set { this._secondaryInterfaces = value; }
+        }
+
+        // Check to see if SecondaryInterfaces property is set
+        internal bool IsSetSecondaryInterfaces()
+        {
+            return this._secondaryInterfaces != null && (this._secondaryInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

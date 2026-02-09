@@ -80,6 +80,7 @@ namespace Amazon.EC2.Model
         private string _ramdiskId;
         private string _rootDeviceName;
         private DeviceType _rootDeviceType;
+        private List<InstanceSecondaryInterface> _secondaryInterfaces = AWSConfigs.InitializeCollections ? new List<InstanceSecondaryInterface>() : null;
         private List<GroupIdentifier> _securityGroups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
         private bool? _sourceDestCheck;
         private string _spotInstanceRequestId;
@@ -976,6 +977,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetRootDeviceType()
         {
             return this._rootDeviceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryInterfaces. 
+        /// <para>
+        /// The secondary interfaces for the instance.
+        /// </para>
+        /// </summary>
+        public List<InstanceSecondaryInterface> SecondaryInterfaces
+        {
+            get { return this._secondaryInterfaces; }
+            set { this._secondaryInterfaces = value; }
+        }
+
+        // Check to see if SecondaryInterfaces property is set
+        internal bool IsSetSecondaryInterfaces()
+        {
+            return this._secondaryInterfaces != null && (this._secondaryInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
