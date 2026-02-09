@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 
+using Amazon.Auth.AccessControlPolicy;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Internal.UserAgent;
@@ -113,6 +114,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly);
 
+        ///// <summary>
+        ///// Creates an update expression for the specified document, optionally including only changed attributes and
+        ///// handling attributes that should use the if-not-exist operator.
+        ///// </summary>
+        ///// <remarks>Use this method to construct complex update expressions, such as those required for
+        ///// conditional updates in document databases. The method does not modify the input document or the provided
+        ///// update expression.</remarks>
+        ///// <param name="doc">The document containing the attributes to be updated.</param>
+        ///// <param name="ifNotExistAttributeNames">A set of attribute names that should be updated using the if-not-exist operator. Cannot be null.</param>
+        ///// <param name="updateExpression">An existing update expression to which additional updates will be appended. Can be null if starting a new
+        ///// expression.</param>
+        ///// <param name="changedAttributesOnly">true to include only attributes that have changed; otherwise, false to include all attributes from the
+        ///// document.</param>
+        ///// <returns>An expression representing the update operation for the specified document and attributes.</returns>
+        //Expression ToUpdateExpression(Document doc, HashSet<string> ifNotExistAttributeNames, Expression updateExpression, bool changedAttributesOnly);
 
         #endregion
 
@@ -1205,7 +1221,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return doc.ToAttributeUpdateMap(this.Conversion, changedAttributesOnly, this.StoreAsEpoch, this.StoreAsEpochLong, this.IsEmptyStringValueEnabled);
         }
 
-
         #endregion
 
         #region PutItem
@@ -1421,6 +1436,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var pipeline = new UpdateItemPipeline(this);
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        internal Document UpdateHelper(Document doc, Key key, ReturnValues returnValues, Expression conditionExpression, Expression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
+        {
+            var keyDocument = key != null ? this.FromAttributeMap(key) : null;
+
+            var attributeUpdates = this.ToAttributeUpdateMap(doc, false);
+            foreach (var keyName in this.KeyNames)
+            {
+                attributeUpdates.Remove(keyName);
+            }
+
+            if(updateExpression == null)
+            {
+                updateExpression = new Expression();
+            }
+
+            updateExpression.SetAttributeUpdates(attributeUpdates, ifNotExistAttributeNames, this);
+
+            var request = new UpdateItemDocumentOperationRequest
+            {
+                Key = keyDocument,
+                UpdateExpression = updateExpression,
+                ConditionalExpression = conditionExpression,
+                ReturnValues = returnValues                
+            };
+            var pipeline = new UpdateItemPipeline(this);
+            return pipeline.ExecuteSync(request);
         }
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, HashSet<string> ifNotExistAttributeNames = null)

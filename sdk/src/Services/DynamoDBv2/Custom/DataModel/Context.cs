@@ -376,7 +376,8 @@ namespace Amazon.DynamoDBv2.DataModel
             var updateDocument = table.UpdateHelper(
                 storage.Document,
                 table.MakeKey(storage.Document),
-                updateConfig.opConfig,
+                updateConfig.opConfig.ReturnValues,
+                updateConfig.opConfig.ConditionalExpression,
                 updateConfig.counterConditionExpression,
                 updateConfig.updateIfNotExistsAttributeNames
             );
@@ -415,7 +416,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private (UpdateItemOperationConfig opConfig, Expression versionExpression, Expression counterConditionExpression, 
             HashSet<string> updateIfNotExistsAttributeNames, bool updateIfNotExists) PrepareUpdateOperation(ItemStorage storage, DynamoDBFlatConfig flatConfig, Table table)
         {
-            var counterConditionExpression = BuildCounterConditionExpression(storage);
+            var counterConditionExpression = BuildCounterUpdateExpression(storage);
 
             Expression versionExpression = null;
 

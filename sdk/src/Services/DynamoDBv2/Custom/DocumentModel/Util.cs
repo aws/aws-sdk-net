@@ -331,7 +331,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         private const string AwsVariablePrefix = "awsavar";
 
-        public static void ConvertAttributeUpdatesToUpdateExpression(
+         public static void ConvertAttributeUpdatesToUpdateExpression(
             Dictionary<string, AttributeValueUpdate> attributesToUpdates, HashSet<string> ifNotExistAttributeNames,
             Expression updateExpression,
             Table table,
@@ -350,10 +350,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 expressionAttributes = updateExpression.ExpressionAttributeNames;
             }
 
-            var attributeNames = expressionAttributes.Select(pair => pair.Value).ToList();
+            var attributeNames = new HashSet<string>(expressionAttributes.Select(pair => pair.Value), StringComparer.Ordinal);
 
-            // Build an expression string with a SET clause for the added/modified attributes and 
-            // REMOVE clause for the attributes set to null.
             int attributeCount = 0;
             StringBuilder sets = new StringBuilder();
             StringBuilder removes = new StringBuilder();
@@ -363,7 +361,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (attributeNames.Contains(attribute)) continue;
 
                 var update = kvp.Value;
-              
+
                 var createOnly = ifNotExistAttributeNames?.Contains(attribute) ?? false;
 
                 string variableName = GetVariableName(ref attributeCount);
@@ -393,18 +391,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
                     }
 
-                    // Add the attribute value for the variable in the added in the expression
                     expressionAttributeValues.Add(attributeValueReference, update.Value);
                     expressionAttributes.Add(attributeReference, attribute);
                 }
 
             }
 
-            // Combine the SET and REMOVE clause
             StringBuilder statementBuilder = new StringBuilder();
             if (sets.Length > 0)
             {
-                // Use existing expression statement only if it is not null/whitespace; otherwise default to "SET"
                 string setStatement;
                 if (updateExpression != null && !string.IsNullOrWhiteSpace(updateExpression.ExpressionStatement))
                     setStatement = updateExpression.ExpressionStatement + ",";
@@ -415,7 +410,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             else
             {
-                // Only append existing expression statement when it contains non-whitespace content
                 if (updateExpression != null && !string.IsNullOrWhiteSpace(updateExpression.ExpressionStatement))
                 {
                     statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} ", updateExpression.ExpressionStatement);
