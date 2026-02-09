@@ -1,7 +1,6 @@
 ﻿using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -889,6 +888,20 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("child", projection.ExpressionAttributeNames["#P5"]);
             Assert.AreEqual("attribute3", projection.ExpressionAttributeNames["#P6"]);
             Assert.AreEqual(0, projection.ExpressionAttributeValues.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void ProjectionExpressionBuilder_NamesList_WithOnlyFirstName_Build_Correctly()
+        {
+            var projection = ProjectionExpressionBuilder.New()
+                .NamesList(NameBuilder.New("Attribute1"))
+                .Build();
+
+            Assert.IsNotNull(projection);
+            Assert.AreEqual("#P0", projection.ExpressionStatement);
+            Assert.AreEqual(1, projection.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", projection.ExpressionAttributeNames["#P0"]);
         }
 
         [TestMethod]

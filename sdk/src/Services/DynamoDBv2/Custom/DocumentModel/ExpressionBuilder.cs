@@ -96,7 +96,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
-    /// The <see cref="ProjectionExpressionBuilder"/> class is used to construct projection expressions for DynamoDB query operation.
+    /// The <see cref="ProjectionExpressionBuilder"/> class is used to construct projection expressions for DynamoDB operations that support ProjectionExpression.
     /// A projection expression is a comma-separated list of attribute names (and nested paths) to retrieve.
     /// </summary>
     public class ProjectionExpressionBuilder : ExpressionBuilder
@@ -109,12 +109,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private ProjectionExpressionBuilder()
         {
             Operands = new List<OperandBuilder>();
-        }
-
-        private ProjectionExpressionBuilder(List<OperandBuilder> operands)
-            : this()
-        {
-            Operands = operands ?? new List<OperandBuilder>();
         }
 
         /// <summary>
@@ -155,10 +149,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="first">First <see cref="NameBuilder"/> to include.</param>
         /// <param name="others">Optional additional <see cref="NameBuilder"/> operands.</param>
-        /// <returns>A new <see cref="ProjectionExpressionBuilder"/> that defines a projection expression using the specified attribute names.</returns>
+        /// <returns>The current <see cref="ProjectionExpressionBuilder"/> for chaining.</returns>
         public ProjectionExpressionBuilder NamesList(NameBuilder first, params NameBuilder[] others)
         {
-            Operands.Add(first);
+            Operands.Add(first ?? throw new ArgumentNullException(nameof(first)));
             if (others is { Length: > 0 })
             {
                 Operands.AddRange(others);
