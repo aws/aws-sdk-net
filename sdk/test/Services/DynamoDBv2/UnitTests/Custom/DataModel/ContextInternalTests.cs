@@ -477,7 +477,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(actualSearch.FilterExpression);
             Assert.IsFalse(actualSearch.FilterExpression.IsSet);
             Assert.IsNotNull(actualSearch.AttributesToGet);
-            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+            Assert.AreEqual(typeof(ContextTestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
 
             // Assert KeyExpression
             Assert.IsNotNull(actualSearch.KeyExpression);
@@ -511,7 +511,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(actualSearch.FilterExpression);
             Assert.IsFalse(actualSearch.FilterExpression.IsSet);
             Assert.IsNotNull(actualSearch.AttributesToGet);
-            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+            Assert.AreEqual(typeof(ContextTestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
 
             // Assert KeyExpression for both hash and range key
             Assert.IsNotNull(actualSearch.KeyExpression);
@@ -645,7 +645,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("1", keyCondition.AttributeValueList[0].N);
             Assert.IsNull(actualSearch.FilterExpression);
             Assert.IsNotNull(actualSearch.AttributesToGet);
-            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+            Assert.AreEqual(typeof(ContextTestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
             Assert.IsNull(actualSearch.KeyExpression);
         }
 
@@ -789,15 +789,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.IsNotNull(search.Filter, "Expected Query.Filter to be set for ConvertQueryByValue with BETWEEN range condition.");
             var conditions = search.Filter.ToConditions();
-            if (!conditions.ContainsKey("Id"))
-            {
-                var s = "";
-                foreach (var kvp in conditions)
-                {
-                    s += $"{kvp.Key}: {kvp.Value}\n";
-                }
-                throw new Exception(s);
-            }
+          
             Assert.IsTrue(conditions.ContainsKey("Id"));
             var idCondition = conditions["Id"];
             Assert.AreEqual(ComparisonOperator.EQ, idCondition.ComparisonOperator);
@@ -1174,7 +1166,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void GetUpdateIfNotExistsAttributeNames_WithNoIfNotExistsProperties_ReturnsEmptyList()
         {
             var itemStorage = new ItemStorage(new
-                ItemStorageConfig(typeof(TestEntity)))
+                ItemStorageConfig(typeof(ContextTestEntity)))
             {
             };
             var result = DynamoDBContext.GetUpdateIfNotExistsAttributeNames(itemStorage);
@@ -1325,7 +1317,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void BuildCounterConditionExpression_NoCounters_ReturnsNull()
         {
-            var itemStorage = new ItemStorage(new ItemStorageConfig(typeof(TestEntity)));
+            var itemStorage = new ItemStorage(new ItemStorageConfig(typeof(ContextTestEntity)));
             // Ensure no property marked as counter
             foreach (var p in itemStorage.Config.BaseTypeStorageConfig.Properties)
                 p.IsCounter = false;
@@ -1356,13 +1348,13 @@ namespace AWSSDK_DotNet.UnitTests
                 });
 
             var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
+            var config = context.StorageConfigCache.GetConfig<ContextTestEntity>(flatConfig);
             var itemStorage = new ItemStorage(config);
 
             var props = itemStorage.Config.BaseTypeStorageConfig.Properties;
 
-            var first = props.First(p => p.PropertyName == nameof(TestEntity.Id));
-            var second = props.First(p => p.PropertyName == nameof(TestEntity.NullableValue));
+            var first = props.First(p => p.PropertyName == nameof(ContextTestEntity.Id));
+            var second = props.First(p => p.PropertyName == nameof(ContextTestEntity.NullableValue));
 
             first.IsCounter = true;
             first.CounterStartValue = 5;

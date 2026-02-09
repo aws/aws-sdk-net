@@ -187,7 +187,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public int Segment { get; set; }
 
         /// <summary>
-        /// Total number of segments for a parallel scan. Defaults to 1 (no parallelism).
+        /// Total number of segments for a parallel scan.
+        /// Defaults to 0, meaning the property is unset and parallel scan parameters will not be included in the request.
+        /// Set to 1 for a non-parallel scan with a single segment, or greater than 1 to enable parallelism.
         /// </summary>
         public int TotalSegments { get; set; }
 
@@ -279,6 +281,5 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Flag specifying what values should be returned.
         /// </summary>
         public ReturnValues ReturnValues { get; set; }
-    }
-   
+    }   
 }

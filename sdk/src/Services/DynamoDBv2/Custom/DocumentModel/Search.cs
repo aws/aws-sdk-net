@@ -267,6 +267,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// The ReturnConsumedCapacity setting used for this search (NONE, TOTAL, INDEXES).
+        /// This value is only set when using the document operation request APIs
+        /// (<see cref="QueryDocumentOperationRequest"/> / <see cref="ScanDocumentOperationRequest"/>).
+        /// Legacy <see cref="QueryOperationConfig"/> and <see cref="ScanOperationConfig"/> do not expose this option,
+        /// so capacity metrics via <see cref="SearchMetrics"/> require the document operation request API.
         /// </summary>
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; internal set; }
 
@@ -910,12 +914,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public double? TotalCapacityUnits { get; internal set; }
 
         /// <summary>
-        /// Gets the total provisioned read capacity units for all tables in the collection.
+        /// Gets the total consumed read capacity units accumulated across all operations performed during the search.
         /// </summary>
         public double? TotalReadCapacityUnits { get; internal set; }
 
         /// <summary>
-        /// Gets the total provisioned write capacity units for all tables in the current context.
+        /// Gets the total accumulated consumed write capacity units for all operations performed during the search.
         /// </summary>
         public double? TotalWriteCapacityUnits { get; internal set; }
 

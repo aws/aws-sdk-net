@@ -1936,7 +1936,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Select = operationRequest.Select,
                 CollectResults = operationRequest.CollectResults,
                 PaginationToken = operationRequest.PaginationToken,
-                ReturnConsumedCapacity = operationRequest.ReturnConsumedCapacity 
+                ReturnConsumedCapacity = operationRequest.ReturnConsumedCapacity
             };
 
             return ret;
