@@ -2715,6 +2715,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateType UpgradePolicyUpdate = new UpdateType("UpgradePolicyUpdate");
         /// <summary>
+        /// Constant VendedLogsUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType VendedLogsUpdate = new UpdateType("VendedLogsUpdate");
+        /// <summary>
         /// Constant VersionUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType VersionUpdate = new UpdateType("VersionUpdate");
