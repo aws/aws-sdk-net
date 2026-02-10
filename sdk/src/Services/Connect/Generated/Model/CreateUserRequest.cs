@@ -40,7 +40,37 @@ namespace Amazon.Connect.Model
     /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
     /// management.
     /// </para>
-    ///  </important> 
+    ///  </important> <note> 
+    /// <para>
+    /// Fields in <c>PhoneConfig</c> cannot be set simultaneously with their corresponding
+    /// channel-specific configuration parameters. Specifically:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>PhoneConfig.AutoAccept</c> conflicts with <c>AutoAcceptConfigs</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PhoneConfig.AfterContactWorkTimeLimit</c> conflicts with <c>AfterContactWorkConfigs</c>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PhoneConfig.PhoneType</c> and <c>PhoneConfig.PhoneNumber</c> conflict with <c>PhoneNumberConfigs</c>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PhoneConfig.PersistentConnection</c> conflicts with <c>PersistentConnectionConfigs</c>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// We recommend using channel-specific parameters such as <c>AutoAcceptConfigs</c>, <c>AfterContactWorkConfigs</c>,
+    /// <c>PhoneNumberConfigs</c>, <c>PersistentConnectionConfigs</c>, and <c>VoiceEnhancementConfigs</c>
+    /// for per-channel configuration.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For information about how to create users using the Amazon Connect admin website,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
@@ -49,16 +79,57 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class CreateUserRequest : AmazonConnectRequest
     {
+        private List<AfterContactWorkConfigPerChannel> _afterContactWorkConfigs = AWSConfigs.InitializeCollections ? new List<AfterContactWorkConfigPerChannel>() : null;
+        private List<AutoAcceptConfig> _autoAcceptConfigs = AWSConfigs.InitializeCollections ? new List<AutoAcceptConfig>() : null;
         private string _directoryUserId;
         private string _hierarchyGroupId;
         private UserIdentityInfo _identityInfo;
         private string _instanceId;
         private string _password;
+        private List<PersistentConnectionConfig> _persistentConnectionConfigs = AWSConfigs.InitializeCollections ? new List<PersistentConnectionConfig>() : null;
         private UserPhoneConfig _phoneConfig;
+        private List<PhoneNumberConfig> _phoneNumberConfigs = AWSConfigs.InitializeCollections ? new List<PhoneNumberConfig>() : null;
         private string _routingProfileId;
         private List<string> _securityProfileIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _username;
+        private List<VoiceEnhancementConfig> _voiceEnhancementConfigs = AWSConfigs.InitializeCollections ? new List<VoiceEnhancementConfig>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AfterContactWorkConfigs. 
+        /// <para>
+        /// The list of after contact work (ACW) timeout configuration settings for each channel.
+        /// </para>
+        /// </summary>
+        public List<AfterContactWorkConfigPerChannel> AfterContactWorkConfigs
+        {
+            get { return this._afterContactWorkConfigs; }
+            set { this._afterContactWorkConfigs = value; }
+        }
+
+        // Check to see if AfterContactWorkConfigs property is set
+        internal bool IsSetAfterContactWorkConfigs()
+        {
+            return this._afterContactWorkConfigs != null && (this._afterContactWorkConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoAcceptConfigs. 
+        /// <para>
+        /// The list of auto-accept configuration settings for each channel.
+        /// </para>
+        /// </summary>
+        public List<AutoAcceptConfig> AutoAcceptConfigs
+        {
+            get { return this._autoAcceptConfigs; }
+            set { this._autoAcceptConfigs = value; }
+        }
+
+        // Check to see if AutoAcceptConfigs property is set
+        internal bool IsSetAutoAcceptConfigs()
+        {
+            return this._autoAcceptConfigs != null && (this._autoAcceptConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property DirectoryUserId. 
@@ -166,12 +237,32 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneConfig. 
+        /// Gets and sets the property PersistentConnectionConfigs. 
         /// <para>
-        /// The phone settings for the user.
+        /// The list of persistent connection configuration settings for each channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public List<PersistentConnectionConfig> PersistentConnectionConfigs
+        {
+            get { return this._persistentConnectionConfigs; }
+            set { this._persistentConnectionConfigs = value; }
+        }
+
+        // Check to see if PersistentConnectionConfigs property is set
+        internal bool IsSetPersistentConnectionConfigs()
+        {
+            return this._persistentConnectionConfigs != null && (this._persistentConnectionConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhoneConfig. 
+        /// <para>
+        /// The phone settings for the user. This parameter is optional. If not provided, the
+        /// user can be configured using channel-specific parameters such as <c>AutoAcceptConfigs</c>,
+        /// <c>AfterContactWorkConfigs</c>, <c>PhoneNumberConfigs</c>, <c>PersistentConnectionConfigs</c>,
+        /// and <c>VoiceEnhancementConfigs</c>.
+        /// </para>
+        /// </summary>
         public UserPhoneConfig PhoneConfig
         {
             get { return this._phoneConfig; }
@@ -182,6 +273,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetPhoneConfig()
         {
             return this._phoneConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhoneNumberConfigs. 
+        /// <para>
+        /// The list of phone number configuration settings for each channel.
+        /// </para>
+        /// </summary>
+        public List<PhoneNumberConfig> PhoneNumberConfigs
+        {
+            get { return this._phoneNumberConfigs; }
+            set { this._phoneNumberConfigs = value; }
+        }
+
+        // Check to see if PhoneNumberConfigs property is set
+        internal bool IsSetPhoneNumberConfigs()
+        {
+            return this._phoneNumberConfigs != null && (this._phoneNumberConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,6 +387,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetUsername()
         {
             return this._username != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoiceEnhancementConfigs. 
+        /// <para>
+        /// The list of voice enhancement configuration settings for each channel.
+        /// </para>
+        /// </summary>
+        public List<VoiceEnhancementConfig> VoiceEnhancementConfigs
+        {
+            get { return this._voiceEnhancementConfigs; }
+            set { this._voiceEnhancementConfigs = value; }
+        }
+
+        // Check to see if VoiceEnhancementConfigs property is set
+        internal bool IsSetVoiceEnhancementConfigs()
+        {
+            return this._voiceEnhancementConfigs != null && (this._voiceEnhancementConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

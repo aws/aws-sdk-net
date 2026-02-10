@@ -5223,7 +5223,37 @@ namespace Amazon.Connect
         /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
         /// management.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// Fields in <c>PhoneConfig</c> cannot be set simultaneously with their corresponding
+        /// channel-specific configuration parameters. Specifically:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AutoAccept</c> conflicts with <c>AutoAcceptConfigs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AfterContactWorkTimeLimit</c> conflicts with <c>AfterContactWorkConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PhoneType</c> and <c>PhoneConfig.PhoneNumber</c> conflict with <c>PhoneNumberConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PersistentConnection</c> conflicts with <c>PersistentConnectionConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// We recommend using channel-specific parameters such as <c>AutoAcceptConfigs</c>, <c>AfterContactWorkConfigs</c>,
+        /// <c>PhoneNumberConfigs</c>, <c>PersistentConnectionConfigs</c>, and <c>VoiceEnhancementConfigs</c>
+        /// for per-channel configuration.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
@@ -27044,6 +27074,87 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateUserConfig
+
+        /// <summary>
+        /// Updates the configuration settings for the specified user, including per-channel auto-accept
+        /// and after contact work (ACW) timeout settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation replaces the UpdateUserPhoneConfig API. While UpdateUserPhoneConfig
+        /// applies the same ACW timeout to all channels, UpdateUserConfig allows you to set different
+        /// auto-accept and ACW timeout values for each channel type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">REST API Reference for UpdateUserConfig Operation</seealso>
+        public virtual UpdateUserConfigResponse UpdateUserConfig(UpdateUserConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">REST API Reference for UpdateUserConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateUserConfig(UpdateUserConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUserConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateUserConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">REST API Reference for UpdateUserConfig Operation</seealso>
+        public virtual UpdateUserConfigResponse EndUpdateUserConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateUserConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateUserHierarchy
 
         /// <summary>
@@ -27344,6 +27455,16 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the phone configuration settings for the specified user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a>
+        /// API, which supports additional functionality that is not available in the UpdateUserPhoneConfig
+        /// API, such as voice enhancement settings and per-channel configuration for auto-accept
+        /// and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API
+        /// will always set the same ACW timeouts to all channels the user handles.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPhoneConfig service method.</param>
         /// 

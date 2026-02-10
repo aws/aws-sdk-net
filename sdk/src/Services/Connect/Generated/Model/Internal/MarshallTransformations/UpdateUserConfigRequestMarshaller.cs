@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateUser Request Marshaller
+    /// UpdateUserConfig Request Marshaller
     /// </summary>       
-    public class CreateUserRequestMarshaller : IMarshaller<IRequest, CreateUserRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateUserConfigRequestMarshaller : IMarshaller<IRequest, UpdateUserConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateUserRequest)input);
+            return this.Marshall((UpdateUserConfigRequest)input);
         }
 
         /// <summary>
@@ -53,17 +53,20 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateUserRequest publicRequest)
+        public IRequest Marshall(UpdateUserConfigRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
-            request.ResourcePath = "/users/{InstanceId}";
+            if (!publicRequest.IsSetUserId())
+                throw new AmazonConnectException("Request object does not have required field UserId set");
+            request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
+            request.ResourcePath = "/users/{InstanceId}/{UserId}/config";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -102,35 +105,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetDirectoryUserId())
-                {
-                    context.Writer.WritePropertyName("DirectoryUserId");
-                    context.Writer.Write(publicRequest.DirectoryUserId);
-                }
-
-                if(publicRequest.IsSetHierarchyGroupId())
-                {
-                    context.Writer.WritePropertyName("HierarchyGroupId");
-                    context.Writer.Write(publicRequest.HierarchyGroupId);
-                }
-
-                if(publicRequest.IsSetIdentityInfo())
-                {
-                    context.Writer.WritePropertyName("IdentityInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserIdentityInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
                 if(publicRequest.IsSetPersistentConnectionConfigs())
                 {
                     context.Writer.WritePropertyName("PersistentConnectionConfigs");
@@ -147,17 +121,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetPhoneConfig())
-                {
-                    context.Writer.WritePropertyName("PhoneConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserPhoneConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PhoneConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetPhoneNumberConfigs())
                 {
                     context.Writer.WritePropertyName("PhoneNumberConfigs");
@@ -172,43 +135,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRoutingProfileId())
-                {
-                    context.Writer.WritePropertyName("RoutingProfileId");
-                    context.Writer.Write(publicRequest.RoutingProfileId);
-                }
-
-                if(publicRequest.IsSetSecurityProfileIds())
-                {
-                    context.Writer.WritePropertyName("SecurityProfileIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityProfileIdsListValue in publicRequest.SecurityProfileIds)
-                    {
-                            context.Writer.Write(publicRequestSecurityProfileIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
                 }
 
                 if(publicRequest.IsSetVoiceEnhancementConfigs())
@@ -235,9 +161,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateUserRequestMarshaller _instance = new CreateUserRequestMarshaller();        
+        private static UpdateUserConfigRequestMarshaller _instance = new UpdateUserConfigRequestMarshaller();        
 
-        internal static CreateUserRequestMarshaller GetInstance()
+        internal static UpdateUserConfigRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -245,7 +171,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateUserRequestMarshaller Instance
+        public static UpdateUserConfigRequestMarshaller Instance
         {
             get
             {
