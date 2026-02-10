@@ -23,6 +23,7 @@ using System.Threading;
 
 namespace Amazon.Runtime
 {
+    [AWSIsBackwardsCompatible]
     public interface IRequestContext
     {
         AmazonWebServiceRequest OriginalRequest { get; set; }
