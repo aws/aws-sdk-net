@@ -90,6 +90,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DisableSessionTags);
                 }
 
+                if(publicRequest.IsSetPolicy())
+                {
+                    context.Writer.WritePropertyName("policy");
+                    context.Writer.Write(publicRequest.Policy);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

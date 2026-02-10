@@ -120,6 +120,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("policy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Policy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
