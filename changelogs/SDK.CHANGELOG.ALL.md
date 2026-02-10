@@ -1,3 +1,17 @@
+### 3.7.1220.0 (2026-02-10 19:24 UTC)
+* BedrockAgentCore (3.7.511.0)
+	* Added AgentCore browser proxy configuration support, allowing routing of browser traffic through HTTP and HTTPS proxy servers with authentication and bypass rules.
+* Connect (3.7.528.0)
+	* Amazon Connect now supports per-channel auto-accept and After Contact Work (ACW) timeouts. Configure agents with auto-accept and ACW timeout settings for chat, tasks, emails, and callbacks. Use the new UpdateUserConfig API to manage these settings.
+* EKS (3.7.510.0)
+	* Introducing an optional policy field, an IAM policy applied to pod identity associations in addition to IAM role policies. When specified, pod permissions are the intersection of IAM role policies and the policy field, ensuring the principle of least privilege.
+* Kafka (3.7.505.0)
+	* Amazon MSK adds three new APIs, CreateTopic, UpdateTopic, and DeleteTopic for managing Kafka topics in your MSK clusters.
+* RDS (3.7.513.0)
+	* This release adds backup configuration for RDS and Aurora restores, letting customers set backup retention period and preferred backup window during restore. It also enables viewing backup settings when describing snapshots or automated backups for instances and clusters.
+* Core 3.7.500.78
+	* Add internal attribute to mark interfaces in `Core` that can be updated without backwards incompatibility issues
+
 ### 3.7.1219.0 (2026-02-09 20:22 UTC)
 * ConnectCampaignsV2 (3.7.505.0)
 	* Add the missing event type for WhatsApp
