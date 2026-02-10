@@ -79,6 +79,7 @@ namespace Amazon.EKS.Model
         private string _clusterName;
         private bool? _disableSessionTags;
         private string _awsNamespace;
+        private string _policy;
         private string _roleArn;
         private string _serviceAccount;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -175,6 +176,45 @@ namespace Amazon.EKS.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// An optional IAM policy in JSON format (as an escaped string) that applies additional
+        /// restrictions to this pod identity association beyond the IAM policies attached to
+        /// the IAM role. This policy is applied as the intersection of the role's policies and
+        /// this policy, allowing you to reduce the permissions that applications in the pods
+        /// can use. Use this policy to enforce least privilege access while still leveraging
+        /// a shared IAM role across multiple applications.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important considerations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Session tags:</b> When using this policy, <c>disableSessionTags</c> must be set
+        /// to <c>true</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Target role permissions:</b> If you specify both a <c>TargetRoleArn</c> and a
+        /// policy, the policy restrictions apply only to the target role's permissions, not to
+        /// the initial role used for assuming the target role.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
         }
 
         /// <summary>

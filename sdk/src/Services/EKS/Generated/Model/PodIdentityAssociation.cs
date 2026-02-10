@@ -45,6 +45,7 @@ namespace Amazon.EKS.Model
         private DateTime? _modifiedAt;
         private string _awsNamespace;
         private string _ownerArn;
+        private string _policy;
         private string _roleArn;
         private string _serviceAccount;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -233,6 +234,29 @@ namespace Amazon.EKS.Model
         internal bool IsSetOwnerArn()
         {
             return this._ownerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// An optional IAM policy in JSON format (as an escaped string) that applies additional
+        /// restrictions to this pod identity association beyond the IAM policies attached to
+        /// the IAM role. This policy is applied as the intersection of the role's policies and
+        /// this policy, allowing you to reduce the permissions that applications in the pods
+        /// can use. Use this policy to enforce least privilege access while still leveraging
+        /// a shared IAM role across multiple applications.
+        /// </para>
+        /// </summary>
+        public string Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
         }
 
         /// <summary>
