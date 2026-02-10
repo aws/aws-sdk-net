@@ -319,37 +319,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return convertedValues;
         }
-
-        internal void SetAttributeUpdates(Dictionary<string, AttributeValueUpdate> attributeUpdates, HashSet<string> ifNotExistAttributeNames, Table table)
-        {
-            if (attributeUpdates == null) throw new ArgumentNullException(nameof(attributeUpdates));
-            if (table == null) throw new ArgumentNullException(nameof(table));
-
-            Common.ConvertAttributeUpdatesToUpdateExpression(
-                attributeUpdates,
-                ifNotExistAttributeNames,
-                this,
-                table,
-                out var statement,
-                out var expressionAttributeValues,
-                out var expressionAttributeNames);
-
-            ExpressionStatement = statement;
-
-            _expressionAttributeNames = expressionAttributeNames != null
-                ? new Dictionary<string, string>(expressionAttributeNames, StringComparer.Ordinal)
-                : new Dictionary<string, string>(StringComparer.Ordinal);
-
-            if (expressionAttributeValues != null && expressionAttributeValues.Count > 0)
-            {
-                var convertedDocument = table.FromAttributeMap(expressionAttributeValues);
-                _expressionAttributeValues = new Dictionary<string, DynamoDBEntry>(convertedDocument, StringComparer.Ordinal);
-            }
-            else
-            {
-                _expressionAttributeValues = new Dictionary<string, DynamoDBEntry>(StringComparer.Ordinal);
-            }
-        }
     }
 
     internal sealed class UpdateExpression : Expression

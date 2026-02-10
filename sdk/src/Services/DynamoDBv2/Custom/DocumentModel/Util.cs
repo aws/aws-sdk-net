@@ -352,6 +352,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             var attributeNames = new HashSet<string>(expressionAttributes.Select(pair => pair.Value), StringComparer.Ordinal);
 
+            // Build an expression string with a SET clause for the added/modified attributes and 
+            // REMOVE clause for the attributes set to null.
             int attributeCount = 0;
             StringBuilder sets = new StringBuilder();
             StringBuilder removes = new StringBuilder();

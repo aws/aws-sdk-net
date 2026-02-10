@@ -1438,22 +1438,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        internal Document UpdateHelper(Document doc, Key key, ReturnValues returnValues, Expression conditionExpression, Expression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
+        internal Document UpdateHelper(Document doc, Key key, ReturnValues returnValues, Expression conditionExpression,
+            UpdateExpression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
         {
             var keyDocument = key != null ? this.FromAttributeMap(key) : null;
 
-            var attributeUpdates = this.ToAttributeUpdateMap(doc, false);
-            foreach (var keyName in this.KeyNames)
-            {
-                attributeUpdates.Remove(keyName);
-            }
-
             if(updateExpression == null)
             {
-                updateExpression = new Expression();
+                updateExpression = new UpdateExpression();
             }
 
-            updateExpression.SetAttributeUpdates(attributeUpdates, ifNotExistAttributeNames, this);
+            bool haveKeysChanged = HaveKeysChanged(doc);
+            bool updateChangedAttributesOnly = !haveKeysChanged;
+
+            UpdateExpression documentUpdate = this.ToUpdateExpression(doc, updateChangedAttributesOnly, ifNotExistAttributeNames);
 
             var request = new UpdateItemDocumentOperationRequest
             {
@@ -1464,6 +1462,58 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
             var pipeline = new UpdateItemPipeline(this);
             return pipeline.ExecuteSync(request);
+        }
+
+        private UpdateExpression ToUpdateExpression(Document doc, bool updateChangedAttributesOnly, HashSet<string> ifNotExistAttributeNames)
+        {
+            var updateExpression = new UpdateExpression();
+            int attributeCount = 0;
+            var keyNames = new HashSet<string>(this.KeyNames, StringComparer.Ordinal);
+
+            foreach (var kvp in this.ToAttributeUpdateMap(doc, updateChangedAttributesOnly))
+            {
+                var attributeName = kvp.Key;
+                if (keyNames.Contains(attributeName))
+                    continue;
+
+                var update = kvp.Value;
+                var createOnly = ifNotExistAttributeNames?.Contains(attributeName) ?? false;
+
+                string variableName = Common.GetVariableName(ref attributeCount);
+                var attributeReference = Common.GetAttributeReference(variableName);
+                var attributeValueReference = Common.GetAttributeValueReference(variableName);
+
+                if (update.Action == AttributeAction.DELETE)
+                {
+                    if (!createOnly)
+                    {
+                        updateExpression.AddStatement(UpdateExpression.OperationRemove, attributeReference);
+                        updateExpression.ExpressionAttributeNames[attributeReference] = attributeName;
+                    }
+                    continue;
+                }
+
+                if (!doc.TryGetValue(attributeName, out var entry))
+                {
+                    entry = new DynamoDBNull();
+                }
+
+                if (this.StoreAsEpoch.Contains(attributeName))
+                    entry = Document.DateTimeToEpochSeconds(entry, attributeName);
+
+                if (this.StoreAsEpochLong.Contains(attributeName))
+                    entry = Document.DateTimeToEpochSecondsLong(entry, attributeName);
+
+                var setStatement = createOnly
+                    ? $"{attributeReference} = if_not_exists({attributeReference}, {attributeValueReference})"
+                    : $"{attributeReference} = {attributeValueReference}";
+
+                updateExpression.AddStatement(UpdateExpression.OperationSet, setStatement);
+                updateExpression.ExpressionAttributeNames[attributeReference] = attributeName;
+                updateExpression.ExpressionAttributeValues[attributeValueReference] = entry;
+            }
+
+            return updateExpression;
         }
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
