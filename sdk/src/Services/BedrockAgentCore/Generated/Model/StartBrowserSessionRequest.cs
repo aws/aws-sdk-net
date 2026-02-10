@@ -75,6 +75,7 @@ namespace Amazon.BedrockAgentCore.Model
         private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private string _name;
         private BrowserProfileConfiguration _profileConfiguration;
+        private ProxyConfiguration _proxyConfiguration;
         private int? _sessionTimeoutSeconds;
         private string _traceId;
         private string _traceParent;
@@ -180,6 +181,27 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetProfileConfiguration()
         {
             return this._profileConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxyConfiguration. 
+        /// <para>
+        /// Optional proxy configuration for routing browser traffic through customer-specified
+        /// proxy servers. When provided, enables HTTP Basic authentication via Amazon Web Services
+        /// Secrets Manager and domain-based routing rules. Requires <c>secretsmanager:GetSecretValue</c>
+        /// IAM permission for the specified secret ARNs.
+        /// </para>
+        /// </summary>
+        public ProxyConfiguration ProxyConfiguration
+        {
+            get { return this._proxyConfiguration; }
+            set { this._proxyConfiguration = value; }
+        }
+
+        // Check to see if ProxyConfiguration property is set
+        internal bool IsSetProxyConfiguration()
+        {
+            return this._proxyConfiguration != null;
         }
 
         /// <summary>
