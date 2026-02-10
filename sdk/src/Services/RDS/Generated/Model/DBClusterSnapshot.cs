@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
     {
         private int? _allocatedStorage;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private int? _backupRetentionPeriod;
         private DateTime? _clusterCreateTime;
         private string _dbClusterIdentifier;
         private string _dbClusterResourceId;
@@ -57,6 +58,7 @@ namespace Amazon.RDS.Model
         private string _masterUsername;
         private int? _percentProgress;
         private int? _port;
+        private string _preferredBackupWindow;
         private DateTime? _snapshotCreateTime;
         private string _snapshotType;
         private string _sourceDBClusterSnapshotArn;
@@ -102,6 +104,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The number of days for which automatic DB snapshots are retained.
+        /// </para>
+        /// </summary>
+        public int BackupRetentionPeriod
+        {
+            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            set { this._backupRetentionPeriod = value; }
+        }
+
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
+        {
+            return this._backupRetentionPeriod.HasValue; 
         }
 
         /// <summary>
@@ -380,6 +400,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c>.
+        /// </para>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
         }
 
         /// <summary>

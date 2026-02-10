@@ -168,6 +168,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PreferredBackupWindow", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreferredBackupWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Region", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
