@@ -414,6 +414,94 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  CreateTopic
+
+
+        /// <summary>
+        /// Creates a topic in the specified MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTopic service method.</param>
+        /// 
+        /// <returns>The response from the CreateTopic service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ClusterConnectivityException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ControllerMovedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.GroupSubscribedToTopicException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.KafkaRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.KafkaTimeoutException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotControllerException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ReassignmentInProgressException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TopicExistsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnknownTopicOrPartitionException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
+        CreateTopicResponse CreateTopic(CreateTopicRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTopic operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTopic
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
+        IAsyncResult BeginCreateTopic(CreateTopicRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTopic.</param>
+        /// 
+        /// <returns>Returns a  CreateTopicResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
+        CreateTopicResponse EndCreateTopic(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateVpcConnection
 
 
@@ -687,6 +775,82 @@ namespace Amazon.Kafka
         /// <returns>Returns a  DeleteReplicatorResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteReplicator">REST API Reference for DeleteReplicator Operation</seealso>
         DeleteReplicatorResponse EndDeleteReplicator(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTopic
+
+
+        /// <summary>
+        /// Deletes a topic in the specified MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTopic service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTopic service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ClusterConnectivityException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ControllerMovedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.GroupSubscribedToTopicException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.KafkaRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.KafkaTimeoutException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotControllerException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ReassignmentInProgressException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnknownTopicOrPartitionException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
+        DeleteTopicResponse DeleteTopic(DeleteTopicRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTopic operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTopic
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
+        IAsyncResult BeginDeleteTopic(DeleteTopicRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTopic.</param>
+        /// 
+        /// <returns>Returns a  DeleteTopicResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
+        DeleteTopicResponse EndDeleteTopic(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3229,6 +3393,88 @@ namespace Amazon.Kafka
         /// <returns>Returns a  UpdateStorageResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateStorage">REST API Reference for UpdateStorage Operation</seealso>
         UpdateStorageResponse EndUpdateStorage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTopic
+
+
+        /// <summary>
+        /// Updates the configuration of the specified topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTopic service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTopic service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ClusterConnectivityException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ControllerMovedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.GroupSubscribedToTopicException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.KafkaRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.KafkaTimeoutException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotControllerException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ReassignmentInProgressException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnknownTopicOrPartitionException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateTopic">REST API Reference for UpdateTopic Operation</seealso>
+        UpdateTopicResponse UpdateTopic(UpdateTopicRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTopic operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTopic
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateTopic">REST API Reference for UpdateTopic Operation</seealso>
+        IAsyncResult BeginUpdateTopic(UpdateTopicRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTopic.</param>
+        /// 
+        /// <returns>Returns a  UpdateTopicResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateTopic">REST API Reference for UpdateTopic Operation</seealso>
+        UpdateTopicResponse EndUpdateTopic(IAsyncResult asyncResult);
 
         #endregion
                 
