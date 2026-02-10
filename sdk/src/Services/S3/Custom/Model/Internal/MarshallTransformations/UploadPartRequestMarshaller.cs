@@ -42,15 +42,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     {
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UploadPartRequest publicRequest)
         {
+            // Server-side encryption with customer-provided keys (SSE-C) handling for backward compatibility.
+            // https://github.com/aws/aws-sdk-net/blob/9ee87d97cfa1150403e84432d79e41d23abbadb7/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/UploadPartRequestMarshaller.cs#L68
+            // When SSE-C key is provided: uses the MD5 digest if supplied, otherwise automatically computes it.
             if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
                 defaultRequest.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, publicRequest.ServerSideEncryptionCustomerProvidedKey);
                 if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
                     defaultRequest.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, publicRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
                 else
+                    // Automatically compute MD5 digest of the customer key if not provided
+                    // This is an S3-specific convenience feature to preserve backward compatibility.
                     defaultRequest.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(publicRequest.ServerSideEncryptionCustomerProvidedKey));
             }
 
+            // Use AddSubResource to add partNumber and uploadId to maintain consistency with the original S3 custom code.
+            // The generated marshaller would add these to the defaultRequest.Parameters, so we added this custom code to
+            // to preserve the exact URL structure and parameter ordering from the original implementation.
+            // https://github.com/aws/aws-sdk-net/blob/9ee87d97cfa1150403e84432d79e41d23abbadb7/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/UploadPartRequestMarshaller.cs#L90C40-L90C50
             if (publicRequest.IsSetPartNumber())
                 defaultRequest.AddSubResource("partNumber", S3Transforms.ToStringValue(publicRequest.PartNumber.Value));
             if (publicRequest.IsSetUploadId())

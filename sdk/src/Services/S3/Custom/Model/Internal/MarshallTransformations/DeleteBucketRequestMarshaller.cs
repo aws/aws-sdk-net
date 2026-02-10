@@ -29,10 +29,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	{
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketRequest publicRequest)
         {
+			// Custom region handling preserves original S3 behavior for legacy regions.
+			// USEast1 and EUWest1 require special mapping because they use different values
+			// between S3Region and RegionEndpoint classes for backward compatibility.
+			// Original implementation: https://github.com/aws/aws-sdk-net/blob/9d4fea34442970b1cdf2e1aff8b02d11e0e135fe/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/DeleteBucketRequestMarshaller.cs#L48-L66
 			if (publicRequest.BucketRegion != null)
 			{
 				RegionEndpoint regionEndpoint;
-#pragma warning disable CR1004
+	#pragma warning disable CR1004
 				if (publicRequest.BucketRegion == S3Region.USEast1)
 				{
 					regionEndpoint = RegionEndpoint.USEast1;
@@ -45,7 +49,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 				{
 					regionEndpoint = RegionEndpoint.GetBySystemName(publicRequest.BucketRegion.Value);
 				}
-#pragma warning restore CR1004
+	#pragma warning restore CR1004
 				defaultRequest.AlternateEndpoint = regionEndpoint;
 			}
 		}
