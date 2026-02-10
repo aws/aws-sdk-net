@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add internal attribute to mark interfaces in `Core` that can be updated without backwards incompatibility issues"
+    ]
+  }
+}
