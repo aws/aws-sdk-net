@@ -120,6 +120,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetProxyConfiguration())
+            {
+                context.Writer.WritePropertyName("proxyConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProxyConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProxyConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSessionTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("sessionTimeoutSeconds");
