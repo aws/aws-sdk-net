@@ -4856,6 +4856,11 @@
     <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z-]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateUserConfigRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserHierarchyRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -5007,6 +5012,10 @@
     <property>Amazon.Connect.Model.UpdateWorkspaceVisibilityRequest.WorkspaceId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AfterContactWorkConfig.AfterContactWorkTimeLimit</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AgentContactReference.ContactId</property>
@@ -6576,6 +6585,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.PhoneNumberConfig.PhoneNumber</property>
+    <pattern>\+[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.PhoneNumberQuickConnectConfig.PhoneNumber</property>
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
@@ -7375,7 +7388,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserPhoneConfig.DeskPhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>\+[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiency.AttributeName</property>

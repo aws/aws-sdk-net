@@ -30,30 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about the returned users.
+    /// Container for the parameters to the UpdateUserConfig operation.
+    /// Updates the configuration settings for the specified user, including per-channel auto-accept
+    /// and after contact work (ACW) timeout settings.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation replaces the UpdateUserPhoneConfig API. While UpdateUserPhoneConfig
+    /// applies the same ACW timeout to all channels, UpdateUserConfig allows you to set different
+    /// auto-accept and ACW timeout values for each channel type.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class UserSearchSummary
+    public partial class UpdateUserConfigRequest : AmazonConnectRequest
     {
         private List<AfterContactWorkConfigPerChannel> _afterContactWorkConfigs = AWSConfigs.InitializeCollections ? new List<AfterContactWorkConfigPerChannel>() : null;
-        private string _arn;
         private List<AutoAcceptConfig> _autoAcceptConfigs = AWSConfigs.InitializeCollections ? new List<AutoAcceptConfig>() : null;
-        private string _directoryUserId;
-        private string _hierarchyGroupId;
-        private string _id;
-        private UserIdentityInfoLite _identityInfo;
+        private string _instanceId;
         private List<PersistentConnectionConfig> _persistentConnectionConfigs = AWSConfigs.InitializeCollections ? new List<PersistentConnectionConfig>() : null;
-        private UserPhoneConfig _phoneConfig;
         private List<PhoneNumberConfig> _phoneNumberConfigs = AWSConfigs.InitializeCollections ? new List<PhoneNumberConfig>() : null;
-        private string _routingProfileId;
-        private List<string> _securityProfileIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private string _username;
+        private string _userId;
         private List<VoiceEnhancementConfig> _voiceEnhancementConfigs = AWSConfigs.InitializeCollections ? new List<VoiceEnhancementConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property AfterContactWorkConfigs. 
         /// <para>
         /// The list of after contact work (ACW) timeout configuration settings for each channel.
+        /// ACW timeout specifies how many seconds agents have for after contact work, such as
+        /// entering notes about the contact. The minimum setting is 1 second, and the maximum
+        /// is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning
+        /// agents must manually choose to end ACW.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -74,27 +80,12 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the user.
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property AutoAcceptConfigs. 
         /// <para>
-        /// The list of auto-accept configuration settings for each channel.
+        /// The list of auto-accept configuration settings for each channel. When auto-accept
+        /// is enabled for a channel, available agents are automatically connected to contacts
+        /// from that channel without needing to manually accept. Auto-accept connects agents
+        /// to contacts in less than one second.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -115,75 +106,23 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectoryUserId. 
+        /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The directory identifier of the user.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
-        public string DirectoryUserId
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string InstanceId
         {
-            get { return this._directoryUserId; }
-            set { this._directoryUserId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
-        // Check to see if DirectoryUserId property is set
-        internal bool IsSetDirectoryUserId()
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
         {
-            return this._directoryUserId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property HierarchyGroupId. 
-        /// <para>
-        /// The identifier of the user's hierarchy group.
-        /// </para>
-        /// </summary>
-        public string HierarchyGroupId
-        {
-            get { return this._hierarchyGroupId; }
-            set { this._hierarchyGroupId = value; }
-        }
-
-        // Check to see if HierarchyGroupId property is set
-        internal bool IsSetHierarchyGroupId()
-        {
-            return this._hierarchyGroupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The identifier of the user's summary.
-        /// </para>
-        /// </summary>
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property IdentityInfo. 
-        /// <para>
-        /// The user's first name and last name.
-        /// </para>
-        /// </summary>
-        public UserIdentityInfoLite IdentityInfo
-        {
-            get { return this._identityInfo; }
-            set { this._identityInfo = value; }
-        }
-
-        // Check to see if IdentityInfo property is set
-        internal bool IsSetIdentityInfo()
-        {
-            return this._identityInfo != null;
+            return this._instanceId != null;
         }
 
         /// <summary>
@@ -210,21 +149,6 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneConfig.
-        /// </summary>
-        public UserPhoneConfig PhoneConfig
-        {
-            get { return this._phoneConfig; }
-            set { this._phoneConfig = value; }
-        }
-
-        // Check to see if PhoneConfig property is set
-        internal bool IsSetPhoneConfig()
-        {
-            return this._phoneConfig != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property PhoneNumberConfigs. 
         /// <para>
         /// The list of phone number configuration settings for each channel.
@@ -248,89 +172,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoutingProfileId. 
+        /// Gets and sets the property UserId. 
         /// <para>
-        /// The identifier of the user's routing profile.
+        /// The identifier of the user account.
         /// </para>
         /// </summary>
-        public string RoutingProfileId
+        [AWSProperty(Required=true)]
+        public string UserId
         {
-            get { return this._routingProfileId; }
-            set { this._routingProfileId = value; }
+            get { return this._userId; }
+            set { this._userId = value; }
         }
 
-        // Check to see if RoutingProfileId property is set
-        internal bool IsSetRoutingProfileId()
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
         {
-            return this._routingProfileId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SecurityProfileIds. 
-        /// <para>
-        /// The identifiers of the user's security profiles.
-        /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<string> SecurityProfileIds
-        {
-            get { return this._securityProfileIds; }
-            set { this._securityProfileIds = value; }
-        }
-
-        // Check to see if SecurityProfileIds property is set
-        internal bool IsSetSecurityProfileIds()
-        {
-            return this._securityProfileIds != null && (this._securityProfileIds.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags used to organize, track, or control access for this resource. For example,
-        /// { "Tags": {"key1":"value1", "key2":"value2"} }.
-        /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Username. 
-        /// <para>
-        /// The name of the user.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string Username
-        {
-            get { return this._username; }
-            set { this._username = value; }
-        }
-
-        // Check to see if Username property is set
-        internal bool IsSetUsername()
-        {
-            return this._username != null;
+            return this._userId != null;
         }
 
         /// <summary>
