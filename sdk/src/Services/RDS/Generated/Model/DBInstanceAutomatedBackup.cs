@@ -60,6 +60,7 @@ namespace Amazon.RDS.Model
         private bool? _multiTenant;
         private string _optionGroupName;
         private int? _port;
+        private string _preferredBackupWindow;
         private string _region;
         private RestoreWindow _restoreWindow;
         private string _status;
@@ -536,6 +537,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c>.
+        /// </para>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
         }
 
         /// <summary>
