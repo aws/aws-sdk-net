@@ -34,17 +34,38 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class ServiceJobSummary
     {
+        private List<ServiceJobCapacityUsageSummary> _capacityUsage = AWSConfigs.InitializeCollections ? new List<ServiceJobCapacityUsageSummary>() : null;
         private long? _createdAt;
         private string _jobArn;
         private string _jobId;
         private string _jobName;
         private LatestServiceJobAttempt _latestAttempt;
+        private long? _scheduledAt;
         private ServiceJobType _serviceJobType;
         private string _shareIdentifier;
         private long? _startedAt;
         private ServiceJobStatus _status;
         private string _statusReason;
         private long? _stoppedAt;
+
+        /// <summary>
+        /// Gets and sets the property CapacityUsage. 
+        /// <para>
+        /// The capacity usage information for this service job, including the unit of measure
+        /// and quantity of resources being used.
+        /// </para>
+        /// </summary>
+        public List<ServiceJobCapacityUsageSummary> CapacityUsage
+        {
+            get { return this._capacityUsage; }
+            set { this._capacityUsage = value; }
+        }
+
+        // Check to see if CapacityUsage property is set
+        internal bool IsSetCapacityUsage()
+        {
+            return this._capacityUsage != null && (this._capacityUsage.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -136,6 +157,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetLatestAttempt()
         {
             return this._latestAttempt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledAt. 
+        /// <para>
+        /// The Unix timestamp (in milliseconds) for when the service job was scheduled for execution.
+        /// </para>
+        /// </summary>
+        public long ScheduledAt
+        {
+            get { return this._scheduledAt.GetValueOrDefault(); }
+            set { this._scheduledAt = value; }
+        }
+
+        // Check to see if ScheduledAt property is set
+        internal bool IsSetScheduledAt()
+        {
+            return this._scheduledAt.HasValue; 
         }
 
         /// <summary>

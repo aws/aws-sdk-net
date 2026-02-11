@@ -1239,7 +1239,9 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Provides a list of the first 100 <c>RUNNABLE</c> jobs associated to a single job queue.
+        /// Provides a list of the first 100 <c>RUNNABLE</c> jobs associated to a single job queue
+        /// and includes capacity utilization, including total usage and breakdown by share for
+        /// fairshare scheduling job queues.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobQueueSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -1341,11 +1343,7 @@ namespace Amazon.Batch
         /// <para>
         /// An array job ID to return a list of the children for that job
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can filter the results by job status with the <c>jobStatus</c> parameter. If you
-        /// don't specify a status, only <c>RUNNING</c> jobs are returned.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">

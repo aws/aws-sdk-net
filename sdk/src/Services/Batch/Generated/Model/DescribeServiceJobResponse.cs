@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
     public partial class DescribeServiceJobResponse : AmazonWebServiceResponse
     {
         private List<ServiceJobAttemptDetail> _attempts = AWSConfigs.InitializeCollections ? new List<ServiceJobAttemptDetail>() : null;
+        private List<ServiceJobCapacityUsageDetail> _capacityUsage = AWSConfigs.InitializeCollections ? new List<ServiceJobCapacityUsageDetail>() : null;
         private long? _createdAt;
         private bool? _isTerminated;
         private string _jobArn;
@@ -43,6 +44,7 @@ namespace Amazon.Batch.Model
         private string _jobQueue;
         private LatestServiceJobAttempt _latestAttempt;
         private ServiceJobRetryStrategy _retryStrategy;
+        private long? _scheduledAt;
         private int? _schedulingPriority;
         private ServiceJobType _serviceJobType;
         private string _serviceRequestPayload;
@@ -70,6 +72,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetAttempts()
         {
             return this._attempts != null && (this._attempts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityUsage. 
+        /// <para>
+        /// The configured capacity for the service job, such as the number of instances. The
+        /// number of instances should be the same value as the <c>serviceRequestPayload.InstanceCount</c>
+        /// field.
+        /// </para>
+        /// </summary>
+        public List<ServiceJobCapacityUsageDetail> CapacityUsage
+        {
+            get { return this._capacityUsage; }
+            set { this._capacityUsage = value; }
+        }
+
+        // Check to see if CapacityUsage property is set
+        internal bool IsSetCapacityUsage()
+        {
+            return this._capacityUsage != null && (this._capacityUsage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,6 +240,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetRetryStrategy()
         {
             return this._retryStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledAt. 
+        /// <para>
+        /// The Unix timestamp (in milliseconds) for when the service job was scheduled. This
+        /// represents when the service job was dispatched to SageMaker and the service job transitioned
+        /// to the <c>SCHEDULED</c> state.
+        /// </para>
+        /// </summary>
+        public long ScheduledAt
+        {
+            get { return this._scheduledAt.GetValueOrDefault(); }
+            set { this._scheduledAt = value; }
+        }
+
+        // Check to see if ScheduledAt property is set
+        internal bool IsSetScheduledAt()
+        {
+            return this._scheduledAt.HasValue; 
         }
 
         /// <summary>

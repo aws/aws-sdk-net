@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
     public partial class GetJobQueueSnapshotResponse : AmazonWebServiceResponse
     {
         private FrontOfQueueDetail _frontOfQueue;
+        private QueueSnapshotUtilizationDetail _queueUtilization;
 
         /// <summary>
         /// Gets and sets the property FrontOfQueue. 
@@ -55,6 +56,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetFrontOfQueue()
         {
             return this._frontOfQueue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueueUtilization. 
+        /// <para>
+        /// The job queue's capacity utilization, including total usage and breakdown by fairshare
+        /// scheduling queue.
+        /// </para>
+        /// </summary>
+        public QueueSnapshotUtilizationDetail QueueUtilization
+        {
+            get { return this._queueUtilization; }
+            set { this._queueUtilization = value; }
+        }
+
+        // Check to see if QueueUtilization property is set
+        internal bool IsSetQueueUtilization()
+        {
+            return this._queueUtilization != null;
         }
 
     }

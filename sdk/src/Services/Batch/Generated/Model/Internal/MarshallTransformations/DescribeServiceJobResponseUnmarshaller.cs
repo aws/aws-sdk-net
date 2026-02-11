@@ -58,6 +58,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     response.Attempts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("capacityUsage", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceJobCapacityUsageDetail, ServiceJobCapacityUsageDetailUnmarshaller>(ServiceJobCapacityUsageDetailUnmarshaller.Instance);
+                    response.CapacityUsage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ServiceJobRetryStrategyUnmarshaller.Instance;
                     response.RetryStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scheduledAt", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.ScheduledAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("schedulingPriority", targetDepth))

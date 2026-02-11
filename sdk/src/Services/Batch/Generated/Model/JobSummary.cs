@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
     public partial class JobSummary
     {
         private ArrayPropertiesSummary _arrayProperties;
+        private List<JobCapacityUsageSummary> _capacityUsage = AWSConfigs.InitializeCollections ? new List<JobCapacityUsageSummary>() : null;
         private ContainerSummary _container;
         private long? _createdAt;
         private string _jobArn;
@@ -42,6 +43,8 @@ namespace Amazon.Batch.Model
         private string _jobId;
         private string _jobName;
         private NodePropertiesSummary _nodeProperties;
+        private long? _scheduledAt;
+        private string _shareIdentifier;
         private long? _startedAt;
         private JobStatus _status;
         private string _statusReason;
@@ -63,6 +66,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetArrayProperties()
         {
             return this._arrayProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityUsage. 
+        /// <para>
+        /// The configured capacity usage information for this job, including the unit of measure
+        /// and quantity of resources.
+        /// </para>
+        /// </summary>
+        public List<JobCapacityUsageSummary> CapacityUsage
+        {
+            get { return this._capacityUsage; }
+            set { this._capacityUsage = value; }
+        }
+
+        // Check to see if CapacityUsage property is set
+        internal bool IsSetCapacityUsage()
+        {
+            return this._capacityUsage != null && (this._capacityUsage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -201,6 +223,45 @@ namespace Amazon.Batch.Model
         internal bool IsSetNodeProperties()
         {
             return this._nodeProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledAt. 
+        /// <para>
+        /// The Unix timestamp (in milliseconds) for when the job was scheduled for execution.
+        /// For more information on job statues, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-status.html">Service
+        /// job status</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public long ScheduledAt
+        {
+            get { return this._scheduledAt.GetValueOrDefault(); }
+            set { this._scheduledAt = value; }
+        }
+
+        // Check to see if ScheduledAt property is set
+        internal bool IsSetScheduledAt()
+        {
+            return this._scheduledAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareIdentifier. 
+        /// <para>
+        /// The share identifier for the fairshare scheduling queue that this job is associated
+        /// with.
+        /// </para>
+        /// </summary>
+        public string ShareIdentifier
+        {
+            get { return this._shareIdentifier; }
+            set { this._shareIdentifier = value; }
+        }
+
+        // Check to see if ShareIdentifier property is set
+        internal bool IsSetShareIdentifier()
+        {
+            return this._shareIdentifier != null;
         }
 
         /// <summary>

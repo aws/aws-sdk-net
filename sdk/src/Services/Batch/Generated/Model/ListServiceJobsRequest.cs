@@ -45,10 +45,16 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// The filter to apply to the query. Only one filter can be used at a time. When the
-        /// filter is used, <c>jobStatus</c> is ignored. The results are sorted by the <c>createdAt</c>
+        /// filter is used, <c>jobStatus</c> is ignored with the exception that <c>SHARE_IDENTIFIER</c>
+        /// and <c>jobStatus</c> can be used together. The results are sorted by the <c>createdAt</c>
         /// field, with the most recent jobs being first.
         /// </para>
-        ///  <dl> <dt>JOB_NAME</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// The <c>SHARE_IDENTIFIER</c> filter and the <c>jobStatus</c> field can be used together
+        /// to filter results.
+        /// </para>
+        ///  </note> <dl> <dt>JOB_NAME</dt> <dd> 
         /// <para>
         /// The value of the filter is a case-insensitive match for the job name. If the value
         /// ends with an asterisk (*), the filter matches any job name that begins with the string
@@ -68,6 +74,10 @@ namespace Amazon.Batch.Model
         /// The value for the filter is the time that's after the job was created. This corresponds
         /// to the <c>createdAt</c> value. The value is a string representation of the number
         /// of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.
+        /// </para>
+        ///  </dd> <dt>SHARE_IDENTIFIER</dt> <dd> 
+        /// <para>
+        /// The value for the filter is the fairshare scheduling share identifier.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -104,8 +114,18 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The job status with which to filter service jobs. 
+        /// The job status used to filter service jobs in the specified queue. If the <c>filters</c>
+        /// parameter is specified, the <c>jobStatus</c> parameter is ignored and jobs with any
+        /// status are returned. The exception is the <c>SHARE_IDENTIFIER</c> filter and <c>jobStatus</c>
+        /// can be used together. If you don't specify a status, only <c>RUNNING</c> jobs are
+        /// returned.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>SHARE_IDENTIFIER</c> filter and the <c>jobStatus</c> field can be used together
+        /// to filter results.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ServiceJobStatus JobStatus
         {
