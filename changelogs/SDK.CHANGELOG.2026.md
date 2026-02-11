@@ -1,3 +1,17 @@
+### 3.7.1221.0 (2026-02-11 19:40 UTC)
+* Batch (3.7.503.0)
+	* Add support for listing jobs by share identifier and getting snapshots of active capacity utilization by job queue and share.
+* EC2 (3.7.547.0)
+	* R8i instances powered by custom Intel Xeon 6 processors available only on AWS with sustained all-core 3.9 GHz turbo frequency
+* EKS (3.7.511.0)
+	* This release adds support for Windows Server 2025 in Amazon EKS Managed Node Groups.
+* KafkaConnect (3.7.505.0)
+	* Support configurable upper limits on task count during autoscaling operations via maxAutoscalingTaskCount parameter.
+* S3Tables (3.7.506.0)
+	* S3 Tables now supports setting partition specifications and sort orders on tables. Partition specs allow users to define how data is organized using transform functions. Sort order configurations enable users to specify sort directions and null ordering preferences for optimized data layout.
+* Core 3.7.500.79
+	* Update documentation for `MaxErrorRetry` to call out different default value for `DynamoDB`
+
 ### 3.7.1220.0 (2026-02-10 19:24 UTC)
 * BedrockAgentCore (3.7.511.0)
 	* Added AgentCore browser proxy configuration support, allowing routing of browser traffic through HTTP and HTTPS proxy servers with authentication and bypass rules.
