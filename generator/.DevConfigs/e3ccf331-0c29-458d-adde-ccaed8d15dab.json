@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix MPU in transfer utility for objects larger than 80GB"
+      ]
+    }
+  ]
+}

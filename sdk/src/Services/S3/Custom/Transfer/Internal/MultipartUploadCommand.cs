@@ -79,7 +79,7 @@ namespace Amazon.S3.Transfer.Internal
                 ? fileTransporterRequest.PartSize 
                 : S3Constants.DefaultPartSize;
 
-            this._partSize = calculatePartSize(this._contentLength, targetPartSize);
+            this._partSize = CalculatePartSize(this._contentLength, targetPartSize);
 
             if (fileTransporterRequest.InputStream != null)
             {
@@ -92,9 +92,26 @@ namespace Amazon.S3.Transfer.Internal
             _logger.DebugFormat("Upload part size {0}.", this._partSize);
         }
 
-        private static long calculatePartSize(long contentLength, long targetPartSize)
+        /// <summary>
+        /// Calculates the optimal part size for multipart uploads.
+        /// </summary>
+        /// <param name="contentLength">The total size of the content to be uploaded in bytes.</param>
+        /// <param name="targetPartSize">The desired part size (e.g., from user configuration or default).</param>
+        /// <returns>The part size to use, ensuring the total number of parts does not exceed S3's limit.</returns>
+        /// <remarks>
+        /// We must use Math.Ceiling when calculating the minimum part size to ensure that
+        /// the total number of parts does not exceed S3Constants.MaxNumberOfParts (10,000).
+        /// Using integer division would truncate the result, potentially causing the part count
+        /// to exceed the maximum limit for files where contentLength / MaxNumberOfParts has a remainder.
+        /// For example, an 87,241,523,200 byte file (~81.24 GiB) with truncating integer division 
+        /// would calculate a part size of 8,724,152 bytes, requiring 10,001 parts which exceeds
+        /// the S3 limit. Using Math.Ceiling gives 8,724,153 bytes per part, keeping the total 
+        /// at exactly 10,000 parts.
+        /// </remarks>
+        internal static long CalculatePartSize(long contentLength, long targetPartSize)
         {
-            return Math.Max(targetPartSize, contentLength / S3Constants.MaxNumberOfParts);
+            var minPartSize = (long)Math.Ceiling((double)contentLength / S3Constants.MaxNumberOfParts);
+            return Math.Max(targetPartSize, minPartSize);
         }
 
         private string determineContentType()
