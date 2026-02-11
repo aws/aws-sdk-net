@@ -13935,6 +13935,58 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R8i96xlarge = new InstanceType("r8i.96xlarge");
         /// <summary>
+        /// Constant R8id12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id12xlarge = new InstanceType("r8id.12xlarge");
+        /// <summary>
+        /// Constant R8id16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id16xlarge = new InstanceType("r8id.16xlarge");
+        /// <summary>
+        /// Constant R8id24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id24xlarge = new InstanceType("r8id.24xlarge");
+        /// <summary>
+        /// Constant R8id2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id2xlarge = new InstanceType("r8id.2xlarge");
+        /// <summary>
+        /// Constant R8id32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id32xlarge = new InstanceType("r8id.32xlarge");
+        /// <summary>
+        /// Constant R8id48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id48xlarge = new InstanceType("r8id.48xlarge");
+        /// <summary>
+        /// Constant R8id4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id4xlarge = new InstanceType("r8id.4xlarge");
+        /// <summary>
+        /// Constant R8id8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id8xlarge = new InstanceType("r8id.8xlarge");
+        /// <summary>
+        /// Constant R8id96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8id96xlarge = new InstanceType("r8id.96xlarge");
+        /// <summary>
+        /// Constant R8idLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idLarge = new InstanceType("r8id.large");
+        /// <summary>
+        /// Constant R8idMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idMetal48xl = new InstanceType("r8id.metal-48xl");
+        /// <summary>
+        /// Constant R8idMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idMetal96xl = new InstanceType("r8id.metal-96xl");
+        /// <summary>
+        /// Constant R8idXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idXlarge = new InstanceType("r8id.xlarge");
+        /// <summary>
         /// Constant R8iFlex12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R8iFlex12xlarge = new InstanceType("r8i-flex.12xlarge");
