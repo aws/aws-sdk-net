@@ -118,15 +118,15 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// Verifies that for very large files approaching S3's 5 TiB limit,
+        /// Verifies that for very large files approaching S3's 50 TiB max object size limit,
         /// the part size is calculated correctly to stay within 10,000 parts.
         /// </summary>
         [TestMethod]
         [TestCategory("S3")]
         public void CalculatePartSize_VeryLargeFile_StaysWithinPartLimit()
         {
-            // Arrange - close to S3's max object size of 5 TiB
-            long contentLength = 5L * 1024 * 1024 * 1024 * 1024; // 5 TiB
+            // Arrange - close to S3's max object size of 50 TiB
+            long contentLength = 50L * 1024 * 1024 * 1024 * 1024; // 50 TiB
             long targetPartSize = S3Constants.DefaultPartSize;
 
             // Act
